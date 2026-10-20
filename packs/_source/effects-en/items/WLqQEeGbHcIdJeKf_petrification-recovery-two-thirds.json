@@ -26,7 +26,20 @@
       "system": {
         "stackId": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.movement",
+            "type": "override",
+            "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.testFactor",
+            "type": "override",
+            "value": "{\"dexterity\":0.6666666666666666}",
+            "phase": "initial"
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,18 +47,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "rules": {
-              "movement": [
-                {
-                  "mode": "all",
-                  "method": "multiply",
-                  "value": 0.6666666666666666
-                }
-              ],
-              "testFactor": {
-                "dexterity": 0.6666666666666666
-              }
-            },
+            "editableChanges": true,
             "related": []
           }
         }

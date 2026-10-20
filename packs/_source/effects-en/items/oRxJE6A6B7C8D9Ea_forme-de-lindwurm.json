@@ -26,7 +26,26 @@
       "system": {
         "stackId": "oRxJE6A6B7C8D9Ea#forme-de-lindwurm",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.formName",
+            "type": "override",
+            "value": "Lindwurm",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.formPolicy",
+            "type": "override",
+            "value": "animal",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,11 +53,7 @@
           "transformation": {
             "key": "oRxJE6A6B7C8D9Ea#forme-de-lindwurm",
             "sourceId": "oRxJE6A6B7C8D9Ea",
-            "rules": {
-              "formName": "Lindwurm",
-              "formPolicy": "animal",
-              "suspendEquipment": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

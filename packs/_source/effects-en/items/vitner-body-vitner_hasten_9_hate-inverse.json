@@ -26,7 +26,15 @@
       "system": {
         "stackId": "vitner-body-vitner:hasten:9#hate-inverse",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":-1}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:hasten:9#hate-inverse",
             "sourceId": "vitner-body-vitner:hasten:9",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "dexterity",
-                  "method": "degrees",
-                  "value": -1
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

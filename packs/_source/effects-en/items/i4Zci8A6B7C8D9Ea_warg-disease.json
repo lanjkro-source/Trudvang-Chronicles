@@ -34,7 +34,7 @@
           "transformation": {
             "key": "i4Zci8A6B7C8D9Ea#warg-disease",
             "sourceId": "i4Zci8A6B7C8D9Ea",
-            "rules": {},
+            "editableChanges": true,
             "related": [
               "warg-garou"
             ]

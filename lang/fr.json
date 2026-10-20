@@ -1240,7 +1240,46 @@
       "ChangeTypeMultiply": "Multiplication",
       "ChangeTypeDowngrade": "Minimum",
       "ChangeTypeUpgrade": "Maximum",
-      "ChangeTypeOverride": "Remplacement"
+      "ChangeTypeOverride": "Remplacement",
+      "Profile": {
+        "suspendEquipment": "Suspendre l’équipement",
+        "preserveHP": "Conserver les PS d’origine",
+        "statueIntegrity": "Intégrité de la statue",
+        "naturalArmor": "Armure naturelle",
+        "movement": "Déplacements (liste JSON : mode, method, value)",
+        "testFactor": "Multiplicateurs des tests (objet JSON)",
+        "traits": "Modifications des traits (liste JSON)",
+        "chooseBestiary": "Choisir une forme du bestiaire",
+        "formPolicy": "Profil copié (physical ou animal)",
+        "formName": "Nom de la forme du bestiaire",
+        "senses": "Sens (liste JSON)",
+        "capabilities": "Facultés descriptives (liste JSON)",
+        "attacks": "Attaques accordées (liste JSON)",
+        "defense": "Modificateur de défense",
+        "vitality": "Dés de vitalité",
+        "temporaryHP": "Points de santé temporaires",
+        "damage": "Bonus aux dégâts et usages (objet JSON)",
+        "noParry": "Ne peut pas parer",
+        "noDodge": "Ne peut pas esquiver",
+        "ignoreFear": "Ignore les effets de la peur",
+        "fearFactor": "Facteur de peur",
+        "size": "Taille",
+        "durationFromElapsed": "Durée proportionnelle au temps écoulé",
+        "ignoreWounds": "Ignore les malus de blessures",
+        "endAtEmptyHP": "Fin lorsque les PS temporaires sont épuisés",
+        "damageTakenFactor": "Multiplicateur des dégâts reçus",
+        "immunities": "Immunités descriptives (liste JSON)",
+        "extraWeaponAction": "Action d’arme supplémentaire (objet JSON)",
+        "capabilityNames": "Capacités de créature accordées (liste JSON)",
+        "unarmedDamage": "Dégâts à mains nues par niveau de rune (liste JSON)",
+        "knowledge": "Bonus aux savoirs par identifiant (objet JSON)",
+        "vision": "Mode de vision (darkvision ou lightAmplification)",
+        "recalculateHP": "Recalculer les PS de cette forme",
+        "heightBonus": "Augmentation de la taille corporelle",
+        "weightBonus": "Augmentation du poids"
+      },
+      "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
+      "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil."
     },
     "Import": {
       "Started": "Installation de la bibliothèque de démarrage Trudvang...",
@@ -13121,7 +13160,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\n• Le bruide grandit de 50 cm et gagne 30 kg de muscles\n• Le bruide a un facteur de peur de 1d10\n• +5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +2 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +1 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur",
+          "Description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13413,7 +13452,8 @@
       "RuneLevel": "Niveau de la rune (0 à 4)",
       "Weapon": "Arme utilisée pour l’action supplémentaire",
       "Factor": "Modificateur de séquelle",
-      "Rules": "Modifications de transformation"
+      "Rules": "Modifications de transformation",
+      "FearImmunity": "Ignore les effets de la peur"
     }
   }
 }

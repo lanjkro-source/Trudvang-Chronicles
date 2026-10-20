@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-gauche",
             "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

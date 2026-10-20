@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
             "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

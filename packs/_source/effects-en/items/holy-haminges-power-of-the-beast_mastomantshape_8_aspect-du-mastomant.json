@@ -33,6 +33,48 @@
             "value": "4",
             "phase": "initial",
             "priority": 50
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.immunities",
+            "type": "override",
+            "value": "[\"toutes les formes de froid\"]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "7",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "30",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant.Attack0\",\"damage\":\"2d10\",\"openRoll\":9,\"maxActions\":0}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
           }
         ]
       },
@@ -42,28 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "replace",
-                  "value": 6
-                }
-              ],
-              "immunities": [
-                "toutes les formes de froid"
-              ],
-              "size": 7,
-              "temporaryHP": 30,
-              "attacks": [
-                {
-                  "damage": "2d10",
-                  "openRoll": 9,
-                  "maxActions": 0
-                }
-              ],
-              "suspendEquipment": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

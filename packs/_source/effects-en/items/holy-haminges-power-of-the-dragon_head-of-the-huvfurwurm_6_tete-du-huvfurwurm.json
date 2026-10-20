@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

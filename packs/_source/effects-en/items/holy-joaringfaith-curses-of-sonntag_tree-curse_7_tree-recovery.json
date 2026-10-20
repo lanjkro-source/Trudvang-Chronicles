@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.testFactor",
+            "type": "override",
+            "value": "{\"agility\":0.5,\"movement\":0.5}",
+            "phase": "initial",
+            "priority": 50
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,12 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery",
             "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
-            "rules": {
-              "testFactor": {
-                "agility": 0.5,
-                "movement": 0.5
-              }
-            },
+            "editableChanges": true,
             "related": []
           }
         }

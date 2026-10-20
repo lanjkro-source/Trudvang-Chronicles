@@ -1454,6 +1454,48 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.ChangeTypeDowngrade` | Downgrade | Minimum |
 | `TRUDVANG.Effect.ChangeTypeUpgrade` | Upgrade | Maximum |
 | `TRUDVANG.Effect.ChangeTypeOverride` | Override | Remplacement |
+| `TRUDVANG.Effect.ProfileHelp` | Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{"mode":"flight","method":"replace","value":24}]. Rage damage: system.transformation.damage = {"value":2,"usages":["melee","throwing","natural"]}. Lists and objects must be valid JSON. | Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{"mode":"flight","method":"replace","value":24}]. Pour les dégâts de Rage : system.transformation.damage = {"value":2,"usages":["melee","throwing","natural"]}. Une liste ou un objet doit être un JSON valide. |
+| `TRUDVANG.Effect.InvalidProfileChange` | Invalid value for {path}. See the profile change examples. | Valeur invalide pour {path}. Consultez les exemples des modifications de profil. |
+
+## `TRUDVANG.Effect.Profile`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Effect.Profile.suspendEquipment` | Suspend equipment | Suspendre l’équipement |
+| `TRUDVANG.Effect.Profile.preserveHP` | Keep original health | Conserver les PS d’origine |
+| `TRUDVANG.Effect.Profile.statueIntegrity` | Statue integrity | Intégrité de la statue |
+| `TRUDVANG.Effect.Profile.naturalArmor` | Natural armor | Armure naturelle |
+| `TRUDVANG.Effect.Profile.movement` | Movement modes (JSON list: mode, method, value) | Déplacements (liste JSON : mode, method, value) |
+| `TRUDVANG.Effect.Profile.testFactor` | Test multipliers (JSON object) | Multiplicateurs des tests (objet JSON) |
+| `TRUDVANG.Effect.Profile.traits` | Trait rules (JSON list) | Modifications des traits (liste JSON) |
+| `TRUDVANG.Effect.Profile.chooseBestiary` | Choose a bestiary form | Choisir une forme du bestiaire |
+| `TRUDVANG.Effect.Profile.formPolicy` | Form policy (physical or animal) | Profil copié (physical ou animal) |
+| `TRUDVANG.Effect.Profile.formName` | Bestiary form name | Nom de la forme du bestiaire |
+| `TRUDVANG.Effect.Profile.senses` | Senses (JSON list) | Sens (liste JSON) |
+| `TRUDVANG.Effect.Profile.capabilities` | Descriptive capabilities (JSON list) | Facultés descriptives (liste JSON) |
+| `TRUDVANG.Effect.Profile.attacks` | Granted attacks (JSON list) | Attaques accordées (liste JSON) |
+| `TRUDVANG.Effect.Profile.defense` | Defense modifier | Modificateur de défense |
+| `TRUDVANG.Effect.Profile.vitality` | Vitality dice | Dés de vitalité |
+| `TRUDVANG.Effect.Profile.temporaryHP` | Temporary health | Points de santé temporaires |
+| `TRUDVANG.Effect.Profile.damage` | Damage bonus and usages (JSON object) | Bonus aux dégâts et usages (objet JSON) |
+| `TRUDVANG.Effect.Profile.noParry` | Cannot parry | Ne peut pas parer |
+| `TRUDVANG.Effect.Profile.noDodge` | Cannot dodge | Ne peut pas esquiver |
+| `TRUDVANG.Effect.Profile.ignoreFear` | Ignore fear | Ignore les effets de la peur |
+| `TRUDVANG.Effect.Profile.fearFactor` | Fear factor | Facteur de peur |
+| `TRUDVANG.Effect.Profile.size` | Size | Taille |
+| `TRUDVANG.Effect.Profile.durationFromElapsed` | Duration as a fraction of elapsed time | Durée proportionnelle au temps écoulé |
+| `TRUDVANG.Effect.Profile.ignoreWounds` | Ignore wound penalties | Ignore les malus de blessures |
+| `TRUDVANG.Effect.Profile.endAtEmptyHP` | End when temporary health is depleted | Fin lorsque les PS temporaires sont épuisés |
+| `TRUDVANG.Effect.Profile.damageTakenFactor` | Incoming damage multiplier | Multiplicateur des dégâts reçus |
+| `TRUDVANG.Effect.Profile.immunities` | Descriptive immunities (JSON list) | Immunités descriptives (liste JSON) |
+| `TRUDVANG.Effect.Profile.extraWeaponAction` | Extra weapon action (JSON object) | Action d’arme supplémentaire (objet JSON) |
+| `TRUDVANG.Effect.Profile.capabilityNames` | Granted creature abilities (JSON list) | Capacités de créature accordées (liste JSON) |
+| `TRUDVANG.Effect.Profile.unarmedDamage` | Unarmed damage by rune level (JSON list) | Dégâts à mains nues par niveau de rune (liste JSON) |
+| `TRUDVANG.Effect.Profile.knowledge` | Knowledge bonuses by identifier (JSON object) | Bonus aux savoirs par identifiant (objet JSON) |
+| `TRUDVANG.Effect.Profile.vision` | Vision mode (darkvision or lightAmplification) | Mode de vision (darkvision ou lightAmplification) |
+| `TRUDVANG.Effect.Profile.recalculateHP` | Recalculate health for this form | Recalculer les PS de cette forme |
+| `TRUDVANG.Effect.Profile.heightBonus` | Height increase | Augmentation de la taille corporelle |
+| `TRUDVANG.Effect.Profile.weightBonus` | Weight increase | Augmentation du poids |
 
 ## `TRUDVANG.Import`
 
@@ -11045,7 +11087,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Name` | Rage | Rage |
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Description` | <p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p> | Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<br>Effets de la Rage :<br>• Le bruide grandit de 50 cm et gagne 30 kg de muscles<br>• Le bruide a un facteur de peur de 1d10<br>• +5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)<br>• +2 aux dégâts avec les armes de corps à corps ou les armes de jet<br>• +1 à la VC de toutes les attaques<br>• Le bruide ne peut ni parer ni esquiver les attaques<br>• Le bruide ignore tous les effets de la peur |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Description` | Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear | Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<br>Effets de la Rage :<br>La mopor grandit de 50 cm et gagne 30 kg de muscles<br>La mopor a un facteur de peur de 1d10<br>+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)<br>+2 aux dégâts avec les armes de corps à corps ou les armes de jet<br>+1 à la VC de toutes les attaques<br>La mopor ne peut ni parer ni esquiver les attaques<br>La mopor ignore tous les effets de la peur |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceName` | Rage | Rage |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourcePage` | 123 | 123 |
@@ -11430,6 +11472,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.Weapon` | Weapon for the additional action | Arme utilisée pour l’action supplémentaire |
 | `TRUDVANG.Transformation.Factor` | Aftereffect modifier | Modificateur de séquelle |
 | `TRUDVANG.Transformation.Rules` | Transformation modifications | Modifications de transformation |
+| `TRUDVANG.Transformation.FearImmunity` | Ignores fear effects | Ignore les effets de la peur |
 
 ## `TRUDVANG.Transformation.Modes`
 

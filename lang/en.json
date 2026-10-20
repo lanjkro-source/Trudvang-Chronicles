@@ -1240,7 +1240,46 @@
       "ChangeTypeMultiply": "Multiply",
       "ChangeTypeDowngrade": "Downgrade",
       "ChangeTypeUpgrade": "Upgrade",
-      "ChangeTypeOverride": "Override"
+      "ChangeTypeOverride": "Override",
+      "Profile": {
+        "suspendEquipment": "Suspend equipment",
+        "preserveHP": "Keep original health",
+        "statueIntegrity": "Statue integrity",
+        "naturalArmor": "Natural armor",
+        "movement": "Movement modes (JSON list: mode, method, value)",
+        "testFactor": "Test multipliers (JSON object)",
+        "traits": "Trait rules (JSON list)",
+        "chooseBestiary": "Choose a bestiary form",
+        "formPolicy": "Form policy (physical or animal)",
+        "formName": "Bestiary form name",
+        "senses": "Senses (JSON list)",
+        "capabilities": "Descriptive capabilities (JSON list)",
+        "attacks": "Granted attacks (JSON list)",
+        "defense": "Defense modifier",
+        "vitality": "Vitality dice",
+        "temporaryHP": "Temporary health",
+        "damage": "Damage bonus and usages (JSON object)",
+        "noParry": "Cannot parry",
+        "noDodge": "Cannot dodge",
+        "ignoreFear": "Ignore fear",
+        "fearFactor": "Fear factor",
+        "size": "Size",
+        "durationFromElapsed": "Duration as a fraction of elapsed time",
+        "ignoreWounds": "Ignore wound penalties",
+        "endAtEmptyHP": "End when temporary health is depleted",
+        "damageTakenFactor": "Incoming damage multiplier",
+        "immunities": "Descriptive immunities (JSON list)",
+        "extraWeaponAction": "Extra weapon action (JSON object)",
+        "capabilityNames": "Granted creature abilities (JSON list)",
+        "unarmedDamage": "Unarmed damage by rune level (JSON list)",
+        "knowledge": "Knowledge bonuses by identifier (JSON object)",
+        "vision": "Vision mode (darkvision or lightAmplification)",
+        "recalculateHP": "Recalculate health for this form",
+        "heightBonus": "Height increase",
+        "weightBonus": "Weight increase"
+      },
+      "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
+      "InvalidProfileChange": "Invalid value for {path}. See the profile change examples."
     },
     "Import": {
       "Started": "Installing the Trudvang starter library...",
@@ -13121,7 +13160,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage",
-          "Description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+          "Description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13413,7 +13452,8 @@
       "RuneLevel": "Rune level (0 to 4)",
       "Weapon": "Weapon for the additional action",
       "Factor": "Aftereffect modifier",
-      "Rules": "Transformation modifications"
+      "Rules": "Transformation modifications",
+      "FearImmunity": "Ignores fear effects"
     }
   }
 }

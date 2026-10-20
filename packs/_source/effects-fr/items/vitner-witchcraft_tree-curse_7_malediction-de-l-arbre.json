@@ -33,6 +33,20 @@
             "value": "4",
             "phase": "initial",
             "priority": 50
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
           }
         ]
       },
@@ -44,10 +58,7 @@
           "transformation": {
             "key": "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
             "sourceId": "vitner-witchcraft:tree-curse:7",
-            "rules": {
-              "suspendEquipment": true,
-              "preserveHP": true
-            },
+            "editableChanges": true,
             "related": [
               "tree-recovery"
             ]

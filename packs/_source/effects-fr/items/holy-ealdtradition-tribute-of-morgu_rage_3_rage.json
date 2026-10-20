@@ -33,6 +33,69 @@
             "value": "1",
             "phase": "initial",
             "priority": 20
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d10",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.heightBonus",
+            "type": "override",
+            "value": "0.5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.weightBonus",
+            "type": "override",
+            "value": "30",
+            "phase": "initial",
+            "priority": 20
           }
         ]
       },
@@ -42,22 +105,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
-            "rules": {
-              "temporaryHP": 5,
-              "damage": {
-                "value": 2,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true,
-              "fearFactor": "1d10",
-              "size": 1
-            },
+            "editableChanges": true,
             "related": [
               "frenzy-exhaustion"
             ]

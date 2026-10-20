@@ -34,7 +34,7 @@
           "transformation": {
             "key": "2hwy57A6B7C8D9Ea#regeneration-de-tete",
             "sourceId": "2hwy57A6B7C8D9Ea",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

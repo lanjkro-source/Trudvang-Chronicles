@@ -12,6 +12,6 @@ export function buildEffectPackDocuments({localize}){
    system:{catalogId:key,description,summary:text("SourceName"),source:{book:text("SourceBook"),page:Number(text("SourcePage"))}},
    effects:[{_id:deterministicId(`effect-template:${key}`),_key:`!items.effects!${id}.${deterministicId(`effect-template:${key}`)}`,name,type:"effect",img:t.icon,description,transfer:false,
     system:{stackId:key,stacking:"replace",changes:structuredClone(t.changes)},statuses:t.statuses,
-    flags:{"trudvang-chronicles":{transformation:{key,sourceId:t.sourceId,rules:structuredClone(t.rules),related:t.related}}}}]};
+    flags:{"trudvang-chronicles":{transformation:{key,sourceId:t.sourceId,editableChanges:true,related:t.related}}}}]};
  })};
 }

@@ -1,6 +1,7 @@
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
 import {npcCurrentTrait, npcBookSkillRows} from "./rules/npc-summary.mjs";
 import {TRUDVANG} from "./config.mjs";
+import {EFFECT_RULE_KEYS} from "./rules/effect-rule-changes.mjs";
 
 const fields = foundry.data.fields;
 
@@ -180,6 +181,8 @@ function actorCommonSchema() {
       raudValue: integer(0, {persisted: false}),
       fearValue: integer(0, {persisted: false})
     }),
+    transformation: schema(Object.fromEntries(EFFECT_RULE_KEYS.map(key => [key,
+      new fields.StringField({required: true, nullable: false, initial: "", persisted: false})]))),
     resources: schema({
       body: resource(32, 32),
       raud: resource(0, 0),

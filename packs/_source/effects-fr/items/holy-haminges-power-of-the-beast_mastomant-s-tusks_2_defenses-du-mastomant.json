@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant.Attack0\",\"damage\":\"1d10\",\"openRoll\":0,\"maxActions\":1}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
-            "rules": {
-              "attacks": [
-                {
-                  "damage": "1d10",
-                  "openRoll": 0,
-                  "maxActions": 1
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

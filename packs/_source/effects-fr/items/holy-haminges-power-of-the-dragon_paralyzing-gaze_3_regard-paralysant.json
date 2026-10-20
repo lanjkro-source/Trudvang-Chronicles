@@ -36,7 +36,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
             "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

@@ -18,6 +18,19 @@ globalThis.foundry = {documents: {Actor: class {
 data: {ActiveEffectTypeDataModel: class {}}};
 globalThis.Hooks = {call: () => true};
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
+test("a character granted a fear factor opens the normal fear-factor roll dialog",async t=>{
+ runtime(t);
+ const oldApi=foundry.applications.api;
+ const oldDocument=globalThis.document;
+ t.after(()=>{foundry.applications.api=oldApi;globalThis.document=oldDocument;});
+ let opened;
+ foundry.applications.api={DialogV2:{wait:async options=>{opened=options;return false;}}};
+ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value);},innerHTML:""})};
+ const actor=Object.assign(new TrudvangActor(),{type:"character",system:{details:{}},transformationProfile:{fearFactor:"1d10"}});
+ assert.equal(await actor.rollFearFactor(),null);
+ assert.match(opened.content,/1d10/);
+ assert.equal(opened.buttons[0].action,"roll");
+});
 const users = [{id: "gm", isGM: true}, {id: "offline-gm", isGM: true, active: false},
   {id: "owner", active: true}, {id: "offline-owner", active: false}, {id: "observer"}, {id: "other-player"}];
 

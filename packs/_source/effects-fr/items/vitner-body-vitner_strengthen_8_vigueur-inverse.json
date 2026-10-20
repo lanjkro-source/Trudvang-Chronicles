@@ -26,7 +26,15 @@
       "system": {
         "stackId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":-1}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:strengthen:8#vigueur-inverse",
             "sourceId": "vitner-body-vitner:strengthen:8",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "degrees",
-                  "value": -1
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

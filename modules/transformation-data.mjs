@@ -11,17 +11,39 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "10",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "100",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.naturalArmor",
+        "type": "override",
+        "value": "0",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 100,
-      "naturalArmor": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -50,20 +72,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -75,20 +100,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
@@ -105,15 +133,25 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "4",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
       "restrain"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true
-    },
     "related": [
       "tree-recovery"
     ],
@@ -146,14 +184,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "tree-recovery",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "testFactor": {
-        "agility": 0.5,
-        "movement": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"agility\":0.5,\"movement\":0.5}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "vitner-witchcraft:tree-curse:7",
@@ -163,17 +203,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "hate",
     "icon": "icons/svg/aura.svg",
     "duration": "5 tours de jeu",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":1}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "degrees",
-          "value": 1
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "vitner-body-vitner:hasten:9",
@@ -194,17 +233,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "hate-inverse",
     "icon": "icons/svg/aura.svg",
     "duration": "5 tours de jeu",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":-1}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "degrees",
-          "value": -1
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "vitner-body-vitner:hasten:9",
@@ -225,17 +263,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "vigueur",
     "icon": "icons/svg/aura.svg",
     "duration": "5 tours de jeu",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":1}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "degrees",
-          "value": 1
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "vitner-body-vitner:strengthen:8",
@@ -256,17 +293,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "vigueur-inverse",
     "icon": "icons/svg/aura.svg",
     "duration": "5 tours de jeu",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":-1}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "degrees",
-          "value": -1
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "vitner-body-vitner:strengthen:8",
@@ -287,14 +323,37 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "transformation",
     "icon": "icons/svg/aura.svg",
     "duration": "5 minutes",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.chooseBestiary",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "physical",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "chooseBestiary": true,
-      "formPolicy": "physical",
-      "preserveHP": true,
-      "suspendEquipment": true
-    },
     "related": [],
     "priority": 50,
     "sourceId": "vitner-body-vitner:change-creature:11",
@@ -325,17 +384,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-du-troll",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 4
-        }
-      ]
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
@@ -356,17 +414,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-de-hinje",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 6
-        }
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
@@ -387,17 +444,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-du-jotun",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":8}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 8
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
@@ -418,17 +474,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-d-ame",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "psyche",
-          "method": "replace",
-          "value": 4
-        }
-      ]
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-gerbanis-power-of-enken:willpower:1",
@@ -449,17 +504,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "temerite",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "psyche",
-          "method": "replace",
-          "value": 6
-        }
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-gerbanis-power-of-enken:bold:2",
@@ -480,17 +534,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "c-ur-d-enken",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":8}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "psyche",
-          "method": "replace",
-          "value": 8
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
@@ -511,40 +564,58 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-du-cerf",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":1},{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0\"]",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.capabilities",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Capability0\"]",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":2}]",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Attack0\",\"damage\":\"1d10\",\"openRoll\":9,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "highest",
-          "value": 1
-        },
-        {
-          "trait": "constitution",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 2
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 9,
-          "maxActions": 0
-        }
-      ],
-      "suspendEquipment": true,
-      "senseCount": 1,
-      "vision": "lightAmplification",
-      "capabilityCount": 1
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
@@ -565,32 +636,44 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-du-saumon",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.capabilities",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability1\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"replace\",\"value\":0},{\"mode\":\"swim\",\"method\":\"baseMultiple\",\"value\":2}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "replace",
-          "value": 0
-        },
-        {
-          "mode": "swim",
-          "method": "baseMultiple",
-          "value": 2
-        }
-      ],
-      "suspendEquipment": true,
-      "senseCount": 1,
-      "capabilityCount": 2
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
@@ -611,46 +694,65 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-du-corbeau",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4},{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.capabilities",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability1\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":0.5},{\"mode\":\"flight\",\"method\":\"baseMultiple\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.defense",
+        "type": "override",
+        "value": "-5",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "constitution",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 0.5
-        },
-        {
-          "mode": "flight",
-          "method": "baseMultiple",
-          "value": 4
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "defense": -5,
-      "suspendEquipment": true,
-      "senseCount": 2,
-      "vision": "lightAmplification",
-      "capabilityCount": 2
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
@@ -671,11 +773,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "simmering-blood",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "1d10",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "1d10"
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
@@ -703,25 +810,72 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "1",
         "phase": "initial",
         "priority": 20
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "5",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.heightBonus",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.weightBonus",
+        "type": "override",
+        "value": "30",
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 5,
-      "damage": {
-        "value": 2,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10",
-      "size": 1
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -733,11 +887,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
@@ -747,11 +906,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "boiling-blood",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "2d10",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "2d10"
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2",
@@ -779,25 +943,58 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 30
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "10",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10 (JO 10)",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "1.5",
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 10,
-      "damage": {
-        "value": 4,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10 (JO 10)",
-      "size": 1.5
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -809,11 +1006,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
@@ -823,11 +1025,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "bloodfire",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "3d10",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "3d10"
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
@@ -855,26 +1062,65 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "3",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "15",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10 (JO 9-10)",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "2",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.ignoreWounds",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 15,
-      "damage": {
-        "value": 6,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10 (JO 9-10)",
-      "size": 2,
-      "ignoreWounds": true
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -886,11 +1132,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
@@ -902,7 +1153,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "1 minute",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 20,
     "sourceId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
@@ -920,7 +1170,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "1 minute",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 40,
     "sourceId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
@@ -936,15 +1185,32 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "statue",
     "icon": "icons/svg/aura.svg",
     "duration": "5 tours de jeu",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "0",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -957,20 +1223,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial",
+        "priority": 30
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -982,20 +1251,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial",
+        "priority": 30
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
@@ -1005,15 +1277,32 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "monument-en-pierre",
     "icon": "icons/svg/aura.svg",
     "duration": "1 jour",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "0",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -1032,20 +1321,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -1057,20 +1349,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
@@ -1080,12 +1375,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "peau-d-ecorce",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "10",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.endAtEmptyHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 10,
-      "endAtEmptyHP": true
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
@@ -1118,15 +1424,25 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "8",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.damageTakenFactor",
+        "type": "override",
+        "value": "0.2",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
       "restrain"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "damageTakenFactor": 0.2
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
@@ -1147,17 +1463,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "resilience",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "constitution",
-          "method": "replace",
-          "value": 4
-        }
-      ]
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
@@ -1178,17 +1493,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "defenses-du-mastomant",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant.Attack0\",\"damage\":\"1d10\",\"openRoll\":0,\"maxActions\":1}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 0,
-          "maxActions": 1
-        }
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
@@ -1209,17 +1523,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "endurance-du-sanglier",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "constitution",
-          "method": "replace",
-          "value": 6
-        }
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
@@ -1240,21 +1553,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "endurance-du-geant",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":8}]",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.immunities",
+        "type": "override",
+        "value": "[\"poison\",\"maladie\"]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "constitution",
-          "method": "replace",
-          "value": 8
-        }
-      ],
-      "immunities": [
-        "poison",
-        "maladie"
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
@@ -1282,31 +1597,51 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "4",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.immunities",
+        "type": "override",
+        "value": "[\"toutes les formes de froid\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "7",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "30",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant.Attack0\",\"damage\":\"2d10\",\"openRoll\":9,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 6
-        }
-      ],
-      "immunities": [
-        "toutes les formes de froid"
-      ],
-      "size": 7,
-      "temporaryHP": 30,
-      "attacks": [
-        {
-          "damage": "2d10",
-          "openRoll": 9,
-          "maxActions": 0
-        }
-      ],
-      "suspendEquipment": true
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
@@ -1339,7 +1674,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "3 tours de jeu",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
@@ -1357,7 +1691,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "3 tours de jeu",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
@@ -1375,7 +1708,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "3 tours de jeu",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
@@ -1393,7 +1725,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "3 tours de jeu",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
@@ -1411,7 +1742,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "2 jours",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
@@ -1432,15 +1762,32 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification",
     "icon": "icons/svg/aura.svg",
     "duration": "1 jour",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "0",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -1459,20 +1806,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -1484,20 +1834,23 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
@@ -1507,17 +1860,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-du-troll",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 4
-        }
-      ]
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
@@ -1538,17 +1890,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-du-stenhinje",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 6
-        }
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
@@ -1569,22 +1920,44 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "fureur-de-l-ogre-des-montagnes",
     "icon": "icons/svg/aura.svg",
     "duration": "3 tours de jeu",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "temporaryHP": 3,
-      "damage": {
-        "value": 1,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
+    "changes": [
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "3",
+        "phase": "initial",
+        "priority": 20
       },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true
-    },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "statuses": [],
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
@@ -1612,23 +1985,44 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "1",
         "phase": "initial",
         "priority": 30
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "6",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":3,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 6,
-      "damage": {
-        "value": 3,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
@@ -1649,17 +2043,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "force-du-tursir",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":8}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": 8
-        }
-      ]
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
@@ -1687,24 +2080,51 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 40
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "10",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":5,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10 (JO 10)",
+        "phase": "initial",
+        "priority": 40
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 10,
-      "damage": {
-        "value": 5,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10 (JO 10)"
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
@@ -1725,13 +2145,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "ravage-du-huvfurwurm",
     "icon": "icons/svg/aura.svg",
     "duration": "3 tours de jeu",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "extraWeaponAction": {
-        "combatPoints": 5
+    "changes": [
+      {
+        "key": "system.transformation.extraWeaponAction",
+        "type": "override",
+        "value": "{\"combatPoints\":5}",
+        "phase": "initial",
+        "priority": 10
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 10,
     "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
@@ -1748,22 +2171,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 20
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.immunities",
+        "type": "override",
+        "value": "[\"flammes non magiques\"]",
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
-    "rules": {
-      "damage": {
-        "value": 1,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "immunities": [
-        "flammes non magiques"
-      ]
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
@@ -1788,7 +2212,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [
       "paralysis"
     ],
-    "rules": {},
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
@@ -1805,22 +2228,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "4",
         "phase": "initial",
         "priority": 30
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.immunities",
+        "type": "override",
+        "value": "[\"flammes non magiques\"]",
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
-    "rules": {
-      "damage": {
-        "value": 2,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "immunities": [
-        "flammes non magiques"
-      ]
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
@@ -1848,7 +2272,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "2 jours",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "priority": 40,
     "sourceId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
@@ -1876,23 +2299,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "6",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.immunities",
+        "type": "override",
+        "value": "[\"flammes non magiques\",\"flammes magiques\"]",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "damage": {
-        "value": 4,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "immunities": [
-        "flammes non magiques",
-        "flammes magiques"
-      ]
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
@@ -1925,29 +2348,44 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "4",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "20",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant.Attack0\",\"damage\":\"2d10\",\"openRoll\":9,\"maxActions\":0},{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant.Attack1\",\"damage\":\"2d10\",\"openRoll\":0,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.capabilityNames",
+        "type": "override",
+        "value": "[\"Regard paralysant\"]",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "size": 4,
-      "temporaryHP": 20,
-      "suspendEquipment": true,
-      "attacks": [
-        {
-          "damage": "2d10",
-          "openRoll": 9,
-          "maxActions": 0
-        },
-        {
-          "damage": "2d10",
-          "openRoll": 0,
-          "maxActions": 0
-        }
-      ],
-      "capabilityNames": [
-        "Regard paralysant"
-      ]
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
@@ -1978,17 +2416,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "poings-d-acier",
     "icon": "icons/svg/aura.svg",
     "duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.unarmedDamage",
+        "type": "override",
+        "value": "[\"1d6\",\"1d6 + 2\",\"1d10 + 2\",\"1d10 + 2\",\"1d10 + 2\"]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "unarmedDamage": [
-        "1d6",
-        "1d6 + 2",
-        "1d10 + 2",
-        "1d10 + 2",
-        "1d10 + 2"
-      ]
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
@@ -2005,28 +2442,44 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 30
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "false",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Sense0\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": false,
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
@@ -2047,31 +2500,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "esprit-de-la-bete-renard",
     "icon": "icons/svg/aura.svg",
     "duration": "10 minutes",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "suspendEquipment": false,
-      "traits": [
-        {
-          "trait": "intelligence",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 1.5
-        }
-      ],
-      "knowledge": {
-        "shadowing": 3,
-        "thievery": 3
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "false",
+        "phase": "initial",
+        "priority": 30
       },
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"intelligence\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":1.5}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"shadowing\":3,\"thievery\":3}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
     "related": [],
     "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
@@ -2092,30 +2565,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "esprit-de-la-bete-lievre",
     "icon": "icons/svg/aura.svg",
     "duration": "10 minutes",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "suspendEquipment": false,
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 1.5
-        }
-      ],
-      "knowledge": {
-        "shadowing": 3
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "false",
+        "phase": "initial",
+        "priority": 30
       },
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Sense0\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":1.5}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"shadowing\":3}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
     "related": [],
     "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
@@ -2136,21 +2630,44 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "esprit-de-la-bete-corbeau",
     "icon": "icons/svg/aura.svg",
     "duration": "10 minutes",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "false",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense1\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": false,
-      "traits": [],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "senseCount": 2,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
@@ -2171,34 +2688,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "esprit-de-la-bete-cerf",
     "icon": "icons/svg/aura.svg",
     "duration": "10 minutes",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "false",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Sense0\"]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":1.5}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": false,
-      "traits": [
-        {
-          "trait": "constitution",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 1.5
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
@@ -2226,38 +2760,44 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "3",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours.Sense0\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":4},{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4},{\"trait\":\"dexterity\",\"method\":\"replace\",\"value\":-2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": true,
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "constitution",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "dexterity",
-          "method": "replace",
-          "value": -2
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
@@ -2278,37 +2818,58 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-animal-renard",
     "icon": "icons/svg/aura.svg",
     "duration": "1 heure",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "suspendEquipment": true,
-      "traits": [
-        {
-          "trait": "intelligence",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": -2
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 2
-        }
-      ],
-      "knowledge": {
-        "shadowing": 3,
-        "thievery": 3
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       },
-      "defense": -2,
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard.Sense0\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"intelligence\",\"method\":\"highest\",\"value\":4},{\"trait\":\"strength\",\"method\":\"replace\",\"value\":-2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"shadowing\":3,\"thievery\":3}",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.defense",
+        "type": "override",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
@@ -2329,33 +2890,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-animal-lievre",
     "icon": "icons/svg/aura.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre.Sense0\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4},{\"trait\":\"strength\",\"method\":\"replace\",\"value\":-2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.defense",
+        "type": "override",
+        "value": "-3",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": true,
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "strength",
-          "method": "replace",
-          "value": -2
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 2
-        }
-      ],
-      "defense": -3,
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
@@ -2376,44 +2955,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-animal-corbeau",
     "icon": "icons/svg/aura.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense1\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4},{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":-4}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":0.5},{\"mode\":\"flight\",\"method\":\"baseMultiple\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": true,
-      "traits": [
-        {
-          "trait": "dexterity",
-          "method": "highest",
-          "value": 4
-        },
-        {
-          "trait": "constitution",
-          "method": "replace",
-          "value": -4
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 0.5
-        },
-        {
-          "mode": "flight",
-          "method": "baseMultiple",
-          "value": 4
-        }
-      ],
-      "senseCount": 2,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
@@ -2434,39 +3020,51 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "aspect-animal-cerf",
     "icon": "icons/svg/aura.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Sense0\"]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":1},{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":2}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "suspendEquipment": true,
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "highest",
-          "value": 1
-        },
-        {
-          "trait": "constitution",
-          "method": "highest",
-          "value": 4
-        }
-      ],
-      "movement": [
-        {
-          "mode": "land",
-          "method": "multiply",
-          "value": 2
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 10,
-          "maxActions": 0
-        }
-      ],
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
@@ -2487,13 +3085,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "don-de-l-eau",
     "icon": "icons/svg/aura.svg",
     "duration": "1 heure",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "knowledge": {
-        "swimming": 2
+    "changes": [
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"swimming\":2}",
+        "phase": "initial",
+        "priority": 10
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 10,
     "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
@@ -2509,11 +3110,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "simmering-blood",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "1d10",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "1d10"
-    },
     "related": [],
     "priority": 10,
     "sourceId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
@@ -2541,25 +3147,72 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "1",
         "phase": "initial",
         "priority": 20
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "5",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.heightBonus",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.weightBonus",
+        "type": "override",
+        "value": "30",
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 5,
-      "damage": {
-        "value": 2,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10",
-      "size": 1
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -2571,11 +3224,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
@@ -2585,11 +3243,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "boiling-blood",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "2d10",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "2d10"
-    },
     "related": [],
     "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
@@ -2617,25 +3280,58 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "2",
         "phase": "initial",
         "priority": 30
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "10",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10 (JO 10)",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "1.5",
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 10,
-      "damage": {
-        "value": 4,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10 (JO 10)",
-      "size": 1.5
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -2647,11 +3343,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 30,
     "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
@@ -2661,11 +3362,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "bloodfire",
     "icon": "icons/svg/blood.svg",
     "duration": "1 heure",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.vitality",
+        "type": "override",
+        "value": "3d10",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "vitality": "3d10"
-    },
     "related": [],
     "priority": 40,
     "sourceId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
@@ -2693,26 +3399,65 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "3",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.temporaryHP",
+        "type": "override",
+        "value": "15",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.damage",
+        "type": "override",
+        "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.noParry",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.noDodge",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.ignoreFear",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d10 (JO 9-10)",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.size",
+        "type": "override",
+        "value": "2",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.ignoreWounds",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
-    "rules": {
-      "temporaryHP": 15,
-      "damage": {
-        "value": 6,
-        "usages": [
-          "melee",
-          "throwing",
-          "natural"
-        ]
-      },
-      "noParry": true,
-      "noDodge": true,
-      "ignoreFear": true,
-      "fearFactor": "1d10 (JO 9-10)",
-      "size": 2,
-      "ignoreWounds": true
-    },
     "related": [
       "frenzy-exhaustion"
     ],
@@ -2724,11 +3469,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "frenzy-exhaustion",
     "icon": "icons/svg/sleep.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.durationFromElapsed",
+        "type": "override",
+        "value": "0.5",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "durationFromElapsed": 0.5
-    },
     "related": [],
     "priority": 50,
     "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
@@ -2745,15 +3495,25 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "4",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
       "restrain"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true
-    },
     "related": [
       "tree-recovery"
     ],
@@ -2786,14 +3546,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "tree-recovery",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "testFactor": {
-        "agility": 0.5,
-        "movement": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"agility\":0.5,\"movement\":0.5}",
+        "phase": "initial",
+        "priority": 50
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "priority": 50,
     "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
@@ -2803,14 +3565,33 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "changement-de-corps-logewurm",
     "icon": "icons/svg/aura.svg",
     "duration": "illimitée",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.chooseBestiary",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "physical",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "chooseBestiary": true,
-      "formPolicy": "physical",
-      "preserveHP": true,
-      "suspendEquipment": true
-    },
     "related": [],
     "sourceId": "MLPIuC5A6B7C8D9E",
     "parameters": []
@@ -2821,7 +3602,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "sourceId": "MKMhM5z5A6B7C8D9",
     "parameters": []
@@ -2830,17 +3610,41 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "c-ur-regenerant-lindwurm",
     "icon": "icons/svg/aura.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.chooseBestiary",
+        "type": "override",
+        "value": "false",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "animal",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "false",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formName",
+        "type": "override",
+        "value": "Lindwurm",
+        "phase": "initial"
+      }
+    ],
     "statuses": [
       "sleep"
     ],
-    "rules": {
-      "chooseBestiary": false,
-      "formPolicy": "animal",
-      "preserveHP": false,
-      "suspendEquipment": true,
-      "formName": "Lindwurm"
-    },
     "related": [
       "forme-de-lindwurm"
     ],
@@ -2851,13 +3655,27 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "forme-de-lindwurm",
     "icon": "icons/svg/aura.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.formName",
+        "type": "override",
+        "value": "Lindwurm",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "animal",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "formName": "Lindwurm",
-      "formPolicy": "animal",
-      "suspendEquipment": true
-    },
     "related": [],
     "sourceId": "oRxJE6A6B7C8D9Ea",
     "parameters": []
@@ -2866,18 +3684,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "corps-de-fumee",
     "icon": "icons/svg/aura.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"land\",\"method\":\"replace\",\"value\":30}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "land",
-          "method": "replace",
-          "value": 30
-        }
-      ],
-      "suspendEquipment": true
-    },
     "related": [],
     "sourceId": "flAdvMhNiOjPkQlR",
     "parameters": []
@@ -2901,7 +3722,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ],
     "statuses": [],
-    "rules": {},
     "related": [],
     "sourceId": "it3GE4w2x3y4z5A6",
     "parameters": []
@@ -2916,40 +3736,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "1",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\"]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"constitution\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"psyche\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":2,\"overflow\":4}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "darkvision",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.recalculateHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
       }
     ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "constitution",
-          "method": "degrees",
-          "value": 2,
-          "overflow": 4
-        },
-        {
-          "trait": "psyche",
-          "method": "degrees",
-          "value": 2,
-          "overflow": 4
-        },
-        {
-          "trait": "strength",
-          "method": "degrees",
-          "value": 2,
-          "overflow": 4
-        },
-        {
-          "trait": "dexterity",
-          "method": "degrees",
-          "value": 2,
-          "overflow": 4
-        }
-      ],
-      "vision": "darkvision",
-      "recalculateHP": true,
-      "senseCount": 1
-    },
     "related": [],
     "sourceId": "NcOgKSkQlRmSnToU",
     "parameters": []
@@ -2960,7 +3773,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [
       "warg-garou"
     ],
@@ -2977,63 +3789,45 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "2",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"dexterity\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"constitution\",\"method\":\"add\",\"value\":6,\"max\":8},{\"trait\":\"psyche\",\"method\":\"add\",\"value\":-2},{\"trait\":\"intelligence\",\"method\":\"add\",\"value\":-4,\"min\":-6}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Attack0\",\"damage\":\"1d10\",\"openRoll\":8,\"maxActions\":1},{\"name\":\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Attack1\",\"damage\":\"1d10\",\"openRoll\":9,\"maxActions\":2}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Sense0\"]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial"
       }
     ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "dexterity",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "constitution",
-          "method": "add",
-          "value": 6,
-          "max": 8
-        },
-        {
-          "trait": "psyche",
-          "method": "add",
-          "value": -2
-        },
-        {
-          "trait": "intelligence",
-          "method": "add",
-          "value": -4,
-          "min": -6
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 8,
-          "maxActions": 1
-        },
-        {
-          "damage": "1d10",
-          "openRoll": 9,
-          "maxActions": 2
-        }
-      ],
-      "suspendEquipment": true,
-      "knowledge": {
-        "brawling": 2,
-        "huntingFishing": 6,
-        "jumpingClimbingBalancing": 6,
-        "tracker": 6
-      },
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "sourceId": "WKMBG3v1w2x3y4z5",
     "parameters": []
@@ -3044,7 +3838,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [
       "warg-garou"
     ],
@@ -3061,63 +3854,45 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "2",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"dexterity\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"constitution\",\"method\":\"add\",\"value\":6,\"max\":8},{\"trait\":\"psyche\",\"method\":\"add\",\"value\":-2},{\"trait\":\"intelligence\",\"method\":\"add\",\"value\":-4,\"min\":-6}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Attack0\",\"damage\":\"1d10\",\"openRoll\":8,\"maxActions\":1},{\"name\":\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Attack1\",\"damage\":\"1d10\",\"openRoll\":9,\"maxActions\":2}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Sense0\"]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial"
       }
     ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "dexterity",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "constitution",
-          "method": "add",
-          "value": 6,
-          "max": 8
-        },
-        {
-          "trait": "psyche",
-          "method": "add",
-          "value": -2
-        },
-        {
-          "trait": "intelligence",
-          "method": "add",
-          "value": -4,
-          "min": -6
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 8,
-          "maxActions": 1
-        },
-        {
-          "damage": "1d10",
-          "openRoll": 9,
-          "maxActions": 2
-        }
-      ],
-      "suspendEquipment": true,
-      "knowledge": {
-        "brawling": 2,
-        "huntingFishing": 6,
-        "jumpingClimbingBalancing": 6,
-        "tracker": 6
-      },
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "sourceId": "gXp2SRjPkQlRmSnT",
     "parameters": []
@@ -3128,7 +3903,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [
       "warg-garou"
     ],
@@ -3145,63 +3919,45 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "2",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"dexterity\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"constitution\",\"method\":\"add\",\"value\":6,\"max\":8},{\"trait\":\"psyche\",\"method\":\"add\",\"value\":-2},{\"trait\":\"intelligence\",\"method\":\"add\",\"value\":-4,\"min\":-6}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Attack0\",\"damage\":\"1d10\",\"openRoll\":8,\"maxActions\":1},{\"name\":\"TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Attack1\",\"damage\":\"1d10\",\"openRoll\":9,\"maxActions\":2}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[\"TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Sense0\"]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.knowledge",
+        "type": "override",
+        "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.vision",
+        "type": "override",
+        "value": "lightAmplification",
+        "phase": "initial"
       }
     ],
     "statuses": [],
-    "rules": {
-      "traits": [
-        {
-          "trait": "strength",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "dexterity",
-          "method": "add",
-          "value": 4,
-          "max": 6
-        },
-        {
-          "trait": "constitution",
-          "method": "add",
-          "value": 6,
-          "max": 8
-        },
-        {
-          "trait": "psyche",
-          "method": "add",
-          "value": -2
-        },
-        {
-          "trait": "intelligence",
-          "method": "add",
-          "value": -4,
-          "min": -6
-        }
-      ],
-      "attacks": [
-        {
-          "damage": "1d10",
-          "openRoll": 8,
-          "maxActions": 1
-        },
-        {
-          "damage": "1d10",
-          "openRoll": 9,
-          "maxActions": 2
-        }
-      ],
-      "suspendEquipment": true,
-      "knowledge": {
-        "brawling": 2,
-        "huntingFishing": 6,
-        "jumpingClimbingBalancing": 6,
-        "tracker": 6
-      },
-      "senseCount": 1,
-      "vision": "lightAmplification"
-    },
     "related": [],
     "sourceId": "i4Zci8A6B7C8D9Ea",
     "parameters": []
@@ -3210,14 +3966,33 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "metamorphose-draugr",
     "icon": "icons/svg/aura.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.chooseBestiary",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "animal",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "false",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "chooseBestiary": true,
-      "formPolicy": "animal",
-      "preserveHP": false,
-      "suspendEquipment": true
-    },
     "related": [],
     "sourceId": "pjY95vXsYtZu0v1w",
     "parameters": []
@@ -3228,7 +4003,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "sourceId": "K2WXpMgMhNiOjPkQ",
     "parameters": []
@@ -3243,17 +4017,35 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "10",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "100",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.naturalArmor",
+        "type": "override",
+        "value": "0",
+        "phase": "initial"
       }
     ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 100,
-      "naturalArmor": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -3265,20 +4057,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial"
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -3289,20 +4082,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial"
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "sourceId": "WLqQEeGbHcIdJeKf",
     "parameters": []
@@ -3317,17 +4111,35 @@ export const TRANSFORMATION_TEMPLATES = {
         "type": "add",
         "value": "20",
         "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.statueIntegrity",
+        "type": "override",
+        "value": "200",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.naturalArmor",
+        "type": "override",
+        "value": "0",
+        "phase": "initial"
       }
     ],
     "statuses": [
       "paralysis"
     ],
-    "rules": {
-      "suspendEquipment": true,
-      "preserveHP": true,
-      "statueIntegrity": 200,
-      "naturalArmor": 0
-    },
     "related": [
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
@@ -3339,20 +4151,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-half",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.5
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.5
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.5}",
+        "phase": "initial"
       }
-    },
+    ],
+    "statuses": [],
     "related": [
       "petrification-recovery-two-thirds"
     ],
@@ -3363,20 +4176,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "petrification-recovery-two-thirds",
     "icon": "icons/svg/downgrade.svg",
     "duration": "3 days",
-    "changes": [],
-    "statuses": [],
-    "rules": {
-      "movement": [
-        {
-          "mode": "all",
-          "method": "multiply",
-          "value": 0.6666666666666666
-        }
-      ],
-      "testFactor": {
-        "dexterity": 0.6666666666666666
+    "changes": [
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.6666666666666666}]",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.testFactor",
+        "type": "override",
+        "value": "{\"dexterity\":0.6666666666666666}",
+        "phase": "initial"
       }
-    },
+    ],
+    "statuses": [],
     "related": [],
     "sourceId": "MxUgKE5A6B7C8D9E",
     "parameters": []
@@ -3387,7 +4201,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "changes": [],
     "statuses": [],
-    "rules": {},
     "related": [],
     "sourceId": "2hwy57A6B7C8D9Ea",
     "parameters": []
@@ -3396,14 +4209,33 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "transformation-corporelle",
     "icon": "icons/svg/aura.svg",
     "duration": "",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.chooseBestiary",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.formPolicy",
+        "type": "override",
+        "value": "animal",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.preserveHP",
+        "type": "override",
+        "value": "false",
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.suspendEquipment",
+        "type": "override",
+        "value": "true",
+        "phase": "initial"
+      }
+    ],
     "statuses": [],
-    "rules": {
-      "chooseBestiary": true,
-      "formPolicy": "animal",
-      "preserveHP": false,
-      "suspendEquipment": true
-    },
     "related": [],
     "sourceId": "NNBuQnQlRmSnToUp",
     "parameters": []

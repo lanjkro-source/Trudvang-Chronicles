@@ -26,7 +26,43 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "3",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,20 +70,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
-            "rules": {
-              "temporaryHP": 3,
-              "damage": {
-                "value": 1,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

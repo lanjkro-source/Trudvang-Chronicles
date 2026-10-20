@@ -33,6 +33,41 @@
             "value": "2",
             "phase": "initial",
             "priority": 50
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "4",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "20",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant.Attack0\",\"damage\":\"2d10\",\"openRoll\":9,\"maxActions\":0},{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant.Attack1\",\"damage\":\"2d10\",\"openRoll\":0,\"maxActions\":0}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.capabilityNames",
+            "type": "override",
+            "value": "[\"Regard paralysant\"]",
+            "phase": "initial",
+            "priority": 50
           }
         ]
       },
@@ -42,26 +77,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
             "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
-            "rules": {
-              "size": 4,
-              "temporaryHP": 20,
-              "suspendEquipment": true,
-              "attacks": [
-                {
-                  "damage": "2d10",
-                  "openRoll": 9,
-                  "maxActions": 0
-                },
-                {
-                  "damage": "2d10",
-                  "openRoll": 0,
-                  "maxActions": 0
-                }
-              ],
-              "capabilityNames": [
-                "Regard paralysant"
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -26,7 +26,43 @@
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "false",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense1\"]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.vision",
+            "type": "override",
+            "value": "lightAmplification",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,19 +70,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "rules": {
-              "suspendEquipment": false,
-              "traits": [],
-              "attacks": [
-                {
-                  "damage": "1d10",
-                  "openRoll": 10,
-                  "maxActions": 0
-                }
-              ],
-              "senseCount": 2,
-              "vision": "lightAmplification"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

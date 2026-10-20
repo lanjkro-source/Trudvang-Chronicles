@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "constitution",
-                  "method": "replace",
-                  "value": 6
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

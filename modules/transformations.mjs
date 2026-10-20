@@ -3,6 +3,7 @@ import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
+import {changesFromRules,rulesFromChanges,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -22,7 +23,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields){
  const content=`<div>${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}">`}</div>`).join("")}</div>`;
- return foundry.applications.api.DialogV2.wait({window:{title},content,buttons:[{action:"apply",label:local("Apply"),default:true,callback:(event,button)=>Object.fromEntries(new FormData(button.form))},{action:"cancel",label:local("Cancel"),callback:()=>null}],close:()=>null});
+ return foundry.applications.api.DialogV2.wait({window:{title},content,buttons:[{action:"apply",label:local("Apply"),default:true,callback:(event,button)=>({action:"apply",...Object.fromEntries(new FormData(button.form))})},{action:"cancel",label:local("Cancel"),callback:()=>false}],close:()=>false});
 }
 function naturalWeapon(row,effectId){
  return {name:row.name,type:"weapon",img:"icons/svg/sword.svg",system:{category:"natural",combatSpecialty:"natural",equipped:true,strengthApplies:true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId}}};
@@ -39,10 +40,14 @@ function selectFormData(form,policy){
 }
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[]}={}){
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
- const template=TRANSFORMATION_TEMPLATES[key];if(!template)throw Error(`Unknown transformation ${key}`);
- const rules=structuredClone(template.rules??{});
- rules.senses=Array.from({length:rules.senseCount??0},(_,i)=>text(key,`Sense${i}`));
- rules.capabilities=Array.from({length:rules.capabilityCount??0},(_,i)=>text(key,`Capability${i}`));
+ const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
+ const supplied=source?.documentName==="ActiveEffect"?source:source?.documentName==="Item"&&source.type==="effect"
+  ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
+ const template=supplied?{...reference,changes:structuredClone(supplied.system.changes),statuses:Array.from(supplied.statuses??[]),icon:supplied.img??reference.icon}:reference;
+ const effectName=supplied?.name||text(key,"Name");
+ const rules=rulesFromChanges(template.changes);
+ for(const field of ["senses","capabilities"])if(rules[field])rules[field]=rules[field].map(s=>game.i18n.localize(s));
+ if(rules.attacks)rules.attacks=rules.attacks.map(a=>({...a,name:game.i18n.localize(a.name)}));
  let durationText=template.duration??"";
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
@@ -51,14 +56,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:0});
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon").map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
- const answers=await askFields(text(key,"Name"),fields);if(!answers)return null;
+ const answers=await askFields(effectName,fields);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
  if(rules.chooseBestiary||rules.formName){
   const form=BESTIARY_ENTRIES.find(e=>e.id===answers.form)||BESTIARY_ENTRIES.find(e=>game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)===rules.formName);
   if(!form)throw Error(`Missing bestiary form ${rules.formName}`);
   Object.assign(rules,selectFormData(form,rules.formPolicy));
  }
  const duration=await resolveDuration(answers.duration);
-  const changes=structuredClone(template.changes??[]);
+  const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  for(const p of template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`])||0);if(!count)continue;
   if(p.target==="duration")duration.value+=count*p.value;
@@ -66,27 +71,40 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(p.target==="protection")changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
   if(p.target==="damage"){rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}
  }
- if(rules.vitality){const amount=Number((await new Roll(rules.vitality).evaluate()).total);for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});}
+ if(rules.vitality){const amount=Number((await new Roll(rules.vitality).evaluate()).total);for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});delete rules.vitality;}
   for(const row of rules.traits??[]){
     const base=Number(actor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;
     changes.push({key:`system.effective.traits.${row.trait}`,type:numeric||row.method==="replace"?"override":row.method==="highest"?"upgrade":"add",value:String(numeric?transformedTrait(base,row):row.value),phase:"initial"});
   }
-  rules.traitsApplied=true;
+  delete rules.traits;
+ delete rules.chooseBestiary;delete rules.formName;delete rules.formPolicy;
+ if(rules.unarmedDamage){
+  const level=Math.min(4,Math.max(0,Number(answers.runeLevel)||0));
+  (rules.attacks??=[]).push({name:text(key,"Name"),damage:rules.unarmedDamage[level],openRoll:level===4?9:level===3?10:0});
+  delete rules.unarmedDamage;
+ }
+ if(rules.extraWeaponAction){
+  const chosen=actor.items.get(answers.weapon);
+  if(chosen)(rules.attacks??=[]).push({name:`${text(key,"Name")} — ${chosen.name}`,damage:chosen.system.damage,openRoll:chosen.system.openRoll,maxActions:1,combatPoints:rules.extraWeaponAction.combatPoints});
+  delete rules.extraWeaponAction;
+ }
+  const profileChanges=changesFromRules(rules,{priority:template.priority});
+  for(const change of profileChanges){
+   const original=template.changes.find(c=>c.key===change.key);
+   if(original?.priority!==undefined)change.priority=original.priority;
+  }
+  changes.push(...profileChanges);
  // Generated trait, vitality and improvement changes share the source spell's
  // priority, just like the fixed changes stored in the reference catalogue.
- if(Number.isFinite(template.priority))for(const change of changes)change.priority=template.priority;
- const meta={key,sourceId:template.sourceId,rules,related:template.related??[],temporaryHP:rules.temporaryHP??0,stoneIntegrity:rules.statueIntegrity??0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||""};
-  const description=text(key,"Description");
- const data={name:text(key,"Name"),img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
+ if(Number.isFinite(template.priority))for(const change of changes)change.priority??=template.priority;
+ const meta={key,sourceId:template.sourceId,editableChanges:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||""};
+  const description=supplied?.description??text(key,"Description");
+ const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId:key,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  const effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;
- const items=(rules.attacks??[]).map((row,index)=>naturalWeapon({...row,name:text(key,`Attack${index}`)},effect.id));
- if(rules.unarmedDamage){const level=Math.min(4,Math.max(0,Number(answers.runeLevel)||0));items.push(naturalWeapon({name:text(key,"Name"),damage:rules.unarmedDamage[level],openRoll:level===4?9:level===3?10:0},effect.id));}
- if(rules.extraWeaponAction){const chosen=actor.items.get(answers.weapon);if(chosen)items.push(naturalWeapon({name:`${text(key,"Name")} — ${chosen.name}`,damage:chosen.system.damage,openRoll:chosen.system.openRoll,maxActions:1,combatPoints:rules.extraWeaponAction.combatPoints},effect.id));}
- for(const name of rules.capabilityNames??[]){const ref=CREATURE_ABILITY_REFERENCES[name];if(ref)items.push({name:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`),type:"creatureAbility",system:{catalogId:ref.id,description:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Description`)},flags:{[SCOPE]:{transformationGrant:effect.id}}});}
- if(items.length)await actor.createEmbeddedDocuments("Item",items);
+ await syncEffectGrants(effect,actor);
  await syncTransformationTokens(actor);
  return effect;
 }
@@ -102,16 +120,45 @@ export async function resolveDuration(text){
 /** Only generated grants are removed. Inventory and original actor data are never restored from a snapshot. */
 async function cleanGrants(effect){
  const actor=effect.parent;if(actor?.documentName!=="Actor")return;
+ await grantQueues.get(`${actor.uuid??actor.id??"actor"}:${effect.id}`)?.catch(()=>{});
  const ids=Array.from(actor.items).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id).map(i=>i.id);
  if(ids.length)await actor.deleteEmbeddedDocuments("Item",ids);
+}
+const grantQueues=new Map();
+function canSyncActor(actor){
+ if(!actor?.isOwner)return false;
+ const gm=game.users?.activeGM;
+ if(gm)return gm.isSelf||gm.id===game.user?.id;
+ const owners=Array.from(game.users??[]).filter(u=>u.active&&actor.canUserModify?.(u,"update")).sort((a,b)=>a.id.localeCompare(b.id));
+ return !owners.length||owners[0].id===game.user?.id;
+}
+/** The same editable attack/capacity changes work on a hand-created effect.
+ * Serialize hooks and drop application so neither can duplicate granted items. */
+export function syncEffectGrants(effect,actor=effect.parent){
+ if(!canSyncActor(actor))return Promise.resolve();
+ const id=`${actor.uuid??actor.id??"actor"}:${effect.id}`;
+ const run=async()=>{
+  if(actor.effects?.get&&!actor.effects.get(effect.id))return;
+  const r=effectRules(effect);
+  const items=(r.attacks??[]).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
+  for(const name of r.capabilityNames??[]){const ref=CREATURE_ABILITY_REFERENCES[name];if(ref)items.push({name:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`),type:"creatureAbility",system:{catalogId:ref.id,description:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Description`)},flags:{[SCOPE]:{transformationGrant:effect.id}}});}
+  const existing=Array.from(actor.items??[]).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id);
+  const signature=JSON.stringify(items);
+  if(existing.length===items.length&&existing.every(i=>i.flags?.[SCOPE]?.grantSignature===signature))return;
+  if(existing.length)await actor.deleteEmbeddedDocuments("Item",existing.map(i=>i.id));
+  for(const item of items)item.flags[SCOPE].grantSignature=signature;
+  if(items.length)await actor.createEmbeddedDocuments("Item",items);
+ };
+ const pending=(grantQueues.get(id)??Promise.resolve()).catch(()=>{}).then(run);
+ grantQueues.set(id,pending);
+ return pending.finally(()=>{if(grantQueues.get(id)===pending)grantQueues.delete(id);});
 }
 export function transformationItemActive(item){
  const id=item?.flags?.[SCOPE]?.transformationGrant;
  return !id||activeTransformations(item.actor).some(e=>e.id===id);
 }
 export async function syncTransformationTokens(actor){
- if(!actor?.isOwner)return;
- const effects=activeTransformations(actor);
+ if(!canSyncActor(actor))return;
  const mode=transformationProfile(actor).vision;
  const tokens=actor.isToken?[actor.token]:actor.getActiveTokens(true,true).map(t=>t.document??t);
  for(const token of tokens){
@@ -155,8 +202,13 @@ export function registerTransformationHooks(){
   if(token)void (async()=>applyTransformation(token.actor,data.key,{source:data.sourceUuid?await foundry.utils.fromUuid(data.sourceUuid):null,counts:data.counts??[]}))().catch(e=>ui.notifications.error(e.message));
   return false;
  });
- const authoritative=()=>game.users.activeGM?.isSelf||(!game.users.activeGM);
- Hooks.on("deleteActiveEffect",async effect=>{if(!metadata(effect)||!authoritative())return;await cleanGrants(effect);await syncTransformationTokens(effect.parent);});
- Hooks.on("updateActiveEffect",async effect=>{if(metadata(effect)&&authoritative())await syncTransformationTokens(effect.parent);});
- Hooks.on("createToken",async token=>{if(authoritative()&&token.actor)await syncTransformationTokens(token.actor);});
+ Hooks.on("deleteActiveEffect",async effect=>{if(!canSyncActor(effect.parent))return;await cleanGrants(effect);await syncTransformationTokens(effect.parent);});
+ Hooks.on("createActiveEffect",async effect=>{if(canSyncActor(effect.parent)&&effect.parent?.documentName==="Actor"){
+  await syncEffectGrants(effect);await syncTransformationTokens(effect.parent);
+ }});
+ Hooks.on("updateActiveEffect",async(effect,changed)=>{if(canSyncActor(effect.parent)&&effect.parent?.documentName==="Actor"){
+  if(changed.system?.changes||Object.keys(changed).some(key=>key.startsWith("system.changes")))await syncEffectGrants(effect);
+  await syncTransformationTokens(effect.parent);
+ }});
+ Hooks.on("createToken",async token=>{if(canSyncActor(token.actor))await syncTransformationTokens(token.actor);});
 }

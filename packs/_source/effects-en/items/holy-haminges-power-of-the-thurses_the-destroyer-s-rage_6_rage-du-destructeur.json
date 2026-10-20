@@ -33,6 +33,48 @@
             "value": "2",
             "phase": "initial",
             "priority": 40
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "10",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":5,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d10 (JO 10)",
+            "phase": "initial",
+            "priority": 40
           }
         ]
       },
@@ -42,21 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
             "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
-            "rules": {
-              "temporaryHP": 10,
-              "damage": {
-                "value": 5,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true,
-              "fearFactor": "1d10 (JO 10)"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

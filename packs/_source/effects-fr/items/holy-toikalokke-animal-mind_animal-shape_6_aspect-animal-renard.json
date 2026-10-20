@@ -26,7 +26,57 @@
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard.Sense0\"]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"intelligence\",\"method\":\"highest\",\"value\":4},{\"trait\":\"strength\",\"method\":\"replace\",\"value\":-2}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.movement",
+            "type": "override",
+            "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":2}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.knowledge",
+            "type": "override",
+            "value": "{\"shadowing\":3,\"thievery\":3}",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.defense",
+            "type": "override",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.vision",
+            "type": "override",
+            "value": "lightAmplification",
+            "phase": "initial",
+            "priority": 50
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,35 +84,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "rules": {
-              "suspendEquipment": true,
-              "traits": [
-                {
-                  "trait": "intelligence",
-                  "method": "highest",
-                  "value": 4
-                },
-                {
-                  "trait": "strength",
-                  "method": "replace",
-                  "value": -2
-                }
-              ],
-              "movement": [
-                {
-                  "mode": "land",
-                  "method": "multiply",
-                  "value": 2
-                }
-              ],
-              "knowledge": {
-                "shadowing": 3,
-                "thievery": 3
-              },
-              "defense": -2,
-              "senseCount": 1,
-              "vision": "lightAmplification"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

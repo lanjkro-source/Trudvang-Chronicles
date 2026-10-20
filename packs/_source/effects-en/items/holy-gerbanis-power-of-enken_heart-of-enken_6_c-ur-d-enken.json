@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":8}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
             "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "psyche",
-                  "method": "replace",
-                  "value": 8
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

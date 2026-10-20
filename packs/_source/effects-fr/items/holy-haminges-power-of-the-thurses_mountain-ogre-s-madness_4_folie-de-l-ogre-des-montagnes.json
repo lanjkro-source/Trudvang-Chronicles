@@ -33,6 +33,41 @@
             "value": "1",
             "phase": "initial",
             "priority": 30
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "6",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":3,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 30
           }
         ]
       },
@@ -42,20 +77,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
-            "rules": {
-              "temporaryHP": 6,
-              "damage": {
-                "value": 3,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

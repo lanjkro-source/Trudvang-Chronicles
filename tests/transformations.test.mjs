@@ -1,13 +1,17 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {transformationProfile,transformedTrait,movementProfile,consumeTemporaryHealth,transformationRollRows,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
+import {transformationProfile,transformedTrait,movementProfile,consumeTemporaryHealth,transformationRollRows,effectRules,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
+import {EFFECT_RULE_PREFIX,changesFromRules,rulesFromChanges,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
+import {temporaryHealthLayers} from "../modules/rules/transformation-profile.mjs";
+import {effectStatus} from "../modules/rules/effect-status.mjs";
 import {TRANSFORMATION_TEMPLATES as templates,TRANSFORMATIONS_BY_SOURCE as sources} from "../modules/transformation-data.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "../modules/rule-test-data.mjs";
 import {resolveCombatPools} from "../modules/rules/combat-pool-resolver.mjs";
 globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
 const {annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
-const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens}=await import("../modules/transformations.mjs");
+const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants}=await import("../modules/transformations.mjs");
+const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
 test("all generated effect offers have bilingual text, valid numeric changes and resolvable manual successors",()=>{
@@ -16,7 +20,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
   for(const [key,t]of Object.entries(templates)){
    assert.ok(language.TRUDVANG.Content.Transformation[key].Name,key);
    assert.ok(language.TRUDVANG.Content.Transformation[key].Description,key);
-   for(const c of t.changes)assert.ok(Number.isFinite(Number(c.value)),key);
+   for(const c of t.changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX)))assert.ok(Number.isFinite(Number(c.value)),key);
    if(t.priority!==undefined){
     assert.ok([10,20,30,40,50].includes(t.priority),key);
     for(const c of t.changes)assert.equal(c.priority,t.priority,key);
@@ -72,7 +76,8 @@ test("applying a form creates independent owned grants and native trait changes,
  assert.ok(created.system.changes.some(c=>c.key==="system.effective.traits.dexterity"&&c.value==="4"));
  assert.ok(created.system.changes.length>0);
  assert.ok(created.system.changes.every(c=>c.priority===50),"level 5 applies priority 50 to dynamically generated trait changes");
- assert.equal(created.flags[S].transformation.rules.traitsApplied,true);
+ assert.equal(created.flags[S].transformation.rules,undefined,"configuration is editable changes, never hidden flags");
+ assert.equal(effectRules(created).traits,undefined,"resolved traits are native scalar changes and cannot apply twice");
  assert.equal(items[0].flags[S].transformationGrant,"new-form");
  assert.equal(items[0].system.damage,"1d10");
  assert.equal(items[0].system.weaponActions,4);
@@ -109,4 +114,103 @@ test("a PC may use a granted reserve only for its granted attack; disabling the 
  assert.equal(other.eligible,false);
  actor.effects[0].disabled=true;
  assert.ok(!resolveCombatPools({actor,item:weapon,context:{action:"attack"}}).pools.some(p=>p.id==="natural:extra"));
+});
+
+test("a hand-created rage effect exposes all consequences and spends its temporary health before ordinary health",async()=>{
+ const key="holy-joaringfaith-fury-of-ogon:rage:2#rage";
+ const rage={id:"rage",name:"Rage",system:{changes:structuredClone(templates[key].changes)}};
+ const actor={type:"character",isOwner:true,items:[],effects:[rage],system:{effective:{traits:{}},resources:{body:{value:32,max:43}},modifiers:{}},_source:{system:{resources:{body:{value:32}}}}};
+ const set=(object,path,value)=>{const parts=path.split('.'),last=parts.pop();parts.reduce((o,k)=>o[k]??={},object)[last]=value;};
+ actor.updateEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");for(const row of rows)for(const [key,value]of Object.entries(row))if(key!=="_id")set(rage,key,value);};
+ actor.update=async updates=>{for(const [key,value]of Object.entries(updates)){set(actor,key,value);set(actor._source,key,value);}};
+ const rules=effectRules(rage);
+ assert.equal(rules.temporaryHP,5);assert.equal(rules.fearFactor,"1d10");
+ assert.equal(rules.noParry,true);assert.equal(rules.noDodge,true);assert.equal(rules.ignoreFear,true);
+ assert.deepEqual(rules.damage,{value:2,usages:["melee","throwing","natural"]});
+ actor.transformationProfile=transformationProfile(actor);
+ assert.equal(effectStatus(actor).temporaryHP,5);
+ let result=await applyDamageToActor({actor,damage:3,ignoreArmor:true,announce:false});
+ assert.equal(result.temporaryDamage,3);assert.equal(result.bodyDamage,0);
+ assert.equal(actor.system.resources.body.value,32);assert.equal(effectStatus(actor).temporaryHP,2);
+ result=await applyDamageToActor({actor,damage:4,ignoreArmor:true,announce:false});
+ assert.equal(result.temporaryDamage,2);assert.equal(result.bodyDamage,2);assert.equal(actor.system.resources.body.value,30);
+ assert.equal(effectStatus(actor).temporaryHP,0);
+ rage.disabled=true;assert.equal(temporaryHealthLayers(actor).length,0);
+ rage.disabled=false;assert.equal(temporaryHealthLayers(actor).length,0,"reenabling never refills spent health");
+ actor.effects=[];assert.equal(actor.system.resources.body.value,30,"removing Rage cannot erase wounds");
+});
+
+test("state panels reflect movement, named fear immunity and editable restrictions for characters and NPCs",()=>{
+ for(const type of ["character","npc"]){
+  const form={id:"custom",name:"Effet du MJ",system:{changes:changesFromRules({movement:[{mode:"flight",method:"replace",value:24}],ignoreFear:true,noParry:true})}};
+  const actor={type,system:{effective:{traits:{}},modifiers:{movement:2}},effects:[form]};
+  actor.transformationProfile=transformationProfile(actor);
+  actor.transformationMovement=movementProfile(12,[{mode:"terrestre",max:"10 m"}],actor.transformationProfile.movements,2);
+  const state=effectStatus(actor);
+  assert.deepEqual(state.movement.map(row=>row.value),[12,24]);
+  assert.equal(state.immunity,"Effet du MJ");assert.match(state.notes[0].details,/noParry/);
+  form.system.changes=changesFromRules({movement:[{mode:"swim",method:"replace",value:8}]});
+  actor.transformationProfile=transformationProfile(actor);
+  assert.equal(effectStatus(actor).immunity,"");assert.equal(actor.transformationProfile.noParry,false);
+ }
+});
+
+test("cancel and close never validate a duration or apply an effect",async()=>{
+ globalThis.game={user:{},i18n:{localize:key=>key}};
+ const key="holy-joaringfaith-fury-of-ogon:rage:2#rage";
+ for(const answer of [null,false,"cancel","close",{action:"cancel"}]){
+  globalThis.foundry.applications.api.DialogV2.wait=async()=>answer;
+  const actor={canUserModify:()=>true,createTrudvangEffect:()=>assert.fail("cancel cannot create an effect")};
+  assert.equal(await applyTransformation(actor,key),null);
+ }
+});
+
+test("manually edited attack changes update granted items and concurrent hooks cannot duplicate them",async()=>{
+ globalThis.game={i18n:{localize:key=>key}};
+ let next=0;
+ const actor={uuid:"Actor.custom",isOwner:true,items:[],async createEmbeddedDocuments(type,items){
+  for(const item of items)this.items.push({...item,id:String(++next)});
+ },async deleteEmbeddedDocuments(type,ids){this.items=this.items.filter(i=>!ids.includes(i.id));}};
+ const form={id:"custom",parent:actor,system:{changes:changesFromRules({attacks:[{name:"Griffes",damage:"1d10",combatPoints:5}]})}};
+ await Promise.all([syncEffectGrants(form),syncEffectGrants(form)]);
+ assert.equal(actor.items.length,1);assert.equal(next,1);
+ form.system.changes=changesFromRules({attacks:[{name:"Morsure",damage:"2d10",combatPoints:10}]});
+ await syncEffectGrants(form);assert.equal(actor.items.length,1);assert.equal(actor.items[0].system.damage,"2d10");
+ form.system.changes=[];await syncEffectGrants(form);assert.equal(actor.items.length,0);
+});
+
+test("profile values round-trip through editable changes without hidden configuration",()=>{
+ const rules={temporaryHP:5,ignoreFear:true,fearFactor:"1d10",movement:[{mode:"flight",method:"replace",value:24}],damage:{value:2,usages:["melee"]}};
+ assert.deepEqual(rulesFromChanges(changesFromRules(rules,{priority:20})),rules);
+ const legacy=effect({ignoreFear:true},{system:{changes:[]}});
+ assert.equal(effectRules(legacy).ignoreFear,true);
+ legacy.flags[S].transformation.editableChanges=true;
+ assert.deepEqual(effectRules(legacy),{},"clearing migrated rows cannot revive old hidden properties");
+ assert.equal(validProfileChange({key:"system.transformation.movement",value:"not JSON"}),false);
+ assert.deepEqual(rulesFromChanges([{key:"system.transformation.movement",type:"override",value:"not JSON"}]),{},"invalid module data cannot break actor preparation");
+});
+
+test("dropping an edited reference keeps the GM's changes rather than resetting to the catalogue",async()=>{
+ globalThis.game={user:{id:"owner"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ const key="holy-joaringfaith-fury-of-ogon:rage:2#rage";
+ let result;
+ const actor={isOwner:true,system:{},items:[],canUserModify:()=>true,getActiveTokens:()=>[],createTrudvangEffect:async data=>(result=data,{...data,id:"edited"})};
+ const source={documentName:"ActiveEffect",name:"Rage ajustée",uuid:"Actor.a.ActiveEffect.rage",description:"Description du MJ",
+  system:{changes:changesFromRules({temporaryHP:9,ignoreFear:false},{priority:7})},statuses:new Set(["prone"])};
+ await applyTransformation(actor,key,{source});
+ assert.equal(result.name,"Rage ajustée");assert.equal(result.description,"Description du MJ");
+ assert.equal(effectRules(result).temporaryHP,9);assert.equal(effectRules(result).ignoreFear,false);
+ assert.ok(result.system.changes.every(c=>c.priority===7));assert.deepEqual(result.statuses,["prone"]);
+});
+
+test("only the elected GM synchronizes grants when a player applies an effect",async()=>{
+ const users=[];users.activeGM={id:"gm",isSelf:false};
+ globalThis.game={user:{id:"player"},users,i18n:{localize:key=>key}};
+ let creations=0;
+ const actor={uuid:"Actor.authority",isOwner:true,items:[],createEmbeddedDocuments:async()=>{creations++;}};
+ const form={id:"effect",parent:actor,system:{changes:changesFromRules({attacks:[{name:"Bec",damage:"1d10"}]})}};
+ await syncEffectGrants(form);assert.equal(creations,0,"the applying player must defer to the GM's creation hook");
+ game.user={id:"gm"};users.activeGM.isSelf=true;
+ await syncEffectGrants(form);assert.equal(creations,1);
 });

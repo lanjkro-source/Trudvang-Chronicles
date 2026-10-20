@@ -28,11 +28,11 @@
       </div>
       {{#each changes as |change index|}}
       <div class="effect-change-row" data-change-index="{{index}}">
-        <input type="text" name="system.changes.{{index}}.key" value="{{change.key}}" list="effect-supported-paths" placeholder="{{localize 'TRUDVANG.Effect.ChangeKey'}}">
+        <input type="text" name="system.changes.{{index}}.key" value="{{change.key}}" title="{{change.hint}}" list="effect-supported-paths" placeholder="{{localize 'TRUDVANG.Effect.ChangeKey'}}">
         <select name="system.changes.{{index}}.type">
           {{selectOptions ../changeTypes selected=change.type}}
         </select>
-        <input type="text" name="system.changes.{{index}}.value" value="{{change.value}}" placeholder="0">
+        <input type="text" name="system.changes.{{index}}.value" value="{{change.value}}" title="{{change.hint}}" placeholder="0">
         <input type="number" name="system.changes.{{index}}.priority" value="{{change.priority}}" step="1" title="{{localize 'TRUDVANG.Effect.PriorityHint'}}">
         <input type="hidden" name="system.changes.{{index}}.phase" value="{{change.phase}}">
         <button type="button" data-action="deleteChange"><i class="fa-solid fa-trash"></i></button>
@@ -47,6 +47,8 @@
       <summary>{{localize "TRUDVANG.Effect.SupportedPaths"}}</summary>
       <p class="hint">{{localize "TRUDVANG.Effect.SupportedPathsHint"}}</p>
       {{#each supportedPaths as |path|}}<code>{{path}}</code>{{/each}}
+      <p class="hint">{{localize "TRUDVANG.Effect.ProfileHelp"}}</p>
+      {{#each profilePaths as |entry|}}<p><code>{{entry.path}}</code> — {{entry.label}}</p>{{/each}}
     </details>
   </fieldset>
 </section>

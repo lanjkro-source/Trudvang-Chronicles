@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-gerbanis-power-of-enken:bold:2#temerite",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
             "sourceId": "holy-gerbanis-power-of-enken:bold:2",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "psyche",
-                  "method": "replace",
-                  "value": 6
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

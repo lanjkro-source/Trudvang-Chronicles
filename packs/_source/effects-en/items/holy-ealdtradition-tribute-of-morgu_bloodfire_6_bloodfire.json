@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.vitality",
+            "type": "override",
+            "value": "3d10",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,9 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
-            "rules": {
-              "vitality": "3d10"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -1,6 +1,7 @@
 import { weaponUsesTwoHands } from "./rules/combat-pool-resolver.mjs";
 import {postActorEvent} from "./actor-event-chat.mjs";
-import {temporaryHealthLayers, consumeTemporaryHealth, activeTransformations, effectRules, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
+import {temporaryHealthLayers, consumeTemporaryHealth, activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
+import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -66,11 +67,12 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   result.bodyDamage = Math.ceil(result.bodyDamage * (actor.transformationProfile?.damageTakenFactor ?? 1));
   for (const effect of activeTransformations(actor)) {
-    const meta = effect.flags[TRANSFORMATION_SCOPE].transformation;
-    const integrity = Number(meta.stoneIntegrity || 0);
+    const meta = effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
+    const integrity = remainingStoneIntegrity(effect);
     const loss = Math.min(integrity, result.bodyDamage);
     if (loss) {
-      await effect.update({[`flags.${TRANSFORMATION_SCOPE}.transformation.stoneIntegrity`]: integrity - loss});
+      const editable=hasProfileChanges(effect)||meta?.editableChanges;
+      await effect.update({[`flags.${TRANSFORMATION_SCOPE}.transformation.${editable?"stoneIntegritySpent":"stoneIntegrity"}`]: editable?Number(meta?.stoneIntegritySpent??0)+loss:integrity-loss});
       result.bodyDamage -= loss;
     }
   }
@@ -78,7 +80,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   if (buffered.updates.length) await actor.updateEmbeddedDocuments("ActiveEffect", buffered.updates);
   result.temporaryDamage = result.bodyDamage - buffered.damage;
   result.bodyDamage = buffered.damage;
-  for (const effect of activeTransformations(actor)) if (effectRules(effect).endAtEmptyHP && Number(effect.flags[TRANSFORMATION_SCOPE].transformation.temporaryHP) === 0) await effect.delete();
+  for (const effect of activeTransformations(actor)) if (effectRules(effect).endAtEmptyHP && !temporaryHealthLayers(actor).some(layer=>layer.effect===effect)) await effect.delete();
   const body = number(actor._source?.system?.resources?.body?.value ?? actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value);
   if (result.bodyDamage) await actor.update({"system.resources.body.value": body - result.bodyDamage});
   if (announce) await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});

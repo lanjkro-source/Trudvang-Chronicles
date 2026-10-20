@@ -26,7 +26,36 @@
       "system": {
         "stackId": "vitner-body-vitner:change-creature:11#transformation",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.chooseBestiary",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.formPolicy",
+            "type": "override",
+            "value": "physical",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,12 +63,7 @@
           "transformation": {
             "key": "vitner-body-vitner:change-creature:11#transformation",
             "sourceId": "vitner-body-vitner:change-creature:11",
-            "rules": {
-              "chooseBestiary": true,
-              "formPolicy": "physical",
-              "preserveHP": true,
-              "suspendEquipment": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

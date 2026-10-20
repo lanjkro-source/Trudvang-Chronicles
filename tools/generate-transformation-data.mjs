@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
+import {rulesFromChanges,changesFromRules,EFFECT_RULE_PREFIX,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
 const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
@@ -21,21 +22,25 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=en[i].effectTemplates?.[j];
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if([...t.changes,...translated.changes].some(c=>!validProfileChange(c)))throw Error(`Invalid profile change ${key}`);
    if(translated.priority!==t.priority||(t.priority!==undefined&&(translated.changes??[]).some(c=>c.priority!==t.priority)))throw Error(`Unaligned EN effect priority ${key}`);
    for(const c of ["fr","en"])references[c].push({key,sourceId:id,
      source:{...(c==="fr"?entry:en[i]).source,name:(c==="fr"?entry:en[i]).name},
      ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[]});
+   const sourceRules=rulesFromChanges(t.changes),translatedRules=rulesFromChanges(translated.changes);
    for(const c of ["fr","en"])lang[c].TRUDVANG.Content.Transformation[key]={Name:(c==="fr"?t:translated).name,Description:(c==="fr"?t:translated).description,
      SourceName:(c==="fr"?entry:en[i]).name,SourceBook:(c==="fr"?entry:en[i]).source.book,SourcePage:String((c==="fr"?entry:en[i]).source.page),Duration:(c==="fr"?t:translated).duration,
-     ...Object.fromEntries(((c==="fr"?t:translated).rules.attacks??[]).map((a,i)=>[`Attack${i}`,a.name])),
-     ...Object.fromEntries(((c==="fr"?t:translated).rules.senses??[]).map((s,i)=>[`Sense${i}`,s])),
-     ...Object.fromEntries(((c==="fr"?t:translated).rules.capabilities??[]).map((s,i)=>[`Capability${i}`,s]))};
+     ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).attacks??[]).map((a,i)=>[`Attack${i}`,a.name])),
+     ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).senses??[]).map((s,i)=>[`Sense${i}`,s])),
+     ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).capabilities??[]).map((s,i)=>[`Capability${i}`,s]))};
    const {name,description,...data}=t;
-   const rules=structuredClone(data.rules);
-   if(rules.senses){rules.senseCount=rules.senses.length;if(rules.senses.some(s=>/noir/i.test(s)))rules.vision??="darkvision";else if(rules.senses.some(s=>/nocturne/i.test(s)))rules.vision??="lightAmplification";delete rules.senses;}
-   if(rules.capabilities){rules.capabilityCount=rules.capabilities.length;delete rules.capabilities;}
-   if(rules.attacks)rules.attacks=rules.attacks.map(({name,...attack})=>attack);
-   data.rules=rules;
+   const rules=structuredClone(sourceRules);
+   data.changes=[...data.changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX)),...changesFromRules({
+     ...rules,
+     ...(sourceRules.senses?{senses:sourceRules.senses.map((s,i)=>`TRUDVANG.Content.Transformation.${key}.Sense${i}`)}:{}),
+     ...(sourceRules.capabilities?{capabilities:sourceRules.capabilities.map((s,i)=>`TRUDVANG.Content.Transformation.${key}.Capability${i}`)}:{}),
+     ...(sourceRules.attacks?{attacks:sourceRules.attacks.map((a,i)=>({...a,name:`TRUDVANG.Content.Transformation.${key}.Attack${i}`}))}:{})
+   },{priority:t.priority})];
    registry[key]={...data,sourceId:id,parameters:/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[]};bySource[id].push(key);
   }
  }

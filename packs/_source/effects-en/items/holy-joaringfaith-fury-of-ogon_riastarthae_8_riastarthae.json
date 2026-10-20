@@ -33,6 +33,62 @@
             "value": "3",
             "phase": "initial",
             "priority": 50
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "15",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d10 (JO 9-10)",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "2",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.ignoreWounds",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
           }
         ]
       },
@@ -42,23 +98,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae",
             "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
-            "rules": {
-              "temporaryHP": 15,
-              "damage": {
-                "value": 6,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true,
-              "fearFactor": "1d10 (JO 9-10)",
-              "size": 2,
-              "ignoreWounds": true
-            },
+            "editableChanges": true,
             "related": [
               "frenzy-exhaustion"
             ]

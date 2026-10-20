@@ -33,6 +33,34 @@
             "value": "10",
             "phase": "initial",
             "priority": 50
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.statueIntegrity",
+            "type": "override",
+            "value": "100",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.naturalArmor",
+            "type": "override",
+            "value": "0",
+            "phase": "initial",
+            "priority": 50
           }
         ]
       },
@@ -44,12 +72,7 @@
           "transformation": {
             "key": "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification",
             "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
-            "rules": {
-              "suspendEquipment": true,
-              "preserveHP": true,
-              "statueIntegrity": 100,
-              "naturalArmor": 0
-            },
+            "editableChanges": true,
             "related": [
               "petrification-recovery-half",
               "petrification-recovery-two-thirds"

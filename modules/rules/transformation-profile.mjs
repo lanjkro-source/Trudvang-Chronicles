@@ -1,6 +1,11 @@
+import {hasProfileChanges, rulesFromChanges} from "./effect-rule-changes.mjs";
 export const TRANSFORMATION_SCOPE = "trudvang-chronicles";
-export const activeTransformations = actor => Array.from(actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && e.flags?.[TRANSFORMATION_SCOPE]?.transformation);
-export const effectRules = effect => effect.flags[TRANSFORMATION_SCOPE].transformation.rules ?? {};
+export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
+ .sort((a,b)=>Math.min(...Array.from(a.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity)-Math.min(...Array.from(b.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity));
+// Compatibility for existing world effects. New effects store all configuration
+// in editable changes; clearing their rows must not revive legacy metadata.
+export const effectRules = effect => hasProfileChanges(effect) || effect.flags?.[TRANSFORMATION_SCOPE]?.transformation?.editableChanges
+ ? rulesFromChanges(effect.system?.changes) : effect.flags?.[TRANSFORMATION_SCOPE]?.transformation?.rules ?? {};
 const degrees=[-8,-6,-4,-2,-1,0,1,2,4,6,8];
 export function transformedTrait(value, rule) {
  let result=value;
@@ -34,22 +39,37 @@ export function transformationProfile(actor) {
  if(profile.senses.some(s=>/noir|darkvision/i.test(s)))profile.vision="darkvision";
  return profile;
 }
-export function movementProfile(base, rows, changes) {
- const modes=Object.fromEntries((rows??[]).map(r=>[({terrestre:"land",vol:"flight",nage:"swim"}[r.mode]??r.mode),Number.parseFloat(r.max)||0]));
+export function movementProfile(base, rows, changes, modifier=0) {
+ const modes=Object.fromEntries((rows??[]).map(r=>[({terrestre:"land",vol:"flight",nage:"swim"}[r.mode]??r.mode),Math.max(0,(Number.parseFloat(r.max)||0)+modifier)]));
  if(!Object.keys(modes).length)modes.land=base;
  for(const row of changes){
   const keys=row.mode==="all"?Object.keys(modes):[row.mode];
-  for(const key of keys)modes[key]=Math.max(0,row.method==="replace"?row.value:row.method==="baseMultiple"?base*row.value:(modes[key]??base)*row.value);
+  for(const key of keys)modes[key]=Math.max(0,row.method==="replace"?row.value:row.method==="baseMultiple"?base*row.value:row.method==="add"?(modes[key]??0)+row.value:row.method==="highest"?Math.max(modes[key]??0,row.value):(modes[key]??base)*row.value);
  }
  return modes;
 }
 export function temporaryHealthLayers(actor) {
- return activeTransformations(actor).map(effect=>({effect,remaining:Number(effect.flags[TRANSFORMATION_SCOPE].transformation.temporaryHP??0)})).filter(e=>e.remaining>0);
+ return activeTransformations(actor).map(effect=>{
+  const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
+  const configured=Number(effectRules(effect).temporaryHP??0);
+  const remaining=hasProfileChanges(effect)||meta?.editableChanges?Math.max(0,configured-Number(meta?.temporaryHPSpent??0)):Number(meta?.temporaryHP??configured);
+  return {effect,remaining};
+ }).filter(e=>e.remaining>0);
+}
+export function remainingStoneIntegrity(effect) {
+ const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
+ return hasProfileChanges(effect)||meta?.editableChanges
+  ? Math.max(0,Number(effectRules(effect).statueIntegrity??0)-Number(meta?.stoneIntegritySpent??0))
+  : Number(meta?.stoneIntegrity??0);
 }
 export function consumeTemporaryHealth(layers,damage){
  let remaining=Math.max(0,damage);
  const updates=[];
- for(const {effect,remaining:hp}of layers){const loss=Math.min(remaining,hp);if(loss)updates.push({_id:effect.id,[`flags.${TRANSFORMATION_SCOPE}.transformation.temporaryHP`]:hp-loss});remaining-=loss;}
+ for(const {effect,remaining:hp}of layers){const loss=Math.min(remaining,hp);if(loss){
+  const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
+  const editable=hasProfileChanges(effect)||meta?.editableChanges;
+  updates.push({_id:effect.id,[`flags.${TRANSFORMATION_SCOPE}.transformation.${editable?"temporaryHPSpent":"temporaryHP"}`]:editable?Number(meta?.temporaryHPSpent??0)+loss:hp-loss});
+ }remaining-=loss;}
  return {damage:remaining,updates};
 }
 /** Named, additive explanation of an explicitly scoped aftereffect multiplier. */

@@ -32,6 +32,42 @@
             "type": "add",
             "value": "2",
             "phase": "initial"
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"dexterity\",\"method\":\"add\",\"value\":4,\"max\":6},{\"trait\":\"constitution\",\"method\":\"add\",\"value\":6,\"max\":8},{\"trait\":\"psyche\",\"method\":\"add\",\"value\":-2},{\"trait\":\"intelligence\",\"method\":\"add\",\"value\":-4,\"min\":-6}]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Attack0\",\"damage\":\"1d10\",\"openRoll\":8,\"maxActions\":1},{\"name\":\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Attack1\",\"damage\":\"1d10\",\"openRoll\":9,\"maxActions\":2}]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Sense0\"]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.knowledge",
+            "type": "override",
+            "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.vision",
+            "type": "override",
+            "value": "lightAmplification",
+            "phase": "initial"
           }
         ]
       },
@@ -41,60 +77,7 @@
           "transformation": {
             "key": "gXp2SRjPkQlRmSnT#warg-garou",
             "sourceId": "gXp2SRjPkQlRmSnT",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "add",
-                  "value": 4,
-                  "max": 6
-                },
-                {
-                  "trait": "dexterity",
-                  "method": "add",
-                  "value": 4,
-                  "max": 6
-                },
-                {
-                  "trait": "constitution",
-                  "method": "add",
-                  "value": 6,
-                  "max": 8
-                },
-                {
-                  "trait": "psyche",
-                  "method": "add",
-                  "value": -2
-                },
-                {
-                  "trait": "intelligence",
-                  "method": "add",
-                  "value": -4,
-                  "min": -6
-                }
-              ],
-              "attacks": [
-                {
-                  "damage": "1d10",
-                  "openRoll": 8,
-                  "maxActions": 1
-                },
-                {
-                  "damage": "1d10",
-                  "openRoll": 9,
-                  "maxActions": 2
-                }
-              ],
-              "suspendEquipment": true,
-              "knowledge": {
-                "brawling": 2,
-                "huntingFishing": 6,
-                "jumpingClimbingBalancing": 6,
-                "tracker": 6
-              },
-              "senseCount": 1,
-              "vision": "lightAmplification"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

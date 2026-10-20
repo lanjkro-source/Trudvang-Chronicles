@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import {buildEffectPackDocuments,EFFECT_PACKS} from "../modules/effect-pack-data.mjs";
 import {TRANSFORMATION_TEMPLATES} from "../modules/transformation-data.mjs";
+import {rulesFromChanges,EFFECT_RULE_PREFIX} from "../modules/rules/effect-rule-changes.mjs";
 
 test("both effect packs preserve every template, stable bilingual identity, provenance and embedded effect",()=>{
  const manifest=JSON.parse(fs.readFileSync(new URL("../system.json",import.meta.url)));
@@ -25,6 +26,7 @@ test("both effect packs preserve every template, stable bilingual identity, prov
    assert.deepEqual(item.effects[0].statuses,t.statuses);
    assert.equal(item.effects[0].transfer,false);
    assert.equal(item.effects[0].flags[manifest.id].transformation.key,key);
+   assert.equal(item.effects[0].flags[manifest.id].transformation.rules,undefined);
    assert.ok(item.name&&item.system.description&&item.system.source.book&&item.system.source.page);
    const source=new URL(`../packs/_source/${packName}/items/${key.replace(/[^A-Za-z0-9._-]/g,"_")}.json`,import.meta.url);
    assert.deepEqual(JSON.parse(fs.readFileSync(source)),item);
@@ -33,7 +35,12 @@ test("both effect packs preserve every template, stable bilingual identity, prov
   if(fs.existsSync(reference)){
    const entries=JSON.parse(fs.readFileSync(reference));
    assert.deepEqual(entries.map(e=>e.id),items.map(e=>e._id));
-   for(const e of entries)assert.deepEqual(e.changes,TRANSFORMATION_TEMPLATES[e.key].changes);
+   for(const e of entries){
+    const t=TRANSFORMATION_TEMPLATES[e.key];
+    const native=changes=>changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
+    assert.deepEqual(native(e.changes),native(t.changes));
+    assert.deepEqual(Object.keys(rulesFromChanges(e.changes)).sort(),Object.keys(rulesFromChanges(t.changes)).sort());
+   }
   }
  }
 });

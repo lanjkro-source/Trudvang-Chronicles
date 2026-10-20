@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
-    "description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\n• Le bruide grandit de 50 cm et gagne 30 kg de muscles\n• Le bruide a un facteur de peur de 1d10\n• +5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +2 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +1 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur",
+    "description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
     "summary": "Rage",
     "source": {
       "book": "Stormlands",
@@ -21,7 +21,7 @@
       "name": "Rage",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\n• Le bruide grandit de 50 cm et gagne 30 kg de muscles\n• Le bruide a un facteur de peur de 1d10\n• +5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +2 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +1 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur",
+      "description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
@@ -33,6 +33,69 @@
             "value": "1",
             "phase": "initial",
             "priority": 20
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d10",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.heightBonus",
+            "type": "override",
+            "value": "0.5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.weightBonus",
+            "type": "override",
+            "value": "30",
+            "phase": "initial",
+            "priority": 20
           }
         ]
       },
@@ -42,22 +105,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
-            "rules": {
-              "temporaryHP": 5,
-              "damage": {
-                "value": 2,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true,
-              "fearFactor": "1d10",
-              "size": 1
-            },
+            "editableChanges": true,
             "related": [
               "frenzy-exhaustion"
             ]

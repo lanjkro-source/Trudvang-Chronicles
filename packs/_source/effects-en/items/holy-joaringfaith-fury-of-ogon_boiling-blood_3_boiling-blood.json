@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.vitality",
+            "type": "override",
+            "value": "2d10",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,9 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
             "sourceId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
-            "rules": {
-              "vitality": "2d10"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

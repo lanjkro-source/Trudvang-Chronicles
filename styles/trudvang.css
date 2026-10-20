@@ -132,6 +132,7 @@
 .trudvang-sheet .resource-bar .rest-button i { color: inherit; font-size: 1rem; }
 .trudvang-sheet .resource { position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid color-mix(in srgb, var(--trudvang-gold) 40%, transparent); font-size: .72rem; text-transform: uppercase; }
 .trudvang-sheet .resource > span:last-child { display: flex; align-items: center; font-size: .9rem; }
+.trudvang-sheet .temporary-hp { color: var(--trudvang-positive); white-space: nowrap; margin-left: .2em; font-weight: bold; }
 .trudvang-sheet .resource input { width: 34px; height: 20px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-on-header) 6%, transparent); text-align: center; }
 .trudvang-sheet .resource button { position: absolute; right: 3px; bottom: 2px; width: 18px; color: var(--trudvang-on-header-muted); }
 .trudvang-sheet.npc-sheet .resource-bar.npc-resources { grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr); }
@@ -1084,4 +1085,3 @@
 .trudvang-transformation-links { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: .5rem; }
 button.trudvang-transformation-link { width: auto; min-height: 0; height: auto; line-height: inherit; padding: .1em .4em; cursor: grab; color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-gold) 20%, transparent); border: 1px solid currentColor; border-radius: .3em; }
 button.trudvang-transformation-link:hover { filter: brightness(1.2); }
-.trudvang-transformation-summary { padding: .4rem; border: 1px solid currentColor; font-size: .9em; }

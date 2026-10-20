@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.vitality",
+            "type": "override",
+            "value": "2d10",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,9 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2",
-            "rules": {
-              "vitality": "2d10"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

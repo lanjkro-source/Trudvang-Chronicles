@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.unarmedDamage",
+            "type": "override",
+            "value": "[\"1d6\",\"1d6 + 2\",\"1d10 + 2\",\"1d10 + 2\",\"1d10 + 2\"]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
             "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
-            "rules": {
-              "unarmedDamage": [
-                "1d6",
-                "1d6 + 2",
-                "1d10 + 2",
-                "1d10 + 2",
-                "1d10 + 2"
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

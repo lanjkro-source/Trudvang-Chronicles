@@ -26,7 +26,22 @@
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "10",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.endAtEmptyHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,10 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
-            "rules": {
-              "temporaryHP": 10,
-              "endAtEmptyHP": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

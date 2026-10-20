@@ -26,7 +26,29 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.statueIntegrity",
+            "type": "override",
+            "value": "0",
+            "phase": "initial",
+            "priority": 50
+          }
+        ]
       },
       "statuses": [
         "paralysis"
@@ -36,11 +58,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
-            "rules": {
-              "suspendEquipment": true,
-              "preserveHP": true,
-              "statueIntegrity": 0
-            },
+            "editableChanges": true,
             "related": [
               "petrification-recovery-half",
               "petrification-recovery-two-thirds"

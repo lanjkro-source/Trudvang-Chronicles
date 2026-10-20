@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou",
             "sourceId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

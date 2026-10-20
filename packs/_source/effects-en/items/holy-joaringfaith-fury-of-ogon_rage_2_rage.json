@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
-    "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+    "description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
     "summary": "Rage",
     "source": {
       "book": "Stormlands",
@@ -21,7 +21,7 @@
       "name": "Rage",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+      "description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
@@ -33,6 +33,69 @@
             "value": "1",
             "phase": "initial",
             "priority": 20
+          },
+          {
+            "key": "system.transformation.temporaryHP",
+            "type": "override",
+            "value": "5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noParry",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.noDodge",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFear",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d10",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.size",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.heightBonus",
+            "type": "override",
+            "value": "0.5",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.weightBonus",
+            "type": "override",
+            "value": "30",
+            "phase": "initial",
+            "priority": 20
           }
         ]
       },
@@ -42,22 +105,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
-            "rules": {
-              "temporaryHP": 5,
-              "damage": {
-                "value": 2,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "noParry": true,
-              "noDodge": true,
-              "ignoreFear": true,
-              "fearFactor": "1d10",
-              "size": 1
-            },
+            "editableChanges": true,
             "related": [
               "frenzy-exhaustion"
             ]

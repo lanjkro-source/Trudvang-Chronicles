@@ -126,6 +126,22 @@ test("new and copied effects record the current creator, never the template auth
   }
 });
 
+test("legacy effect configuration appears in editable rows and saving preserves spent reserves",async()=>{
+ const document={isOwner:true,duration:{},_source:{},system:{changes:[{key:"system.modifiers.rolls.attack",type:"add",value:"1"}]},
+  flags:{"trudvang-chronicles":{transformation:{rules:{temporaryHP:5,noParry:true,ignoreFear:true},temporaryHP:2}}}};
+ const sheet=sheetFor(document),context=await sheet._preparePartContext("durationChanges",{});
+ assert.equal(context.changes.find(c=>c.key==="system.transformation.temporaryHP").value,"5");
+ assert.equal(context.changes.find(c=>c.key==="system.transformation.noParry").value,"true");
+ assert.ok(context.supportedPaths.includes("system.transformation.movement"));
+ const restore=stubCoreFormTransform();
+ try{
+  const data=sheet._processFormData({}, {}, {object:{"system.changes":context.changes}});
+  const meta=data.flags["trudvang-chronicles"].transformation;
+  assert.equal(meta.editableChanges,true);assert.equal(meta.temporaryHPSpent,3);
+  assert.equal(meta["-=rules"],null);
+ }finally{restore();}
+});
+
 test("TrudvangEffectSheet durationChanges stays finite for indefinite and finite durations", async () => {
   const indefinite = {
     isOwner: true,

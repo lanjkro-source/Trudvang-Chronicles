@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.extraWeaponAction",
+            "type": "override",
+            "value": "{\"combatPoints\":5}",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,11 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
-            "rules": {
-              "extraWeaponAction": {
-                "combatPoints": 5
-              }
-            },
+            "editableChanges": true,
             "related": []
           }
         }

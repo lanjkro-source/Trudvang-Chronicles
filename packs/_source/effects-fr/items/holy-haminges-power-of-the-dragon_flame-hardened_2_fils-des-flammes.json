@@ -33,6 +33,20 @@
             "value": "2",
             "phase": "initial",
             "priority": 20
+          },
+          {
+            "key": "system.transformation.damage",
+            "type": "override",
+            "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.immunities",
+            "type": "override",
+            "value": "[\"flammes non magiques\"]",
+            "phase": "initial",
+            "priority": 20
           }
         ]
       },
@@ -42,19 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
             "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
-            "rules": {
-              "damage": {
-                "value": 1,
-                "usages": [
-                  "melee",
-                  "throwing",
-                  "natural"
-                ]
-              },
-              "immunities": [
-                "flammes non magiques"
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -26,7 +26,20 @@
       "system": {
         "stackId": "flAdvMhNiOjPkQlR#corps-de-fumee",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.movement",
+            "type": "override",
+            "value": "[{\"mode\":\"land\",\"method\":\"replace\",\"value\":30}]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,16 +47,7 @@
           "transformation": {
             "key": "flAdvMhNiOjPkQlR#corps-de-fumee",
             "sourceId": "flAdvMhNiOjPkQlR",
-            "rules": {
-              "movement": [
-                {
-                  "mode": "land",
-                  "method": "replace",
-                  "value": 30
-                }
-              ],
-              "suspendEquipment": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

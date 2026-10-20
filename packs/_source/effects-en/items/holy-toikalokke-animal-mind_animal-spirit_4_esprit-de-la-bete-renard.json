@@ -26,7 +26,50 @@
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "false",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0\"]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"intelligence\",\"method\":\"highest\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.movement",
+            "type": "override",
+            "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":1.5}]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.knowledge",
+            "type": "override",
+            "value": "{\"shadowing\":3,\"thievery\":3}",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.vision",
+            "type": "override",
+            "value": "lightAmplification",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,29 +77,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "rules": {
-              "suspendEquipment": false,
-              "traits": [
-                {
-                  "trait": "intelligence",
-                  "method": "highest",
-                  "value": 4
-                }
-              ],
-              "movement": [
-                {
-                  "mode": "land",
-                  "method": "multiply",
-                  "value": 1.5
-                }
-              ],
-              "knowledge": {
-                "shadowing": 3,
-                "thievery": 3
-              },
-              "senseCount": 1,
-              "vision": "lightAmplification"
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.knowledge",
+            "type": "override",
+            "value": "{\"swimming\":2}",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,11 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
-            "rules": {
-              "knowledge": {
-                "swimming": 2
-              }
-            },
+            "editableChanges": true,
             "related": []
           }
         }

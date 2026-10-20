@@ -32,6 +32,30 @@
             "type": "add",
             "value": "1",
             "phase": "initial"
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\"]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"constitution\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"psyche\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":2,\"overflow\":4}]",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.vision",
+            "type": "override",
+            "value": "darkvision",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.recalculateHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
           }
         ]
       },
@@ -41,37 +65,7 @@
           "transformation": {
             "key": "NcOgKSkQlRmSnToU#infection-des-rugtannes",
             "sourceId": "NcOgKSkQlRmSnToU",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "constitution",
-                  "method": "degrees",
-                  "value": 2,
-                  "overflow": 4
-                },
-                {
-                  "trait": "psyche",
-                  "method": "degrees",
-                  "value": 2,
-                  "overflow": 4
-                },
-                {
-                  "trait": "strength",
-                  "method": "degrees",
-                  "value": 2,
-                  "overflow": 4
-                },
-                {
-                  "trait": "dexterity",
-                  "method": "degrees",
-                  "value": 2,
-                  "overflow": 4
-                }
-              ],
-              "vision": "darkvision",
-              "recalculateHP": true,
-              "senseCount": 1
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
             "sourceId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
-            "rules": {},
+            "editableChanges": true,
             "related": []
           }
         }

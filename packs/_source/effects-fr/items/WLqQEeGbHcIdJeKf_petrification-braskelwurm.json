@@ -32,6 +32,30 @@
             "type": "add",
             "value": "10",
             "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.statueIntegrity",
+            "type": "override",
+            "value": "100",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.naturalArmor",
+            "type": "override",
+            "value": "0",
+            "phase": "initial"
           }
         ]
       },
@@ -43,12 +67,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-braskelwurm",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "rules": {
-              "suspendEquipment": true,
-              "preserveHP": true,
-              "statueIntegrity": 100,
-              "naturalArmor": 0
-            },
+            "editableChanges": true,
             "related": [
               "petrification-recovery-half",
               "petrification-recovery-two-thirds"

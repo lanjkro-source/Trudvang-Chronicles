@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
             "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "replace",
-                  "value": 6
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

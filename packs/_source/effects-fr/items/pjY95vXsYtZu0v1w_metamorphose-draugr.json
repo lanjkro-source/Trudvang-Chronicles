@@ -26,7 +26,32 @@
       "system": {
         "stackId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.chooseBestiary",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.formPolicy",
+            "type": "override",
+            "value": "animal",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "false",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,12 +59,7 @@
           "transformation": {
             "key": "pjY95vXsYtZu0v1w#metamorphose-draugr",
             "sourceId": "pjY95vXsYtZu0v1w",
-            "rules": {
-              "chooseBestiary": true,
-              "formPolicy": "animal",
-              "preserveHP": false,
-              "suspendEquipment": true
-            },
+            "editableChanges": true,
             "related": []
           }
         }

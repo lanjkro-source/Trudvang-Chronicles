@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.durationFromElapsed",
+            "type": "override",
+            "value": "0.5",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,9 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
-            "rules": {
-              "durationFromElapsed": 0.5
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -32,6 +32,30 @@
             "type": "add",
             "value": "20",
             "phase": "initial"
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.preserveHP",
+            "type": "override",
+            "value": "true",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.statueIntegrity",
+            "type": "override",
+            "value": "200",
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.naturalArmor",
+            "type": "override",
+            "value": "0",
+            "phase": "initial"
           }
         ]
       },
@@ -43,12 +67,7 @@
           "transformation": {
             "key": "MxUgKE5A6B7C8D9E#petrification-demon-tangible",
             "sourceId": "MxUgKE5A6B7C8D9E",
-            "rules": {
-              "suspendEquipment": true,
-              "preserveHP": true,
-              "statueIntegrity": 200,
-              "naturalArmor": 0
-            },
+            "editableChanges": true,
             "related": [
               "petrification-recovery-half",
               "petrification-recovery-two-thirds"

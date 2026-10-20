@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.durationFromElapsed",
+            "type": "override",
+            "value": "0.5",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,9 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
             "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
-            "rules": {
-              "durationFromElapsed": 0.5
-            },
+            "editableChanges": true,
             "related": []
           }
         }

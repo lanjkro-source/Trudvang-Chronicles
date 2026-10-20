@@ -20,6 +20,7 @@ import {magicCapacities} from "../rules/magic-capacity.mjs";
 import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 import {bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectContributions, effectContributionText} from "../rules/effect-contributions.mjs";
+import {effectStatus} from "../rules/effect-status.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -155,6 +156,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
     context.fearFactor = parseFearFactor(this.actor.system.details?.fearFactor);
+    context.effectiveFearFactor = parseFearFactor(this.actor.transformationProfile?.fearFactor ?? this.actor.system.details?.fearFactor);
+    context.fearFactorNotation = context.effectiveFearFactor.valid ? formatFearFactor(context.effectiveFearFactor) : "";
+    context.effectStatus = effectStatus(this.actor, {localize:key=>game.i18n.localize(key)});
     const body = this.actor.system.resources.body;
     const fear = this.actor.system.resources.fear;
     const recovery = this.actor.system.healthRecovery ?? {amount: 1, days: 1};
@@ -470,14 +474,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       .map(item => ({item, iconClass: powerIconClassForItem(item)}));
     context.compatibleTabletCount = this.actor.compatibleTablets.length;
     context.holyTabletCapacity = this.actor.holyTabletCapacity;
-    const profile = this.actor.transformationProfile;
     if (this.actor.transformationMovementRows?.length) context.npcMovement = this.actor.transformationMovementRows.map(row => ({...row,mode:row.label}));
-    context.transformationSummary = profile?.effects?.length ? [
-      ...profile.effects.map(e => e.name),
-      ...(profile.senses || []), ...(profile.capabilities || []),
-      ...Object.entries(this.actor.transformationMovement || {}).map(([mode,value]) => `${game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`)} : ${value} m`),
-      `${game.i18n.localize("TRUDVANG.Transformation.TemporaryHP")} : ${profile.effects.reduce((n,e) => n + Number(e.flags?.["trudvang-chronicles"]?.transformation?.temporaryHP || 0), 0)}`
-    ].join(" · ") : "";
     return context;
   }
 

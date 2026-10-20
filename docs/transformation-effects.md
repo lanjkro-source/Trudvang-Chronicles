@@ -41,6 +41,25 @@ leurs tests et leur application restent des actions distinctes.
 
 ## Préparation et ressources
 
+Chaque conséquence est enregistrée dans `system.changes` ou dans les états de
+l’effet. Les propriétés de profil utilisent `system.transformation.<propriété>` :
+par exemple `temporaryHP = 5`, `ignoreFear = true`, `noParry = true`,
+`fearFactor = 1d10`. Les listes et objets utilisent une valeur JSON, notamment
+`movement = [{"mode":"flight","method":"replace","value":24}]` et
+`damage = {"value":2,"usages":["melee","throwing","natural"]}`.
+L’éditeur propose ces chemins, leur libellé et des exemples. Un effet créé à la
+main utilise les mêmes calculs et les mêmes restrictions qu’un effet du catalogue.
+La consommation des réserves reste un état de suivi de l’effet, indépendant de sa
+configuration ; modifier ou désactiver l’effet ne recharge pas les PS consommés.
+Les anciens effets restent lisibles ; leur éditeur affiche également leurs
+anciennes propriétés et les enregistre en modifications lors de la sauvegarde.
+
+Les fiches PJ et PNJ affichent les PS sous la forme `32 / 43 + 5`. Le cadre État
+précise les réserves et leurs effets contributeurs, les déplacements modifiés et
+les modes ajoutés, les restrictions et l’immunité à la peur. Le facteur de peur
+conféré par un effet est lançable sur les deux types de fiche. Le bandeau de
+rappel en haut de la fiche a été retiré.
+
 Les modifications de traits utilisent les changements natifs, avant les calculs
 dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille
 effective, les restrictions de parade/esquive et les bonus de dégâts ciblés sont

@@ -1,5 +1,4 @@
 <div class="trudvang-sheet character-sheet">
-  {{#if transformationSummary}}<div class="trudvang-transformation-summary">{{transformationSummary}}</div>{{/if}}
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" alt="{{actor.name}}" {{#if editable}}data-action="manage-portraits" role="button" tabindex="0" title="{{localize 'TRUDVANG.Portrait.ManageMenu'}}"{{else}}title="{{actor.name}}"{{/if}}>
     <div class="identity">
@@ -23,7 +22,7 @@
 
   <section class="resource-bar">
     <button type="button" class="rest-button" data-action="rest-for-night" title="{{localize 'TRUDVANG.Action.RestForNight'}}" aria-label="{{localize 'TRUDVANG.Action.RestForNight'}}"><i class="fas fa-bed"></i></button>
-    <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input title="{{resourceEffectHints.body}}" name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
+    <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input title="{{resourceEffectHints.body}}" name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}{{#if effectStatus.temporaryHP}}<span class="temporary-hp" title="{{effectStatus.temporaryHint}}"> + {{effectStatus.temporaryHP}}</span>{{/if}}</span></label>
     <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input title="{{resourceEffectHints.fear}}" name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input title="{{resourceEffectHints.vitner}}" name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input title="{{resourceEffectHints.divinity}}" name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}} + <input name="system.resources.divinity.temporary" type="number" min="0" value="{{system.resources.divinity.temporary}}"></span></label>
@@ -61,7 +60,7 @@
               <span><strong>{{localize "TRUDVANG.Resource.Integrity"}} :</strong> {{armorStatus.integrityCurrent}} / {{armorStatus.integrityMax}} VI</span>
             </section>
             <section class="status-vital health-vital">
-              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span class="status-vital-value">{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
+              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span class="status-vital-value">{{healthStatus.current}} / {{healthStatus.max}}{{#if effectStatus.temporaryHP}}<span class="temporary-hp" title="{{effectStatus.temporaryHint}}"> + {{effectStatus.temporaryHP}}</span>{{/if}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
               <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span>{{#each healthStatus.marks as |mark|}}<i class="vital-meter-mark" style="left: {{mark}}%"></i>{{/each}}</div>
               <p class="status-consequence">{{#if healthStatus.survivalExpired}}<strong class="status-dead"><i class="fas fa-skull-crossbones"></i> {{localize "TRUDVANG.Damage.dead"}}</strong>{{else}}<strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong>{{#if (eq healthStatus.level "dying")}}{{#if healthStatus.survivalStarted}}<span>{{localize "TRUDVANG.Status.LifeSparkCountdown" rounds=healthStatus.survivalRounds}}</span>{{else}}<button type="button" class="status-action" data-action="roll-survival-rounds"><i class="fas fa-hourglass-half"></i> {{localize "TRUDVANG.Action.RollSurvivalRounds"}}</button>{{/if}}{{else}}<span>{{healthStatus.consequence}}</span>{{/if}}{{/if}}</p>
             </section>
@@ -73,6 +72,12 @@
               <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Fear"}}</strong><span class="status-vital-value">{{fearStatus.current}} / {{fearStatus.max}}</span><span></span></div>
               <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Fear'}}" aria-valuemin="0" aria-valuemax="{{fearStatus.max}}" aria-valuenow="{{fearStatus.current}}"><span class="vital-meter-fill" style="width: {{fearStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 20%"></i><i class="vital-meter-mark" style="left: 40%"></i><i class="vital-meter-mark" style="left: 60%"></i><i class="vital-meter-mark" style="left: 80%"></i></div>
               <p class="status-consequence"><strong>{{fearStatus.state}}</strong><span>{{fearStatus.consequence}}</span></p>
+              {{#if effectStatus.immunity}}<p class="status-consequence"><strong>{{localize "TRUDVANG.Transformation.FearImmunity"}}</strong><span>{{effectStatus.immunity}}</span></p>{{/if}}
+              {{#if effectiveFearFactor.valid}}<p class="status-consequence"><button type="button" class="status-action" data-action="roll-fear-factor"><i class="fas fa-dice-d10"></i> {{localize "TRUDVANG.Field.FearFactor"}} : {{fearFactorNotation}}</button></p>{{/if}}
+            {{#if effectStatus.temporaryHP}}<p class="status-consequence" title="{{effectStatus.temporaryHint}}"><strong>{{localize "TRUDVANG.Transformation.TemporaryHP"}} : +{{effectStatus.temporaryHP}}</strong><span>{{effectStatus.temporaryHint}}</span></p>{{/if}}
+            {{#each effectStatus.movement as |mode|}}<p class="status-consequence" title="{{../effectHints.movement}}"><strong>{{mode.label}}</strong><span>{{mode.value}} m{{#if mode.source}} · {{mode.source}}{{/if}}</span></p>{{/each}}
+            {{#each effectStatus.notes as |effect|}}<p class="status-consequence" title="{{effect.description}}"><strong>{{effect.name}}</strong>{{#if effect.details}}<span>{{effect.details}}</span>{{/if}}</p>{{/each}}
+
             </section>
           </div>
           <dl class="status-list">

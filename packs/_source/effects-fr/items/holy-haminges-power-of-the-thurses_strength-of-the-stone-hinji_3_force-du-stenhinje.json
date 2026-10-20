@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
             "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "replace",
-                  "value": 6
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

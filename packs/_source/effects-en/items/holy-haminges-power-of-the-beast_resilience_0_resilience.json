@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"constitution\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:resilience:0#resilience",
             "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "constitution",
-                  "method": "replace",
-                  "value": 4
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

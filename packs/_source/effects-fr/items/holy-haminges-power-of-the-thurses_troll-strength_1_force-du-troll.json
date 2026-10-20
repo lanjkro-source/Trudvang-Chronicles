@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,15 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
             "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "strength",
-                  "method": "replace",
-                  "value": 4
-                }
-              ]
-            },
+            "editableChanges": true,
             "related": []
           }
         }

@@ -1,6 +1,7 @@
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
+import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -126,12 +127,19 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         turnStart: game.i18n.localize("TRUDVANG.Effect.TurnStart"),
         turnEnd: game.i18n.localize("TRUDVANG.Effect.TurnEnd")
       };
-      partContext.changes = Array.from(this.document.system?.changes || []).map(c => ({
+      const changes=Array.from(this.document.system?.changes || []);
+      const legacy=this.document.flags?.["trudvang-chronicles"]?.transformation;
+      if(legacy?.rules&&!legacy.editableChanges&&!hasProfileChanges(this.document)){
+        const rules={...legacy.rules};if(rules.traitsApplied)delete rules.traits;
+        changes.push(...changesFromRules(rules));
+      }
+      partContext.changes = changes.map(c => ({
         key: c.key ?? "",
         type: c.type ?? "add",
         value: String(c.value ?? ""),
         priority: c.priority != null ? Number(c.priority) : null,
-        phase: effectChangePhase(c)
+        phase: effectChangePhase(c),
+        hint: c.key?.startsWith(EFFECT_RULE_PREFIX)?game.i18n.localize(`TRUDVANG.Effect.Profile.${c.key.slice(EFFECT_RULE_PREFIX.length)}`):c.key
       }));
       partContext.changeTypes = {
         custom: game.i18n.localize("TRUDVANG.Effect.ChangeTypeCustom"),
@@ -162,6 +170,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         "system.modifiers.vitnerValue", "system.modifiers.divinityValue",
         "system.modifiers.raudValue", "system.modifiers.fearValue"
       ];
+      partContext.supportedPaths.push(...EFFECT_RULE_KEYS.map(key=>EFFECT_RULE_PREFIX+key));
+      partContext.profilePaths=EFFECT_RULE_KEYS.map(key=>({path:EFFECT_RULE_PREFIX+key,label:game.i18n.localize(`TRUDVANG.Effect.Profile.${key}`)}));
       return partContext;
     }
 
@@ -194,6 +204,14 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     // can only come from the core ActiveEffectConfig path, which must never
     // clobber or duplicate our namespaced storage on save.
     delete submitData.changes;
+    const legacy=this.document.flags?.["trudvang-chronicles"]?.transformation;
+    if(legacy?.rules&&!legacy.editableChanges&&raw.system?.changes!==undefined){
+      submitData.flags ??= {};submitData.flags["trudvang-chronicles"] ??= {};
+      submitData.flags["trudvang-chronicles"].transformation={editableChanges:true,
+        "-=rules":null,"-=temporaryHP":null,"-=stoneIntegrity":null,
+        temporaryHPSpent:Math.max(0,Number(legacy.rules.temporaryHP??0)-Number(legacy.temporaryHP??legacy.rules.temporaryHP??0)),
+        stoneIntegritySpent:Math.max(0,Number(legacy.rules.statueIntegrity??0)-Number(legacy.stoneIntegrity??legacy.rules.statueIntegrity??0))};
+    }
     if (Object.hasOwn(raw, "statuses")) {
       const statuses = raw.statuses instanceof Set ? [...raw.statuses]
         : Array.isArray(raw.statuses) ? raw.statuses : raw.statuses ? [raw.statuses] : [];
@@ -306,6 +324,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   // Same row normalization as the save path (drop keyless rows, coerce
   // priority) so delete-by-DOM-index and save agree on row identity.
   static #normalizeChangeRows(rows) {
+    for(const row of rows??[])if(row?.key&&!validProfileChange(row))throw new Error(game.i18n.format("TRUDVANG.Effect.InvalidProfileChange",{path:row.key}));
     return (Array.isArray(rows) ? rows : []).filter(c => c?.key)
       .map(c => ({...c, phase: effectChangePhase(c), priority: c.priority != null && c.priority !== "" ? Number(c.priority) : null}));
   }

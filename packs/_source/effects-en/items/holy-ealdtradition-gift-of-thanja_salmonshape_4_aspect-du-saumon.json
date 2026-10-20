@@ -26,7 +26,43 @@
       "system": {
         "stackId": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\"]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.capabilities",
+            "type": "override",
+            "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability1\"]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.movement",
+            "type": "override",
+            "value": "[{\"mode\":\"land\",\"method\":\"replace\",\"value\":0},{\"mode\":\"swim\",\"method\":\"baseMultiple\",\"value\":2}]",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.suspendEquipment",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
       },
       "statuses": [],
       "flags": {
@@ -34,30 +70,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
             "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
-            "rules": {
-              "traits": [
-                {
-                  "trait": "dexterity",
-                  "method": "highest",
-                  "value": 4
-                }
-              ],
-              "movement": [
-                {
-                  "mode": "land",
-                  "method": "replace",
-                  "value": 0
-                },
-                {
-                  "mode": "swim",
-                  "method": "baseMultiple",
-                  "value": 2
-                }
-              ],
-              "suspendEquipment": true,
-              "senseCount": 1,
-              "capabilityCount": 2
-            },
+            "editableChanges": true,
             "related": []
           }
         }
