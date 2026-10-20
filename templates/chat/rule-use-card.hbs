@@ -1,4 +1,5 @@
 <article class="trudvang chat-card rule-use" data-item-uuid="{{document.uuid}}" data-rule-document-uuid="{{document.uuid}}">
   <header><img src="{{actorImg}}"><div><strong>{{actorName}}</strong><h3><button type="button" class="card-title" data-action="{{openAction}}">{{document.name}}</button></h3></div></header>
   {{#if ruleTests.length}}<ul class="rule-action-tests">{{#each ruleTests as |test|}}<li><button type="button" data-action="roll-rule-test" data-test-index="{{test.index}}" title="{{test.title}}"><i class="fas fa-dice-d20" aria-hidden="true"></i> {{test.action}}</button></li>{{/each}}</ul>{{/if}}
+  {{#if transformationLinks}}<div class="trudvang-transformation-links">{{{transformationLinks}}}</div>{{/if}}
 </article>

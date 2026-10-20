@@ -470,6 +470,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       .map(item => ({item, iconClass: powerIconClassForItem(item)}));
     context.compatibleTabletCount = this.actor.compatibleTablets.length;
     context.holyTabletCapacity = this.actor.holyTabletCapacity;
+    const profile = this.actor.transformationProfile;
+    if (this.actor.transformationMovementRows?.length) context.npcMovement = this.actor.transformationMovementRows.map(row => ({...row,mode:row.label}));
+    context.transformationSummary = profile?.effects?.length ? [
+      ...profile.effects.map(e => e.name),
+      ...(profile.senses || []), ...(profile.capabilities || []),
+      ...Object.entries(this.actor.transformationMovement || {}).map(([mode,value]) => `${game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`)} : ${value} m`),
+      `${game.i18n.localize("TRUDVANG.Transformation.TemporaryHP")} : ${profile.effects.reduce((n,e) => n + Number(e.flags?.["trudvang-chronicles"]?.transformation?.temporaryHP || 0), 0)}`
+    ].join(" · ") : "";
     return context;
   }
 
@@ -688,6 +696,13 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   /** @override — délègue au parent V2 (le diagnostic a été retiré en 0.5.4) */
   async _onDrop(event) {
+    let data;
+    try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { /* Other native drop formats. */ }
+    if (data?.type === "TrudvangTransformation") {
+      const {applyTransformation} = await import("../transformations.mjs");
+      const source = data.sourceUuid ? await foundry.utils.fromUuid(data.sourceUuid) : null;
+      return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? []});
+    }
     return super._onDrop(event);
   }
 

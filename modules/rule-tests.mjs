@@ -1,6 +1,7 @@
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
+import {annotateTransformationDescription} from "./transformations.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const legacyAbilityIdByName = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, ref]) => [name, ref.id]));
@@ -11,7 +12,7 @@ function flag(document, key) {
 
 export function ruleTestsForDocument(document) {
   if (game.i18n?.lang && game.i18n.lang !== "fr") return [];
-  const id = document?.system?.catalogId
+  const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
   return id ? RULE_TESTS_BY_CATALOG_ID[id] ?? [] : [];
@@ -114,6 +115,10 @@ function inlineTestButton(test, index, phrase, label = phrase) {
 
 /** Link configured tests to the closest matching situation, skill, trait or resistance wording. */
 export function annotateRuleTestDescription(description, document) {
+  return annotateTransformationDescription(annotateTests(description, document), document);
+}
+
+function annotateTests(description, document) {
   const tests = ruleTestsForDocument(document);
   if (!tests.length) return String(description ?? "");
   const anchors = descriptionAnchors(description, tests).map(anchor => ({...anchor, rows: []}));

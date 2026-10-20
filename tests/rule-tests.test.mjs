@@ -20,7 +20,7 @@ test("the French rule-test catalogue maps powers and creature abilities by stabl
 
 test("every resistance test has two trait slots and an explicit method", () => {
   const resistTests = Object.values(RULE_TESTS_BY_CATALOG_ID).flat().filter(test => test.kind === "resist");
-  assert.equal(resistTests.length, 171);
+  assert.equal(resistTests.length, 179);
   for (const test of resistTests) {
     assert.equal(test.trait.length, 2, test.action);
     assert.ok(test.trait.every(trait => typeof trait === "string"), test.action);

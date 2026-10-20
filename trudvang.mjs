@@ -20,12 +20,14 @@ import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
 import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
 import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
+import {registerTransformationHooks} from "./modules/transformations.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
   configureEffects();
   registerEffectHooks();
+  registerTransformationHooks();
   registerActorStatusHooks();
   registerCombatHooks();
   // Directory context menus are built once at sidebar first render (before

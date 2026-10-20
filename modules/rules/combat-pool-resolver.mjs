@@ -313,9 +313,12 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
   });
   // A reserve may be shared by several natural profiles (e.g. horns and fists).
   // Its expenditure is mirrored on those items, never duplicated in the total.
-  if (actor?.type === "npc") {
+  if (actor?.type === "npc" || Array.from(actor?.items ?? []).some(i => i.flags?.["trudvang-chronicles"]?.transformationGrant)) {
     const groups = new Map();
     for (const weapon of Array.from(actor.items ?? []).filter(entry => weaponType(entry) === "natural" && entry.type === "weapon"
+      && (entry.flags?.["trudvang-chronicles"]?.transformationGrant
+        ? Array.from(actor.effects ?? []).some(effect => effect.id === entry.flags["trudvang-chronicles"].transformationGrant && !effect.disabled && !effect.duration?.expired && !effect.isSuppressed)
+        : !actor.transformationProfile?.suspendEquipment)
       && !(isUnarmedWeapon(entry) && entry.system.naturalCombatPool === "natural"))) {
       const id = `natural:${weapon.system.naturalCombatPool || weapon.id}`;
       if (!groups.has(id)) groups.set(id, []);

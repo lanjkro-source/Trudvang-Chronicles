@@ -12,6 +12,8 @@ import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
 import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
+import {transformationLinks} from "./transformations.mjs";
+import {transformationRollRows} from "./rules/transformation-profile.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -53,7 +55,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = ""}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = []}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -61,7 +63,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const {critical, margin} = outcome;
   const attackMargin = target => `${target - result >= 0 ? "+" : ""}${target - result}`;
   const targetResults = attackTargets.map(row => {
-    const target = finalTarget + row.modifier - attackTargets[0].modifier;
+    const target = finalTarget + row.modifier - attackTargets[0].modifier + Number(row.defenseModifier || 0);
     return {...row, target, attackMargin: attackMargin(target), ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
@@ -89,6 +91,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
+    transformationLinks: success && item ? transformationLinks(item, powerLevelCounts) : "",
     ruleTests: success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -185,6 +188,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const traitValue = calculateTraitModifier(traitEffectValues.map(row => row.value + row.effect), test.traitMethod || "first");
   const effect = sharedEffect;
   const modifierRows = actorStateRollModifiers(actor);
+  modifierRows.push(...transformationRollRows(actor, {target: situation.base + traitValue + effect + rollModifierTotal(modifierRows), traitKey: configuredTraits.includes("dexterity") ? "dexterity" : ""}));
   const traitLabel = hasTrait ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait")
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   const title = game.i18n.format("TRUDVANG.RuleTest.ResistanceTitle", {source: sourceName || "", action: test.action || ""});
@@ -430,7 +434,7 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
 
 function damageBreakdownRows(profile) {
   return profile.rows.map(row => ({...row,
-    label: game.i18n.format(row.labelKey, {...row.data, amount: signedDamage(row.amount)})
+    label: row.label || game.i18n.format(row.labelKey, {...row.data, amount: signedDamage(row.amount)})
   }));
 }
 

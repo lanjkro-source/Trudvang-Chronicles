@@ -1,4 +1,5 @@
 <div class="trudvang-sheet character-sheet">
+  {{#if transformationSummary}}<div class="trudvang-transformation-summary">{{transformationSummary}}</div>{{/if}}
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" alt="{{actor.name}}" {{#if editable}}data-action="manage-portraits" role="button" tabindex="0" title="{{localize 'TRUDVANG.Portrait.ManageMenu'}}"{{else}}title="{{actor.name}}"{{/if}}>
     <div class="identity">

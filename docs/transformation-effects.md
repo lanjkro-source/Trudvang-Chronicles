@@ -1,0 +1,66 @@
+# Effets de transformation
+
+Les modèles sont écrits dans `effectTemplates` et `effectParameters` des JSON FR
+`trudvang-powers-fr.json` et `trudvang-feats-fr.json` du dépôt privé. Leurs homologues
+EN portent les noms et descriptions traduits. L’inventaire des métamorphoses conserve
+les références des règles ; ses anciens identifiants de pouvoirs ont été normalisés.
+
+`node tools/generate-transformation-data.mjs` génère le catalogue structurel et les
+textes de `lang/*.json`. `--check`, exécuté par la validation locale quand les sources
+sont disponibles, détecte un catalogue périmé. Les modèles sont indépendants des
+compendiums : un objet existant conservant son `catalogId` bénéficie des nouvelles offres
+dans sa description, sans migration ni modification d’un monde installé.
+
+## Utilisation
+
+Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
+peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
+au propriétaire de la source ou à l’acteur contrôlé/assigné. Les permissions de
+l’acteur destinataire sont vérifiées avant toute création.
+
+Les variantes prédéfinies sont proposées séparément. Transformation et les formes
+libres de créatures ouvrent un choix dans le bestiaire. Les déguisements en objets
+sans profil chiffré restent descriptifs ; aucun profil n’est inventé. La durée et les
+améliorations numériques reconnues sont ajustables avant application. Une annonce
+de lancement conserve les comptes d’améliorations choisis dans ses offres.
+
+La pétrification propose les deux effets de récupération, la malédiction de l’arbre
+sa raideur, et les frénésies leur épuisement. Une description d’effet propose ses
+successeurs. Ces transitions sont manuelles ; le délai de retour de Transformation
+reste géré oralement. L’épuisement peut reprendre la moitié du temps écoulé sous
+l’effet source. La maladie des wargs et la forme de warg garou sont deux effets :
+leurs tests et leur application restent des actions distinctes.
+
+## Préparation et ressources
+
+Les modifications de traits utilisent les changements natifs, avant les calculs
+dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille
+effective, les restrictions de parade/esquive et les bonus de dégâts ciblés sont
+préparés sans écrire dans le profil original. Les armes accordées sont des objets
+intégrés identifiés par l’effet propriétaire. Elles deviennent inutilisables si
+l’effet est désactivé/expiré et sont supprimées avec lui. Les objets originaux ne
+sont pas supprimés ou restaurés depuis une sauvegarde.
+
+Les PS temporaires consommés en priorité sont enregistrés sur chaque effet ;
+l’application de dégâts et les pertes par la barre du token consomment ces réserves
+avant les PS ordinaires. La vitalité des pouvoirs de sang utilise une augmentation
+séparée des PS et de leur maximum : retirer l’effet ne soigne pas les blessures.
+L’intégrité des statues est suivie séparément. Les formes de Transformation qui
+doivent conserver leurs PS ne recalculent pas leur maximum selon la nouvelle Force.
+
+La vision utilise le mode natif du token. Le mode initial est conservé, puis rétabli
+quand le dernier effet de vision disparaît ; une modification manuelle ultérieure
+du mode est préservée. Les communications, la respiration et les autres facultés
+narratives figurent dans le texte et les icônes d’effets.
+
+Les déclenchements exceptionnels décrits par les règles (refroidissement, événement
+de mort/résurrection, décapitation, maladie permanente, fréquence de régénération,
+choix d’une immunité, qualification élémentaire des dégâts) restent soumis au MJ.
+Les effets contiennent leurs consignes ; ils ne déclenchent pas ces événements sans
+intervention. Supprimer une transformation ne guérit pas une maladie distincte.
+
+## Vérification
+
+Tests isolés des offres bilingues, liens Joaring, profils, réserves temporaires,
+application des attaques accordées, pénalités de récupération et restauration de la
+vision. Aucun accès à une installation Foundry n’est utilisé.

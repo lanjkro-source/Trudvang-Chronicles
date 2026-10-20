@@ -22,6 +22,8 @@ import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-re
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
+import {transformationProfile, movementProfile, transformationRollRows, temporaryHealthLayers} from "../rules/transformation-profile.mjs";
+import {transformationItemActive} from "../transformations.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -97,6 +99,11 @@ export class TrudvangActor extends BaseActor {
     const updates = {"system.resources.body.value": update};
     const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates, this);
     if (allowed === false) return this;
+    if (update < current && temporaryHealthLayers(this).length) {
+      const {applyDamageToActor} = await import("../damage-application.mjs");
+      await applyDamageToActor({actor: this, damage: current - update, ignoreArmor: true});
+      return this;
+    }
     const updated = await this.update(updates);
     const after = Number(this.system.resources.body.value || 0);
     if (updated && after < current) await postActorEvent({actor: this, kind: "damage", amount: current - after});
@@ -107,6 +114,8 @@ export class TrudvangActor extends BaseActor {
     super.prepareDerivedData();
     const system = this.system;
     if (!system.resources) return;
+    this.transformationProfile = transformationProfile(this);
+    Object.assign(system.effective.traits, this.transformationProfile.traits);
 
     if (this.type === "character") {
       const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
@@ -117,6 +126,18 @@ export class TrudvangActor extends BaseActor {
       system.resources.body.max = Math.max(1, Number(system.resources.body.max || 1) + Number(system.modifiers.bodyMax || 0));
       system.movement.current = Math.max(0, Number(system.movement.base || 0) + Number(system.modifiers.movement || 0));
     }
+    if (this.transformationProfile.preserveHP && this.type === "character") {
+      const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
+      system.resources.body.max = Math.max(1, race.body + Number(this._source.system.traits.constitution || 0) + Number(this._source.system.traits.strength || 0) + Number(system.modifiers.bodyMax || 0));
+    }
+    this.transformationMovement = movementProfile(system.movement.current, this._source?.system?.details?.move, this.transformationProfile.movements);
+    this.transformationMovementRows = this.transformationProfile.movements.length ? Object.entries(this.transformationMovement).map(([mode,max]) => {
+      const row = this._source?.system?.details?.move?.find(r => ({terrestre:"land",vol:"flight",nage:"swim"}[r.mode] ?? r.mode) === mode);
+      const originalMax = Number.parseFloat(row?.max) || system.movement.current || 1;
+      const distance = (Number.parseFloat(row?.distance) || 1) * max / originalMax;
+      return {id: mode, mode, label: game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`), metersPerTwo: distance, distance: `${distance} m`, max: `${max} m`};
+    }) : [];
+    if (this.transformationProfile.movements.length) system.movement.current = this.transformationMovement.land ?? 0;
     if (isImmobilized(this)) system.movement.current = 0;
 
     const capacities = magicCapacities({skill: key => this.getSkillValue(key),
@@ -155,16 +176,22 @@ export class TrudvangActor extends BaseActor {
     }
 
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
-    if (ignoresWoundPenalties(this)) system.damage.penalty = 0;
+    if (ignoresWoundPenalties(this) || this.transformationProfile.ignoreWounds) system.damage.penalty = 0;
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
     const fear = Number(system.resources.fear.current || 0);
     const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});
     system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
     system.fearPenalty = fearStatus.penalty;
+    if (this.transformationProfile.ignoreFear) system.fearPenalty = 0;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);
     system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection + Number(system.modifiers.protection || 0);
+    if (this.transformationProfile.naturalArmor !== undefined) system.protection += this.transformationProfile.naturalArmor - Number(system.details?.naturalArmor || 0);
+    for (const effect of this.transformationProfile.effects) {
+      const data = effect.flags?.["trudvang-chronicles"]?.transformation;
+      if (data?.rules?.statueIntegrity) system.protection += Math.ceil(Number(data.stoneIntegrity || 0) / 10) - data.rules.statueIntegrity / 10;
+    }
     system.armorVCPenalty = -this.equippedItems.filter(item => item.type === "armor")
       .reduce((sum, item) => sum + resolveArmorProfile({item, actor: this}).combatActionModifier.value, 0);
     system.buildCost = this.calculateBuildCost();
@@ -310,7 +337,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   get equippedItems() {
-    return this.items.filter(item => item.system.equipped);
+    return this.items.filter(item => item.system.equipped && transformationItemActive(item)
+      && (!this.transformationProfile?.suspendEquipment || item.flags?.["trudvang-chronicles"]?.transformationGrant));
   }
 
   calculatePersistenceInWild() {
@@ -456,7 +484,7 @@ export class TrudvangActor extends BaseActor {
       localize: key => game.i18n.localize(key)}).find(row => row.catalogId === catalogId);
     if (!row) return null;
     return {name: row.name, uuid: "", type: "ability", system: {catalogId, kind: row.kind,
-      parentSkill: row.skillKey, level: row.value, offHandLevel: 0}};
+      parentSkill: row.skillKey, level: row.value + Number(this.transformationProfile?.knowledge?.[catalogId] || 0) / (row.kind === "specialty" ? 2 : 1), offHandLevel: 0}};
   }
 
   catalogText(catalogId, suffix) {
@@ -470,11 +498,16 @@ export class TrudvangActor extends BaseActor {
     const level = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(item.system.catalogId)
       ? Number(item.system.offHandLevel || 0)
       : Number(item.system.level || 0);
-    const own = level * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
+    const own = level * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1))
+      + (this.type !== "npc" || item.id ? Number(this.transformationProfile?.knowledge?.[item.system.catalogId] || 0) : 0);
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
     const discipline = item.system.kind === "specialty" && disciplineLevel != null ? Number(disciplineLevel)
       : parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
     const modifierRows = this.skillRollModifierRows(item.system.parentSkill, {kind: "ability"});
+    for (const effect of this.transformationProfile?.effects ?? []) {
+      const bonus = effect.flags?.["trudvang-chronicles"]?.transformation?.rules?.knowledge?.[item.system.catalogId];
+      if (bonus) modifierRows.push({label: effect.name, value: Number(bonus), included: true});
+    }
     const base = skill + discipline + own;
     const modifier = rollModifierTotal(modifierRows);
     return {skill, skillLabel: this.skillValueLabel(item.system.parentSkill), discipline, specialty: item.system.kind === "specialty" ? own : 0, own, base, modifier, modifierRows, total: base + modifier};
@@ -787,6 +820,7 @@ export class TrudvangActor extends BaseActor {
     const base = this.getSkillValue(skillKey);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
     const modifierRows = this.skillRollModifierRows(skillKey, {bonus});
+    modifierRows.push(...transformationRollRows(this, {target: base + rollModifierTotal(modifierRows), skillKey}));
     const target = base + rollModifierTotal(modifierRows);
     const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))]});
     if (!options) return null;
@@ -827,6 +861,7 @@ export class TrudvangActor extends BaseActor {
     const breakdown = this.getAbilityBreakdown(item, context);
     const modifierRows = [...breakdown.modifierRows];
     if (Number(context.bonus || 0)) modifierRows.push({labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
+    modifierRows.push(...transformationRollRows(this, {target: breakdown.base + rollModifierTotal(modifierRows), skillKey: item.system.parentSkill, movement: Boolean(context.movement)}));
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
     const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])]});
@@ -920,6 +955,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollDodge() {
+    if (this.transformationProfile?.noDodge) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     if (!combatPoolsAreFull(this)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DodgeRequiresFullCombatPools"));
@@ -1073,6 +1109,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollWeaponAction(item, kind, {defaultPoints = 5, throwing = null} = {}) {
+    if (!transformationItemActive(item) || (this.transformationProfile?.suspendEquipment && !item.flags?.["trudvang-chronicles"]?.transformationGrant)
+      || (kind === "parry" && this.transformationProfile?.noParry)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
@@ -1311,7 +1349,7 @@ export class TrudvangActor extends BaseActor {
     const fatalKind = isDivine ? "faith" : "vitner";
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
-      flavor, item, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
         modifier: this.fatalEffectModifier(fatalKind, options.cost)}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
@@ -1474,6 +1512,7 @@ export class TrudvangActor extends BaseActor {
 
   /** Add a rolled fear factor to this character after its personal mitigation. */
   async applyFearFactor(factor, {announce = true} = {}) {
+    if (this.transformationProfile?.ignoreFear) return {rolled: Number(factor) || 0, modifier: 0, applied: 0};
     if (this.type !== "character" || !this.isOwner) return null;
     const rolled = Math.max(0, Math.trunc(Number(factor) || 0));
     const modifier = Number(this.system.fearFactorModifier || 0);
@@ -1487,7 +1526,7 @@ export class TrudvangActor extends BaseActor {
   /** Roll this NPC's fear factor and create an actionable compact chat card. */
   async rollFearFactor() {
     if (this.type !== "npc") return null;
-    const factor = parseFearFactor(this.system.details?.fearFactor);
+    const factor = parseFearFactor(this.transformationProfile?.fearFactor ?? this.system.details?.fearFactor);
     if (!factor.valid) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidFearFactor"));
     const notation = `${factor.dice}d${factor.faces}${factor.threshold ? ` (JO ${factor.threshold}-10)` : ""}`;
     const options = await fearFactorDialog({title: game.i18n.localize("TRUDVANG.Action.RollFearFactor"), factor: notation});
@@ -1577,7 +1616,7 @@ export class TrudvangActor extends BaseActor {
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
     const movementRows = this.type === "npc" ? npcMovementRows(this.system, {localize: key => game.i18n.localize(key)}) : [];
-    const movementModes = this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
+    const movementModes = this.transformationMovementRows?.length ? this.transformationMovementRows.filter(row => row.metersPerTwo > 0) : this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
       ...mode, label: movementRows[Number(mode.id)]?.mode || mode.mode
     })) : [];
     const options = await combatPointDialog({
@@ -1826,6 +1865,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollItem(item) {
+    if (!transformationItemActive(item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (item.type === "creatureAbility") return useCreatureAbility(item);
     if (item.type === "weapon" || item.type === "shield") return this.rollWeaponAttack(item);
     if (item.type === "spell" || item.type === "divineFeat") return this.rollSpell(item);

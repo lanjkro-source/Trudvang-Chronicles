@@ -1080,3 +1080,8 @@
 .trudvang.chat-card .attack-target-result { padding: 5px; border-left: 2px solid currentColor; }
 .trudvang.chat-card .attack-target-result.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
 .trudvang.chat-card .attack-target-result.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
+/* Effect offers share the normal text rhythm in descriptions and chat. */
+.trudvang-transformation-links { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: .5rem; }
+button.trudvang-transformation-link { width: auto; min-height: 0; height: auto; line-height: inherit; padding: .1em .4em; cursor: grab; color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-gold) 20%, transparent); border: 1px solid currentColor; border-radius: .3em; }
+button.trudvang-transformation-link:hover { filter: brightness(1.2); }
+.trudvang-transformation-summary { padding: .4rem; border: 1px solid currentColor; font-size: .9em; }

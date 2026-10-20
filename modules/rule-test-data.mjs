@@ -2455,6 +2455,168 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "index": 0
     }
   ],
+  "holy-joaringfaith-sight-of-lekaba:read-powers:5": [
+    {
+      "action": "identifier un sort",
+      "sv": {
+        "by": [
+          {
+            "condition": "sort de niveau 1",
+            "value": 10
+          },
+          {
+            "condition": "sort de niveau 2",
+            "value": 8
+          },
+          {
+            "condition": "sort de niveau 3",
+            "value": 6
+          },
+          {
+            "condition": "sort de niveau 4",
+            "value": 4
+          },
+          {
+            "condition": "sort de niveau 5",
+            "value": 2
+          }
+        ],
+        "bonus": " +2 si le même type de vitner est utilisé"
+      },
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
+      "success": "identifie le type, les effets et le mode d’activation du sort.",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-joaringfaith-sight-of-lekaba:true-sight:7": [
+    {
+      "action": "détecter la présence d’un enchantement",
+      "sv": {
+        "by": [
+          {
+            "condition": "sort de niveau 1",
+            "value": 12
+          },
+          {
+            "condition": "sort de niveau 2",
+            "value": 10
+          },
+          {
+            "condition": "sort de niveau 3",
+            "value": 8
+          },
+          {
+            "condition": "sort de niveau 4",
+            "value": 6
+          },
+          {
+            "condition": "sort de niveau 5",
+            "value": 4
+          }
+        ]
+      },
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
+      "success": "perçoit la présence du sort ou de l’enchantement.",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": [
+    {
+      "action": "résister à la peur provoquée par le pouvoir",
+      "sv": 6,
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
+      "success": "n’est pas effrayé.",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": [
+    {
+      "action": "percer l’illusion et comprendre la vérité",
+      "sv": 8,
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
+      "success": "découvre la vérité derrière l’illusion.",
+      "repeat": "un nouveau test peut être tenté chaque jour",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag:fever:2": [
+    {
+      "action": "résister aux dégâts de la fièvre",
+      "sv": 8,
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
+      "success": "évite les 1d10 points de dégâts.",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag:amnesia:4": [
+    {
+      "action": "résister à la perte des souvenirs",
+      "sv": 6,
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
+      "success": "conserve son identité et ses souvenirs.",
+      "condition": "test initial",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    },
+    {
+      "action": "récupérer un souvenir",
+      "sv": 6,
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
+      "success": "se rappelle un détail important; chaque réussite ajoute +2 aux chances des tests suivants.",
+      "condition": "après l’échec initial",
+      "repeat": "une fois par jour; si la SV atteint 20, la victime retrouve tous ses souvenirs",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 1
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag:tree-curse:7": [
+    {
+      "action": "résister à la transformation en arbre",
+      "sv": 4,
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
+      "success": "ne subit qu’une transformation partielle: peau d’écorce si elle pèse au plus 60 kg, parties du corps transformées au-delà.",
+      "failure": "la victime est entièrement transformée et enracinée.",
+      "traitMethod": "first",
+      "kind": "resist",
+      "index": 0
+    }
+  ],
   "5SL1RE8D9EaGbHcI": [
     {
       "action": "se libérer de l’emprise du diser",

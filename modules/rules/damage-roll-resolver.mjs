@@ -53,8 +53,13 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
   if (actorEffects && !finite(actor?.system?.modifiers?.damage)) rows.push({labelKey: "TRUDVANG.DamageRoll.ActorEffects", amount: 0, value: "0", source: actorEffects});
   for (const step of resolution.openRoll.steps) if (step.delta) rows.push({labelKey: step.explanationKey || "TRUDVANG.DamageRoll.OpenRollEffects",
     data: step.explanationData, value: `${step.before} → ${step.after}`, source: step.source.name});
+  let transformationBonus = 0;
+  for (const row of actor?.transformationProfile?.damage ?? []) if (row.usages.includes(usage)) {
+    transformationBonus += row.value;
+    rows.push({label: row.effect, value: signedDamage(row.value), amount: row.value, source: row.effect});
+  }
   return {resolution, rows, ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
-    parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base,
+    parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base + transformationBonus,
     situational: finite(context.damageModifier), minimumTotal: resolution.minimumTotal};
 }
 

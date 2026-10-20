@@ -27,6 +27,10 @@ else if (availableAbilitySources.length === 2) {
   const result = spawnSync(process.execPath, ["tools/generate-creature-ability-data.mjs", "--check"], {cwd: root, encoding: "utf8"});
   if (result.status !== 0) failures.push(`Creature ability source audit failed: ${result.stderr || result.stdout}`);
 }
+if (availablePowerSources.length === 2 && availableAbilitySources.length === 2) {
+  const result = spawnSync(process.execPath, ["tools/generate-transformation-data.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (result.status !== 0) failures.push(`Transformation source audit failed: ${result.stderr || result.stdout}`);
+}
 
 function readJson(path) {
   try {

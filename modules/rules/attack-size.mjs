@@ -22,10 +22,11 @@ export function attackSizeModifier(attackerSize, targetSize) {
 }
 
 export function attackSizeTargets(attacker, targets = []) {
-  const size = actor => actor?.type === "character" ? 1 : actor?.system?.details?.size ?? 1;
+  const size = actor => actor?.transformationProfile?.size ?? (actor?.type === "character" ? 1 : actor?.system?.details?.size ?? 1);
   return Array.from(targets).filter(token => token?.actor).map(token => ({
     name: token.name || token.actor.name || "", actorUuid: token.actor.uuid || "",
     tokenUuid: token.document?.uuid || token.uuid || "",
+    ...(token.actor.transformationProfile?.defense ? {defenseModifier: token.actor.transformationProfile.defense} : {}),
     modifier: attackSizeModifier(size(attacker), size(token.actor))
   }));
 }
