@@ -4,6 +4,7 @@ import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
 import {changesFromRules,rulesFromChanges,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
+import {effectChangesSource} from "./rules/effect-source.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -43,7 +44,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const supplied=source?.documentName==="ActiveEffect"?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
- const template=supplied?{...reference,changes:structuredClone(supplied.system.changes),statuses:Array.from(supplied.statuses??[]),icon:supplied.img??reference.icon}:reference;
+ const template=supplied?{...reference,changes:effectChangesSource(supplied.system.changes),statuses:Array.from(supplied.statuses??[]),icon:supplied.img??reference.icon}:reference;
  const effectName=supplied?.name||text(key,"Name");
  const rules=rulesFromChanges(template.changes);
  for(const field of ["senses","capabilities"])if(rules[field])rules[field]=rules[field].map(s=>game.i18n.localize(s));

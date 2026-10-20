@@ -1,6 +1,7 @@
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
+import {effectChangesSource} from "../rules/effect-source.mjs";
 import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
@@ -188,7 +189,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         label: stage.label,
         durationValue: stage.durationValue,
         durationUnit: stage.durationUnit,
-        changesJson: JSON.stringify(Array.from(stage.changes || []), null, 2)
+        changesJson: JSON.stringify(effectChangesSource(stage.changes), null, 2)
       }));
       return partContext;
     }

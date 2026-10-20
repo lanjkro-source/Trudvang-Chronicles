@@ -53,6 +53,12 @@ La consommation des réserves reste un état de suivi de l’effet, indépendant
 configuration ; modifier ou désactiver l’effet ne recharge pas les PS consommés.
 Les anciens effets restent lisibles ; leur éditeur affiche également leurs
 anciennes propriétés et les enregistre en modifications lors de la sauvegarde.
+Les modifications natives de Foundry sont des DataModels pouvant référencer leur
+parent. Avant toute copie vers un nouvel effet, `effect-source.mjs` en extrait les
+champs scalaires (`key`, `type`, `value`, `phase`, `priority`), y compris dans les
+étapes. Ne jamais cloner directement le graphe d’un modèle préparé :
+`structuredClone` conserve ses cycles, puis `foundry.utils.deepClone` dépasse sa
+profondeur maximale lors de la création du document.
 
 Les fiches PJ et PNJ affichent les PS sous la forme `32 / 43 + 5`. Le cadre État
 précise les réserves et leurs effets contributeurs, les déplacements modifiés et

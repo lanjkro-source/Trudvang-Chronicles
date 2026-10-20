@@ -214,3 +214,28 @@ test("only the elected GM synchronizes grants when a player applies an effect",a
  game.user={id:"gm"};users.activeGM.isSelf=true;
  await syncEffectGrants(form);assert.equal(creations,1);
 });
+
+test("compendium and chat effect references with cyclic native changes produce plain creation payloads",async()=>{
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ const key="holy-joaringfaith-fury-of-ogon:rage:2#rage";
+ for(const kind of ["ActiveEffect","Item"]){
+  const system={changes:[]};
+  class ChangeModel{constructor(data){Object.assign(this,data);this.parent=system;}}
+  system.changes=templates[key].changes.map(c=>new ChangeModel(c));
+  const effect={documentName:"ActiveEffect",name:"Rage du MJ",system,statuses:new Set(),flags:{[S]:{transformation:{key}}}};
+  const source=kind==="ActiveEffect"?effect:{documentName:"Item",type:"effect",effects:[effect]};
+  let created;
+  const actor={isOwner:true,system:{},items:[],canUserModify:()=>true,getActiveTokens:()=>[],
+   createTrudvangEffect:async data=>{
+    // JSON cannot serialize a DataModel's parent graph. Foundry's deepClone
+    // hits its maximum depth first; this boundary must contain only source data.
+    assert.doesNotThrow(()=>JSON.stringify(data));
+    created=data;return {...data,id:"rage"};
+   }};
+  await applyTransformation(actor,key,{source});
+  assert.equal(created.name,"Rage du MJ");
+  assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.rolls.attack").value,"1");
+  assert.equal(effectRules(created).temporaryHP,5);
+ }
+});

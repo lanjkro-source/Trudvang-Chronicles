@@ -1,5 +1,6 @@
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
+import {effectChangesSource} from "./rules/effect-source.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
@@ -97,7 +98,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
       const first = stages[0];
       this.updateSource({
         "system.stage": 0,
-        "system.changes": foundry.utils.deepClone(first.changes || []),
+        "system.changes": effectChangesSource(first.changes),
         duration: {value: Number(first.durationValue || 0), units: first.durationUnit || "seconds", expired: false}
       });
     }
@@ -140,7 +141,7 @@ export function registerEffectHooks() {
     const implementation = foundry.documents.ActiveEffect.implementation;
     await effect.update({
       "system.stage": nextIndex,
-      "system.changes": foundry.utils.deepClone(next.changes || []),
+      "system.changes": effectChangesSource(next.changes),
       duration: {
         value: Number(next.durationValue || 0),
         units: next.durationUnit || "seconds",

@@ -25,6 +25,7 @@ import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
 import {transformationProfile, movementProfile, transformationRollRows, temporaryHealthLayers, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
 import {proportionalBodyHealth,bodyHealthUpdate} from "../rules/body-health.mjs";
+import {effectSource} from "../rules/effect-source.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -1850,7 +1851,7 @@ export class TrudvangActor extends BaseActor {
     if (!this.canUserModify(game.user, "update")) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.EffectPermission"));
     }
-    const prepared = foundry.utils.deepClone(data);
+    const prepared = foundry.utils.deepClone(effectSource(data));
     prepared.type = "effect";
     prepared.system ??= {};
     const stackId = String(prepared.system.stackId || "").trim();
