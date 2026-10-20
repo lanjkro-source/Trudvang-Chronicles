@@ -14,6 +14,7 @@ const deepClone = value => structuredClone(value);
 class Field { constructor(options) { this.options = options; } }
 
 class StubActiveEffect {
+  canUserModify(user) { return Boolean(user?.isGM || this.parent?.isOwner); }
   get isSuppressed() { return this._superSuppressed ?? false; }
   async _preCreate() { return true; }
 }
@@ -21,7 +22,10 @@ StubActiveEffect.implementation = {getEffectStart: () => 777};
 
 class StubActiveEffectConfig {
   static PARTS = {header: {template: "header.hbs"}, tabs: {template: "tabs.hbs"}, footer: {template: "footer.hbs"}};
-  constructor({document} = {}) { this.document = document; this.isEditable = document?.isOwner ?? true; }
+  constructor({document} = {}) { this.document = document; }
+  get isEditable() { return this.document?.isOwner ?? true; }
+  get isVisible() { return this.document?.visible ?? true; }
+  async _prepareContext() { return {editable: false, isEditable: false}; }
   async _preparePartContext(partId, context) {
     return {tabs: {
       details: {id: "details", cssClass: "tab", group: "sheet"},
@@ -74,6 +78,53 @@ const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks} = await imp
 function sheetFor(document) {
   return new TrudvangEffectSheet({document});
 }
+
+test("effect edit permissions agree in the document, sheet and every tab", async t => {
+  const originalUser = game.user;
+  const originalPacks = game.packs;
+  t.after(() => {game.user = originalUser; game.packs = originalPacks;});
+  game.packs = new Map([["locked", {locked: true}], ["unlocked", {locked: false}]]);
+  const effect = new TrudvangActiveEffect();
+  Object.assign(effect, {flags: {"trudvang-chronicles": {creatorId: "creator"}},
+    parent: {isOwner: false}, visible: false, description: "", statuses: new Set(),
+    system: {changes: [], stages: []}, duration: {}, _source: {}});
+  for (const [user, expected] of [[{id: "gm", isGM: true}, true],
+    [{id: "creator", isGM: false}, true], [{id: "other", isGM: false}, false]]) {
+    game.user = user;
+    assert.equal(effect.canUserModify(user, "update"), expected);
+    const sheet = sheetFor(effect);
+    assert.equal(sheet.isEditable, expected);
+    assert.equal(sheet.isVisible, expected);
+    const context = await sheet._prepareContext({});
+    assert.equal(context.editable, expected);
+    assert.equal(context.isEditable, expected);
+    for (const part of ["header", "details", "durationChanges", "trudvang", "footer"]) {
+      const prepared = await sheet._preparePartContext(part, {editable: !expected});
+      assert.equal(prepared.editable, expected, `${user.id}: ${part}`);
+      assert.equal(prepared.isEditable, expected);
+    }
+  }
+  game.user = {id: "owner", isGM: false};
+  effect.parent.isOwner = true;
+  assert.equal(sheetFor(effect).isEditable, true, "existing parent owners retain access without creator metadata");
+  effect.pack = "locked";
+  game.user = {id: "gm", isGM: true};
+  assert.equal(sheetFor(effect).isEditable, false, "compendium locking remains enforced");
+  effect.pack = "unlocked";
+  assert.equal(sheetFor(effect).isEditable, true);
+});
+
+test("new and copied effects record the current creator, never the template author", async () => {
+  for (const flags of [{}, {"trudvang-chronicles": {creatorId: "template-author"}}]) {
+    const effect = new TrudvangActiveEffect();
+    effect.flags = flags;
+    effect.system = {stages: []};
+    const updates = [];
+    effect.updateSource = data => updates.push(data);
+    await effect._preCreate({}, {}, {id: "new-creator"});
+    assert.deepEqual(updates, [{"flags.trudvang-chronicles.creatorId": "new-creator"}]);
+  }
+});
 
 test("TrudvangEffectSheet durationChanges stays finite for indefinite and finite durations", async () => {
   const indefinite = {
@@ -453,18 +504,20 @@ test("TrudvangEffectSheet onSaveDescription saves and collapses through the elem
   const updates = [];
   const document = {_source: {description: "<p>Old</p>"},
     update: async changes => { updates.push(changes); return document; }};
-  const sheet = {document, element: {querySelector: selector =>
+  const sheet = {isEditable: true, document, element: {querySelector: selector =>
     (selector === 'prose-mirror[name="description"]'
       ? {save: async () => { saved += 1; }, value: "<p>New</p>"} : null)}};
   await TrudvangEffectSheet.onSaveDescription.call(sheet);
   assert.equal(saved, 1, "element.save() must run (same as the core menu save button)");
   assert.deepEqual(updates, [{description: "<p>New</p>"}], "changed text must persist to the document without closing");
+  await TrudvangEffectSheet.onSaveDescription.call({...sheet, isEditable: false});
+  assert.equal(saved, 1, "a read-only sheet cannot save through its action handler");
   const bare = {};
   await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(bare), "missing editor must stay inert");
-  const unupgraded = {element: {querySelector: () => ({})}};
+  const unupgraded = {isEditable: true, element: {querySelector: () => ({})}};
   await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(unupgraded),
     "non-upgraded element without save() must stay inert instead of throwing");
-  const unchanged = {document: {_source: {description: "<p>Same</p>"},
+  const unchanged = {isEditable: true, document: {_source: {description: "<p>Same</p>"},
     update: async changes => { updates.push(changes); return document; }},
     element: {querySelector: () => ({save: async () => {}, value: "<p>Same</p>"})}};
   const count = updates.length;
@@ -531,7 +584,7 @@ for (const type of ["base", "effect"]) {
     assert.match(html, /<multi-select name="statuses"/);
     assert.match(html, /value="sleep" selected/);
     assert.match(html, /value="custom-state" selected/);
-    const readOnly = await sheet._preparePartContext("details", {editable: false});
+    const readOnly = await sheetFor({...document, isOwner: false})._preparePartContext("details", {});
     assert.match(template(readOnly), /<multi-select name="statuses" disabled/);
     const restore = stubCoreFormTransform();
     try {

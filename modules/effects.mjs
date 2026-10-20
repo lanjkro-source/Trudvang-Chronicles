@@ -56,6 +56,12 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
  * intentionally always suppressed. Potion templates are likewise always
  * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
+  canUserModify(user, action, data = {}) {
+    if (action === "update" && user && (user.isGM
+      || (user.id && this.flags?.["trudvang-chronicles"]?.creatorId === user.id))) return true;
+    return super.canUserModify(user, action, data);
+  }
+
   prepareBaseData() {
     super.prepareBaseData();
     for (const change of this.system?.changes ?? []) change.phase = effectChangePhase(change);
@@ -83,6 +89,9 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   async _preCreate(data, options, user) {
     const allowed = await super._preCreate(data, options, user);
     if (allowed === false) return false;
+    // A copied template belongs to the user creating this instance, not its
+    // original author. Never infer authorship from lastModifiedBy.
+    if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
     const stages = Array.from(this.system.stages || []);
     if (stages.length && !this.system.changes.length) {
       const first = stages[0];

@@ -7,6 +7,23 @@ const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? g
 const DURATION_UNITS = ["rounds", "turns", "seconds", "minutes", "hours", "days", "weeks", "months", "years"];
 
 export class TrudvangEffectSheet extends ActiveEffectConfig {
+  get isEditable() {
+    const pack = this.document?.pack;
+    if (pack && game.packs?.get(pack)?.locked) return false;
+    return this.document?.canUserModify?.(game.user, "update") ?? super.isEditable;
+  }
+
+  get isVisible() {
+    return this.isEditable || super.isVisible;
+  }
+
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+    // Use the same permission for the core header/footer and all custom tabs.
+    context.editable = context.isEditable = this.isEditable;
+    return context;
+  }
+
   static DEFAULT_OPTIONS = {
     classes: ["trudvang", "effect-sheet"],
     position: {width: 620, height: 720},
@@ -64,13 +81,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
   async _preparePartContext(partId, context) {
     const partContext = await super._preparePartContext(partId, context);
+    partContext.editable = partContext.isEditable = this.isEditable;
 
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
-      // Prefer the framework-provided context flag, then document ownership:
-      // this.isEditable proved an unreliable source and wrongly forced the
-      // read-only branch.
-      partContext.editable = context?.editable ?? this.document?.isOwner ?? this.isEditable;
       partContext.documentUuid = this.document.uuid ?? "";
       partContext.description = this.document._source?.description ?? this.document.description ?? "";
       partContext.enrichedDescription = annotateRuleTestDescription(await TextEditorImpl.enrichHTML(
@@ -281,6 +295,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   }
 
   static async #silentSubmitData(sheet, target) {
+    if (!sheet.isEditable) return null;
     const form = TrudvangEffectSheet.#sheetForm(sheet, target);
     const FormDataExtended = TrudvangEffectSheet.#formDataCtor();
     if (!form || !FormDataExtended) return null;
@@ -383,6 +398,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   // to the form and collapses a toggled editor); the footer submit still
   // writes to the document, exactly as with the core button.
   static async onSaveDescription() {
+    if (!this.isEditable) return null;
     try {
       const editor = this.element?.querySelector?.('prose-mirror[name="description"]');
       if (!editor) {
