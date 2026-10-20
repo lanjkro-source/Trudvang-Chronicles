@@ -44,6 +44,17 @@ test("movement offers add flight/swim and reductions without overwriting the ori
  assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"multiply",value:0.5},{mode:"flight",method:"baseMultiple",value:4}]),{land:5,flight:40});
  assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"replace",value:0},{mode:"swim",method:"baseMultiple",value:2}]),{land:0,swim:20});
 });
+
+test("fear profiles upgrade the native factor and disabling the effect restores it unchanged",()=>{
+ const source="2d10 (JO 8-10)";
+ const form=effect({fearFactor:"3d10"});
+ const actor={type:"npc",system:{details:{fearFactor:source}},effects:[form]};
+ assert.equal(transformationProfile(actor).fearFactor,"3d10 (JO 8-10)");
+ assert.equal(actor.system.details.fearFactor,source);
+ form.disabled=true;
+ assert.equal(transformationProfile(actor).fearFactor,undefined);
+ assert.equal(actor.system.details.fearFactor,source);
+});
 test("temporary health is spent first and only unabsorbed damage reaches ordinary health",()=>{
  const a=effect({});const b=effect({},{id:"second"});
  const result=consumeTemporaryHealth([{effect:a,remaining:5},{effect:b,remaining:3}],10);

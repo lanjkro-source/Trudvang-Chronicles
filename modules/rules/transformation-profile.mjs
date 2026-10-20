@@ -1,4 +1,5 @@
 import {hasProfileChanges, rulesFromChanges} from "./effect-rule-changes.mjs";
+import {upgradeFearFactor} from "./fear-resolver.mjs";
 export const TRANSFORMATION_SCOPE = "trudvang-chronicles";
 export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
  .sort((a,b)=>Math.min(...Array.from(a.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity)-Math.min(...Array.from(b.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity));
@@ -30,7 +31,7 @@ export function transformationProfile(actor) {
   if(r.size!==undefined)profile.size=r.size;
   if(r.vision)profile.vision=r.vision;
   if(r.naturalArmor!==undefined)profile.naturalArmor=r.naturalArmor;
-  if(r.fearFactor)profile.fearFactor=r.fearFactor;
+  if(r.fearFactor)profile.fearFactor=upgradeFearFactor(profile.fearFactor??actor.system.details?.fearFactor,r.fearFactor);
   if(r.defense)profile.defense=(profile.defense||0)+r.defense;
   if(r.testFactor)profile.testFactor={...profile.testFactor,...r.testFactor};
   if(r.damageTakenFactor)profile.damageTakenFactor=(profile.damageTakenFactor??1)*r.damageTakenFactor;

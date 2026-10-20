@@ -156,8 +156,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.editable = this.isEditable && this.actor.isOwner;
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
-    context.fearFactor = parseFearFactor(this.actor.system.details?.fearFactor);
     context.effectiveFearFactor = parseFearFactor(this.actor.transformationProfile?.fearFactor ?? this.actor.system.details?.fearFactor);
+    context.fearFactor = context.effectiveFearFactor;
+    const baseFearFactor=parseFearFactor(this.actor._source.system.details?.fearFactor);
+    context.baseFearFactorNotation=baseFearFactor.valid?formatFearFactor(baseFearFactor):"—";
+    context.fearFactorModified=context.effectiveFearFactor.valid&&formatFearFactor(context.effectiveFearFactor)!==context.baseFearFactorNotation;
     context.fearFactorNotation = context.effectiveFearFactor.valid ? formatFearFactor(context.effectiveFearFactor) : "";
     context.effectStatus = effectStatus(this.actor, {localize:key=>game.i18n.localize(key)});
     const body = this.actor.system.resources.body;
@@ -648,7 +651,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const fearDice = formData.object["trudvang.fearFactorDice"];
     const fearThreshold = formData.object["trudvang.fearFactorThreshold"];
     if (fearDice !== undefined || fearThreshold !== undefined) {
-      foundry.utils.setProperty(changes, "system.details.fearFactor", formatFearFactor({dice: fearDice, faces: 10, threshold: fearThreshold}));
+      const base=parseFearFactor(this.actor._source.system.details?.fearFactor);
+      if(editedPath==="trudvang.fearFactorDice"||editedPath==="trudvang.fearFactorThreshold"){
+        foundry.utils.setProperty(changes,"system.details.fearFactor",formatFearFactor({
+          dice:editedPath==="trudvang.fearFactorDice"?fearDice:`${base.dice}d${base.faces}`,
+          threshold:editedPath==="trudvang.fearFactorThreshold"?fearThreshold:base.threshold}));
+      }
       delete changes.trudvang;
     }
     const sourceResources = this.actor._source.system.resources || {};

@@ -60,11 +60,14 @@ champs scalaires (`key`, `type`, `value`, `phase`, `priority`), y compris dans l
 `structuredClone` conserve ses cycles, puis `foundry.utils.deepClone` dépasse sa
 profondeur maximale lors de la création du document.
 
-Les fiches PJ et PNJ affichent les PS sous la forme `32 / 43 + 5`. Le cadre État
-précise les réserves et leurs effets contributeurs, les déplacements modifiés et
-les modes ajoutés, les restrictions et l’immunité à la peur. Le facteur de peur
-conféré par un effet est lançable sur les deux types de fiche. Le bandeau de
-rappel en haut de la fiche a été retiré.
+Les fiches PJ et PNJ affichent les PS sous la forme `32 / 43 + 5`. Le rappel des
+PS temporaires suit les conséquences des blessures dans Santé ; les déplacements
+modifiés et les modes ajoutés figurent dans Mouvement. Les effets et leurs
+conséquences occupent un cadre sous les traits des PJ et une section du cadre
+Capacités des PNJ. Le facteur de peur conféré par un effet est lançable sur les
+deux types de fiche. Chez les PNJ, il utilise les champs existants et conserve les
+composantes les plus redoutables (nombre de dés et seuil de jet ouvert), sans
+modifier la valeur d’origine. Le bandeau de rappel en haut de la fiche a été retiré.
 
 Les modifications de traits utilisent les changements natifs, avant les calculs
 dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille

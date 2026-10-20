@@ -34,3 +34,16 @@ export function formatFearFactor({dice = 1, faces = 10, threshold = 0} = {}) {
   const openRoll = Math.max(0, Number(threshold) || 0);
   return openRoll ? `${notation} (JO ${openRoll}-10)` : notation;
 }
+
+/** An effect may worsen a creature's existing factor, never reduce its dice or
+ * remove/weaken an existing open roll. A lower positive threshold is stronger. */
+export function upgradeFearFactor(base,...effects){
+ let factor=parseFearFactor(base);
+ for(const value of effects){
+  const candidate=parseFearFactor(value);if(!candidate.valid)continue;
+  if(!factor.valid){factor=candidate;continue;}
+  const thresholds=[factor.threshold,candidate.threshold].filter(n=>n>0);
+  factor={valid:true,dice:Math.max(factor.dice,candidate.dice),faces:Math.max(factor.faces,candidate.faces),threshold:thresholds.length?Math.min(...thresholds):0};
+ }
+ return factor.valid?formatFearFactor(factor):base;
+}

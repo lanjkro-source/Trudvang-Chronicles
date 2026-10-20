@@ -220,6 +220,11 @@
 .trudvang-sheet .panel { padding: 9px; border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 76%, transparent); box-shadow: 0 1px 2px color-mix(in srgb, var(--trudvang-ink) 12%, transparent); }
 .trudvang-sheet .npc-stats-grid, .trudvang-sheet .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .trudvang-sheet .summary-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; }
+.trudvang-sheet .summary-traits-column { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.trudvang-sheet .effects-summary-panel .status-consequence + .status-consequence,
+.trudvang-sheet .effect-notes-section .status-consequence + .status-consequence { margin-top: 6px; }
+.trudvang-sheet .effect-notes-section { margin-top: 10px; padding-top: 8px; border-top: 1px dotted var(--trudvang-line); }
+.trudvang-sheet .movement-effect-notes { flex-basis: 100%; margin-top: 4px; text-align: left; }
 .trudvang-sheet .quick-actions { margin-top: 10px; }
 .trudvang-sheet .trait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 9px; }
 .trudvang-sheet .trait-row { display: grid; row-gap: 2px; align-items: center; }

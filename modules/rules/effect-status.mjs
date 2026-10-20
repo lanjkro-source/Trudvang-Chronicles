@@ -19,7 +19,7 @@ export function effectStatus(actor, {localize = key => key} = {}) {
     const r=effectRules(effect);
     return {name:effect.name, description:String(effect.description ?? "").replace(/<[^>]*>/g," "), details: [
       ...(r.senses ?? []).map(localize), ...(r.capabilities ?? []).map(localize), ...(r.immunities ?? []).map(localize),
-      ...["noParry","noDodge","ignoreWounds"].filter(key=>r[key]).map(key=>localize(`TRUDVANG.Effect.Profile.${key}`)),
+      ...["noParry","noDodge","ignoreWounds","ignoreFear"].filter(key=>r[key]).map(key=>localize(`TRUDVANG.Effect.Profile.${key}`)),
       ...(r.heightBonus?[`${localize("TRUDVANG.Effect.Profile.heightBonus")} +${r.heightBonus} m`]:[]),
       ...(r.weightBonus?[`${localize("TRUDVANG.Effect.Profile.weightBonus")} +${r.weightBonus} kg`]:[])
     ].join(" · ")};

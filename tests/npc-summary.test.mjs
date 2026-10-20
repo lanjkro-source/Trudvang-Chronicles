@@ -304,6 +304,30 @@ test("unrelated form submissions do not persist effect bonuses or break the intr
   assert.equal(changes.at(-1).system.traitCurrent.constitution, 2);
 });
 
+test("NPC fear fields show the upgraded factor without saving effects into either base component",async()=>{
+ const npc=actor();npc.isOwner=true;
+ npc._source.system.details.fearFactor="2d10 (JO 8-10)";
+ npc.system.details.fearFactor=npc._source.system.details.fearFactor;
+ npc.transformationProfile.fearFactor="3d10 (JO 6-10)";
+ const sheet=new TrudvangNpcSheet();sheet.actor=npc;sheet.isEditable=true;
+ const context=await sheet._prepareContext({});
+ assert.equal(context.fearFactor.dice,3);
+ assert.equal(context.fearFactor.threshold,6);
+ assert.equal(context.fearFactorModified,true);
+ assert.equal(context.baseFearFactorNotation,"2d10 (JO 8-10)");
+ const updates=[];npc.update=async update=>updates.push(update);
+ const submit=TrudvangActorSheet.DEFAULT_OPTIONS.form.handler;
+ const values={name:npc.name,"trudvang.fearFactorDice":"3d10","trudvang.fearFactorThreshold":6};
+ await submit.call(sheet,{target:{name:"name"}},{},{object:values});
+ assert.equal(updates.at(-1).system?.details?.fearFactor,undefined);
+ assert.equal(updates.at(-1).trudvang,undefined);
+ await submit.call(sheet,{target:{name:"trudvang.fearFactorDice"}},{},{object:{...values,"trudvang.fearFactorDice":"4d10"}});
+ assert.equal(updates.at(-1).system.details.fearFactor,"4d10 (JO 8-10)");
+ await submit.call(sheet,{target:{name:"trudvang.fearFactorThreshold"}},{},{object:{...values,"trudvang.fearFactorThreshold":7}});
+ assert.equal(updates.at(-1).system.details.fearFactor,"2d10 (JO 7-10)");
+ assert.equal(npc._source.system.details.fearFactor,"2d10 (JO 8-10)");
+});
+
 test("Durable requires an explicit active feat mechanic, never a translated name", () => {
   assert.equal(ignoresWoundPenalties({items: [feat()]}), true);
   assert.equal(ignoresWoundPenalties({items: [feat(false)]}), false);
