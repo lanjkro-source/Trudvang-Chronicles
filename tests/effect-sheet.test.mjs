@@ -79,6 +79,18 @@ function sheetFor(document) {
   return new TrudvangEffectSheet({document});
 }
 
+test("Hasten's compendium effect exposes its trait and skill table in the modifications editor",async()=>{
+ const item=JSON.parse(readFileSync(new URL("../packs/_source/effects-fr/items/vitner-body-vitner_hasten_9_hate.json",import.meta.url)));
+ const document=item.effects[0];document._source=structuredClone(document);document.duration={};document.isOwner=true;
+ const context=await sheetFor(document)._preparePartContext("durationChanges",{});
+ assert.equal(context.changes.length,1);
+ assert.equal(context.changes[0].key,"system.transformation.traits");
+ const trait=JSON.parse(context.changes[0].value)[0];
+ assert.equal(trait.trait,"dexterity");
+ assert.deepEqual(trait.skillBonus.skills,["agility","fighting"]);
+ assert.equal(trait.skillBonus.values["4"],3);
+});
+
 test("effect edit permissions agree in the document, sheet and every tab", async t => {
   const originalUser = game.user;
   const originalPacks = game.packs;

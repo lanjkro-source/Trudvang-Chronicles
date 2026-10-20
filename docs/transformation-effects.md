@@ -69,6 +69,15 @@ deux types de fiche. Chez les PNJ, il utilise les champs existants et conserve l
 composantes les plus redoutables (nombre de dés et seuil de jet ouvert), sans
 modifier la valeur d’origine. Le bandeau de rappel en haut de la fiche a été retiré.
 
+Hâte et sa version inversée renseignent dans la modification de Dextérité un
+`skillBonus` : liste `skills` et table `values` reliant la Dextérité obtenue au
+bonus de VC. À l’application, cette table produit deux modifications natives
+éditables sur `system.effective.skills.agility` et `system.effective.skills.fighting`.
+Ainsi, une Dextérité finale de +4 donne +3 aux VC, conformément au Livre des règles,
+p. 194–195. Le détail des compétences et des jets nomme l’effet contributeur.
+Les effets déjà appliqués avant ce correctif conservent leurs anciennes lignes :
+les supprimer puis les réappliquer pour obtenir les deux nouvelles modifications.
+
 Les modifications de traits utilisent les changements natifs, avant les calculs
 dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille
 effective, les restrictions de parade/esquive et les bonus de dégâts ciblés sont

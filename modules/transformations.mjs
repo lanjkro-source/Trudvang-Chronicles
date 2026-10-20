@@ -76,7 +76,15 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   for(const row of rules.traits??[]){
     const base=Number(actor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;
-    changes.push({key:`system.effective.traits.${row.trait}`,type:numeric||row.method==="replace"?"override":row.method==="highest"?"upgrade":"add",value:String(numeric?transformedTrait(base,row):row.value),phase:"initial"});
+    const result=transformedTrait(base,row);
+    changes.push({key:`system.effective.traits.${row.trait}`,type:numeric||row.method==="replace"?"override":row.method==="highest"?"upgrade":"add",value:String(numeric?result:row.value),phase:"initial"});
+    // Some spells supply their own skill-VC table in addition to the trait's
+    // situation/movement modifier. Resolve it into editable native changes,
+    // attributed to this effect by the normal skill breakdown and roll paths.
+    const bonus=row.skillBonus?.values?.[String(result)];
+    if(Number.isFinite(bonus))for(const skill of row.skillBonus.skills??[]){
+      changes.push({key:`system.effective.skills.${skill}`,type:"add",value:String(bonus),phase:"initial"});
+    }
   }
   delete rules.traits;
  delete rules.chooseBestiary;delete rules.formName;delete rules.formPolicy;

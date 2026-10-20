@@ -1894,6 +1894,36 @@ test("native initial effects feed derived protection, movement, reserves and NPC
   assert.equal(instance._source.system.skills.fighting.value, 8);
 });
 
+test("Hasten's generated native changes increase displayed skills, specialties and their VC once on PCs and NPCs",async t=>{
+ const {applyTransformation}=await import("../modules/transformations.mjs");
+ const before=foundry.applications.api.DialogV2;
+ const previousTime=game.time;game.time={worldTime:100};
+ t.after(()=>{foundry.applications.api.DialogV2=before;game.time=previousTime;});
+ foundry.applications.api.DialogV2={wait:async()=>({duration:"5 tours de jeu"})};
+ for(const type of ["character","npc"]){
+  const instance=actor();instance.type=type;
+  instance.system.effective.traits.dexterity=2;
+  instance.system.damage.penalty=0;instance.system.fearPenalty=0;
+  instance.canUserModify=()=>true;
+  let created;
+  instance.createTrudvangEffect=async data=>{created=data;return null;};
+  await applyTransformation(instance,"vitner-body-vitner:hasten:9#hate");
+  instance.allApplicableEffects=()=>[created];
+  for(const change of created.system.changes){
+   const current=Number(get(instance,change.key)||0);
+   set(instance,change.key,change.type==="add"?current+Number(change.value):Number(change.value));
+  }
+  assert.equal(instance.getTraitValue("dexterity"),4);
+  assert.equal(instance.getSkillValue("agility"),4);
+  assert.equal(instance.getSkillValue("fighting"),11);
+  assert.equal(instance.getSkillTarget("fighting"),11);
+  assert.match(instance.skillValueLabel("fighting"),/Hâte \+3/);
+  const breakdown=instance.getAbilityBreakdown({name:"Test",system:{kind:"specialty",parentSkill:"fighting",level:1}});
+  assert.equal(breakdown.skill,11);
+  assert.equal(breakdown.total,13);
+ }
+});
+
 test("skill effects remain individually visible without being added twice, including cancelling roll effects", () => {
   const instance = actor();
   instance.system.damage.penalty = 0;

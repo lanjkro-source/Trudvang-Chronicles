@@ -8,6 +8,7 @@ import {effectStatus} from "../modules/rules/effect-status.mjs";
 import {TRANSFORMATION_TEMPLATES as templates,TRANSFORMATIONS_BY_SOURCE as sources} from "../modules/transformation-data.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "../modules/rule-test-data.mjs";
 import {resolveCombatPools} from "../modules/rules/combat-pool-resolver.mjs";
+import {buildEffectPackDocuments} from "../modules/effect-pack-data.mjs";
 globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
 const {annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
 const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants}=await import("../modules/transformations.mjs");
@@ -102,6 +103,33 @@ test("recovery penalties name their contributor, apply once, and leave unrelated
  assert.deepEqual(transformationRollRows(actor,{target:15,skillKey:"knowledge"}),[]);
  actor.effects[0].disabled=true;
  assert.deepEqual(transformationRollRows(actor,{target:15,traitKey:"dexterity"}),[]);
+});
+
+test("Hasten and its reverse resolve the book's separate skill-VC table from spell and compendium sources",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"player"},time:{worldTime:100},i18n:{localize}};
+ globalThis.foundry={applications:{api:{DialogV2:{wait:async()=>({duration:"5 tours de jeu"})}}}};
+ const references=buildEffectPackDocuments({localize}).items;
+ for(const [id,base,trait,bonus]of [["hate",0,1,1],["hate",2,4,3],["hate",8,8,5],["hate-inverse",0,-1,-1],["hate-inverse",-4,-6,-4],["hate-inverse",-8,-8,-5]]){
+  const key=`vitner-body-vitner:hasten:9#${id}`;
+  const item=references.find(i=>i.system.catalogId===key);
+  assert.ok(item.effects[0].system.changes.length,"compendium reference must retain its embedded change rows");
+  item.documentName="Item";
+  for(const source of [null,item]){
+   let created;
+   const actor={canUserModify:()=>true,getTraitValue:()=>base,createTrudvangEffect:async data=>{created=data;return null;}};
+   await applyTransformation(actor,key,{source});
+   const rows=created.system.changes;
+   assert.equal(rows.find(c=>c.key==="system.effective.traits.dexterity").value,String(trait));
+   for(const skill of ["agility","fighting"]){
+    const changes=rows.filter(c=>c.key===`system.effective.skills.${skill}`);
+    assert.equal(changes.length,1);
+    assert.equal(changes[0].value,String(bonus));
+    assert.equal(changes[0].type,"add");assert.equal(changes[0].phase,"initial");assert.equal(changes[0].priority,40);
+   }
+  }
+ }
 });
 test("vision is restored after removal, while later manual token edits remain intact",async()=>{
  const token={sight:{visionMode:"basic"},flags:{},async update(data){
