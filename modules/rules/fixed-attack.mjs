@@ -1,3 +1,4 @@
+import {targetDefenseRows} from "./attack-size.mjs";
 const NO_TRAIT = "none";
 
 /** Resolve a fixed attack's per-target VC while keeping a stable target reference
@@ -17,7 +18,9 @@ export function resolveFixedAttackTargets({baseVC = 0, targetTrait = NO_TRAIT, t
       name: String(token?.name || actor?.name || token?.document?.name || ""),
       trait,
       traitValue,
-      target: base - traitValue,
+      defenseRows: targetDefenseRows(actor),
+      defenseModifier: Number(actor?.transformationProfile?.defense || 0),
+      target: base - traitValue + Number(actor?.transformationProfile?.defense || 0),
       effectTarget: actor ? {actorUuid: actor.uuid ?? "", tokenUuid: token?.document?.uuid ?? token?.uuid ?? ""} : null
     };
   };

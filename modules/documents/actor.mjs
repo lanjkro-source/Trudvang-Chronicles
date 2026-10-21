@@ -1108,7 +1108,7 @@ export class TrudvangActor extends BaseActor {
     const results = [];
     for (const targetRow of targets) {
       const traitModifier = -Number(targetRow.traitValue || 0);
-      const modifier = traitModifier + effectModifier + armorModifier + stateModifier + Number(options.modifier || 0);
+      const modifier = traitModifier + Number(targetRow.defenseModifier || 0) + effectModifier + armorModifier + stateModifier + Number(options.modifier || 0);
       const traitFlavor = targetRow.actor && targetTrait !== "none"
         ? game.i18n.format("TRUDVANG.Calculation.FixedAttackTargetTrait", {
           trait: traitLabel,
@@ -1125,7 +1125,7 @@ export class TrudvangActor extends BaseActor {
         modifier,
         kind: "attack",
         targetName: targetRow.name,
-        flavor: [traitFlavor, manualFlavor, rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>"),
+        flavor: [traitFlavor, manualFlavor, rollModifierFlavor(modifierRows), rollModifierFlavor(targetRow.defenseRows || [])].filter(Boolean).join("<br>"),
         successConsequence,
         effectTarget: targetRow.effectTarget
       });

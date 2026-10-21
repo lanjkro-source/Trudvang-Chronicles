@@ -1,3 +1,5 @@
+import {effectRules} from "./transformation-profile.mjs";
+
 /** FR Bestiaire de Jorge, pp. 8–10; EN GM Guide, creature size.
  * The first band is open (<1/3); other numeric sizes use the nearest column. */
 export const ATTACK_SIZE_BANDS = [1 / 6, 1 / 3, 1 / 2, 1, 1.5, 2, 3, 5, 10];
@@ -21,12 +23,19 @@ export function attackSizeModifier(attackerSize, targetSize) {
   return magnitude ? Math.sign(difference) * magnitude : 0;
 }
 
+/** Named modifiers imposed by effects on the defender, never on the attacker. */
+export function targetDefenseRows(actor) {
+  const rows = (actor?.transformationProfile?.effects ?? []).map(effect => ({label: effect.name, value: Number(effectRules(effect).defense || 0)})).filter(row => row.value);
+  if (!rows.length && actor?.transformationProfile?.defense) rows.push({label: actor.name, value: Number(actor.transformationProfile.defense)});
+  return rows;
+}
+
 export function attackSizeTargets(attacker, targets = []) {
   const size = actor => actor?.transformationProfile?.size ?? (actor?.type === "character" ? 1 : actor?.system?.details?.size ?? 1);
   return Array.from(targets).filter(token => token?.actor).map(token => ({
     name: token.name || token.actor.name || "", actorUuid: token.actor.uuid || "",
     tokenUuid: token.document?.uuid || token.uuid || "",
-    ...(token.actor.transformationProfile?.defense ? {defenseModifier: token.actor.transformationProfile.defense} : {}),
+    ...(token.actor.transformationProfile?.defense ? {defenseModifier: token.actor.transformationProfile.defense, defenseRows: targetDefenseRows(token.actor)} : {}),
     modifier: attackSizeModifier(size(attacker), size(token.actor))
   }));
 }

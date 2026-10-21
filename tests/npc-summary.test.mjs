@@ -1991,3 +1991,35 @@ test("weapon attacks use size-adjusted VC per target with one allocation, one ac
   await npc.rollWeaponAction(item, "parry");
   assert.doesNotMatch(runtime.dialogs.at(-1).content, /combat-size-modifiers/);
 });
+
+
+test("defender transformation penalties appear and apply once to weapon and fixed attacks", async t => {
+  const runtime = mockActionRuntime(t, {die: 3});
+  const oldTargets = game.user.targets;
+  t.after(() => {game.user.targets = oldTargets;});
+  const item = inventoryItem("weapon", "Axe", {equipped: true});
+  const npc = spendableNpc([item]);
+  npc.system.damage.penalty = 0;
+  npc.spendCombatPoints = async () => {};
+  npc.spendWeaponAction = async () => {};
+  npc.getWeaponActionState = () => ({current: 1});
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  const effect = {name: "Aspect du corbeau", system: {changes: [{key: "system.transformation.defense", type: "override", value: "-5"}]}};
+  game.user.targets = [
+    {name: "Corbeau", actor: {uuid: "Actor.r", transformationProfile: {size: 1, defense: -5, effects: [effect]}}},
+    {name: "Ordinaire", actor: {uuid: "Actor.o", system: {details: {size: 1}}}}
+  ];
+  runtime.response = {allocation: {free: 4}, feint: 0, modifier: 0};
+  const weapon = await npc.rollWeaponAction(item, "attack");
+  assert.deepEqual(weapon.attackTargets.map(row => [row.target, row.success]), [[-1, false], [4, true]]);
+  assert.match(runtime.dialogs.at(-1).content, /Corbeau · Aspect du corbeau/);
+  assert.match(runtime.dialogs.at(-1).content, /data-defense-modifier="-5"/);
+  game.user.targets.pop();
+  const single = await npc.rollWeaponAction(item, "attack");
+  assert.equal(single.target, -1);
+  game.user.targets.push({name: "Ordinaire", actor: {uuid: "Actor.o"}});
+  runtime.response = {modifier: 0};
+  const fixed = await npc.rollFixedAttack({name: "Saisie", target: 6});
+  assert.deepEqual(fixed.results.map(row => [row.target, row.success]), [[1, false], [6, true]]);
+  assert.match(runtime.dialogs.at(-1).content, /Aspect du corbeau: -5/);
+});
