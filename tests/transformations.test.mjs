@@ -486,6 +486,18 @@ test("rolled vitality posts the actual dice to the normal chat pipeline for Dice
   assert.equal(posted[0].options.speaker.actor,"target");
   assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyMax"&&c.value==="13"));
   assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyValue"&&c.value==="13"));
+  const vitalityTemplates=Object.entries(templates).filter(([,t])=>rulesFromChanges(t.changes).vitality);
+  assert.equal(vitalityTemplates.length,6);
+  for(const [vitalityKey,template]of vitalityTemplates){
+   const boost=template.parameters.find(p=>p.target==="vitality");assert.ok(boost,vitalityKey);
+   globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute",[`boost${boost.index}`]:3});
+   await applyTransformation(actor,vitalityKey);
+   for(const field of ["bodyMax","bodyValue"]){
+    const rows=created.system.changes.filter(c=>c.key===`system.modifiers.${field}`);
+    assert.equal(rows.length,1,vitalityKey);assert.equal(rows[0].value,"16");assert.equal(rows[0].type,"add");
+   }
+   assert.ok(!created.system.changes.some(c=>/temporary/.test(c.key)),vitalityKey);
+  }
   globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1d6 + 2 jours"});
   posted.length=0;await applyTransformation(actor,key);
   assert.deepEqual(posted.map(p=>p.roll.formula.trim()),["1d6 + 2","2d10"]);

@@ -794,7 +794,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
@@ -934,7 +934,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
@@ -1067,7 +1067,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
@@ -3236,7 +3236,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
@@ -3376,7 +3376,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
@@ -3509,7 +3509,7 @@ export const TRANSFORMATION_TEMPLATES = {
       },
       {
         "index": 1,
-        "target": "temporaryHP",
+        "target": "vitality",
         "value": 1
       }
     ]
