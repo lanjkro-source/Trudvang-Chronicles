@@ -128,7 +128,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         turnStart: game.i18n.localize("TRUDVANG.Effect.TurnStart"),
         turnEnd: game.i18n.localize("TRUDVANG.Effect.TurnEnd")
       };
-      const changes=Array.from(this.document.system?.changes || []);
+      const changes=effectChangesSource(this.document.system?.changes || []);
       const legacy=this.document.flags?.["trudvang-chronicles"]?.transformation;
       if(legacy?.rules&&!legacy.editableChanges&&!hasProfileChanges(this.document)){
         const rules={...legacy.rules};if(rules.traitsApplied)delete rules.traits;

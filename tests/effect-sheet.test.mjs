@@ -89,6 +89,10 @@ test("Hasten's compendium effect exposes its trait and skill table in the modifi
  assert.equal(trait.trait,"dexterity");
  assert.deepEqual(trait.skillBonus.skills,["agility","fighting"]);
  assert.equal(trait.skillBonus.values["4"],3);
+ document.system.changes[0].value=[trait];
+ const typedContext=await sheetFor(document)._preparePartContext("durationChanges",{});
+ assert.deepEqual(JSON.parse(typedContext.changes[0].value),[trait]);
+ assert.doesNotMatch(typedContext.changes[0].value,/\[object Object\]/);
 });
 
 test("effect edit permissions agree in the document, sheet and every tab", async t => {

@@ -11,7 +11,7 @@ const arrays=new Set(["movement","traits","senses","capabilities","attacks","imm
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreWounds","endAtEmptyHP","recalculateHP"]);
 const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus"]);
-const parse=value=>{try{return JSON.parse(value);}catch{return value;}};
+const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){
  if(!row.key?.startsWith(EFFECT_RULE_PREFIX))return true;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length),value=parse(row.value);

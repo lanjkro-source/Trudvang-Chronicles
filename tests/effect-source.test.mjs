@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {effectChangesSource,effectSource} from "../modules/rules/effect-source.mjs";
 import {TRANSFORMATION_TEMPLATES} from "../modules/transformation-data.mjs";
+import {rulesFromChanges,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
 
 class ChangeModel {
  constructor(data,parent){Object.assign(this,data);this.parent=parent;}
@@ -45,4 +46,25 @@ test("the creation boundary and staged effects remove native models while preser
  assert.equal(data.system.stages[0].changes[0].parent,undefined);
  assert.equal(system.changes[0].phase,"final","serializing cannot mutate the native model");
  assert.equal(data.flags,source.flags);
+});
+
+test("V14.369 typed JSON change values round-trip for every effect, including nested Hasten's VC table",()=>{
+ for(const [key,template]of Object.entries(TRANSFORMATION_TEMPLATES)){
+  const typed=template.changes.map(change=>{
+   let value=change.value;try{value=JSON.parse(value);}catch{}
+   return {...change,value};
+  });
+  const system=liveSystem(typed);
+  const result=effectSource({system}).system.changes;
+  assert.ok(result.every(validProfileChange),key);
+  assert.deepEqual(rulesFromChanges(result),rulesFromChanges(template.changes),key);
+  assert.doesNotThrow(()=>strictClone(result),key);
+  assert.ok(result.every(c=>typeof c.value==="string"),key);
+ }
+});
+
+test("already parsed JSON arrays must not be coerced back into scalar values",()=>{
+ for(const senses of [["0"],["true"],["null"],[]]){
+  assert.deepEqual(rulesFromChanges([{key:"system.transformation.senses",type:"override",value:senses}]).senses,senses);
+ }
 });

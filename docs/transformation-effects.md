@@ -84,7 +84,10 @@ Les références antérieures à 0.97 conservaient leurs règles dynamiques dans
 Hâte, sans réécrire la référence originale. Les références au format éditable actuel
 restent prioritaires : une liste délibérément vidée n'est pas remplie à nouveau.
 Une ligne structurée invalide provoque une erreur explicite au lieu de créer un
-effet privé de ses modifications.
+effet privé de ses modifications. Foundry 14.369 peut exporter les valeurs sous
+forme de tableaux ou d'objets JSON déjà décodés : la copie et l'éditeur les
+sérialisent avec `JSON.stringify`, et le lecteur de règles accepte aussi directement
+ces valeurs typées. Ne pas utiliser `String()` sur une valeur structurée.
 
 Les modifications de traits utilisent les changements natifs, avant les calculs
 dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille

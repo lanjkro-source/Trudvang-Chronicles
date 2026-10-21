@@ -132,6 +132,24 @@ test("Hasten and its reverse resolve the book's separate skill-VC table from spe
  }
 });
 
+test("the reported V14.369 compendium Hasten with an array value creates all three resolved modifications",async()=>{
+ const key="vitner-body-vitner:hasten:9#hate";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:(key,{path})=>`${key}: ${path}`}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"5 tours de jeu"});
+ const typed=structuredClone(templates[key].changes);typed[0].value=JSON.parse(typed[0].value);
+ const exported={name:"Hâte",system:{changes:typed},flags:{[S]:{transformation:{key,sourceId:templates[key].sourceId,editableChanges:true}}}};
+ const model={documentName:"ActiveEffect",...exported,toObject:()=>structuredClone(exported)};
+ for(const source of [model,{documentName:"Item",type:"effect",system:{catalogId:key},effects:[model]}]){
+  let created;
+  const actor={canUserModify:()=>true,getTraitValue:()=>2,createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(actor,key,{source});
+  assert.deepEqual(created.system.changes.map(c=>[c.key,c.value]),[
+   ["system.effective.traits.dexterity","4"],["system.effective.skills.agility","3"],["system.effective.skills.fighting","3"]
+  ]);
+  assert.ok(created.system.changes.every(c=>c.priority===40));
+ }
+});
+
 test("legacy compendium Hasten stores its dynamic rules in flags and must not become an empty effect on drop",async()=>{
  const key="vitner-body-vitner:hasten:9#hate";
  globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
