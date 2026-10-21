@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
-    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
-    "summary": "Mountain Ogre's Madness",
+    "description": "The target gains 6 temporary health points, +3 damage with melee, thrown, and natural attacks, and +1 to attack skill value. It ignores fear and cannot parry or dodge.",
+    "summary": "Unleashes a frenzy that improves attacks.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -21,7 +21,7 @@
       "name": "Mountain Ogre's Madness",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "description": "The target gains 6 temporary health points, +3 damage with melee, thrown, and natural attacks, and +1 to attack skill value. It ignores fear and cannot parry or dodge.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
@@ -77,6 +77,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+            "summary": "Unleashes a frenzy that improves attacks.",
             "editableChanges": true,
             "related": []
           }

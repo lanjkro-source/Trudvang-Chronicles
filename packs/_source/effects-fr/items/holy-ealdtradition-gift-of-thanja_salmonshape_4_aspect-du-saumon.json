@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
-    "description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un saumon ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.\nTraits de l’Aspect du saumon\nUn bruide transformé par l’Aspect du saumon profite des traits suivants :\n• Peut communiquer avec les saumons\n• Respiration aquatique\n• Équipement protégé contre l’eau\n• Mouvement dans l’eau doublé (capacité de mouvement du personnage × 2)\n• Respiration possible sur terre, mais pas le déplacement\n• Excellente vision aquatique.\n• Trait de personnage exceptionnel de +4 en Dextérité\n• Un bruide ayant adopté l’Aspect du saumon possède également des traits guérisseurs : toute personne qui touche les écailles du saumon récupère 1 point de santé (1 fois par personne et par jour) ; quelqu’un qui embrasse le saumon peut récupérer 1d3 points de santé (1 fois par personne et par jour), et quelqu’un qui mord dans la chair du saumon (ce qui inflige 1d5 points de dégâts au bruide) peut recouvrer 1d6 + 1 points de santé.",
-    "summary": "Aspect du saumon",
+    "description": "La cible prend la forme d’un saumon. Sa Dextérité ne peut être inférieure à +4 ; son déplacement aquatique est doublé et elle peut respirer sous l’eau comme à l’air libre, mais ne peut pas se déplacer sur terre. Elle communique avec les saumons, voit parfaitement sous l’eau et son équipement est protégé de l’eau. Toucher ses écailles rend 1 PS à une personne par jour ; l’embrasser en rend 1d3 par jour ; manger sa chair rend 1d6+1 PS, mais inflige 1d5 dégâts au saumon.",
+    "summary": "Confère les traits et les sens d’un saumon.",
     "source": {
       "book": "Livre des règles",
       "page": 235
@@ -21,7 +21,7 @@
       "name": "Aspect du saumon",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un saumon ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.\nTraits de l’Aspect du saumon\nUn bruide transformé par l’Aspect du saumon profite des traits suivants :\n• Peut communiquer avec les saumons\n• Respiration aquatique\n• Équipement protégé contre l’eau\n• Mouvement dans l’eau doublé (capacité de mouvement du personnage × 2)\n• Respiration possible sur terre, mais pas le déplacement\n• Excellente vision aquatique.\n• Trait de personnage exceptionnel de +4 en Dextérité\n• Un bruide ayant adopté l’Aspect du saumon possède également des traits guérisseurs : toute personne qui touche les écailles du saumon récupère 1 point de santé (1 fois par personne et par jour) ; quelqu’un qui embrasse le saumon peut récupérer 1d3 points de santé (1 fois par personne et par jour), et quelqu’un qui mord dans la chair du saumon (ce qui inflige 1d5 points de dégâts au bruide) peut recouvrer 1d6 + 1 points de santé.",
+      "description": "La cible prend la forme d’un saumon. Sa Dextérité ne peut être inférieure à +4 ; son déplacement aquatique est doublé et elle peut respirer sous l’eau comme à l’air libre, mais ne peut pas se déplacer sur terre. Elle communique avec les saumons, voit parfaitement sous l’eau et son équipement est protégé de l’eau. Toucher ses écailles rend 1 PS à une personne par jour ; l’embrasser en rend 1d3 par jour ; manger sa chair rend 1d6+1 PS, mais inflige 1d5 dégâts au saumon.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
@@ -70,6 +70,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
             "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
+            "summary": "Confère les traits et les sens d’un saumon.",
             "editableChanges": true,
             "related": []
           }

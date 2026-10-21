@@ -1,7 +1,7 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../tablet-catalog.mjs";
-import { effectChangeSummary } from "../effects.mjs";
+import { effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
@@ -267,7 +267,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       img: effect.img,
       source: effect.sourceName,
       duration: effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent"),
-      summary: effectChangeSummary(effect),
+      summary: effectTooltipSummary(effect),
       active: effect.active,
       disabled: effect.disabled,
       suppressed: effect.isSuppressed,

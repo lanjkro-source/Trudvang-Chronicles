@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
-    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
-    "summary": "Jotun Strength",
+    "description": "Replaces the target’s Strength trait with the exceptional level +8.",
+    "summary": "Raises Strength to a jotun’s exceptional level.",
     "source": {
       "book": "Player's Handbook",
       "page": 164
@@ -21,7 +21,7 @@
       "name": "Jotun Strength",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
+      "description": "Replaces the target’s Strength trait with the exceptional level +8.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
             "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "summary": "Raises Strength to a jotun’s exceptional level.",
             "editableChanges": true,
             "related": []
           }

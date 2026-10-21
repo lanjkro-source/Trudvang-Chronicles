@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
-    "description": "The Bruid hears all noises and conversations within range. A pair of griffon’s ears emerges from the Bruid’s head for the duration of the ability. To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14. It is up to the game master to increase or decrease this Situation value depending on how busy the environment surrounding the dimwalker is, such as: nature +5, settlement ±0, busy town +5, and so on.",
-    "summary": "Griffon's Sense",
+    "description": "The target hears sounds and conversations within range. To distinguish a specific sound or conversation, it makes a situation test of 14, adjusted for ambient noise.",
+    "summary": "Sharpens hearing to perceive sounds within range.",
     "source": {
       "book": "Player's Handbook",
       "page": 185
@@ -21,7 +21,7 @@
       "name": "Griffon's Sense",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The Bruid hears all noises and conversations within range. A pair of griffon’s ears emerges from the Bruid’s head for the duration of the ability. To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14. It is up to the game master to increase or decrease this Situation value depending on how busy the environment surrounding the dimwalker is, such as: nature +5, settlement ±0, busy town +5, and so on.",
+      "description": "The target hears sounds and conversations within range. To distinguish a specific sound or conversation, it makes a situation test of 14, adjusted for ambient noise.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
             "sourceId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
+            "summary": "Sharpens hearing to perceive sounds within range.",
             "editableChanges": true,
             "related": []
           }

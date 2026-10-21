@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
-    "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +8 for the duration of the ability.",
-    "summary": "Thurse Strength",
+    "description": "Replaces the target’s Strength trait with the exceptional level +8.",
+    "summary": "Raises Strength to a tursir’s exceptional level.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -21,7 +21,7 @@
       "name": "Thurse Strength",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +8 for the duration of the ability.",
+      "description": "Replaces the target’s Strength trait with the exceptional level +8.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
             "sourceId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+            "summary": "Raises Strength to a tursir’s exceptional level.",
             "editableChanges": true,
             "related": []
           }

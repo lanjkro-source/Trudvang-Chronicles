@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
-    "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
-    "summary": "Night Vision",
+    "description": "Replaces the target’s Psyche trait with the exceptional level +4.",
+    "summary": "Strengthens courage and Psyche.",
     "source": {
       "book": "Player's Handbook",
       "page": 162
@@ -21,7 +21,7 @@
       "name": "Night Vision",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
+      "description": "Replaces the target’s Psyche trait with the exceptional level +4.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
             "sourceId": "holy-gerbanis-power-of-enken:willpower:1",
+            "summary": "Strengthens courage and Psyche.",
             "editableChanges": true,
             "related": []
           }

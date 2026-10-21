@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
-    "description": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de brassards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues. Les attaques qu’il porte à l’aide de la spécialité Bagarre provoquent les dégâts indiqués par la table ci-dessous. Si le thuul perd l’un de ses gants/bracelets/brassards, il cesse de profiter de cet effet car il doit porter les deux runes en même temps. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. Si le thuul possède un trait exceptionnel en Force, le modificateur aux dégâts découlant de ce trait vient également s’ajouter aux dégâts.",
-    "summary": "Poings d’acier",
+    "description": "Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs.",
+    "summary": "Renforce les attaques à mains nues.",
     "source": {
       "book": "Livre des règles",
       "page": 287
@@ -21,7 +21,7 @@
       "name": "Poings d’acier",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de brassards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues. Les attaques qu’il porte à l’aide de la spécialité Bagarre provoquent les dégâts indiqués par la table ci-dessous. Si le thuul perd l’un de ses gants/bracelets/brassards, il cesse de profiter de cet effet car il doit porter les deux runes en même temps. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. Si le thuul possède un trait exceptionnel en Force, le modificateur aux dégâts découlant de ce trait vient également s’ajouter aux dégâts.",
+      "description": "Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
             "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+            "summary": "Renforce les attaques à mains nues.",
             "editableChanges": true,
             "related": []
           }

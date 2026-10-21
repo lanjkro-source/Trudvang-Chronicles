@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
-    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
-    "summary": "Hinji Strength",
+    "description": "Replaces the target’s Strength trait with the exceptional level +6.",
+    "summary": "Raises Strength to a hinje’s exceptional level.",
     "source": {
       "book": "Player's Handbook",
       "page": 164
@@ -21,7 +21,7 @@
       "name": "Hinji Strength",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
+      "description": "Replaces the target’s Strength trait with the exceptional level +6.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
             "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
+            "summary": "Raises Strength to a hinje’s exceptional level.",
             "editableChanges": true,
             "related": []
           }

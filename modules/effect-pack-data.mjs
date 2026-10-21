@@ -9,9 +9,9 @@ export function buildEffectPackDocuments({localize}){
   const text=field=>localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
   const name=text("Name"),description=text("Description");
   return {_id:id,_key:`!items!${id}`,name,type:"effect",img:t.icon,folder:null,
-   system:{catalogId:key,description,summary:text("SourceName"),source:{book:text("SourceBook"),page:Number(text("SourcePage"))}},
+   system:{catalogId:key,description,summary:text("Summary"),source:{book:text("SourceBook"),page:Number(text("SourcePage"))}},
    effects:[{_id:deterministicId(`effect-template:${key}`),_key:`!items.effects!${id}.${deterministicId(`effect-template:${key}`)}`,name,type:"effect",img:t.icon,description,transfer:false,
     system:{stackId:key,stacking:"replace",changes:structuredClone(t.changes)},statuses:t.statuses,
-    flags:{"trudvang-chronicles":{transformation:{key,sourceId:t.sourceId,editableChanges:true,related:t.related}}}}]};
+    flags:{"trudvang-chronicles":{transformation:{key,sourceId:t.sourceId,summary:text("Summary"),editableChanges:true,related:t.related}}}}]};
  })};
 }

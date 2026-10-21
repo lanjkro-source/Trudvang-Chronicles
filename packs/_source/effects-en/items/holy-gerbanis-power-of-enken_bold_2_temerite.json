@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:bold:2#temerite",
-    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
-    "summary": "Bold",
+    "description": "Replaces the target’s Psyche trait with the exceptional level +6.",
+    "summary": "Strengthens courage and Psyche.",
     "source": {
       "book": "Player's Handbook",
       "page": 162
@@ -21,7 +21,7 @@
       "name": "Bold",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
+      "description": "Replaces the target’s Psyche trait with the exceptional level +6.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-power-of-enken:bold:2#temerite",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
             "sourceId": "holy-gerbanis-power-of-enken:bold:2",
+            "summary": "Strengthens courage and Psyche.",
             "editableChanges": true,
             "related": []
           }

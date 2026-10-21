@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
-    "description": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability. If the spirit conjurer dies while they have the lindwurm heart, they will rise again, completely healed, in 1d6 days. This ability can be used only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic.",
-    "summary": "Heart of the Lindwurm",
+    "description": "If the target dies while bearing the lindwurm heart, it returns to life fully healed after 1d6 days. This effect can trigger only once.",
+    "summary": "Revives the target after death.",
     "source": {
       "book": "Player's Handbook",
       "page": 218
@@ -21,7 +21,7 @@
       "name": "Heart of the Lindwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability. If the spirit conjurer dies while they have the lindwurm heart, they will rise again, completely healed, in 1d6 days. This ability can be used only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic.",
+      "description": "If the target dies while bearing the lindwurm heart, it returns to life fully healed after 1d6 days. This effect can trigger only once.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
             "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
+            "summary": "Revives the target after death.",
             "editableChanges": true,
             "related": []
           }

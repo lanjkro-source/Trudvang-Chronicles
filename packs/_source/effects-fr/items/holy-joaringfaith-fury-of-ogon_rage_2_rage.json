@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
-    "description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
-    "summary": "Rage",
+    "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
+    "summary": "Renforce les attaques et la résistance à la peur.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -21,7 +21,7 @@
       "name": "Rage",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
+      "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
@@ -105,6 +105,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
+            "summary": "Renforce les attaques et la résistance à la peur.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

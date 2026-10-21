@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
-    "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
-    "summary": "Cœur du lindwurm",
+    "description": "Si la cible meurt tant qu’elle porte le cœur de lindwurm, elle revient à la vie, entièrement guérie, au bout de 1d6 jours. Cet effet ne peut se déclencher qu’une fois.",
+    "summary": "Ressuscite la cible après sa mort.",
     "source": {
       "book": "Livre des règles",
       "page": 271
@@ -21,7 +21,7 @@
       "name": "Cœur du lindwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
+      "description": "Si la cible meurt tant qu’elle porte le cœur de lindwurm, elle revient à la vie, entièrement guérie, au bout de 1d6 jours. Cet effet ne peut se déclencher qu’une fois.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
             "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
+            "summary": "Ressuscite la cible après sa mort.",
             "editableChanges": true,
             "related": []
           }

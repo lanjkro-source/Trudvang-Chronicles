@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
-    "description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
-    "summary": "Giant Snakeshape",
+    "description": "The target becomes a size 4 giant serpent, as long as a sanctuary and weighing 500 kg to 8 tonnes. It gains 20 temporary HP, Protection 2, Strength +6 (and +6 damage), Fear Factor 1d5, Paralysing Gaze, and Constriction. Its natural attacks are a bite (2d10, Open Roll 9–10) and a crush after a successful constriction (2d10, ignoring armour protection). Its equipment is suspended; it cannot wield weapons or use other divine powers than those granted by this form.",
+    "summary": "Transforms the target into a giant serpent.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -21,7 +21,7 @@
       "name": "Giant Snakeshape",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
+      "description": "The target becomes a size 4 giant serpent, as long as a sanctuary and weighing 500 kg to 8 tonnes. It gains 20 temporary HP, Protection 2, Strength +6 (and +6 damage), Fear Factor 1d5, Paralysing Gaze, and Constriction. Its natural attacks are a bite (2d10, Open Roll 9–10) and a crush after a successful constriction (2d10, ignoring armour protection). Its equipment is suspended; it cannot wield weapons or use other divine powers than those granted by this form.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
@@ -77,6 +77,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
             "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+            "summary": "Transforms the target into a giant serpent.",
             "editableChanges": true,
             "related": []
           }

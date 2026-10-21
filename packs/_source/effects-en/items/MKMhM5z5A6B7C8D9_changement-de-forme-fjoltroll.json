@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
-    "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
-    "summary": "Change Shape (fjol troll)",
+    "description": "The fjoltroll can take almost any shape to pass unnoticed among travellers and other creatures.",
+    "summary": "Allows taking almost any appearance.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 148
@@ -21,7 +21,7 @@
       "name": "Change Shape (fjol troll)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+      "description": "The fjoltroll can take almost any shape to pass unnoticed among travellers and other creatures.",
       "transfer": false,
       "system": {
         "stackId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
             "sourceId": "MKMhM5z5A6B7C8D9",
+            "summary": "Allows taking almost any appearance.",
             "editableChanges": true,
             "related": []
           }

@@ -78,7 +78,7 @@
           <section class="effect-notes-section">
             <h3>{{localize "TRUDVANG.Section.Effects"}}</h3>
             {{#each effectStatus.notes as |effect|}}
-            <p class="status-consequence" title="{{effect.description}}"><strong>{{effect.name}}</strong>{{#if effect.details}}<span>{{effect.details}}</span>{{/if}}</p>
+            <p class="status-consequence" title="{{effect.summary}}"><strong>{{effect.name}}</strong>{{#if effect.details}}<span>{{effect.details}}</span>{{/if}}</p>
             {{/each}}
           </section>
         </section>

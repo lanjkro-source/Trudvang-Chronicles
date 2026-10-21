@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
-    "description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
-    "summary": "Boiling Blood",
+    "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
+    "summary": "Temporarily increases health points.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -21,7 +21,7 @@
       "name": "Boiling Blood",
       "type": "effect",
       "img": "icons/svg/blood.svg",
-      "description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+      "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
             "sourceId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
+            "summary": "Temporarily increases health points.",
             "editableChanges": true,
             "related": []
           }

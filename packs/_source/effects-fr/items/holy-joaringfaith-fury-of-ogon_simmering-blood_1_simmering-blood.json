@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood",
-    "description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
-    "summary": "Sang brûlant",
+    "description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
+    "summary": "Augmente temporairement les points de santé.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -21,7 +21,7 @@
       "name": "Sang brûlant",
       "type": "effect",
       "img": "icons/svg/blood.svg",
-      "description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+      "description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood",
             "sourceId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
+            "summary": "Augmente temporairement les points de santé.",
             "editableChanges": true,
             "related": []
           }

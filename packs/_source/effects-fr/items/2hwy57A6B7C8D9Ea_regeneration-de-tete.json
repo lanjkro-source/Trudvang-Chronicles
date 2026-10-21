@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "2hwy57A6B7C8D9Ea#regeneration-de-tete",
-    "description": "Quand un huvfurwurm subit 20 points de dégâts ou plus, ou si l’une de ses têtes est tranchée, une tête repousse depuis une excroissance de son corps; le MJ décide à quelle fréquence. Chaque nouvelle tête peut être plus dangereuse et recevoir des pouvoirs utilisables en combat. Une tête peut régénérer jusqu’à trois fois; la quatrième régénération est mutilée et ne peut plus blesser ni fonctionner normalement. Certaines régénérations créent plusieurs têtes. La capacité source cite 1d20 pour déterminer les trois premières régénérations, alors que la table imprimée est titrée 2d10 : cette divergence est signalée dans la source.",
-    "summary": "Régénération de tête",
+    "description": "Après une blessure de 20 dégâts ou plus, ou la décapitation, une nouvelle tête peut pousser. Chaque tête peut régénérer jusqu’à trois fois ; la quatrième repousse mutilée et ne peut plus attaquer normalement.",
+    "summary": "Permet à une tête tranchée de repousser.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 110
@@ -21,7 +21,7 @@
       "name": "Régénération de tête",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Quand un huvfurwurm subit 20 points de dégâts ou plus, ou si l’une de ses têtes est tranchée, une tête repousse depuis une excroissance de son corps; le MJ décide à quelle fréquence. Chaque nouvelle tête peut être plus dangereuse et recevoir des pouvoirs utilisables en combat. Une tête peut régénérer jusqu’à trois fois; la quatrième régénération est mutilée et ne peut plus blesser ni fonctionner normalement. Certaines régénérations créent plusieurs têtes. La capacité source cite 1d20 pour déterminer les trois premières régénérations, alors que la table imprimée est titrée 2d10 : cette divergence est signalée dans la source.",
+      "description": "Après une blessure de 20 dégâts ou plus, ou la décapitation, une nouvelle tête peut pousser. Chaque tête peut régénérer jusqu’à trois fois ; la quatrième repousse mutilée et ne peut plus attaquer normalement.",
       "transfer": false,
       "system": {
         "stackId": "2hwy57A6B7C8D9Ea#regeneration-de-tete",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "2hwy57A6B7C8D9Ea#regeneration-de-tete",
             "sourceId": "2hwy57A6B7C8D9Ea",
+            "summary": "Permet à une tête tranchée de repousser.",
             "editableChanges": true,
             "related": []
           }

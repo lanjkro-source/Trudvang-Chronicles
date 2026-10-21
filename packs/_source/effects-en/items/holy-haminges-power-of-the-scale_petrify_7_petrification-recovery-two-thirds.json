@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
-    "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
-    "summary": "Petrify",
+    "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
+    "summary": "Leaves residual stiffness after petrification.",
     "source": {
       "book": "Player's Handbook",
       "page": 218
@@ -21,7 +21,7 @@
       "name": "Stiffness after petrification — two thirds",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+      "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
+            "summary": "Leaves residual stiffness after petrification.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
-    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.\nLa Peau du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +4.\n• Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
-    "summary": "Peau du dragon",
+    "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
+    "summary": "Protège des flammes et renforce les attaques.",
     "source": {
       "book": "Livre des règles",
       "page": 279
@@ -21,7 +21,7 @@
       "name": "Peau du dragon",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.\nLa Peau du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +4.\n• Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+      "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
@@ -56,6 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+            "summary": "Protège des flammes et renforce les attaques.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
-    "description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.\nFils des flammes confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +2.\n• Le conjurateur inflige 1 point de dégâts supplémentaire avec toutes les armes de corps à corps et les armes de jet.",
-    "summary": "Fils des flammes",
+    "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
+    "summary": "Protège des flammes ordinaires et renforce les attaques.",
     "source": {
       "book": "Livre des règles",
       "page": 277
@@ -21,7 +21,7 @@
       "name": "Fils des flammes",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.\nFils des flammes confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +2.\n• Le conjurateur inflige 1 point de dégâts supplémentaire avec toutes les armes de corps à corps et les armes de jet.",
+      "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
@@ -56,6 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
             "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
+            "summary": "Protège des flammes ordinaires et renforce les attaques.",
             "editableChanges": true,
             "related": []
           }

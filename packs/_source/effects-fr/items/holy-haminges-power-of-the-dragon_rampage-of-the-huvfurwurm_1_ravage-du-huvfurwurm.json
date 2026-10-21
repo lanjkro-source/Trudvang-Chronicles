@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
-    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu. Ces points sont liés à cette action d’arme supplémentaire, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer une deuxième paire de bras, qui brandissent une arme supplémentaire.",
-    "summary": "Ravage du huvfurwurm",
+    "description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
+    "summary": "Accorde une action d’arme supplémentaire.",
     "source": {
       "book": "Livre des règles",
       "page": 277
@@ -21,7 +21,7 @@
       "name": "Ravage du huvfurwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu. Ces points sont liés à cette action d’arme supplémentaire, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer une deuxième paire de bras, qui brandissent une arme supplémentaire.",
+      "description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
+            "summary": "Accorde une action d’arme supplémentaire.",
             "editableChanges": true,
             "related": []
           }

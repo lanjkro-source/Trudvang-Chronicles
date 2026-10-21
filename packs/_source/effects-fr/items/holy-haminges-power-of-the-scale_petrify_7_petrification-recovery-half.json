@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half",
-    "description": "Raideur temporaire après le retour à la forme normale.",
-    "summary": "Pétrification",
+    "description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
+    "summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
     "source": {
       "book": "Livre des règles",
       "page": 272
@@ -21,7 +21,7 @@
       "name": "Raideur après pétrification — moitié",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Raideur temporaire après le retour à la forme normale.",
+      "description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
+            "summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-two-thirds"

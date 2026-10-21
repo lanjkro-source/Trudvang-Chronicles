@@ -1,5 +1,5 @@
 import { TRUDVANG } from "../config.mjs";
-import { EFFECT_ITEM_TYPES, effectChangeSummary } from "../effects.mjs";
+import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
 import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipment-inspection.mjs";
 import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
@@ -83,7 +83,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       img: effect.img,
       transfer: effect.transfer,
       disabled: effect.disabled,
-      summary: effectChangeSummary(effect)
+      summary: effectTooltipSummary(effect)
     })) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);

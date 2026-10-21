@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion",
-    "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
-    "summary": "Rage",
+    "description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
+    "summary": "Provoque l’épuisement après la frénésie.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -21,7 +21,7 @@
       "name": "Épuisement après frénésie",
       "type": "effect",
       "img": "icons/svg/sleep.svg",
-      "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+      "description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
+            "summary": "Provoque l’épuisement après la frénésie.",
             "editableChanges": true,
             "related": []
           }

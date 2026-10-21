@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
-    "description": "Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +1d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
-    "summary": "Simmering Blood",
+    "description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
+    "summary": "Temporarily increases health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 187
@@ -21,7 +21,7 @@
       "name": "Simmering Blood",
       "type": "effect",
       "img": "icons/svg/blood.svg",
-      "description": "Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +1d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+      "description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
+            "summary": "Temporarily increases health points.",
             "editableChanges": true,
             "related": []
           }

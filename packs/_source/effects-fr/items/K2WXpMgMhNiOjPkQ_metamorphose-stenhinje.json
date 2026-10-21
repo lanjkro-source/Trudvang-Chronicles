@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
-    "description": "En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.\nIl est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.",
-    "summary": "Métamorphose (stenhinje)",
+    "description": "Le stenhinje peut prendre la forme d’un objet simple (coffre, porte, mur ou sol), façonné à partir de sa propre masse. Le maître de jeu détermine ce qui le pousse à attaquer, par exemple une agression ou l’arrivée d’un ennemi précis. Il est presque impossible de le reconnaître comme créature vivante sans le vitner approprié.",
+    "summary": "Permet de prendre l’apparence d’un objet simple.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 97
@@ -21,7 +21,7 @@
       "name": "Métamorphose (stenhinje)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.\nIl est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.",
+      "description": "Le stenhinje peut prendre la forme d’un objet simple (coffre, porte, mur ou sol), façonné à partir de sa propre masse. Le maître de jeu détermine ce qui le pousse à attaquer, par exemple une agression ou l’arrivée d’un ennemi précis. Il est presque impossible de le reconnaître comme créature vivante sans le vitner approprié.",
       "transfer": false,
       "system": {
         "stackId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
             "sourceId": "K2WXpMgMhNiOjPkQ",
+            "summary": "Permet de prendre l’apparence d’un objet simple.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
-    "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
-    "summary": "Change Self (logiwurm)",
+    "description": "The logewurm can take the physical form of any creature it chooses for an unlimited duration, then return to its original form whenever it wishes. It retains none of its dragon’s physical attributes in this form and is therefore vulnerable. It can use this transformation only once per year.",
+    "summary": "Changes physical form to a selected creature.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 124
@@ -21,7 +21,7 @@
       "name": "Change Self (logiwurm)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+      "description": "The logewurm can take the physical form of any creature it chooses for an unlimited duration, then return to its original form whenever it wishes. It retains none of its dragon’s physical attributes in this form and is therefore vulnerable. It can use this transformation only once per year.",
       "transfer": false,
       "system": {
         "stackId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
@@ -59,6 +59,7 @@
           "transformation": {
             "key": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
             "sourceId": "MLPIuC5A6B7C8D9E",
+            "summary": "Changes physical form to a selected creature.",
             "editableChanges": true,
             "related": []
           }

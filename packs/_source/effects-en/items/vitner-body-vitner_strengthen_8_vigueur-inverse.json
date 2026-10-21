@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
-    "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
-    "summary": "Strengthen",
+    "description": "Lowers the target’s Strength by one degree. This reduces Strength-based situation tests and damage according to the Strength modifier table. The listed modifiers are applied in reverse. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
+    "summary": "Weakens the muscles and reduces Strength.",
     "source": {
       "book": "Player's Handbook",
       "page": 96
@@ -21,7 +21,7 @@
       "name": "Strengthen — reversed",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+      "description": "Lowers the target’s Strength by one degree. This reduces Strength-based situation tests and damage according to the Strength modifier table. The listed modifiers are applied in reverse. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
       "transfer": false,
       "system": {
         "stackId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:strengthen:8#vigueur-inverse",
             "sourceId": "vitner-body-vitner:strengthen:8",
+            "summary": "Weakens the muscles and reduces Strength.",
             "editableChanges": true,
             "related": []
           }

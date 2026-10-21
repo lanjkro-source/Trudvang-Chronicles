@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
-    "description": "Le gavlien invoque la force du chêne noir. Le bénéficiaire de ce pouvoir (qui peut être le prêtre lui-même ou la personne de son choix) voit sa peau se recouvrir de l’écorce sombre du chêne de fer, ce qui lui confère 10 points de santé supplémentaire, à utiliser en priorité après avoir soustrait la valeur de protection des dégâts reçus. Ces points de santé sont temporaires, et s’il en reste au prêtre à expiration du pouvoir, ils sont perdus. Si les 10 points de santé octroyés par ce pouvoir sont utilisés avant son expiration, l’effet cesse immédiatement.",
-    "summary": "Peau d’écorce",
+    "description": "La cible gagne 10 points de santé temporaires, qui absorbent les dégâts après la protection. L’effet prend fin si ces points sont épuisés ; les points restants disparaissent à son expiration.",
+    "summary": "Protège la cible avec des points de santé temporaires.",
     "source": {
       "book": "Livre des règles",
       "page": 258
@@ -21,7 +21,7 @@
       "name": "Peau d’écorce",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le gavlien invoque la force du chêne noir. Le bénéficiaire de ce pouvoir (qui peut être le prêtre lui-même ou la personne de son choix) voit sa peau se recouvrir de l’écorce sombre du chêne de fer, ce qui lui confère 10 points de santé supplémentaire, à utiliser en priorité après avoir soustrait la valeur de protection des dégâts reçus. Ces points de santé sont temporaires, et s’il en reste au prêtre à expiration du pouvoir, ils sont perdus. Si les 10 points de santé octroyés par ce pouvoir sont utilisés avant son expiration, l’effet cesse immédiatement.",
+      "description": "La cible gagne 10 points de santé temporaires, qui absorbent les dégâts après la protection. L’effet prend fin si ces points sont épuisés ; les points restants disparaissent à son expiration.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
+            "summary": "Protège la cible avec des points de santé temporaires.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
-    "description": "The priest directs their powerful gaze at an opponent. If the target is unable to resist by making a Situation roll with a Situation value of 4 (Psyche modifiers apply), they turn into a statue for the duration of the ability. If a priest spends a raud while using this ability, the petrification becomes Permanent if the opponent fails their Situation roll. This ability can be used only on people and creatures that are close to human-sized (from half the size of a human up to 1.5 times the size of a human). A dimwalker spending a raud can petrify larger creatures (greater than or equal to 1.5 times the size of a human). The priest requires only a single action round to invoke the ability, but it takes 1d6 rounds for the target to fully petrify. For each round in which the target is turning to stone, that character halves their effective Skill Values ( compounding each action round, and rounding up where applicable). For example, if a person has SV 16 in the Fighting skill (including disciplines and specialties), the next action round it would be SV 8, the next round only SV 4, and so on. These values are restored when the petrification is removed.",
-    "summary": "Stone Monument",
+    "description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
+    "summary": "Petrifies and immobilizes the target.",
     "source": {
       "book": "Player's Handbook",
       "page": 194
@@ -21,7 +21,7 @@
       "name": "Stone Monument",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The priest directs their powerful gaze at an opponent. If the target is unable to resist by making a Situation roll with a Situation value of 4 (Psyche modifiers apply), they turn into a statue for the duration of the ability. If a priest spends a raud while using this ability, the petrification becomes Permanent if the opponent fails their Situation roll. This ability can be used only on people and creatures that are close to human-sized (from half the size of a human up to 1.5 times the size of a human). A dimwalker spending a raud can petrify larger creatures (greater than or equal to 1.5 times the size of a human). The priest requires only a single action round to invoke the ability, but it takes 1d6 rounds for the target to fully petrify. For each round in which the target is turning to stone, that character halves their effective Skill Values ( compounding each action round, and rounding up where applicable). For example, if a person has SV 16 in the Fighting skill (including disciplines and specialties), the next action round it would be SV 8, the next round only SV 4, and so on. These values are restored when the petrification is removed.",
+      "description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
@@ -58,6 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
             "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
+            "summary": "Petrifies and immobilizes the target.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
-    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Destroyer’s Rage grants<ul><li>The Destroyer’s Rage grants the</li></ul>the following: ✦ Spirit conjurer receives a fear factor of 1d10 (OR 10) ✦ +10 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +5 in damage with melee weapons or throwing weapons ✦ +2 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
-    "summary": "The Destroyer's Rage",
+    "description": "The target gains 10 temporary health points, +5 damage with melee, thrown, and natural attacks, and +2 to attack skill value. It receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
+    "summary": "Unleashes an extreme frenzy that improves attacks.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -21,7 +21,7 @@
       "name": "The Destroyer's Rage",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Destroyer’s Rage grants<ul><li>The Destroyer’s Rage grants the</li></ul>the following: ✦ Spirit conjurer receives a fear factor of 1d10 (OR 10) ✦ +10 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +5 in damage with melee weapons or throwing weapons ✦ +2 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "description": "The target gains 10 temporary health points, +5 damage with melee, thrown, and natural attacks, and +2 to attack skill value. It receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
@@ -84,6 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
             "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+            "summary": "Unleashes an extreme frenzy that improves attacks.",
             "editableChanges": true,
             "related": []
           }

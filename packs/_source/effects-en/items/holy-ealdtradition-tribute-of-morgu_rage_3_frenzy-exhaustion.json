@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
-    "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
-    "summary": "Boiling Blood",
+    "description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
+    "summary": "Causes exhaustion after a frenzy.",
     "source": {
       "book": "Player's Handbook",
       "page": 187
@@ -21,7 +21,7 @@
       "name": "Exhaustion after frenzy",
       "type": "effect",
       "img": "icons/svg/sleep.svg",
-      "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+      "description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
+            "summary": "Causes exhaustion after a frenzy.",
             "editableChanges": true,
             "related": []
           }

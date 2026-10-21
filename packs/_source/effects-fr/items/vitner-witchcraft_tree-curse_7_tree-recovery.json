@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-witchcraft:tree-curse:7#tree-recovery",
-    "description": "Raideur temporaire après le retour à la forme normale.",
-    "summary": "Malédiction de l’arbre",
+    "description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
+    "summary": "Laisse une raideur après la malédiction de l’arbre.",
     "source": {
       "book": "Livre des règles",
       "page": 187
@@ -21,7 +21,7 @@
       "name": "Raideur après la malédiction de l’arbre",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Raideur temporaire après le retour à la forme normale.",
+      "description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
       "transfer": false,
       "system": {
         "stackId": "vitner-witchcraft:tree-curse:7#tree-recovery",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "vitner-witchcraft:tree-curse:7#tree-recovery",
             "sourceId": "vitner-witchcraft:tree-curse:7",
+            "summary": "Laisse une raideur après la malédiction de l’arbre.",
             "editableChanges": true,
             "related": []
           }

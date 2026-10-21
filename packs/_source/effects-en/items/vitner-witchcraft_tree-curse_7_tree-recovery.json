@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-witchcraft:tree-curse:7#tree-recovery",
-    "description": "For three days after a full-duration tree curse, Agility and movement-related tests are halved.",
-    "summary": "Tree Curse",
+    "description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
+    "summary": "Leaves stiffness after the tree curse.",
     "source": {
       "book": "Player's Handbook",
       "page": 143
@@ -21,7 +21,7 @@
       "name": "Stiffness after the tree curse",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "For three days after a full-duration tree curse, Agility and movement-related tests are halved.",
+      "description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
       "transfer": false,
       "system": {
         "stackId": "vitner-witchcraft:tree-curse:7#tree-recovery",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "vitner-witchcraft:tree-curse:7#tree-recovery",
             "sourceId": "vitner-witchcraft:tree-curse:7",
+            "summary": "Leaves stiffness after the tree curse.",
             "editableChanges": true,
             "related": []
           }

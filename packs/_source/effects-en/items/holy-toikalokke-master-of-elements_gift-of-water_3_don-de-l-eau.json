@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
-    "description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
-    "summary": "Control Fire",
+    "description": "The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value.",
+    "summary": "Makes swimming and breathing underwater easier.",
     "source": {
       "book": "Player's Handbook",
       "page": 241
@@ -21,7 +21,7 @@
       "name": "Control Fire",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+      "description": "The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+            "summary": "Makes swimming and breathing underwater easier.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
-    "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
-    "summary": "Petrify (braskelwurm)",
+    "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
+    "summary": "Slows movement and Dexterity-based actions after petrification.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 106
@@ -21,7 +21,7 @@
       "name": "Stiffness after petrification — half",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+      "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
       "transfer": false,
       "system": {
         "stackId": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
@@ -47,6 +47,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
             "sourceId": "WLqQEeGbHcIdJeKf",
+            "summary": "Slows movement and Dexterity-based actions after petrification.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-two-thirds"

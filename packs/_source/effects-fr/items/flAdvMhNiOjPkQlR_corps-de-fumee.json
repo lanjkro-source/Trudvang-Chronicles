@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "flAdvMhNiOjPkQlR#corps-de-fumee",
-    "description": "Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.\nLe draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.\nLa transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.",
-    "summary": "Corps de fumée",
+    "description": "Le draugr se transforme en fumée en trois tours, sans pouvoir se défendre pendant ce temps. Sous cette forme, il se déplace de 30 mètres par tour (moins vite par vent fort) et récupère 10 PS par journée passée ainsi.",
+    "summary": "Transforme le corps en fumée et accélère le déplacement.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 50
@@ -21,7 +21,7 @@
       "name": "Corps de fumée",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.\nLe draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.\nLa transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.",
+      "description": "Le draugr se transforme en fumée en trois tours, sans pouvoir se défendre pendant ce temps. Sous cette forme, il se déplace de 30 mètres par tour (moins vite par vent fort) et récupère 10 PS par journée passée ainsi.",
       "transfer": false,
       "system": {
         "stackId": "flAdvMhNiOjPkQlR#corps-de-fumee",
@@ -47,6 +47,7 @@
           "transformation": {
             "key": "flAdvMhNiOjPkQlR#corps-de-fumee",
             "sourceId": "flAdvMhNiOjPkQlR",
+            "summary": "Transforme le corps en fumée et accélère le déplacement.",
             "editableChanges": true,
             "related": []
           }

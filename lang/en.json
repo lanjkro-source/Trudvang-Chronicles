@@ -12511,7 +12511,8 @@
       "Transformation": {
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification": {
           "Name": "Petrify/Remove Petrification",
-          "Description": "The Petrify spell’s energy is so powerful that it can turn a victim’s body to stone. The victim’s clothes and equipment are also turned to stone; however, magic items are spared (though they may be caught in a stone grip or stone pack). The victim can attempt to resist the transformation by making a s uccessful Situation roll with a Situation value determined<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>by their size, according to the table below (Psyche modifiers apply). SIZE AND SITUATION VALUES Size Situation Value &lt;1/3 4 ≥1/3 – 1/2 6 ≥1/2 – 1.5t 8 ≥1.5 – 3t 10 ≥3 – 5t 12 ≥5 – 10t 15 ≥10t 19 If the victim fails the Situation roll, they are turned into solid stone, along with any equipment that is held, worn, or carried. The stone is extremely hard and almost indestructible.<br>The petrified victim has a Protection Value of 10 and a Break Value of 100. Once the Break Value is depleted, the victim takes damage as normal, and if they take double their Body Points in damage, the stone shatters and they die. A victim who is turned to stone is in<br>a complete daze and unable to perceive their surroundings or the passage of time. Therefore, they are no longer able to affect anything that happens around them. Once the spell’s duration expires, the victim returns to their original form. It is possible to liberate a p etrified creature using the spells Remove Petrification<br>or Dispel Vitner. A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The<br>statue weighs around ten times the victim’s original weight. The enchanter can also use the Remove Petrification version of this spell. By turning the vitner used to petrify a target, the enchanter can restore a stone creature to its original form. Using the spell in this manner also restores any attached and unbroken equipment that was p etrified. To successfully restore a petrified creature, the target must first succeed on a Situation roll with a Situation value of 12 (C onstitution<table><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>modifiers apply), modified depending on how long they have been a statue, according to the table below. With a successful restoration, the victim awakens in the space of 1 action round. They have no realization of what happened, believing it is the moment immediately after they first were petrified, and they have no memory of the events that occurred or the time that elapsed. For the first three days, the victim feels very stiff, which halves their movement capacity and Skill Values for any Skill rolls or Situation rolls involving Dexterity. For the next three days following that, movement capacity and Skill Values increase to twoPETRIFY/REMOVE PETRIFICATION MODIFIERS Time Modifier &lt; 1 day +8 1-3 days +4 4-7 days +2 2 weeks ±0 3 weeks -2 4 weeks -4 2 months -6 3 months -10 6 months -14 1 year -18 10 years -25 100 years -35 &gt; 100 years -50 thirds their normal capacity. After six days, the victim completely recovers from the ordeal. The game master can alter this timeline depending on how long the victim was petrified.",
+          "Summary": "Petrifies the target, turning it into a statue.",
+          "Description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 10 and integrity 100; non-magical clothes and equipment are petrified with it. When the effect ends, the target and any undamaged equipment return to their normal forms.",
           "SourceName": "Petrify/Remove Petrification",
           "SourceBook": "Player's Handbook",
           "SourcePage": "123",
@@ -12519,7 +12520,8 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify/Remove Petrification",
           "SourceBook": "Player's Handbook",
           "SourcePage": "123",
@@ -12527,7 +12529,8 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify/Remove Petrification",
           "SourceBook": "Player's Handbook",
           "SourcePage": "123",
@@ -12535,7 +12538,8 @@
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse",
-          "Description": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root. The spell can only be woven over a living creature who weighs less than 60 kg and is standing over ground of sufficient thickness and fertility for a tree to take root and grow. The victim can resist the full transformation by succeeding on a Situation roll with a Situation value of 4 (Constitution modifiers apply). On a success, only the victim’s skin transforms to birch or bark, which has no effects beyond appearance and restricted Agility; all Skill Values and Situation values related to Agility suffer a negative modifier of -3 for the duration. If the target weighs too much to be entirely transformed, only parts of the victim will be altered (how much and what parts are up to the game master to decide), and the rest of the victim’s skin turns to birch and bark with the same effects as above. A successful Situation roll in this case means the victim suffers a negative modifier of -1 (instead of -3). If the target fails the Situation roll and weighs less than the spell’s effect limit, the victim immediately takes root and is unable to move. At this point, over the course of about an hour, the victim transforms into a tree of whichever species the mage designates (though the tree must be able to survive in the area, even if it is not commonly found there). The tree has the same size and Body Points that the victim had in their normal form. It also retains facial features twisted within the bark, and limbs that resemble arms and legs. While the creature is in tree form, it maintains the same senses of perception that it had before the curse took effect. The creature sees everything visible within view (depending on which direction the face is pointing) and hears sounds, detects scents, and feels contact as normal. Any damage the tree creature suffers remains once it returns to its natural form. Possessions such as clothing and equipment also become parts of the tree (assuming their added weight is within the spell’s limit). In tree form, the victim has a natural Protection Value of 4. The victim does not need to eat or drink to survive, but will occasionally fall asleep. If someone carves or tries to cut down the tree (inflicting damage upon the victim), the tree begins to bleed. If this does not deter the attacker, the victim dies after suffering enough damage. The mage can end this curse and return the creature to its original shape at any time. A creature that endures tree form for the full duration of the spell is very stiff once restored, and for the first three days afterward, all Skill rolls and Situation rolls related to Agility and movement are halved.",
+          "Summary": "Transforms the target into a tree and protects it with bark.",
+          "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
           "SourceBook": "Player's Handbook",
           "SourcePage": "143",
@@ -12543,7 +12547,8 @@
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
           "Name": "Stiffness after the tree curse",
-          "Description": "For three days after a full-duration tree curse, Agility and movement-related tests are halved.",
+          "Summary": "Leaves stiffness after the tree curse.",
+          "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
           "SourceBook": "Player's Handbook",
           "SourcePage": "143",
@@ -12551,7 +12556,8 @@
         },
         "vitner-body-vitner:hasten:9#hate": {
           "Name": "Hasten",
-          "Description": "✦ Cost (Modifier): 8 (-8 This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile. The enchanted character’s increased agility leads to enhanced movement (movement capacity), quicker speed (Initiative), and a higher chance of success on Situation rolls and Skill rolls that involve dexterity. Suddenly the enchanted person moves faster and is far more precise with everything<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.</td></tr></tbody></table>related to movement (typical skills: Agility and Fighting). The enchanted rises one step in the Dexterity character trait according to the following table. HASTEN’S MODIFIERS Situation Dexterity SV Bonus Rolls/Move Drauglo +8 +5 dexterity Elastic +6 +4 Gracious +4 +3 Agile +2 +2 Lithe +1 +1 Average ±0 ±0 Stiff -1 -1 Awkward -2 -2 Immobile -4 -3 Inflexible -6 -4 Lapidified -8 -5 The spell can also be woven for the reverse effect, causing the victim’s body to become more stiff and unwieldy. The enchanted character’s dexterity decreases immediately, which leads to hindered mobility (Move), reduced speed (Initiative), and a lower chance of success on Situation rolls concerning dexterity (typical skills: Agility and Fighting). The enchanted character drops one step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 ( Constitution m odifiers apply).",
+          "Summary": "Improves flexibility and reflexes.",
+          "Description": "Increases the target’s Dexterity, and therefore its movement and Initiative, as well as the skill values of Agility and Fighting. The target gains one Dexterity degree according to the table below. <table><thead><tr><th colspan=\"3\">MODIFIERS</th></tr><tr><th>Dexterity</th><th>Situation tests/movement</th><th>Skill-value bonus</th></tr></thead><tbody><tr><td>Drauglo Dexterity</td><td>+8</td><td>+5</td></tr><tr><td>Elastic</td><td>+6</td><td>+4</td></tr><tr><td>Gracious</td><td>+4</td><td>+3</td></tr><tr><td>Agile</td><td>+2</td><td>+2</td></tr><tr><td>Lithe</td><td>+1</td><td>+1</td></tr><tr><td>Average</td><td>±0</td><td>±0</td></tr><tr><td>Stiff</td><td>-1</td><td>-1</td></tr><tr><td>Clumsy</td><td>-2</td><td>-2</td></tr><tr><td>Immobile</td><td>-4</td><td>-3</td></tr><tr><td>Inflexible</td><td>-6</td><td>-4</td></tr><tr><td>Lapidified</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hasten",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
@@ -12559,7 +12565,8 @@
         },
         "vitner-body-vitner:hasten:9#hate-inverse": {
           "Name": "Hasten — reversed",
-          "Description": "✦ Cost (Modifier): 8 (-8 This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile. The enchanted character’s increased agility leads to enhanced movement (movement capacity), quicker speed (Initiative), and a higher chance of success on Situation rolls and Skill rolls that involve dexterity. Suddenly the enchanted person moves faster and is far more precise with everything<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.</td></tr></tbody></table>related to movement (typical skills: Agility and Fighting). The enchanted rises one step in the Dexterity character trait according to the following table. HASTEN’S MODIFIERS Situation Dexterity SV Bonus Rolls/Move Drauglo +8 +5 dexterity Elastic +6 +4 Gracious +4 +3 Agile +2 +2 Lithe +1 +1 Average ±0 ±0 Stiff -1 -1 Awkward -2 -2 Immobile -4 -3 Inflexible -6 -4 Lapidified -8 -5 The spell can also be woven for the reverse effect, causing the victim’s body to become more stiff and unwieldy. The enchanted character’s dexterity decreases immediately, which leads to hindered mobility (Move), reduced speed (Initiative), and a lower chance of success on Situation rolls concerning dexterity (typical skills: Agility and Fighting). The enchanted character drops one step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 ( Constitution m odifiers apply).",
+          "Summary": "Reduces flexibility and reflexes.",
+          "Description": "Lowers the target’s Dexterity by one degree, reducing its movement and Initiative as well as the skill values of Agility and Fighting. The table shows the modifiers associated with each Dexterity degree. <table><thead><tr><th colspan=\"3\">MODIFIERS</th></tr><tr><th>Dexterity</th><th>Situation tests/movement</th><th>Skill-value bonus</th></tr></thead><tbody><tr><td>Drauglo Dexterity</td><td>+8</td><td>+5</td></tr><tr><td>Elastic</td><td>+6</td><td>+4</td></tr><tr><td>Gracious</td><td>+4</td><td>+3</td></tr><tr><td>Agile</td><td>+2</td><td>+2</td></tr><tr><td>Lithe</td><td>+1</td><td>+1</td></tr><tr><td>Average</td><td>±0</td><td>±0</td></tr><tr><td>Stiff</td><td>-1</td><td>-1</td></tr><tr><td>Clumsy</td><td>-2</td><td>-2</td></tr><tr><td>Immobile</td><td>-4</td><td>-3</td></tr><tr><td>Inflexible</td><td>-6</td><td>-4</td></tr><tr><td>Lapidified</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hasten",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
@@ -12567,7 +12574,8 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur": {
           "Name": "Strengthen",
-          "Description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+          "Summary": "Strengthens the muscles and increases Strength.",
+          "Description": "Raises the target’s Strength by one degree. This improves Strength-based situation tests and damage according to the Strength modifier table. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Strengthen",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
@@ -12575,7 +12583,8 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur-inverse": {
           "Name": "Strengthen — reversed",
-          "Description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+          "Summary": "Weakens the muscles and reduces Strength.",
+          "Description": "Lowers the target’s Strength by one degree. This reduces Strength-based situation tests and damage according to the Strength modifier table. The listed modifiers are applied in reverse. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Strengthen",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
@@ -12583,7 +12592,8 @@
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Change Creature",
-          "Description": "The vitner that the spell brings forth is powerful enough to turn a living creature into the form of an entirely different one. The spell transforms the enchanted creature, whose weight must be less than or equal to 60 kg, into any other desired creature’s shape. The new size cannot exceed that of the original creature, nor can it be more than five times smaller than the original creature’s size. (See Creature Size in the Bestiary for more information about sizes.) The enchanted takes on the new creature’s shape as well as its physical characteristics, such as size, appearance, Strength, Agility, and senses, along with any relevant modifiers, such as for damage and natural attacks (non-magical). The enchanted keeps its original Intelligence, Constitution, and Psyche. Because the change is only physical, the enchanted does not adopt the new creature’s magical abilities or powers, nor does it adopt the creature’s Body Points, which are unchanged by the initial transformation or by the eventual transformation back after the spell ends. For example, a person who turns into a Skoll has all its physical character traits (not Body Points), but not its Intelligence, Constitution, or Psyche. If the person turns into a fjoll troll, they will look like one but not be able to use troll magic. The enchanted can speak only if the new form has the ability to speak. A character who has been transformed voluntarily can turn back to their natural shape when they wish, but a creature enchanted against its will cannot. Once the spell’s duration expires, it takes 5 action rounds for the enchanted to fully resume their original form. The victim can resist the transformation on a successful Situation roll with a Situation value of 4 (Constitution modifiers apply). Exceptionally large creatures and monsters can also be affected by the spell, but for every increase in size equivalent to that of a human, the Situation value increases by +2 to resist the spell. So a creature that is three times the size of a normal human would receive a bonus of +4, which results in a total Situation value of 8 to resist the spell.",
+          "Summary": "Changes the target’s physical form.",
+          "Description": "The target takes the physical form of a creature chosen from the bestiary, up to five times smaller and never larger than its original form. It gains the creature’s appearance, size, Strength, Dexterity, senses, physical modifiers, and non-magical natural attacks. It retains its Intelligence, Constitution, Psyche, and HP, and gains none of the creature’s magical abilities or powers. It can speak only if the new form can. A willing target can change back at any time; when the effect ends, the return takes five turns.",
           "SourceName": "Change Creature",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
@@ -12591,7 +12601,8 @@
         },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
           "Name": "Voice of Command",
-          "Description": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range. Everything the dimwalker says sounds believable, and the afflicted character must succeed on a Situation roll with a Situation value of 8 (Intelligence modifiers apply) to avoid complete acceptance of whatever the Stormkelt says.",
+          "Summary": "Raises Strength to a troll’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +4.",
           "SourceName": "Voice of Command",
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
@@ -12599,7 +12610,8 @@
         },
         "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje": {
           "Name": "Hinji Strength",
-          "Description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
+          "Summary": "Raises Strength to a hinje’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +6.",
           "SourceName": "Hinji Strength",
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
@@ -12607,7 +12619,8 @@
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Jotun Strength",
-          "Description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
+          "Summary": "Raises Strength to a jotun’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +8.",
           "SourceName": "Jotun Strength",
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
@@ -12615,7 +12628,8 @@
         },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Night Vision",
-          "Description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
+          "Summary": "Strengthens courage and Psyche.",
+          "Description": "Replaces the target’s Psyche trait with the exceptional level +4.",
           "SourceName": "Night Vision",
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
@@ -12623,7 +12637,8 @@
         },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Bold",
-          "Description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
+          "Summary": "Strengthens courage and Psyche.",
+          "Description": "Replaces the target’s Psyche trait with the exceptional level +6.",
           "SourceName": "Bold",
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
@@ -12631,7 +12646,8 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Heart of Enken",
-          "Description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual. The person who is granted this power receives the exceptional trait of Psyche +8 for the ability’s duration. Even the dimwalker (if the Stormkelt offered the power to someone else) and up to two friends within range also receive a lesser exceptional trait of Psyche +4 for the ability’s duration.",
+          "Summary": "Raises Psyche to an exceptional level.",
+          "Description": "The target gains the exceptional Psyche trait +8.",
           "SourceName": "Heart of Enken",
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
@@ -12639,7 +12655,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Stagshape",
-          "Description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
+          "Summary": "Grants the traits and senses of a deer.",
+          "Description": "The target takes the form of a deer. Its Strength and Constitution cannot be lower than +1 and +4; its land movement is doubled. It can communicate with deer, see in darkness, carry one rider, and feed on grass. It attacks with its antlers (1d10, Open Roll 9–10). Higher Strength and Constitution traits are retained; its equipment takes on the animal form’s appearance and returns to normal when the target changes back.",
           "SourceName": "Stagshape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "176",
@@ -12650,7 +12667,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Salmonshape",
-          "Description": "<p>This ability grants the Bruid the power to transform into a salmon. In the animal shape, the dimwalker receives a number of traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard salmon without any such equipment visible. Once the Bruid returns to their normal appearance,<hr>all armor, weapons, and equipment will take on their normal appearance as well. ✦ Salmonshape<ul><li>Salmonshape Traits</li><li>A Bruid transformed with</li></ul>Traits ✦ A Bruid transformed with Salmonshape has the following traits: ✦ Communicate with salmon ✦ Breathe underwater ✦ Equipment is protected from water ✦ Movement in water is doubled (the character’s movement x 2) ✦ Breathe but not move when on land. ✦ Excellent vision underwater ✦ Exceptional character trait for D exterity +4 ✦ A Bruid in Salmonshape form also has healing traits: someone touching the salmon’s scales can heal 1 Body Point (one time per person per day), someone kissing the salmon can heal 1d3 Body Points (one time per person per day), and someone taking a bite from the salmon (Bruid suffers 1d5 points of damage) heals 1d6 + 1 Body Points.</p>",
+          "Summary": "Grants the traits and senses of a salmon.",
+          "Description": "The target takes the form of a salmon. Its Dexterity cannot be lower than +4; its swimming speed is doubled and it can breathe both underwater and in air, but cannot move on land. It can communicate with salmon, sees exceptionally well underwater, and its equipment is protected from water. Touching its scales restores 1 HP to a person once per day; kissing it restores 1d3 HP once per day; eating its flesh restores 1d6+1 HP but deals 1d5 damage to the salmon.",
           "SourceName": "Salmonshape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "176",
@@ -12661,7 +12679,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Ravenshape",
-          "Description": "<p>This ability grants the Bruid the power to transform into a raven. In the animal shape, the dimwalker receives a number of traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard raven without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Reavenshape Traits ✦ A Bruid transformed with<ul><li>Reavenshape Traits</li><li>A Bruid transformed with Ravenshape</li></ul>Ravenshape has the following traits: ✦ Communicate with ravens and undead beings ✦ Movement on land is halved (the character’s movement /2) ✦ Movement in air (flying) is quadrupled (the character’s movement x 4) ✦ Exceptional character trait for Dexterity +4 ✦ Exceptional character trait for Constitution +4 ✦ Night vision. ✦ Sees all invisible and intangible beings ✦ Has a beak as a natural weapon, 1d10 (OR 10) points of damage ✦ Harder to hit due to its small size, and all who attack the raven in flight will receive -5 to the SV of the attack. This deduction also affects ranged attacks, in addition to any other modifiers for attacking a moving target.</p>",
+          "Summary": "Grants the traits and senses of a raven.",
+          "Description": "The target takes the form of a raven. Its Dexterity and Constitution cannot be lower than +4; its land movement is halved and its flying speed is quadrupled. It sees in darkness, perceives invisible and intangible creatures, and can communicate with ravens and the undead. It attacks with its beak (1d10, Open Roll 10). Attacks against it while flying suffer −5 to their combat value, including ranged attacks. Higher traits are retained, and equipment returns to its normal appearance when the target changes back.",
           "SourceName": "Ravenshape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "176",
@@ -12674,7 +12693,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Simmering Blood",
-          "Description": "Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +1d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+          "Summary": "Temporarily increases health points.",
+          "Description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Simmering Blood",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12682,7 +12702,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Boiling Blood",
-          "Description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+          "Summary": "Improves attacks and grants fear immunity.",
+          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Boiling Blood",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12690,7 +12711,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Boiling Blood",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12698,7 +12720,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood": {
           "Name": "Rage",
-          "Description": "Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ Bruid grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ Bruid is unable to parry or evade attacks ✦ Bruid ignores all effects from fear",
+          "Summary": "Temporarily increases health points.",
+          "Description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Rage",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12706,7 +12729,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
           "Name": "Madness",
-          "Description": "<p>Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in particularly hard battles. This effect can be so overpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their face twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless sufficiently cooled. Simply lying down in water (or being thrown<ul><li>Effects of Madness:</li><li>Bruid grows 1 m taller and gains 60</li></ul>into it) is enough to prevent this damage. ✦ Effects of Madness: ✦ Bruid grows 1 m taller and gains 60 kg in muscle (calculated as 1.5 times the size of a normal human) ✦ Bruid receives their own fear factor of 1d10 (OR 10) ✦ +10 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +4 in damage with melee weapons or thrown weapons ✦ +2 on SV of all attacks ✦ Bruid is unable to parry or evade attacks ✦ Bruid ignores all effects from fear ✦ Bruid can continue to fight for 1d3 action rounds after dying</p>",
+          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12714,7 +12738,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Madness",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12722,7 +12747,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire": {
           "Name": "Bloodfire",
-          "Description": "Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +3d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+          "Summary": "Greatly increases health points.",
+          "Description": "The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Bloodfire",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12730,7 +12756,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
           "Name": "Riastarthae",
-          "Description": "<p>Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in particularly hard battles. This effect can be so overpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless sufficiently cooled. Simply lying down in water (or being thrown into it)<ul><li>Effects of the Riastarthae:</li><li>Bruid grows 1.5 m taller and gains</li></ul>is enough to prevent this damage. ✦ Effects of the Riastarthae: ✦ Bruid grows 1.5 m taller and gains 100 kg in muscles (calculated as twice the size of a normal human) ✦ Bruid receives their own fear factor of 1d10 (OR 9-10) ✦ +15 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +6 in damage with melee weapons or thrown weapons ✦ +3 on SV of all attacks ✦ Bruid is unable to parry or avoid attacks ✦ Bruid ignores all effects from fear ✦ Bruid ignores the effect of severe damage or injury ✦ Bruid can continue to fight for 1d6 + 1 action rounds after dying</p>",
+          "Summary": "Unleashes an extreme frenzy and ignores wounds.",
+          "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12738,7 +12765,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Riastarthae",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -12746,7 +12774,8 @@
         },
         "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou": {
           "Name": "Owl Hearing",
-          "Description": "The Bruid hears all noises and conversations within range. A pair of owl-like ear tufts emerges from the Bruid’s head for the duration of the ability. To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 12. It is up to the game master to increase or decrease this Situation value depending on how busy the environment surrounding the dimwalker is, such as: nature +5, settlement ±0, busy town +5, and so on.",
+          "Summary": "Allows sounds to be heard at a distance.",
+          "Description": "The target hears sounds and conversations within range. To distinguish a specific sound or conversation, it makes a situation test of 12, adjusted for ambient noise.",
           "SourceName": "Owl Hearing",
           "SourceBook": "Player's Handbook",
           "SourcePage": "185",
@@ -12754,7 +12783,8 @@
         },
         "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon": {
           "Name": "Griffon's Sense",
-          "Description": "The Bruid hears all noises and conversations within range. A pair of griffon’s ears emerges from the Bruid’s head for the duration of the ability. To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14. It is up to the game master to increase or decrease this Situation value depending on how busy the environment surrounding the dimwalker is, such as: nature +5, settlement ±0, busy town +5, and so on.",
+          "Summary": "Sharpens hearing to perceive sounds within range.",
+          "Description": "The target hears sounds and conversations within range. To distinguish a specific sound or conversation, it makes a situation test of 14, adjusted for ambient noise.",
           "SourceName": "Griffon's Sense",
           "SourceBook": "Player's Handbook",
           "SourcePage": "185",
@@ -12762,7 +12792,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
-          "Description": "The priest directs their powerful gaze at an opponent. If the target is unable to resist by making a Situation roll with a Situation value of 8 (Psyche modifiers apply), they turn into a statue for the duration of the ability. If a priest spends a raud while using this ability, the petrification becomes Permanent if the opponent fails their Situation roll. This ability can be used only on people and creatures that are close to humansized (from half the size of a human up to 1.5 times the size of a human). The priest requires only a single action round to invoke the ability, but it takes 1d6 rounds for the target to fully petrify. For each round in which the target is turning to stone, that character halves their e ffective Skill Values (c ompounding each action round, and rounding up where applicable). For example, if the target has SV 16 in the Fighting skill ( including disciplines and specialties), the next action round it would be SV 8, the next round only SV 4, and so on. These values are restored when the petrification is removed.",
+          "Summary": "Gradually immobilizes and petrifies the target.",
+          "Description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12770,7 +12801,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12778,7 +12810,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12786,7 +12819,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre": {
           "Name": "Stone Monument",
-          "Description": "The priest directs their powerful gaze at an opponent. If the target is unable to resist by making a Situation roll with a Situation value of 4 (Psyche modifiers apply), they turn into a statue for the duration of the ability. If a priest spends a raud while using this ability, the petrification becomes Permanent if the opponent fails their Situation roll. This ability can be used only on people and creatures that are close to human-sized (from half the size of a human up to 1.5 times the size of a human). A dimwalker spending a raud can petrify larger creatures (greater than or equal to 1.5 times the size of a human). The priest requires only a single action round to invoke the ability, but it takes 1d6 rounds for the target to fully petrify. For each round in which the target is turning to stone, that character halves their effective Skill Values ( compounding each action round, and rounding up where applicable). For example, if a person has SV 16 in the Fighting skill (including disciplines and specialties), the next action round it would be SV 8, the next round only SV 4, and so on. These values are restored when the petrification is removed.",
+          "Summary": "Petrifies and immobilizes the target.",
+          "Description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12794,7 +12828,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12802,7 +12837,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -12810,7 +12846,8 @@
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Bark Skin",
-          "Description": "The Gavlian invokes the force of the black oak. Either the priest or one person of their choosing grows a bark-like skin of dark iron-oak. The skin provides 10 additional Body Points for the blessed character, which are used up before they receive any damage, and after any armor’s Protection Value has been deducted from the damage. These Body Points are t emporary, and any r emaining are lost when the duration ends. If the ability’s 10 Body Points are used up before the duration ends, the effect stops.",
+          "Summary": "Protects the target with temporary health points.",
+          "Description": "The target gains 10 temporary health points, which absorb damage after Protection. The effect ends if these points are depleted; any remaining points disappear when it expires.",
           "SourceName": "Bark Skin",
           "SourceBook": "Player's Handbook",
           "SourcePage": "201",
@@ -12818,7 +12855,8 @@
         },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Tree Port",
-          "Description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day. The transformation takes 60 action rounds (5 minutes) and requires enough soil and space for the oak’s roots and branches, respectively. For each hour the priest spends in this state, they heal 1 Body Point. As a tree, the priest also receives nutrients from the water in the soil and the sun’s light, so there is no need to consume any food or water. Additionally, the priest can make a Situation roll once every day with a Situation value of 6 (Psyche modifiers apply) to try to remove an existing curse or demon infection from himself. In the tree port, the priest is immune to all demon attacks and a bilities. The priest can turn back to their true shape whenever they wish within the duration. If anyone (besides a demon) attacks the tree, it has a natural Protection Value of 8, and only one-fifth of the damage that penetrates this protection hurts the priest. If the priest is slain while in the tree port, they will remain a black oak.",
+          "Summary": "Transforms the target into a resilient tree.",
+          "Description": "The target becomes a large black oak with Protection 8; after this protection, only one fifth of damage harms it. It recovers 1 HP per hour, feeds on water from the soil and sunlight, and is immune to demons’ attacks and abilities. Once per day, it can attempt a Situation Value 6 test (Psyche) to remove a curse or demonic infection. It can return to its normal form at any time; if it dies in this form, it remains a black oak.",
           "SourceName": "Tree Port",
           "SourceBook": "Player's Handbook",
           "SourcePage": "201",
@@ -12826,7 +12864,8 @@
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Mind of the Predator",
-          "Description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey. The spirit conjurer receives +1 on the SV of all combat actions when battling beasts and animals.",
+          "Summary": "Improves Constitution and physical resilience.",
+          "Description": "Replaces the target’s Constitution trait with the exceptional level +4.",
           "SourceName": "Mind of the Predator",
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
@@ -12834,7 +12873,8 @@
         },
         "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant": {
           "Name": "Mastomant's Tusks",
-          "Description": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw. The dimwalker can use these tusks in unarmed fighting, dealing 1d10 points of damage. An attack with the tusks counts as a bonus attack, though the character must still spend Combat Points as a standard attack to determine the Situation value. The spirit conjurer can attempt only one attack with the tusks per action round.",
+          "Summary": "Grants a natural tusk attack.",
+          "Description": "The target grows two tusks and can make one tusk attack per round for 1d10 damage. This bonus attack uses combat points as a normal attack.",
           "SourceName": "Mastomant's Tusks",
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
@@ -12843,7 +12883,8 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier": {
           "Name": "Endurance of the Boar",
-          "Description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +6 for the duration of the ability.",
+          "Summary": "Greatly improves Constitution.",
+          "Description": "Replaces the target’s Constitution trait with the exceptional level +6.",
           "SourceName": "Endurance of the Boar",
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
@@ -12851,7 +12892,8 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance of the Giant",
-          "Description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +8 for the duration of the ability. The spirit conjurer also becomes immune to all poison and disease for the duration.",
+          "Summary": "Improves Constitution and grants immunity to poison and disease.",
+          "Description": "Replaces the target’s Constitution trait with the exceptional level +8 and makes it immune to poison and disease.",
           "SourceName": "Endurance of the Giant",
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
@@ -12859,7 +12901,8 @@
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Mastomantshape",
-          "Description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
+          "Summary": "Transforms the target into a giant mastomant.",
+          "Description": "The target takes the form of a size 7 mastomant weighing about 15 tonnes. It gains Protection 4, Strength +6 (and therefore +6 damage), 30 temporary HP, immunity to all forms of cold, and a tusk attack (2d10, Open Roll 9–10). It can carry four riders.",
           "SourceName": "Mastomantshape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
@@ -12868,7 +12911,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Blood of the Lindwurm — Left arm",
-          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+          "Summary": "Petrifies the target’s left arm.",
+          "Description": "The left arm becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
           "SourceName": "Blood of the Lindwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12876,7 +12920,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit": {
           "Name": "Blood of the Lindwurm — Right arm",
-          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+          "Summary": "Petrifies the target’s right arm.",
+          "Description": "The right arm becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
           "SourceName": "Blood of the Lindwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12884,7 +12929,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-gauche": {
           "Name": "Blood of the Lindwurm — Left leg",
-          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+          "Summary": "Petrifies the target’s left leg.",
+          "Description": "The left leg becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
           "SourceName": "Blood of the Lindwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12892,7 +12938,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite": {
           "Name": "Blood of the Lindwurm — Right leg",
-          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+          "Summary": "Petrifies the target’s right leg.",
+          "Description": "The right leg becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
           "SourceName": "Blood of the Lindwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12900,7 +12947,8 @@
         },
         "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm": {
           "Name": "Heart of the Lindwurm",
-          "Description": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability. If the spirit conjurer dies while they have the lindwurm heart, they will rise again, completely healed, in 1d6 days. This ability can be used only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic.",
+          "Summary": "Revives the target after death.",
+          "Description": "If the target dies while bearing the lindwurm heart, it returns to life fully healed after 1d6 days. This effect can trigger only once.",
           "SourceName": "Heart of the Lindwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12908,7 +12956,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification": {
           "Name": "Petrify",
-          "Description": "The spirit conjurer directs their powerful gaze at an opponent who turns to stone. The opponent becomes a statue for the duration of the ability if they are unable to resist by making a Situation roll with a Situation value of 4 (Psyche modifiers apply). If the spirit conjurer spends a raud while using this ability, the petrification becomes permanent if the opponent fails the Situation roll. This ability can be used only on people and creatures that are close to humansized (from half the size of a human up to 1.5 times the size of a human). A dimwalker spending a raud can also petrify creatures that are much larger than a human (greater than or equal to 1.5 times). The conjurer requires only a single action round to invoke the ability, but it takes 1d6 rounds for the target to fully petrify. For each round in which the target is turning to stone, that character halves their effective Skill Values (compounding each action round, and rounding up where applicable). For example, if a person has 16 Skill Value in the Fighting skill (i ncluding disciplines and specialties), the next action round it would be 8 SV, the next round only 4, and so on. These values are restored when the petrification is removed.",
+          "Summary": "Turns the target into a stone statue.",
+          "Description": "The target turns into a stone statue over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once petrified, it cannot perceive its surroundings or act; its HP are preserved. It regains its normal values when the petrification ends.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12916,7 +12965,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12924,7 +12974,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
@@ -12932,7 +12983,8 @@
         },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Troll Strength",
-          "Description": "The hrimthurse’s spirit bestows strength like that of a troll upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +4 for the duration of the ability.",
+          "Summary": "Raises Strength to a troll’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +4.",
           "SourceName": "Troll Strength",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12940,7 +12992,8 @@
         },
         "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje": {
           "Name": "Strength of the Stone Hinji",
-          "Description": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +6 for the duration of the ability.",
+          "Summary": "Raises Strength to a stenhinje’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +6.",
           "SourceName": "Strength of the Stone Hinji",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12948,7 +13001,8 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes": {
           "Name": "Mountain Ogre's Fury",
-          "Description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following:<ul><li>Mountain Ogre’s Fury grants the</li></ul>✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+          "Summary": "Unleashes a frenzy that improves physical resilience.",
+          "Description": "The target gains 3 temporary health points and +1 damage with melee, thrown, and natural attacks. It ignores fear and cannot parry or dodge.",
           "SourceName": "Mountain Ogre's Fury",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12956,7 +13010,8 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes": {
           "Name": "Mountain Ogre's Madness",
-          "Description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Description": "The target gains 6 temporary health points, +3 damage with melee, thrown, and natural attacks, and +1 to attack skill value. It ignores fear and cannot parry or dodge.",
           "SourceName": "Mountain Ogre's Madness",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12964,7 +13019,8 @@
         },
         "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir": {
           "Name": "Thurse Strength",
-          "Description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +8 for the duration of the ability.",
+          "Summary": "Raises Strength to a tursir’s exceptional level.",
+          "Description": "Replaces the target’s Strength trait with the exceptional level +8.",
           "SourceName": "Thurse Strength",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12972,7 +13028,8 @@
         },
         "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur": {
           "Name": "The Destroyer's Rage",
-          "Description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Destroyer’s Rage grants<ul><li>The Destroyer’s Rage grants the</li></ul>the following: ✦ Spirit conjurer receives a fear factor of 1d10 (OR 10) ✦ +10 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +5 in damage with melee weapons or throwing weapons ✦ +2 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+          "Summary": "Unleashes an extreme frenzy that improves attacks.",
+          "Description": "The target gains 10 temporary health points, +5 damage with melee, thrown, and natural attacks, and +2 to attack skill value. It receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "The Destroyer's Rage",
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
@@ -12980,7 +13037,8 @@
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Rampage of the Huvfurwurm",
-          "Description": "wurm The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +1 weapon action per action round, as well as +5 Combat Points per action round. These points are locked into the additional weapon action, meaning that to take advantage of the extra points, the spirit conjurer must use all their ordinary weapon actions first. When the spirit conjurer uses this ability, it appears as if they gain a second pair of limbs, which wield an extra weapon.",
+          "Summary": "Grants an additional weapon action.",
+          "Description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
           "SourceName": "Rampage of the Huvfurwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -12988,7 +13046,8 @@
         },
         "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes": {
           "Name": "Flame Hardened",
-          "Description": "<p>The spirit conjurer is filled with the power of the logirwurm, which m anifests through burning breath and skin that appears to darken slightly and grow somewhat scaly. ✦ Flame Hardened’s<ul><li>Flame Hardened’s Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer gains a natural Protection Value of +2. ✦ The spirit conjurer deals +1 extra damage with all melee weapons and throwing weapons.</p>",
+          "Summary": "Protects against ordinary fire and improves attacks.",
+          "Description": "The target gains Protection +2, deals +1 damage in melee, at range, and with natural attacks, and takes no damage from nonmagical fire. Its breath can ignite dry wood.",
           "SourceName": "Flame Hardened",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -12996,7 +13055,8 @@
         },
         "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant": {
           "Name": "Paralyzing Gaze",
-          "Description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze. First the spirit conjurer must gain the opponent’s attention so they meet the gaze. Once eye contact is made, the opponent must make a successful Situation roll with a S ituation value of 8 (Psyche modifiers apply) or become paralyzed for 1 round. A paralyzed opponent cannot do anything until the effect wears off. If the target has not yet acted in the current action round, the paralyzing effect costs them this round of action; otherwise the effect commences in the next action round. Either way, the opponent loses 1 round of action (current or next) in the ability’s basic version.",
+          "Summary": "Briefly paralyzes a target that meets the gaze.",
+          "Description": "After eye contact, a target that fails its resistance test is paralyzed for one round and cannot act.",
           "SourceName": "Paralyzing Gaze",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13004,7 +13064,8 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Dragon Skin",
-          "Description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
+          "Summary": "Protects against fire and improves attacks.",
+          "Description": "The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood.",
           "SourceName": "Dragon Skin",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13012,7 +13073,8 @@
         },
         "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm": {
           "Name": "Head of the Huvfurwurm",
-          "Description": "The spirit conjurer is able to survive the normally fatal blow of having their head severed from the body. When the spirit conjurer suffers an attack that would kill them, roll 1d10. If the result is 9-10, the head sustains the attack and is lopped off. The spirit conjurer immediately goes into hibernation, though they appear to be slain, and after a month a new head has grown and the spirit conjurer wakes up from the slumber. This ability works only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic. A spirit conjurer who has enabled this ability seems to have a slightly longer neck than usual, which pushes the head a bit forward as a leading appendage.",
+          "Summary": "Allows survival after decapitation.",
+          "Description": "When an attack would kill the target, a 9 or 10 on 1d10 allows its head to regrow. It appears dead and hibernates for a month before waking; this effect works only once.",
           "SourceName": "Head of the Huvfurwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13020,7 +13082,8 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon": {
           "Name": "Dragon Soul",
-          "Description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that often ignites, and skin that significantly darkens and grows scaly. ✦ Dragon Soul<ul><li>Dragon Soul Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer is not harmed by magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +6. ✦ The spirit conjurer deals +4 extra damage with all melee weapons and throwing weapons.</p>",
+          "Summary": "Grants protection and complete fire resistance.",
+          "Description": "The target gains Protection +6, deals +4 damage in melee, at range, and with natural attacks, and is immune to magical and nonmagical fire. Its breath can ignite dry wood.",
           "SourceName": "Dragon Soul",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13028,7 +13091,8 @@
         },
         "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant": {
           "Name": "Giant Snakeshape",
-          "Description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
+          "Summary": "Transforms the target into a giant serpent.",
+          "Description": "The target becomes a size 4 giant serpent, as long as a sanctuary and weighing 500 kg to 8 tonnes. It gains 20 temporary HP, Protection 2, Strength +6 (and +6 damage), Fear Factor 1d5, Paralysing Gaze, and Constriction. Its natural attacks are a bite (2d10, Open Roll 9–10) and a crush after a successful constriction (2d10, ignoring armour protection). Its equipment is suspended; it cannot wield weapons or use other divine powers than those granted by this form.",
           "SourceName": "Giant Snakeshape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13038,7 +13102,8 @@
         },
         "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier": {
           "Name": "Hammer Fists",
-          "Description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
+          "Summary": "Improves unarmed attacks.",
+          "Description": "Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels.",
           "SourceName": "Hammer Fists",
           "SourceBook": "Player's Handbook",
           "SourcePage": "231",
@@ -13046,7 +13111,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Animal Spirit — Bear",
-          "Description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+          "Summary": "Grants some bear traits without changing form.",
+          "Description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, night vision, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13056,7 +13122,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard": {
           "Name": "Animal Spirit — Fox",
-          "Description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+          "Summary": "Grants some fox traits without changing form.",
+          "Description": "The target takes on some fox traits without fully changing shape: Intelligence at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth and Larceny. Foxes regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13065,7 +13132,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre": {
           "Name": "Animal Spirit — Hare",
-          "Description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+          "Summary": "Grants some hare traits without changing form.",
+          "Description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13074,7 +13142,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau": {
           "Name": "Animal Spirit — Raven",
-          "Description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+          "Summary": "Grants some raven traits without changing form.",
+          "Description": "The target takes on some raven traits without fully changing shape: night vision, the ability to perceive invisible beings, and a beak (1d10, Open Roll 10) as a natural weapon. Ravens regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13085,7 +13154,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf": {
           "Name": "Animal Spirit — Stag",
-          "Description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+          "Summary": "Grants some deer traits without changing form.",
+          "Description": "The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, night vision, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13095,7 +13165,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Animal Shape — Bear",
-          "Description": "<p>The elf can transform into the form of their chosen animal. The Ihana takes on all the traits of the animal while maintaining any of their own traits that do not conflict with the build of the animal (for example, weapon skills would be lost since an animal cannot use weapons). The elf always maintains their own intelligence. Any gear worn by the Ihana at the moment of transformation, including a single object in each hand as well as clothing or armor, becomes one with the animal. When the elf decides to transform back, all equipment returns to its state at the moment of transformation (even held objects). What traits animals possess is up to the game master to decide,<ul><li>Bear: Communicate with other bears;</li></ul>but below are some examples from different animals: ✦ Bear: Communicate with other bears; Night vision; Strength +4; Constitution +4; Dexterity -2; Can be ridden by a person; Natural Protection Value of +3; Claws as a natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Communicate with other foxes; Movement on land is doubled (x2); Night vision; Intelligence +4; Strength -2; +3 in the disciplines of Shadowing and Thievery; Harder to hit in combat: -3 to the Skill Values of all opponents’ attacks ✦ Hare: Communicate with other hares; Movement on land is doubled (x2); Night vision; Dexterity +4; Strength -2; Harder to hit in combat: -3 to the Skill Values of all o pponents’ attacks ✦ Raven: Speak with ravens and dead beings; Movement on land is halved (/2); Movement in the air is quadrupled (x4); Dexterity +4; Constitution -4; Night vision; See all invisible and immaterial beings; Beak as a natural weapon: 1d10 (OR 10) points of damage ✦ Stag: Communicate with other deer; Movement on land is doubled (x2); Night vision; Strength +1; Constitution +4; Can be ridden by a person; Horns as natural weapons: 1d10 (OR 10) points of damage</p>",
+          "Summary": "Transforms the target into a bear.",
+          "Description": "The target takes the form of a bear and retains its Intelligence and traits compatible with this form. It can communicate with bears and carry one rider. It gains night vision, Strength and Constitution at least +4, Dexterity −2, Protection +3, and a claw attack (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13105,7 +13176,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard": {
           "Name": "Animal Shape — Fox",
-          "Description": "<p>The elf can transform into the form of their chosen animal. The Ihana takes on all the traits of the animal while maintaining any of their own traits that do not conflict with the build of the animal (for example, weapon skills would be lost since an animal cannot use weapons). The elf always maintains their own intelligence. Any gear worn by the Ihana at the moment of transformation, including a single object in each hand as well as clothing or armor, becomes one with the animal. When the elf decides to transform back, all equipment returns to its state at the moment of transformation (even held objects). What traits animals possess is up to the game master to decide,<ul><li>Bear: Communicate with other bears;</li></ul>but below are some examples from different animals: ✦ Bear: Communicate with other bears; Night vision; Strength +4; Constitution +4; Dexterity -2; Can be ridden by a person; Natural Protection Value of +3; Claws as a natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Communicate with other foxes; Movement on land is doubled (x2); Night vision; Intelligence +4; Strength -2; +3 in the disciplines of Shadowing and Thievery; Harder to hit in combat: -3 to the Skill Values of all opponents’ attacks ✦ Hare: Communicate with other hares; Movement on land is doubled (x2); Night vision; Dexterity +4; Strength -2; Harder to hit in combat: -3 to the Skill Values of all o pponents’ attacks ✦ Raven: Speak with ravens and dead beings; Movement on land is halved (/2); Movement in the air is quadrupled (x4); Dexterity +4; Constitution -4; Night vision; See all invisible and immaterial beings; Beak as a natural weapon: 1d10 (OR 10) points of damage ✦ Stag: Communicate with other deer; Movement on land is doubled (x2); Night vision; Strength +1; Constitution +4; Can be ridden by a person; Horns as natural weapons: 1d10 (OR 10) points of damage</p>",
+          "Summary": "Transforms the target into a fox.",
+          "Description": "The target takes the form of a fox and retains its Intelligence and traits compatible with this form. It can communicate with foxes, see in darkness, and gains Intelligence +4, Strength −2, doubled land movement, and +3 in Stealth and Larceny. Attacks against it suffer −2 to their combat value. Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13114,7 +13186,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre": {
           "Name": "Animal Shape — Hare",
-          "Description": "<p>The elf can transform into the form of their chosen animal. The Ihana takes on all the traits of the animal while maintaining any of their own traits that do not conflict with the build of the animal (for example, weapon skills would be lost since an animal cannot use weapons). The elf always maintains their own intelligence. Any gear worn by the Ihana at the moment of transformation, including a single object in each hand as well as clothing or armor, becomes one with the animal. When the elf decides to transform back, all equipment returns to its state at the moment of transformation (even held objects). What traits animals possess is up to the game master to decide,<ul><li>Bear: Communicate with other bears;</li></ul>but below are some examples from different animals: ✦ Bear: Communicate with other bears; Night vision; Strength +4; Constitution +4; Dexterity -2; Can be ridden by a person; Natural Protection Value of +3; Claws as a natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Communicate with other foxes; Movement on land is doubled (x2); Night vision; Intelligence +4; Strength -2; +3 in the disciplines of Shadowing and Thievery; Harder to hit in combat: -3 to the Skill Values of all opponents’ attacks ✦ Hare: Communicate with other hares; Movement on land is doubled (x2); Night vision; Dexterity +4; Strength -2; Harder to hit in combat: -3 to the Skill Values of all o pponents’ attacks ✦ Raven: Speak with ravens and dead beings; Movement on land is halved (/2); Movement in the air is quadrupled (x4); Dexterity +4; Constitution -4; Night vision; See all invisible and immaterial beings; Beak as a natural weapon: 1d10 (OR 10) points of damage ✦ Stag: Communicate with other deer; Movement on land is doubled (x2); Night vision; Strength +1; Constitution +4; Can be ridden by a person; Horns as natural weapons: 1d10 (OR 10) points of damage</p>",
+          "Summary": "Transforms the target into a hare.",
+          "Description": "The target takes the form of a hare and retains its Intelligence and traits compatible with this form. It can communicate with hares, see in darkness, and gains Dexterity +4 and Strength −2; its land movement is doubled. Attacks against it suffer −3 to their combat value. Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13123,7 +13196,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau": {
           "Name": "Animal Shape — Raven",
-          "Description": "<p>The elf can transform into the form of their chosen animal. The Ihana takes on all the traits of the animal while maintaining any of their own traits that do not conflict with the build of the animal (for example, weapon skills would be lost since an animal cannot use weapons). The elf always maintains their own intelligence. Any gear worn by the Ihana at the moment of transformation, including a single object in each hand as well as clothing or armor, becomes one with the animal. When the elf decides to transform back, all equipment returns to its state at the moment of transformation (even held objects). What traits animals possess is up to the game master to decide,<ul><li>Bear: Communicate with other bears;</li></ul>but below are some examples from different animals: ✦ Bear: Communicate with other bears; Night vision; Strength +4; Constitution +4; Dexterity -2; Can be ridden by a person; Natural Protection Value of +3; Claws as a natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Communicate with other foxes; Movement on land is doubled (x2); Night vision; Intelligence +4; Strength -2; +3 in the disciplines of Shadowing and Thievery; Harder to hit in combat: -3 to the Skill Values of all opponents’ attacks ✦ Hare: Communicate with other hares; Movement on land is doubled (x2); Night vision; Dexterity +4; Strength -2; Harder to hit in combat: -3 to the Skill Values of all o pponents’ attacks ✦ Raven: Speak with ravens and dead beings; Movement on land is halved (/2); Movement in the air is quadrupled (x4); Dexterity +4; Constitution -4; Night vision; See all invisible and immaterial beings; Beak as a natural weapon: 1d10 (OR 10) points of damage ✦ Stag: Communicate with other deer; Movement on land is doubled (x2); Night vision; Strength +1; Constitution +4; Can be ridden by a person; Horns as natural weapons: 1d10 (OR 10) points of damage</p>",
+          "Summary": "Transforms the target into a raven.",
+          "Description": "The target takes the form of a raven and retains its Intelligence and traits compatible with this form. It can communicate with ravens and the dead, see in darkness, and perceive invisible and immaterial beings. Its Dexterity increases by 4, its Constitution decreases by 4, its land movement is halved, and its flying speed is quadrupled. It attacks with its beak (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13134,7 +13208,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf": {
           "Name": "Animal Shape — Stag",
-          "Description": "<p>The elf can transform into the form of their chosen animal. The Ihana takes on all the traits of the animal while maintaining any of their own traits that do not conflict with the build of the animal (for example, weapon skills would be lost since an animal cannot use weapons). The elf always maintains their own intelligence. Any gear worn by the Ihana at the moment of transformation, including a single object in each hand as well as clothing or armor, becomes one with the animal. When the elf decides to transform back, all equipment returns to its state at the moment of transformation (even held objects). What traits animals possess is up to the game master to decide,<ul><li>Bear: Communicate with other bears;</li></ul>but below are some examples from different animals: ✦ Bear: Communicate with other bears; Night vision; Strength +4; Constitution +4; Dexterity -2; Can be ridden by a person; Natural Protection Value of +3; Claws as a natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Communicate with other foxes; Movement on land is doubled (x2); Night vision; Intelligence +4; Strength -2; +3 in the disciplines of Shadowing and Thievery; Harder to hit in combat: -3 to the Skill Values of all opponents’ attacks ✦ Hare: Communicate with other hares; Movement on land is doubled (x2); Night vision; Dexterity +4; Strength -2; Harder to hit in combat: -3 to the Skill Values of all o pponents’ attacks ✦ Raven: Speak with ravens and dead beings; Movement on land is halved (/2); Movement in the air is quadrupled (x4); Dexterity +4; Constitution -4; Night vision; See all invisible and immaterial beings; Beak as a natural weapon: 1d10 (OR 10) points of damage ✦ Stag: Communicate with other deer; Movement on land is doubled (x2); Night vision; Strength +1; Constitution +4; Can be ridden by a person; Horns as natural weapons: 1d10 (OR 10) points of damage</p>",
+          "Summary": "Transforms the target into a deer.",
+          "Description": "The target takes the form of a deer and retains its Intelligence and traits compatible with this form. It can communicate with deer, carry one rider, and feed on grass. It sees in darkness, gains Strength +1 and Constitution +4, and has doubled land movement. It attacks with its antlers (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
@@ -13144,7 +13219,8 @@
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Control Fire",
-          "Description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+          "Summary": "Makes swimming and breathing underwater easier.",
+          "Description": "The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value.",
           "SourceName": "Control Fire",
           "SourceBook": "Player's Handbook",
           "SourcePage": "241",
@@ -13152,7 +13228,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
           "Name": "Simmering Blood",
-          "Description": "Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +1d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aid of this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+          "Summary": "Temporarily increases health points.",
+          "Description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Simmering Blood",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13160,7 +13237,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage",
-          "Description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
+          "Summary": "Improves attacks and grants fear immunity.",
+          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13168,7 +13246,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13176,7 +13255,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood": {
           "Name": "Boiling Blood",
-          "Description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+          "Summary": "Temporarily increases health points.",
+          "Description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Boiling Blood",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13184,7 +13264,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
           "Name": "Madness",
-          "Description": "<p>Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in particularly hard battles. This effect can be so overpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their face twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless sufficiently cooled. Simply lying down in water (or being thrown<ul><li>Effects of Madness:</li><li>Bruid grows 1 m taller and gains 60</li></ul>into it) is enough to prevent this damage. ✦ Effects of Madness: ✦ Bruid grows 1 m taller and gains 60 kg in muscle (calculated as 1.5 times the size of a normal human) ✦ Bruid receives their own fear factor of 1d10 (OR 10) ✦ +10 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +4 in damage with melee weapons or thrown weapons ✦ +2 on SV of all attacks ✦ Bruid is unable to parry or evade attacks ✦ Bruid ignores all effects from fear ✦ Bruid can continue to fight for 1d3 action rounds after dying</p>",
+          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13192,7 +13273,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Madness",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13200,7 +13282,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire": {
           "Name": "Bloodfire",
-          "Description": "Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +3d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aid of this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+          "Summary": "Greatly increases health points.",
+          "Description": "The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Bloodfire",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13208,7 +13291,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
           "Name": "Riastarthae",
-          "Description": "<p>Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in particularly hard battles. This effect can be so overpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless sufficiently cooled. Simply lying down in water (or being thrown into it)<ul><li>Effects of the Riastarthae:</li><li>Bruid grows 1.5 m taller and gains</li></ul>is enough to prevent this damage. ✦ Effects of the Riastarthae: ✦ Bruid grows 1.5 m taller and gains 100 kg in muscles (calculated as twice the size of a normal human) ✦ Bruid receives their own fear factor of 1d10 (OR 9-10) ✦ +15 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +6 in damage with melee weapons or thrown weapons ✦ +3 on SV of all attacks ✦ Bruid is unable to parry or avoid attacks ✦ Bruid ignores all effects from fear ✦ Bruid ignores the effect of severe damage or injury ✦ Bruid can continue to fight for 1d6 + 1 action rounds after dying</p>",
+          "Summary": "Unleashes an extreme frenzy and ignores wounds.",
+          "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13216,7 +13300,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion": {
           "Name": "Exhaustion after frenzy",
-          "Description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+          "Summary": "Causes exhaustion after a frenzy.",
+          "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13224,7 +13309,8 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse",
-          "Description": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root. The spell can only be woven over a living creature who weighs less than 60 kg and is standing over ground of sufficient thickness and fertility for a tree to take root and grow. The victim can resist the full transformation by succeeding on a Situation roll with a Situation value of 4 (Constitution modifiers apply). On a success, only the victim’s skin transforms to birch or bark, which has no effects beyond appearance and restricted Agility; all Skill Values and Situation values related to Agility suffer a negative modifier of -3 for the duration. If the target weighs too much to be entirely transformed, only parts of the victim will be altered (how much and what parts are up to the game master to decide), and the rest of the victim’s skin turns to birch and bark with the same effects as above. A successful Situation roll in this case means the victim suffers a negative modifier of -1 (instead of -3). If the target fails the Situation roll and weighs less than the spell’s effect limit, the victim immediately takes root and is unable to move. At this point, over the course of about an hour, the victim transforms into a tree of whichever species the mage designates (though the tree must be able to survive in the area, even if it is not commonly found there). The tree has the same size and Body Points that the victim had in their normal form. It also retains facial features twisted within the bark, and limbs that resemble arms and legs. While the creature is in tree form, it maintains the same senses of perception that it had before the curse took effect. The creature sees everything visible within view (depending on which direction the face is pointing) and hears sounds, detects scents, and feels contact as normal. Any damage the tree creature suffers remains once it returns to its natural form. Possessions such as clothing and equipment also become parts of the tree (assuming their added weight is within the spell’s limit). In tree form, the victim has a natural Protection Value of 4. The victim does not need to eat or drink to survive, but will occasionally fall asleep. If someone carves or tries to cut down the tree (inflicting damage upon the victim), the tree begins to bleed. If this does not deter the attacker, the victim dies after suffering enough damage. The mage can end this curse and return the creature to its original shape at any time. A creature that endures tree form for the full duration of the spell is very stiff once restored, and for the first three days afterward, all Skill rolls and Situation rolls related to Agility and movement are halved.",
+          "Summary": "Transforms the target into a tree and protects it with bark.",
+          "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13232,7 +13318,8 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
           "Name": "Stiffness after the tree curse",
-          "Description": "For three days after a full-duration tree curse, Agility and movement-related tests are halved.",
+          "Summary": "Leaves stiffness after the tree curse.",
+          "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13240,7 +13327,8 @@
         },
         "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm": {
           "Name": "Change Self (logiwurm)",
-          "Description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+          "Summary": "Changes physical form to a selected creature.",
+          "Description": "The logewurm can take the physical form of any creature it chooses for an unlimited duration, then return to its original form whenever it wishes. It retains none of its dragon’s physical attributes in this form and is therefore vulnerable. It can use this transformation only once per year.",
           "SourceName": "Change Self (logiwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "124",
@@ -13248,7 +13336,8 @@
         },
         "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll": {
           "Name": "Change Shape (fjol troll)",
-          "Description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+          "Summary": "Allows taking almost any appearance.",
+          "Description": "The fjoltroll can take almost any shape to pass unnoticed among travellers and other creatures.",
           "SourceName": "Change Shape (fjol troll)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "148",
@@ -13256,7 +13345,8 @@
         },
         "oRxJE6A6B7C8D9Ea#c-ur-regenerant-lindwurm": {
           "Name": "Regenerating Heart (lindwurm)",
-          "Description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+          "Summary": "Heals the target, at the risk of transforming it into a lindwurm.",
+          "Description": "Eating all or part of a lindwurm’s heart heals wounds, cures diseases, and restores unusable or missing body parts; recovery time depends on the injuries. After eating it, the target makes a Situation Value 16 test (Constitution). On a failure, it falls into a magical sleep and becomes a lindwurm after 1d10 weeks; that lindwurm returns to its original form when it dies.",
           "SourceName": "Regenerating Heart (lindwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "120",
@@ -13264,7 +13354,8 @@
         },
         "oRxJE6A6B7C8D9Ea#forme-de-lindwurm": {
           "Name": "Lindwurm form",
-          "Description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+          "Summary": "Transforms the target into a lindwurm.",
+          "Description": "The target takes the physical form of a lindwurm and gains its characteristics. Its equipment is suspended during the transformation.",
           "SourceName": "Regenerating Heart (lindwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "120",
@@ -13272,7 +13363,8 @@
         },
         "flAdvMhNiOjPkQlR#corps-de-fumee": {
           "Name": "Smoke Body",
-          "Description": "<p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p>",
+          "Summary": "Turns the body into smoke and increases movement.",
+          "Description": "The draugr transforms into smoke over three turns and cannot defend itself during this time. In this form it moves 30 metres per turn (less in strong winds) and recovers 10 HP for each day spent this way.",
           "SourceName": "Smoke Body",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "58",
@@ -13280,7 +13372,8 @@
         },
         "it3GE4w2x3y4z5A6#frenesie-hrimtroll": {
           "Name": "Frenzy (hrim troll)",
-          "Description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+          "Summary": "Improves attacks at the cost of parries.",
+          "Description": "For 1d6 rounds, the target gains +2 to attacks and suffers -2 to parries.",
           "SourceName": "Frenzy (hrim troll)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "159",
@@ -13288,7 +13381,8 @@
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Rugtanne Infection",
-          "Description": "<p>Every other action round in which a night ulm sucks blood from a victim, there is a chance that the victim will develop a rare disease. After two action rounds, the chance is 1 in 20 (the roll of 20 on 1d20). After four action rounds, the chance is 2 in 20 (the roll of 19-20 on 1d20). For some inexplicable reason, only humans can be infected by the disease.</p><p>A victim who is infected by the disease will transform into a rugtanne (a strange mix between a human and a night ulm) within 2d3 days. A rugtanne can live only during the night. If exposed to sunlight, it dies instantly from the shock when it is hit by the rays of the sun. Every fifth night, they must feed on blood from another warm-bodied creature. The bite and the bloodsucking works the same way for the rugtanne as it does for the night ulm.</p><p>A rugtanne can live up to four times as long a human, which means that it has much more time for learning things. According to some myths, a rugtanne can have great magical capabilities and powers, such as being able to transform into a bat or a great black stallion. These are nothing but superstitions. However, if mighty wizards are transformed into rugtannes, they still can wield their magic, creating horrid bloodsuckers with powers that few men hold.</p><p>When a player character becomes a rugtanne, Constitution, Psyche, Strength, and Dexterity increase by two levels (for example, -2 becomes 0, or +1 becomes +4). If already at the highest level, add +4 to that trait modifier, making it +8. Natural skin protection gives PV 1. The rugtanne gains Darkvision: normal vision in total darkness up to 10 m, fading until it vanishes at about 60 m. It still takes damage and remains mortal as before, but recalculate its Body Points using its new traits.</p>",
+          "Summary": "Transforms the target into a rugtanne.",
+          "Description": "After an incubation of 2d3 days, a human target becomes a rugtanne: its Constitution, Psyche, Strength, and Dexterity increase by two degrees, up to +8; Protection increases by 1 and HP are recalculated. It sees in total darkness up to 10 m, then gradually out to about 60 m. It can live only at night, dies instantly in daylight, and must drink the blood of a warm-blooded creature every five nights. It retains its magical abilities and can live up to four times longer than a human.",
           "SourceName": "Rugtanne Infection",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "24",
@@ -13297,7 +13391,8 @@
         },
         "WKMBG3v1w2x3y4z5#warg-disease": {
           "Name": "Warg disease",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-5 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Infects the target and may turn it into a werewarg.",
+          "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (garm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13305,7 +13400,8 @@
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
           "Name": "Werewarg",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-5 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Transforms the target into a werewarg.",
+          "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (garm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13316,7 +13412,8 @@
         },
         "gXp2SRjPkQlRmSnT#warg-disease": {
           "Name": "Warg disease",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-3 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Infects the target and may turn it into a werewarg.",
+          "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (skoll)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13324,7 +13421,8 @@
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
           "Name": "Werewarg",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-3 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Transforms the target into a werewarg.",
+          "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (skoll)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13335,7 +13433,8 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-disease": {
           "Name": "Warg disease",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-2 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Infects the target and may turn it into a werewarg.",
+          "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (warg)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13343,7 +13442,8 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
           "Name": "Werewarg",
-          "Description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-2 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+          "Summary": "Transforms the target into a werewarg.",
+          "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (warg)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "30",
@@ -13354,7 +13454,8 @@
         },
         "pjY95vXsYtZu0v1w#metamorphose-draugr": {
           "Name": "Shapeshifter (draugr)",
-          "Description": "<p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p>",
+          "Summary": "Allows a draugr to take an animal form.",
+          "Description": "The draugr can take the form of a chosen animal, often a wolf, raven, or horse, and gains its physical characteristics; its HP are not preserved. The transformation takes three turns, during which it cannot defend itself. Each change from one form to another costs 30 days and nights.",
           "SourceName": "Shapeshifter (draugr)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "58",
@@ -13362,7 +13463,8 @@
         },
         "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje": {
           "Name": "Metamorph (stonehinje)",
-          "Description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+          "Summary": "Allows taking the appearance of a simple object.",
+          "Description": "The stenhinje can take the form of a simple object (such as a chest, door, wall, or floor), made from its own mass. The GM decides what prompts it to attack, such as violence against it or the arrival of a specific enemy. It is almost impossible to recognise as a living creature without the appropriate vitner.",
           "SourceName": "Metamorph (stonehinje)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "99",
@@ -13370,7 +13472,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-braskelwurm": {
           "Name": "Petrify (braskelwurm)",
-          "Description": "<p>When the braskelwurm attacks with its eyes, it tries to force the victim to face its gaze. It does this by clucking seductively and pointing its glowing eyes toward its chosen victim. Even if the clucking is neither beautiful nor seductive, it is hard not to turn one’s attention toward this sound and then fall into the deep eyes of the reptile.</p><p>Everyone who hears the clucking noise must make a situation roll with a situation value of 14 (Psyche modifiers apply) to avoid looking into the beast’s eyes. The one whom the braskelwurm has chosen to be its victim has a negative modifier of -6 (situation value 8). Depending on the age of the braskelwurm, the situation value may be modified. A young braskelwurm is much more dangerous than an old one, and the most dangerous are the ones that were just born. It is up to the game master to give modifiers based on the age of the braskelwurm.</p><p>Victims of the gaze can withstand the incoming spell by making a situation roll with a situation value of 6 (Psyche modifiers apply). If the roll fails, the victim is instantly turned to nearly unbreakable stone. This means that the petrified victim gains a Protection Value of 10 and a Break Value of 100. When the Break Value is lowered to 0, the victim starts to take damage like normal, and if the victim takes as much damage as double its Body Points, the stone statue will break and the victim will die.</p><p>A petrified creature is in a constant state of sleep and cannot comprehend the passage of time or what happens around them. The victim cannot affect anything in its surroundings. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja). When the petrification runs out, the victim returns to its original form.</p><p>A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The statue weighs around ten times the victim’s original weight.</p>",
+          "Summary": "Petrifies the target and turns it into a statue.",
+          "Description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 10 and integrity 100; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. The target returns to normal if the petrification is dispelled.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "106",
@@ -13378,7 +13481,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "106",
@@ -13386,7 +13490,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "106",
@@ -13394,7 +13499,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-demon-tangible": {
           "Name": "Petrify (physical demon)",
-          "Description": "<p>The demon can petrify a victim that stands within 30 meters of the demon (SV 14) without spending Combat Points. The ability can be used 1d3 times per day and the duration of the petrification is 1d10 (OR 7-10) days. The armor of the victim and their clothes are also petrified; however, no magical object is affected.</p><p>The victim can try to resist the petrification by succeeding with a situational roll with a situation value of 6 (the trait Psyche modifies the roll). If the roll fails the victim is turned into stone. The stone that the victim is petrified into is very hard and close to unbreakable. In practice this means that the petrified person gains a protection value of 20 and a Break Value of 200. When the Break Value is lowered to 0 the person starts to take damage like normal and if the petrified person takes as much damage as double its Body Points this stone statue will be broken and the victim will die.</p><p>A creature that is petrified is in a constant state of sleep and cannot comprehend time that passes or what happens around him or her. The victim cannot affect anything that happens in its surroundings. When the duration has run out the victim returns to its original form. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja).</p><p>A petrified creature is not stuck in the ground in any way, but it can be moved by someone strong enough to do so. The petrified creature weighs around ten times the victim’s original weight.</p>",
+          "Summary": "Petrifies the target and turns it into a resilient statue.",
+          "Description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 20 and integrity 200; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. When the effect ends or the petrification is dispelled, the target returns to normal.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "48",
@@ -13402,7 +13508,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "48",
@@ -13410,7 +13517,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds",
-          "Description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+          "Summary": "Leaves residual stiffness after petrification.",
+          "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "48",
@@ -13418,7 +13526,8 @@
         },
         "2hwy57A6B7C8D9Ea#regeneration-de-tete": {
           "Name": "Regenerate Head",
-          "Description": "<p>When a huvfurwurm takes great damage (20+ points of damage) or if a head is cut off, a new head is created from one of the many growths and lumps that cover the dragon’s body (the game master decides how often this happens). The greater the damage, the more dangerous the head. A few have their own abilities and can be used in battle. The GM can create other heads with special traits and powers. Below are examples of heads and their traits.</p><p>In order to remain functional a head cannot be severed and regenerated more than three times. This is due to the fact that every time a new head grows it is mutated, both in shape and property. The first three times the GM rolls 1d20 on the table below while the fourth time the head is so mutated that it can not cause any injury anymore or even work normally. Should such a mutated head also be cut off, it does not grow a new one to replace it. You will notice that some head regeneration can result in two or more extra heads. Regarding the number of regenerations, the extra heads will not be considered anew, but they will keep the same regeneration status (first, second, etc..) that they should have had, if they were singular heads.</p><table><thead><tr><th>2d10 (printed table heading)</th><th>Result</th></tr></thead><tbody><tr><td>2-4</td><td>Two normal heads regenerate instead of one.</td></tr><tr><td>5</td><td>Thin neck: halve the BP that must be reduced to 0 to sever it.</td></tr><tr><td>6</td><td>Thick neck: double the BP that must be reduced to 0 to sever it.</td></tr><tr><td>7</td><td>Hypnotic eyes without a CP cost: resist at situation value 8 (Psyche). Paralysis for 2d6 rounds or until taking at least 1 damage.</td></tr><tr><td>8</td><td>Poor vision: -3 to this head's attack SV.</td></tr><tr><td>9</td><td>Long tusks: increase the chance of an open roll by 1.</td></tr><tr><td>10</td><td>An insane head that attacks the other heads.</td></tr><tr><td>11</td><td>Large grabbing mouth: a successful attack deals half damage. Resist at situation value 12 (Strength); on failure the victim is trapped. The other heads gain +2 to attacks against the victim until a new successful situation roll frees them.</td></tr><tr><td>12</td><td>Short neck: -4 m reach.</td></tr><tr><td>13</td><td>Very long neck: +4 m reach.</td></tr><tr><td>14</td><td>Fragile scales: PV 0 for this head.</td></tr><tr><td>15</td><td>Thick scales: +3 PV for this head.</td></tr><tr><td>16</td><td>Mutated giant head: +3 to its attack SV and increase the chance of an open roll by 2.</td></tr><tr><td>17</td><td>Acid: range 7 m, cone 4 m in diameter at its end, 1d10 (OR 8-10) damage, twice per day without CP.</td></tr><tr><td>18</td><td>Fire: range 10 m, cone 4 m in diameter at its end, 1d10 (OR 7-10) damage, twice per day without CP.</td></tr><tr><td>19</td><td>Two additional heads; roll twice to determine their nature.</td></tr><tr><td>20</td><td>Three additional heads; roll three times to determine their nature.</td></tr></tbody></table><p>The prose specifies 1d20 for the first three regenerations, whereas the printed table is headed 2d10 and starts at 2. This discrepancy is preserved for the GM to choose. The huvfurwurm dies when its body reaches 0 BP or when it has no functional heads left.</p>",
+          "Summary": "Allows a severed head to regrow.",
+          "Description": "After taking 20 or more damage, or being decapitated, a new head may grow. Each head can regenerate up to three times; the fourth regrowth is mutilated and cannot attack normally.",
           "SourceName": "Regenerate Head",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "111",
@@ -13426,7 +13535,8 @@
         },
         "NNBuQnQlRmSnToUp#transformation-corporelle": {
           "Name": "Body Transformation",
-          "Description": "<p>The demon can transform into a creature of its choice.</p>",
+          "Summary": "Transforms the target into a selected animal.",
+          "Description": "The target takes the physical form of an animal selected from the bestiary and gains its physical characteristics. Its health points are not preserved and its equipment is suspended.",
           "SourceName": "Body Transformation",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "48",

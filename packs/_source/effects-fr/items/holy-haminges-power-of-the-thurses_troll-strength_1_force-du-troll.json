@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
-    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
-    "summary": "Force du troll",
+    "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
+    "summary": "Porte la Force au niveau exceptionnel d’un troll.",
     "source": {
       "book": "Livre des règles",
       "page": 275
@@ -21,7 +21,7 @@
       "name": "Force du troll",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+      "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
             "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
+            "summary": "Porte la Force au niveau exceptionnel d’un troll.",
             "editableChanges": true,
             "related": []
           }

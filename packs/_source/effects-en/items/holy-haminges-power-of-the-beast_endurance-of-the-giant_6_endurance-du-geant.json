@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
-    "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +8 for the duration of the ability. The spirit conjurer also becomes immune to all poison and disease for the duration.",
-    "summary": "Endurance of the Giant",
+    "description": "Replaces the target’s Constitution trait with the exceptional level +8 and makes it immune to poison and disease.",
+    "summary": "Improves Constitution and grants immunity to poison and disease.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -21,7 +21,7 @@
       "name": "Endurance of the Giant",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +8 for the duration of the ability. The spirit conjurer also becomes immune to all poison and disease for the duration.",
+      "description": "Replaces the target’s Constitution trait with the exceptional level +8 and makes it immune to poison and disease.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
+            "summary": "Improves Constitution and grants immunity to poison and disease.",
             "editableChanges": true,
             "related": []
           }

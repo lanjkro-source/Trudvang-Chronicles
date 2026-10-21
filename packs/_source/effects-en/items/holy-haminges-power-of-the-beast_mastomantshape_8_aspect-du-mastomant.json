@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
-    "description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
-    "summary": "Mastomantshape",
+    "description": "The target takes the form of a size 7 mastomant weighing about 15 tonnes. It gains Protection 4, Strength +6 (and therefore +6 damage), 30 temporary HP, immunity to all forms of cold, and a tusk attack (2d10, Open Roll 9–10). It can carry four riders.",
+    "summary": "Transforms the target into a giant mastomant.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -21,7 +21,7 @@
       "name": "Mastomantshape",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
+      "description": "The target takes the form of a size 7 mastomant weighing about 15 tonnes. It gains Protection 4, Strength +6 (and therefore +6 damage), 30 temporary HP, immunity to all forms of cold, and a tusk attack (2d10, Open Roll 9–10). It can carry four riders.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
@@ -84,6 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
+            "summary": "Transforms the target into a giant mastomant.",
             "editableChanges": true,
             "related": []
           }

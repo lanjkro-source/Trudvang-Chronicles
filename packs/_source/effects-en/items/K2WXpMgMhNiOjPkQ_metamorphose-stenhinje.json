@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
-    "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
-    "summary": "Metamorph (stonehinje)",
+    "description": "The stenhinje can take the form of a simple object (such as a chest, door, wall, or floor), made from its own mass. The GM decides what prompts it to attack, such as violence against it or the arrival of a specific enemy. It is almost impossible to recognise as a living creature without the appropriate vitner.",
+    "summary": "Allows taking the appearance of a simple object.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 99
@@ -21,7 +21,7 @@
       "name": "Metamorph (stonehinje)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+      "description": "The stenhinje can take the form of a simple object (such as a chest, door, wall, or floor), made from its own mass. The GM decides what prompts it to attack, such as violence against it or the arrival of a specific enemy. It is almost impossible to recognise as a living creature without the appropriate vitner.",
       "transfer": false,
       "system": {
         "stackId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
             "sourceId": "K2WXpMgMhNiOjPkQ",
+            "summary": "Allows taking the appearance of a simple object.",
             "editableChanges": true,
             "related": []
           }

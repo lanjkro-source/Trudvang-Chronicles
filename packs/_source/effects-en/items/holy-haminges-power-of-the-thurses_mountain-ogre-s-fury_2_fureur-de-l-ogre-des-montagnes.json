@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
-    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following:<ul><li>Mountain Ogre’s Fury grants the</li></ul>✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear</p>",
-    "summary": "Mountain Ogre's Fury",
+    "description": "The target gains 3 temporary health points and +1 damage with melee, thrown, and natural attacks. It ignores fear and cannot parry or dodge.",
+    "summary": "Unleashes a frenzy that improves physical resilience.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -21,7 +21,7 @@
       "name": "Mountain Ogre's Fury",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following:<ul><li>Mountain Ogre’s Fury grants the</li></ul>✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "description": "The target gains 3 temporary health points and +1 damage with melee, thrown, and natural attacks. It ignores fear and cannot parry or dodge.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
@@ -70,6 +70,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+            "summary": "Unleashes a frenzy that improves physical resilience.",
             "editableChanges": true,
             "related": []
           }

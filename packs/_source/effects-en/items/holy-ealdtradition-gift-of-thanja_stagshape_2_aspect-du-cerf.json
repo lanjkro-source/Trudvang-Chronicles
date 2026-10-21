@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
-    "description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
-    "summary": "Stagshape",
+    "description": "The target takes the form of a deer. Its Strength and Constitution cannot be lower than +1 and +4; its land movement is doubled. It can communicate with deer, see in darkness, carry one rider, and feed on grass. It attacks with its antlers (1d10, Open Roll 9–10). Higher Strength and Constitution traits are retained; its equipment takes on the animal form’s appearance and returns to normal when the target changes back.",
+    "summary": "Grants the traits and senses of a deer.",
     "source": {
       "book": "Player's Handbook",
       "page": 176
@@ -21,7 +21,7 @@
       "name": "Stagshape",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
+      "description": "The target takes the form of a deer. Its Strength and Constitution cannot be lower than +1 and +4; its land movement is doubled. It can communicate with deer, see in darkness, carry one rider, and feed on grass. It attacks with its antlers (1d10, Open Roll 9–10). Higher Strength and Constitution traits are retained; its equipment takes on the animal form’s appearance and returns to normal when the target changes back.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
@@ -84,6 +84,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
             "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
+            "summary": "Grants the traits and senses of a deer.",
             "editableChanges": true,
             "related": []
           }

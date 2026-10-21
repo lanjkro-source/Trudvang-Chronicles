@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
-    "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force extraordinaire. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +6 en Force pour la durée du pouvoir.",
-    "summary": "Force de hinje",
+    "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +6.",
+    "summary": "Porte la Force au niveau exceptionnel d’un hinje.",
     "source": {
       "book": "Livre des règles",
       "page": 218
@@ -21,7 +21,7 @@
       "name": "Force de hinje",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force extraordinaire. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +6 en Force pour la durée du pouvoir.",
+      "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +6.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
             "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
+            "summary": "Porte la Force au niveau exceptionnel d’un hinje.",
             "editableChanges": true,
             "related": []
           }

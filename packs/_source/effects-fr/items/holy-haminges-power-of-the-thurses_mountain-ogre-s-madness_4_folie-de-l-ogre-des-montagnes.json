@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
-    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFolie de l’ogre des montagnes confère les traits suivants :\n• +6 points de santé (les dégâts affectent ces points de santé en priorité)\n• +3 aux dégâts des armes de corps à corps ou de lancer\n• +1 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
-    "summary": "Folie de l’ogre des montagnes",
+    "description": "La cible gagne 6 points de santé temporaires, +3 aux dégâts de corps à corps, de lancer et des armes naturelles, et +1 à la VC d’attaque. Elle ignore la peur et ne peut ni parer ni esquiver.",
+    "summary": "Déchaîne une rage qui améliore les attaques.",
     "source": {
       "book": "Livre des règles",
       "page": 276
@@ -21,7 +21,7 @@
       "name": "Folie de l’ogre des montagnes",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFolie de l’ogre des montagnes confère les traits suivants :\n• +6 points de santé (les dégâts affectent ces points de santé en priorité)\n• +3 aux dégâts des armes de corps à corps ou de lancer\n• +1 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+      "description": "La cible gagne 6 points de santé temporaires, +3 aux dégâts de corps à corps, de lancer et des armes naturelles, et +1 à la VC d’attaque. Elle ignore la peur et ne peut ni parer ni esquiver.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
@@ -77,6 +77,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+            "summary": "Déchaîne une rage qui améliore les attaques.",
             "editableChanges": true,
             "related": []
           }

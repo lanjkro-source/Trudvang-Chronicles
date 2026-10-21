@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
-    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
-    "summary": "Endurance du géant",
+    "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +8 et la rend immunisée au poison et aux maladies.",
+    "summary": "Renforce la Constitution et immunise aux poisons et maladies.",
     "source": {
       "book": "Livre des règles",
       "page": 269
@@ -21,7 +21,7 @@
       "name": "Endurance du géant",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
+      "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +8 et la rend immunisée au poison et aux maladies.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
+            "summary": "Renforce la Constitution et immunise aux poisons et maladies.",
             "editableChanges": true,
             "related": []
           }

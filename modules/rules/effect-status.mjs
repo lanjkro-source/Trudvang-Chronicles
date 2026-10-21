@@ -17,7 +17,11 @@ export function effectStatus(actor, {localize = key => key} = {}) {
   const immunity = profile.effects.filter(e => effectRules(e).ignoreFear).map(e => e.name).join(" · ");
   const notes = profile.effects.map(effect => {
     const r=effectRules(effect);
-    return {name:effect.name, description:String(effect.description ?? "").replace(/<[^>]*>/g," "), details: [
+    const parentSummary=effect.parent?.type==="effect"?effect.parent.system?.summary:"";
+    const summary=effect.flags?.["trudvang-chronicles"]?.transformation?.summary
+      || parentSummary
+      || String(effect.description ?? "").replace(/<[^>]*>/g," ");
+    return {name:effect.name, summary, details: [
       ...(r.senses ?? []).map(localize), ...(r.capabilities ?? []).map(localize), ...(r.immunities ?? []).map(localize),
       ...["noParry","noDodge","ignoreWounds","ignoreFear"].filter(key=>r[key]).map(key=>localize(`TRUDVANG.Effect.Profile.${key}`)),
       ...(r.heightBonus?[`${localize("TRUDVANG.Effect.Profile.heightBonus")} +${r.heightBonus} m`]:[]),

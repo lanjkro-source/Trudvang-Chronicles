@@ -56,7 +56,7 @@
         <section class="panel effects-summary-panel">
           <h2>{{localize "TRUDVANG.Section.Effects"}}</h2>
           {{#each effectStatus.notes as |effect|}}
-          <p class="status-consequence" title="{{effect.description}}"><strong>{{effect.name}}</strong>{{#if effect.details}}<span>{{effect.details}}</span>{{/if}}</p>
+          <p class="status-consequence" title="{{effect.summary}}"><strong>{{effect.name}}</strong>{{#if effect.details}}<span>{{effect.details}}</span>{{/if}}</p>
           {{/each}}
         </section>
         </div>

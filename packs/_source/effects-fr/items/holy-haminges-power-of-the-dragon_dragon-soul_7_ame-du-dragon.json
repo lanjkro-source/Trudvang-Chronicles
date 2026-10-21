@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
-    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.\nL’Âme du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +6\n• Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
-    "summary": "Âme du dragon",
+    "description": "La cible bénéficie de Protection +6, inflige +4 dégâts en combat rapproché, à distance et avec les armes naturelles, et est immunisée aux flammes magiques comme non magiques. Son souffle peut enflammer du bois sec.",
+    "summary": "Accorde une protection et une résistance totale au feu.",
     "source": {
       "book": "Livre des règles",
       "page": 279
@@ -21,7 +21,7 @@
       "name": "Âme du dragon",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.\nL’Âme du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +6\n• Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+      "description": "La cible bénéficie de Protection +6, inflige +4 dégâts en combat rapproché, à distance et avec les armes naturelles, et est immunisée aux flammes magiques comme non magiques. Son souffle peut enflammer du bois sec.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
@@ -56,6 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
+            "summary": "Accorde une protection et une résistance totale au feu.",
             "editableChanges": true,
             "related": []
           }

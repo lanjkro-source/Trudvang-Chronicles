@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
-    "description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day. The transformation takes 60 action rounds (5 minutes) and requires enough soil and space for the oak’s roots and branches, respectively. For each hour the priest spends in this state, they heal 1 Body Point. As a tree, the priest also receives nutrients from the water in the soil and the sun’s light, so there is no need to consume any food or water. Additionally, the priest can make a Situation roll once every day with a Situation value of 6 (Psyche modifiers apply) to try to remove an existing curse or demon infection from himself. In the tree port, the priest is immune to all demon attacks and a bilities. The priest can turn back to their true shape whenever they wish within the duration. If anyone (besides a demon) attacks the tree, it has a natural Protection Value of 8, and only one-fifth of the damage that penetrates this protection hurts the priest. If the priest is slain while in the tree port, they will remain a black oak.",
-    "summary": "Tree Port",
+    "description": "The target becomes a large black oak with Protection 8; after this protection, only one fifth of damage harms it. It recovers 1 HP per hour, feeds on water from the soil and sunlight, and is immune to demons’ attacks and abilities. Once per day, it can attempt a Situation Value 6 test (Psyche) to remove a curse or demonic infection. It can return to its normal form at any time; if it dies in this form, it remains a black oak.",
+    "summary": "Transforms the target into a resilient tree.",
     "source": {
       "book": "Player's Handbook",
       "page": 201
@@ -21,7 +21,7 @@
       "name": "Tree Port",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day. The transformation takes 60 action rounds (5 minutes) and requires enough soil and space for the oak’s roots and branches, respectively. For each hour the priest spends in this state, they heal 1 Body Point. As a tree, the priest also receives nutrients from the water in the soil and the sun’s light, so there is no need to consume any food or water. Additionally, the priest can make a Situation roll once every day with a Situation value of 6 (Psyche modifiers apply) to try to remove an existing curse or demon infection from himself. In the tree port, the priest is immune to all demon attacks and a bilities. The priest can turn back to their true shape whenever they wish within the duration. If anyone (besides a demon) attacks the tree, it has a natural Protection Value of 8, and only one-fifth of the damage that penetrates this protection hurts the priest. If the priest is slain while in the tree port, they will remain a black oak.",
+      "description": "The target becomes a large black oak with Protection 8; after this protection, only one fifth of damage harms it. It recovers 1 HP per hour, feeds on water from the soil and sunlight, and is immune to demons’ attacks and abilities. Once per day, it can attempt a Situation Value 6 test (Psyche) to remove a curse or demonic infection. It can return to its normal form at any time; if it dies in this form, it remains a black oak.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
@@ -58,6 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
+            "summary": "Transforms the target into a resilient tree.",
             "editableChanges": true,
             "related": []
           }

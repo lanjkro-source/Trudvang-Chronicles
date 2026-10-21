@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll",
-    "description": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix). Cette force se traduit par un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
-    "summary": "Force du troll",
+    "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
+    "summary": "Porte la Force au niveau exceptionnel d’un troll.",
     "source": {
       "book": "Livre des règles",
       "page": 218
@@ -21,7 +21,7 @@
       "name": "Force du troll",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix). Cette force se traduit par un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+      "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll",
             "sourceId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
+            "summary": "Porte la Force au niveau exceptionnel d’un troll.",
             "editableChanges": true,
             "related": []
           }

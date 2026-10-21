@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
-    "description": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation). Dans des conditions normales, il peut nager dans des eaux calmes aussi longtemps que dure ce pouvoir sans avoir besoin de faire le moindre jet de situation. Si un jet de compétence d’Agilité s’avère nécessaire, l’elfe reçoit un bonus à ce jet de +2 par niveau. L’elfe n’a aucun problème pour atteindre des profondeurs égales à trois fois sa propre taille. Pour chaque mètre de profondeur supplémentaire, l’elfe subit un malus de -2 à sa valeur de compétence (mais il continue de profiter du bonus mentionné plus haut). Les conséquences d’un jet de compétence raté sont laissées à l’appréciation du maître de jeu.",
-    "summary": "Don de l’eau",
+    "description": "La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC.",
+    "summary": "Facilite la nage et la respiration sous l’eau.",
     "source": {
       "book": "Livre des règles",
       "page": 297
@@ -21,7 +21,7 @@
       "name": "Don de l’eau",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation). Dans des conditions normales, il peut nager dans des eaux calmes aussi longtemps que dure ce pouvoir sans avoir besoin de faire le moindre jet de situation. Si un jet de compétence d’Agilité s’avère nécessaire, l’elfe reçoit un bonus à ce jet de +2 par niveau. L’elfe n’a aucun problème pour atteindre des profondeurs égales à trois fois sa propre taille. Pour chaque mètre de profondeur supplémentaire, l’elfe subit un malus de -2 à sa valeur de compétence (mais il continue de profiter du bonus mentionné plus haut). Les conséquences d’un jet de compétence raté sont laissées à l’appréciation du maître de jeu.",
+      "description": "La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+            "summary": "Facilite la nage et la respiration sous l’eau.",
             "editableChanges": true,
             "related": []
           }

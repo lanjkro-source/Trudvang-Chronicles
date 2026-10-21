@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
-    "description": "Le conjurateur fait appel au pouvoir de l’esprit lié et se transforme (ainsi que tout son équipement) en un mastomant géant jusqu’à expiration du pouvoir. L’Aspect du mastomant confère les traits suivants : - Aussi grand qu’un vrai mastomant (Taille 7) et d’un poids d’environ 15 tonnes - Valeur de protection naturelle de 4 - Arme naturelle : défenses 2d10 (JO 9-10) points de dégâts - Immunisé à tous les types de froid - +6 en Force, ce qui ajoute également +6 à ses dégâts - +30 points de santé (utilisés avant les points de santé naturels du conjurateur) - Peut servir de monture à quatre personnes à la fois",
-    "summary": "Aspect du mastomant",
+    "description": "La cible prend la forme d’un mastomant de taille 7 et d’environ 15 tonnes. Elle gagne Protection 4, Force +6 (et donc +6 aux dégâts), 30 PS temporaires, l’immunité à toutes les formes de froid et une attaque de défenses (2d10, JO 9–10). Elle peut servir de monture à quatre personnes.",
+    "summary": "Transforme la cible en mastomant géant.",
     "source": {
       "book": "Livre des règles",
       "page": 270
@@ -21,7 +21,7 @@
       "name": "Aspect du mastomant",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur fait appel au pouvoir de l’esprit lié et se transforme (ainsi que tout son équipement) en un mastomant géant jusqu’à expiration du pouvoir. L’Aspect du mastomant confère les traits suivants : - Aussi grand qu’un vrai mastomant (Taille 7) et d’un poids d’environ 15 tonnes - Valeur de protection naturelle de 4 - Arme naturelle : défenses 2d10 (JO 9-10) points de dégâts - Immunisé à tous les types de froid - +6 en Force, ce qui ajoute également +6 à ses dégâts - +30 points de santé (utilisés avant les points de santé naturels du conjurateur) - Peut servir de monture à quatre personnes à la fois",
+      "description": "La cible prend la forme d’un mastomant de taille 7 et d’environ 15 tonnes. Elle gagne Protection 4, Force +6 (et donc +6 aux dégâts), 30 PS temporaires, l’immunité à toutes les formes de froid et une attaque de défenses (2d10, JO 9–10). Elle peut servir de monture à quatre personnes.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
@@ -84,6 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
+            "summary": "Transforme la cible en mastomant géant.",
             "editableChanges": true,
             "related": []
           }

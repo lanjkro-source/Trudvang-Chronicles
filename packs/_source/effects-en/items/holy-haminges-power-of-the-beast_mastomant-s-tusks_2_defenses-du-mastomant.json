@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
-    "description": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw. The dimwalker can use these tusks in unarmed fighting, dealing 1d10 points of damage. An attack with the tusks counts as a bonus attack, though the character must still spend Combat Points as a standard attack to determine the Situation value. The spirit conjurer can attempt only one attack with the tusks per action round.",
-    "summary": "Mastomant's Tusks",
+    "description": "The target grows two tusks and can make one tusk attack per round for 1d10 damage. This bonus attack uses combat points as a normal attack.",
+    "summary": "Grants a natural tusk attack.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -21,7 +21,7 @@
       "name": "Mastomant's Tusks",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw. The dimwalker can use these tusks in unarmed fighting, dealing 1d10 points of damage. An attack with the tusks counts as a bonus attack, though the character must still spend Combat Points as a standard attack to determine the Situation value. The spirit conjurer can attempt only one attack with the tusks per action round.",
+      "description": "The target grows two tusks and can make one tusk attack per round for 1d10 damage. This bonus attack uses combat points as a normal attack.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
+            "summary": "Grants a natural tusk attack.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
-    "description": "wurm The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +1 weapon action per action round, as well as +5 Combat Points per action round. These points are locked into the additional weapon action, meaning that to take advantage of the extra points, the spirit conjurer must use all their ordinary weapon actions first. When the spirit conjurer uses this ability, it appears as if they gain a second pair of limbs, which wield an extra weapon.",
-    "summary": "Rampage of the Huvfurwurm",
+    "description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
+    "summary": "Grants an additional weapon action.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -21,7 +21,7 @@
       "name": "Rampage of the Huvfurwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "wurm The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +1 weapon action per action round, as well as +5 Combat Points per action round. These points are locked into the additional weapon action, meaning that to take advantage of the extra points, the spirit conjurer must use all their ordinary weapon actions first. When the spirit conjurer uses this ability, it appears as if they gain a second pair of limbs, which wield an extra weapon.",
+      "description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
+            "summary": "Grants an additional weapon action.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
-    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFureur de l’ogre des montagnes confère les traits suivants :\n• +3 points de santé (les dégâts affectent ces points de santé en priorité)\n• +1 aux dégâts des armes de corps à corps ou de lancer\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
-    "summary": "Fureur de l’ogre des montagnes",
+    "description": "La cible gagne 3 points de santé temporaires et +1 aux dégâts de corps à corps, de lancer et des armes naturelles. Elle ignore la peur et ne peut ni parer ni esquiver.",
+    "summary": "Déchaîne une rage qui renforce la résistance physique.",
     "source": {
       "book": "Livre des règles",
       "page": 276
@@ -21,7 +21,7 @@
       "name": "Fureur de l’ogre des montagnes",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFureur de l’ogre des montagnes confère les traits suivants :\n• +3 points de santé (les dégâts affectent ces points de santé en priorité)\n• +1 aux dégâts des armes de corps à corps ou de lancer\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+      "description": "La cible gagne 3 points de santé temporaires et +1 aux dégâts de corps à corps, de lancer et des armes naturelles. Elle ignore la peur et ne peut ni parer ni esquiver.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
@@ -70,6 +70,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+            "summary": "Déchaîne une rage qui renforce la résistance physique.",
             "editableChanges": true,
             "related": []
           }

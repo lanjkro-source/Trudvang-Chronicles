@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
-    "description": "Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.\nLe draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.\nChaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.",
-    "summary": "Métamorphose (draugr)",
+    "description": "Le draugr peut prendre la forme d’un animal choisi, souvent un loup, un corbeau ou un cheval, et en adopte les caractéristiques physiques ; ses points de santé ne sont pas conservés. La métamorphose prend trois tours, pendant lesquels il ne peut pas se défendre. Chaque changement d’une forme à une autre lui coûte 30 jours et 30 nuits.",
+    "summary": "Permet au draugr de prendre une forme animale.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 50
@@ -21,7 +21,7 @@
       "name": "Métamorphose (draugr)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.\nLe draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.\nChaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.",
+      "description": "Le draugr peut prendre la forme d’un animal choisi, souvent un loup, un corbeau ou un cheval, et en adopte les caractéristiques physiques ; ses points de santé ne sont pas conservés. La métamorphose prend trois tours, pendant lesquels il ne peut pas se défendre. Chaque changement d’une forme à une autre lui coûte 30 jours et 30 nuits.",
       "transfer": false,
       "system": {
         "stackId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
@@ -59,6 +59,7 @@
           "transformation": {
             "key": "pjY95vXsYtZu0v1w#metamorphose-draugr",
             "sourceId": "pjY95vXsYtZu0v1w",
+            "summary": "Permet au draugr de prendre une forme animale.",
             "editableChanges": true,
             "related": []
           }

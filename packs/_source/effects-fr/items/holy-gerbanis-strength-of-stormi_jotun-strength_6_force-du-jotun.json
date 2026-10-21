@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
-    "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
-    "summary": "Force du jotun",
+    "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
+    "summary": "Porte la Force au niveau exceptionnel d’un jotun.",
     "source": {
       "book": "Livre des règles",
       "page": 219
@@ -21,7 +21,7 @@
       "name": "Force du jotun",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
+      "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
             "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "summary": "Porte la Force au niveau exceptionnel d’un jotun.",
             "editableChanges": true,
             "related": []
           }

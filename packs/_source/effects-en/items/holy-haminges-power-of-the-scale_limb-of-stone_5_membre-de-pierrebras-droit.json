@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
-    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
-    "summary": "Blood of the Lindwurm",
+    "description": "The right arm becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
+    "summary": "Petrifies the target’s right arm.",
     "source": {
       "book": "Player's Handbook",
       "page": 218
@@ -21,7 +21,7 @@
       "name": "Blood of the Lindwurm — Right arm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+      "description": "The right arm becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
             "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+            "summary": "Petrifies the target’s right arm.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "NNBuQnQlRmSnToUp#transformation-corporelle",
-    "description": "<p>The demon can transform into a creature of its choice.</p>",
-    "summary": "Body Transformation",
+    "description": "The target takes the physical form of an animal selected from the bestiary and gains its physical characteristics. Its health points are not preserved and its equipment is suspended.",
+    "summary": "Transforms the target into a selected animal.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48
@@ -21,7 +21,7 @@
       "name": "Body Transformation",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The demon can transform into a creature of its choice.</p>",
+      "description": "The target takes the physical form of an animal selected from the bestiary and gains its physical characteristics. Its health points are not preserved and its equipment is suspended.",
       "transfer": false,
       "system": {
         "stackId": "NNBuQnQlRmSnToUp#transformation-corporelle",
@@ -59,6 +59,7 @@
           "transformation": {
             "key": "NNBuQnQlRmSnToUp#transformation-corporelle",
             "sourceId": "NNBuQnQlRmSnToUp",
+            "summary": "Transforms the target into a selected animal.",
             "editableChanges": true,
             "related": []
           }

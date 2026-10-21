@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
-    "description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
-    "summary": "Hammer Fists",
+    "description": "Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels.",
+    "summary": "Improves unarmed attacks.",
     "source": {
       "book": "Player's Handbook",
       "page": 231
@@ -21,7 +21,7 @@
       "name": "Hammer Fists",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
+      "description": "Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
             "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+            "summary": "Improves unarmed attacks.",
             "editableChanges": true,
             "related": []
           }

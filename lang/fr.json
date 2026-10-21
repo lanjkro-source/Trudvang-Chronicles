@@ -12511,7 +12511,8 @@
       "Transformation": {
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification": {
           "Name": "Pétrification/Annuler une pétrification",
-          "Description": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre. Les vêtements et l’équipement de la victime sont eux aussi transformés en pierre, mais pas ses objets magiques (ils peuvent cependant se retrouver coincés dans un poing ou un sac en pierre). La victime peut tenter de résister à la transformation par un test de situation avec une valeur de situation qui dépend de sa taille, comme l’indique la table ci-dessous (prendre en compte le modificateur de Psychisme).\nTAILLE ET VALEURS DE SITUATION\nTailleValeur de situation\n<1/3 | 4\n≥1/3 – 1/2 | 6\n≥1/2 – 1,5 | 8\n≥1,5 – 3 | 10\n≥3 – 5 | 12\n≥5 – 10 | 15\n≥10 | 19\nSi la victime rate ce test de situation, elle se transforme en pierre en même temps que tout l’équipement qu’elle tient ou qu’elle porte. C’est une roche extrêmement dure, quasiment indestructible. La victime pétrifiée bénéficie d’une valeur de protection de 10 et d’une valeur d’intégrité de 100. Une fois la valeur d’intégrité réduite à 0, la victime encaisse les dégâts selon les règles habituelles, et si elle en subit un nombre équivalent au double de ses points de santé, la roche qui la compose se brise et la victime meurt. Une victime changée en pierre est complètement hébétée et n’a pas conscience de son environnement ou du temps qui passe. De fait, elle n’est plus en mesure d’interagir avec le monde qui l’entoure de quelque façon que ce soit. Lorsque le sort qui l’affecte arrive à expiration, la victime retrouve sa forme d’origine. Il est possible de libérer une créature pétrifiée en utilisant le sort Annuler une pétrification ou bien le sort Dissipation du vitner. Une créature pétrifiée n’est en aucun cas fixée au sol et n’est retenue que par la gravité, ce qui signifie qu’une personne suffisamment forte peut la déplacer. La statue pèse environ dix fois le poids d’origine de la victime. L’enchanteur peut également utiliser une version alternative de ce sort, Annuler une pétrification. En manipulant le vitner utilisé pour pétrifier une cible, l’enchanteur peut rendre à une créature en pierre sa forme d’origine. Utilisé de cette façon, ce sort redonne également sa forme d’origine à l’équipement transformé, pour peu qu’il n’ait pas été endommagé. Lorsqu’un enchanteur tente de rendre sa forme originelle à une cible pétrifiée, cette dernière doit réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Constitution), modifiée en fonction du temps que la victime a passé sous forme de statue (voir la table ci-dessous).\nMODIFICATEURS\nTempsModificateur\n< 1 journée | +8\n1 à 3 jours | +4\n4 à 7 jours | +2 | 2 semaines | +0\n3 semaines | -2\n4 semaines | -4\n2 mois | -6\n3 mois | -10\n6 mois | -14\n1 an | -18\n10 ans | -25\n100 ans | -35\n> 100 ans | -50\nSi l’enchanteur parvient à restaurer une victime pétrifiée, elle s’éveille au bout de 1 tour de jeu. Elle n’a pas la moindre idée de ce qui s’est produit, et ne réalise pas qu’il s’est écoulé un certain temps depuis qu’elle a été pétrifiée. Elle n’a aucun souvenir des événements qui se sont déroulés entre-temps. Pendant les trois premiers jours, la victime se sent particulièrement raide, ce qui réduit de moitié sa capacité de mouvement ainsi que ses valeurs de compétence pour tous les tests de compétence ou de situation reposant sur la Dextérité). Pendant les trois jours suivants, sa capacité de mouvement et ses valeurs de compétence passent aux deux tiers de leur valeur normale. Au bout de six jours, la victime recouvre toutes ses facultés. Le maître de jeu est libre de modifier ce temps de récupération en fonction du temps que la victime a passé sous forme de statue.",
+          "Summary": "Pétrifie la cible et la transforme en statue.",
+          "Description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 10 et d’une intégrité de 100 ; les vêtements et l’équipement non magique sont pétrifiés avec elle. Quand l’effet prend fin, la cible et son équipement non endommagé retrouvent leur forme normale.",
           "SourceName": "Pétrification/Annuler une pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "162",
@@ -12519,7 +12520,8 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification/Annuler une pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "162",
@@ -12527,7 +12529,8 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification/Annuler une pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "162",
@@ -12535,7 +12538,8 @@
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre",
-          "Description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine. Ce sort ne peut être tissé que sur une créature dont le poids n’excède pas 60 kg et qui se tient sur un sol suffisamment épais et fertile pour qu’un arbre puisse s’y enraciner et pousser. La victime peut tenter de résister à cette transformation en effectuant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). En cas de réussite, seule la peau de la victime se transforme en écorce, ce qui n’a d’autre effet que de modifier son apparence et de réduire son Agilité : toutes ses valeurs de compétence et de situation associées à l’Agilité subissent un malus de -3 jusqu’à expiration du sort. Si la cible est trop lourde pour être complètement transformée, seules certaines parties de la victime se verront altérées (au maître de jeu de déterminer lesquelles), tandis que le reste du corps de la victime voit seulement sa peau se changer en écorce, avec les mêmes effets que ci-dessus. Dans ce cas, un test de situation réussi signifie que la victime ne subit qu’un malus de -1 (au lieu de -3). Si la cible rate son test de situation et que son poids ne dépasse pas 60 kg, elle prend immédiatement racine et se retrouve incapable de bouger. Dès lors, au cours de l’heure qui suit, la victime se change en un arbre d’une essence choisie par l’enchanteur (il doit cependant s’agir d’une espèce capable de survivre dans la région, même si elle n’y est pas courante). L’arbre conserve la taille et les points de santé que la victime possédait sous sa forme normale. Il conserve également son apparence faciale, incrustée dans son écorce, et des membres ressemblant à des bras et des jambes. Tant que la créature est sous cette forme, elle conserve les mêmes facultés sensorielles qu’elle possédait au moment où la malédiction l’a frappée. La créature voit tout ce qui est visible de son point de vue (selon l’orientation de son visage) et entend les sons, perçoit les odeurs, et ressent les contacts normalement. La créature conserve tous les dégâts qu’elle subit sous cette forme quand elle recouvre sa forme naturelle. Les possessions telles que les vêtements et l’équipement sont intégrées à l’arbre (pour peu que leur poids n’excède pas la limite imposée par le sort). Sous forme d’arbre, la victime profite d’une valeur de protection de 4. Elle n’a pas besoin de boire ou de manger pour survivre, mais il lui arrivera de s’endormir. Si quelqu’un grave l’écorce de l’arbre ou tente de l’abattre (ce qui inflige des dégâts à la victime), l’arbre se met à saigner. Si cela ne dissuade pas l’assaillant, la victime meurt si elle encaisse suffisamment de dégâts. L’enchanteur peut à tout moment mettre un terme à cette malédiction et rendre à sa victime sa forme d’origine. Une créature qui subit la malédiction de l’arbre pendant toute la durée du sort demeure très raide même après avoir retrouvé sa forme d’origine, et pendant les trois jours qui suivent, ses tests de compétence et de situation associés à l’Agilité et au mouvement sont diminués de moitié.",
+          "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
+          "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Livre des règles",
           "SourcePage": "187",
@@ -12543,7 +12547,8 @@
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
           "Name": "Raideur après la malédiction de l’arbre",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Laisse une raideur après la malédiction de l’arbre.",
+          "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Livre des règles",
           "SourcePage": "187",
@@ -12551,7 +12556,8 @@
         },
         "vitner-body-vitner:hasten:9#hate": {
           "Name": "Hâte",
-          "Description": "Ce sort améliore la souplesse et les réflexes de la personne enchantée, qui devient immédiatement plus rapide et plus agile. Cette agilité accrue augmente la foulée du bénéficiaire (capacité de mouvement), mais aussi sa vitesse (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité. Soudain, la personne enchantée se déplace plus vite et fait preuve d’une bien plus grande précision dans toutes les actions associées au mouvement (et notamment les compétences Agilité et Combat). Le bénéficiaire du sort gagne un degré en Dextérité selon la table ci-dessous. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table> Il est également possible de tisser ce sort dans le but inverse de rendre le corps de la victime raide et maladroit. La Dextérité du personnage enchanté décline immédiatement, ce qui diminue sa mobilité (capacité de mouvement), sa réactivité (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité (et notamment les compétences Agilité et Combat). Le personnage enchanté baisse d’un degré sur la table ci-contre. La victime peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution).",
+          "Summary": "Améliore la souplesse et les réflexes.",
+          "Description": "Augmente la Dextérité de la cible, et donc sa capacité de mouvement et son initiative, ainsi que le VC des compétences d’Agilité et de Combat. La cible gagne un degré en Dextérité selon le tableau ci-dessous. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hâte",
           "SourceBook": "Livre des règles",
           "SourcePage": "194",
@@ -12559,7 +12565,8 @@
         },
         "vitner-body-vitner:hasten:9#hate-inverse": {
           "Name": "Hâte — inversé",
-          "Description": "Ce sort améliore la souplesse et les réflexes de la personne enchantée, qui devient immédiatement plus rapide et plus agile. Cette agilité accrue augmente la foulée du bénéficiaire (capacité de mouvement), mais aussi sa vitesse (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité. Soudain, la personne enchantée se déplace plus vite et fait preuve d’une bien plus grande précision dans toutes les actions associées au mouvement (et notamment les compétences Agilité et Combat). Le bénéficiaire du sort gagne un degré en Dextérité selon la table ci-dessous. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table> Il est également possible de tisser ce sort dans le but inverse de rendre le corps de la victime raide et maladroit. La Dextérité du personnage enchanté décline immédiatement, ce qui diminue sa mobilité (capacité de mouvement), sa réactivité (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité (et notamment les compétences Agilité et Combat). Le personnage enchanté baisse d’un degré sur la table ci-contre. La victime peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution).",
+          "Summary": "Réduit la souplesse et les réflexes.",
+          "Description": "Diminue la Dextérité de la cible d’un degré, ce qui réduit sa capacité de mouvement et son initiative ainsi que le VC de ses compétences d’Agilité et de Combat. Les valeurs du tableau indiquent les modificateurs associés à chaque degré de Dextérité. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hâte",
           "SourceBook": "Livre des règles",
           "SourcePage": "194",
@@ -12567,7 +12574,8 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur": {
           "Name": "Vigueur",
-          "Description": "Ce sort renforce les muscles du bénéficiaire, qui gagnent instantanément en taille et en puissance. La force du personnage enchanté augmente, ce qui améliore son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table> Le personnage enchanté peut soudain brandir d’énormes troncs comme s’il s’agissait de simples branches, ou lancer des rochers aussi facilement que des galets. Le personnage enchanté voit sa Force augmenter d’un degré sur la table ci-dessous, jusqu’à un maximum de +8. Il est également possible de tisser ce sort dans le but inverse de provoquer le flétrissement et l’atrophie des muscles de la victime. La Force de cette dernière décline immédiatement, ce qui diminue son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. Le personnage enchanté voit sa Force diminuer d’un degré sur la table ci-dessous. La victime peut résister à l’effet de ce sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte les modificateurs de Constitution).",
+          "Summary": "Renforce les muscles et la Force.",
+          "Description": "Augmente la Force de la cible d’un degré. Ce changement améliore les tests de situation fondés sur la Force ainsi que les dégâts, selon la table des modificateurs de Force. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Vigueur",
           "SourceBook": "Livre des règles",
           "SourcePage": "195",
@@ -12575,7 +12583,8 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur-inverse": {
           "Name": "Vigueur — inversé",
-          "Description": "Ce sort renforce les muscles du bénéficiaire, qui gagnent instantanément en taille et en puissance. La force du personnage enchanté augmente, ce qui améliore son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table> Le personnage enchanté peut soudain brandir d’énormes troncs comme s’il s’agissait de simples branches, ou lancer des rochers aussi facilement que des galets. Le personnage enchanté voit sa Force augmenter d’un degré sur la table ci-dessous, jusqu’à un maximum de +8. Il est également possible de tisser ce sort dans le but inverse de provoquer le flétrissement et l’atrophie des muscles de la victime. La Force de cette dernière décline immédiatement, ce qui diminue son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. Le personnage enchanté voit sa Force diminuer d’un degré sur la table ci-dessous. La victime peut résister à l’effet de ce sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte les modificateurs de Constitution).",
+          "Summary": "Affaiblit les muscles et la Force.",
+          "Description": "Diminue la Force de la cible d’un degré. Ce changement réduit les tests de situation fondés sur la Force ainsi que les dégâts, selon la table des modificateurs de Force. Les modificateurs indiqués sont appliqués en sens inverse. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Vigueur",
           "SourceBook": "Livre des règles",
           "SourcePage": "195",
@@ -12583,7 +12592,8 @@
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Transformation",
-          "Description": "Le vitner que conjure ce sort est assez puissant pour donner à une créature vivante la forme d’une tout autre créature. Ce sort transforme la créature enchantée, dont le poids ne doit pas dépasser 60 kg, en une créature du choix de l’enchanteur. La nouvelle taille de la créature ne peut pas dépasser celle de sa forme d’origine, et peut au maximum être cinq fois plus petite (Cf. Taille des créatures dans le Bestiaire de Jorge , page 7, pour de plus amples informations sur les tailles). La créature enchantée adopte l’aspect physique de la créature choisie, mais aussi ses caractéristiques physiques, comme sa taille, son apparence, sa Force, son Agilité et ses facultés sensorielles, ainsi que tous les modificateurs associés, comme les dégâts et les attaques naturelles (non magiques). La créature enchantée conserve ses valeurs d’origine en Intelligence, en Constitution et en Psychisme. Comme il s’agit seulement d’une transformation physique, le bénéficiaire du sort n’adopte pas les aptitudes ou pouvoirs magiques de la nouvelle créature, pas plus que ses points de santé, qui ne sont modifiés ni par la transformation initiale, ni par la transformation en retour une fois que le sort expire. Par exemple, une personne qui se change en skoll adopte tous ses traits de personnage physiques (hormis les points de santé) mais pas son Intelligence, sa Constitution ou son Psychisme. Si la personne se change en fjoltroll, elle ressemblera à une créature de ce type mais demeurera incapable de pratiquer la magie des trolls. La créature enchantée ne peut parler que si sa nouvelle forme en est capable. Un personnage transformé de son plein gré peut reprendre sa forme d’origine quand il le désire, contrairement à une créature enchantée contre sa volonté. Quand le sort arrive à expiration, il faut cinq tours à la créature enchantée pour retrouver complètement sa forme d’origine. La victime peut résister à la transformation en réussissant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). Il est possible de lancer ce sort sur des créatures exceptionnellement grandes ainsi que sur des monstres, mais pour chaque augmentation de taille correspondant à celle d’un humain, la valeur de situation pour résister au sort augmente de +2. Ainsi, une créature trois fois plus grande qu’un humain normal recevra un bonus de +4, et bénéficiera donc d’une valeur de situation de 8 pour résister au sort.",
+          "Summary": "Change la forme physique de la cible.",
+          "Description": "La cible prend la forme physique d’une créature choisie dans le bestiaire, jusqu’à cinq fois plus petite et jamais plus grande que sa forme d’origine. Elle en adopte l’apparence, la taille, la Force, la Dextérité, les sens, les modificateurs physiques et les attaques naturelles non magiques. Elle conserve son Intelligence, sa Constitution, son Psychisme et ses points de santé, et ne gagne ni capacités ni pouvoirs magiques de la créature. Elle ne peut parler que si cette forme le permet. Une cible transformée volontairement peut reprendre sa forme à tout moment ; à la fin de l’effet, le retour prend cinq tours.",
           "SourceName": "Transformation",
           "SourceBook": "Livre des règles",
           "SourcePage": "196",
@@ -12591,7 +12601,8 @@
         },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
           "Name": "Force du troll",
-          "Description": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix). Cette force se traduit par un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force du troll",
           "SourceBook": "Livre des règles",
           "SourcePage": "218",
@@ -12599,7 +12610,8 @@
         },
         "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje": {
           "Name": "Force de hinje",
-          "Description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force extraordinaire. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +6 en Force pour la durée du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un hinje.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +6.",
           "SourceName": "Force de hinje",
           "SourceBook": "Livre des règles",
           "SourcePage": "218",
@@ -12607,7 +12619,8 @@
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Force du jotun",
-          "Description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un jotun.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
           "SourceName": "Force du jotun",
           "SourceBook": "Livre des règles",
           "SourcePage": "219",
@@ -12615,7 +12628,8 @@
         },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Force d’âme",
-          "Description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +4 en Psychisme pendant la durée du pouvoir.",
+          "Summary": "Renforce le courage et le Psychisme.",
+          "Description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force d’âme",
           "SourceBook": "Livre des règles",
           "SourcePage": "224",
@@ -12623,7 +12637,8 @@
         },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Témérité",
-          "Description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +6 en Psychisme pendant la durée du pouvoir.",
+          "Summary": "Renforce le courage et le Psychisme.",
+          "Description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +6.",
           "SourceName": "Témérité",
           "SourceBook": "Livre des règles",
           "SourcePage": "224",
@@ -12631,7 +12646,8 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Cœur d’Enken",
-          "Description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +8 en Psychisme pendant la durée du pouvoir. Même s’il a offert ce pouvoir à quelqu’un d’autre, le stormikjalt et jusqu’à deux amis à portée reçoivent également un trait exceptionnel mineur de +4 au Psychisme pour la durée du pouvoir.",
+          "Summary": "Porte le Psychisme à un niveau exceptionnel.",
+          "Description": "La cible reçoit le trait exceptionnel +8 en Psychisme.",
           "SourceName": "Cœur d’Enken",
           "SourceBook": "Livre des règles",
           "SourcePage": "225",
@@ -12639,7 +12655,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Aspect du cerf",
-          "Description": "Ce pouvoir confère au bruide la faculté de se transformer en cerf. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un cerf ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.\nTraits de l’Aspect du cerf\nUn bruide transformé par l’Aspect du cerf profite des traits suivants :\n• Peut communiquer avec les cerfs\n• Mouvement terrestre doublé\n• Vision de nuit\n• Trait de personnage exceptionnel de +1 en Force\n• Trait de personnage exceptionnel de +4 en Constitution\n• Peut servir de monture à une personne\n• Peut se nourrir en mangeant de l’herbe\n• A des cornes comme armes naturelles, 1d10 (JO 9-10) points de dégâts",
+          "Summary": "Confère les traits et les sens d’un cerf.",
+          "Description": "La cible prend la forme d’un cerf. Sa Force et sa Constitution ne peuvent être inférieures à +1 et +4 ; son déplacement terrestre est doublé. Elle peut communiquer avec les cerfs, voit dans l’obscurité, peut servir de monture à une personne et se nourrir d’herbe. Elle attaque avec ses cornes (1d10, JO 9–10). Les traits de Force et de Constitution supérieurs sont conservés ; l’équipement prend l’apparence de la forme animale et retrouve son apparence normale au retour.",
           "SourceName": "Aspect du cerf",
           "SourceBook": "Livre des règles",
           "SourcePage": "235",
@@ -12650,7 +12667,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Aspect du saumon",
-          "Description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un saumon ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.\nTraits de l’Aspect du saumon\nUn bruide transformé par l’Aspect du saumon profite des traits suivants :\n• Peut communiquer avec les saumons\n• Respiration aquatique\n• Équipement protégé contre l’eau\n• Mouvement dans l’eau doublé (capacité de mouvement du personnage × 2)\n• Respiration possible sur terre, mais pas le déplacement\n• Excellente vision aquatique.\n• Trait de personnage exceptionnel de +4 en Dextérité\n• Un bruide ayant adopté l’Aspect du saumon possède également des traits guérisseurs : toute personne qui touche les écailles du saumon récupère 1 point de santé (1 fois par personne et par jour) ; quelqu’un qui embrasse le saumon peut récupérer 1d3 points de santé (1 fois par personne et par jour), et quelqu’un qui mord dans la chair du saumon (ce qui inflige 1d5 points de dégâts au bruide) peut recouvrer 1d6 + 1 points de santé.",
+          "Summary": "Confère les traits et les sens d’un saumon.",
+          "Description": "La cible prend la forme d’un saumon. Sa Dextérité ne peut être inférieure à +4 ; son déplacement aquatique est doublé et elle peut respirer sous l’eau comme à l’air libre, mais ne peut pas se déplacer sur terre. Elle communique avec les saumons, voit parfaitement sous l’eau et son équipement est protégé de l’eau. Toucher ses écailles rend 1 PS à une personne par jour ; l’embrasser en rend 1d3 par jour ; manger sa chair rend 1d6+1 PS, mais inflige 1d5 dégâts au saumon.",
           "SourceName": "Aspect du saumon",
           "SourceBook": "Livre des règles",
           "SourcePage": "235",
@@ -12661,7 +12679,8 @@
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Aspect du corbeau",
-          "Description": "Ce pouvoir confère au bruide la faculté de se transformer en corbeau. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un corbeau classique sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.\nTraits de l’Aspect du corbeau\nUn bruide transformé par l’Aspect du corbeau profite des traits suivants :\n• Communication avec les corbeaux et les morts-vivants\n• Mouvement terrestre diminué de moitié\n• Mouvement aérien (en vol) multiplié par quatre\n• Trait de personnage exceptionnel de +4 en Dextérité\n• Trait de personnage exceptionnel de +4 en Constitution\n• Vision nocturne\n• Perception des créatures invisibles et intangibles\n• Possède un bec comme arme naturelle, 1d10 (JO 10) points de dégâts\n• Plus difficile à toucher à cause de sa petite taille : tous ceux qui attaquent le corbeau en vol subissent un malus de -5 à la VC de l’attaque. Ce malus affecte également les attaques à distance, en plus des autres modificateurs imposés aux personnages qui attaquent une cible en mouvement.",
+          "Summary": "Confère les traits et les sens d’un corbeau.",
+          "Description": "La cible prend la forme d’un corbeau. Sa Dextérité et sa Constitution ne peuvent être inférieures à +4 ; son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle voit dans l’obscurité, perçoit les créatures invisibles et intangibles, et communique avec les corbeaux et les morts-vivants. Elle attaque avec son bec (1d10, JO 10). Lorsqu’elle vole, les attaques contre elle subissent −5 à la VC, y compris les attaques à distance. Les traits supérieurs sont conservés et l’équipement retrouve son apparence normale au retour.",
           "SourceName": "Aspect du corbeau",
           "SourceBook": "Livre des règles",
           "SourcePage": "236",
@@ -12674,7 +12693,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Sang brûlant",
-          "Description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente temporairement les points de santé.",
+          "Description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
           "SourceName": "Sang brûlant",
           "SourceBook": "Livre des règles",
           "SourcePage": "241",
@@ -12682,7 +12702,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Rage",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\n• Le bruide grandit de 50 cm et gagne 30 kg de muscles\n• Le bruide a un facteur de peur de 1d10\n• +5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +2 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +1 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur",
+          "Summary": "Renforce les attaques et la résistance à la peur.",
+          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Livre des règles",
           "SourcePage": "241",
@@ -12690,7 +12711,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Rage",
           "SourceBook": "Livre des règles",
           "SourcePage": "241",
@@ -12698,7 +12720,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood": {
           "Name": "Sang bouillant",
-          "Description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 2d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente temporairement les points de santé.",
+          "Description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Sang bouillant",
           "SourceBook": "Livre des règles",
           "SourcePage": "242",
@@ -12706,7 +12729,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
           "Name": "Folie",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Folie :\n• Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)\n• Le bruide a un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +4 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +2 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort",
+          "Summary": "Déchaîne une rage qui renforce les attaques.",
+          "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
           "SourceBook": "Livre des règles",
           "SourcePage": "243",
@@ -12714,7 +12738,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Folie",
           "SourceBook": "Livre des règles",
           "SourcePage": "243",
@@ -12722,7 +12747,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire": {
           "Name": "Embrasement du sang",
-          "Description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente fortement les points de santé.",
+          "Description": "La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Embrasement du sang",
           "SourceBook": "Livre des règles",
           "SourcePage": "243",
@@ -12730,7 +12756,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
           "Name": "Riastarthae",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la riastarthae :\n• Le bruide grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)\n• Le bruide a un facteur de peur de 1d10 (JO 9-10)\n• +15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +6 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +3 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide ignore les effets des blessures graves\n• Le bruide peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort",
+          "Summary": "Déchaîne une rage extrême et ignore les blessures.",
+          "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
           "SourceBook": "Livre des règles",
           "SourcePage": "244",
@@ -12738,7 +12765,8 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Riastarthae",
           "SourceBook": "Livre des règles",
           "SourcePage": "244",
@@ -12746,7 +12774,8 @@
         },
         "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou": {
           "Name": "Ouïe du hibou",
-          "Description": "Le bruide perçoit tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du hibou, aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 12. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+          "Summary": "Permet de percevoir les sons à grande distance.",
+          "Description": "La cible entend les bruits et conversations à portée. Pour discerner un son ou une conversation précise, elle effectue un test de situation de 12, ajusté selon le bruit ambiant.",
           "SourceName": "Ouïe du hibou",
           "SourceBook": "Livre des règles",
           "SourcePage": "244",
@@ -12754,7 +12783,8 @@
         },
         "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon": {
           "Name": "Sens du griffon",
-          "Description": "Le bruide entend tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du griffon aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 14. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+          "Summary": "Affûte l’ouïe jusqu’à percevoir les sons à portée.",
+          "Description": "La cible entend les bruits et conversations à portée. Pour discerner un son ou une conversation précise, elle effectue un test de situation de 14, ajusté selon le bruit ambiant.",
           "SourceName": "Sens du griffon",
           "SourceBook": "Livre des règles",
           "SourcePage": "245",
@@ -12762,7 +12792,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
-          "Description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique), elle est changée en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud en activant ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
+          "Summary": "Immobilise et pétrifie progressivement la cible.",
+          "Description": "La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12770,7 +12801,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12778,7 +12810,8 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12786,7 +12819,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre": {
           "Name": "Monument en pierre",
-          "Description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique), elle se change en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud au moment où il active ce pouvoir, la pétrification devient permanente si la cible rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
+          "Summary": "Pétrifie la cible et l’immobilise.",
+          "Description": "La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12794,7 +12828,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12802,7 +12837,8 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
@@ -12810,7 +12846,8 @@
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Peau d’écorce",
-          "Description": "Le gavlien invoque la force du chêne noir. Le bénéficiaire de ce pouvoir (qui peut être le prêtre lui-même ou la personne de son choix) voit sa peau se recouvrir de l’écorce sombre du chêne de fer, ce qui lui confère 10 points de santé supplémentaire, à utiliser en priorité après avoir soustrait la valeur de protection des dégâts reçus. Ces points de santé sont temporaires, et s’il en reste au prêtre à expiration du pouvoir, ils sont perdus. Si les 10 points de santé octroyés par ce pouvoir sont utilisés avant son expiration, l’effet cesse immédiatement.",
+          "Summary": "Protège la cible avec des points de santé temporaires.",
+          "Description": "La cible gagne 10 points de santé temporaires, qui absorbent les dégâts après la protection. L’effet prend fin si ces points sont épuisés ; les points restants disparaissent à son expiration.",
           "SourceName": "Peau d’écorce",
           "SourceBook": "Livre des règles",
           "SourcePage": "258",
@@ -12818,7 +12855,8 @@
         },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Refuge arboricole",
-          "Description": "Le gavlien invoque la force du chêne noir, ce qui lui confère la faculté de se transformer en un grand chêne noir pendant une journée. La transformation prend 60 tours de jeu (5 minutes) et nécessite assez de terre pour les racines et d’espace pour les branches du chêne. Pour chaque heure que le prêtre passe dans cet état, il récupère 1 point de santé. Sous sa forme d’arbre, le prêtre se nourrit également de l’eau dans le sol et de la lumière du soleil, et il n’a donc pas besoin de consommer autre chose. En outre, le prêtre peut quotidiennement faire un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) afin de tenter de supprimer une malédiction ou une infection démoniaque qui le frappe. Lorsqu’il se trouve dans le refuge arboricole, le prêtre est immunisé contre toutes les attaques et facultés des démons. Le prêtre peut reprendre sa véritable forme à tout moment. Quelle que soit la créature qui l’attaque en dehors des démons, l’arbre a une valeur de protection de 8, et seul un cinquième des dégâts qui traversent cette protection blesse le prêtre. S’il est tué en étant dans son refuge arboricole, il demeurera un chêne noir.",
+          "Summary": "Transforme la cible en arbre résistant.",
+          "Description": "La cible devient un grand chêne noir doté de Protection 8 ; après cette protection, seul un cinquième des dégâts la blesse. Elle récupère 1 PS par heure, se nourrit d’eau du sol et de lumière, et est immunisée aux attaques et facultés des démons. Une fois par jour, elle peut tenter un test de situation de 6 (Psychisme) pour supprimer une malédiction ou une infection démoniaque. Elle peut reprendre sa forme à tout moment ; si elle meurt sous cette forme, elle demeure un chêne noir.",
           "SourceName": "Refuge arboricole",
           "SourceBook": "Livre des règles",
           "SourcePage": "259",
@@ -12826,7 +12864,8 @@
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Résilience",
-          "Description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +4 en Constitution jusqu’à expiration du pouvoir.",
+          "Summary": "Renforce la Constitution et la résistance physique.",
+          "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +4.",
           "SourceName": "Résilience",
           "SourceBook": "Livre des règles",
           "SourcePage": "268",
@@ -12834,7 +12873,8 @@
         },
         "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant": {
           "Name": "Défenses du mastomant",
-          "Description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cinquantaine de centimètres surgissent de sa mâchoire. L’arpenteur des brumes peut utiliser ces défenses qui infligent 1d10 points de dégâts en combat à mains nues. Une attaque de défenses compte comme une attaque bonus, mais le personnage doit tout de même dépenser des points de combat comme pour une attaque standard afin de déterminer la valeur de situation (compétence Combat, discipline Combat à mains nues, spécialité Bagarre). Le conjurateur ne peut tenter qu’une seule attaque de défenses par tour de jeu.",
+          "Summary": "Ajoute une attaque naturelle de défenses.",
+          "Description": "La cible fait pousser deux défenses et peut porter une attaque de défenses par tour, infligeant 1d10 dégâts. Cette attaque bonus utilise les points de combat d’une attaque normale.",
           "SourceName": "Défenses du mastomant",
           "SourceBook": "Livre des règles",
           "SourcePage": "269",
@@ -12843,7 +12883,8 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier": {
           "Name": "Endurance du sanglier",
-          "Description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +6 en Constitution jusqu’à expiration du pouvoir.",
+          "Summary": "Renforce fortement la Constitution.",
+          "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +6.",
           "SourceName": "Endurance du sanglier",
           "SourceBook": "Livre des règles",
           "SourcePage": "269",
@@ -12851,7 +12892,8 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance du géant",
-          "Description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
+          "Summary": "Renforce la Constitution et immunise aux poisons et maladies.",
+          "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +8 et la rend immunisée au poison et aux maladies.",
           "SourceName": "Endurance du géant",
           "SourceBook": "Livre des règles",
           "SourcePage": "269",
@@ -12859,7 +12901,8 @@
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Aspect du mastomant",
-          "Description": "Le conjurateur fait appel au pouvoir de l’esprit lié et se transforme (ainsi que tout son équipement) en un mastomant géant jusqu’à expiration du pouvoir. L’Aspect du mastomant confère les traits suivants : - Aussi grand qu’un vrai mastomant (Taille 7) et d’un poids d’environ 15 tonnes - Valeur de protection naturelle de 4 - Arme naturelle : défenses 2d10 (JO 9-10) points de dégâts - Immunisé à tous les types de froid - +6 en Force, ce qui ajoute également +6 à ses dégâts - +30 points de santé (utilisés avant les points de santé naturels du conjurateur) - Peut servir de monture à quatre personnes à la fois",
+          "Summary": "Transforme la cible en mastomant géant.",
+          "Description": "La cible prend la forme d’un mastomant de taille 7 et d’environ 15 tonnes. Elle gagne Protection 4, Force +6 (et donc +6 aux dégâts), 30 PS temporaires, l’immunité à toutes les formes de froid et une attaque de défenses (2d10, JO 9–10). Elle peut servir de monture à quatre personnes.",
           "SourceName": "Aspect du mastomant",
           "SourceBook": "Livre des règles",
           "SourcePage": "270",
@@ -12868,7 +12911,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Membre de pierre — Bras gauche",
-          "Description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+          "Summary": "Pétrifie le bras gauche de la cible.",
+          "Description": "Le bras gauche devient une masse de pierre inutilisable et lourde ; les vêtements ou l’armure qui le couvrent sont pétrifiés avec lui.",
           "SourceName": "Membre de pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
@@ -12876,7 +12920,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit": {
           "Name": "Membre de pierre — Bras droit",
-          "Description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+          "Summary": "Pétrifie le bras droit de la cible.",
+          "Description": "Le bras droit devient une masse de pierre inutilisable et lourde ; les vêtements ou l’armure qui le couvrent sont pétrifiés avec lui.",
           "SourceName": "Membre de pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
@@ -12884,7 +12929,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-gauche": {
           "Name": "Membre de pierre — Jambe gauche",
-          "Description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+          "Summary": "Pétrifie la jambe gauche de la cible.",
+          "Description": "La jambe gauche devient une masse de pierre inutilisable et lourde ; les vêtements ou l’armure qui la couvrent sont pétrifiés avec elle.",
           "SourceName": "Membre de pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
@@ -12892,7 +12938,8 @@
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite": {
           "Name": "Membre de pierre — Jambe droite",
-          "Description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+          "Summary": "Pétrifie la jambe droite de la cible.",
+          "Description": "La jambe droite devient une masse de pierre inutilisable et lourde ; les vêtements ou l’armure qui la couvrent sont pétrifiés avec elle.",
           "SourceName": "Membre de pierre",
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
@@ -12900,7 +12947,8 @@
         },
         "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm": {
           "Name": "Cœur du lindwurm",
-          "Description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
+          "Summary": "Ressuscite la cible après sa mort.",
+          "Description": "Si la cible meurt tant qu’elle porte le cœur de lindwurm, elle revient à la vie, entièrement guérie, au bout de 1d6 jours. Cet effet ne peut se déclencher qu’une fois.",
           "SourceName": "Cœur du lindwurm",
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
@@ -12908,7 +12956,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification": {
           "Name": "Pétrification",
-          "Description": "Le conjurateur dirige son puissant regard vers un adversaire qui se change en pierre. L’adversaire se change en statue de pierre jusqu’à expiration du pouvoir, à moins de résister à la métamorphose en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Si le conjurateur dépense un point de raud quand il active ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5). Un arpenteur des brumes qui dépense un point de raud peut également pétrifier des créatures bien plus grandes qu’un être humain (Taille supérieure à 1,5). Le conjurateur n’a besoin que d’un tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la cible soit entièrement pétrifiée. À chaque tour au cours duquel la cible se change en pierre, ses valeurs de compétence sont diminuées de moitié (cette diminution se cumule à chaque tour, en arrondissant à l’entier supérieur quand cela est applicable). Par exemple, si une personne a une valeur de compétence de 16 dans la compétence Combat (en prenant en compte les disciplines et les spécialités), cette valeur tombera à 8 au premier tour, à 4 au tour suivant, et ainsi de suite. La cible retrouve ses valeurs d’origine à l’expiration de la pétrification.",
+          "Summary": "Transforme la cible en statue de pierre.",
+          "Description": "La cible se transforme en statue de pierre en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois pétrifiée, elle ne perçoit plus son environnement et ne peut plus agir ; ses points de santé sont conservés. Elle retrouve ses valeurs normales à la fin de la pétrification.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "272",
@@ -12916,7 +12965,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "272",
@@ -12924,7 +12974,8 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
           "SourcePage": "272",
@@ -12932,7 +12983,8 @@
         },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Force du troll",
-          "Description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force du troll",
           "SourceBook": "Livre des règles",
           "SourcePage": "275",
@@ -12940,7 +12992,8 @@
         },
         "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje": {
           "Name": "Force du stenhinje",
-          "Description": "L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje. L’arpenteur des brumes reçoit un trait exceptionnel de +6 en Force jusqu’à expiration du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un stenhinje.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +6.",
           "SourceName": "Force du stenhinje",
           "SourceBook": "Livre des règles",
           "SourcePage": "276",
@@ -12948,7 +13001,8 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes": {
           "Name": "Fureur de l’ogre des montagnes",
-          "Description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFureur de l’ogre des montagnes confère les traits suivants :\n• +3 points de santé (les dégâts affectent ces points de santé en priorité)\n• +1 aux dégâts des armes de corps à corps ou de lancer\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+          "Summary": "Déchaîne une rage qui renforce la résistance physique.",
+          "Description": "La cible gagne 3 points de santé temporaires et +1 aux dégâts de corps à corps, de lancer et des armes naturelles. Elle ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Fureur de l’ogre des montagnes",
           "SourceBook": "Livre des règles",
           "SourcePage": "276",
@@ -12956,7 +13010,8 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes": {
           "Name": "Folie de l’ogre des montagnes",
-          "Description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFolie de l’ogre des montagnes confère les traits suivants :\n• +6 points de santé (les dégâts affectent ces points de santé en priorité)\n• +3 aux dégâts des armes de corps à corps ou de lancer\n• +1 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+          "Summary": "Déchaîne une rage qui améliore les attaques.",
+          "Description": "La cible gagne 6 points de santé temporaires, +3 aux dégâts de corps à corps, de lancer et des armes naturelles, et +1 à la VC d’attaque. Elle ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie de l’ogre des montagnes",
           "SourceBook": "Livre des règles",
           "SourcePage": "276",
@@ -12964,7 +13019,8 @@
         },
         "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir": {
           "Name": "Force du tursir",
-          "Description": "L’esprit du hrimtursir confère toute sa force au conjurateur, qui gagne un trait exceptionnel de +8 en Force jusqu’à expiration du pouvoir.",
+          "Summary": "Porte la Force au niveau exceptionnel d’un tursir.",
+          "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
           "SourceName": "Force du tursir",
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
@@ -12972,7 +13028,8 @@
         },
         "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur": {
           "Name": "Rage du destructeur",
-          "Description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nRage du destructeur confère les traits suivants :\n• Le conjurateur reçoit un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (les dégâts affectent ces points de santé en priorité)\n• +5 aux dégâts des armes de corps à corps ou de lancer\n• +2 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+          "Summary": "Déchaîne une rage extrême qui renforce les attaques.",
+          "Description": "La cible gagne 10 points de santé temporaires, +5 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage du destructeur",
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
@@ -12980,7 +13037,8 @@
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Ravage du huvfurwurm",
-          "Description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu. Ces points sont liés à cette action d’arme supplémentaire, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer une deuxième paire de bras, qui brandissent une arme supplémentaire.",
+          "Summary": "Accorde une action d’arme supplémentaire.",
+          "Description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
           "SourceName": "Ravage du huvfurwurm",
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
@@ -12988,7 +13046,8 @@
         },
         "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes": {
           "Name": "Fils des flammes",
-          "Description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.\nFils des flammes confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +2.\n• Le conjurateur inflige 1 point de dégâts supplémentaire avec toutes les armes de corps à corps et les armes de jet.",
+          "Summary": "Protège des flammes ordinaires et renforce les attaques.",
+          "Description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Fils des flammes",
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
@@ -12996,7 +13055,8 @@
         },
         "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant": {
           "Name": "Regard paralysant",
-          "Description": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de paralyser ses adversaires avec son puissant regard. Le conjurateur doit d’abord attirer l’attention de son adversaire afin de croiser son regard. Une fois le contact visuel établi, l’adversaire doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ou être paralysé pendant 1 tour. Un adversaire paralysé ne peut rien faire jusqu’à ce que l’effet se dissipe. Si la cible n’a pas encore agi au cours du tour de jeu en cours, l’effet paralysant lui coûte ce tour de jeu ; autrement l’effet commence au prochain tour de jeu. Dans l’un ou l’autre cas, l’adversaire perd 1 tour de jeu dans la version de base du pouvoir.",
+          "Summary": "Paralyse brièvement une cible qui croise le regard.",
+          "Description": "Après un contact visuel, la cible qui échoue à son test de résistance est paralysée pendant un tour et ne peut rien faire.",
           "SourceName": "Regard paralysant",
           "SourceBook": "Livre des règles",
           "SourcePage": "279",
@@ -13004,7 +13064,8 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Peau du dragon",
-          "Description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.\nLa Peau du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +4.\n• Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+          "Summary": "Protège des flammes et renforce les attaques.",
+          "Description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Peau du dragon",
           "SourceBook": "Livre des règles",
           "SourcePage": "279",
@@ -13012,7 +13073,8 @@
         },
         "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm": {
           "Name": "Tête du huvfurwurm",
-          "Description": "Le conjurateur est capable de survivre à une décapitation. Quand le conjurateur subit une attaque qui devrait le tuer, lancez 1d10. Sur un résultat de 9 ou 10, sa tête est tranchée. Le conjurateur semble mort mais en réalité, il tombe immédiatement en hibernation, et au bout d’un mois une nouvelle tête a poussé et le conjurateur sort de son long sommeil. Ce pouvoir ne fonctionne qu’une seule fois, après quoi la relique associée à la Tablette sacrée se fend et devient inutilisable. Pour pouvoir utiliser de nouveau ce pouvoir, le conjurateur doit créer une nouvelle relique. Un conjurateur qui a recouru à ce pouvoir semble avoir un cou légèrement plus long que la normale qui pousse sa tête un peu en avant à la manière d’un appendice.",
+          "Summary": "Permet de survivre à une décapitation.",
+          "Description": "Quand une attaque devrait tuer la cible, un résultat de 9 ou 10 sur 1d10 permet à sa tête de repousser. Elle semble morte et hiberne pendant un mois avant de se réveiller ; l’effet ne fonctionne qu’une fois.",
           "SourceName": "Tête du huvfurwurm",
           "SourceBook": "Livre des règles",
           "SourcePage": "279",
@@ -13020,7 +13082,8 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon": {
           "Name": "Âme du dragon",
-          "Description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.\nL’Âme du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +6\n• Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+          "Summary": "Accorde une protection et une résistance totale au feu.",
+          "Description": "La cible bénéficie de Protection +6, inflige +4 dégâts en combat rapproché, à distance et avec les armes naturelles, et est immunisée aux flammes magiques comme non magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Âme du dragon",
           "SourceBook": "Livre des règles",
           "SourcePage": "279",
@@ -13028,7 +13091,8 @@
         },
         "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant": {
           "Name": "Aspect du serpent géant",
-          "Description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expiration de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits. Cela dit, le conjurateur peut voir certaines de ses capacités limitées par sa nouvelle forme (par exemple, un serpent géant ne peut pas manier d’armes en combat ni invoquer des pouvoirs divins au-delà de ceux mentionnés ci-dessous).\nL’Aspect du serpent géant confère les traits suivants :\n• Aussi long que la hauteur d’un sanctuaire (Taille 4), et d’un poids pouvant aller de 500 kg à 8 tonnes\n• +20 points de santé (ces points sont utilisés avant les points de santé naturels du conjurateur)\n• Valeur de protection naturelle de 2\n• Pouvoir de Regard paralysant (Cf. le pouvoir de niveau 2 page précédente)\n• Pouvoir de Constriction (Cf. le pouvoir de niveau 1 page précédente)\n• Trait de personnage de +6 en Force, qui confère un bonus de +6 aux dégâts\n• Arme naturelle : morsure, 2d10 (JO 9-10) points de dégâts\n• Arme naturelle : écrasement (uniquement après une utilisation réussie de la Constriction), 2d10 points de dégâts (contre lesquelles l’armure ne protège pas)\n• Facteur de peur : 1d5",
+          "Summary": "Transforme la cible en serpent géant.",
+          "Description": "La cible devient un serpent géant de taille 4, long comme un sanctuaire et pesant de 500 kg à 8 tonnes. Elle gagne 20 PS temporaires, Protection 2, Force +6 (et +6 aux dégâts), le facteur de peur 1d5, le Regard paralysant et la Constriction. Ses attaques naturelles sont une morsure (2d10, JO 9–10) et un écrasement après une constriction réussie (2d10, sans protection d’armure). Son équipement est suspendu ; elle ne peut pas manier d’armes ni utiliser d’autres pouvoirs divins que ceux accordés par cette forme.",
           "SourceName": "Aspect du serpent géant",
           "SourceBook": "Livre des règles",
           "SourcePage": "280",
@@ -13038,7 +13102,8 @@
         },
         "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier": {
           "Name": "Poings d’acier",
-          "Description": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de brassards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues. Les attaques qu’il porte à l’aide de la spécialité Bagarre provoquent les dégâts indiqués par la table ci-dessous. Si le thuul perd l’un de ses gants/bracelets/brassards, il cesse de profiter de cet effet car il doit porter les deux runes en même temps. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. Si le thuul possède un trait exceptionnel en Force, le modificateur aux dégâts découlant de ce trait vient également s’ajouter aux dégâts.",
+          "Summary": "Renforce les attaques à mains nues.",
+          "Description": "Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs.",
           "SourceName": "Poings d’acier",
           "SourceBook": "Livre des règles",
           "SourcePage": "287",
@@ -13046,7 +13111,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Esprit de la bête — Ours",
-          "Description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Donne certains traits de l’ours sans changer de forme.",
+          "Description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, vision nocturne et griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
@@ -13056,7 +13122,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard": {
           "Name": "Esprit de la bête — Renard",
-          "Description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Donne certains traits du renard sans changer de forme.",
+          "Description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion et en Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
@@ -13065,7 +13132,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre": {
           "Name": "Esprit de la bête — Lièvre",
-          "Description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Donne certains traits du lièvre sans changer de forme.",
+          "Description": "La cible adopte certains traits du lièvre sans changer entièrement de forme : Dextérité au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion. Les lièvres la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
@@ -13074,7 +13142,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau": {
           "Name": "Esprit de la bête — Corbeau",
-          "Description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Donne certains traits du corbeau sans changer de forme.",
+          "Description": "La cible adopte certains traits du corbeau sans changer entièrement de forme : vision nocturne, perception des êtres invisibles et bec (1d10, JO 10) comme arme naturelle. Les corbeaux la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
@@ -13085,7 +13154,8 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf": {
           "Name": "Esprit de la bête — Cerf",
-          "Description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Donne certains traits du cerf sans changer de forme.",
+          "Description": "La cible adopte certains traits du cerf sans changer entièrement de forme : Constitution au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et cornes (1d10, JO 10) comme arme naturelle. Les cerfs la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
@@ -13095,7 +13165,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Aspect animal — Ours",
-          "Description": "L’elfe peut revêtir la forme de l’animal de son choix. L’ihana adopte tous les traits de cet animal tout en conservant ceux de ses propres traits qui n’entrent pas en conflit avec la morphologie de l’animal (par exemple, il perd ses compétences d’armes puisqu’un animal ne peut pas utiliser d’arme). L’elfe conserve toujours sa propre intelligence. L’équipement qu’il porte au moment de la transformation, ainsi que les objets qu’il tient dans ses mains, ses vêtements et son armure, ne font plus qu’un avec l’animal. Quand l’elfe décide de reprendre sa forme d’origine, tout son équipement revient à l’état dans lequel il se trouvait au moment de la transformation (même les objets tenus en main). C’est au maître de jeu de déterminer les traits que possèdent les animaux.\nVoici quelques exemples :\n• Ours : peut communiquer avec les autres ours ; vision nocturne ; +4 en Force ; +4 en Constitution ; -2 en Dextérité ; peut servir de monture à une personne ; valeur de protection naturelle de +3 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : peut communiquer avec les autres renards ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Intelligence ; -2 en Force ; +3 dans les disciplines Discrétion et Larcin ; difficile à toucher en combat : malus de -2 à la valeur de compétence de toutes les attaques adverses\n• Lièvre : peut communiquer avec les autres lièvres ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Dextérité ; -2 en Force ; malus de -3 à la valeur de compétence de toutes les attaques adverses\n• Corbeau : peut communiquer avec les corbeaux et les morts ; mouvement terrestre réduit de moitié (/2) ; mouvement aérien quadruplé (x4) ; +4 en Dextérité ; -4 en Constitution ; vision nocturne ; voit les êtres invisibles et immatériels ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Cerf : peut communiquer avec les autres cerfs ; mouvement terrestre doublé (x2) ; vision nocturne ; +1 en Force ; +4 en Constitution ; peut servir de monture à une personne ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Transforme la cible en ours.",
+          "Description": "La cible prend la forme d’un ours et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les ours et servir de monture à une personne. Elle obtient la vision nocturne, Force et Constitution au moins +4, Dextérité −2, Protection +3 et une attaque de griffes (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
           "SourcePage": "296",
@@ -13105,7 +13176,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard": {
           "Name": "Aspect animal — Renard",
-          "Description": "L’elfe peut revêtir la forme de l’animal de son choix. L’ihana adopte tous les traits de cet animal tout en conservant ceux de ses propres traits qui n’entrent pas en conflit avec la morphologie de l’animal (par exemple, il perd ses compétences d’armes puisqu’un animal ne peut pas utiliser d’arme). L’elfe conserve toujours sa propre intelligence. L’équipement qu’il porte au moment de la transformation, ainsi que les objets qu’il tient dans ses mains, ses vêtements et son armure, ne font plus qu’un avec l’animal. Quand l’elfe décide de reprendre sa forme d’origine, tout son équipement revient à l’état dans lequel il se trouvait au moment de la transformation (même les objets tenus en main). C’est au maître de jeu de déterminer les traits que possèdent les animaux.\nVoici quelques exemples :\n• Ours : peut communiquer avec les autres ours ; vision nocturne ; +4 en Force ; +4 en Constitution ; -2 en Dextérité ; peut servir de monture à une personne ; valeur de protection naturelle de +3 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : peut communiquer avec les autres renards ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Intelligence ; -2 en Force ; +3 dans les disciplines Discrétion et Larcin ; difficile à toucher en combat : malus de -2 à la valeur de compétence de toutes les attaques adverses\n• Lièvre : peut communiquer avec les autres lièvres ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Dextérité ; -2 en Force ; malus de -3 à la valeur de compétence de toutes les attaques adverses\n• Corbeau : peut communiquer avec les corbeaux et les morts ; mouvement terrestre réduit de moitié (/2) ; mouvement aérien quadruplé (x4) ; +4 en Dextérité ; -4 en Constitution ; vision nocturne ; voit les êtres invisibles et immatériels ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Cerf : peut communiquer avec les autres cerfs ; mouvement terrestre doublé (x2) ; vision nocturne ; +1 en Force ; +4 en Constitution ; peut servir de monture à une personne ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Transforme la cible en renard.",
+          "Description": "La cible prend la forme d’un renard et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les renards, voit dans l’obscurité, reçoit Intelligence +4, Force −2, un déplacement terrestre doublé et +3 en Discrétion et en Larcin. Les attaques contre elle subissent −2 à leur VC. Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
           "SourcePage": "296",
@@ -13114,7 +13186,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre": {
           "Name": "Aspect animal — Lièvre",
-          "Description": "L’elfe peut revêtir la forme de l’animal de son choix. L’ihana adopte tous les traits de cet animal tout en conservant ceux de ses propres traits qui n’entrent pas en conflit avec la morphologie de l’animal (par exemple, il perd ses compétences d’armes puisqu’un animal ne peut pas utiliser d’arme). L’elfe conserve toujours sa propre intelligence. L’équipement qu’il porte au moment de la transformation, ainsi que les objets qu’il tient dans ses mains, ses vêtements et son armure, ne font plus qu’un avec l’animal. Quand l’elfe décide de reprendre sa forme d’origine, tout son équipement revient à l’état dans lequel il se trouvait au moment de la transformation (même les objets tenus en main). C’est au maître de jeu de déterminer les traits que possèdent les animaux.\nVoici quelques exemples :\n• Ours : peut communiquer avec les autres ours ; vision nocturne ; +4 en Force ; +4 en Constitution ; -2 en Dextérité ; peut servir de monture à une personne ; valeur de protection naturelle de +3 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : peut communiquer avec les autres renards ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Intelligence ; -2 en Force ; +3 dans les disciplines Discrétion et Larcin ; difficile à toucher en combat : malus de -2 à la valeur de compétence de toutes les attaques adverses\n• Lièvre : peut communiquer avec les autres lièvres ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Dextérité ; -2 en Force ; malus de -3 à la valeur de compétence de toutes les attaques adverses\n• Corbeau : peut communiquer avec les corbeaux et les morts ; mouvement terrestre réduit de moitié (/2) ; mouvement aérien quadruplé (x4) ; +4 en Dextérité ; -4 en Constitution ; vision nocturne ; voit les êtres invisibles et immatériels ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Cerf : peut communiquer avec les autres cerfs ; mouvement terrestre doublé (x2) ; vision nocturne ; +1 en Force ; +4 en Constitution ; peut servir de monture à une personne ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Transforme la cible en lièvre.",
+          "Description": "La cible prend la forme d’un lièvre et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les lièvres, voit dans l’obscurité, reçoit Dextérité +4 et Force −2, et son déplacement terrestre est doublé. Les attaques contre elle subissent −3 à leur VC. Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
           "SourcePage": "296",
@@ -13123,7 +13196,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau": {
           "Name": "Aspect animal — Corbeau",
-          "Description": "L’elfe peut revêtir la forme de l’animal de son choix. L’ihana adopte tous les traits de cet animal tout en conservant ceux de ses propres traits qui n’entrent pas en conflit avec la morphologie de l’animal (par exemple, il perd ses compétences d’armes puisqu’un animal ne peut pas utiliser d’arme). L’elfe conserve toujours sa propre intelligence. L’équipement qu’il porte au moment de la transformation, ainsi que les objets qu’il tient dans ses mains, ses vêtements et son armure, ne font plus qu’un avec l’animal. Quand l’elfe décide de reprendre sa forme d’origine, tout son équipement revient à l’état dans lequel il se trouvait au moment de la transformation (même les objets tenus en main). C’est au maître de jeu de déterminer les traits que possèdent les animaux.\nVoici quelques exemples :\n• Ours : peut communiquer avec les autres ours ; vision nocturne ; +4 en Force ; +4 en Constitution ; -2 en Dextérité ; peut servir de monture à une personne ; valeur de protection naturelle de +3 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : peut communiquer avec les autres renards ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Intelligence ; -2 en Force ; +3 dans les disciplines Discrétion et Larcin ; difficile à toucher en combat : malus de -2 à la valeur de compétence de toutes les attaques adverses\n• Lièvre : peut communiquer avec les autres lièvres ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Dextérité ; -2 en Force ; malus de -3 à la valeur de compétence de toutes les attaques adverses\n• Corbeau : peut communiquer avec les corbeaux et les morts ; mouvement terrestre réduit de moitié (/2) ; mouvement aérien quadruplé (x4) ; +4 en Dextérité ; -4 en Constitution ; vision nocturne ; voit les êtres invisibles et immatériels ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Cerf : peut communiquer avec les autres cerfs ; mouvement terrestre doublé (x2) ; vision nocturne ; +1 en Force ; +4 en Constitution ; peut servir de monture à une personne ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Transforme la cible en corbeau.",
+          "Description": "La cible prend la forme d’un corbeau et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle communique avec les corbeaux et les morts, voit dans l’obscurité et perçoit les êtres invisibles et immatériels. Sa Dextérité augmente de 4, sa Constitution diminue de 4, son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle attaque avec son bec (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
           "SourcePage": "296",
@@ -13134,7 +13208,8 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf": {
           "Name": "Aspect animal — Cerf",
-          "Description": "L’elfe peut revêtir la forme de l’animal de son choix. L’ihana adopte tous les traits de cet animal tout en conservant ceux de ses propres traits qui n’entrent pas en conflit avec la morphologie de l’animal (par exemple, il perd ses compétences d’armes puisqu’un animal ne peut pas utiliser d’arme). L’elfe conserve toujours sa propre intelligence. L’équipement qu’il porte au moment de la transformation, ainsi que les objets qu’il tient dans ses mains, ses vêtements et son armure, ne font plus qu’un avec l’animal. Quand l’elfe décide de reprendre sa forme d’origine, tout son équipement revient à l’état dans lequel il se trouvait au moment de la transformation (même les objets tenus en main). C’est au maître de jeu de déterminer les traits que possèdent les animaux.\nVoici quelques exemples :\n• Ours : peut communiquer avec les autres ours ; vision nocturne ; +4 en Force ; +4 en Constitution ; -2 en Dextérité ; peut servir de monture à une personne ; valeur de protection naturelle de +3 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : peut communiquer avec les autres renards ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Intelligence ; -2 en Force ; +3 dans les disciplines Discrétion et Larcin ; difficile à toucher en combat : malus de -2 à la valeur de compétence de toutes les attaques adverses\n• Lièvre : peut communiquer avec les autres lièvres ; mouvement terrestre doublé (x2) ; vision nocturne ; +4 en Dextérité ; -2 en Force ; malus de -3 à la valeur de compétence de toutes les attaques adverses\n• Corbeau : peut communiquer avec les corbeaux et les morts ; mouvement terrestre réduit de moitié (/2) ; mouvement aérien quadruplé (x4) ; +4 en Dextérité ; -4 en Constitution ; vision nocturne ; voit les êtres invisibles et immatériels ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Cerf : peut communiquer avec les autres cerfs ; mouvement terrestre doublé (x2) ; vision nocturne ; +1 en Force ; +4 en Constitution ; peut servir de monture à une personne ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+          "Summary": "Transforme la cible en cerf.",
+          "Description": "La cible prend la forme d’un cerf et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les cerfs, servir de monture à une personne et se nourrir d’herbe. Elle voit dans l’obscurité, reçoit Force +1 et Constitution +4, et son déplacement terrestre est doublé. Elle attaque avec ses cornes (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
           "SourcePage": "296",
@@ -13144,7 +13219,8 @@
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Don de l’eau",
-          "Description": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation). Dans des conditions normales, il peut nager dans des eaux calmes aussi longtemps que dure ce pouvoir sans avoir besoin de faire le moindre jet de situation. Si un jet de compétence d’Agilité s’avère nécessaire, l’elfe reçoit un bonus à ce jet de +2 par niveau. L’elfe n’a aucun problème pour atteindre des profondeurs égales à trois fois sa propre taille. Pour chaque mètre de profondeur supplémentaire, l’elfe subit un malus de -2 à sa valeur de compétence (mais il continue de profiter du bonus mentionné plus haut). Les conséquences d’un jet de compétence raté sont laissées à l’appréciation du maître de jeu.",
+          "Summary": "Facilite la nage et la respiration sous l’eau.",
+          "Description": "La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC.",
           "SourceName": "Don de l’eau",
           "SourceBook": "Livre des règles",
           "SourcePage": "297",
@@ -13152,7 +13228,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
           "Name": "Sang brûlant",
-          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente temporairement les points de santé.",
+          "Description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
           "SourceName": "Sang brûlant",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13160,7 +13237,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage",
-          "Description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Rage :\nLa mopor grandit de 50 cm et gagne 30 kg de muscles\nLa mopor a un facteur de peur de 1d10\n+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n+2 aux dégâts avec les armes de corps à corps ou les armes de jet\n+1 à la VC de toutes les attaques\nLa mopor ne peut ni parer ni esquiver les attaques\nLa mopor ignore tous les effets de la peur",
+          "Summary": "Renforce les attaques et la résistance à la peur.",
+          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13168,7 +13246,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13176,7 +13255,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood": {
           "Name": "Sang bouillant",
-          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 2d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente temporairement les points de santé.",
+          "Description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Sang bouillant",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13184,7 +13264,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
           "Name": "Folie",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Folie :\n• Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)\n• Le bruide a un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +4 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +2 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort",
+          "Summary": "Déchaîne une rage qui renforce les attaques.",
+          "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13192,7 +13273,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Folie",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13200,7 +13282,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire": {
           "Name": "Embrasement du sang",
-          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "Summary": "Augmente fortement les points de santé.",
+          "Description": "La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Embrasement du sang",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13208,7 +13291,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
           "Name": "Riastarthae",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la riastarthae :\n• Le bruide grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)\n• Le bruide a un facteur de peur de 1d10 (JO 9-10)\n• +15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +6 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +3 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide ignore les effets des blessures graves\n• Le bruide peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort",
+          "Summary": "Déchaîne une rage extrême et ignore les blessures.",
+          "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13216,7 +13300,8 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion": {
           "Name": "Épuisement après frénésie",
-          "Description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+          "Summary": "Provoque l’épuisement après la frénésie.",
+          "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13224,7 +13309,8 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre",
-          "Description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine. Ce sort ne peut être tissé que sur une créature dont le poids n’excède pas 60 kg et qui se tient sur un sol suffisamment épais et fertile pour qu’un arbre puisse s’y enraciner et pousser. La victime peut tenter de résister à cette transformation en effectuant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). En cas de réussite, seule la peau de la victime se transforme en écorce, ce qui n’a d’autre effet que de modifier son apparence et de réduire son Agilité : toutes ses valeurs de compétence et de situation associées à l’Agilité subissent un malus de -3 jusqu’à expiration du sort. Si la cible est trop lourde pour être complètement transformée, seules certaines parties de la victime se verront altérées (au maître de jeu de déterminer lesquelles), tandis que le reste du corps de la victime voit seulement sa peau se changer en écorce, avec les mêmes effets que ci-dessus. Dans ce cas, un test de situation réussi signifie que la victime ne subit qu’un malus de -1 (au lieu de -3). Si la cible rate son test de situation et que son poids ne dépasse pas 60 kg, elle prend immédiatement racine et se retrouve incapable de bouger. Dès lors, au cours de l’heure qui suit, la victime se change en un arbre d’une essence choisie par l’enchanteur (il doit cependant s’agir d’une espèce capable de survivre dans la région, même si elle n’y est pas courante). L’arbre conserve la taille et les points de santé que la victime possédait sous sa forme normale. Il conserve également son apparence faciale, incrustée dans son écorce, et des membres ressemblant à des bras et des jambes. Tant que la créature est sous cette forme, elle conserve les mêmes facultés sensorielles qu’elle possédait au moment où la malédiction l’a frappée. La créature voit tout ce qui est visible de son point de vue (selon l’orientation de son visage) et entend les sons, perçoit les odeurs, et ressent les contacts normalement. La créature conserve tous les dégâts qu’elle subit sous cette forme quand elle recouvre sa forme naturelle. Les possessions telles que les vêtements et l’équipement sont intégrées à l’arbre (pour peu que leur poids n’excède pas la limite imposée par le sort). Sous forme d’arbre, la victime profite d’une valeur de protection de 4. Elle n’a pas besoin de boire ou de manger pour survivre, mais il lui arrivera de s’endormir. Si quelqu’un grave l’écorce de l’arbre ou tente de l’abattre (ce qui inflige des dégâts à la victime), l’arbre se met à saigner. Si cela ne dissuade pas l’assaillant, la victime meurt si elle encaisse suffisamment de dégâts. L’enchanteur peut à tout moment mettre un terme à cette malédiction et rendre à sa victime sa forme d’origine. Une créature qui subit la malédiction de l’arbre pendant toute la durée du sort demeure très raide même après avoir retrouvé sa forme d’origine, et pendant les trois jours qui suivent, ses tests de compétence et de situation associés à l’Agilité et au mouvement sont diminués de moitié.",
+          "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
+          "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13232,7 +13318,8 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
           "Name": "Raideur après la malédiction de l’arbre",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Laisse une raideur après la malédiction de l’arbre.",
+          "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13240,7 +13327,8 @@
         },
         "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm": {
           "Name": "Changement de corps (logewurm)",
-          "Description": "Au fil des années, le logewurm a développé un pouvoir basé sur le sort Transformation qui lui permet de se transformer en n’importe quelle créature de son choix. Il utilise ce pouvoir pour s’infiltrer et approcher des personnes importantes. La durée de la transformation est illimitée et le dragon peut retrouver sa forme d’origine dès qu’il le souhaite. Cependant, le dragon ne peut utiliser ce pouvoir qu’une seule fois par an. Étant donné qu’il ne conserve aucun attribut physique de sa forme de dragon, en adoptant une autre forme, il devient vulnérable. Aussi, il n’utilise ce pouvoir que lorsque la situation l’exige.",
+          "Summary": "Change la forme physique en celle d’une créature choisie.",
+          "Description": "Le logewurm peut prendre la forme physique de toute créature de son choix, pour une durée illimitée, puis reprendre sa forme d’origine quand il le souhaite. Il ne conserve aucun attribut physique de dragon sous cette forme et devient donc vulnérable. Il ne peut utiliser cette transformation qu’une fois par an.",
           "SourceName": "Changement de corps (logewurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "124",
@@ -13248,7 +13336,8 @@
         },
         "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll": {
           "Name": "Changement de forme (fjoltroll)",
-          "Description": "Dès qu’il le souhaite, un fjoltroll peut se transformer en pratiquement n’importe quoi pour ne pas se faire remarquer des voyageurs et des créatures de passage.",
+          "Summary": "Permet de prendre presque n’importe quelle apparence.",
+          "Description": "Le fjoltroll peut prendre l’apparence de presque n’importe quelle forme afin de se faire passer inaperçu auprès des voyageurs et des créatures de passage.",
           "SourceName": "Changement de forme (fjoltroll)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "148",
@@ -13256,7 +13345,8 @@
         },
         "oRxJE6A6B7C8D9Ea#c-ur-regenerant-lindwurm": {
           "Name": "Cœur régénérant (lindwurm)",
-          "Description": "Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guérit de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective.\nIl est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt.",
+          "Summary": "Guérit la cible, au risque de la transformer en lindwurm.",
+          "Description": "Manger tout ou partie du cœur d’un lindwurm guérit les blessures, soigne les maladies et restaure les parties du corps inutilisables ou manquantes ; le temps de guérison dépend des atteintes. Après ingestion, la cible effectue un test de situation de 16 (Constitution). En cas d’échec, elle tombe dans un sommeil magique et devient un lindwurm après 1d10 semaines ; ce lindwurm reprend sa forme d’origine à sa mort.",
           "SourceName": "Cœur régénérant (lindwurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "118",
@@ -13264,7 +13354,8 @@
         },
         "oRxJE6A6B7C8D9Ea#forme-de-lindwurm": {
           "Name": "Forme de lindwurm",
-          "Description": "Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guérit de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective.\nIl est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt.",
+          "Summary": "Transforme la cible en lindwurm.",
+          "Description": "La cible prend la forme physique d’un lindwurm et en adopte les caractéristiques. Son équipement est suspendu pendant la transformation.",
           "SourceName": "Cœur régénérant (lindwurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "118",
@@ -13272,7 +13363,8 @@
         },
         "flAdvMhNiOjPkQlR#corps-de-fumee": {
           "Name": "Corps de fumée",
-          "Description": "Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.\nLe draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.\nLa transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.",
+          "Summary": "Transforme le corps en fumée et accélère le déplacement.",
+          "Description": "Le draugr se transforme en fumée en trois tours, sans pouvoir se défendre pendant ce temps. Sous cette forme, il se déplace de 30 mètres par tour (moins vite par vent fort) et récupère 10 PS par journée passée ainsi.",
           "SourceName": "Corps de fumée",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "50",
@@ -13280,7 +13372,8 @@
         },
         "it3GE4w2x3y4z5A6#frenesie-hrimtroll": {
           "Name": "Frénésie (hrimtroll)",
-          "Description": "<p>Habituellement paisible, le hrimtroll devient une tout autre créature quand il engage le combat. Pendant les 1d6 premiers tours de jeu, il combat dans un état de frénésie décuplée en bénéficiant d’un modificateur de +2 à ses attaques mais aussi un modificateur de -2 à ses parades. Pendant ces tours de jeu, le troll paraît très menaçant. Il rugit comme un animal de manière incompréhensible et menace sauvagement ses adversaires de ses impressionnantes défenses. Le hrimtroll se comporte de la sorte pour intimider ses ennemis afin de les paralyser de peur ou de les forcer à fuir.</p><p>Les hrimtrolls engagent souvent le combat en utilisant une grande épée de combat ou une grosse massue bardée de fer.</p>",
+          "Summary": "Renforce les attaques au prix des parades.",
+          "Description": "Pendant 1d6 tours, la cible bénéficie de +2 à ses attaques et subit -2 à ses parades.",
           "SourceName": "Frénésie (hrimtroll)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "156",
@@ -13288,7 +13381,8 @@
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Infection des rugtannes",
-          "Description": "À chaque tour pendant lequel un ulm nocturne boit le sang d’une victime, il y a un risque que celle-ci contracte une maladie rare. Après deux tours de jeu, le risque s’élève à 1 sur 20 (obtention d’un 20 sur 1d20). Après quatre tours de jeu, le risque s’élève à 2 sur 20 (obtention de 19 ou 20 sur 1d20). Pour une raison inexpliquée, la maladie affecte uniquement les humains.\nUne victime infectée par la maladie se transformera en rugtanne (un étrange mélange d’humain et de nattulm) dans un délai de 2d3 jours. Les rugtannes vivent uniquement la nuit. En cas d’exposition à la lumière du jour, ils succombent instantanément au choc des rayons solaires. Toutes les cinq nuits, ils doivent se nourrir du sang d’une autre créature au sang chaud. La morsure et le vampirisme fonctionnent de la même manière pour le rugtanne que pour le nattulm.\nUn rugtanne peut vivre jusqu’à quatre fois plus longtemps qu’un humain, ce qui lui donne bien plus de temps pour apprendre de nouvelles facultés. D’après certains mythes, un rugtanne est capable d’acquérir de formidables pouvoirs et aptitudes magiques, comme la transformation en chauve-souris ou en étalon noir. Tout ceci n’est que superstition. Cependant, lorsque de puissants magiciens sont transformés en rugtannes, ils sont toujours en mesure d’utiliser leur magie et deviennent ainsi d’horribles suceurs de sang dotés de pouvoirs rarement égalés.\nLorsqu’un personnage joueur devient un rugtanne, les caractéristiques suivantes sont modifiées :\n• Les traits Constitution, Psychisme, Force et Dextérité augmentent de deux niveaux (de -2 à 0 ou de +1 à +4 par exemple). Si le personnage est déjà au niveau maximum dans un ou plusieurs de ces traits, le modificateur bénéficie d’un bonus de +4 (le Trait passe donc à +8).\n• Le rugtanne obtient une valeur de protection de 1 du fait d’une protection naturelle (sa peau).\n• Le rugtanne gagne la capacité Vision dans le noir et peut voir dans le noir complet comme en plein jour jusqu’à 10 mètres, après quoi la vision diminue graduellement avant de s’estomper complètement à 60 mètres environ.\n• Le rugtanne subit les dégâts de la même manière qu’avant sa transformation, et reste donc mortel comme lorsqu’il était humain, mais ses points de santé sont modifiés en fonction de ses nouveaux traits.",
+          "Summary": "Transforme la cible en rugtanne.",
+          "Description": "Après une incubation de 2d3 jours, la cible humaine devient un rugtanne : ses traits de Constitution, Psychisme, Force et Dextérité augmentent de deux degrés, avec un dépassement à +8 ; Protection augmente de 1 et les points de santé sont recalculés. Elle voit dans le noir jusqu’à 10 m, puis graduellement jusqu’à environ 60 m. Elle ne peut vivre que la nuit, meurt instantanément à la lumière du jour et doit boire le sang d’une créature à sang chaud toutes les cinq nuits. Elle conserve ses facultés magiques et peut vivre jusqu’à quatre fois plus longtemps qu’un humain.",
           "SourceName": "Infection des rugtannes",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "27",
@@ -13297,7 +13391,8 @@
         },
         "WKMBG3v1w2x3y4z5#warg-disease": {
           "Name": "Maladie des wargs",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Infecte la cible et peut la transformer en warg garou.",
+          "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (garm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13305,7 +13400,8 @@
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
           "Name": "Warg garou",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Transforme la cible en warg garou.",
+          "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (garm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13316,7 +13412,8 @@
         },
         "gXp2SRjPkQlRmSnT#warg-disease": {
           "Name": "Maladie des wargs",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Infecte la cible et peut la transformer en warg garou.",
+          "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (skoll)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13324,7 +13421,8 @@
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
           "Name": "Warg garou",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Transforme la cible en warg garou.",
+          "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (skoll)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13335,7 +13433,8 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-disease": {
           "Name": "Maladie des wargs",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Infecte la cible et peut la transformer en warg garou.",
+          "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (warg)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13343,7 +13442,8 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
           "Name": "Warg garou",
-          "Description": "Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.\nLa maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.\nRisque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.\nLorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.\nChaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.\nSi la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.\nTransformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.\nLes traits des wargs garous sont modifiés comme suit :\n• Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)\n• Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)\n• Psychisme -2 aux tests de situation\n• Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)\n• Intelligence -4 aux tests de situation (pour un total maximum de -6)\nAutres aptitudes :\n• Protection naturelle : VC 2 (peau)\n• Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1\n• Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2\n• VC (Combat, Bagarre) +2\n• Compétences :\n• Agilité : Contrôle corporel (Saut, escalade et équilibre) +6\n• Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6\n• Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.\nType de wargRésultat du d20 infectieux\nLoup | Aucun\nWarg | 1 à 2\nSkoll | 1 à 3\nGarm | 1 à 5",
+          "Summary": "Transforme la cible en warg garou.",
+          "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (warg)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "30",
@@ -13354,7 +13454,8 @@
         },
         "pjY95vXsYtZu0v1w#metamorphose-draugr": {
           "Name": "Métamorphose (draugr)",
-          "Description": "Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.\nLe draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.\nChaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.",
+          "Summary": "Permet au draugr de prendre une forme animale.",
+          "Description": "Le draugr peut prendre la forme d’un animal choisi, souvent un loup, un corbeau ou un cheval, et en adopte les caractéristiques physiques ; ses points de santé ne sont pas conservés. La métamorphose prend trois tours, pendant lesquels il ne peut pas se défendre. Chaque changement d’une forme à une autre lui coûte 30 jours et 30 nuits.",
           "SourceName": "Métamorphose (draugr)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "50",
@@ -13362,7 +13463,8 @@
         },
         "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje": {
           "Name": "Métamorphose (stenhinje)",
-          "Description": "En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.\nIl est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.",
+          "Summary": "Permet de prendre l’apparence d’un objet simple.",
+          "Description": "Le stenhinje peut prendre la forme d’un objet simple (coffre, porte, mur ou sol), façonné à partir de sa propre masse. Le maître de jeu détermine ce qui le pousse à attaquer, par exemple une agression ou l’arrivée d’un ennemi précis. Il est presque impossible de le reconnaître comme créature vivante sans le vitner approprié.",
           "SourceName": "Métamorphose (stenhinje)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "97",
@@ -13370,7 +13472,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-braskelwurm": {
           "Name": "Pétrification (braskelwurm)",
-          "Description": "Quand le braskelwurm attaque avec son regard, il tente de forcer sa victime à le regarder droit dans les yeux. Pour ce faire, il produit un caquètement séduisant et tourne ses yeux luisants vers la victime choisie. Même si le caquètement n’est ni séduisant ni particulièrement plaisant, il est difficile de ne pas prêter attention à ce son puis de croiser le regard pénétrant du reptile.\nQuiconque entend le caquètement doit réussir un test de situation avec une valeur de situation de 14 (le modificateur de Psychisme s’applique) pour éviter de croiser le regard de la créature. La victime choisie par le braskelwurm subit un modificateur de -6 (et effectue donc le test avec une valeur de situation de 8). La valeur de situation peut être ajustée en fonction de l’âge du braskelwurm. Un jeune braskelwurm est bien plus dangereux qu’un vieux, les plus dangereux étant ceux qui viennent de naître. C’est au maître de jeu de déterminer les modificateurs en se basant sur l’âge du braskelwurm.\nLes victimes du regard peuvent résister au sort imminent qui les attend en effectuant chacune un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si elle échoue, la victime est instantanément transformée en statue de pierre pratiquement incassable. Ceci signifie que la victime pétrifiée obtient une valeur de protection de 10 et une valeur d’intégrité de 100. Lorsque la valeur d’intégrité est réduite à 0, la victime subit ensuite les dégâts normalement et si elle reçoit un nombre de points de dégâts au moins égal au double de ses points de santé, la statue de pierre se brise et la victime meurt.\nUne créature pétrifiée se trouve dans un état de sommeil permanent. Elle ne perçoit plus l’écoulement du temps ni son environnement. La victime ne peut rien affecter autour d’elle. On peut libérer une personne pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja). Une fois la pétrification dissipée, la victime retrouve sa forme d’origine.\nUne créature pétrifiée n’est pas fixée au sol, même si la pesanteur continue d’agir normalement sur elle. Une créature suffisamment forte peut donc la déplacer. La statue pèse environ dix fois le poids normal de la victime.",
+          "Summary": "Pétrifie la cible et la transforme en statue.",
+          "Description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 10 et d’une intégrité de 100 ; une fois l’intégrité épuisée, elle subit les dégâts normalement et se brise si elle reçoit des dégâts équivalant au double de ses PS. Elle pèse environ dix fois son poids et peut être déplacée. La cible retrouve sa forme normale si la pétrification est dissipée.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "106",
@@ -13378,7 +13481,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "106",
@@ -13386,7 +13490,8 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "106",
@@ -13394,7 +13499,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-demon-tangible": {
           "Name": "Pétrification (démon tangible)",
-          "Description": "Le démon peut pétrifier une victime située à 30 mètres ou moins de lui (VC 14) sans dépenser le moindre point de combat. Ce pouvoir peut être utilisé 1d3 fois par jour et la pétrification dure 1d10 (JO 7-10) jours. L’armure et les vêtements de la victime sont eux aussi pétrifiés, ce qui n’est pas le cas de ses objets magiques.\nLa victime peut résister à la pétrification en réussissant un test de situation avec une valeur de situation de 6 (le trait Psychisme modifie ce test). En cas d’échec, la victime se transforme en statue de pierre. Cette pierre est très solide et pratiquement incassable. En pratique, cela signifie que la créature pétrifiée obtient une valeur de protection de 20 et une valeur d’intégrité de 200. Quand la valeur d’intégrité est réduite à 0, la créature commence à subir des dégâts comme à l’accoutumée et, si la créature pétrifiée subit un montant de dégâts égal au double de ses points de santé, la statue de pierre est fracassée et la victime meurt.\nUne créature pétrifiée est dans un état de sommeil permanent, elle ne perçoit plus l’écoulement du temps ni ce qui se passe autour d’elle. Elle ne peut plus agir sur quoi que ce soit dans son environnement. Quand la durée de la pétrification touche à sa fin, la victime retrouve sa forme d’origine. Il est possible de libérer une créature pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja).\nUne créature pétrifiée n’est pas inamovible et une créature suffisamment forte peut donc la soulever et la déplacer. La créature pétrifiée pèse à peu près dix fois son poids d’origine.",
+          "Summary": "Pétrifie la cible et la transforme en statue résistante.",
+          "Description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 20 et d’une intégrité de 200 ; une fois l’intégrité épuisée, elle subit les dégâts normalement et se brise si elle reçoit des dégâts équivalant au double de ses PS. Elle pèse environ dix fois son poids et peut être déplacée. À la fin de l’effet ou si la pétrification est annulée, la cible retrouve sa forme normale.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "40",
@@ -13402,7 +13508,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "40",
@@ -13410,7 +13517,8 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers",
-          "Description": "Raideur temporaire après le retour à la forme normale.",
+          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "40",
@@ -13418,7 +13526,8 @@
         },
         "2hwy57A6B7C8D9Ea#regeneration-de-tete": {
           "Name": "Régénération de tête",
-          "Description": "Quand un huvfurwurm subit 20 points de dégâts ou plus, ou si l’une de ses têtes est tranchée, une tête repousse depuis une excroissance de son corps; le MJ décide à quelle fréquence. Chaque nouvelle tête peut être plus dangereuse et recevoir des pouvoirs utilisables en combat. Une tête peut régénérer jusqu’à trois fois; la quatrième régénération est mutilée et ne peut plus blesser ni fonctionner normalement. Certaines régénérations créent plusieurs têtes. La capacité source cite 1d20 pour déterminer les trois premières régénérations, alors que la table imprimée est titrée 2d10 : cette divergence est signalée dans la source.",
+          "Summary": "Permet à une tête tranchée de repousser.",
+          "Description": "Après une blessure de 20 dégâts ou plus, ou la décapitation, une nouvelle tête peut pousser. Chaque tête peut régénérer jusqu’à trois fois ; la quatrième repousse mutilée et ne peut plus attaquer normalement.",
           "SourceName": "Régénération de tête",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "110",
@@ -13426,7 +13535,8 @@
         },
         "NNBuQnQlRmSnToUp#transformation-corporelle": {
           "Name": "Transformation corporelle",
-          "Description": "Le démon peut se transformer en une créature de son choix.",
+          "Summary": "Transforme la cible en animal choisi.",
+          "Description": "La cible prend la forme physique d’un animal choisi dans le bestiaire et en adopte les caractéristiques physiques. Ses points de santé ne sont pas conservés et son équipement est suspendu.",
           "SourceName": "Transformation corporelle",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "40",

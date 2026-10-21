@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
-    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +4 en Constitution jusqu’à expiration du pouvoir.",
-    "summary": "Résilience",
+    "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +4.",
+    "summary": "Renforce la Constitution et la résistance physique.",
     "source": {
       "book": "Livre des règles",
       "page": 268
@@ -21,7 +21,7 @@
       "name": "Résilience",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +4 en Constitution jusqu’à expiration du pouvoir.",
+      "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +4.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:resilience:0#resilience",
             "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
+            "summary": "Renforce la Constitution et la résistance physique.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
-    "description": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +6 for the duration of the ability.",
-    "summary": "Strength of the Stone Hinji",
+    "description": "Replaces the target’s Strength trait with the exceptional level +6.",
+    "summary": "Raises Strength to a stenhinje’s exceptional level.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -21,7 +21,7 @@
       "name": "Strength of the Stone Hinji",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +6 for the duration of the ability.",
+      "description": "Replaces the target’s Strength trait with the exceptional level +6.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
             "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
+            "summary": "Raises Strength to a stenhinje’s exceptional level.",
             "editableChanges": true,
             "related": []
           }

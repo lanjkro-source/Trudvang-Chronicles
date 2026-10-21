@@ -177,3 +177,12 @@ export function effectChangeSummary(effect) {
     return `${change.key} ${change.type} ${value}`;
   }).join(" · ");
 }
+
+/** Short descriptive tooltip supplied by a catalogue effect, with a useful fallback for hand-made effects. */
+export function effectTooltipSummary(effect) {
+  const parentSummary = effect?.parent?.type === "effect" ? effect.parent.system?.summary : "";
+  return effect?.flags?.["trudvang-chronicles"]?.transformation?.summary
+    || effect?.system?.summary
+    || parentSummary
+    || effectChangeSummary(effect);
+}

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
-    "description": "Raideur temporaire après le retour à la forme normale.",
-    "summary": "Pétrification (démon tangible)",
+    "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
+    "summary": "Maintient une raideur résiduelle après la pétrification.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40
@@ -21,7 +21,7 @@
       "name": "Raideur après pétrification — deux tiers",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Raideur temporaire après le retour à la forme normale.",
+      "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
       "transfer": false,
       "system": {
         "stackId": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
@@ -47,6 +47,7 @@
           "transformation": {
             "key": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
             "sourceId": "MxUgKE5A6B7C8D9E",
+            "summary": "Maintient une raideur résiduelle après la pétrification.",
             "editableChanges": true,
             "related": []
           }

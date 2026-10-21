@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds",
-    "description": "Raideur temporaire après le retour à la forme normale.",
-    "summary": "Pétrification/Annuler une pétrification",
+    "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
+    "summary": "Maintient une raideur résiduelle après la pétrification.",
     "source": {
       "book": "Livre des règles",
       "page": 162
@@ -21,7 +21,7 @@
       "name": "Raideur après pétrification — deux tiers",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
-      "description": "Raideur temporaire après le retour à la forme normale.",
+      "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
       "transfer": false,
       "system": {
         "stackId": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds",
             "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
+            "summary": "Maintient une raideur résiduelle après la pétrification.",
             "editableChanges": true,
             "related": []
           }

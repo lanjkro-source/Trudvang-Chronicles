@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood",
-    "description": "Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ Bruid grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ Bruid is unable to parry or evade attacks ✦ Bruid ignores all effects from fear",
-    "summary": "Rage",
+    "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
+    "summary": "Temporarily increases health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 187
@@ -21,7 +21,7 @@
       "name": "Rage",
       "type": "effect",
       "img": "icons/svg/blood.svg",
-      "description": "Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ Bruid grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ Bruid is unable to parry or evade attacks ✦ Bruid ignores all effects from fear",
+      "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2",
+            "summary": "Temporarily increases health points.",
             "editableChanges": true,
             "related": []
           }

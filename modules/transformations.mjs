@@ -126,7 +126,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // Generated trait, vitality and improvement changes share the source spell's
  // priority, just like the fixed changes stored in the reference catalogue.
  if(Number.isFinite(template.priority))for(const change of changes)change.priority??=template.priority;
- const meta={key,sourceId:template.sourceId,editableChanges:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||""};
+ const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
+ const summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ const meta={key,sourceId:template.sourceId,summary,editableChanges:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||""};
   const description=supplied?.description??text(key,"Description");
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId:key,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};

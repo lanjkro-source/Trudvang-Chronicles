@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
-    "description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
-    "summary": "Rage",
+    "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
+    "summary": "Improves attacks and grants fear immunity.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -21,7 +21,7 @@
       "name": "Rage",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
+      "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
@@ -105,6 +105,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
+            "summary": "Improves attacks and grants fear immunity.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

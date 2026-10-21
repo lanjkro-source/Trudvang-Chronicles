@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
-    "description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
-    "summary": "Animal Spirit",
+    "description": "The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, night vision, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged.",
+    "summary": "Grants some deer traits without changing form.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -21,7 +21,7 @@
       "name": "Animal Spirit — Stag",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+      "description": "The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, night vision, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
@@ -77,6 +77,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
+            "summary": "Grants some deer traits without changing form.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
-    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey. The spirit conjurer receives +1 on the SV of all combat actions when battling beasts and animals.",
-    "summary": "Mind of the Predator",
+    "description": "Replaces the target’s Constitution trait with the exceptional level +4.",
+    "summary": "Improves Constitution and physical resilience.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -21,7 +21,7 @@
       "name": "Mind of the Predator",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey. The spirit conjurer receives +1 on the SV of all combat actions when battling beasts and animals.",
+      "description": "Replaces the target’s Constitution trait with the exceptional level +4.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:resilience:0#resilience",
             "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
+            "summary": "Improves Constitution and physical resilience.",
             "editableChanges": true,
             "related": []
           }

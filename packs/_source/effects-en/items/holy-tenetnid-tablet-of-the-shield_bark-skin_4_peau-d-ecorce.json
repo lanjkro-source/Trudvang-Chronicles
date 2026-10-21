@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
-    "description": "The Gavlian invokes the force of the black oak. Either the priest or one person of their choosing grows a bark-like skin of dark iron-oak. The skin provides 10 additional Body Points for the blessed character, which are used up before they receive any damage, and after any armor’s Protection Value has been deducted from the damage. These Body Points are t emporary, and any r emaining are lost when the duration ends. If the ability’s 10 Body Points are used up before the duration ends, the effect stops.",
-    "summary": "Bark Skin",
+    "description": "The target gains 10 temporary health points, which absorb damage after Protection. The effect ends if these points are depleted; any remaining points disappear when it expires.",
+    "summary": "Protects the target with temporary health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 201
@@ -21,7 +21,7 @@
       "name": "Bark Skin",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The Gavlian invokes the force of the black oak. Either the priest or one person of their choosing grows a bark-like skin of dark iron-oak. The skin provides 10 additional Body Points for the blessed character, which are used up before they receive any damage, and after any armor’s Protection Value has been deducted from the damage. These Body Points are t emporary, and any r emaining are lost when the duration ends. If the ability’s 10 Body Points are used up before the duration ends, the effect stops.",
+      "description": "The target gains 10 temporary health points, which absorb damage after Protection. The effect ends if these points are depleted; any remaining points disappear when it expires.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
@@ -49,6 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
+            "summary": "Protects the target with temporary health points.",
             "editableChanges": true,
             "related": []
           }

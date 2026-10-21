@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
-    "description": "Le conjurateur est capable de survivre à une décapitation. Quand le conjurateur subit une attaque qui devrait le tuer, lancez 1d10. Sur un résultat de 9 ou 10, sa tête est tranchée. Le conjurateur semble mort mais en réalité, il tombe immédiatement en hibernation, et au bout d’un mois une nouvelle tête a poussé et le conjurateur sort de son long sommeil. Ce pouvoir ne fonctionne qu’une seule fois, après quoi la relique associée à la Tablette sacrée se fend et devient inutilisable. Pour pouvoir utiliser de nouveau ce pouvoir, le conjurateur doit créer une nouvelle relique. Un conjurateur qui a recouru à ce pouvoir semble avoir un cou légèrement plus long que la normale qui pousse sa tête un peu en avant à la manière d’un appendice.",
-    "summary": "Tête du huvfurwurm",
+    "description": "Quand une attaque devrait tuer la cible, un résultat de 9 ou 10 sur 1d10 permet à sa tête de repousser. Elle semble morte et hiberne pendant un mois avant de se réveiller ; l’effet ne fonctionne qu’une fois.",
+    "summary": "Permet de survivre à une décapitation.",
     "source": {
       "book": "Livre des règles",
       "page": 279
@@ -21,7 +21,7 @@
       "name": "Tête du huvfurwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le conjurateur est capable de survivre à une décapitation. Quand le conjurateur subit une attaque qui devrait le tuer, lancez 1d10. Sur un résultat de 9 ou 10, sa tête est tranchée. Le conjurateur semble mort mais en réalité, il tombe immédiatement en hibernation, et au bout d’un mois une nouvelle tête a poussé et le conjurateur sort de son long sommeil. Ce pouvoir ne fonctionne qu’une seule fois, après quoi la relique associée à la Tablette sacrée se fend et devient inutilisable. Pour pouvoir utiliser de nouveau ce pouvoir, le conjurateur doit créer une nouvelle relique. Un conjurateur qui a recouru à ce pouvoir semble avoir un cou légèrement plus long que la normale qui pousse sa tête un peu en avant à la manière d’un appendice.",
+      "description": "Quand une attaque devrait tuer la cible, un résultat de 9 ou 10 sur 1d10 permet à sa tête de repousser. Elle semble morte et hiberne pendant un mois avant de se réveiller ; l’effet ne fonctionne qu’une fois.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
@@ -34,6 +34,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
+            "summary": "Permet de survivre à une décapitation.",
             "editableChanges": true,
             "related": []
           }

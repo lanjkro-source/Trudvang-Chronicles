@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
-    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
-    "summary": "Dragon Skin",
+    "description": "The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood.",
+    "summary": "Protects against fire and improves attacks.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -21,7 +21,7 @@
       "name": "Dragon Skin",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
+      "description": "The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
@@ -56,6 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+            "summary": "Protects against fire and improves attacks.",
             "editableChanges": true,
             "related": []
           }

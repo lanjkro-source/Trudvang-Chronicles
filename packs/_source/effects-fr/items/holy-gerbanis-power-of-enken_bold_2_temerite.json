@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:bold:2#temerite",
-    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +6 en Psychisme pendant la durée du pouvoir.",
-    "summary": "Témérité",
+    "description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +6.",
+    "summary": "Renforce le courage et le Psychisme.",
     "source": {
       "book": "Livre des règles",
       "page": 224
@@ -21,7 +21,7 @@
       "name": "Témérité",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +6 en Psychisme pendant la durée du pouvoir.",
+      "description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +6.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-power-of-enken:bold:2#temerite",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
             "sourceId": "holy-gerbanis-power-of-enken:bold:2",
+            "summary": "Renforce le courage et le Psychisme.",
             "editableChanges": true,
             "related": []
           }

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
-    "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
-    "summary": "Frenzy (hrim troll)",
+    "description": "For 1d6 rounds, the target gains +2 to attacks and suffers -2 to parries.",
+    "summary": "Improves attacks at the cost of parries.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 159
@@ -21,7 +21,7 @@
       "name": "Frenzy (hrim troll)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+      "description": "For 1d6 rounds, the target gains +2 to attacks and suffers -2 to parries.",
       "transfer": false,
       "system": {
         "stackId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
@@ -47,6 +47,7 @@
           "transformation": {
             "key": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
             "sourceId": "it3GE4w2x3y4z5A6",
+            "summary": "Improves attacks at the cost of parries.",
             "editableChanges": true,
             "related": []
           }

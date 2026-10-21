@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
-    "description": "L’esprit du hrimtursir confère toute sa force au conjurateur, qui gagne un trait exceptionnel de +8 en Force jusqu’à expiration du pouvoir.",
-    "summary": "Force du tursir",
+    "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
+    "summary": "Porte la Force au niveau exceptionnel d’un tursir.",
     "source": {
       "book": "Livre des règles",
       "page": 277
@@ -21,7 +21,7 @@
       "name": "Force du tursir",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "L’esprit du hrimtursir confère toute sa force au conjurateur, qui gagne un trait exceptionnel de +8 en Force jusqu’à expiration du pouvoir.",
+      "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +8.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
@@ -42,6 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
             "sourceId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+            "summary": "Porte la Force au niveau exceptionnel d’un tursir.",
             "editableChanges": true,
             "related": []
           }

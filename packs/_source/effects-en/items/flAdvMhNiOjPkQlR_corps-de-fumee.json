@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "flAdvMhNiOjPkQlR#corps-de-fumee",
-    "description": "<p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p>",
-    "summary": "Smoke Body",
+    "description": "The draugr transforms into smoke over three turns and cannot defend itself during this time. In this form it moves 30 metres per turn (less in strong winds) and recovers 10 HP for each day spent this way.",
+    "summary": "Turns the body into smoke and increases movement.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 58
@@ -21,7 +21,7 @@
       "name": "Smoke Body",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "<p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p>",
+      "description": "The draugr transforms into smoke over three turns and cannot defend itself during this time. In this form it moves 30 metres per turn (less in strong winds) and recovers 10 HP for each day spent this way.",
       "transfer": false,
       "system": {
         "stackId": "flAdvMhNiOjPkQlR#corps-de-fumee",
@@ -47,6 +47,7 @@
           "transformation": {
             "key": "flAdvMhNiOjPkQlR#corps-de-fumee",
             "sourceId": "flAdvMhNiOjPkQlR",
+            "summary": "Turns the body into smoke and increases movement.",
             "editableChanges": true,
             "related": []
           }
