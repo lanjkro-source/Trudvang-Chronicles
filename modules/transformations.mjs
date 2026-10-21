@@ -42,7 +42,11 @@ function selectFormData(form,policy){
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[]}={}){
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
- const supplied=source?.documentName==="ActiveEffect"?source:source?.documentName==="Item"&&source.type==="effect"
+ // A related-effect link keeps its originating document for ownership, elapsed
+ // duration and provenance. Its data belongs to a different effect, however.
+ // Unidentified custom effects remain copyable; identified ones must match.
+ const sourceKey=metadata(source)?.key||source?.system?.stackId;
+ const supplied=source?.documentName==="ActiveEffect"&&(!sourceKey||sourceKey===key)?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
  const stored=supplied?effectSource(supplied):null;
  const template=stored?{...reference,changes:stored.system.changes,statuses:Array.from(stored.statuses??[]),icon:stored.img??reference.icon}:reference;

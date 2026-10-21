@@ -381,3 +381,37 @@ test("effect names identify their source in both languages and decimal movement 
  assert.equal(movementDetails(10,[],[{mode:"land",method:"replace",value:12.3456}]).land.max,12.35);
  assert.equal(rulesFromChanges([{key:"system.transformation.defense",type:"override",value:3},{key:"system.transformation.defense",type:"multiply",value:0.555}]).defense,1.67);
 });
+
+
+test("linked effects apply the requested successor rather than copying their originating effect",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:120},i18n:{localize}};
+ const dialogs=[];
+ globalThis.foundry.applications.api.DialogV2.wait=async options=>{dialogs.push(options);return {duration:"1 minute"};};
+ for(const [parentId,childId]of [["rage","frenzy-exhaustion"],["warg-disease","warg-garou"],["petrification-recovery-half","petrification-recovery-two-thirds"]]){
+  const parentKey=Object.keys(templates).find(k=>k.endsWith("#"+parentId));
+  const childKey=templates[parentKey].sourceId+"#"+childId;
+  assert.ok(templates[childKey]);
+  const parent={documentName:"ActiveEffect",uuid:"Actor.a.ActiveEffect.parent",name:"Effet initial modifié",description:"Description de l’origine",system:{stackId:parentKey,changes:[{key:"system.modifiers.rolls.attack",type:"add",value:"999"}]},statuses:["prone"],flags:{[S]:{transformation:{key:parentKey,sourceId:templates[parentKey].sourceId,related:[childId],summary:"Résumé de l’origine",appliedAt:100,editableChanges:true}}}};
+  const before=structuredClone(parent);
+  for(const source of [parent,{documentName:"Item",type:"effect",uuid:"Item.reference",effects:[parent]}]){
+   let created;
+   const actor={canUserModify:()=>true,getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+   await applyTransformation(actor,childKey,{source,elapsed:20});
+   assert.equal(dialogs.at(-1).window.title,localize("TRUDVANG.Content.Transformation."+childKey+".Name"));
+   assert.equal(created.name,localize("TRUDVANG.Content.Transformation."+childKey+".Name"));
+   assert.equal(created.description,localize("TRUDVANG.Content.Transformation."+childKey+".Description"));
+   assert.equal(created.flags[S].transformation.summary,localize("TRUDVANG.Content.Transformation."+childKey+".Summary"));
+   assert.equal(created.flags[S].transformation.key,childKey);
+   assert.equal(created.origin,source.uuid);
+   assert.deepEqual(created.statuses,templates[childKey].statuses);
+   assert.ok(!created.system.changes.some(c=>c.value==="999"));
+   if(childId==="frenzy-exhaustion"){
+    assert.equal(effectRules(created).durationFromElapsed,0.5);
+    assert.match(dialogs.at(-1).content,/value="10 seconds"/);
+   }
+  }
+  assert.deepEqual(parent,before);
+ }
+});
