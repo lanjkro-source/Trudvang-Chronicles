@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
-    "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
+    "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
     "summary": "Improves attacks and grants fear immunity.",
     "source": {
       "book": "Stormlands",
@@ -21,7 +21,7 @@
       "name": "Rage (Fury of Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
+      "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
       "transfer": false,
       "system": {
         "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
@@ -87,13 +87,6 @@
             "key": "system.transformation.fearFactor",
             "type": "override",
             "value": "1d10",
-            "phase": "initial",
-            "priority": 20
-          },
-          {
-            "key": "system.transformation.size",
-            "type": "override",
-            "value": "1",
             "phase": "initial",
             "priority": 20
           },

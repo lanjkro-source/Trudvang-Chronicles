@@ -328,6 +328,20 @@ test("NPC fear fields show the upgraded factor without saving effects into eithe
  assert.equal(npc._source.system.details.fearFactor,"2d10 (JO 8-10)");
 });
 
+test("NPC size displays its transformation without persisting it on unrelated submissions",async()=>{
+ const npc=actor();npc.isOwner=true;npc._source.system.details.size="1/3";npc.system.details.size="1/3";npc.transformationProfile.size=2;
+ const sheet=new TrudvangNpcSheet();sheet.actor=npc;sheet.isEditable=true;
+ const context=await sheet._prepareContext({});
+ assert.equal(context.effectiveSize,2);assert.equal(context.baseSize,"1/3");assert.equal(context.sizeModified,true);
+ const updates=[];npc.update=async update=>updates.push(update);
+ const submit=TrudvangActorSheet.DEFAULT_OPTIONS.form.handler;
+ await submit.call(sheet,{target:{name:"name"}},{},{object:{name:npc.name,"trudvang.size":"2"}});
+ assert.equal(updates.at(-1).system?.details?.size,undefined);assert.equal(updates.at(-1).trudvang,undefined);
+ await submit.call(sheet,{target:{name:"trudvang.size"}},{},{object:{"trudvang.size":"3"}});
+ assert.equal(updates.at(-1).system.details.size,"3");
+ assert.equal(npc._source.system.details.size,"1/3");
+});
+
 test("Durable requires an explicit active feat mechanic, never a translated name", () => {
   assert.equal(ignoresWoundPenalties({items: [feat()]}), true);
   assert.equal(ignoresWoundPenalties({items: [feat(false)]}), false);

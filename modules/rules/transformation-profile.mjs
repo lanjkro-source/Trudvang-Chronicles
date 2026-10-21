@@ -20,7 +20,7 @@ export function transformedTrait(value, rule) {
 }
 /** Pure profile: no document writes, timers, or source mutations during preparation. */
 export function transformationProfile(actor) {
- const profile={effects:[],traits:{...actor.system.effective?.traits},knowledge:{},movements:[],senses:[],capabilities:[],damage:[],size:actor.type==="character"?1:Number(actor.system.details?.size)||1};
+ const profile={effects:[],traits:{...actor.system.effective?.traits},knowledge:{},movements:[],senses:[],capabilities:[],damage:[],size:actor.type==="character"?1:actor.system.details?.size||1};
  for(const effect of activeTransformations(actor)){
   const r=effectRules(effect);profile.effects.push(effect);
   if(!r.traitsApplied)for(const row of r.traits??[])profile.traits[row.trait]=transformedTrait(Number(profile.traits[row.trait]||0),row);

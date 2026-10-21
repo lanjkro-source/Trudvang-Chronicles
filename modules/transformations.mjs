@@ -5,6 +5,7 @@ import {escapeHtml} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
 import {changesFromRules,rulesFromChanges,hasProfileChanges,validProfileChange,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
+import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -86,7 +87,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(!form)throw Error(`Missing bestiary form ${rules.formName}`);
   Object.assign(rules,selectFormData(form,rules.formPolicy));
  }
- const duration=await resolveDuration(answers.duration);
+ const duration=await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  for(const p of template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`])||0);if(!count)continue;
@@ -95,7 +96,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(p.target==="protection")changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
   if(p.target==="damage"){const rows=changes.filter(c=>c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));if(rows.length)for(const row of rows)row.value=String(Number(row.value)+count*p.value);else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}}
  }
- if(rules.vitality){const roll=await new Roll(rules.vitality).evaluate();await roll.toMessage({speaker:ChatMessage.getSpeaker({actor}),flavor:escapeHtml(effectName)});const amount=Number(roll.total);for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});delete rules.vitality;}
+ if(rules.vitality){const amount=await rollEffectValue(rules.vitality,{actor,name:effectName});for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});delete rules.vitality;}
   for(const row of rules.traits??[]){
     const base=Number(actor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;
@@ -142,11 +143,17 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  await syncTransformationTokens(actor);
  return effect;
 }
-export async function resolveDuration(text){
+/** Publish the actual Roll so the standard chat pipeline also animates Dice So Nice. */
+async function rollEffectValue(formula,{actor,name=""}={}){
+ const roll=await new Roll(formula).evaluate();
+ await roll.toMessage({speaker:ChatMessage.getSpeaker(actor?{actor}:{}),flavor:escapeHtml(name)});
+ return Number(roll.total);
+}
+export async function resolveDuration(text,context={}){
  const notation=String(text).replace(/\(JO\s*(\d+)(?:[-–]\d+)?\)/gi,"xo>=$1");
  const match=notation.trim().match(/^([\ddD+ .xo>=-]+)\s*(seconds?|secondes?|minutes?|heures?|hours?|journées?|jours?|days?|semaines?|weeks?|mois|months?|années?|ans?|years?|tours?(?: de jeu)?|rounds?)$/i);
   if(!match){if(String(text).trim())throw Error(local("InvalidDuration"));return {value:0,units:"seconds"};}
- const value=Number.isFinite(Number(match[1]))?Number(match[1]):Number((await new Roll(match[1]).evaluate()).total);
+ const value=Number.isFinite(Number(match[1]))?Number(match[1]):await rollEffectValue(match[1],context);
  const unit=match[2].toLowerCase();
  const seconds=/^minute/.test(unit)?60:/^(heure|hour)/.test(unit)?3600:/^(jour|day)/.test(unit)?86400:/^(semaine|week)/.test(unit)?604800:/^(mois|month)/.test(unit)?2592000:/^(année|an|year)/.test(unit)?31536000:/^(tour|round)/.test(unit)?5:1;
  return {value:Math.max(0,value*seconds),units:"seconds"};
@@ -191,17 +198,40 @@ export function transformationItemActive(item){
  const id=item?.flags?.[SCOPE]?.transformationGrant;
  return !id||activeTransformations(item.actor).some(e=>e.id===id);
 }
-export async function syncTransformationTokens(actor){
+const tokenSyncQueues=new WeakMap();
+export function syncTransformationTokens(actor){
+ if(!canSyncActor(actor))return Promise.resolve();
+ const pending=(tokenSyncQueues.get(actor)??Promise.resolve()).catch(()=>{}).then(()=>updateTransformationTokens(actor));
+ tokenSyncQueues.set(actor,pending);
+ return pending.finally(()=>{if(tokenSyncQueues.get(actor)===pending)tokenSyncQueues.delete(actor);});
+}
+async function updateTransformationTokens(actor){
  if(!canSyncActor(actor))return;
- const mode=transformationProfile(actor).vision;
- const tokens=actor.isToken?[actor.token]:actor.getActiveTokens(true,true).map(t=>t.document??t);
+ const profile=transformationProfile(actor),mode=profile.vision;
+ const sized=profile.effects.some(effect=>effectRules(effect).size!==undefined);
+ const dimensions=sized?creatureTokenDimensions(profile.size):null;
+ const tokens=actor.isToken?[actor.token]:Array.from(new Set([
+  ...actor.getActiveTokens(true,true).map(t=>t.document??t),
+  ...Array.from(game.scenes??[]).flatMap(scene=>Array.from(scene.tokens??[]).filter(t=>t.actorLink&&t.actorId===actor.id))
+ ]));
  for(const token of tokens){
+  if(!token)continue;
+  const footprint=token.flags?.[SCOPE]?.transformationSize;
+  if(dimensions){
+   const before=footprint?.before??{width:token.width,height:token.height};
+   if(!footprint||token.width!==dimensions.width||token.height!==dimensions.height||footprint.applied.width!==dimensions.width||footprint.applied.height!==dimensions.height)
+    await token.update({...dimensions,[`flags.${SCOPE}.transformationSize`]:{before,applied:dimensions}});
+  }else if(footprint){
+   const changes={[`flags.${SCOPE}.-=transformationSize`]:null};
+   if(token.width===footprint.applied.width&&token.height===footprint.applied.height)Object.assign(changes,footprint.before);
+   await token.update(changes);
+  }
   const saved=token.flags?.[SCOPE]?.transformationVision;
   if(mode){
    const changes={"sight.visionMode":mode};
    if(!saved)changes[`flags.${SCOPE}.transformationVision`]={before:token.sight.visionMode,applied:mode};
    else changes[`flags.${SCOPE}.transformationVision.applied`]=mode;
-   await token.update(changes);
+   if(!saved||token.sight.visionMode!==mode||saved.applied!==mode)await token.update(changes);
   }else if(saved){
    const changes={[`flags.${SCOPE}.-=transformationVision`]:null};
    if(token.sight.visionMode===saved.applied)changes["sight.visionMode"]=saved.before;
@@ -245,4 +275,5 @@ export function registerTransformationHooks(){
   await syncTransformationTokens(effect.parent);
  }});
  Hooks.on("createToken",async token=>{if(canSyncActor(token.actor))await syncTransformationTokens(token.actor);});
+ Hooks.on("updateActor",async actor=>{if(canSyncActor(actor))await syncTransformationTokens(actor);});
 }

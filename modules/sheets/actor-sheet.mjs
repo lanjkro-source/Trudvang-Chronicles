@@ -162,6 +162,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const baseFearFactor=parseFearFactor(this.actor._source.system.details?.fearFactor);
     context.baseFearFactorNotation=baseFearFactor.valid?formatFearFactor(baseFearFactor):"—";
     context.fearFactorModified=context.effectiveFearFactor.valid&&formatFearFactor(context.effectiveFearFactor)!==context.baseFearFactorNotation;
+    context.effectiveSize=this.actor.transformationProfile?.size??this.actor.system.details?.size;
+    context.baseSize=this.actor._source.system.details?.size;
+    context.sizeModified=String(context.effectiveSize)!==String(context.baseSize);
     context.fearFactorNotation = context.effectiveFearFactor.valid ? formatFearFactor(context.effectiveFearFactor) : "";
     context.effectStatus = effectStatus(this.actor, {localize:key=>game.i18n.localize(key)});
     const body = this.actor.system.resources.body;
@@ -637,6 +640,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (!this.isEditable || !this.actor.isOwner) return;
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
+    if(editedPath==="trudvang.size")foundry.utils.setProperty(changes,"system.details.size",formData.object[editedPath]);
+    if(changes.trudvang)delete changes.trudvang.size;
     if(editedPath==="trudvang.temporaryHP")await setTemporaryHealth(this.actor,formData.object[editedPath]);
     if(changes.trudvang){delete changes.trudvang.temporaryHP;if(!Object.keys(changes.trudvang).length)delete changes.trudvang;}
     if (this.actor.type === "npc") {

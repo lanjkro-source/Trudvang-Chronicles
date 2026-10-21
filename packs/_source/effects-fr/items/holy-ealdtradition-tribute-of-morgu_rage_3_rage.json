@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
-    "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
+    "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
     "summary": "Renforce les attaques et la résistance à la peur.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Rage (Tribut de Morgu)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
+      "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
@@ -87,13 +87,6 @@
             "key": "system.transformation.fearFactor",
             "type": "override",
             "value": "1d10",
-            "phase": "initial",
-            "priority": 20
-          },
-          {
-            "key": "system.transformation.size",
-            "type": "override",
-            "value": "1",
             "phase": "initial",
             "priority": 20
           },

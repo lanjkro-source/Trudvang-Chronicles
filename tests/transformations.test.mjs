@@ -211,6 +211,37 @@ test("vision is restored after removal, while later manual token edits remain in
  token.sight.visionMode="tremorsense";actor.effects=[];await syncTransformationTokens(actor);
  assert.equal(token.sight.visionMode,"tremorsense");
 });
+
+test("size effects resize linked tokens across scenes and restore their original footprint",async()=>{
+ const makeToken=()=>({width:1,height:2,flags:{},async update(data){
+  for(const key of ["width","height"])if(data[key]!==undefined)this[key]=data[key];
+  this.flags[S]??={};
+  if(data[`flags.${S}.transformationSize`])this.flags[S].transformationSize=structuredClone(data[`flags.${S}.transformationSize`]);
+  if(data[`flags.${S}.-=transformationSize`]!==undefined)delete this.flags[S].transformationSize;
+ }});
+ const previousGame=globalThis.game;
+ try{
+  const token=makeToken(),offScene=Object.assign(makeToken(),{actorLink:true,actorId:"a"}),other=Object.assign(makeToken(),{actorLink:false,actorId:"a"});
+  globalThis.game={user:{id:"gm"},scenes:[{tokens:[offScene,other]}]};
+  const actor={id:"a",isOwner:true,type:"npc",system:{details:{size:"1/3"}},getActiveTokens:()=>[token],effects:[effect({size:2})]};
+  await syncTransformationTokens(actor);
+  for(const t of [token,offScene])assert.deepEqual([t.width,t.height],[2,2]);
+  assert.deepEqual([other.width,other.height],[1,2]);
+  actor.effects=[effect({size:7})];await syncTransformationTokens(actor);assert.equal(token.width,4);
+  actor.effects[0].disabled=true;await syncTransformationTokens(actor);
+  assert.deepEqual([token.width,token.height],[1,2]);assert.equal(token.flags[S].transformationSize,undefined);
+  assert.equal(transformationProfile(actor).size,"1/3","fractions survive preparation");
+  actor.effects=[effect({size:0.25})];await syncTransformationTokens(actor);assert.equal(token.width,0.5);
+  token.width=3;actor.effects=[];await syncTransformationTokens(actor);assert.equal(token.width,3,"later manual edits are preserved");
+  actor.isToken=true;actor.token=token;actor.effects=[effect({size:2})];await syncTransformationTokens(actor);assert.equal(token.width,2);
+  actor.effects[0].duration={expired:true};await syncTransformationTokens(actor);assert.equal(token.width,3);
+ }finally{globalThis.game=previousGame;}
+});
+
+test("Rage adds height and mass without assigning a creature Size",()=>{
+ const rages=Object.values(templates).filter(t=>t.id==="rage");assert.equal(rages.length,2);
+ for(const t of rages){const rules=rulesFromChanges(t.changes);assert.equal(rules.size,undefined);assert.equal(rules.heightBonus,0.5);assert.equal(rules.weightBonus,30);}
+});
 test("a PC may use a granted reserve only for its granted attack; disabling the effect removes the reserve",()=>{
  const weapon={id:"extra",name:"Extra attack",type:"weapon",system:{category:"natural",combatSpecialty:"natural",naturalCombatPoints:5,naturalCombatPool:"extra"},flags:{[S]:{transformationGrant:"form"}}};
  const actor={type:"character",system:{skills:{fighting:{value:1}},combatPools:{},resources:{combat:{}}},items:[weapon],effects:[effect({})],getSkillValue:()=>1,findRuleKnowledge:()=>null};
@@ -455,5 +486,19 @@ test("rolled vitality posts the actual dice to the normal chat pipeline for Dice
   assert.equal(posted[0].options.speaker.actor,"target");
   assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyMax"&&c.value==="13"));
   assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyValue"&&c.value==="13"));
+  globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1d6 + 2 jours"});
+  posted.length=0;await applyTransformation(actor,key);
+  assert.deepEqual(posted.map(p=>p.roll.formula.trim()),["1d6 + 2","2d10"]);
+  assert.equal(created.duration.value,13*86400);
+  assert.match(posted[0].options.flavor,/Durée/);
+  for(const p of posted)assert.equal(p.options.speaker.actor,"target");
+  posted.length=0;
+  assert.equal((await resolveDuration("1d10 (JO 7-10) jours",{actor,name:"Pétrification"})).value,13*86400);
+  assert.equal(posted[0].roll.formula.trim(),"1d10 xo>=7");
+  for(const template of Object.values(templates).filter(t=>/\dd\d/i.test(t.duration??""))){
+   posted.length=0;
+   await resolveDuration(template.duration,{actor,name:template.id});
+   assert.equal(posted.length,1,template.id);
+  }
  }finally{globalThis.Roll=previousRoll;globalThis.ChatMessage=previousChat;}
 });

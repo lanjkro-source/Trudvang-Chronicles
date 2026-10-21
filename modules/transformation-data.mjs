@@ -868,13 +868,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       },
       {
-        "key": "system.transformation.size",
-        "type": "override",
-        "value": "1",
-        "phase": "initial",
-        "priority": 20
-      },
-      {
         "key": "system.transformation.heightBonus",
         "type": "override",
         "value": "0.5",
@@ -3317,13 +3310,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       },
       {
-        "key": "system.transformation.size",
-        "type": "override",
-        "value": "1",
-        "phase": "initial",
-        "priority": 20
-      },
-      {
         "key": "system.transformation.heightBonus",
         "type": "override",
         "value": "0.5",
@@ -3860,7 +3846,7 @@ export const TRANSFORMATION_TEMPLATES = {
   "it3GE4w2x3y4z5A6#frenesie-hrimtroll": {
     "id": "frenesie-hrimtroll",
     "icon": "icons/svg/aura.svg",
-    "duration": "1d6 premiers tours",
+    "duration": "1d6 tours de jeu",
     "changes": [
       {
         "key": "system.modifiers.rolls.attack",

@@ -12703,7 +12703,7 @@
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Rage (Tribut de Morgu)",
           "Summary": "Renforce les attaques et la résistance à la peur.",
-          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
+          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Livre des règles",
           "SourcePage": "241",
@@ -13238,7 +13238,7 @@
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage (Fureur d’Ogon)",
           "Summary": "Renforce les attaques et la résistance à la peur.",
-          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
+          "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13377,7 +13377,7 @@
           "SourceName": "Frénésie (hrimtroll)",
           "SourceBook": "Bestiaire de Jorge",
           "SourcePage": "156",
-          "Duration": "1d6 premiers tours"
+          "Duration": "1d6 tours de jeu"
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Infection des rugtannes",

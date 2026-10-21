@@ -12703,7 +12703,7 @@
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Boiling Blood (Tribute of Morgu)",
           "Summary": "Improves attacks and grants fear immunity.",
-          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
+          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Boiling Blood",
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
@@ -13238,7 +13238,7 @@
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage (Fury of Ogon)",
           "Summary": "Improves attacks and grants fear immunity.",
-          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
+          "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -13377,7 +13377,7 @@
           "SourceName": "Frenzy (hrim troll)",
           "SourceBook": "Jorgi's Bestiary",
           "SourcePage": "159",
-          "Duration": "1d6 premiers tours"
+          "Duration": "1d6 rounds"
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Rugtanne Infection",

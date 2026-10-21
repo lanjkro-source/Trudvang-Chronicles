@@ -10438,7 +10438,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Name` | Boiling Blood (Tribute of Morgu) | Rage (Tribut de Morgu) |
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.SourceName` | Boiling Blood | Rage |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.SourcePage` | 187 | 241 |
@@ -11087,7 +11087,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Name` | Rage (Fury of Ogon) | Rage (Fureur d’Ogon) |
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceName` | Rage | Rage |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourcePage` | 123 | 123 |
@@ -11256,7 +11256,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.it3GE4w2x3y4z5A6#frenesie-hrimtroll.SourceName` | Frenzy (hrim troll) | Frénésie (hrimtroll) |
 | `TRUDVANG.Content.Transformation.it3GE4w2x3y4z5A6#frenesie-hrimtroll.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 | `TRUDVANG.Content.Transformation.it3GE4w2x3y4z5A6#frenesie-hrimtroll.SourcePage` | 159 | 156 |
-| `TRUDVANG.Content.Transformation.it3GE4w2x3y4z5A6#frenesie-hrimtroll.Duration` | 1d6 premiers tours | 1d6 premiers tours |
+| `TRUDVANG.Content.Transformation.it3GE4w2x3y4z5A6#frenesie-hrimtroll.Duration` | 1d6 rounds | 1d6 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes`
 
