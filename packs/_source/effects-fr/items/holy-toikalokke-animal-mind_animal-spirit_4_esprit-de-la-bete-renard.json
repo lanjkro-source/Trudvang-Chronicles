@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
-    "description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion et en Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
+    "description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5 et +3 dans la discipline Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
     "summary": "Donne certains traits du renard sans changer de forme.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Esprit de la bête — Renard",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion et en Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
+      "description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5 et +3 dans la discipline Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
@@ -31,13 +31,6 @@
             "key": "system.transformation.suspendEquipment",
             "type": "override",
             "value": "false",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.senses",
-            "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0\"]",
             "phase": "initial",
             "priority": 30
           },
@@ -58,14 +51,7 @@
           {
             "key": "system.transformation.knowledge",
             "type": "override",
-            "value": "{\"shadowing\":3,\"thievery\":3}",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
+            "value": "{\"thievery\":3}",
             "phase": "initial",
             "priority": 30
           }

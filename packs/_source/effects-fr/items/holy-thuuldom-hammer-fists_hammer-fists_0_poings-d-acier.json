@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
-    "description": "Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs.",
+    "description": "Les attaques à mains nues utilisant Bagarre infligent, selon le niveau de la rune : 1d6 ; 1d6 + 2 ; 1d10 + 2 ; 1d10 (JO 10) + 2 ; 1d10 (JO 9–10) + 2. Le modificateur de Force s’ajoute à ces dégâts. Les deux runes doivent être portées et alimentées pour que l’effet fonctionne.",
     "summary": "Renforce les attaques à mains nues.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Poings d’acier",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs.",
+      "description": "Les attaques à mains nues utilisant Bagarre infligent, selon le niveau de la rune : 1d6 ; 1d6 + 2 ; 1d10 + 2 ; 1d10 (JO 10) + 2 ; 1d10 (JO 9–10) + 2. Le modificateur de Force s’ajoute à ces dégâts. Les deux runes doivent être portées et alimentées pour que l’effet fonctionne.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
@@ -30,7 +30,7 @@
           {
             "key": "system.transformation.unarmedDamage",
             "type": "override",
-            "value": "[\"1d6\",\"1d6 + 2\",\"1d10 + 2\",\"1d10 + 2\",\"1d10 + 2\"]",
+            "value": "[{\"damage\":\"1d6\",\"openRoll\":0},{\"damage\":\"1d6 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":10},{\"damage\":\"1d10 + 2\",\"openRoll\":9}]",
             "phase": "initial",
             "priority": 10
           }

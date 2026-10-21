@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
-    "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
+    "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, de lancer et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
     "summary": "Protège des flammes ordinaires et renforce les attaques.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Fils des flammes",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
+      "description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, de lancer et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",

@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
-    "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
+    "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, de lancer et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
     "summary": "Protège des flammes et renforce les attaques.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Peau du dragon",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
+      "description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, de lancer et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",

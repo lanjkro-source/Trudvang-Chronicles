@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
-    "description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, night vision, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
+    "description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
     "summary": "Grants some bear traits without changing form.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Animal Spirit — Bear",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, night vision, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
+      "description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
@@ -42,13 +42,6 @@
             "priority": 30
           },
           {
-            "key": "system.transformation.senses",
-            "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Sense0\"]",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
             "key": "system.transformation.traits",
             "type": "override",
             "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":4}]",
@@ -59,13 +52,6 @@
             "key": "system.transformation.attacks",
             "type": "override",
             "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 30
           }

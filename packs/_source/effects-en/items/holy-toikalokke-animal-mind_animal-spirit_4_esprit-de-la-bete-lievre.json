@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre",
-    "description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
+    "description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
     "summary": "Grants some hare traits without changing form.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Animal Spirit — Hare",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
+      "description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre",
@@ -31,13 +31,6 @@
             "key": "system.transformation.suspendEquipment",
             "type": "override",
             "value": "false",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.senses",
-            "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Sense0\"]",
             "phase": "initial",
             "priority": 30
           },
@@ -59,13 +52,6 @@
             "key": "system.transformation.knowledge",
             "type": "override",
             "value": "{\"shadowing\":3}",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 30
           }

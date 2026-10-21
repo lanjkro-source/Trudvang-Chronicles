@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
-    "description": "La cible se transforme en statue de pierre en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois pétrifiée, elle ne perçoit plus son environnement et ne peut plus agir ; ses points de santé sont conservés. Elle retrouve ses valeurs normales à la fin de la pétrification.",
+    "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
     "summary": "Transforme la cible en statue de pierre.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Pétrification",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible se transforme en statue de pierre en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois pétrifiée, elle ne perçoit plus son environnement et ne peut plus agir ; ses points de santé sont conservés. Elle retrouve ses valeurs normales à la fin de la pétrification.",
+      "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification",

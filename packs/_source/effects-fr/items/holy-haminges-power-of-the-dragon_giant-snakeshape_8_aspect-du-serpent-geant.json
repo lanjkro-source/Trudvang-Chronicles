@@ -63,9 +63,23 @@
             "priority": 50
           },
           {
-            "key": "system.transformation.capabilityNames",
+            "key": "system.transformation.traits",
             "type": "override",
-            "value": "[\"Regard paralysant\"]",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.fearFactor",
+            "type": "override",
+            "value": "1d5",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.transformation.powerIds",
+            "type": "override",
+            "value": "[\"holy-haminges-power-of-the-dragon:constriction:0\",\"holy-haminges-power-of-the-dragon:paralyzing-gaze:3\"]",
             "phase": "initial",
             "priority": 50
           }

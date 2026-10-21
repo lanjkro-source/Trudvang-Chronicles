@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
-    "description": "Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels.",
+    "description": "Unarmed Brawling attacks deal, by rune level: 1d6; 1d6 + 2; 1d10 + 2; 1d10 (OR 10) + 2; 1d10 (OR 9–10) + 2. The Strength modifier also applies. Both runes must be worn and powered for the effect to function.",
     "summary": "Improves unarmed attacks.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Hammer Fists",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels.",
+      "description": "Unarmed Brawling attacks deal, by rune level: 1d6; 1d6 + 2; 1d10 + 2; 1d10 (OR 10) + 2; 1d10 (OR 9–10) + 2. The Strength modifier also applies. Both runes must be worn and powered for the effect to function.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
@@ -30,7 +30,7 @@
           {
             "key": "system.transformation.unarmedDamage",
             "type": "override",
-            "value": "[\"1d6\",\"1d6 + 2\",\"1d10 + 2\",\"1d10 + 2\",\"1d10 + 2\"]",
+            "value": "[{\"damage\":\"1d6\",\"openRoll\":0},{\"damage\":\"1d6 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":10},{\"damage\":\"1d10 + 2\",\"openRoll\":9}]",
             "phase": "initial",
             "priority": 10
           }

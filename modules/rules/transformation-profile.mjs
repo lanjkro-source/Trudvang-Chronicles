@@ -27,6 +27,7 @@ export function transformationProfile(actor) {
   for(const [key,value]of Object.entries(r.knowledge??{}))profile.knowledge[key]=(profile.knowledge[key]||0)+value;
   profile.movements.push(...r.movement??[]);profile.senses.push(...r.senses??[]);profile.capabilities.push(...r.capabilities??[]);
   if(r.damage)profile.damage.push({effect:effect.name,...r.damage});
+  for(const attack of r.attacks??[])if(attack.isUnarmed)profile.unarmedAttack=attack;
   for(const key of ["suspendEquipment","preserveHP","ignoreFear","ignoreWounds","noParry","noDodge","endAtEmptyHP"])profile[key] ||= Boolean(r[key]);
   if(r.size!==undefined)profile.size=r.size;
   if(r.vision)profile.vision=r.vision;
@@ -54,7 +55,7 @@ export function movementDetails(base, rows, changes, modifier=0) {
     modes[key]={...current,metersPerTwo:Math.max(0,(row.method==="baseMultiple"?baseRate:current.metersPerTwo)*row.value)};
    }else{
     const max=Math.max(0,row.method==="replace"?row.value:row.method==="add"?current.max+row.value:row.method==="highest"?Math.max(current.max,row.value):current.max);
-    modes[key]={max,metersPerTwo:current.max?current.metersPerTwo*max/current.max:0};
+    modes[key]={max,metersPerTwo:row.metersPerTwo!==undefined?Math.max(0,number(row.metersPerTwo,0)):current.max?current.metersPerTwo*max/current.max:0};
    }
   }
  }

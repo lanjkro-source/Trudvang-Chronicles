@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
-    "description": "The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value.",
-    "summary": "Makes swimming and breathing underwater easier.",
+    "description": "The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV.",
+    "summary": "Allows easy swimming and improves swimming rolls.",
     "source": {
       "book": "Player's Handbook",
       "page": 241
@@ -21,7 +21,7 @@
       "name": "Control Fire",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value.",
+      "description": "The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
-            "summary": "Makes swimming and breathing underwater easier.",
+            "summary": "Allows easy swimming and improves swimming rolls.",
             "editableChanges": true,
             "related": []
           }

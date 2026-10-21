@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
-    "description": "La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC.",
-    "summary": "Facilite la nage et la respiration sous l’eau.",
+    "description": "La cible nage comme dans son milieu naturel, même sans la spécialité Natation, et ne fait aucun test en eau calme. Pour les tests d’Agilité nécessaires à la nage, elle reçoit +2 à la VC par niveau du pouvoir. Au-delà d’une profondeur égale à trois fois sa taille, chaque mètre supplémentaire impose un malus de −2 à la VC.",
+    "summary": "Permet de nager aisément et améliore les tests de nage.",
     "source": {
       "book": "Livre des règles",
       "page": 297
@@ -21,7 +21,7 @@
       "name": "Don de l’eau",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC.",
+      "description": "La cible nage comme dans son milieu naturel, même sans la spécialité Natation, et ne fait aucun test en eau calme. Pour les tests d’Agilité nécessaires à la nage, elle reçoit +2 à la VC par niveau du pouvoir. Au-delà d’une profondeur égale à trois fois sa taille, chaque mètre supplémentaire impose un malus de −2 à la VC.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
-            "summary": "Facilite la nage et la respiration sous l’eau.",
+            "summary": "Permet de nager aisément et améliore les tests de nage.",
             "editableChanges": true,
             "related": []
           }

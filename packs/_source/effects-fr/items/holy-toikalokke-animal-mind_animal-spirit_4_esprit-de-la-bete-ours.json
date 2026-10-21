@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
-    "description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, vision nocturne et griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
+    "description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
     "summary": "Donne certains traits de l’ours sans changer de forme.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Esprit de la bête — Ours",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, vision nocturne et griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
+      "description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
@@ -42,13 +42,6 @@
             "priority": 30
           },
           {
-            "key": "system.transformation.senses",
-            "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Sense0\"]",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
             "key": "system.transformation.traits",
             "type": "override",
             "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":4}]",
@@ -59,13 +52,6 @@
             "key": "system.transformation.attacks",
             "type": "override",
             "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 30
           }

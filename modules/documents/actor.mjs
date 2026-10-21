@@ -131,17 +131,26 @@ export class TrudvangActor extends BaseActor {
     this.transformationProfile = transformationProfile(this);
     Object.assign(system.effective.traits, this.transformationProfile.traits);
 
+    const maximumEffects=Array.from(this.allApplicableEffects?.()??this.effects??[]).filter(e=>!e.disabled&&!e.isSuppressed&&!e.duration?.expired)
+      .flatMap(effect=>Array.from(effect.system?.changes??[]).filter(c=>c.key==="system.resources.body.max"&&c.type==="override").map(change=>({effect,priority:Number(change.priority??50)})))
+      .sort((a,b)=>a.priority-b.priority);
+    const maximumEffect=maximumEffects.at(-1)?.effect;
+    const traitHealth=this.transformationProfile.preserveHP?0:["strength","constitution"].reduce((sum,key)=>{
+      const row=maximumEffect?.system.changes.find(c=>c.key===`system.effective.traits.${key}`&&c.type==="override");
+      const base=row?Number(row.value):Number(this._source.system.traitCurrent?.[key]??this._source.system.traits?.[key]??0);
+      return sum+this.getTraitValue(key)-base;
+    },0);
+
     if (this.type === "character") {
       const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
-      system.resources.body.max = Math.max(1, race.body + this.getTraitValue("constitution") + this.getTraitValue("strength") + Number(system.modifiers.bodyMax || 0));
+      system.resources.body.max = Math.max(1, (maximumEffect?Number(system.resources.body.max)+traitHealth:race.body + this.getTraitValue("constitution") + this.getTraitValue("strength")) + Number(system.modifiers.bodyMax || 0));
       system.movement.current = Math.max(0, race.movement + this.getTraitValue("dexterity") + this.equippedMovementModifier + Number(system.modifiers.movement || 0));
       system.persistenceInWild = this.calculatePersistenceInWild();
     } else {
-      const traitHealth=this.transformationProfile.preserveHP?0:["strength","constitution"].reduce((sum,key)=>sum+this.getTraitValue(key)-Number(this._source.system.traitCurrent?.[key]??this._source.system.traits?.[key]??0),0);
       system.resources.body.max = Math.max(1, Number(system.resources.body.max || 1) + traitHealth + Number(system.modifiers.bodyMax || 0));
       system.movement.current = Math.max(0, Number(system.movement.base || 0) + Number(system.modifiers.movement || 0));
     }
-    if (this.transformationProfile.preserveHP && this.type === "character") {
+    if (this.transformationProfile.preserveHP && this.type === "character"&&!maximumEffect) {
       const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
       system.resources.body.max = Math.max(1, race.body + Number(this._source.system.traits.constitution || 0) + Number(this._source.system.traits.strength || 0) + Number(system.modifiers.bodyMax || 0));
     }
@@ -974,11 +983,12 @@ export class TrudvangActor extends BaseActor {
   }
 
   get humanoidNaturalWeapon() {
+    const attack=this.transformationProfile?.unarmedAttack;
     return {
       id: "humanoid-natural", uuid: "", type: "weapon",
       name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
       img: "icons/svg/combat.svg",
-      system: {category: "natural", isUnarmed: true, equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4}
+      system: {category: "natural", isUnarmed: true, equipped: true, hand: "weapon", damage: attack?.damage??"1d5", damageBonus: 0, openRoll: attack?.openRoll??0, strengthApplies: true, weaponActions: 4}
     };
   }
 
@@ -1274,6 +1284,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollSpell(item) {
+    if(!transformationItemActive(item))return this.warnCannotAct();
     if (item.system.isRune) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.RuneObjectNeeded"));
     if (!this.canPerformAction()) return this.warnCannotAct();
     const isDivine = item.type === "divineFeat";

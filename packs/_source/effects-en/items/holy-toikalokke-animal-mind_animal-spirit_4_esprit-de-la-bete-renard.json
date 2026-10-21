@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
-    "description": "The target takes on some fox traits without fully changing shape: Intelligence at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth and Larceny. Foxes regard it as a friend and will not attack it; its other traits remain unchanged.",
+    "description": "The target takes on some fox traits without fully changing form: Intelligence at least +4, land movement multiplied by 1.5, and +3 to Thievery. Foxes regard the target as a friend and do not attack; other traits remain unchanged.",
     "summary": "Grants some fox traits without changing form.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Animal Spirit — Fox",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target takes on some fox traits without fully changing shape: Intelligence at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth and Larceny. Foxes regard it as a friend and will not attack it; its other traits remain unchanged.",
+      "description": "The target takes on some fox traits without fully changing form: Intelligence at least +4, land movement multiplied by 1.5, and +3 to Thievery. Foxes regard the target as a friend and do not attack; other traits remain unchanged.",
       "transfer": false,
       "system": {
         "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
@@ -31,13 +31,6 @@
             "key": "system.transformation.suspendEquipment",
             "type": "override",
             "value": "false",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.senses",
-            "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0\"]",
             "phase": "initial",
             "priority": 30
           },
@@ -58,14 +51,7 @@
           {
             "key": "system.transformation.knowledge",
             "type": "override",
-            "value": "{\"shadowing\":3,\"thievery\":3}",
-            "phase": "initial",
-            "priority": 30
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
+            "value": "{\"thievery\":3}",
             "phase": "initial",
             "priority": 30
           }

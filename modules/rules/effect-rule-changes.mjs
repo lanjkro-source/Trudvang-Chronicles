@@ -1,5 +1,6 @@
 /** Editable, per-effect profile changes. Native scalar bonuses keep their usual
  * system.effective/system.modifiers paths; structured profiles use JSON values. */
+import {creatureTokenDimensions} from "./creature-token-size.mjs";
 export const EFFECT_RULE_PREFIX = "system.transformation.";
 export const roundEffectValue = value => Math.round((value + Number.EPSILON) * 100) / 100;
 export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegrity", "naturalArmor",
@@ -7,8 +8,8 @@ export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegr
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus"];
-const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage"]);
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds"];
+const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds"]);
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreWounds","endAtEmptyHP","recalculateHP"]);
 const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus"]);
@@ -17,9 +18,11 @@ export function validProfileChange(row){
  if(!row.key?.startsWith(EFFECT_RULE_PREFIX))return true;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length),value=parse(row.value);
  if(!EFFECT_RULE_KEYS.includes(key))return false;
+ if(key==="powerIds")return Array.isArray(value)&&value.every(id=>typeof id==="string");
  if(arrays.has(key))return Array.isArray(value)&&(!["traits","movement","attacks"].includes(key)||value.every(r=>r&&typeof r==="object"&&!Array.isArray(r)));
  if(objects.has(key))return value!==null&&typeof value==="object"&&!Array.isArray(value);
  if(booleans.has(key))return typeof value==="boolean";
+ if(key==="size")return creatureTokenDimensions(value)!==null;
  if(numbers.has(key))return typeof value==="number"&&Number.isFinite(value);
  return typeof value==="string";
 }

@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
-    "description": "The target turns into a stone statue over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once petrified, it cannot perceive its surroundings or act; its HP are preserved. It regains its normal values when the petrification ends.",
+    "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
     "summary": "Turns the target into a stone statue.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Petrify",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target turns into a stone statue over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once petrified, it cannot perceive its surroundings or act; its HP are preserved. It regains its normal values when the petrification ends.",
+      "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification",

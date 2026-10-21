@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:statue:5#statue",
-    "description": "La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin.",
+    "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
     "summary": "Immobilise et pétrifie progressivement la cible.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Statue",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin.",
+      "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-anger:statue:5#statue",

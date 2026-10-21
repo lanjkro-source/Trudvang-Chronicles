@@ -191,6 +191,13 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": "{\"agility\":0.5,\"movement\":0.5}",
         "phase": "initial",
         "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -226,6 +233,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "duration",
         "value": 600
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 5,
+        "target": "traitDegrees",
+        "trait": "dexterity",
+        "value": 1
       }
     ]
   },
@@ -256,6 +274,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "duration",
         "value": 600
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 5,
+        "target": "traitDegrees",
+        "trait": "dexterity",
+        "value": 1
       }
     ]
   },
@@ -286,6 +315,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "duration",
         "value": 600
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 5,
+        "target": "traitDegrees",
+        "trait": "strength",
+        "value": 1
       }
     ]
   },
@@ -316,6 +356,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "duration",
         "value": 600
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 5,
+        "target": "traitDegrees",
+        "trait": "strength",
+        "value": 1
       }
     ]
   },
@@ -888,7 +939,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -1021,7 +1078,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 30,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -1161,7 +1224,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 50,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -1252,7 +1321,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
     "id": "petrification-recovery-half",
@@ -1551,6 +1626,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 3600
+      },
+      {
+        "index": 2,
+        "target": "attackStep",
+        "attack": 0,
+        "steps": [
+          {
+            "damage": "1d10",
+            "openRoll": 0
+          },
+          {
+            "damage": "1d10",
+            "openRoll": 10
+          },
+          {
+            "damage": "1d10",
+            "openRoll": 9
+          },
+          {
+            "damage": "1d10",
+            "openRoll": 8
+          },
+          {
+            "damage": "1d10 + 1",
+            "openRoll": 8
+          }
+        ]
       }
     ]
   },
@@ -1717,6 +1819,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
       }
     ]
   },
@@ -1734,6 +1841,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
       }
     ]
   },
@@ -1751,6 +1863,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
       }
     ]
   },
@@ -1768,6 +1885,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
       }
     ]
   },
@@ -2020,6 +2142,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "damage",
         "value": 1
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
       }
     ]
   },
@@ -2098,6 +2225,17 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 2,
         "target": "damage",
+        "value": 1
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.attack",
         "value": 1
       }
     ]
@@ -2215,6 +2353,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 2,
         "target": "damage",
         "value": 1
+      },
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.attack",
+        "value": 1
       }
     ]
   },
@@ -2306,7 +2455,13 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
     "id": "peau-du-dragon",
@@ -2483,9 +2638,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
-        "key": "system.transformation.capabilityNames",
+        "key": "system.transformation.traits",
         "type": "override",
-        "value": "[\"Regard paralysant\"]",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.fearFactor",
+        "type": "override",
+        "value": "1d5",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.powerIds",
+        "type": "override",
+        "value": "[\"holy-haminges-power-of-the-dragon:constriction:0\",\"holy-haminges-power-of-the-dragon:paralyzing-gaze:3\"]",
         "phase": "initial",
         "priority": 50
       }
@@ -2514,6 +2683,11 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 4,
         "target": "temporaryHP",
         "value": 10
+      },
+      {
+        "index": 3,
+        "target": "fearFactor",
+        "value": "1d10"
       }
     ]
   },
@@ -2525,7 +2699,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.unarmedDamage",
         "type": "override",
-        "value": "[\"1d6\",\"1d6 + 2\",\"1d10 + 2\",\"1d10 + 2\",\"1d10 + 2\"]",
+        "value": "[{\"damage\":\"1d6\",\"openRoll\":0},{\"damage\":\"1d6 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":0},{\"damage\":\"1d10 + 2\",\"openRoll\":10},{\"damage\":\"1d10 + 2\",\"openRoll\":9}]",
         "phase": "initial",
         "priority": 10
       }
@@ -2556,13 +2730,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.senses",
-        "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Sense0\"]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"strength\",\"method\":\"highest\",\"value\":4}]",
@@ -2573,13 +2740,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.attacks",
         "type": "override",
         "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 30
       }
@@ -2614,13 +2774,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.senses",
-        "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0\"]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"intelligence\",\"method\":\"highest\",\"value\":4}]",
@@ -2637,14 +2790,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.knowledge",
         "type": "override",
-        "value": "{\"shadowing\":3,\"thievery\":3}",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
+        "value": "{\"thievery\":3}",
         "phase": "initial",
         "priority": 30
       }
@@ -2679,13 +2825,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.senses",
-        "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Sense0\"]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"dexterity\",\"method\":\"highest\",\"value\":4}]",
@@ -2703,13 +2842,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.knowledge",
         "type": "override",
         "value": "{\"shadowing\":3}",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 30
       }
@@ -2802,13 +2934,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.senses",
-        "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Sense0\"]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"constitution\",\"method\":\"highest\",\"value\":4}]",
@@ -2826,13 +2951,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.attacks",
         "type": "override",
         "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 30
       }
@@ -3202,6 +3320,13 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 10,
+    "levelParameter": {
+      "labelKey": "TRUDVANG.Transformation.PowerLevel",
+      "default": 1,
+      "knowledge": [
+        "swimming"
+      ]
+    },
     "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
     "parameters": [
       {
@@ -3330,7 +3455,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -3463,7 +3594,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 30,
     "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -3603,7 +3740,13 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "priority": 50,
     "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion": {
     "id": "frenzy-exhaustion",
@@ -3691,6 +3834,13 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.testFactor",
         "type": "override",
         "value": "{\"agility\":0.5,\"movement\":0.5}",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.transformation.movement",
+        "type": "override",
+        "value": "[{\"mode\":\"all\",\"method\":\"multiply\",\"value\":0.5}]",
         "phase": "initial",
         "priority": 50
       }

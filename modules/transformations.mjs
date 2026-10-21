@@ -6,6 +6,8 @@ import {activeTransformations,effectRules,transformedTrait,transformationProfile
 import {changesFromRules,rulesFromChanges,hasProfileChanges,validProfileChange,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
 import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
+import {TABLET_CATALOG,powerItemData} from "./tablet-catalog.mjs";
+import {TRUDVANG} from "./config.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -30,15 +32,19 @@ async function askFields(title,fields){
 function naturalWeapon(row,effectId){
  return {name:row.name,type:"weapon",img:"icons/svg/sword.svg",system:{category:"natural",combatSpecialty:"natural",equipped:true,strengthApplies:true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId}}};
 }
-function selectFormData(form,policy){
+export function selectFormData(form,policy){
  const s=form.actor.system;
- const r={size:Number(s.details.size)||1,traits:[],movement:(s.details.move??[]).map(row=>({mode:({terrestre:"land",vol:"flight",nage:"swim"}[row.mode]??row.mode),method:"replace",value:Number.parseFloat(row.max)||0}))};
+ const meters=value=>Number.parseFloat(String(value??"").replace(",","."))||0;
+ const r={size:s.details.size||1,traits:[],movement:[{mode:"all",method:"replace",value:0,metersPerTwo:0},...(s.details.move??[]).map(row=>({mode:({terrestre:"land",vol:"flight",nage:"swim"}[row.mode]??row.mode),method:"replace",value:meters(row.max),metersPerTwo:meters(row.distance)}))]};
  const keep=policy==="physical"?["intelligence","constitution","psyche"]:["intelligence"];
- for(const [trait,value]of Object.entries(s.traits??{}))if(!keep.includes(trait))r.traits.push({trait,method:"replace",value});
+ for(const trait of Object.keys(TRUDVANG.traits))if(!keep.includes(trait))r.traits.push({trait,method:"replace",value:Number(s.traits?.[trait]??0)});
  r.attacks=form.actor.items.filter(i=>i.type==="weapon"&&i.system.category==="natural").map(i=>({name:game.i18n.localize(i.nameKey),damage:i.system.damage,openRoll:i.system.openRoll,combatPoints:i.system.naturalCombatPoints}));
  r.naturalArmor=Number(s.details.naturalArmor)||0;
- r.senses=form.featIds.map(id=>Object.entries(CREATURE_ABILITY_REFERENCES).find(([,v])=>v.id===id)?.[0]).filter(n=>/^Vision/.test(n??""));
- return r;
+ const senses=form.featIds.map(id=>Object.entries(CREATURE_ABILITY_REFERENCES).find(([,v])=>v.id===id)).filter(row=>/^Vision/.test(row?.[0]??""));
+ r.senses=senses.map(([,ref])=>`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`);
+ if(senses.some(([name])=>/nocturne/.test(name)))r.vision="lightAmplification";
+ if(senses.some(([name])=>/noir/.test(name)))r.vision="darkvision";
+ return {rules:r,maximum:Number(s.resources.body.max)};
 }
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[]}={}){
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
@@ -78,17 +84,27 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=[{name:"duration",label:local("Duration"),value:durationText}];
  for(const p of template.parameters??[])fields.push({name:`boost${p.index}`,label:game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${p.index}`),value:counts[p.index]??0});
- if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:0});
+ if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:1});
+ if(template.levelParameter){
+  const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
+  const tablet=Array.from(caster.items??[]).find(i=>i.type==="tablet"&&i.system.catalogId===template.sourceId.split(":")[0]);
+  fields.push({name:"powerLevel",label:game.i18n.localize(template.levelParameter.labelKey),value:Number(tablet?.system.level)||template.levelParameter.default});
+ }
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon").map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
  const answers=await askFields(effectName,fields);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ let formMaximum;
  if(rules.chooseBestiary||rules.formName){
   const form=BESTIARY_ENTRIES.find(e=>e.id===answers.form)||BESTIARY_ENTRIES.find(e=>game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)===rules.formName);
   if(!form)throw Error(`Missing bestiary form ${rules.formName}`);
-  Object.assign(rules,selectFormData(form,rules.formPolicy));
+  const selected=selectFormData(form,rules.formPolicy);
+  Object.assign(rules,selected.rules);
+  if(!rules.preserveHP)formMaximum=selected.maximum;
  }
  const duration=await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
+ if(Number.isFinite(formMaximum))changes.push({key:"system.resources.body.max",type:"override",value:String(formMaximum),phase:"initial"});
+ if(template.levelParameter)for(const id of template.levelParameter.knowledge??[])if(rules.knowledge?.[id]!==undefined)rules.knowledge[id]*=Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0);
  const addVitality=amount=>{for(const field of ["bodyMax","bodyValue"]){
   const key=`system.modifiers.${field}`,row=changes.find(c=>c.key===key&&c.type==="add");
   if(row)row.value=String(Number(row.value)+amount);
@@ -97,6 +113,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  for(const p of template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`])||0);if(!count)continue;
   if(p.target==="duration")duration.value+=count*p.value;
+  if(p.target==="traitDegrees")for(const row of rules.traits??[])if(row.trait===p.trait&&row.method==="degrees")row.value+=Math.sign(row.value||1)*count*p.value;
+  if(p.target==="modifier"){
+   const row=changes.find(c=>c.key===p.key&&c.type==="add");
+   if(row)row.value=String(Number(row.value)+count*p.value);
+   else changes.push({key:p.key,type:"add",value:String(count*p.value),phase:"initial"});
+  }
+  if(p.target==="fearFactor")rules.fearFactor=p.value;
+  if(p.target==="attackStep"&&rules.attacks?.[p.attack])Object.assign(rules.attacks[p.attack],p.steps[Math.min(p.steps.length-1,Math.trunc(count))]);
   if(p.target==="vitality")addVitality(count*p.value);
   if(p.target==="temporaryHP"){const row=changes.find(c=>c.key==="system.resources.body.temporaryMax");if(row)row.value=String(Number(row.value)+count*p.value);else rules.temporaryHP=(rules.temporaryHP??0)+count*p.value;}
   if(p.target==="protection")changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
@@ -124,8 +148,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   delete rules.traits;
  delete rules.chooseBestiary;delete rules.formName;delete rules.formPolicy;
  if(rules.unarmedDamage){
-  const level=Math.min(4,Math.max(0,Number(answers.runeLevel)||0));
-  (rules.attacks??=[]).push({name:text(key,"Name"),damage:rules.unarmedDamage[level],openRoll:level===4?9:level===3?10:0});
+  const level=Math.min(4,Math.max(0,(Number(answers.runeLevel)||1)-1)),row=rules.unarmedDamage[level];
+  const attack=typeof row==="string"?{damage:row,openRoll:level===4?9:level===3?10:0}:row;
+  (rules.attacks??=[]).push({name:text(key,"Name"),...attack,isUnarmed:true});
   delete rules.unarmedDamage;
  }
  if(rules.extraWeaponAction){
@@ -192,7 +217,14 @@ export function syncEffectGrants(effect,actor=effect.parent){
  const run=async()=>{
   if(actor.effects?.get&&!actor.effects.get(effect.id))return;
   const r=effectRules(effect);
-  const items=(r.attacks??[]).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
+  const items=(r.attacks??[]).filter(row=>!row.isUnarmed).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
+  for(const id of r.powerIds??[]){
+   const tablet=TABLET_CATALOG.find(t=>t.powers.some(p=>p.id===id));
+   if(!tablet)continue;
+   const data=powerItemData(tablet.powers.find(p=>p.id===id),tablet);
+   data.flags={...data.flags,[SCOPE]:{...data.flags?.[SCOPE],transformationGrant:effect.id}};
+   items.push(data);
+  }
   for(const name of r.capabilityNames??[]){const ref=CREATURE_ABILITY_REFERENCES[name];if(ref)items.push({name:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`),type:"creatureAbility",system:{catalogId:ref.id,description:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Description`)},flags:{[SCOPE]:{transformationGrant:effect.id}}});}
   const existing=Array.from(actor.items??[]).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id);
   const signature=JSON.stringify(items);

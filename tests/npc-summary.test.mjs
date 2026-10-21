@@ -4,7 +4,7 @@ import test from "node:test";
 import Handlebars from "handlebars";
 import {ignoresWoundPenalties, npcCombatMovementModes, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
 import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
-import {resolveCombatActionModifier} from "../modules/rules/equipment-resolver.mjs";
+import {resolveCombatActionModifier,resolveDamage} from "../modules/rules/equipment-resolver.mjs";
 import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 import {bodyHealthPersistence} from "../modules/rules/body-health.mjs";
@@ -134,6 +134,24 @@ test("native Force and Constitution effects change NPC health by their effective
  instance.system=structuredClone(instance._source.system);
  instance.system.effective.traits.strength=1;instance.system.effective.traits.constitution=6;
  instance.prepareDerivedData();assert.equal(instance.system.resources.body.max,45);assert.equal(instance.system.resources.body.current,35);
+});
+
+test("complete bestiary profiles replace maximum HP and steel fists change the normal unarmed weapon reversibly",async()=>{
+ for(const type of ["character","npc"]){
+  const instance=actor();instance.type=type;instance.isOwner=true;
+  Object.assign(instance._source.system.resources.body,{value:30,max:40,maxAtValue:40,modifierAtValue:0,maximumOnlyAtValue:40});
+  Object.assign(instance._source.system.traits,{strength:4,constitution:4});
+  const e={id:"form",name:"Forme",canUserModify:()=>true,system:{changes:[{key:"system.resources.body.max",type:"override",value:"18"},{key:"system.effective.traits.strength",type:"override",value:"1"},{key:"system.effective.traits.constitution",type:"override",value:"0"},{key:"system.transformation.attacks",type:"override",value:JSON.stringify([{name:"Poings",isUnarmed:true,damage:"1d10 + 2",openRoll:9}])}]}};
+  instance.allApplicableEffects=()=>[e];
+  const prepare=(extraStrength=0)=>{instance.system=structuredClone(instance._source.system);instance.system.effective.traits={...instance.system.traits};if(!e.disabled){instance.system.resources.body.max=18;instance.system.effective.traits.strength=1+extraStrength;instance.system.effective.traits.constitution=0;}instance.prepareDerivedData();};
+  prepare();assert.equal(instance.system.resources.body.max,18);assert.equal(instance.system.resources.body.current,18);
+  assert.equal(instance.humanoidNaturalWeapon.system.damage,"1d10 + 2");assert.equal(instance.humanoidNaturalWeapon.system.openRoll,9);
+  const damage=resolveDamage({item:instance.humanoidNaturalWeapon,actor:instance});assert.equal(damage.modifier.value,1);
+  prepare(1);assert.equal(instance.system.resources.body.max,19,"other Strength effects still increase a form's HP");
+  const sheet=type==="npc"?new TrudvangNpcSheet():new TrudvangCharacterSheet();sheet.actor=instance;sheet.isEditable=true;
+  const context=await sheet._prepareContext({});assert.match(context.unarmedActionDetail,/1d10 \+ 2/);
+  e.disabled=true;prepare();assert.equal(instance.system.resources.body.max,40);assert.equal(instance.humanoidNaturalWeapon.system.damage,"1d5");assert.equal(instance.humanoidNaturalWeapon.system.openRoll,0);
+ }
 });
 
 test("refreshing a maximum-HP effect updates it atomically and never heals lost HP again",async t=>{

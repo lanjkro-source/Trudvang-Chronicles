@@ -11,7 +11,7 @@ import {resolveCombatPools} from "../modules/rules/combat-pool-resolver.mjs";
 import {buildEffectPackDocuments} from "../modules/effect-pack-data.mjs";
 globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
 const {annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
-const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants}=await import("../modules/transformations.mjs");
+const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants,selectFormData}=await import("../modules/transformations.mjs");
 const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
@@ -530,4 +530,90 @@ test("rolled vitality posts the actual dice to the normal chat pipeline for Dice
    assert.equal(posted.length,1,template.id);
   }
  }finally{globalThis.Roll=previousRoll;globalThis.ChatMessage=previousChat;}
+});
+
+
+test("effect improvements change their base fields, including inverse traits, attack dice and unrestricted manual counts",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ let created,answers,dialog;
+ foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
+ for(const [key,template]of Object.entries(templates).filter(([k,t])=>!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
+  const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
+  assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,95,key);
+  assert.doesNotMatch(dialog.content,/name="boost\d+"[^>]*\bmax=/,key);
+ }
+ for(const [key,template]of Object.entries(templates).filter(([,t])=>t.parameters.some(p=>p.target==="traitDegrees"))){
+  const p=template.parameters.find(p=>p.target==="traitDegrees"),base=rulesFromChanges(template.changes).traits[0];
+  const result=await apply(key,{["boost"+p.index]:2});
+  assert.equal(result.system.changes.find(c=>c.key==="system.effective.traits."+p.trait).value,String(Math.sign(base.value)*4));
+ }
+ for(const [key,template]of Object.entries(templates).filter(([,t])=>t.parameters.some(p=>p.target==="modifier"))){
+  const p=template.parameters.find(p=>p.target==="modifier"),base=Number(template.changes.find(c=>c.key===p.key).value);
+  assert.equal((await apply(key,{["boost"+p.index]:7})).system.changes.find(c=>c.key===p.key).value,String(base+7));
+ }
+ const tusks=Object.keys(templates).find(k=>k.endsWith("#defenses-du-mastomant"));assert.ok(tusks);
+ for(let count=0;count<=4;count++){
+  const rules=effectRules(await apply(tusks,{boost2:count}));
+  assert.equal(rules.attacks[0].damage,count===4?"1d10 + 1":"1d10");
+  assert.equal(rules.attacks[0].openRoll,[0,10,9,8,8][count]);
+ }
+ const snake=Object.keys(templates).find(k=>k.endsWith("#aspect-du-serpent-geant"));
+ const result=await apply(snake,{boost3:1});
+ assert.equal(result.system.changes.find(c=>c.key==="system.effective.traits.strength").value,"6");
+ assert.equal(effectRules(result).fearFactor,"1d10");
+ assert.equal(effectRules(result).powerIds.length,2);assert.equal(effectRules(result).capabilityNames,undefined);
+ const water=Object.keys(templates).find(k=>k.endsWith("#don-de-l-eau"));
+ assert.equal(effectRules(await apply(water,{powerLevel:4})).knowledge.swimming,8);
+ const {BESTIARY_ENTRIES}=await import("../modules/bestiary-catalog-data.mjs");
+ const form=BESTIARY_ENTRIES[0];
+ const animal=Object.entries(templates).find(([,t])=>{const r=rulesFromChanges(t.changes);return r.chooseBestiary&&!r.preserveHP;})[0];
+ assert.equal((await apply(animal,{form:form.id})).system.changes.find(c=>c.key==="system.resources.body.max").value,String(form.actor.system.resources.body.max));
+ const physical=Object.entries(templates).find(([,t])=>{const r=rulesFromChanges(t.changes);return r.chooseBestiary&&r.preserveHP;})[0];
+ assert.ok(!(await apply(physical,{form:form.id})).system.changes.some(c=>c.key==="system.resources.body.max"));
+ const fists=Object.keys(templates).find(k=>k.endsWith("#poings-d-acier"));assert.ok(fists);
+ for(let level=1;level<=5;level++){
+  const attack=effectRules(await apply(fists,{runeLevel:level})).attacks[0];
+  assert.equal(attack.isUnarmed,true);assert.equal(attack.damage,["1d6","1d6 + 2","1d10 + 2","1d10 + 2","1d10 + 2"][level-1]);
+  assert.equal(attack.openRoll,[0,0,0,10,9][level-1]);
+ }
+});
+
+test("bestiary forms retain fractional Size, movement rates, maxima and physical-trait defaults",()=>{
+ const form={actor:{system:{details:{size:"<1/3",move:[{mode:"terrestre",distance:"4 m",max:"20 m"},{mode:"vol",distance:"0,5 m",max:"12 m"}],naturalArmor:2},traits:{strength:1},resources:{body:{max:18}}},items:[]},featIds:[]};
+ const {rules,maximum}=selectFormData(form,"animal");assert.equal(maximum,18);assert.equal(rules.size,"<1/3");
+ assert.equal(validProfileChange(changesFromRules({size:rules.size})[0]),true);
+ assert.equal(rules.traits.find(r=>r.trait==="constitution").value,0);assert.ok(!rules.traits.some(r=>r.trait==="intelligence"));
+ assert.deepEqual(movementDetails(14,[{mode:"nage",distance:"2 m",max:"15 m"}],rules.movement),{swim:{max:0,metersPerTwo:0},land:{max:20,metersPerTwo:4},flight:{max:12,metersPerTwo:0.5}});
+ const physical=selectFormData(form,"physical").rules;
+ assert.ok(!physical.traits.some(r=>["constitution","psyche","intelligence"].includes(r.trait)));
+});
+
+test("snake grants the actual divine powers, and resolved steel fists grant no duplicate weapon",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",has:key=>localize(key)!==key,localize,format:(key,data)=>Object.entries(data).reduce((s,[k,v])=>s.replaceAll("{"+k+"}",v),localize(key))}};
+ const key=Object.keys(templates).find(k=>k.endsWith("#aspect-du-serpent-geant"));
+ const e={id:"snake",name:"Serpent",system:{changes:templates[key].changes}};
+ let items=[];const actor={isOwner:true,items:[],createEmbeddedDocuments:async(type,data)=>{assert.equal(type,"Item");items=data;}};
+ await syncEffectGrants(e,actor);
+ assert.deepEqual(items.filter(i=>i.type==="divineFeat").map(i=>i.system.catalogId),effectRules(e).powerIds);
+ assert.deepEqual(items.filter(i=>i.type==="divineFeat").map(i=>i.name),["Constriction","Regard paralysant"]);
+ items=[];await syncEffectGrants({id:"fists",system:{changes:changesFromRules({attacks:[{name:"Poings",damage:"1d6",isUnarmed:true}]})}},actor);assert.deepEqual(items,[]);
+});
+
+test("reference effects contain no invented fox stealth or animal night vision, and tree recovery changes actual movement",()=>{
+ for(const code of ["fr","en"]){
+  const language=JSON.parse(fs.readFileSync(new URL("../lang/"+code+".json",import.meta.url)));
+  const data=Object.entries(templates).map(([key,t])=>({...t,name:language.TRUDVANG.Content.Transformation[key].Name,description:language.TRUDVANG.Content.Transformation[key].Description,summary:language.TRUDVANG.Content.Transformation[key].Summary}));
+  for(const e of data.filter(e=>e.id.startsWith("esprit-de-la-bete-")&&!e.id.endsWith("corbeau"))){
+   const r=rulesFromChanges(e.changes);assert.equal(r.vision,undefined,e.name);assert.equal(r.senses,undefined,e.name);
+   assert.doesNotMatch(e.description,/vision nocturne|night vision/i,e.name);
+   if(e.id.endsWith("renard"))assert.deepEqual(r.knowledge,{thievery:3});
+  }
+  const water=data.find(e=>e.id==="don-de-l-eau");assert.doesNotMatch(water.summary+water.description,/respir|breath/i);
+ }
+ for(const t of Object.values(templates).filter(t=>t.id==="tree-recovery"))assert.equal(movementDetails(14,[],rulesFromChanges(t.changes).movement).land.metersPerTwo,0.5);
 });

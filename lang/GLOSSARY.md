@@ -1502,6 +1502,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.recalculateHP` | Recalculate health for this form | Recalculer les PS de cette forme |
 | `TRUDVANG.Effect.Profile.heightBonus` | Height increase | Augmentation de la taille corporelle |
 | `TRUDVANG.Effect.Profile.weightBonus` | Weight increase | Augmentation du poids |
+| `TRUDVANG.Effect.Profile.powerIds` | Granted spells and powers (catalogue IDs, JSON list) | Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON) |
 
 ## `TRUDVANG.Import`
 
@@ -10555,7 +10556,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.Name` | Statue | Statue |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.Description` | The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends. | La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.Description` | The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification. | La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.SourceName` | Statue | Statue |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue.SourcePage` | 194 | 252 |
@@ -10588,7 +10589,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.Name` | Stone Monument | Monument en pierre |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.Description` | The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends. | La cible se pétrifie entièrement en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois la transformation achevée, elle est paralysée ; cette réduction disparaît lorsque la pétrification prend fin. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.Description` | The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification. | La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.SourceName` | Stone Monument | Monument en pierre |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre.SourcePage` | 194 | 252 |
@@ -10755,7 +10756,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.Name` | Petrify | Pétrification |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.Description` | The target turns into a stone statue over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once petrified, it cannot perceive its surroundings or act; its HP are preserved. It regains its normal values when the petrification ends. | La cible se transforme en statue de pierre en 1d6 tours. À chaque tour de transformation, ses valeurs de compétence effectives sont réduites de moitié de façon cumulative, en arrondissant au supérieur. Une fois pétrifiée, elle ne perçoit plus son environnement et ne peut plus agir ; ses points de santé sont conservés. Elle retrouve ses valeurs normales à la fin de la pétrification. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.Description` | The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification. | La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.SourceName` | Petrify | Pétrification |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification.SourcePage` | 218 | 272 |
@@ -10865,7 +10866,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.Name` | Flame Hardened | Fils des flammes |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.Description` | The target gains Protection +2, deals +1 damage in melee, at range, and with natural attacks, and takes no damage from nonmagical fire. Its breath can ignite dry wood. | La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, à distance et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.Description` | The target gains Protection +2, deals +1 damage in melee, at range, and with natural attacks, and takes no damage from nonmagical fire. Its breath can ignite dry wood. | La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, de lancer et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.SourceName` | Flame Hardened | Fils des flammes |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes.SourcePage` | 214 | 277 |
@@ -10887,7 +10888,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.Name` | Dragon Skin | Peau du dragon |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.Description` | The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood. | La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, à distance et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.Description` | The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood. | La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, de lancer et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.SourceName` | Dragon Skin | Peau du dragon |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon.SourcePage` | 214 | 279 |
@@ -10933,7 +10934,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Name` | Hammer Fists | Poings d’acier |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Description` | Brawling attacks deal the following damage according to the rune’s level: 1d6, 1d6 + 2, then 1d10 + 2 at the three highest levels. | Les attaques de Bagarre infligent les dégâts suivants selon le niveau de la rune : 1d6, 1d6 + 2, puis 1d10 + 2 aux trois niveaux supérieurs. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Description` | Unarmed Brawling attacks deal, by rune level: 1d6; 1d6 + 2; 1d10 + 2; 1d10 (OR 10) + 2; 1d10 (OR 9–10) + 2. The Strength modifier also applies. Both runes must be worn and powered for the effect to function. | Les attaques à mains nues utilisant Bagarre infligent, selon le niveau de la rune : 1d6 ; 1d6 + 2 ; 1d10 + 2 ; 1d10 (JO 10) + 2 ; 1d10 (JO 9–10) + 2. Le modificateur de Force s’ajoute à ces dégâts. Les deux runes doivent être portées et alimentées pour que l’effet fonctionne. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourceName` | Hammer Fists | Poings d’acier |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourcePage` | 231 | 287 |
@@ -10944,37 +10945,34 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Name` | Animal Spirit — Bear | Esprit de la bête — Ours |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Description` | The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, night vision, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, vision nocturne et griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Description` | The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.SourceName` | Animal Spirit | Esprit de la bête |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Duration` | 10 minutes | 10 minutes |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Attack0` | Claws | Griffes |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours.Sense0` | low-light vision | vision nocturne |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Name` | Animal Spirit — Fox | Esprit de la bête — Renard |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Description` | The target takes on some fox traits without fully changing shape: Intelligence at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth and Larceny. Foxes regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion et en Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Description` | The target takes on some fox traits without fully changing form: Intelligence at least +4, land movement multiplied by 1.5, and +3 to Thievery. Foxes regard the target as a friend and do not attack; other traits remain unchanged. | La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5 et +3 dans la discipline Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.SourceName` | Animal Spirit | Esprit de la bête |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Duration` | 10 minutes | 10 minutes |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard.Sense0` | low-light vision | vision nocturne |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Name` | Animal Spirit — Hare | Esprit de la bête — Lièvre |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Description` | The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, night vision, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits du lièvre sans changer entièrement de forme : Dextérité au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et +3 en Discrétion. Les lièvres la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Description` | The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits du lièvre sans changer entièrement de forme : Dextérité au moins +4, déplacement terrestre multiplié par 1,5, +3 en Discrétion. Les lièvres la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.SourceName` | Animal Spirit | Esprit de la bête |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Duration` | 10 minutes | 10 minutes |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre.Sense0` | low-light vision | vision nocturne |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau`
 
@@ -10995,13 +10993,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Name` | Animal Spirit — Stag | Esprit de la bête — Cerf |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Description` | The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, night vision, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits du cerf sans changer entièrement de forme : Constitution au moins +4, déplacement terrestre multiplié par 1,5, vision nocturne et cornes (1d10, JO 10) comme arme naturelle. Les cerfs la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Description` | The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged. | La cible adopte certains traits du cerf sans changer entièrement de forme : Constitution au moins +4, déplacement terrestre multiplié par 1,5, cornes (1d10, JO 10) comme arme naturelle. Les cerfs la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés. |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.SourceName` | Animal Spirit | Esprit de la bête |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Duration` | 10 minutes | 10 minutes |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Attack0` | Horns | Cornes |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Sense0` | low-light vision | vision nocturne |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours`
 
@@ -11072,7 +11069,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.Name` | Control Fire | Don de l’eau |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.Description` | The target swims as if in its natural environment, needs no test in calm water, and can breathe underwater. It gains +2 to Swimming per effect level; beyond a depth equal to three times its height, each additional meter gives a -2 penalty to its skill value. | La cible nage comme dans son milieu naturel, sans test dans une eau calme, et peut respirer sous l’eau. Elle reçoit +2 en Natation par niveau de l’effet ; au-delà d’une profondeur égale à trois fois sa taille, chaque mètre ajoute un malus de -2 à sa VC. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.Description` | The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV. | La cible nage comme dans son milieu naturel, même sans la spécialité Natation, et ne fait aucun test en eau calme. Pour les tests d’Agilité nécessaires à la nage, elle reçoit +2 à la VC par niveau du pouvoir. Au-delà d’une profondeur égale à trois fois sa taille, chaque mètre supplémentaire impose un malus de −2 à la VC. |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.SourceName` | Control Fire | Don de l’eau |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.SourcePage` | 241 | 297 |
@@ -11480,6 +11477,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.Factor` | Aftereffect modifier | Modificateur de séquelle |
 | `TRUDVANG.Transformation.Rules` | Transformation modifications | Modifications de transformation |
 | `TRUDVANG.Transformation.FearImmunity` | Ignores fear effects | Ignore les effets de la peur |
+| `TRUDVANG.Transformation.PowerLevel` | Power level | Niveau du pouvoir |
 
 ## `TRUDVANG.Transformation.Modes`
 

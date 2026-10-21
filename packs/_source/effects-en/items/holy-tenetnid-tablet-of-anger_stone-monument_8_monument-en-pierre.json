@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
-    "description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
+    "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
     "summary": "Petrifies and immobilizes the target.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Stone Monument",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target fully petrifies over 1d6 turns. Each turn of transformation, its effective skill values are halved cumulatively, rounding up. Once the transformation is complete, it is paralysed; this reduction disappears when the petrification ends.",
+      "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
