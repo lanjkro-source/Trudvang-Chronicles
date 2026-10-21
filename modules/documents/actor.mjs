@@ -22,7 +22,7 @@ import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-re
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
-import {transformationProfile, movementProfile, transformationRollRows, temporaryHealthLayers, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
+import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthLayers, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
 import {proportionalBodyHealth,bodyHealthUpdate} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
@@ -143,14 +143,12 @@ export class TrudvangActor extends BaseActor {
       const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
       system.resources.body.max = Math.max(1, race.body + Number(this._source.system.traits.constitution || 0) + Number(this._source.system.traits.strength || 0) + Number(system.modifiers.bodyMax || 0));
     }
-    this.transformationMovement = movementProfile(system.movement.current, this._source?.system?.details?.move, this.transformationProfile.movements,Number(system.modifiers.movement||0));
+    const movement = movementDetails(system.movement.current, this._source?.system?.details?.move, this.transformationProfile.movements, Number(system.modifiers.movement||0));
+    this.transformationMovement = Object.fromEntries(Object.entries(movement).map(([mode,row])=>[mode,row.max]));
     const movementModified=this.transformationProfile.movements.length||Number(system.modifiers.movement||0);
-    this.transformationMovementRows = movementModified ? Object.entries(this.transformationMovement).map(([mode,max]) => {
-      const row = this._source?.system?.details?.move?.find(r => ({terrestre:"land",vol:"flight",nage:"swim"}[r.mode] ?? r.mode) === mode);
-      const originalMax = Number.parseFloat(row?.max) || system.movement.current || 1;
-      const distance = (Number.parseFloat(row?.distance) || 1) * max / originalMax;
-      return {id: mode, mode, label: game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`), metersPerTwo: distance, distance: `${distance} m`, max: `${max} m`};
-    }) : [];
+    this.transformationMovementRows = movementModified || this.type === "character" ? Object.entries(movement).map(([mode,row]) => ({
+      id: mode, mode, label: game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`), metersPerTwo: row.metersPerTwo, distance: `${row.metersPerTwo} m`, max: `${row.max} m`
+    })) : [];
     if (movementModified) system.movement.current = this.transformationMovement.land ?? 0;
     if (isImmobilized(this)) system.movement.current = 0;
 

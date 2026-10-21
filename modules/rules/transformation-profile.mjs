@@ -40,14 +40,28 @@ export function transformationProfile(actor) {
  if(profile.senses.some(s=>/noir|darkvision/i.test(s)))profile.vision="darkvision";
  return profile;
 }
-export function movementProfile(base, rows, changes, modifier=0) {
- const modes=Object.fromEntries((rows??[]).map(r=>[({terrestre:"land",vol:"flight",nage:"swim"}[r.mode]??r.mode),Math.max(0,(Number.parseFloat(r.max)||0)+modifier)]));
- if(!Object.keys(modes).length)modes.land=base;
+/** Movement multipliers change metres per 2 CP, never the per-turn maximum. */
+export function movementDetails(base, rows, changes, modifier=0) {
+ const number=(value,fallback)=>{const n=Number.parseFloat(String(value??"").replace(",","."));return Number.isFinite(n)?n:fallback;};
+ const modes=Object.fromEntries((rows??[]).map(r=>[({terrestre:"land",vol:"flight",nage:"swim"}[r.mode]??r.mode),{max:Math.max(0,number(r.max,0)+modifier),metersPerTwo:Math.max(0,number(r.distance,1))}]));
+ if(!Object.keys(modes).length)modes.land={max:base,metersPerTwo:1};
+ const baseRate=modes.land?.metersPerTwo??1;
  for(const row of changes){
   const keys=row.mode==="all"?Object.keys(modes):[row.mode];
-  for(const key of keys)modes[key]=Math.max(0,row.method==="replace"?row.value:row.method==="baseMultiple"?base*row.value:row.method==="add"?(modes[key]??0)+row.value:row.method==="highest"?Math.max(modes[key]??0,row.value):(modes[key]??base)*row.value);
+  for(const key of keys){
+   const current=modes[key]??{max:base,metersPerTwo:baseRate};
+   if(row.method==="multiply"||row.method==="baseMultiple"){
+    modes[key]={...current,metersPerTwo:Math.max(0,(row.method==="baseMultiple"?baseRate:current.metersPerTwo)*row.value)};
+   }else{
+    const max=Math.max(0,row.method==="replace"?row.value:row.method==="add"?current.max+row.value:row.method==="highest"?Math.max(current.max,row.value):current.max);
+    modes[key]={max,metersPerTwo:current.max?current.metersPerTwo*max/current.max:0};
+   }
+  }
  }
  return modes;
+}
+export function movementProfile(base, rows, changes, modifier=0) {
+ return Object.fromEntries(Object.entries(movementDetails(base,rows,changes,modifier)).map(([mode,row])=>[mode,row.max]));
 }
 export function temporaryHealthLayers(actor) {
  return activeTransformations(actor).map(effect=>{

@@ -405,7 +405,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Combat.HumanoidNaturalWeapons` | Fists & feet | Poings & pieds |
 | `TRUDVANG.Combat.Dodge` | Dodge | Esquiver |
 | `TRUDVANG.Combat.MovementAction` | Movement action | Action de mouvement |
-| `TRUDVANG.Combat.MovementHint` | 2 CP per paid metre · {free} free m · Movement {movement} m | 2 PC par mètre payant · {free} m gratuit(s) · Mouvement {movement} m |
+| `TRUDVANG.Combat.MovementHint` | {modes} (per 2 CP / max) · {free} free m | {modes} (par 2 PC / max) · {free} m gratuit(s) |
 | `TRUDVANG.Combat.Grapple` | Grapple | Saisie |
 | `TRUDVANG.Combat.Glima` | Glima | Glima |
 | `TRUDVANG.Combat.WrestlingHint` | Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target. | Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible. |

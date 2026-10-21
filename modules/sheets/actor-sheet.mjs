@@ -174,6 +174,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       integrityCurrent: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.value || 0), 0),
       integrityMax: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.max || 0), 0)
     };
+    context.characterMovement = this.actor.transformationMovementRows ?? [];
     context.freeCombatMovement = Math.min(5, Number(this.actor.findKnowledgeItem("combatMovement")?.system.level || 0));
     context.healthStatus = {
       current: Number(body.current || 0),
@@ -255,7 +256,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
     context.combatMovementHint = game.i18n.format("TRUDVANG.Combat.MovementHint", {
       free: Number(this.actor.findKnowledgeItem("combatMovement")?.system.level || 0),
-      movement: Number(this.actor.system.movement?.current || 0)
+      modes: context.characterMovement.map(row => `${row.label} : ${row.distance} / ${row.max}`).join(" | ")
     });
     context.vitnerProfile = this.actor.selectedVitnerType;
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;

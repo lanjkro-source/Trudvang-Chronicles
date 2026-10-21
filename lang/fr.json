@@ -345,7 +345,7 @@
       "HumanoidNaturalWeapons": "Poings & pieds",
       "Dodge": "Esquiver",
       "MovementAction": "Action de mouvement",
-      "MovementHint": "2 PC par mètre payant · {free} m gratuit(s) · Mouvement {movement} m",
+      "MovementHint": "{modes} (par 2 PC / max) · {free} m gratuit(s)",
       "Grapple": "Saisie",
       "Glima": "Glima",
       "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible.",

@@ -25,11 +25,11 @@ test("real PJ and PNJ templates show temporary health and effect state without a
   const context={actor:{name:"Test"},system:{details:{},resources:{body:{value:32,max:43},divinity:{value:0,max:0,temporary:0}}},
    healthStatus:{current:32,max:43,level:"light"},fearStatus:{state:"Peur",consequence:"Conséquence de peur"},
    effectiveFearFactor:{valid:true},fearFactor:{dice:1,faces:10,threshold:0},fearFactorNotation:"1d10",transformationSummary:"obsolete banner",
-   effectStatus:{temporaryHP:5,temporaryHint:"Rage +5",movement:[{label:"Vol",value:24}],immunity:"Rage",notes:[{name:"Rage",details:"Ignore les effets de la peur"}]}};
+   effectStatus:{temporaryHP:5,temporaryHint:"Rage +5",movement:[{label:"Vol",value:24,distance:"4 m",max:"24 m"}],immunity:"Rage",notes:[{name:"Rage",details:"Ignore les effets de la peur"}]}};
   const html=render(context);
   assert.match(html,/32 \/ 43<span class="temporary-hp"[^>]*> \+ 5/);
   assert.match(html,/Points de santé temporaires : \+5/);
-  assert.match(html,/Vol<\/strong><span>24 m/);
+  assert.match(html,/Vol<\/strong><span>4 m \/ 24 m/);
   assert.match(html,/Ignore les effets de la peur/);
   assert.match(html,/data-action="roll-fear-factor"/);
   assert.match(html,/1d10/);
@@ -38,7 +38,7 @@ test("real PJ and PNJ templates show temporary health and effect state without a
   assert.ok(health,"health section exists");
   assert.match(health,/Points de santé temporaires : \+5/);
   assert.doesNotMatch(health,/Vol<\/strong>|Ignore les effets de la peur|roll-fear-factor/);
-  assert.match(html, /class="movement-effect-notes">[^]*?Vol<\/strong><span>24 m/);
+  assert.match(html, /class="movement-effect-notes">[^]*?Vol<\/strong><span>4 m \/ 24 m/);
   if(type==="character"){
    assert.ok(html.indexOf("Conséquence de peur")<html.indexOf('data-action="roll-fear-factor"'));
    const fear=html.match(/<section class="status-vital fear-vital">([^]*?)<\/section>/)?.[1];

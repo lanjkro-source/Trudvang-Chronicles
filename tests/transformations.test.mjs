@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {transformationProfile,transformedTrait,movementProfile,consumeTemporaryHealth,transformationRollRows,effectRules,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
+import {transformationProfile,transformedTrait,movementDetails,movementProfile,consumeTemporaryHealth,transformationRollRows,effectRules,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
 import {EFFECT_RULE_PREFIX,changesFromRules,rulesFromChanges,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
 import {temporaryHealthLayers} from "../modules/rules/transformation-profile.mjs";
 import {effectStatus} from "../modules/rules/effect-status.mjs";
@@ -42,8 +42,8 @@ test("forms compose without modifying source data and disabled or expired effect
  assert.equal(transformedTrait(4,{method:"add",value:4,max:6}),6);
 });
 test("movement offers add flight/swim and reductions without overwriting the original modes",()=>{
- assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"multiply",value:0.5},{mode:"flight",method:"baseMultiple",value:4}]),{land:5,flight:40});
- assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"replace",value:0},{mode:"swim",method:"baseMultiple",value:2}]),{land:0,swim:20});
+ assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"multiply",value:0.5},{mode:"flight",method:"baseMultiple",value:4}]),{land:10,flight:10});
+ assert.deepEqual(movementProfile(10,[],[{mode:"land",method:"replace",value:0},{mode:"swim",method:"baseMultiple",value:2}]),{land:0,swim:10});
 });
 
 test("fear profiles upgrade the native factor and disabling the effect restores it unchanged",()=>{
@@ -345,5 +345,26 @@ test("compendium and chat effect references with cyclic native changes produce p
   assert.equal(created.name,"Rage du MJ");
   assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.rolls.attack").value,"1");
   assert.equal(effectRules(created).temporaryHP,5);
+ }
+});
+
+
+test("raven movement multipliers change metres per 2 CP without changing maxima",()=>{
+ const changes=[{mode:"land",method:"multiply",value:0.5},{mode:"flight",method:"baseMultiple",value:4}];
+ assert.deepEqual(movementDetails(14,[],changes),{land:{max:14,metersPerTwo:0.5},flight:{max:14,metersPerTwo:4}});
+ const rows=[{mode:"terrestre",distance:"1 m",max:"14 m"}];
+ assert.deepEqual(movementDetails(14,rows,changes),{land:{max:14,metersPerTwo:0.5},flight:{max:14,metersPerTwo:4}});
+ assert.deepEqual(movementDetails(14,rows,[]),{land:{max:14,metersPerTwo:1}});
+ assert.deepEqual(movementDetails(14,[{mode:"terrestre",distance:"1,5 m",max:"14 m"}],changes),{land:{max:14,metersPerTwo:0.75},flight:{max:14,metersPerTwo:6}});
+});
+
+
+test("both shipped raven forms preserve movement maxima on PJ and PNJ profiles",()=>{
+ for(const template of Object.values(templates).filter(t=>["aspect-du-corbeau","aspect-animal-corbeau"].includes(t.id))){
+  const rules=rulesFromChanges(template.changes);
+  for(const rows of [[],[{mode:"terrestre",distance:"1 m",max:"14 m"}]]){
+   const movement=movementDetails(14,rows,rules.movement);
+   assert.deepEqual(movement,{land:{max:14,metersPerTwo:0.5},flight:{max:14,metersPerTwo:4}},template.id);
+  }
  }
 });
