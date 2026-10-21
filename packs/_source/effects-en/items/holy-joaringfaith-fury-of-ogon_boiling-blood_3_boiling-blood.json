@@ -1,7 +1,7 @@
 {
   "_id": "U1AauwXsYtZu0v1w",
   "_key": "!items!U1AauwXsYtZu0v1w",
-  "name": "Boiling Blood",
+  "name": "Boiling Blood (Fury of Ogon)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "VIBX8cFaGbHcIdJe",
       "_key": "!items.effects!U1AauwXsYtZu0v1w.VIBX8cFaGbHcIdJe",
-      "name": "Boiling Blood",
+      "name": "Boiling Blood (Fury of Ogon)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",

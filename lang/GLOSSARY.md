@@ -10217,7 +10217,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half.Name` | Stiffness after petrification — half (Petrify/Remove Petrification — Soil Craft) | Raideur après pétrification — moitié (Pétrification/Annuler une pétrification — Maîtrise de la terre) |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half.SourceName` | Petrify/Remove Petrification | Pétrification/Annuler une pétrification |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half.SourceBook` | Player's Handbook | Livre des règles |
@@ -10228,7 +10228,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Petrify/Remove Petrification — Soil Craft) | Raideur après pétrification — deux tiers (Pétrification/Annuler une pétrification — Maîtrise de la terre) |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourceName` | Petrify/Remove Petrification | Pétrification/Annuler une pétrification |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourceBook` | Player's Handbook | Livre des règles |
@@ -10239,7 +10239,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre.Name` | Tree Curse | Malédiction de l’arbre |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre.Name` | Tree Curse (Witchcraft) | Malédiction de l’arbre (Sorcellerie) |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre.Description` | The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse. | La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur. |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre.SourceName` | Tree Curse | Malédiction de l’arbre |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre.SourceBook` | Player's Handbook | Livre des règles |
@@ -10250,7 +10250,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Name` | Stiffness after the tree curse | Raideur après la malédiction de l’arbre |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Name` | Stiffness after the tree curse (Tree Curse — Witchcraft) | Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Sorcellerie) |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Description` | For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved. | Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié. |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourceName` | Tree Curse | Malédiction de l’arbre |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourceBook` | Player's Handbook | Livre des règles |
@@ -10316,7 +10316,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll.Name` | Voice of Command | Force du troll |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll.Name` | Voice of Command (Strength of Stormi) | Force du troll (Force de Storme) |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll.Description` | Replaces the target’s Strength trait with the exceptional level +4. | Remplace le trait de Force de la cible par le niveau exceptionnel +4. |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll.SourceName` | Voice of Command | Force du troll |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll.SourceBook` | Player's Handbook | Livre des règles |
@@ -10426,7 +10426,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood.Name` | Simmering Blood | Sang brûlant |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood.Name` | Simmering Blood (Tribute of Morgu) | Sang brûlant (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood.Description` | The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood.SourceName` | Simmering Blood | Sang brûlant |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood.SourceBook` | Player's Handbook | Livre des règles |
@@ -10437,7 +10437,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Name` | Boiling Blood | Rage |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Name` | Boiling Blood (Tribute of Morgu) | Rage (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.SourceName` | Boiling Blood | Rage |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#rage.SourceBook` | Player's Handbook | Livre des règles |
@@ -10448,7 +10448,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion.Name` | Exhaustion after frenzy (Boiling Blood — Tribute of Morgu) | Épuisement après frénésie (Rage — Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion.SourceName` | Boiling Blood | Rage |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion.SourceBook` | Player's Handbook | Livre des règles |
@@ -10459,7 +10459,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood.Name` | Rage | Sang bouillant |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood.Name` | Rage (Tribute of Morgu) | Sang bouillant (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood.Description` | The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood.SourceName` | Rage | Sang bouillant |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood.SourceBook` | Player's Handbook | Livre des règles |
@@ -10470,7 +10470,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#folie.Name` | Madness | Folie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#folie.Name` | Madness (Tribute of Morgu) | Folie (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#folie.Description` | The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge. | La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#folie.SourceName` | Madness | Folie |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#folie.SourceBook` | Player's Handbook | Livre des règles |
@@ -10481,7 +10481,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion.Name` | Exhaustion after frenzy (Madness — Tribute of Morgu) | Épuisement après frénésie (Folie — Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion.SourceName` | Madness | Folie |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion.SourceBook` | Player's Handbook | Livre des règles |
@@ -10492,7 +10492,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire.Name` | Bloodfire | Embrasement du sang |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire.Name` | Bloodfire (Tribute of Morgu) | Embrasement du sang (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire.Description` | The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire.SourceName` | Bloodfire | Embrasement du sang |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire.SourceBook` | Player's Handbook | Livre des règles |
@@ -10503,7 +10503,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae.Name` | Riastarthae | Riastarthae |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae.Name` | Riastarthae (Tribute of Morgu) | Riastarthae (Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae.Description` | The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge. | La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae.SourceName` | Riastarthae | Riastarthae |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae.SourceBook` | Player's Handbook | Livre des règles |
@@ -10514,7 +10514,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.Name` | Exhaustion after frenzy (Riastarthae — Tribute of Morgu) | Épuisement après frénésie (Riastarthae — Tribut de Morgu) |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.SourceName` | Riastarthae | Riastarthae |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.SourceBook` | Player's Handbook | Livre des règles |
@@ -10558,7 +10558,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half.Name` | Stiffness after petrification — half (Statue — Tablet of Anger) | Raideur après pétrification — moitié (Statue — Tablette de la colère) |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half.SourceName` | Statue | Statue |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half.SourceBook` | Player's Handbook | Livre des règles |
@@ -10569,7 +10569,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Statue — Tablet of Anger) | Raideur après pétrification — deux tiers (Statue — Tablette de la colère) |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds.SourceName` | Statue | Statue |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds.SourceBook` | Player's Handbook | Livre des règles |
@@ -10591,7 +10591,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half.Name` | Stiffness after petrification — half (Stone Monument — Tablet of Anger) | Raideur après pétrification — moitié (Monument en pierre — Tablette de la colère) |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half.SourceName` | Stone Monument | Monument en pierre |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half.SourceBook` | Player's Handbook | Livre des règles |
@@ -10602,7 +10602,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Stone Monument — Tablet of Anger) | Raideur après pétrification — deux tiers (Monument en pierre — Tablette de la colère) |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourceName` | Stone Monument | Monument en pierre |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourceBook` | Player's Handbook | Livre des règles |
@@ -10758,7 +10758,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half.Name` | Stiffness after petrification — half (Petrify — Power of the Scale) | Raideur après pétrification — moitié (Pétrification — Puissance de l'écaille) |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half.SourceName` | Petrify | Pétrification |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half.SourceBook` | Player's Handbook | Livre des règles |
@@ -10769,7 +10769,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Petrify — Power of the Scale) | Raideur après pétrification — deux tiers (Pétrification — Puissance de l'écaille) |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.SourceName` | Petrify | Pétrification |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.SourceBook` | Player's Handbook | Livre des règles |
@@ -10780,7 +10780,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.Name` | Troll Strength | Force du troll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.Name` | Troll Strength (Power of the Thurses) | Force du troll (Puissance des tursirs) |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.Description` | Replaces the target’s Strength trait with the exceptional level +4. | Remplace le trait de Force de la cible par le niveau exceptionnel +4. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.SourceName` | Troll Strength | Force du troll |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.SourceBook` | Player's Handbook | Livre des règles |
@@ -11075,7 +11075,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood.Name` | Simmering Blood | Sang brûlant |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood.Name` | Simmering Blood (Fury of Ogon) | Sang brûlant (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood.Description` | The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood.SourceName` | Simmering Blood | Sang brûlant |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood.SourceBook` | Stormlands | Stormlands |
@@ -11086,7 +11086,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Name` | Rage | Rage |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Name` | Rage (Fury of Ogon) | Rage (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.Description` | The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge. | La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceName` | Rage | Rage |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#rage.SourceBook` | Stormlands | Stormlands |
@@ -11097,7 +11097,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion.Name` | Exhaustion after frenzy (Rage — Fury of Ogon) | Épuisement après frénésie (Rage — Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion.SourceName` | Rage | Rage |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion.SourceBook` | Stormlands | Stormlands |
@@ -11108,7 +11108,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood.Name` | Boiling Blood | Sang bouillant |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood.Name` | Boiling Blood (Fury of Ogon) | Sang bouillant (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood.Description` | The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood.SourceName` | Boiling Blood | Sang bouillant |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood.SourceBook` | Stormlands | Stormlands |
@@ -11119,7 +11119,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#folie.Name` | Madness | Folie |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#folie.Name` | Madness (Fury of Ogon) | Folie (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#folie.Description` | The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge. | La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#folie.SourceName` | Madness | Folie |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#folie.SourceBook` | Stormlands | Stormlands |
@@ -11130,7 +11130,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion.Name` | Exhaustion after frenzy (Madness — Fury of Ogon) | Épuisement après frénésie (Folie — Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion.SourceName` | Madness | Folie |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion.SourceBook` | Stormlands | Stormlands |
@@ -11141,7 +11141,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire.Name` | Bloodfire | Embrasement du sang |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire.Name` | Bloodfire (Fury of Ogon) | Embrasement du sang (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire.Description` | The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk. | La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire.SourceName` | Bloodfire | Embrasement du sang |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire.SourceBook` | Stormlands | Stormlands |
@@ -11152,7 +11152,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae.Name` | Riastarthae | Riastarthae |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae.Name` | Riastarthae (Fury of Ogon) | Riastarthae (Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae.Description` | The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge. | La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae.SourceName` | Riastarthae | Riastarthae |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae.SourceBook` | Stormlands | Stormlands |
@@ -11163,7 +11163,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.Name` | Exhaustion after frenzy | Épuisement après frénésie |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.Name` | Exhaustion after frenzy (Riastarthae — Fury of Ogon) | Épuisement après frénésie (Riastarthae — Fureur d’Ogon) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.Description` | When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection. | À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.SourceName` | Riastarthae | Riastarthae |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.SourceBook` | Stormlands | Stormlands |
@@ -11174,7 +11174,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre.Name` | Tree Curse | Malédiction de l’arbre |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre.Name` | Tree Curse (Curses of Sonntag) | Malédiction de l’arbre (Malédictions de Sonntag) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre.Description` | The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse. | La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre.SourceName` | Tree Curse | Malédiction de l’arbre |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre.SourceBook` | Stormlands | Stormlands |
@@ -11185,7 +11185,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery.Name` | Stiffness after the tree curse | Raideur après la malédiction de l’arbre |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery.Name` | Stiffness after the tree curse (Tree Curse — Curses of Sonntag) | Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Malédictions de Sonntag) |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery.Description` | For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved. | Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery.SourceName` | Tree Curse | Malédiction de l’arbre |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery.SourceBook` | Stormlands | Stormlands |
@@ -11274,7 +11274,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-disease.Name` | Warg disease | Maladie des wargs |
+| `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-disease.Name` | Warg disease (Warg Sickness (garm)) | Maladie des wargs (Maladie du warg (garm)) |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-disease.Description` | Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting. | Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure. |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-disease.SourceName` | Warg Sickness (garm) | Maladie du warg (garm) |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-disease.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11285,7 +11285,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Name` | Werewarg | Warg garou |
+| `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Name` | Werewarg (Warg Sickness (garm)) | Warg garou (Maladie du warg (garm)) |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Description` | The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation. | La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation. |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.SourceName` | Warg Sickness (garm) | Maladie du warg (garm) |
 | `TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11299,7 +11299,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-disease.Name` | Warg disease | Maladie des wargs |
+| `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-disease.Name` | Warg disease (Warg Sickness (skoll)) | Maladie des wargs (Maladie du warg (skoll)) |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-disease.Description` | Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting. | Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure. |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-disease.SourceName` | Warg Sickness (skoll) | Maladie du warg (skoll) |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-disease.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11310,7 +11310,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Name` | Werewarg | Warg garou |
+| `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Name` | Werewarg (Warg Sickness (skoll)) | Warg garou (Maladie du warg (skoll)) |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Description` | The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation. | La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation. |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.SourceName` | Warg Sickness (skoll) | Maladie du warg (skoll) |
 | `TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11324,7 +11324,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-disease.Name` | Warg disease | Maladie des wargs |
+| `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-disease.Name` | Warg disease (Warg Sickness (warg)) | Maladie des wargs (Maladie du warg (warg)) |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-disease.Description` | Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting. | Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure. |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-disease.SourceName` | Warg Sickness (warg) | Maladie du warg (warg) |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-disease.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11335,7 +11335,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Name` | Werewarg | Warg garou |
+| `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Name` | Werewarg (Warg Sickness (warg)) | Warg garou (Maladie du warg (warg)) |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Description` | The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation. | La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation. |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.SourceName` | Warg Sickness (warg) | Maladie du warg (warg) |
 | `TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11382,7 +11382,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-half.Name` | Stiffness after petrification — half (Petrify (braskelwurm)) | Raideur après pétrification — moitié (Pétrification (braskelwurm)) |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-half.SourceName` | Petrify (braskelwurm) | Pétrification (braskelwurm) |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-half.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11393,7 +11393,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Petrify (braskelwurm)) | Raideur après pétrification — deux tiers (Pétrification (braskelwurm)) |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds.SourceName` | Petrify (braskelwurm) | Pétrification (braskelwurm) |
 | `TRUDVANG.Content.Transformation.WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11415,7 +11415,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-half.Name` | Stiffness after petrification — half | Raideur après pétrification — moitié |
+| `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-half.Name` | Stiffness after petrification — half (Petrify (physical demon)) | Raideur après pétrification — moitié (Pétrification (démon tangible)) |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-half.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are halved. | Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié. |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-half.SourceName` | Petrify (physical demon) | Pétrification (démon tangible) |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-half.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
@@ -11426,7 +11426,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds | Raideur après pétrification — deux tiers |
+| `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds.Name` | Stiffness after petrification — two thirds (Petrify (physical demon)) | Raideur après pétrification — deux tiers (Pétrification (démon tangible)) |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds.Description` | For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value. | Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale. |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds.SourceName` | Petrify (physical demon) | Pétrification (démon tangible) |
 | `TRUDVANG.Content.Transformation.MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |

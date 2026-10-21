@@ -1,7 +1,7 @@
 {
   "_id": "UCin67y4z5A6B7C8",
   "_key": "!items!UCin67y4z5A6B7C8",
-  "name": "Force du troll",
+  "name": "Force du troll (Force de Storme)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "T8kBDvZu0v1w2x3y",
       "_key": "!items.effects!UCin67y4z5A6B7C8.T8kBDvZu0v1w2x3y",
-      "name": "Force du troll",
+      "name": "Force du troll (Force de Storme)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",

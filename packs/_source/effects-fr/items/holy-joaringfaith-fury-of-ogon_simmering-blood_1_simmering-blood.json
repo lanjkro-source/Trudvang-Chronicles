@@ -1,7 +1,7 @@
 {
   "_id": "AoniWmPkQlRmSnTo",
   "_key": "!items!AoniWmPkQlRmSnTo",
-  "name": "Sang brûlant",
+  "name": "Sang brûlant (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "DulzIUlRmSnToUpV",
       "_key": "!items.effects!AoniWmPkQlRmSnTo.DulzIUlRmSnToUpV",
-      "name": "Sang brûlant",
+      "name": "Sang brûlant (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",

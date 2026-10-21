@@ -1,7 +1,7 @@
 {
   "_id": "jf7FuvWrXsYtZu0v",
   "_key": "!items!jf7FuvWrXsYtZu0v",
-  "name": "Stiffness after the tree curse",
+  "name": "Stiffness after the tree curse (Tree Curse — Curses of Sonntag)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "sD5HE2tZu0v1w2x3",
       "_key": "!items.effects!jf7FuvWrXsYtZu0v.sD5HE2tZu0v1w2x3",
-      "name": "Stiffness after the tree curse",
+      "name": "Stiffness after the tree curse (Tree Curse — Curses of Sonntag)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",

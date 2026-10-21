@@ -1,7 +1,7 @@
 {
   "_id": "E6v5BjMhNiOjPkQl",
   "_key": "!items!E6v5BjMhNiOjPkQl",
-  "name": "Rage",
+  "name": "Rage (Tribut de Morgu)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "l8S3nnQlRmSnToUp",
       "_key": "!items.effects!E6v5BjMhNiOjPkQl.l8S3nnQlRmSnToUp",
-      "name": "Rage",
+      "name": "Rage (Tribut de Morgu)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",

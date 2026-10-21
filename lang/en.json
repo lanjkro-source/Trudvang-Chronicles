@@ -12519,7 +12519,7 @@
           "Duration": "1d6 + 2 jours"
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Petrify/Remove Petrification — Soil Craft)",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify/Remove Petrification",
@@ -12528,7 +12528,7 @@
           "Duration": "3 days"
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Petrify/Remove Petrification — Soil Craft)",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify/Remove Petrification",
@@ -12537,7 +12537,7 @@
           "Duration": "3 days"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
-          "Name": "Tree Curse",
+          "Name": "Tree Curse (Witchcraft)",
           "Summary": "Transforms the target into a tree and protects it with bark.",
           "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
@@ -12546,7 +12546,7 @@
           "Duration": "2d6 jours"
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
-          "Name": "Stiffness after the tree curse",
+          "Name": "Stiffness after the tree curse (Tree Curse — Witchcraft)",
           "Summary": "Leaves stiffness after the tree curse.",
           "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
@@ -12600,7 +12600,7 @@
           "Duration": "5 minutes"
         },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
-          "Name": "Voice of Command",
+          "Name": "Voice of Command (Strength of Stormi)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
           "Description": "Replaces the target’s Strength trait with the exceptional level +4.",
           "SourceName": "Voice of Command",
@@ -12692,7 +12692,7 @@
           "Capability1": "undead"
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
-          "Name": "Simmering Blood",
+          "Name": "Simmering Blood (Tribute of Morgu)",
           "Summary": "Temporarily increases health points.",
           "Description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Simmering Blood",
@@ -12701,7 +12701,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
-          "Name": "Boiling Blood",
+          "Name": "Boiling Blood (Tribute of Morgu)",
           "Summary": "Improves attacks and grants fear immunity.",
           "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Boiling Blood",
@@ -12710,7 +12710,7 @@
           "Duration": "3 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Boiling Blood — Tribute of Morgu)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Boiling Blood",
@@ -12719,7 +12719,7 @@
           "Duration": ""
         },
         "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood": {
-          "Name": "Rage",
+          "Name": "Rage (Tribute of Morgu)",
           "Summary": "Temporarily increases health points.",
           "Description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Rage",
@@ -12728,7 +12728,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
-          "Name": "Madness",
+          "Name": "Madness (Tribute of Morgu)",
           "Summary": "Unleashes a frenzy that improves attacks.",
           "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
@@ -12737,7 +12737,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Madness — Tribute of Morgu)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Madness",
@@ -12746,7 +12746,7 @@
           "Duration": ""
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire": {
-          "Name": "Bloodfire",
+          "Name": "Bloodfire (Tribute of Morgu)",
           "Summary": "Greatly increases health points.",
           "Description": "The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Bloodfire",
@@ -12755,7 +12755,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
-          "Name": "Riastarthae",
+          "Name": "Riastarthae (Tribute of Morgu)",
           "Summary": "Unleashes an extreme frenzy and ignores wounds.",
           "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
@@ -12764,7 +12764,7 @@
           "Duration": "7 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Riastarthae — Tribute of Morgu)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Riastarthae",
@@ -12800,7 +12800,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Statue — Tablet of Anger)",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Statue",
@@ -12809,7 +12809,7 @@
           "Duration": "3 days"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Statue — Tablet of Anger)",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Statue",
@@ -12827,7 +12827,7 @@
           "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Stone Monument — Tablet of Anger)",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Stone Monument",
@@ -12836,7 +12836,7 @@
           "Duration": "3 days"
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Stone Monument — Tablet of Anger)",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Stone Monument",
@@ -12964,7 +12964,7 @@
           "Duration": "1 jour"
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Petrify — Power of the Scale)",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify",
@@ -12973,7 +12973,7 @@
           "Duration": "3 days"
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Petrify — Power of the Scale)",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify",
@@ -12982,7 +12982,7 @@
           "Duration": "3 days"
         },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
-          "Name": "Troll Strength",
+          "Name": "Troll Strength (Power of the Thurses)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
           "Description": "Replaces the target’s Strength trait with the exceptional level +4.",
           "SourceName": "Troll Strength",
@@ -13227,7 +13227,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
-          "Name": "Simmering Blood",
+          "Name": "Simmering Blood (Fury of Ogon)",
           "Summary": "Temporarily increases health points.",
           "Description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Simmering Blood",
@@ -13236,7 +13236,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
-          "Name": "Rage",
+          "Name": "Rage (Fury of Ogon)",
           "Summary": "Improves attacks and grants fear immunity.",
           "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Rage",
@@ -13245,7 +13245,7 @@
           "Duration": "3 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Rage — Fury of Ogon)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Rage",
@@ -13254,7 +13254,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood": {
-          "Name": "Boiling Blood",
+          "Name": "Boiling Blood (Fury of Ogon)",
           "Summary": "Temporarily increases health points.",
           "Description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Boiling Blood",
@@ -13263,7 +13263,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
-          "Name": "Madness",
+          "Name": "Madness (Fury of Ogon)",
           "Summary": "Unleashes a frenzy that improves attacks.",
           "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
@@ -13272,7 +13272,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Madness — Fury of Ogon)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Madness",
@@ -13281,7 +13281,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire": {
-          "Name": "Bloodfire",
+          "Name": "Bloodfire (Fury of Ogon)",
           "Summary": "Greatly increases health points.",
           "Description": "The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
           "SourceName": "Bloodfire",
@@ -13290,7 +13290,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
-          "Name": "Riastarthae",
+          "Name": "Riastarthae (Fury of Ogon)",
           "Summary": "Unleashes an extreme frenzy and ignores wounds.",
           "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
@@ -13299,7 +13299,7 @@
           "Duration": "7 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion": {
-          "Name": "Exhaustion after frenzy",
+          "Name": "Exhaustion after frenzy (Riastarthae — Fury of Ogon)",
           "Summary": "Causes exhaustion after a frenzy.",
           "Description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",
           "SourceName": "Riastarthae",
@@ -13308,7 +13308,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
-          "Name": "Tree Curse",
+          "Name": "Tree Curse (Curses of Sonntag)",
           "Summary": "Transforms the target into a tree and protects it with bark.",
           "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
@@ -13317,7 +13317,7 @@
           "Duration": "2d6 jours"
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
-          "Name": "Stiffness after the tree curse",
+          "Name": "Stiffness after the tree curse (Tree Curse — Curses of Sonntag)",
           "Summary": "Leaves stiffness after the tree curse.",
           "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
@@ -13390,7 +13390,7 @@
           "Sense0": "darkvision to 10 m, gradually fading up to about 60 m"
         },
         "WKMBG3v1w2x3y4z5#warg-disease": {
-          "Name": "Warg disease",
+          "Name": "Warg disease (Warg Sickness (garm))",
           "Summary": "Infects the target and may turn it into a werewarg.",
           "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (garm)",
@@ -13399,7 +13399,7 @@
           "Duration": ""
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
-          "Name": "Werewarg",
+          "Name": "Werewarg (Warg Sickness (garm))",
           "Summary": "Transforms the target into a werewarg.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (garm)",
@@ -13411,7 +13411,7 @@
           "Sense0": "low-light vision"
         },
         "gXp2SRjPkQlRmSnT#warg-disease": {
-          "Name": "Warg disease",
+          "Name": "Warg disease (Warg Sickness (skoll))",
           "Summary": "Infects the target and may turn it into a werewarg.",
           "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (skoll)",
@@ -13420,7 +13420,7 @@
           "Duration": ""
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
-          "Name": "Werewarg",
+          "Name": "Werewarg (Warg Sickness (skoll))",
           "Summary": "Transforms the target into a werewarg.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (skoll)",
@@ -13432,7 +13432,7 @@
           "Sense0": "low-light vision"
         },
         "i4Zci8A6B7C8D9Ea#warg-disease": {
-          "Name": "Warg disease",
+          "Name": "Warg disease (Warg Sickness (warg))",
           "Summary": "Infects the target and may turn it into a werewarg.",
           "Description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",
           "SourceName": "Warg Sickness (warg)",
@@ -13441,7 +13441,7 @@
           "Duration": ""
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
-          "Name": "Werewarg",
+          "Name": "Werewarg (Warg Sickness (warg))",
           "Summary": "Transforms the target into a werewarg.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (warg)",
@@ -13480,7 +13480,7 @@
           "Duration": ""
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Petrify (braskelwurm))",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (braskelwurm)",
@@ -13489,7 +13489,7 @@
           "Duration": "3 days"
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Petrify (braskelwurm))",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (braskelwurm)",
@@ -13507,7 +13507,7 @@
           "Duration": "1d10 (JO 7-10) jours"
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
-          "Name": "Stiffness after petrification — half",
+          "Name": "Stiffness after petrification — half (Petrify (physical demon))",
           "Summary": "Slows movement and Dexterity-based actions after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (physical demon)",
@@ -13516,7 +13516,7 @@
           "Duration": "3 days"
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
-          "Name": "Stiffness after petrification — two thirds",
+          "Name": "Stiffness after petrification — two thirds (Petrify (physical demon))",
           "Summary": "Leaves residual stiffness after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (physical demon)",

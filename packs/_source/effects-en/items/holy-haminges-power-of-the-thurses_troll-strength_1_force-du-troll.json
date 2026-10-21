@@ -1,7 +1,7 @@
 {
   "_id": "YJ8QVqWrXsYtZu0v",
   "_key": "!items!YJ8QVqWrXsYtZu0v",
-  "name": "Troll Strength",
+  "name": "Troll Strength (Power of the Thurses)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "zcXLe1tZu0v1w2x3",
       "_key": "!items.effects!YJ8QVqWrXsYtZu0v.zcXLe1tZu0v1w2x3",
-      "name": "Troll Strength",
+      "name": "Troll Strength (Power of the Thurses)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Replaces the target’s Strength trait with the exceptional level +4.",

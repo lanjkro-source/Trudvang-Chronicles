@@ -46,6 +46,7 @@ for(const kind of ["powers","feats"]){
   }
  }
 }
+for(const c of ["fr","en"])if(new Set(references[c].map(r=>r.name)).size!==references[c].length)throw Error(`Ambiguous effect names in ${c}`);
 const output=`// Generated from authoritative FR effectTemplates. Text belongs to lang/*.json.\nexport const TRANSFORMATION_TEMPLATES = ${JSON.stringify(registry,null,2)};\nexport const TRANSFORMATIONS_BY_SOURCE = ${JSON.stringify(bySource,null,2)};\n`;
 if(process.argv.includes("--check")){
  if(fs.readFileSync("modules/transformation-data.mjs","utf8")!==output)throw Error("Stale transformation catalogue");

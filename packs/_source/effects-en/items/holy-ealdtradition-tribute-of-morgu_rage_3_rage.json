@@ -1,7 +1,7 @@
 {
   "_id": "E6v5BjMhNiOjPkQl",
   "_key": "!items!E6v5BjMhNiOjPkQl",
-  "name": "Boiling Blood",
+  "name": "Boiling Blood (Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "l8S3nnQlRmSnToUp",
       "_key": "!items.effects!E6v5BjMhNiOjPkQl.l8S3nnQlRmSnToUp",
-      "name": "Boiling Blood",
+      "name": "Boiling Blood (Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",

@@ -1,4 +1,4 @@
-import {hasProfileChanges, rulesFromChanges} from "./effect-rule-changes.mjs";
+import {hasProfileChanges, rulesFromChanges, roundEffectValue} from "./effect-rule-changes.mjs";
 import {upgradeFearFactor} from "./fear-resolver.mjs";
 export const TRANSFORMATION_SCOPE = "trudvang-chronicles";
 export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
@@ -58,7 +58,7 @@ export function movementDetails(base, rows, changes, modifier=0) {
    }
   }
  }
- return modes;
+ return Object.fromEntries(Object.entries(modes).map(([mode,row])=>[mode,{max:roundEffectValue(row.max),metersPerTwo:roundEffectValue(row.metersPerTwo)}]));
 }
 export function movementProfile(base, rows, changes, modifier=0) {
  return Object.fromEntries(Object.entries(movementDetails(base,rows,changes,modifier)).map(([mode,row])=>[mode,row.max]));

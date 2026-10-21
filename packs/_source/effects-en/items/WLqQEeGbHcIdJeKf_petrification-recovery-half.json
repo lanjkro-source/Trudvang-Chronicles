@@ -1,7 +1,7 @@
 {
   "_id": "aVO56YrXsYtZu0v1",
   "_key": "!items!aVO56YrXsYtZu0v1",
-  "name": "Stiffness after petrification — half",
+  "name": "Stiffness after petrification — half (Petrify (braskelwurm))",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "36roPMdJeKfLgMhN",
       "_key": "!items.effects!aVO56YrXsYtZu0v1.36roPMdJeKfLgMhN",
-      "name": "Stiffness after petrification — half",
+      "name": "Stiffness after petrification — half (Petrify (braskelwurm))",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",

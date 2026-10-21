@@ -1,7 +1,7 @@
 {
   "_id": "b2sTChKfLgMhNiOj",
   "_key": "!items!b2sTChKfLgMhNiOj",
-  "name": "Folie",
+  "name": "Folie (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "ev6sdHcIdJeKfLgM",
       "_key": "!items.effects!b2sTChKfLgMhNiOj.ev6sdHcIdJeKfLgM",
-      "name": "Folie",
+      "name": "Folie (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",

@@ -1,7 +1,7 @@
 {
   "_id": "nV72GWnToUpVqWrX",
   "_key": "!items!nV72GWnToUpVqWrX",
-  "name": "Raideur après pétrification — deux tiers",
+  "name": "Raideur après pétrification — deux tiers (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "ctuYqlPkQlRmSnTo",
       "_key": "!items.effects!nV72GWnToUpVqWrX.ctuYqlPkQlRmSnTo",
-      "name": "Raideur après pétrification — deux tiers",
+      "name": "Raideur après pétrification — deux tiers (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",

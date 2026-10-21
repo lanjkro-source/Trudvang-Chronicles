@@ -1,7 +1,7 @@
 {
   "_id": "7ibqhbGbHcIdJeKf",
   "_key": "!items!7ibqhbGbHcIdJeKf",
-  "name": "Raideur après la malédiction de l’arbre",
+  "name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Sorcellerie)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "s2ePVSlRmSnToUpV",
       "_key": "!items.effects!7ibqhbGbHcIdJeKf.s2ePVSlRmSnToUpV",
-      "name": "Raideur après la malédiction de l’arbre",
+      "name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Sorcellerie)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",

@@ -1,7 +1,7 @@
 {
   "_id": "LDoWcE7C8D9EaGbH",
   "_key": "!items!LDoWcE7C8D9EaGbH",
-  "name": "Embrasement du sang",
+  "name": "Embrasement du sang (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "szYGCTlRmSnToUpV",
       "_key": "!items.effects!LDoWcE7C8D9EaGbH.szYGCTlRmSnToUpV",
-      "name": "Embrasement du sang",
+      "name": "Embrasement du sang (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",

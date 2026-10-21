@@ -1,7 +1,7 @@
 {
   "_id": "m5ogxeHcIdJeKfLg",
   "_key": "!items!m5ogxeHcIdJeKfLg",
-  "name": "Tree Curse",
+  "name": "Tree Curse (Witchcraft)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "HTa8x0tZu0v1w2x3",
       "_key": "!items.effects!m5ogxeHcIdJeKfLg.HTa8x0tZu0v1w2x3",
-      "name": "Tree Curse",
+      "name": "Tree Curse (Witchcraft)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",

@@ -1,7 +1,7 @@
 {
   "_id": "js4I0fKfLgMhNiOj",
   "_key": "!items!js4I0fKfLgMhNiOj",
-  "name": "Maladie des wargs",
+  "name": "Maladie des wargs (Maladie du warg (skoll))",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "aX2sziLgMhNiOjPk",
       "_key": "!items.effects!js4I0fKfLgMhNiOj.aX2sziLgMhNiOjPk",
-      "name": "Maladie des wargs",
+      "name": "Maladie des wargs (Maladie du warg (skoll))",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",

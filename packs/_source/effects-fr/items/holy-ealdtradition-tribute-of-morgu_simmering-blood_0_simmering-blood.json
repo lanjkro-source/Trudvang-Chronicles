@@ -1,7 +1,7 @@
 {
   "_id": "pTqj9XsYtZu0v1w2",
   "_key": "!items!pTqj9XsYtZu0v1w2",
-  "name": "Sang brûlant",
+  "name": "Sang brûlant (Tribut de Morgu)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "40VVfC6B7C8D9EaG",
       "_key": "!items.effects!pTqj9XsYtZu0v1w2.40VVfC6B7C8D9EaG",
-      "name": "Sang brûlant",
+      "name": "Sang brûlant (Tribut de Morgu)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",

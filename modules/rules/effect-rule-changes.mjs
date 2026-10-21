@@ -1,6 +1,7 @@
 /** Editable, per-effect profile changes. Native scalar bonuses keep their usual
  * system.effective/system.modifiers paths; structured profiles use JSON values. */
 export const EFFECT_RULE_PREFIX = "system.transformation.";
+export const roundEffectValue = value => Math.round((value + Number.EPSILON) * 100) / 100;
 export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegrity", "naturalArmor",
   "movement", "testFactor", "traits", "chooseBestiary", "formPolicy", "formName", "senses",
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
@@ -32,7 +33,7 @@ export function rulesFromChanges(changes = []) {
     const value=parse(row.value);
     if (row.type === "add" && Array.isArray(value)) rules[key] = [...rules[key] ?? [], ...value];
     else if (row.type === "add" && typeof value === "number") rules[key] = Number(rules[key] ?? 0) + value;
-    else if (row.type === "multiply") rules[key] = Number(rules[key] ?? 1) * Number(value);
+    else if (row.type === "multiply") rules[key] = roundEffectValue(Number(rules[key] ?? 1) * Number(value));
     else if (row.type === "upgrade") rules[key] = Math.max(Number(rules[key] ?? value), Number(value));
     else if (row.type === "downgrade") rules[key] = Math.min(Number(rules[key] ?? value), Number(value));
     else if (row.type === "subtract") rules[key] = Number(rules[key] ?? 0) - Number(value);

@@ -1,7 +1,7 @@
 {
   "_id": "pTqj9XsYtZu0v1w2",
   "_key": "!items!pTqj9XsYtZu0v1w2",
-  "name": "Simmering Blood",
+  "name": "Simmering Blood (Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "40VVfC6B7C8D9EaG",
       "_key": "!items.effects!pTqj9XsYtZu0v1w2.40VVfC6B7C8D9EaG",
-      "name": "Simmering Blood",
+      "name": "Simmering Blood (Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "The target gains 1d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",

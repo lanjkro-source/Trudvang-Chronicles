@@ -1,7 +1,7 @@
 {
   "_id": "SnHIXgMhNiOjPkQl",
   "_key": "!items!SnHIXgMhNiOjPkQl",
-  "name": "Madness",
+  "name": "Madness (Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "bwXiMpSnToUpVqWr",
       "_key": "!items.effects!SnHIXgMhNiOjPkQl.bwXiMpSnToUpVqWr",
-      "name": "Madness",
+      "name": "Madness (Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",

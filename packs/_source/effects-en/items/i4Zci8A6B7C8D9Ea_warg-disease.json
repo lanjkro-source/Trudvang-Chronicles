@@ -1,7 +1,7 @@
 {
   "_id": "sbooahMhNiOjPkQl",
   "_key": "!items!sbooahMhNiOjPkQl",
-  "name": "Warg disease",
+  "name": "Warg disease (Warg Sickness (warg))",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "dSzqm2v1w2x3y4z5",
       "_key": "!items.effects!sbooahMhNiOjPkQl.dSzqm2v1w2x3y4z5",
-      "name": "Warg disease",
+      "name": "Warg disease (Warg Sickness (warg))",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Transmitted by warg bites (not ordinary wolves), the disease lies dormant and may trigger because of the moon, intense fear, unusual stress, or extreme hunger. Under the moon, the target resists a Situation Value 6 test (Psyche and Constitution); if it sees the full moon, the SV is reduced by 4. In a stressful situation, a target with negative Psyche resists a Situation Value 8 test (Psyche). Failure triggers the werewarg transformation; a werewarg can transmit the disease by biting.",

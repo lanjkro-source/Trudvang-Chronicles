@@ -1,3 +1,4 @@
+import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
@@ -1654,7 +1655,7 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
     const selectedMode = movementModes.find(mode => mode.id === options.movementMode) ?? movementModes[0];
-    const paidMeters = spending.total / 2 * (selectedMode?.metersPerTwo ?? 1);
+    const paidMeters = roundEffectValue(spending.total / 2 * (selectedMode?.metersPerTwo ?? 1));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     await postActorEvent({actor: this, kind: "movement", amount: spending.total, meters: paidMeters,
       mode: selectedMode?.label ?? game.i18n.localize("TRUDVANG.Npc.MovementModes.land")});

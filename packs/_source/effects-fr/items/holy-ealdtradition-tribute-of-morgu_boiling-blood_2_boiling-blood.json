@@ -1,7 +1,7 @@
 {
   "_id": "vzanzaE9EaGbHcId",
   "_key": "!items!vzanzaE9EaGbHcId",
-  "name": "Sang bouillant",
+  "name": "Sang bouillant (Tribut de Morgu)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "IIBLkvYtZu0v1w2x",
       "_key": "!items.effects!vzanzaE9EaGbHcId.IIBLkvYtZu0v1w2x",
-      "name": "Sang bouillant",
+      "name": "Sang bouillant (Tribut de Morgu)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",

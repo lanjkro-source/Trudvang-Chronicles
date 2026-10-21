@@ -1,7 +1,7 @@
 {
   "_id": "EyxR93v1w2x3y4z5",
   "_key": "!items!EyxR93v1w2x3y4z5",
-  "name": "Raideur après pétrification — moitié",
+  "name": "Raideur après pétrification — moitié (Monument en pierre — Tablette de la colère)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "RHw9F5y4z5A6B7C8",
       "_key": "!items.effects!EyxR93v1w2x3y4z5.RHw9F5y4z5A6B7C8",
-      "name": "Raideur après pétrification — moitié",
+      "name": "Raideur après pétrification — moitié (Monument en pierre — Tablette de la colère)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",

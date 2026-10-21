@@ -1,7 +1,7 @@
 {
   "_id": "OqKgM5w2x3y4z5A6",
   "_key": "!items!OqKgM5w2x3y4z5A6",
-  "name": "Raideur après pétrification — deux tiers",
+  "name": "Raideur après pétrification — deux tiers (Pétrification (braskelwurm))",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "ptYzISnToUpVqWrX",
       "_key": "!items.effects!OqKgM5w2x3y4z5A6.ptYzISnToUpVqWrX",
-      "name": "Raideur après pétrification — deux tiers",
+      "name": "Raideur après pétrification — deux tiers (Pétrification (braskelwurm))",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",

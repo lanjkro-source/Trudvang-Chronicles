@@ -12519,7 +12519,7 @@
           "Duration": "1d6 + 2 jours"
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification/Annuler une pétrification",
@@ -12528,7 +12528,7 @@
           "Duration": "3 days"
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification/Annuler une pétrification",
@@ -12537,7 +12537,7 @@
           "Duration": "3 days"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
-          "Name": "Malédiction de l’arbre",
+          "Name": "Malédiction de l’arbre (Sorcellerie)",
           "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
           "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
@@ -12546,7 +12546,7 @@
           "Duration": "2d6 jours"
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
-          "Name": "Raideur après la malédiction de l’arbre",
+          "Name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Sorcellerie)",
           "Summary": "Laisse une raideur après la malédiction de l’arbre.",
           "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
@@ -12600,7 +12600,7 @@
           "Duration": "5 minutes"
         },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
-          "Name": "Force du troll",
+          "Name": "Force du troll (Force de Storme)",
           "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
           "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force du troll",
@@ -12692,7 +12692,7 @@
           "Capability1": "morts-vivants"
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
-          "Name": "Sang brûlant",
+          "Name": "Sang brûlant (Tribut de Morgu)",
           "Summary": "Augmente temporairement les points de santé.",
           "Description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
           "SourceName": "Sang brûlant",
@@ -12701,7 +12701,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
-          "Name": "Rage",
+          "Name": "Rage (Tribut de Morgu)",
           "Summary": "Renforce les attaques et la résistance à la peur.",
           "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
@@ -12710,7 +12710,7 @@
           "Duration": "3 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Rage — Tribut de Morgu)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Rage",
@@ -12719,7 +12719,7 @@
           "Duration": ""
         },
         "holy-ealdtradition-tribute-of-morgu:boiling-blood:2#boiling-blood": {
-          "Name": "Sang bouillant",
+          "Name": "Sang bouillant (Tribut de Morgu)",
           "Summary": "Augmente temporairement les points de santé.",
           "Description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Sang bouillant",
@@ -12728,7 +12728,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
-          "Name": "Folie",
+          "Name": "Folie (Tribut de Morgu)",
           "Summary": "Déchaîne une rage qui renforce les attaques.",
           "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
@@ -12737,7 +12737,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Folie — Tribut de Morgu)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Folie",
@@ -12746,7 +12746,7 @@
           "Duration": ""
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire": {
-          "Name": "Embrasement du sang",
+          "Name": "Embrasement du sang (Tribut de Morgu)",
           "Summary": "Augmente fortement les points de santé.",
           "Description": "La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Embrasement du sang",
@@ -12755,7 +12755,7 @@
           "Duration": "1 heure"
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
-          "Name": "Riastarthae",
+          "Name": "Riastarthae (Tribut de Morgu)",
           "Summary": "Déchaîne une rage extrême et ignore les blessures.",
           "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
@@ -12764,7 +12764,7 @@
           "Duration": "7 tours de jeu"
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Riastarthae — Tribut de Morgu)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Riastarthae",
@@ -12800,7 +12800,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Statue — Tablette de la colère)",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Statue",
@@ -12809,7 +12809,7 @@
           "Duration": "3 days"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Statue — Tablette de la colère)",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Statue",
@@ -12827,7 +12827,7 @@
           "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Monument en pierre — Tablette de la colère)",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Monument en pierre",
@@ -12836,7 +12836,7 @@
           "Duration": "3 days"
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Monument en pierre — Tablette de la colère)",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Monument en pierre",
@@ -12964,7 +12964,7 @@
           "Duration": "1 jour"
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Pétrification — Puissance de l'écaille)",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification",
@@ -12973,7 +12973,7 @@
           "Duration": "3 days"
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Pétrification — Puissance de l'écaille)",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification",
@@ -12982,7 +12982,7 @@
           "Duration": "3 days"
         },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
-          "Name": "Force du troll",
+          "Name": "Force du troll (Puissance des tursirs)",
           "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
           "Description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force du troll",
@@ -13227,7 +13227,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
-          "Name": "Sang brûlant",
+          "Name": "Sang brûlant (Fureur d’Ogon)",
           "Summary": "Augmente temporairement les points de santé.",
           "Description": "La cible gagne 1d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points ; elles peuvent alors mettre la cible en danger.",
           "SourceName": "Sang brûlant",
@@ -13236,7 +13236,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
-          "Name": "Rage",
+          "Name": "Rage (Fureur d’Ogon)",
           "Summary": "Renforce les attaques et la résistance à la peur.",
           "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
@@ -13245,7 +13245,7 @@
           "Duration": "3 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Rage — Fureur d’Ogon)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Rage",
@@ -13254,7 +13254,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood": {
-          "Name": "Sang bouillant",
+          "Name": "Sang bouillant (Fureur d’Ogon)",
           "Summary": "Augmente temporairement les points de santé.",
           "Description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Sang bouillant",
@@ -13263,7 +13263,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
-          "Name": "Folie",
+          "Name": "Folie (Fureur d’Ogon)",
           "Summary": "Déchaîne une rage qui renforce les attaques.",
           "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
@@ -13272,7 +13272,7 @@
           "Duration": "5 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Folie — Fureur d’Ogon)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Folie",
@@ -13281,7 +13281,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-fury-of-ogon:bloodfire:6#bloodfire": {
-          "Name": "Embrasement du sang",
+          "Name": "Embrasement du sang (Fureur d’Ogon)",
           "Summary": "Augmente fortement les points de santé.",
           "Description": "La cible gagne 3d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",
           "SourceName": "Embrasement du sang",
@@ -13290,7 +13290,7 @@
           "Duration": "1 heure"
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
-          "Name": "Riastarthae",
+          "Name": "Riastarthae (Fureur d’Ogon)",
           "Summary": "Déchaîne une rage extrême et ignore les blessures.",
           "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
@@ -13299,7 +13299,7 @@
           "Duration": "7 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion": {
-          "Name": "Épuisement après frénésie",
+          "Name": "Épuisement après frénésie (Riastarthae — Fureur d’Ogon)",
           "Summary": "Provoque l’épuisement après la frénésie.",
           "Description": "À la fin de la frénésie, la cible s’effondre et reste épuisée pendant la moitié de sa durée effective. Si elle n’est pas refroidie, elle subit pendant deux tours 1, 2 ou 4 dégâts par tour après Rage, Folie ou Riastarthae, sans protection de l’armure.",
           "SourceName": "Riastarthae",
@@ -13308,7 +13308,7 @@
           "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
-          "Name": "Malédiction de l’arbre",
+          "Name": "Malédiction de l’arbre (Malédictions de Sonntag)",
           "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
           "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
@@ -13317,7 +13317,7 @@
           "Duration": "2d6 jours"
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
-          "Name": "Raideur après la malédiction de l’arbre",
+          "Name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Malédictions de Sonntag)",
           "Summary": "Laisse une raideur après la malédiction de l’arbre.",
           "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
@@ -13390,7 +13390,7 @@
           "Sense0": "vision dans le noir jusqu’à 10 m, graduellement jusqu’à environ 60 m"
         },
         "WKMBG3v1w2x3y4z5#warg-disease": {
-          "Name": "Maladie des wargs",
+          "Name": "Maladie des wargs (Maladie du warg (garm))",
           "Summary": "Infecte la cible et peut la transformer en warg garou.",
           "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (garm)",
@@ -13399,7 +13399,7 @@
           "Duration": ""
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
-          "Name": "Warg garou",
+          "Name": "Warg garou (Maladie du warg (garm))",
           "Summary": "Transforme la cible en warg garou.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (garm)",
@@ -13411,7 +13411,7 @@
           "Sense0": "vision nocturne"
         },
         "gXp2SRjPkQlRmSnT#warg-disease": {
-          "Name": "Maladie des wargs",
+          "Name": "Maladie des wargs (Maladie du warg (skoll))",
           "Summary": "Infecte la cible et peut la transformer en warg garou.",
           "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (skoll)",
@@ -13420,7 +13420,7 @@
           "Duration": ""
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
-          "Name": "Warg garou",
+          "Name": "Warg garou (Maladie du warg (skoll))",
           "Summary": "Transforme la cible en warg garou.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (skoll)",
@@ -13432,7 +13432,7 @@
           "Sense0": "vision nocturne"
         },
         "i4Zci8A6B7C8D9Ea#warg-disease": {
-          "Name": "Maladie des wargs",
+          "Name": "Maladie des wargs (Maladie du warg (warg))",
           "Summary": "Infecte la cible et peut la transformer en warg garou.",
           "Description": "Transmise par la morsure des wargs (pas des loups ordinaires), la maladie reste dormante et peut se déclencher sous l’effet de la lune, d’une peur intense, d’un stress inhabituel ou d’une faim extrême. Sous la lune, la cible résiste à un test de situation de 6 (Psychisme et Constitution) ; si elle voit la pleine lune, la valeur baisse de 4. En situation stressante, une cible au Psychisme négatif résiste à un test de 8 (Psychisme). Un échec déclenche la transformation en warg garou ; un warg garou peut transmettre la maladie par morsure.",
           "SourceName": "Maladie du warg (warg)",
@@ -13441,7 +13441,7 @@
           "Duration": ""
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
-          "Name": "Warg garou",
+          "Name": "Warg garou (Maladie du warg (warg))",
           "Summary": "Transforme la cible en warg garou.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (warg)",
@@ -13480,7 +13480,7 @@
           "Duration": ""
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Pétrification (braskelwurm))",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (braskelwurm)",
@@ -13489,7 +13489,7 @@
           "Duration": "3 days"
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Pétrification (braskelwurm))",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (braskelwurm)",
@@ -13507,7 +13507,7 @@
           "Duration": "1d10 (JO 7-10) jours"
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
-          "Name": "Raideur après pétrification — moitié",
+          "Name": "Raideur après pétrification — moitié (Pétrification (démon tangible))",
           "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (démon tangible)",
@@ -13516,7 +13516,7 @@
           "Duration": "3 days"
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
-          "Name": "Raideur après pétrification — deux tiers",
+          "Name": "Raideur après pétrification — deux tiers (Pétrification (démon tangible))",
           "Summary": "Maintient une raideur résiduelle après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (démon tangible)",

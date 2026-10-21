@@ -1,7 +1,7 @@
 {
   "_id": "HXsY6TlRmSnToUpV",
   "_key": "!items!HXsY6TlRmSnToUpV",
-  "name": "Riastarthae",
+  "name": "Riastarthae (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "G2OrnpQlRmSnToUp",
       "_key": "!items.effects!HXsY6TlRmSnToUpV.G2OrnpQlRmSnToUp",
-      "name": "Riastarthae",
+      "name": "Riastarthae (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",

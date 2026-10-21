@@ -1,7 +1,7 @@
 {
   "_id": "X5ogkvZu0v1w2x3y",
   "_key": "!items!X5ogkvZu0v1w2x3y",
-  "name": "Warg garou",
+  "name": "Warg garou (Maladie du warg (skoll))",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "MMES7TlRmSnToUpV",
       "_key": "!items.effects!X5ogkvZu0v1w2x3y.MMES7TlRmSnToUpV",
-      "name": "Warg garou",
+      "name": "Warg garou (Maladie du warg (skoll))",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",

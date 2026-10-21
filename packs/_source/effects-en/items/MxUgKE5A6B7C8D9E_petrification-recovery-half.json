@@ -1,7 +1,7 @@
 {
   "_id": "Lmd5gpToUpVqWrXs",
   "_key": "!items!Lmd5gpToUpVqWrXs",
-  "name": "Stiffness after petrification — half",
+  "name": "Stiffness after petrification — half (Petrify (physical demon))",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "ELFRe9z5A6B7C8D9",
       "_key": "!items.effects!Lmd5gpToUpVqWrXs.ELFRe9z5A6B7C8D9",
-      "name": "Stiffness after petrification — half",
+      "name": "Stiffness after petrification — half (Petrify (physical demon))",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",

@@ -1,7 +1,7 @@
 {
   "_id": "Oz1LxVnToUpVqWrX",
   "_key": "!items!Oz1LxVnToUpVqWrX",
-  "name": "Tree Curse",
+  "name": "Tree Curse (Curses of Sonntag)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "TTQwsXoUpVqWrXsY",
       "_key": "!items.effects!Oz1LxVnToUpVqWrX.TTQwsXoUpVqWrXsY",
-      "name": "Tree Curse",
+      "name": "Tree Curse (Curses of Sonntag)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",

@@ -1,7 +1,7 @@
 {
   "_id": "gtcjrQkQlRmSnToU",
   "_key": "!items!gtcjrQkQlRmSnToU",
-  "name": "Stiffness after petrification — half",
+  "name": "Stiffness after petrification — half (Petrify — Power of the Scale)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "x6ALEJcIdJeKfLgM",
       "_key": "!items.effects!gtcjrQkQlRmSnToU.x6ALEJcIdJeKfLgM",
-      "name": "Stiffness after petrification — half",
+      "name": "Stiffness after petrification — half (Petrify — Power of the Scale)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",

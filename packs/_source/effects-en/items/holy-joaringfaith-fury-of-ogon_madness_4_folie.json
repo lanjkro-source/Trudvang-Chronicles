@@ -1,7 +1,7 @@
 {
   "_id": "b2sTChKfLgMhNiOj",
   "_key": "!items!b2sTChKfLgMhNiOj",
-  "name": "Madness",
+  "name": "Madness (Fury of Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "ev6sdHcIdJeKfLgM",
       "_key": "!items.effects!b2sTChKfLgMhNiOj.ev6sdHcIdJeKfLgM",
-      "name": "Madness",
+      "name": "Madness (Fury of Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",

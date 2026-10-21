@@ -1,7 +1,7 @@
 {
   "_id": "9UJKMTmSnToUpVqW",
   "_key": "!items!9UJKMTmSnToUpVqW",
-  "name": "Raideur après pétrification — deux tiers",
+  "name": "Raideur après pétrification — deux tiers (Pétrification (démon tangible))",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "aSmLkXrXsYtZu0v1",
       "_key": "!items.effects!9UJKMTmSnToUpVqW.aSmLkXrXsYtZu0v1",
-      "name": "Raideur après pétrification — deux tiers",
+      "name": "Raideur après pétrification — deux tiers (Pétrification (démon tangible))",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",

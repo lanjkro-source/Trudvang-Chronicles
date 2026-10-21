@@ -1,7 +1,7 @@
 {
   "_id": "YJ8QVqWrXsYtZu0v",
   "_key": "!items!YJ8QVqWrXsYtZu0v",
-  "name": "Force du troll",
+  "name": "Force du troll (Puissance des tursirs)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "zcXLe1tZu0v1w2x3",
       "_key": "!items.effects!YJ8QVqWrXsYtZu0v.zcXLe1tZu0v1w2x3",
-      "name": "Force du troll",
+      "name": "Force du troll (Puissance des tursirs)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Remplace le trait de Force de la cible par le niveau exceptionnel +4.",

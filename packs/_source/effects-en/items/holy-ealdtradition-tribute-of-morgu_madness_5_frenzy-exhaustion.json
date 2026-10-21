@@ -1,7 +1,7 @@
 {
   "_id": "8xM9etUpVqWrXsYt",
   "_key": "!items!8xM9etUpVqWrXsYt",
-  "name": "Exhaustion after frenzy",
+  "name": "Exhaustion after frenzy (Madness — Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/sleep.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "7UDqidIdJeKfLgMh",
       "_key": "!items.effects!8xM9etUpVqWrXsYt.7UDqidIdJeKfLgMh",
-      "name": "Exhaustion after frenzy",
+      "name": "Exhaustion after frenzy (Madness — Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/sleep.svg",
       "description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",

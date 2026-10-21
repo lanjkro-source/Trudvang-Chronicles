@@ -2023,3 +2023,16 @@ test("defender transformation penalties appear and apply once to weapon and fixe
   assert.deepEqual(fixed.results.map(row => [row.target, row.success]), [[1, false], [6, true]]);
   assert.match(runtime.dialogs.at(-1).content, /Aspect du corbeau: -5/);
 });
+
+
+test("fractional movement expenditure rounds the multiplied distance to two decimal places", async t=>{
+ const runtime=mockActionRuntime(t);
+ const npc=spendableNpc([]);
+ npc._source.system.combatPools.free.weaponSpent=0;
+ npc.prepareDerivedData();
+ npc.transformationMovementRows=[{id:"flight",label:"Vol",metersPerTwo:0.1}];
+ game.combat={started:true,combatants:[{actor:npc}]};
+ runtime.response={allocation:{free:6},movementMode:"flight"};
+ const result=await npc.rollCombatMovement();
+ assert.equal(result.paidMeters,0.3);
+});

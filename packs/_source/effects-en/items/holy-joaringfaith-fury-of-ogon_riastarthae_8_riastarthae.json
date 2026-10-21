@@ -1,7 +1,7 @@
 {
   "_id": "HXsY6TlRmSnToUpV",
   "_key": "!items!HXsY6TlRmSnToUpV",
-  "name": "Riastarthae",
+  "name": "Riastarthae (Fury of Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "G2OrnpQlRmSnToUp",
       "_key": "!items.effects!HXsY6TlRmSnToUpV.G2OrnpQlRmSnToUp",
-      "name": "Riastarthae",
+      "name": "Riastarthae (Fury of Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",

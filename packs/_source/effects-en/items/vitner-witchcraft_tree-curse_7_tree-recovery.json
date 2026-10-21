@@ -1,7 +1,7 @@
 {
   "_id": "7ibqhbGbHcIdJeKf",
   "_key": "!items!7ibqhbGbHcIdJeKf",
-  "name": "Stiffness after the tree curse",
+  "name": "Stiffness after the tree curse (Tree Curse — Witchcraft)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "s2ePVSlRmSnToUpV",
       "_key": "!items.effects!7ibqhbGbHcIdJeKf.s2ePVSlRmSnToUpV",
-      "name": "Stiffness after the tree curse",
+      "name": "Stiffness after the tree curse (Tree Curse — Witchcraft)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",

@@ -1,7 +1,7 @@
 {
   "_id": "PRa0QYqWrXsYtZu0",
   "_key": "!items!PRa0QYqWrXsYtZu0",
-  "name": "Bloodfire",
+  "name": "Bloodfire (Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "MdZKXC7C8D9EaGbH",
       "_key": "!items.effects!PRa0QYqWrXsYtZu0.MdZKXC7C8D9EaGbH",
-      "name": "Bloodfire",
+      "name": "Bloodfire (Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "The target gains 3d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",

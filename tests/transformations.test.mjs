@@ -368,3 +368,16 @@ test("both shipped raven forms preserve movement maxima on PJ and PNJ profiles",
   }
  }
 });
+
+
+test("effect names identify their source in both languages and decimal movement has at most two places",()=>{
+ for(const code of ["fr","en"]){
+  const lang=JSON.parse(fs.readFileSync(new URL(`../lang/${code}.json`,import.meta.url)));
+  const names=Object.values(lang.TRUDVANG.Content.Transformation).map(row=>row.Name);
+  assert.equal(new Set(names).size,names.length);
+ }
+ assert.equal(movementDetails(10,[],[{mode:"land",method:"multiply",value:1/3}]).land.metersPerTwo,0.33);
+ assert.equal(movementDetails(10,[],[{mode:"land",method:"multiply",value:2/3}]).land.metersPerTwo,0.67);
+ assert.equal(movementDetails(10,[],[{mode:"land",method:"replace",value:12.3456}]).land.max,12.35);
+ assert.equal(rulesFromChanges([{key:"system.transformation.defense",type:"override",value:3},{key:"system.transformation.defense",type:"multiply",value:0.555}]).defense,1.67);
+});

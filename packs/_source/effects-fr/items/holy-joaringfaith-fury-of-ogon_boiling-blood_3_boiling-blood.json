@@ -1,7 +1,7 @@
 {
   "_id": "U1AauwXsYtZu0v1w",
   "_key": "!items!U1AauwXsYtZu0v1w",
-  "name": "Sang bouillant",
+  "name": "Sang bouillant (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "VIBX8cFaGbHcIdJe",
       "_key": "!items.effects!U1AauwXsYtZu0v1w.VIBX8cFaGbHcIdJe",
-      "name": "Sang bouillant",
+      "name": "Sang bouillant (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "La cible gagne 2d10 points de santé supplémentaires pendant la durée de l’effet. Les blessures subies restent après la disparition de ces points et peuvent alors mettre la cible en danger.",

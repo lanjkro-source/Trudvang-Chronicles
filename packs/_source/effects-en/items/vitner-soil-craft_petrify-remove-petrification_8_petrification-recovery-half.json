@@ -1,7 +1,7 @@
 {
   "_id": "XJzT3MeKfLgMhNiO",
   "_key": "!items!XJzT3MeKfLgMhNiO",
-  "name": "Stiffness after petrification — half",
+  "name": "Stiffness after petrification — half (Petrify/Remove Petrification — Soil Craft)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "eluPIQlRmSnToUpV",
       "_key": "!items.effects!XJzT3MeKfLgMhNiO.eluPIQlRmSnToUpV",
-      "name": "Stiffness after petrification — half",
+      "name": "Stiffness after petrification — half (Petrify/Remove Petrification — Soil Craft)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",

@@ -1,7 +1,7 @@
 {
   "_id": "2ohjNoRmSnToUpVq",
   "_key": "!items!2ohjNoRmSnToUpVq",
-  "name": "Riastarthae",
+  "name": "Riastarthae (Tribut de Morgu)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "XTFHr6z5A6B7C8D9",
       "_key": "!items.effects!2ohjNoRmSnToUpVq.XTFHr6z5A6B7C8D9",
-      "name": "Riastarthae",
+      "name": "Riastarthae (Tribut de Morgu)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",

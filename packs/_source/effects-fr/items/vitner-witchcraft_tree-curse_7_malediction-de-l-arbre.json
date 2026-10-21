@@ -1,7 +1,7 @@
 {
   "_id": "m5ogxeHcIdJeKfLg",
   "_key": "!items!m5ogxeHcIdJeKfLg",
-  "name": "Malédiction de l’arbre",
+  "name": "Malédiction de l’arbre (Sorcellerie)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "HTa8x0tZu0v1w2x3",
       "_key": "!items.effects!m5ogxeHcIdJeKfLg.HTa8x0tZu0v1w2x3",
-      "name": "Malédiction de l’arbre",
+      "name": "Malédiction de l’arbre (Sorcellerie)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",

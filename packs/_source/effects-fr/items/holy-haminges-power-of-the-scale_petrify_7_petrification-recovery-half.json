@@ -1,7 +1,7 @@
 {
   "_id": "gtcjrQkQlRmSnToU",
   "_key": "!items!gtcjrQkQlRmSnToU",
-  "name": "Raideur après pétrification — moitié",
+  "name": "Raideur après pétrification — moitié (Pétrification — Puissance de l'écaille)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "x6ALEJcIdJeKfLgM",
       "_key": "!items.effects!gtcjrQkQlRmSnToU.x6ALEJcIdJeKfLgM",
-      "name": "Raideur après pétrification — moitié",
+      "name": "Raideur après pétrification — moitié (Pétrification — Puissance de l'écaille)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",

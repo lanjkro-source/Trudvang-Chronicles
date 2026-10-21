@@ -1,7 +1,7 @@
 {
   "_id": "B4A6B6y4z5A6B7C8",
   "_key": "!items!B4A6B6y4z5A6B7C8",
-  "name": "Rage",
+  "name": "Rage (Fureur d’Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "SEvJuC7C8D9EaGbH",
       "_key": "!items.effects!B4A6B6y4z5A6B7C8.SEvJuC7C8D9EaGbH",
-      "name": "Rage",
+      "name": "Rage (Fureur d’Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa Taille passe à 1, sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",

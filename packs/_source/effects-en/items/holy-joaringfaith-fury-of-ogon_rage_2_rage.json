@@ -1,7 +1,7 @@
 {
   "_id": "B4A6B6y4z5A6B7C8",
   "_key": "!items!B4A6B6y4z5A6B7C8",
-  "name": "Rage",
+  "name": "Rage (Fury of Ogon)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "SEvJuC7C8D9EaGbH",
       "_key": "!items.effects!B4A6B6y4z5A6B7C8.SEvJuC7C8D9EaGbH",
-      "name": "Rage",
+      "name": "Rage (Fury of Ogon)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its Size becomes 1, its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",

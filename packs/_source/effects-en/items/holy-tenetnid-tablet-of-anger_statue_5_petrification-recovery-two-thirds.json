@@ -1,7 +1,7 @@
 {
   "_id": "oi5BwSlRmSnToUpV",
   "_key": "!items!oi5BwSlRmSnToUpV",
-  "name": "Stiffness after petrification — two thirds",
+  "name": "Stiffness after petrification — two thirds (Statue — Tablet of Anger)",
   "type": "effect",
   "img": "icons/svg/downgrade.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "xRBECQiOjPkQlRmS",
       "_key": "!items.effects!oi5BwSlRmSnToUpV.xRBECQiOjPkQlRmS",
-      "name": "Stiffness after petrification — two thirds",
+      "name": "Stiffness after petrification — two thirds (Statue — Tablet of Anger)",
       "type": "effect",
       "img": "icons/svg/downgrade.svg",
       "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",

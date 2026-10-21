@@ -1,7 +1,7 @@
 {
   "_id": "vzanzaE9EaGbHcId",
   "_key": "!items!vzanzaE9EaGbHcId",
-  "name": "Rage",
+  "name": "Rage (Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/blood.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "IIBLkvYtZu0v1w2x",
       "_key": "!items.effects!vzanzaE9EaGbHcId.IIBLkvYtZu0v1w2x",
-      "name": "Rage",
+      "name": "Rage (Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/blood.svg",
       "description": "The target gains 2d10 additional health points for the duration of the effect. Damage taken remains after these points disappear and may then put the target at risk.",
