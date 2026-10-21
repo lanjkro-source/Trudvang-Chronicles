@@ -90,13 +90,14 @@ function actor(items = [], {fighting = 8} = {}) {
   return instance;
 }
 
-test("real character and NPC preparation preserve health proportions as traits or maximum effects enter and expire",()=>{
+test("real character and NPC maximum-only effects heal once and leave current health on expiration",()=>{
  for(const type of ["character","npc"]){
   const instance=actor();instance.type=type;
   Object.assign(instance._source.system.resources.body,{value:30,max:40,maxAtValue:40,modifierAtValue:0});
   Object.assign(instance._source.system.traits,{strength:4,constitution:4});
   const prepare=active=>{
    instance.system=structuredClone(instance._source.system);
+   instance.system.effective.traits={...instance.system.traits};
    if(type==="character"){
     instance.system.effective.traits={...instance.system.traits,strength:active?5:4,constitution:active?8:4};
    }else if(active)instance.system.modifiers.bodyMax=5;
@@ -104,10 +105,77 @@ test("real character and NPC preparation preserve health proportions as traits o
   };
   prepare(true);
   assert.equal(instance.system.resources.body.max,45);
-  assert.equal(instance.system.resources.body.current,34);
+  assert.equal(instance.system.resources.body.current,35);
   for(const [key,value]of Object.entries(bodyHealthPersistence(instance)))instance._source.system.resources.body[key.split('.').at(-1)]=value;
-  prepare(true);assert.equal(instance.system.resources.body.current,34,"repeated preparation cannot rescale twice");
-  prepare(false);assert.equal(instance.system.resources.body.max,40);assert.equal(instance.system.resources.body.current,31);
+  prepare(true);assert.equal(instance.system.resources.body.current,35,"repeated preparation cannot heal twice");
+  prepare(false);assert.equal(instance.system.resources.body.max,40);assert.equal(instance.system.resources.body.current,35);
+ }
+});
+
+test("real PJ and PNJ vitality removal can leave negative HP while maximum-only removal cannot",()=>{
+ for(const type of ["character","npc"]){
+  const instance=actor();instance.type=type;
+  Object.assign(instance._source.system.resources.body,{value:30,max:40,maxAtValue:40,modifierAtValue:0,maximumOnlyAtValue:40});
+  Object.assign(instance._source.system.traits,{strength:4,constitution:4});
+  const e={id:"blood",name:"Sang brûlant",system:{changes:["bodyMax","bodyValue"].map(k=>({key:`system.modifiers.${k}`,type:"add",value:"13"}))}};
+  let active=true;
+  instance.allApplicableEffects=()=>active?[e]:[];
+  const persist=()=>{for(const [k,v]of Object.entries(bodyHealthPersistence(instance)??{}))set(instance._source,k,v);};
+  const prepare=()=>{instance.system=structuredClone(instance._source.system);instance.system.effective.traits={...instance.system.traits};if(active){instance.system.modifiers.bodyMax=13;instance.system.modifiers.bodyValue=13;}instance.prepareDerivedData();};
+  prepare();assert.equal(instance.system.resources.body.current,43);assert.equal(instance.system.resources.body.max,53);persist();
+  set(instance._source,"system.resources.body.value",-5);prepare();assert.equal(instance.system.resources.body.current,8);
+  active=false;prepare();assert.equal(instance.system.resources.body.current,-5);assert.equal(instance.system.resources.body.max,40);persist();
+  prepare();assert.equal(instance.system.resources.body.current,-5);
+ }
+});
+
+test("native Force and Constitution effects change NPC health by their effective trait delta",()=>{
+ const instance=actor();Object.assign(instance._source.system.resources.body,{value:30,max:40,maxAtValue:40,modifierAtValue:0});
+ instance.system=structuredClone(instance._source.system);
+ instance.system.effective.traits.strength=1;instance.system.effective.traits.constitution=6;
+ instance.prepareDerivedData();assert.equal(instance.system.resources.body.max,45);assert.equal(instance.system.resources.body.current,35);
+});
+
+test("refreshing a maximum-HP effect updates it atomically and never heals lost HP again",async t=>{
+ const implementation=foundry.documents.ActiveEffect.implementation;
+ const deepClone=foundry.utils.deepClone;foundry.utils.deepClone=structuredClone;
+ foundry.documents.ActiveEffect.implementation={getEffectStart:()=>({time:10})};
+ t.after(()=>{foundry.documents.ActiveEffect.implementation=implementation;foundry.utils.deepClone=deepClone;});
+ const instance=actor();instance.type="character";instance.effects=[];instance.canUserModify=()=>true;
+ Object.assign(instance._source.system.traits,{strength:4,constitution:4});
+ Object.assign(instance._source.system.resources.body,{value:30,maxAtValue:40,modifierAtValue:0,maximumOnlyAtValue:40});
+ instance.allApplicableEffects=()=>instance.effects;
+ const prepare=()=>{instance.system=structuredClone(instance._source.system);instance.system.effective.traits={...instance.system.traits};instance.system.modifiers.bodyMax=instance.effects.reduce((sum,e)=>sum+Number(e.system.changes[0].value),0);instance.prepareDerivedData();};
+ const persist=()=>{for(const [key,value]of Object.entries(bodyHealthPersistence(instance)??{}))set(instance._source,key,value);};
+ let creations=0;
+ instance.createEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");creations++;const e={...rows[0],id:"grant",_source:{duration:{value:60}},async update(data){Object.assign(this,data);prepare();persist();},async delete(){assert.fail("replacement must not expire the effect first");}};instance.effects.push(e);prepare();persist();return [e];};
+ const data={name:"Vigueur",duration:{value:60,units:"seconds"},system:{stackId:"strength",stacking:"replace",changes:[{key:"system.modifiers.bodyMax",type:"add",value:"5"}]}};
+ const first=await instance.createTrudvangEffect(data);assert.equal(instance.system.resources.body.current,35);
+ instance._source.system.resources.body.value=32;prepare();
+ const second=await instance.createTrudvangEffect(data);assert.equal(first,second);assert.equal(creations,1);assert.equal(instance.system.resources.body.current,32);assert.equal(instance.system.resources.body.max,45);
+});
+
+test("discipline effect VC propagates once to specialties on PJ and PNJ, with named contributors",async()=>{
+ for(const type of ["character","npc"]){
+  const discipline={id:"d",type:"ability",name:"Discrétion",system:{kind:"discipline",catalogId:"shadowing",parentSkill:"shadowArts",level:1,rollBonus:1}};
+  const specialty={id:"s",type:"ability",name:"Trouver & remarquer",system:{kind:"specialty",catalogId:"findingSpotting",parentSkill:"shadowArts",parentDiscipline:"Discrétion",level:1,rollBonus:2}};
+  const instance=actor(type==="character"?[discipline,specialty]:[]);instance.type=type;
+  instance.system.skills.shadowArts.value=7;instance.system.effective.skills.shadowArts=7;
+  instance.system.damage.penalty=0;instance.system.fearPenalty=0;
+  if(type==="npc")instance.system.skillTree=[{kind:"skill",skillId:"shadowArts",name:"Arts des ombres",value:7},{kind:"discipline",catalogId:"shadowing",name:"Discrétion",value:1},{kind:"specialty",catalogId:"findingSpotting",name:"Trouver & remarquer",value:1}];
+  const effect=(name,knowledge)=>({name,system:{changes:[{key:"system.transformation.knowledge",type:"override",value:JSON.stringify(knowledge)}]}});
+  instance.transformationProfile={knowledge:{shadowing:3,findingSpotting:2},effects:[effect("Renard",{shadowing:3}),effect("Vue",{findingSpotting:2})]};
+  assert.equal(instance.getAbilityBreakdown(discipline).total,11);
+  for(const item of [specialty,instance.findRuleKnowledge("findingSpotting")]){
+   const b=instance.getAbilityBreakdown(item);assert.equal(b.total,15);assert.equal(b.discipline,4);assert.equal(b.specialty,4);
+   assert.deepEqual(b.modifierRows.filter(r=>r.label).map(r=>[r.label,r.value,r.included]),[["Renard",3,true],["Vue",2,true]]);
+   assert.equal(instance.getAbilityBreakdown(item,{disciplineLevel:1}).total,15);
+  }
+  assert.equal(instance.findRuleKnowledge("shadowing").system.level,1,"a VC bonus must not become acquired ranks");
+  assert.equal(discipline.system.level,1);assert.equal(specialty.system.level,1);
+  const sheet=new TrudvangNpcSheet();sheet.actor=instance;
+  if(type==="npc"){const row=sheet._npcBookSkillRows().at(-1);assert.match(row.calculation,/Renard \+3/);assert.match(row.calculation,/Vue \+2/);assert.match(row.calculation,/15/);}
+  instance.transformationProfile={knowledge:{},effects:[]};assert.equal(instance.getAbilityBreakdown(specialty).total,10);
  }
 });
 
@@ -1976,6 +2044,18 @@ test("magic dialog separates intrinsic skill from every named effect and keeps t
     assert.match(content, /Compétence 7/);
     assert.match(content, /data-final-target>13</);
   } finally { foundry.applications.api.DialogV2 = before; }
+});
+
+test("magic method VCs include discipline and specialty effect bonuses once and name both",async t=>{
+ const instance=actor([...["vitnerShaping","galding"].map(catalogId=>({type:"ability",name:catalogId,system:{kind:catalogId==="vitnerShaping"?"discipline":"specialty",catalogId,level:1}}))]);
+ instance.system.skills.vitnerCraft.value=7;instance.system.effective.skills.vitnerCraft=7;
+ instance.system.damage.penalty=0;instance.system.fearPenalty=0;
+ instance.transformationProfile={knowledge:{vitnerShaping:3,galding:2},effects:[{name:"Maîtrise",system:{changes:[{key:"system.transformation.knowledge",type:"override",value:JSON.stringify({vitnerShaping:3})}]}},{name:"Chant",system:{changes:[{key:"system.transformation.knowledge",type:"override",value:JSON.stringify({galding:2})}]}}]};
+ const previous=foundry.applications.api.DialogV2;t.after(()=>{foundry.applications.api.DialogV2=previous;});
+ let content;foundry.applications.api.DialogV2=class{static async wait(options){content=options.content;return null;}};
+ await instance.rollSpell({type:"spell",name:"Test",system:{level:1,cost:2,modifier:0}});
+ assert.match(content,/data-final-target>15</);assert.match(content,/Maîtrise \+3/);assert.match(content,/Chant \+2/);
+ assert.equal(instance.findRuleKnowledge("vitnerShaping").system.level,1);
 });
 
 test("weapon attacks use size-adjusted VC per target with one allocation, one action and one die; parries ignore size", async t => {

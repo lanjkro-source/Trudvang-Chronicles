@@ -47,7 +47,7 @@ function markerMatches(effect, data) {
 async function synchronize(actor) {
   if (!canSynchronize(actor)) return false;
   const health=bodyHealthPersistence(actor);
-  if(health)await actor.update(health,{...syncOptions,trudvangHealthRatioSync:true});
+  if(health)await actor.update(health,{...syncOptions,trudvangHealthSync:true});
   const desired = new Map(actorStateStatuses(actor).map(state => [state.group, state]));
   const effects = values(actor.effects);
   const create = [], update = [], remove = [];
@@ -68,9 +68,11 @@ async function synchronize(actor) {
   }
   // Only our own markers are changed; manual statuses, item effects and
   // Sacrilege are never removed or rewritten by this synchronization.
-  if (remove.length) await actor.deleteEmbeddedDocuments("ActiveEffect", remove, syncOptions);
-  if (update.length) await actor.updateEmbeddedDocuments("ActiveEffect", update, syncOptions);
-  if (create.length) await actor.createEmbeddedDocuments("ActiveEffect", create, syncOptions);
+  // Foundry mutates operation options (parentUuid, updates, etc.). A shared
+  // object can retain an ActorDelta parent and misroute the next Actor update.
+  if (remove.length) await actor.deleteEmbeddedDocuments("ActiveEffect", remove, {...syncOptions});
+  if (update.length) await actor.updateEmbeddedDocuments("ActiveEffect", update, {...syncOptions});
+  if (create.length) await actor.createEmbeddedDocuments("ActiveEffect", create, {...syncOptions});
   return Boolean(health || remove.length || update.length || create.length);
 }
 
@@ -100,11 +102,11 @@ async function queueActorAndDependents(actor, options) {
   const dependents = new Set(values(actor.getDependentTokens?.({concreteOnly: true}))
     .map(token => token.actor).filter(dependent => dependent && dependent !== actor));
   // A dependent may have its own current HP but inherit the base maximum
-  // reference. Commit its ratio before that reference changes on the base.
+  // reference. Commit its health before that reference changes on the base.
   if(!options?.trudvangStatusSync&&(bodyHealthPersistence(actor)?.["system.resources.body.value"]!==undefined||bodyHealthPersistence(actor)?.["system.resources.body.temporary"]!==undefined)){
     await Promise.all([...dependents].filter(canSynchronize).map(async dependent=>{
       const health=bodyHealthPersistence(dependent);
-      if(health)await dependent.update(health,{...syncOptions,trudvangHealthRatioSync:true});
+      if(health)await dependent.update(health,{...syncOptions,trudvangHealthSync:true});
     }));
   }
   const changed = await queueSync(actor, options);
@@ -120,9 +122,9 @@ export async function syncWorldActorStatuses() {
   // start inheriting into their deltas. Their existing forms can have a
   // different maximum from the base actor already at initial world load.
   await Promise.all([...actors.values()].filter(actor=>actor.isToken&&canSynchronize(actor)
-    &&(!(Number(actor._source?.system?.resources?.body?.maxAtValue)>0)||Number(actor._source?.system?.resources?.body?.temporaryMaxAtValue??-1)<0)).map(async actor=>{
+    &&(!(Number(actor._source?.system?.resources?.body?.maxAtValue)>0)||Number(actor._source?.system?.resources?.body?.temporaryMaxAtValue??-1)<0||actor._source?.system?.resources?.body?.maximumOnlyAtValue==null)).map(async actor=>{
     const health=bodyHealthPersistence(actor);
-    if(health)await actor.update(health,{...syncOptions,trudvangHealthRatioSync:true});
+    if(health)await actor.update(health,{...syncOptions,trudvangHealthSync:true});
   }));
   // Synchronize bases first: token deltas can inherit their marker documents.
   await Promise.all(values(game.actors).map(actor => queueSync(actor)));

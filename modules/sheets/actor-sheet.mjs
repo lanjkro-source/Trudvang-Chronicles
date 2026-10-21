@@ -973,10 +973,18 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   }
 
   _npcBookSkillRows() {
-    return npcBookSkillRows(this.actor.system.skillTree, {...TRUDVANG, localize: key => game.i18n.localize(key)}).map(row => ({...row,
+    return npcBookSkillRows(this.actor.system.skillTree, {...TRUDVANG, localize: key => game.i18n.localize(key)}).map(row => {
+      if(row.kind!=="skill"&&row.catalogId){
+        const item={name:row.name,type:"ability",system:{catalogId:row.catalogId,kind:row.kind,parentSkill:row.skillKey,level:row.value,rollBonus:row.kind==="specialty"?2:1}};
+        const breakdown=this.actor.getAbilityBreakdown(item,{disciplineLevel:row.disciplineValue});
+        return {...row,displayValue:row.value,calculation:game.i18n.format(row.kind==="specialty"?"TRUDVANG.Calculation.Specialty":"TRUDVANG.Calculation.Discipline",{
+          skill:breakdown.skillLabel,discipline:row.kind==="specialty"?breakdown.discipline:breakdown.own,specialty:breakdown.specialty,total:breakdown.total,modifiers:calculationModifiers(breakdown)
+        })};
+      }
+      return {...row,
       displayValue: row.kind === "skill" && row.skillKey ? this.actor.getSkillValue(row.skillKey) : row.value,
       calculation: row.skillKey ? this.actor.skillValueLabel(row.skillKey) : row.value
-    }));
+    };});
   }
 
   async _openNpcBookSkill(index) {

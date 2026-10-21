@@ -103,8 +103,13 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(p.target==="damage"){const rows=changes.filter(c=>c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));if(rows.length)for(const row of rows)row.value=String(Number(row.value)+count*p.value);else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}}
  }
  if(rules.vitality){addVitality(await rollEffectValue(rules.vitality,{actor,name:effectName}));delete rules.vitality;}
+ // Replacing a dynamic effect must resolve against the actor without the old
+ // instance. A detached clone retains all other effects and equipment; it never
+ // deletes the live effect before the replacement has been prepared.
+ const replacing=(rules.traits?.length&&Array.from(actor.effects??[]).some(e=>e.system?.stackId===key));
+ const traitActor=replacing?await actor.clone({effects:Array.from(actor.effects).filter(e=>e.system?.stackId!==key).map(e=>effectSource(e))},{keepId:true}):actor;
   for(const row of rules.traits??[]){
-    const base=Number(actor.getTraitValue(row.trait)||0);
+    const base=Number(traitActor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;
     const result=transformedTrait(base,row);
     changes.push({key:`system.effective.traits.${row.trait}`,type:numeric||row.method==="replace"?"override":row.method==="highest"?"upgrade":"add",value:String(numeric?result:row.value),phase:"initial"});

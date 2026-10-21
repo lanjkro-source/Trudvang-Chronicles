@@ -25,7 +25,7 @@ import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
 import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthState, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
-import {proportionalBodyHealth,bodyHealthUpdate} from "../rules/body-health.mjs";
+import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -90,14 +90,14 @@ export class TrudvangActor extends BaseActor {
     }
     const body = changed["system.resources.body.value"] ?? changed.system?.resources?.body?.value;
     const explicitBasis=changed["system.resources.body.maxAtValue"]??changed.system?.resources?.body?.maxAtValue;
-    if(body!==undefined&&explicitBasis===undefined&&!options?.trudvangHealthRatioSync&&Number(body)!==Number(this._source.system.resources?.body?.value)){
-      // An explicit HP edit wins over scaling, including a simultaneous NPC
+    if(body!==undefined&&explicitBasis===undefined&&!options?.trudvangHealthSync&&Number(body)!==Number(this._source.system.resources?.body?.value)){
+      // An explicit HP edit wins over automatic gains, including a simultaneous NPC
       // maximum edit. Clone only for structural edits; ordinary damage is cheap.
       const structural=changed.system?.traits||changed.system?.details||changed.system?.resources?.body?.max!==undefined
         ||Object.keys(changed).some(k=>k.startsWith("system.traits.")||k.startsWith("system.details.")||k==="system.resources.body.max");
       const projected=structural&&this.clone?await this.clone(changed,{keepId:true}):this;
       const maximum=Number(projected.system.resources?.body?.max);
-      if(maximum>0){changed["system.resources.body.maxAtValue"]=maximum;changed["system.resources.body.modifierAtValue"]=Number(projected.system.modifiers?.bodyValue||0);}
+      if(maximum>0){changed["system.resources.body.maxAtValue"]=maximum;changed["system.resources.body.modifierAtValue"]=Number(projected.system.modifiers?.bodyValue||0);changed["system.resources.body.maximumOnlyAtValue"]=maximumOnlyHealth(projected,maximum);}
     }
     if (body !== undefined && Number(body) > 0) changed["system.survivalRounds"] = -1;
   }
@@ -137,7 +137,8 @@ export class TrudvangActor extends BaseActor {
       system.movement.current = Math.max(0, race.movement + this.getTraitValue("dexterity") + this.equippedMovementModifier + Number(system.modifiers.movement || 0));
       system.persistenceInWild = this.calculatePersistenceInWild();
     } else {
-      system.resources.body.max = Math.max(1, Number(system.resources.body.max || 1) + Number(system.modifiers.bodyMax || 0));
+      const traitHealth=this.transformationProfile.preserveHP?0:["strength","constitution"].reduce((sum,key)=>sum+this.getTraitValue(key)-Number(this._source.system.traitCurrent?.[key]??this._source.system.traits?.[key]??0),0);
+      system.resources.body.max = Math.max(1, Number(system.resources.body.max || 1) + traitHealth + Number(system.modifiers.bodyMax || 0));
       system.movement.current = Math.max(0, Number(system.movement.base || 0) + Number(system.modifiers.movement || 0));
     }
     if (this.transformationProfile.preserveHP && this.type === "character") {
@@ -182,9 +183,14 @@ export class TrudvangActor extends BaseActor {
         const source=this._source?.system?.resources?.body??resource;
         // Existing actors establish their baseline on first preparation. This
         // preserves their current health when loading an already active effect.
-        this._initialBodyBasis??={maximum:Number(resource.max),modifier};
+        const maximumOnly=maximumOnlyHealth(this,resource.max);
+        this._initialBodyBasis??={maximum:Number(resource.max),modifier,maximumOnly};
         const initialized=Number(source.maxAtValue)>0;
-        this.bodyHealthState=proportionalBodyHealth({value:resource.value,modifier,maximum:resource.max,
+        // TEMPORARY WORLD MIGRATION — initialize the additional baseline for
+        // pre-0.103 worlds without retroactively changing an active effect's HP.
+        const referenceMaximumOnly=source.maximumOnlyAtValue??(!initialized?this._initialBodyBasis.maximumOnly:
+          Number(source.maxAtValue)===Number(resource.max)&&Number(source.modifierAtValue)===modifier?maximumOnly:Number(source.maxAtValue)-Number(source.modifierAtValue||0));
+        this.bodyHealthState=resolveBodyHealth({value:resource.value,modifier,maximum:resource.max,maximumOnly,referenceMaximumOnly,
           referenceMaximum:initialized?source.maxAtValue:this._initialBodyBasis.maximum,
           referenceModifier:initialized?source.modifierAtValue:this._initialBodyBasis.modifier});
         resource.current=resource.value=this.bodyHealthState.current;
@@ -507,12 +513,13 @@ export class TrudvangActor extends BaseActor {
   /** Book knowledge participates in rules without inventing embedded ability items. */
   findRuleKnowledge(catalogId) {
     const embedded = this.findKnowledgeItem(catalogId);
-    if (embedded || this.type !== "npc") return embedded;
+    if(embedded||this.type!=="npc")return embedded;
     const row = npcBookSkillRows(this.system.skillTree, {skills: TRUDVANG.skills, knowledgeTree: TRUDVANG.knowledgeTree,
       localize: key => game.i18n.localize(key)}).find(row => row.catalogId === catalogId);
-    if (!row) return null;
-    return {name: row.name, uuid: "", type: "ability", system: {catalogId, kind: row.kind,
-      parentSkill: row.skillKey, level: row.value + Number(this.transformationProfile?.knowledge?.[catalogId] || 0) / (row.kind === "specialty" ? 2 : 1), offHandLevel: 0}};
+    if(!row)return null;
+    // Effect VC bonuses are not learned ranks: they must not grant permanent
+    // knowledge or inflate combat-point reserves and other rank-based benefits.
+    return {name:row.name,uuid:"",type:"ability",system:{catalogId,kind:row.kind,parentSkill:row.skillKey,level:row.value,offHandLevel:0}};
   }
 
   catalogText(catalogId, suffix) {
@@ -525,20 +532,28 @@ export class TrudvangActor extends BaseActor {
     const skill = skillValue == null ? this.getSkillValue(item.system.parentSkill) : Number(skillValue);
     const level = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(item.system.catalogId)
       ? Number(item.system.offHandLevel || 0)
-      : Number(item.system.level || 0);
+      : Number(item.system.level??0);
     const own = level * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1))
-      + (this.type !== "npc" || item.id ? Number(this.transformationProfile?.knowledge?.[item.system.catalogId] || 0) : 0);
+      + Number(this.transformationProfile?.knowledge?.[item.system.catalogId] || 0);
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
+    const parentId=item.system.kind==="specialty"?(this.getCatalogEntry(item.system.catalogId)?.parentCatalogId??parent?.system.catalogId):null;
+    const ruleParent=parentId?this.findRuleKnowledge(parentId):parent;
+    const parentBonus=Number(this.transformationProfile?.knowledge?.[parentId]||0);
     const discipline = item.system.kind === "specialty" && disciplineLevel != null ? Number(disciplineLevel)
-      : parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
+      +parentBonus:ruleParent?Number(ruleParent.system.level??0)*Number(ruleParent.system.rollBonus||1)+parentBonus:parentBonus;
     const modifierRows = this.skillRollModifierRows(item.system.parentSkill, {kind: "ability"});
-    for (const effect of this.transformationProfile?.effects ?? []) {
-      const bonus = effectRules(effect).knowledge?.[item.system.catalogId];
-      if (bonus) modifierRows.push({label: effect.name, value: Number(bonus), included: true});
-    }
+    modifierRows.push(...this.knowledgeEffectRows(item.system.catalogId,parentId));
     const base = skill + discipline + own;
     const modifier = rollModifierTotal(modifierRows);
     return {skill, skillLabel: this.skillValueLabel(item.system.parentSkill), discipline, specialty: item.system.kind === "specialty" ? own : 0, own, base, modifier, modifierRows, total: base + modifier};
+  }
+
+  knowledgeEffectRows(...catalogIds){
+    return (this.transformationProfile?.effects??[]).flatMap(effect=>{
+      const knowledge=effectRules(effect).knowledge??{};
+      const value=[...new Set(catalogIds.filter(Boolean))].reduce((sum,id)=>sum+Number(knowledge[id]||0),0);
+      return value?[{label:effect.name,value,included:true}]:[];
+    });
   }
 
   async alignCreationOrigins() {
@@ -1266,15 +1281,17 @@ export class TrudvangActor extends BaseActor {
     const skillKey = isDivine ? "faith" : "vitnerCraft";
     const disciplineId = isDivine ? "invoke" : "vitnerShaping";
     const specialtyIds = isDivine ? Object.values(TRUDVANG.religions).map(religion => religion.specialty) : ["galding", "sejding", "vyrding"];
-    const disciplineLevel = Number(this.findRuleKnowledge(disciplineId)?.system.level || 0);
+    const learnedDisciplineLevel = Number(this.findRuleKnowledge(disciplineId)?.system.level || 0);
+    const disciplineLevel=learnedDisciplineLevel+Number(this.transformationProfile?.knowledge?.[disciplineId]||0);
     const modifierRows = this.skillRollModifierRows(skillKey, {kind: "magic"});
     const skillValue = this.getSkillValue(skillKey);
     const methods = specialtyIds.map(id => ({id, item: this.findRuleKnowledge(id)})).filter(entry => Number(entry.item?.system.level || 0) > 0).map(entry => {
-      const specialtyBonus = 2 * Number(entry.item.system.level || 0);
+      const specialtyBonus = 2 * Number(entry.item.system.level || 0)+Number(this.transformationProfile?.knowledge?.[entry.id]||0);
       const target = skillValue + disciplineLevel + specialtyBonus;
-      return {id: entry.id, label: entry.item.name, target, breakdown: game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: this.skillValueLabel(skillKey), discipline: disciplineLevel, specialty: specialtyBonus, total: target})};
+      const contributors=effectContributionText(this.knowledgeEffectRows(disciplineId,entry.id));
+      return {id: entry.id, label: entry.item.name, target, breakdown: [game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: this.skillValueLabel(skillKey), discipline: disciplineLevel, specialty: specialtyBonus, total: target}),contributors].filter(Boolean).join(" · ")};
     });
-    if (!methods.length || disciplineLevel < 1) {
+    if (!methods.length || learnedDisciplineLevel < 1) {
       const target = this.type === "npc" ? this.system.magic?.castingTarget : null;
       if (target !== null && target !== undefined && Number.isFinite(Number(target))) {
         methods.splice(0, methods.length, {id: "innate", label: game.i18n.localize("TRUDVANG.Npc.InnateMagic"),
@@ -1865,9 +1882,12 @@ export class TrudvangActor extends BaseActor {
         await existing.update({start, duration: {...existing._source.duration, expired: false}});
         return existing;
       }
-      if (stacking === "refresh") {
+      // Update replacements atomically as well: deleting then recreating would
+      // expire a maximum-HP grant and heal it again during the same refresh.
+      if (["refresh","replace"].includes(stacking)) {
         const update = foundry.utils.deepClone(prepared);
         delete update._id;
+        if(stacking==="replace")update.disabled??=false;
         update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
         update.duration = {...(update.duration || existing._source.duration), expired: false};
         await existing.update(update);

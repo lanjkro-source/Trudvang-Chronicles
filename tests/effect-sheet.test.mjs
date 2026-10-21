@@ -247,7 +247,7 @@ function makeStackActor({existingPotency = 5, existingDuration = {value: 3, unit
   return {actor, existing};
 }
 
-test("createTrudvangEffect stacking matrix keeps current stack/refresh/replace/highest semantics", async () => {
+test("createTrudvangEffect stacking matrix replaces atomically without an intermediate effect expiration", async () => {
   const matrix = [
     {stacking: "stack", incoming: 7, survivor: "both", potency: 7},
     {stacking: "stack", incoming: 5, survivor: "both", potency: 5},
@@ -255,9 +255,9 @@ test("createTrudvangEffect stacking matrix keeps current stack/refresh/replace/h
     {stacking: "refresh", incoming: 7, survivor: "existing", potency: 7},
     {stacking: "refresh", incoming: 5, survivor: "existing", potency: 5},
     {stacking: "refresh", incoming: 3, survivor: "existing", potency: 3},
-    {stacking: "replace", incoming: 7, survivor: "new", potency: 7},
-    {stacking: "replace", incoming: 5, survivor: "new", potency: 5},
-    {stacking: "replace", incoming: 3, survivor: "new", potency: 3},
+    {stacking: "replace", incoming: 7, survivor: "existing", potency: 7},
+    {stacking: "replace", incoming: 5, survivor: "existing", potency: 5},
+    {stacking: "replace", incoming: 3, survivor: "existing", potency: 3},
     {stacking: "highest", incoming: 7, survivor: "new", potency: 7},
     {stacking: "highest", incoming: 5, survivor: "new", potency: 5},
     {stacking: "highest", incoming: 3, survivor: "existing", potency: 5}
@@ -280,7 +280,7 @@ test("createTrudvangEffect stacking matrix keeps current stack/refresh/replace/h
       assert.equal(actor.effects.length, 1, label);
       assert.equal(existing.system.potency, potency, label);
       assert.equal(existing._source.duration.expired, false, label);
-      if (stacking === "refresh") assert.equal(existing._source.duration.value, 9, label);
+      if (["refresh", "replace"].includes(stacking)) assert.equal(existing._source.duration.value, 9, label);
       else assert.equal(existing._source.duration.value, 3, label);
     } else {
       assert.equal(actor.effects.length, 1, label);

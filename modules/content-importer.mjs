@@ -972,7 +972,7 @@ export async function ensureUtilityMacros() {
   const gm = await upsertFolder("gm-macros", {nameKey: "TRUDVANG.Content.Folder.GMMacros", type: "Macro", defaultRole: "NONE"}, new Set(["Maitre de jeu", "Game Master"]));
   // TEMPORARY WORLD MIGRATION — remove historical per-user grants from the GM folder.
   const grants = Object.keys(gm.ownership ?? {}).filter(key => key !== "default");
-  if (grants.length) await gm.update(Object.fromEntries(grants.map(key => [`ownership.-=${key}`, null])));
+  if (grants.length) await gm.update({ownership: foundry.data.operators.ForcedReplacement.create({default: 0})});
   for (const [id, key, command, img, folder, permission] of [
     ["generic-situation", "SituationRoll", GENERIC_SITUATION_COMMAND, "icons/svg/d20.svg", players, 3],
     ["trait-situation", "TraitSituationRoll", TRAIT_SITUATION_COMMAND, TRAIT_SITUATION_IMAGE, gm, 0],
@@ -985,9 +985,9 @@ export async function ensureUtilityMacros() {
     const existing = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === id);
     if (existing) {
       // TEMPORARY WORLD MIGRATION — refresh old starter macro names, locations and access.
-      if (!permission) for (const key of Object.keys(existing.ownership ?? {})) {
-        if (key !== "default") data[`ownership.-=${key}`] = null;
-      }
+      // Ownership is a complete mapping: per-key deletion operators fail its
+      // V14 validation. Replace the mapping atomically using the supported API.
+      data.ownership = foundry.data.operators.ForcedReplacement.create(data.ownership);
       await existing.update(data);
     } else await Macro.createDocuments([data]);
   }

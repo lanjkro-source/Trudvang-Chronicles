@@ -12,9 +12,9 @@ export function effectChangePhase(change) {
 
 /** Explain prepared values; never apply effects a second time to the document.
  * Replay only for attribution, then reconcile with the authoritative total. */
-export function effectContributions(actor, key, {base = 0, total = get(actor, key)} = {}) {
+export function effectContributions(actor, key, {base = 0, total = get(actor, key), includeEffect = false} = {}) {
   const changes = Array.from(actor.allApplicableEffects?.() ?? actor.effects ?? [])
-    .filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false)
+    .filter(effect => !effect.disabled && !effect.isSuppressed && !effect.duration?.expired && effect.active !== false)
     .flatMap(effect => Array.from(effect.system?.changes ?? []).filter(change => change.key === key)
       .map(change => ({effect, change})))
     .sort((a, b) => priority(a.change) - priority(b.change));
@@ -33,7 +33,7 @@ export function effectContributions(actor, key, {base = 0, total = get(actor, ke
     else if (type === "downgrade" || type === 3) current = Math.min(current, value);
     else if (type === "override" || type === 5) current = value;
     else continue;
-    rows.push({label: effect.name, value: current - before});
+    rows.push({label: effect.name, value: current - before, ...(includeEffect ? {effect} : {})});
   }
   const residual = numeric(total) - current;
   if (residual) rows.push({labelKey: "TRUDVANG.Inspection.OtherModifiers", value: residual});

@@ -242,6 +242,23 @@ test("Rage adds height and mass without assigning a creature Size",()=>{
  const rages=Object.values(templates).filter(t=>t.id==="rage");assert.equal(rages.length,2);
  for(const t of rages){const rules=rulesFromChanges(t.changes);assert.equal(rules.size,undefined);assert.equal(rules.heightBonus,0.5);assert.equal(rules.weightBonus,30);}
 });
+
+test("reapplying a dynamic trait effect excludes its old copy but retains other bonuses",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ for(const [suffix,trait]of [["#hate","dexterity"],["#vigueur","strength"]]){
+  const key=Object.keys(templates).find(k=>k.endsWith(suffix));assert.ok(key);
+  const old={id:"old",system:{stackId:key,changes:[{key:`system.effective.traits.${trait}`,type:"override",value:"2"}]}},other={id:"other",system:{stackId:"other",changes:[]}};
+  let created,clones=0;
+  const actor={effects:[old,other],canUserModify:()=>true,getTraitValue:()=>2,
+   clone:async(data,options)=>{clones++;assert.equal(options.keepId,true);assert.deepEqual(data.effects.map(e=>e.id),["other"]);return {getTraitValue:()=>1};},
+   createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(actor,key);
+  assert.equal(clones,1);assert.deepEqual(actor.effects,[old,other]);
+  assert.equal(created.system.changes.find(c=>c.key===`system.effective.traits.${trait}`).value,"2","must not increase to 4 from the previous effect's effective 2");
+ }
+});
 test("a PC may use a granted reserve only for its granted attack; disabling the effect removes the reserve",()=>{
  const weapon={id:"extra",name:"Extra attack",type:"weapon",system:{category:"natural",combatSpecialty:"natural",naturalCombatPoints:5,naturalCombatPool:"extra"},flags:{[S]:{transformationGrant:"form"}}};
  const actor={type:"character",system:{skills:{fighting:{value:1}},combatPools:{},resources:{combat:{}}},items:[weapon],effects:[effect({})],getSkillValue:()=>1,findRuleKnowledge:()=>null};

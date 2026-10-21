@@ -18,6 +18,12 @@ Toute nouvelle migration de monde doit :
 |---|---|---|
 | Conversion de `transformation.rules` dans `applyTransformation()` | Les références antérieures à 0.97 stockaient les modifications dynamiques dans les flags ; Hâte avait donc `system.changes: []`. Lors d'un nouveau dépôt, convertir ces règles en lignes éditables avant de calculer les traits. Compléter l'ancienne règle de Hâte avec sa table de VC actuelle issue du catalogue JSON, sans remplacer les choix de trait du MJ. Ne pas recalculer les traits déjà résolus (`traitsApplied`), ni rétablir les lignes d'une référence au format actuel volontairement vidée. Aucun document source n'est réécrit. | Toutes les références des mondes de développement utilisent les modifications éditables ; supprimer le bloc identifié `TEMPORARY WORLD MIGRATION`. Conserver la lecture des données source et la validation des lignes. |
 
+## `modules/documents/actor.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| Initialisation de `maximumOnlyAtValue` dans `prepareDerivedData()` | Les mondes antérieurs à 0.103 ne séparaient pas le maximum seul de la vitalité modifiant aussi les PS actuels. Établir ce repère sans changer rétroactivement les PS d'un effet déjà actif. Réutiliser les anciens repères si une transition de maximum est en cours. Le synchroniseur habituel persiste le nouveau repère, y compris pour les acteurs synthétiques. | Tous les acteurs enregistrent `maximumOnlyAtValue` ; retirer le repli sur les anciens repères, en conservant l'initialisation normale des nouveaux acteurs. |
+
 ## `modules/rules/magic-capacity.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |

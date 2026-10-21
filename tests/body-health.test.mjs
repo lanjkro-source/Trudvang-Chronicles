@@ -1,42 +1,49 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {proportionalBodyHealth,bodyHealthPersistence,bodyHealthUpdate} from "../modules/rules/body-health.mjs";
+import {resolveBodyHealth,bodyHealthPersistence,bodyHealthUpdate,maximumOnlyHealth} from "../modules/rules/body-health.mjs";
 
-test("maximum changes preserve the current health ratio, rounding upwards on entry and exit",()=>{
- const apply=proportionalBodyHealth({value:30,referenceMaximum:40,maximum:45});
- assert.equal(apply.current,34);
- assert.equal(proportionalBodyHealth({value:34,referenceMaximum:45,maximum:40}).current,31);
- assert.equal(proportionalBodyHealth({value:40,referenceMaximum:40,maximum:45}).current,45);
- assert.equal(proportionalBodyHealth({value:0,referenceMaximum:40,maximum:45}).current,0);
- assert.equal(proportionalBodyHealth({value:-4,referenceMaximum:40,maximum:45}).current,-4);
- assert.equal(proportionalBodyHealth({value:30,referenceMaximum:40,maximum:35}).current,27);
+test("maximum-only gains heal by the same amount; expiration only clamps excess health",()=>{
+ assert.equal(resolveBodyHealth({value:30,referenceMaximum:40,maximum:45}).current,35);
+ assert.equal(resolveBodyHealth({value:35,referenceMaximum:45,maximum:40}).current,35);
+ assert.equal(resolveBodyHealth({value:44,referenceMaximum:45,maximum:40}).current,40);
+ assert.equal(resolveBodyHealth({value:0,referenceMaximum:40,maximum:45}).current,5);
+ assert.equal(resolveBodyHealth({value:-4,referenceMaximum:40,maximum:45}).current,1);
+ assert.equal(resolveBodyHealth({value:30,referenceMaximum:40,maximum:35}).current,30);
 });
 
-test("paired maximum/current bonuses cannot add health a second time, and reloads cannot reapply scaling",()=>{
- const state=proportionalBodyHealth({value:30,referenceMaximum:40,referenceModifier:0,maximum:45,modifier:5});
- assert.equal(state.current,34);
+test("paired vitality adds once, survives reloads and can kill on expiration",()=>{
+ const state=resolveBodyHealth({value:30,referenceMaximum:40,referenceModifier:0,maximum:53,modifier:13});
+ assert.equal(state.current,43);
  const actor={bodyHealthState:state,_source:{system:{resources:{body:{value:30,maxAtValue:40,modifierAtValue:0}}}}};
  const updates=bodyHealthPersistence(actor);
- assert.equal(updates["system.resources.body.value"],29);
- assert.equal(updates["system.resources.body.maxAtValue"],45);
- assert.equal(updates["system.resources.body.modifierAtValue"],5);
- const reload=proportionalBodyHealth({value:29,referenceMaximum:45,referenceModifier:5,maximum:45,modifier:5});
- assert.equal(reload.current,34);assert.equal(reload.rescaled,false);
- assert.equal(proportionalBodyHealth({value:29,referenceMaximum:45,referenceModifier:5,maximum:40,modifier:0}).current,31);
+ assert.equal(updates["system.resources.body.value"],30);
+ assert.equal(updates["system.resources.body.maximumOnlyAtValue"],40);
+ const reload=resolveBodyHealth({value:30,referenceMaximum:53,referenceModifier:13,maximum:53,modifier:13});
+ assert.equal(reload.current,43);assert.equal(reload.adjusted,false);
+ // 43 - 35 damage = 8 effective HP; intrinsic value is 8 - 13 = -5.
+ assert.equal(resolveBodyHealth({value:-5,referenceMaximum:53,referenceModifier:13,maximum:40,modifier:0}).current,-5);
 });
 
-test("damage before synchronization rebases even when its new stored value matches the previous source value",()=>{
- const actor={system:{resources:{body:{current:34,max:45}},modifiers:{bodyValue:0}}};
- const update=bodyHealthUpdate(actor,30);
- assert.deepEqual(update,{"system.resources.body.value":30,"system.resources.body.maxAtValue":45,"system.resources.body.modifierAtValue":0});
- assert.equal(proportionalBodyHealth({value:30,maximum:45,referenceMaximum:45}).current,30);
- assert.equal(proportionalBodyHealth({value:30,maximum:40,referenceMaximum:45}).current,27);
+test("maximum-only and paired grants can be added, removed or swapped together",()=>{
+ assert.equal(resolveBodyHealth({value:30,referenceMaximum:40,referenceModifier:0,maximum:58,modifier:13}).current,48);
+ assert.equal(resolveBodyHealth({value:35,referenceMaximum:58,referenceModifier:13,maximum:45,modifier:0}).current,35);
+ assert.equal(resolveBodyHealth({value:35,referenceMaximum:58,referenceModifier:13,maximum:53,modifier:13}).current,48);
+ assert.equal(resolveBodyHealth({value:30,referenceMaximum:45,referenceModifier:5,maximum:45,modifier:0}).current,35);
 });
 
-test("an ordinary value-only effect does not rewrite the intrinsic health, and initial baselines preserve existing actors",()=>{
- const state=proportionalBodyHealth({value:30,referenceMaximum:40,maximum:40,modifier:20});
- const actor={bodyHealthState:state,_source:{system:{resources:{body:{value:30,maxAtValue:40,modifierAtValue:0}}}}};
- assert.equal(state.current,40);
- assert.equal(bodyHealthPersistence(actor)["system.resources.body.value"],undefined);
- assert.equal(proportionalBodyHealth({value:30,maximum:45}).current,30,"initial load does not retroactively scale an existing active effect");
+test("damage before synchronization records the new baseline even if the stored value has not changed",()=>{
+ const actor={system:{resources:{body:{current:35,max:45}},modifiers:{bodyValue:0}}};
+ assert.deepEqual(bodyHealthUpdate(actor,30),{"system.resources.body.value":30,"system.resources.body.maxAtValue":45,"system.resources.body.modifierAtValue":0,"system.resources.body.maximumOnlyAtValue":45});
+ assert.equal(resolveBodyHealth({value:30,maximum:45,referenceMaximum:45}).current,30);
+ assert.equal(resolveBodyHealth({value:30,maximum:40,referenceMaximum:45}).current,30);
+});
+
+test("value-only effects stay independent of maximum-only health grants",()=>{
+ const effect=(paired,value)=>({system:{changes:[{key:"system.modifiers.bodyValue",type:"add",value:String(value)},...paired?[{key:"system.modifiers.bodyMax",type:"add",value:String(value)}]:[]]}});
+ const actor={system:{resources:{body:{max:53}},modifiers:{bodyValue:18}},effects:[effect(true,13),effect(false,5)]};
+ assert.equal(maximumOnlyHealth(actor),40);
+ assert.equal(resolveBodyHealth({value:30,modifier:18,maximum:53,maximumOnly:40,referenceMaximum:40,referenceModifier:0,referenceMaximumOnly:40}).current,48);
+ actor.effects.pop();assert.equal(maximumOnlyHealth(actor),40);
+ assert.equal(resolveBodyHealth({value:30,modifier:13,maximum:53,maximumOnly:40,referenceMaximum:53,referenceModifier:18,referenceMaximumOnly:40}).current,43);
+ assert.equal(resolveBodyHealth({value:30,maximum:45}).current,30,"initial load never retroactively heals an existing effect");
 });

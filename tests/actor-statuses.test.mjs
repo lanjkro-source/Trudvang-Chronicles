@@ -3,7 +3,7 @@ import {existsSync, readFileSync} from "node:fs";
 import test from "node:test";
 import {ACTOR_STATE_STATUSES, actorStateStatuses} from "../modules/rules/actor-status-resolver.mjs";
 import {registerActorStatusHooks, syncActorStateStatuses, syncWorldActorStatuses} from "../modules/actor-statuses.mjs";
-import {proportionalBodyHealth} from "../modules/rules/body-health.mjs";
+import {resolveBodyHealth} from "../modules/rules/body-health.mjs";
 
 const gm = {id: "gm", active: true};
 const owner = {id: "owner", active: true};
@@ -60,28 +60,61 @@ function makeActor({uuid = "Actor.test", type = "character", current = 20, level
 
 const statusIds = actor => actor.effects.flatMap(effect => Array.from(effect.statuses ?? []));
 
-test("the elected synchronizer commits health ratios once on application and expiry",async()=>{
+test("Foundry operation mutation cannot leak a token delta into later health or effect writes", async () => {
+  const token = makeActor({fear: 12});
+  const base = makeActor({fear: 12});
+  const operations = [];
+  for (const actor of [token, base]) {
+    for (const method of ["createEmbeddedDocuments", "updateEmbeddedDocuments", "deleteEmbeddedDocuments"]) {
+      const original = actor[method];
+      actor[method] = async (type, data, options) => {
+        assert.deepEqual(options, {trudvangStatusSync: true}, "each effect write starts with fresh options");
+        operations.push(options);
+        const result = await original(type, data, options);
+        // Core serializes the operation and leaves its parentUuid on this object.
+        options.parentUuid = "Scene.scene.Token.token.ActorDelta.delta";
+        options.updates = data;
+        return result;
+      };
+    }
+  }
+  await syncActorStateStatuses(token);
+  token.system.resources.fear.current = 25;
+  await syncActorStateStatuses(token);
+  token.system.resources.fear.current = 0;
+  await syncActorStateStatuses(token);
+  base._source = {system: {resources: {body: {value: 20, maxAtValue: 0}}}};
+  base.bodyHealthState = resolveBodyHealth({value: 20, maximum: 32});
+  base.update = async (changes, options) => {
+    assert.deepEqual(options, {trudvangStatusSync: true, trudvangHealthSync: true});
+    for (const [key, value] of Object.entries(changes)) base._source.system.resources.body[key.split(".").at(-1)] = value;
+  };
+  await syncActorStateStatuses(base);
+  assert.equal(new Set(operations).size, operations.length);
+});
+
+test("the elected synchronizer commits health transitions once on application and expiry",async()=>{
  const actor=makeActor();
  actor._source={system:{resources:{body:{value:30,maxAtValue:40,modifierAtValue:0}}}};
  let maximum=45,writes=0;
  const prepare=()=>{
   const body=actor._source.system.resources.body;
-  actor.bodyHealthState=proportionalBodyHealth({value:body.value,referenceMaximum:body.maxAtValue,referenceModifier:body.modifierAtValue,maximum});
+  actor.bodyHealthState=resolveBodyHealth({value:body.value,referenceMaximum:body.maxAtValue,referenceModifier:body.modifierAtValue,maximum});
   Object.assign(actor.system.resources.body,{current:actor.bodyHealthState.current,value:actor.bodyHealthState.current,max:maximum});
  };
  actor.update=async(changes,options)=>{
-  assert.equal(options.trudvangHealthRatioSync,true);assert.equal(options.trudvangStatusSync,true);
+  assert.equal(options.trudvangHealthSync,true);assert.equal(options.trudvangStatusSync,true);
   writes++;
   for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split('.').at(-1)]=value;
   prepare();
  };
  prepare();
  await Promise.all([syncActorStateStatuses(actor),syncActorStateStatuses(actor)]);
- assert.equal(writes,1);assert.equal(actor.system.resources.body.current,34);
+ assert.equal(writes,1);assert.equal(actor.system.resources.body.current,35);
  assert.equal(actor._source.system.resources.body.maxAtValue,45);
  maximum=40;prepare();
  await syncActorStateStatuses(actor);
- assert.equal(writes,2);assert.equal(actor.system.resources.body.current,31);
+ assert.equal(writes,2);assert.equal(actor.system.resources.body.current,35);
  await syncActorStateStatuses(actor);assert.equal(writes,2);
 });
 
@@ -93,7 +126,7 @@ test("initial world synchronization establishes independent unlinked-token basel
  const order=[];
  for(const [actor,maximum]of [[base,40],[token,45]]){
   actor._source={system:{resources:{body:{value:30,maxAtValue:0,modifierAtValue:0}}}};
-  actor.bodyHealthState=proportionalBodyHealth({value:30,maximum});
+  actor.bodyHealthState=resolveBodyHealth({value:30,maximum});
   actor.update=async changes=>{
    order.push(actor.uuid);
    for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split('.').at(-1)]=value;
@@ -107,7 +140,7 @@ test("initial world synchronization establishes independent unlinked-token basel
  assert.equal(token._source.system.resources.body.value,30,"existing health is preserved at initial load");
 });
 
-test("base maximum changes scale an injured unlinked token before its inherited reference is replaced",async t=>{
+test("base maximum changes heal an injured unlinked token before its inherited reference is replaced",async t=>{
  const previous=globalThis.Hooks;
  t.after(()=>{globalThis.Hooks=previous;});
  const hooks=new Map();globalThis.Hooks={on:(name,fn)=>hooks.set(name,fn),once:()=>{}};
@@ -119,7 +152,7 @@ test("base maximum changes scale an injured unlinked token before its inherited 
  let childOwnReference=false;
  const prepare=actor=>{
   const source=actor._source.system.resources.body;
-  actor.bodyHealthState=proportionalBodyHealth({value:source.value,referenceMaximum:source.maxAtValue,referenceModifier:0,maximum:45});
+  actor.bodyHealthState=resolveBodyHealth({value:source.value,referenceMaximum:source.maxAtValue,referenceModifier:0,maximum:45});
   Object.assign(actor.system.resources.body,{current:actor.bodyHealthState.current,value:actor.bodyHealthState.current,max:45});
  };
  for(const actor of [base,child])actor.update=async changes=>{
@@ -131,7 +164,7 @@ test("base maximum changes scale an injured unlinked token before its inherited 
  prepare(base);prepare(child);
  await hooks.get("updateActor")(base,{},{});
  assert.equal(base.system.resources.body.current,45);
- assert.equal(child.system.resources.body.current,34);
+ assert.equal(child.system.resources.body.current,35);
  assert.equal(child._source.system.resources.body.maxAtValue,45);
 });
 
