@@ -1,4 +1,4 @@
-import { isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
+import { isThrowingWeapon, isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -341,6 +341,7 @@ export function resolveWeaponActions({item, actor = null, modifiers = []} = {}) 
 
 /** Resolve an item's intrinsic damage notation and its contextual fixed modifier. */
 export function resolveDamage({item, actor = null, context = {}, modifiers = []} = {}) {
+  context={...context,usage:context.usage||(item?.system?.category==="natural"?"natural":isThrowingWeapon(item)?"throwing":["crossbow","bowsSlings"].includes(weaponType(item))?"ranged":"melee")};
   const formula = String(item?.system?.damage || "1d10").replace(/\s/g, "");
   return {
     formula,
@@ -360,6 +361,7 @@ export function resolveDamage({item, actor = null, context = {}, modifiers = []}
         ...(actor?.system?.modifiers?.damage ? [{id: "actor-damage", target: "damageModifier", operation: "add", phase: "effect",
           amount: actor.system.modifiers.damage, source: {kind: "effect", id: "actor-damage"},
           explanationKey: "TRUDVANG.Calculation.Equipment.ActorDamageBonus", explanationData: {amount: actor.system.modifiers.damage}}] : []),
+        ...(actor?.system?.modifiers?.damageByUsage?.[context.usage] ? [{id:"actor-damage-usage",target:"damageModifier",operation:"add",phase:"effect",amount:actor.system.modifiers.damageByUsage[context.usage],source:{kind:"effect",id:"actor-damage-usage"},explanationKey:"TRUDVANG.Calculation.Equipment.ActorDamageBonus",explanationData:{amount:actor.system.modifiers.damageByUsage[context.usage]}}] : []),
         ...modifiers]
     }),
     minimumTotal: 1

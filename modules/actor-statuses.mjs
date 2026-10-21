@@ -101,7 +101,7 @@ async function queueActorAndDependents(actor, options) {
     .map(token => token.actor).filter(dependent => dependent && dependent !== actor));
   // A dependent may have its own current HP but inherit the base maximum
   // reference. Commit its ratio before that reference changes on the base.
-  if(!options?.trudvangStatusSync&&bodyHealthPersistence(actor)?.["system.resources.body.value"]!==undefined){
+  if(!options?.trudvangStatusSync&&(bodyHealthPersistence(actor)?.["system.resources.body.value"]!==undefined||bodyHealthPersistence(actor)?.["system.resources.body.temporary"]!==undefined)){
     await Promise.all([...dependents].filter(canSynchronize).map(async dependent=>{
       const health=bodyHealthPersistence(dependent);
       if(health)await dependent.update(health,{...syncOptions,trudvangHealthRatioSync:true});
@@ -120,7 +120,7 @@ export async function syncWorldActorStatuses() {
   // start inheriting into their deltas. Their existing forms can have a
   // different maximum from the base actor already at initial world load.
   await Promise.all([...actors.values()].filter(actor=>actor.isToken&&canSynchronize(actor)
-    &&!(Number(actor._source?.system?.resources?.body?.maxAtValue)>0)).map(async actor=>{
+    &&(!(Number(actor._source?.system?.resources?.body?.maxAtValue)>0)||Number(actor._source?.system?.resources?.body?.temporaryMaxAtValue??-1)<0)).map(async actor=>{
     const health=bodyHealthPersistence(actor);
     if(health)await actor.update(health,{...syncOptions,trudvangHealthRatioSync:true});
   }));

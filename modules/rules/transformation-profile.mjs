@@ -63,29 +63,43 @@ export function movementDetails(base, rows, changes, modifier=0) {
 export function movementProfile(base, rows, changes, modifier=0) {
  return Object.fromEntries(Object.entries(movementDetails(base,rows,changes,modifier)).map(([mode,row])=>[mode,row.max]));
 }
-export function temporaryHealthLayers(actor) {
- return activeTransformations(actor).map(effect=>{
+export function temporaryHealthGrants(actor) {
+ const active=Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).filter(e=>!e.disabled&&!e.isSuppressed&&!e.duration?.expired);
+ return active.map(effect=>{
   const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
-  const configured=Number(effectRules(effect).temporaryHP??0);
-  const remaining=hasProfileChanges(effect)||meta?.editableChanges?Math.max(0,configured-Number(meta?.temporaryHPSpent??0)):Number(meta?.temporaryHP??configured);
-  return {effect,remaining};
- }).filter(e=>e.remaining>0);
+  let configured=Number(effectRules(effect).temporaryHP??0);
+  for(const row of effect.system?.changes??[])if(["system.resources.body.temporary","system.resources.body.temporaryMax"].includes(row.key)){
+   const value=Number(row.value)||0;
+   configured=row.type==="add"?configured+value:row.type==="subtract"?configured-value:row.type==="multiply"?configured*value:row.type==="upgrade"?Math.max(configured,value):row.type==="downgrade"?Math.min(configured,value):value;
+  }
+  const editable=hasProfileChanges(effect)||meta?.editableChanges||Array.from(effect.system?.changes??[]).some(c=>["system.resources.body.temporary","system.resources.body.temporaryMax"].includes(c.key));
+  const remaining=editable?Math.max(0,configured-Number(meta?.temporaryHPSpent??0)):Number(meta?.temporaryHP??configured);
+  return {effect,remaining,maximum:configured};
+ }).filter(row=>row.maximum!==0);
+}
+/** One shared current reserve; effects contribute only to its maximum. */
+export function temporaryHealthState(actor) {
+ const source=actor._source?.system?.resources?.body??{};
+ const grants=temporaryHealthGrants(actor);
+ const maximum=Math.max(0,Number(source.temporaryMax||0)+grants.reduce((sum,row)=>sum+row.maximum,0));
+ const stored=Math.max(0,Number(source.temporary)||0),reference=Number(source.temporaryMaxAtValue??-1);
+ const current=reference<0?Math.min(maximum,stored+grants.reduce((sum,row)=>sum+row.remaining,0))
+  :Math.min(maximum,stored+Math.max(0,maximum-reference));
+ return {current,maximum,reference};
+}
+export function temporaryHealthUpdate(actor,value) {
+ const state=temporaryHealthState(actor),current=Math.max(0,Number(value)||0),maximum=Math.max(state.maximum,current);
+ return {"system.resources.body.temporary":current,"system.resources.body.temporaryMaxAtValue":maximum,
+  ...(maximum>state.maximum?{"system.resources.body.temporaryMax":Math.max(0,Number(actor._source?.system.resources?.body?.temporaryMax)||0)+maximum-state.maximum}:{})};
+}
+export async function setTemporaryHealth(actor, value) {
+ await actor.update(temporaryHealthUpdate(actor,value));
 }
 export function remainingStoneIntegrity(effect) {
  const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
  return hasProfileChanges(effect)||meta?.editableChanges
   ? Math.max(0,Number(effectRules(effect).statueIntegrity??0)-Number(meta?.stoneIntegritySpent??0))
   : Number(meta?.stoneIntegrity??0);
-}
-export function consumeTemporaryHealth(layers,damage){
- let remaining=Math.max(0,damage);
- const updates=[];
- for(const {effect,remaining:hp}of layers){const loss=Math.min(remaining,hp);if(loss){
-  const meta=effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
-  const editable=hasProfileChanges(effect)||meta?.editableChanges;
-  updates.push({_id:effect.id,[`flags.${TRANSFORMATION_SCOPE}.transformation.${editable?"temporaryHPSpent":"temporaryHP"}`]:editable?Number(meta?.temporaryHPSpent??0)+loss:hp-loss});
- }remaining-=loss;}
- return {damage:remaining,updates};
 }
 /** Named, additive explanation of an explicitly scoped aftereffect multiplier. */
 export function transformationRollRows(actor,{target=0,skillKey="",traitKey="",movement=false}={}){

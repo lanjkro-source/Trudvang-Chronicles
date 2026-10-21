@@ -1,9 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {transformationProfile,transformedTrait,movementDetails,movementProfile,consumeTemporaryHealth,transformationRollRows,effectRules,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
+import {transformationProfile,transformedTrait,movementDetails,movementProfile,transformationRollRows,effectRules,TRANSFORMATION_SCOPE as S} from "../modules/rules/transformation-profile.mjs";
 import {EFFECT_RULE_PREFIX,changesFromRules,rulesFromChanges,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
-import {temporaryHealthLayers} from "../modules/rules/transformation-profile.mjs";
+import {temporaryHealthGrants,temporaryHealthState,temporaryHealthUpdate,setTemporaryHealth} from "../modules/rules/transformation-profile.mjs";
 import {effectStatus} from "../modules/rules/effect-status.mjs";
 import {TRANSFORMATION_TEMPLATES as templates,TRANSFORMATIONS_BY_SOURCE as sources} from "../modules/transformation-data.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "../modules/rule-test-data.mjs";
@@ -56,12 +56,10 @@ test("fear profiles upgrade the native factor and disabling the effect restores 
  assert.equal(transformationProfile(actor).fearFactor,undefined);
  assert.equal(actor.system.details.fearFactor,source);
 });
-test("temporary health is spent first and only unabsorbed damage reaches ordinary health",()=>{
- const a=effect({});const b=effect({},{id:"second"});
- const result=consumeTemporaryHealth([{effect:a,remaining:5},{effect:b,remaining:3}],10);
- assert.equal(result.damage,2);assert.equal(result.updates.length,2);
- assert.equal(result.updates[0][`flags.${S}.transformation.temporaryHP`],0);
- assert.equal(a.flags[S].transformation.temporaryHP,10);
+test("legacy temporary health balances initialize one shared reserve without restoring consumed points",()=>{
+ const a=effect({temporaryHP:5},{system:{changes:changesFromRules({temporaryHP:5})},flags:{[S]:{transformation:{editableChanges:true,temporaryHPSpent:2}}}});
+ const actor={effects:[a],_source:{system:{resources:{body:{temporary:0}}}}};
+ assert.deepEqual(temporaryHealthState(actor),{current:3,maximum:5,reference:-1});
 });
 test("the seven Joaring powers have all eight generated tests and a link for each test",()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
@@ -232,9 +230,10 @@ test("a hand-created rage effect exposes all consequences and spends its tempora
  actor.updateEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");for(const row of rows)for(const [key,value]of Object.entries(row))if(key!=="_id")set(rage,key,value);};
  actor.update=async updates=>{for(const [key,value]of Object.entries(updates)){set(actor,key,value);set(actor._source,key,value);}};
  const rules=effectRules(rage);
- assert.equal(rules.temporaryHP,5);assert.equal(rules.fearFactor,"1d10");
+ assert.equal(rage.system.changes.find(c=>c.key==="system.resources.body.temporaryMax").value,"5");assert.equal(rules.fearFactor,"1d10");
  assert.equal(rules.noParry,true);assert.equal(rules.noDodge,true);assert.equal(rules.ignoreFear,true);
- assert.deepEqual(rules.damage,{value:2,usages:["melee","throwing","natural"]});
+ assert.equal(rules.damage,undefined);
+ assert.ok(rage.system.changes.some(c=>c.key==="system.modifiers.damageByUsage.melee"&&c.type==="add"&&c.value==="2"));
  actor.transformationProfile=transformationProfile(actor);
  assert.equal(effectStatus(actor).temporaryHP,5);
  let result=await applyDamageToActor({actor,damage:3,ignoreArmor:true,announce:false});
@@ -243,8 +242,8 @@ test("a hand-created rage effect exposes all consequences and spends its tempora
  result=await applyDamageToActor({actor,damage:4,ignoreArmor:true,announce:false});
  assert.equal(result.temporaryDamage,2);assert.equal(result.bodyDamage,2);assert.equal(actor.system.resources.body.value,30);
  assert.equal(effectStatus(actor).temporaryHP,0);
- rage.disabled=true;assert.equal(temporaryHealthLayers(actor).length,0);
- rage.disabled=false;assert.equal(temporaryHealthLayers(actor).length,0,"reenabling never refills spent health");
+ rage.disabled=true;assert.equal(temporaryHealthGrants(actor).length,0);
+ rage.disabled=false;assert.equal(temporaryHealthState(actor).current,0,"a reprepare without a maximum transition cannot refill health");
  actor.effects=[];assert.equal(actor.system.resources.body.value,30,"removing Rage cannot erase wounds");
 });
 
@@ -344,7 +343,7 @@ test("compendium and chat effect references with cyclic native changes produce p
   await applyTransformation(actor,key,{source});
   assert.equal(created.name,"Rage du MJ");
   assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.rolls.attack").value,"1");
-  assert.equal(effectRules(created).temporaryHP,5);
+  assert.equal(temporaryHealthGrants({effects:[created]}).reduce((n,r)=>n+r.remaining,0),5);
  }
 });
 
@@ -414,4 +413,47 @@ test("linked effects apply the requested successor rather than copying their ori
   }
   assert.deepEqual(parent,before);
  }
+});
+
+
+test("one temporary reserve clamps to either remaining maximum and persists each transition",async()=>{
+ for(const removed of ["first","second"]){
+  const first={id:"first",system:{changes:[{key:"system.resources.body.temporaryMax",type:"add",value:"5"}]}},second={id:"second",system:{changes:[{key:"system.resources.body.temporaryMax",type:"add",value:"7"}]}};
+  const actor={effects:[first],_source:{system:{resources:{body:{temporary:0,temporaryMaxAtValue:-1}}}}};
+  const set=(o,path,value)=>{const keys=path.split("."),leaf=keys.pop();keys.reduce((o,k)=>o[k]??={},o)[leaf]=value;};
+  actor.update=async changes=>{for(const [k,v]of Object.entries(changes))set(actor._source,k,v);};
+  const sync=async()=>{actor.temporaryHealthState=temporaryHealthState(actor);const {bodyHealthPersistence}=await import("../modules/rules/body-health.mjs");await actor.update(bodyHealthPersistence(actor)||{});};
+  await sync();assert.equal(temporaryHealthState(actor).current,5);
+  actor.effects.push(second);await sync();assert.equal(temporaryHealthState(actor).current,12);
+  await setTemporaryHealth(actor,9);
+  actor.effects=actor.effects.filter(e=>e.id!==removed);await sync();
+  const maximum=removed==="first"?7:5;
+  assert.equal(temporaryHealthState(actor).maximum,maximum);assert.equal(temporaryHealthState(actor).current,maximum);
+  assert.equal(actor._source.system.resources.body.temporaryMaxAtValue,maximum);
+  await sync();assert.equal(temporaryHealthState(actor).current,maximum,"reload cannot alter the reserve");
+  await setTemporaryHealth(actor,2);await sync();assert.equal(temporaryHealthState(actor).current,2);
+  actor.effects=[];await sync();assert.equal(temporaryHealthState(actor).current,0);
+  actor.effects=[first];await sync();assert.equal(temporaryHealthState(actor).current,5);
+  await setTemporaryHealth(actor,8);assert.equal(temporaryHealthState(actor).current,8);assert.equal(temporaryHealthState(actor).maximum,8);
+ }
+});
+
+test("rolled vitality posts the actual dice to the normal chat pipeline for Dice So Nice",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize}};
+ const previousRoll=globalThis.Roll,previousChat=globalThis.ChatMessage;
+ const posted=[];let created;
+ try{
+  globalThis.Roll=class {constructor(formula){this.formula=formula;}async evaluate(){this.total=13;return this;}async toMessage(options){posted.push({roll:this,options});}};
+  globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.id})};
+  globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+  const key=Object.keys(templates).find(k=>k.endsWith("#boiling-blood"));
+  const actor={id:"target",canUserModify:()=>true,createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(actor,key);
+  assert.equal(posted.length,1);assert.equal(posted[0].roll.formula,"2d10");assert.equal(posted[0].roll.total,13);
+  assert.equal(posted[0].options.speaker.actor,"target");
+  assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyMax"&&c.value==="13"));
+  assert.ok(created.system.changes.some(c=>c.key==="system.modifiers.bodyValue"&&c.value==="13"));
+ }finally{globalThis.Roll=previousRoll;globalThis.ChatMessage=previousChat;}
 });

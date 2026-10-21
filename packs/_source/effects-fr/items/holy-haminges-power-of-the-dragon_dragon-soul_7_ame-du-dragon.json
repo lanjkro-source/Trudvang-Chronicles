@@ -35,9 +35,9 @@
             "priority": 50
           },
           {
-            "key": "system.transformation.damage",
-            "type": "override",
-            "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "key": "system.modifiers.damage",
+            "type": "add",
+            "value": "4",
             "phase": "initial",
             "priority": 50
           },

@@ -812,16 +812,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "5",
         "phase": "initial",
         "priority": 20
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "2",
         "phase": "initial",
         "priority": 20
       },
@@ -945,16 +959,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "10",
         "phase": "initial",
         "priority": 30
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "4",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "4",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "4",
         "phase": "initial",
         "priority": 30
       },
@@ -1064,16 +1092,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "15",
         "phase": "initial",
         "priority": 50
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "6",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "6",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "6",
         "phase": "initial",
         "priority": 50
       },
@@ -1377,8 +1419,8 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "1 minute",
     "changes": [
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "10",
         "phase": "initial",
         "priority": 30
@@ -1599,6 +1641,13 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
+        "value": "30",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
@@ -1616,13 +1665,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.size",
         "type": "override",
         "value": "7",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
-        "value": "30",
         "phase": "initial",
         "priority": 50
       },
@@ -1922,16 +1964,30 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "3 tours de jeu",
     "changes": [
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "3",
         "phase": "initial",
         "priority": 20
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "1",
         "phase": "initial",
         "priority": 20
       },
@@ -1987,16 +2043,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "6",
         "phase": "initial",
         "priority": 30
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":3,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "3",
         "phase": "initial",
         "priority": 30
       },
@@ -2082,16 +2152,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 40
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "10",
         "phase": "initial",
         "priority": 40
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":5,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "5",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "5",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "5",
         "phase": "initial",
         "priority": 40
       },
@@ -2173,9 +2257,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":1,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "1",
         "phase": "initial",
         "priority": 20
       },
@@ -2230,9 +2328,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "2",
         "phase": "initial",
         "priority": 30
       },
@@ -2301,9 +2413,9 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damage",
+        "type": "add",
+        "value": "4",
         "phase": "initial",
         "priority": 50
       },
@@ -2350,16 +2462,16 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
-        "key": "system.transformation.size",
-        "type": "override",
-        "value": "4",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
+        "value": "20",
         "phase": "initial",
         "priority": 50
       },
       {
-        "key": "system.transformation.temporaryHP",
+        "key": "system.transformation.size",
         "type": "override",
-        "value": "20",
+        "value": "4",
         "phase": "initial",
         "priority": 50
       },
@@ -3149,16 +3261,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "5",
         "phase": "initial",
         "priority": 20
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "2",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "2",
         "phase": "initial",
         "priority": 20
       },
@@ -3282,16 +3408,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 30
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "10",
         "phase": "initial",
         "priority": 30
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":4,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "4",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "4",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "4",
         "phase": "initial",
         "priority": 30
       },
@@ -3401,16 +3541,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 50
       },
       {
-        "key": "system.transformation.temporaryHP",
-        "type": "override",
+        "key": "system.resources.body.temporaryMax",
+        "type": "add",
         "value": "15",
         "phase": "initial",
         "priority": 50
       },
       {
-        "key": "system.transformation.damage",
-        "type": "override",
-        "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+        "key": "system.modifiers.damageByUsage.melee",
+        "type": "add",
+        "value": "6",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.modifiers.damageByUsage.throwing",
+        "type": "add",
+        "value": "6",
+        "phase": "initial",
+        "priority": 50
+      },
+      {
+        "key": "system.modifiers.damageByUsage.natural",
+        "type": "add",
+        "value": "6",
         "phase": "initial",
         "priority": 50
       },

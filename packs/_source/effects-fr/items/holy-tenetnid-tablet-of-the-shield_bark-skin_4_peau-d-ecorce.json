@@ -28,8 +28,8 @@
         "stacking": "replace",
         "changes": [
           {
-            "key": "system.transformation.temporaryHP",
-            "type": "override",
+            "key": "system.resources.body.temporaryMax",
+            "type": "add",
             "value": "10",
             "phase": "initial",
             "priority": 30

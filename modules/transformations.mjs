@@ -91,11 +91,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  for(const p of template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`])||0);if(!count)continue;
   if(p.target==="duration")duration.value+=count*p.value;
-  if(p.target==="temporaryHP")rules.temporaryHP=(rules.temporaryHP??0)+count*p.value;
+  if(p.target==="temporaryHP"){const row=changes.find(c=>c.key==="system.resources.body.temporaryMax");if(row)row.value=String(Number(row.value)+count*p.value);else rules.temporaryHP=(rules.temporaryHP??0)+count*p.value;}
   if(p.target==="protection")changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
-  if(p.target==="damage"){rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}
+  if(p.target==="damage"){const rows=changes.filter(c=>c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));if(rows.length)for(const row of rows)row.value=String(Number(row.value)+count*p.value);else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}}
  }
- if(rules.vitality){const amount=Number((await new Roll(rules.vitality).evaluate()).total);for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});delete rules.vitality;}
+ if(rules.vitality){const roll=await new Roll(rules.vitality).evaluate();await roll.toMessage({speaker:ChatMessage.getSpeaker({actor}),flavor:escapeHtml(effectName)});const amount=Number(roll.total);for(const key of ["bodyMax","bodyValue"])changes.push({key:`system.modifiers.${key}`,type:"add",value:String(amount),phase:"initial"});delete rules.vitality;}
   for(const row of rules.traits??[]){
     const base=Number(actor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;

@@ -73,6 +73,7 @@ function resource(initialValue, initialMax, {temporary = false, proportional = f
     max: number(initialMax),
     current: number(initialValue, {persisted: false}),
     ...(temporary ? {temporary: number(0)} : {}),
+    ...(temporary && proportional ? {temporaryMax:number(0,{min:0}),temporaryMaxAtValue:number(-1,{min:-1})} : {}),
     ...(proportional ? {maxAtValue:number(0,{min:0}),modifierAtValue:number(0)} : {})
   });
 }
@@ -170,6 +171,7 @@ function actorCommonSchema() {
       movement: integer(0, {persisted: false}),
       protection: integer(0, {persisted: false}),
       damage: integer(0, {persisted: false}),
+      damageByUsage: schema(Object.fromEntries(["melee","ranged","throwing","natural"].map(key=>[key,integer(0,{persisted:false})]))),
       fearFactor: integer(0, {persisted: false}),
       bodyMax: integer(0, {persisted: false}),
       combatMax: integer(0, {persisted: false}),
@@ -185,7 +187,7 @@ function actorCommonSchema() {
     transformation: schema(Object.fromEntries(EFFECT_RULE_KEYS.map(key => [key,
       new fields.StringField({required: true, nullable: false, initial: "", persisted: false})]))),
     resources: schema({
-      body: resource(32,32,{proportional:true}),
+      body: resource(32,32,{proportional:true,temporary:true}),
       raud: resource(0, 0),
       fear: resource(0, 50),
       combat: resource(1, 1),

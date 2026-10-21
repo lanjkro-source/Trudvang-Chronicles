@@ -1,3 +1,4 @@
+import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../tablet-catalog.mjs";
@@ -636,6 +637,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (!this.isEditable || !this.actor.isOwner) return;
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
+    if(editedPath==="trudvang.temporaryHP")await setTemporaryHealth(this.actor,formData.object[editedPath]);
+    if(changes.trudvang){delete changes.trudvang.temporaryHP;if(!Object.keys(changes.trudvang).length)delete changes.trudvang;}
     if (this.actor.type === "npc") {
       if (foundry.utils.hasProperty(changes, "system.magic.castingTarget")
         && foundry.utils.getProperty(changes, "system.magic.castingTarget") === "") {

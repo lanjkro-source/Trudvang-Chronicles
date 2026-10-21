@@ -349,3 +349,23 @@ test("base actor and equipment hooks also synchronize unlinked dependents, even 
   await callbacks.get("updateItem")({actor: base}, {system: {}}, {});
   assert.deepEqual(statusIds(tokenActor), ["trudvang-wound-light"]);
 });
+
+
+test("the elected synchronizer persists shared temporary health and maximum changes once",async()=>{
+ const {temporaryHealthState,temporaryHealthUpdate}=await import("../modules/rules/transformation-profile.mjs");
+ const actor=makeActor({current:32});
+ actor._source={system:{resources:{body:{value:32,temporary:0,temporaryMax:0,temporaryMaxAtValue:-1}}}};
+ const first={id:"grant5",system:{changes:[{key:"system.resources.body.temporaryMax",type:"add",value:"5"}]}},second={id:"grant7",system:{changes:[{key:"system.resources.body.temporaryMax",type:"add",value:"7"}]}};
+ const grants=[first];actor.allApplicableEffects=()=>grants;
+ let writes=0;
+ const prepare=()=>{actor.temporaryHealthState=temporaryHealthState(actor);actor.system.resources.body.temporary=actor.temporaryHealthState.current;};
+ actor.update=async changes=>{writes++;for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split(".").at(-1)]=value;prepare();};
+ prepare();await syncActorStateStatuses(actor);assert.equal(actor.system.resources.body.temporary,5);
+ grants.push(second);prepare();await syncActorStateStatuses(actor);assert.equal(actor.system.resources.body.temporary,12);
+ await actor.update(temporaryHealthUpdate(actor,9));
+ grants.shift();prepare();await syncActorStateStatuses(actor);assert.equal(actor.system.resources.body.temporary,7);
+ assert.equal(actor._source.system.resources.body.temporaryMaxAtValue,7);
+ const before=writes;await syncActorStateStatuses(actor);assert.equal(writes,before);
+ await actor.update(temporaryHealthUpdate(actor,3));grants.length=0;prepare();await syncActorStateStatuses(actor);
+ assert.equal(actor.system.resources.body.temporary,0);
+});

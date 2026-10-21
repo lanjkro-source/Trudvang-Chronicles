@@ -164,6 +164,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         "system.modifiers.rolls.allActions", "system.modifiers.rolls.combatActions",
         "system.modifiers.rolls.movementActions", "system.modifiers.rolls.attack",
         "system.modifiers.rolls.parry", "system.modifiers.rolls.magic", "system.modifiers.rolls.initiative",
+        "system.resources.body.temporaryMax", ...["melee","ranged","throwing","natural"].map(usage=>`system.modifiers.damageByUsage.${usage}`),
         "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.damage", "system.modifiers.fearFactor",
         "system.modifiers.bodyMax", "system.modifiers.combatMax",
         "system.modifiers.vitnerMax", "system.modifiers.divinityMax",

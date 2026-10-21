@@ -35,16 +35,30 @@
             "priority": 50
           },
           {
-            "key": "system.transformation.temporaryHP",
-            "type": "override",
+            "key": "system.resources.body.temporaryMax",
+            "type": "add",
             "value": "15",
             "phase": "initial",
             "priority": 50
           },
           {
-            "key": "system.transformation.damage",
-            "type": "override",
-            "value": "{\"value\":6,\"usages\":[\"melee\",\"throwing\",\"natural\"]}",
+            "key": "system.modifiers.damageByUsage.melee",
+            "type": "add",
+            "value": "6",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.modifiers.damageByUsage.throwing",
+            "type": "add",
+            "value": "6",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
+            "key": "system.modifiers.damageByUsage.natural",
+            "type": "add",
+            "value": "6",
             "phase": "initial",
             "priority": 50
           },

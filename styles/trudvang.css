@@ -1090,3 +1090,6 @@
 .trudvang-transformation-links { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: .5rem; }
 button.trudvang-transformation-link { width: auto; min-height: 0; height: auto; line-height: inherit; padding: .1em .4em; cursor: grab; color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-gold) 20%, transparent); border: 1px solid currentColor; border-radius: .3em; }
 button.trudvang-transformation-link:hover { filter: brightness(1.2); }
+
+.trudvang-sheet .effect-notes-section h3 { color: var(--trudvang-ink); text-shadow: none; }
+.trudvang-sheet .resource .temporary-health-input { color: inherit; background: inherit; }

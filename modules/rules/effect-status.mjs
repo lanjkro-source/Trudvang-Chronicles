@@ -1,12 +1,12 @@
-import {temporaryHealthLayers, effectRules, transformationProfile} from "./transformation-profile.mjs";
+import {temporaryHealthGrants, temporaryHealthState, effectRules, transformationProfile} from "./transformation-profile.mjs";
 import {effectContributions,effectContributionText} from "./effect-contributions.mjs";
 
 /** Shared PJ/PNJ state panel: prepared values plus the named contributors. */
 export function effectStatus(actor, {localize = key => key} = {}) {
   const profile = actor.transformationProfile ?? transformationProfile(actor);
-  const layers = temporaryHealthLayers(actor);
-  const temporaryHP = layers.reduce((total, layer) => total + layer.remaining, 0);
-  const temporaryHint = layers.map(({effect,remaining}) => `${effect.name} +${remaining}`).join(" · ");
+  const layers = temporaryHealthGrants(actor);
+  const temporary=temporaryHealthState(actor),temporaryHP=temporary.current;
+  const temporaryHint = layers.map(({effect,maximum}) => `${effect.name} ${maximum>0?"+":""}${maximum}`).join(" · ");
   const nativeEffects=Array.from(actor.allApplicableEffects?.()??actor.effects??[]).filter(e=>!e.disabled&&!e.isSuppressed&&!e.duration?.expired);
   const nativeMovement=nativeEffects.some(e=>Array.from(e.system?.changes??[]).some(c=>["system.modifiers.movement","system.effective.traits.dexterity"].includes(c.key)));
   const movementChanged = profile.movements.length || nativeMovement || Number(actor.system.modifiers?.movement);
@@ -30,5 +30,5 @@ export function effectStatus(actor, {localize = key => key} = {}) {
       ...(r.weightBonus?[`${localize("TRUDVANG.Effect.Profile.weightBonus")} +${r.weightBonus} kg`]:[])
     ].join(" · ")};
   });
-  return {temporaryHP, temporaryHint, movement, immunity, notes};
+  return {temporaryHP,temporaryMax:temporary.maximum, temporaryHint, movement, immunity, notes};
 }

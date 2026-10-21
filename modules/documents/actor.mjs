@@ -23,7 +23,7 @@ import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-re
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
-import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthLayers, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
+import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthState, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
 import {proportionalBodyHealth,bodyHealthUpdate} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
@@ -112,7 +112,7 @@ export class TrudvangActor extends BaseActor {
     const updates = {"system.resources.body.value": update};
     const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates, this);
     if (allowed === false) return this;
-    if (update < current && temporaryHealthLayers(this).length) {
+    if (update < current && temporaryHealthState(this).current>0) {
       const {applyDamageToActor} = await import("../damage-application.mjs");
       await applyDamageToActor({actor: this, damage: current - update, ignoreArmor: true});
       return this;
@@ -200,6 +200,9 @@ export class TrudvangActor extends BaseActor {
       resource.value = current;
     }
 
+    this.temporaryHealthState = temporaryHealthState(this);
+    system.resources.body.temporary = this.temporaryHealthState.current;
+    system.resources.body.temporaryMax = this.temporaryHealthState.maximum;
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
     if (ignoresWoundPenalties(this) || this.transformationProfile.ignoreWounds) system.damage.penalty = 0;
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));

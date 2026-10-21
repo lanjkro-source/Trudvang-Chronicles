@@ -44,7 +44,7 @@ export function rulesFromChanges(changes = []) {
 
 export function changesFromRules(rules, {priority} = {}) {
   return Object.entries(rules).filter(([key,value]) => EFFECT_RULE_KEYS.includes(key) && value !== undefined)
-    .map(([key,value]) => ({key: EFFECT_RULE_PREFIX + key, type: "override",
+    .map(([key,value]) => ({key: EFFECT_RULE_PREFIX + key, type: key === "temporaryHP" ? "add" : "override",
       value: typeof value === "string" ? value : JSON.stringify(value), phase: "initial",
       ...(Number.isFinite(priority) ? {priority} : {})}));
 }

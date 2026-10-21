@@ -35,16 +35,16 @@
             "priority": 50
           },
           {
-            "key": "system.transformation.size",
-            "type": "override",
-            "value": "4",
+            "key": "system.resources.body.temporaryMax",
+            "type": "add",
+            "value": "20",
             "phase": "initial",
             "priority": 50
           },
           {
-            "key": "system.transformation.temporaryHP",
+            "key": "system.transformation.size",
             "type": "override",
-            "value": "20",
+            "value": "4",
             "phase": "initial",
             "priority": 50
           },

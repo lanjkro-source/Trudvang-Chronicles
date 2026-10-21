@@ -35,6 +35,13 @@
             "priority": 50
           },
           {
+            "key": "system.resources.body.temporaryMax",
+            "type": "add",
+            "value": "30",
+            "phase": "initial",
+            "priority": 50
+          },
+          {
             "key": "system.transformation.traits",
             "type": "override",
             "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":6}]",
@@ -52,13 +59,6 @@
             "key": "system.transformation.size",
             "type": "override",
             "value": "7",
-            "phase": "initial",
-            "priority": 50
-          },
-          {
-            "key": "system.transformation.temporaryHP",
-            "type": "override",
-            "value": "30",
             "phase": "initial",
             "priority": 50
           },

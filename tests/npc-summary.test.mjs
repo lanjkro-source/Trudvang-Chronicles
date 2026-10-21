@@ -2036,3 +2036,22 @@ test("fractional movement expenditure rounds the multiplied distance to two deci
  const result=await npc.rollCombatMovement();
  assert.equal(result.paidMeters,0.3);
 });
+
+
+test("temporary health is editable on the real actor form and unrelated submissions cannot refill it",async()=>{
+ const npc=actor();npc.isOwner=true;
+ const reserve={id:"reserve",name:"Rage",system:{changes:[{key:"system.resources.body.temporaryMax",type:"add",value:"5"}]}};
+ npc.allApplicableEffects=()=>[reserve];
+ npc.updateEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");for(const row of rows)for(const [key,value]of Object.entries(row))if(key!=="_id")set(reserve,key,value);};
+ const updates=[];npc.update=async changes=>{updates.push(changes);for(const [key,value]of Object.entries(changes))if(key.includes("."))set(npc._source,key,value);};
+ const submit=TrudvangActorSheet.DEFAULT_OPTIONS.form.handler,sheet={actor:npc,isEditable:true};
+ await submit.call(sheet,{target:{name:"trudvang.temporaryHP"}},{},{object:{"trudvang.temporaryHP":"3"}});
+ assert.equal(npc._source.system.resources.body.temporary,3);
+ assert.equal(updates.at(-1).trudvang,undefined);
+ await submit.call(sheet,{target:{name:"name"}},{},{object:{name:"Test","trudvang.temporaryHP":"5"}});
+ assert.equal(npc._source.system.resources.body.temporary,3);
+ npc.prepareDerivedData();assert.equal(npc.system.resources.body.temporary,3);
+ npc.isOwner=false;
+ await submit.call(sheet,{target:{name:"trudvang.temporaryHP"}},{},{object:{"trudvang.temporaryHP":"0"}});
+ assert.equal(npc._source.system.resources.body.temporary,3);
+});

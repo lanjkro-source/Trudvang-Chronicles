@@ -1,6 +1,6 @@
 # Modificateurs d’effets : calcul et affichage
 
-Les chemins `system.effective.*` et `system.modifiers.*` sont des entrées des calculs dérivés. Ils utilisent la phase native `initial` de Foundry, avant ces calculs. La phase est normalisée en mémoire pour les effets déjà présents, sans migration du monde ni réapplication manuelle des changements. Les autres chemins conservent leur phase. Les valeurs préparées par Foundry restent la référence ; le calcul des contributions sert uniquement à les expliquer.
+Les chemins `system.effective.*` et `system.modifiers.*` sont des entrées des calculs dérivés. Ils utilisent la phase native `initial` de Foundry, avant ces calculs. La phase est normalisée en mémoire pour les effets déjà présents, sans migration du monde ni réapplication manuelle des changements. Le chemin `system.resources.body.temporaryMax` utilise également la phase initiale pour que les réserves soient préparées avant leur affichage. Les autres chemins conservent leur phase. Les valeurs préparées par Foundry restent la référence ; le calcul des contributions sert uniquement à les expliquer.
 
 | Chemin | Utilisation et affichage |
 | --- | --- |
@@ -22,3 +22,12 @@ Les chemins `system.effective.*` et `system.modifiers.*` sont des entrées des c
 Chaque contribution affiche le nom de l’effet et sa variation. Les effets désactivés ou supprimés ne contribuent pas ; deux effets qui se compensent restent visibles. Les contributions déjà incorporées au trait ou à la compétence portent la mention « déjà compris dans la valeur de base » et ne sont pas ajoutées une seconde fois. Les opérations addition, soustraction, multiplication, minimum, maximum et remplacement sont expliquées par leur variation effective ; toute différence avec la valeur native préparée est réconciliée sous « autres modificateurs ».
 
 Vérification isolée : tests des phases, des opérations et de chaque contexte de jet ; simulation de la préparation native avant/après effets avec le vrai calcul d’acteur ; rendu du dialogue magique avec plusieurs effets nommés. Aucun accès à une installation Foundry n’est nécessaire pour ces tests.
+
+
+## Réserves temporaires et dégâts
+
+Les nouvelles définitions d’effets additionnent leurs contributions au maximum `system.resources.body.temporaryMax`. Le courant `system.resources.body.temporary` est une réserve commune : les dégâts diminuent ce courant, jamais un solde propre à un effet. Une augmentation du maximum ajoute son gain au courant ; une diminution plafonne le courant au nouveau maximum, sans le remettre à zéro ni appliquer de proportion. Ainsi, 5 + 7 − 3 donne 9/12 ; supprimer le bonus de 7 laisse 5/5, tandis que supprimer celui de 5 laisse 7/7. Le maximum de référence enregistré avec le courant évite de rejouer les gains au rechargement. La synchronisation utilise le même auteur élu et les mêmes événements que les PS ordinaires. Les PS temporaires précèdent toujours les PS ordinaires. Une augmentation manuelle au-delà du maximum ajoute le complément au maximum propre à l’acteur.
+
+Les bonus généraux de dégâts utilisent `system.modifiers.damage`. Les bonus limités à une catégorie utilisent `system.modifiers.damageByUsage.melee`, `throwing`, `ranged` ou `natural`. Ils sont additifs, traités dans le même résolveur que les autres bonus et expliqués par leur source. Les anciennes données `system.transformation.damage` et `temporaryHP` restent lisibles pour préserver les effets personnalisés déjà enregistrés ; les nouvelles références ne les produisent plus. Les profils structurés restent nécessaires pour les formes, sens et attaques accordées.
+
+Les jets de vitalité sont publiés par `Roll.toMessage` : le résultat employé par l’effet est le jet du message, et Dice So Nice peut utiliser son intégration normale au chat sans seconde animation ajoutée par le système.

@@ -27,6 +27,7 @@ test("real PJ and PNJ templates show temporary health and effect state without a
    effectiveFearFactor:{valid:true},fearFactor:{dice:1,faces:10,threshold:0},fearFactorNotation:"1d10",transformationSummary:"obsolete banner",
    effectStatus:{temporaryHP:5,temporaryHint:"Rage +5",movement:[{label:"Vol",value:24,distance:"4 m",max:"24 m"}],immunity:"Rage",notes:[{name:"Rage",details:"Ignore les effets de la peur"}]}};
   const html=render(context);
+  assert.match(html,/name="trudvang.temporaryHP"[^>]*value="5"/);
   assert.match(html,/32 \/ 43<span class="temporary-hp"[^>]*> \+ 5/);
   assert.match(html,/Points de santé temporaires : \+5/);
   assert.match(html,/Vol<\/strong><span>4 m \/ 24 m/);

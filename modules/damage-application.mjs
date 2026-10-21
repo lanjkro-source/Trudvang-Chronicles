@@ -1,6 +1,7 @@
+import {temporaryHealthState,temporaryHealthUpdate} from "./rules/transformation-profile.mjs";
 import { weaponUsesTwoHands } from "./rules/combat-pool-resolver.mjs";
 import {postActorEvent} from "./actor-event-chat.mjs";
-import {temporaryHealthLayers, consumeTemporaryHealth, activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
+import {activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
 import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
 
@@ -77,11 +78,11 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
       result.bodyDamage -= loss;
     }
   }
-  const buffered = consumeTemporaryHealth(temporaryHealthLayers(actor), result.bodyDamage);
-  if (buffered.updates.length) await actor.updateEmbeddedDocuments("ActiveEffect", buffered.updates);
-  result.temporaryDamage = result.bodyDamage - buffered.damage;
-  result.bodyDamage = buffered.damage;
-  for (const effect of activeTransformations(actor)) if (effectRules(effect).endAtEmptyHP && !temporaryHealthLayers(actor).some(layer=>layer.effect===effect)) await effect.delete();
+  const reserve=temporaryHealthState(actor);
+  result.temporaryDamage=Math.min(reserve.current,result.bodyDamage);
+  if(result.temporaryDamage)await actor.update(temporaryHealthUpdate(actor,reserve.current-result.temporaryDamage));
+  result.bodyDamage-=result.temporaryDamage;
+  if(result.temporaryDamage&&reserve.current===result.temporaryDamage)for(const effect of activeTransformations(actor))if(effectRules(effect).endAtEmptyHP)await effect.delete();
   const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? actor._source?.system?.resources?.body?.value);
   if (result.bodyDamage) await actor.update(bodyHealthUpdate(actor,body-result.bodyDamage));
   if (announce) await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});

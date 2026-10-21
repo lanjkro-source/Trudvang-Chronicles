@@ -21,7 +21,7 @@ function effectSources(document, keys) {
 
 /** One immutable snapshot shared by the confirmation dialog and the final card. */
 export function prepareDamageRoll({item, actor = null, context = {}}) {
-  const usage = context.usage || (isThrowingWeapon(item) ? "throwing"
+  const usage = context.usage || (item.system?.category === "natural" ? "natural" : isThrowingWeapon(item) ? "throwing"
     : ["crossbow", "bowsSlings"].includes(weaponType(item)) ? "ranged" : "melee");
   const ranged = ["throwing", "ranged"].includes(usage) || Boolean(context.longRange);
   const longRange = context.longRange ?? (ranged && item.system?.rangeSelection === "long");
@@ -42,8 +42,8 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
   for (const step of resolution.modifier.steps) {
     if (!step.explanationKey && !step.source.name) continue;
     const source = step.id === "strength-damage" ? effectSources(actor, ["system.effective.traits.strength", "system.traits.strength"])
-      : step.id === "actor-damage" ? effectSources(actor, ["system.modifiers.damage"]) : step.source.name;
-    const labelKey = {"strength-damage": "TRUDVANG.DamageRoll.Strength", "actor-damage": "TRUDVANG.DamageRoll.ActorEffects",
+      : step.id === "actor-damage" ? effectSources(actor, ["system.modifiers.damage"]) : step.id === "actor-damage-usage" ? effectSources(actor,[`system.modifiers.damageByUsage.${usage}`]) : step.source.name;
+    const labelKey = {"strength-damage": "TRUDVANG.DamageRoll.Strength", "actor-damage": "TRUDVANG.DamageRoll.ActorEffects", "actor-damage-usage":"TRUDVANG.DamageRoll.ActorEffects",
       "improvised-throwing-damage": "TRUDVANG.DamageRoll.ImprovisedThrow"}[step.id];
     rows.push({labelKey: labelKey || step.explanationKey || "TRUDVANG.Dialog.EffectModifier", amount: step.delta,
       data: step.explanationData, value: signedDamage(step.delta), source});
@@ -53,6 +53,8 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
   if (actorEffects && !finite(actor?.system?.modifiers?.damage)) rows.push({labelKey: "TRUDVANG.DamageRoll.ActorEffects", amount: 0, value: "0", source: actorEffects});
   for (const step of resolution.openRoll.steps) if (step.delta) rows.push({labelKey: step.explanationKey || "TRUDVANG.DamageRoll.OpenRollEffects",
     data: step.explanationData, value: `${step.before} → ${step.after}`, source: step.source.name});
+  const scopedEffects=effectSources(actor,[`system.modifiers.damageByUsage.${usage}`]);
+  if(scopedEffects&&!finite(actor?.system?.modifiers?.damageByUsage?.[usage]))rows.push({labelKey:"TRUDVANG.DamageRoll.ActorEffects",amount:0,value:"0",source:scopedEffects});
   let transformationBonus = 0;
   for (const row of actor?.transformationProfile?.damage ?? []) if (row.usages.includes(usage)) {
     transformationBonus += row.value;

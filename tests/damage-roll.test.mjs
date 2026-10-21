@@ -209,3 +209,20 @@ test("invalid confirmation data never launches dice even if native form validati
   assert.equal(await rollDamage({actor: actor(), item: weapon()}), null);
   assert.equal(rolls.length, 0); assert.equal(cards.length, 0); assert.equal(warnings.length, 1);
 });
+
+
+test("native general and scoped damage effects add once and explain their sources for each weapon usage",()=>{
+ const wearer=actor(0,4,[effect("Âme du dragon","system.modifiers.damage",4),effect("Rage","system.modifiers.damageByUsage.melee",2),effect("Rage","system.modifiers.damageByUsage.natural",2),effect("Rage","system.modifiers.damageByUsage.throwing",2)]);
+ wearer.system.modifiers.damageByUsage={melee:2,natural:2,throwing:2,ranged:0};
+ for(const usage of ["melee","ranged","throwing","natural"]){
+  const profile=prepareDamageRoll({item:weapon(),actor:wearer,context:{usage}});
+  assert.equal(profile.fixedModifier,usage==="ranged"?4:6,usage);
+  assert.ok(profile.rows.some(row=>row.source?.includes("Âme du dragon")));
+  if(usage!=="ranged")assert.ok(profile.rows.some(row=>row.source?.includes("Rage")));
+ }
+ for(const combatSpecialty of ["bowsSlings","crossbow"]){
+  assert.equal(prepareDamageRoll({item:weapon({combatSpecialty,category:"ranged"}),actor:wearer}).fixedModifier,4);
+ }
+ const natural=prepareDamageRoll({item:weapon({category:"natural"}),actor:wearer});
+ assert.equal(natural.usage,"natural");assert.equal(natural.fixedModifier,6);
+});

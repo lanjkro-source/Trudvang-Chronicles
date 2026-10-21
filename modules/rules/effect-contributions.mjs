@@ -6,6 +6,7 @@ export const signedEffect = value => `${value > 0 ? "+" : ""}${value}`;
 /** Inputs to derived actor statistics must be applied before derived preparation.
  * Final changes to other document/token fields retain Foundry's own phase. */
 export function effectChangePhase(change) {
+  if(change.key==="system.resources.body.temporaryMax")return "initial";
   return /^system\.(?:effective\.|modifiers\.|transformation\.)/u.test(change.key || "") ? "initial" : change.phase ?? "final";
 }
 
