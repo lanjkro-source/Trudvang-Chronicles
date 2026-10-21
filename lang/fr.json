@@ -914,7 +914,7 @@
       "TotalSituationValue": "Valeur de situation totale",
       "OpenRollBonus": "Bonus",
       "OpenRollBreakdown": "Modificateur total",
-      "GenericSituationTitle": "Jet de situation générique",
+      "GenericSituationTitle": "Test de situation",
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modificateur",
       "SituationLabel": "Intitulé",
@@ -958,7 +958,13 @@
       "SizeAttackModifier": "Différence de taille"
     },
     "Macro": {
-      "SituationRoll": "Jet de situation générique",
+      "SituationRoll": "Test de situation",
+      "DamageRoll": "Jet de dégâts générique",
+      "FearRoll": "Jet de peur générique",
+      "RequestSituation": "Provoquer un test de situation",
+      "DiceCount": "Nombre de dés",
+      "DieType": "Type de dé",
+      "InvalidDice": "Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun).",
       "TraitSituationRoll": "Provoquer un jet de résistance",
       "LegacyTraitSituationRoll": "Jet de situation de trait"
     },
@@ -1336,7 +1342,8 @@
         "Animals": "Animaux",
         "CharacterCreation": "Création de Personnages",
         "CharacterCreationTables": "Création de Personnages",
-        "Macros": "Macros"
+        "Macros": "Joueurs",
+        "GMMacros": "Maitre de jeu"
       },
       "Scene": {
         "WorldMap": "Carte du monde",

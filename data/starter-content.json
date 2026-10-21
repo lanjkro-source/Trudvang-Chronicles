@@ -78,6 +78,12 @@
       "colorRole": "gold",
       "defaultRole": "OBSERVER"
     },
+    "gm-macros": {
+      "nameKey": "TRUDVANG.Content.Folder.GMMacros",
+      "type": "Macro",
+      "colorRole": "warning",
+      "defaultRole": "NONE"
+    },
     "macros": {
       "nameKey": "TRUDVANG.Content.Folder.Macros",
       "type": "Macro",

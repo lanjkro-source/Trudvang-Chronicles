@@ -1041,7 +1041,7 @@ export async function rollGenericSituation({target, label, modifier} = {}) {
  * GM dialog: pick a trait and a base Situation Value, then post a request card
  * with a button players click to roll with their controlled character.
  */
-export async function gmTraitSituationDialog() {
+export async function gmTraitSituationDialog({generic = false} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const traits = Object.entries(TRUDVANG.traits).map(([id, label]) => ({id, label: game.i18n.localize(label)}));
   const traitOptions = [
@@ -1049,14 +1049,14 @@ export async function gmTraitSituationDialog() {
     `<option value="aucun">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait"))}</option>`
   ].join("");
   const content = `<div class="trudvang roll-dialog">
-    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait"))}</label><select name="trait">${traitOptions}</select></div>
+    ${generic ? '<input type="hidden" name="trait" value="aucun">' : `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait"))}</label><select name="trait">${traitOptions}</select></div>`}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSV"))}</label><input name="sv" type="number" value="10"></div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSpecificTitle"))}</label><input name="title" type="text"></div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSuccessConsequence"))}</label><textarea name="success"></textarea></div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationFailureConsequence"))}</label><textarea name="failure"></textarea></div>
   </div>`;
   return DialogClass.wait({
-    window: {title: game.i18n.localize("TRUDVANG.Dialog.TraitSituationTitle")},
+    window: {title: game.i18n.localize(generic ? "TRUDVANG.Macro.RequestSituation" : "TRUDVANG.Dialog.TraitSituationTitle")},
     content,
     buttons: [
       {action: "roll", icon: "fas fa-shield-halved", label: game.i18n.localize("TRUDVANG.Action.ShowInChat"), default: true, callback: (event, button, dialog) => {
@@ -1080,13 +1080,13 @@ export async function gmTraitSituationDialog() {
  * Post a trait situation request card. Called by the GM macro after the dialog,
  * or directly with explicit arguments. No `rolls` field — Dice So Nice stays silent.
  */
-export async function requestTraitSituationRoll({traitKey, situationValue, title = "", success = "", failure = ""} = {}) {
+export async function requestTraitSituationRoll({traitKey, situationValue, title = "", success = "", failure = "", generic = false} = {}) {
   if (!game.user.isGM) {
     ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.GMOnly"));
     return null;
   }
   if (traitKey === undefined && situationValue === undefined) {
-    const answered = await gmTraitSituationDialog();
+    const answered = await gmTraitSituationDialog({generic});
     if (!answered) return null;
     ({traitKey, situationValue, title, success, failure} = answered);
   }

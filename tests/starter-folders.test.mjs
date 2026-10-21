@@ -80,7 +80,9 @@ test("every starter folder colour comes from the theme palette instead of a hard
 test("actors, roll tables and macros each get a distinct folder", () => {
   const byType = type => Object.entries(starter.folders).filter(([, config]) => config.type === type);
   assert.deepEqual(byType("Actor").map(([slug]) => slug), ["characters", "animals"]);
-  assert.deepEqual(byType("Macro").map(([slug]) => slug), ["macros"]);
+  assert.deepEqual(byType("Macro").map(([slug]) => slug), ["gm-macros", "macros"]);
+  assert.equal(starter.folders["gm-macros"].defaultRole, "NONE");
+  assert.equal(starter.folders.macros.defaultRole, "OWNER");
   assert.ok(byType("RollTable").length);
 
   // Groups that must read apart from one another; folders sharing a colour inside a group

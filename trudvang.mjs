@@ -8,7 +8,8 @@ import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
-import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
+import { ensureGenericSituationMacro, ensureTraitSituationMacro, ensureUtilityMacros, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
+import {rollGenericDamage, rollGenericFear, requestGenericSituationRoll} from "./modules/generic-rolls.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { registerCombatDockSupport } from "./modules/combat-dock.mjs";
 import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules/portrait.mjs";
@@ -156,7 +157,7 @@ Hooks.once("init", () => {
 
   // Public macro API: the generic situation-roll macro calls
   // `game.trudvang.rollGenericSituation()` (no actor required).
-  game.trudvang = {rollGenericSituation, requestTraitSituationRoll};
+  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll};
 
   const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
@@ -258,6 +259,7 @@ Hooks.once("ready", async () => {
     }
     try {
       await ensureTraitSituationMacro();
+      await ensureUtilityMacros();
     } catch (error) {
       console.error("Trudvang Chronicles | Trait situation macro crashed outside its own guard", error);
     }

@@ -914,7 +914,7 @@
       "TotalSituationValue": "Total Situation Value",
       "OpenRollBonus": "Bonus",
       "OpenRollBreakdown": "Total modifier",
-      "GenericSituationTitle": "Generic situation roll",
+      "GenericSituationTitle": "Situation test",
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modifier",
       "SituationLabel": "Label",
@@ -958,7 +958,13 @@
       "SizeAttackModifier": "Size difference"
     },
     "Macro": {
-      "SituationRoll": "Generic situation roll",
+      "SituationRoll": "Situation test",
+      "DamageRoll": "Generic damage roll",
+      "FearRoll": "Generic fear roll",
+      "RequestSituation": "Request a situation test",
+      "DiceCount": "Number of dice",
+      "DieType": "Die type",
+      "InvalidDice": "Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none).",
       "TraitSituationRoll": "Request a resistance roll",
       "LegacyTraitSituationRoll": "Trait situation roll"
     },
@@ -1336,7 +1342,8 @@
         "Animals": "Animals",
         "CharacterCreation": "Character Creation",
         "CharacterCreationTables": "Character Creation",
-        "Macros": "Macros"
+        "Macros": "Players",
+        "GMMacros": "Game Master"
       },
       "Scene": {
         "WorldMap": "World Map",

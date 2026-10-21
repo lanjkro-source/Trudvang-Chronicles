@@ -967,6 +967,32 @@ export async function ensureGenericSituationMacro(folder) {
   }
 }
 
+export async function ensureUtilityMacros() {
+  const players = await upsertFolder("macros", {nameKey: "TRUDVANG.Content.Folder.Macros", type: "Macro", defaultRole: "OWNER"}, new Set(["Macros", "Joueurs", "Players"]));
+  const gm = await upsertFolder("gm-macros", {nameKey: "TRUDVANG.Content.Folder.GMMacros", type: "Macro", defaultRole: "NONE"}, new Set(["Maitre de jeu", "Game Master"]));
+  // TEMPORARY WORLD MIGRATION — remove historical per-user grants from the GM folder.
+  const grants = Object.keys(gm.ownership ?? {}).filter(key => key !== "default");
+  if (grants.length) await gm.update(Object.fromEntries(grants.map(key => [`ownership.-=${key}`, null])));
+  for (const [id, key, command, img, folder, permission] of [
+    ["generic-situation", "SituationRoll", GENERIC_SITUATION_COMMAND, "icons/svg/d20.svg", players, 3],
+    ["trait-situation", "TraitSituationRoll", TRAIT_SITUATION_COMMAND, TRAIT_SITUATION_IMAGE, gm, 0],
+    ["generic-damage", "DamageRoll", "await game.trudvang.rollGenericDamage();", "icons/svg/sword.svg", players, 3],
+    ["generic-fear", "FearRoll", "await game.trudvang.rollGenericFear();", "icons/svg/terror.svg", players, 3],
+    ["request-situation", "RequestSituation", "await game.trudvang.requestGenericSituationRoll();", "icons/svg/d20.svg", gm, 0]
+  ]) {
+    const data = {name: game.i18n.localize(`TRUDVANG.Macro.${key}`), type: "script", scope: "global", command, img,
+      folder: folder.id, ownership: {default: permission}, flags: {[SYSTEM_ID]: {macro: id}}};
+    const existing = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === id);
+    if (existing) {
+      // TEMPORARY WORLD MIGRATION — refresh old starter macro names, locations and access.
+      if (!permission) for (const key of Object.keys(existing.ownership ?? {})) {
+        if (key !== "default") data[`ownership.-=${key}`] = null;
+      }
+      await existing.update(data);
+    } else await Macro.createDocuments([data]);
+  }
+}
+
 export async function ensureTraitSituationMacro() {
   try {
     const target = starterFolder("macros", "Macro");
@@ -1163,6 +1189,7 @@ export async function importStarterContent({force = false} = {}) {
     await upsertDefaultScene();
     await upsertWelcomeScene();
     await ensureGenericSituationMacro(folders.macros);
+    await ensureUtilityMacros();
 
     // TEMPORARY WORLD MIGRATION: before v0.23.0, purpose-built throwing weapons
     // were stored as the throwing specialty itself. Restore their melee profile

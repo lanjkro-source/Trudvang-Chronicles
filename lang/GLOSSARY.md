@@ -1067,7 +1067,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.TotalSituationValue` | Total Situation Value | Valeur de situation totale |
 | `TRUDVANG.Dialog.OpenRollBonus` | Bonus | Bonus |
 | `TRUDVANG.Dialog.OpenRollBreakdown` | Total modifier | Modificateur total |
-| `TRUDVANG.Dialog.GenericSituationTitle` | Generic situation roll | Jet de situation générique |
+| `TRUDVANG.Dialog.GenericSituationTitle` | Situation test | Test de situation |
 | `TRUDVANG.Dialog.GenericSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.GenericSituationModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
@@ -1117,7 +1117,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Macro.SituationRoll` | Generic situation roll | Jet de situation générique |
+| `TRUDVANG.Macro.SituationRoll` | Situation test | Test de situation |
+| `TRUDVANG.Macro.DamageRoll` | Generic damage roll | Jet de dégâts générique |
+| `TRUDVANG.Macro.FearRoll` | Generic fear roll | Jet de peur générique |
+| `TRUDVANG.Macro.RequestSituation` | Request a situation test | Provoquer un test de situation |
+| `TRUDVANG.Macro.DiceCount` | Number of dice | Nombre de dés |
+| `TRUDVANG.Macro.DieType` | Die type | Type de dé |
+| `TRUDVANG.Macro.InvalidDice` | Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none). | Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun). |
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 
@@ -1573,7 +1579,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Animals` | Animals | Animaux |
 | `TRUDVANG.Content.Folder.CharacterCreation` | Character Creation | Création de Personnages |
 | `TRUDVANG.Content.Folder.CharacterCreationTables` | Character Creation | Création de Personnages |
-| `TRUDVANG.Content.Folder.Macros` | Macros | Macros |
+| `TRUDVANG.Content.Folder.Macros` | Players | Joueurs |
+| `TRUDVANG.Content.Folder.GMMacros` | Game Master | Maitre de jeu |
 
 ## `TRUDVANG.Content.Scene`
 
