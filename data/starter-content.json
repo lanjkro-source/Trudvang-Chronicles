@@ -2043,7 +2043,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.FreshVidrjotunSap.Name",
       "type": "gear",
-      "img": "icons/consumables/potions/potion-jar-corked-green.webp",
+      "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
       "folder": "extracts",
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
@@ -2061,7 +2061,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name",
       "type": "gear",
-      "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
+      "img": "icons/equipment/neck/pendant-rough-orange.webp",
       "folder": "magicObjects",
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
@@ -2124,7 +2124,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.FirdtursirGold.Name",
       "type": "gear",
-      "img": "icons/svg/item-bag.svg",
+      "img": "icons/svg/coins.svg",
       "folder": "materials",
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary130"

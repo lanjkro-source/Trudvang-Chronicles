@@ -16,8 +16,10 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // installs the equipment-quality journal; version 53 installs the creature-harvest items
 // (materiaux + objets magiques + extraits); version 54 nests the materiaux under the
 // magic objects, moves the centennial amber and hides both from players (GM-only folder
-// plus item ownership).
-const CONTENT_VERSION = 54;
+// plus item ownership); version 55 fixes three icons that point at core paths proven
+// nowhere else: the amber uses the neck pendant, the fresh sap the green bulb bottle
+// (FrostboarFat path) and the firdtursir gold the coin pile svg.
+const CONTENT_VERSION = 55;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

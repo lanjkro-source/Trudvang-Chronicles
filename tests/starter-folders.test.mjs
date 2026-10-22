@@ -94,6 +94,15 @@ test("the materiaux and the centennial amber live in the GM-only magic objects f
     "the materiaux hang under the magic objects folder, not equipment");
   const amber = starter.items.find(item => item.nameKey === "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name");
   assert.equal(amber.folder, "magicObjects", "the centennial amber left the extracts folder");
+  // Regression: v0.105.2 — three of the twelve icons referenced core paths that no other
+  // shipped data ever used; the client silently rendered broken images for them. Only paths
+  // proven elsewhere in the modules (or confirmed core defaults) may be picked for the
+  // creature-harvest items.
+  assert.equal(amber.img, "icons/equipment/neck/pendant-rough-orange.webp");
+  const sap = starter.items.find(item => item.nameKey === "TRUDVANG.Content.Item.FreshVidrjotunSap.Name");
+  assert.equal(sap.img, "icons/consumables/potions/bottle-bulb-corked-green.webp");
+  const gold = starter.items.find(item => item.nameKey === "TRUDVANG.Content.Item.FirdtursirGold.Name");
+  assert.equal(gold.img, "icons/svg/coins.svg");
   const sourceCode = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
   assert.match(sourceCode, /folderOwnership\(source\.folders\[destination\]\)/,
     "starter items derive their ownership from the destination folder config");
