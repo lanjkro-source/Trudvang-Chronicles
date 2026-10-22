@@ -1,7 +1,7 @@
 {
   "name": "Garde royale",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg",
   "items": [
     {
       "name": "Breid swerd (épée large)",
@@ -97,12 +97,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+      "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg"
     ],
     "traits": {
       "strength": 1

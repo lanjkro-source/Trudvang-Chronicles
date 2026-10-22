@@ -1,7 +1,7 @@
 {
   "name": "Svartasi",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg",
   "items": [
     {
       "name": "Cotte de mailles",
@@ -40,12 +40,12 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+      "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg"
     ],
     "traits": {
       "strength": 5

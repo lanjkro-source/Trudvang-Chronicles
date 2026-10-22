@@ -1,7 +1,7 @@
 {
   "name": "Einharjar",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg",
   "items": [
     {
       "name": "Tvei swerd (épée à deux mains)",
@@ -45,12 +45,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+      "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg"
     ],
     "traits": {
       "strength": 4

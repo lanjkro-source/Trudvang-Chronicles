@@ -1,7 +1,7 @@
 {
   "name": "Falfax",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg",
   "items": [
     {
       "name": "Cuir",
@@ -40,12 +40,12 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+      "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg"
     ],
     "traits": {
       "strength": 4

@@ -1,7 +1,7 @@
 {
   "name": "Havar",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg",
   "items": [
     {
       "name": "Barda axi (hache de bataille)",
@@ -97,12 +97,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+      "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg"
     ],
     "traits": {
       "strength": 1

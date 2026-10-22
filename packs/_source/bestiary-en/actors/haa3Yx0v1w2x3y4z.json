@@ -1,7 +1,7 @@
 {
   "name": "Royal Militiaman",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg",
   "items": [
     {
       "name": "Glaaf (Short Sword)",
@@ -97,12 +97,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+      "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg"
     ],
     "traits": {},
     "skills": {},

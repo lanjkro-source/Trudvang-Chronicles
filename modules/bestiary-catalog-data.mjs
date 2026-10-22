@@ -17147,7 +17147,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon0",
@@ -17237,12 +17237,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+          "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg"
         ],
         "traits": {},
         "skills": {},
@@ -17310,7 +17310,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon0",
@@ -17400,12 +17400,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+          "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg"
         ],
         "traits": {
           "strength": 1
@@ -17475,7 +17475,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Weapon0",
@@ -17517,12 +17517,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+          "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg"
         ],
         "traits": {
           "strength": 4
@@ -17584,7 +17584,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Weapon0",
@@ -17626,12 +17626,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+          "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg"
         ],
         "traits": {
           "strength": 4
@@ -17701,7 +17701,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon0",
@@ -17791,12 +17791,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+          "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg"
         ],
         "traits": {
           "strength": 1
@@ -17866,7 +17866,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon0",
@@ -17954,12 +17954,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+          "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg"
         ],
         "traits": {
           "strength": 2
@@ -18029,7 +18029,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Armor0",
@@ -18066,12 +18066,12 @@ export const BESTIARY_ENTRIES = [
         "width": 2,
         "height": 2,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+          "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg"
         ],
         "traits": {
           "strength": 4
@@ -18138,7 +18138,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg",
       "items": [
         {
           "nameKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Armor0",
@@ -18175,12 +18175,12 @@ export const BESTIARY_ENTRIES = [
         "width": 2,
         "height": 2,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+          "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg"
         ],
         "traits": {
           "strength": 5
@@ -18247,7 +18247,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg",
       "items": [],
       "effects": [],
       "flags": {
@@ -18261,12 +18261,12 @@ export const BESTIARY_ENTRIES = [
         "width": 3,
         "height": 3,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+          "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg"
         ],
         "traits": {
           "strength": 6
@@ -18333,7 +18333,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg",
       "items": [],
       "effects": [],
       "flags": {
@@ -18347,12 +18347,12 @@ export const BESTIARY_ENTRIES = [
         "width": 0.5,
         "height": 0.5,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+          "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg"
         ],
         "traits": {},
         "skills": {},
@@ -18417,7 +18417,7 @@ export const BESTIARY_ENTRIES = [
     "actor": {
       "nameKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Name",
       "type": "npc",
-      "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg",
+      "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg",
       "items": [],
       "effects": [],
       "flags": {
@@ -18431,12 +18431,12 @@ export const BESTIARY_ENTRIES = [
         "width": 1,
         "height": 1,
         "texture": {
-          "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+          "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
         }
       },
       "system": {
         "portraits": [
-          "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+          "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
         ],
         "traits": {
           "intelligence": -4,

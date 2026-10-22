@@ -1,7 +1,7 @@
 {
   "name": "One of the Nine Kings",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg",
   "items": [
     {
       "name": "Tvei Swerd (Two-Handed Sword)",
@@ -45,12 +45,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+      "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg"
     ],
     "traits": {
       "strength": 4

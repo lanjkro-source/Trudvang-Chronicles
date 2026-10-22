@@ -1,7 +1,7 @@
 {
   "name": "Skölddíser",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg",
   "items": [
     {
       "name": "Barda swerd (épée de bataille)",
@@ -95,12 +95,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+      "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg"
     ],
     "traits": {
       "strength": 2

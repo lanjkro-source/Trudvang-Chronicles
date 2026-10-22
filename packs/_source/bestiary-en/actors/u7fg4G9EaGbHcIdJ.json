@@ -1,7 +1,7 @@
 {
   "name": "Snarfari",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg",
   "items": [],
   "effects": [],
   "flags": {
@@ -15,12 +15,12 @@
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+      "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg"
     ],
     "traits": {
       "strength": 6

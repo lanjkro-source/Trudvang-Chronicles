@@ -1,7 +1,7 @@
 {
   "name": "Esclave mort-vivant",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg",
   "items": [],
   "effects": [],
   "flags": {
@@ -15,12 +15,12 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+      "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
     ],
     "traits": {
       "intelligence": -4,

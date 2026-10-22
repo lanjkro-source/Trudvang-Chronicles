@@ -1,7 +1,7 @@
 {
   "name": "Enfant de la pierre",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg",
   "items": [],
   "effects": [],
   "flags": {
@@ -15,12 +15,12 @@
     "width": 0.5,
     "height": 0.5,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+      "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg"
     ],
     "traits": {},
     "skills": {},
