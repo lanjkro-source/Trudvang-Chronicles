@@ -278,6 +278,46 @@ test("portrait subclass binds prepared icons when the module lookup throws", asy
   ourNode.listeners.click[0]({});
   assert.deepEqual(npc.rolls, [[0, 0]]);
 });
+test("portrait effect entries carry the short summary, not the full description", async () => {
+  registerCombatDockSupport();
+  const init = hookListeners["combat-tracker-dock-init"].at(-1);
+  class ModulePortrait {
+    constructor() {
+      this.actor = null;
+    }
+    async getData() {
+      return {effects: new Set(this.effects ?? [
+        {uuid: "u1.mp-1", name: "État de rage", description: "<p>Paragraphe très long…</p>"},
+        {uuid: "core.missing", name: "Défaite", description: "<p>Texte du module</p>"}
+      ])};
+    }
+  }
+  const config = {CombatantPortrait: ModulePortrait};
+  init(config);
+  const portrait = new config.CombatantPortrait();
+  portrait.combatant = {actor: {temporaryEffects: [
+    {uuid: "u1.mp-1", system: {changes: [{key: "system.damage.penalty", type: "add", value: "-1"}]}},
+    {uuid: "u2.mp-2", flags: {"trudvang-chronicles": {transformation: {summary: "Cheval (+6 m×2 CP)"}}},
+      system: {changes: []}}
+  ]}};
+  const data = await portrait.getData();
+  const [rewritten, untouched] = [...data.effects];
+  assert.equal(rewritten.name, "État de rage");
+  assert.doesNotMatch(rewritten.description, /Paragraphe/, "the long description is gone from the tooltip");
+  assert.doesNotMatch(rewritten.description, /<[a-z]/i, "summary stays plain text (module escapes it)");
+  assert.equal(rewritten.description, "system.damage.penalty add -1");
+  assert.equal(untouched.description, "<p>Texte du module</p>", "unknown uuid keeps the module description");
+  const drifted = new config.CombatantPortrait();
+  drifted.combatant = {actor: {temporaryEffects: [
+    {uuid: "u3.mp-3", flags: {"trudvang-chronicles": {transformation: {summary: "Cheval <b>asset</b>"}}}, system: {changes: []}}
+  ]}};
+  drifted.effects = [{uuid: "u3.mp-3", name: "Cheval", description: "<p>Paragraphe très long…</p>"}];
+  const payload = await drifted.getData();
+  const [transformed] = [...payload.effects];
+  assert.ok(transformed.description.includes("Cheval"), "transformation summary surfaces");
+  assert.doesNotMatch(transformed.description, /</, "markup never reaches the escaped tooltip");
+});
+
 test("handler never throws on drifted module shapes", () => {
   const init = hookListeners["combat-tracker-dock-init"].at(-1);
   assert.doesNotThrow(() => init({CombatantPortrait: class {

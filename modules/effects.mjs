@@ -171,18 +171,6 @@ export function isImmobilized(actor) {
   return false;
 }
 
-export function effectChangeSummary(effect) {
-  return Array.from(effect.system.changes || []).map(change => {
-    const value = typeof change.value === "string" ? change.value : JSON.stringify(change.value);
-    return `${change.key} ${change.type} ${value}`;
-  }).join(" · ");
-}
-
-/** Short descriptive tooltip supplied by a catalogue effect, with a useful fallback for hand-made effects. */
-export function effectTooltipSummary(effect) {
-  const parentSummary = effect?.parent?.type === "effect" ? effect.parent.system?.summary : "";
-  return effect?.flags?.["trudvang-chronicles"]?.transformation?.summary
-    || effect?.system?.summary
-    || parentSummary
-    || effectChangeSummary(effect);
-}
+// Summary helpers live in effects-summary.mjs so the combat dock (a Foundry-free
+// test environment) can import them without dragging the ActiveEffect schema along.
+export {effectChangeSummary, effectTooltipSummary} from "./effects-summary.mjs";

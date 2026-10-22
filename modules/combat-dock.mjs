@@ -13,6 +13,7 @@
 import {ignoresWoundPenalties} from "./rules/npc-summary.mjs";
 import {resolveNpcPreparedAction} from "./rules/npc-prepared-actions.mjs";
 import {resolveFearStatus} from "./rules/fear-resolver.mjs";
+import {effectTooltipSummary} from "./effects-summary.mjs";
 
 export const COMBAT_DOCK_SYSTEM_ID = "trudvang-chronicles";
 export const COMBAT_DOCK_HOOK = "combat-tracker-dock-init";
@@ -307,6 +308,28 @@ export function buildTrackedCombatEntry() {
     iconHTML: '<i class="fas fa-swords" aria-hidden="true"></i>'};
 }
 
+/**
+ * The dock module (5.0.2, CombatantPortrait.getData) fills every portrait-effect
+ * entry with the effect's full enriched description, which drowns the tooltip in
+ * paragraphs of rules text. Rewrite each entry to the system's short effect
+ * summary text (the same wording the item and actor sheets use as
+ * effectTooltipSummary), resolved against the actor's temporary effects by uuid;
+ * entries without a matching effect document keep the module's own description.
+ */
+function replaceEffectDescriptions(portrait, data) {
+  if (typeof data?.effects?.[Symbol.iterator] !== "function") return;
+  const effects = new Map(
+    (portrait?.combatant?.actor?.temporaryEffects ?? []).map(effect => [effect.uuid, effect]));
+  const rewritten = new Set();
+  for (const entry of [...data.effects]) {
+    const effect = effects.get(entry?.uuid);
+    rewritten.add(effect
+      ? {...entry, description: escapeDockHtml(effectTooltipSummary(effect))}
+      : entry);
+  }
+  data.effects = rewritten;
+}
+
 function appendTrudvangDockData(portrait, data) {
   if (!data || typeof data !== "object") return;
   const actor = portrait?.actor ?? portrait?.combatant?.actor ?? portrait?.document?.actor ?? null;
@@ -327,6 +350,11 @@ function appendTrudvangDockData(portrait, data) {
     data.description = buildDockDescription(actor);
   } catch {
     // Keep any description the module already prepared.
+  }
+  try {
+    replaceEffectDescriptions(portrait, data);
+  } catch {
+    // Keep the module's effect descriptions.
   }
   try {
     const icons = buildPreparedIcons(actor);
