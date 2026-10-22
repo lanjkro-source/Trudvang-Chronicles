@@ -1344,7 +1344,9 @@
         "CharacterCreation": "Character Creation",
         "CharacterCreationTables": "Character Creation",
         "Macros": "Players",
-        "GMMacros": "Game Master"
+        "GMMacros": "Game Master",
+        "MagicObjects": "Magic Objects",
+        "Materials": "Materials"
       },
       "Scene": {
         "WorldMap": "World Map",
@@ -1382,7 +1384,15 @@
         "PHB69": "Player's Handbook, p. 69",
         "PHB74": "Player's Handbook, p. 74",
         "PHB92": "Player's Handbook, p. 92",
-        "PHB201": "Player's Handbook, p. 201"
+        "PHB201": "Player's Handbook, p. 201",
+        "Bestiary16": "Jörgi’s Bestiary, p. 20",
+        "Bestiary24": "Jörgi’s Bestiary, p. 28",
+        "Bestiary73": "Jörgi’s Bestiary, p. 73",
+        "Bestiary117": "Jörgi’s Bestiary, p. 117",
+        "Bestiary118": "Jörgi’s Bestiary, p. 120",
+        "Bestiary127": "Jörgi’s Bestiary, p. 127",
+        "Bestiary130": "Jörgi’s Bestiary, p. 130",
+        "Bestiary142": "Jörgi’s Bestiary, p. 142"
       },
       "ExtractType": {
         "Alteration": "Alteration",
@@ -2164,6 +2174,54 @@
         "Survival": {
           "Name": "Survival",
           "Description": "A Wilderness discipline covering prolonged travel, shelter, weather, food, and life beyond settled lands."
+        },
+        "MinokksHeart": {
+          "Name": "Troll bull heart",
+          "Description": "Eating the heart of a troll bull fills one with courage and inner strength. The character who eats it loses 1d10 (OR 10) fear points, feels more alive, and becomes more protective of friends. Should an enemy threaten one of them, there is a risk that the character will charge and attack the enemy. They must then make a Situation test with a Situation Value of 10 (Psyche modifiers apply) to avoid yielding to the urge to charge."
+        },
+        "LindwurmRegeneratingHeart": {
+          "Name": "Lindwurm regenerating heart",
+          "Description": "The lindwurm’s regenerating heart is the very reason people hunt this massive serpent. When a lindwurm dies, its heart gives birth to a new one after 1d10 weeks. However, if someone eats the heart of a lindwurm, all of their wounds close, they are cured of all their diseases, every unusable part of their body becomes fully functional again, and missing parts grow back. Depending on the severity of the wounds or diseases, these effects may take more or less time, and it is up to the game master to decide how long the healing takes. Eating the heart of a lindwurm is nevertheless risky. If a creature eats it, entirely or partially, it must make a Situation test with a Situation Value of 16 (Constitution modifiers apply). On a failure, the creature falls into a deep magical sleep and will turn into a lindwurm after 1d10 weeks. A lindwurm created this way regains its original form when it dies."
+        },
+        "FreshVidrjotunSap": {
+          "Name": "Vial of fresh vidrjotun sap",
+          "Description": "The sap that flows in a vidrjotun’s veins, instead of blood, is full of life and can be used to heal all living beings. A wounded creature that drinks a mouthful of the sap instantly heals 1d10 (OR 6-10) points of damage."
+        },
+        "HardenedVidrjotunSap": {
+          "Name": "Piece of hardened vidrjotun sap",
+          "Description": "When the sap hardens, it becomes a chewy, sticky rubbery substance that has healing attributes. A piece of hardened sap the size of an acorn will restore 1d10 (OR 8-10) Body Points to anyone who eats it."
+        },
+        "CentennialVidrjotunAmber": {
+          "Name": "Centennial vidrjotun sap amber",
+          "Description": "After the sap has been allowed to harden for several hundred years, it becomes amber, which also has healing powers. Anyone who carries a piece of this amber increases their natural healing by +1 body point per day."
+        },
+        "KnowledgeStone": {
+          "Name": "Stone of knowledge",
+          "Description": "Since the dragon cannot write, it uses magic to carve its knowledge into rocks. These stones are inlaid with insights, knowledge, and powers of all kinds. Explorers who pick up such a stone of knowledge can learn the knowledge it contains by activating it. This can be done only with the Read Vitner spell. When the spell is woven on a stone of knowledge, there is no requirement for making a SV roll to learn the power it contains (as per normal Read Vitner rules), but the spell has only the effect of activating the stone. After the normal weaving time of the Read Vitner spell has passed (1 hour), the stone is activated, but it will disappear in 6 rounds. The knowledge will be given to the first creature to touch the stone before it disappears. If no one takes the stone in 6 rounds, it will disappear without transferring the knowledge. The person who is holding the stone when it is activated receives its teachings. If multiple people hold the stone, the recipient is selected at random. But know this: it can be dangerous to receive the contents of a stone, since it can contain powers that no living person can handle. The effects of the knowledge are totally up to the GM."
+        },
+        "FairyDust": {
+          "Name": "Fairy dust",
+          "Description": "Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect."
+        },
+        "SpiderSilkBraidedRope": {
+          "Name": "Spider-silk braided rope",
+          "Description": "A silky rope made from the net of a great net spider weighs a fourth of a normal rope’s weight and holds double the load. Making a rope can take more than a month’s time. The ropes are always black."
+        },
+        "SpiderSilkBowstring": {
+          "Name": "Spider-silk bowstring",
+          "Description": "A bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1. Making a bowstring takes two to three months of time. The strings are always black."
+        },
+        "SpiderSilk": {
+          "Name": "Spider web",
+          "Description": "The net of a great net spider (or eye spider) has legendary capabilities. Once harvested, it can be used to make silky ropes and bowstrings. A silky rope from a great net spider weighs a fourth of a normal rope’s weight and holds double the load, while a bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1. Making a rope can take more than a month’s time, and making a bowstring takes two to three months of time. The rope or bowstring is always black."
+        },
+        "MagmaBlood": {
+          "Name": "Jarnwurm magma blood",
+          "Description": "The magma blood is of use not only to the jarnwurm but also to all the blacksmiths in Trudvang. If the blood is mixed with iron, a binding is formed that is both harder and more durable than the dwarves’ mitraka. The metal is colored scarlet and called ironblood iron. Weapons made out of ironblood iron increase the chance of an open roll by 2. The Protection Value, Breach Value, and weight of weapons and armors made from ironblood iron is increased by 1d3."
+        },
+        "FirdtursirGold": {
+          "Name": "Firdtursir belly gold",
+          "Description": "The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1 PV/10 BV)."
         }
       },
       "Table": {

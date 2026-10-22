@@ -1582,6 +1582,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.CharacterCreationTables` | Character Creation | Création de Personnages |
 | `TRUDVANG.Content.Folder.Macros` | Players | Joueurs |
 | `TRUDVANG.Content.Folder.GMMacros` | Game Master | Maitre de jeu |
+| `TRUDVANG.Content.Folder.MagicObjects` | Magic Objects | Objets magiques |
+| `TRUDVANG.Content.Folder.Materials` | Materials | Matériaux |
 
 ## `TRUDVANG.Content.Scene`
 
@@ -1626,6 +1628,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Source.PHB74` | Player's Handbook, p. 74 | Livre des règles, p. 74 |
 | `TRUDVANG.Content.Source.PHB92` | Player's Handbook, p. 92 | Livre des règles, p. 92 |
 | `TRUDVANG.Content.Source.PHB201` | Player's Handbook, p. 201 | Livre des règles, p. 201 |
+| `TRUDVANG.Content.Source.Bestiary16` | Jörgi’s Bestiary, p. 20 | Bestiaire de Jorge, p. 16 |
+| `TRUDVANG.Content.Source.Bestiary24` | Jörgi’s Bestiary, p. 28 | Bestiaire de Jorge, p. 24 |
+| `TRUDVANG.Content.Source.Bestiary73` | Jörgi’s Bestiary, p. 73 | Bestiaire de Jorge, p. 73 |
+| `TRUDVANG.Content.Source.Bestiary117` | Jörgi’s Bestiary, p. 117 | Bestiaire de Jorge, p. 117 |
+| `TRUDVANG.Content.Source.Bestiary118` | Jörgi’s Bestiary, p. 120 | Bestiaire de Jorge, p. 118 |
+| `TRUDVANG.Content.Source.Bestiary127` | Jörgi’s Bestiary, p. 127 | Bestiaire de Jorge, p. 127 |
+| `TRUDVANG.Content.Source.Bestiary130` | Jörgi’s Bestiary, p. 130 | Bestiaire de Jorge, p. 130 |
+| `TRUDVANG.Content.Source.Bestiary142` | Jörgi’s Bestiary, p. 142 | Bestiaire de Jorge, p. 142 |
 
 ## `TRUDVANG.Content.ExtractType`
 
@@ -2919,6 +2929,90 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Item.Survival.Name` | Survival | Survie |
 | `TRUDVANG.Content.Item.Survival.Description` | A Wilderness discipline covering prolonged travel, shelter, weather, food, and life beyond settled lands. | Une discipline de Nature couvrant les voyages prolongés, l'abri, la météo, la nourriture et la vie au-delà des terres civilisées. |
+
+## `TRUDVANG.Content.Item.MinokksHeart`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MinokksHeart.Name` | Troll bull heart | Cœur de minokks |
+| `TRUDVANG.Content.Item.MinokksHeart.Description` | Eating the heart of a troll bull fills one with courage and inner strength. The character who eats it loses 1d10 (OR 10) fear points, feels more alive, and becomes more protective of friends. Should an enemy threaten one of them, there is a risk that the character will charge and attack the enemy. They must then make a Situation test with a Situation Value of 10 (Psyche modifiers apply) to avoid yielding to the urge to charge. | Manger le cœur d’un taureau troll emplit de courage et de force intérieure. Le personnage qui en bénéficie perd 1d10 (JO 10) points de peur, se sent plus vivace et devient plus protecteur envers ses amis. Si un ennemi menace l’un d’entre eux, il existe un risque que le consommateur du cœur le charge et l’attaque. Ce dernier doit alors faire un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Psychisme) pour éviter de céder à la pulsion de charger l’ennemi. |
+
+## `TRUDVANG.Content.Item.LindwurmRegeneratingHeart`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.LindwurmRegeneratingHeart.Name` | Lindwurm regenerating heart | Cœur régénérant de lindwurm |
+| `TRUDVANG.Content.Item.LindwurmRegeneratingHeart.Description` | The lindwurm’s regenerating heart is the very reason people hunt this massive serpent. When a lindwurm dies, its heart gives birth to a new one after 1d10 weeks. However, if someone eats the heart of a lindwurm, all of their wounds close, they are cured of all their diseases, every unusable part of their body becomes fully functional again, and missing parts grow back. Depending on the severity of the wounds or diseases, these effects may take more or less time, and it is up to the game master to decide how long the healing takes. Eating the heart of a lindwurm is nevertheless risky. If a creature eats it, entirely or partially, it must make a Situation test with a Situation Value of 16 (Constitution modifiers apply). On a failure, the creature falls into a deep magical sleep and will turn into a lindwurm after 1d10 weeks. A lindwurm created this way regains its original form when it dies. | Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guéri de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective. Il est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt. |
+
+## `TRUDVANG.Content.Item.FreshVidrjotunSap`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FreshVidrjotunSap.Name` | Vial of fresh vidrjotun sap | Fiole de sève fraîche de vidrjotun |
+| `TRUDVANG.Content.Item.FreshVidrjotunSap.Description` | The sap that flows in a vidrjotun’s veins, instead of blood, is full of life and can be used to heal all living beings. A wounded creature that drinks a mouthful of the sap instantly heals 1d10 (OR 6-10) points of damage. | La sève qui coule à la place du sang dans les veines d’un vidrjotun est pleine de vie et peut être utilisée pour soigner tous les êtres vivants. Une créature blessée qui boit une gorgée de sève soigne instantanément 1d10 (JO 6-10) points de dégâts. |
+
+## `TRUDVANG.Content.Item.HardenedVidrjotunSap`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HardenedVidrjotunSap.Name` | Piece of hardened vidrjotun sap | Morceau de sève durcie de vidrjotun |
+| `TRUDVANG.Content.Item.HardenedVidrjotunSap.Description` | When the sap hardens, it becomes a chewy, sticky rubbery substance that has healing attributes. A piece of hardened sap the size of an acorn will restore 1d10 (OR 8-10) Body Points to anyone who eats it. | Quand la sève se solidifie, elle prend une consistance caoutchouteuse et collante et devient une substance aux propriétés curatives. Un morceau de sève durcie de la taille d’un gland permettra à ceux qui l’avalent de récupérer 1d10 (JO 8-10) points de santé. |
+
+## `TRUDVANG.Content.Item.CentennialVidrjotunAmber`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name` | Centennial vidrjotun sap amber | Ambre de sève centenaire de vidrjotun |
+| `TRUDVANG.Content.Item.CentennialVidrjotunAmber.Description` | After the sap has been allowed to harden for several hundred years, it becomes amber, which also has healing powers. Anyone who carries a piece of this amber increases their natural healing by +1 body point per day. | Une sève qui a durci pendant plusieurs centaines d’années prend une teinte ambrée et possède toujours des propriétés curatives. Ceux qui portent un morceau de cet ambre augmentent leur faculté de guérison naturelle de +1 point de santé par jour. |
+
+## `TRUDVANG.Content.Item.KnowledgeStone`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.KnowledgeStone.Name` | Stone of knowledge | Pierre de savoir |
+| `TRUDVANG.Content.Item.KnowledgeStone.Description` | Since the dragon cannot write, it uses magic to carve its knowledge into rocks. These stones are inlaid with insights, knowledge, and powers of all kinds. Explorers who pick up such a stone of knowledge can learn the knowledge it contains by activating it. This can be done only with the Read Vitner spell. When the spell is woven on a stone of knowledge, there is no requirement for making a SV roll to learn the power it contains (as per normal Read Vitner rules), but the spell has only the effect of activating the stone. After the normal weaving time of the Read Vitner spell has passed (1 hour), the stone is activated, but it will disappear in 6 rounds. The knowledge will be given to the first creature to touch the stone before it disappears. If no one takes the stone in 6 rounds, it will disappear without transferring the knowledge. The person who is holding the stone when it is activated receives its teachings. If multiple people hold the stone, the recipient is selected at random. But know this: it can be dangerous to receive the contents of a stone, since it can contain powers that no living person can handle. The effects of the knowledge are totally up to the GM. | L’yggwurm utilise la magie pour graver ses connaissances sur des pierres. Ces pierres contiennent des idées, des connaissances et des pouvoirs de toutes sortes. Les explorateurs qui ramassent une pierre de savoir peuvent apprendre le savoir qu’elle contient en l’activant grâce au sort de Lecture du vitner. Quand ce sort est tissé sur une pierre de savoir, aucun test de VC n’est nécessaire pour apprendre le pouvoir qu’elle contient, mais le sort permet seulement d’activer la pierre. Une fois le temps normal de tissage du sort de Lecture du vitner écoulé (une heure), la pierre est activée mais disparaît au bout de 6 tours de jeu. Si personne ne s’empare de la pierre avant les 6 tours, celle-ci disparaît sans transmettre le savoir qu’elle contient. La personne qui tient en main la pierre lorsque celle-ci est activée bénéficie de ses enseignements. Si plusieurs personnes touchent la pierre, le bénéficiaire est déterminé au hasard. Mais apprendre le contenu d’une pierre peut s’avérer dangereux car elle peut contenir des pouvoirs qu’aucune personne vivante n’est capable de maîtriser. Les effets du savoir sont laissés à l’entière appréciation du MJ. |
+
+## `TRUDVANG.Content.Item.FairyDust`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FairyDust.Name` | Fairy dust | Poussière de fée |
+| `TRUDVANG.Content.Item.FairyDust.Description` | Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect. | Les fées portent toujours sur elles une petite bourse contenant de la poussière de fée. Elles peuvent la donner à une personne qui a grandement aidé la forêt ou dont la personnalité et les actions sont aussi nobles que les leurs. Elles offriront jusqu’à deux bourses aux individus véritablement méritants. Une bourse de poussière contient 1d3+1 doses. Une personne qui jette cette poussière en l’air autour d’elle augmente de 1d3+1 la valeur de compétence de toutes ses actions pendant 1d5 heures. Si quelqu’un parvient à rassembler sept doses de poussière de fée et les jette toutes en l’air d’un coup, il peut faire un vœu. Si le vœu est de bonne moralité (du point de vue du maître de jeu), il sera exaucé. Le personnage ne peut faire qu’un seul vœu, et si le maître de jeu estime que sa moralité n’est pas appropriée, la poussière féerique sera gâchée sans produire d’effet. |
+
+## `TRUDVANG.Content.Item.SpiderSilkBraidedRope`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SpiderSilkBraidedRope.Name` | Spider-silk braided rope | Corde tressée en soie d’araignée |
+| `TRUDVANG.Content.Item.SpiderSilkBraidedRope.Description` | A silky rope made from the net of a great net spider weighs a fourth of a normal rope’s weight and holds double the load. Making a rope can take more than a month’s time. The ropes are always black. | Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge. Tresser une corde peut prendre plus d’un mois. Les cordes sont toujours noires. |
+
+## `TRUDVANG.Content.Item.SpiderSilkBowstring`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SpiderSilkBowstring.Name` | Spider-silk bowstring | Corde d’arc en soie d’araignée |
+| `TRUDVANG.Content.Item.SpiderSilkBowstring.Description` | A bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1. Making a bowstring takes two to three months of time. The strings are always black. | Une corde d’arc fabriquée en soie d’araignée augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1. Confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires. |
+
+## `TRUDVANG.Content.Item.SpiderSilk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SpiderSilk.Name` | Spider web | Toile d’araignée |
+| `TRUDVANG.Content.Item.SpiderSilk.Description` | The net of a great net spider (or eye spider) has legendary capabilities. Once harvested, it can be used to make silky ropes and bowstrings. A silky rope from a great net spider weighs a fourth of a normal rope’s weight and holds double the load, while a bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1. Making a rope can take more than a month’s time, and making a bowstring takes two to three months of time. The rope or bowstring is always black. | La toile d’une araignée tisseuse (ou d’une araignée hypnotique) possède des aptitudes légendaires. Une fois récoltée, elle sert à fabriquer des cordes tressées ou des cordes d’arc en soie. Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge ; une corde d’arc en soie d’araignée augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1. Tresser une corde peut prendre plus d’un mois et confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires. |
+
+## `TRUDVANG.Content.Item.MagmaBlood`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MagmaBlood.Name` | Jarnwurm magma blood | Sang magmatique de jarnwurm |
+| `TRUDVANG.Content.Item.MagmaBlood.Description` | The magma blood is of use not only to the jarnwurm but also to all the blacksmiths in Trudvang. If the blood is mixed with iron, a binding is formed that is both harder and more durable than the dwarves’ mitraka. The metal is colored scarlet and called ironblood iron. Weapons made out of ironblood iron increase the chance of an open roll by 2. The Protection Value, Breach Value, and weight of weapons and armors made from ironblood iron is increased by 1d3. | Sous le cuir du jarnwurm coule l’horrible et précieux sang magmatique. Il est aussi précieux aux jarnwurms qu’aux forgerons de Trudvang. S’il est mélangé à du minerai de fer, l’alliage qui en résulte est à la fois plus solide et plus résistant que le mitrakk des nains. Ce métal aux reflets écarlates porte le nom de fer sang-de-fer. Les armes en fer sang-de-fer augmentent les chances de réaliser un jet ouvert de 2. La valeur de protection et le poids des armes et armures en fer sang-de-fer sont augmentés de 1d3. |
+
+## `TRUDVANG.Content.Item.FirdtursirGold`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FirdtursirGold.Name` | Firdtursir belly gold | Or abdominal de firdtursir |
+| `TRUDVANG.Content.Item.FirdtursirGold.Description` | The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1 PV/10 BV). | Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS). |
 
 ## `TRUDVANG.Content.Table.StormlanderMale`
 

@@ -1344,7 +1344,9 @@
         "CharacterCreation": "Création de Personnages",
         "CharacterCreationTables": "Création de Personnages",
         "Macros": "Joueurs",
-        "GMMacros": "Maitre de jeu"
+        "GMMacros": "Maitre de jeu",
+        "MagicObjects": "Objets magiques",
+        "Materials": "Matériaux"
       },
       "Scene": {
         "WorldMap": "Carte du monde",
@@ -1382,7 +1384,15 @@
         "PHB69": "Livre des règles, p. 69",
         "PHB74": "Livre des règles, p. 74",
         "PHB92": "Livre des règles, p. 92",
-        "PHB201": "Livre des règles, p. 201"
+        "PHB201": "Livre des règles, p. 201",
+        "Bestiary16": "Bestiaire de Jorge, p. 16",
+        "Bestiary24": "Bestiaire de Jorge, p. 24",
+        "Bestiary73": "Bestiaire de Jorge, p. 73",
+        "Bestiary117": "Bestiaire de Jorge, p. 117",
+        "Bestiary118": "Bestiaire de Jorge, p. 118",
+        "Bestiary127": "Bestiaire de Jorge, p. 127",
+        "Bestiary130": "Bestiaire de Jorge, p. 130",
+        "Bestiary142": "Bestiaire de Jorge, p. 142"
       },
       "ExtractType": {
         "Alteration": "Altération",
@@ -2164,6 +2174,54 @@
         "Survival": {
           "Name": "Survie",
           "Description": "Une discipline de Nature couvrant les voyages prolongés, l'abri, la météo, la nourriture et la vie au-delà des terres civilisées."
+        },
+        "MinokksHeart": {
+          "Name": "Cœur de minokks",
+          "Description": "Manger le cœur d’un taureau troll emplit de courage et de force intérieure. Le personnage qui en bénéficie perd 1d10 (JO 10) points de peur, se sent plus vivace et devient plus protecteur envers ses amis. Si un ennemi menace l’un d’entre eux, il existe un risque que le consommateur du cœur le charge et l’attaque. Ce dernier doit alors faire un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Psychisme) pour éviter de céder à la pulsion de charger l’ennemi."
+        },
+        "LindwurmRegeneratingHeart": {
+          "Name": "Cœur régénérant de lindwurm",
+          "Description": "Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guéri de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective. Il est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt."
+        },
+        "FreshVidrjotunSap": {
+          "Name": "Fiole de sève fraîche de vidrjotun",
+          "Description": "La sève qui coule à la place du sang dans les veines d’un vidrjotun est pleine de vie et peut être utilisée pour soigner tous les êtres vivants. Une créature blessée qui boit une gorgée de sève soigne instantanément 1d10 (JO 6-10) points de dégâts."
+        },
+        "HardenedVidrjotunSap": {
+          "Name": "Morceau de sève durcie de vidrjotun",
+          "Description": "Quand la sève se solidifie, elle prend une consistance caoutchouteuse et collante et devient une substance aux propriétés curatives. Un morceau de sève durcie de la taille d’un gland permettra à ceux qui l’avalent de récupérer 1d10 (JO 8-10) points de santé."
+        },
+        "CentennialVidrjotunAmber": {
+          "Name": "Ambre de sève centenaire de vidrjotun",
+          "Description": "Une sève qui a durci pendant plusieurs centaines d’années prend une teinte ambrée et possède toujours des propriétés curatives. Ceux qui portent un morceau de cet ambre augmentent leur faculté de guérison naturelle de +1 point de santé par jour."
+        },
+        "KnowledgeStone": {
+          "Name": "Pierre de savoir",
+          "Description": "L’yggwurm utilise la magie pour graver ses connaissances sur des pierres. Ces pierres contiennent des idées, des connaissances et des pouvoirs de toutes sortes. Les explorateurs qui ramassent une pierre de savoir peuvent apprendre le savoir qu’elle contient en l’activant grâce au sort de Lecture du vitner. Quand ce sort est tissé sur une pierre de savoir, aucun test de VC n’est nécessaire pour apprendre le pouvoir qu’elle contient, mais le sort permet seulement d’activer la pierre. Une fois le temps normal de tissage du sort de Lecture du vitner écoulé (une heure), la pierre est activée mais disparaît au bout de 6 tours de jeu. Si personne ne s’empare de la pierre avant les 6 tours, celle-ci disparaît sans transmettre le savoir qu’elle contient. La personne qui tient en main la pierre lorsque celle-ci est activée bénéficie de ses enseignements. Si plusieurs personnes touchent la pierre, le bénéficiaire est déterminé au hasard. Mais apprendre le contenu d’une pierre peut s’avérer dangereux car elle peut contenir des pouvoirs qu’aucune personne vivante n’est capable de maîtriser. Les effets du savoir sont laissés à l’entière appréciation du MJ."
+        },
+        "FairyDust": {
+          "Name": "Poussière de fée",
+          "Description": "Les fées portent toujours sur elles une petite bourse contenant de la poussière de fée. Elles peuvent la donner à une personne qui a grandement aidé la forêt ou dont la personnalité et les actions sont aussi nobles que les leurs. Elles offriront jusqu’à deux bourses aux individus véritablement méritants. Une bourse de poussière contient 1d3+1 doses. Une personne qui jette cette poussière en l’air autour d’elle augmente de 1d3+1 la valeur de compétence de toutes ses actions pendant 1d5 heures. Si quelqu’un parvient à rassembler sept doses de poussière de fée et les jette toutes en l’air d’un coup, il peut faire un vœu. Si le vœu est de bonne moralité (du point de vue du maître de jeu), il sera exaucé. Le personnage ne peut faire qu’un seul vœu, et si le maître de jeu estime que sa moralité n’est pas appropriée, la poussière féerique sera gâchée sans produire d’effet."
+        },
+        "SpiderSilkBraidedRope": {
+          "Name": "Corde tressée en soie d’araignée",
+          "Description": "Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge. Tresser une corde peut prendre plus d’un mois. Les cordes sont toujours noires."
+        },
+        "SpiderSilkBowstring": {
+          "Name": "Corde d’arc en soie d’araignée",
+          "Description": "Une corde d’arc fabriquée en soie d’araignée augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1. Confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires."
+        },
+        "SpiderSilk": {
+          "Name": "Toile d’araignée",
+          "Description": "La toile d’une araignée tisseuse (ou d’une araignée hypnotique) possède des aptitudes légendaires. Une fois récoltée, elle sert à fabriquer des cordes tressées ou des cordes d’arc en soie. Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge ; une corde d’arc en soie d’araignée augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1. Tresser une corde peut prendre plus d’un mois et confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires."
+        },
+        "MagmaBlood": {
+          "Name": "Sang magmatique de jarnwurm",
+          "Description": "Sous le cuir du jarnwurm coule l’horrible et précieux sang magmatique. Il est aussi précieux aux jarnwurms qu’aux forgerons de Trudvang. S’il est mélangé à du minerai de fer, l’alliage qui en résulte est à la fois plus solide et plus résistant que le mitrakk des nains. Ce métal aux reflets écarlates porte le nom de fer sang-de-fer. Les armes en fer sang-de-fer augmentent les chances de réaliser un jet ouvert de 2. La valeur de protection et le poids des armes et armures en fer sang-de-fer sont augmentés de 1d3."
+        },
+        "FirdtursirGold": {
+          "Name": "Or abdominal de firdtursir",
+          "Description": "Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS)."
         }
       },
       "Table": {

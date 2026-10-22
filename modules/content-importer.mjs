@@ -13,8 +13,9 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // indexing, and the world map create data had been merged with the welcome template.
 // version 50 replayed the import of worlds whose version target was recorded by the broken
 // 49 release; version 51 fixed the bestiary animal import and scene thumbnails; version 52
-// installs the equipment-quality journal.
-const CONTENT_VERSION = 52;
+// installs the equipment-quality journal; version 53 installs the creature-harvest items
+// (materiaux + objets magiques + extraits).
+const CONTENT_VERSION = 53;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

@@ -89,6 +89,15 @@
       "type": "Macro",
       "colorRole": "warning",
       "defaultRole": "OWNER"
+    },
+    "magicObjects": {
+      "nameKey": "TRUDVANG.Content.Folder.MagicObjects",
+      "type": "Item"
+    },
+    "materials": {
+      "nameKey": "TRUDVANG.Content.Folder.Materials",
+      "type": "Item",
+      "parent": "equipment"
     }
   },
   "items": [
@@ -2010,6 +2019,114 @@
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 5,
         "value": 250
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.MinokksHeart.Name",
+      "type": "gear",
+      "img": "icons/commodities/biological/organ-heart-red.webp",
+      "folder": "extracts",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary24"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.LindwurmRegeneratingHeart.Name",
+      "type": "gear",
+      "img": "icons/commodities/biological/organ-heart-red.webp",
+      "folder": "extracts",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary118"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.FreshVidrjotunSap.Name",
+      "type": "gear",
+      "img": "icons/consumables/potions/potion-jar-corked-green.webp",
+      "folder": "extracts",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.HardenedVidrjotunSap.Name",
+      "type": "gear",
+      "img": "icons/consumables/plants/dried-stem-vine-root-bramble-brown.webp",
+      "folder": "extracts",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name",
+      "type": "gear",
+      "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
+      "folder": "extracts",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.KnowledgeStone.Name",
+      "type": "gear",
+      "img": "icons/svg/book.svg",
+      "folder": "magicObjects",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary127"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.FairyDust.Name",
+      "type": "gear",
+      "img": "icons/svg/item-bag.svg",
+      "folder": "magicObjects",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary73"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.SpiderSilkBraidedRope.Name",
+      "type": "gear",
+      "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
+      "folder": "magicObjects",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.SpiderSilkBowstring.Name",
+      "type": "gear",
+      "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
+      "folder": "magicObjects",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.SpiderSilk.Name",
+      "type": "gear",
+      "img": "icons/svg/net.svg",
+      "folder": "materials",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.MagmaBlood.Name",
+      "type": "gear",
+      "img": "icons/consumables/potions/bottle-round-corked-red.webp",
+      "folder": "materials",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary117"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.FirdtursirGold.Name",
+      "type": "gear",
+      "img": "icons/svg/item-bag.svg",
+      "folder": "materials",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary130"
       }
     }
   ],
