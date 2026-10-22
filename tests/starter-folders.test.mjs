@@ -77,6 +77,30 @@ test("every starter folder colour comes from the theme palette instead of a hard
   }
 });
 
+// Regression: v0.105.1 nests the materiaux under the magic objects, moves the centennial
+// amber out of the extracts folder and makes the two GM-visible only; the import must also
+// propagate the folder's default role onto the starter items inside, otherwise the items
+// stay visible in the players' item directory even when the sidebar folder is not.
+test("the materiaux and the centennial amber live in the GM-only magic objects folder", t => {
+  t.after(() => { delete globalThis.CONST; });
+  globalThis.CONST = {DOCUMENT_OWNERSHIP_LEVELS: {NONE: 0, LIMITED: 1, OBSERVER: 2, OWNER: 3}};
+  const order = Object.keys(starter.folders);
+  assert.ok(order.indexOf("magicObjects") < order.indexOf("materials"),
+    "materials is declared after its parent so upsertFolder() can hand it over");
+  assert.equal(starter.folders.magicObjects.defaultRole, "NONE",
+    "players get no default access to the magic objects folder");
+  assert.equal(folderOwnership(starter.folders.magicObjects).default, 0, "NONE resolves to level 0");
+  assert.equal(starter.folders.materials.parent, "magicObjects",
+    "the materiaux hang under the magic objects folder, not equipment");
+  const amber = starter.items.find(item => item.nameKey === "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name");
+  assert.equal(amber.folder, "magicObjects", "the centennial amber left the extracts folder");
+  const sourceCode = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
+  assert.match(sourceCode, /folderOwnership\(source\.folders\[destination\]\)/,
+    "starter items derive their ownership from the destination folder config");
+  assert.match(sourceCode, /if \(payload\.ownership\) update\.ownership = payload\.ownership;/,
+    "replays move existing starter items onto their folder's default level");
+});
+
 test("actors, roll tables and macros each get a distinct folder", () => {
   const byType = type => Object.entries(starter.folders).filter(([, config]) => config.type === type);
   assert.deepEqual(byType("Actor").map(([slug]) => slug), ["characters", "animals"]);

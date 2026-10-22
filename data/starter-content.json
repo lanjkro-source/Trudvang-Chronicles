@@ -92,12 +92,13 @@
     },
     "magicObjects": {
       "nameKey": "TRUDVANG.Content.Folder.MagicObjects",
-      "type": "Item"
+      "type": "Item",
+      "defaultRole": "NONE"
     },
     "materials": {
       "nameKey": "TRUDVANG.Content.Folder.Materials",
       "type": "Item",
-      "parent": "equipment"
+      "parent": "magicObjects"
     }
   },
   "items": [
@@ -2061,7 +2062,7 @@
       "nameKey": "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name",
       "type": "gear",
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
-      "folder": "extracts",
+      "folder": "magicObjects",
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
       }

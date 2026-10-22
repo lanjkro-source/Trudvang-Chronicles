@@ -14,8 +14,10 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // version 50 replayed the import of worlds whose version target was recorded by the broken
 // 49 release; version 51 fixed the bestiary animal import and scene thumbnails; version 52
 // installs the equipment-quality journal; version 53 installs the creature-harvest items
-// (materiaux + objets magiques + extraits).
-const CONTENT_VERSION = 53;
+// (materiaux + objets magiques + extraits); version 54 nests the materiaux under the
+// magic objects, moves the centennial amber and hides both from players (GM-only folder
+// plus item ownership).
+const CONTENT_VERSION = 54;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -282,7 +284,14 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     const payload = localizeTree(entry);
     delete payload.folderOverride;
     payload.img = starterImage(entry);
-    payload.folder = folders[destinationFolder(entry)]?.id;
+    const destination = destinationFolder(entry);
+    // Folders that declare a default role also rule their content visibility: starter
+    // items inside repeat the folder's default level (never the running user's level,
+    // which would always read OWNER during the GM-run import), so folder and items
+    // can never drift apart.
+    const folderDefault = source.folders[destination] ? folderOwnership(source.folders[destination]) : undefined;
+    payload.folder = folders[destination]?.id;
+    if (folderDefault) payload.ownership = {...folderDefault};
     const bookDescription = documentedDescription(entry);
     const descriptionKey = entry.nameKey?.replace(/\.Name$/, ".Description");
     const description = descriptionKey ? game.i18n.localize(descriptionKey) : "";
@@ -310,6 +319,7 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     if (existing) {
       const update = presentationUpdate(payload, key);
       update.folder = payload.folder;
+      if (payload.ownership) update.ownership = payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
       if (renamedOrCustom(existing, translations)) delete update.name;
