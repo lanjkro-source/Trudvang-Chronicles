@@ -1,7 +1,7 @@
 {
   "_id": "xtb5ktXsYtZu0v1w",
   "_key": "!items!xtb5ktXsYtZu0v1w",
-  "name": "Night Vision",
+  "name": "Willpower",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "AwPuKXrXsYtZu0v1",
       "_key": "!items.effects!xtb5ktXsYtZu0v1w.AwPuKXrXsYtZu0v1",
-      "name": "Night Vision",
+      "name": "Willpower",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Replaces the target’s Psyche trait with the exceptional level +4.",

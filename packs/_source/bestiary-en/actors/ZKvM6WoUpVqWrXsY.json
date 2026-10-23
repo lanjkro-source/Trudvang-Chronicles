@@ -164,6 +164,20 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Darkvision"
+      }
+    ],
     "skillTree": [
       {
         "name": "Fighting",

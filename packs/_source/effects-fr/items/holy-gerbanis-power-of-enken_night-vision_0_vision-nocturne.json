@@ -1,0 +1,53 @@
+{
+  "_id": "tIbjgmQlRmSnToUp",
+  "_key": "!items!tIbjgmQlRmSnToUp",
+  "name": "Vision nocturne",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+    "description": "La cible voit clairement dans l’obscurité totale jusqu’à 20 mètres. Au-delà, sa perception des détails diminue et sa vision cesse à 60 mètres.",
+    "summary": "Permet de voir dans l’obscurité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 224
+    }
+  },
+  "effects": [
+    {
+      "_id": "yC7whxZu0v1w2x3y",
+      "_key": "!items.effects!tIbjgmQlRmSnToUp.yC7whxZu0v1w2x3y",
+      "name": "Vision nocturne",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "La cible voit clairement dans l’obscurité totale jusqu’à 20 mètres. Au-delà, sa perception des détails diminue et sa vision cesse à 60 mètres.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne.Sense0\",\"range\":60,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+            "sourceId": "holy-gerbanis-power-of-enken:night-vision:0",
+            "summary": "Permet de voir dans l’obscurité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

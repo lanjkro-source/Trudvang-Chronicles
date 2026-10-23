@@ -195,6 +195,26 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      },
+      {
+        "type": "dark",
+        "range": 300,
+        "enabled": true,
+        "label": "Vision dans le noir (100 à 300 m)"
+      },
+      {
+        "type": "other",
+        "range": null,
+        "enabled": true,
+        "label": "Vision thermique"
+      }
+    ],
     "skillTree": [
       {
         "name": "Combat",

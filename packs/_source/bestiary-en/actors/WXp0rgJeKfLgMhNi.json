@@ -296,6 +296,26 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      },
+      {
+        "type": "other",
+        "range": null,
+        "enabled": true,
+        "label": "Sense Living"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Darkvision"
+      }
+    ],
     "skillTree": [
       {
         "name": "Shadow Arts",

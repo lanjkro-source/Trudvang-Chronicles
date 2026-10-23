@@ -86,6 +86,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Skill0",
@@ -255,6 +269,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Skill0",
@@ -425,6 +453,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Skill0",
@@ -666,6 +708,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill0",
@@ -907,6 +957,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": 60,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Skill0",
@@ -1207,6 +1271,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill0",
@@ -1581,6 +1653,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Skill0",
@@ -1734,6 +1820,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Skill0",
@@ -1900,6 +1994,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Skill0",
@@ -2082,6 +2190,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Skill0",
@@ -2263,6 +2385,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Skill0",
@@ -2451,6 +2587,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Skill0",
@@ -2651,6 +2801,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill0",
@@ -3029,6 +3193,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense1"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill0",
@@ -3519,6 +3703,32 @@ export const BESTIARY_ENTRIES = [
         ],
         "traits": {},
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense0"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense1"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense2"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense3"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -3781,6 +3991,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill0",
@@ -4165,6 +4389,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Skill0",
@@ -4333,6 +4565,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Skill0",
@@ -4574,6 +4820,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill0",
@@ -5086,6 +5346,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense0"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense1"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill0",
@@ -5443,6 +5723,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill0",
@@ -5704,6 +5998,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill0",
@@ -6063,6 +6365,20 @@ export const BESTIARY_ENTRIES = [
           "intelligence": 2
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Sense1"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -6212,6 +6528,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Skill0",
@@ -6385,6 +6715,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Skill0",
@@ -6540,6 +6878,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Skill0",
@@ -6698,6 +7044,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Skill0",
@@ -6813,6 +7173,14 @@ export const BESTIARY_ENTRIES = [
         ],
         "traits": {},
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -6953,6 +7321,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Skill0",
@@ -7118,6 +7500,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Skill0",
@@ -7318,6 +7714,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill0",
@@ -7674,6 +8084,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill0",
@@ -7969,6 +8393,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Skill0",
@@ -8146,6 +8584,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Skill0",
@@ -8292,6 +8744,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Sense0"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Sense1"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Skill0",
@@ -8427,6 +8899,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Skill0",
@@ -8604,6 +9084,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Skill0",
@@ -8749,6 +9243,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 6
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -8905,6 +9407,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": 300,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense1"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Skill0",
@@ -9104,6 +9626,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": 300,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense1"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Skill0",
@@ -9261,6 +9803,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Skill0",
@@ -9455,6 +10011,26 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": 300,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense1"
+          },
+          {
+            "type": "other",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense2"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Skill0",
@@ -9643,6 +10219,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill0",
@@ -9871,6 +10461,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Skill0",
@@ -10060,6 +10664,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Skill0",
@@ -10219,6 +10831,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Skill0",
@@ -10361,6 +10987,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Skill0",
@@ -10525,6 +11165,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Skill0",
@@ -10745,6 +11393,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill0",
@@ -11209,6 +11871,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Sense0"
+          },
+          {
+            "type": "dark",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill0",
@@ -11670,6 +12346,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill0",
@@ -12186,6 +12876,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill0",
@@ -12655,6 +13359,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill0",
@@ -13162,6 +13880,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill0",
@@ -13716,6 +14442,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill0",
@@ -14189,6 +14923,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill0",
@@ -14559,6 +15307,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Skill0",
@@ -14696,6 +15452,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Skill0",
@@ -14825,6 +15589,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Skill0",
@@ -14982,6 +15754,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Skill0",
@@ -15123,6 +15903,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Skill0",
@@ -15254,6 +16042,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Skill0",
@@ -15383,6 +16179,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Skill0",
@@ -15514,6 +16318,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Skill0",
@@ -15645,6 +16457,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Skill0",
@@ -15804,6 +16624,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Skill0",
@@ -15947,6 +16775,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Skill0",
@@ -16106,6 +16942,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Skill0",
@@ -16241,6 +17085,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Skill0",
@@ -16370,6 +17222,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Skill0",
@@ -16521,6 +17381,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Skill0",
@@ -16662,6 +17530,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Skill0",
@@ -16799,6 +17675,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Skill0",
@@ -16934,6 +17818,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Skill0",
@@ -17063,6 +17955,14 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Skill0",
@@ -17246,6 +18146,14 @@ export const BESTIARY_ENTRIES = [
         ],
         "traits": {},
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Skill0",
@@ -17411,6 +18319,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 1
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Skill0",
@@ -17528,6 +18444,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 4
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -17637,6 +18561,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 4
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Skill0",
@@ -17802,6 +18734,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 1
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Skill0",
@@ -17965,6 +18905,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 2
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Sense0"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Skill0",
@@ -18077,6 +19025,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 4
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -18186,6 +19142,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 5
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -18272,6 +19236,14 @@ export const BESTIARY_ENTRIES = [
           "strength": 6
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -18356,6 +19328,14 @@ export const BESTIARY_ENTRIES = [
         ],
         "traits": {},
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -18443,6 +19423,14 @@ export const BESTIARY_ENTRIES = [
           "dexterity": -4
         },
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {
@@ -18552,6 +19540,20 @@ export const BESTIARY_ENTRIES = [
             "bonus": 0
           }
         },
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Sense0"
+          },
+          {
+            "type": "night",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Sense1"
+          }
+        ],
         "skillTree": [
           {
             "nameKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Skill0",
@@ -18663,6 +19665,14 @@ export const BESTIARY_ENTRIES = [
         ],
         "traits": {},
         "skills": {},
+        "senses": [
+          {
+            "type": "normal",
+            "range": null,
+            "enabled": true,
+            "labelKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Sense0"
+          }
+        ],
         "skillTree": [],
         "attacks": [],
         "resources": {

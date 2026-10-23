@@ -156,6 +156,20 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      },
+      {
+        "type": "night",
+        "range": null,
+        "enabled": true,
+        "label": "Vision nocturne"
+      }
+    ],
     "skillTree": [
       {
         "name": "Combat",

@@ -117,6 +117,20 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      },
+      {
+        "type": "dark",
+        "range": 60,
+        "enabled": true,
+        "label": "Vision dans le noir (10 à 60 m)"
+      }
+    ],
     "skillTree": [
       {
         "name": "Combat",

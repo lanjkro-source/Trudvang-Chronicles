@@ -1,0 +1,53 @@
+{
+  "_id": "tIbjgmQlRmSnToUp",
+  "_key": "!items!tIbjgmQlRmSnToUp",
+  "name": "Night Vision",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+    "description": "The target sees clearly in total darkness up to 20 meters. Beyond that distance, detail gradually fades; sight ends at 60 meters.",
+    "summary": "Allows sight in darkness.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "yC7whxZu0v1w2x3y",
+      "_key": "!items.effects!tIbjgmQlRmSnToUp.yC7whxZu0v1w2x3y",
+      "name": "Night Vision",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "The target sees clearly in total darkness up to 20 meters. Beyond that distance, detail gradually fades; sight ends at 60 meters.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne.Sense0\",\"range\":60,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne",
+            "sourceId": "holy-gerbanis-power-of-enken:night-vision:0",
+            "summary": "Allows sight in darkness.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

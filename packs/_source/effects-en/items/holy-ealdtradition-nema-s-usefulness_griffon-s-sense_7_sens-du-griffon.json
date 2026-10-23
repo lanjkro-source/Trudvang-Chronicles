@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Sense0\",\"range\":200,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
       },
       "statuses": [],
       "flags": {

@@ -26,7 +26,15 @@
       "system": {
         "stackId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou",
         "stacking": "replace",
-        "changes": []
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou.Sense0\",\"range\":50,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
       },
       "statuses": [],
       "flags": {

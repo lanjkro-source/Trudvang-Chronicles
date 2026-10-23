@@ -37,7 +37,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre.Sense0\"]",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre.Sense0\",\"range\":null,\"enabled\":true}]",
             "phase": "initial",
             "priority": 50
           },
@@ -59,13 +59,6 @@
             "key": "system.transformation.defense",
             "type": "override",
             "value": "-3",
-            "phase": "initial",
-            "priority": 50
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 50
           }

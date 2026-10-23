@@ -1,7 +1,7 @@
 {
   "_id": "4yPin4w2x3y4z5A6",
   "_key": "!items!4yPin4w2x3y4z5A6",
-  "name": "Mind of the Predator",
+  "name": "Resilience",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "bKigLcE9EaGbHcId",
       "_key": "!items.effects!4yPin4w2x3y4z5A6.bKigLcE9EaGbHcId",
-      "name": "Mind of the Predator",
+      "name": "Resilience",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Replaces the target’s Constitution trait with the exceptional level +4.",

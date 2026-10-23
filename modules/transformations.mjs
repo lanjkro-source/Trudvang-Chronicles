@@ -11,6 +11,7 @@ import {TRUDVANG} from "./config.mjs";
 import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
+import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -52,10 +53,9 @@ export function selectFormData(form,policy){
  for(const trait of Object.keys(TRUDVANG.traits))if(!keep.includes(trait))r.traits.push({trait,method:"replace",value:Number(s.traits?.[trait]??0)});
  r.attacks=form.actor.items.filter(i=>i.type==="weapon"&&i.system.category==="natural").map(i=>({name:game.i18n.localize(i.nameKey),damage:i.system.damage,openRoll:i.system.openRoll,combatPoints:i.system.naturalCombatPoints}));
  r.naturalArmor=Number(s.details.naturalArmor)||0;
- const senses=form.featIds.map(id=>Object.entries(CREATURE_ABILITY_REFERENCES).find(([,v])=>v.id===id)).filter(row=>/^Vision/.test(row?.[0]??""));
- r.senses=senses.map(([,ref])=>`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`);
- if(senses.some(([name])=>/nocturne/.test(name)))r.vision="lightAmplification";
- if(senses.some(([name])=>/noir/.test(name)))r.vision="darkvision";
+ r.senses=structuredClone(s.senses??form.featIds.map(id=>Object.entries(CREATURE_ABILITY_REFERENCES).find(([,v])=>v.id===id)).filter(row=>/^(Vision|Vue|Perception de)/.test(row?.[0]??"")).map(([name])=>normalizeSense(name)))
+  .map(s=>normalizeSense({...s,label:game.i18n.localize(s.label??s.labelKey??"")}));
+ r.sensesReplace=true;
  return {rules:r,maximum:Number(s.resources.body.max)};
 }
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[],context}={}){
@@ -91,16 +91,18 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  for(const row of template.changes)if(!validProfileChange(row))throw new Error(game.i18n.format("TRUDVANG.Effect.InvalidProfileChange",{path:row.key}));
  const effectName=supplied?.name||text(key,"Name");
  const rules=rulesFromChanges(template.changes);
- for(const field of ["senses","capabilities"])if(rules[field])rules[field]=rules[field].map(s=>game.i18n.localize(s));
+ if(rules.senses)rules.senses=rules.senses.map(s=>typeof s==="string"?game.i18n.localize(s):({...s,label:game.i18n.localize(s.label??s.labelKey??"")}));
+ if(rules.capabilities)rules.capabilities=rules.capabilities.map(s=>game.i18n.localize(s));
  if(rules.attacks)rules.attacks=rules.attacks.map(a=>({...a,name:game.i18n.localize(a.name)}));
- let durationText=template.duration??"";
+ const resolvedCopy=Boolean(metadata(supplied)?.resolved||metadata(supplied)?.appliedAt!==undefined);
+ let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=[{name:"duration",label:local("Duration"),value:durationText}];
- const indices=[...new Set([...(template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices)fields.push({name:`boost${index}`,label:game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),value:counts[index]??0});
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
- if(template.levelParameter){
+ if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
   const tablet=Array.from(caster.items??[]).find(i=>i.type==="tablet"&&i.system.catalogId===template.sourceId.split(":")[0]);
   fields.push({name:"powerLevel",label:game.i18n.localize(template.levelParameter.labelKey),value:Number(tablet?.system.level)||template.levelParameter.default});
@@ -121,15 +123,16 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const duration=await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  if(Number.isFinite(formMaximum))changes.push({key:"system.resources.body.max",type:"override",value:String(formMaximum),phase:"initial"});
- if(template.levelParameter)for(const id of template.levelParameter.knowledge??[])if(rules.knowledge?.[id]!==undefined)rules.knowledge[id]*=Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0);
+ if(!resolvedCopy&&template.levelParameter)for(const id of template.levelParameter.knowledge??[])if(rules.knowledge?.[id]!==undefined)rules.knowledge[id]*=Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0);
  const addVitality=amount=>{for(const field of ["bodyMax","bodyValue"]){
   const key=`system.modifiers.${field}`,row=changes.find(c=>c.key===key&&c.type==="add");
   if(row)row.value=String(Number(row.value)+amount);
   else changes.push({key,type:"add",value:String(amount),phase:"initial"});
  }};
- for(const p of template.parameters??[]){
+ for(const p of resolvedCopy?[]:template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`]??counts[p.index])||0);if(!count)continue;
   if(p.target==="duration")duration.value+=count*p.value;
+  if(p.target==="senseRange"&&rules.senses?.[p.sense])rules.senses[p.sense].range+=count*p.value;
   if(p.target==="traitDegrees")for(const row of rules.traits??[])if(row.trait===p.trait&&row.method==="degrees")row.value+=Math.sign(row.value||1)*count*p.value;
   if(p.target==="traitValue")for(const row of rules.traits??[])if(row.trait===p.trait)row.value+=count*p.value;
   if(p.target==="modifier"){
@@ -197,7 +200,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(Number.isFinite(template.priority))for(const change of changes)change.priority??=template.priority;
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
- const meta={key,sourceId:template.sourceId,summary,editableChanges:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting};
+ const meta={key,sourceId:template.sourceId,summary,editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting};
   const description=supplied?.description??text(key,"Description");
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId:key,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
@@ -290,7 +293,7 @@ export function syncTransformationTokens(actor){
 }
 async function updateTransformationTokens(actor){
  if(!canSyncActor(actor))return;
- const profile=transformationProfile(actor),mode=profile.vision;
+ const profile=transformationProfile(actor),vision=sensoryVision(profile.sensory);
  const sized=profile.effects.some(effect=>effectRules(effect).size!==undefined);
  const dimensions=sized?creatureTokenDimensions(profile.size):null;
  const tokens=actor.isToken?[actor.token]:Array.from(new Set([
@@ -305,21 +308,12 @@ async function updateTransformationTokens(actor){
    if(!footprint||token.width!==dimensions.width||token.height!==dimensions.height||footprint.applied.width!==dimensions.width||footprint.applied.height!==dimensions.height)
     await token.update({...dimensions,[`flags.${SCOPE}.transformationSize`]:{before,applied:dimensions}});
   }else if(footprint){
-   const changes={[`flags.${SCOPE}.-=transformationSize`]:null};
+   const changes={[`flags.${SCOPE}.transformationSize`]:foundry.data.operators.ForcedDeletion.create()};
    if(token.width===footprint.applied.width&&token.height===footprint.applied.height)Object.assign(changes,footprint.before);
    await token.update(changes);
   }
-  const saved=token.flags?.[SCOPE]?.transformationVision;
-  if(mode){
-   const changes={"sight.visionMode":mode};
-   if(!saved)changes[`flags.${SCOPE}.transformationVision`]={before:token.sight.visionMode,applied:mode};
-   else changes[`flags.${SCOPE}.transformationVision.applied`]=mode;
-   if(!saved||token.sight.visionMode!==mode||saved.applied!==mode)await token.update(changes);
-  }else if(saved){
-   const changes={[`flags.${SCOPE}.-=transformationVision`]:null};
-   if(token.sight.visionMode===saved.applied)changes["sight.visionMode"]=saved.before;
-   await token.update(changes);
-  }
+  const visionChanges=tokenVisionUpdate(token,vision);
+  if(Object.keys(visionChanges).length)await token.update(visionChanges);
  }
 }
 /** A pre-fix chat button may contain only "{" in its context attribute. Its
@@ -371,4 +365,5 @@ export function registerTransformationHooks(){
  }});
  Hooks.on("createToken",async token=>{if(canSyncActor(token.actor))await syncTransformationTokens(token.actor);});
  Hooks.on("updateActor",async actor=>{if(canSyncActor(actor))await syncTransformationTokens(actor);});
+ for(const hook of ["createItem","updateItem","deleteItem"])Hooks.on(hook,async item=>{if(item.parent?.documentName==="Actor"&&canSyncActor(item.parent))await syncTransformationTokens(item.parent);});
 }

@@ -106,6 +106,14 @@
       "strength": 2
     },
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      }
+    ],
     "skillTree": [
       {
         "name": "Shield Bearer",

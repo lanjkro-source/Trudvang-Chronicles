@@ -1,7 +1,7 @@
 {
   "_id": "QO1rcPiOjPkQlRmS",
   "_key": "!items!QO1rcPiOjPkQlRmS",
-  "name": "Control Fire",
+  "name": "Gift of Water",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "l9EVGtWrXsYtZu0v",
       "_key": "!items.effects!QO1rcPiOjPkQlRmS.l9EVGtWrXsYtZu0v",
-      "name": "Control Fire",
+      "name": "Gift of Water",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV.",

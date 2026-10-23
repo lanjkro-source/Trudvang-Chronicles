@@ -2219,3 +2219,25 @@ test("temporary health is editable on the real actor form and unrelated submissi
  await submit.call(sheet,{target:{name:"trudvang.temporaryHP"}},{},{object:{"trudvang.temporaryHP":"0"}});
  assert.equal(npc._source.system.resources.body.temporary,3);
 });
+
+test("PJ and PNJ sensory editors save intrinsic rows without persisting the effect's temporary senses",async()=>{
+ for(const type of ["character","npc"]){
+  const instance=actor();instance.type=type;instance.isOwner=true;
+  instance.system.senses=[{type:"normal",label:"",range:null,enabled:true},{type:"dark",label:"Vision dans le noir",range:60,enabled:true}];
+  instance.system.experience={creationMode:false};
+  const changes=[];instance.update=async data=>{changes.push(data);if(data.system?.senses)instance.system.senses=data.system.senses;};
+  const submit=TrudvangActorSheet.DEFAULT_OPTIONS.form.handler,sheet={actor:instance,isEditable:true};
+  await submit.call(sheet,{target:{name:"trudvang.senses.1.range"}},{},{object:{"trudvang.senses.1.range":"300"}});
+  assert.equal(instance.system.senses[1].range,300);assert.equal(changes.at(-1).trudvang,undefined);
+  await submit.call(sheet,{target:{name:"trudvang.senses.1.enabled"}},{},{object:{"trudvang.senses.1.enabled":false}});
+  assert.equal(instance.system.senses[1].enabled,false);
+  await submit.call(sheet,{target:{name:"trudvang.senses.1.range"}},{},{object:{"trudvang.senses.1.range":""}});
+  assert.equal(instance.system.senses[1].range,null);
+  await TrudvangActorSheet.DEFAULT_OPTIONS.actions["sense-add"].call(sheet,{}, {dataset:{action:"sense-add"}});
+  assert.equal(changes.at(-1)["system.senses"].length,3);
+  instance.isOwner=false;
+  const count=changes.length;
+  await submit.call(sheet,{target:{name:"trudvang.senses.1.range"}},{},{object:{"trudvang.senses.1.range":"10"}});
+  assert.equal(changes.length,count);
+ }
+});

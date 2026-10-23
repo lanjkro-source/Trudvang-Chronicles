@@ -118,6 +118,20 @@
       "intelligence": 2
     },
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      },
+      {
+        "type": "night",
+        "range": null,
+        "enabled": true,
+        "label": "Low-Light Vision"
+      }
+    ],
     "skillTree": [],
     "attacks": [],
     "resources": {

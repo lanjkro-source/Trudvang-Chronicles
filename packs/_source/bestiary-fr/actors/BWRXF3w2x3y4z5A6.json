@@ -115,6 +115,26 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      },
+      {
+        "type": "other",
+        "range": null,
+        "enabled": true,
+        "label": "Perception de l’hostilité"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Vision dans le noir"
+      }
+    ],
     "skillTree": [
       {
         "name": "Combat",

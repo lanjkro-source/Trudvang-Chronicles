@@ -1,0 +1,53 @@
+{
+  "_id": "ccnz1cHcIdJeKfLg",
+  "_key": "!items!ccnz1cHcIdJeKfLg",
+  "name": "Sight of the Dwarves",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+    "description": "The target gains a dwarf’s night vision for the duration of the effect.",
+    "summary": "Allows sight in darkness.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "Xyxtm9D9EaGbHcId",
+      "_key": "!items.effects!ccnz1cHcIdJeKfLg.Xyxtm9D9EaGbHcId",
+      "name": "Sight of the Dwarves",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "The target gains a dwarf’s night vision for the duration of the effect.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0\",\"range\":null,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+            "sourceId": "holy-haminges-power-of-men:sight-of-the-dwarves:0",
+            "summary": "Allows sight in darkness.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

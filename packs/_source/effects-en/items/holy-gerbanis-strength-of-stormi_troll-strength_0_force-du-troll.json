@@ -1,7 +1,7 @@
 {
   "_id": "UCin67y4z5A6B7C8",
   "_key": "!items!UCin67y4z5A6B7C8",
-  "name": "Voice of Command (Strength of Stormi)",
+  "name": "Troll Strength (Strength of Stormi)",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "T8kBDvZu0v1w2x3y",
       "_key": "!items.effects!UCin67y4z5A6B7C8.T8kBDvZu0v1w2x3y",
-      "name": "Voice of Command (Strength of Stormi)",
+      "name": "Troll Strength (Strength of Stormi)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "Replaces the target’s Strength trait with the exceptional level +4.",

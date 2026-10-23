@@ -1,5 +1,6 @@
 import {temporaryHealthGrants, temporaryHealthState, effectRules, transformationProfile} from "./transformation-profile.mjs";
 import {effectContributions,effectContributionText} from "./effect-contributions.mjs";
+import {normalizeSense} from "./senses.mjs";
 
 /** Shared PJ/PNJ state panel: prepared values plus the named contributors. */
 export function effectStatus(actor, {localize = key => key} = {}) {
@@ -24,7 +25,7 @@ export function effectStatus(actor, {localize = key => key} = {}) {
       || parentSummary
       || String(effect.description ?? "").replace(/<[^>]*>/g," ");
     return {name:effect.name, summary, details: [
-      ...(r.senses ?? []).map(localize), ...(r.capabilities ?? []).map(localize), ...(r.immunities ?? []).map(localize),
+      ...(r.senses ?? []).map(s=>localize(normalizeSense(s).label)), ...(r.capabilities ?? []).map(localize), ...(r.immunities ?? []).map(localize),
       ...["noParry","noDodge","ignoreWounds","ignoreFear"].filter(key=>r[key]).map(key=>localize(`TRUDVANG.Effect.Profile.${key}`)),
       ...(r.heightBonus?[`${localize("TRUDVANG.Effect.Profile.heightBonus")} +${r.heightBonus} m`]:[]),
       ...(r.weightBonus?[`${localize("TRUDVANG.Effect.Profile.weightBonus")} +${r.weightBonus} kg`]:[])

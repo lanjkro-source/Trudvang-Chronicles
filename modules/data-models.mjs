@@ -186,6 +186,8 @@ function actorCommonSchema() {
     }),
     transformation: schema(Object.fromEntries(EFFECT_RULE_KEYS.map(key => [key,
       new fields.StringField({required: true, nullable: false, initial: "", persisted: false})]))),
+    senses: new fields.ArrayField(schema({type:string("normal"),label:string(),range:number(null,{nullable:true,min:0}),enabled:boolean(true)}),
+      {required:true,initial:[{type:"normal",label:"",range:null,enabled:true}]}),
     resources: schema({
       body: resource(32,32,{trackMaximum:true,temporary:true}),
       raud: resource(0, 0),

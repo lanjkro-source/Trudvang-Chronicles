@@ -278,6 +278,32 @@
     ],
     "traits": {},
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      },
+      {
+        "type": "other",
+        "range": null,
+        "enabled": true,
+        "label": "Sense Life"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Darkvision"
+      },
+      {
+        "type": "other",
+        "range": null,
+        "enabled": true,
+        "label": "Sight"
+      }
+    ],
     "skillTree": [],
     "attacks": [],
     "resources": {

@@ -36,19 +36,13 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\"]",
+            "value": "[{\"type\":\"dark\",\"label\":\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\",\"range\":60,\"enabled\":true}]",
             "phase": "initial"
           },
           {
             "key": "system.transformation.traits",
             "type": "override",
             "value": "[{\"trait\":\"constitution\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"psyche\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":2,\"overflow\":4}]",
-            "phase": "initial"
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "darkvision",
             "phase": "initial"
           },
           {

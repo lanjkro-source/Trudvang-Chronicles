@@ -51,6 +51,14 @@
       "strength": 5
     },
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      }
+    ],
     "skillTree": [],
     "attacks": [],
     "resources": {

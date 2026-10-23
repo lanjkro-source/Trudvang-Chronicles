@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,74);
+ assert.equal(Object.keys(sources).length,76);
 });
 test("forms compose without modifying source data and disabled or expired effects do not contribute",()=>{
  const actor={type:"character",system:{effective:{traits:{strength:1,dexterity:0}}},effects:[effect({size:7,traits:[{trait:"strength",method:"highest",value:6}],suspendEquipment:true}),effect({size:10},{disabled:true}),effect({size:3},{duration:{expired:true}})]};
@@ -200,10 +200,11 @@ test("compendium drops read persisted source rows and reject malformed dynamic r
  assert.equal(created,null);
 });
 test("vision is restored after removal, while later manual token edits remain intact",async()=>{
+ globalThis.foundry.data={operators:{ForcedDeletion:{create:()=>({delete:true})}}};
  const token={sight:{visionMode:"basic"},flags:{},async update(data){
   if(data["sight.visionMode"])this.sight.visionMode=data["sight.visionMode"];
   if(data[`flags.${S}.transformationVision`])this.flags[S]={transformationVision:data[`flags.${S}.transformationVision`]};
-  if(data[`flags.${S}.-=transformationVision`]!==undefined)delete this.flags[S].transformationVision;
+  if(data[`flags.${S}.transformationVision`]?.delete)delete this.flags[S].transformationVision;
  }};
  const actor={isOwner:true,system:{},getActiveTokens:()=>[token],effects:[effect({vision:"darkvision"})]};
  await syncTransformationTokens(actor);assert.equal(token.sight.visionMode,"darkvision");
@@ -218,7 +219,7 @@ test("size effects resize linked tokens across scenes and restore their original
   for(const key of ["width","height"])if(data[key]!==undefined)this[key]=data[key];
   this.flags[S]??={};
   if(data[`flags.${S}.transformationSize`])this.flags[S].transformationSize=structuredClone(data[`flags.${S}.transformationSize`]);
-  if(data[`flags.${S}.-=transformationSize`]!==undefined)delete this.flags[S].transformationSize;
+  if(data[`flags.${S}.transformationSize`]?.delete)delete this.flags[S].transformationSize;
  }});
  const previousGame=globalThis.game;
  try{
@@ -684,4 +685,46 @@ test("all numeric non-duration improvements resolve from casting counts and comp
   await applyTransformation(actor,ally,{counts:[0,0,0,0,1]});
   assert.equal(created.system.changes.find(c=>c.key.startsWith("system.effective.traits.")).value,"6");
  }
+});
+
+test("copying already resolved effects preserves improvements, duration and rolled vitality instead of applying them twice",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split('.').reduce((o,k)=>o?.[k],language)??key}};
+ let created,rolls=0;
+ const oldRoll=globalThis.Roll,oldChat=globalThis.ChatMessage;
+ try{
+  globalThis.Roll=class {async evaluate(){this.total=7;rolls++;return this;}async toMessage(){}};
+  globalThis.ChatMessage={getSpeaker:()=>({})};
+  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+  foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute"});
+  const covered=new Set();
+  for(const [key,t]of Object.entries(templates)){
+   const rules=rulesFromChanges(t.changes);
+   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter)continue;
+   if(!t.parameters.length&&!rules.vitality)continue;
+   const counts=[];for(const p of t.parameters){counts[p.index]=2;covered.add(p.target);}
+   await applyTransformation(actor,key,{counts});const first=structuredClone(created),beforeRolls=rolls;
+   for(const legacy of [false,true]){
+    const source={documentName:"ActiveEffect",...structuredClone(first)};
+    if(legacy)delete source.flags[S].transformation.resolved;
+    await applyTransformation(actor,key,{source});
+    assert.deepEqual(created.system.changes,first.system.changes,key);
+    assert.deepEqual(created.duration,first.duration,`${key}: duration is not shortened or improved twice`);
+    assert.equal(rolls,beforeRolls,`${key}: copying the resolved result does not reroll vitality`);
+   }
+  }
+  for(const target of ["duration","vitality","temporaryHP","protection","damage","modifier","traitDegrees","traitValue","attackStep","senseRange"])assert.ok(covered.has(target),target);
+ }finally{globalThis.Roll=oldRoll;globalThis.ChatMessage=oldChat;}
+});
+
+test("selected bestiary forms transfer localized, editable sensory profiles rather than only Vision abilities",()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ globalThis.game={i18n:{localize:key=>key.split('.').reduce((o,k)=>o?.[k],language)??key}};
+ const form={actor:{system:{details:{size:1,move:[]},traits:{},resources:{body:{max:20}},senses:[{type:"normal",labelKey:"TRUDVANG.Senses.Types.normal",range:null,enabled:true},{type:"other",label:"Odorat exceptionnel",range:30,enabled:true} ]},items:[]},featIds:[]};
+ const {rules}=selectFormData(form,"physical");
+ assert.equal(rules.sensesReplace,true);assert.equal(rules.senses[0].label,"Vision normale");assert.equal(rules.senses[1].label,"Odorat exceptionnel");
+ assert.ok(changesFromRules(rules).every(validProfileChange));
+ const actor={system:{senses:[{type:"night",label:"Vision nocturne",range:60,enabled:true}]},effects:[effect(rules)]};
+ assert.equal(transformationProfile(actor).sensory.some(s=>s.type==="night"),false);
+ actor.effects=[];assert.equal(transformationProfile(actor).sensory[0].type,"night");
 });

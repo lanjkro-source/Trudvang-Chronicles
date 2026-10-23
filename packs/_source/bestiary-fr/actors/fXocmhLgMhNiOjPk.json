@@ -2308,6 +2308,14 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      }
+    ],
     "skillTree": [
       {
         "name": "Agilité",

@@ -37,7 +37,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0\"]",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0\",\"range\":null,\"enabled\":true}]",
             "phase": "initial",
             "priority": 20
           },
@@ -66,13 +66,6 @@
             "key": "system.transformation.suspendEquipment",
             "type": "override",
             "value": "true",
-            "phase": "initial",
-            "priority": 20
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 20
           }

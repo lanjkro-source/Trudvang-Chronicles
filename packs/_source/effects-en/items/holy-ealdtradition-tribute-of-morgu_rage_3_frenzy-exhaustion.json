@@ -1,7 +1,7 @@
 {
   "_id": "MLeJsC4z5A6B7C8D",
   "_key": "!items!MLeJsC4z5A6B7C8D",
-  "name": "Exhaustion after frenzy (Boiling Blood — Tribute of Morgu)",
+  "name": "Exhaustion after frenzy (Rage — Tribute of Morgu)",
   "type": "effect",
   "img": "icons/svg/sleep.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "BOtee7B7C8D9EaGb",
       "_key": "!items.effects!MLeJsC4z5A6B7C8D.BOtee7B7C8D9EaGb",
-      "name": "Exhaustion after frenzy (Boiling Blood — Tribute of Morgu)",
+      "name": "Exhaustion after frenzy (Rage — Tribute of Morgu)",
       "type": "effect",
       "img": "icons/svg/sleep.svg",
       "description": "When the frenzy ends, the target collapses and remains exhausted for half its effective duration. If it is not cooled down, it takes 1, 2, or 4 damage per round for two rounds after Rage, Madness, or Riastarthae, with no armor protection.",

@@ -35,8 +35,15 @@ test("both effect packs preserve every template, stable bilingual identity, prov
   const reference=new URL(`../game doc/${code}/trudvang-effects-${code}.json`,import.meta.url);
   if(fs.existsSync(reference)){
    const entries=JSON.parse(fs.readFileSync(reference));
+   const powerPath=new URL(`../game doc/${code}/trudvang-powers-${code}.json`,import.meta.url);
+   const sourcePowers=fs.existsSync(powerPath)?new Map(JSON.parse(fs.readFileSync(powerPath)).map(p=>[p.catalogId,p])):null;
    assert.deepEqual(entries.map(e=>e.id),items.map(e=>e._id));
    for(const e of entries){
+    const source=sourcePowers?.get(e.sourceId);
+    if(source){
+     assert.equal(e.source.name,source.name,`${code}: effect provenance must use the source id, never array position`);
+     assert.ok(source.effectTemplates.some(t=>t.id===e.templateId),`${code}: effect belongs to its actual power`);
+    }
     const t=TRANSFORMATION_TEMPLATES[e.key];
     const native=changes=>changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
     assert.deepEqual(native(e.changes),native(t.changes));

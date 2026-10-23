@@ -17,6 +17,10 @@ const check = process.argv.includes("--check");
 const load = path => JSON.parse(readFileSync(path, "utf8"));
 const sources = Object.fromEntries(["fr", "en"].map(code => [code, load(`game doc/${code}/trudvang-creatures-${code}.json`)]));
 if (sources.fr.length !== sources.en.length) throw new Error("Bilingual creature references must be aligned.");
+for(const [i,entry]of sources.fr.entries()){
+ const mechanics=senses=>(senses??[]).map(({label,...data})=>data);
+ if(JSON.stringify(mechanics(entry.senses))!==JSON.stringify(mechanics(sources.en[i].senses)))throw new Error(`Unaligned creature senses: ${entry.name}`);
+}
 const languages = Object.fromEntries(["fr", "en"].map(code => [code, load(`lang/${code}.json`)]));
 for (const language of Object.values(languages)) language.TRUDVANG.Content.Creature = {};
 const localize = (code, key) => key.split(".").reduce((value, part) => value?.[part], languages[code]);
@@ -163,6 +167,7 @@ const entries = sources.fr.map((creature, index) => {
     system: {portraits, traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
       if (!traitKeys[trait]) throw new Error(`Unknown trait ${trait}`); return [traitKeys[trait], value];
     })), skills: Object.fromEntries(rawRows.filter(row => row.kind === "skill" && row.skillKey).map(row => [row.skillKey, {value: row.value, bonus: 0}])),
+    senses:(creature.senses??[]).map((s,i)=>({...s,labelKey:key(`Sense${i}`,s.label,english.senses[i].label),label:undefined})),
     skillTree, attacks, resources: {body: {value: body, max: body}}, combatPools: {free: {
       ...(Number.isFinite(creature.combatPoints) ? {maxOverride: Math.max(0, Math.trunc(creature.combatPoints))} : {}),
       spent: 0, weaponSpent: 0, offHandSpent: 0}},

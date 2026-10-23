@@ -1,0 +1,53 @@
+{
+  "_id": "ccnz1cHcIdJeKfLg",
+  "_key": "!items!ccnz1cHcIdJeKfLg",
+  "name": "Vision des nains",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+    "description": "La cible bénéficie de la vision nocturne d’un nain pendant la durée de l’effet.",
+    "summary": "Permet de voir dans l’obscurité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 272
+    }
+  },
+  "effects": [
+    {
+      "_id": "Xyxtm9D9EaGbHcId",
+      "_key": "!items.effects!ccnz1cHcIdJeKfLg.Xyxtm9D9EaGbHcId",
+      "name": "Vision des nains",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "La cible bénéficie de la vision nocturne d’un nain pendant la durée de l’effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0\",\"range\":null,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains",
+            "sourceId": "holy-haminges-power-of-men:sight-of-the-dwarves:0",
+            "summary": "Permet de voir dans l’obscurité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

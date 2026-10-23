@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 110 variantes.
+les états, les règles et les liens des 115 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -40,6 +40,31 @@ l’effet source. La maladie des wargs et la forme de warg garou sont deux effet
 leurs tests et leur application restent des actions distinctes.
 
 ## Préparation et ressources
+
+Les acteurs disposent de `system.senses`, une liste éditable de facultés
+`{type, label, range, enabled}`. La portée est en mètres ; `null` signifie qu’aucune
+limite n’est spécifiée. Vision normale est proposée par défaut. Les bestiaires
+FR/EN renseignent ce champ et les transformations de forme le transfèrent. Les
+effets peuvent ajouter des sens via `system.transformation.senses`, ou remplacer
+le profil pendant la transformation avec `system.transformation.sensesReplace`.
+Les sens sont affichés dans le cadre État des fiches PJ/PNJ ; les autres sens que
+la vision restent des rappels textuels. Les portées de l’Ouïe du hibou et du Sens
+du griffon suivent leurs améliorations sans modifier la détection Foundry.
+
+Conformément au choix du MJ, Vision nocturne et Vision dans le noir activent
+`sight.enabled`, le mode `darkvision`, ainsi que `detectionModes.darkvision` avec
+sa portée. Les détections de Foundry V14 utilisent un objet indexé par identifiant.
+Les autres détections sont conservées. À la suppression, les réglages gérés sont
+restaurés si le MJ ne les a pas modifiés entre-temps. La portée maximale est
+utilisée ; les paliers de netteté restent descriptifs. Les distances sont converties
+si la scène est en pieds ou en kilomètres.
+
+Les effets appliqués portent `transformation.resolved`. Leur copie conserve les
+valeurs déjà résolues et leur durée sans réappliquer les améliorations, les niveaux
+de savoir ou les tirages aléatoires. Les anciennes copies sont reconnues par leur
+date `appliedAt`. Les références de compendium restent paramétrables à chaque
+application. L’inventaire des rappels descriptifs est dans
+[`descriptive-effects.md`](descriptive-effects.md).
 
 Chaque conséquence est enregistrée dans `system.changes` ou dans les états de
 l’effet. Les propriétés de profil utilisent `system.transformation.<propriété>` :

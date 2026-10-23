@@ -1,7 +1,7 @@
 {
   "_id": "viWOd7y4z5A6B7C8",
   "_key": "!items!viWOd7y4z5A6B7C8",
-  "name": "Blood of the Lindwurm — Right leg",
+  "name": "Limb of Stone — Right leg",
   "type": "effect",
   "img": "icons/svg/aura.svg",
   "folder": null,
@@ -18,7 +18,7 @@
     {
       "_id": "KdfCqwZu0v1w2x3y",
       "_key": "!items.effects!viWOd7y4z5A6B7C8.KdfCqwZu0v1w2x3y",
-      "name": "Blood of the Lindwurm — Right leg",
+      "name": "Limb of Stone — Right leg",
       "type": "effect",
       "img": "icons/svg/aura.svg",
       "description": "The right leg becomes a heavy, unusable mass of stone; clothing or armor covering it is petrified with it.",

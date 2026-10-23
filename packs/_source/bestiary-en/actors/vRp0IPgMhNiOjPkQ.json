@@ -3338,6 +3338,26 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      },
+      {
+        "type": "night",
+        "range": null,
+        "enabled": true,
+        "label": "Low-Light Vision"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Darkvision"
+      }
+    ],
     "skillTree": [
       {
         "name": "Agility",

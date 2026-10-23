@@ -27,6 +27,14 @@
       "dexterity": -4
     },
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Normal sight"
+      }
+    ],
     "skillTree": [],
     "attacks": [],
     "resources": {

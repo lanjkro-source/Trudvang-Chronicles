@@ -590,6 +590,36 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne": {
+    "id": "vision-nocturne",
+    "duration": "1 minute",
+    "icon": "icons/svg/eye.svg",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne.Sense0\",\"range\":60,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-gerbanis-power-of-enken:night-vision:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400
+      }
+    ]
+  },
   "holy-gerbanis-power-of-enken:bold:2#temerite": {
     "id": "temerite",
     "icon": "icons/svg/aura.svg",
@@ -704,7 +734,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 20
       },
@@ -733,13 +763,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.suspendEquipment",
         "type": "override",
         "value": "true",
-        "phase": "initial",
-        "priority": 20
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 20
       }
@@ -776,7 +799,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\"]",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 30
       },
@@ -834,7 +857,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense0\",\"range\":null,\"enabled\":true},{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -870,13 +893,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.suspendEquipment",
         "type": "override",
         "value": "true",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -1333,7 +1349,15 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "ouie-du-hibou",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou.Sense0\",\"range\":50,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
     "statuses": [],
     "related": [],
     "priority": 20,
@@ -1343,6 +1367,12 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 0,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 1,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 20
       }
     ]
   },
@@ -1350,7 +1380,15 @@ export const TRANSFORMATION_TEMPLATES = {
     "id": "sens-du-griffon",
     "icon": "icons/svg/aura.svg",
     "duration": "1 minute",
-    "changes": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Sense0\",\"range\":200,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
     "statuses": [],
     "related": [],
     "priority": 40,
@@ -1360,6 +1398,12 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 0,
         "target": "duration",
         "value": 60
+      },
+      {
+        "index": 1,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 100
       }
     ]
   },
@@ -2090,6 +2134,36 @@ export const TRANSFORMATION_TEMPLATES = {
     "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": []
+  },
+  "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains": {
+    "id": "vision-des-nains",
+    "duration": "1 minute",
+    "icon": "icons/svg/eye.svg",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0\",\"range\":null,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-haminges-power-of-men:sight-of-the-dwarves:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600
+      }
+    ]
   },
   "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
     "id": "force-du-troll",
@@ -2992,7 +3066,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense1\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense0\",\"range\":null,\"enabled\":true},{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Sense1\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 30
       },
@@ -3007,13 +3081,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.attacks",
         "type": "override",
         "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-        "phase": "initial",
-        "priority": 30
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 30
       }
@@ -3108,7 +3175,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -3123,13 +3190,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.attacks",
         "type": "override",
         "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -3166,7 +3226,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -3195,13 +3255,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.defense",
         "type": "override",
         "value": "-2",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -3238,7 +3291,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -3260,13 +3313,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.defense",
         "type": "override",
         "value": "-3",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -3303,7 +3349,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense1\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense0\",\"range\":null,\"enabled\":true},{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense1\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -3325,13 +3371,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.movement",
         "type": "override",
         "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":0.5},{\"mode\":\"flight\",\"method\":\"baseMultiple\",\"value\":4}]",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -3368,7 +3407,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial",
         "priority": 50
       },
@@ -3390,13 +3429,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.attacks",
         "type": "override",
         "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"maxActions\":0}]",
-        "phase": "initial",
-        "priority": 50
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial",
         "priority": 50
       }
@@ -4144,19 +4176,13 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\"]",
+        "value": "[{\"type\":\"dark\",\"label\":\"TRUDVANG.Content.Transformation.NcOgKSkQlRmSnToU#infection-des-rugtannes.Sense0\",\"range\":60,\"enabled\":true}]",
         "phase": "initial"
       },
       {
         "key": "system.transformation.traits",
         "type": "override",
         "value": "[{\"trait\":\"constitution\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"psyche\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"strength\",\"method\":\"degrees\",\"value\":2,\"overflow\":4},{\"trait\":\"dexterity\",\"method\":\"degrees\",\"value\":2,\"overflow\":4}]",
-        "phase": "initial"
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "darkvision",
         "phase": "initial"
       },
       {
@@ -4209,7 +4235,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial"
       },
       {
@@ -4222,12 +4248,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.knowledge",
         "type": "override",
         "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
-        "phase": "initial"
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial"
       }
     ],
@@ -4274,7 +4294,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.gXp2SRjPkQlRmSnT#warg-garou.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial"
       },
       {
@@ -4287,12 +4307,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.knowledge",
         "type": "override",
         "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
-        "phase": "initial"
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial"
       }
     ],
@@ -4339,7 +4353,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.senses",
         "type": "override",
-        "value": "[\"TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Sense0\"]",
+        "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.i4Zci8A6B7C8D9Ea#warg-garou.Sense0\",\"range\":null,\"enabled\":true}]",
         "phase": "initial"
       },
       {
@@ -4352,12 +4366,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.transformation.knowledge",
         "type": "override",
         "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
-        "phase": "initial"
-      },
-      {
-        "key": "system.transformation.vision",
-        "type": "override",
-        "value": "lightAmplification",
         "phase": "initial"
       }
     ],
@@ -4679,6 +4687,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-power-of-enken:willpower:1": [
     "holy-gerbanis-power-of-enken:willpower:1#force-d-ame"
   ],
+  "holy-gerbanis-power-of-enken:night-vision:0": [
+    "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne"
+  ],
   "holy-gerbanis-power-of-enken:bold:2": [
     "holy-gerbanis-power-of-enken:bold:2#temerite"
   ],
@@ -4766,6 +4777,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-haminges-power-of-the-scale:petrify:7#petrification",
     "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half",
     "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds"
+  ],
+  "holy-haminges-power-of-men:sight-of-the-dwarves:0": [
+    "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains"
   ],
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"

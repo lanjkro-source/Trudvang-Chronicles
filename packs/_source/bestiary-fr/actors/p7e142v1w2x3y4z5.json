@@ -108,6 +108,14 @@
       "strength": 1
     },
     "skills": {},
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      }
+    ],
     "skillTree": [
       {
         "name": "Porteur de bouclier",

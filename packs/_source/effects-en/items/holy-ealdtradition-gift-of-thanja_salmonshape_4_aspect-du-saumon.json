@@ -37,7 +37,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\"]",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0\",\"range\":null,\"enabled\":true}]",
             "phase": "initial",
             "priority": 30
           },

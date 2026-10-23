@@ -3338,6 +3338,26 @@
         "bonus": 0
       }
     },
+    "senses": [
+      {
+        "type": "normal",
+        "range": null,
+        "enabled": true,
+        "label": "Vision normale"
+      },
+      {
+        "type": "night",
+        "range": null,
+        "enabled": true,
+        "label": "Vision nocturne"
+      },
+      {
+        "type": "dark",
+        "range": null,
+        "enabled": true,
+        "label": "Vision dans le noir"
+      }
+    ],
     "skillTree": [
       {
         "name": "Agilité",

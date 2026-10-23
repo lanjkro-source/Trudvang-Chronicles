@@ -7,9 +7,9 @@ signifie pas que chaque sort du jeu dispose déjà d’un effet automatique.
 
 ## Modifications de profil prises en charge
 
-Le catalogue contient 113 variantes d’effets, provenant de 74 sources (59 pouvoirs
-ou sortilèges, et 15 capacités). Les pouvoirs définissent 128 paramètres
-d’amélioration, dont 31 hors durée, sur 21 sources : PS, protection, dégâts,
+Le catalogue contient 115 variantes d’effets, provenant de 76 sources (61 pouvoirs
+ou sortilèges, et 15 capacités). Les pouvoirs définissent 134 paramètres
+d’amélioration : PS, protection, dégâts, portées sensorielles,
 degrés ou valeurs de traits, VC d’attaque, facteur de peur et paliers d’attaque.
 Poings d’acier possède en complément son sélecteur de niveau de rune.
 
@@ -88,7 +88,21 @@ résistance. Cette séparation et leurs coûts ont été corrigés dans les sour
 - Ouïe du hibou et Sens du griffon restent des effets descriptifs. Membre de pierre
   indique le membre atteint, sans gestion anatomique de l’équipement ou des gestes.
 - Les capacités narratives (communication, respiration, apparence, etc.) restent
-  des indications avec icône/texte. Les visions utilisent les modes Foundry.
+  des indications avec icône/texte. Les visions activent le mode et la détection
+  Foundry, avec leur portée maximale. Les autres sens sont affichés dans État.
+
+L’inventaire détaillé des 14 rappels descriptifs et des six épuisements est dans
+[`descriptive-effects.md`](descriptive-effects.md). Une copie d’effet déjà appliqué
+ne réapplique plus ses améliorations ; sa durée et ses résultats aléatoires sont
+conservés. Les formes transfèrent désormais tout leur profil sensoriel, au lieu
+de ne reprendre que leurs capacités nommées Vision.
+
+Les effets anglais sont associés à leur pouvoir par `catalogId`, puis par
+identifiant de variante, et leurs modifications mécaniques sont comparées aux
+sources FR. L’ancien rapprochement par position confondait notamment Rage et
+Sang bouillant, Force d’âme et Vision nocturne, ainsi que Membre de pierre et
+Sang du lindwurm. Les noms, sources et associations ont été corrigés dans les JSON
+EN avant de régénérer les références et les compendiums.
 
 Conformément aux décisions du MJ, la pétrification progressive et les transitions
 de fin ne sont pas automatisées. Les effets de récupération et de séquelles

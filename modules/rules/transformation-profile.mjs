@@ -1,5 +1,6 @@
 import {hasProfileChanges, rulesFromChanges, roundEffectValue} from "./effect-rule-changes.mjs";
 import {upgradeFearFactor} from "./fear-resolver.mjs";
+import {sensoryProfile,sensoryVision} from "./senses.mjs";
 export const TRANSFORMATION_SCOPE = "trudvang-chronicles";
 export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
  .sort((a,b)=>Math.min(...Array.from(a.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity)-Math.min(...Array.from(b.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity));
@@ -37,8 +38,8 @@ export function transformationProfile(actor) {
   if(r.testFactor)profile.testFactor={...profile.testFactor,...r.testFactor};
   if(r.damageTakenFactor)profile.damageTakenFactor=(profile.damageTakenFactor??1)*r.damageTakenFactor;
  }
- if(profile.senses.some(s=>/vision nocturne/i.test(s)))profile.vision??="lightAmplification";
- if(profile.senses.some(s=>/noir|darkvision/i.test(s)))profile.vision="darkvision";
+ profile.sensory=sensoryProfile(actor,profile.effects.map(e=>({rules:effectRules(e),name:e.name})));
+ profile.vision=sensoryVision(profile.sensory)?.mode;
  return profile;
 }
 /** Movement multipliers change metres per 2 CP, never the per-turn maximum. */

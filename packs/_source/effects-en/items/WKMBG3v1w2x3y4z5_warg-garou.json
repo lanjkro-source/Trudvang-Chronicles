@@ -48,7 +48,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Sense0\"]",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.WKMBG3v1w2x3y4z5#warg-garou.Sense0\",\"range\":null,\"enabled\":true}]",
             "phase": "initial"
           },
           {
@@ -61,12 +61,6 @@
             "key": "system.transformation.knowledge",
             "type": "override",
             "value": "{\"brawling\":2,\"huntingFishing\":6,\"jumpingClimbingBalancing\":6,\"tracker\":6}",
-            "phase": "initial"
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial"
           }
         ]

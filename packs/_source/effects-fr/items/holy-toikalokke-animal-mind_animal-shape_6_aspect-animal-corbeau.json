@@ -37,7 +37,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense1\"]",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense0\",\"range\":null,\"enabled\":true},{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau.Sense1\",\"range\":null,\"enabled\":true}]",
             "phase": "initial",
             "priority": 50
           },
@@ -59,13 +59,6 @@
             "key": "system.transformation.movement",
             "type": "override",
             "value": "[{\"mode\":\"land\",\"method\":\"multiply\",\"value\":0.5},{\"mode\":\"flight\",\"method\":\"baseMultiple\",\"value\":4}]",
-            "phase": "initial",
-            "priority": 50
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 50
           }

@@ -37,7 +37,7 @@
           {
             "key": "system.transformation.senses",
             "type": "override",
-            "value": "[\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense0\",\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1\"]",
+            "value": "[{\"type\":\"night\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense0\",\"range\":null,\"enabled\":true},{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1\",\"range\":null,\"enabled\":true}]",
             "phase": "initial",
             "priority": 50
           },
@@ -73,13 +73,6 @@
             "key": "system.transformation.suspendEquipment",
             "type": "override",
             "value": "true",
-            "phase": "initial",
-            "priority": 50
-          },
-          {
-            "key": "system.transformation.vision",
-            "type": "override",
-            "value": "lightAmplification",
             "phase": "initial",
             "priority": 50
           }

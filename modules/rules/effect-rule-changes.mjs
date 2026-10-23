@@ -8,10 +8,10 @@ export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegr
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds"];
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace"];
 const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds"]);
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge"]);
-const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreWounds","endAtEmptyHP","recalculateHP"]);
+const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
 const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){
@@ -19,6 +19,7 @@ export function validProfileChange(row){
  const key=row.key.slice(EFFECT_RULE_PREFIX.length),value=parse(row.value);
  if(!EFFECT_RULE_KEYS.includes(key))return false;
  if(key==="powerIds")return Array.isArray(value)&&value.every(id=>typeof id==="string");
+ if(key==="senses")return Array.isArray(value)&&value.every(s=>typeof s==="string"||s&&typeof s.label==="string"&&["normal","night","dark","other"].includes(s.type)&&(s.range===null||Number.isFinite(s.range)&&s.range>=0)&&typeof s.enabled==="boolean");
  if(arrays.has(key))return Array.isArray(value)&&(!["traits","movement","attacks"].includes(key)||value.every(r=>r&&typeof r==="object"&&!Array.isArray(r)));
  if(objects.has(key))return value!==null&&typeof value==="object"&&!Array.isArray(value);
  if(booleans.has(key))return typeof value==="boolean";
