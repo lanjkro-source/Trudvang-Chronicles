@@ -11,7 +11,7 @@ import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
-import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isDesignedForThrowing, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
+import { actorParticipatesInCombat, extraWeaponActionReady, isExtraWeaponAction, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isDesignedForThrowing, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
@@ -1166,6 +1166,7 @@ export class TrudvangActor extends BaseActor {
       || (kind === "parry" && this.transformationProfile?.noParry)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
+    if (inCombat && !extraWeaponActionReady(this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.OrdinaryActionsFirst"));
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const canThrow = kind === "attack" && canThrowWeapon(item);
     const defaultThrowing = canThrow && (throwing ?? isThrowingWeapon(item));
@@ -1238,6 +1239,7 @@ export class TrudvangActor extends BaseActor {
     // Another prepared action may have spent points while this dialog was open.
     // Refresh eligibility before committing rather than rolling a stale total.
     const poolResolution = resolveCombatPools({actor: this, item: mode.usageItem, context: {action: kind, ignoreSpent: !inCombat}});
+    if (inCombat && !extraWeaponActionReady(this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.OrdinaryActionsFirst"));
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     const feint = kind === "attack" && !mode.ranged ? Math.min(spending.total, mode.feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
@@ -1535,7 +1537,7 @@ export class TrudvangActor extends BaseActor {
     await this.update(Object.fromEntries(updates));
     const combatEquipment = this.items.filter(item => ["weapon", "shield"].includes(item.type));
     if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0,
-      ...(weaponType(item) === "natural" ? {"system.naturalCombatPointsSpent": 0} : {})})));
+      ...((weaponType(item) === "natural"||isExtraWeaponAction(item)) ? {"system.naturalCombatPointsSpent": 0} : {})})));
     return this;
   }
 
@@ -1760,7 +1762,7 @@ export class TrudvangActor extends BaseActor {
     if (!this.isInActiveCombat) return this;
     const updates = combatPointSpendingUpdates(this.system.combatPools, allocation, {freeScope});
     const naturalUpdates = resolveCombatPools({actor: this}).pools.filter(pool => pool.id.startsWith("natural:") && Number(allocation[pool.id]) > 0)
-      .flatMap(pool => this.items.filter(item => weaponType(item) === "natural"
+      .flatMap(pool => this.items.filter(item => (weaponType(item) === "natural"||isExtraWeaponAction(item))
         && `natural:${item.system.naturalCombatPool || item.id}` === pool.id)
         .map(item => ({_id: item.id, "system.naturalCombatPointsSpent": pool.spent + Math.min(pool.current, Math.max(0, Math.trunc(Number(allocation[pool.id]))))})));
     if (Object.keys(updates).length) await this.update(updates);

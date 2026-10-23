@@ -1,0 +1,53 @@
+{
+  "_id": "IdLJj1v1w2x3y4z5",
+  "_key": "!items!IdLJj1v1w2x3y4z5",
+  "name": "Cœur d’Enken (alliés)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+    "description": "Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
+    "summary": "Confère Psychisme +4 aux alliés.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 225
+    }
+  },
+  "effects": [
+    {
+      "_id": "VRqTlYpVqWrXsYtZ",
+      "_key": "!items.effects!IdLJj1v1w2x3y4z5.VRqTlYpVqWrXsYtZ",
+      "name": "Cœur d’Enken (alliés)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+            "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
+            "summary": "Confère Psychisme +4 aux alliés.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

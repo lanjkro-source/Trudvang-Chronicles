@@ -1,0 +1,53 @@
+{
+  "_id": "ddBOuKcIdJeKfLgM",
+  "_key": "!items!ddBOuKcIdJeKfLgM",
+  "name": "Force du jotun (alliés)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+    "description": "Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
+    "summary": "Confère Force +4 aux alliés.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 219
+    }
+  },
+  "effects": [
+    {
+      "_id": "iucELZu0v1w2x3y4",
+      "_key": "!items.effects!ddBOuKcIdJeKfLgM.iucELZu0v1w2x3y4",
+      "name": "Force du jotun (alliés)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "summary": "Confère Force +4 aux alliés.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

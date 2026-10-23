@@ -521,6 +521,45 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies": {
+    "id": "force-du-jotun-allies",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 40,
+    "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600
+      },
+      {
+        "index": 4,
+        "target": "traitValue",
+        "trait": "strength",
+        "value": 2,
+        "templates": [
+          "force-du-jotun-allies"
+        ]
+      }
+    ]
+  },
   "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
     "id": "force-d-ame",
     "icon": "icons/svg/aura.svg",
@@ -608,6 +647,45 @@ export const TRANSFORMATION_TEMPLATES = {
         "index": 1,
         "target": "duration",
         "value": 3600
+      }
+    ]
+  },
+  "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies": {
+    "id": "c-ur-d-enken-allies",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 40,
+    "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600
+      },
+      {
+        "index": 4,
+        "target": "traitValue",
+        "trait": "psyche",
+        "value": 2,
+        "templates": [
+          "c-ur-d-enken-allies"
+        ]
       }
     ]
   },
@@ -2375,7 +2453,7 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "key": "system.transformation.extraWeaponAction",
         "type": "override",
-        "value": "{\"combatPoints\":5}",
+        "value": "{\"combatPoints\":5,\"actions\":1}",
         "phase": "initial",
         "priority": 10
       }
@@ -2384,7 +2462,13 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "priority": 10,
     "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
   },
   "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes": {
     "id": "fils-des-flammes",
@@ -2455,6 +2539,31 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm": {
+    "id": "attaque-du-huvfurwurm",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "changes": [
+      {
+        "key": "system.transformation.extraWeaponAction",
+        "type": "override",
+        "value": "{\"combatPoints\":10,\"actions\":2}",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 30,
+    "sourceId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
     "parameters": [
       {
         "index": 0,
@@ -2593,7 +2702,12 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 2,
         "target": "damage",
-        "value": 1
+        "value": 1,
+        "usages": [
+          "melee",
+          "throwing",
+          "natural"
+        ]
       }
     ]
   },
@@ -4559,7 +4673,8 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje"
   ],
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": [
-    "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun"
+    "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+    "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies"
   ],
   "holy-gerbanis-power-of-enken:willpower:1": [
     "holy-gerbanis-power-of-enken:willpower:1#force-d-ame"
@@ -4568,7 +4683,8 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-gerbanis-power-of-enken:bold:2#temerite"
   ],
   "holy-gerbanis-power-of-enken:heart-of-enken:6": [
-    "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken"
+    "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
+    "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies"
   ],
   "holy-ealdtradition-gift-of-thanja:stagshape:2": [
     "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf"
@@ -4677,6 +4793,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-the-dragon:paralyzing-gaze:3": [
     "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant"
+  ],
+  "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": [
+    "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm"
   ],
   "holy-haminges-power-of-the-dragon:dragon-skin:4": [
     "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon"

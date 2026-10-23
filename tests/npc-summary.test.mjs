@@ -961,6 +961,32 @@ test("humanoid bare hands deplete a persisted actor-level AA counter capped at 4
   assert.equal(pc.getWeaponActionState(fists).current, 4);
 });
 
+test("huvfurwurm attacks spend only their shared reserve and reset their actions and CP each round",async t=>{
+ const previous={combat:game.combat,ui:globalThis.ui,document:globalThis.document,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage,dialog:foundry.applications.api.DialogV2};
+ t.after(()=>{game.combat=previous.combat;globalThis.ui=previous.ui;globalThis.document=previous.document;globalThis.Roll=previous.Roll;globalThis.ChatMessage=previous.ChatMessage;foundry.applications.api.DialogV2=previous.dialog;});
+ const warnings=[];globalThis.ui={notifications:{warn:message=>{warnings.push(message);return null;}}};
+ globalThis.document={createElement:()=>({set textContent(value){this.value=value;},get innerHTML(){return this.value;}})};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=5;}};
+ globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>data};
+ const sword=inventoryItem("weapon","Sword",{equipped:true,category:"oneHandedLight",combatSpecialty:"oneHandedLightWeapons",weaponActions:2,weaponActionsSpent:0,damage:"1d10"});sword.id="sword";
+ const extra=inventoryItem("weapon","Attaque du huvfurwurm — Sword",{...sword.system,weaponActions:2,naturalCombatPool:"effect:arms",naturalCombatPoints:10,naturalCombatPointsSpent:0});extra.id="extra";
+ extra.flags={"trudvang-chronicles":{transformationGrant:"arms",extraWeaponAction:{weaponId:sword.id}}};
+ const npc=spendableNpc([sword,extra]);npc.effects=[{id:"arms",system:{changes:[]},flags:{"trudvang-chronicles":{transformation:{editableChanges:true}}}}];
+ npc.allApplicableEffects=()=>npc.effects;
+ for(const i of npc.items){i.actor=npc;i.update=async changes=>{for(const [key,value]of Object.entries(changes))set(i,key,value);};}
+ game.combat={started:true,combatants:[{actor:npc}]};
+ let dialogs=0;foundry.applications.api.DialogV2=class{static async wait(){dialogs++;return {modifier:0,feint:0,allocation:{"natural:effect:arms":5,free:8}};}};
+ await npc.rollWeaponAction(extra,"attack");assert.equal(dialogs,0);assert.match(warnings.at(-1),/actions d’arme ordinaires/);
+ sword.system.weaponActionsSpent=2;
+ const free=structuredClone(npc.system.combatPools.free);
+ await npc.rollWeaponAction(extra,"attack");assert.equal(extra.system.naturalCombatPointsSpent,5);assert.equal(extra.system.weaponActionsSpent,1);
+ await npc.rollWeaponAction(extra,"attack");assert.equal(extra.system.naturalCombatPointsSpent,10);assert.equal(extra.system.weaponActionsSpent,2);
+ assert.deepEqual(npc.system.combatPools.free,free,"injected ordinary allocation must not consume free CP");
+ await npc.rollWeaponAction(extra,"attack");assert.equal(dialogs,2,"third action is blocked");
+ await npc.resetCombatPoints();assert.equal(extra.system.naturalCombatPointsSpent,0);assert.equal(extra.system.weaponActionsSpent,0);assert.equal(sword.system.weaponActionsSpent,0);
+ await npc.rollWeaponAction(extra,"attack");assert.equal(dialogs,2,"ordinary actions are required again after reset");
+});
+
 test("a bare-hands attack rolls end to end without touching item.update", async t => {
   const previous = {combat: game.combat, document: globalThis.document, Roll: globalThis.Roll,
     ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2};

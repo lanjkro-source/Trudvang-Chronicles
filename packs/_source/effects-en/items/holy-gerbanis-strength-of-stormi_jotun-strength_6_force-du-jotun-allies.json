@@ -1,0 +1,53 @@
+{
+  "_id": "ddBOuKcIdJeKfLgM",
+  "_key": "!items!ddBOuKcIdJeKfLgM",
+  "name": "Jotun Strength (allies)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+    "description": "The ally’s Strength becomes +4, or +6 with the dedicated improvement.",
+    "summary": "Grants Strength +4 to allies.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "iucELZu0v1w2x3y4",
+      "_key": "!items.effects!ddBOuKcIdJeKfLgM.iucELZu0v1w2x3y4",
+      "name": "Jotun Strength (allies)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The ally’s Strength becomes +4, or +6 with the dedicated improvement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"strength\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "summary": "Grants Strength +4 to allies.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

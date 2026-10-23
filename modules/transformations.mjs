@@ -84,13 +84,13 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=[{name:"duration",label:local("Duration"),value:durationText}];
  for(const p of template.parameters??[])fields.push({name:`boost${p.index}`,label:game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${p.index}`),value:counts[p.index]??0});
- if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:1});
+ if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
  if(template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
   const tablet=Array.from(caster.items??[]).find(i=>i.type==="tablet"&&i.system.catalogId===template.sourceId.split(":")[0]);
   fields.push({name:"powerLevel",label:game.i18n.localize(template.levelParameter.labelKey),value:Number(tablet?.system.level)||template.levelParameter.default});
  }
- if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon").map(i=>({value:i.id,label:i.name}))});
+ if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
  const answers=await askFields(effectName,fields);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
  let formMaximum;
@@ -111,9 +111,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   else changes.push({key,type:"add",value:String(amount),phase:"initial"});
  }};
  for(const p of template.parameters??[]){
-  const count=Math.max(0,Number(answers[`boost${p.index}`])||0);if(!count)continue;
+  const count=Math.max(0,Number(answers[`boost${p.index}`]??counts[p.index])||0);if(!count)continue;
   if(p.target==="duration")duration.value+=count*p.value;
   if(p.target==="traitDegrees")for(const row of rules.traits??[])if(row.trait===p.trait&&row.method==="degrees")row.value+=Math.sign(row.value||1)*count*p.value;
+  if(p.target==="traitValue")for(const row of rules.traits??[])if(row.trait===p.trait)row.value+=count*p.value;
   if(p.target==="modifier"){
    const row=changes.find(c=>c.key===p.key&&c.type==="add");
    if(row)row.value=String(Number(row.value)+count*p.value);
@@ -123,8 +124,18 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(p.target==="attackStep"&&rules.attacks?.[p.attack])Object.assign(rules.attacks[p.attack],p.steps[Math.min(p.steps.length-1,Math.trunc(count))]);
   if(p.target==="vitality")addVitality(count*p.value);
   if(p.target==="temporaryHP"){const row=changes.find(c=>c.key==="system.resources.body.temporaryMax");if(row)row.value=String(Number(row.value)+count*p.value);else rules.temporaryHP=(rules.temporaryHP??0)+count*p.value;}
-  if(p.target==="protection")changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
-  if(p.target==="damage"){const rows=changes.filter(c=>c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));if(rows.length)for(const row of rows)row.value=String(Number(row.value)+count*p.value);else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}}
+  if(p.target==="protection"){
+   const row=changes.find(c=>c.key==="system.modifiers.protection"&&c.type==="add");
+   if(row)row.value=String(Number(row.value)+count*p.value);
+   else changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
+  }
+  if(p.target==="damage"){
+   const keys=p.usages?.map(u=>`system.modifiers.damageByUsage.${u}`);
+   const rows=changes.filter(c=>keys?keys.includes(c.key):c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));
+   if(keys)for(const key of keys){const row=rows.find(c=>c.key===key);if(row)row.value=String(Number(row.value)+count*p.value);else changes.push({key,type:"add",value:String(count*p.value),phase:"initial"});}
+   else if(rows.length)for(const row of rows)row.value=String(Number(row.value)+count*p.value);
+   else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}
+  }
  }
  if(rules.vitality){addVitality(await rollEffectValue(rules.vitality,{actor,name:effectName}));delete rules.vitality;}
  // Replacing a dynamic effect must resolve against the actor without the old
@@ -155,8 +166,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(rules.extraWeaponAction){
   const chosen=actor.items.get(answers.weapon);
-  if(chosen)(rules.attacks??=[]).push({name:`${text(key,"Name")} — ${chosen.name}`,damage:chosen.system.damage,openRoll:chosen.system.openRoll,maxActions:1,combatPoints:rules.extraWeaponAction.combatPoints});
-  delete rules.extraWeaponAction;
+  if(!chosen)throw Error(local("WeaponRequired"));
+  rules.extraWeaponAction={...rules.extraWeaponAction,actions:rules.extraWeaponAction.actions??1,weaponId:chosen.id};
  }
   const profileChanges=changesFromRules(rules,{priority:template.priority});
   for(const change of profileChanges){
@@ -218,6 +229,18 @@ export function syncEffectGrants(effect,actor=effect.parent){
   if(actor.effects?.get&&!actor.effects.get(effect.id))return;
   const r=effectRules(effect);
   const items=(r.attacks??[]).filter(row=>!row.isUnarmed).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
+  if(r.extraWeaponAction?.weaponId){
+   const weapon=actor.items.get(r.extraWeaponAction.weaponId);
+   if(weapon){
+    const data=weapon.toObject(false);
+    delete data._id;delete data._stats;delete data.folder;
+    data.name=`${effect.name} — ${weapon.name}`;
+    data.effects=[];
+    Object.assign(data.system,{weaponActions:r.extraWeaponAction.actions??1,weaponActionsSpent:0,naturalCombatPool:`effect:${effect.id}`,naturalCombatPoints:r.extraWeaponAction.combatPoints,naturalCombatPointsSpent:0,combatPointBonus:0,combatPointBonusUsed:false});
+    data.flags={[SCOPE]:{transformationGrant:effect.id,extraWeaponAction:{weaponId:weapon.id}}};
+    items.push(data);
+   }
+  }
   for(const id of r.powerIds??[]){
    const tablet=TABLET_CATALOG.find(t=>t.powers.some(p=>p.id===id));
    if(!tablet)continue;

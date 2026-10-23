@@ -1,0 +1,53 @@
+{
+  "_id": "sZUm3A2x3y4z5A6B",
+  "_key": "!items!sZUm3A2x3y4z5A6B",
+  "name": "Attaque du huvfurwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+    "description": "Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
+    "summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 279
+    }
+  },
+  "effects": [
+    {
+      "_id": "DQPf7ZsYtZu0v1w2",
+      "_key": "!items.effects!sZUm3A2x3y4z5A6B.DQPf7ZsYtZu0v1w2",
+      "name": "Attaque du huvfurwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.extraWeaponAction",
+            "type": "override",
+            "value": "{\"combatPoints\":10,\"actions\":2}",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+            "sourceId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
+            "summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

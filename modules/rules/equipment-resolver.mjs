@@ -333,7 +333,7 @@ export function resolveWeaponActions({item, actor = null, modifiers = []} = {}) 
   return resolveNumericEquipmentStat({
     key: "weaponActions",
     base: item?.system?.weaponActions,
-    modifiers: [...twoHandedWeaponActionModifiers(item, actor), ...modifiers],
+    modifiers: [...(item?.flags?.["trudvang-chronicles"]?.extraWeaponAction?[]:twoHandedWeaponActionModifiers(item, actor)), ...modifiers],
     minimum: 0,
     integer: true
   });

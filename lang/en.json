@@ -12692,6 +12692,15 @@
           "SourcePage": "164",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies": {
+          "Name": "Jotun Strength (allies)",
+          "Summary": "Grants Strength +4 to allies.",
+          "Description": "The ally’s Strength becomes +4, or +6 with the dedicated improvement.",
+          "SourceName": "Jotun Strength",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Night Vision",
           "Summary": "Strengthens courage and Psyche.",
@@ -12714,6 +12723,15 @@
           "Name": "Heart of Enken",
           "Summary": "Raises Psyche to an exceptional level.",
           "Description": "The target gains the exceptional Psyche trait +8.",
+          "SourceName": "Heart of Enken",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies": {
+          "Name": "Heart of Enken (allies)",
+          "Summary": "Grants Psyche +4 to allies.",
+          "Description": "The ally’s Psyche becomes +4, or +6 with the dedicated improvement.",
           "SourceName": "Heart of Enken",
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
@@ -13104,7 +13122,7 @@
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Rampage of the Huvfurwurm",
           "Summary": "Grants an additional weapon action.",
-          "Description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
+          "Description": "Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
           "SourceName": "Rampage of the Huvfurwurm",
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
@@ -13127,6 +13145,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "214",
           "Duration": "1 round"
+        },
+        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm": {
+          "Name": "Attack of the Huvfurwurm",
+          "Summary": "Grants two additional weapon actions and 10 reserved CP.",
+          "Description": "Grants two additional weapon actions and a shared reserve of 10 CP per round. These points are reserved for those actions, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
+          "SourceName": "Attack of the Huvfurwurm",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "214",
+          "Duration": "3 tours de jeu"
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Dragon Skin",
@@ -13626,7 +13653,9 @@
       "Factor": "Aftereffect modifier",
       "Rules": "Transformation modifications",
       "FearImmunity": "Ignores fear effects",
-      "PowerLevel": "Power level"
+      "PowerLevel": "Power level",
+      "WeaponRequired": "Choose a weapon for the additional actions.",
+      "OrdinaryActionsFirst": "Use all ordinary weapon actions before the additional actions."
     }
   }
 }

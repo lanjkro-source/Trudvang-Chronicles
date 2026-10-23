@@ -10447,6 +10447,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun.SourcePage` | 164 | 219 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.Name` | Jotun Strength (allies) | Force du jotun (alliés) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.Description` | The ally’s Strength becomes +4, or +6 with the dedicated improvement. | Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourceName` | Jotun Strength | Force du jotun |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourcePage` | 164 | 219 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:willpower:1#force-d-ame`
 
 | Clé | English | Français |
@@ -10479,6 +10490,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken.SourcePage` | 162 | 225 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Name` | Heart of Enken (allies) | Cœur d’Enken (alliés) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Description` | The ally’s Psyche becomes +4, or +6 with the dedicated improvement. | Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourceName` | Heart of Enken | Cœur d’Enken |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourcePage` | 162 | 225 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf`
 
@@ -10949,7 +10971,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.Name` | Rampage of the Huvfurwurm | Ravage du huvfurwurm |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.Description` | The target gains one additional weapon action per round and 5 combat points that can only be used for that action. | La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.Description` | Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics. | Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.SourceName` | Rampage of the Huvfurwurm | Ravage du huvfurwurm |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm.SourcePage` | 214 | 277 |
@@ -10976,6 +10998,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant.SourcePage` | 214 | 279 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant.Duration` | 1 round | 1 round |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.Name` | Attack of the Huvfurwurm | Attaque du huvfurwurm |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.Description` | Grants two additional weapon actions and a shared reserve of 10 CP per round. These points are reserved for those actions, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics. | Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.SourceName` | Attack of the Huvfurwurm | Attaque du huvfurwurm |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.SourcePage` | 214 | 279 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm.Duration` | 3 tours de jeu | 3 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon`
 
@@ -11572,6 +11605,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.Rules` | Transformation modifications | Modifications de transformation |
 | `TRUDVANG.Transformation.FearImmunity` | Ignores fear effects | Ignore les effets de la peur |
 | `TRUDVANG.Transformation.PowerLevel` | Power level | Niveau du pouvoir |
+| `TRUDVANG.Transformation.WeaponRequired` | Choose a weapon for the additional actions. | Choisissez une arme pour les actions supplémentaires. |
+| `TRUDVANG.Transformation.OrdinaryActionsFirst` | Use all ordinary weapon actions before the additional actions. | Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires. |
 
 ## `TRUDVANG.Transformation.Modes`
 

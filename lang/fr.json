@@ -12692,6 +12692,15 @@
           "SourcePage": "219",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies": {
+          "Name": "Force du jotun (alliés)",
+          "Summary": "Confère Force +4 aux alliés.",
+          "Description": "Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
+          "SourceName": "Force du jotun",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "219",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Force d’âme",
           "Summary": "Renforce le courage et le Psychisme.",
@@ -12714,6 +12723,15 @@
           "Name": "Cœur d’Enken",
           "Summary": "Porte le Psychisme à un niveau exceptionnel.",
           "Description": "La cible reçoit le trait exceptionnel +8 en Psychisme.",
+          "SourceName": "Cœur d’Enken",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "225",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies": {
+          "Name": "Cœur d’Enken (alliés)",
+          "Summary": "Confère Psychisme +4 aux alliés.",
+          "Description": "Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
           "SourceName": "Cœur d’Enken",
           "SourceBook": "Livre des règles",
           "SourcePage": "225",
@@ -13104,7 +13122,7 @@
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Ravage du huvfurwurm",
           "Summary": "Accorde une action d’arme supplémentaire.",
-          "Description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
+          "Description": "Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
           "SourceName": "Ravage du huvfurwurm",
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
@@ -13127,6 +13145,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "279",
           "Duration": "1 round"
+        },
+        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm": {
+          "Name": "Attaque du huvfurwurm",
+          "Summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+          "Description": "Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
+          "SourceName": "Attaque du huvfurwurm",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "279",
+          "Duration": "3 tours de jeu"
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Peau du dragon",
@@ -13626,7 +13653,9 @@
       "Factor": "Modificateur de séquelle",
       "Rules": "Modifications de transformation",
       "FearImmunity": "Ignore les effets de la peur",
-      "PowerLevel": "Niveau du pouvoir"
+      "PowerLevel": "Niveau du pouvoir",
+      "WeaponRequired": "Choisissez une arme pour les actions supplémentaires.",
+      "OrdinaryActionsFirst": "Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires."
     }
   }
 }

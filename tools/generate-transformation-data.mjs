@@ -7,7 +7,8 @@ const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
-const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","damage","traitDegrees","modifier","fearFactor","attackStep"]);
+const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep"]);
+const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id));
 for(const c of ["fr","en"])lang[c].TRUDVANG.Content.Transformation={};
 for(const kind of ["powers","feats"]){
  const fr=read(`game doc/fr/trudvang-${kind}-fr.json`),en=read(`game doc/en/trudvang-${kind}-en.json`);
@@ -19,6 +20,7 @@ for(const kind of ["powers","feats"]){
   }
   const id=entry.catalogId||CREATURE_ABILITY_REFERENCES[entry.name]?.id;
   if(!id)throw Error(`Unknown effect source ${entry.name}`);
+  for(const p of entry.effectParameters??[])if(p.templates?.some(id=>!entry.effectTemplates.some(t=>t.id===id)))throw Error(`Unknown effect variant in parameters for ${entry.name}`);
   bySource[id]=[];
   for(const [j,t]of entry.effectTemplates.entries()){
    const key=`${id}#${t.id}`;
@@ -29,13 +31,13 @@ for(const kind of ["powers","feats"]){
    if(translated.priority!==t.priority||(t.priority!==undefined&&(translated.changes??[]).some(c=>c.priority!==t.priority)))throw Error(`Unaligned EN effect priority ${key}`);
    for(const c of ["fr","en"])references[c].push({key,sourceId:id,
      source:{...(c==="fr"?entry:en[i]).source,name:(c==="fr"?entry:en[i]).name},
-     ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[]});
+     ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:effectParameters(entry,t)});
    const sourceRules=rulesFromChanges(t.changes),translatedRules=rulesFromChanges(translated.changes);
    for(const id of sourceRules.powerIds??[])if(!powerIds.has(id))throw Error(`Unknown granted power ${id} in ${key}`);
    if(t.levelParameter){
     if(!Number.isFinite(t.levelParameter.default)||!t.levelParameter.knowledge?.every(id=>typeof sourceRules.knowledge?.[id]==="number"))throw Error(`Invalid level scaling in ${key}`);
    }
-   const parameters=/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[];
+   const parameters=effectParameters(entry,t);
    if(JSON.stringify(entry.effectParameters??[])!==JSON.stringify(en[i].effectParameters??[]))throw Error(`Unaligned effect parameters for ${id}`);
    for(const p of parameters){
     if(!parameterTargets.has(p.target)||!entry.powerLevels?.[p.index])throw Error(`Invalid parameter ${p.target} in ${key}`);
@@ -44,6 +46,7 @@ for(const kind of ["powers","feats"]){
     if(p.target==="vitality"&&!sourceRules.vitality&&!(native("system.modifiers.bodyMax")&&native("system.modifiers.bodyValue")))throw Error(`Vitality parameter without matching base in ${key}`);
     if(p.target==="damage"&&!sourceRules.damage&&!native("system.modifiers.damage")&&!native("system.modifiers.damageByUsage"))throw Error(`Damage parameter without matching base in ${key}`);
     if(p.target==="traitDegrees"&&!sourceRules.traits?.some(r=>r.trait===p.trait&&r.method==="degrees"))throw Error(`Trait parameter without matching base in ${key}`);
+    if(p.target==="traitValue"&&!sourceRules.traits?.some(r=>r.trait===p.trait))throw Error(`Trait value parameter without matching base in ${key}`);
     if(p.target==="attackStep"&&(!sourceRules.attacks?.[p.attack]||!p.steps?.length))throw Error(`Attack parameter without matching base in ${key}`);
    }
    for(const c of ["fr","en"])lang[c].TRUDVANG.Content.Transformation[key]={Name:(c==="fr"?t:translated).name,Summary:(c==="fr"?t:translated).summary,Description:(c==="fr"?t:translated).description,
@@ -59,7 +62,7 @@ for(const kind of ["powers","feats"]){
      ...(sourceRules.capabilities?{capabilities:sourceRules.capabilities.map((s,i)=>`TRUDVANG.Content.Transformation.${key}.Capability${i}`)}:{}),
      ...(sourceRules.attacks?{attacks:sourceRules.attacks.map((a,i)=>({...a,name:`TRUDVANG.Content.Transformation.${key}.Attack${i}`}))}:{})
    },{priority:t.priority})];
-   registry[key]={...data,sourceId:id,parameters:/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[]};bySource[id].push(key);
+   registry[key]={...data,sourceId:id,parameters};bySource[id].push(key);
   }
  }
 }

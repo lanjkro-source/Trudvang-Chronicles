@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
-    "description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
+    "description": "Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
     "summary": "Grants an additional weapon action.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Rampage of the Huvfurwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The target gains one additional weapon action per round and 5 combat points that can only be used for that action.",
+      "description": "Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
@@ -30,7 +30,7 @@
           {
             "key": "system.transformation.extraWeaponAction",
             "type": "override",
-            "value": "{\"combatPoints\":5}",
+            "value": "{\"combatPoints\":5,\"actions\":1}",
             "phase": "initial",
             "priority": 10
           }

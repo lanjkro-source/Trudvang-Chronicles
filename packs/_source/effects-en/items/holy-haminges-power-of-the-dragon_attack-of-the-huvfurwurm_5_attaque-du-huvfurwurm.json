@@ -1,0 +1,53 @@
+{
+  "_id": "sZUm3A2x3y4z5A6B",
+  "_key": "!items!sZUm3A2x3y4z5A6B",
+  "name": "Attack of the Huvfurwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+    "description": "Grants two additional weapon actions and a shared reserve of 10 CP per round. These points are reserved for those actions, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
+    "summary": "Grants two additional weapon actions and 10 reserved CP.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "DQPf7ZsYtZu0v1w2",
+      "_key": "!items.effects!sZUm3A2x3y4z5A6B.DQPf7ZsYtZu0v1w2",
+      "name": "Attack of the Huvfurwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants two additional weapon actions and a shared reserve of 10 CP per round. These points are reserved for those actions, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.extraWeaponAction",
+            "type": "override",
+            "value": "{\"combatPoints\":10,\"actions\":2}",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
+            "sourceId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
+            "summary": "Grants two additional weapon actions and 10 reserved CP.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

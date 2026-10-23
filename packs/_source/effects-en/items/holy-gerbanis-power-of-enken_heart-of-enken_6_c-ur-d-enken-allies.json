@@ -1,0 +1,53 @@
+{
+  "_id": "IdLJj1v1w2x3y4z5",
+  "_key": "!items!IdLJj1v1w2x3y4z5",
+  "name": "Heart of Enken (allies)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+    "description": "The ally’s Psyche becomes +4, or +6 with the dedicated improvement.",
+    "summary": "Grants Psyche +4 to allies.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "VRqTlYpVqWrXsYtZ",
+      "_key": "!items.effects!IdLJj1v1w2x3y4z5.VRqTlYpVqWrXsYtZ",
+      "name": "Heart of Enken (allies)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The ally’s Psyche becomes +4, or +6 with the dedicated improvement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
+            "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
+            "summary": "Grants Psyche +4 to allies.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

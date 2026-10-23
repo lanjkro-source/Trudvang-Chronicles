@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
-    "description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
+    "description": "Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
     "summary": "Accorde une action d’arme supplémentaire.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Ravage du huvfurwurm",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La cible obtient une action d’arme supplémentaire par tour de jeu et 5 points de combat qui ne peuvent servir qu’à cette action.",
+      "description": "Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
@@ -30,7 +30,7 @@
           {
             "key": "system.transformation.extraWeaponAction",
             "type": "override",
-            "value": "{\"combatPoints\":5}",
+            "value": "{\"combatPoints\":5,\"actions\":1}",
             "phase": "initial",
             "priority": 10
           }

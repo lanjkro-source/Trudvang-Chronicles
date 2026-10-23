@@ -7,7 +7,8 @@ import {temporaryHealthGrants,temporaryHealthState,temporaryHealthUpdate,setTemp
 import {effectStatus} from "../modules/rules/effect-status.mjs";
 import {TRANSFORMATION_TEMPLATES as templates,TRANSFORMATIONS_BY_SOURCE as sources} from "../modules/transformation-data.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "../modules/rule-test-data.mjs";
-import {resolveCombatPools} from "../modules/rules/combat-pool-resolver.mjs";
+import {resolveCombatPools,extraWeaponActionReady,readiedHandConflicts} from "../modules/rules/combat-pool-resolver.mjs";
+import {resolveWeaponActions} from "../modules/rules/equipment-resolver.mjs";
 import {buildEffectPackDocuments} from "../modules/effect-pack-data.mjs";
 globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
 const {annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
@@ -29,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,73);
+ assert.equal(Object.keys(sources).length,74);
 });
 test("forms compose without modifying source data and disabled or expired effects do not contribute",()=>{
  const actor={type:"character",system:{effective:{traits:{strength:1,dexterity:0}}},effects:[effect({size:7,traits:[{trait:"strength",method:"highest",value:6}],suspendEquipment:true}),effect({size:10},{disabled:true}),effect({size:3},{duration:{expired:true}})]};
@@ -616,4 +617,71 @@ test("reference effects contain no invented fox stealth or animal night vision, 
   const water=data.find(e=>e.id==="don-de-l-eau");assert.doesNotMatch(water.summary+water.description,/respir|breath/i);
  }
  for(const t of Object.values(templates).filter(t=>t.id==="tree-recovery"))assert.equal(movementDetails(14,[],rulesFromChanges(t.changes).movement).land.metersPerTwo,0.5);
+});
+
+test("huvfurwurm effects grant real weapon profiles with reserved CP, gated ordinary actions and shared spending",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize}};
+ const original={id:"bow",name:"Arc",type:"weapon",system:{equipped:true,category:"ranged",combatSpecialty:"bowsSlings",damage:"1d10 + 2",openRoll:10,weaponActions:2,weaponActionsSpent:0,range:{short:40,long:80}},toObject(){return {name:this.name,type:this.type,system:structuredClone(this.system),effects:[{name:"Transferred"}]};}};
+ const offhand={id:"sword",type:"weapon",system:{equipped:true,category:"oneHandedLight",weaponActions:3,weaponActionsSpent:0}};
+ for(const [suffix,actions,cp]of [["ravage-du-huvfurwurm",1,5],["attaque-du-huvfurwurm",2,10]]){
+  const key=Object.keys(templates).find(k=>k.endsWith("#"+suffix));assert.ok(key);
+  let created,granted=[];const items=[original,offhand];items.get=id=>items.find(i=>i.id===id);
+  const actor={type:"character",id:"hero",isOwner:true,items,effects:[],system:{skills:{fighting:{value:12}}},canUserModify:()=>true,createTrudvangEffect:async data=>{created=data;return null;},createEmbeddedDocuments:async(type,rows)=>{granted=rows;}};
+  foundry.applications.api.DialogV2.wait=async()=>({duration:"3 tours de jeu",weapon:"bow",boost0:2});
+  await applyTransformation(actor,key);
+  assert.equal(created.duration.value,25);
+  assert.deepEqual(effectRules(created).extraWeaponAction,{combatPoints:cp,actions,weaponId:"bow"});
+  const e={id:"arms",...created};await syncEffectGrants(e,actor);assert.equal(granted.length,1);
+  const bonus={id:"extra",...granted[0]};items.push(bonus);actor.effects.push(e);
+  assert.equal(bonus.system.category,"ranged");assert.equal(bonus.system.combatSpecialty,"bowsSlings");assert.deepEqual(bonus.system.range,original.system.range);
+  assert.equal(bonus.system.damage,original.system.damage);assert.equal(bonus.system.openRoll,10);assert.deepEqual(bonus.effects,[]);
+  assert.equal(resolveWeaponActions({item:bonus,actor}).value,actions);
+  original.system.weaponActionsSpent=0;offhand.system.weaponActionsSpent=0;
+  const pools=item=>resolveCombatPools({actor,item,context:{action:"attack"}});
+  assert.equal(extraWeaponActionReady(actor,bonus),false);assert.equal(pools(bonus).eligibleCurrent,0);
+  original.system.weaponActionsSpent=2;
+  assert.equal(extraWeaponActionReady(actor,bonus),false,"other ordinary weapon actions still available");
+  offhand.system.weaponActionsSpent=3;
+  assert.equal(extraWeaponActionReady(actor,bonus),true);assert.equal(pools(bonus).eligibleCurrent,cp);
+  assert.deepEqual(pools(bonus).eligible.map(p=>p.id),["natural:effect:arms"]);
+  assert.ok(!pools(original).eligible.some(p=>p.id==="natural:effect:arms"));
+  assert.ok(!resolveCombatPools({actor,context:{action:"movement"}}).eligible.some(p=>p.id==="natural:effect:arms"));
+  bonus.system.naturalCombatPointsSpent=3;assert.equal(pools(bonus).eligibleCurrent,cp-3);
+  e.disabled=true;assert.equal(pools(bonus).eligibleCurrent,0);e.disabled=false;e.duration.expired=true;assert.equal(pools(bonus).eligibleCurrent,0);
+  assert.ok(!readiedHandConflicts([bonus],{id:"other",type:"weapon",system:{category:"twoHanded"}}).length);
+ }
+});
+
+test("all numeric non-duration improvements resolve from casting counts and compendium copies",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ for(const [key,t]of Object.entries(templates))for(const p of t.parameters.filter(p=>["protection","temporaryHP","damage","modifier","traitValue"].includes(p.target))){
+  const counts=[];counts[p.index]=2;
+  for(const source of [null,{documentName:"Item",type:"effect",effects:[{flags:{[S]:{transformation:{key}}},system:{changes:structuredClone(t.changes)}}]}]){
+   await applyTransformation(actor,key,{source,counts});
+   const base=path=>t.changes.filter(c=>c.key===path).reduce((n,c)=>n+Number(c.value),0);
+   const value=path=>created.system.changes.filter(c=>c.key===path).reduce((n,c)=>n+Number(c.value),0);
+   if(p.target==="protection")assert.equal(value("system.modifiers.protection"),base("system.modifiers.protection")+2*p.value,key);
+   if(p.target==="temporaryHP")assert.equal(value("system.resources.body.temporaryMax"),base("system.resources.body.temporaryMax")+2*p.value,key);
+   if(p.target==="modifier")assert.equal(value(p.key),base(p.key)+2*p.value,key);
+   if(p.target==="traitValue")assert.equal(value(`system.effective.traits.${p.trait}`),8,key);
+   if(p.target==="damage"){
+    const keys=p.usages?.map(u=>`system.modifiers.damageByUsage.${u}`)??t.changes.filter(c=>c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage.")).map(c=>c.key);
+    for(const path of keys)assert.equal(value(path),base(path)+2*p.value,key);
+    if(p.usages)assert.equal(value("system.modifiers.damage"),base("system.modifiers.damage"),"scoped improvement preserves the universal base bonus");
+   }
+  }
+ }
+ for(const stem of ["holy-gerbanis-strength-of-stormi:jotun-strength:6","holy-gerbanis-power-of-enken:heart-of-enken:6"]){
+  const main=sources[stem][0],ally=sources[stem][1];assert.ok(ally);
+  assert.ok(!templates[main].parameters.some(p=>p.index===4));
+  assert.ok(templates[ally].parameters.some(p=>p.index===4));
+  await applyTransformation(actor,ally,{counts:[0,0,0,0,1]});
+  assert.equal(created.system.changes.find(c=>c.key.startsWith("system.effective.traits.")).value,"6");
+ }
 });

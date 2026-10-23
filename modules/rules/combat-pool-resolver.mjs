@@ -67,6 +67,23 @@ function finite(value, fallback = 0) {
   return Number.isFinite(number) ? number : fallback;
 }
 
+/** Extra arms keep a weapon's real usage, but have their own actions and CP. */
+export const isExtraWeaponAction = item => Boolean(item?.flags?.["trudvang-chronicles"]?.extraWeaponAction);
+const activeGrant=(actor,item)=>{
+  const id=item?.flags?.["trudvang-chronicles"]?.transformationGrant;
+  return !id||Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).some(e=>e.id===id&&!e.disabled&&!e.isSuppressed&&!e.duration?.expired);
+};
+export function extraWeaponActionReady(actor,item,{ignoreSpent=false}={}) {
+  if(!isExtraWeaponAction(item)||ignoreSpent)return true;
+  const sourceId=item.flags["trudvang-chronicles"].extraWeaponAction.weaponId;
+  const ordinary=Array.from(actor?.items??[]).filter(i=>["weapon","shield"].includes(i.type)&&!isExtraWeaponAction(i)&&activeGrant(actor,i)
+    && (i.system?.equipped||i.id===sourceId));
+  return ordinary.some(i=>i.id===sourceId)&&ordinary.every(i=>{
+    const state=actor.getWeaponActionState?.(i,{ignoreSpent:false});
+    return state?state.current<=0:finite(i.system?.weaponActionsSpent)>=finite(i.system?.weaponActions);
+  });
+}
+
 function knowledge(actor, catalogId) {
   if (!actor || !catalogId) return null;
   if (typeof actor.findRuleKnowledge === "function") return actor.findRuleKnowledge(catalogId) ?? null;
@@ -206,6 +223,7 @@ export function weaponUsesTwoHands(item) {
 /** Return the physical hand slots occupied while the item is readied. */
 export function readiedItemHands(item) {
   if (!item) return [];
+  if (isExtraWeaponAction(item)) return [];
   if (item.type === "shield") return ["offHand"];
   if (item.type !== "weapon" || weaponType(item) === "natural") return [];
   if (weaponUsesTwoHands(item)) return ["weapon", "offHand"];
@@ -235,6 +253,7 @@ function poolMaximum(actor, id) {
 }
 
 function poolEligibility(id, item, context) {
+  if(isExtraWeaponAction(item))return false;
   const action = context.action || context.usage || "";
   if (!action) return true;
   // Saisie and glima draw solely on Combat, Combat à mains nues and Lutte.
@@ -315,7 +334,7 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
   // Its expenditure is mirrored on those items, never duplicated in the total.
   if (actor?.type === "npc" || Array.from(actor?.items ?? []).some(i => i.flags?.["trudvang-chronicles"]?.transformationGrant)) {
     const groups = new Map();
-    for (const weapon of Array.from(actor.items ?? []).filter(entry => weaponType(entry) === "natural" && entry.type === "weapon"
+    for (const weapon of Array.from(actor.items ?? []).filter(entry => (weaponType(entry) === "natural"||isExtraWeaponAction(entry)) && entry.type === "weapon"
       && (entry.flags?.["trudvang-chronicles"]?.transformationGrant
         ? Array.from(actor.effects ?? []).some(effect => effect.id === entry.flags["trudvang-chronicles"].transformationGrant && !effect.disabled && !effect.duration?.expired && !effect.isSuppressed)
         : !actor.transformationProfile?.suspendEquipment)
@@ -331,7 +350,8 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       pools.push({id, labelKey: common ? "TRUDVANG.Npc.NaturalWeapons" : "", label: common ? "" : weapons[0].name,
         max, spent, current: Math.max(0, max - spent), priority: 100, hintKey: "",
         eligible: !context.action || (["attack", "parry"].includes(context.action)
-          && weaponType(item) === "natural" && weapons.some(weapon => weapon.id === item?.id)),
+          && weapons.some(weapon => weapon.id === item?.id)
+          && extraWeaponActionReady(actor,item,context)),
         source: {kind: "natural", id, uuid: weapons[0].uuid || "", name: weapons.map(weapon => weapon.name).join(", "), level: max}});
     }
   }
