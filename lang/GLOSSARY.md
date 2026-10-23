@@ -1262,6 +1262,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.TraitSituationAlreadyRolled` | This PC or NPC has already made its resistance roll on this card. | Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte. |
 | `TRUDVANG.Warning.TraitSituationUnavailable` | The resistance roll could not be recorded. Check that a GM is connected. | Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté. |
 | `TRUDVANG.Warning.NoActorForAbilityUse` | Select a PC or NPC you own before using an ability. | Sélectionnez un PJ ou un PNJ que vous contrôlez avant d’utiliser une capacité. |
+| `TRUDVANG.Warning.SpellCasterRequired` | Select a PC or NPC able to cast this power. | Sélectionnez un PJ ou un PNJ capable de lancer ce pouvoir. |
+| `TRUDVANG.Warning.SpellCasterPermission` | You do not control the character who would cast this power. | Vous ne contrôlez pas le personnage qui doit lancer ce pouvoir. |
+| `TRUDVANG.Warning.SpellTabletRequired` | The character does not know the tablet required for this power. | Le personnage ne connaît pas la tablette requise pour ce pouvoir. |
+| `TRUDVANG.Warning.SpellTabletLevelRequired` | This power requires level {level} in its tablet. | Ce pouvoir nécessite le niveau {level} dans sa tablette. |
 
 ## `TRUDVANG.Description`
 

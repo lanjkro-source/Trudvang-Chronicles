@@ -4,7 +4,7 @@ import { TrudvangItem } from "./modules/documents/item.mjs";
 import { TrudvangCombat } from "./modules/documents/combat.mjs";
 import { TrudvangRollTable, registerExtractStageDirectoryIcon } from "./modules/documents/roll-table.mjs";
 import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
-import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
+import { TrudvangItemSheet,registerMagicSheetAvailabilityHooks } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
@@ -28,6 +28,7 @@ Hooks.once("init", () => {
   CONFIG.TRUDVANG = TRUDVANG;
   configureEffects();
   registerEffectHooks();
+  registerMagicSheetAvailabilityHooks();
   registerTransformationHooks();
   registerActorStatusHooks();
   registerCombatHooks();

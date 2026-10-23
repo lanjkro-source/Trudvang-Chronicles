@@ -15,6 +15,7 @@ import { actorParticipatesInCombat, extraWeaponActionReady, isExtraWeaponAction,
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
+import {spellAvailability} from "../rules/spell-availability.mjs";
 import {nextNpcCombatCycle} from "../rules/npc-combat-cycle.mjs";
 import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
 import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
@@ -1286,14 +1287,13 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollSpell(item) {
-    if(!transformationItemActive(item))return this.warnCannotAct();
-    if (item.system.isRune) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.RuneObjectNeeded"));
-    if (!this.canPerformAction()) return this.warnCannotAct();
+    const availability=spellAvailability(this,item);
+    if(!availability.ok)return ui.notifications.warn(game.i18n.format(availability.reason,availability.data));
     const isDivine = item.type === "divineFeat";
     const resource = isDivine ? "divinity" : "vitner";
     const skillKey = isDivine ? "faith" : "vitnerCraft";
     const disciplineId = isDivine ? "invoke" : "vitnerShaping";
-    const specialtyIds = isDivine ? Object.values(TRUDVANG.religions).map(religion => religion.specialty) : ["galding", "sejding", "vyrding"];
+    const specialtyIds = availability.specialtyIds;
     const learnedDisciplineLevel = Number(this.findRuleKnowledge(disciplineId)?.system.level || 0);
     const disciplineLevel=learnedDisciplineLevel+Number(this.transformationProfile?.knowledge?.[disciplineId]||0);
     const modifierRows = this.skillRollModifierRows(skillKey, {kind: "magic"});
@@ -1354,6 +1354,8 @@ export class TrudvangActor extends BaseActor {
       sacrifice: offerVitner
     });
     if (!options) return null;
+    const currentAvailability=spellAvailability(this,item);
+    if(!currentAvailability.ok)return ui.notifications.warn(game.i18n.format(currentAvailability.reason,currentAvailability.data));
     if (trackedPersistent && activeSpellInstances(this).length >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;

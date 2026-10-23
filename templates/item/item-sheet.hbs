@@ -6,7 +6,7 @@
       {{#if system.swedishName}}<p class="tablet-swedish-name" lang="sv">{{system.swedishName}}</p>{{/if}}
       <p class="item-type">{{#if (or isThuulRune isRunePower)}}{{localize "TRUDVANG.Tablet.ThuulRune"}}{{else if (eq item.type "tablet")}}{{localize (concat "TRUDVANG.Tablet." system.tabletType)}}{{else}}{{localize (concat "TYPES.Item." item.type)}}{{/if}}{{#if tabletReligion}} · {{tabletReligion}}{{/if}}</p>
     </div>
-    <button type="button" data-action="roll" class="initiative-button" {{#if isRunePower}}disabled title="{{localize 'TRUDVANG.Power.RuneObjectNeeded'}}"{{/if}}><i class="fas fa-dice-d20"></i><span>{{localize "TRUDVANG.Action.Use"}}</span></button>
+    <button type="button" data-action="roll" class="initiative-button" {{#if (and isMagicPower (not canLaunchMagic))}}disabled{{/if}} title="{{magicLaunchHint}}"><i class="fas fa-dice-d20"></i><span>{{localize "TRUDVANG.Action.Use"}}</span></button>
 
     {{#if (and (eq item.type "ability") (not system.catalogId))}}<button type="button" data-action="delete-item" class="initiative-button" title="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i><span>{{localize "TRUDVANG.Action.Delete"}}</span></button>{{/if}}
   </header>

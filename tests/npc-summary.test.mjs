@@ -47,6 +47,8 @@ globalThis.foundry = {
     sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} _getHeaderControls() { return [{action: "configureSheet"}]; } }, ItemSheetV2: class {
       constructor({document} = {}) { this.document = document; this.item = document; }
       async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
+      async _onRender() {}
+      async close() {}
     }},
     ux: {TextEditor: {implementation: {enrichHTML: async value => value}}},
     handlebars: {renderTemplate: async (path, data) => { renderedCards.push({path, data}); return ""; }}
@@ -64,6 +66,31 @@ const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect} = await import("../modules/effects.mjs");
 const {TrudvangActorSheet, TrudvangNpcSheet, TrudvangCharacterSheet} = await import("../modules/sheets/actor-sheet.mjs");
 const {TrudvangItemSheet} = await import("../modules/sheets/item-sheet.mjs");
+const {registerMagicSheetAvailabilityHooks} = await import("../modules/sheets/item-sheet.mjs");
+
+test("magic sheet launch button follows token and actor changes and rechecks permission at click",async t=>{
+ const oldCanvas=globalThis.canvas,oldHooks=globalThis.Hooks,oldUi=globalThis.ui;
+ const hooks=new Map(),warnings=[];
+ globalThis.Hooks={on:(name,fn)=>hooks.set(name,fn)};
+ globalThis.canvas={tokens:{controlled:[]}};
+ globalThis.ui={notifications:{warn:text=>warnings.push(text)}};
+ t.after(()=>{globalThis.canvas=oldCanvas;globalThis.Hooks=oldHooks;globalThis.ui=oldUi;});
+ registerMagicSheetAvailabilityHooks();
+ const item={type:"spell",system:{cost:1},effects:[],getFlag:()=>null};
+ const sheet=new TrudvangItemSheet({document:item}),button={};
+ sheet.element={querySelector:selector=>selector==="[data-action='roll']"?button:null,querySelectorAll:()=>[]};
+ await sheet._onRender({},{});t.after(()=>sheet.close());
+ assert.equal(button.disabled,true);assert.match(button.title,/sélectionn/i);
+ const caster=actor();caster.system.magic={castingTarget:10};caster.isOwner=true;
+ let launched;caster.rollSpell=async source=>{launched=source;};
+ canvas.tokens.controlled=[{actor:caster}];hooks.get("controlToken")();assert.equal(button.disabled,false);
+ await TrudvangItemSheet.DEFAULT_OPTIONS.actions.roll.call(sheet,{preventDefault(){}},button);
+ assert.equal(launched,item,"compendium power is launched by the selected actor");
+ caster.isOwner=false;hooks.get("updateActor")();assert.equal(button.disabled,true);
+ launched=null;button.disabled=false;
+ await TrudvangItemSheet.DEFAULT_OPTIONS.actions.roll.call(sheet,{preventDefault(){}},button);
+ assert.equal(launched,null);assert.equal(warnings.length,1,"stale button state cannot bypass eligibility");
+});
 const feat = (enabled = true, level = 1) => ({type: "ability", name: "Tenace",
   system: {kind: "feat", ignoreWoundPenalties: enabled, level}});
 const knowledge = (kind, level, name, extra = {}) => ({level, item: {id: name, name, type: "ability",
@@ -1723,7 +1750,7 @@ test("an infeasible or declined vitner sacrifice keeps the insufficient-vitner b
     const blocked = await instance.rollSpell(spell);
     assert.equal(blocked?.target, undefined, "no roll result is produced");
     assert.match(runtime.warnings[0], /réserve/);
-    assert.equal(runtime.dialogs.length, 1, "no confirmation dialog is shown");
+    assert.equal(runtime.dialogs.length, cost===90?0:1, "impossible base costs are blocked before opening the casting window");
     assert.equal(runtime.messages.length, 0);
     assert.equal(instance._source.system.resources.body.value, body);
     assert.equal(instance._source.system.resources.vitner.value, vitner);
@@ -1737,8 +1764,7 @@ test("divine powers never offer the health-for-vitner sacrifice", async t => {
   const blocked = await instance.rollSpell(power);
   assert.equal(blocked?.target, undefined, "no roll result is produced");
   assert.match(runtime.warnings[0], /réserve/);
-  assert.equal(runtime.dialogs.length, 1, "no confirmation dialog is shown");
-  assert.doesNotMatch(runtime.dialogs[0].content, /data-sacrifice-option/);
+  assert.equal(runtime.dialogs.length, 0, "insufficient divinity is blocked before opening the casting window");
   assert.equal(instance._source.system.resources.divinity.value, 1);
 });
 

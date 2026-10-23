@@ -11,6 +11,13 @@ import {activeSpellCosts} from "../rules/active-spell-resolver.mjs";
 import {powerIconClassForId, powerIconClassForItem} from "../power-icons.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
+import {spellActorForItem,spellAvailability} from "../rules/spell-availability.mjs";
+
+const magicSheets=new Set();
+export function registerMagicSheetAvailabilityHooks(){
+  const refresh=()=>{for(const sheet of magicSheets)sheet.refreshMagicCastingButton();};
+  for(const hook of ["controlToken","updateUser","updateActor","createItem","updateItem","deleteItem","createActiveEffect","updateActiveEffect","deleteActiveEffect"])Hooks.on(hook,refresh);
+}
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -89,6 +96,11 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
     context.powerIconClass = context.isMagicPower ? powerIconClassForItem(this.item) : null;
     context.isRunePower = context.isMagicPower && Boolean(this.item.system.isRune);
+    if(context.isMagicPower){
+      const availability=spellAvailability(spellActorForItem(this.item),this.item);
+      context.canLaunchMagic=availability.ok;
+      context.magicLaunchHint=availability.ok?game.i18n.localize("TRUDVANG.Action.Use"):game.i18n.format(availability.reason,availability.data);
+    }
     context.isPersistentSpell = this.item.type === "spell" && this.item.system.spellType === "lasting";
     const activeCosts = context.isPersistentSpell && this.item.parent?.documentName === "Actor"
       ? activeSpellCosts(this.item.parent, this.item) : [];
@@ -142,6 +154,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     await super._onRender(context, options);
     bindTitleSharing(this);
     bindSheetListMenus(this);
+    if(["spell","divineFeat"].includes(this.item.type)){magicSheets.add(this);this.refreshMagicCastingButton();}
     const root = this.element;
     if (!this.isEditable || !this.item.isOwner) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
@@ -181,6 +194,15 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     });
     this._activateTabs(root);
   }
+
+  refreshMagicCastingButton(){
+    const button=this.element?.querySelector?.("[data-action='roll']");if(!button)return;
+    const availability=spellAvailability(spellActorForItem(this.item),this.item);
+    button.disabled=!availability.ok;
+    button.title=availability.ok?game.i18n.localize("TRUDVANG.Action.Use"):game.i18n.format(availability.reason,availability.data);
+  }
+
+  async close(options){magicSheets.delete(this);return super.close(options);}
 
   _activateTabs(root) {
     const nav = root.querySelector(".item-sheet-tabs");
@@ -246,6 +268,11 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onRoll(event, target) {
     event.preventDefault();
+    if(["spell","divineFeat"].includes(this.item.type)){
+      const actor=spellActorForItem(this.item),availability=spellAvailability(actor,this.item);
+      if(!availability.ok)return ui.notifications.warn(game.i18n.format(availability.reason,availability.data));
+      return actor.rollSpell(this.item);
+    }
     await this.item.roll();
   }
 
