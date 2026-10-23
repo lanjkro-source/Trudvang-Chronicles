@@ -82,6 +82,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Settings.PortraitForceAllName` | Portrait sharing: large display by default | Partage des portraits : affichage en grand par défaut |
+| `TRUDVANG.Settings.PortraitForceAllHint` | Preselects “Force large display for all players” when sharing a portrait. Personal preference; the GM can still change the checkbox for each share. | Pré-coche « Forcer l'affichage en grand chez tous les joueurs » lors du partage d'un portrait. Préférence personnelle ; la case reste modifiable à chaque partage par le MJ. |
 | `TRUDVANG.Settings.StarterContentName` | Starter content version | Version du contenu de démarrage |
 | `TRUDVANG.Settings.StarterContentHint` | Tracks the installed Trudvang starter library. | Suit la version installée de la bibliothèque de démarrage Trudvang. |
 | `TRUDVANG.Settings.ReimportName` | Reinstall starter content | Réinstaller le contenu de démarrage |

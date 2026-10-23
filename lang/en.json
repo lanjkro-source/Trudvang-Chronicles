@@ -58,6 +58,8 @@
       "CreatureAbility": "Creature Feat Sheet"
     },
     "Settings": {
+      "PortraitForceAllName": "Portrait sharing: large display by default",
+      "PortraitForceAllHint": "Preselects “Force large display for all players” when sharing a portrait. Personal preference; the GM can still change the checkbox for each share.",
       "StarterContentName": "Starter content version",
       "StarterContentHint": "Tracks the installed Trudvang starter library.",
       "ReimportName": "Reinstall starter content",

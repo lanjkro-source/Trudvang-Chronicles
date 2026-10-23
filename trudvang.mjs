@@ -135,6 +135,14 @@ Hooks.once("init", () => {
     type: Number,
     default: 0
   });
+  game.settings.register("trudvang-chronicles", "portraitForceAllDefault", {
+    name: "TRUDVANG.Settings.PortraitForceAllName",
+    hint: "TRUDVANG.Settings.PortraitForceAllHint",
+    scope: "client",
+    config: true,
+    type: Boolean,
+    default: false
+  });
   game.settings.register("trudvang-chronicles", "colorPalette", {
     name: "TRUDVANG.Settings.PaletteName",
     hint: "TRUDVANG.Settings.PaletteHint",

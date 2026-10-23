@@ -58,6 +58,8 @@
       "CreatureAbility": "Feuille de capacité"
     },
     "Settings": {
+      "PortraitForceAllName": "Partage des portraits : affichage en grand par défaut",
+      "PortraitForceAllHint": "Pré-coche « Forcer l'affichage en grand chez tous les joueurs » lors du partage d'un portrait. Préférence personnelle ; la case reste modifiable à chaque partage par le MJ.",
       "StarterContentName": "Version du contenu de démarrage",
       "StarterContentHint": "Suit la version installée de la bibliothèque de démarrage Trudvang.",
       "ReimportName": "Réinstaller le contenu de démarrage",

@@ -161,7 +161,7 @@ export async function showActorPortraitDialog(actor) {
     <div class="trudvang roll-dialog portrait-dialog">
       <p>${escapeHtml(game.i18n.localize("TRUDVANG.Portrait.ShareHint"))}</p>
       <div class="portrait-grid">${portraitGalleryHTML(actor, sources)}</div>
-      ${game.user?.isGM ? `<label class="checkbox"><input type="checkbox" name="forceAll"> ${escapeHtml(game.i18n.localize("TRUDVANG.Portrait.ForceAll"))}</label>` : ""}
+      ${game.user?.isGM ? `<label class="checkbox"><input type="checkbox" name="forceAll" ${game.settings?.get(SYSTEM_ID, "portraitForceAllDefault") ? "checked" : ""}> ${escapeHtml(game.i18n.localize("TRUDVANG.Portrait.ForceAll"))}</label>` : ""}
     </div>`;
   const answered = await DialogClass.wait({
     window: { title: game.i18n.format("TRUDVANG.Portrait.DialogTitle", { actor: actor.name }) },
