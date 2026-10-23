@@ -1,7 +1,7 @@
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
-import {escapeHtml} from "./helpers.mjs";
+import {escapeHtml,escapeAttribute} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
 import {changesFromRules,rulesFromChanges,hasProfileChanges,validProfileChange,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
@@ -23,7 +23,7 @@ export function transformationKeys(document){
 }
 export function transformationLinks(document,counts=[],{context}={}){
  const casting=ruleTestCastingContext(document,{counts,context});
- return transformationKeys(document).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeHtml(key)}" data-transformation-counts="${escapeHtml(JSON.stringify(counts))}" data-rule-test-context="${escapeHtml(JSON.stringify(casting))}" data-transformation-source="${escapeHtml(document.uuid||"")}" title="${escapeHtml(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
+ return transformationKeys(document).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeAttribute(key)}" data-transformation-counts="${escapeAttribute(JSON.stringify(counts))}" data-rule-test-context="${escapeAttribute(JSON.stringify(casting))}" data-transformation-source="${escapeAttribute(document.uuid||"")}" title="${escapeAttribute(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
 }
 export function annotateTransformationDescription(description,document){
  const links=transformationLinks(document);
@@ -322,18 +322,30 @@ async function updateTransformationTokens(actor){
   }
  }
 }
+/** A pre-fix chat button may contain only "{" in its context attribute. Its
+ * message still holds the complete casting snapshot, so do not lose the boosts. */
+export function transformationRequest(button){
+ const messageId=button.closest?.("[data-message-id]")?.dataset.messageId;
+ const saved=messageId?game.messages?.get(messageId)?.flags?.[SCOPE]?.ruleTestContext:null;
+ const parse=(value,fallback)=>{try{return value?JSON.parse(value):fallback;}catch{return fallback;}};
+ const context=parse(button.dataset.ruleTestContext,saved??null);
+ const counts=parse(button.dataset.transformationCounts,context?.counts??[]);
+ return {type:"TrudvangTransformation",key:button.dataset.transformationKey,sourceUuid:button.dataset.transformationSource,
+  counts:Array.isArray(counts)?counts:context?.counts??[],context};
+}
 export function registerTransformationHooks(){
  document.addEventListener("dragstart",event=>{
   const button=event.target.closest?.("[data-transformation-key]");if(!button)return;
-  event.dataTransfer.setData("text/plain",JSON.stringify({type:"TrudvangTransformation",key:button.dataset.transformationKey,sourceUuid:button.dataset.transformationSource,counts:JSON.parse(button.dataset.transformationCounts||"[]"),context:JSON.parse(button.dataset.ruleTestContext||"null")}));
+  event.dataTransfer.setData("text/plain",JSON.stringify(transformationRequest(button)));
  });
  document.addEventListener("click",async event=>{
   const button=event.target.closest?.("[data-transformation-key]");if(!button)return;
   event.preventDefault();event.stopPropagation();
   try{
+   const request=transformationRequest(button);
    const source=button.dataset.transformationSource?await foundry.utils.fromUuid(button.dataset.transformationSource):null;
    const actor=source?.parent?.documentName==="Actor"?source.parent:canvas.tokens.controlled.find(t=>t.actor?.isOwner)?.actor||game.user.character;
-   await applyTransformation(actor,button.dataset.transformationKey,{source,counts:JSON.parse(button.dataset.transformationCounts||"[]"),context:JSON.parse(button.dataset.ruleTestContext||"null"),elapsed:metadata(source)?game.time.worldTime-metadata(source).appliedAt:0});
+   await applyTransformation(actor,request.key,{source,counts:request.counts,context:request.context,elapsed:metadata(source)?game.time.worldTime-metadata(source).appliedAt:0});
   }catch(error){console.error("Trudvang transformation",error);ui.notifications.error(error.message);}
  },true);
  Hooks.on("dropCanvasData",(canvas,data)=>{

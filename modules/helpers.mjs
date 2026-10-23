@@ -26,3 +26,8 @@ export function escapeHtml(value) {
   div.textContent = String(value ?? "");
   return div.innerHTML;
 }
+
+/** Text-node serialization does not escape quotes; quoted attributes must. */
+export function escapeAttribute(value) {
+  return escapeHtml(value).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+}
