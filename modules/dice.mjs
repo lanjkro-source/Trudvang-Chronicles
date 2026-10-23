@@ -14,6 +14,8 @@ import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
 import {transformationLinks} from "./transformations.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
+import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
+import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -57,6 +59,7 @@ export async function openD10(options = {}) {
 
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = []}) {
   const finalTarget = Number(target) + Number(modifier || 0);
+  const ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
@@ -91,7 +94,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: success && item ? transformationLinks(item, powerLevelCounts) : "",
+    transformationLinks: success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
     ruleTests: success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -106,9 +109,9 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     speaker: ChatMessage.getSpeaker({actor}),
     content,
     rolls: [roll],
-    ...((useDiceSoNice || targetResults.length) ? {flags: {
+    ...((useDiceSoNice || targetResults.length || ruleTestContext) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...(targetResults.length ? {[SYSTEM_ID]: {attackTargets: targetResults}} : {})
+      ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{})}} : {})
     }} : {})
   });
   if (useDiceSoNice) {
@@ -164,7 +167,7 @@ function ruleTestSituationOptions(test) {
 }
 
 /** Run a resistance test from a rule description; the clicking user rolls for their selected PC/NPC. */
-export async function rollConfiguredTraitSituation({actor, test, sourceName = ""} = {}) {
+export async function rollConfiguredTraitSituation({actor, test, sourceName = "",castingModifierRows=[]} = {}) {
   if (!actor || !test || !actor.canPerformAction()) return actor?.warnCannotAct?.() ?? null;
   const situation = ruleTestSituationOptions(test);
   const configuredTraits = (Array.isArray(test.trait) ? test.trait : [test.trait]).slice(0, 2);
@@ -187,7 +190,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   }));
   const traitValue = calculateTraitModifier(traitEffectValues.map(row => row.value + row.effect), test.traitMethod || "first");
   const effect = sharedEffect;
-  const modifierRows = actorStateRollModifiers(actor);
+  const modifierRows = [...castingModifierRows,...actorStateRollModifiers(actor)];
   modifierRows.push(...transformationRollRows(actor, {target: situation.base + traitValue + effect + rollModifierTotal(modifierRows), traitKey: configuredTraits.includes("dexterity") ? "dexterity" : ""}));
   const traitLabel = hasTrait ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait")
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
@@ -253,7 +256,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   });
 }
 
-export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = [], sacrifice = null}) {
+export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = [], sacrifice = null,ruleDocument=null,castingActor=null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
   const stateModifier = rollModifierTotal(modifierRows);
@@ -273,6 +276,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     return `<div class="magic-power-option" data-power-row="${index}"><label><span>${escapeHtml(level.effect || "")}</span><small>${escapeHtml(costText)}${maxText ? ` · ${escapeHtml(maxText)}` : ""}</small></label><div class="magic-power-counter"><button type="button" data-power-decrease="${index}" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Power.DecreaseLevel"))}">−</button><span data-power-count="${index}"${maxCount}>0</span><button type="button" data-power-increase="${index}" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Power.IncreaseLevel"))}">+</button></div></div>`;
   }).join("");
   const countsFrom = root => powerLevels.map((_, index) => Number(root.querySelector(`[data-power-count="${index}"]`)?.textContent || 0));
+  const resistanceContext=ruleDocument?ruleTestCastingContext(ruleDocument,{caster:castingActor}):null;
   const costFrom = (root, strenuousBonus) => resolvePowerLevelCost({baseCost: defaultCost, powerLevels, counts: countsFrom(root), affinity, strenuousBonus});
   const finalTargetFrom = (root, method, strenuousBonus) => Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + stateModifier
     + strenuousBonus + Number(root.querySelector("[name=modifier]")?.value || 0);
@@ -287,6 +291,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${affinityDescription ? `<p class="magic-affinity-note">${escapeHtml(affinityDescription)}</p>` : ""}
     ${levelRows ? `<div class="magic-power-options">${levelRows}</div>` : ""}
     ${levelRows ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Power.LevelsInvested"))} : <strong data-level-cost>0</strong></p>` : ""}
+    <div data-resistance-preview>${resistanceContext?magicResistancePreview(resistanceContext):""}</div>
     ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize(strenuousLabel))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     <p>${escapeHtml(resourceLabel)} : <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>
     ${sacrifice ? `<label class="magic-sacrifice-option" data-sacrifice-option hidden><input type="checkbox" name="sacrifice"><span data-sacrifice-text></span></label>` : ""}
@@ -302,6 +307,8 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
       const refresh = () => {
         const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
+        const resistancePreview=root.querySelector("[data-resistance-preview]");
+        if(resistancePreview&&resistanceContext)resistancePreview.innerHTML=magicResistancePreview({...resistanceContext,counts:countsFrom(root)});
         const output = root.querySelector("[data-final-target]");
         if (output) output.textContent = finalTargetFrom(root, method, strenuousBonus);
         const finalCost = root.querySelector("[data-final-cost]");
@@ -1136,6 +1143,9 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
   const effectModifier = Number(effect) || 0;
   const situationBase = Number(base ?? sv) || 0;
   const hasTwoTraitSlots = traitValues.length > 1;
+  const currentTraitModifier = root => hasTwoTraitSlots
+    ? calculateTraitModifier(traitValues.map(row=>Number(row.value)+Number(row.effect||0)),root.querySelector("[name=trait-method]")?.value||traitMethod)
+    : trait;
   const multiTrait = traitValues.filter(row => row.key !== "aucun").length > 1;
   const multiTraitRows = hasTwoTraitSlots ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div></div>` : "";
   const traitMethodControl = multiTrait ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitMethod"))}</label><select name="trait-method">${[
@@ -1186,13 +1196,10 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       super._onRender(context, options);
       const root = this.element;
       const configuredModifierValue = () => Number(root.querySelector("[name=condition-modifier]")?.value || 0);
-      const currentTraitModifier = () => hasTwoTraitSlots
-        ? calculateTraitModifier(traitValues.map(row => Number(row.value) + Number(row.effect || 0)), root.querySelector("[name=trait-method]")?.value || traitMethod)
-        : trait;
       const refresh = () => {
         const target = root.querySelector("[data-final-target]");
         const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
-        if (target) target.textContent = situationValue + currentTraitModifier() + effectModifier + configuredModifierValue() + repeatedModifierTotal(root) + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
+        if (target) target.textContent = situationValue + currentTraitModifier(root) + effectModifier + configuredModifierValue() + repeatedModifierTotal(root) + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
       root.querySelector("[name=sv-choice]")?.addEventListener("change", event => {
         const choice = event.currentTarget.value === "" ? null : svChoices[Number(event.currentTarget.value)];
@@ -1225,7 +1232,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
         const configuredModifier = Number(root.querySelector("[name=condition-modifier]")?.value || 0);
         const repeatedModifier = repeatedModifierTotal(root);
         const result = {modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
-        if (multiTrait) result.traitModifier = currentTraitModifier();
+        if (multiTrait) result.traitModifier = currentTraitModifier(root);
         if (base !== undefined || svChoices.length || modifierChoices.length || repeatedModifiers.length || svEditable) {
           Object.assign(result, {situationValue, configuredModifier, repeatedModifier});
         }

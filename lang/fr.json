@@ -7259,9 +7259,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du sort de : 1 tour de jeu",
-            "1": "Augmente la portée de : 5 mètres 2 Applique un malus de : -1 aux chances qu’a la victime de réussir son test de situation",
-            "2": "Augmente la ténacité des corbeaux de sorte que la victime subit un malus supplémentaire de : -1 à toutes les actions qu’elle entreprend pendant la durée du sort",
-            "3": "Crée un autre vol de corbeau qui perturbe une autre cible"
+            "1": "Augmente la portée de : 5 mètres",
+            "2": "Applique un malus de -1 aux chances qu’a la victime de réussir son test de situation",
+            "3": "Augmente la ténacité des corbeaux de sorte que la victime subit un malus supplémentaire de : -1 à toutes les actions qu’elle entreprend pendant la durée du sort",
+            "4": "Crée un autre vol de corbeau qui perturbe une autre cible"
           }
         },
         "vitner-animal-vitner:control-animals:4": {
@@ -13656,6 +13657,13 @@
       "PowerLevel": "Niveau du pouvoir",
       "WeaponRequired": "Choisissez une arme pour les actions supplémentaires.",
       "OrdinaryActionsFirst": "Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires."
+    },
+    "Resistance": {
+      "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
+      "PowerLevelMinimum": "Amélioration {index} — {description} ({count} × {unit}, SV minimale : {minimum})",
+      "CasterKnowledge": "{knowledge} du lanceur {name} — niveau {level} × −2",
+      "DefenderKnowledge": "{knowledge} de {name} — niveau {level} × +2",
+      "CastingPreview": "Modificateurs des tests liés au pouvoir (sans modifier la VC de lancement ; les bonus du personnage qui résiste seront ajoutés lors du jet)."
     }
   }
 }

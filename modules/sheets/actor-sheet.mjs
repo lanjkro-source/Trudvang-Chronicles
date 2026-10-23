@@ -720,7 +720,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (data?.type === "TrudvangTransformation") {
       const {applyTransformation} = await import("../transformations.mjs");
       const source = data.sourceUuid ? await foundry.utils.fromUuid(data.sourceUuid) : null;
-      return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? []});
+      return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? [],context:data.context});
     }
     return super._onDrop(event);
   }

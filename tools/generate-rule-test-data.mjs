@@ -2,19 +2,31 @@ import {readFile, writeFile} from "node:fs/promises";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 
 const powers = JSON.parse(await readFile(new URL("../game doc/fr/trudvang-powers-fr.json", import.meta.url), "utf8"));
+const englishPowers = JSON.parse(await readFile(new URL("../game doc/en/trudvang-powers-en.json", import.meta.url), "utf8"));
 const feats = JSON.parse(await readFile(new URL("../game doc/fr/trudvang-feats-fr.json", import.meta.url), "utf8"));
 const abilityIdByName = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, reference]) => [name, reference.id]));
 const result = {};
 
 function testsFor(entry) {
   return [
-    ...(entry.resist ?? []).map((test, index) => ({...test, kind: "resist", index})),
+    ...(entry.resist ?? []).map((test, index) => {
+      const {test:configuredIndex,...configuration}=entry.ruleTestModifiers?.find(row=>row.test===index)??{};
+      return {...test,...configuration,kind:"resist",index};
+    }),
     ...(entry.skillTest ?? []).map((test, index) => ({...test, kind: "skill", index}))
   ];
 }
 
 for (const entry of powers) {
   if (!entry.catalogId) continue;
+  const translated=englishPowers.find(p=>p.catalogId===entry.catalogId);
+  if(JSON.stringify(entry.ruleTestModifiers??[])!==JSON.stringify(translated?.ruleTestModifiers??[]))throw Error(`Unaligned resistance modifiers for ${entry.catalogId}`);
+  const configured=new Set();
+  for(const row of entry.ruleTestModifiers??[]){
+    if(!entry.resist?.[row.test]||configured.has(row.test)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
+    configured.add(row.test);
+    for(const p of row.powerLevelModifiers??[])if(!entry.powerLevels?.[p.index]||!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);
+  }
   const tests = testsFor(entry);
   if (tests.length) result[entry.catalogId] = tests;
 }

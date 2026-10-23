@@ -162,7 +162,7 @@ function attachListeners(message, html) {
       if (!document) return;
       button.disabled = true;
       try {
-        await performRuleTest({document, index: button.dataset.testIndex});
+        await performRuleTest({document, index: button.dataset.testIndex,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext});
       } finally {
         button.disabled = false;
       }

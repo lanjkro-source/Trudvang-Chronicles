@@ -1337,6 +1337,7 @@ export class TrudvangActor extends BaseActor {
     };
     const options = await magicDialog({
       title: item.name,
+      ruleDocument:item,castingActor:this,
       methods,
       modifierRows,
       spellModifier: Number(item.system.modifier || 0),

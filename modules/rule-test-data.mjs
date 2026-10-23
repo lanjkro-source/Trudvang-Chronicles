@@ -11,6 +11,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "se libère de la bourse.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -49,6 +50,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "neutralise le vitner et interrompt le sort hostile, qui n’a aucun effet.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -87,6 +95,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "neutralise et disperse le vitner du sort.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -125,6 +140,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "empêche tous les effets du sort de traverser le mur.",
       "repeat": "à chaque tentative de traversée",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -162,6 +184,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "découvre l’origine, le tisseur et le lieu de tissage du sort; pour une négation, découvre le sort et le lieu qu’il a affecté.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 5,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -176,6 +205,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "remarque les êtres vivants, même invisibles ou camouflés; la capacité ne repère pas ceux qui utilisent de la grindblom ou sont dans le Domaine des Brumes.",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     }
@@ -191,6 +221,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite tous les dégâts du sort pour le tour en cours.",
       "repeat": "une fois par tour",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -206,6 +243,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "comprend que l’esprit n’est pas celui recherché.",
       "condition": "le résultat du tableau 1d20 est 17 ou 18",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     },
@@ -219,6 +257,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "comprend que l’esprit n’est pas celui recherché.",
       "condition": "le résultat du tableau 1d20 est 19",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 1
     }
@@ -282,6 +321,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "tranche le lien avec Dimhall et bannit l’âme du ou des morts-vivants.",
       "note": "Pour plusieurs cibles, additionner leurs PS max. avant de choisir le modificateur.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -297,6 +343,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "empêche le vol de vitner (ou de points de santé) pendant ce tour.",
       "repeat": "au début de chaque tour",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -360,6 +413,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "prend le contrôle du lien; le mort-vivant obéit à tous les ordres.",
       "note": "Pour plusieurs cibles, additionner leurs PS max. avant de choisir le modificateur; le contrôle cesse si l’enchanteur perd conscience.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -375,6 +435,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "avance de 1 mètre vers la sortie par tour.",
       "condition": "la victime piégée reçoit une corde ou un objet similaire",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -430,6 +491,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite la pétrification.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -499,6 +567,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "rend sa forme d’origine à la victime; elle se réveille au bout d’un tour.",
       "condition": "version Annuler une pétrification",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 1
     }
@@ -514,6 +583,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "n’est pas distrait ni désorienté par la pluie.",
       "condition": "pendant Sourcier, sous la pluie",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     }
@@ -529,6 +599,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "n’est pas soulevé par le sort.",
       "condition": "la cible ne consent pas au sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 8,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -543,6 +620,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "condition": "l’enchanteur subit des dégâts ou est déconcentré",
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 1
     }
@@ -594,6 +672,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "permet à l’entité de traverser le bouclier.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -619,6 +698,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "n’est pas soulevé par le sort.",
       "condition": "la cible ne consent pas au sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 7,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -633,6 +719,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "condition": "l’enchanteur subit des dégâts ou est déconcentré",
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 1
     }
@@ -671,6 +758,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être projeté par la tempête; le malus d’action de la table s’applique toujours tant que la créature reste dans la zone.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -737,6 +825,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "localise l’objet; un jet de 1d20 détermine ensuite la précision des informations.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -804,6 +899,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "localise la cible; un jet de 1d20 détermine ensuite la précision des informations.",
       "note": "La description renvoie à la même table de modificateurs que Détection d’objet.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -870,6 +972,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "détecte sa présence; un jet de 1d20 détermine ensuite les informations obtenues.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -884,6 +993,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite les points de peur infligés par le sort.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -898,6 +1014,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas affecté par l’émotion.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -911,6 +1034,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "reste éveillé.",
       "condition": "émotion Fatigué, dans les cinq prochaines minutes",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 1
     },
@@ -924,6 +1054,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "ne révèle pas ses secrets importants ou incriminants.",
       "condition": "émotion Sincère",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 2
     }
@@ -938,6 +1075,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "empêche l’idée d’être implantée.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -953,6 +1097,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "voit l’enchanteur tel qu’il est réellement et ne se soumet pas à son autorité.",
       "repeat": "nouveau test si l’enchanteur demande quelque chose d’inhabituel",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -967,6 +1118,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’obéir aveuglément aux ordres.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -982,6 +1140,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "empêche le lecteur d’accéder à ce secret; il doit recommencer son test.",
       "repeat": "pour chaque secret protégé",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -996,6 +1155,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "empêche l’enchanteur de prendre le contrôle du corps.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 5,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1034,6 +1200,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "identifie le type, les effets et le mode d’activation du sort.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1071,6 +1244,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "perçoit la présence du sort ou de l’enchantement.",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     }
@@ -1085,6 +1259,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas effrayé.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -1100,6 +1275,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "découvre la vérité derrière l’illusion.",
       "repeat": "un nouveau test peut être tenté chaque jour",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1114,6 +1296,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite les 1d10 points de dégâts.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1129,6 +1318,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve son identité et ses souvenirs.",
       "condition": "test initial",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1,
+          "minimum": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -1143,6 +1340,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "condition": "après l’échec initial",
       "repeat": "une fois par jour; si la SV atteint 20, la victime retrouve tous ses souvenirs",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 1
     }
@@ -1158,6 +1356,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "ne subit qu’une transformation partielle: peau d’écorce si elle pèse au plus 60 kg, parties du corps transformées au-delà.",
       "failure": "la victime est entièrement transformée et enracinée.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -1172,6 +1371,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "réduit à −1 le malus d’action pour le tour au lieu de −3.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1187,6 +1393,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1202,6 +1415,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1217,6 +1437,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1237,6 +1464,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être immobilisé.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 5,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1252,6 +1486,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve son apparence.",
       "condition": "la cible connaît le sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1267,6 +1508,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve sa Dextérité normale.",
       "condition": "utilisation inversée du sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1282,6 +1530,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve sa Force normale.",
       "condition": "utilisation inversée du sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1297,6 +1552,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "passe la barrière et s’évade; la décharge électrique reste à subir.",
       "failure": "subit 1d10 dégâts et ne franchit pas la barrière.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1317,6 +1579,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite la transformation.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1331,6 +1600,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "garde sa voix naturelle.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1448,6 +1724,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "ne subit que 1d5 points de peur au lieu de 1d10.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -1462,6 +1739,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas gêné par le son de l’alarme.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -1507,6 +1785,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "verrouille ou déverrouille la serrure.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1522,6 +1807,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "garde son libre arbitre et n’accepte pas ses propos sans condition.",
       "failure": "accepte sans condition tout ce que dit le stormikjalt.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1536,6 +1828,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’obéit pas à l’ordre imposé.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1550,6 +1849,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’obéit pas à l’ordre imposé.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1565,6 +1871,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "parvient à lancer le pouvoir malgré la distraction ou les dégâts.",
       "condition": "si le Stormikjalt subit des dégâts ou est distrait",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1580,6 +1893,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "maintient la protection malgré la distraction ou les dégâts.",
       "condition": "si le Stormikjalt subit des dégâts ou est distrait",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1594,6 +1914,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "empêche la lecture des pensées.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1658,6 +1985,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "neutralise le sort hostile.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1695,6 +2029,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "empêche le sort hostile d’affecter la cible.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1732,6 +2073,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "empêche le sort hostile d’affecter la cible.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1762,6 +2110,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "entend clairement le son.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1776,6 +2131,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "se libère de l’obstacle.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1806,6 +2168,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "entend clairement le son.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1820,6 +2189,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "annule l’effet qui retient la personne.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -1832,6 +2208,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "débloque ou libère l’obstacle.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 1
     },
@@ -1845,6 +2228,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "libère la cible du contrôle.",
       "condition": "sort de niveau 1 à 3; aucun test n’est indiqué pour les niveaux 4 et 5",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 2
     }
@@ -1875,6 +2265,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "entend clairement le son.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1889,6 +2286,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "surmonte l’obstacle physique.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -1912,6 +2316,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "libère la cible du contrôle.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 1
     }
@@ -1926,6 +2337,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite les malus d’action dus à la douleur; les dégâts physiques restent.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -1940,6 +2352,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite le malus de −3 aux compétences et aux situations jusqu’à la fin de la journée; les dégâts physiques restent.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1954,6 +2373,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être changé en pierre.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1968,6 +2394,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être changé en pierre.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1983,6 +2416,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "reste conscient et ne subit le malus de −3 que pendant 1d6 heures.",
       "failure": "le malus dure jusqu’à la fin de la journée et la victime perd connaissance pendant 1d6 minutes.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -1997,6 +2437,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2011,6 +2458,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2025,6 +2479,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2039,6 +2500,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2053,6 +2521,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2067,6 +2542,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2081,6 +2563,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "pénètre l’aura et dissipe le sort.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2096,6 +2585,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "repousse ou supprime l’influence néfaste.",
       "repeat": "une fois par jour",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2110,6 +2606,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "peut attaquer le prêtre ou mentir malgré sa présence divine.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2125,6 +2628,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "peut attaquer, mentir ou intriguer contre le prêtre malgré sa présence divine.",
       "condition": "l’intrigue est aussi concernée si la cible est à portée du sort",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 4,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2139,6 +2649,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite que le membre ciblé soit changé en pierre.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2153,6 +2670,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être changé en pierre.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2167,6 +2691,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "est immunisé à la maladie pendant une journée.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2181,6 +2712,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "est immunisé à la maladie pendant une journée.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2195,6 +2733,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas contraint d’accomplir la tâche.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2209,6 +2754,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "est immunisé à la maladie pendant une journée.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2223,6 +2775,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "résiste au charme et n’exécute pas la suggestion.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -2236,6 +2795,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "s’arrête avant d’accomplir l’acte irréversible.",
       "condition": "test immédiat juste avant de tuer sous l’effet de la suggestion",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 1
     }
@@ -2250,6 +2816,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "ne fuit pas la source du froid.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2264,6 +2837,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "ne fuit pas la source du froid.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2278,6 +2858,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite la paralysie.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2309,6 +2896,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "se rappelle la distance et la direction.",
       "condition": "déplacement effectué en étant conscient",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     },
@@ -2328,6 +2916,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "se rappelle la distance et la direction.",
       "condition": "déplacement subi alors que le thuul était inconscient",
       "traitMethod": "first",
+      "magicResistance": false,
       "kind": "resist",
       "index": 1
     }
@@ -2376,6 +2965,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être déséquilibré et de perdre sa capacité d’agir pendant le tour en cours et le suivant.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -2441,6 +3031,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "purifie la boisson.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2489,6 +3086,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "identifie le type, les effets et le mode d’activation du sort.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2526,6 +3130,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "perçoit la présence du sort ou de l’enchantement.",
       "traitMethod": "first",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 6,
+          "value": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2540,6 +3151,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "n’est pas effrayé.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }
@@ -2555,6 +3167,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "découvre la vérité derrière l’illusion.",
       "repeat": "un nouveau test peut être tenté chaque jour",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 0,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2569,6 +3188,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite les 1d10 points de dégâts.",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 3,
+          "value": -1
+        }
+      ],
       "kind": "resist",
       "index": 0
     }
@@ -2584,6 +3210,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve son identité et ses souvenirs.",
       "condition": "test initial",
       "traitMethod": "first",
+      "magicResistance": true,
+      "powerLevelModifiers": [
+        {
+          "index": 2,
+          "value": -1,
+          "minimum": 1
+        }
+      ],
       "kind": "resist",
       "index": 0
     },
@@ -2598,6 +3232,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "condition": "après l’échec initial",
       "repeat": "une fois par jour; si la SV atteint 20, la victime retrouve tous ses souvenirs",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 1
     }
@@ -2613,6 +3248,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "ne subit qu’une transformation partielle: peau d’écorce si elle pèse au plus 60 kg, parties du corps transformées au-delà.",
       "failure": "la victime est entièrement transformée et enracinée.",
       "traitMethod": "first",
+      "magicResistance": true,
       "kind": "resist",
       "index": 0
     }

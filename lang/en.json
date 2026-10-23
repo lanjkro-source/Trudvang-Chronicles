@@ -7259,9 +7259,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters. 2: Impose a -1 penalty on the victim's chance to succeed on the Situation roll",
-            "2": "Increase the ravens' persistence so the victim suffers an additional -1 penalty on every action during the spell's duration",
-            "3": "Create another flock of ravens that harasses another target"
+            "1": "Increase the range by 5 meters",
+            "2": "Apply a -1 penalty to the victim’s Situation roll",
+            "3": "Increase the ravens' persistence so the victim suffers an additional -1 penalty on every action during the spell's duration",
+            "4": "Create another flock of ravens that harasses another target"
           }
         },
         "vitner-animal-vitner:control-animals:4": {
@@ -13656,6 +13657,13 @@
       "PowerLevel": "Power level",
       "WeaponRequired": "Choose a weapon for the additional actions.",
       "OrdinaryActionsFirst": "Use all ordinary weapon actions before the additional actions."
+    },
+    "Resistance": {
+      "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
+      "PowerLevelMinimum": "Improvement {index} — {description} ({count} × {unit}, minimum SV: {minimum})",
+      "CasterKnowledge": "Caster {name} — {knowledge}, level {level} × −2",
+      "DefenderKnowledge": "{name} — {knowledge}, level {level} × +2",
+      "CastingPreview": "Modifiers to tests associated with the power (do not modify casting SV; the resisting character’s bonuses are added when rolling)."
     }
   }
 }

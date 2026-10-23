@@ -11615,3 +11615,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.Modes.land` | Land | Terrestre |
 | `TRUDVANG.Transformation.Modes.flight` | Flight | Vol |
 | `TRUDVANG.Transformation.Modes.swim` | Swimming | Nage |
+
+## `TRUDVANG.Resistance`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Resistance.PowerLevel` | Improvement {index} — {description} ({count} × {unit}) | Amélioration {index} — {description} ({count} × {unit}) |
+| `TRUDVANG.Resistance.PowerLevelMinimum` | Improvement {index} — {description} ({count} × {unit}, minimum SV: {minimum}) | Amélioration {index} — {description} ({count} × {unit}, SV minimale : {minimum}) |
+| `TRUDVANG.Resistance.CasterKnowledge` | Caster {name} — {knowledge}, level {level} × −2 | {knowledge} du lanceur {name} — niveau {level} × −2 |
+| `TRUDVANG.Resistance.DefenderKnowledge` | {name} — {knowledge}, level {level} × +2 | {knowledge} de {name} — niveau {level} × +2 |
+| `TRUDVANG.Resistance.CastingPreview` | Modifiers to tests associated with the power (do not modify casting SV; the resisting character’s bonuses are added when rolling). | Modificateurs des tests liés au pouvoir (sans modifier la VC de lancement ; les bonus du personnage qui résiste seront ajoutés lors du jet). |

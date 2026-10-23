@@ -30,18 +30,24 @@
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:1",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the range by 5 meters. 2: Impose a -1 penalty on the victim's chance to succeed on the Situation roll"
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Apply a -1 penalty to the victim’s Situation roll"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the ravens' persistence so the victim suffers an additional -1 penalty on every action during the spell's duration"
       },
       {
-        "id": "vitner-animal-vitner:conjure-ravens:3:3",
+        "id": "vitner-animal-vitner:conjure-ravens:3:4",
         "cost": 4,
         "maxCount": null,
         "effect": "Create another flock of ravens that harasses another target"

@@ -6304,18 +6304,24 @@
           },
           {
             "id": "vitner-animal-vitner:conjure-ravens:3:1",
-            "cost": 1,
+            "cost": 2,
             "maxCount": null,
-            "effect": "Augmente la portée de : 5 mètres 2 Applique un malus de : -1 aux chances qu’a la victime de réussir son test de situation"
+            "effect": "Augmente la portée de : 5 mètres"
           },
           {
             "id": "vitner-animal-vitner:conjure-ravens:3:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Applique un malus de -1 aux chances qu’a la victime de réussir son test de situation"
+          },
+          {
+            "id": "vitner-animal-vitner:conjure-ravens:3:3",
             "cost": 4,
             "maxCount": null,
             "effect": "Augmente la ténacité des corbeaux de sorte que la victime subit un malus supplémentaire de : -1 à toutes les actions qu’elle entreprend pendant la durée du sort"
           },
           {
-            "id": "vitner-animal-vitner:conjure-ravens:3:3",
+            "id": "vitner-animal-vitner:conjure-ravens:3:4",
             "cost": 4,
             "maxCount": null,
             "effect": "Crée un autre vol de corbeau qui perturbe une autre cible"

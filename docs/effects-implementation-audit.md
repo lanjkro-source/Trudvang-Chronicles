@@ -34,25 +34,43 @@ Corrections de cette étape :
 Sources : Livre des règles, p. 219, 225, 277 et 279 ; Player’s Handbook,
 sections Jotun Strength, Heart of Enken, Rampage/Attack of the Huvfurwurm.
 
-## Améliorations encore à relier aux jets
+## Améliorations et savoirs appliqués aux jets
 
-Les boutons de résistance existent, mais les améliorations achetées au lancement
-ne modifient pas encore automatiquement leur SV. Elles restent ajustables dans
-la fenêtre du jet. Il faut transporter le contexte d’améliorations avec ces
-boutons, le conserver sur l’effet appliqué et ajuster uniquement le test concerné.
-Il ne faut pas appliquer un bonus général à tous les jets du bénéficiaire.
+Les améliorations numériques de SV sont désormais définies dans les JSON FR,
+validées contre les métadonnées EN et appliquées à 87 tests configurés. Cela
+comprend les réductions de résistance de Hâte, Vigueur, Transformation,
+pétrifications, Regard paralysant, et les augmentations des tests d’écoute, de
+soin ou du Refuge arboricole.
 
-Cas identifiés dans les sources disposant déjà d’effets :
+Chaque lancement enregistre ses propres choix et le niveau du savoir du lanceur
+dans le message. Les références d’effets glissées depuis ce message transmettent
+ce contexte ; les effets appliqués le conservent pour les liens de leur description.
+Une utilisation ultérieure du même sort ne modifie pas le contexte du premier
+lancement. Sans contexte, le code ne devine pas les niveaux achetés à partir d’un
+ancien message ou du dernier lancement connu.
 
-| Pouvoir ou sortilège | Modification restant à transmettre |
-|---|---|
-| Hâte, Vigueur | −1 à la SV de résistance initiale par amélioration |
-| Transformation | −1 à la SV de résistance initiale par amélioration |
-| Pétrification/Annuler une pétrification | −1 à la résistance initiale ; progression dans la table du retour à la forme d’origine |
-| Statue, Monument en pierre, Membre de pierre, Pétrification | −1 à la résistance initiale par amélioration |
-| Regard paralysant | −1 à la SV de l’adversaire par amélioration |
-| Ouïe du hibou, Sens du griffon | +1 à la SV d’écoute par amélioration |
-| Refuge arboricole | +1 à la SV du test quotidien par amélioration |
+Puissance applique le malus du lanceur et le bonus du personnage résistant pour
+les résistances aux sorts. Transcendance applique le malus du lanceur aux
+résistances aux pouvoirs divins. Ces savoirs ne modifient pas les jets d’écoute,
+de soins ou de concentration du lanceur. L’applicabilité et les indices des
+améliorations sont explicites dans les données, jamais déduits du texte à l’exécution.
+Sources : Livre des règles et Player’s Handbook, sections Puissance/Potency et
+Transcendance/Potent.
+
+Les fenêtres de lancement et d’application d’effet affichent séparément les
+ajustements propres aux tests du pouvoir, sans changer la VC de lancement. La
+fenêtre de résistance détaille améliorations, savoir du lanceur, Puissance de la
+cible, traits, effets contributeurs et états. Le modificateur libre reste disponible.
+
+Exceptions conservées : les améliorations d’Amnésie limitées au test initial ne
+modifient pas la récupération quotidienne ; leur SV initiale minimale est respectée.
+Les réductions de résistance au vent ne pénalisent pas le test du lanceur pour en
+garder le contrôle. Les améliorations par déplacement dans une table (retour après
+pétrification), les niveaux de rune et les paramètres non numériques ne sont pas
+convertis en bonus fixes ; les contrôles existants et l’ajustement manuel subsistent.
+
+Conjuration de corbeaux : le tableau FR p. 189 sépare la portée et le malus de
+résistance. Cette séparation et leurs coûts ont été corrigés dans les sources.
 
 ## Paramètres de lancement et conséquences particulières
 

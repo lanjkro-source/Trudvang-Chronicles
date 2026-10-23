@@ -2,6 +2,7 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {annotateTransformationDescription} from "./transformations.mjs";
+import {ruleTestCastingContext,magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistance.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const legacyAbilityIdByName = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, ref]) => [name, ref.id]));
@@ -173,7 +174,7 @@ function abilityEntryFor(actor, catalogId) {
   return null;
 }
 
-export async function performRuleTest({document, index, actor = testActorForUser()} = {}) {
+export async function performRuleTest({document, index, actor = testActorForUser(), context} = {}) {
   const test = ruleTestsForDocument(document)[Number(index)];
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
@@ -181,7 +182,9 @@ export async function performRuleTest({document, index, actor = testActorForUser
   }
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
-    return rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? ""});
+    const casting=ruleTestCastingContext(document,{context});
+    const modifierRows=localizeResistanceRows(magicResistanceRows(test,{context:casting,actor}));
+    return rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",castingModifierRows:modifierRows});
   }
   const entry = abilityEntryFor(actor, test.skill);
   const skillKey = entry?.skillKey || (CONFIG.TRUDVANG?.skills?.[test.skill] ? test.skill : "");

@@ -6503,16 +6503,21 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:1",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:2",
-        "cost": 4,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:3",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:4",
         "cost": 4,
         "maxCount": null
       }
