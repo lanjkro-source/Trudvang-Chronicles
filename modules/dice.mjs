@@ -57,13 +57,14 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = []}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], resolveProcedure = null}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
   const {critical, margin} = outcome;
+  const procedure = resolveProcedure ? await resolveProcedure({...outcome, result, target: finalTarget}) : null;
   const attackMargin = target => `${target - result >= 0 ? "+" : ""}${target - result}`;
   const targetResults = attackTargets.map(row => {
     const target = finalTarget + row.modifier - attackTargets[0].modifier + Number(row.defenseModifier || 0);
@@ -86,8 +87,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor: [flavor, ...attackTargets.flatMap(row => (row.defenseRows || []).map(effect => `${escapeHtml(row.name)} · ${escapeHtml(effect.label)}: ${signedModifier(effect.value)}`))].filter(Boolean).join("<br>"),
-    successConsequence: consequenceText(successConsequence),
-    failureConsequence: consequenceText(failureConsequence),
+    successConsequence: consequenceText(procedure?.text && outcome.success ? procedure.text : successConsequence),
+    failureConsequence: consequenceText(procedure?.text && !outcome.success ? procedure.text : failureConsequence),
     criticalSuccessConsequence: consequenceText(criticalSuccessConsequence),
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
     effectTarget,
@@ -108,7 +109,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const message = await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({actor}),
     content,
-    rolls: [roll],
+    rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
       ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{})}} : {})

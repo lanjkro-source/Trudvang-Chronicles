@@ -68,6 +68,92 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TYPES.Item.creatureAbility` | Creature feat | Capacité |
 | `TYPES.Item.effect` | Effect | Effet |
 
+## `TRUDVANG.Procedure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Procedure.TimeBonus` | Hunting time bonus | Bonus du temps de chasse |
+| `TRUDVANG.Procedure.Tables` | View reference table | Consulter la table |
+| `TRUDVANG.Procedure.Margin` | Margin | Marge |
+| `TRUDVANG.Procedure.Level` | Level | Niveau |
+| `TRUDVANG.Procedure.Integrity` | BV restored per hour | VI restaurée par heure |
+| `TRUDVANG.Procedure.Healing` | BP: first aid / poultice bonus | PS : premiers secours / bonus du cataplasme |
+| `TRUDVANG.Procedure.hunt` | Hunt or fish | Chasser ou pêcher |
+| `TRUDVANG.Procedure.repair` | Repair an item | Réparer un objet |
+| `TRUDVANG.Procedure.heal` | Treat injuries | Soigner |
+| `TRUDVANG.Procedure.train` | Train an animal | Dresser un animal |
+| `TRUDVANG.Procedure.size` | Game | Gibier |
+| `TRUDVANG.Procedure.Small` | Small | Petit |
+| `TRUDVANG.Procedure.Medium` | Medium | Moyen |
+| `TRUDVANG.Procedure.Large` | Large | Gros |
+| `TRUDVANG.Procedure.terrain` | Hunting ground | Terrain de chasse |
+| `TRUDVANG.Procedure.Terrain0` | Incredibly favorable | Incroyablement favorable |
+| `TRUDVANG.Procedure.Terrain1` | Favorable | Favorable |
+| `TRUDVANG.Procedure.Terrain2` | Good | Bon |
+| `TRUDVANG.Procedure.Terrain3` | Neither good nor barren | Ni bon ni aride |
+| `TRUDVANG.Procedure.Terrain4` | Barren | Aride |
+| `TRUDVANG.Procedure.Terrain5` | Very barren | Très aride |
+| `TRUDVANG.Procedure.Terrain6` | Extremely barren | Extrêmement aride |
+| `TRUDVANG.Procedure.hours` | Hours spent today | Heures consacrées aujourd’hui |
+| `TRUDVANG.Procedure.carried` | Time bonus carried over from previous days | Bonus de temps conservé des jours précédents |
+| `TRUDVANG.Procedure.hunters` | Hunters in the group | Chasseurs dans le groupe |
+| `TRUDVANG.Procedure.animal` | Trained hunting animal bonus | Bonus de l’animal dressé pour chasser |
+| `TRUDVANG.Procedure.separate` | Separate hunters on the same ground: halve SV | Chasseurs séparés sur le même terrain : VC divisée par deux |
+| `TRUDVANG.Procedure.species` | Species matches the Species Hunter specialty | Espèce correspondant à la spécialité Chasser une espèce |
+| `TRUDVANG.Procedure.butcher` | Carve & Butcher: +10% rations (round down) | Découper et dépecer : +10 % de rations (arrondi inférieur) |
+| `TRUDVANG.Procedure.material` | Material to repair | Matériau à réparer |
+| `TRUDVANG.Procedure.tools` | Repair equipment | Équipement de réparation |
+| `TRUDVANG.Procedure.Tools0` | Workshop or forge | Atelier ou forge |
+| `TRUDVANG.Procedure.Tools1` | Large craft box | Grand paquetage |
+| `TRUDVANG.Procedure.Tools2` | Ordinary craft box | Paquetage ordinaire |
+| `TRUDVANG.Procedure.Tools3` | Small craft box | Petit paquetage |
+| `TRUDVANG.Procedure.mode` | Treatment | Traitement |
+| `TRUDVANG.Procedure.first` | First aid: injury less than ten minutes old | Premiers secours : blessure de moins de dix minutes |
+| `TRUDVANG.Procedure.rest` | Nursing: double recovery | Soins prolongés : doubler la récupération |
+| `TRUDVANG.Procedure.poultice` | Poultice before resting | Cataplasme avant le repos |
+| `TRUDVANG.Procedure.save` | Save a dying patient | Sauver un mourant |
+| `TRUDVANG.Procedure.stabilize` | Stop bleeding or prevent deterioration | Stopper une hémorragie ou éviter une aggravation |
+| `TRUDVANG.Procedure.negative` | Patient’s Body Points below zero | Nombre de PS sous zéro du patient |
+| `TRUDVANG.Procedure.animalName` | Animal | Animal |
+| `TRUDVANG.Procedure.training` | Training | Apprentissage |
+| `TRUDVANG.Procedure.domesticate` | Domesticate a captured wild animal | Domestiquer un animal sauvage capturé |
+| `TRUDVANG.Procedure.fetch` | Fetch | Rapporter |
+| `TRUDVANG.Procedure.jump` | Jump | Sauter |
+| `TRUDVANG.Procedure.message` | Carry a message | Porter un message |
+| `TRUDVANG.Procedure.run` | Run fast | Courir vite |
+| `TRUDVANG.Procedure.track` | Track | Pister |
+| `TRUDVANG.Procedure.attack` | Attack | Attaquer |
+| `TRUDVANG.Procedure.guard` | Guard | Monter la garde |
+| `TRUDVANG.Procedure.stage` | Target degree (previous degrees must be learned) | Degré visé (après avoir acquis les précédents) |
+| `TRUDVANG.Procedure.Stage1` | Obedient | Obéissant |
+| `TRUDVANG.Procedure.Stage2` | Competent | Compétent |
+| `TRUDVANG.Procedure.Stage3` | Excellent | Excellent |
+| `TRUDVANG.Procedure.Stage4` | Expert | Expert |
+| `TRUDVANG.Procedure.Stage5` | Masterful | Magistral |
+| `TRUDVANG.Procedure.completed` | Successes already earned for this degree | Réussites déjà obtenues pour ce degré |
+| `TRUDVANG.Procedure.domestic` | The animal is already domesticated | L’animal est déjà domestiqué |
+| `TRUDVANG.Procedure.modifier` | Situational modifier | Modificateur situationnel |
+| `TRUDVANG.Procedure.ProcedureModifier` | Procedure modifiers | Modificateurs de la procédure |
+| `TRUDVANG.Procedure.Halved` | SV halved | VC divisée par deux |
+| `TRUDVANG.Procedure.ChooseActor` | Select a character you control. | Sélectionnez un personnage que vous contrôlez. |
+| `TRUDVANG.Procedure.Invalid` | Check the minimum duration, required specialties and animal domestication. | Vérifiez la durée minimale, les spécialités requises et la domestication de l’animal. |
+| `TRUDVANG.Procedure.huntNotes` | FR rules pp. 303–305. Minimum: small game 4 h, medium 6 h, large 8 h. +1 per 2 extra hours; per hour with at least 2/4/6 hunters respectively. Time bonus capped at Wilderness. Maximum 12 h per day. Ground, game, time and animal modifiers are included. The result gives rations to record manually. | Règles p. 303–305. Minimum : petit gibier 4 h, moyen 6 h, gros 8 h. +1 par tranche de 2 h supplémentaires ; par heure avec au moins 2/4/6 chasseurs selon le gibier. Bonus de temps plafonné à Nature. Maximum 12 h par jour. Terrain, gibier, temps et animal sont inclus. Le résultat indique des rations, à reporter manuellement. |
+| `TRUDVANG.Procedure.repairNotes` | FR rules p. 121. One test per hour. Success: 2 BV per specialty level; a 1 triples repairs; a 20 loses 1d6 BV. Apply the result manually, up to the item’s maximum BV. | Règles p. 121. Un test par heure. Réussite : 2 VI par niveau de spécialité ; un 1 triple la réparation ; un 20 fait perdre 1d6 VI. Reporter le résultat sur l’objet, sans dépasser sa VI maximale. |
+| `TRUDVANG.Procedure.healNotes` | FR rules pp. 102, 332–333. First aid within ten minutes: one minute per injury. Nursing: two hours and the patient resting for the day. Poultice before sleep. Rescue before survival rounds expire, with a penalty equal to negative Body Points. Apply the result manually; do not treat the same recent injury repeatedly. | Règles p. 102, 332–333. Premiers secours dans les dix minutes : une minute par blessure. Soins prolongés : deux heures et patient au repos pour la journée. Cataplasme avant le sommeil. Sauvetage avant la fin des rounds de survie, avec malus égal aux PS sous zéro. Reporter le résultat sur le patient ; ne pas soigner plusieurs fois la même blessure récente. |
+| `TRUDVANG.Procedure.trainNotes` | FR rules pp. 97, 128–129. Domestication: five successes, one test per week. Then one test per week per training, at most three simultaneous trainings. Each degree requires its own successes: fetch/jump 2 × degree; hunt/message/track 3 × degree; run/guard 4 × degree; attack 5 × degree. Record progress for the next test. | Règles p. 97, 128–129. Domestication : cinq réussites, un test par semaine. Ensuite un test par semaine et par entraînement, trois entraînements simultanés au maximum. Chaque degré exige ses propres réussites : rapporter/sauter 2 × degré ; chasser/message/pister 3 × degré ; courir/garde 4 × degré ; attaquer 5 × degré. Reporter le compteur pour le prochain test. |
+| `TRUDVANG.Procedure.NoCatch` | No catch. | Aucune prise. |
+| `TRUDVANG.Procedure.Food` | Food obtained: {amount} rations (table: {formula}). | Nourriture obtenue : {amount} rations (table : {formula}). |
+| `TRUDVANG.Procedure.Repaired` | Repairs after one hour: +{amount} BV, up to the item’s maximum. | Réparation après une heure : +{amount} VI, dans la limite du maximum de l’objet. |
+| `TRUDVANG.Procedure.RepairDamage` | Complete failure: the item loses {amount} BV ({formula}). | Échec complet : l’objet perd {amount} VI ({formula}). |
+| `TRUDVANG.Procedure.Failed` | Treatment failed. | Le traitement échoue. |
+| `TRUDVANG.Procedure.FirstAid` | First aid: restore {amount} BP, limited to damage from this injury. | Premiers secours : récupération de {amount} PS, limitée aux dégâts de cette blessure. |
+| `TRUDVANG.Procedure.Nursing` | Successful nursing: normal recovery doubled for this day of rest. | Soins réussis : récupération normale doublée pour cette journée de repos. |
+| `TRUDVANG.Procedure.Poultice` | Successful poultice: +{amount} BP to natural healing after rest. | Cataplasme réussi : +{amount} PS à la guérison naturelle après le repos. |
+| `TRUDVANG.Procedure.Saved` | First aid to save the dying patient succeeds. | Les premiers secours pour sauver le mourant réussissent. |
+| `TRUDVANG.Procedure.Stabilized` | Bleeding stopped or deterioration prevented; this discipline alone restores no BP. | L’hémorragie est stoppée ou l’aggravation évitée ; aucun PS restauré par cette seule discipline. |
+| `TRUDVANG.Procedure.TrainingProgress` | {animal}: {completed}/{required} successes for the selected training. | {animal} : {completed}/{required} réussites pour l’apprentissage choisi. |
+| `TRUDVANG.Procedure.Trained` | {animal}: training completed ({completed}/{required} successes). | {animal} : apprentissage accompli ({completed}/{required} réussites). |
+
 ## `TRUDVANG.Sheets`
 
 | Clé | English | Français |

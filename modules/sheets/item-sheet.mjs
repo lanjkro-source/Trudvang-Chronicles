@@ -12,6 +12,7 @@ import {powerIconClassForId, powerIconClassForItem} from "../power-icons.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {spellActorForItem,spellAvailability} from "../rules/spell-availability.mjs";
+import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowledge-procedures.mjs";
 
 const magicSheets=new Set();
 export function registerMagicSheetAvailabilityHooks(){
@@ -59,7 +60,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
       "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
-      "roll-rule-test": TrudvangItemSheet.#onRollRuleTest
+      "roll-rule-test": TrudvangItemSheet.#onRollRuleTest,
+      "knowledge-procedure": function() { return performKnowledgeProcedure(this.item); }
     }
   };
 
@@ -145,8 +147,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       }))
     })).filter(group => group.powers.length) : [];
     context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.tabletPowerGroups.length > 0;
-    context.enrichedDescription = annotateRuleTestDescription(
-      await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner}), this.item);
+    context.enrichedDescription = knowledgeProcedureDescription(annotateRuleTestDescription(
+      await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner}), this.item), this.item);
     return context;
   }
 
