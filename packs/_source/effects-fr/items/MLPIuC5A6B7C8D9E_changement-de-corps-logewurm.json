@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
     "description": "Le logewurm peut prendre la forme physique de toute créature de son choix, pour une durée illimitée, puis reprendre sa forme d’origine quand il le souhaite. Il ne conserve aucun attribut physique de dragon sous cette forme et devient donc vulnérable. Il ne peut utiliser cette transformation qu’une fois par an.",
-    "summary": "Change la forme physique en celle d’une créature choisie.",
+    "summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 124
@@ -59,7 +59,7 @@
           "transformation": {
             "key": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
             "sourceId": "MLPIuC5A6B7C8D9E",
-            "summary": "Change la forme physique en celle d’une créature choisie.",
+            "summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
             "editableChanges": true,
             "related": []
           }

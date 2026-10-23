@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau",
     "description": "The target takes the form of a raven and retains its Intelligence and traits compatible with this form. It can communicate with ravens and the dead, see in darkness, and perceive invisible and immaterial beings. Its Dexterity increases by 4, its Constitution decreases by 4, its land movement is halved, and its flying speed is quadrupled. It attacks with its beak (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
-    "summary": "Transforms the target into a raven.",
+    "summary": "Transforms into a raven, increases Dexterity, reduces Constitution and walking speed, and grants flight, night vision and a beak attack.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -77,7 +77,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "summary": "Transforms the target into a raven.",
+            "summary": "Transforms into a raven, increases Dexterity, reduces Constitution and walking speed, and grants flight, night vision and a beak attack.",
             "editableChanges": true,
             "related": []
           }

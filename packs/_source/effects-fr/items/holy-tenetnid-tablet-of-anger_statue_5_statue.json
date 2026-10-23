@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:statue:5#statue",
     "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
-    "summary": "Immobilise et pétrifie progressivement la cible.",
+    "summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
     "source": {
       "book": "Livre des règles",
       "page": 252
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-anger:statue:5#statue",
             "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
-            "summary": "Immobilise et pétrifie progressivement la cible.",
+            "summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

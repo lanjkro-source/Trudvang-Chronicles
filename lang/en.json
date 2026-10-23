@@ -12586,7 +12586,7 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Petrify/Remove Petrification — Soil Craft)",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify/Remove Petrification",
           "SourceBook": "Player's Handbook",
@@ -12595,7 +12595,7 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Petrify/Remove Petrification — Soil Craft)",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify/Remove Petrification",
           "SourceBook": "Player's Handbook",
@@ -12604,7 +12604,7 @@
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
-          "Summary": "Transforms the target into a tree and protects it with bark.",
+          "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
           "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
           "SourceBook": "Player's Handbook",
@@ -12613,7 +12613,7 @@
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
           "Name": "Stiffness after the tree curse (Tree Curse — Witchcraft)",
-          "Summary": "Leaves stiffness after the tree curse.",
+          "Summary": "Reduces movement and Agility test values after the curse.",
           "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
           "SourceBook": "Player's Handbook",
@@ -12622,7 +12622,7 @@
         },
         "vitner-body-vitner:hasten:9#hate": {
           "Name": "Hasten",
-          "Summary": "Improves flexibility and reflexes.",
+          "Summary": "Increases Dexterity, movement, initiative and Agility and Fighting SVs.",
           "Description": "Increases the target’s Dexterity, and therefore its movement and Initiative, as well as the skill values of Agility and Fighting. The target gains one Dexterity degree according to the table below. <table><thead><tr><th colspan=\"3\">MODIFIERS</th></tr><tr><th>Dexterity</th><th>Situation tests/movement</th><th>Skill-value bonus</th></tr></thead><tbody><tr><td>Drauglo Dexterity</td><td>+8</td><td>+5</td></tr><tr><td>Elastic</td><td>+6</td><td>+4</td></tr><tr><td>Gracious</td><td>+4</td><td>+3</td></tr><tr><td>Agile</td><td>+2</td><td>+2</td></tr><tr><td>Lithe</td><td>+1</td><td>+1</td></tr><tr><td>Average</td><td>±0</td><td>±0</td></tr><tr><td>Stiff</td><td>-1</td><td>-1</td></tr><tr><td>Clumsy</td><td>-2</td><td>-2</td></tr><tr><td>Immobile</td><td>-4</td><td>-3</td></tr><tr><td>Inflexible</td><td>-6</td><td>-4</td></tr><tr><td>Lapidified</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hasten",
           "SourceBook": "Player's Handbook",
@@ -12631,7 +12631,7 @@
         },
         "vitner-body-vitner:hasten:9#hate-inverse": {
           "Name": "Hasten — reversed",
-          "Summary": "Reduces flexibility and reflexes.",
+          "Summary": "Decreases Dexterity, movement, initiative and Agility and Fighting SVs.",
           "Description": "Lowers the target’s Dexterity by one degree, reducing its movement and Initiative as well as the skill values of Agility and Fighting. The table shows the modifiers associated with each Dexterity degree. <table><thead><tr><th colspan=\"3\">MODIFIERS</th></tr><tr><th>Dexterity</th><th>Situation tests/movement</th><th>Skill-value bonus</th></tr></thead><tbody><tr><td>Drauglo Dexterity</td><td>+8</td><td>+5</td></tr><tr><td>Elastic</td><td>+6</td><td>+4</td></tr><tr><td>Gracious</td><td>+4</td><td>+3</td></tr><tr><td>Agile</td><td>+2</td><td>+2</td></tr><tr><td>Lithe</td><td>+1</td><td>+1</td></tr><tr><td>Average</td><td>±0</td><td>±0</td></tr><tr><td>Stiff</td><td>-1</td><td>-1</td></tr><tr><td>Clumsy</td><td>-2</td><td>-2</td></tr><tr><td>Immobile</td><td>-4</td><td>-3</td></tr><tr><td>Inflexible</td><td>-6</td><td>-4</td></tr><tr><td>Lapidified</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hasten",
           "SourceBook": "Player's Handbook",
@@ -12640,7 +12640,7 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur": {
           "Name": "Strengthen",
-          "Summary": "Strengthens the muscles and increases Strength.",
+          "Summary": "Increases Strength, Strength-based damage and maximum health points.",
           "Description": "Raises the target’s Strength by one degree. This improves Strength-based situation tests and damage according to the Strength modifier table. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Strengthen",
           "SourceBook": "Player's Handbook",
@@ -12649,7 +12649,7 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur-inverse": {
           "Name": "Strengthen — reversed",
-          "Summary": "Weakens the muscles and reduces Strength.",
+          "Summary": "Decreases Strength, Strength-based damage and maximum health points.",
           "Description": "Lowers the target’s Strength by one degree. This reduces Strength-based situation tests and damage according to the Strength modifier table. The listed modifiers are applied in reverse. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Strengthen",
           "SourceBook": "Player's Handbook",
@@ -12658,7 +12658,7 @@
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Change Creature",
-          "Summary": "Changes the target’s physical form.",
+          "Summary": "Adopts the chosen form’s physical traits, movement and attacks while retaining health points.",
           "Description": "The target takes the physical form of a creature chosen from the bestiary, up to five times smaller and never larger than its original form. It gains the creature’s appearance, size, Strength, Dexterity, senses, physical modifiers, and non-magical natural attacks. It retains its Intelligence, Constitution, Psyche, and HP, and gains none of the creature’s magical abilities or powers. It can speak only if the new form can. A willing target can change back at any time; when the effect ends, the return takes five turns.",
           "SourceName": "Change Creature",
           "SourceBook": "Player's Handbook",
@@ -12694,7 +12694,7 @@
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies": {
           "Name": "Jotun Strength (allies)",
-          "Summary": "Grants Strength +4 to allies.",
+          "Summary": "Increases allies’ Strength.",
           "Description": "The ally’s Strength becomes +4, or +6 with the dedicated improvement.",
           "SourceName": "Jotun Strength",
           "SourceBook": "Player's Handbook",
@@ -12703,7 +12703,7 @@
         },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Night Vision",
-          "Summary": "Strengthens courage and Psyche.",
+          "Summary": "Increases Psyche.",
           "Description": "Replaces the target’s Psyche trait with the exceptional level +4.",
           "SourceName": "Night Vision",
           "SourceBook": "Player's Handbook",
@@ -12712,7 +12712,7 @@
         },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Bold",
-          "Summary": "Strengthens courage and Psyche.",
+          "Summary": "Increases Psyche.",
           "Description": "Replaces the target’s Psyche trait with the exceptional level +6.",
           "SourceName": "Bold",
           "SourceBook": "Player's Handbook",
@@ -12721,7 +12721,7 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Heart of Enken",
-          "Summary": "Raises Psyche to an exceptional level.",
+          "Summary": "Increases Psyche.",
           "Description": "The target gains the exceptional Psyche trait +8.",
           "SourceName": "Heart of Enken",
           "SourceBook": "Player's Handbook",
@@ -12730,7 +12730,7 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies": {
           "Name": "Heart of Enken (allies)",
-          "Summary": "Grants Psyche +4 to allies.",
+          "Summary": "Increases allies’ Psyche.",
           "Description": "The ally’s Psyche becomes +4, or +6 with the dedicated improvement.",
           "SourceName": "Heart of Enken",
           "SourceBook": "Player's Handbook",
@@ -12739,7 +12739,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Stagshape",
-          "Summary": "Grants the traits and senses of a deer.",
+          "Summary": "Increases Strength, Constitution and land movement, and grants night vision and a horn attack in stag form.",
           "Description": "The target takes the form of a deer. Its Strength and Constitution cannot be lower than +1 and +4; its land movement is doubled. It can communicate with deer, see in darkness, carry one rider, and feed on grass. It attacks with its antlers (1d10, Open Roll 9–10). Higher Strength and Constitution traits are retained; its equipment takes on the animal form’s appearance and returns to normal when the target changes back.",
           "SourceName": "Stagshape",
           "SourceBook": "Player's Handbook",
@@ -12751,7 +12751,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Salmonshape",
-          "Summary": "Grants the traits and senses of a salmon.",
+          "Summary": "Increases Dexterity and allows swimming and breathing underwater in salmon form.",
           "Description": "The target takes the form of a salmon. Its Dexterity cannot be lower than +4; its swimming speed is doubled and it can breathe both underwater and in air, but cannot move on land. It can communicate with salmon, sees exceptionally well underwater, and its equipment is protected from water. Touching its scales restores 1 HP to a person once per day; kissing it restores 1d3 HP once per day; eating its flesh restores 1d6+1 HP but deals 1d5 damage to the salmon.",
           "SourceName": "Salmonshape",
           "SourceBook": "Player's Handbook",
@@ -12763,7 +12763,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Ravenshape",
-          "Summary": "Grants the traits and senses of a raven.",
+          "Summary": "Increases Dexterity and Constitution, grants flight and sight of invisible beings, and penalizes attacks against the raven form.",
           "Description": "The target takes the form of a raven. Its Dexterity and Constitution cannot be lower than +4; its land movement is halved and its flying speed is quadrupled. It sees in darkness, perceives invisible and intangible creatures, and can communicate with ravens and the undead. It attacks with its beak (1d10, Open Roll 10). Attacks against it while flying suffer −5 to their combat value, including ranged attacks. Higher traits are retained, and equipment returns to its normal appearance when the target changes back.",
           "SourceName": "Ravenshape",
           "SourceBook": "Player's Handbook",
@@ -12786,7 +12786,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Boiling Blood (Tribute of Morgu)",
-          "Summary": "Improves attacks and grants fear immunity.",
+          "Summary": "Increases attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Boiling Blood",
           "SourceBook": "Player's Handbook",
@@ -12813,7 +12813,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
           "Name": "Madness (Tribute of Morgu)",
-          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Summary": "Increases Size, attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
           "SourceBook": "Player's Handbook",
@@ -12840,7 +12840,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
           "Name": "Riastarthae (Tribute of Morgu)",
-          "Summary": "Unleashes an extreme frenzy and ignores wounds.",
+          "Summary": "Increases Size, attack SV, damage and temporary health, ignores fear and wound penalties, but prevents parrying and dodging.",
           "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
           "SourceBook": "Player's Handbook",
@@ -12876,7 +12876,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
-          "Summary": "Gradually immobilizes and petrifies the target.",
+          "Summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
           "Description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
@@ -12885,7 +12885,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Statue — Tablet of Anger)",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
@@ -12894,7 +12894,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Statue — Tablet of Anger)",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Statue",
           "SourceBook": "Player's Handbook",
@@ -12903,7 +12903,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre": {
           "Name": "Stone Monument",
-          "Summary": "Petrifies and immobilizes the target.",
+          "Summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
           "Description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
@@ -12912,7 +12912,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Stone Monument — Tablet of Anger)",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
@@ -12921,7 +12921,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Stone Monument — Tablet of Anger)",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Stone Monument",
           "SourceBook": "Player's Handbook",
@@ -12930,7 +12930,7 @@
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Bark Skin",
-          "Summary": "Protects the target with temporary health points.",
+          "Summary": "Adds temporary health points that absorb damage.",
           "Description": "The target gains 10 temporary health points, which absorb damage after Protection. The effect ends if these points are depleted; any remaining points disappear when it expires.",
           "SourceName": "Bark Skin",
           "SourceBook": "Player's Handbook",
@@ -12939,7 +12939,7 @@
         },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Tree Port",
-          "Summary": "Transforms the target into a resilient tree.",
+          "Summary": "Turns the target into a tree, increases Protection, reduces incoming damage and allows health recovery and resistance to curses.",
           "Description": "The target becomes a large black oak with Protection 8; after this protection, only one fifth of damage harms it. It recovers 1 HP per hour, feeds on water from the soil and sunlight, and is immune to demons’ attacks and abilities. Once per day, it can attempt a Situation Value 6 test (Psyche) to remove a curse or demonic infection. It can return to its normal form at any time; if it dies in this form, it remains a black oak.",
           "SourceName": "Tree Port",
           "SourceBook": "Player's Handbook",
@@ -12948,7 +12948,7 @@
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Mind of the Predator",
-          "Summary": "Improves Constitution and physical resilience.",
+          "Summary": "Increases Constitution and maximum health points.",
           "Description": "Replaces the target’s Constitution trait with the exceptional level +4.",
           "SourceName": "Mind of the Predator",
           "SourceBook": "Player's Handbook",
@@ -12967,7 +12967,7 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier": {
           "Name": "Endurance of the Boar",
-          "Summary": "Greatly improves Constitution.",
+          "Summary": "Increases Constitution and maximum health points.",
           "Description": "Replaces the target’s Constitution trait with the exceptional level +6.",
           "SourceName": "Endurance of the Boar",
           "SourceBook": "Player's Handbook",
@@ -12976,7 +12976,7 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance of the Giant",
-          "Summary": "Improves Constitution and grants immunity to poison and disease.",
+          "Summary": "Increases Constitution and maximum health points, and grants immunity to poison and disease.",
           "Description": "Replaces the target’s Constitution trait with the exceptional level +8 and makes it immune to poison and disease.",
           "SourceName": "Endurance of the Giant",
           "SourceBook": "Player's Handbook",
@@ -12985,7 +12985,7 @@
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Mastomantshape",
-          "Summary": "Transforms the target into a giant mastomant.",
+          "Summary": "Transforms into a mastomant, increases Strength, Size, Protection and temporary health, grants tusk attacks and immunity to cold.",
           "Description": "The target takes the form of a size 7 mastomant weighing about 15 tonnes. It gains Protection 4, Strength +6 (and therefore +6 damage), 30 temporary HP, immunity to all forms of cold, and a tusk attack (2d10, Open Roll 9–10). It can carry four riders.",
           "SourceName": "Mastomantshape",
           "SourceBook": "Player's Handbook",
@@ -13040,7 +13040,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification": {
           "Name": "Petrify",
-          "Summary": "Turns the target into a stone statue.",
+          "Summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
           "Description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
@@ -13049,7 +13049,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Petrify — Power of the Scale)",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
@@ -13058,7 +13058,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Petrify — Power of the Scale)",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify",
           "SourceBook": "Player's Handbook",
@@ -13085,7 +13085,7 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes": {
           "Name": "Mountain Ogre's Fury",
-          "Summary": "Unleashes a frenzy that improves physical resilience.",
+          "Summary": "Adds temporary health, increases damage and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 3 temporary health points and +1 damage with melee, thrown, and natural attacks. It ignores fear and cannot parry or dodge.",
           "SourceName": "Mountain Ogre's Fury",
           "SourceBook": "Player's Handbook",
@@ -13094,7 +13094,7 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes": {
           "Name": "Mountain Ogre's Madness",
-          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Summary": "Adds temporary health, increases attack SV and damage, and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 6 temporary health points, +3 damage with melee, thrown, and natural attacks, and +1 to attack skill value. It ignores fear and cannot parry or dodge.",
           "SourceName": "Mountain Ogre's Madness",
           "SourceBook": "Player's Handbook",
@@ -13112,7 +13112,7 @@
         },
         "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur": {
           "Name": "The Destroyer's Rage",
-          "Summary": "Unleashes an extreme frenzy that improves attacks.",
+          "Summary": "Adds temporary health, increases attack SV and damage, causes fear and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 10 temporary health points, +5 damage with melee, thrown, and natural attacks, and +2 to attack skill value. It receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "The Destroyer's Rage",
           "SourceBook": "Player's Handbook",
@@ -13121,7 +13121,7 @@
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Rampage of the Huvfurwurm",
-          "Summary": "Grants an additional weapon action.",
+          "Summary": "Grants additional weapon actions with reserved Combat Points.",
           "Description": "Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
           "SourceName": "Rampage of the Huvfurwurm",
           "SourceBook": "Player's Handbook",
@@ -13130,7 +13130,7 @@
         },
         "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes": {
           "Name": "Flame Hardened",
-          "Summary": "Protects against ordinary fire and improves attacks.",
+          "Summary": "Increases Protection and melee and throwing damage, and grants immunity to non-magical fire.",
           "Description": "The target gains Protection +2, deals +1 damage in melee, at range, and with natural attacks, and takes no damage from nonmagical fire. Its breath can ignite dry wood.",
           "SourceName": "Flame Hardened",
           "SourceBook": "Player's Handbook",
@@ -13148,7 +13148,7 @@
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm": {
           "Name": "Attack of the Huvfurwurm",
-          "Summary": "Grants two additional weapon actions and 10 reserved CP.",
+          "Summary": "Grants additional weapon actions with reserved Combat Points.",
           "Description": "Grants two additional weapon actions and a shared reserve of 10 CP per round. These points are reserved for those actions, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
           "SourceName": "Attack of the Huvfurwurm",
           "SourceBook": "Player's Handbook",
@@ -13157,7 +13157,7 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Dragon Skin",
-          "Summary": "Protects against fire and improves attacks.",
+          "Summary": "Increases Protection and melee and throwing damage, grants immunity to non-magical fire and reduces magical fire damage.",
           "Description": "The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood.",
           "SourceName": "Dragon Skin",
           "SourceBook": "Player's Handbook",
@@ -13175,7 +13175,7 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon": {
           "Name": "Dragon Soul",
-          "Summary": "Grants protection and complete fire resistance.",
+          "Summary": "Increases Protection and weapon damage, and grants immunity to magical and non-magical fire.",
           "Description": "The target gains Protection +6, deals +4 damage in melee, at range, and with natural attacks, and is immune to magical and nonmagical fire. Its breath can ignite dry wood.",
           "SourceName": "Dragon Soul",
           "SourceBook": "Player's Handbook",
@@ -13184,7 +13184,7 @@
         },
         "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant": {
           "Name": "Giant Snakeshape",
-          "Summary": "Transforms the target into a giant serpent.",
+          "Summary": "Transforms into a giant snake, increases Strength, Protection and temporary health, and grants bite, constriction and paralyzing gaze.",
           "Description": "The target becomes a size 4 giant serpent, as long as a sanctuary and weighing 500 kg to 8 tonnes. It gains 20 temporary HP, Protection 2, Strength +6 (and +6 damage), Fear Factor 1d5, Paralysing Gaze, and Constriction. Its natural attacks are a bite (2d10, Open Roll 9–10) and a crush after a successful constriction (2d10, ignoring armour protection). Its equipment is suspended; it cannot wield weapons or use other divine powers than those granted by this form.",
           "SourceName": "Giant Snakeshape",
           "SourceBook": "Player's Handbook",
@@ -13195,7 +13195,7 @@
         },
         "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier": {
           "Name": "Hammer Fists",
-          "Summary": "Improves unarmed attacks.",
+          "Summary": "Increases unarmed attack damage.",
           "Description": "Unarmed Brawling attacks deal, by rune level: 1d6; 1d6 + 2; 1d10 + 2; 1d10 (OR 10) + 2; 1d10 (OR 9–10) + 2. The Strength modifier also applies. Both runes must be worn and powered for the effect to function.",
           "SourceName": "Hammer Fists",
           "SourceBook": "Player's Handbook",
@@ -13204,7 +13204,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Animal Spirit — Bear",
-          "Summary": "Grants some bear traits without changing form.",
+          "Summary": "Increases Strength and Protection, and grants a claw attack without changing form.",
           "Description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
@@ -13214,7 +13214,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard": {
           "Name": "Animal Spirit — Fox",
-          "Summary": "Grants some fox traits without changing form.",
+          "Summary": "Increases Intelligence, land movement and Thievery SVs without changing form.",
           "Description": "The target takes on some fox traits without fully changing form: Intelligence at least +4, land movement multiplied by 1.5, and +3 to Thievery. Foxes regard the target as a friend and do not attack; other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
@@ -13223,7 +13223,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre": {
           "Name": "Animal Spirit — Hare",
-          "Summary": "Grants some hare traits without changing form.",
+          "Summary": "Increases Dexterity, land movement and Shadowing SVs without changing form.",
           "Description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
@@ -13232,7 +13232,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau": {
           "Name": "Animal Spirit — Raven",
-          "Summary": "Grants some raven traits without changing form.",
+          "Summary": "Grants night vision, perception of invisible beings and a beak attack without changing form.",
           "Description": "The target takes on some raven traits without fully changing shape: night vision, the ability to perceive invisible beings, and a beak (1d10, Open Roll 10) as a natural weapon. Ravens regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
@@ -13244,7 +13244,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf": {
           "Name": "Animal Spirit — Stag",
-          "Summary": "Grants some deer traits without changing form.",
+          "Summary": "Increases Constitution and land movement, and grants a horn attack without changing form.",
           "Description": "The target takes on some deer traits without fully changing shape: Constitution at least +4, land movement multiplied by 1.5, and antlers (1d10, Open Roll 10) as a natural weapon. Deer regard it as a friend and will not attack it; its other traits remain unchanged.",
           "SourceName": "Animal Spirit",
           "SourceBook": "Player's Handbook",
@@ -13254,7 +13254,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Animal Shape — Bear",
-          "Summary": "Transforms the target into a bear.",
+          "Summary": "Transforms into a bear, increases Strength, Constitution and Protection, reduces Dexterity and grants night vision and claws.",
           "Description": "The target takes the form of a bear and retains its Intelligence and traits compatible with this form. It can communicate with bears and carry one rider. It gains night vision, Strength and Constitution at least +4, Dexterity −2, Protection +3, and a claw attack (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
@@ -13265,7 +13265,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard": {
           "Name": "Animal Shape — Fox",
-          "Summary": "Transforms the target into a fox.",
+          "Summary": "Transforms into a fox, increases Intelligence, movement, Shadowing and Thievery, reduces Strength and penalizes incoming attacks.",
           "Description": "The target takes the form of a fox and retains its Intelligence and traits compatible with this form. It can communicate with foxes, see in darkness, and gains Intelligence +4, Strength −2, doubled land movement, and +3 in Stealth and Larceny. Attacks against it suffer −2 to their combat value. Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
@@ -13275,7 +13275,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre": {
           "Name": "Animal Shape — Hare",
-          "Summary": "Transforms the target into a hare.",
+          "Summary": "Transforms into a hare, increases Dexterity and land movement, reduces Strength and penalizes incoming attacks.",
           "Description": "The target takes the form of a hare and retains its Intelligence and traits compatible with this form. It can communicate with hares, see in darkness, and gains Dexterity +4 and Strength −2; its land movement is doubled. Attacks against it suffer −3 to their combat value. Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
@@ -13285,7 +13285,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau": {
           "Name": "Animal Shape — Raven",
-          "Summary": "Transforms the target into a raven.",
+          "Summary": "Transforms into a raven, increases Dexterity, reduces Constitution and walking speed, and grants flight, night vision and a beak attack.",
           "Description": "The target takes the form of a raven and retains its Intelligence and traits compatible with this form. It can communicate with ravens and the dead, see in darkness, and perceive invisible and immaterial beings. Its Dexterity increases by 4, its Constitution decreases by 4, its land movement is halved, and its flying speed is quadrupled. It attacks with its beak (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
@@ -13297,7 +13297,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf": {
           "Name": "Animal Shape — Stag",
-          "Summary": "Transforms the target into a deer.",
+          "Summary": "Transforms into a stag, increases Strength, Constitution and land movement, and grants night vision and a horn attack.",
           "Description": "The target takes the form of a deer and retains its Intelligence and traits compatible with this form. It can communicate with deer, carry one rider, and feed on grass. It sees in darkness, gains Strength +1 and Constitution +4, and has doubled land movement. It attacks with its antlers (1d10, Open Roll 10). Its equipment merges into the animal form and returns to its original state when it changes back.",
           "SourceName": "Animal Shape",
           "SourceBook": "Player's Handbook",
@@ -13308,7 +13308,7 @@
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Control Fire",
-          "Summary": "Allows easy swimming and improves swimming rolls.",
+          "Summary": "Improves Swimming tests and allows swimming without a test in calm water.",
           "Description": "The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV.",
           "SourceName": "Control Fire",
           "SourceBook": "Player's Handbook",
@@ -13326,7 +13326,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage (Fury of Ogon)",
-          "Summary": "Improves attacks and grants fear immunity.",
+          "Summary": "Increases attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
@@ -13353,7 +13353,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
           "Name": "Madness (Fury of Ogon)",
-          "Summary": "Unleashes a frenzy that improves attacks.",
+          "Summary": "Increases Size, attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
           "Description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
           "SourceName": "Madness",
           "SourceBook": "Stormlands",
@@ -13380,7 +13380,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
           "Name": "Riastarthae (Fury of Ogon)",
-          "Summary": "Unleashes an extreme frenzy and ignores wounds.",
+          "Summary": "Increases Size, attack SV, damage and temporary health, ignores fear and wound penalties, but prevents parrying and dodging.",
           "Description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
@@ -13398,7 +13398,7 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Curses of Sonntag)",
-          "Summary": "Transforms the target into a tree and protects it with bark.",
+          "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
           "Description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
           "SourceName": "Tree Curse",
           "SourceBook": "Stormlands",
@@ -13407,7 +13407,7 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
           "Name": "Stiffness after the tree curse (Tree Curse — Curses of Sonntag)",
-          "Summary": "Leaves stiffness after the tree curse.",
+          "Summary": "Reduces movement and Agility test values after the curse.",
           "Description": "For three days after returning to its normal form, the target moves at half speed and its Agility- and movement-related skill and situation tests are halved.",
           "SourceName": "Tree Curse",
           "SourceBook": "Stormlands",
@@ -13416,7 +13416,7 @@
         },
         "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm": {
           "Name": "Change Self (logiwurm)",
-          "Summary": "Changes physical form to a selected creature.",
+          "Summary": "Adopts the chosen form’s physical traits, movement and attacks while retaining health points.",
           "Description": "The logewurm can take the physical form of any creature it chooses for an unlimited duration, then return to its original form whenever it wishes. It retains none of its dragon’s physical attributes in this form and is therefore vulnerable. It can use this transformation only once per year.",
           "SourceName": "Change Self (logiwurm)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13461,7 +13461,7 @@
         },
         "it3GE4w2x3y4z5A6#frenesie-hrimtroll": {
           "Name": "Frenzy (hrim troll)",
-          "Summary": "Improves attacks at the cost of parries.",
+          "Summary": "Increases attack SV and reduces parry SV.",
           "Description": "For 1d6 rounds, the target gains +2 to attacks and suffers -2 to parries.",
           "SourceName": "Frenzy (hrim troll)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13470,7 +13470,7 @@
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Rugtanne Infection",
-          "Summary": "Transforms the target into a rugtanne.",
+          "Summary": "Increases Strength, Constitution, Dexterity, Psyche and Protection, and grants darkvision.",
           "Description": "After an incubation of 2d3 days, a human target becomes a rugtanne: its Constitution, Psyche, Strength, and Dexterity increase by two degrees, up to +8; Protection increases by 1 and HP are recalculated. It sees in total darkness up to 10 m, then gradually out to about 60 m. It can live only at night, dies instantly in daylight, and must drink the blood of a warm-blooded creature every five nights. It retains its magical abilities and can live up to four times longer than a human.",
           "SourceName": "Rugtanne Infection",
           "SourceBook": "Jorgi's Bestiary",
@@ -13489,7 +13489,7 @@
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
           "Name": "Werewarg (Warg Sickness (garm))",
-          "Summary": "Transforms the target into a werewarg.",
+          "Summary": "Increases Strength, Dexterity, Constitution and Protection, reduces Psyche and Intelligence, and grants bite, claws and night vision.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (garm)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13510,7 +13510,7 @@
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
           "Name": "Werewarg (Warg Sickness (skoll))",
-          "Summary": "Transforms the target into a werewarg.",
+          "Summary": "Increases Strength, Dexterity, Constitution and Protection, reduces Psyche and Intelligence, and grants bite, claws and night vision.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (skoll)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13531,7 +13531,7 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
           "Name": "Werewarg (Warg Sickness (warg))",
-          "Summary": "Transforms the target into a werewarg.",
+          "Summary": "Increases Strength, Dexterity, Constitution and Protection, reduces Psyche and Intelligence, and grants bite, claws and night vision.",
           "Description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
           "SourceName": "Warg Sickness (warg)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13543,7 +13543,7 @@
         },
         "pjY95vXsYtZu0v1w#metamorphose-draugr": {
           "Name": "Shapeshifter (draugr)",
-          "Summary": "Allows a draugr to take an animal form.",
+          "Summary": "Adopts the chosen animal form’s traits, movement and attacks.",
           "Description": "The draugr can take the form of a chosen animal, often a wolf, raven, or horse, and gains its physical characteristics; its HP are not preserved. The transformation takes three turns, during which it cannot defend itself. Each change from one form to another costs 30 days and nights.",
           "SourceName": "Shapeshifter (draugr)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13561,7 +13561,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-braskelwurm": {
           "Name": "Petrify (braskelwurm)",
-          "Summary": "Petrifies the target and turns it into a statue.",
+          "Summary": "Petrifies and paralyzes the target, and grants the Protection of a stone statue.",
           "Description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 10 and integrity 100; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. The target returns to normal if the petrification is dispelled.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13570,7 +13570,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Petrify (braskelwurm))",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13579,7 +13579,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Petrify (braskelwurm))",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (braskelwurm)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13588,7 +13588,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-demon-tangible": {
           "Name": "Petrify (physical demon)",
-          "Summary": "Petrifies the target and turns it into a resilient statue.",
+          "Summary": "Petrifies and paralyzes the target, and grants the Protection of a resilient statue.",
           "Description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 20 and integrity 200; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. When the effect ends or the petrification is dispelled, the target returns to normal.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13597,7 +13597,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
           "Name": "Stiffness after petrification — half (Petrify (physical demon))",
-          "Summary": "Slows movement and Dexterity-based actions after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13606,7 +13606,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
           "Name": "Stiffness after petrification — two thirds (Petrify (physical demon))",
-          "Summary": "Leaves residual stiffness after petrification.",
+          "Summary": "Reduces movement and Dexterity-based test values after petrification.",
           "Description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
           "SourceName": "Petrify (physical demon)",
           "SourceBook": "Jorgi's Bestiary",
@@ -13624,7 +13624,7 @@
         },
         "NNBuQnQlRmSnToUp#transformation-corporelle": {
           "Name": "Body Transformation",
-          "Summary": "Transforms the target into a selected animal.",
+          "Summary": "Adopts the chosen animal’s traits, movement and attacks.",
           "Description": "The target takes the physical form of an animal selected from the bestiary and gains its physical characteristics. Its health points are not preserved and its equipment is suspended.",
           "SourceName": "Body Transformation",
           "SourceBook": "Jorgi's Bestiary",

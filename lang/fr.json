@@ -12586,7 +12586,7 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification/Annuler une pétrification",
           "SourceBook": "Livre des règles",
@@ -12595,7 +12595,7 @@
         },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Pétrification/Annuler une pétrification — Maîtrise de la terre)",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification/Annuler une pétrification",
           "SourceBook": "Livre des règles",
@@ -12604,7 +12604,7 @@
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
-          "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
+          "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
           "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Livre des règles",
@@ -12613,7 +12613,7 @@
         },
         "vitner-witchcraft:tree-curse:7#tree-recovery": {
           "Name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Sorcellerie)",
-          "Summary": "Laisse une raideur après la malédiction de l’arbre.",
+          "Summary": "Réduit le déplacement et les valeurs des tests d’Agilité après la malédiction.",
           "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Livre des règles",
@@ -12622,7 +12622,7 @@
         },
         "vitner-body-vitner:hasten:9#hate": {
           "Name": "Hâte",
-          "Summary": "Améliore la souplesse et les réflexes.",
+          "Summary": "Augmente la Dextérité, le déplacement, l’initiative et les VC d’Agilité et de Combat.",
           "Description": "Augmente la Dextérité de la cible, et donc sa capacité de mouvement et son initiative, ainsi que le VC des compétences d’Agilité et de Combat. La cible gagne un degré en Dextérité selon le tableau ci-dessous. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hâte",
           "SourceBook": "Livre des règles",
@@ -12631,7 +12631,7 @@
         },
         "vitner-body-vitner:hasten:9#hate-inverse": {
           "Name": "Hâte — inversé",
-          "Summary": "Réduit la souplesse et les réflexes.",
+          "Summary": "Diminue la Dextérité, le déplacement, l’initiative et les VC d’Agilité et de Combat.",
           "Description": "Diminue la Dextérité de la cible d’un degré, ce qui réduit sa capacité de mouvement et son initiative ainsi que le VC de ses compétences d’Agilité et de Combat. Les valeurs du tableau indiquent les modificateurs associés à chaque degré de Dextérité. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table>",
           "SourceName": "Hâte",
           "SourceBook": "Livre des règles",
@@ -12640,7 +12640,7 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur": {
           "Name": "Vigueur",
-          "Summary": "Renforce les muscles et la Force.",
+          "Summary": "Augmente la Force, les dégâts qui en dépendent et le maximum de points de santé.",
           "Description": "Augmente la Force de la cible d’un degré. Ce changement améliore les tests de situation fondés sur la Force ainsi que les dégâts, selon la table des modificateurs de Force. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Vigueur",
           "SourceBook": "Livre des règles",
@@ -12649,7 +12649,7 @@
         },
         "vitner-body-vitner:strengthen:8#vigueur-inverse": {
           "Name": "Vigueur — inversé",
-          "Summary": "Affaiblit les muscles et la Force.",
+          "Summary": "Diminue la Force, les dégâts qui en dépendent et le maximum de points de santé.",
           "Description": "Diminue la Force de la cible d’un degré. Ce changement réduit les tests de situation fondés sur la Force ainsi que les dégâts, selon la table des modificateurs de Force. Les modificateurs indiqués sont appliqués en sens inverse. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table>",
           "SourceName": "Vigueur",
           "SourceBook": "Livre des règles",
@@ -12658,7 +12658,7 @@
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Transformation",
-          "Summary": "Change la forme physique de la cible.",
+          "Summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
           "Description": "La cible prend la forme physique d’une créature choisie dans le bestiaire, jusqu’à cinq fois plus petite et jamais plus grande que sa forme d’origine. Elle en adopte l’apparence, la taille, la Force, la Dextérité, les sens, les modificateurs physiques et les attaques naturelles non magiques. Elle conserve son Intelligence, sa Constitution, son Psychisme et ses points de santé, et ne gagne ni capacités ni pouvoirs magiques de la créature. Elle ne peut parler que si cette forme le permet. Une cible transformée volontairement peut reprendre sa forme à tout moment ; à la fin de l’effet, le retour prend cinq tours.",
           "SourceName": "Transformation",
           "SourceBook": "Livre des règles",
@@ -12694,7 +12694,7 @@
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies": {
           "Name": "Force du jotun (alliés)",
-          "Summary": "Confère Force +4 aux alliés.",
+          "Summary": "Augmente la Force des alliés.",
           "Description": "Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
           "SourceName": "Force du jotun",
           "SourceBook": "Livre des règles",
@@ -12703,7 +12703,7 @@
         },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Force d’âme",
-          "Summary": "Renforce le courage et le Psychisme.",
+          "Summary": "Augmente le Psychisme.",
           "Description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +4.",
           "SourceName": "Force d’âme",
           "SourceBook": "Livre des règles",
@@ -12712,7 +12712,7 @@
         },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Témérité",
-          "Summary": "Renforce le courage et le Psychisme.",
+          "Summary": "Augmente le Psychisme.",
           "Description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +6.",
           "SourceName": "Témérité",
           "SourceBook": "Livre des règles",
@@ -12721,7 +12721,7 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Cœur d’Enken",
-          "Summary": "Porte le Psychisme à un niveau exceptionnel.",
+          "Summary": "Augmente le Psychisme.",
           "Description": "La cible reçoit le trait exceptionnel +8 en Psychisme.",
           "SourceName": "Cœur d’Enken",
           "SourceBook": "Livre des règles",
@@ -12730,7 +12730,7 @@
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies": {
           "Name": "Cœur d’Enken (alliés)",
-          "Summary": "Confère Psychisme +4 aux alliés.",
+          "Summary": "Augmente le Psychisme des alliés.",
           "Description": "Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
           "SourceName": "Cœur d’Enken",
           "SourceBook": "Livre des règles",
@@ -12739,7 +12739,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Aspect du cerf",
-          "Summary": "Confère les traits et les sens d’un cerf.",
+          "Summary": "Augmente la Force, la Constitution et le déplacement terrestre, et accorde vision nocturne et attaque de cornes sous forme de cerf.",
           "Description": "La cible prend la forme d’un cerf. Sa Force et sa Constitution ne peuvent être inférieures à +1 et +4 ; son déplacement terrestre est doublé. Elle peut communiquer avec les cerfs, voit dans l’obscurité, peut servir de monture à une personne et se nourrir d’herbe. Elle attaque avec ses cornes (1d10, JO 9–10). Les traits de Force et de Constitution supérieurs sont conservés ; l’équipement prend l’apparence de la forme animale et retrouve son apparence normale au retour.",
           "SourceName": "Aspect du cerf",
           "SourceBook": "Livre des règles",
@@ -12751,7 +12751,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Aspect du saumon",
-          "Summary": "Confère les traits et les sens d’un saumon.",
+          "Summary": "Augmente la Dextérité et permet de nager et de respirer sous l’eau sous forme de saumon.",
           "Description": "La cible prend la forme d’un saumon. Sa Dextérité ne peut être inférieure à +4 ; son déplacement aquatique est doublé et elle peut respirer sous l’eau comme à l’air libre, mais ne peut pas se déplacer sur terre. Elle communique avec les saumons, voit parfaitement sous l’eau et son équipement est protégé de l’eau. Toucher ses écailles rend 1 PS à une personne par jour ; l’embrasser en rend 1d3 par jour ; manger sa chair rend 1d6+1 PS, mais inflige 1d5 dégâts au saumon.",
           "SourceName": "Aspect du saumon",
           "SourceBook": "Livre des règles",
@@ -12763,7 +12763,7 @@
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Aspect du corbeau",
-          "Summary": "Confère les traits et les sens d’un corbeau.",
+          "Summary": "Augmente la Dextérité et la Constitution, permet de voler et de voir les êtres invisibles, et pénalise les attaques visant la forme de corbeau.",
           "Description": "La cible prend la forme d’un corbeau. Sa Dextérité et sa Constitution ne peuvent être inférieures à +4 ; son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle voit dans l’obscurité, perçoit les créatures invisibles et intangibles, et communique avec les corbeaux et les morts-vivants. Elle attaque avec son bec (1d10, JO 10). Lorsqu’elle vole, les attaques contre elle subissent −5 à la VC, y compris les attaques à distance. Les traits supérieurs sont conservés et l’équipement retrouve son apparence normale au retour.",
           "SourceName": "Aspect du corbeau",
           "SourceBook": "Livre des règles",
@@ -12786,7 +12786,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3#rage": {
           "Name": "Rage (Tribut de Morgu)",
-          "Summary": "Renforce les attaques et la résistance à la peur.",
+          "Summary": "Augmente la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Livre des règles",
@@ -12813,7 +12813,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5#folie": {
           "Name": "Folie (Tribut de Morgu)",
-          "Summary": "Déchaîne une rage qui renforce les attaques.",
+          "Summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
           "SourceBook": "Livre des règles",
@@ -12840,7 +12840,7 @@
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae": {
           "Name": "Riastarthae (Tribut de Morgu)",
-          "Summary": "Déchaîne une rage extrême et ignore les blessures.",
+          "Summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, ignore peur et malus de blessures, mais interdit parade et esquive.",
           "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
           "SourceBook": "Livre des règles",
@@ -12876,7 +12876,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
-          "Summary": "Immobilise et pétrifie progressivement la cible.",
+          "Summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
           "Description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
@@ -12885,7 +12885,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Statue — Tablette de la colère)",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
@@ -12894,7 +12894,7 @@
         },
         "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Statue — Tablette de la colère)",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Statue",
           "SourceBook": "Livre des règles",
@@ -12903,7 +12903,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre": {
           "Name": "Monument en pierre",
-          "Summary": "Pétrifie la cible et l’immobilise.",
+          "Summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
           "Description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
@@ -12912,7 +12912,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Monument en pierre — Tablette de la colère)",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
@@ -12921,7 +12921,7 @@
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Monument en pierre — Tablette de la colère)",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Monument en pierre",
           "SourceBook": "Livre des règles",
@@ -12930,7 +12930,7 @@
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Peau d’écorce",
-          "Summary": "Protège la cible avec des points de santé temporaires.",
+          "Summary": "Ajoute des points de santé temporaires qui absorbent les dégâts.",
           "Description": "La cible gagne 10 points de santé temporaires, qui absorbent les dégâts après la protection. L’effet prend fin si ces points sont épuisés ; les points restants disparaissent à son expiration.",
           "SourceName": "Peau d’écorce",
           "SourceBook": "Livre des règles",
@@ -12939,7 +12939,7 @@
         },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Refuge arboricole",
-          "Summary": "Transforme la cible en arbre résistant.",
+          "Summary": "Transforme en arbre, augmente la Protection, réduit les dégâts reçus et permet de récupérer des PS et de résister aux malédictions.",
           "Description": "La cible devient un grand chêne noir doté de Protection 8 ; après cette protection, seul un cinquième des dégâts la blesse. Elle récupère 1 PS par heure, se nourrit d’eau du sol et de lumière, et est immunisée aux attaques et facultés des démons. Une fois par jour, elle peut tenter un test de situation de 6 (Psychisme) pour supprimer une malédiction ou une infection démoniaque. Elle peut reprendre sa forme à tout moment ; si elle meurt sous cette forme, elle demeure un chêne noir.",
           "SourceName": "Refuge arboricole",
           "SourceBook": "Livre des règles",
@@ -12948,7 +12948,7 @@
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Résilience",
-          "Summary": "Renforce la Constitution et la résistance physique.",
+          "Summary": "Augmente la Constitution et le maximum de points de santé.",
           "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +4.",
           "SourceName": "Résilience",
           "SourceBook": "Livre des règles",
@@ -12967,7 +12967,7 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier": {
           "Name": "Endurance du sanglier",
-          "Summary": "Renforce fortement la Constitution.",
+          "Summary": "Augmente la Constitution et le maximum de points de santé.",
           "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +6.",
           "SourceName": "Endurance du sanglier",
           "SourceBook": "Livre des règles",
@@ -12976,7 +12976,7 @@
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance du géant",
-          "Summary": "Renforce la Constitution et immunise aux poisons et maladies.",
+          "Summary": "Augmente la Constitution et le maximum de points de santé, et immunise aux poisons et aux maladies.",
           "Description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +8 et la rend immunisée au poison et aux maladies.",
           "SourceName": "Endurance du géant",
           "SourceBook": "Livre des règles",
@@ -12985,7 +12985,7 @@
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Aspect du mastomant",
-          "Summary": "Transforme la cible en mastomant géant.",
+          "Summary": "Transforme en mastomant, augmente Force, Taille, Protection et PS temporaires, accorde des attaques de défenses et immunise au froid.",
           "Description": "La cible prend la forme d’un mastomant de taille 7 et d’environ 15 tonnes. Elle gagne Protection 4, Force +6 (et donc +6 aux dégâts), 30 PS temporaires, l’immunité à toutes les formes de froid et une attaque de défenses (2d10, JO 9–10). Elle peut servir de monture à quatre personnes.",
           "SourceName": "Aspect du mastomant",
           "SourceBook": "Livre des règles",
@@ -13040,7 +13040,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification": {
           "Name": "Pétrification",
-          "Summary": "Transforme la cible en statue de pierre.",
+          "Summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
           "Description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
@@ -13049,7 +13049,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Pétrification — Puissance de l'écaille)",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
@@ -13058,7 +13058,7 @@
         },
         "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Pétrification — Puissance de l'écaille)",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification",
           "SourceBook": "Livre des règles",
@@ -13085,7 +13085,7 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes": {
           "Name": "Fureur de l’ogre des montagnes",
-          "Summary": "Déchaîne une rage qui renforce la résistance physique.",
+          "Summary": "Ajoute des PS temporaires, augmente les dégâts et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 3 points de santé temporaires et +1 aux dégâts de corps à corps, de lancer et des armes naturelles. Elle ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Fureur de l’ogre des montagnes",
           "SourceBook": "Livre des règles",
@@ -13094,7 +13094,7 @@
         },
         "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes": {
           "Name": "Folie de l’ogre des montagnes",
-          "Summary": "Déchaîne une rage qui améliore les attaques.",
+          "Summary": "Ajoute des PS temporaires, augmente la VC d’attaque et les dégâts, et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 6 points de santé temporaires, +3 aux dégâts de corps à corps, de lancer et des armes naturelles, et +1 à la VC d’attaque. Elle ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie de l’ogre des montagnes",
           "SourceBook": "Livre des règles",
@@ -13112,7 +13112,7 @@
         },
         "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur": {
           "Name": "Rage du destructeur",
-          "Summary": "Déchaîne une rage extrême qui renforce les attaques.",
+          "Summary": "Ajoute des PS temporaires, augmente la VC d’attaque et les dégâts, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 10 points de santé temporaires, +5 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage du destructeur",
           "SourceBook": "Livre des règles",
@@ -13121,7 +13121,7 @@
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Ravage du huvfurwurm",
-          "Summary": "Accorde une action d’arme supplémentaire.",
+          "Summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
           "Description": "Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
           "SourceName": "Ravage du huvfurwurm",
           "SourceBook": "Livre des règles",
@@ -13130,7 +13130,7 @@
         },
         "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes": {
           "Name": "Fils des flammes",
-          "Summary": "Protège des flammes ordinaires et renforce les attaques.",
+          "Summary": "Augmente la Protection et les dégâts de corps à corps et de lancer, et immunise aux flammes non magiques.",
           "Description": "La cible bénéficie de Protection +2, inflige +1 dégât en combat rapproché, de lancer et avec les armes naturelles, et ne subit aucun dégât des flammes non magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Fils des flammes",
           "SourceBook": "Livre des règles",
@@ -13148,7 +13148,7 @@
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm": {
           "Name": "Attaque du huvfurwurm",
-          "Summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+          "Summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
           "Description": "Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
           "SourceName": "Attaque du huvfurwurm",
           "SourceBook": "Livre des règles",
@@ -13157,7 +13157,7 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon": {
           "Name": "Peau du dragon",
-          "Summary": "Protège des flammes et renforce les attaques.",
+          "Summary": "Augmente la Protection et les dégâts de corps à corps et de lancer, immunise au feu non magique et réduit les dégâts du feu magique.",
           "Description": "La cible bénéficie de Protection +4, inflige +2 dégâts en combat rapproché, de lancer et avec les armes naturelles, est immunisée aux flammes non magiques et ne subit que la moitié des dégâts des flammes magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Peau du dragon",
           "SourceBook": "Livre des règles",
@@ -13175,7 +13175,7 @@
         },
         "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon": {
           "Name": "Âme du dragon",
-          "Summary": "Accorde une protection et une résistance totale au feu.",
+          "Summary": "Augmente la Protection et les dégâts des armes, et immunise aux flammes magiques et non magiques.",
           "Description": "La cible bénéficie de Protection +6, inflige +4 dégâts en combat rapproché, à distance et avec les armes naturelles, et est immunisée aux flammes magiques comme non magiques. Son souffle peut enflammer du bois sec.",
           "SourceName": "Âme du dragon",
           "SourceBook": "Livre des règles",
@@ -13184,7 +13184,7 @@
         },
         "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant": {
           "Name": "Aspect du serpent géant",
-          "Summary": "Transforme la cible en serpent géant.",
+          "Summary": "Transforme en serpent géant, augmente Force, Protection et PS temporaires, et accorde morsure, constriction et regard paralysant.",
           "Description": "La cible devient un serpent géant de taille 4, long comme un sanctuaire et pesant de 500 kg à 8 tonnes. Elle gagne 20 PS temporaires, Protection 2, Force +6 (et +6 aux dégâts), le facteur de peur 1d5, le Regard paralysant et la Constriction. Ses attaques naturelles sont une morsure (2d10, JO 9–10) et un écrasement après une constriction réussie (2d10, sans protection d’armure). Son équipement est suspendu ; elle ne peut pas manier d’armes ni utiliser d’autres pouvoirs divins que ceux accordés par cette forme.",
           "SourceName": "Aspect du serpent géant",
           "SourceBook": "Livre des règles",
@@ -13195,7 +13195,7 @@
         },
         "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier": {
           "Name": "Poings d’acier",
-          "Summary": "Renforce les attaques à mains nues.",
+          "Summary": "Augmente les dégâts des attaques à mains nues.",
           "Description": "Les attaques à mains nues utilisant Bagarre infligent, selon le niveau de la rune : 1d6 ; 1d6 + 2 ; 1d10 + 2 ; 1d10 (JO 10) + 2 ; 1d10 (JO 9–10) + 2. Le modificateur de Force s’ajoute à ces dégâts. Les deux runes doivent être portées et alimentées pour que l’effet fonctionne.",
           "SourceName": "Poings d’acier",
           "SourceBook": "Livre des règles",
@@ -13204,7 +13204,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Esprit de la bête — Ours",
-          "Summary": "Donne certains traits de l’ours sans changer de forme.",
+          "Summary": "Augmente la Force et la Protection, et accorde une attaque de griffes sans changer de forme.",
           "Description": "La cible adopte certains traits de l’ours sans changer entièrement de forme : Force au moins +4, Protection +2, griffes (1d10, JO 10). Les ours la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
@@ -13214,7 +13214,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard": {
           "Name": "Esprit de la bête — Renard",
-          "Summary": "Donne certains traits du renard sans changer de forme.",
+          "Summary": "Augmente l’Intelligence, le déplacement terrestre et les VC de Larcin sans changer de forme.",
           "Description": "La cible adopte certains traits du renard sans changer entièrement de forme : Intelligence au moins +4, déplacement terrestre multiplié par 1,5 et +3 dans la discipline Larcin. Les renards la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
@@ -13223,7 +13223,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre": {
           "Name": "Esprit de la bête — Lièvre",
-          "Summary": "Donne certains traits du lièvre sans changer de forme.",
+          "Summary": "Augmente la Dextérité, le déplacement terrestre et les VC de Discrétion sans changer de forme.",
           "Description": "La cible adopte certains traits du lièvre sans changer entièrement de forme : Dextérité au moins +4, déplacement terrestre multiplié par 1,5, +3 en Discrétion. Les lièvres la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
@@ -13232,7 +13232,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau": {
           "Name": "Esprit de la bête — Corbeau",
-          "Summary": "Donne certains traits du corbeau sans changer de forme.",
+          "Summary": "Accorde vision nocturne, perception des êtres invisibles et attaque de bec sans changer de forme.",
           "Description": "La cible adopte certains traits du corbeau sans changer entièrement de forme : vision nocturne, perception des êtres invisibles et bec (1d10, JO 10) comme arme naturelle. Les corbeaux la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
@@ -13244,7 +13244,7 @@
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf": {
           "Name": "Esprit de la bête — Cerf",
-          "Summary": "Donne certains traits du cerf sans changer de forme.",
+          "Summary": "Augmente la Constitution et le déplacement terrestre, et accorde une attaque de cornes sans changer de forme.",
           "Description": "La cible adopte certains traits du cerf sans changer entièrement de forme : Constitution au moins +4, déplacement terrestre multiplié par 1,5, cornes (1d10, JO 10) comme arme naturelle. Les cerfs la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
           "SourceName": "Esprit de la bête",
           "SourceBook": "Livre des règles",
@@ -13254,7 +13254,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Aspect animal — Ours",
-          "Summary": "Transforme la cible en ours.",
+          "Summary": "Transforme en ours, augmente Force, Constitution et Protection, réduit la Dextérité et accorde vision nocturne et griffes.",
           "Description": "La cible prend la forme d’un ours et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les ours et servir de monture à une personne. Elle obtient la vision nocturne, Force et Constitution au moins +4, Dextérité −2, Protection +3 et une attaque de griffes (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
@@ -13265,7 +13265,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard": {
           "Name": "Aspect animal — Renard",
-          "Summary": "Transforme la cible en renard.",
+          "Summary": "Transforme en renard, augmente Intelligence, déplacement, Discrétion et Larcin, réduit la Force et pénalise les attaques reçues.",
           "Description": "La cible prend la forme d’un renard et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les renards, voit dans l’obscurité, reçoit Intelligence +4, Force −2, un déplacement terrestre doublé et +3 en Discrétion et en Larcin. Les attaques contre elle subissent −2 à leur VC. Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
@@ -13275,7 +13275,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre": {
           "Name": "Aspect animal — Lièvre",
-          "Summary": "Transforme la cible en lièvre.",
+          "Summary": "Transforme en lièvre, augmente Dextérité et déplacement terrestre, réduit la Force et pénalise les attaques reçues.",
           "Description": "La cible prend la forme d’un lièvre et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les lièvres, voit dans l’obscurité, reçoit Dextérité +4 et Force −2, et son déplacement terrestre est doublé. Les attaques contre elle subissent −3 à leur VC. Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
@@ -13285,7 +13285,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau": {
           "Name": "Aspect animal — Corbeau",
-          "Summary": "Transforme la cible en corbeau.",
+          "Summary": "Transforme en corbeau, augmente la Dextérité, réduit Constitution et marche, et accorde vol, vision nocturne et attaque de bec.",
           "Description": "La cible prend la forme d’un corbeau et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle communique avec les corbeaux et les morts, voit dans l’obscurité et perçoit les êtres invisibles et immatériels. Sa Dextérité augmente de 4, sa Constitution diminue de 4, son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle attaque avec son bec (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
@@ -13297,7 +13297,7 @@
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf": {
           "Name": "Aspect animal — Cerf",
-          "Summary": "Transforme la cible en cerf.",
+          "Summary": "Transforme en cerf, augmente Force, Constitution et déplacement terrestre, et accorde vision nocturne et attaque de cornes.",
           "Description": "La cible prend la forme d’un cerf et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les cerfs, servir de monture à une personne et se nourrir d’herbe. Elle voit dans l’obscurité, reçoit Force +1 et Constitution +4, et son déplacement terrestre est doublé. Elle attaque avec ses cornes (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
           "SourceName": "Aspect animal",
           "SourceBook": "Livre des règles",
@@ -13308,7 +13308,7 @@
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Don de l’eau",
-          "Summary": "Permet de nager aisément et améliore les tests de nage.",
+          "Summary": "Améliore les tests de Natation et permet de nager sans test en eau calme.",
           "Description": "La cible nage comme dans son milieu naturel, même sans la spécialité Natation, et ne fait aucun test en eau calme. Pour les tests d’Agilité nécessaires à la nage, elle reçoit +2 à la VC par niveau du pouvoir. Au-delà d’une profondeur égale à trois fois sa taille, chaque mètre supplémentaire impose un malus de −2 à la VC.",
           "SourceName": "Don de l’eau",
           "SourceBook": "Livre des règles",
@@ -13326,7 +13326,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:rage:2#rage": {
           "Name": "Rage (Fureur d’Ogon)",
-          "Summary": "Renforce les attaques et la résistance à la peur.",
+          "Summary": "Augmente la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Rage",
           "SourceBook": "Stormlands",
@@ -13353,7 +13353,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:madness:4#folie": {
           "Name": "Folie (Fureur d’Ogon)",
-          "Summary": "Déchaîne une rage qui renforce les attaques.",
+          "Summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
           "Description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
           "SourceName": "Folie",
           "SourceBook": "Stormlands",
@@ -13380,7 +13380,7 @@
         },
         "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae": {
           "Name": "Riastarthae (Fureur d’Ogon)",
-          "Summary": "Déchaîne une rage extrême et ignore les blessures.",
+          "Summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, ignore peur et malus de blessures, mais interdit parade et esquive.",
           "Description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
           "SourceName": "Riastarthae",
           "SourceBook": "Stormlands",
@@ -13398,7 +13398,7 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Malédictions de Sonntag)",
-          "Summary": "Transforme la cible en arbre et la protège comme une écorce.",
+          "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
           "Description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Stormlands",
@@ -13407,7 +13407,7 @@
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery": {
           "Name": "Raideur après la malédiction de l’arbre (Malédiction de l’arbre — Malédictions de Sonntag)",
-          "Summary": "Laisse une raideur après la malédiction de l’arbre.",
+          "Summary": "Réduit le déplacement et les valeurs des tests d’Agilité après la malédiction.",
           "Description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
           "SourceName": "Malédiction de l’arbre",
           "SourceBook": "Stormlands",
@@ -13416,7 +13416,7 @@
         },
         "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm": {
           "Name": "Changement de corps (logewurm)",
-          "Summary": "Change la forme physique en celle d’une créature choisie.",
+          "Summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
           "Description": "Le logewurm peut prendre la forme physique de toute créature de son choix, pour une durée illimitée, puis reprendre sa forme d’origine quand il le souhaite. Il ne conserve aucun attribut physique de dragon sous cette forme et devient donc vulnérable. Il ne peut utiliser cette transformation qu’une fois par an.",
           "SourceName": "Changement de corps (logewurm)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13461,7 +13461,7 @@
         },
         "it3GE4w2x3y4z5A6#frenesie-hrimtroll": {
           "Name": "Frénésie (hrimtroll)",
-          "Summary": "Renforce les attaques au prix des parades.",
+          "Summary": "Augmente la VC d’attaque et réduit la VC de parade.",
           "Description": "Pendant 1d6 tours, la cible bénéficie de +2 à ses attaques et subit -2 à ses parades.",
           "SourceName": "Frénésie (hrimtroll)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13470,7 +13470,7 @@
         },
         "NcOgKSkQlRmSnToU#infection-des-rugtannes": {
           "Name": "Infection des rugtannes",
-          "Summary": "Transforme la cible en rugtanne.",
+          "Summary": "Augmente Force, Constitution, Dextérité, Psychisme et Protection, et accorde la vision dans le noir.",
           "Description": "Après une incubation de 2d3 jours, la cible humaine devient un rugtanne : ses traits de Constitution, Psychisme, Force et Dextérité augmentent de deux degrés, avec un dépassement à +8 ; Protection augmente de 1 et les points de santé sont recalculés. Elle voit dans le noir jusqu’à 10 m, puis graduellement jusqu’à environ 60 m. Elle ne peut vivre que la nuit, meurt instantanément à la lumière du jour et doit boire le sang d’une créature à sang chaud toutes les cinq nuits. Elle conserve ses facultés magiques et peut vivre jusqu’à quatre fois plus longtemps qu’un humain.",
           "SourceName": "Infection des rugtannes",
           "SourceBook": "Bestiaire de Jorge",
@@ -13489,7 +13489,7 @@
         },
         "WKMBG3v1w2x3y4z5#warg-garou": {
           "Name": "Warg garou (Maladie du warg (garm))",
-          "Summary": "Transforme la cible en warg garou.",
+          "Summary": "Augmente Force, Dextérité, Constitution et Protection, réduit Psychisme et Intelligence, et accorde morsure, griffes et vision nocturne.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (garm)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13510,7 +13510,7 @@
         },
         "gXp2SRjPkQlRmSnT#warg-garou": {
           "Name": "Warg garou (Maladie du warg (skoll))",
-          "Summary": "Transforme la cible en warg garou.",
+          "Summary": "Augmente Force, Dextérité, Constitution et Protection, réduit Psychisme et Intelligence, et accorde morsure, griffes et vision nocturne.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (skoll)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13531,7 +13531,7 @@
         },
         "i4Zci8A6B7C8D9Ea#warg-garou": {
           "Name": "Warg garou (Maladie du warg (warg))",
-          "Summary": "Transforme la cible en warg garou.",
+          "Summary": "Augmente Force, Dextérité, Constitution et Protection, réduit Psychisme et Intelligence, et accorde morsure, griffes et vision nocturne.",
           "Description": "La cible devient un warg garou : Force +4 (maximum +6), Dextérité +4 (maximum +6), Constitution +6 (maximum +8), Psychisme −2 et Intelligence −4 (minimum −6). Elle gagne Protection 2, vision nocturne, morsure (1d10, JO 8, une action), griffes (1d10, JO 9, deux actions), +2 en Bagarre, +6 en Contrôle corporel et +6 en Expérience de la chasse. Elle perd ses facultés habituelles et sa capacité à raisonner, et agit selon un instinct carnassier. Ses morsures peuvent transmettre la maladie ; une victime infectée a 1 chance sur 20 de ne jamais retrouver sa forme d’origine après sa première transformation.",
           "SourceName": "Maladie du warg (warg)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13543,7 +13543,7 @@
         },
         "pjY95vXsYtZu0v1w#metamorphose-draugr": {
           "Name": "Métamorphose (draugr)",
-          "Summary": "Permet au draugr de prendre une forme animale.",
+          "Summary": "Adopte les traits, les déplacements et les attaques de la forme animale choisie.",
           "Description": "Le draugr peut prendre la forme d’un animal choisi, souvent un loup, un corbeau ou un cheval, et en adopte les caractéristiques physiques ; ses points de santé ne sont pas conservés. La métamorphose prend trois tours, pendant lesquels il ne peut pas se défendre. Chaque changement d’une forme à une autre lui coûte 30 jours et 30 nuits.",
           "SourceName": "Métamorphose (draugr)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13561,7 +13561,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-braskelwurm": {
           "Name": "Pétrification (braskelwurm)",
-          "Summary": "Pétrifie la cible et la transforme en statue.",
+          "Summary": "Pétrifie et paralyse la cible, et lui confère la Protection d’une statue de pierre.",
           "Description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 10 et d’une intégrité de 100 ; une fois l’intégrité épuisée, elle subit les dégâts normalement et se brise si elle reçoit des dégâts équivalant au double de ses PS. Elle pèse environ dix fois son poids et peut être déplacée. La cible retrouve sa forme normale si la pétrification est dissipée.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13570,7 +13570,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Pétrification (braskelwurm))",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13579,7 +13579,7 @@
         },
         "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Pétrification (braskelwurm))",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (braskelwurm)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13588,7 +13588,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-demon-tangible": {
           "Name": "Pétrification (démon tangible)",
-          "Summary": "Pétrifie la cible et la transforme en statue résistante.",
+          "Summary": "Pétrifie et paralyse la cible, et lui confère la Protection d’une statue résistante.",
           "Description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 20 et d’une intégrité de 200 ; une fois l’intégrité épuisée, elle subit les dégâts normalement et se brise si elle reçoit des dégâts équivalant au double de ses PS. Elle pèse environ dix fois son poids et peut être déplacée. À la fin de l’effet ou si la pétrification est annulée, la cible retrouve sa forme normale.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13597,7 +13597,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-half": {
           "Name": "Raideur après pétrification — moitié (Pétrification (démon tangible))",
-          "Summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13606,7 +13606,7 @@
         },
         "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds": {
           "Name": "Raideur après pétrification — deux tiers (Pétrification (démon tangible))",
-          "Summary": "Maintient une raideur résiduelle après la pétrification.",
+          "Summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
           "Description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
           "SourceName": "Pétrification (démon tangible)",
           "SourceBook": "Bestiaire de Jorge",
@@ -13624,7 +13624,7 @@
         },
         "NNBuQnQlRmSnToUp#transformation-corporelle": {
           "Name": "Transformation corporelle",
-          "Summary": "Transforme la cible en animal choisi.",
+          "Summary": "Adopte les traits, les déplacements et les attaques de l’animal choisi.",
           "Description": "La cible prend la forme physique d’un animal choisi dans le bestiaire et en adopte les caractéristiques physiques. Ses points de santé ne sont pas conservés et son équipement est suspendu.",
           "SourceName": "Transformation corporelle",
           "SourceBook": "Bestiaire de Jorge",

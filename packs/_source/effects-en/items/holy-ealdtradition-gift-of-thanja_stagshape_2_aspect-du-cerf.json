@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
     "description": "The target takes the form of a deer. Its Strength and Constitution cannot be lower than +1 and +4; its land movement is doubled. It can communicate with deer, see in darkness, carry one rider, and feed on grass. It attacks with its antlers (1d10, Open Roll 9–10). Higher Strength and Constitution traits are retained; its equipment takes on the animal form’s appearance and returns to normal when the target changes back.",
-    "summary": "Grants the traits and senses of a deer.",
+    "summary": "Increases Strength, Constitution and land movement, and grants night vision and a horn attack in stag form.",
     "source": {
       "book": "Player's Handbook",
       "page": 176
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
             "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
-            "summary": "Grants the traits and senses of a deer.",
+            "summary": "Increases Strength, Constitution and land movement, and grants night vision and a horn attack in stag form.",
             "editableChanges": true,
             "related": []
           }

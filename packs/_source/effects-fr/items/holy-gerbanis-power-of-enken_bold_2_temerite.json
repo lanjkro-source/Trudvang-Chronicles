@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:bold:2#temerite",
     "description": "Remplace le trait de Psychisme de la cible par le niveau exceptionnel +6.",
-    "summary": "Renforce le courage et le Psychisme.",
+    "summary": "Augmente le Psychisme.",
     "source": {
       "book": "Livre des règles",
       "page": 224
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
             "sourceId": "holy-gerbanis-power-of-enken:bold:2",
-            "summary": "Renforce le courage et le Psychisme.",
+            "summary": "Augmente le Psychisme.",
             "editableChanges": true,
             "related": []
           }

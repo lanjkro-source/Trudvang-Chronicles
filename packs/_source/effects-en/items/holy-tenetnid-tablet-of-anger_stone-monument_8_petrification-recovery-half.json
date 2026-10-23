@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
     "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
-    "summary": "Slows movement and Dexterity-based actions after petrification.",
+    "summary": "Reduces movement and Dexterity-based test values after petrification.",
     "source": {
       "book": "Player's Handbook",
       "page": 194
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
             "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
-            "summary": "Slows movement and Dexterity-based actions after petrification.",
+            "summary": "Reduces movement and Dexterity-based test values after petrification.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-two-thirds"

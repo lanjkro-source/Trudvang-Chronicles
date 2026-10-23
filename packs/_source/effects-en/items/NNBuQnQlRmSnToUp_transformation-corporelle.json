@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "NNBuQnQlRmSnToUp#transformation-corporelle",
     "description": "The target takes the physical form of an animal selected from the bestiary and gains its physical characteristics. Its health points are not preserved and its equipment is suspended.",
-    "summary": "Transforms the target into a selected animal.",
+    "summary": "Adopts the chosen animal’s traits, movement and attacks.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48
@@ -59,7 +59,7 @@
           "transformation": {
             "key": "NNBuQnQlRmSnToUp#transformation-corporelle",
             "sourceId": "NNBuQnQlRmSnToUp",
-            "summary": "Transforms the target into a selected animal.",
+            "summary": "Adopts the chosen animal’s traits, movement and attacks.",
             "editableChanges": true,
             "related": []
           }

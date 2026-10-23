@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
     "description": "La cible gagne 3 points de santé temporaires et +1 aux dégâts de corps à corps, de lancer et des armes naturelles. Elle ignore la peur et ne peut ni parer ni esquiver.",
-    "summary": "Déchaîne une rage qui renforce la résistance physique.",
+    "summary": "Ajoute des PS temporaires, augmente les dégâts et immunise à la peur, mais interdit parade et esquive.",
     "source": {
       "book": "Livre des règles",
       "page": 276
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
-            "summary": "Déchaîne une rage qui renforce la résistance physique.",
+            "summary": "Ajoute des PS temporaires, augmente les dégâts et immunise à la peur, mais interdit parade et esquive.",
             "editableChanges": true,
             "related": []
           }

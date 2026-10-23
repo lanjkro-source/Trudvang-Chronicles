@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
     "description": "The target gains Protection +2, deals +1 damage in melee, at range, and with natural attacks, and takes no damage from nonmagical fire. Its breath can ignite dry wood.",
-    "summary": "Protects against ordinary fire and improves attacks.",
+    "summary": "Increases Protection and melee and throwing damage, and grants immunity to non-magical fire.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -70,7 +70,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
             "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
-            "summary": "Protects against ordinary fire and improves attacks.",
+            "summary": "Increases Protection and melee and throwing damage, and grants immunity to non-magical fire.",
             "editableChanges": true,
             "related": []
           }

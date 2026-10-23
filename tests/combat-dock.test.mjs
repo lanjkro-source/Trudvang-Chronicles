@@ -296,7 +296,7 @@ test("portrait effect entries carry the short summary, not the full description"
   init(config);
   const portrait = new config.CombatantPortrait();
   portrait.combatant = {actor: {temporaryEffects: [
-    {uuid: "u1.mp-1", system: {changes: [{key: "system.damage.penalty", type: "add", value: "-1"}]}},
+    {uuid: "u1.mp-1", name: "État de rage", system: {changes: [{key: "system.damage.penalty", type: "add", value: "-1"}]}},
     {uuid: "u2.mp-2", flags: {"trudvang-chronicles": {transformation: {summary: "Cheval (+6 m×2 CP)"}}},
       system: {changes: []}}
   ]}};
@@ -305,7 +305,7 @@ test("portrait effect entries carry the short summary, not the full description"
   assert.equal(rewritten.name, "État de rage");
   assert.doesNotMatch(rewritten.description, /Paragraphe/, "the long description is gone from the tooltip");
   assert.doesNotMatch(rewritten.description, /<[a-z]/i, "summary stays plain text (module escapes it)");
-  assert.equal(rewritten.description, "system.damage.penalty add -1");
+  assert.equal(rewritten.description, "État de rage");
   assert.equal(untouched.description, "<p>Texte du module</p>", "unknown uuid keeps the module description");
   const drifted = new config.CombatantPortrait();
   drifted.combatant = {actor: {temporaryEffects: [

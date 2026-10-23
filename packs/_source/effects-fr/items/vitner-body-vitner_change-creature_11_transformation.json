@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:change-creature:11#transformation",
     "description": "La cible prend la forme physique d’une créature choisie dans le bestiaire, jusqu’à cinq fois plus petite et jamais plus grande que sa forme d’origine. Elle en adopte l’apparence, la taille, la Force, la Dextérité, les sens, les modificateurs physiques et les attaques naturelles non magiques. Elle conserve son Intelligence, sa Constitution, son Psychisme et ses points de santé, et ne gagne ni capacités ni pouvoirs magiques de la créature. Elle ne peut parler que si cette forme le permet. Une cible transformée volontairement peut reprendre sa forme à tout moment ; à la fin de l’effet, le retour prend cinq tours.",
-    "summary": "Change la forme physique de la cible.",
+    "summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
     "source": {
       "book": "Livre des règles",
       "page": 196
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "vitner-body-vitner:change-creature:11#transformation",
             "sourceId": "vitner-body-vitner:change-creature:11",
-            "summary": "Change la forme physique de la cible.",
+            "summary": "Adopte les traits physiques, les déplacements et les attaques de la forme choisie en conservant les points de santé.",
             "editableChanges": true,
             "related": []
           }

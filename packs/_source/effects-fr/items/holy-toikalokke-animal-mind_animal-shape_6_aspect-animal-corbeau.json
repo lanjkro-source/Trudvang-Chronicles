@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau",
     "description": "La cible prend la forme d’un corbeau et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle communique avec les corbeaux et les morts, voit dans l’obscurité et perçoit les êtres invisibles et immatériels. Sa Dextérité augmente de 4, sa Constitution diminue de 4, son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle attaque avec son bec (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
-    "summary": "Transforme la cible en corbeau.",
+    "summary": "Transforme en corbeau, augmente la Dextérité, réduit Constitution et marche, et accorde vol, vision nocturne et attaque de bec.",
     "source": {
       "book": "Livre des règles",
       "page": 296
@@ -77,7 +77,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "summary": "Transforme la cible en corbeau.",
+            "summary": "Transforme en corbeau, augmente la Dextérité, réduit Constitution et marche, et accorde vol, vision nocturne et attaque de bec.",
             "editableChanges": true,
             "related": []
           }

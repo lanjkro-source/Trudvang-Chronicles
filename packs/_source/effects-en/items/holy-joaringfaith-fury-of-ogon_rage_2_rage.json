@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
     "description": "The target gains 5 temporary health points, +2 damage with melee, thrown, and natural attacks, and +1 to attack skill value. Its height increases by 50 cm, and it gains 30 kg, receives a 1d10 fear factor, ignores fear, and cannot parry or dodge.",
-    "summary": "Improves attacks and grants fear immunity.",
+    "summary": "Increases attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -112,7 +112,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
             "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
-            "summary": "Improves attacks and grants fear immunity.",
+            "summary": "Increases attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

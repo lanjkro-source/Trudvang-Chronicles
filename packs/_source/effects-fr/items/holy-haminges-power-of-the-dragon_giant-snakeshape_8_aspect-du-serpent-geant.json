@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
     "description": "La cible devient un serpent géant de taille 4, long comme un sanctuaire et pesant de 500 kg à 8 tonnes. Elle gagne 20 PS temporaires, Protection 2, Force +6 (et +6 aux dégâts), le facteur de peur 1d5, le Regard paralysant et la Constriction. Ses attaques naturelles sont une morsure (2d10, JO 9–10) et un écrasement après une constriction réussie (2d10, sans protection d’armure). Son équipement est suspendu ; elle ne peut pas manier d’armes ni utiliser d’autres pouvoirs divins que ceux accordés par cette forme.",
-    "summary": "Transforme la cible en serpent géant.",
+    "summary": "Transforme en serpent géant, augmente Force, Protection et PS temporaires, et accorde morsure, constriction et regard paralysant.",
     "source": {
       "book": "Livre des règles",
       "page": 280
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
             "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
-            "summary": "Transforme la cible en serpent géant.",
+            "summary": "Transforme en serpent géant, augmente Force, Protection et PS temporaires, et accorde morsure, constriction et regard paralysant.",
             "editableChanges": true,
             "related": []
           }

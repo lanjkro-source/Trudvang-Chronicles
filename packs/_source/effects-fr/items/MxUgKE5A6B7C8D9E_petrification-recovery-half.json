@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "MxUgKE5A6B7C8D9E#petrification-recovery-half",
     "description": "Pendant les trois jours qui suivent la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites de moitié.",
-    "summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+    "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "MxUgKE5A6B7C8D9E#petrification-recovery-half",
             "sourceId": "MxUgKE5A6B7C8D9E",
-            "summary": "Ralentit les mouvements et les actions liées à la Dextérité après la pétrification.",
+            "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-two-thirds"

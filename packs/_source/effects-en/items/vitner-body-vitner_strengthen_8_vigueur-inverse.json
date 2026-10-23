@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
     "description": "Lowers the target’s Strength by one degree. This reduces Strength-based situation tests and damage according to the Strength modifier table. The listed modifiers are applied in reverse. <table><thead><tr><th colspan=\"2\">STRENGTH MODIFIERS/DAMAGE</th></tr><tr><th>Strength</th><th>Situation-test modifier/Damage modifier</th></tr></thead><tbody><tr><td>Power of Giants</td><td>+8</td></tr><tr><td>Strength of the Stonehinji</td><td>+6</td></tr><tr><td>Strength of the Trolls</td><td>+4</td></tr><tr><td>Mighty</td><td>+2</td></tr><tr><td>Strong</td><td>+1</td></tr><tr><td>Average</td><td>±0</td></tr><tr><td>Weak</td><td>-1</td></tr><tr><td>Feeble</td><td>-2</td></tr><tr><td>Powerless</td><td>-4</td></tr><tr><td>Soft</td><td>-6</td></tr><tr><td>Limp</td><td>-8</td></tr></tbody></table>",
-    "summary": "Weakens the muscles and reduces Strength.",
+    "summary": "Decreases Strength, Strength-based damage and maximum health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 96
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:strengthen:8#vigueur-inverse",
             "sourceId": "vitner-body-vitner:strengthen:8",
-            "summary": "Weakens the muscles and reduces Strength.",
+            "summary": "Decreases Strength, Strength-based damage and maximum health points.",
             "editableChanges": true,
             "related": []
           }

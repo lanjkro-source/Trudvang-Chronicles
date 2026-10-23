@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
     "description": "The target takes on some fox traits without fully changing form: Intelligence at least +4, land movement multiplied by 1.5, and +3 to Thievery. Foxes regard the target as a friend and do not attack; other traits remain unchanged.",
-    "summary": "Grants some fox traits without changing form.",
+    "summary": "Increases Intelligence, land movement and Thievery SVs without changing form.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-renard",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "summary": "Grants some fox traits without changing form.",
+            "summary": "Increases Intelligence, land movement and Thievery SVs without changing form.",
             "editableChanges": true,
             "related": []
           }

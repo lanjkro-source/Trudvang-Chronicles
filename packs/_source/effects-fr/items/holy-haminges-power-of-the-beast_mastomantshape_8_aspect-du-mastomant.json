@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
     "description": "La cible prend la forme d’un mastomant de taille 7 et d’environ 15 tonnes. Elle gagne Protection 4, Force +6 (et donc +6 aux dégâts), 30 PS temporaires, l’immunité à toutes les formes de froid et une attaque de défenses (2d10, JO 9–10). Elle peut servir de monture à quatre personnes.",
-    "summary": "Transforme la cible en mastomant géant.",
+    "summary": "Transforme en mastomant, augmente Force, Taille, Protection et PS temporaires, accorde des attaques de défenses et immunise au froid.",
     "source": {
       "book": "Livre des règles",
       "page": 270
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
-            "summary": "Transforme la cible en mastomant géant.",
+            "summary": "Transforme en mastomant, augmente Force, Taille, Protection et PS temporaires, accorde des attaques de défenses et immunise au froid.",
             "editableChanges": true,
             "related": []
           }

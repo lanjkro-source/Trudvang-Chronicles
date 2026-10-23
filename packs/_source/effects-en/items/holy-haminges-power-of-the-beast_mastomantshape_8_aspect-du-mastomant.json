@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
     "description": "The target takes the form of a size 7 mastomant weighing about 15 tonnes. It gains Protection 4, Strength +6 (and therefore +6 damage), 30 temporary HP, immunity to all forms of cold, and a tusk attack (2d10, Open Roll 9–10). It can carry four riders.",
-    "summary": "Transforms the target into a giant mastomant.",
+    "summary": "Transforms into a mastomant, increases Strength, Size, Protection and temporary health, grants tusk attacks and immunity to cold.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
             "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
-            "summary": "Transforms the target into a giant mastomant.",
+            "summary": "Transforms into a mastomant, increases Strength, Size, Protection and temporary health, grants tusk attacks and immunity to cold.",
             "editableChanges": true,
             "related": []
           }

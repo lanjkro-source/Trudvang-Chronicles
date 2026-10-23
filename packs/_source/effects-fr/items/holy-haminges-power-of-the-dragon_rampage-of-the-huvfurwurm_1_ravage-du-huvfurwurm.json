@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
     "description": "Accorde une action d’arme supplémentaire et une réserve de 5 PC par tour de jeu. Ces PC sont réservés à cette action, disponible une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
-    "summary": "Accorde une action d’arme supplémentaire.",
+    "summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
     "source": {
       "book": "Livre des règles",
       "page": 277
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
-            "summary": "Accorde une action d’arme supplémentaire.",
+            "summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
             "editableChanges": true,
             "related": []
           }

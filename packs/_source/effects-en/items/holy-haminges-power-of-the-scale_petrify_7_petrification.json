@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
     "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
-    "summary": "Turns the target into a stone statue.",
+    "summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
     "source": {
       "book": "Player's Handbook",
       "page": 218
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
-            "summary": "Turns the target into a stone statue.",
+            "summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre",
     "description": "The target takes on some hare traits without fully changing shape: Dexterity at least +4, land movement multiplied by 1.5, and +3 in Stealth. Hares regard it as a friend and will not attack it; its other traits remain unchanged.",
-    "summary": "Grants some hare traits without changing form.",
+    "summary": "Increases Dexterity, land movement and Shadowing SVs without changing form.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "summary": "Grants some hare traits without changing form.",
+            "summary": "Increases Dexterity, land movement and Shadowing SVs without changing form.",
             "editableChanges": true,
             "related": []
           }

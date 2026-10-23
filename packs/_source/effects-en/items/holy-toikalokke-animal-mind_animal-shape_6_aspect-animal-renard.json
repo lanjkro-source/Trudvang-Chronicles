@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
     "description": "The target takes the form of a fox and retains its Intelligence and traits compatible with this form. It can communicate with foxes, see in darkness, and gains Intelligence +4, Strength −2, doubled land movement, and +3 in Stealth and Larceny. Attacks against it suffer −2 to their combat value. Its equipment merges into the animal form and returns to its original state when it changes back.",
-    "summary": "Transforms the target into a fox.",
+    "summary": "Transforms into a fox, increases Intelligence, movement, Shadowing and Thievery, reduces Strength and penalizes incoming attacks.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "summary": "Transforms the target into a fox.",
+            "summary": "Transforms into a fox, increases Intelligence, movement, Shadowing and Thievery, reduces Strength and penalizes incoming attacks.",
             "editableChanges": true,
             "related": []
           }

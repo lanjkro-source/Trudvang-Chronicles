@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "MxUgKE5A6B7C8D9E#petrification-demon-tangible",
     "description": "La cible devient une statue de pierre inerte, sans conscience de son environnement, et conserve ses points de santé. La statue bénéficie de Protection 20 et d’une intégrité de 200 ; une fois l’intégrité épuisée, elle subit les dégâts normalement et se brise si elle reçoit des dégâts équivalant au double de ses PS. Elle pèse environ dix fois son poids et peut être déplacée. À la fin de l’effet ou si la pétrification est annulée, la cible retrouve sa forme normale.",
-    "summary": "Pétrifie la cible et la transforme en statue résistante.",
+    "summary": "Pétrifie et paralyse la cible, et lui confère la Protection d’une statue résistante.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40
@@ -67,7 +67,7 @@
           "transformation": {
             "key": "MxUgKE5A6B7C8D9E#petrification-demon-tangible",
             "sourceId": "MxUgKE5A6B7C8D9E",
-            "summary": "Pétrifie la cible et la transforme en statue résistante.",
+            "summary": "Pétrifie et paralyse la cible, et lui confère la Protection d’une statue résistante.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
     "description": "La cible prend la forme d’un renard et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les renards, voit dans l’obscurité, reçoit Intelligence +4, Force −2, un déplacement terrestre doublé et +3 en Discrétion et en Larcin. Les attaques contre elle subissent −2 à leur VC. Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
-    "summary": "Transforme la cible en renard.",
+    "summary": "Transforme en renard, augmente Intelligence, déplacement, Discrétion et Larcin, réduit la Force et pénalise les attaques reçues.",
     "source": {
       "book": "Livre des règles",
       "page": 296
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-renard",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "summary": "Transforme la cible en renard.",
+            "summary": "Transforme en renard, augmente Intelligence, déplacement, Discrétion et Larcin, réduit la Force et pénalise les attaques reçues.",
             "editableChanges": true,
             "related": []
           }

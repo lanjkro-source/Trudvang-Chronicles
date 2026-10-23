@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:change-creature:11#transformation",
     "description": "The target takes the physical form of a creature chosen from the bestiary, up to five times smaller and never larger than its original form. It gains the creature’s appearance, size, Strength, Dexterity, senses, physical modifiers, and non-magical natural attacks. It retains its Intelligence, Constitution, Psyche, and HP, and gains none of the creature’s magical abilities or powers. It can speak only if the new form can. A willing target can change back at any time; when the effect ends, the return takes five turns.",
-    "summary": "Changes the target’s physical form.",
+    "summary": "Adopts the chosen form’s physical traits, movement and attacks while retaining health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 96
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "vitner-body-vitner:change-creature:11#transformation",
             "sourceId": "vitner-body-vitner:change-creature:11",
-            "summary": "Changes the target’s physical form.",
+            "summary": "Adopts the chosen form’s physical traits, movement and attacks while retaining health points.",
             "editableChanges": true,
             "related": []
           }

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
     "description": "The target gains Protection +6, deals +4 damage in melee, at range, and with natural attacks, and is immune to magical and nonmagical fire. Its breath can ignite dry wood.",
-    "summary": "Grants protection and complete fire resistance.",
+    "summary": "Increases Protection and weapon damage, and grants immunity to magical and non-magical fire.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -56,7 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
-            "summary": "Grants protection and complete fire resistance.",
+            "summary": "Increases Protection and weapon damage, and grants immunity to magical and non-magical fire.",
             "editableChanges": true,
             "related": []
           }

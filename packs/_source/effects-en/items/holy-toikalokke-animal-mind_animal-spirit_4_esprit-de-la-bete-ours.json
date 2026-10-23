@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
     "description": "The target takes on some bear traits without fully changing shape: Strength at least +4, Protection +2, and claws (1d10, Open Roll 10). Bears regard it as a friend and will not attack it; its other traits remain unchanged.",
-    "summary": "Grants some bear traits without changing form.",
+    "summary": "Increases Strength and Protection, and grants a claw attack without changing form.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "summary": "Grants some bear traits without changing form.",
+            "summary": "Increases Strength and Protection, and grants a claw attack without changing form.",
             "editableChanges": true,
             "related": []
           }

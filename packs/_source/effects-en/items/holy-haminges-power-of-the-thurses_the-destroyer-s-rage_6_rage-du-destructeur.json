@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
     "description": "The target gains 10 temporary health points, +5 damage with melee, thrown, and natural attacks, and +2 to attack skill value. It receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
-    "summary": "Unleashes an extreme frenzy that improves attacks.",
+    "summary": "Adds temporary health, increases attack SV and damage, causes fear and grants fear immunity, but prevents parrying and dodging.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -98,7 +98,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
             "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
-            "summary": "Unleashes an extreme frenzy that improves attacks.",
+            "summary": "Adds temporary health, increases attack SV and damage, causes fear and grants fear immunity, but prevents parrying and dodging.",
             "editableChanges": true,
             "related": []
           }

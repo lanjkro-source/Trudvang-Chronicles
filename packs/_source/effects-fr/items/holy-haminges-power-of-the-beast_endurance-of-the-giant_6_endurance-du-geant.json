@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
     "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +8 et la rend immunisée au poison et aux maladies.",
-    "summary": "Renforce la Constitution et immunise aux poisons et maladies.",
+    "summary": "Augmente la Constitution et le maximum de points de santé, et immunise aux poisons et aux maladies.",
     "source": {
       "book": "Livre des règles",
       "page": 269
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
-            "summary": "Renforce la Constitution et immunise aux poisons et maladies.",
+            "summary": "Augmente la Constitution et le maximum de points de santé, et immunise aux poisons et aux maladies.",
             "editableChanges": true,
             "related": []
           }

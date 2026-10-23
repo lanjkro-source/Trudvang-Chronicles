@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
     "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
-    "summary": "Maintient une raideur résiduelle après la pétrification.",
+    "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
     "source": {
       "book": "Livre des règles",
       "page": 272
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
-            "summary": "Maintient une raideur résiduelle après la pétrification.",
+            "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
             "editableChanges": true,
             "related": []
           }

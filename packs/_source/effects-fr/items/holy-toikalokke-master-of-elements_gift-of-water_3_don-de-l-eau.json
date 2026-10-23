@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
     "description": "La cible nage comme dans son milieu naturel, même sans la spécialité Natation, et ne fait aucun test en eau calme. Pour les tests d’Agilité nécessaires à la nage, elle reçoit +2 à la VC par niveau du pouvoir. Au-delà d’une profondeur égale à trois fois sa taille, chaque mètre supplémentaire impose un malus de −2 à la VC.",
-    "summary": "Permet de nager aisément et améliore les tests de nage.",
+    "summary": "Améliore les tests de Natation et permet de nager sans test en eau calme.",
     "source": {
       "book": "Livre des règles",
       "page": 297
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
-            "summary": "Permet de nager aisément et améliore les tests de nage.",
+            "summary": "Améliore les tests de Natation et permet de nager sans test en eau calme.",
             "editableChanges": true,
             "related": []
           }

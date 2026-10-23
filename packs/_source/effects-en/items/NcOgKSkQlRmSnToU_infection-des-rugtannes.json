@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "NcOgKSkQlRmSnToU#infection-des-rugtannes",
     "description": "After an incubation of 2d3 days, a human target becomes a rugtanne: its Constitution, Psyche, Strength, and Dexterity increase by two degrees, up to +8; Protection increases by 1 and HP are recalculated. It sees in total darkness up to 10 m, then gradually out to about 60 m. It can live only at night, dies instantly in daylight, and must drink the blood of a warm-blooded creature every five nights. It retains its magical abilities and can live up to four times longer than a human.",
-    "summary": "Transforms the target into a rugtanne.",
+    "summary": "Increases Strength, Constitution, Dexterity, Psyche and Protection, and grants darkvision.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 24
@@ -65,7 +65,7 @@
           "transformation": {
             "key": "NcOgKSkQlRmSnToU#infection-des-rugtannes",
             "sourceId": "NcOgKSkQlRmSnToU",
-            "summary": "Transforms the target into a rugtanne.",
+            "summary": "Increases Strength, Constitution, Dexterity, Psyche and Protection, and grants darkvision.",
             "editableChanges": true,
             "related": []
           }

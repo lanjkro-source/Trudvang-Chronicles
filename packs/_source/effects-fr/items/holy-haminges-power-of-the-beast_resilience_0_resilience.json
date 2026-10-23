@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
     "description": "Remplace le trait de Constitution de la cible par le niveau exceptionnel +4.",
-    "summary": "Renforce la Constitution et la résistance physique.",
+    "summary": "Augmente la Constitution et le maximum de points de santé.",
     "source": {
       "book": "Livre des règles",
       "page": 268
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:resilience:0#resilience",
             "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
-            "summary": "Renforce la Constitution et la résistance physique.",
+            "summary": "Augmente la Constitution et le maximum de points de santé.",
             "editableChanges": true,
             "related": []
           }

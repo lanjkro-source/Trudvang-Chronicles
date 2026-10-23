@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
     "description": "La cible prend la forme d’un cerf. Sa Force et sa Constitution ne peuvent être inférieures à +1 et +4 ; son déplacement terrestre est doublé. Elle peut communiquer avec les cerfs, voit dans l’obscurité, peut servir de monture à une personne et se nourrir d’herbe. Elle attaque avec ses cornes (1d10, JO 9–10). Les traits de Force et de Constitution supérieurs sont conservés ; l’équipement prend l’apparence de la forme animale et retrouve son apparence normale au retour.",
-    "summary": "Confère les traits et les sens d’un cerf.",
+    "summary": "Augmente la Force, la Constitution et le déplacement terrestre, et accorde vision nocturne et attaque de cornes sous forme de cerf.",
     "source": {
       "book": "Livre des règles",
       "page": 235
@@ -84,7 +84,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
             "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
-            "summary": "Confère les traits et les sens d’un cerf.",
+            "summary": "Augmente la Force, la Constitution et le déplacement terrestre, et accorde vision nocturne et attaque de cornes sous forme de cerf.",
             "editableChanges": true,
             "related": []
           }

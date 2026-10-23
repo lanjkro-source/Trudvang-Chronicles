@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau",
     "description": "The target takes the form of a raven. Its Dexterity and Constitution cannot be lower than +4; its land movement is halved and its flying speed is quadrupled. It sees in darkness, perceives invisible and intangible creatures, and can communicate with ravens and the undead. It attacks with its beak (1d10, Open Roll 10). Attacks against it while flying suffer −5 to their combat value, including ranged attacks. Higher traits are retained, and equipment returns to its normal appearance when the target changes back.",
-    "summary": "Grants the traits and senses of a raven.",
+    "summary": "Increases Dexterity and Constitution, grants flight and sight of invisible beings, and penalizes attacks against the raven form.",
     "source": {
       "book": "Player's Handbook",
       "page": 176
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau",
             "sourceId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
-            "summary": "Grants the traits and senses of a raven.",
+            "summary": "Increases Dexterity and Constitution, grants flight and sight of invisible beings, and penalizes attacks against the raven form.",
             "editableChanges": true,
             "related": []
           }

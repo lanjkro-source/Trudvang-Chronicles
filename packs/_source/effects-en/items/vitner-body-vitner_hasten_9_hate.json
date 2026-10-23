@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:hasten:9#hate",
     "description": "Increases the target’s Dexterity, and therefore its movement and Initiative, as well as the skill values of Agility and Fighting. The target gains one Dexterity degree according to the table below. <table><thead><tr><th colspan=\"3\">MODIFIERS</th></tr><tr><th>Dexterity</th><th>Situation tests/movement</th><th>Skill-value bonus</th></tr></thead><tbody><tr><td>Drauglo Dexterity</td><td>+8</td><td>+5</td></tr><tr><td>Elastic</td><td>+6</td><td>+4</td></tr><tr><td>Gracious</td><td>+4</td><td>+3</td></tr><tr><td>Agile</td><td>+2</td><td>+2</td></tr><tr><td>Lithe</td><td>+1</td><td>+1</td></tr><tr><td>Average</td><td>±0</td><td>±0</td></tr><tr><td>Stiff</td><td>-1</td><td>-1</td></tr><tr><td>Clumsy</td><td>-2</td><td>-2</td></tr><tr><td>Immobile</td><td>-4</td><td>-3</td></tr><tr><td>Inflexible</td><td>-6</td><td>-4</td></tr><tr><td>Lapidified</td><td>-8</td><td>-5</td></tr></tbody></table>",
-    "summary": "Improves flexibility and reflexes.",
+    "summary": "Increases Dexterity, movement, initiative and Agility and Fighting SVs.",
     "source": {
       "book": "Player's Handbook",
       "page": 96
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:hasten:9#hate",
             "sourceId": "vitner-body-vitner:hasten:9",
-            "summary": "Improves flexibility and reflexes.",
+            "summary": "Increases Dexterity, movement, initiative and Agility and Fighting SVs.",
             "editableChanges": true,
             "related": []
           }

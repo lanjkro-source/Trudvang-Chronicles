@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:madness:5#folie",
     "description": "The target gains 10 temporary health points, +4 damage with melee, thrown, and natural attacks, and +2 to attack skill value. Its Size becomes 1.5 and it receives a 1d10 fear factor (open roll 10), ignores fear, and cannot parry or dodge.",
-    "summary": "Unleashes a frenzy that improves attacks.",
+    "summary": "Increases Size, attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
     "source": {
       "book": "Player's Handbook",
       "page": 187
@@ -105,7 +105,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:madness:5#folie",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
-            "summary": "Unleashes a frenzy that improves attacks.",
+            "summary": "Increases Size, attack SV, damage and temporary health, causes fear and grants fear immunity, but prevents parrying and dodging.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "MxUgKE5A6B7C8D9E#petrification-demon-tangible",
     "description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 20 and integrity 200; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. When the effect ends or the petrification is dispelled, the target returns to normal.",
-    "summary": "Petrifies the target and turns it into a resilient statue.",
+    "summary": "Petrifies and paralyzes the target, and grants the Protection of a resilient statue.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48
@@ -67,7 +67,7 @@
           "transformation": {
             "key": "MxUgKE5A6B7C8D9E#petrification-demon-tangible",
             "sourceId": "MxUgKE5A6B7C8D9E",
-            "summary": "Petrifies the target and turns it into a resilient statue.",
+            "summary": "Petrifies and paralyzes the target, and grants the Protection of a resilient statue.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

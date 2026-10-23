@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
     "description": "Grants one additional weapon action and a reserve of 5 CP per round. These points are reserved for that action, available after all ordinary weapon actions have been used. The chosen weapon retains its characteristics.",
-    "summary": "Grants an additional weapon action.",
+    "summary": "Grants additional weapon actions with reserved Combat Points.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
-            "summary": "Grants an additional weapon action.",
+            "summary": "Grants additional weapon actions with reserved Combat Points.",
             "editableChanges": true,
             "related": []
           }

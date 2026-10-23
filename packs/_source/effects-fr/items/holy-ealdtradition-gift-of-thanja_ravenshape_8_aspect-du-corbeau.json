@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau",
     "description": "La cible prend la forme d’un corbeau. Sa Dextérité et sa Constitution ne peuvent être inférieures à +4 ; son déplacement terrestre est réduit de moitié et sa vitesse de vol est quadruplée. Elle voit dans l’obscurité, perçoit les créatures invisibles et intangibles, et communique avec les corbeaux et les morts-vivants. Elle attaque avec son bec (1d10, JO 10). Lorsqu’elle vole, les attaques contre elle subissent −5 à la VC, y compris les attaques à distance. Les traits supérieurs sont conservés et l’équipement retrouve son apparence normale au retour.",
-    "summary": "Confère les traits et les sens d’un corbeau.",
+    "summary": "Augmente la Dextérité et la Constitution, permet de voler et de voir les êtres invisibles, et pénalise les attaques visant la forme de corbeau.",
     "source": {
       "book": "Livre des règles",
       "page": 236
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau",
             "sourceId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
-            "summary": "Confère les traits et les sens d’un corbeau.",
+            "summary": "Augmente la Dextérité et la Constitution, permet de voler et de voir les êtres invisibles, et pénalise les attaques visant la forme de corbeau.",
             "editableChanges": true,
             "related": []
           }

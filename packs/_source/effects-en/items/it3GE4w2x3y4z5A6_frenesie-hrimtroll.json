@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
     "description": "For 1d6 rounds, the target gains +2 to attacks and suffers -2 to parries.",
-    "summary": "Improves attacks at the cost of parries.",
+    "summary": "Increases attack SV and reduces parry SV.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 159
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
             "sourceId": "it3GE4w2x3y4z5A6",
-            "summary": "Improves attacks at the cost of parries.",
+            "summary": "Increases attack SV and reduces parry SV.",
             "editableChanges": true,
             "related": []
           }

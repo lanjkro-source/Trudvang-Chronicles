@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "description": "La cible prend racine et se transforme en arbre au cours de l’heure suivante. L’arbre conserve sa taille, ses points de santé, ses sens et son apparence faciale ; les possessions deviennent partie intégrante de l’arbre. La cible ne peut plus se déplacer, n’a pas besoin de boire ni de manger et bénéficie de Protection 4. Les dégâts reçus sont conservés au retour à sa forme normale ; si l’arbre est abattu, il saigne et la cible peut mourir. La malédiction peut être levée par son auteur.",
-    "summary": "Transforme la cible en arbre et la protège comme une écorce.",
+    "summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
     "source": {
       "book": "Livre des règles",
       "page": 187
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
             "sourceId": "vitner-witchcraft:tree-curse:7",
-            "summary": "Transforme la cible en arbre et la protège comme une écorce.",
+            "summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
             "editableChanges": true,
             "related": [
               "tree-recovery"

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae",
     "description": "The target gains 15 temporary health points, +6 damage with melee, thrown, and natural attacks, and +3 to attack skill value. Its Size becomes 2 and it receives a 1d10 fear factor (open roll 9–10), ignores fear and wounds, and cannot parry or dodge.",
-    "summary": "Unleashes an extreme frenzy and ignores wounds.",
+    "summary": "Increases Size, attack SV, damage and temporary health, ignores fear and wound penalties, but prevents parrying and dodging.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -112,7 +112,7 @@
           "transformation": {
             "key": "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae",
             "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
-            "summary": "Unleashes an extreme frenzy and ignores wounds.",
+            "summary": "Increases Size, attack SV, damage and temporary health, ignores fear and wound penalties, but prevents parrying and dodging.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

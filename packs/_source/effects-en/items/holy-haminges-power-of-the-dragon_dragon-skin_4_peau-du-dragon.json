@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
     "description": "The target gains Protection +4, deals +2 damage in melee, at range, and with natural attacks, is immune to nonmagical fire, and takes half damage from magical fire. Its breath can ignite dry wood.",
-    "summary": "Protects against fire and improves attacks.",
+    "summary": "Increases Protection and melee and throwing damage, grants immunity to non-magical fire and reduces magical fire damage.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -70,7 +70,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
-            "summary": "Protects against fire and improves attacks.",
+            "summary": "Increases Protection and melee and throwing damage, grants immunity to non-magical fire and reduces magical fire damage.",
             "editableChanges": true,
             "related": []
           }

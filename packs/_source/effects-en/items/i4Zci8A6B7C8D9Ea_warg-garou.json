@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "i4Zci8A6B7C8D9Ea#warg-garou",
     "description": "The target becomes a werewarg: Strength +4 (maximum +6), Dexterity +4 (maximum +6), Constitution +6 (maximum +8), Psyche −2, and Intelligence −4 (minimum −6). It gains Protection 2, night vision, Bite (1d10, Open Roll 8, one action), Claws (1d10, Open Roll 9, two actions), +2 in Brawling, +6 in Body Control, and +6 in Hunting Experience. It loses its usual abilities and capacity for reason, acting on a predatory instinct. Its bites can transmit the disease; an infected victim has a 1-in-20 chance of never returning to its original form after its first transformation.",
-    "summary": "Transforms the target into a werewarg.",
+    "summary": "Increases Strength, Dexterity, Constitution and Protection, reduces Psyche and Intelligence, and grants bite, claws and night vision.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 30
@@ -77,7 +77,7 @@
           "transformation": {
             "key": "i4Zci8A6B7C8D9Ea#warg-garou",
             "sourceId": "i4Zci8A6B7C8D9Ea",
-            "summary": "Transforms the target into a werewarg.",
+            "summary": "Increases Strength, Dexterity, Constitution and Protection, reduces Psyche and Intelligence, and grants bite, claws and night vision.",
             "editableChanges": true,
             "related": []
           }

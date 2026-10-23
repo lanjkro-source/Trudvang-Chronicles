@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
     "description": "La cible prend la forme d’un saumon. Sa Dextérité ne peut être inférieure à +4 ; son déplacement aquatique est doublé et elle peut respirer sous l’eau comme à l’air libre, mais ne peut pas se déplacer sur terre. Elle communique avec les saumons, voit parfaitement sous l’eau et son équipement est protégé de l’eau. Toucher ses écailles rend 1 PS à une personne par jour ; l’embrasser en rend 1d3 par jour ; manger sa chair rend 1d6+1 PS, mais inflige 1d5 dégâts au saumon.",
-    "summary": "Confère les traits et les sens d’un saumon.",
+    "summary": "Augmente la Dextérité et permet de nager et de respirer sous l’eau sous forme de saumon.",
     "source": {
       "book": "Livre des règles",
       "page": 235
@@ -70,7 +70,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
             "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
-            "summary": "Confère les traits et les sens d’un saumon.",
+            "summary": "Augmente la Dextérité et permet de nager et de respirer sous l’eau sous forme de saumon.",
             "editableChanges": true,
             "related": []
           }

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:resilience:0#resilience",
     "description": "Replaces the target’s Constitution trait with the exceptional level +4.",
-    "summary": "Improves Constitution and physical resilience.",
+    "summary": "Increases Constitution and maximum health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:resilience:0#resilience",
             "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
-            "summary": "Improves Constitution and physical resilience.",
+            "summary": "Increases Constitution and maximum health points.",
             "editableChanges": true,
             "related": []
           }

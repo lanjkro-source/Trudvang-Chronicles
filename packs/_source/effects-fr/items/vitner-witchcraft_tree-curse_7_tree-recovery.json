@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-witchcraft:tree-curse:7#tree-recovery",
     "description": "Pendant les trois jours suivant le retour à sa forme normale, la cible se déplace à la moitié de sa vitesse et ses tests de compétence et de situation liés à l’Agilité ou au mouvement sont réduits de moitié.",
-    "summary": "Laisse une raideur après la malédiction de l’arbre.",
+    "summary": "Réduit le déplacement et les valeurs des tests d’Agilité après la malédiction.",
     "source": {
       "book": "Livre des règles",
       "page": 187
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "vitner-witchcraft:tree-curse:7#tree-recovery",
             "sourceId": "vitner-witchcraft:tree-curse:7",
-            "summary": "Laisse une raideur après la malédiction de l’arbre.",
+            "summary": "Réduit le déplacement et les valeurs des tests d’Agilité après la malédiction.",
             "editableChanges": true,
             "related": []
           }

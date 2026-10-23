@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
     "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
-    "summary": "Maintient une raideur résiduelle après la pétrification.",
+    "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 106
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "summary": "Maintient une raideur résiduelle après la pétrification.",
+            "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
             "editableChanges": true,
             "related": []
           }

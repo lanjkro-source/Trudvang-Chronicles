@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds",
     "description": "Pendant trois jours après la libération de la statue, la capacité de mouvement et les valeurs de compétence des tests liés à la Dextérité sont réduites aux deux tiers de leur valeur normale.",
-    "summary": "Maintient une raideur résiduelle après la pétrification.",
+    "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
     "source": {
       "book": "Livre des règles",
       "page": 162
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds",
             "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
-            "summary": "Maintient une raideur résiduelle après la pétrification.",
+            "summary": "Réduit le déplacement et les valeurs des tests liés à la Dextérité après la pétrification.",
             "editableChanges": true,
             "related": []
           }

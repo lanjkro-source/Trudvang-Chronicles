@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
     "description": "The ally’s Strength becomes +4, or +6 with the dedicated improvement.",
-    "summary": "Grants Strength +4 to allies.",
+    "summary": "Increases allies’ Strength.",
     "source": {
       "book": "Player's Handbook",
       "page": 164
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
             "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
-            "summary": "Grants Strength +4 to allies.",
+            "summary": "Increases allies’ Strength.",
             "editableChanges": true,
             "related": []
           }

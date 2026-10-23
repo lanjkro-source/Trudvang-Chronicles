@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
     "description": "The ally’s Psyche becomes +4, or +6 with the dedicated improvement.",
-    "summary": "Grants Psyche +4 to allies.",
+    "summary": "Increases allies’ Psyche.",
     "source": {
       "book": "Player's Handbook",
       "page": 162
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
             "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
-            "summary": "Grants Psyche +4 to allies.",
+            "summary": "Increases allies’ Psyche.",
             "editableChanges": true,
             "related": []
           }

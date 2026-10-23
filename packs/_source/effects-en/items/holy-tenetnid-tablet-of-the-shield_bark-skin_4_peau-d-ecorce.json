@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
     "description": "The target gains 10 temporary health points, which absorb damage after Protection. The effect ends if these points are depleted; any remaining points disappear when it expires.",
-    "summary": "Protects the target with temporary health points.",
+    "summary": "Adds temporary health points that absorb damage.",
     "source": {
       "book": "Player's Handbook",
       "page": 201
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
-            "summary": "Protects the target with temporary health points.",
+            "summary": "Adds temporary health points that absorb damage.",
             "editableChanges": true,
             "related": []
           }

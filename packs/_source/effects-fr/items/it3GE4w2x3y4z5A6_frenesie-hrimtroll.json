@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
     "description": "Pendant 1d6 tours, la cible bénéficie de +2 à ses attaques et subit -2 à ses parades.",
-    "summary": "Renforce les attaques au prix des parades.",
+    "summary": "Augmente la VC d’attaque et réduit la VC de parade.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 156
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
             "sourceId": "it3GE4w2x3y4z5A6",
-            "summary": "Renforce les attaques au prix des parades.",
+            "summary": "Augmente la VC d’attaque et réduit la VC de parade.",
             "editableChanges": true,
             "related": []
           }

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
     "description": "Replaces the target’s Constitution trait with the exceptional level +8 and makes it immune to poison and disease.",
-    "summary": "Improves Constitution and grants immunity to poison and disease.",
+    "summary": "Increases Constitution and maximum health points, and grants immunity to poison and disease.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
-            "summary": "Improves Constitution and grants immunity to poison and disease.",
+            "summary": "Increases Constitution and maximum health points, and grants immunity to poison and disease.",
             "editableChanges": true,
             "related": []
           }

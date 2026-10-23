@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau",
     "description": "The target takes on some raven traits without fully changing shape: night vision, the ability to perceive invisible beings, and a beak (1d10, Open Roll 10) as a natural weapon. Ravens regard it as a friend and will not attack it; its other traits remain unchanged.",
-    "summary": "Grants some raven traits without changing form.",
+    "summary": "Grants night vision, perception of invisible beings and a beak attack without changing form.",
     "source": {
       "book": "Player's Handbook",
       "page": 237
@@ -70,7 +70,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "summary": "Grants some raven traits without changing form.",
+            "summary": "Grants night vision, perception of invisible beings and a beak attack without changing form.",
             "editableChanges": true,
             "related": []
           }

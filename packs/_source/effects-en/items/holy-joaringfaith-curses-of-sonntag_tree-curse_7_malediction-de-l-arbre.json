@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",
     "description": "The target takes root and turns into a tree over the following hour. The tree retains the target’s size, HP, senses, and facial appearance; possessions become part of it. The target cannot move, needs no food or water, and has Protection 4. Damage taken remains when it returns to normal; if the tree is felled, it bleeds and the target can die. The caster can end the curse.",
-    "summary": "Transforms the target into a tree and protects it with bark.",
+    "summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
     "source": {
       "book": "Stormlands",
       "page": 123
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",
             "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
-            "summary": "Transforms the target into a tree and protects it with bark.",
+            "summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
             "editableChanges": true,
             "related": [
               "tree-recovery"

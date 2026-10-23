@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
     "description": "La cible est entièrement pétrifiée et paralysée. Elle ne perçoit plus son environnement et ne peut plus agir. Ses points de santé sont conservés et son équipement est pétrifié avec elle. La progression vers cet état est gérée manuellement ; cet effet représente uniquement la pétrification complète.",
-    "summary": "Transforme la cible en statue de pierre.",
+    "summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
     "source": {
       "book": "Livre des règles",
       "page": 272
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-scale:petrify:7#petrification",
             "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
-            "summary": "Transforme la cible en statue de pierre.",
+            "summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

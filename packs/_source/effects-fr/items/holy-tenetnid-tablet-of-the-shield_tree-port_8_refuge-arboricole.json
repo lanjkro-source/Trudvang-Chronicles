@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
     "description": "La cible devient un grand chêne noir doté de Protection 8 ; après cette protection, seul un cinquième des dégâts la blesse. Elle récupère 1 PS par heure, se nourrit d’eau du sol et de lumière, et est immunisée aux attaques et facultés des démons. Une fois par jour, elle peut tenter un test de situation de 6 (Psychisme) pour supprimer une malédiction ou une infection démoniaque. Elle peut reprendre sa forme à tout moment ; si elle meurt sous cette forme, elle demeure un chêne noir.",
-    "summary": "Transforme la cible en arbre résistant.",
+    "summary": "Transforme en arbre, augmente la Protection, réduit les dégâts reçus et permet de récupérer des PS et de résister aux malédictions.",
     "source": {
       "book": "Livre des règles",
       "page": 259
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
-            "summary": "Transforme la cible en arbre résistant.",
+            "summary": "Transforme en arbre, augmente la Protection, réduit les dégâts reçus et permet de récupérer des PS et de résister aux malédictions.",
             "editableChanges": true,
             "related": []
           }

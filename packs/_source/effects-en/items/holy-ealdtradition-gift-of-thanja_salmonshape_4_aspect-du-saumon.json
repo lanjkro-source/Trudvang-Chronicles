@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
     "description": "The target takes the form of a salmon. Its Dexterity cannot be lower than +4; its swimming speed is doubled and it can breathe both underwater and in air, but cannot move on land. It can communicate with salmon, sees exceptionally well underwater, and its equipment is protected from water. Touching its scales restores 1 HP to a person once per day; kissing it restores 1d3 HP once per day; eating its flesh restores 1d6+1 HP but deals 1d5 damage to the salmon.",
-    "summary": "Grants the traits and senses of a salmon.",
+    "summary": "Increases Dexterity and allows swimming and breathing underwater in salmon form.",
     "source": {
       "book": "Player's Handbook",
       "page": 176
@@ -70,7 +70,7 @@
           "transformation": {
             "key": "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon",
             "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
-            "summary": "Grants the traits and senses of a salmon.",
+            "summary": "Increases Dexterity and allows swimming and breathing underwater in salmon form.",
             "editableChanges": true,
             "related": []
           }

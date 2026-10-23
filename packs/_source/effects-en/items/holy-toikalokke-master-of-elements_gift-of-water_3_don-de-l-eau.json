@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
     "description": "The target swims as if water were its natural environment, even without the Swimming specialty, and makes no rolls in calm water. Agility rolls required for swimming gain +2 SV per power level. Beyond a depth equal to three times the target’s height, each additional metre imposes −2 SV.",
-    "summary": "Allows easy swimming and improves swimming rolls.",
+    "summary": "Improves Swimming tests and allows swimming without a test in calm water.",
     "source": {
       "book": "Player's Handbook",
       "page": 241
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau",
             "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
-            "summary": "Allows easy swimming and improves swimming rolls.",
+            "summary": "Improves Swimming tests and allows swimming without a test in calm water.",
             "editableChanges": true,
             "related": []
           }

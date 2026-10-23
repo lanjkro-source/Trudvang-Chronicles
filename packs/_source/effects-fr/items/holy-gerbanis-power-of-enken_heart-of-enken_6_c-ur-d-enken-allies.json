@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
     "description": "Le trait de Psychisme de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
-    "summary": "Confère Psychisme +4 aux alliés.",
+    "summary": "Augmente le Psychisme des alliés.",
     "source": {
       "book": "Livre des règles",
       "page": 225
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies",
             "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
-            "summary": "Confère Psychisme +4 aux alliés.",
+            "summary": "Augmente le Psychisme des alliés.",
             "editableChanges": true,
             "related": []
           }

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
     "description": "The draugr can take the form of a chosen animal, often a wolf, raven, or horse, and gains its physical characteristics; its HP are not preserved. The transformation takes three turns, during which it cannot defend itself. Each change from one form to another costs 30 days and nights.",
-    "summary": "Allows a draugr to take an animal form.",
+    "summary": "Adopts the chosen animal form’s traits, movement and attacks.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 58
@@ -59,7 +59,7 @@
           "transformation": {
             "key": "pjY95vXsYtZu0v1w#metamorphose-draugr",
             "sourceId": "pjY95vXsYtZu0v1w",
-            "summary": "Allows a draugr to take an animal form.",
+            "summary": "Adopts the chosen animal form’s traits, movement and attacks.",
             "editableChanges": true,
             "related": []
           }

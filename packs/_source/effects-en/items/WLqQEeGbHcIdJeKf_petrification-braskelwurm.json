@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "WLqQEeGbHcIdJeKf#petrification-braskelwurm",
     "description": "The target becomes an inert stone statue, unaware of its surroundings, and retains its HP. The statue has Protection 10 and integrity 100; once integrity is depleted, it takes damage normally and breaks if it takes damage equal to twice its HP. It weighs about ten times as much and can be moved. The target returns to normal if the petrification is dispelled.",
-    "summary": "Petrifies the target and turns it into a statue.",
+    "summary": "Petrifies and paralyzes the target, and grants the Protection of a stone statue.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 106
@@ -67,7 +67,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-braskelwurm",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "summary": "Petrifies the target and turns it into a statue.",
+            "summary": "Petrifies and paralyzes the target, and grants the Protection of a stone statue.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

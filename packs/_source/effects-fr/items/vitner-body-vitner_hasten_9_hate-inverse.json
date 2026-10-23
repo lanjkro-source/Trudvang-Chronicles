@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:hasten:9#hate-inverse",
     "description": "Diminue la Dextérité de la cible d’un degré, ce qui réduit sa capacité de mouvement et son initiative ainsi que le VC de ses compétences d’Agilité et de Combat. Les valeurs du tableau indiquent les modificateurs associés à chaque degré de Dextérité. <table><thead><tr><th colspan=\"3\">MODIFICATEURS</th></tr><tr><th>Dextérité</th><th>Tests de situation/capacité de mouvement</th><th>Bonus à la VC</th></tr></thead><tbody><tr><td>Dextérité d’un drauglo</td><td>+8</td><td>+5</td></tr><tr><td>Souple</td><td>+6</td><td>+4</td></tr><tr><td>Gracieux</td><td>+4</td><td>+3</td></tr><tr><td>Vif</td><td>+2</td><td>+2</td></tr><tr><td>Agile</td><td>+1</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td><td>+0</td></tr><tr><td>Raide</td><td>-1</td><td>-1</td></tr><tr><td>Maladroit</td><td>-2</td><td>-2</td></tr><tr><td>Gauche</td><td>-4</td><td>-3</td></tr><tr><td>Impotent</td><td>-6</td><td>-4</td></tr><tr><td>Pétrifié</td><td>-8</td><td>-5</td></tr></tbody></table>",
-    "summary": "Réduit la souplesse et les réflexes.",
+    "summary": "Diminue la Dextérité, le déplacement, l’initiative et les VC d’Agilité et de Combat.",
     "source": {
       "book": "Livre des règles",
       "page": 194
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:hasten:9#hate-inverse",
             "sourceId": "vitner-body-vitner:hasten:9",
-            "summary": "Réduit la souplesse et les réflexes.",
+            "summary": "Diminue la Dextérité, le déplacement, l’initiative et les VC d’Agilité et de Combat.",
             "editableChanges": true,
             "related": []
           }

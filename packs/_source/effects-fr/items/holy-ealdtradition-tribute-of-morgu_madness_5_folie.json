@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:madness:5#folie",
     "description": "La cible gagne 10 points de santé temporaires, +4 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +2 à la VC d’attaque. Sa Taille passe à 1,5 et elle reçoit un facteur de peur de 1d10 (JO 10), ignore la peur et ne peut ni parer ni esquiver.",
-    "summary": "Déchaîne une rage qui renforce les attaques.",
+    "summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
     "source": {
       "book": "Livre des règles",
       "page": 243
@@ -105,7 +105,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:madness:5#folie",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
-            "summary": "Déchaîne une rage qui renforce les attaques.",
+            "summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

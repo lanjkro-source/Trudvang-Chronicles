@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
     "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are halved.",
-    "summary": "Slows movement and Dexterity-based actions after petrification.",
+    "summary": "Reduces movement and Dexterity-based test values after petrification.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 106
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "summary": "Slows movement and Dexterity-based actions after petrification.",
+            "summary": "Reduces movement and Dexterity-based test values after petrification.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-two-thirds"

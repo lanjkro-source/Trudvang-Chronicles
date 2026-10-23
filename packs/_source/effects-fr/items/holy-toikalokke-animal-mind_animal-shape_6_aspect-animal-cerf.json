@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf",
     "description": "La cible prend la forme d’un cerf et conserve son Intelligence ainsi que ses traits compatibles avec cette forme. Elle peut communiquer avec les cerfs, servir de monture à une personne et se nourrir d’herbe. Elle voit dans l’obscurité, reçoit Force +1 et Constitution +4, et son déplacement terrestre est doublé. Elle attaque avec ses cornes (1d10, JO 10). Son équipement se fond dans la forme animale et retrouve son état initial au retour.",
-    "summary": "Transforme la cible en cerf.",
+    "summary": "Transforme en cerf, augmente Force, Constitution et déplacement terrestre, et accorde vision nocturne et attaque de cornes.",
     "source": {
       "book": "Livre des règles",
       "page": 296
@@ -77,7 +77,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf",
             "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
-            "summary": "Transforme la cible en cerf.",
+            "summary": "Transforme en cerf, augmente Force, Constitution et déplacement terrestre, et accorde vision nocturne et attaque de cornes.",
             "editableChanges": true,
             "related": []
           }

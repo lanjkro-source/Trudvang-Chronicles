@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
     "description": "The target is fully petrified and paralyzed, cannot perceive its surroundings, and cannot act. Its Body Points are preserved and its equipment is petrified with it. The progression into this state is handled manually; this effect represents only complete petrification.",
-    "summary": "Petrifies and immobilizes the target.",
+    "summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
     "source": {
       "book": "Player's Handbook",
       "page": 194
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
             "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
-            "summary": "Petrifies and immobilizes the target.",
+            "summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
             "editableChanges": true,
             "related": [
               "petrification-recovery-half",

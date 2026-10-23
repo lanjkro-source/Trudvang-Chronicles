@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
     "description": "La cible gagne 6 points de santé temporaires, +3 aux dégâts de corps à corps, de lancer et des armes naturelles, et +1 à la VC d’attaque. Elle ignore la peur et ne peut ni parer ni esquiver.",
-    "summary": "Déchaîne une rage qui améliore les attaques.",
+    "summary": "Ajoute des PS temporaires, augmente la VC d’attaque et les dégâts, et immunise à la peur, mais interdit parade et esquive.",
     "source": {
       "book": "Livre des règles",
       "page": 276
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
-            "summary": "Déchaîne une rage qui améliore les attaques.",
+            "summary": "Ajoute des PS temporaires, augmente la VC d’attaque et les dégâts, et immunise à la peur, mais interdit parade et esquive.",
             "editableChanges": true,
             "related": []
           }

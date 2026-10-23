@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
     "description": "Unarmed Brawling attacks deal, by rune level: 1d6; 1d6 + 2; 1d10 + 2; 1d10 (OR 10) + 2; 1d10 (OR 9–10) + 2. The Strength modifier also applies. Both runes must be worn and powered for the effect to function.",
-    "summary": "Improves unarmed attacks.",
+    "summary": "Increases unarmed attack damage.",
     "source": {
       "book": "Player's Handbook",
       "page": 231
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
             "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
-            "summary": "Improves unarmed attacks.",
+            "summary": "Increases unarmed attack damage.",
             "editableChanges": true,
             "related": []
           }

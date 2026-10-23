@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:bold:2#temerite",
     "description": "Replaces the target’s Psyche trait with the exceptional level +6.",
-    "summary": "Strengthens courage and Psyche.",
+    "summary": "Increases Psyche.",
     "source": {
       "book": "Player's Handbook",
       "page": 162
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
             "sourceId": "holy-gerbanis-power-of-enken:bold:2",
-            "summary": "Strengthens courage and Psyche.",
+            "summary": "Increases Psyche.",
             "editableChanges": true,
             "related": []
           }

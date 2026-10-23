@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
     "description": "La cible bénéficie de Protection +6, inflige +4 dégâts en combat rapproché, à distance et avec les armes naturelles, et est immunisée aux flammes magiques comme non magiques. Son souffle peut enflammer du bois sec.",
-    "summary": "Accorde une protection et une résistance totale au feu.",
+    "summary": "Augmente la Protection et les dégâts des armes, et immunise aux flammes magiques et non magiques.",
     "source": {
       "book": "Livre des règles",
       "page": 279
@@ -56,7 +56,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
             "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
-            "summary": "Accorde une protection et une résistance totale au feu.",
+            "summary": "Augmente la Protection et les dégâts des armes, et immunise aux flammes magiques et non magiques.",
             "editableChanges": true,
             "related": []
           }

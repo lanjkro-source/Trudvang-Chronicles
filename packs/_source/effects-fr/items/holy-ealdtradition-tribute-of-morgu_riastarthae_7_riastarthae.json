@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae",
     "description": "La cible gagne 15 points de santé temporaires, +6 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +3 à la VC d’attaque. Sa Taille passe à 2 et elle reçoit un facteur de peur de 1d10 (JO 9–10), ignore peur et blessures, et ne peut ni parer ni esquiver.",
-    "summary": "Déchaîne une rage extrême et ignore les blessures.",
+    "summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, ignore peur et malus de blessures, mais interdit parade et esquive.",
     "source": {
       "book": "Livre des règles",
       "page": 244
@@ -112,7 +112,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
-            "summary": "Déchaîne une rage extrême et ignore les blessures.",
+            "summary": "Augmente la Taille, la VC d’attaque, les dégâts et les PS temporaires, ignore peur et malus de blessures, mais interdit parade et esquive.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

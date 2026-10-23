@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
     "description": "La cible gagne 10 points de santé temporaires, qui absorbent les dégâts après la protection. L’effet prend fin si ces points sont épuisés ; les points restants disparaissent à son expiration.",
-    "summary": "Protège la cible avec des points de santé temporaires.",
+    "summary": "Ajoute des points de santé temporaires qui absorbent les dégâts.",
     "source": {
       "book": "Livre des règles",
       "page": 258
@@ -49,7 +49,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
-            "summary": "Protège la cible avec des points de santé temporaires.",
+            "summary": "Ajoute des points de santé temporaires qui absorbent les dégâts.",
             "editableChanges": true,
             "related": []
           }

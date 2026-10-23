@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "NcOgKSkQlRmSnToU#infection-des-rugtannes",
     "description": "Après une incubation de 2d3 jours, la cible humaine devient un rugtanne : ses traits de Constitution, Psychisme, Force et Dextérité augmentent de deux degrés, avec un dépassement à +8 ; Protection augmente de 1 et les points de santé sont recalculés. Elle voit dans le noir jusqu’à 10 m, puis graduellement jusqu’à environ 60 m. Elle ne peut vivre que la nuit, meurt instantanément à la lumière du jour et doit boire le sang d’une créature à sang chaud toutes les cinq nuits. Elle conserve ses facultés magiques et peut vivre jusqu’à quatre fois plus longtemps qu’un humain.",
-    "summary": "Transforme la cible en rugtanne.",
+    "summary": "Augmente Force, Constitution, Dextérité, Psychisme et Protection, et accorde la vision dans le noir.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 27
@@ -65,7 +65,7 @@
           "transformation": {
             "key": "NcOgKSkQlRmSnToU#infection-des-rugtannes",
             "sourceId": "NcOgKSkQlRmSnToU",
-            "summary": "Transforme la cible en rugtanne.",
+            "summary": "Augmente Force, Constitution, Dextérité, Psychisme et Protection, et accorde la vision dans le noir.",
             "editableChanges": true,
             "related": []
           }

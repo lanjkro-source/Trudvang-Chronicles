@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
     "description": "La cible gagne 5 points de santé temporaires, +2 aux dégâts de corps à corps, de lancer et des armes naturelles, ainsi que +1 à la VC d’attaque. Sa hauteur augmente de 50 cm et elle gagne 30 kg, reçoit un facteur de peur de 1d10, ignore la peur et ne peut ni parer ni esquiver.",
-    "summary": "Renforce les attaques et la résistance à la peur.",
+    "summary": "Augmente la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
     "source": {
       "book": "Livre des règles",
       "page": 241
@@ -112,7 +112,7 @@
           "transformation": {
             "key": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
             "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
-            "summary": "Renforce les attaques et la résistance à la peur.",
+            "summary": "Augmente la VC d’attaque, les dégâts et les PS temporaires, rend effrayant et immunise à la peur, mais interdit parade et esquive.",
             "editableChanges": true,
             "related": [
               "frenzy-exhaustion"

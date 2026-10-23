@@ -15,8 +15,17 @@ export function effectChangeSummary(effect) {
 /** Short descriptive tooltip supplied by a catalogue effect, with a useful fallback for hand-made effects. */
 export function effectTooltipSummary(effect) {
   const parentSummary = effect?.parent?.type === "effect" ? effect.parent.system?.summary : "";
-  return effect?.flags?.["trudvang-chronicles"]?.transformation?.summary
+  const meta=effect?.flags?.["trudvang-chronicles"]?.transformation;
+  const summary=meta?.summary
     || effect?.system?.summary
-    || parentSummary
-    || effectChangeSummary(effect);
+    || parentSummary;
+  // Catalogue wording also updates the tooltip of existing world copies;
+  // their descriptions and mechanical changes remain untouched.
+  if(!effect?.system?.summary&&meta?.key){
+    const key=`TRUDVANG.Content.Transformation.${meta.key}.Summary`;
+    const current=globalThis.game?.i18n?.localize(key);
+    if(current&&current!==key)return current;
+  }
+  // Raw change paths and values belong to the effect's detailed sheet.
+  return summary || effect?.name || "";
 }

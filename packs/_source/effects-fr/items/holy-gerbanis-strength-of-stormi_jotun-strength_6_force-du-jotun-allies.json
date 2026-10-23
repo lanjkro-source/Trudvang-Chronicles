@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
     "description": "Le trait de Force de l’allié passe à +4, ou +6 avec l’amélioration dédiée.",
-    "summary": "Confère Force +4 aux alliés.",
+    "summary": "Augmente la Force des alliés.",
     "source": {
       "book": "Livre des règles",
       "page": 219
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies",
             "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
-            "summary": "Confère Force +4 aux alliés.",
+            "summary": "Augmente la Force des alliés.",
             "editableChanges": true,
             "related": []
           }

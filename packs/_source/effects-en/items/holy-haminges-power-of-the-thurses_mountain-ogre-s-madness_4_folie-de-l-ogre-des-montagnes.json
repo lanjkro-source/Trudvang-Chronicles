@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
     "description": "The target gains 6 temporary health points, +3 damage with melee, thrown, and natural attacks, and +1 to attack skill value. It ignores fear and cannot parry or dodge.",
-    "summary": "Unleashes a frenzy that improves attacks.",
+    "summary": "Adds temporary health, increases attack SV and damage, and grants fear immunity, but prevents parrying and dodging.",
     "source": {
       "book": "Player's Handbook",
       "page": 221
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
             "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
-            "summary": "Unleashes a frenzy that improves attacks.",
+            "summary": "Adds temporary health, increases attack SV and damage, and grants fear immunity, but prevents parrying and dodging.",
             "editableChanges": true,
             "related": []
           }

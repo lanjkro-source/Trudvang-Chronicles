@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
     "description": "La cible reçoit le trait exceptionnel +8 en Psychisme.",
-    "summary": "Porte le Psychisme à un niveau exceptionnel.",
+    "summary": "Augmente le Psychisme.",
     "source": {
       "book": "Livre des règles",
       "page": 225
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
             "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
-            "summary": "Porte le Psychisme à un niveau exceptionnel.",
+            "summary": "Augmente le Psychisme.",
             "editableChanges": true,
             "related": []
           }

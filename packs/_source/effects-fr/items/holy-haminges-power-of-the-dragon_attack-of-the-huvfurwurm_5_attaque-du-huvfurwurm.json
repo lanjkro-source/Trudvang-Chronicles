@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
     "description": "Accorde deux actions d’arme supplémentaires et une réserve commune de 10 PC par tour de jeu. Ces PC sont réservés à ces deux actions, disponibles une fois toutes les actions d’arme ordinaires utilisées. L’arme choisie conserve ses caractéristiques.",
-    "summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+    "summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
     "source": {
       "book": "Livre des règles",
       "page": 279
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5#attaque-du-huvfurwurm",
             "sourceId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
-            "summary": "Accorde deux actions d’arme supplémentaires et 10 PC réservés.",
+            "summary": "Accorde des actions d’arme supplémentaires avec des points de combat réservés.",
             "editableChanges": true,
             "related": []
           }

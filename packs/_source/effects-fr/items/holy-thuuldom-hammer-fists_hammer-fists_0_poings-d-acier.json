@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
     "description": "Les attaques à mains nues utilisant Bagarre infligent, selon le niveau de la rune : 1d6 ; 1d6 + 2 ; 1d10 + 2 ; 1d10 (JO 10) + 2 ; 1d10 (JO 9–10) + 2. Le modificateur de Force s’ajoute à ces dégâts. Les deux runes doivent être portées et alimentées pour que l’effet fonctionne.",
-    "summary": "Renforce les attaques à mains nues.",
+    "summary": "Augmente les dégâts des attaques à mains nues.",
     "source": {
       "book": "Livre des règles",
       "page": 287
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
             "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
-            "summary": "Renforce les attaques à mains nues.",
+            "summary": "Augmente les dégâts des attaques à mains nues.",
             "editableChanges": true,
             "related": []
           }

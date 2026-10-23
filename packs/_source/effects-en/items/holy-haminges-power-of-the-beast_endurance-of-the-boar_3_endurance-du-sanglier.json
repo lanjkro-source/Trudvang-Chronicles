@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
     "description": "Replaces the target’s Constitution trait with the exceptional level +6.",
-    "summary": "Greatly improves Constitution.",
+    "summary": "Increases Constitution and maximum health points.",
     "source": {
       "book": "Player's Handbook",
       "page": 212
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
             "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
-            "summary": "Greatly improves Constitution.",
+            "summary": "Increases Constitution and maximum health points.",
             "editableChanges": true,
             "related": []
           }

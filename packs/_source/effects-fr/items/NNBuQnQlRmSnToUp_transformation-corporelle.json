@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "NNBuQnQlRmSnToUp#transformation-corporelle",
     "description": "La cible prend la forme physique d’un animal choisi dans le bestiaire et en adopte les caractéristiques physiques. Ses points de santé ne sont pas conservés et son équipement est suspendu.",
-    "summary": "Transforme la cible en animal choisi.",
+    "summary": "Adopte les traits, les déplacements et les attaques de l’animal choisi.",
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40
@@ -59,7 +59,7 @@
           "transformation": {
             "key": "NNBuQnQlRmSnToUp#transformation-corporelle",
             "sourceId": "NNBuQnQlRmSnToUp",
-            "summary": "Transforme la cible en animal choisi.",
+            "summary": "Adopte les traits, les déplacements et les attaques de l’animal choisi.",
             "editableChanges": true,
             "related": []
           }

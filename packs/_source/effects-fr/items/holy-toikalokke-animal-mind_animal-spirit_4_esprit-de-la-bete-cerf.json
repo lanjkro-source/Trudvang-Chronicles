@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
     "description": "La cible adopte certains traits du cerf sans changer entièrement de forme : Constitution au moins +4, déplacement terrestre multiplié par 1,5, cornes (1d10, JO 10) comme arme naturelle. Les cerfs la considèrent comme une amie et ne l’attaquent pas ; ses autres traits restent inchangés.",
-    "summary": "Donne certains traits du cerf sans changer de forme.",
+    "summary": "Augmente la Constitution et le déplacement terrestre, et accorde une attaque de cornes sans changer de forme.",
     "source": {
       "book": "Livre des règles",
       "page": 295
@@ -63,7 +63,7 @@
           "transformation": {
             "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
             "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
-            "summary": "Donne certains traits du cerf sans changer de forme.",
+            "summary": "Augmente la Constitution et le déplacement terrestre, et accorde une attaque de cornes sans changer de forme.",
             "editableChanges": true,
             "related": []
           }

@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
     "description": "Diminue la Force de la cible d’un degré. Ce changement réduit les tests de situation fondés sur la Force ainsi que les dégâts, selon la table des modificateurs de Force. Les modificateurs indiqués sont appliqués en sens inverse. <table><thead><tr><th colspan=\"2\">MODIFICATEURS/DÉGÂTS</th></tr><tr><th>Force</th><th>Modificateur au test de situation/Modificateur aux dégâts</th></tr></thead><tbody><tr><td>Puissance de géant</td><td>+8</td></tr><tr><td>Force de stenhinje</td><td>+6</td></tr><tr><td>Force de troll</td><td>+4</td></tr><tr><td>Puissant</td><td>+2</td></tr><tr><td>Fort</td><td>+1</td></tr><tr><td>Moyen</td><td>+0</td></tr><tr><td>Faible</td><td>-1</td></tr><tr><td>Frêle</td><td>-2</td></tr><tr><td>Chétif</td><td>-4</td></tr><tr><td>Mou</td><td>-6</td></tr><tr><td>Invalide</td><td>-8</td></tr></tbody></table>",
-    "summary": "Affaiblit les muscles et la Force.",
+    "summary": "Diminue la Force, les dégâts qui en dépendent et le maximum de points de santé.",
     "source": {
       "book": "Livre des règles",
       "page": 195
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "vitner-body-vitner:strengthen:8#vigueur-inverse",
             "sourceId": "vitner-body-vitner:strengthen:8",
-            "summary": "Affaiblit les muscles et la Force.",
+            "summary": "Diminue la Force, les dégâts qui en dépendent et le maximum de points de santé.",
             "editableChanges": true,
             "related": []
           }

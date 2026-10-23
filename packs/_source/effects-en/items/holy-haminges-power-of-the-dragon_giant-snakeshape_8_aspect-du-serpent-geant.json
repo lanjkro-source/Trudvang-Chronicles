@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
     "description": "The target becomes a size 4 giant serpent, as long as a sanctuary and weighing 500 kg to 8 tonnes. It gains 20 temporary HP, Protection 2, Strength +6 (and +6 damage), Fear Factor 1d5, Paralysing Gaze, and Constriction. Its natural attacks are a bite (2d10, Open Roll 9–10) and a crush after a successful constriction (2d10, ignoring armour protection). Its equipment is suspended; it cannot wield weapons or use other divine powers than those granted by this form.",
-    "summary": "Transforms the target into a giant serpent.",
+    "summary": "Transforms into a giant snake, increases Strength, Protection and temporary health, and grants bite, constriction and paralyzing gaze.",
     "source": {
       "book": "Player's Handbook",
       "page": 214
@@ -91,7 +91,7 @@
           "transformation": {
             "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
             "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
-            "summary": "Transforms the target into a giant serpent.",
+            "summary": "Transforms into a giant snake, increases Strength, Protection and temporary health, and grants bite, constriction and paralyzing gaze.",
             "editableChanges": true,
             "related": []
           }

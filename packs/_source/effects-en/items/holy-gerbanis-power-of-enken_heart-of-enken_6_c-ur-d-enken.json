@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
     "description": "The target gains the exceptional Psyche trait +8.",
-    "summary": "Raises Psyche to an exceptional level.",
+    "summary": "Increases Psyche.",
     "source": {
       "book": "Player's Handbook",
       "page": 162
@@ -42,7 +42,7 @@
           "transformation": {
             "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
             "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
-            "summary": "Raises Psyche to an exceptional level.",
+            "summary": "Increases Psyche.",
             "editableChanges": true,
             "related": []
           }

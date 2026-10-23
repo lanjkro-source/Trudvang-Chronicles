@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
     "description": "The target becomes a large black oak with Protection 8; after this protection, only one fifth of damage harms it. It recovers 1 HP per hour, feeds on water from the soil and sunlight, and is immune to demons’ attacks and abilities. Once per day, it can attempt a Situation Value 6 test (Psyche) to remove a curse or demonic infection. It can return to its normal form at any time; if it dies in this form, it remains a black oak.",
-    "summary": "Transforms the target into a resilient tree.",
+    "summary": "Turns the target into a tree, increases Protection, reduces incoming damage and allows health recovery and resistance to curses.",
     "source": {
       "book": "Player's Handbook",
       "page": 201
@@ -58,7 +58,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole",
             "sourceId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
-            "summary": "Transforms the target into a resilient tree.",
+            "summary": "Turns the target into a tree, increases Protection, reduces incoming damage and allows health recovery and resistance to curses.",
             "editableChanges": true,
             "related": []
           }

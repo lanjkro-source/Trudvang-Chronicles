@@ -8,7 +8,7 @@
   "system": {
     "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
     "description": "For three days after release from the statue, movement and skill values for Dexterity-based tests are reduced to two-thirds of their normal value.",
-    "summary": "Leaves residual stiffness after petrification.",
+    "summary": "Reduces movement and Dexterity-based test values after petrification.",
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 106
@@ -47,7 +47,7 @@
           "transformation": {
             "key": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
             "sourceId": "WLqQEeGbHcIdJeKf",
-            "summary": "Leaves residual stiffness after petrification.",
+            "summary": "Reduces movement and Dexterity-based test values after petrification.",
             "editableChanges": true,
             "related": []
           }
