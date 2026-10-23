@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import fs from "node:fs";
 import Handlebars from "handlebars";
-import {normalizeSense,intrinsicSenses,sensoryProfile,sensoryVision,tokenVisionUpdate} from "../modules/rules/senses.mjs";
+import {normalizeSense,intrinsicSenses,sensoryProfile,sensoryVision,sensoryText,tokenVisionUpdate} from "../modules/rules/senses.mjs";
 import {BESTIARY_ENTRIES} from "../modules/bestiary-catalog-data.mjs";
 import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
 
@@ -79,11 +79,24 @@ test("every bilingual bestiary profile has localized sensory data with the book'
  }
 });
 
-test("the shared PJ/PNJ sensory section renders escaped text, ranges, disabled senses and editable controls",()=>{
- const h=Handlebars.create();h.registerHelper("localize",key=>key);h.registerHelper("eq",(a,b)=>a===b);h.registerHelper("checked",v=>v?"checked":"");
+test("the shared PJ/PNJ senses line stays compact, deduplicates abilities and escapes custom labels",()=>{
+ const localize=key=>({"TRUDVANG.Senses.Types.normal":"Vision normale","TRUDVANG.Senses.Types.night":"Vision nocturne"}[key]??key);
+ const a=actor([sense("normal"),sense("night",60),sense("night",300),sense("other",300,"Vision thermique"),{...sense("dark",60),enabled:false}]);
+ assert.equal(sensoryText(a,{localize}),"vision nocturne, vision thermique");
+ assert.equal(sensoryText(actor(),{localize}),"vision normale");
+ const h=Handlebars.create();h.registerHelper("localize",()=>"Sens");
  const render=h.compile(fs.readFileSync(new URL("../templates/actor/senses.hbs",import.meta.url),"utf8"));
- const html=render({editable:true,senses:[{...sense("dark",60,"<script>"),rangeLabel:"60 m",enabled:false}],baseSenses:[{...sense("night",60),index:0,types:[{type:"night",label:"Vision nocturne",selected:true}]}]});
- assert.match(html,/60 m/);assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>/);
- assert.match(html,/sense-disabled/);assert.match(html,/trudvang.senses.0.range/);assert.match(html,/data-action="sense-add"/);
- assert.doesNotMatch(render({editable:false,senses:[]}),/sensory-editor/);
+ const html=render({sensesText:"vision nocturne, <script>"});
+ assert.match(html,/Sens/);assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>|<section|<details|<input|<ul/);
+ const npc=fs.readFileSync(new URL("../templates/actor/npc-sheet.hbs",import.meta.url),"utf8");
+ assert.match(npc,/<section class="panel npc-health-panel"[^]*?\{\{\{sensesHtml\}\}\}\s*<\/section>/);
+});
+
+test("manual token vision disable and range reductions survive unrelated actor synchronization",()=>{
+ const t=token(),vision={mode:"darkvision",range:60};
+ apply(t,tokenVisionUpdate(t,vision));
+ t.detectionModes.darkvision.enabled=false;t.detectionModes.darkvision.range=20;t.sight.range=20;
+ assert.deepEqual(tokenVisionUpdate(t,vision),{});
+ apply(t,tokenVisionUpdate(t,null));
+ assert.equal(t.detectionModes.darkvision.enabled,false);assert.equal(t.detectionModes.darkvision.range,20);assert.equal(t.sight.range,20);
 });

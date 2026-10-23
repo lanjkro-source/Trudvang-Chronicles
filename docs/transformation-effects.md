@@ -41,13 +41,17 @@ leurs tests et leur application restent des actions distinctes.
 
 ## Préparation et ressources
 
-Les acteurs disposent de `system.senses`, une liste éditable de facultés
+Les acteurs disposent de `system.senses`, une liste de facultés
 `{type, label, range, enabled}`. La portée est en mètres ; `null` signifie qu’aucune
 limite n’est spécifiée. Vision normale est proposée par défaut. Les bestiaires
 FR/EN renseignent ce champ et les transformations de forme le transfèrent. Les
 effets peuvent ajouter des sens via `system.transformation.senses`, ou remplacer
 le profil pendant la transformation avec `system.transformation.sensesReplace`.
-Les sens sont affichés dans le cadre État des fiches PJ/PNJ ; les autres sens que
+Les sens sont affichés sur une ligne dans le cadre État des fiches PJ/PNJ, sous
+un séparateur en bas du cadre santé pour les PNJ. La fiche ne présente ni portée
+ni contrôles détaillés ; les ajustements de vision se font dans la configuration
+du token et sont conservés lors des mises à jour sans changement du profil sensoriel.
+Les autres sens que
 la vision restent des rappels textuels. Les portées de l’Ouïe du hibou et du Sens
 du griffon suivent leurs améliorations sans modifier la détection Foundry.
 

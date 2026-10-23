@@ -22,7 +22,7 @@ import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 import {bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectContributions, effectContributionText} from "../rules/effect-contributions.mjs";
 import {effectStatus} from "../rules/effect-status.mjs";
-import {normalizeSense,intrinsicSenses,sensoryRows} from "../rules/senses.mjs";
+import {sensoryText} from "../rules/senses.mjs";
 import {bodyHealthUpdate} from "../rules/body-health.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -62,8 +62,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     },
     dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}],
     actions: {
-      "sense-add": TrudvangActorSheet.#onAction,
-      "sense-delete": TrudvangActorSheet.#onAction,
       "manage-portraits": TrudvangActorSheet.#onAction,
       "share-portrait": TrudvangActorSheet.#onAction,
       "roll-skill": TrudvangActorSheet.#onAction,
@@ -171,9 +169,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.fearFactorNotation = context.effectiveFearFactor.valid ? formatFearFactor(context.effectiveFearFactor) : "";
     context.effectStatus = effectStatus(this.actor, {localize:key=>game.i18n.localize(key)});
     context.sensesHtml=await renderTemplate("systems/trudvang-chronicles/templates/actor/senses.hbs",{
-      senses:sensoryRows(this.actor,{localize:key=>game.i18n.localize(key)}),editable:context.editable,
-      baseSenses:intrinsicSenses(this.actor).map((s,index)=>({...normalizeSense(s),index,
-        types:["normal","night","dark","other"].map(type=>({type,label:game.i18n.localize(`TRUDVANG.Senses.Types.${type}`),selected:type===normalizeSense(s).type}))}))});
+      sensesText:sensoryText(this.actor,{localize:key=>game.i18n.localize(key)})});
     const body = this.actor.system.resources.body;
     const fear = this.actor.system.resources.fear;
     const recovery = this.actor.system.healthRecovery ?? {amount: 1, days: 1};
@@ -544,13 +540,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   }
 
   static async #onAction(event, target) {
-    if(["sense-add","sense-delete"].includes(target.dataset.action)){
-      if(!this.isEditable||!this.actor.isOwner)return;
-      const senses=intrinsicSenses(this.actor);
-      if(target.dataset.action==="sense-add")senses.push({type:"other",label:"",range:null,enabled:true});
-      else senses.splice(Number(target.dataset.index),1);
-      return this.actor.update({"system.senses":senses});
-    }
     event.preventDefault();
     event.stopPropagation();
     const action = target.dataset.action;
@@ -654,16 +643,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (!this.isEditable || !this.actor.isOwner) return;
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
-    if(editedPath.startsWith("trudvang.senses.")){
-      const [, ,index,field]=editedPath.split('.');
-      const senses=intrinsicSenses(this.actor);
-      if(senses[index]){
-        const value=formData.object[editedPath];
-        senses[index][field]=field==="range"?(value===""||value===null?null:Math.max(0,Number(value)||0)):field==="enabled"?Boolean(value):String(value??"");
-        foundry.utils.setProperty(changes,"system.senses",senses);
-      }
-    }
-    if(changes.trudvang)delete changes.trudvang.senses;
     if(editedPath==="trudvang.size")foundry.utils.setProperty(changes,"system.details.size",formData.object[editedPath]);
     if(changes.trudvang)delete changes.trudvang.size;
     if(editedPath==="trudvang.temporaryHP")await setTemporaryHealth(this.actor,formData.object[editedPath]);

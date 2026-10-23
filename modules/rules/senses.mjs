@@ -40,6 +40,12 @@ export function sensoryRows(actor,{localize=key=>key}={}){
  const profile=actor.transformationProfile?.sensory??sensoryProfile(actor);
  return profile.map(s=>({...s,label:s.label?localize(s.label):localize(`TRUDVANG.Senses.Types.${s.type}`),rangeLabel:s.range===null?localize("TRUDVANG.Senses.Unlimited"):game.i18n.format("TRUDVANG.Senses.Meters",{range:s.range})}));
 }
+export function sensoryText(actor,{localize=key=>key}={}){
+ const senses=(actor.transformationProfile?.sensory??sensoryProfile(actor)).filter(s=>s.enabled);
+ const selected=senses.some(s=>s.type!=="normal")?senses.filter(s=>s.type!=="normal"):senses;
+ return [...new Set(selected.map(s=>s.type!=="other"?localize(`TRUDVANG.Senses.Types.${s.type}`):localize(s.label)))]
+  .map(label=>label.charAt(0).toLocaleLowerCase()+label.slice(1)).join(", ");
+}
 
 /** Partial updates preserve unrelated detection modes and later manual edits. V14
  * detectionModes is a keyed TypedObjectField, not the old array of mode objects. */
@@ -56,13 +62,14 @@ export function tokenVisionUpdate(token,vision){
   const scale=/^(ft|feet|foot|pi|pieds?)$/.test(units)?1/0.3048:/^(km|kilom)/.test(units)?0.001:1;
   const range=vision.range===null?null:Math.round((vision.range*scale+Number.EPSILON)*100)/100;
   const unlimited=Math.hypot(scene?.dimensions?.width??scene?.width??0,scene?.dimensions?.height??scene?.height??0)/(scene?.grid?.size||1)*(scene?.grid?.distance||1);
-  const desired={"sight.enabled":true,"sight.visionMode":"darkvision","sight.range":range??Math.max(unlimited,Number(token.sight?.range)||0),
+  const desired={"sight.enabled":true,"sight.visionMode":"darkvision","sight.range":range??Math.max(unlimited,Number(saved?.before?.["sight.range"]??token.sight?.range)||0),
    ...Object.fromEntries(Object.entries(globalThis.CONFIG?.Canvas?.visionModes?.darkvision?.vision?.defaults??{saturation:-1,attenuation:0}).map(([k,v])=>[`sight.${k}`,v])),
    "detectionModes.darkvision.enabled":true,"detectionModes.darkvision.range":range};
   const before=typeof saved?.before==="object"?{...saved.before}:saved?{"sight.visionMode":saved.before}:{};
   for(const [path,value]of Object.entries(desired)){
    if(!Object.hasOwn(before,path))before[path]=get(path)??null;
-   if(!equal(get(path),value))changes[path]=value;
+   // Token configuration edits persist until the granted sensory profile changes.
+   if(!equal(get(path),value)&&(!saved||!equal(saved.applied?.[path],value)))changes[path]=value;
   }
   const state={before,applied:desired};
   if(!equal(saved,state))changes[flag]=state;
