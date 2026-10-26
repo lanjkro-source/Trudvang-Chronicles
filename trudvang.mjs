@@ -10,6 +10,7 @@ import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-abilit
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, ensureUtilityMacros, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import {rollGenericDamage, rollGenericFear, requestGenericSituationRoll} from "./modules/generic-rolls.mjs";
+import {advanceDay} from "./modules/world-time.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { registerCombatDockSupport } from "./modules/combat-dock.mjs";
 import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules/portrait.mjs";
@@ -166,7 +167,7 @@ Hooks.once("init", () => {
 
   // Public macro API: the generic situation-roll macro calls
   // `game.trudvang.rollGenericSituation()` (no actor required).
-  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll};
+  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll, advanceDay};
 
   const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 

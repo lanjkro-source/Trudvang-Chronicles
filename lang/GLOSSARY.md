@@ -1217,6 +1217,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.DamageRoll` | Generic damage roll | Jet de dégâts générique |
 | `TRUDVANG.Macro.FearRoll` | Generic fear roll | Jet de peur générique |
 | `TRUDVANG.Macro.RequestSituation` | Request a situation test | Provoquer un test de situation |
+| `TRUDVANG.Macro.AdvanceDay` | Advance one day | Passer un jour |
+| `TRUDVANG.Macro.AdvanceDayGMOnly` | Only the game master can advance world time. | Seul le maître de jeu peut faire avancer le temps du monde. |
+| `TRUDVANG.Macro.DayAdvanced` | One day has passed: the clock advanced by 24 hours and effect durations were refreshed. | Un jour s’est écoulé : l’horloge a avancé de 24 heures et les durées des effets ont été actualisées. |
 | `TRUDVANG.Macro.DiceCount` | Number of dice | Nombre de dés |
 | `TRUDVANG.Macro.DieType` | Die type | Type de dé |
 | `TRUDVANG.Macro.InvalidDice` | Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none). | Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun). |

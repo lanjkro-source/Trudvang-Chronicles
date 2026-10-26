@@ -187,16 +187,23 @@ export function registerEffectHooks() {
   Hooks.on("updateActiveEffect", (effect, changed, options) => {
     if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);
   });
-  Hooks.on("ready", async () => {
-    const actors = new Set(Array.from(game.actors ?? []));
-    for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
-    const seen = new Set();
-    for (const actor of actors) for (const effect of actor.allApplicableEffects?.() ?? actor.effects ?? []) {
-      if (!effect.duration?.expired || seen.has(effect)) continue;
-      seen.add(effect);
-      await finishExpiredEffect(effect);
-    }
-  });
+  Hooks.on("ready", expireAppliedEffects);
+}
+
+/** Include unlinked tokens on inactive scenes, without duplicating linked actors. */
+export function appliedWorldEffects() {
+  const actors = new Set(Array.from(game.actors ?? []));
+  for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
+  const effects = new Set();
+  for (const actor of actors) for (const effect of actor.allApplicableEffects?.() ?? actor.effects ?? []) {
+    effects.add(effect);
+  }
+  return effects;
+}
+
+/** Complete pending expiry on world actors and unlinked tokens on every scene. */
+export async function expireAppliedEffects() {
+  for (const effect of appliedWorldEffects()) if (effect.duration?.expired) await finishExpiredEffect(effect);
 }
 
 export function isIncapacitated(actor) {

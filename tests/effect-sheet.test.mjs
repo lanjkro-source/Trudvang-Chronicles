@@ -74,6 +74,7 @@ globalThis.CONFIG = {statusEffects: {}};
 const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks} = await import("../modules/effects.mjs");
+const {advanceDay} = await import("../modules/world-time.mjs");
 
 function sheetFor(document) {
   return new TrudvangEffectSheet({document});
@@ -672,4 +673,66 @@ test("expiration deletes the final applied effect once and preserves library ref
     assert.equal(deleted, 1, "only the elected GM handles expiry");
     game.users.activeGM.isSelf = true;
   }
+});
+
+test("advance-day moves shared time once, refreshes long durations and deletes expired effects on unlinked tokens", async t => {
+  const previous = {game: globalThis.game, registry: StubActiveEffect.implementation.registry, info: ui.notifications.info};
+  t.after(() => {globalThis.game = previous.game; StubActiveEffect.implementation.registry = previous.registry; ui.notifications.info = previous.info;});
+  const day = 86400, registered = new Set();
+  const actor = {type: "character", effects: []}, tokenActor = {type: "npc", effects: []};
+  function effect(parent, value, units, seconds) {
+    const row = {type: "effect", parent, system: {stages: []}, isExpiryTrackable: true,
+      duration: {value, units, expired: false, remaining: value}, seconds,
+      async delete() {parent.effects.splice(parent.effects.indexOf(this), 1);}};
+    parent.effects.push(row);
+    return row;
+  }
+  const short = effect(actor, 12, "hours", 43200), long = effect(actor, 48, "hours", 172800);
+  const days = effect(tokenActor, 3, "days", 3 * day), tokenShort = effect(tokenActor, 6, "hours", 21600);
+  const year = effect(actor, 1, "years", 365 * day), permanent = effect(actor, null, "rounds", null);
+  const template = effect(actor, 1, "hours", 3600); template.parent = {type: "effect"}; template.isExpiryTrackable = false;
+  let advances = 0, notices = 0;
+  globalThis.game = {user: {isGM: true}, users: {activeGM: {isSelf: true}}, actors: [actor],
+    scenes: [{tokens: [{actor}, {actor: tokenActor}]}], i18n: {localize: key => key},
+    time: {worldTime: 0, async advance(delta) {advances++; assert.equal(delta, day); await Promise.resolve(); return this.worldTime += delta;}}};
+  ui.notifications.info = () => {notices++;};
+  StubActiveEffect.implementation.registry = {
+    add(row) {if (row.isExpiryTrackable) registered.add(row);},
+    async refresh(event) {
+      assert.equal(event, "updateWorldTime");
+      assert.equal(game.time.worldTime, day, "refresh must follow the clock update");
+      for (const row of registered) if (row.seconds !== null) {
+        row.duration.remaining = row.duration.value * (row.seconds - day) / row.seconds;
+        row.duration.expired = row.seconds <= day;
+      }
+    }
+  };
+  assert.deepEqual(await Promise.all([advanceDay(), advanceDay()]), [day, day]);
+  assert.equal(advances, 1, "double clicks must not advance two days");
+  assert.equal(notices, 1);
+  assert.ok(!actor.effects.includes(short));
+  assert.ok(!tokenActor.effects.includes(tokenShort));
+  assert.equal(long.duration.remaining, 24);
+  assert.equal(days.duration.remaining, 2);
+  assert.equal(year.duration.remaining, 364 / 365);
+  assert.ok(actor.effects.includes(permanent));
+  assert.ok(actor.effects.includes(template), "library templates are never consumed");
+  assert.equal(registered.size, 6, "linked actors are processed once, inactive-scene tokens are included");
+});
+
+test("advance-day rejects players and releases its lock after a failed clock update", async t => {
+  const previous = {game: globalThis.game, registry: StubActiveEffect.implementation.registry, warn: ui.notifications.warn};
+  t.after(() => {globalThis.game = previous.game; StubActiveEffect.implementation.registry = previous.registry; ui.notifications.warn = previous.warn;});
+  let calls = 0, warnings = 0;
+  globalThis.game = {user: {isGM: false}, actors: [], scenes: [], i18n: {localize: key => key},
+    time: {async advance(delta) {calls++; if (calls === 1) throw new Error("Clock unavailable"); return delta;}}};
+  StubActiveEffect.implementation.registry = {refresh: async () => {}};
+  ui.notifications.warn = () => {warnings++;};
+  assert.equal(await advanceDay(), null);
+  assert.equal(calls, 0);
+  assert.equal(warnings, 1);
+  game.user.isGM = true;
+  await assert.rejects(advanceDay(), /Clock unavailable/);
+  assert.equal(await advanceDay(), 86400);
+  assert.equal(calls, 2);
 });
