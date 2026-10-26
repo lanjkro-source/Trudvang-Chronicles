@@ -44,10 +44,10 @@ export async function expireRoundEffects(combat, {ended = false} = {}) {
   for (const actor of actors) {
     const ids = values(actor.effects).filter(effect => {
       const expiry = effect.flags?.[S]?.combatRoundExpiry;
-      return !effect.disabled && !effect.duration?.expired && expiry?.combatId === combat.id
+      return expiry?.combatId === combat.id
         && (ended || !combat.started || Number(combat.round) > Number(expiry.round));
-    }).map(effect => ({_id: effect.id, disabled: true, "duration.expired": true}));
-    if (ids.length) await actor.updateEmbeddedDocuments("ActiveEffect", ids);
+    }).map(effect => effect.id);
+    if (ids.length) await actor.deleteEmbeddedDocuments("ActiveEffect", ids);
   }
 }
 export function registerCombatEffectHooks() {

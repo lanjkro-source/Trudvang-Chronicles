@@ -5,6 +5,7 @@ import {effectChangesSource} from "./rules/effect-source.mjs";
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
+import {normalizeEffectDuration, normalizeEffectStage} from "./rules/effect-duration.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -41,7 +42,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
       stages: new fields.ArrayField(new fields.SchemaField({
         label: string(),
         durationValue: new fields.NumberField({required: true, nullable: false, initial: 0, min: 0}),
-        durationUnit: string("seconds"),
+        durationUnit: string("rounds"),
         changes: stagedChangesField()
       }))
     };
@@ -94,6 +95,8 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // A copied template belongs to the user creating this instance, not its
     // original author. Never infer authorship from lastModifiedBy.
     if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
+    this.updateSource({duration: normalizeEffectDuration(data.duration ?? {value: null, units: "rounds"})});
+    if (data.system?.stages) this.updateSource({"system.stages": data.system.stages.map(normalizeEffectStage)});
     if (this.parent?.documentName === "Actor" && data.flags?.["trudvang-chronicles"]?.untilRoundEnd) {
       const expiry = currentRoundExpiry();
       if (!expiry) {ui.notifications.warn(game.i18n.localize("TRUDVANG.Status.SurprisedNeedsCombat")); return false;}
@@ -106,10 +109,16 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
       this.updateSource({
         "system.stage": 0,
         "system.changes": effectChangesSource(first.changes),
-        duration: {value: Number(first.durationValue || 0), units: first.durationUnit || "seconds", expired: false}
+        duration: normalizeEffectDuration({value: Number(first.durationValue || 0), units: first.durationUnit || "rounds", expired: false})
       });
     }
     return allowed;
+  }
+
+  async _preUpdate(data, options, user) {
+    if (data.duration) data.duration = normalizeEffectDuration({...this._source.duration, ...data.duration});
+    if (Array.isArray(data.system?.stages)) data.system.stages = data.system.stages.map(normalizeEffectStage);
+    return super._preUpdate(data, options, user);
   }
 }
 
@@ -136,32 +145,57 @@ export function configureEffects() {
   for (const status of ACTOR_STATE_STATUSES) CONFIG.statusEffects[status.id] = {...status};
 }
 
-/** Advance staged extracts and poisons once Foundry expires the current stage. */
-export function registerEffectHooks() {
-  registerCombatEffectHooks();
-  Hooks.on("updateActiveEffect", async (effect, changed, options) => {
-    if (options?.trudvangStageTransition || changed.duration?.expired !== true) return;
-    if (!game.users.activeGM?.isSelf || !["base", "effect"].includes(effect.type)) return;
+const expirationJobs = new WeakMap();
+/** Keep intermediate stages, delete applied effects when their final duration ends.
+ * Library references are never consumed by expiration on a character. */
+export function finishExpiredEffect(effect, options = {}) {
+  if (expirationJobs.has(effect)) return expirationJobs.get(effect);
+  const job = (async () => {
+    if (options?.trudvangStageTransition) return;
+    if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
+      || effect.parent?.type === "effect" || effect.inCompendium || effect.isExpiryTrackable === false) return;
     const stages = Array.from(effect.system.stages || []);
     const nextIndex = Number(effect.system.stage || 0) + 1;
     const next = stages[nextIndex];
-    if (!next) return;
+    if (!next) {
+      if (effect.parent && effect.parent.type !== "effect" && !effect.inCompendium && effect.isExpiryTrackable !== false) await effect.delete();
+      return;
+    }
     const implementation = foundry.documents.ActiveEffect.implementation;
     await effect.update({
       "system.stage": nextIndex,
       "system.changes": effectChangesSource(next.changes),
-      duration: {
+      duration: normalizeEffectDuration({
         value: Number(next.durationValue || 0),
-        units: next.durationUnit || "seconds",
+        units: next.durationUnit || "rounds",
         expiry: null,
         expired: false
-      },
+      }),
       start: implementation.getEffectStart()
     }, {trudvangStageTransition: true});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectStageAdvanced", {
       effect: effect.name,
       stage: next.label || String(nextIndex + 1)
     }));
+  })().finally(() => expirationJobs.delete(effect));
+  expirationJobs.set(effect, job);
+  return job;
+}
+
+export function registerEffectHooks() {
+  registerCombatEffectHooks();
+  Hooks.on("updateActiveEffect", (effect, changed, options) => {
+    if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);
+  });
+  Hooks.on("ready", async () => {
+    const actors = new Set(Array.from(game.actors ?? []));
+    for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
+    const seen = new Set();
+    for (const actor of actors) for (const effect of actor.allApplicableEffects?.() ?? actor.effects ?? []) {
+      if (!effect.duration?.expired || seen.has(effect)) continue;
+      seen.add(effect);
+      await finishExpiredEffect(effect);
+    }
   });
 }
 

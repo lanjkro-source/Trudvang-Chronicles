@@ -83,7 +83,7 @@ test("applying a form creates independent owned grants and native trait changes,
  const key=Object.keys(templates).find(k=>k.endsWith("#aspect-du-corbeau"));
  assert.ok(key);
  await applyTransformation(actor,key);
- assert.equal(created.duration.value,60);assert.equal(created.transfer,false);
+ assert.equal(created.duration.value,12);assert.equal(created.duration.units,"rounds");assert.equal(created.transfer,false);
  assert.ok(created.system.changes.some(c=>c.key==="system.effective.traits.dexterity"&&c.value==="4"));
  assert.ok(created.system.changes.length>0);
  assert.ok(created.system.changes.every(c=>c.priority===50),"level 5 applies priority 50 to dynamically generated trait changes");
@@ -92,7 +92,7 @@ test("applying a form creates independent owned grants and native trait changes,
  assert.equal(items[0].flags[S].transformationGrant,"new-form");
  assert.equal(items[0].system.damage,"1d10");
  assert.equal(items[0].system.weaponActions,4);
- assert.deepEqual(await resolveDuration("3 jours"),{value:259200,units:"seconds"});
+ assert.deepEqual(await resolveDuration("3 jours"),{value:3,units:"days"});
  const diseaseKey=Object.keys(templates).find(k=>k.endsWith("#warg-disease"));
  assert.ok(transformationLinks({uuid:"Actor.a.ActiveEffect.disease",flags:{[S]:{transformation:{sourceId:templates[diseaseKey].sourceId,related:templates[diseaseKey].related}}}}).includes("warg-garou"));
 });
@@ -520,11 +520,11 @@ test("rolled vitality posts the actual dice to the normal chat pipeline for Dice
   globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"1d6 + 2 jours"});
   posted.length=0;await applyTransformation(actor,key);
   assert.deepEqual(posted.map(p=>p.roll.formula.trim()),["1d6 + 2","2d10"]);
-  assert.equal(created.duration.value,13*86400);
+  assert.equal(created.duration.value,13);
   assert.match(posted[0].options.flavor,/Durée/);
   for(const p of posted)assert.equal(p.options.speaker.actor,"target");
   posted.length=0;
-  assert.equal((await resolveDuration("1d10 (JO 7-10) jours",{actor,name:"Pétrification"})).value,13*86400);
+  assert.equal((await resolveDuration("1d10 (JO 7-10) jours",{actor,name:"Pétrification"})).value,13);
   assert.equal(posted[0].roll.formula.trim(),"1d10 xo>=7");
   for(const template of Object.values(templates).filter(t=>/\dd\d/i.test(t.duration??""))){
    posted.length=0;
@@ -544,7 +544,7 @@ test("effect improvements change their base fields, including inverse traits, at
  const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
  for(const [key,template]of Object.entries(templates).filter(([k,t])=>!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
-  assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,95,key);
+  assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,19,key);
   assert.doesNotMatch(dialog.content,/name="boost\d+"[^>]*\bmax=/,key);
  }
  for(const [key,template]of Object.entries(templates).filter(([,t])=>t.parameters.some(p=>p.target==="traitDegrees"))){
@@ -632,7 +632,7 @@ test("huvfurwurm effects grant real weapon profiles with reserved CP, gated ordi
   const actor={type:"character",id:"hero",isOwner:true,items,effects:[],system:{skills:{fighting:{value:12}}},canUserModify:()=>true,createTrudvangEffect:async data=>{created=data;return null;},createEmbeddedDocuments:async(type,rows)=>{granted=rows;}};
   foundry.applications.api.DialogV2.wait=async()=>({duration:"3 tours de jeu",weapon:"bow",boost0:2});
   await applyTransformation(actor,key);
-  assert.equal(created.duration.value,25);
+  assert.equal(created.duration.value,5);
   assert.deepEqual(effectRules(created).extraWeaponAction,{combatPoints:cp,actions,weaponId:"bow"});
   const e={id:"arms",...created};await syncEffectGrants(e,actor);assert.equal(granted.length,1);
   const bonus={id:"extra",...granted[0]};items.push(bonus);actor.effects.push(e);

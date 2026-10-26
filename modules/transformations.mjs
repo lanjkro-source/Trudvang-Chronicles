@@ -13,6 +13,7 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
+import {normalizeEffectDuration, addDurationSeconds} from "./rules/effect-duration.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -133,7 +134,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }};
  for(const p of resolvedCopy?[]:template.parameters??[]){
   const count=Math.max(0,Number(answers[`boost${p.index}`]??counts[p.index])||0);if(!count)continue;
-  if(p.target==="duration")duration.value+=count*p.value;
+  if(p.target==="duration")Object.assign(duration,addDurationSeconds(duration,count*p.value));
   if(p.target==="senseRange"&&rules.senses?.[p.sense])rules.senses[p.sense].range+=count*p.value;
   if(p.target==="traitDegrees")for(const row of rules.traits??[])if(row.trait===p.trait&&row.method==="degrees")row.value+=Math.sign(row.value||1)*count*p.value;
   if(p.target==="traitValue")for(const row of rules.traits??[])if(row.trait===p.trait)row.value+=count*p.value;
@@ -220,12 +221,12 @@ async function rollEffectValue(formula,{actor,name=""}={}){
 }
 export async function resolveDuration(text,context={}){
  const notation=String(text).replace(/\(JO\s*(\d+)(?:[-–]\d+)?\)/gi,"xo>=$1");
- const match=notation.trim().match(/^([\ddD+ .xo>=-]+)\s*(seconds?|secondes?|minutes?|heures?|hours?|journées?|jours?|days?|semaines?|weeks?|mois|months?|années?|ans?|years?|tours?(?: de jeu)?|rounds?)$/i);
+ const match=notation.trim().match(/^([\ddD+ .xo>=-]+)\s*(seconds?|secondes?|minutes?|heures?|hours?|journées?|jours?|days?|semaines?|weeks?|mois|months?|années?|ans?|years?|siècles?|centur(?:y|ies)|tours?(?: de jeu)?|rounds?)$/i);
   if(!match){if(String(text).trim())throw Error(local("InvalidDuration"));return {value:0,units:"seconds"};}
  const value=Number.isFinite(Number(match[1]))?Number(match[1]):await rollEffectValue(match[1],context);
  const unit=match[2].toLowerCase();
- const seconds=/^minute/.test(unit)?60:/^(heure|hour)/.test(unit)?3600:/^(jour|day)/.test(unit)?86400:/^(semaine|week)/.test(unit)?604800:/^(mois|month)/.test(unit)?2592000:/^(année|an|year)/.test(unit)?31536000:/^(tour|round)/.test(unit)?5:1;
- return {value:Math.max(0,value*seconds),units:"seconds"};
+ const units=/^minute/.test(unit)?"minutes":/^(heure|hour)/.test(unit)?"hours":/^(jour|day)/.test(unit)?"days":/^(semaine|week)/.test(unit)?"weeks":/^(mois|month)/.test(unit)?"months":/^(année|an|year)/.test(unit)?"years":/^(siècle|centur)/.test(unit)?"centuries":/^(tour|round)/.test(unit)?"rounds":"seconds";
+ return normalizeEffectDuration({value:Math.max(0,value),units});
 }
 /** Only generated grants are removed. Inventory and original actor data are never restored from a snapshot. */
 async function cleanGrants(effect){

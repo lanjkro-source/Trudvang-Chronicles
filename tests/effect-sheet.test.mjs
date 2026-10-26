@@ -138,7 +138,8 @@ test("new and copied effects record the current creator, never the template auth
     const updates = [];
     effect.updateSource = data => updates.push(data);
     await effect._preCreate({}, {}, {id: "new-creator"});
-    assert.deepEqual(updates, [{"flags.trudvang-chronicles.creatorId": "new-creator"}]);
+    assert.deepEqual(updates, [{"flags.trudvang-chronicles.creatorId": "new-creator"},
+      {duration: {value: null, units: "rounds"}}]);
   }
 });
 
@@ -646,5 +647,29 @@ test("native and custom effect types advance stages through the same lifecycle",
     await hook(effect, {duration: {expired: true}}, {});
     assert.equal(saved["system.stage"], 1);
     assert.equal(saved.duration.expired, false);
+  }
+});
+
+test("expiration deletes the final applied effect once and preserves library references", async t => {
+  const previousHooks = globalThis.Hooks, previousUsers = game.users;
+  t.after(() => {globalThis.Hooks = previousHooks; game.users = previousUsers;});
+  let hook;
+  globalThis.Hooks = {on: (event, callback) => {if (event === "updateActiveEffect") hook = callback;}};
+  game.users = {activeGM: {isSelf: true}};
+  registerEffectHooks();
+  for (const type of ["base", "effect"]) {
+    let deleted = 0;
+    const applied = {type, parent: {type: "character"}, system: {stage: 1, stages: [{}, {}]},
+      delete: async () => {deleted++; await Promise.resolve();}};
+    await Promise.all([hook(applied, {duration: {expired: true}}, {}), hook(applied, {"duration.expired": true}, {})]);
+    assert.equal(deleted, 1, "duplicate notifications must not delete an effect twice");
+    for (const attributes of [{parent: {type: "effect"}}, {inCompendium: true}, {isExpiryTrackable: false}]) {
+      await hook({...applied, ...attributes}, {duration: {expired: true}}, {});
+    }
+    assert.equal(deleted, 1, "templates must survive expiry on an actor");
+    game.users.activeGM.isSelf = false;
+    await hook({...applied}, {duration: {expired: true}}, {});
+    assert.equal(deleted, 1, "only the elected GM handles expiry");
+    game.users.activeGM.isSelf = true;
   }
 });

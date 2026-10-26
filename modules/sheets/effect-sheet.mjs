@@ -2,6 +2,7 @@ import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
 import {effectChangesSource} from "../rules/effect-source.mjs";
+import {normalizeEffectDuration, normalizeEffectStage} from "../rules/effect-duration.mjs";
 import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
@@ -283,6 +284,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     }
 
     delete submitData.trudvang;
+    if (submitData.duration) submitData.duration = normalizeEffectDuration(submitData.duration);
+    if (Array.isArray(submitData.system?.stages)) submitData.system.stages = submitData.system.stages.map(normalizeEffectStage);
     return submitData;
   }
 
@@ -369,7 +372,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     silent.system.changes = foundry.utils.deepClone(stage?.changes || []);
     silent.duration = stage ? {
       value: Number(stage.durationValue || 0),
-      units: stage.durationUnit || "seconds",
+      units: stage.durationUnit || "rounds",
       expiry: null,
       expired: false
     } : {value: null, units: null, expiry: null, expired: false};

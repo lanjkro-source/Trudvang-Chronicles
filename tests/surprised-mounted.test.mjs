@@ -16,17 +16,20 @@ test("Surprised penalizes combat tests once, stacks with wounds/fear and ignores
 test("round-bound surprise expires after the whole initiative cycle, including unlinked recipients", async () => {
   const combat = {id: "c", round: 3, started: true, combatants: []};
   const effect = {id: "s", statuses: [SURPRISED_STATUS], flags: {"trudvang-chronicles": {combatRoundExpiry: {combatId: "c", round: 3}}}};
-  const actor = {effects: [effect], async updateEmbeddedDocuments(type, changes) {
-    assert.equal(type, "ActiveEffect"); for (const c of changes) {effect.disabled = c.disabled; effect.duration = {expired: c["duration.expired"]};}
+  const removed = [];
+  const actor = {effects: [effect], async deleteEmbeddedDocuments(type, ids) {
+    assert.equal(type, "ActiveEffect"); removed.push(...ids);
   }};
   globalThis.game = {user: {}, users: {activeGM: {isSelf: true}}, actors: [], scenes: [{tokens: [{actor}]}]};
-  await expireRoundEffects(combat); assert.equal(effect.disabled, undefined);
+  await expireRoundEffects(combat); assert.deepEqual(removed, []);
   combat.round = 4;
-  await expireRoundEffects(combat); assert.equal(effect.disabled, true); assert.equal(effect.duration.expired, true);
-  effect.disabled = false; effect.duration.expired = false; effect.flags["trudvang-chronicles"].combatRoundExpiry.combatId = "other";
-  await expireRoundEffects(combat); assert.equal(effect.disabled, false);
+  await expireRoundEffects(combat); assert.deepEqual(removed, ["s"]);
+  removed.length = 0;
+  effect.flags["trudvang-chronicles"].combatRoundExpiry.combatId = "other";
+  await expireRoundEffects(combat); assert.deepEqual(removed, []);
   effect.flags["trudvang-chronicles"].combatRoundExpiry.combatId = "c";
-  await expireRoundEffects(combat, {ended: true}); assert.equal(effect.disabled, true);
+  effect.disabled = true; effect.duration = {expired: true};
+  await expireRoundEffects(combat, {ended: true}); assert.deepEqual(removed, ["s"], "old disabled markers are removed too");
 });
 test("applying the GM reference starts its lifetime at the current round", async () => {
   let data;
