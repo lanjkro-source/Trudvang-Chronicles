@@ -73,7 +73,7 @@ globalThis.CONFIG = {statusEffects: {}};
 
 const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
-const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks} = await import("../modules/effects.mjs");
+const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks, expireAppliedEffects} = await import("../modules/effects.mjs");
 const {advanceDay} = await import("../modules/world-time.mjs");
 
 function sheetFor(document) {
@@ -643,11 +643,13 @@ test("native and custom effect types advance stages through the same lifecycle",
   registerEffectHooks();
   for (const type of ["base", "effect"]) {
     let saved;
-    const effect = {type, name: "Effect", system: {stage: 0, stages: [{}, {label: "Next", durationValue: 2, durationUnit: "rounds", changes: []}]},
+    const effect = {type, name: "Effect", parent: {documentName: "Actor"}, disabled: true, isExpiryTrackable: false,
+      system: {stage: 0, stages: [{}, {label: "Next", durationValue: 2, durationUnit: "rounds", changes: []}]},
       update: async data => {saved = data;}};
     await hook(effect, {duration: {expired: true}}, {});
     assert.equal(saved["system.stage"], 1);
     assert.equal(saved.duration.expired, false);
+    assert.equal(saved.disabled, false, "the next stage must become active again");
   }
 });
 
@@ -660,11 +662,14 @@ test("expiration deletes the final applied effect once and preserves library ref
   registerEffectHooks();
   for (const type of ["base", "effect"]) {
     let deleted = 0;
-    const applied = {type, parent: {type: "character"}, system: {stage: 1, stages: [{}, {}]},
+    const applied = {type, parent: {documentName: "Actor", type: "character"}, isExpiryTrackable: false, disabled: true,
+      system: {stage: 1, stages: [{}, {}]},
       delete: async () => {deleted++; await Promise.resolve();}};
     await Promise.all([hook(applied, {duration: {expired: true}}, {}), hook(applied, {"duration.expired": true}, {})]);
     assert.equal(deleted, 1, "duplicate notifications must not delete an effect twice");
-    for (const attributes of [{parent: {type: "effect"}}, {inCompendium: true}, {isExpiryTrackable: false}]) {
+    for (const attributes of [{parent: {documentName: "Item", type: "effect"}}, {inCompendium: true},
+      {parent: {documentName: "Item", type: "gear"}},
+      {parent: {documentName: "Item", type: "potion", parent: applied.parent}, transfer: false}]) {
       await hook({...applied, ...attributes}, {duration: {expired: true}}, {});
     }
     assert.equal(deleted, 1, "templates must survive expiry on an actor");
@@ -679,7 +684,7 @@ test("advance-day moves shared time once, refreshes long durations and deletes e
   const previous = {game: globalThis.game, registry: StubActiveEffect.implementation.registry, info: ui.notifications.info};
   t.after(() => {globalThis.game = previous.game; StubActiveEffect.implementation.registry = previous.registry; ui.notifications.info = previous.info;});
   const day = 86400, registered = new Set();
-  const actor = {type: "character", effects: []}, tokenActor = {type: "npc", effects: []};
+  const actor = {documentName: "Actor", type: "character", effects: []}, tokenActor = {documentName: "Actor", type: "npc", effects: []};
   function effect(parent, value, units, seconds) {
     const row = {type: "effect", parent, system: {stages: []}, isExpiryTrackable: true,
       duration: {value, units, expired: false, remaining: value}, seconds,
@@ -704,6 +709,7 @@ test("advance-day moves shared time once, refreshes long durations and deletes e
       for (const row of registered) if (row.seconds !== null) {
         row.duration.remaining = row.duration.value * (row.seconds - day) / row.seconds;
         row.duration.expired = row.seconds <= day;
+        if (row.duration.expired) row.isExpiryTrackable = false;
       }
     }
   };
@@ -735,4 +741,20 @@ test("advance-day rejects players and releases its lock after a failed clock upd
   await assert.rejects(advanceDay(), /Clock unavailable/);
   assert.equal(await advanceDay(), 86400);
   assert.equal(calls, 2);
+});
+
+test("cleanup deletes already-greyed actor and equipment instances even when the applicable list omits them", async t => {
+  const previous = globalThis.game;
+  t.after(() => {globalThis.game = previous;});
+  const deleted = [];
+  const actor = {documentName: "Actor", effects: [], items: [], allApplicableEffects: () => []};
+  const gear = {documentName: "Item", type: "gear", parent: actor, effects: []};
+  const instance = (id, parent, transfer = false) => ({id, type: "effect", parent, transfer, system: {stages: []},
+    duration: {expired: true}, disabled: true, isExpiryTrackable: false, async delete() {deleted.push(id);}});
+  actor.effects.push(instance("direct", actor));
+  gear.effects.push(instance("equipment", gear, true), instance("reference", gear));
+  actor.items.push(gear);
+  globalThis.game = {actors: [actor], scenes: [{tokens: [{actor}]}], users: {activeGM: {isSelf: true}}};
+  await expireAppliedEffects();
+  assert.deepEqual(deleted, ["direct", "equipment"]);
 });

@@ -30,6 +30,7 @@ test("native and system ActiveEffects share the Trudvang model and default sheet
   configureWith({});
   assert.equal(CONFIG.ActiveEffect.dataModels.base, TrudvangEffectData);
   assert.equal(CONFIG.ActiveEffect.dataModels.effect, TrudvangEffectData);
+  assert.equal(CONFIG.ActiveEffect.expiryAction, "update", "native expiry must notify the staged/deletion lifecycle");
   const entrypoint = readFileSync(new URL("../trudvang.mjs", import.meta.url), "utf8");
   assert.match(entrypoint, /registerSheet\(foundry\.documents\.ActiveEffect, "trudvang-chronicles", TrudvangEffectSheet, \{\s*types: \["base", "effect"\],\s*makeDefault: true/);
 });

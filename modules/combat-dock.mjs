@@ -372,12 +372,37 @@ function appendTrudvangDockData(portrait, data) {
   }
 }
 
-/**
- * Register system support on the module's official init hook. All logic is
- * guarded: a missing config, a drifted module shape, or any unexpected error
- * results in a silent no-op, never a throw — and when the module is absent the
- * hook simply never fires, leaving zero behavior change.
- */
+function legacyPortraitDataView(portrait) {
+  if (globalThis.game?.modules?.get("combat-tracker-dock")?.version !== "5.0.2" || !portrait.combatant?.actor) return portrait;
+  // Carousel 5.0.2 reads duration.duration. Supply a rendering-only view,
+  // never invoking the deprecated core getter or changing any documents.
+  // remaining and value use the same native unit (hours, days, rounds, ...),
+  // which also corrects the module's remaining/total percentage calculation.
+  const view = (target, override) => new Proxy(target, {get(object, key) {
+    const result = override(object, key);
+    if (result.handled) return result.value;
+    const value = Reflect.get(object, key, object);
+    return typeof value === "function" ? value.bind(object) : value;
+  }});
+  const pass = {handled: false};
+  const effectView = effect => view(effect, (object, key) => {
+    if (key !== "duration" || !object.duration) return pass;
+    return {handled: true, value: view(object.duration, (duration, field) => {
+      return field === "duration" ? {handled: true, value: duration.value} : pass;
+    })};
+  });
+  const actor = view(portrait.combatant.actor, (object, key) => {
+    return key === "temporaryEffects" ? {handled: true, value: Array.from(object.temporaryEffects ?? [], effectView)} : pass;
+  });
+  const combatant = view(portrait.combatant, (object, key) => key === "actor" ? {handled: true, value: actor} : pass);
+  // Leave portrait methods unbound so their access to this.combatant uses the
+  // view; writes such as _hasTakenTurn still reach the original portrait.
+  return new Proxy(portrait, {get(object, key, receiver) {
+    return key === "combatant" ? combatant : Reflect.get(object, key, receiver);
+  }});
+}
+
+/** Register through the module's init hook; absent modules leave no changes. */
 export function registerCombatDockSupport() {
   const hooks = globalThis.Hooks;
   if (!hooks || typeof hooks.on !== "function") return;
@@ -394,7 +419,7 @@ export function registerCombatDockSupport() {
       if (typeof Base !== "function") return;
       class TrudvangCombatantPortrait extends Base {
         async getData(...args) {
-          const data = await super.getData(...args);
+          const data = await super.getData.call(legacyPortraitDataView(this), ...args);
           try {
             appendTrudvangDockData(this, data);
           } catch {

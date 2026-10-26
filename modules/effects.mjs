@@ -134,6 +134,9 @@ export function configureEffects() {
   CONFIG.ActiveEffect.defaultType = "effect";
   CONFIG.ActiveEffect.typeLabels.effect = "TYPES.ActiveEffect.effect";
   CONFIG.ActiveEffect.typeIcons.effect = "fa-solid fa-person-rays";
+  // Persist native expiry so our hook can advance a stage or delete the final
+  // applied instance. Direct native deletion would skip intermediate stages.
+  CONFIG.ActiveEffect.expiryAction = "update";
   CONFIG.time.roundTime = 5;
 
   // Hide only the manual Token HUD shortcuts. Keep the status definitions so
@@ -152,13 +155,19 @@ export function finishExpiredEffect(effect, options = {}) {
   if (expirationJobs.has(effect)) return expirationJobs.get(effect);
   const job = (async () => {
     if (options?.trudvangStageTransition) return;
+    // isExpiryTrackable is a registration predicate, not an ownership check:
+    // Foundry may unregister an effect as soon as it has expired. Determine
+    // whether this is an applied instance from its document ancestry instead.
+    const parent = effect.parent;
+    const applied = parent?.documentName === "Actor"
+      || (parent?.documentName === "Item" && parent.parent?.documentName === "Actor" && effect.transfer);
     if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
-      || effect.parent?.type === "effect" || effect.inCompendium || effect.isExpiryTrackable === false) return;
+      || !applied || parent?.type === "effect" || effect.inCompendium) return;
     const stages = Array.from(effect.system.stages || []);
     const nextIndex = Number(effect.system.stage || 0) + 1;
     const next = stages[nextIndex];
     if (!next) {
-      if (effect.parent && effect.parent.type !== "effect" && !effect.inCompendium && effect.isExpiryTrackable !== false) await effect.delete();
+      await effect.delete();
       return;
     }
     const implementation = foundry.documents.ActiveEffect.implementation;
@@ -171,6 +180,7 @@ export function finishExpiredEffect(effect, options = {}) {
         expiry: null,
         expired: false
       }),
+      disabled: false,
       start: implementation.getEffectStart()
     }, {trudvangStageTransition: true});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectStageAdvanced", {
@@ -195,8 +205,12 @@ export function appliedWorldEffects() {
   const actors = new Set(Array.from(game.actors ?? []));
   for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
   const effects = new Set();
-  for (const actor of actors) for (const effect of actor.allApplicableEffects?.() ?? actor.effects ?? []) {
-    effects.add(effect);
+  for (const actor of actors) {
+    // Prepared applicable lists can omit suppressed/expired entries. Include
+    // the stored collections so previously greyed-out instances are removed.
+    for (const effect of actor.effects ?? []) effects.add(effect);
+    for (const effect of actor.allApplicableEffects?.() ?? []) effects.add(effect);
+    for (const item of actor.items ?? []) for (const effect of item.effects ?? []) if (effect.transfer) effects.add(effect);
   }
   return effects;
 }

@@ -41,6 +41,24 @@ test("applying the GM reference starts its lifetime at the current round", async
   assert.deepEqual(data.flags["trudvang-chronicles"].combatRoundExpiry, {combatId: "active", round: 7});
   assert.deepEqual(data.system.changes, [], "the status resolver owns the penalty, avoiding doubled −5");
 });
+
+test("simultaneous combat hooks cannot delete a round-bound effect twice", async () => {
+  const combat = {id: "race", round: 2, started: true, combatants: []};
+  const effect = {id: "surprised", flags: {"trudvang-chronicles": {combatRoundExpiry: {combatId: "race", round: 1}}}};
+  let deletions = 0;
+  const actor = {effects: [effect], async deleteEmbeddedDocuments(type, ids) {
+    await new Promise(resolve => setTimeout(resolve, 5));
+    for (const id of ids) {
+      assert.ok(this.effects.some(row => row.id === id), "server rejects a second deletion of the same document");
+      this.effects = this.effects.filter(row => row.id !== id);
+    }
+    deletions++;
+  }};
+  globalThis.game = {users: {activeGM: {isSelf: true}}, actors: [actor], scenes: [{tokens: [{actor}]}]};
+  await Promise.all([expireRoundEffects(combat), expireRoundEffects(combat), expireRoundEffects(combat)]);
+  assert.equal(deletions, 1);
+  assert.deepEqual(actor.effects, []);
+});
 test("all GM starter folders share the accent role and the reference is GM-only", () => {
   const source = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url)));
   for (const id of ["gmItems", "gmTables", "gm-macros"]) {

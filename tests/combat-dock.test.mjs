@@ -328,6 +328,36 @@ test("handler never throws on drifted module shapes", () => {
   assert.doesNotThrow(() => init({CombatantPortrait: 42, defaultAttributesConfig: null}));
 });
 
+test("Carousel 5.0.2 renders native duration ratios without invoking the deprecated getter or mutating effects", async t => {
+  const previous = game.modules;
+  t.after(() => {game.modules = previous;});
+  game.modules = new Map([["combat-tracker-dock", {version: "5.0.2"}]]);
+  const duration = {value: 48, units: "hours", remaining: 24, seconds: 172800};
+  Object.defineProperty(duration, "duration", {get() {throw new Error("Deprecated native getter");}});
+  const effect = {uuid: "Actor.test.ActiveEffect.test", name: "Effect", duration};
+  const actor = {...bodyActor(), temporaryEffects: [effect]};
+  const combatant = {actor};
+  class ModulePortrait {
+    constructor() {this.combatant = combatant;}
+    async getData() {
+      this._hasTakenTurn = true;
+      const row = this.combatant.actor.temporaryEffects[0];
+      return {effects: new Set([{uuid: row.uuid, percent: row.duration.remaining / row.duration.duration * 100}])};
+    }
+  }
+  registerCombatDockSupport();
+  const config = {CombatantPortrait: ModulePortrait};
+  hookListeners["combat-tracker-dock-init"].at(-1)(config);
+  const portrait = new config.CombatantPortrait();
+  const result = await portrait.getData();
+  assert.equal([...result.effects][0].percent, 50);
+  assert.equal(portrait._hasTakenTurn, true);
+  assert.equal(portrait.combatant, combatant);
+  assert.equal(actor.temporaryEffects[0], effect);
+  assert.equal(effect.duration, duration);
+  assert.throws(() => duration.duration, /Deprecated/, "the original getter was never replaced");
+});
+
 test("without the module nothing is registered and nothing changes", () => {
   const saved = globalThis.Hooks;
   delete globalThis.Hooks;

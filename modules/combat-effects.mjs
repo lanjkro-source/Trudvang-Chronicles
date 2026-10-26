@@ -36,7 +36,19 @@ export async function applySurprised(actor, source) {
 
 /** Expire only effects authored with this round-bound lifetime, including
  * unlinked tokens on inactive scenes and recipients outside the tracker. */
-export async function expireRoundEffects(combat, {ended = false} = {}) {
+const roundExpiryJobs = new WeakMap();
+export function expireRoundEffects(combat, options = {}) {
+  // combatTurnChange and updateCombat can run before either deletion finishes.
+  // Serialize their scans so a second scan sees the updated effect collection.
+  const run = () => expireRoundEffectsNow(combat, options);
+  const previous = roundExpiryJobs.get(combat) ?? Promise.resolve();
+  const job = previous.then(run, run).finally(() => {
+    if (roundExpiryJobs.get(combat) === job) roundExpiryJobs.delete(combat);
+  });
+  roundExpiryJobs.set(combat, job);
+  return job;
+}
+async function expireRoundEffectsNow(combat, {ended = false} = {}) {
   if (!(game.users?.activeGM?.isSelf ?? game.user?.isActiveGM)) return;
   const actors = new Set(values(game.actors));
   for (const scene of values(game.scenes)) for (const token of values(scene.tokens)) if (token.actor) actors.add(token.actor);
