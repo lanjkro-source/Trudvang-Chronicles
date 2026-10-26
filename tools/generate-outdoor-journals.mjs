@@ -48,6 +48,11 @@ export function travelHtml(l, language) {
   });
   return article(html + p(l.Source));
 }
+export function combatActionsHtml(l) {
+  const sections = l.Sections.map(section => h(section.Title) + section.Paragraphs.map(p).join("")).join("");
+  return article(p(l.Intro) + h(l.SummaryTitle) + table(l.Headers, l.Actions) + sections
+    + `<aside class="trudvang-religion-example">${p(l.Example)}</aside>` + p(l.Source));
+}
 if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.mjs")) {
   for (const language of ["fr", "en"]) {
     const path = `lang/${language}.json`;
@@ -56,7 +61,8 @@ if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.m
     journals.training.Content = trainingHtml(journals.training);
     journals.hunting.Content = huntingHtml(journals.hunting);
     journals.travel.Content = travelHtml(journals.travel, language);
+    journals.combatActions.Content = combatActionsHtml(journals.combatActions);
     writeFileSync(path, `${JSON.stringify(locale, null, 2)}\n`);
   }
-  console.log("Training, hunting and travel journals regenerated (4, 5 and 4 tables per locale).");
+  console.log("Rules journals regenerated: training, hunting, travel and combat actions.");
 }

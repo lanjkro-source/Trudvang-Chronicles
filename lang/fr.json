@@ -10192,6 +10192,250 @@
         }
       },
       "Journal": {
+        "combatActions": {
+          "Name": "Actions de combat",
+          "Intro": "Les actions de combat regroupent ce qu’un personnage peut faire pendant un tour de jeu : attaquer, parer, se déplacer et accomplir diverses manœuvres. Une action d’arme (AA) est une action de combat, mais toute action de combat n’est pas une action d’arme. Le MJ décide toujours des modificateurs appropriés et des actions possibles dans la situation.",
+          "SummaryTitle": "Actions et coûts de référence",
+          "Headers": [
+            "Action",
+            "Points de combat et particularités",
+            "Action d’arme"
+          ],
+          "Actions": [
+            [
+              "Actions d’opportunité",
+              "PC restants investis dans l’action choisie ; hors initiative",
+              "Selon l’action"
+            ],
+            [
+              "Attaque",
+              "PC investis dans l’attaque",
+              "AA"
+            ],
+            [
+              "Attaque à distance",
+              "PC investis ; modificateurs de cible",
+              "AA"
+            ],
+            [
+              "Attaque en passant",
+              "10 PC en plus du combat monté et de l’attaque",
+              "AA"
+            ],
+            [
+              "Attaque montée à distance",
+              "10 PC ; comme l’attaque en passant, cible à portée",
+              "AA"
+            ],
+            [
+              "Attaque par surprise",
+              "+10 PC accordés pour cette attaque ; victime à −5",
+              "AA"
+            ],
+            [
+              "Battre en retraite",
+              "Déplacement : 2 PC/m après sortie du corps à corps",
+              "—"
+            ],
+            [
+              "Combat monté",
+              "15 PC par tour, −3 par niveau d’Équitation",
+              "Couplé aux AA"
+            ],
+            [
+              "Dégainer une arme",
+              "10 PC ; initiative −10 pour agir ensuite",
+              "AA"
+            ],
+            [
+              "Donner des ordres",
+              "Sans PC",
+              "—"
+            ],
+            [
+              "Esquive",
+              "Aucune autre action dans le tour",
+              "—"
+            ],
+            [
+              "Feinte",
+              "PC supplémentaires : au plus 5 − Perception adverse",
+              "Incluse dans l’AA"
+            ],
+            [
+              "Franchir/éviter un obstacle",
+              "6 PC",
+              "—"
+            ],
+            [
+              "Frapper l’arme",
+              "PC investis dans l’action",
+              "AA"
+            ],
+            [
+              "Mouvement de combat",
+              "2 PC par mètre",
+              "—"
+            ],
+            [
+              "Parade",
+              "PC investis dans la parade",
+              "AA"
+            ],
+            [
+              "Ramasser un objet",
+              "5–10 PC, selon le MJ",
+              "—"
+            ],
+            [
+              "Se relever",
+              "10 PC",
+              "—"
+            ],
+            [
+              "Autres situations",
+              "Modificateurs déterminés par le MJ",
+              "Selon l’action"
+            ]
+          ],
+          "Sections": [
+            {
+              "Title": "Actions d’opportunité",
+              "Paragraphs": [
+                "Un adversaire qui fuit, sort du corps à corps ou bat en retraite offre une action d’opportunité, aussi appelée action libre. Elle ignore l’ordre d’initiative, même si le combattant n’aurait pas encore dû agir.",
+                "Action libre ne signifie pas sans dépense de PC : le combattant peut investir autant de ses PC encore disponibles pour le tour qu’il le souhaite. Il s’agit généralement d’une attaque, donc d’une AA ; une autre action conserve sa propre nature.",
+                "On ne peut pas y combiner un dégainage : l’arme doit déjà avoir été dégainée à un tour ou rang d’initiative précédent."
+              ]
+            },
+            {
+              "Title": "Attaque en passant",
+              "Paragraphs": [
+                "Une fois dans le tour, un cavalier peut faire passer sa monture près d’un adversaire et l’attaquer. La manœuvre coûte 10 PC en plus du coût du Combat monté et des PC de l’attaque. Sans Équitation, les coûts fixes atteignent ainsi 25 PC avant l’attaque.",
+                "La force de la monture augmente les chances de jet ouvert de dégâts de 1 : un JO 9–10 devient JO 8–10 ; une arme sans jet ouvert obtient JO 10. L’attaque en passant est une AA."
+              ]
+            },
+            {
+              "Title": "Attaque montée à distance",
+              "Paragraphs": [
+                "Le livre la décrit comme identique à l’Attaque en passant, mais réalisée avec une arme à distance sur une cible à portée. Le coût supplémentaire est de 10 PC. C’est une AA."
+              ]
+            },
+            {
+              "Title": "Attaque par surprise",
+              "Paragraphs": [
+                "L’adversaire ne doit pas avoir conscience de l’attaque. L’attaquant reçoit 10 PC supplémentaires pour cette seule attaque, résolue normalement. Il ne peut surprendre ainsi le même adversaire qu’une seule fois : réussi ou raté, le premier coup le révèle.",
+                "La victime subit −5 à toutes ses actions de combat pendant ce tour. L’attaque par surprise est une AA."
+              ]
+            },
+            {
+              "Title": "Attaques à distance",
+              "Paragraphs": [
+                "Toutes sont des AA. Le MJ fixe les modificateurs applicables. Une cible engagée au corps à corps impose −5 à la VC ; en cas de tir raté dans une mêlée, le MJ peut décider qu’une autre personne ou un objet est touché.",
+                "Une cible à longue portée impose −10 à la VC. Consultez les limites courte et longue de l’arme. Une cible courant, manœuvrant rapidement ou montée à cheval impose −10 à la VC."
+              ]
+            },
+            {
+              "Title": "Battre en retraite",
+              "Paragraphs": [
+                "La retraite commence au rang d’initiative du personnage. Il conserve ses actions défensives mais donne une action d’opportunité à chacun de ses adversaires de corps à corps ; il peut les parer avec ses PC restants.",
+                "On ne peut pas attaquer puis battre en retraite dans le même tour. Après avoir quitté le corps à corps, le déplacement coûte normalement 2 PC par mètre et ne peut dépasser la capacité de mouvement du tour."
+              ]
+            },
+            {
+              "Title": "Combat monté",
+              "Paragraphs": [
+                "Toute action montée autre qu’une action défensive nécessite de payer au début du tour 15 PC, réduits de 3 par niveau d’Équitation. La monture agit habituellement à l’initiative du cavalier. Le cavalier ne paie pas le déplacement, contrairement à sa monture.",
+                "Contre un adversaire au sol, le cavalier reçoit +2 à ses AA hors armes à distance ; l’adversaire subit −2 à ses AA contre le cavalier. Une monture dressée au combat ajoute +1 au cavalier et −1 à ses ennemis par degré de dressage, qu’ils soient montés ou non, sauf si la monture attaque elle-même.",
+                "Entre combattants montés, les bonus et malus se neutralisent, sauf différence de dressage. Les effets de dégâts de l’attaque en passant subsistent. Combat monté n’est pas une AA distincte : il modifie les attaques et parades du cavalier et lui ouvre les attaques en passant et montées à distance."
+              ]
+            },
+            {
+              "Title": "Dégainer une arme",
+              "Paragraphs": [
+                "Dégainer coûte 10 PC et impose −10 à l’initiative si le personnage veut accomplir d’autres actions. S’il ne dispose pas des 10 PC, le dégainage prend le tour entier : aucune autre action n’est possible, pas même une parade.",
+                "Une arme envoyée au loin doit d’abord être rejointe par un Mouvement de combat, puis ramassée avec Ramasser un objet ; on ne la récupère pas au cours du tour où elle a été perdue. Une arme retenue au poignet par une sangle peut être reprise par l’action Dégainer.",
+                "Aucun dégainage n’est nécessaire à mains nues. Dégainer est une AA et ne peut être combiné à une parade ou une action d’opportunité : l’arme doit déjà être prête à un rang d’initiative ou tour précédent."
+              ]
+            },
+            {
+              "Title": "Donner des ordres",
+              "Paragraphs": [
+                "Parler, chuchoter, interpeller ou crier des ordres ne coûte aucun PC si le personnage peut parler. Les paroles doivent tenir dans la durée du tour et peuvent accompagner d’autres manœuvres."
+              ]
+            },
+            {
+              "Title": "Esquive",
+              "Paragraphs": [
+                "L’esquive permet d’éviter une attaque de corps à corps, certains pièges ou attaques spéciales, mais pas une attaque à distance. Elle exclut toute autre action pendant le tour.",
+                "Effectuez un test d’Agilité ; Manœuvres de combat et Esquive s’ajoutent si le personnage les connaît, sans être obligatoires. La spécialité permet plusieurs esquives selon son niveau (p. 76). On ne tente l’esquive que si l’attaque adverse réussit."
+              ]
+            },
+            {
+              "Title": "Feinte",
+              "Paragraphs": [
+                "Lors d’une attaque, investissez des PC supplémentaires, jusqu’à 5 moins le modificateur de Perception de l’adversaire. S’il pare, il subit un malus égal aux PC investis dans la feinte. Celle-ci fait partie de l’AA et n’en constitue pas une seconde."
+              ]
+            },
+            {
+              "Title": "Franchir/éviter un obstacle",
+              "Paragraphs": [
+                "Sauter une table, rouler sous une clôture ou plonger à couvert coûte normalement 6 PC. Sans assez de PC, le personnage peut consacrer le tour complet à la manœuvre en dépensant tous ses PC restants et en renonçant à toute autre action.",
+                "Pendant cette manœuvre, il compte comme cible mouvante pour les attaques à distance."
+              ]
+            },
+            {
+              "Title": "Frapper l’arme",
+              "Paragraphs": [
+                "Cette AA vise l’arme tenue par un adversaire. L’arme ciblée ne peut pas être plus grande que celle de l’attaquant. L’adversaire peut parer pour contrer la manœuvre.",
+                "En cas de réussite, soustrayez la VP de l’arme aux dégâts puis retirez le reste de sa VI. Le porteur effectue ensuite un test d’Agilité ou de Combat, en prenant la meilleure VC, modifié par la Force. Avec Combat, les disciplines et spécialités de l’arme ciblée s’appliquent. En cas d’échec, il lâche l’arme, projetée à 1d6 mètres."
+              ]
+            },
+            {
+              "Title": "Mouvement de combat",
+              "Paragraphs": [
+                "Se déplacer tout en gardant le contrôle de l’environnement coûte 2 PC par mètre. La distance ne peut dépasser la capacité totale de mouvement du tour. Des savoirs peuvent accorder du déplacement sans dépense de PC."
+              ]
+            },
+            {
+              "Title": "Ramasser un objet",
+              "Paragraphs": [
+                "Ramasser un objet proche coûte 5 à 10 PC, selon sa nature et sa position, à l’appréciation du MJ. Aucun test de situation n’est normalement requis.",
+                "Un test peut être nécessaire si quelqu’un tente de saisir le même objet ou si celui-ci est difficile à attraper, comme un poisson glissant. Après un échec, on peut réessayer au tour suivant."
+              ]
+            },
+            {
+              "Title": "Se relever",
+              "Paragraphs": [
+                "Se relever après s’être couché ou avoir été projeté au sol coûte 10 PC et peut exposer à une attaque. Sans les 10 PC nécessaires, l’action prend le tour entier et interdit toute autre action, y compris parer."
+              ]
+            },
+            {
+              "Title": "Autres situations de combat",
+              "Paragraphs": [
+                "Le MJ détermine les effets des circonstances. Un sol glissant impose −3 à la VC de toutes les actions faisant appel à l’Agilité. Un combattant aveugle, réduit à son ouïe pour localiser sa cible, subit −15 à la VC de toutes ses actions de combat."
+              ]
+            },
+            {
+              "Title": "Jeter des sorts",
+              "Paragraphs": [
+                "Un sortilège dont le tissage dépasse un tour commence au rang d’initiative du tisseur, sans attendre un tour supplémentaire. Son MI est l’opposé de son niveau et s’applique uniquement au tour où le sort prend effet.",
+                "Pendant le même tour, le tisseur ne peut réaliser d’AA, lancer un autre sort ni invoquer un pouvoir divin. Il peut effectuer d’autres actions de combat ; elles peuvent précéder ou suivre le tissage si celui-ci ne dépasse pas un tour.",
+                "Chaque blessure ou chute pendant le tissage impose un test de situation de 6, modifié par le Psychisme, pour conserver sa concentration ; un échec fait échouer le tissage."
+              ]
+            },
+            {
+              "Title": "Invocation divine",
+              "Paragraphs": [
+                "Une invocation de plus d’un tour commence au rang d’initiative de l’arpenteur des brumes. Son MI est l’opposé du niveau du pouvoir et ne s’applique qu’au tour où il prend effet.",
+                "Dans le même tour, le fidèle ne peut accomplir d’AA, utiliser la Maîtrise du vitner ni invoquer un autre pouvoir. Les autres actions de combat peuvent précéder ou suivre une invocation ne dépassant pas un tour.",
+                "Chaque blessure ou chute pendant l’invocation impose un test de situation de 6, modifié par le Psychisme, pour conserver sa concentration ; un échec fait échouer l’invocation."
+              ]
+            }
+          ],
+          "Example": "Exemple de feinte : contre une Perception de +1, le maximum est 4 PC et le malus de parade peut atteindre −4. Contre une Perception de −2, le maximum est 7 PC et le malus peut atteindre −7.",
+          "Source": "Source : Livre des règles, Les actions de combat, p. 320–323.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>Les actions de combat regroupent ce qu’un personnage peut faire pendant un tour de jeu : attaquer, parer, se déplacer et accomplir diverses manœuvres. Une action d’arme (AA) est une action de combat, mais toute action de combat n’est pas une action d’arme. Le MJ décide toujours des modificateurs appropriés et des actions possibles dans la situation.</p><h2>Actions et coûts de référence</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Action</th><th scope=\"col\">Points de combat et particularités</th><th scope=\"col\">Action d’arme</th></tr></thead><tbody><tr><td>Actions d’opportunité</td><td>PC restants investis dans l’action choisie ; hors initiative</td><td>Selon l’action</td></tr><tr><td>Attaque</td><td>PC investis dans l’attaque</td><td>AA</td></tr><tr><td>Attaque à distance</td><td>PC investis ; modificateurs de cible</td><td>AA</td></tr><tr><td>Attaque en passant</td><td>10 PC en plus du combat monté et de l’attaque</td><td>AA</td></tr><tr><td>Attaque montée à distance</td><td>10 PC ; comme l’attaque en passant, cible à portée</td><td>AA</td></tr><tr><td>Attaque par surprise</td><td>+10 PC accordés pour cette attaque ; victime à −5</td><td>AA</td></tr><tr><td>Battre en retraite</td><td>Déplacement : 2 PC/m après sortie du corps à corps</td><td>—</td></tr><tr><td>Combat monté</td><td>15 PC par tour, −3 par niveau d’Équitation</td><td>Couplé aux AA</td></tr><tr><td>Dégainer une arme</td><td>10 PC ; initiative −10 pour agir ensuite</td><td>AA</td></tr><tr><td>Donner des ordres</td><td>Sans PC</td><td>—</td></tr><tr><td>Esquive</td><td>Aucune autre action dans le tour</td><td>—</td></tr><tr><td>Feinte</td><td>PC supplémentaires : au plus 5 − Perception adverse</td><td>Incluse dans l’AA</td></tr><tr><td>Franchir/éviter un obstacle</td><td>6 PC</td><td>—</td></tr><tr><td>Frapper l’arme</td><td>PC investis dans l’action</td><td>AA</td></tr><tr><td>Mouvement de combat</td><td>2 PC par mètre</td><td>—</td></tr><tr><td>Parade</td><td>PC investis dans la parade</td><td>AA</td></tr><tr><td>Ramasser un objet</td><td>5–10 PC, selon le MJ</td><td>—</td></tr><tr><td>Se relever</td><td>10 PC</td><td>—</td></tr><tr><td>Autres situations</td><td>Modificateurs déterminés par le MJ</td><td>Selon l’action</td></tr></tbody></table></div><h2>Actions d’opportunité</h2><p>Un adversaire qui fuit, sort du corps à corps ou bat en retraite offre une action d’opportunité, aussi appelée action libre. Elle ignore l’ordre d’initiative, même si le combattant n’aurait pas encore dû agir.</p><p>Action libre ne signifie pas sans dépense de PC : le combattant peut investir autant de ses PC encore disponibles pour le tour qu’il le souhaite. Il s’agit généralement d’une attaque, donc d’une AA ; une autre action conserve sa propre nature.</p><p>On ne peut pas y combiner un dégainage : l’arme doit déjà avoir été dégainée à un tour ou rang d’initiative précédent.</p><h2>Attaque en passant</h2><p>Une fois dans le tour, un cavalier peut faire passer sa monture près d’un adversaire et l’attaquer. La manœuvre coûte 10 PC en plus du coût du Combat monté et des PC de l’attaque. Sans Équitation, les coûts fixes atteignent ainsi 25 PC avant l’attaque.</p><p>La force de la monture augmente les chances de jet ouvert de dégâts de 1 : un JO 9–10 devient JO 8–10 ; une arme sans jet ouvert obtient JO 10. L’attaque en passant est une AA.</p><h2>Attaque montée à distance</h2><p>Le livre la décrit comme identique à l’Attaque en passant, mais réalisée avec une arme à distance sur une cible à portée. Le coût supplémentaire est de 10 PC. C’est une AA.</p><h2>Attaque par surprise</h2><p>L’adversaire ne doit pas avoir conscience de l’attaque. L’attaquant reçoit 10 PC supplémentaires pour cette seule attaque, résolue normalement. Il ne peut surprendre ainsi le même adversaire qu’une seule fois : réussi ou raté, le premier coup le révèle.</p><p>La victime subit −5 à toutes ses actions de combat pendant ce tour. L’attaque par surprise est une AA.</p><h2>Attaques à distance</h2><p>Toutes sont des AA. Le MJ fixe les modificateurs applicables. Une cible engagée au corps à corps impose −5 à la VC ; en cas de tir raté dans une mêlée, le MJ peut décider qu’une autre personne ou un objet est touché.</p><p>Une cible à longue portée impose −10 à la VC. Consultez les limites courte et longue de l’arme. Une cible courant, manœuvrant rapidement ou montée à cheval impose −10 à la VC.</p><h2>Battre en retraite</h2><p>La retraite commence au rang d’initiative du personnage. Il conserve ses actions défensives mais donne une action d’opportunité à chacun de ses adversaires de corps à corps ; il peut les parer avec ses PC restants.</p><p>On ne peut pas attaquer puis battre en retraite dans le même tour. Après avoir quitté le corps à corps, le déplacement coûte normalement 2 PC par mètre et ne peut dépasser la capacité de mouvement du tour.</p><h2>Combat monté</h2><p>Toute action montée autre qu’une action défensive nécessite de payer au début du tour 15 PC, réduits de 3 par niveau d’Équitation. La monture agit habituellement à l’initiative du cavalier. Le cavalier ne paie pas le déplacement, contrairement à sa monture.</p><p>Contre un adversaire au sol, le cavalier reçoit +2 à ses AA hors armes à distance ; l’adversaire subit −2 à ses AA contre le cavalier. Une monture dressée au combat ajoute +1 au cavalier et −1 à ses ennemis par degré de dressage, qu’ils soient montés ou non, sauf si la monture attaque elle-même.</p><p>Entre combattants montés, les bonus et malus se neutralisent, sauf différence de dressage. Les effets de dégâts de l’attaque en passant subsistent. Combat monté n’est pas une AA distincte : il modifie les attaques et parades du cavalier et lui ouvre les attaques en passant et montées à distance.</p><h2>Dégainer une arme</h2><p>Dégainer coûte 10 PC et impose −10 à l’initiative si le personnage veut accomplir d’autres actions. S’il ne dispose pas des 10 PC, le dégainage prend le tour entier : aucune autre action n’est possible, pas même une parade.</p><p>Une arme envoyée au loin doit d’abord être rejointe par un Mouvement de combat, puis ramassée avec Ramasser un objet ; on ne la récupère pas au cours du tour où elle a été perdue. Une arme retenue au poignet par une sangle peut être reprise par l’action Dégainer.</p><p>Aucun dégainage n’est nécessaire à mains nues. Dégainer est une AA et ne peut être combiné à une parade ou une action d’opportunité : l’arme doit déjà être prête à un rang d’initiative ou tour précédent.</p><h2>Donner des ordres</h2><p>Parler, chuchoter, interpeller ou crier des ordres ne coûte aucun PC si le personnage peut parler. Les paroles doivent tenir dans la durée du tour et peuvent accompagner d’autres manœuvres.</p><h2>Esquive</h2><p>L’esquive permet d’éviter une attaque de corps à corps, certains pièges ou attaques spéciales, mais pas une attaque à distance. Elle exclut toute autre action pendant le tour.</p><p>Effectuez un test d’Agilité ; Manœuvres de combat et Esquive s’ajoutent si le personnage les connaît, sans être obligatoires. La spécialité permet plusieurs esquives selon son niveau (p. 76). On ne tente l’esquive que si l’attaque adverse réussit.</p><h2>Feinte</h2><p>Lors d’une attaque, investissez des PC supplémentaires, jusqu’à 5 moins le modificateur de Perception de l’adversaire. S’il pare, il subit un malus égal aux PC investis dans la feinte. Celle-ci fait partie de l’AA et n’en constitue pas une seconde.</p><h2>Franchir/éviter un obstacle</h2><p>Sauter une table, rouler sous une clôture ou plonger à couvert coûte normalement 6 PC. Sans assez de PC, le personnage peut consacrer le tour complet à la manœuvre en dépensant tous ses PC restants et en renonçant à toute autre action.</p><p>Pendant cette manœuvre, il compte comme cible mouvante pour les attaques à distance.</p><h2>Frapper l’arme</h2><p>Cette AA vise l’arme tenue par un adversaire. L’arme ciblée ne peut pas être plus grande que celle de l’attaquant. L’adversaire peut parer pour contrer la manœuvre.</p><p>En cas de réussite, soustrayez la VP de l’arme aux dégâts puis retirez le reste de sa VI. Le porteur effectue ensuite un test d’Agilité ou de Combat, en prenant la meilleure VC, modifié par la Force. Avec Combat, les disciplines et spécialités de l’arme ciblée s’appliquent. En cas d’échec, il lâche l’arme, projetée à 1d6 mètres.</p><h2>Mouvement de combat</h2><p>Se déplacer tout en gardant le contrôle de l’environnement coûte 2 PC par mètre. La distance ne peut dépasser la capacité totale de mouvement du tour. Des savoirs peuvent accorder du déplacement sans dépense de PC.</p><h2>Ramasser un objet</h2><p>Ramasser un objet proche coûte 5 à 10 PC, selon sa nature et sa position, à l’appréciation du MJ. Aucun test de situation n’est normalement requis.</p><p>Un test peut être nécessaire si quelqu’un tente de saisir le même objet ou si celui-ci est difficile à attraper, comme un poisson glissant. Après un échec, on peut réessayer au tour suivant.</p><h2>Se relever</h2><p>Se relever après s’être couché ou avoir été projeté au sol coûte 10 PC et peut exposer à une attaque. Sans les 10 PC nécessaires, l’action prend le tour entier et interdit toute autre action, y compris parer.</p><h2>Autres situations de combat</h2><p>Le MJ détermine les effets des circonstances. Un sol glissant impose −3 à la VC de toutes les actions faisant appel à l’Agilité. Un combattant aveugle, réduit à son ouïe pour localiser sa cible, subit −15 à la VC de toutes ses actions de combat.</p><h2>Jeter des sorts</h2><p>Un sortilège dont le tissage dépasse un tour commence au rang d’initiative du tisseur, sans attendre un tour supplémentaire. Son MI est l’opposé de son niveau et s’applique uniquement au tour où le sort prend effet.</p><p>Pendant le même tour, le tisseur ne peut réaliser d’AA, lancer un autre sort ni invoquer un pouvoir divin. Il peut effectuer d’autres actions de combat ; elles peuvent précéder ou suivre le tissage si celui-ci ne dépasse pas un tour.</p><p>Chaque blessure ou chute pendant le tissage impose un test de situation de 6, modifié par le Psychisme, pour conserver sa concentration ; un échec fait échouer le tissage.</p><h2>Invocation divine</h2><p>Une invocation de plus d’un tour commence au rang d’initiative de l’arpenteur des brumes. Son MI est l’opposé du niveau du pouvoir et ne s’applique qu’au tour où il prend effet.</p><p>Dans le même tour, le fidèle ne peut accomplir d’AA, utiliser la Maîtrise du vitner ni invoquer un autre pouvoir. Les autres actions de combat peuvent précéder ou suivre une invocation ne dépassant pas un tour.</p><p>Chaque blessure ou chute pendant l’invocation impose un test de situation de 6, modifié par le Psychisme, pour conserver sa concentration ; un échec fait échouer l’invocation.</p><aside class=\"trudvang-religion-example\"><p>Exemple de feinte : contre une Perception de +1, le maximum est 4 PC et le malus de parade peut atteindre −4. Contre une Perception de −2, le maximum est 7 PC et le malus peut atteindre −7.</p></aside><p>Source : Livre des règles, Les actions de combat, p. 320–323.</p></article>"
+        },
         "travel": {
           "Name": "Voyage & Terrains",
           "Intro": "La distance parcourue dépend du mode de déplacement, de l’allure, du relief (plaine, collines ou montagnes), du terrain et de la météo. En dehors de la marche simple, un déplacement à pied demande des tests de situation modifiés par la Constitution. À cheval, utilisez Agilité, Maîtrise équestre et Équitation. La fréquence des tests dépend de l’allure.",

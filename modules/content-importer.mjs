@@ -22,7 +22,8 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // TEMPORARY WORLD MIGRATION — version 56 installs the GM head-regeneration
 // table and the hunting/training journals in previously populated worlds.
 // TEMPORARY WORLD MIGRATION — version 57 adds the Travel & Terrain journal.
-const CONTENT_VERSION = 57;
+// TEMPORARY WORLD MIGRATION — version 58 adds the Combat Actions journal.
+const CONTENT_VERSION = 58;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

@@ -10192,6 +10192,250 @@
         }
       },
       "Journal": {
+        "combatActions": {
+          "Name": "Combat Actions",
+          "Intro": "Combat actions cover what a character can do during an action round: attack, parry, move and perform other manoeuvres. A weapon action (WA) is a combat action, but not every combat action is a weapon action. The GM determines appropriate modifiers and what is possible in the circumstances.",
+          "SummaryTitle": "Actions and reference costs",
+          "Headers": [
+            "Action",
+            "Combat Points and special conditions",
+            "Weapon action"
+          ],
+          "Actions": [
+            [
+              "Opportunity actions",
+              "Remaining CP invested in the chosen action; ignores initiative",
+              "Depends on action"
+            ],
+            [
+              "Attack",
+              "CP invested in the attack",
+              "WA"
+            ],
+            [
+              "Ranged attack",
+              "CP invested; target modifiers",
+              "WA"
+            ],
+            [
+              "Ride-by attack",
+              "10 CP in addition to mounted combat and the attack",
+              "WA"
+            ],
+            [
+              "Mounted ranged attack",
+              "10 CP; as ride-by attack, target within range",
+              "WA"
+            ],
+            [
+              "Surprise attack",
+              "+10 CP granted for this attack; victim at −5",
+              "WA"
+            ],
+            [
+              "Retreat",
+              "Movement: 2 CP/m after leaving melee",
+              "—"
+            ],
+            [
+              "Mounted combat",
+              "15 CP per round, −3 per Riding level",
+              "Combined with WA"
+            ],
+            [
+              "Draw a weapon",
+              "10 CP; initiative −10 to act afterwards",
+              "WA"
+            ],
+            [
+              "Give orders",
+              "No CP",
+              "—"
+            ],
+            [
+              "Evade",
+              "No other action during the round",
+              "—"
+            ],
+            [
+              "Feint",
+              "Extra CP: at most 5 − opponent’s Perception",
+              "Part of the WA"
+            ],
+            [
+              "Cross/avoid an obstacle",
+              "6 CP",
+              "—"
+            ],
+            [
+              "Strike a weapon",
+              "CP invested in the action",
+              "WA"
+            ],
+            [
+              "Combat movement",
+              "2 CP per metre",
+              "—"
+            ],
+            [
+              "Parry",
+              "CP invested in the parry",
+              "WA"
+            ],
+            [
+              "Pick up an object",
+              "5–10 CP, set by the GM",
+              "—"
+            ],
+            [
+              "Stand up",
+              "10 CP",
+              "—"
+            ],
+            [
+              "Other circumstances",
+              "Modifiers set by the GM",
+              "Depends on action"
+            ]
+          ],
+          "Sections": [
+            {
+              "Title": "Opportunity actions",
+              "Paragraphs": [
+                "An opponent who flees, leaves melee or retreats grants an opportunity action, also called a free action. It ignores initiative order even if the character would not yet be entitled to act.",
+                "Free action does not mean no CP cost: the character may invest as many remaining CP for the round as desired. It is usually an attack and thus a WA; a different action retains its own nature.",
+                "Drawing a weapon cannot be combined with it: the weapon must already have been drawn at an earlier initiative count or round."
+              ]
+            },
+            {
+              "Title": "Ride-by attack",
+              "Paragraphs": [
+                "Once per round, a rider can bring the mount past an opponent and attack. This costs 10 CP in addition to Mounted Combat and the attack itself. Without Riding, the fixed costs total 25 CP before investing in the attack.",
+                "The mount’s force increases the chance of open damage rolls by 1: OR 9–10 becomes OR 8–10, and a weapon without an open roll gains OR 10. A ride-by attack is a WA."
+              ]
+            },
+            {
+              "Title": "Mounted ranged attack",
+              "Paragraphs": [
+                "The book describes this as identical to a ride-by attack, but performed with a ranged weapon against a target within range. The additional cost is 10 CP. It is a WA."
+              ]
+            },
+            {
+              "Title": "Surprise attack",
+              "Paragraphs": [
+                "The opponent must be unaware of the attack. The attacker gains 10 extra CP for this attack alone, otherwise resolved normally. The same opponent can only be surprised this way once: success or failure, the first attack reveals the attacker.",
+                "The victim suffers −5 on all combat actions for the round. A surprise attack is a WA."
+              ]
+            },
+            {
+              "Title": "Ranged attacks",
+              "Paragraphs": [
+                "All are WA. The GM sets applicable modifiers. A target engaged in melee imposes −5 SV; a missed shot into a melee may hit another person or object at the GM’s discretion.",
+                "A long-range target imposes −10 SV; consult the weapon’s short and long ranges. A running, rapidly manoeuvring or mounted target imposes −10 SV."
+              ]
+            },
+            {
+              "Title": "Retreat",
+              "Paragraphs": [
+                "Retreat begins at the character’s initiative count. Defensive actions remain possible, but each melee opponent gains an opportunity action; the character may parry with remaining CP.",
+                "A character cannot attack and then retreat in the same round. After leaving melee, movement normally costs 2 CP per metre and cannot exceed the round’s movement allowance."
+              ]
+            },
+            {
+              "Title": "Mounted combat",
+              "Paragraphs": [
+                "Any mounted action other than a defensive action requires paying 15 CP at the start of the round, reduced by 3 per Riding level. The mount normally acts at its rider’s initiative. The rider does not pay for movement, but the mount does.",
+                "Against opponents on foot, the rider gains +2 on WA except ranged weapons, while opponents suffer −2 on WA against the rider. A combat-trained mount adds +1 for the rider and −1 for enemies per training degree, mounted or not, unless the mount attacks itself.",
+                "Mounted opponents cancel each other’s bonuses and penalties except for differences in training. Ride-by damage benefits remain. Mounted Combat is not a separate WA: it modifies the rider’s attacks and parries and allows ride-by and mounted ranged attacks."
+              ]
+            },
+            {
+              "Title": "Draw a weapon",
+              "Paragraphs": [
+                "Drawing costs 10 CP and applies −10 initiative if the character wishes to perform other actions. Without the 10 CP, drawing takes the whole round: no other action is possible, not even a parry.",
+                "A weapon knocked away must first be reached by Combat Movement and then retrieved with Pick Up an Object; it cannot be recovered in the round it was lost. A weapon retained on a wrist strap can be recovered using Draw a Weapon.",
+                "Unarmed combat needs no drawing action. Drawing is a WA and cannot be combined with a parry or opportunity action: the weapon must already be ready from an earlier initiative count or round."
+              ]
+            },
+            {
+              "Title": "Give orders",
+              "Paragraphs": [
+                "Speaking, whispering, calling or shouting orders costs no CP if the character can speak. The words must fit within the round’s duration and can accompany other manoeuvres."
+              ]
+            },
+            {
+              "Title": "Evade",
+              "Paragraphs": [
+                "Evading can avoid melee attacks, some traps and special attacks, but not ranged attacks. It excludes all other actions during the round.",
+                "Make an Agility test, adding Combat Manoeuvres and Evade if known; neither is required. The specialty permits multiple evasions depending on level. Only attempt to evade when the opponent’s attack succeeds."
+              ]
+            },
+            {
+              "Title": "Feint",
+              "Paragraphs": [
+                "During an attack, invest extra CP up to 5 minus the opponent’s Perception modifier. If the opponent parries, the penalty equals CP invested in the feint. The feint belongs to the attack’s WA and is not a separate one."
+              ]
+            },
+            {
+              "Title": "Cross/avoid an obstacle",
+              "Paragraphs": [
+                "Jumping a table, rolling under a fence or diving for cover normally costs 6 CP. Without enough CP, the character may spend the whole round on the manoeuvre, using all remaining CP and taking no other action.",
+                "During the manoeuvre, treat the character as a moving target for ranged attacks."
+              ]
+            },
+            {
+              "Title": "Strike a weapon",
+              "Paragraphs": [
+                "This WA targets an opponent’s held weapon. The target weapon cannot be larger than the attacker’s. The opponent may parry to counter the manoeuvre.",
+                "On success, subtract the weapon’s PV from damage and deduct the remainder from its BV. Its wielder then tests Agility or Fighting, whichever gives the higher SV, modified by Strength. When using Fighting, applicable disciplines and specialties for the targeted weapon apply. Failure drops the weapon 1d6 metres away."
+              ]
+            },
+            {
+              "Title": "Combat movement",
+              "Paragraphs": [
+                "Moving while retaining awareness of the surroundings costs 2 CP per metre. Distance cannot exceed the round’s total movement allowance. Certain skills can grant movement without CP expenditure."
+              ]
+            },
+            {
+              "Title": "Pick up an object",
+              "Paragraphs": [
+                "Picking up a nearby object costs 5–10 CP depending on its nature and location, at the GM’s discretion. Normally no Situation roll is required.",
+                "A roll may be needed if someone else is grabbing the same object or it is difficult to hold, such as a slippery fish. A failed attempt may be retried next round."
+              ]
+            },
+            {
+              "Title": "Stand up",
+              "Paragraphs": [
+                "Standing after lying down or being knocked down costs 10 CP and may expose the character to attack. Without the required 10 CP, the action takes the whole round and excludes all other actions, including parrying."
+              ]
+            },
+            {
+              "Title": "Other combat circumstances",
+              "Paragraphs": [
+                "The GM determines circumstantial effects. Slippery ground imposes −3 SV on all actions using Agility. A blind combatant relying on hearing to locate a target suffers −15 SV on all combat actions."
+              ]
+            },
+            {
+              "Title": "Cast spells",
+              "Paragraphs": [
+                "A spell taking more than one round to weave starts at the weaver’s initiative count, without waiting another round. Its initiative modifier is minus its level and only applies in the round when the spell takes effect.",
+                "During the same round the weaver cannot perform a WA, cast another spell or invoke a divine power. Other combat actions are possible; they may precede or follow weaving if it takes no more than one round.",
+                "Each injury or knockdown during weaving requires a Situation roll of 6 modified by Psyche to maintain concentration; failure ruins the weaving."
+              ]
+            },
+            {
+              "Title": "Divine invocation",
+              "Paragraphs": [
+                "An invocation taking more than one round begins at the dimwalker’s initiative count. Its initiative modifier is minus the power’s level and applies only in the round when the power takes effect.",
+                "During the same round the faithful cannot perform a WA, use Vitner Craft or invoke another power. Other combat actions may precede or follow an invocation lasting no more than one round.",
+                "Each injury or knockdown during invocation requires a Situation roll of 6 modified by Psyche to maintain concentration; failure ruins the invocation."
+              ]
+            }
+          ],
+          "Example": "Feint example: against Perception +1, the maximum is 4 CP and the parry penalty can reach −4. Against Perception −2, the maximum is 7 CP and the penalty can reach −7.",
+          "Source": "Source: Game Master’s Guide, Combat Actions; French Rules pp. 320–323.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>Combat actions cover what a character can do during an action round: attack, parry, move and perform other manoeuvres. A weapon action (WA) is a combat action, but not every combat action is a weapon action. The GM determines appropriate modifiers and what is possible in the circumstances.</p><h2>Actions and reference costs</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Action</th><th scope=\"col\">Combat Points and special conditions</th><th scope=\"col\">Weapon action</th></tr></thead><tbody><tr><td>Opportunity actions</td><td>Remaining CP invested in the chosen action; ignores initiative</td><td>Depends on action</td></tr><tr><td>Attack</td><td>CP invested in the attack</td><td>WA</td></tr><tr><td>Ranged attack</td><td>CP invested; target modifiers</td><td>WA</td></tr><tr><td>Ride-by attack</td><td>10 CP in addition to mounted combat and the attack</td><td>WA</td></tr><tr><td>Mounted ranged attack</td><td>10 CP; as ride-by attack, target within range</td><td>WA</td></tr><tr><td>Surprise attack</td><td>+10 CP granted for this attack; victim at −5</td><td>WA</td></tr><tr><td>Retreat</td><td>Movement: 2 CP/m after leaving melee</td><td>—</td></tr><tr><td>Mounted combat</td><td>15 CP per round, −3 per Riding level</td><td>Combined with WA</td></tr><tr><td>Draw a weapon</td><td>10 CP; initiative −10 to act afterwards</td><td>WA</td></tr><tr><td>Give orders</td><td>No CP</td><td>—</td></tr><tr><td>Evade</td><td>No other action during the round</td><td>—</td></tr><tr><td>Feint</td><td>Extra CP: at most 5 − opponent’s Perception</td><td>Part of the WA</td></tr><tr><td>Cross/avoid an obstacle</td><td>6 CP</td><td>—</td></tr><tr><td>Strike a weapon</td><td>CP invested in the action</td><td>WA</td></tr><tr><td>Combat movement</td><td>2 CP per metre</td><td>—</td></tr><tr><td>Parry</td><td>CP invested in the parry</td><td>WA</td></tr><tr><td>Pick up an object</td><td>5–10 CP, set by the GM</td><td>—</td></tr><tr><td>Stand up</td><td>10 CP</td><td>—</td></tr><tr><td>Other circumstances</td><td>Modifiers set by the GM</td><td>Depends on action</td></tr></tbody></table></div><h2>Opportunity actions</h2><p>An opponent who flees, leaves melee or retreats grants an opportunity action, also called a free action. It ignores initiative order even if the character would not yet be entitled to act.</p><p>Free action does not mean no CP cost: the character may invest as many remaining CP for the round as desired. It is usually an attack and thus a WA; a different action retains its own nature.</p><p>Drawing a weapon cannot be combined with it: the weapon must already have been drawn at an earlier initiative count or round.</p><h2>Ride-by attack</h2><p>Once per round, a rider can bring the mount past an opponent and attack. This costs 10 CP in addition to Mounted Combat and the attack itself. Without Riding, the fixed costs total 25 CP before investing in the attack.</p><p>The mount’s force increases the chance of open damage rolls by 1: OR 9–10 becomes OR 8–10, and a weapon without an open roll gains OR 10. A ride-by attack is a WA.</p><h2>Mounted ranged attack</h2><p>The book describes this as identical to a ride-by attack, but performed with a ranged weapon against a target within range. The additional cost is 10 CP. It is a WA.</p><h2>Surprise attack</h2><p>The opponent must be unaware of the attack. The attacker gains 10 extra CP for this attack alone, otherwise resolved normally. The same opponent can only be surprised this way once: success or failure, the first attack reveals the attacker.</p><p>The victim suffers −5 on all combat actions for the round. A surprise attack is a WA.</p><h2>Ranged attacks</h2><p>All are WA. The GM sets applicable modifiers. A target engaged in melee imposes −5 SV; a missed shot into a melee may hit another person or object at the GM’s discretion.</p><p>A long-range target imposes −10 SV; consult the weapon’s short and long ranges. A running, rapidly manoeuvring or mounted target imposes −10 SV.</p><h2>Retreat</h2><p>Retreat begins at the character’s initiative count. Defensive actions remain possible, but each melee opponent gains an opportunity action; the character may parry with remaining CP.</p><p>A character cannot attack and then retreat in the same round. After leaving melee, movement normally costs 2 CP per metre and cannot exceed the round’s movement allowance.</p><h2>Mounted combat</h2><p>Any mounted action other than a defensive action requires paying 15 CP at the start of the round, reduced by 3 per Riding level. The mount normally acts at its rider’s initiative. The rider does not pay for movement, but the mount does.</p><p>Against opponents on foot, the rider gains +2 on WA except ranged weapons, while opponents suffer −2 on WA against the rider. A combat-trained mount adds +1 for the rider and −1 for enemies per training degree, mounted or not, unless the mount attacks itself.</p><p>Mounted opponents cancel each other’s bonuses and penalties except for differences in training. Ride-by damage benefits remain. Mounted Combat is not a separate WA: it modifies the rider’s attacks and parries and allows ride-by and mounted ranged attacks.</p><h2>Draw a weapon</h2><p>Drawing costs 10 CP and applies −10 initiative if the character wishes to perform other actions. Without the 10 CP, drawing takes the whole round: no other action is possible, not even a parry.</p><p>A weapon knocked away must first be reached by Combat Movement and then retrieved with Pick Up an Object; it cannot be recovered in the round it was lost. A weapon retained on a wrist strap can be recovered using Draw a Weapon.</p><p>Unarmed combat needs no drawing action. Drawing is a WA and cannot be combined with a parry or opportunity action: the weapon must already be ready from an earlier initiative count or round.</p><h2>Give orders</h2><p>Speaking, whispering, calling or shouting orders costs no CP if the character can speak. The words must fit within the round’s duration and can accompany other manoeuvres.</p><h2>Evade</h2><p>Evading can avoid melee attacks, some traps and special attacks, but not ranged attacks. It excludes all other actions during the round.</p><p>Make an Agility test, adding Combat Manoeuvres and Evade if known; neither is required. The specialty permits multiple evasions depending on level. Only attempt to evade when the opponent’s attack succeeds.</p><h2>Feint</h2><p>During an attack, invest extra CP up to 5 minus the opponent’s Perception modifier. If the opponent parries, the penalty equals CP invested in the feint. The feint belongs to the attack’s WA and is not a separate one.</p><h2>Cross/avoid an obstacle</h2><p>Jumping a table, rolling under a fence or diving for cover normally costs 6 CP. Without enough CP, the character may spend the whole round on the manoeuvre, using all remaining CP and taking no other action.</p><p>During the manoeuvre, treat the character as a moving target for ranged attacks.</p><h2>Strike a weapon</h2><p>This WA targets an opponent’s held weapon. The target weapon cannot be larger than the attacker’s. The opponent may parry to counter the manoeuvre.</p><p>On success, subtract the weapon’s PV from damage and deduct the remainder from its BV. Its wielder then tests Agility or Fighting, whichever gives the higher SV, modified by Strength. When using Fighting, applicable disciplines and specialties for the targeted weapon apply. Failure drops the weapon 1d6 metres away.</p><h2>Combat movement</h2><p>Moving while retaining awareness of the surroundings costs 2 CP per metre. Distance cannot exceed the round’s total movement allowance. Certain skills can grant movement without CP expenditure.</p><h2>Pick up an object</h2><p>Picking up a nearby object costs 5–10 CP depending on its nature and location, at the GM’s discretion. Normally no Situation roll is required.</p><p>A roll may be needed if someone else is grabbing the same object or it is difficult to hold, such as a slippery fish. A failed attempt may be retried next round.</p><h2>Stand up</h2><p>Standing after lying down or being knocked down costs 10 CP and may expose the character to attack. Without the required 10 CP, the action takes the whole round and excludes all other actions, including parrying.</p><h2>Other combat circumstances</h2><p>The GM determines circumstantial effects. Slippery ground imposes −3 SV on all actions using Agility. A blind combatant relying on hearing to locate a target suffers −15 SV on all combat actions.</p><h2>Cast spells</h2><p>A spell taking more than one round to weave starts at the weaver’s initiative count, without waiting another round. Its initiative modifier is minus its level and only applies in the round when the spell takes effect.</p><p>During the same round the weaver cannot perform a WA, cast another spell or invoke a divine power. Other combat actions are possible; they may precede or follow weaving if it takes no more than one round.</p><p>Each injury or knockdown during weaving requires a Situation roll of 6 modified by Psyche to maintain concentration; failure ruins the weaving.</p><h2>Divine invocation</h2><p>An invocation taking more than one round begins at the dimwalker’s initiative count. Its initiative modifier is minus the power’s level and applies only in the round when the power takes effect.</p><p>During the same round the faithful cannot perform a WA, use Vitner Craft or invoke another power. Other combat actions may precede or follow an invocation lasting no more than one round.</p><p>Each injury or knockdown during invocation requires a Situation roll of 6 modified by Psyche to maintain concentration; failure ruins the invocation.</p><aside class=\"trudvang-religion-example\"><p>Feint example: against Perception +1, the maximum is 4 CP and the parry penalty can reach −4. Against Perception −2, the maximum is 7 CP and the penalty can reach −7.</p></aside><p>Source: Game Master’s Guide, Combat Actions; French Rules pp. 320–323.</p></article>"
+        },
         "travel": {
           "Name": "Travel & Terrain",
           "Intro": "Distance depends on the means and pace of travel, relief (plains, hills or mountains), terrain and weather. Except for ordinary walking, travel on foot calls for Situation rolls modified by Constitution. Mounted travel uses Agility, Horsemanship and Riding. The pace determines how often to roll.",
