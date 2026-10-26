@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {test} from "node:test";
-import {trainingHtml, huntingHtml} from "../tools/generate-outdoor-journals.mjs";
+import {trainingHtml, huntingHtml, travelHtml} from "../tools/generate-outdoor-journals.mjs";
 import {folderColor, folderOwnership} from "../modules/content-importer.mjs";
 import {PALETTES} from "../modules/palette.mjs";
 import {journalDocuments} from "../modules/journal-catalog.mjs";
@@ -26,13 +26,18 @@ test("both journals retain every reference table and regenerate without data dri
     const journals = locale.TRUDVANG.Content.Journal;
     assert.equal(journals.training.Content, trainingHtml(journals.training));
     assert.equal(journals.hunting.Content, huntingHtml(journals.hunting));
+    assert.equal(journals.travel.Content, travelHtml(journals.travel, language));
+    assert.equal((journals.travel.Content.match(/<table>/g) || []).length, 4);
+    assert.match(journals.travel.Content, /60 km \/ 2 h/);
+    assert.match(journals.travel.Content, /1d10 \((?:JO|OR) 2–10\)/);
+    assert.equal(journals.travel.Sections.length, 17);
     assert.equal((journals.training.Content.match(/<table>/g) || []).length, 4);
     assert.equal((journals.hunting.Content.match(/<table>/g) || []).length, 5);
     assert.match(journals.training.Content, /<td>25<\/td>/);
     assert.match(journals.hunting.Content, /8d10\+80/);
     globalThis.game = {i18n: {localize: key => key.split(".").reduce((value, part) => value?.[part], locale) ?? key}};
-    const documents = journalDocuments({rules: {id: "rules"}}).filter(row => ["training", "hunting"].includes(row.id));
-    assert.equal(documents.length, 2);
+    const documents = journalDocuments({rules: {id: "rules"}}).filter(row => ["training", "hunting", "travel"].includes(row.id));
+    assert.equal(documents.length, 3);
     assert.ok(documents.every(row => row.folder === "rules" && row.pages[0].text.content.includes("<table>")));
   }
 });

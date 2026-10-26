@@ -10192,6 +10192,186 @@
         }
       },
       "Journal": {
+        "travel": {
+          "Name": "Voyage & Terrains",
+          "Intro": "La distance parcourue dépend du mode de déplacement, de l’allure, du relief (plaine, collines ou montagnes), du terrain et de la météo. En dehors de la marche simple, un déplacement à pied demande des tests de situation modifiés par la Constitution. À cheval, utilisez Agilité, Maîtrise équestre et Équitation. La fréquence des tests dépend de l’allure.",
+          "MovementTitle": "Déplacements selon l’environnement",
+          "MovementHeaders": [
+            "Mode de déplacement",
+            "Plaine",
+            "Collines",
+            "Montagnes",
+            "Test"
+          ],
+          "Modes": [
+            "Marche simple",
+            "Marche soutenue",
+            "Marche forcée",
+            "Monture au pas",
+            "Monture à un rythme soutenu",
+            "Monture au triple galop"
+          ],
+          "Tests": [
+            "—",
+            "1 test de situation par jour (Constitution)",
+            "1 test de situation par heure (Constitution)",
+            "1 test d’Agilité par jour",
+            "1 test d’Agilité par heure",
+            "1 test d’Agilité à −5 par heure"
+          ],
+          "TerrainTitle": "Déplacements : modificateurs de terrain",
+          "WeatherTitle": "Déplacements : modificateurs de météo",
+          "ModifierHeaders": [
+            "Condition",
+            "Coefficient multiplicateur"
+          ],
+          "Terrains": [
+            "Pas de chemin",
+            "Terrain accidenté",
+            "Terrain très accidenté",
+            "Herbes hautes",
+            "Marais",
+            "Terrain broussailleux",
+            "Buissons",
+            "Forêt clairsemée",
+            "Forêt",
+            "Forêt dense",
+            "Neige (30 cm)",
+            "Neige (1 m)"
+          ],
+          "Weather": [
+            "Frais (10 °C à 0 °C)",
+            "Froid (−1 °C à −10 °C)",
+            "Gel (−11 °C à −20 °C)",
+            "Gel intense (−21 °C à −40 °C)",
+            "Hrim (−41 °C et moins)",
+            "Pluie",
+            "Pluie forte",
+            "Neige clairsemée",
+            "Neige abondante"
+          ],
+          "Example": "Bjorn traverse la plaine au triple galop pendant deux heures : 60 km et deux tests d’Agilité à −5, un par heure. Un terrain très accidenté (×0,5) limite le trajet à 30 km. Si la pluie s’y ajoute (×0,9), il ne parcourt plus que 27 km : 60 × 0,5 × 0,9.",
+          "Sections": [
+            {
+              "Title": "Les forêts",
+              "Paragraphs": [
+                "Les forêts de Trudvang sont des étendues sauvages, sombres et anciennes, où se dissimulent aussi bien trolls et monstres que merveilles. Il est facile de s’y perdre. Un personnage dépourvu de la discipline Survie subit −4 lorsqu’il cherche son chemin en forêt.",
+                "Les arbres et broussailles peuvent masquer l’ennemi et gêner les mouvements en combat ; le MJ tient compte de ces obstacles."
+              ]
+            },
+            {
+              "Title": "La végétation",
+              "Paragraphs": [
+                "La végétation peut cacher des créatures ou protéger de la pluie et du vent. Mousses, fougères, champignons, baies et arbres imposants peuvent nourrir la description ou former le cœur d’une aventure.",
+                "Pins, épicéas, bouleaux et chênes côtoient des essences singulières : pin troll aux épines changeantes, chêne cuivré très robuste et chargé de vitner, chêne ours noir, épicéa-saule, chêne de fer au bois noir et elfarka du sud, si dur qu’on le rapproche du métal. L’yggdra est un arbre mythique conscient et gorgé de magie, habité par les êtres du même nom."
+              ]
+            },
+            {
+              "Title": "Les montagnes",
+              "Paragraphs": [
+                "Les montagnes peuvent être magnifiques mais aussi désolées et inaccessibles. Leurs chaînes forment des frontières et obligent souvent à contourner les sommets. Jarngand s’étend des Stormländer au Vastermark, mêlant pierre, neige et glace."
+              ]
+            },
+            {
+              "Title": "Glissement de terrain",
+              "Paragraphs": [
+                "Roche instable, neige, glace, mauvaise visibilité et vents froids rendent la traversée difficile. Un effondrement peut ne provoquer qu’une glissade et une écorchure, ou précipiter un voyageur dans un gouffre. Ces dangers peuvent remplacer une rencontre de combat."
+              ]
+            },
+            {
+              "Title": "Ravins",
+              "Paragraphs": [
+                "Franchir un ravin exige préparation, équipement adapté et expérience de l’escalade ou l’aide d’un guide. Le temps et la prudence ne suffisent pas toujours à contourner ces failles."
+              ]
+            },
+            {
+              "Title": "Les océans et les mers",
+              "Paragraphs": [
+                "Les mers sont aussi dangereuses et imprévisibles que les forêts et montagnes : vagues, récifs, îles isolées et falaises menacent les navires et leurs équipages."
+              ]
+            },
+            {
+              "Title": "Les vagues-tempêtes",
+              "Paragraphs": [
+                "Ces immenses vagues culminent au plus fort des tempêtes et peuvent briser les navires. Elles sont fréquentes dans Rimhavet et, en hiver, dans l’est de l’Althishavet au large du Dalheim. Un marin expérimenté peut tenter d’y présenter son bateau au bon moment et sous le bon angle ; même cela n’assure pas la survie."
+              ]
+            },
+            {
+              "Title": "Rochers et récifs",
+              "Paragraphs": [
+                "Les marins évitent les hauts fonds et les côtes rocheuses en préparant des détours et des trajectoires plus larges. Des vents ou courants poussant le navire sur les récifs peuvent le détruire."
+              ]
+            },
+            {
+              "Title": "Des courants dangereux",
+              "Paragraphs": [
+                "Les courants sous-marins peuvent entraîner un navire vers les rochers ou faire sombrer un nageur expérimenté. Ceux de la mer de Vilore sont particulièrement redoutés."
+              ]
+            },
+            {
+              "Title": "La neige et le froid",
+              "Paragraphs": [
+                "Fréquents dans les Stormländer, aux confins du Mittland, à Svartliden et dans Jarngand, neige et froid épuisent les voyageurs. Blizzards, crevasses, avalanches, cécité des neiges et engelures en constituent les principaux dangers."
+              ]
+            },
+            {
+              "Title": "Blizzards",
+              "Paragraphs": [
+                "Un test de Nature, avec éventuellement Connaissance de l’environnement (neige et froid) ou Météorologie, permet de ne pas être surpris par l’arrivée d’un blizzard.",
+                "La visibilité dépasse rarement 1d3 mètres. Le risque de perdre un objet dans la neige ou le vent est de 10 à 15 % ; le livre donne 1–3 sur 1d20. Un objet mal attaché risque de s’envoler.",
+                "Le MJ choisit une intensité de 1 à 5 : de la brève bourrasque à la tempête de glace avec des vents de 30 à 40 m/s. Seuls les niveaux 4 et 5 infligent des blessures : respectivement 1d3 et 1d6 dégâts par minute."
+              ]
+            },
+            {
+              "Title": "Crevasses de neige",
+              "Paragraphs": [
+                "Les crevasses dissimulées sous la neige peuvent être découvertes avec un test de Nature. Leurs parois glacées, leurs pointes de glace et leurs changements de direction compliquent l’évasion ou le sauvetage.",
+                "Si le personnage n’a pas repéré la crevasse, le MJ lui accorde une dernière chance de ne pas tomber : un test de situation de difficulté fixée par le MJ, modifié par la Dextérité."
+              ]
+            },
+            {
+              "Title": "Avalanches",
+              "Paragraphs": [
+                "Le MJ évalue l’intensité de 1 à 5. Un test de Nature permet de reconnaître un risque important d’avalanche.",
+                "Toute personne prise dans une avalanche peut effectuer un test d’Agilité. En cas de réussite, les dégâts sont ceux d’un niveau inférieur, par exemple ceux du niveau 4 pour une avalanche de niveau 5."
+              ]
+            },
+            {
+              "Title": "Cécité des neiges",
+              "Paragraphs": [
+                "Le soleil réfléchi par la neige peut provoquer larmoiements et aveuglement. La victime subit un malus à toutes les VC liées à la vue, dont la valeur reste à déterminer par le MJ. Elle doit rester dans un endroit sombre pendant au moins une journée complète pour guérir et éviter l’aggravation."
+              ]
+            },
+            {
+              "Title": "Engelures",
+              "Paragraphs": [
+                "La peau exposée, les vêtements insuffisants, le séjour prolongé dans le froid et le vent favorisent les engelures, d’abord aux extrémités et au visage. Un traitement rapide peut limiter les lésions superficielles.",
+                "La règle ordinaire est de subir 1 point de dégâts d’engelure par heure lorsqu’on reste dans un froid extrême sans vêtements adaptés ou qu’on dépasse ses limites ordinaires."
+              ]
+            },
+            {
+              "Title": "Le brouillard",
+              "Paragraphs": [
+                "Les brumes peuvent signaler un lien surnaturel avec Dimhall. On risque de s’y perdre entre les royaumes ou d’y rencontrer des morts-vivants. Au Mittland, on dit qu’elles ouvrent aussi un chemin vers Othwa.",
+                "Pour chaque jour passé dans le brouillard : 5 % de risque d’attaque par un mort-vivant, soit 1 sur 1d20. Pour chaque nuit : 20 %, soit 1–4 sur 1d20."
+              ]
+            },
+            {
+              "Title": "Les portes des brumes",
+              "Paragraphs": [
+                "Une porte des brumes peut ressembler à une zone de brouillard plus dense, deux arbres morts tordus ou une grotte. Elle mène ailleurs sur Trudvang, dans un royaume lié à Dimhall ou jusqu’à Othwa. Dans ce dernier royaume, chaque journée écoulée peut correspondre à une année entière sur Trudvang."
+              ]
+            }
+          ],
+          "AvalancheTitle": "Avalanches : dégâts selon l’intensité",
+          "AvalancheHeaders": [
+            "Intensité",
+            "Dégâts"
+          ],
+          "OpenRoll": "JO",
+          "Source": "Source : Livre des règles, Terrain et environnement, p. 305–310.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>La distance parcourue dépend du mode de déplacement, de l’allure, du relief (plaine, collines ou montagnes), du terrain et de la météo. En dehors de la marche simple, un déplacement à pied demande des tests de situation modifiés par la Constitution. À cheval, utilisez Agilité, Maîtrise équestre et Équitation. La fréquence des tests dépend de l’allure.</p><h2>Déplacements selon l’environnement</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Mode de déplacement</th><th scope=\"col\">Plaine</th><th scope=\"col\">Collines</th><th scope=\"col\">Montagnes</th><th scope=\"col\">Test</th></tr></thead><tbody><tr><td>Marche simple</td><td>30 km / 12 h</td><td>15 km / 12 h</td><td>10 km / 12 h</td><td>—</td></tr><tr><td>Marche soutenue</td><td>30 km / 8 h</td><td>15 km / 8 h</td><td>10 km / 8 h</td><td>1 test de situation par jour (Constitution)</td></tr><tr><td>Marche forcée</td><td>30 km / 4 h</td><td>15 km / 4 h</td><td>—</td><td>1 test de situation par heure (Constitution)</td></tr><tr><td>Monture au pas</td><td>60 km / 12 h</td><td>30 km / 12 h</td><td>15 km / 12 h</td><td>1 test d’Agilité par jour</td></tr><tr><td>Monture à un rythme soutenu</td><td>60 km / 6 h</td><td>30 km / 6 h</td><td>—</td><td>1 test d’Agilité par heure</td></tr><tr><td>Monture au triple galop</td><td>60 km / 2 h</td><td>—</td><td>—</td><td>1 test d’Agilité à −5 par heure</td></tr></tbody></table></div><h2>Déplacements : modificateurs de terrain</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Condition</th><th scope=\"col\">Coefficient multiplicateur</th></tr></thead><tbody><tr><td>Pas de chemin</td><td>×0,9</td></tr><tr><td>Terrain accidenté</td><td>×0,75</td></tr><tr><td>Terrain très accidenté</td><td>×0,5</td></tr><tr><td>Herbes hautes</td><td>×0,9</td></tr><tr><td>Marais</td><td>×0,75</td></tr><tr><td>Terrain broussailleux</td><td>×0,75</td></tr><tr><td>Buissons</td><td>×0,5</td></tr><tr><td>Forêt clairsemée</td><td>×0,75</td></tr><tr><td>Forêt</td><td>×0,5</td></tr><tr><td>Forêt dense</td><td>×0,25</td></tr><tr><td>Neige (30 cm)</td><td>×0,75</td></tr><tr><td>Neige (1 m)</td><td>×0,25</td></tr></tbody></table></div><h2>Déplacements : modificateurs de météo</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Condition</th><th scope=\"col\">Coefficient multiplicateur</th></tr></thead><tbody><tr><td>Frais (10 °C à 0 °C)</td><td>×0,9</td></tr><tr><td>Froid (−1 °C à −10 °C)</td><td>×0,8</td></tr><tr><td>Gel (−11 °C à −20 °C)</td><td>×0,6</td></tr><tr><td>Gel intense (−21 °C à −40 °C)</td><td>×0,4</td></tr><tr><td>Hrim (−41 °C et moins)</td><td>×0,2</td></tr><tr><td>Pluie</td><td>×0,9</td></tr><tr><td>Pluie forte</td><td>×0,75</td></tr><tr><td>Neige clairsemée</td><td>×0,8</td></tr><tr><td>Neige abondante</td><td>×0,5</td></tr></tbody></table></div><aside class=\"trudvang-religion-example\"><p>Bjorn traverse la plaine au triple galop pendant deux heures : 60 km et deux tests d’Agilité à −5, un par heure. Un terrain très accidenté (×0,5) limite le trajet à 30 km. Si la pluie s’y ajoute (×0,9), il ne parcourt plus que 27 km : 60 × 0,5 × 0,9.</p></aside><h2>Les forêts</h2><p>Les forêts de Trudvang sont des étendues sauvages, sombres et anciennes, où se dissimulent aussi bien trolls et monstres que merveilles. Il est facile de s’y perdre. Un personnage dépourvu de la discipline Survie subit −4 lorsqu’il cherche son chemin en forêt.</p><p>Les arbres et broussailles peuvent masquer l’ennemi et gêner les mouvements en combat ; le MJ tient compte de ces obstacles.</p><h2>La végétation</h2><p>La végétation peut cacher des créatures ou protéger de la pluie et du vent. Mousses, fougères, champignons, baies et arbres imposants peuvent nourrir la description ou former le cœur d’une aventure.</p><p>Pins, épicéas, bouleaux et chênes côtoient des essences singulières : pin troll aux épines changeantes, chêne cuivré très robuste et chargé de vitner, chêne ours noir, épicéa-saule, chêne de fer au bois noir et elfarka du sud, si dur qu’on le rapproche du métal. L’yggdra est un arbre mythique conscient et gorgé de magie, habité par les êtres du même nom.</p><h2>Les montagnes</h2><p>Les montagnes peuvent être magnifiques mais aussi désolées et inaccessibles. Leurs chaînes forment des frontières et obligent souvent à contourner les sommets. Jarngand s’étend des Stormländer au Vastermark, mêlant pierre, neige et glace.</p><h2>Glissement de terrain</h2><p>Roche instable, neige, glace, mauvaise visibilité et vents froids rendent la traversée difficile. Un effondrement peut ne provoquer qu’une glissade et une écorchure, ou précipiter un voyageur dans un gouffre. Ces dangers peuvent remplacer une rencontre de combat.</p><h2>Ravins</h2><p>Franchir un ravin exige préparation, équipement adapté et expérience de l’escalade ou l’aide d’un guide. Le temps et la prudence ne suffisent pas toujours à contourner ces failles.</p><h2>Les océans et les mers</h2><p>Les mers sont aussi dangereuses et imprévisibles que les forêts et montagnes : vagues, récifs, îles isolées et falaises menacent les navires et leurs équipages.</p><h2>Les vagues-tempêtes</h2><p>Ces immenses vagues culminent au plus fort des tempêtes et peuvent briser les navires. Elles sont fréquentes dans Rimhavet et, en hiver, dans l’est de l’Althishavet au large du Dalheim. Un marin expérimenté peut tenter d’y présenter son bateau au bon moment et sous le bon angle ; même cela n’assure pas la survie.</p><h2>Rochers et récifs</h2><p>Les marins évitent les hauts fonds et les côtes rocheuses en préparant des détours et des trajectoires plus larges. Des vents ou courants poussant le navire sur les récifs peuvent le détruire.</p><h2>Des courants dangereux</h2><p>Les courants sous-marins peuvent entraîner un navire vers les rochers ou faire sombrer un nageur expérimenté. Ceux de la mer de Vilore sont particulièrement redoutés.</p><h2>La neige et le froid</h2><p>Fréquents dans les Stormländer, aux confins du Mittland, à Svartliden et dans Jarngand, neige et froid épuisent les voyageurs. Blizzards, crevasses, avalanches, cécité des neiges et engelures en constituent les principaux dangers.</p><h2>Blizzards</h2><p>Un test de Nature, avec éventuellement Connaissance de l’environnement (neige et froid) ou Météorologie, permet de ne pas être surpris par l’arrivée d’un blizzard.</p><p>La visibilité dépasse rarement 1d3 mètres. Le risque de perdre un objet dans la neige ou le vent est de 10 à 15 % ; le livre donne 1–3 sur 1d20. Un objet mal attaché risque de s’envoler.</p><p>Le MJ choisit une intensité de 1 à 5 : de la brève bourrasque à la tempête de glace avec des vents de 30 à 40 m/s. Seuls les niveaux 4 et 5 infligent des blessures : respectivement 1d3 et 1d6 dégâts par minute.</p><h2>Crevasses de neige</h2><p>Les crevasses dissimulées sous la neige peuvent être découvertes avec un test de Nature. Leurs parois glacées, leurs pointes de glace et leurs changements de direction compliquent l’évasion ou le sauvetage.</p><p>Si le personnage n’a pas repéré la crevasse, le MJ lui accorde une dernière chance de ne pas tomber : un test de situation de difficulté fixée par le MJ, modifié par la Dextérité.</p><h2>Avalanches</h2><p>Le MJ évalue l’intensité de 1 à 5. Un test de Nature permet de reconnaître un risque important d’avalanche.</p><p>Toute personne prise dans une avalanche peut effectuer un test d’Agilité. En cas de réussite, les dégâts sont ceux d’un niveau inférieur, par exemple ceux du niveau 4 pour une avalanche de niveau 5.</p><h3>Avalanches : dégâts selon l’intensité</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Intensité</th><th scope=\"col\">Dégâts</th></tr></thead><tbody><tr><td>1</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>1d10 (JO 8–10)</td></tr><tr><td>3</td><td>1d10 (JO 6–10)</td></tr><tr><td>4</td><td>1d10 (JO 4–10)</td></tr><tr><td>5</td><td>1d10 (JO 2–10)</td></tr></tbody></table></div><h2>Cécité des neiges</h2><p>Le soleil réfléchi par la neige peut provoquer larmoiements et aveuglement. La victime subit un malus à toutes les VC liées à la vue, dont la valeur reste à déterminer par le MJ. Elle doit rester dans un endroit sombre pendant au moins une journée complète pour guérir et éviter l’aggravation.</p><h2>Engelures</h2><p>La peau exposée, les vêtements insuffisants, le séjour prolongé dans le froid et le vent favorisent les engelures, d’abord aux extrémités et au visage. Un traitement rapide peut limiter les lésions superficielles.</p><p>La règle ordinaire est de subir 1 point de dégâts d’engelure par heure lorsqu’on reste dans un froid extrême sans vêtements adaptés ou qu’on dépasse ses limites ordinaires.</p><h2>Le brouillard</h2><p>Les brumes peuvent signaler un lien surnaturel avec Dimhall. On risque de s’y perdre entre les royaumes ou d’y rencontrer des morts-vivants. Au Mittland, on dit qu’elles ouvrent aussi un chemin vers Othwa.</p><p>Pour chaque jour passé dans le brouillard : 5 % de risque d’attaque par un mort-vivant, soit 1 sur 1d20. Pour chaque nuit : 20 %, soit 1–4 sur 1d20.</p><h2>Les portes des brumes</h2><p>Une porte des brumes peut ressembler à une zone de brouillard plus dense, deux arbres morts tordus ou une grotte. Elle mène ailleurs sur Trudvang, dans un royaume lié à Dimhall ou jusqu’à Othwa. Dans ce dernier royaume, chaque journée écoulée peut correspondre à une année entière sur Trudvang.</p><p>Source : Livre des règles, Terrain et environnement, p. 305–310.</p></article>"
+        },
         "training": {
           "Name": "Dressage",
           "Intro": "Un animal sauvage doit d’abord être capturé puis domestiqué : le dresseur doit réussir cinq tests de Nature, avec Connaissance de la nature et Ami des animaux, à raison d’une tentative par semaine. Il faut donc au minimum cinq semaines. Le MJ décide des espèces qui peuvent être domestiquées et des apprentissages qu’elles peuvent acquérir.",

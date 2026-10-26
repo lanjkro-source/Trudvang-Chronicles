@@ -41,7 +41,8 @@ const journals = [
   {id: "joaringFaith", folder: "religions", key: "joaringFaith"},
   {id: "creatureSize", folder: "rules", key: "creatureSize"},
   {id: "training", folder: "rules", key: "training"},
-  {id: "hunting", folder: "rules", key: "hunting"}
+  {id: "hunting", folder: "rules", key: "hunting"},
+  {id: "travel", folder: "rules", key: "travel"}
 ];
 
 const l = key => game.i18n.localize(key);

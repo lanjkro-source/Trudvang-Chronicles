@@ -30,6 +30,24 @@ export function huntingHtml(l) {
   html += h(l.Titles[6]) + table(c.slice(8, 10), l.Prey.map((prey, i) => [rations[i], prey]));
   return article(html + h(l.Titles[7]) + p(l.Bonuses) + p(l.Source));
 }
+// FR pp. 305, 309: source tables checked visually, including unavailable routes.
+export function travelHtml(l, language) {
+  const routes = [[30, 15, 10, 12], [30, 15, 10, 8], [30, 15, null, 4],
+    [60, 30, 15, 12], [60, 30, null, 6], [60, null, null, 2]];
+  const number = new Intl.NumberFormat(language);
+  let html = p(l.Intro) + h(l.MovementTitle) + table(l.MovementHeaders,
+    routes.map((row, i) => [l.Modes[i], ...row.slice(0, 3).map(km => km == null ? "—" : `${km} km / ${row[3]} h`), l.Tests[i]]));
+  const modifiers = (labels, values) => table(l.ModifierHeaders, values.map((value, i) => [labels[i], `×${number.format(value)}`]));
+  html += h(l.TerrainTitle) + modifiers(l.Terrains, [0.9, 0.75, 0.5, 0.9, 0.75, 0.75, 0.5, 0.75, 0.5, 0.25, 0.75, 0.25]);
+  html += h(l.WeatherTitle) + modifiers(l.Weather, [0.9, 0.8, 0.6, 0.4, 0.2, 0.9, 0.75, 0.8, 0.5]);
+  html += `<aside class="trudvang-religion-example">${p(l.Example)}</aside>`;
+  l.Sections.forEach((section, i) => {
+    html += h(section.Title) + section.Paragraphs.map(p).join("");
+    if (i === 12) html += `<h3>${escape(l.AvalancheTitle)}</h3>` + table(l.AvalancheHeaders,
+      [10, 8, 6, 4, 2].map((threshold, index) => [index + 1, `1d10 (${l.OpenRoll} ${threshold === 10 ? "10" : `${threshold}–10`})`]));
+  });
+  return article(html + p(l.Source));
+}
 if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.mjs")) {
   for (const language of ["fr", "en"]) {
     const path = `lang/${language}.json`;
@@ -37,7 +55,8 @@ if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.m
     const journals = locale.TRUDVANG.Content.Journal;
     journals.training.Content = trainingHtml(journals.training);
     journals.hunting.Content = huntingHtml(journals.hunting);
+    journals.travel.Content = travelHtml(journals.travel, language);
     writeFileSync(path, `${JSON.stringify(locale, null, 2)}\n`);
   }
-  console.log("Training and hunting journals regenerated (4 and 5 tables per locale).");
+  console.log("Training, hunting and travel journals regenerated (4, 5 and 4 tables per locale).");
 }
