@@ -106,7 +106,7 @@ test("the materiaux and the centennial amber live in the GM-only magic objects f
   const sourceCode = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
   assert.match(sourceCode, /folderOwnership\(source\.folders\[destination\]\)/,
     "starter items derive their ownership from the destination folder config");
-  assert.match(sourceCode, /if \(payload\.ownership\) update\.ownership = payload\.ownership;/,
+  assert.match(sourceCode, /if \(payload\.ownership\) update\.ownership = destination === "gmItems"[\s\S]*?ForcedReplacement\.create\(payload\.ownership\) : payload\.ownership;/,
     "replays move existing starter items onto their folder's default level");
 });
 

@@ -23,7 +23,9 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // table and the hunting/training journals in previously populated worlds.
 // TEMPORARY WORLD MIGRATION — version 57 adds the Travel & Terrain journal.
 // TEMPORARY WORLD MIGRATION — version 58 adds the Combat Actions journal.
-const CONTENT_VERSION = 58;
+// TEMPORARY WORLD MIGRATION — version 59 adds the GM Surprised reference
+// and refreshes every managed GM folder to the palette's accent colour.
+const CONTENT_VERSION = 59;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -246,7 +248,8 @@ async function upsertFolder(slug, config, translations, parent) {
     if (color && existing.color !== color) update.color = color;
     // Only folders that opt in carry a role, so this never touches per-user grants the GM
     // made on the other starter folders.
-    if (ownership) update.ownership = ownership;
+    if (ownership) update.ownership = /\.GM(?:Items|Tables|Macros)$/.test(config.nameKey)
+      ? foundry.data.operators.ForcedReplacement.create(ownership) : ownership;
     await existing.update(update);
   }
   const createData = {name: localized, type: config.type, folder: parent?.id ?? null, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}};
@@ -326,7 +329,8 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     if (existing) {
       const update = presentationUpdate(payload, key);
       update.folder = payload.folder;
-      if (payload.ownership) update.ownership = payload.ownership;
+      if (payload.ownership) update.ownership = destination === "gmItems"
+        ? foundry.data.operators.ForcedReplacement.create(payload.ownership) : payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
       if (renamedOrCustom(existing, translations)) delete update.name;
@@ -988,7 +992,7 @@ export async function ensureGenericSituationMacro(folder) {
 
 export async function ensureUtilityMacros() {
   const players = await upsertFolder("macros", {nameKey: "TRUDVANG.Content.Folder.Macros", type: "Macro", defaultRole: "OWNER"}, new Set(["Macros", "Joueurs", "Players"]));
-  const gm = await upsertFolder("gm-macros", {nameKey: "TRUDVANG.Content.Folder.GMMacros", type: "Macro", defaultRole: "NONE"}, new Set(["Maitre de jeu", "Game Master"]));
+  const gm = await upsertFolder("gm-macros", {nameKey: "TRUDVANG.Content.Folder.GMMacros", type: "Macro", colorRole: "accent", defaultRole: "NONE"}, new Set(["Maitre de jeu", "Maître de jeu", "Game Master"]));
   // TEMPORARY WORLD MIGRATION — remove historical per-user grants from the GM folder.
   const grants = Object.keys(gm.ownership ?? {}).filter(key => key !== "default");
   if (grants.length) await gm.update({ownership: foundry.data.operators.ForcedReplacement.create({default: 0})});

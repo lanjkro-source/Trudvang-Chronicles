@@ -21,6 +21,8 @@ import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
 import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
 import {postActorEvent} from "../actor-event-chat.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-resolver.mjs";
+import {mountedCombatValues, mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
+import {applyMounted, currentRoundExpiry} from "../combat-effects.mjs";
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
@@ -266,7 +268,7 @@ export class TrudvangActor extends BaseActor {
     if (["attack", "parry", "magic"].includes(kind)) total += Number(modifiers[kind] || 0);
     if (skillKey) total += Number(modifiers.skills?.[skillKey] || 0);
     if (traitKey) total += Number(modifiers.traits?.[traitKey] || 0);
-    if (includeState) total += rollModifierTotal(actorStateRollModifiers(this));
+    if (includeState) total += rollModifierTotal(actorStateRollModifiers(this, {combat: combatKinds.has(kind) || this.isInCombatActive()}));
     return total;
   }
 
@@ -861,7 +863,7 @@ export class TrudvangActor extends BaseActor {
     const armor = this.isInCombatActive() ? -Number(this.system.armorVCPenalty || 0) : 0;
     return [
       ...this.skillEffectRows(skillKey).map(row => ({...row, included: true})),
-      ...(includeState ? actorStateRollModifiers(this) : []),
+      ...(includeState ? actorStateRollModifiers(this, {combat: ["attack", "parry", "magic"].includes(kind) || this.isInCombatActive()}) : []),
       ...this.rollEffectRows({kind, skillKey, movement}),
       {labelKey: "TRUDVANG.Dialog.ArmorModifier", value: armor},
       {labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(bonus || 0)}
@@ -1033,7 +1035,7 @@ export class TrudvangActor extends BaseActor {
     const inCombat = this.isInActiveCombat;
     const poolResolution = resolveCombatPools({actor: this, context: {action: kind, ignoreSpent: !inCombat}});
     const strength = this.getTraitValue("strength");
-    const modifierRows = actorStateRollModifiers(this);
+    const modifierRows = actorStateRollModifiers(this, {combat: true});
     const otherModifier = this.getRollModifier({kind: "attack", movement: true, includeState: false}) - Number(this.system.armorVCPenalty || 0);
     const actionModifier = otherModifier + rollModifierTotal(modifierRows);
     const availableEven = poolResolution.eligibleCurrent - poolResolution.eligibleCurrent % 2;
@@ -1119,7 +1121,7 @@ export class TrudvangActor extends BaseActor {
     const traitLabel = targetTrait === "none"
       ? game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTrait")
       : game.i18n.localize(TRUDVANG.traits[targetTrait] ?? targetTrait);
-    const stateRows = actorStateRollModifiers(this);
+    const stateRows = actorStateRollModifiers(this, {combat: true});
     const effectModifier = this.getRollModifier({kind: "attack", movement: true, includeState: false});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const modifierRows = [
@@ -1202,7 +1204,7 @@ export class TrudvangActor extends BaseActor {
     // The once-per-round marker only limits an active combat: outside combat there
     // is no round reset, so a stale marker would silence the bonus forever.
     const combatPointBonus = inCombat && item.system.combatPointBonusUsed ? 0 : equipment.characteristics.combatPointBonus.value;
-    const stateRows = actorStateRollModifiers(this);
+    const stateRows = actorStateRollModifiers(this, {combat: true});
     const effectModifier = this.getRollModifier({kind, movement: true, includeState: false});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item: defaultMode.usageItem, actor: this, context: {usage: kind, hand: item.system.hand}});
@@ -1215,6 +1217,7 @@ export class TrudvangActor extends BaseActor {
     const ruleNotice = kind === "parry" && (item.system?.combatSpecialty === "natural" || item.system?.category === "natural")
       ? game.i18n.localize("TRUDVANG.Combat.NaturalParryHint")
       : "";
+    const rememberedMount = this.getFlag?.("trudvang-chronicles", "mountedCombat") ?? {};
     const options = await combatPointDialog({
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
       pools: defaultMode.pools,
@@ -1225,6 +1228,7 @@ export class TrudvangActor extends BaseActor {
       sizeTargets,
       feintMax: defaultMode.feintMax,
       ruleNotice,
+      mountedCombat: isMounted(this) ? {...rememberedMount, enabled: true} : null,
       combatModes: {
         toggle: canThrow,
         label: game.i18n.localize(defaultThrowing ? "TRUDVANG.Dialog.MeleeAttack" : "TRUDVANG.Dialog.ThrowWeapon"),
@@ -1237,6 +1241,9 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const mode = modes.find(candidate => candidate.id === options.mode) ?? defaultMode;
+    const mounted = mountedCombatValues({...options.mountedCombat, enabled: isMounted(this)});
+    if (this.isOwner && typeof this.setFlag === "function") await this.setFlag("trudvang-chronicles", "mountedCombat", {enabled: mounted.enabled, bonus: mounted.bonus});
+    if (mounted.enabled) modifierRows.push({labelKey: "TRUDVANG.Dialog.MountBonus", value: mounted.bonus});
     // Another prepared action may have spent points while this dialog was open.
     // Refresh eligibility before committing rather than rolling a stale total.
     const poolResolution = resolveCombatPools({actor: this, item: mode.usageItem, context: {action: kind, ignoreSpent: !inCombat}});
@@ -1275,7 +1282,7 @@ export class TrudvangActor extends BaseActor {
       actor: this,
       label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : mode.throwing ? "TRUDVANG.Action.Throw" : "TRUDVANG.Action.Attack")}`,
       target: allocatedCombatVC(spending.total, feint, sizeTargets[0]?.modifier || 0),
-      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows),
+      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows) + mounted.total,
       kind,
       attackTargets: sizeTargets,
       flavor,
@@ -1697,6 +1704,32 @@ export class TrudvangActor extends BaseActor {
       mode: selectedMode?.label ?? game.i18n.localize("TRUDVANG.Npc.MovementModes.land")});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));
     return {...spending, paidMeters};
+  }
+
+  /** Pay the mounted-combat upkeep once per global round, from general-action pools. */
+  async startMountedCombat() {
+    if (this._mountedCombatPending || !this.isOwner || !this.isInActiveCombat || isMounted(this)) return null;
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    this._mountedCombatPending = true;
+    try {
+      const round = currentRoundExpiry();
+      const cost = mountedCombatCost(this.findRuleKnowledge("riding")?.system.level);
+      const pools = resolveCombatPools({actor: this, context: {action: "other"}});
+      if (pools.eligibleCurrent < cost) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Combat.MountedUnavailable"));
+      const choice = await combatPointDialog({title: game.i18n.localize("TRUDVANG.Dialog.MountedCombat"),
+        pools: pools.eligible, defaultAllocation: suggestCombatAllocation(pools.eligible, cost),
+        showModifier: false, totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints", buttonLabelKey: "TRUDVANG.Action.SpendCombat",
+        ruleNotice: game.i18n.format("TRUDVANG.Combat.MountedCost", {cost})});
+      if (!choice) return null;
+      const current = currentRoundExpiry();
+      if (!current || current.combatId !== round?.combatId || current.round !== round.round || isMounted(this)) return null;
+      const latest = resolveCombatPools({actor: this, context: {action: "other"}});
+      const spending = normalizeCombatAllocation(latest.eligible, choice.allocation);
+      if (spending.total !== cost) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Combat.MountedUnavailable"));
+      if (cost) await this.spendCombatPoints(spending.allocation, {freeScope: latest.freeScope});
+      const effect = await applyMounted(this);
+      return effect ? {...spending, cost, effect} : null;
+    } finally {this._mountedCombatPending = false;}
   }
 
   /** Spend Combat Points on a manoeuvre not otherwise represented in the sheet. */

@@ -12,6 +12,7 @@ import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
+import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -59,6 +60,7 @@ export function selectFormData(form,policy){
  return {rules:r,maximum:Number(s.resources.body.max)};
 }
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[],context}={}){
+ if(key===SURPRISED_ITEM)return applySurprised(actor,source);
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const casting=ruleTestCastingContext(source??{system:{catalogId:reference.sourceId}},{counts,context});

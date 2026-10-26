@@ -1,6 +1,7 @@
 import { renderTemplate } from "../helpers.mjs";
 import { EFFECT_ITEM_TYPES } from "../effects.mjs";
 import {annotateRuleTestDescription} from "../rule-tests.mjs";
+import {SURPRISED_ITEM, applySurprised} from "../combat-effects.mjs";
 
 const BaseItem = foundry.documents.Item;
 
@@ -19,7 +20,7 @@ export class TrudvangItem extends BaseItem {
       item: this,
       system: this.system,
       canUseExtract: this.type === "potion",
-      canApplyEffects: EFFECT_ITEM_TYPES.has(this.type) && this.effects.some(effect => !effect.transfer && !effect.disabled),
+      canApplyEffects: (EFFECT_ITEM_TYPES.has(this.type) || this.system.catalogId === SURPRISED_ITEM) && this.effects.some(effect => !effect.transfer && !effect.disabled),
       description: annotateRuleTestDescription(
         await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true}), this)
     });
@@ -30,6 +31,16 @@ export class TrudvangItem extends BaseItem {
   }
 
   async applyEffects(targets = null) {
+    if (this.type === "effect" && this.system.catalogId === SURPRISED_ITEM) {
+      const candidates = targets ? Array.from(targets) : Array.from(game.user.targets?.size ? game.user.targets : globalThis.canvas?.tokens?.controlled ?? []);
+      if (!candidates.length && this.actor) candidates.push(this.actor);
+      const actors = [...new Set(candidates.map(target => target?.actor ?? target).filter(actor => actor?.documentName === "Actor"))];
+      if (!actors.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoEffectTarget"));
+      let applied = 0;
+      for (const actor of actors) if (await applySurprised(actor, this)) applied++;
+      if (applied) ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectsApplied", {count: applied}));
+      return applied;
+    }
     if (!EFFECT_ITEM_TYPES.has(this.type)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoApplicableEffects"));
     const templates = this.effects.filter(effect => !effect.transfer && !effect.disabled && !effect.duration?.expired);
     if (!templates.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoApplicableEffects"));

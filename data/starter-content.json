@@ -1,9 +1,15 @@
 {
   "folders": {
+    "gmItems": {
+      "nameKey": "TRUDVANG.Content.Folder.GMItems",
+      "type": "Item",
+      "colorRole": "accent",
+      "defaultRole": "NONE"
+    },
     "gmTables": {
       "nameKey": "TRUDVANG.Content.Folder.GMTables",
       "type": "RollTable",
-      "colorRole": "warning",
+      "colorRole": "accent",
       "defaultRole": "NONE"
     },
     "weapons": {
@@ -87,7 +93,7 @@
     "gm-macros": {
       "nameKey": "TRUDVANG.Content.Folder.GMMacros",
       "type": "Macro",
-      "colorRole": "warning",
+      "colorRole": "accent",
       "defaultRole": "NONE"
     },
     "macros": {
@@ -108,6 +114,30 @@
     }
   },
   "items": [
+    {
+      "nameKey": "TRUDVANG.Content.Item.Surprised.Name",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/surprised.svg",
+      "type": "effect",
+      "folder": "gmItems",
+      "system": {
+        "catalogId": "trudvang-surprised",
+        "summaryKey": "TRUDVANG.Content.Item.Surprised.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.Surprised.Description",
+        "source": {"bookKey": "TRUDVANG.Content.Item.Surprised.Book", "page": 320}
+      },
+      "effects": [{
+        "nameKey": "TRUDVANG.Content.Item.Surprised.Name",
+        "descriptionKey": "TRUDVANG.Content.Item.Surprised.Description",
+        "img": "systems/trudvang-chronicles/assets/icons/statuses/surprised.svg",
+        "type": "effect",
+        "statuses": ["trudvang-surprised"],
+        "transfer": false,
+        "disabled": false,
+        "duration": {"value": null, "units": "seconds", "expiry": null, "expired": false},
+        "system": {"stackId": "trudvang-surprised", "stacking": "replace", "changes": [], "stages": []},
+        "flags": {"trudvang-chronicles": {"untilRoundEnd": true}}
+      }]
+    },
     {
       "nameKey": "TRUDVANG.Content.Item.Glaaf.Name",
       "type": "weapon",

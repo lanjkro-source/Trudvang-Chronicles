@@ -4,8 +4,12 @@ import {ignoresWoundPenalties} from "./npc-summary.mjs";
  * Initiative already includes these states in its prepared value. Open trait
  * comparisons, damage, fear-factor and table rolls are not skill/situation tests.
  */
-export function actorStateRollModifiers(actor) {
+export function actorStateRollModifiers(actor, {combat = typeof actor.isInCombatActive === "function" ? actor.isInCombatActive() : Boolean(actor.isInActiveCombat)} = {}) {
+  const surprised = actor.statuses?.has?.("trudvang-surprised") || Array.from(actor.allApplicableEffects?.() ?? actor.effects ?? []).some(effect =>
+    !effect.disabled && !effect.isSuppressed && !effect.duration?.expired && effect.active !== false
+    && Array.from(effect.statuses ?? []).includes("trudvang-surprised"));
   return [
+    ...(combat && surprised ? [{labelKey: "TRUDVANG.Status.SurprisedPenalty", value: -5}] : []),
     {labelKey: "TRUDVANG.Dialog.WoundPenalty", value: ignoresWoundPenalties(actor) ? 0 : Number(actor.system?.damage?.penalty || 0)},
     {labelKey: "TRUDVANG.Resource.FearPenalty", value: Number(actor.system?.fearPenalty || 0)}
   ].filter(row => row.value !== 0);

@@ -16,6 +16,7 @@ import {transformationLinks} from "./transformations.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
+import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -701,7 +702,7 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = []}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = [], mountedCombat = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
@@ -748,12 +749,14 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${breakdown || defenseBreakdown ? `<ul class="combat-modifier-breakdown">${breakdown}${defenseBreakdown}</ul>` : ""}
       ${rangedTargetOptions}
       ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
+      ${mountedCombat ? `<ul class="combat-modifier-breakdown" data-mounted-breakdown><li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MountBonus"))}</span><b data-mounted-bonus></b></li></ul>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
       ${showModifier || combatPointBonus || breakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span>${varyingSizes ? `<span>${sizeTargets.map(target => `<span>${escapeHtml(target.name)} : <strong data-combat-target-final data-size-modifier="${target.modifier}" data-defense-modifier="${Number(target.defenseModifier || 0)}"></strong></span>`).join("<br>")}</span>` : `<strong data-combat-final-target></strong>`}</p>` : ""}
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
     ${targets}
+    ${mountedCombat ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MountBonus"))}</label><input type="number" data-mount-bonus value="${mountedCombatValues(mountedCombat).bonus}" step="1"></div>` : ""}
     ${hasModeToggle ? `<label class="checkbox"><input type="checkbox" data-combat-mode-toggle ${combatModes.checked ? "checked" : ""}> ${escapeHtml(combatModes.label)}</label>` : ""}
     ${modes.map(renderMode).join("")}
   </div>`;
@@ -770,6 +773,10 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const refresh = () => {
         const section = selectedSection();
         if (!section) return;
+        const mounted = mountedCombatValues(mountedCombat ? {enabled: true, bonus: root.querySelector("[data-mount-bonus]")?.value} : null);
+        if (mountedCombat) {
+          root.querySelectorAll("[data-mounted-bonus]").forEach(el => el.textContent = signedModifier(mounted.bonus));
+        }
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
         const poolById = new Map(selectedMode().pools.map(pool => [pool.id, pool]));
         const total = inputs.reduce((sum, input) => {
@@ -800,11 +807,11 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const finalTarget = section.querySelector("[data-combat-final-target]");
         if (finalTarget) {
           const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
-          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0);
+          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0) + mounted.total;
           finalTarget.textContent = String(attackTotal + manual + fixed + rangedModifier + Number(sizeTargets[0]?.defenseModifier || 0));
         }
         section.querySelectorAll("[data-combat-target-final]").forEach(output => {
-          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0);
+          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0) + mounted.total;
           output.textContent = String(allocatedCombatVC(total, feint, Number(output.dataset.sizeModifier), targetPointCost) + Number(section.querySelector("[name=modifier]")?.value || 0) + fixed + rangedModifier + Number(output.dataset.defenseModifier || 0));
         });
         const slider = section.querySelector("[data-combat-slider]");
@@ -833,6 +840,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       }));
       root.querySelectorAll("[data-combat-slider]").forEach(slider => slider.addEventListener("input", event => { allocate(event.currentTarget.closest("[data-combat-mode]"), event.currentTarget.value); refresh(); }));
       root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier], [data-ranged-modifier], [data-range-selection]").forEach(input => input.addEventListener("input", refresh));
+      if (mountedCombat) root.querySelector("[data-mount-bonus]")?.addEventListener("input", refresh);
       refresh();
     }
   }
@@ -851,6 +859,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const section = root.querySelector(`[data-combat-mode="${mode}"]`) ?? root;
       return {
         mode,
+        ...(mountedCombat ? {mountedCombat: mountedCombatValues({enabled: true, bonus: root.querySelector("[data-mount-bonus]")?.value})} : {}),
         modifier: Number(section.querySelector("[name=modifier]")?.value || 0),
         feint: Number(section.querySelector("[name=feint]")?.value || 0),
         ranged: {

@@ -4,6 +4,7 @@ import {effectChangesSource} from "./rules/effect-source.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
+import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -93,6 +94,12 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // A copied template belongs to the user creating this instance, not its
     // original author. Never infer authorship from lastModifiedBy.
     if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
+    if (this.parent?.documentName === "Actor" && data.flags?.["trudvang-chronicles"]?.untilRoundEnd) {
+      const expiry = currentRoundExpiry();
+      if (!expiry) {ui.notifications.warn(game.i18n.localize("TRUDVANG.Status.SurprisedNeedsCombat")); return false;}
+      this.updateSource({"flags.trudvang-chronicles.combatRoundExpiry": expiry,
+        showIcon: foundry.CONST.ACTIVE_EFFECT_SHOW_ICON.ALWAYS});
+    }
     const stages = Array.from(this.system.stages || []);
     if (stages.length && !this.system.changes.length) {
       const first = stages[0];
@@ -131,6 +138,7 @@ export function configureEffects() {
 
 /** Advance staged extracts and poisons once Foundry expires the current stage. */
 export function registerEffectHooks() {
+  registerCombatEffectHooks();
   Hooks.on("updateActiveEffect", async (effect, changed, options) => {
     if (options?.trudvangStageTransition || changed.duration?.expired !== true) return;
     if (!game.users.activeGM?.isSelf || !["base", "effect"].includes(effect.type)) return;

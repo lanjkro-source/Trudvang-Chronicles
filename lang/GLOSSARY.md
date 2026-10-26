@@ -490,6 +490,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Combat.MountedCost` | {cost} CP — until the end of the round | {cost} PC — jusqu’à la fin du round |
+| `TRUDVANG.Combat.MountedUnavailable` | Allocate the exact mounted-combat cost from available pools. Free CP are spent for both hands. | Allouez exactement le coût du combat monté depuis les réserves disponibles. Les PC libres sont dépensés dans les deux mains. |
 | `TRUDVANG.Combat.HumanoidNaturalWeapons` | Fists & feet | Poings & pieds |
 | `TRUDVANG.Combat.Dodge` | Dodge | Esquiver |
 | `TRUDVANG.Combat.MovementAction` | Movement action | Action de mouvement |
@@ -1006,6 +1008,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Status.Surprised` | Surprised | Surpris |
+| `TRUDVANG.Status.Mounted` | Mounted | Monté |
+| `TRUDVANG.Status.SurprisedPenalty` | Surprised: combat actions | Surpris : actions de combat |
+| `TRUDVANG.Status.SurprisedNeedsCombat` | Start combat to apply Surprised until the end of the current round. | Un combat doit être démarré pour appliquer Surpris jusqu’à la fin du round en cours. |
 | `TRUDVANG.Status.Sacrilege` | Sacrilegious | Sacrilège |
 | `TRUDVANG.Status.RecoveryDaily` | {amount} BP/day | {amount} PS/jour |
 | `TRUDVANG.Status.RecoveryEveryDays` | {amount} BP/{days} days | {amount} PS/{days} jours |
@@ -1077,6 +1083,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Dialog.MountedCombat` | Mounted combat | Combat monté |
+| `TRUDVANG.Dialog.MountBonus` | Mount bonus | Bonus de monture |
 | `TRUDVANG.Dialog.BaseTarget` | Base target: {target} | Cible de base: {target} |
 | `TRUDVANG.Dialog.CombatPoolSlider` | Quick allocation | Allocation rapide |
 | `TRUDVANG.Dialog.EquipmentCombatPointBonus` | Equipment CP bonus | Bonus de PC de l’équipement |
@@ -1648,6 +1656,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.Folder.GMItems` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.GMTables` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.Weapons` | Weapons | Armes |
 | `TRUDVANG.Content.Folder.WeaponsLight` | Light weapons | Armes légères |
@@ -1675,7 +1684,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.CharacterCreation` | Character Creation | Création de Personnages |
 | `TRUDVANG.Content.Folder.CharacterCreationTables` | Character Creation | Création de Personnages |
 | `TRUDVANG.Content.Folder.Macros` | Players | Joueurs |
-| `TRUDVANG.Content.Folder.GMMacros` | Game Master | Maitre de jeu |
+| `TRUDVANG.Content.Folder.GMMacros` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.MagicObjects` | Magic Objects | Objets magiques |
 | `TRUDVANG.Content.Folder.Materials` | Materials | Matériaux |
 
@@ -1890,6 +1899,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.ItemDescription.SmallMetalShield` | Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal. | Boucliers Les boucliers sont des objets spécialement conçus pour parer les attaques. Ils sont particulièrement utiles car, contrairement aux armes, il suffit d’avoir le premier niveau de la spécialité Porteur de bouclier (compétence Combat) pour ignorer le malus de -15 dû à la main de bouclier dès lors qu’on utilise un bouclier pour parer. Les attaques réalisées avec un bouclier n’infligent que 1d10 points de dégâts, et la spécialité Porteur de bouclier n’ajoute pas de bonus à l’attaque. Les boucliers de base sont simples, fabriqués avec du bois, et ne peuvent résister aux dégâts infligés par certaines armes. De ce fait, des guerriers bien préparés apportent plus d’un bouclier avec eux lorsqu’ils s’attendent à des batailles. Quel que soit le matériau dont ils sont faits (cf. ci-contre), les boucliers ont le même poids car dès lors qu’ils sont faits de métal, ils sont plus fins. |
 | `TRUDVANG.Content.ItemDescription.MediumMetalShield` | Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal. | Boucliers Les boucliers sont des objets spécialement conçus pour parer les attaques. Ils sont particulièrement utiles car, contrairement aux armes, il suffit d’avoir le premier niveau de la spécialité Porteur de bouclier (compétence Combat) pour ignorer le malus de -15 dû à la main de bouclier dès lors qu’on utilise un bouclier pour parer. Les attaques réalisées avec un bouclier n’infligent que 1d10 points de dégâts, et la spécialité Porteur de bouclier n’ajoute pas de bonus à l’attaque. Les boucliers de base sont simples, fabriqués avec du bois, et ne peuvent résister aux dégâts infligés par certaines armes. De ce fait, des guerriers bien préparés apportent plus d’un bouclier avec eux lorsqu’ils s’attendent à des batailles. Quel que soit le matériau dont ils sont faits (cf. ci-contre), les boucliers ont le même poids car dès lors qu’ils sont faits de métal, ils sont plus fins. |
 | `TRUDVANG.Content.ItemDescription.LargeMetalShield` | Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal. | Boucliers Les boucliers sont des objets spécialement conçus pour parer les attaques. Ils sont particulièrement utiles car, contrairement aux armes, il suffit d’avoir le premier niveau de la spécialité Porteur de bouclier (compétence Combat) pour ignorer le malus de -15 dû à la main de bouclier dès lors qu’on utilise un bouclier pour parer. Les attaques réalisées avec un bouclier n’infligent que 1d10 points de dégâts, et la spécialité Porteur de bouclier n’ajoute pas de bonus à l’attaque. Les boucliers de base sont simples, fabriqués avec du bois, et ne peuvent résister aux dégâts infligés par certaines armes. De ce fait, des guerriers bien préparés apportent plus d’un bouclier avec eux lorsqu’ils s’attendent à des batailles. Quel que soit le matériau dont ils sont faits (cf. ci-contre), les boucliers ont le même poids car dès lors qu’ils sont faits de métal, ils sont plus fins. |
+
+## `TRUDVANG.Content.Item.Surprised`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Surprised.Name` | Surprised | Surpris |
+| `TRUDVANG.Content.Item.Surprised.Description` | <p>The character is surprised: −5 to all combat actions. Drop this effect onto a PC or NPC sheet, or select one of its tokens and use the effect. Combat must have started.</p><p>The effect expires at the end of the current round, after all participants have acted, rather than at the end of this character’s turn. It also expires when combat ends. A manually applied Surprised status remains until removed.</p><p>Source: French Rules p. 320.</p> | <p>Le personnage est surpris : −5 à toutes ses actions de combat. Glissez cet effet sur la feuille d’un PJ ou PNJ, ou sélectionnez un de ses tokens puis utilisez l’effet. Le combat doit être démarré.</p><p>L’effet expire à la fin du round en cours, après les actions de tous les participants, et non à la fin du seul tour du personnage. Il expire aussi si le combat est terminé. L’état Surpris ajouté manuellement reste actif jusqu’à son retrait.</p><p>Source : Livre des règles, p. 320.</p> |
+| `TRUDVANG.Content.Item.Surprised.Book` | Game Master’s Guide | Livre des règles |
 
 ## `TRUDVANG.Content.Item.Seax`
 

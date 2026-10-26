@@ -169,11 +169,11 @@ test("base maximum changes heal an injured unlinked token before its inherited r
 });
 
 test("automatic definitions use localized names, distinct shipped icons, and no numerical changes", () => {
-  assert.equal(ACTOR_STATE_STATUSES.length, 12);
-  assert.equal(new Set(ACTOR_STATE_STATUSES.map(status => status.id)).size, 12);
-  assert.equal(new Set(ACTOR_STATE_STATUSES.map(status => status.img)).size, 12);
+  assert.equal(ACTOR_STATE_STATUSES.length, 14);
+  assert.equal(new Set(ACTOR_STATE_STATUSES.map(status => status.id)).size, 14);
+  assert.equal(new Set(ACTOR_STATE_STATUSES.map(status => status.img)).size, 14);
   for (const status of ACTOR_STATE_STATUSES) {
-    assert.equal(status.hud, status.id === "trudvang-sacrilege", "only Sacrilege is a new manual shortcut");
+    assert.equal(status.hud, ["trudvang-sacrilege", "trudvang-surprised", "trudvang-mounted"].includes(status.id), "resource-managed states stay out of the HUD");
     assert.ok(!status.system && !status.changes, "state definitions cannot apply the existing malus twice");
     assert.ok(existsSync(new URL(`../${status.img.replace("systems/trudvang-chronicles/", "")}`, import.meta.url)));
     for (const locale of ["fr", "en"]) {

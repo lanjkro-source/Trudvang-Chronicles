@@ -427,6 +427,8 @@
       "ShieldShort": "SH"
     },
     "Combat": {
+      "MountedCost": "{cost} CP — until the end of the round",
+      "MountedUnavailable": "Allocate the exact mounted-combat cost from available pools. Free CP are spent for both hands.",
       "HumanoidNaturalWeapons": "Fists & feet",
       "Dodge": "Dodge",
       "MovementAction": "Movement action",
@@ -865,6 +867,10 @@
       "ApplyToTargets": "Apply to controlled characters"
     },
     "Status": {
+      "Surprised": "Surprised",
+      "Mounted": "Mounted",
+      "SurprisedPenalty": "Surprised: combat actions",
+      "SurprisedNeedsCombat": "Start combat to apply Surprised until the end of the current round.",
       "Sacrilege": "Sacrilegious",
       "RecoveryDaily": "{amount} BP/day",
       "RecoveryEveryDays": "{amount} BP/{days} days",
@@ -921,6 +927,8 @@
       "FormulaAdjusted": "Formula adjusted for this roll: {before} → {after}."
     },
     "Dialog": {
+      "MountedCombat": "Mounted combat",
+      "MountBonus": "Mount bonus",
       "BaseTarget": "Base target: {target}",
       "CombatPoolSlider": "Quick allocation",
       "EquipmentCombatPointBonus": "Equipment CP bonus",
@@ -1408,6 +1416,7 @@
         }
       },
       "Folder": {
+        "GMItems": "Game Master",
         "GMTables": "Game Master",
         "Weapons": "Weapons",
         "WeaponsLight": "Light weapons",
@@ -1619,6 +1628,12 @@
         "LargeMetalShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal."
       },
       "Item": {
+        "Surprised": {
+          "Name": "Surprised",
+          "Summary": "−5 to all combat actions until the end of the current round.",
+          "Description": "<p>The character is surprised: −5 to all combat actions. Drop this effect onto a PC or NPC sheet, or select one of its tokens and use the effect. Combat must have started.</p><p>The effect expires at the end of the current round, after all participants have acted, rather than at the end of this character’s turn. It also expires when combat ends. A manually applied Surprised status remains until removed.</p><p>Source: French Rules p. 320.</p>",
+          "Book": "Game Master’s Guide"
+        },
         "Seax": {
           "Name": "Seax (Dagger or Knife)",
           "Description": "A ubiquitous single-edged knife used for work, ritual blood gifting, throwing, and as a last-resort weapon."

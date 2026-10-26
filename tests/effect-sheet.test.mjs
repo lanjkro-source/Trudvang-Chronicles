@@ -636,7 +636,7 @@ test("native and custom effect types advance stages through the same lifecycle",
   const previousHooks = globalThis.Hooks, previousUsers = game.users;
   t.after(() => {globalThis.Hooks = previousHooks; game.users = previousUsers;});
   let hook;
-  globalThis.Hooks = {on: (event, callback) => {assert.equal(event, "updateActiveEffect"); hook = callback;}};
+  globalThis.Hooks = {on: (event, callback) => {if (event === "updateActiveEffect") hook = callback;}};
   game.users = {activeGM: {isSelf: true}};
   registerEffectHooks();
   for (const type of ["base", "effect"]) {

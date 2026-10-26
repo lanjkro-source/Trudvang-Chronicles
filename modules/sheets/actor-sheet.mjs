@@ -1,5 +1,6 @@
 import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
 import { TRUDVANG } from "../config.mjs";
+import {mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
 import { escapeHtml, localizeConfig,renderTemplate } from "../helpers.mjs";
 import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../tablet-catalog.mjs";
 import { effectTooltipSummary } from "../effects.mjs";
@@ -107,6 +108,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "dodge-action": TrudvangActorSheet.#onAction,
       "wrestling-action": TrudvangActorSheet.#onAction,
       "generic-combat-action": TrudvangActorSheet.#onAction,
+      "mounted-combat-action": TrudvangActorSheet.#onAction,
       "item-create": TrudvangActorSheet.#onAction,
       "add-tablet": TrudvangActorSheet.#onAction,
       "add-npc-knowledge": TrudvangActorSheet.#onAction,
@@ -231,6 +233,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
     context.isInCombat = this.actor.isInActiveCombat;
+    context.mountedCombatCostLabel = game.i18n.format("TRUDVANG.Combat.MountedCost", {cost: mountedCombatCost(this.actor.findRuleKnowledge("riding")?.system.level)});
+    context.canStartMountedCombat = context.isInCombat && !isMounted(this.actor);
     context.canDodge = context.isInCombat && combatPoolsAreFull(this.actor);
     const poolContext = {ignoreSpent: !context.isInCombat};
     const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
@@ -613,6 +617,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "dodge-action": return this.actor.rollDodge();
       case "wrestling-action": return this.actor.rollWrestlingAction(target.dataset.kind || "grapple");
       case "generic-combat-action": return this.actor.spendGenericCombatAction();
+      case "mounted-combat-action": return this.actor.startMountedCombat();
       case "item-create": return this._createItem(target.dataset.type, {natural: target.dataset.natural === "true"});
       case "add-tablet": return this._openTabletPicker();
       case "add-npc-knowledge": return this._openNpcKnowledgePicker();

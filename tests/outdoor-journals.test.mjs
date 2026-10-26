@@ -15,7 +15,7 @@ test("head regeneration is private and covers every possible 2d10 total exactly 
   assert.equal(table.replacement, true);
   const folder = source.folders[table.folder];
   assert.deepEqual(folderOwnership(folder), {default: 0});
-  assert.equal(folderColor(folder), PALETTES.spring.warning);
+  assert.equal(folderColor(folder), PALETTES.spring.accent);
   for (let die1 = 1; die1 <= 10; die1++) for (let die2 = 1; die2 <= 10; die2++) {
     assert.equal(table.results.filter(row => row.range[0] <= die1 + die2 && row.range[1] >= die1 + die2).length, 1);
   }

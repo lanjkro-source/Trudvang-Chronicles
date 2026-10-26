@@ -1373,6 +1373,60 @@ test("the improvised throwing penalty is visible only in thrown mode and never s
   assert.doesNotMatch(runtime.dialogs.at(-1).content, /-5 dégâts/);
 });
 
+test("mounted attack/parry use only the mount bonus and remember it while the status remains", async t => {
+  const runtime = mockActionRuntime(t);
+  const weapon = inventoryItem("weapon", "Sword", {equipped: true, weaponActions: 4});
+  const npc = spendableNpc([weapon, {type: "ability", name: "Riding", system: {catalogId: "riding", level: 3}}]);
+  let remembered = {};
+  npc.getFlag = () => remembered;
+  npc.setFlag = async (_scope, key, value) => {assert.equal(key, "mountedCombat"); remembered = value;};
+  runtime.response = {modifier: 0, allocation: {free: 4}};
+  const ordinary = await npc.rollWeaponAction(weapon, "attack");
+  npc.statuses = new Set(["trudvang-mounted"]);
+  runtime.response = {...runtime.response, mountedCombat: {enabled: true, bonus: 3}};
+  const mounted = await npc.rollWeaponAction(weapon, "attack");
+  assert.equal(mounted.target, ordinary.target + 3, "the upkeep is spent separately, never deducted from VC");
+  assert.deepEqual(remembered, {enabled: true, bonus: 3});
+  const parry = await npc.rollWeaponAction(weapon, "parry");
+  assert.equal(parry.target, mounted.target);
+  assert.doesNotMatch(runtime.dialogs.at(-1).content, /data-mounted-combat/);
+  assert.match(runtime.dialogs.at(-1).content, /data-mount-bonus value="3"/);
+  runtime.response = null;
+  await npc.rollWeaponAction(weapon, "attack");
+  assert.deepEqual(remembered, {enabled: true, bonus: 3}, "cancel preserves preferences");
+  npc.statuses.clear();
+  runtime.response = {modifier: 0, allocation: {free: 4}, mountedCombat: {enabled: false, bonus: 3}};
+  const dismounted = await npc.rollWeaponAction(weapon, "attack");
+  assert.equal(dismounted.target, ordinary.target);
+  assert.deepEqual(remembered, {enabled: false, bonus: 2});
+});
+
+test("mounted-combat action pays both free hands once per round and works at zero cost for Riding 5", async t => {
+  const runtime = mockActionRuntime(t);
+  const riding = {type: "ability", name: "Riding", system: {catalogId: "riding", level: 4}};
+  const npc = spendableNpc([riding]);
+  game.combat = {id: "mounted", round: 1, started: true, combatants: [{actor: npc}]};
+  npc.canUserModify = () => true;
+  npc.statuses = new Set();
+  let applied;
+  npc.createTrudvangEffect = async data => {applied = data; npc.statuses.add("trudvang-mounted"); return data;};
+  runtime.response = {allocation: {free: 2}};
+  assert.equal(await npc.startMountedCombat(), "notification");
+  assert.equal(npc.system.combatPools.free.weaponSpent, 4);
+  runtime.response = {allocation: {free: 3}};
+  const paid = await npc.startMountedCombat();
+  assert.equal(paid.cost, 3);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 7);
+  assert.equal(npc.system.combatPools.free.offHandSpent, 3);
+  assert.equal(applied.flags["trudvang-chronicles"].combatRoundExpiry.round, 1);
+  assert.equal(await npc.startMountedCombat(), null, "a second click cannot charge upkeep twice");
+  npc.statuses.clear(); game.combat.round = 2; riding.system.level = 5;
+  runtime.response = {allocation: {}};
+  const free = await npc.startMountedCombat();
+  assert.equal(free.cost, 0); assert.equal(npc.system.combatPools.free.weaponSpent, 7);
+  assert.equal(applied.flags["trudvang-chronicles"].combatRoundExpiry.round, 2);
+});
+
 test("the weapon CP bonus applies outside combat even with a stale round marker, and once per round inside combat", async t => {
   const runtime = mockActionRuntime(t);
   const plain = inventoryItem("weapon", "Plain sword", {equipped: true, weaponActions: 4});

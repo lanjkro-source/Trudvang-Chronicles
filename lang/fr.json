@@ -427,6 +427,8 @@
       "ShieldShort": "MB"
     },
     "Combat": {
+      "MountedCost": "{cost} PC — jusqu’à la fin du round",
+      "MountedUnavailable": "Allouez exactement le coût du combat monté depuis les réserves disponibles. Les PC libres sont dépensés dans les deux mains.",
       "HumanoidNaturalWeapons": "Poings & pieds",
       "Dodge": "Esquiver",
       "MovementAction": "Action de mouvement",
@@ -865,6 +867,10 @@
       "ApplyToTargets": "Appliquer aux personnages contrôlés"
     },
     "Status": {
+      "Surprised": "Surpris",
+      "Mounted": "Monté",
+      "SurprisedPenalty": "Surpris : actions de combat",
+      "SurprisedNeedsCombat": "Un combat doit être démarré pour appliquer Surpris jusqu’à la fin du round en cours.",
       "Sacrilege": "Sacrilège",
       "RecoveryDaily": "{amount} PS/jour",
       "RecoveryEveryDays": "{amount} PS/{days} jours",
@@ -921,6 +927,8 @@
       "FormulaAdjusted": "Formule modifiée pour ce jet : {before} → {after}."
     },
     "Dialog": {
+      "MountedCombat": "Combat monté",
+      "MountBonus": "Bonus de monture",
       "BaseTarget": "Cible de base: {target}",
       "CombatPoolSlider": "Allocation rapide",
       "EquipmentCombatPointBonus": "Bonus de PC de l’équipement",
@@ -1408,6 +1416,7 @@
         }
       },
       "Folder": {
+        "GMItems": "Maître de jeu",
         "GMTables": "Maître de jeu",
         "Weapons": "Armes",
         "WeaponsLight": "Armes légères",
@@ -1435,7 +1444,7 @@
         "CharacterCreation": "Création de Personnages",
         "CharacterCreationTables": "Création de Personnages",
         "Macros": "Joueurs",
-        "GMMacros": "Maitre de jeu",
+        "GMMacros": "Maître de jeu",
         "MagicObjects": "Objets magiques",
         "Materials": "Matériaux"
       },
@@ -1619,6 +1628,12 @@
         "LargeMetalShield": "Boucliers Les boucliers sont des objets spécialement conçus pour parer les attaques. Ils sont particulièrement utiles car, contrairement aux armes, il suffit d’avoir le premier niveau de la spécialité Porteur de bouclier (compétence Combat) pour ignorer le malus de -15 dû à la main de bouclier dès lors qu’on utilise un bouclier pour parer. Les attaques réalisées avec un bouclier n’infligent que 1d10 points de dégâts, et la spécialité Porteur de bouclier n’ajoute pas de bonus à l’attaque. Les boucliers de base sont simples, fabriqués avec du bois, et ne peuvent résister aux dégâts infligés par certaines armes. De ce fait, des guerriers bien préparés apportent plus d’un bouclier avec eux lorsqu’ils s’attendent à des batailles. Quel que soit le matériau dont ils sont faits (cf. ci-contre), les boucliers ont le même poids car dès lors qu’ils sont faits de métal, ils sont plus fins."
       },
       "Item": {
+        "Surprised": {
+          "Name": "Surpris",
+          "Summary": "−5 à toutes les actions de combat jusqu’à la fin du round en cours.",
+          "Description": "<p>Le personnage est surpris : −5 à toutes ses actions de combat. Glissez cet effet sur la feuille d’un PJ ou PNJ, ou sélectionnez un de ses tokens puis utilisez l’effet. Le combat doit être démarré.</p><p>L’effet expire à la fin du round en cours, après les actions de tous les participants, et non à la fin du seul tour du personnage. Il expire aussi si le combat est terminé. L’état Surpris ajouté manuellement reste actif jusqu’à son retrait.</p><p>Source : Livre des règles, p. 320.</p>",
+          "Book": "Livre des règles"
+        },
         "Seax": {
           "Name": "Seax (dague/couteau)",
           "Description": "Un couteau à un seul tranchant omniprésent, utilisé pour le travail, le don rituel de sang, le jet et comme arme de dernier recours."

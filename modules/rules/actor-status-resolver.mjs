@@ -6,6 +6,8 @@ const fears = ["one", "two", "three", "four", "five", "mad"];
 
 /** Visual markers only: resource preparation already applies the state penalties. */
 export const ACTOR_STATE_STATUSES = [
+  {id: "trudvang-surprised", name: "TRUDVANG.Status.Surprised", img: `${iconRoot}/surprised.svg`, hud: true, order: 121},
+  {id: "trudvang-mounted", name: "TRUDVANG.Status.Mounted", img: `${iconRoot}/mounted.svg`, hud: true, order: 122},
   ...wounds.map((level, index) => ({
     id: `trudvang-wound-${level}`, name: `TRUDVANG.Damage.${level}`,
     img: `${iconRoot}/wound-${level}.svg`, hud: false, order: 100 + index
