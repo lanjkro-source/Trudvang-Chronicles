@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {test} from "node:test";
-import {trainingHtml, huntingHtml, travelHtml, combatActionsHtml} from "../tools/generate-outdoor-journals.mjs";
+import {trainingHtml, huntingHtml, travelHtml, combatActionsHtml, environmentHtml} from "../tools/generate-outdoor-journals.mjs";
 import {folderColor, folderOwnership} from "../modules/content-importer.mjs";
 import {PALETTES} from "../modules/palette.mjs";
 import {journalDocuments} from "../modules/journal-catalog.mjs";
@@ -28,6 +28,11 @@ test("both journals retain every reference table and regenerate without data dri
     assert.equal(journals.hunting.Content, huntingHtml(journals.hunting));
     assert.equal(journals.travel.Content, travelHtml(journals.travel, language));
     assert.equal(journals.combatActions.Content, combatActionsHtml(journals.combatActions));
+    assert.equal(journals.environment.Content, environmentHtml(journals.environment));
+    assert.equal((journals.environment.Content.match(/<table>/g) || []).length, 3);
+    assert.equal(journals.environment.Groups.reduce((sum, group) => sum + group.Rows.length, 0), 20);
+    const rationRows = [...journals.environment.Content.matchAll(/<tr><td>([^<]*)<\/td><td>±0<\/td><td>-1<\/td><td>-1<\/td><td>(-\d)<\/td><\/tr>/g)];
+    assert.deepEqual(rationRows.map(row => row[2]), ["-1", "-2"], "retain the printed half-ration food/fluid day-5 distinction");
     assert.equal(journals.combatActions.Actions.length, 19);
     assert.equal(journals.combatActions.Sections.length, 19);
     assert.equal((journals.combatActions.Content.match(/<table>/g) || []).length, 1);
@@ -41,8 +46,8 @@ test("both journals retain every reference table and regenerate without data dri
     assert.match(journals.training.Content, /<td>25<\/td>/);
     assert.match(journals.hunting.Content, /8d10\+80/);
     globalThis.game = {i18n: {localize: key => key.split(".").reduce((value, part) => value?.[part], locale) ?? key}};
-    const documents = journalDocuments({rules: {id: "rules"}}).filter(row => ["training", "hunting", "travel", "combatActions"].includes(row.id));
-    assert.equal(documents.length, 4);
+    const documents = journalDocuments({rules: {id: "rules"}}).filter(row => ["training", "hunting", "travel", "combatActions", "environment"].includes(row.id));
+    assert.equal(documents.length, 5);
     assert.ok(documents.every(row => row.folder === "rules" && row.pages[0].text.content.includes("<table>")));
   }
 });

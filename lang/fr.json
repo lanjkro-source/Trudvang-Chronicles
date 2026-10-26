@@ -10207,6 +10207,195 @@
         }
       },
       "Journal": {
+        "environment": {
+          "Name": "Environnement",
+          "Title": "Une vie de trappeur",
+          "Intro": "Vivre longtemps dans les espaces sauvages de Trudvang n’est pas facile. Pluies diluviennes, vent, froid, neige et sols durs compliquent les nuits et les journées. Le manque de nourriture, des vêtements médiocres ou détrempés, un mauvais confort, une hygiène insuffisante et des repas déséquilibrés aggravent les difficultés. La compétence Nature apprend au personnage à vivre dans ces terres sauvages.",
+          "ComplicationsTitle": "Complications dans la nature",
+          "ComplicationsText": [
+            "Avec des conditions favorables et un équipement adapté, un personnage peut rester dans la nature dix jours, plus un jour par niveau dans la compétence Nature, avant de devoir effectuer un test de situation. Ainsi, Nature 5 permet de rester quinze jours si les conditions demeurent favorables.",
+            "Une fois cette durée dépassée, le personnage effectue un test de situation de valeur 10, modifié par le Psychisme et par les conditions météorologiques du jour indiquées dans la table. En cas d’échec, il subit un malus de −1 dans des conditions favorables à toutes ses actions, y compris son prochain test de survie quotidienne. Ce malus persiste jusqu’à un repos dans des conditions permettant d’annuler les pénalités de la vie dans la nature.",
+            "Chaque matin suivant sans repos convenable, il effectue un nouveau test de situation de valeur 10, modifié par le Psychisme, les conditions du jour et toutes les pénalités accumulées. Une réussite n’ajoute aucun malus mais n’efface pas les précédents. Un échec ajoute encore −1 dans des conditions favorables. Ce malus s’ajoute aux modificateurs météorologiques.",
+            "Si les conditions météorologiques changent, le modificateur correspondant à la nouvelle situation remplace l’ancien. Si le personnage n’a pas les vêtements adaptés, le modificateur négatif est doublé (×2) et il subit ce jour-là autant de points de dégâts de gelure que la valeur de ce malus."
+          ],
+          "Headers": [
+            "Condition",
+            "Modificateur",
+            "Nécessite…"
+          ],
+          "Groups": [
+            {
+              "Title": "Voyage",
+              "Rows": [
+                [
+                  "À pied",
+                  "—"
+                ],
+                [
+                  "À cheval",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Température",
+              "Rows": [
+                [
+                  "Frais (10 °C à 0 °C)",
+                  "Vêtements chauds"
+                ],
+                [
+                  "Froid (−1 °C à −10 °C)",
+                  "Vêtements d’hiver"
+                ],
+                [
+                  "Gel (−11 °C à −20 °C)",
+                  "Vêtements d’hiver épais"
+                ],
+                [
+                  "Gel intense (−21 °C à −40 °C)",
+                  "Vêtements d’hiver épais"
+                ],
+                [
+                  "Hrim (gel extrême, en dessous de −40 °C)",
+                  "Vêtements d’hiver en peau de mastomant"
+                ]
+              ]
+            },
+            {
+              "Title": "Précipitations",
+              "Rows": [
+                [
+                  "Pluie",
+                  "Cape"
+                ],
+                [
+                  "Pluie torrentielle",
+                  "Manteau de pluie"
+                ],
+                [
+                  "Grosse averse",
+                  "Manteau de pluie"
+                ],
+                [
+                  "Grêle",
+                  "Manteau de pluie"
+                ],
+                [
+                  "Légère chute de neige",
+                  "—"
+                ],
+                [
+                  "Chute de neige",
+                  "—"
+                ],
+                [
+                  "Forte chute de neige",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Vent",
+              "Rows": [
+                [
+                  "Brise",
+                  "—"
+                ],
+                [
+                  "Coup de vent",
+                  "—"
+                ],
+                [
+                  "Tempête",
+                  "—"
+                ],
+                [
+                  "Ouragan",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Sommeil",
+              "Rows": [
+                [
+                  "Mauvaise nuit",
+                  "—"
+                ],
+                [
+                  "Nuit blanche",
+                  "—"
+                ]
+              ]
+            }
+          ],
+          "FavorableTitle": "Circonstances favorables",
+          "FavorableText": "Certaines circonstances rendent la vie dans la nature plus supportable et réduisent les pénalités subies à la suite d’échecs aux tests de séjour prolongé. Elles ne permettent jamais au total des modificateurs de dépasser 0 : elles réduisent uniquement les malus.",
+          "FavorableHeaders": [
+            "Facteur",
+            "Modificateur",
+            "Nécessite…"
+          ],
+          "FavorableRows": [
+            [
+              "Temps incroyablement beau",
+              "—"
+            ],
+            [
+              "Repas préparés (ration quotidienne complète)",
+              "Nourriture fraîche et équipement de cuisine"
+            ],
+            [
+              "Vêtements propres",
+              "Vêtements propres et secs"
+            ],
+            [
+              "Objectif en vue",
+              "Le personnage sait qu’il ne reste qu’une journée de voyage avant d’atteindre sa destination"
+            ],
+            [
+              "Confort",
+              "Se reposer plus de quatre heures d’affilée dans des conditions confortables"
+            ],
+            [
+              "Sommeil réparateur",
+              "Bien dormir sans interruption plus de quatre heures d’affilée"
+            ]
+          ],
+          "HungerTitle": "Sans nourriture ni eau",
+          "HungerText": [
+            "Une journée complète sans manger entraîne −2 à tous les tests de compétence et de situation le jour suivant. Si le personnage mange à sa faim le lendemain matin, il évite ce malus. Chaque journée supplémentaire sans nourriture ajoute encore −2 aux pénalités précédentes.",
+            "Une journée complète sans boire entraîne de même −2 à tous les tests de compétence et de situation le jour suivant. Si le personnage étanche sa soif le lendemain matin, il évite ce malus. Chaque journée supplémentaire sans boire ajoute encore −2.",
+            "Après quatorze jours sans nourriture, le personnage meurt de faim, même s’il a pu boire. Après sept jours sans liquide, il meurt de déshydratation."
+          ],
+          "RationRules": [
+            "Trois quarts de la ration quotidienne de nourriture ou de boisson : −1 tous les trois jours.",
+            "La moitié de la ration quotidienne : −1 tous les deux jours.",
+            "Le quart de la ration quotidienne : −1 chaque jour.",
+            "Aucune ration quotidienne de nourriture ou d’eau : −2 chaque jour."
+          ],
+          "Cumulative": "Si le personnage manque à la fois de nourriture et d’eau, les modificateurs se cumulent. Le tableau ci-dessous reprend les valeurs imprimées pour les jours 2 à 5.",
+          "RationHeaders": [
+            "Quantité consommée",
+            "Jour 2",
+            "Jour 3",
+            "Jour 4",
+            "Jour 5"
+          ],
+          "RationLabels": [
+            "¾ de ration quotidienne de nourriture",
+            "½ ration quotidienne de nourriture",
+            "¼ de ration quotidienne de nourriture",
+            "Pas de nourriture",
+            "¾ de ration quotidienne de liquide",
+            "½ ration quotidienne de liquide",
+            "¼ de ration quotidienne de liquide",
+            "Pas de liquide"
+          ],
+          "Source": "Source : Livre des règles, Une vie de trappeur, p. 301–303 ; tableaux p. 302–303.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><h2>Une vie de trappeur</h2><p>Vivre longtemps dans les espaces sauvages de Trudvang n’est pas facile. Pluies diluviennes, vent, froid, neige et sols durs compliquent les nuits et les journées. Le manque de nourriture, des vêtements médiocres ou détrempés, un mauvais confort, une hygiène insuffisante et des repas déséquilibrés aggravent les difficultés. La compétence Nature apprend au personnage à vivre dans ces terres sauvages.</p><h2>Complications dans la nature</h2><p>Avec des conditions favorables et un équipement adapté, un personnage peut rester dans la nature dix jours, plus un jour par niveau dans la compétence Nature, avant de devoir effectuer un test de situation. Ainsi, Nature 5 permet de rester quinze jours si les conditions demeurent favorables.</p><p>Une fois cette durée dépassée, le personnage effectue un test de situation de valeur 10, modifié par le Psychisme et par les conditions météorologiques du jour indiquées dans la table. En cas d’échec, il subit un malus de −1 dans des conditions favorables à toutes ses actions, y compris son prochain test de survie quotidienne. Ce malus persiste jusqu’à un repos dans des conditions permettant d’annuler les pénalités de la vie dans la nature.</p><p>Chaque matin suivant sans repos convenable, il effectue un nouveau test de situation de valeur 10, modifié par le Psychisme, les conditions du jour et toutes les pénalités accumulées. Une réussite n’ajoute aucun malus mais n’efface pas les précédents. Un échec ajoute encore −1 dans des conditions favorables. Ce malus s’ajoute aux modificateurs météorologiques.</p><p>Si les conditions météorologiques changent, le modificateur correspondant à la nouvelle situation remplace l’ancien. Si le personnage n’a pas les vêtements adaptés, le modificateur négatif est doublé (×2) et il subit ce jour-là autant de points de dégâts de gelure que la valeur de ce malus.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Condition</th><th scope=\"col\">Modificateur</th><th scope=\"col\">Nécessite…</th></tr></thead><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Voyage</th></tr><tr><td>À pied</td><td>-1</td><td>—</td></tr><tr><td>À cheval</td><td>-2</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Température</th></tr><tr><td>Frais (10 °C à 0 °C)</td><td>-1</td><td>Vêtements chauds</td></tr><tr><td>Froid (−1 °C à −10 °C)</td><td>-1</td><td>Vêtements d’hiver</td></tr><tr><td>Gel (−11 °C à −20 °C)</td><td>-2</td><td>Vêtements d’hiver épais</td></tr><tr><td>Gel intense (−21 °C à −40 °C)</td><td>-3</td><td>Vêtements d’hiver épais</td></tr><tr><td>Hrim (gel extrême, en dessous de −40 °C)</td><td>-3</td><td>Vêtements d’hiver en peau de mastomant</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Précipitations</th></tr><tr><td>Pluie</td><td>-1</td><td>Cape</td></tr><tr><td>Pluie torrentielle</td><td>-2</td><td>Manteau de pluie</td></tr><tr><td>Grosse averse</td><td>-3</td><td>Manteau de pluie</td></tr><tr><td>Grêle</td><td>-2</td><td>Manteau de pluie</td></tr><tr><td>Légère chute de neige</td><td>-1</td><td>—</td></tr><tr><td>Chute de neige</td><td>-2</td><td>—</td></tr><tr><td>Forte chute de neige</td><td>-3</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Vent</th></tr><tr><td>Brise</td><td>-1</td><td>—</td></tr><tr><td>Coup de vent</td><td>-1</td><td>—</td></tr><tr><td>Tempête</td><td>-2</td><td>—</td></tr><tr><td>Ouragan</td><td>-3</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Sommeil</th></tr><tr><td>Mauvaise nuit</td><td>-1</td><td>—</td></tr><tr><td>Nuit blanche</td><td>-2</td><td>—</td></tr></tbody></table></div><h2>Circonstances favorables</h2><p>Certaines circonstances rendent la vie dans la nature plus supportable et réduisent les pénalités subies à la suite d’échecs aux tests de séjour prolongé. Elles ne permettent jamais au total des modificateurs de dépasser 0 : elles réduisent uniquement les malus.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Facteur</th><th scope=\"col\">Modificateur</th><th scope=\"col\">Nécessite…</th></tr></thead><tbody><tr><td>Temps incroyablement beau</td><td>+1</td><td>—</td></tr><tr><td>Repas préparés (ration quotidienne complète)</td><td>+1</td><td>Nourriture fraîche et équipement de cuisine</td></tr><tr><td>Vêtements propres</td><td>+1</td><td>Vêtements propres et secs</td></tr><tr><td>Objectif en vue</td><td>+1</td><td>Le personnage sait qu’il ne reste qu’une journée de voyage avant d’atteindre sa destination</td></tr><tr><td>Confort</td><td>+1</td><td>Se reposer plus de quatre heures d’affilée dans des conditions confortables</td></tr><tr><td>Sommeil réparateur</td><td>+2</td><td>Bien dormir sans interruption plus de quatre heures d’affilée</td></tr></tbody></table></div><h2>Sans nourriture ni eau</h2><p>Une journée complète sans manger entraîne −2 à tous les tests de compétence et de situation le jour suivant. Si le personnage mange à sa faim le lendemain matin, il évite ce malus. Chaque journée supplémentaire sans nourriture ajoute encore −2 aux pénalités précédentes.</p><p>Une journée complète sans boire entraîne de même −2 à tous les tests de compétence et de situation le jour suivant. Si le personnage étanche sa soif le lendemain matin, il évite ce malus. Chaque journée supplémentaire sans boire ajoute encore −2.</p><p>Après quatorze jours sans nourriture, le personnage meurt de faim, même s’il a pu boire. Après sept jours sans liquide, il meurt de déshydratation.</p><ul><li>Trois quarts de la ration quotidienne de nourriture ou de boisson : −1 tous les trois jours.</li><li>La moitié de la ration quotidienne : −1 tous les deux jours.</li><li>Le quart de la ration quotidienne : −1 chaque jour.</li><li>Aucune ration quotidienne de nourriture ou d’eau : −2 chaque jour.</li></ul><p>Si le personnage manque à la fois de nourriture et d’eau, les modificateurs se cumulent. Le tableau ci-dessous reprend les valeurs imprimées pour les jours 2 à 5.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Quantité consommée</th><th scope=\"col\">Jour 2</th><th scope=\"col\">Jour 3</th><th scope=\"col\">Jour 4</th><th scope=\"col\">Jour 5</th></tr></thead><tbody><tr><td>¾ de ration quotidienne de nourriture</td><td>±0</td><td>±0</td><td>-1</td><td>-1</td></tr><tr><td>½ ration quotidienne de nourriture</td><td>±0</td><td>-1</td><td>-1</td><td>-1</td></tr><tr><td>¼ de ration quotidienne de nourriture</td><td>-1</td><td>-2</td><td>-3</td><td>-4</td></tr><tr><td>Pas de nourriture</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td></tr><tr><td>¾ de ration quotidienne de liquide</td><td>±0</td><td>±0</td><td>-1</td><td>-2</td></tr><tr><td>½ ration quotidienne de liquide</td><td>±0</td><td>-1</td><td>-1</td><td>-2</td></tr><tr><td>¼ de ration quotidienne de liquide</td><td>-1</td><td>-2</td><td>-3</td><td>-4</td></tr><tr><td>Pas de liquide</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td></tr></tbody></table></div><p>Source : Livre des règles, Une vie de trappeur, p. 301–303 ; tableaux p. 302–303.</p></article>"
+        },
         "combatActions": {
           "Name": "Actions de combat",
           "Intro": "Les actions de combat regroupent ce qu’un personnage peut faire pendant un tour de jeu : attaquer, parer, se déplacer et accomplir diverses manœuvres. Une action d’arme (AA) est une action de combat, mais toute action de combat n’est pas une action d’arme. Le MJ décide toujours des modificateurs appropriés et des actions possibles dans la situation.",

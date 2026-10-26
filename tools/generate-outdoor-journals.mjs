@@ -53,6 +53,20 @@ export function combatActionsHtml(l) {
   return article(p(l.Intro) + h(l.SummaryTitle) + table(l.Headers, l.Actions) + sections
     + `<aside class="trudvang-religion-example">${p(l.Example)}</aside>` + p(l.Source));
 }
+export function environmentHtml(l) {
+  const modifiers = [[-1, -2], [-1, -1, -2, -3, -3], [-1, -2, -3, -2, -1, -2, -3], [-1, -1, -2, -3], [-1, -2]];
+  const head = `<thead><tr>${l.Headers.map(text => `<th scope="col">${escape(text)}</th>`).join("")}</tr></thead>`;
+  const groups = l.Groups.map((group, i) => `<tbody><tr><th colspan="3" scope="rowgroup">${escape(group.Title)}</th></tr>${group.Rows.map(([condition, requirement], j) => `<tr><td>${escape(condition)}</td><td>${modifiers[i][j]}</td><td>${escape(requirement)}</td></tr>`).join("")}</tbody>`).join("");
+  const complications = `<div class="trudvang-rules-table-scroll"><table>${head}${groups}</table></div>`;
+  // French printed p. 303: retain the different day-5 food/fluid values,
+  // even where they do not follow the nearby prose's progression exactly.
+  const rations = [[0, 0, -1, -1], [0, -1, -1, -1], [-1, -2, -3, -4], [-2, -4, -6, -8],
+    [0, 0, -1, -2], [0, -1, -1, -2], [-1, -2, -3, -4], [-2, -4, -6, -8]];
+  return article(h(l.Title) + p(l.Intro) + h(l.ComplicationsTitle) + l.ComplicationsText.map(p).join("") + complications
+    + h(l.FavorableTitle) + p(l.FavorableText) + table(l.FavorableHeaders, l.FavorableRows.map(([factor, requirement], i) => [factor, i === 5 ? "+2" : "+1", requirement]))
+    + h(l.HungerTitle) + l.HungerText.map(p).join("") + `<ul>${l.RationRules.map(rule => `<li>${escape(rule)}</li>`).join("")}</ul>` + p(l.Cumulative)
+    + table(l.RationHeaders, rations.map((row, i) => [l.RationLabels[i], ...row.map(n => n === 0 ? "±0" : n)])) + p(l.Source));
+}
 if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.mjs")) {
   for (const language of ["fr", "en"]) {
     const path = `lang/${language}.json`;
@@ -62,7 +76,8 @@ if (process.argv[1]?.replaceAll("\\", "/").endsWith("generate-outdoor-journals.m
     journals.hunting.Content = huntingHtml(journals.hunting);
     journals.travel.Content = travelHtml(journals.travel, language);
     journals.combatActions.Content = combatActionsHtml(journals.combatActions);
+    journals.environment.Content = environmentHtml(journals.environment);
     writeFileSync(path, `${JSON.stringify(locale, null, 2)}\n`);
   }
-  console.log("Rules journals regenerated: training, hunting, travel and combat actions.");
+  console.log("Rules journals regenerated: training, hunting, travel, combat actions and environment.");
 }

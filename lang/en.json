@@ -10207,6 +10207,195 @@
         }
       },
       "Journal": {
+        "environment": {
+          "Name": "Environment",
+          "Title": "A Trapper’s Life",
+          "Intro": "Living in Trudvang’s wilderness for long periods is difficult. Heavy rain, wind, cold, snow and hard ground make days and nights uncomfortable. Lack of food, poor or soaked clothing, inadequate comfort and hygiene, and unbalanced meals make matters worse. Wilderness teaches a character to live in these wild lands.",
+          "ComplicationsTitle": "Wilderness complications",
+          "ComplicationsText": [
+            "With favorable conditions and suitable equipment, a character can remain in the wilderness for ten days plus one day per Wilderness skill level before needing a Situation roll. Wilderness 5 therefore allows fifteen days if conditions remain favorable.",
+            "After this period, make a Situation roll with value 10, modified by Psyche and the day’s weather from the table. Failure imposes −1 in favorable conditions on all actions, including the next daily wilderness test. The penalty lasts until the character rests in conditions that remove the hardships of wilderness life.",
+            "Each subsequent morning without suitable rest, make another Situation roll of 10, modified by Psyche, current conditions and all accumulated penalties. Success adds no penalty but does not remove previous ones. Failure adds another −1 in favorable conditions. This penalty is added to weather modifiers.",
+            "When the weather changes, the new weather modifier replaces the old one. Without clothing appropriate to the weather, the negative modifier is doubled (×2), and the character suffers frostbite damage that day equal to the magnitude of this penalty."
+          ],
+          "Headers": [
+            "Condition",
+            "Modifier",
+            "Requires…"
+          ],
+          "Groups": [
+            {
+              "Title": "Travel",
+              "Rows": [
+                [
+                  "On foot",
+                  "—"
+                ],
+                [
+                  "On horseback",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Temperature",
+              "Rows": [
+                [
+                  "Cool (10 °C to 0 °C)",
+                  "Warm clothing"
+                ],
+                [
+                  "Cold (−1 °C to −10 °C)",
+                  "Winter clothing"
+                ],
+                [
+                  "Freezing (−11 °C to −20 °C)",
+                  "Thick winter clothing"
+                ],
+                [
+                  "Severe frost (−21 °C to −40 °C)",
+                  "Thick winter clothing"
+                ],
+                [
+                  "Hrim (extreme frost, below −40 °C)",
+                  "Mastomant-skin winter clothing"
+                ]
+              ]
+            },
+            {
+              "Title": "Precipitation",
+              "Rows": [
+                [
+                  "Rain",
+                  "Cloak"
+                ],
+                [
+                  "Torrential rain",
+                  "Raincoat"
+                ],
+                [
+                  "Heavy downpour",
+                  "Raincoat"
+                ],
+                [
+                  "Hail",
+                  "Raincoat"
+                ],
+                [
+                  "Light snowfall",
+                  "—"
+                ],
+                [
+                  "Snowfall",
+                  "—"
+                ],
+                [
+                  "Heavy snowfall",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Wind",
+              "Rows": [
+                [
+                  "Breeze",
+                  "—"
+                ],
+                [
+                  "Strong wind",
+                  "—"
+                ],
+                [
+                  "Storm",
+                  "—"
+                ],
+                [
+                  "Hurricane",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "Title": "Sleep",
+              "Rows": [
+                [
+                  "Poor night’s sleep",
+                  "—"
+                ],
+                [
+                  "Sleepless night",
+                  "—"
+                ]
+              ]
+            }
+          ],
+          "FavorableTitle": "Mitigating circumstances",
+          "FavorableText": "Certain circumstances make wilderness life easier and reduce penalties caused by failed prolonged-stay tests. They never raise the total modifier above 0: they only reduce negative modifiers.",
+          "FavorableHeaders": [
+            "Factor",
+            "Modifier",
+            "Requires…"
+          ],
+          "FavorableRows": [
+            [
+              "Incredibly good weather",
+              "—"
+            ],
+            [
+              "Prepared meals (full daily ration)",
+              "Fresh food and cooking equipment"
+            ],
+            [
+              "Clean clothing",
+              "Clean and dry clothing"
+            ],
+            [
+              "Destination in sight",
+              "The character knows only one day’s travel remains before reaching the destination"
+            ],
+            [
+              "Comfort",
+              "Rest for more than four consecutive hours in comfortable surroundings"
+            ],
+            [
+              "Restful sleep",
+              "Sleep well and uninterrupted for more than four consecutive hours"
+            ]
+          ],
+          "HungerTitle": "Without food or water",
+          "HungerText": [
+            "A full day without food imposes −2 on all Skill and Situation rolls the next day. Eating a full meal the next morning avoids this penalty. Each additional day without food adds another −2 to previous penalties.",
+            "A full day without drinking likewise imposes −2 on all Skill and Situation rolls the next day. Quenching thirst the next morning avoids this penalty. Each additional day without drinking adds another −2.",
+            "After fourteen days without food, the character dies of starvation even if drinking was possible. After seven days without fluid, the character dies of dehydration."
+          ],
+          "RationRules": [
+            "Three quarters of the daily food or drink ration: −1 every three days.",
+            "Half the daily ration: −1 every two days.",
+            "One quarter of the daily ration: −1 each day.",
+            "No daily ration of food or water: −2 each day."
+          ],
+          "Cumulative": "When lacking both food and water, the modifiers add together. The table below reproduces the French printed values for days 2 to 5.",
+          "RationHeaders": [
+            "Amount consumed",
+            "Day 2",
+            "Day 3",
+            "Day 4",
+            "Day 5"
+          ],
+          "RationLabels": [
+            "¾ daily food ration",
+            "½ daily food ration",
+            "¼ daily food ration",
+            "No food",
+            "¾ daily fluid ration",
+            "½ daily fluid ration",
+            "¼ daily fluid ration",
+            "No fluid"
+          ],
+          "Source": "Source: Game Master’s Guide, A Trapper’s Life; French Rules pp. 301–303, tables pp. 302–303.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><h2>A Trapper’s Life</h2><p>Living in Trudvang’s wilderness for long periods is difficult. Heavy rain, wind, cold, snow and hard ground make days and nights uncomfortable. Lack of food, poor or soaked clothing, inadequate comfort and hygiene, and unbalanced meals make matters worse. Wilderness teaches a character to live in these wild lands.</p><h2>Wilderness complications</h2><p>With favorable conditions and suitable equipment, a character can remain in the wilderness for ten days plus one day per Wilderness skill level before needing a Situation roll. Wilderness 5 therefore allows fifteen days if conditions remain favorable.</p><p>After this period, make a Situation roll with value 10, modified by Psyche and the day’s weather from the table. Failure imposes −1 in favorable conditions on all actions, including the next daily wilderness test. The penalty lasts until the character rests in conditions that remove the hardships of wilderness life.</p><p>Each subsequent morning without suitable rest, make another Situation roll of 10, modified by Psyche, current conditions and all accumulated penalties. Success adds no penalty but does not remove previous ones. Failure adds another −1 in favorable conditions. This penalty is added to weather modifiers.</p><p>When the weather changes, the new weather modifier replaces the old one. Without clothing appropriate to the weather, the negative modifier is doubled (×2), and the character suffers frostbite damage that day equal to the magnitude of this penalty.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Condition</th><th scope=\"col\">Modifier</th><th scope=\"col\">Requires…</th></tr></thead><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Travel</th></tr><tr><td>On foot</td><td>-1</td><td>—</td></tr><tr><td>On horseback</td><td>-2</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Temperature</th></tr><tr><td>Cool (10 °C to 0 °C)</td><td>-1</td><td>Warm clothing</td></tr><tr><td>Cold (−1 °C to −10 °C)</td><td>-1</td><td>Winter clothing</td></tr><tr><td>Freezing (−11 °C to −20 °C)</td><td>-2</td><td>Thick winter clothing</td></tr><tr><td>Severe frost (−21 °C to −40 °C)</td><td>-3</td><td>Thick winter clothing</td></tr><tr><td>Hrim (extreme frost, below −40 °C)</td><td>-3</td><td>Mastomant-skin winter clothing</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Precipitation</th></tr><tr><td>Rain</td><td>-1</td><td>Cloak</td></tr><tr><td>Torrential rain</td><td>-2</td><td>Raincoat</td></tr><tr><td>Heavy downpour</td><td>-3</td><td>Raincoat</td></tr><tr><td>Hail</td><td>-2</td><td>Raincoat</td></tr><tr><td>Light snowfall</td><td>-1</td><td>—</td></tr><tr><td>Snowfall</td><td>-2</td><td>—</td></tr><tr><td>Heavy snowfall</td><td>-3</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Wind</th></tr><tr><td>Breeze</td><td>-1</td><td>—</td></tr><tr><td>Strong wind</td><td>-1</td><td>—</td></tr><tr><td>Storm</td><td>-2</td><td>—</td></tr><tr><td>Hurricane</td><td>-3</td><td>—</td></tr></tbody><tbody><tr><th colspan=\"3\" scope=\"rowgroup\">Sleep</th></tr><tr><td>Poor night’s sleep</td><td>-1</td><td>—</td></tr><tr><td>Sleepless night</td><td>-2</td><td>—</td></tr></tbody></table></div><h2>Mitigating circumstances</h2><p>Certain circumstances make wilderness life easier and reduce penalties caused by failed prolonged-stay tests. They never raise the total modifier above 0: they only reduce negative modifiers.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Factor</th><th scope=\"col\">Modifier</th><th scope=\"col\">Requires…</th></tr></thead><tbody><tr><td>Incredibly good weather</td><td>+1</td><td>—</td></tr><tr><td>Prepared meals (full daily ration)</td><td>+1</td><td>Fresh food and cooking equipment</td></tr><tr><td>Clean clothing</td><td>+1</td><td>Clean and dry clothing</td></tr><tr><td>Destination in sight</td><td>+1</td><td>The character knows only one day’s travel remains before reaching the destination</td></tr><tr><td>Comfort</td><td>+1</td><td>Rest for more than four consecutive hours in comfortable surroundings</td></tr><tr><td>Restful sleep</td><td>+2</td><td>Sleep well and uninterrupted for more than four consecutive hours</td></tr></tbody></table></div><h2>Without food or water</h2><p>A full day without food imposes −2 on all Skill and Situation rolls the next day. Eating a full meal the next morning avoids this penalty. Each additional day without food adds another −2 to previous penalties.</p><p>A full day without drinking likewise imposes −2 on all Skill and Situation rolls the next day. Quenching thirst the next morning avoids this penalty. Each additional day without drinking adds another −2.</p><p>After fourteen days without food, the character dies of starvation even if drinking was possible. After seven days without fluid, the character dies of dehydration.</p><ul><li>Three quarters of the daily food or drink ration: −1 every three days.</li><li>Half the daily ration: −1 every two days.</li><li>One quarter of the daily ration: −1 each day.</li><li>No daily ration of food or water: −2 each day.</li></ul><p>When lacking both food and water, the modifiers add together. The table below reproduces the French printed values for days 2 to 5.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Amount consumed</th><th scope=\"col\">Day 2</th><th scope=\"col\">Day 3</th><th scope=\"col\">Day 4</th><th scope=\"col\">Day 5</th></tr></thead><tbody><tr><td>¾ daily food ration</td><td>±0</td><td>±0</td><td>-1</td><td>-1</td></tr><tr><td>½ daily food ration</td><td>±0</td><td>-1</td><td>-1</td><td>-1</td></tr><tr><td>¼ daily food ration</td><td>-1</td><td>-2</td><td>-3</td><td>-4</td></tr><tr><td>No food</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td></tr><tr><td>¾ daily fluid ration</td><td>±0</td><td>±0</td><td>-1</td><td>-2</td></tr><tr><td>½ daily fluid ration</td><td>±0</td><td>-1</td><td>-1</td><td>-2</td></tr><tr><td>¼ daily fluid ration</td><td>-1</td><td>-2</td><td>-3</td><td>-4</td></tr><tr><td>No fluid</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td></tr></tbody></table></div><p>Source: Game Master’s Guide, A Trapper’s Life; French Rules pp. 301–303, tables pp. 302–303.</p></article>"
+        },
         "combatActions": {
           "Name": "Combat Actions",
           "Intro": "Combat actions cover what a character can do during an action round: attack, parry, move and perform other manoeuvres. A weapon action (WA) is a combat action, but not every combat action is a weapon action. The GM determines appropriate modifiers and what is possible in the circumstances.",
