@@ -19,7 +19,9 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // plus item ownership); version 55 fixes three icons that point at core paths proven
 // nowhere else: the amber uses the neck pendant, the fresh sap the green bulb bottle
 // (FrostboarFat path) and the firdtursir gold the coin pile svg.
-const CONTENT_VERSION = 55;
+// TEMPORARY WORLD MIGRATION — version 56 installs the GM head-regeneration
+// table and the hunting/training journals in previously populated worlds.
+const CONTENT_VERSION = 56;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -204,7 +206,8 @@ const renamedOrCustom = (document, translations) => !translations.has(document.n
 // data/starter-content.json. Exported for the regression test that pins the Foundry shape.
 export function folderColor(config) {
   if (!config.colorRole) return undefined;
-  const color = PALETTES.default[config.colorRole];
+  const palette = PALETTES[globalThis.game?.settings?.get?.("trudvang-chronicles", "colorPalette")] ?? PALETTES.default;
+  const color = palette[config.colorRole];
   if (!color || !/^#[\da-f]{6}$/i.test(color)) throw new Error(`No solid palette colour for folder role ${config.colorRole}`);
   return color;
 }
@@ -378,6 +381,7 @@ async function rebuildTables(source, folders, translationsByKey) {
   const tables = source.tables.map(entry => ({
     ...localizeTree(entry),
     folder: folders[entry.folder]?.id,
+    ...(folderOwnership(source.folders[entry.folder] ?? {}) ? {ownership: folderOwnership(source.folders[entry.folder])} : {}),
     flags: {[SYSTEM_ID]: {starterId: starterKey(entry.nameKey), tableKey: starterKey(entry.nameKey)}}
   }));
   await RollTable.createDocuments(tables);

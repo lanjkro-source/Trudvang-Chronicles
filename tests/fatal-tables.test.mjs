@@ -14,8 +14,9 @@ for (const table of tables) {
       if (!range[1] || max > range[1]) range[1] = max;
       return range;
     }, [null, null]);
-    assert.deepEqual(availableRange, [1, 999]);
-    for (const total of [1, 10, 20, 21, 60, 999]) {
+    const heads = table.formula === "2d10";
+    assert.deepEqual(availableRange, heads ? [2, 20] : [1, 999]);
+    for (const total of heads ? Array.from({length: 19}, (_, i) => i + 2) : [1, 10, 20, 21, 60, 999]) {
       assert.equal(table.results.filter(result => total >= result.range[0] && total <= result.range[1]).length, 1);
     }
   });

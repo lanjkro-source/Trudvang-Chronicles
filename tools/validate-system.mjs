@@ -165,7 +165,7 @@ for (const extract of (content.items || []).filter(item => item.type === "potion
 for (const key of localization) if (!frenchLocalization.has(key)) failures.push(`Missing French localization key: ${key}`);
 for (const key of frenchLocalization) if (!localization.has(key)) failures.push(`Missing English localization key: ${key}`);
 
-const requiredTables = new Map([["fatal-magic-effects", 29], ["fatal-failure-effects", 11], ["extract-stage", 4], ["stormlander-traits", 40]]);
+const requiredTables = new Map([["fatal-magic-effects", 29], ["fatal-failure-effects", 11], ["extract-stage", 4], ["stormlander-traits", 40], ["huvfurwurm-head-regeneration", 17]]);
 if (content.tables?.length !== requiredTables.size) failures.push(`Starter content must contain exactly ${requiredTables.size} rule tables.`);
 for (const table of content.tables || []) {
   const id = table.flags?.["trudvang-chronicles"]?.starterId;
@@ -174,12 +174,14 @@ for (const table of content.tables || []) {
   else if (table.results?.length !== expectedResults) failures.push(`${id} must contain ${expectedResults} results.`);
   const sorted = [...(table.results || [])].sort((a, b) => a.range[0] - b.range[0]);
   // Foundry V14's table preflight treats a zero lower bound as unset.
-  let next = 1;
+  const headRegeneration = id === "huvfurwurm-head-regeneration";
+  if (headRegeneration && table.formula !== "2d10") failures.push("Head regeneration must roll 2d10.");
+  let next = headRegeneration ? 2 : 1;
   for (const result of sorted) {
     if (result.range?.[0] !== next) failures.push(`${id} has a gap or overlap before ${result.range?.[0]}.`);
     next = Number(result.range?.[1]) + 1;
   }
-  if (next !== 1000) failures.push(`${id} must cover every total from 1 through 999.`);
+  if (next !== (headRegeneration ? 21 : 1000)) failures.push(`${id} does not cover its full roll range.`);
 }
 
 const glossary = readFileSync(join(root, "lang/GLOSSARY.md"), "utf8");

@@ -1,5 +1,11 @@
 {
   "folders": {
+    "gmTables": {
+      "nameKey": "TRUDVANG.Content.Folder.GMTables",
+      "type": "RollTable",
+      "colorRole": "warning",
+      "defaultRole": "NONE"
+    },
     "weapons": {
       "nameKey": "TRUDVANG.Content.Folder.Weapons",
       "type": "Item"
@@ -2132,6 +2138,35 @@
     }
   ],
   "tables": [
+    {
+      "nameKey": "TRUDVANG.Content.Table.HeadRegeneration.Name",
+      "flags": {"trudvang-chronicles": {"starterId": "huvfurwurm-head-regeneration"}},
+      "descriptionKey": "TRUDVANG.Content.Table.HeadRegeneration.Description",
+      "img": "icons/svg/regen.svg",
+      "folder": "gmTables",
+      "formula": "2d10",
+      "displayRoll": true,
+      "replacement": true,
+      "results": [
+        {"type": "text", "range": [2, 4], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E2"},
+        {"type": "text", "range": [5, 5], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E5"},
+        {"type": "text", "range": [6, 6], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E6"},
+        {"type": "text", "range": [7, 7], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E7"},
+        {"type": "text", "range": [8, 8], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E8"},
+        {"type": "text", "range": [9, 9], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E9"},
+        {"type": "text", "range": [10, 10], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E10"},
+        {"type": "text", "range": [11, 11], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E11"},
+        {"type": "text", "range": [12, 12], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E12"},
+        {"type": "text", "range": [13, 13], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E13"},
+        {"type": "text", "range": [14, 14], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E14"},
+        {"type": "text", "range": [15, 15], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E15"},
+        {"type": "text", "range": [16, 16], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E16"},
+        {"type": "text", "range": [17, 17], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E17"},
+        {"type": "text", "range": [18, 18], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E18"},
+        {"type": "text", "range": [19, 19], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E19"},
+        {"type": "text", "range": [20, 20], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E20"}
+      ]
+    },
     {
       "nameKey": "TRUDVANG.Content.Table.FatalMagic.Name",
       "img": "icons/svg/explosion.svg",

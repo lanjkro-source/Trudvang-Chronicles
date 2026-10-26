@@ -1408,6 +1408,7 @@
         }
       },
       "Folder": {
+        "GMTables": "Game Master",
         "Weapons": "Weapons",
         "WeaponsLight": "Light weapons",
         "WeaponsHeavy": "Heavy weapons",
@@ -2315,6 +2316,27 @@
         }
       },
       "Table": {
+        "HeadRegeneration": {
+          "Name": "Head Regeneration — Huvfurwurm",
+          "Description": "<p>Jorgi’s Bestiary, Heads of the Huvfurwurm (French edition pp. 110–111). Roll 2d10, following the table heading despite the paragraph mentioning 1d20. After great damage (20 or more points) or a decapitation, the GM decides whether a head regenerates. The first three regenerations are functional; the fourth produces a useless head which never grows back if severed again. Extra heads retain the original head’s regeneration count. On 19 or 20, make the additional rolls indicated.</p>",
+          "E2": "Two normal heads regenerate instead of one.",
+          "E5": "Thin neck: halve the neck’s BP which must be reduced to zero to sever it.",
+          "E6": "Thick neck: double the neck’s BP which must be reduced to zero to sever it.",
+          "E7": "Hypnotic eyes, costing no CP. The victim must pass a Situation roll of 8, modified by Psyche, or become paralyzed for 2d6 action rounds or until suffering at least 1 damage.",
+          "E8": "Poor sight: −3 SV on this head’s attacks.",
+          "E9": "Mutated head with great tusks: open-roll chance increases by 1 (OR threshold reduced by 1).",
+          "E10": "Frenzied head attacking the other heads.",
+          "E11": "Broad grabbing head: deals half damage. The victim must pass a Situation roll of 12, modified by Strength, or remain trapped in its mouth. All other heads gain +2 SV against the trapped victim until it succeeds on another Situation roll to escape.",
+          "E12": "Short neck: reach −4 m.",
+          "E13": "Extra-long neck: reach +4 m.",
+          "E14": "Defective scales: PV 0 for this head only.",
+          "E15": "Heavy scales: PV +3 for this head only.",
+          "E16": "Mutated giant head with great teeth: +3 attack SV and open-roll chance increased by 2 (OR threshold reduced by 2).",
+          "E17": "Acid breath: cone 7 m long and 4 m wide at the end; 1d10 (OR 8–10) damage. Twice per day, no CP cost.",
+          "E18": "Fire breath: cone 10 m long and 4 m wide at the end; 1d10 (OR 7–10) damage. Twice per day, no CP cost.",
+          "E19": "Two extra heads grow: roll twice more to determine their nature.",
+          "E20": "Three extra heads grow: roll three times more to determine their nature."
+        },
         "StormlanderMale": {
           "Name": "Names - Stormlander Men"
         },
@@ -10170,6 +10192,107 @@
         }
       },
       "Journal": {
+        "training": {
+          "Name": "Animal Training",
+          "Intro": "A wild animal must first be captured and domesticated. The trainer must succeed on five Wilderness tests, using Nature Knowledge and Animal Friend, with one attempt per week. This takes at least five weeks. The GM decides which species can be domesticated and what they can learn.",
+          "Learning": "After domestication, make one Wilderness test with Animal Friend per week and per training type. No more than three training types may be taught simultaneously. Each degree must be learned before the next and requires the listed successes in addition to those for earlier degrees. An animal may learn several types of training.",
+          "LearningTitle": "Learning and progression",
+          "CountTitle": "Successful tests required for each training degree",
+          "Type": "Training type",
+          "Stages": [
+            "Obedient",
+            "Competent",
+            "Excellent",
+            "Expert",
+            "Masterful"
+          ],
+          "Names": [
+            "Fetch",
+            "Jump",
+            "Hunt",
+            "Carry a message",
+            "Run fast",
+            "Track",
+            "Attack",
+            "Guard"
+          ],
+          "Descriptions": [
+            "On a simple order, the animal fetches or searches for an object. Its search SV depends on its degree. The GM applies appropriate circumstantial modifiers.",
+            "The mount is trained to jump obstacles. Its rider gains +1 Agility SV per training degree when making the mount jump.",
+            "The animal drives game towards its master or hunts by itself. Its master gains +1 Wilderness SV per degree when hunting with its help. When hunting alone, use the table’s SV; trained animals almost always hunt small game. The GM may apply circumstantial modifiers.",
+            "The animal carries a message to a learned destination. It knows one destination per training degree.",
+            "Initial movement increases by 20% per degree: +20%, +40%, +60%, +80%, then +100% at the masterful degree.",
+            "The animal follows a trail shown by its master. The trainer gains +2 Wilderness SV per degree when following a trail with its help.",
+            "The animal helps its master by hindering an opponent: the master gains +1 SV on combat actions per degree, and the enemy suffers −1 per degree on combat actions against the master. The animal does not actually attack in this case. If it attacks itself, these modifiers no longer apply and its attack SV is 2 per degree.",
+            "The animal warns its master about unwanted visitors and attacks if they come too close. Its detection SV appears in the table. Depending on the animal, the GM determines the modifier to the intruder’s test to remain unnoticed."
+          ],
+          "Effectiveness": "Degree",
+          "SV": "Animal SV",
+          "FetchTitle": "Fetch: searching for an object",
+          "HuntTitle": "Hunting alone",
+          "GuardTitle": "Guard: detection",
+          "Example": "Example: teaching masterful Fetch requires 2 + 4 + 6 + 8 + 10 = 30 successful tests, taking at least thirty weeks after domestication.",
+          "Source": "Source: Player’s Handbook (Wilderness) and Game Master’s Guide (Trained Animals); French Rules pp. 97, 128–129.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>A wild animal must first be captured and domesticated. The trainer must succeed on five Wilderness tests, using Nature Knowledge and Animal Friend, with one attempt per week. This takes at least five weeks. The GM decides which species can be domesticated and what they can learn.</p><h2>Learning and progression</h2><p>After domestication, make one Wilderness test with Animal Friend per week and per training type. No more than three training types may be taught simultaneously. Each degree must be learned before the next and requires the listed successes in addition to those for earlier degrees. An animal may learn several types of training.</p><h2>Successful tests required for each training degree</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Training type</th><th scope=\"col\">Obedient</th><th scope=\"col\">Competent</th><th scope=\"col\">Excellent</th><th scope=\"col\">Expert</th><th scope=\"col\">Masterful</th></tr></thead><tbody><tr><td>Fetch</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><td>Jump</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><td>Hunt</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Carry a message</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Run fast</td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr><tr><td>Track</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Attack</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr><tr><td>Guard</td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr></tbody></table></div><aside class=\"trudvang-religion-example\"><p>Example: teaching masterful Fetch requires 2 + 4 + 6 + 8 + 10 = 30 successful tests, taking at least thirty weeks after domestication.</p></aside><h2>Fetch</h2><p>On a simple order, the animal fetches or searches for an object. Its search SV depends on its degree. The GM applies appropriate circumstantial modifiers.</p><h3>Fetch: searching for an object</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degree</th><th scope=\"col\">Animal SV</th></tr></thead><tbody><tr><td>Obedient</td><td>3</td></tr><tr><td>Competent</td><td>6</td></tr><tr><td>Excellent</td><td>9</td></tr><tr><td>Expert</td><td>12</td></tr><tr><td>Masterful</td><td>15</td></tr></tbody></table></div><h2>Jump</h2><p>The mount is trained to jump obstacles. Its rider gains +1 Agility SV per training degree when making the mount jump.</p><h2>Hunt</h2><p>The animal drives game towards its master or hunts by itself. Its master gains +1 Wilderness SV per degree when hunting with its help. When hunting alone, use the table’s SV; trained animals almost always hunt small game. The GM may apply circumstantial modifiers.</p><h3>Hunting alone</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degree</th><th scope=\"col\">Animal SV</th></tr></thead><tbody><tr><td>Obedient</td><td>—</td></tr><tr><td>Competent</td><td>2</td></tr><tr><td>Excellent</td><td>4</td></tr><tr><td>Expert</td><td>6</td></tr><tr><td>Masterful</td><td>8</td></tr></tbody></table></div><h2>Carry a message</h2><p>The animal carries a message to a learned destination. It knows one destination per training degree.</p><h2>Run fast</h2><p>Initial movement increases by 20% per degree: +20%, +40%, +60%, +80%, then +100% at the masterful degree.</p><h2>Track</h2><p>The animal follows a trail shown by its master. The trainer gains +2 Wilderness SV per degree when following a trail with its help.</p><h2>Attack</h2><p>The animal helps its master by hindering an opponent: the master gains +1 SV on combat actions per degree, and the enemy suffers −1 per degree on combat actions against the master. The animal does not actually attack in this case. If it attacks itself, these modifiers no longer apply and its attack SV is 2 per degree.</p><h2>Guard</h2><p>The animal warns its master about unwanted visitors and attacks if they come too close. Its detection SV appears in the table. Depending on the animal, the GM determines the modifier to the intruder’s test to remain unnoticed.</p><h3>Guard: detection</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degree</th><th scope=\"col\">Animal SV</th></tr></thead><tbody><tr><td>Obedient</td><td>10</td></tr><tr><td>Competent</td><td>12</td></tr><tr><td>Excellent</td><td>14</td></tr><tr><td>Expert</td><td>16</td></tr><tr><td>Masterful</td><td>18</td></tr></tbody></table></div><p>Source: Player’s Handbook (Wilderness) and Game Master’s Guide (Trained Animals); French Rules pp. 97, 128–129.</p></article>"
+        },
+        "hunting": {
+          "Name": "Hunting",
+          "Intro": "Hunting and fishing use Wilderness, Hunting Experience and Hunting and Fishing. Results depend on the hunting ground, time spent, game sought and the hunter’s skill. Choose these before rolling. The result table gives daily food rations; a person normally needs one ration per day.",
+          "Titles": [
+            "Hunting grounds",
+            "Minimum time",
+            "Extra time and successive days",
+            "Group hunting",
+            "Type of game",
+            "Rations gained by margin",
+            "Examples of prey",
+            "Specialties and trained animals"
+          ],
+          "Columns": [
+            "Ground",
+            "SV modifier",
+            "Game",
+            "Minimum time",
+            "Margin (final SV − die)",
+            "Small game",
+            "Medium game",
+            "Large game",
+            "Daily rations",
+            "Examples of prey"
+          ],
+          "Grounds": [
+            "Incredibly favorable",
+            "Favorable",
+            "Good",
+            "Neither good nor barren (forest)",
+            "Barren (prairie, savanna, steppe)",
+            "Very barren (arctic, tundra)",
+            "Extremely barren (great ice plains)"
+          ],
+          "Hours": "hours",
+          "Time": "Each additional two hours beyond the minimum gives +1 SV. A hunter may hunt no more than twelve hours per day. The hunter can postpone the test and continue the following day, but must spend the minimum time again before earning further bonuses. The accumulated time bonus cannot exceed the Wilderness skill value. Normal penalties for time in the wilderness, weather, sleep and rationing still apply.",
+          "Group": "A group makes a single test using its most skilled hunter. The time bonus becomes +1 per extra hour with at least two hunters for small game, four for medium game and six for large game. Only one hunter uses this bonus at a time. Hunters working separately on the same hunting ground each halve their SV.",
+          "Game": "Small game includes rodents, rabbits and pheasants; medium game includes martens and foxes; large game includes boars, deer and moose.",
+          "Resolution": "Add the ground, time and game modifiers to the appropriate SV and make the test. Subtract the die result from final SV and consult the table. A margin below 1 produces no catch; large game requires a margin of at least 5. Roll the listed dice to determine the number of rations.",
+          "NoCatch": "No catch",
+          "More": "For each further 4 margin points, add 4, 8 or 16 rations respectively to the final row’s result.",
+          "Prey": [
+            "Rabbit, pheasant, poultry, hare",
+            "Fox, eel, trout",
+            "Carp, porcupine",
+            "Pike, otter",
+            "Old pike, badger",
+            "Sheep",
+            "Deer, reindeer",
+            "Boar",
+            "Cow",
+            "Moose, bear, wulter (whale)",
+            "Mastomant"
+          ],
+          "Bonuses": "Species Hunter applies when tracking the chosen species or hunting where it lives. Carve and Butcher yields 10% more rations and allows the use of the animal’s fur. A trained hunting animal gives its master +1 Wilderness SV per degree; if hunting alone, use its own values in the Animal Training journal.",
+          "Source": "Source: Player’s Handbook (Wilderness) and Game Master’s Guide (Hunting/Trained Animals); French Rules pp. 97–98, 128, 303–305.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>Hunting and fishing use Wilderness, Hunting Experience and Hunting and Fishing. Results depend on the hunting ground, time spent, game sought and the hunter’s skill. Choose these before rolling. The result table gives daily food rations; a person normally needs one ration per day.</p><h2>Hunting grounds</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Ground</th><th scope=\"col\">SV modifier</th></tr></thead><tbody><tr><td>Incredibly favorable</td><td>+5</td></tr><tr><td>Favorable</td><td>+2</td></tr><tr><td>Good</td><td>+1</td></tr><tr><td>Neither good nor barren (forest)</td><td>0</td></tr><tr><td>Barren (prairie, savanna, steppe)</td><td>-2</td></tr><tr><td>Very barren (arctic, tundra)</td><td>-5</td></tr><tr><td>Extremely barren (great ice plains)</td><td>-10</td></tr></tbody></table></div><h2>Minimum time</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Game</th><th scope=\"col\">Minimum time</th></tr></thead><tbody><tr><td>Small game</td><td>4 hours</td></tr><tr><td>Medium game</td><td>6 hours</td></tr><tr><td>Large game</td><td>8 hours</td></tr></tbody></table></div><h2>Extra time and successive days</h2><p>Each additional two hours beyond the minimum gives +1 SV. A hunter may hunt no more than twelve hours per day. The hunter can postpone the test and continue the following day, but must spend the minimum time again before earning further bonuses. The accumulated time bonus cannot exceed the Wilderness skill value. Normal penalties for time in the wilderness, weather, sleep and rationing still apply.</p><h2>Group hunting</h2><p>A group makes a single test using its most skilled hunter. The time bonus becomes +1 per extra hour with at least two hunters for small game, four for medium game and six for large game. Only one hunter uses this bonus at a time. Hunters working separately on the same hunting ground each halve their SV.</p><h2>Type of game</h2><p>Small game includes rodents, rabbits and pheasants; medium game includes martens and foxes; large game includes boars, deer and moose.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Game</th><th scope=\"col\">SV modifier</th></tr></thead><tbody><tr><td>Small game</td><td>+2</td></tr><tr><td>Medium game</td><td>0</td></tr><tr><td>Large game</td><td>−5</td></tr></tbody></table></div><h2>Rations gained by margin</h2><p>Add the ground, time and game modifiers to the appropriate SV and make the test. Subtract the die result from final SV and consult the table. A margin below 1 produces no catch; large game requires a margin of at least 5. Roll the listed dice to determine the number of rations.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Margin (final SV − die)</th><th scope=\"col\">Small game</th><th scope=\"col\">Medium game</th><th scope=\"col\">Large game</th></tr></thead><tbody><tr><td>&lt;1</td><td>No catch</td><td>No catch</td><td>No catch</td></tr><tr><td>1–4</td><td>1d3+1</td><td>1d6+2</td><td>No catch</td></tr><tr><td>5–8</td><td>1d6+2</td><td>1d10+6</td><td>3d10+2</td></tr><tr><td>9–12</td><td>1d10+2</td><td>2d10+4</td><td>4d10+8</td></tr><tr><td>13–16</td><td>1d10+6</td><td>3d10+2</td><td>6d10+4</td></tr><tr><td>17–20</td><td>2d10</td><td>4d10</td><td>8d10</td></tr><tr><td>21–24</td><td>2d10+4</td><td>4d10+8</td><td>8d10+16</td></tr><tr><td>25–28</td><td>2d10+8</td><td>5d10+6</td><td>8d10+32</td></tr><tr><td>29–32</td><td>3d10+2</td><td>6d10+4</td><td>8d10+48</td></tr><tr><td>33–36</td><td>3d10+6</td><td>7d10+2</td><td>8d10+64</td></tr><tr><td>37–40</td><td>4d10</td><td>8d10</td><td>8d10+80</td></tr><tr><td>+4</td><td>+4</td><td>+8</td><td>+16</td></tr></tbody></table></div><p>For each further 4 margin points, add 4, 8 or 16 rations respectively to the final row’s result.</p><h2>Examples of prey</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Daily rations</th><th scope=\"col\">Examples of prey</th></tr></thead><tbody><tr><td>1–2</td><td>Rabbit, pheasant, poultry, hare</td></tr><tr><td>3–4</td><td>Fox, eel, trout</td></tr><tr><td>5–8</td><td>Carp, porcupine</td></tr><tr><td>9–12</td><td>Pike, otter</td></tr><tr><td>13–20</td><td>Old pike, badger</td></tr><tr><td>21–40</td><td>Sheep</td></tr><tr><td>41–80</td><td>Deer, reindeer</td></tr><tr><td>81–160</td><td>Boar</td></tr><tr><td>161–320</td><td>Cow</td></tr><tr><td>321–640</td><td>Moose, bear, wulter (whale)</td></tr><tr><td>641+</td><td>Mastomant</td></tr></tbody></table></div><h2>Specialties and trained animals</h2><p>Species Hunter applies when tracking the chosen species or hunting where it lives. Carve and Butcher yields 10% more rations and allows the use of the animal’s fur. A trained hunting animal gives its master +1 Wilderness SV per degree; if hunting alone, use its own values in the Animal Training journal.</p><p>Source: Player’s Handbook (Wilderness) and Game Master’s Guide (Hunting/Trained Animals); French Rules pp. 97–98, 128, 303–305.</p></article>"
+        },
         "human": {
           "Name": "Humans",
           "Content": "<p>chapter 1. the character | 19 that one can be an Ogro Wildfolk or a Stormlander Gray Brute.</p><h2>Changeling</h2><p>A Changeling is a cross between a human and a forest troll. It is smaller than a regular human, with brownish skin and yellow eyes. Some Changelings also have a cow tail, just like a troll.</p><h2>Gray Brute</h2><p>A Gray Brute is the offspring of a human and a gray troll. They are typically bigger than a human in every respect. A Gray Brute usually takes after its troll lineage, meaning they have lots of hair on their body , yellow eyes, a big nose, and long ears.</p><h2>Ogro</h2><p>An Ogro is a mix of human and ogre. It is much taller than a human but less intelligent. Their skin is gray or green and as hardened as leather. Some ogros have blue eyes, but most of them have the yellow eyes of a troll, and just like changelings most ogros have a long tail.</p><h2>Wildfolk</h2><p>The traditional Wildfolk are a mix of different tribes, Amures live in the northwestern mountains, Thoorkaals in the southwest, and all the wild and savage tribes and clans dwell in the northern parts of Trudvang. Most of the Wildfolk pray to the dark gods and put their faith in Haminges. They are brutal and hardened, well known for their excellence in war and fighting. They are typically smaller, less intelligent, and stronger than the average Stormlander .</p><h2>Half-Trolls</h2><p>There are many stories about trolls using their foul magic on humans to beget offspring. Half-troll is the common name for the offspring of a human and a troll. The typical half-troll is big and brutish, and shares characteristics of both trolls and humans. Rem ember that “half-troll” is just a race name. Half-trolls raised by humans tend to also have human cultures. This means The daughters and sons of the human race live in every corner of Trudvang. Ever since their first dawn, they’ve adjusted to the environment like no other race. In the east live the Stormlanders; in Mittland, descendants of the Thronelander kings; and in the far west the wise Viranns. Side by side with these main human breeds live the Wildfolk hiding in the deep forests and mountains.</p><h2>Mittlander</h2><p>The old name of the Mittlanders is East-throners. It is a human culture with old and complex traditions. According to legend, Mittlanders descended from the Thronelanders and lived in the far eastern wilderness for thousands of years before returning west. Mittlanders are proud and honorable, and they value courage as the highest virtue. Typical Mittlanders are not as tall and strong as most Stormlanders, but they are still respected for their stamina and endurance.</p><h2>Stormlander</h2><p>Stormlanders are the main folk in the east. They are tall and strong and have been shaped by the harsh and great wilderness they live in. Typical Stormlanders are taller than other humans and have dark hair and black eyes. Only those from Ejdland differ from the typical Stormlander; they are blond and have blue eyes. Sometimes one may even find a Stormlander with yellow eyes, which is said to be the heritage from living side by side with trolls and other dark breeds.</p><h2>Virann</h2><p>The humans living in the far west are called Viranns. The typical Virann is blond and has gray or dark brown eyes. They are not known for great strength or constitution but rather for their wisdom and knowledge. Ever since they settled down and learned agriculture, the Viranns have valued the pursuits of knowledge above those of strength and war.</p>"

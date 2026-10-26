@@ -1408,6 +1408,7 @@
         }
       },
       "Folder": {
+        "GMTables": "Maître de jeu",
         "Weapons": "Armes",
         "WeaponsLight": "Armes légères",
         "WeaponsHeavy": "Armes lourdes",
@@ -2315,6 +2316,27 @@
         }
       },
       "Table": {
+        "HeadRegeneration": {
+          "Name": "Régénération de tête — Huvfurwurm",
+          "Description": "<p>Bestiaire de Jorge, p. 110–111. Lancez 2d10 : le tableau fait autorité malgré la mention de 1d20 dans le paragraphe. Après des dégâts importants (20 points ou plus) ou une décapitation, le MJ décide si une tête repousse. Une tête reste fonctionnelle pendant ses trois premières régénérations ; la quatrième est inutilisable et ne repousse plus si elle est tranchée. Les têtes supplémentaires conservent le rang de régénération de la tête d’origine. Pour 19 ou 20, effectuez les nouveaux jets indiqués.</p>",
+          "E2": "Deux têtes normales sont régénérées au lieu d’une seule.",
+          "E5": "Tête au cou fin : divisez par deux les PS du cou à réduire à 0 pour le trancher.",
+          "E6": "Tête au cou épais : doublez les PS du cou à réduire à 0 pour le trancher.",
+          "E7": "Yeux hypnotiques, utilisables sans PC. La victime doit réussir un test de situation de 8, modifié par le Psychisme, pour éviter la paralysie pendant 2d6 tours de jeu ou jusqu’à subir au moins 1 point de dégâts.",
+          "E8": "La tête voit mal : −3 à la VC de ses attaques.",
+          "E9": "Tête mutée aux longues défenses : les chances de jet ouvert augmentent de 1 (seuil de JO réduit de 1).",
+          "E10": "Tête démente qui attaque les autres têtes.",
+          "E11": "Tête large et agrippeuse : inflige la moitié des dégâts. La victime doit réussir un test de situation de 12, modifié par la Force, sinon elle reste coincée dans la gueule. Les autres têtes gagnent +2 à la VC contre elle jusqu’à sa libération par un nouveau test de situation.",
+          "E12": "Cou court : allonge −4 m.",
+          "E13": "Cou très long : allonge +4 m.",
+          "E14": "Écailles fragiles : VP 0 pour cette tête seulement.",
+          "E15": "Écailles épaisses : VP +3 pour cette tête seulement.",
+          "E16": "Tête géante mutée aux crocs imposants : VC d’attaque +3 et chances de jet ouvert augmentées de 2 (seuil de JO réduit de 2).",
+          "E17": "Souffle d’acide : cône long de 7 m, large de 4 m à son extrémité ; 1d10 (JO 8–10) dégâts. Deux fois par jour, sans PC.",
+          "E18": "Souffle de feu : cône long de 10 m, large de 4 m à son extrémité ; 1d10 (JO 7–10) dégâts. Deux fois par jour, sans PC.",
+          "E19": "Deux têtes supplémentaires : faites deux nouveaux jets pour déterminer leur nature.",
+          "E20": "Trois têtes supplémentaires : faites trois nouveaux jets pour déterminer leur nature."
+        },
         "StormlanderMale": {
           "Name": "Noms - Hommes stormlander"
         },
@@ -10170,6 +10192,107 @@
         }
       },
       "Journal": {
+        "training": {
+          "Name": "Dressage",
+          "Intro": "Un animal sauvage doit d’abord être capturé puis domestiqué : le dresseur doit réussir cinq tests de Nature, avec Connaissance de la nature et Ami des animaux, à raison d’une tentative par semaine. Il faut donc au minimum cinq semaines. Le MJ décide des espèces qui peuvent être domestiquées et des apprentissages qu’elles peuvent acquérir.",
+          "Learning": "Une fois l’animal domestiqué, le dresseur effectue un test de Nature avec Ami des animaux par semaine et par type d’entraînement. Il ne peut mener plus de trois types d’entraînement en parallèle. Chaque degré doit être acquis avant le suivant et exige le nombre de réussites indiqué, en plus des réussites des degrés précédents. Un animal peut apprendre plusieurs types d’entraînement.",
+          "LearningTitle": "Apprentissage et progression",
+          "CountTitle": "Réussites nécessaires par degré de dressage",
+          "Type": "Type de dressage",
+          "Stages": [
+            "Obéissant",
+            "Compétent",
+            "Excellent",
+            "Expert",
+            "Magistral"
+          ],
+          "Names": [
+            "Rapporter",
+            "Sauter",
+            "Chasser",
+            "Porter un message",
+            "Courir vite",
+            "Pister",
+            "Attaquer",
+            "Monter la garde"
+          ],
+          "Descriptions": [
+            "Sur un ordre simple, l’animal rapporte ou cherche un objet. Sa VC de recherche dépend de son degré. Le MJ applique les modificateurs appropriés aux circonstances.",
+            "La monture est entraînée à franchir des obstacles. Le cavalier reçoit +1 à sa VC d’Agilité par degré de dressage lorsqu’il fait sauter la monture.",
+            "L’animal rabat le gibier ou chasse lui-même. Son maître reçoit +1 à sa VC de Nature par degré lorsqu’il chasse avec son aide. S’il chasse seul, utilisez la VC du tableau ; il chasse presque toujours de petites proies. Le MJ peut appliquer des modificateurs de circonstances.",
+            "L’animal porte un message vers un lieu appris. Il connaît une destination par degré de dressage.",
+            "Le mouvement initial augmente de 20 % par degré : +20 %, +40 %, +60 %, +80 %, puis +100 % au degré magistral.",
+            "L’animal suit une piste montrée par son maître. Le dresseur reçoit +2 à sa VC de Nature par degré de dressage lorsqu’il suit une piste avec son aide.",
+            "L’animal aide son maître en gênant son adversaire : le maître reçoit +1 à la VC de ses actions de combat par degré et l’ennemi subit −1 par degré à ses actions contre le maître. L’animal n’attaque pas réellement dans ce cas. S’il attaque lui-même, ces modificateurs ne s’appliquent plus ; sa VC d’attaque est de 2 par degré.",
+            "L’animal avertit son maître de l’arrivée de visiteurs indésirables et attaque s’ils s’approchent trop. Sa VC de détection figure dans le tableau. Le MJ détermine, selon l’animal, le modificateur au test de l’intrus pour éviter d’être repéré."
+          ],
+          "Effectiveness": "Degré",
+          "SV": "VC de l’animal",
+          "FetchTitle": "Rapporter : recherche d’un objet",
+          "HuntTitle": "Chasser seul",
+          "GuardTitle": "Monter la garde : détection",
+          "Example": "Exemple : apprendre à rapporter au degré magistral exige 2 + 4 + 6 + 8 + 10 = 30 réussites, soit au moins trente semaines après la domestication.",
+          "Source": "Source : Livre des règles, p. 97 et 128–129.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>Un animal sauvage doit d’abord être capturé puis domestiqué : le dresseur doit réussir cinq tests de Nature, avec Connaissance de la nature et Ami des animaux, à raison d’une tentative par semaine. Il faut donc au minimum cinq semaines. Le MJ décide des espèces qui peuvent être domestiquées et des apprentissages qu’elles peuvent acquérir.</p><h2>Apprentissage et progression</h2><p>Une fois l’animal domestiqué, le dresseur effectue un test de Nature avec Ami des animaux par semaine et par type d’entraînement. Il ne peut mener plus de trois types d’entraînement en parallèle. Chaque degré doit être acquis avant le suivant et exige le nombre de réussites indiqué, en plus des réussites des degrés précédents. Un animal peut apprendre plusieurs types d’entraînement.</p><h2>Réussites nécessaires par degré de dressage</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Type de dressage</th><th scope=\"col\">Obéissant</th><th scope=\"col\">Compétent</th><th scope=\"col\">Excellent</th><th scope=\"col\">Expert</th><th scope=\"col\">Magistral</th></tr></thead><tbody><tr><td>Rapporter</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><td>Sauter</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><td>Chasser</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Porter un message</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Courir vite</td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr><tr><td>Pister</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><td>Attaquer</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr><tr><td>Monter la garde</td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td></tr></tbody></table></div><aside class=\"trudvang-religion-example\"><p>Exemple : apprendre à rapporter au degré magistral exige 2 + 4 + 6 + 8 + 10 = 30 réussites, soit au moins trente semaines après la domestication.</p></aside><h2>Rapporter</h2><p>Sur un ordre simple, l’animal rapporte ou cherche un objet. Sa VC de recherche dépend de son degré. Le MJ applique les modificateurs appropriés aux circonstances.</p><h3>Rapporter : recherche d’un objet</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degré</th><th scope=\"col\">VC de l’animal</th></tr></thead><tbody><tr><td>Obéissant</td><td>3</td></tr><tr><td>Compétent</td><td>6</td></tr><tr><td>Excellent</td><td>9</td></tr><tr><td>Expert</td><td>12</td></tr><tr><td>Magistral</td><td>15</td></tr></tbody></table></div><h2>Sauter</h2><p>La monture est entraînée à franchir des obstacles. Le cavalier reçoit +1 à sa VC d’Agilité par degré de dressage lorsqu’il fait sauter la monture.</p><h2>Chasser</h2><p>L’animal rabat le gibier ou chasse lui-même. Son maître reçoit +1 à sa VC de Nature par degré lorsqu’il chasse avec son aide. S’il chasse seul, utilisez la VC du tableau ; il chasse presque toujours de petites proies. Le MJ peut appliquer des modificateurs de circonstances.</p><h3>Chasser seul</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degré</th><th scope=\"col\">VC de l’animal</th></tr></thead><tbody><tr><td>Obéissant</td><td>—</td></tr><tr><td>Compétent</td><td>2</td></tr><tr><td>Excellent</td><td>4</td></tr><tr><td>Expert</td><td>6</td></tr><tr><td>Magistral</td><td>8</td></tr></tbody></table></div><h2>Porter un message</h2><p>L’animal porte un message vers un lieu appris. Il connaît une destination par degré de dressage.</p><h2>Courir vite</h2><p>Le mouvement initial augmente de 20 % par degré : +20 %, +40 %, +60 %, +80 %, puis +100 % au degré magistral.</p><h2>Pister</h2><p>L’animal suit une piste montrée par son maître. Le dresseur reçoit +2 à sa VC de Nature par degré de dressage lorsqu’il suit une piste avec son aide.</p><h2>Attaquer</h2><p>L’animal aide son maître en gênant son adversaire : le maître reçoit +1 à la VC de ses actions de combat par degré et l’ennemi subit −1 par degré à ses actions contre le maître. L’animal n’attaque pas réellement dans ce cas. S’il attaque lui-même, ces modificateurs ne s’appliquent plus ; sa VC d’attaque est de 2 par degré.</p><h2>Monter la garde</h2><p>L’animal avertit son maître de l’arrivée de visiteurs indésirables et attaque s’ils s’approchent trop. Sa VC de détection figure dans le tableau. Le MJ détermine, selon l’animal, le modificateur au test de l’intrus pour éviter d’être repéré.</p><h3>Monter la garde : détection</h3><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Degré</th><th scope=\"col\">VC de l’animal</th></tr></thead><tbody><tr><td>Obéissant</td><td>10</td></tr><tr><td>Compétent</td><td>12</td></tr><tr><td>Excellent</td><td>14</td></tr><tr><td>Expert</td><td>16</td></tr><tr><td>Magistral</td><td>18</td></tr></tbody></table></div><p>Source : Livre des règles, p. 97 et 128–129.</p></article>"
+        },
+        "hunting": {
+          "Name": "Chasse",
+          "Intro": "La chasse et la pêche utilisent Nature, Expérience de la chasse et Chasser et pêcher. Le résultat dépend du terrain, du temps consacré, du gibier recherché et de la compétence du chasseur. Choisissez ces éléments avant le jet. Le tableau final indique des rations quotidiennes de nourriture ; une personne consomme normalement une ration par jour.",
+          "Titles": [
+            "Terrain de chasse",
+            "Temps minimum",
+            "Temps supplémentaire et jours successifs",
+            "Chasser en groupe",
+            "Type de gibier",
+            "Rations obtenues selon la marge",
+            "Exemples de prises",
+            "Savoirs et animaux dressés"
+          ],
+          "Columns": [
+            "Terrain",
+            "Modificateur de VC",
+            "Gibier",
+            "Durée minimum",
+            "Marge (VC finale − dé)",
+            "Petit gibier",
+            "Gibier moyen",
+            "Gros gibier",
+            "Rations quotidiennes",
+            "Exemples de proies"
+          ],
+          "Grounds": [
+            "Incroyablement favorable",
+            "Favorable",
+            "Bon",
+            "Ni bon ni aride (forêt)",
+            "Aride (prairie, savane, steppe)",
+            "Très aride (arctique, toundra)",
+            "Extrêmement aride (grandes plaines de glace)"
+          ],
+          "Hours": "heures",
+          "Time": "Chaque tranche de deux heures au-delà du minimum accorde +1 à la VC. On ne peut chasser plus de douze heures par jour. Le chasseur peut différer son test et continuer le lendemain, mais doit de nouveau consacrer la durée minimale au gibier avant de gagner de nouveaux bonus. Le bonus de temps cumulé ne peut dépasser la valeur de la compétence Nature. Les pénalités normales liées au séjour dans la nature, à la météo, au sommeil et au rationnement continuent de s’appliquer.",
+          "Group": "Un groupe effectue un seul jet, réalisé par le chasseur le plus compétent. Le bonus de temps passe à +1 par heure supplémentaire avec au moins deux chasseurs pour le petit gibier, quatre pour le gibier moyen et six pour le gros gibier. Un seul chasseur utilise ce bonus à la fois. Si plusieurs chasseurs chassent séparément sur le même terrain, chacun divise sa VC par deux.",
+          "Game": "Le petit gibier comprend par exemple rongeurs, lapins et faisans ; le gibier moyen, martres et renards ; le gros gibier, sangliers, cerfs et élans.",
+          "Resolution": "Additionnez les modificateurs de terrain, de temps et de gibier à la VC adaptée puis effectuez le test. Soustrayez le résultat du dé de la VC finale et consultez le tableau. Une marge inférieure à 1 n’apporte aucune prise ; le gros gibier exige au moins 5 de marge. Lancez les dés indiqués pour connaître le nombre de rations.",
+          "NoCatch": "Aucune prise",
+          "More": "Par tranche de 4 points supplémentaires, ajoutez respectivement 4, 8 ou 16 rations au résultat de la dernière ligne.",
+          "Prey": [
+            "Lapin, faisan, volaille, lièvre",
+            "Renard, anguille, truite",
+            "Carpe, porc-épic",
+            "Brochet, loutre",
+            "Vieux brochet, blaireau",
+            "Mouton",
+            "Cerf, renne",
+            "Sanglier",
+            "Vache",
+            "Élan, ours, wulter (baleine)",
+            "Mastomant"
+          ],
+          "Bonuses": "Chasser une espèce apporte son bonus lorsqu’on piste l’espèce choisie ou qu’on chasse là où elle est établie. Découper et dépecer permet de tirer 10 % de rations supplémentaires des prises et d’exploiter leur fourrure. Un animal dressé à chasser apporte +1 à la VC de Nature du maître par degré de dressage ; s’il chasse seul, utilisez ses valeurs propres décrites dans le journal Dressage.",
+          "Source": "Source : Livre des règles, p. 97–98, 128 et 303–305.",
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><p>La chasse et la pêche utilisent Nature, Expérience de la chasse et Chasser et pêcher. Le résultat dépend du terrain, du temps consacré, du gibier recherché et de la compétence du chasseur. Choisissez ces éléments avant le jet. Le tableau final indique des rations quotidiennes de nourriture ; une personne consomme normalement une ration par jour.</p><h2>Terrain de chasse</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Terrain</th><th scope=\"col\">Modificateur de VC</th></tr></thead><tbody><tr><td>Incroyablement favorable</td><td>+5</td></tr><tr><td>Favorable</td><td>+2</td></tr><tr><td>Bon</td><td>+1</td></tr><tr><td>Ni bon ni aride (forêt)</td><td>0</td></tr><tr><td>Aride (prairie, savane, steppe)</td><td>-2</td></tr><tr><td>Très aride (arctique, toundra)</td><td>-5</td></tr><tr><td>Extrêmement aride (grandes plaines de glace)</td><td>-10</td></tr></tbody></table></div><h2>Temps minimum</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Gibier</th><th scope=\"col\">Durée minimum</th></tr></thead><tbody><tr><td>Petit gibier</td><td>4 heures</td></tr><tr><td>Gibier moyen</td><td>6 heures</td></tr><tr><td>Gros gibier</td><td>8 heures</td></tr></tbody></table></div><h2>Temps supplémentaire et jours successifs</h2><p>Chaque tranche de deux heures au-delà du minimum accorde +1 à la VC. On ne peut chasser plus de douze heures par jour. Le chasseur peut différer son test et continuer le lendemain, mais doit de nouveau consacrer la durée minimale au gibier avant de gagner de nouveaux bonus. Le bonus de temps cumulé ne peut dépasser la valeur de la compétence Nature. Les pénalités normales liées au séjour dans la nature, à la météo, au sommeil et au rationnement continuent de s’appliquer.</p><h2>Chasser en groupe</h2><p>Un groupe effectue un seul jet, réalisé par le chasseur le plus compétent. Le bonus de temps passe à +1 par heure supplémentaire avec au moins deux chasseurs pour le petit gibier, quatre pour le gibier moyen et six pour le gros gibier. Un seul chasseur utilise ce bonus à la fois. Si plusieurs chasseurs chassent séparément sur le même terrain, chacun divise sa VC par deux.</p><h2>Type de gibier</h2><p>Le petit gibier comprend par exemple rongeurs, lapins et faisans ; le gibier moyen, martres et renards ; le gros gibier, sangliers, cerfs et élans.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Gibier</th><th scope=\"col\">Modificateur de VC</th></tr></thead><tbody><tr><td>Petit gibier</td><td>+2</td></tr><tr><td>Gibier moyen</td><td>0</td></tr><tr><td>Gros gibier</td><td>−5</td></tr></tbody></table></div><h2>Rations obtenues selon la marge</h2><p>Additionnez les modificateurs de terrain, de temps et de gibier à la VC adaptée puis effectuez le test. Soustrayez le résultat du dé de la VC finale et consultez le tableau. Une marge inférieure à 1 n’apporte aucune prise ; le gros gibier exige au moins 5 de marge. Lancez les dés indiqués pour connaître le nombre de rations.</p><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Marge (VC finale − dé)</th><th scope=\"col\">Petit gibier</th><th scope=\"col\">Gibier moyen</th><th scope=\"col\">Gros gibier</th></tr></thead><tbody><tr><td>&lt;1</td><td>Aucune prise</td><td>Aucune prise</td><td>Aucune prise</td></tr><tr><td>1–4</td><td>1d3+1</td><td>1d6+2</td><td>Aucune prise</td></tr><tr><td>5–8</td><td>1d6+2</td><td>1d10+6</td><td>3d10+2</td></tr><tr><td>9–12</td><td>1d10+2</td><td>2d10+4</td><td>4d10+8</td></tr><tr><td>13–16</td><td>1d10+6</td><td>3d10+2</td><td>6d10+4</td></tr><tr><td>17–20</td><td>2d10</td><td>4d10</td><td>8d10</td></tr><tr><td>21–24</td><td>2d10+4</td><td>4d10+8</td><td>8d10+16</td></tr><tr><td>25–28</td><td>2d10+8</td><td>5d10+6</td><td>8d10+32</td></tr><tr><td>29–32</td><td>3d10+2</td><td>6d10+4</td><td>8d10+48</td></tr><tr><td>33–36</td><td>3d10+6</td><td>7d10+2</td><td>8d10+64</td></tr><tr><td>37–40</td><td>4d10</td><td>8d10</td><td>8d10+80</td></tr><tr><td>+4</td><td>+4</td><td>+8</td><td>+16</td></tr></tbody></table></div><p>Par tranche de 4 points supplémentaires, ajoutez respectivement 4, 8 ou 16 rations au résultat de la dernière ligne.</p><h2>Exemples de prises</h2><div class=\"trudvang-rules-table-scroll\"><table><thead><tr><th scope=\"col\">Rations quotidiennes</th><th scope=\"col\">Exemples de proies</th></tr></thead><tbody><tr><td>1–2</td><td>Lapin, faisan, volaille, lièvre</td></tr><tr><td>3–4</td><td>Renard, anguille, truite</td></tr><tr><td>5–8</td><td>Carpe, porc-épic</td></tr><tr><td>9–12</td><td>Brochet, loutre</td></tr><tr><td>13–20</td><td>Vieux brochet, blaireau</td></tr><tr><td>21–40</td><td>Mouton</td></tr><tr><td>41–80</td><td>Cerf, renne</td></tr><tr><td>81–160</td><td>Sanglier</td></tr><tr><td>161–320</td><td>Vache</td></tr><tr><td>321–640</td><td>Élan, ours, wulter (baleine)</td></tr><tr><td>641+</td><td>Mastomant</td></tr></tbody></table></div><h2>Savoirs et animaux dressés</h2><p>Chasser une espèce apporte son bonus lorsqu’on piste l’espèce choisie ou qu’on chasse là où elle est établie. Découper et dépecer permet de tirer 10 % de rations supplémentaires des prises et d’exploiter leur fourrure. Un animal dressé à chasser apporte +1 à la VC de Nature du maître par degré de dressage ; s’il chasse seul, utilisez ses valeurs propres décrites dans le journal Dressage.</p><p>Source : Livre des règles, p. 97–98, 128 et 303–305.</p></article>"
+        },
         "human": {
           "Name": "Humains",
           "Content": "<p>Les filles et fils de la race humaine vivent aux quatre coins de Trudvang. Depuis leur premier lever de soleil, ils se sont adaptés à leur environnement comme aucune autre race. À l’est, vivent les Stormlanders ; au Mittland, les descendants des rois de Tronland ; et loin à l’ouest, les sages Viranns. En marge de ces peuples, des sauvages vivent cachés dans les forêts profondes et les montagnes.</p><h2>Les Mittlanders</h2><p>Autrefois, les Mittlanders étaient appelés les Osttronlanders, ou Tronlanders de l’est. Cette culture humaine a des traditions anciennes et complexes. Selon la légende, les Mittlanders descendent des Tronlanders et vécurent dans les contrées sauvages loin à l’est pendant des millénaires avant de revenir dans l’Ouest. Les Mittlanders sont fiers et honorables, et considèrent le courage comme la valeur la plus élevée qui soit. Les Mittlanders typiques ne sont pas aussi grands et forts que la plupart des Stormlanders, mais ils sont néanmoins respectés pour leur résistance et leur endurance.</p><h2>Les Stormlanders</h2><p>Les Stormlanders sont le peuple principal vivant dans l’Est. Ils sont grands et forts, et ont été façonnés par les terres sauvages vastes et rigoureuses sur lesquelles ils vivent. Les Stormlanders typiques sont plus grands que les autres humains, et ont les cheveux sombres et les yeux bleus. Parfois, on peut rencontrer un Stormlander aux yeux jaunes, dont on dit qu’ils seraient l’héritage d’une vie passée aux côtés des trolls et d’autres sombres espèces.</p><h2>Les Viranns</h2><p>Les humains qui vivent loin dans l’Ouest sont appelés les Viranns. Le Virann typique est blond et a des yeux gris ou marron foncé. Ils ne sont pas réputés pour avoir une force ou une constitution importante, mais plus pour leur sagesse et leurs connaissances. Depuis qu’ils se sont installés et ont découvert l’agriculture, les Viranns accordent plus de valeur à la quête de connaissances qu’à la force et à la guerre.</p><h2>Les Sauvages</h2><p>Les peuples sauvages traditionnels sont un mélange de différentes tribus : les Amures, qui vivent dans les montagnes du nord-ouest, les Thoorkaals du sud-ouest, et les tribus et clans sauvages et barbares qui demeurent dans les régions nordiques de Trudvang. La plupart des peuples sauvages vénèrent les dieux des ténèbres et croient en Haminges. Ils sont brutaux et durs, et sont réputés pour exceller à la guerre et au combat. Ils sont habituellement plus petits, moins intelligents et plus forts que le Stormlander moyen.</p><h2>Les demi-trolls</h2><p>Il existe de nombreuses histoires au sujet de trolls faisant usage de leur magie immonde sur des humains pour engendrer des rejetons. Demi-troll est le nom donné habituellement à la progéniture d’un humain et d’un troll. Le demi-troll typique est grand et bestial, et partage des traits communs aux humains et aux trolls. Gardez à l’esprit que « demi-troll » n’est qu’un nom de race. Les demi-trolls élevés par des humains tendent à avoir également une culture humaine. Ce qui signifie qu’un demi-troll peut être un ogro des peuples sauvages ou bien une brute grise stormlander.</p><h2>Les changelins</h2><p>Un changelin est un croisement entre un humain et un troll des forêts. Il est plus petit qu’un humain moyen, et a une peau brunâtre et les yeux jaunes. Tout comme les trolls, certains changelins ont aussi une queue semblable à celle des vaches.</p><h2>Les brutes grises</h2><p>Une brute grise est la progéniture d’un humain et d’un troll gris. Les brutes grises sont habituellement plus grandes et plus charpentées qu’un humain. Elles tiennent essentiellement de leur parent troll : elles ont une forte pilosité corporelle, des yeux jaunes, un gros nez et de grandes oreilles.</p><h2>Les ogros</h2><p>Un ogro est un croisement entre un humain et un ogre. Il est beaucoup plus grand qu’un humain, mais moins intelligent. Sa peau est grise ou verte, et aussi épaisse que du cuir. Certains ogros ont les yeux bleus, mais la plupart ont les yeux jaunes des trolls, et tout comme les changelins, une longue queue.</p>"

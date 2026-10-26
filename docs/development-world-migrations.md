@@ -35,6 +35,7 @@ Toute nouvelle migration de monde doit :
 | Code | Rôle transitoire | Suppression possible lorsque |
 |---|---|---|
 | `CONTENT_VERSION`, `starterContentVersion`, `starterContentLocale` et le chemin `importStarterContent()` | Détectent qu'un monde existant doit recevoir à nouveau le contenu de démarrage. | Les mondes de développement antérieurs ont été supprimés. |
+| Passage de `CONTENT_VERSION` à 56 | Installe la table de régénération de tête (2d10) dans un dossier MJ et les journaux Chasse/Dressage du dossier Règles dans les mondes existants. Les permissions de la table sont données explicitement à NONE, comme son dossier. | Les mondes précédant cette version ont été supprimés ; conserver les données et leur import normal. |
 | `fetchLangPack()`, `loadTranslations()` et `normalizeLabel()` | Reconnaissent les anciens documents par leurs noms français/anglais, avant l'introduction des identifiants stables. | Tous les documents de départ portent leurs flags stables. |
 | `upsertFolder()` et son regroupement des doublons | Adopte et fusionne les dossiers créés par les anciens imports. | Les anciens mondes ont disparu. |
 | `presentationUpdate()`, `upsertBaseItems()` et `upsertActors()` | Met à jour les objets et PNJ de départ existants sans écraser leurs données de règles personnalisées. | La réinstallation n'a plus à réparer des documents existants. |
