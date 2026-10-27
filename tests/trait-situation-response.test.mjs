@@ -8,7 +8,7 @@ globalThis.foundry = {
   utils: {fromUuid: async uuid => documents.get(uuid)}
 };
 const {
-  claimTraitSituationRoll, recordTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse
+  claimTraitSituationRoll, recordTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse, applyEnvironmentFatigue
 } = await import("../modules/trait-situation-request.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 
@@ -179,4 +179,38 @@ test("a no-trait resistance uses a normal situation modifier and never reads a t
   assert.deepEqual(modifierCalls, [{kind: "situation"}]);
   request.traitKey = "strength";
   request.sv = 10;
+});
+
+test("environment responses use server-side weather, Weathered, Psyche, effects and entered bonuses without losing simultaneous results", async t => {
+  t.after(() => {delete request.environment; request.traitKey = "strength";});
+  request.traitKey = "psyche";
+  request.environment = {environment: "forest", travel: "foot", temperature: "cold", wind: "gale", meal: true};
+  const first = actor("environment-a", 2), second = actor("environment-b", -1);
+  first.findRuleKnowledge = () => ({system: {level: 2}});
+  first.getRollModifier = () => -3;
+  const a = await claim(first), b = await claim(second);
+  await Promise.all([recordTraitSituationResponse({...a, result: 11, modifier: 2}), recordTraitSituationResponse({...b, result: 11, modifier: 0})]);
+  assert.equal(request.responses.find(row => row.actorUuid === first.uuid).target, 13, "10+2 Psyche-3 effects-3 conditions+1 meal+4 Weathered+2 manual");
+  assert.equal(request.responses.find(row => row.actorUuid === second.uuid).target, 7);
+  const view = JSON.parse(message.content);
+  assert.ok(view.environmentLines.length >= 7);
+});
+
+test("only a GM can add Fatigued once per environment response without another chat message", async t => {
+  const previous = {user: game.user, items: game.items, clone: foundry.utils.deepClone};
+  t.after(() => {game.user = previous.user; game.items = previous.items; foundry.utils.deepClone = previous.clone; delete request.environment;});
+  const performer = actor("environment-fatigue", 0);
+  let applications = 0;
+  performer.canUserModify = () => true;
+  performer.createTrudvangEffect = async () => {applications++; return {id: "fatigue"};};
+  game.items = [{type: "effect", uuid: "Item.fatigue", system: {catalogId: "trudvang-fatigued"}, effects: [{name: "Fatigued", system: {potency: 1, stackId: "trudvang-fatigued", changes: []}}]}];
+  foundry.utils.deepClone = structuredClone;
+  request.environment = {environment: "forest"};
+  request.responses.push({actorUuid: performer.uuid, name: performer.name, result: 15, success: false});
+  game.user = player;
+  assert.equal(await applyEnvironmentFatigue(message, performer.uuid), null);
+  game.user = gm;
+  await Promise.all([applyEnvironmentFatigue(message, performer.uuid), applyEnvironmentFatigue(message, performer.uuid)]);
+  assert.equal(applications, 1);
+  assert.equal(request.responses.find(row => row.actorUuid === performer.uuid).fatigueApplied, true);
 });

@@ -1,6 +1,8 @@
 import {renderTemplate} from "./helpers.mjs";
 import {TRUDVANG} from "./config.mjs";
 import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
+import {environmentActorValues, environmentCardLines} from "./rules/environment.mjs";
+import {applyGradedEffect} from "./graded-effects.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -9,6 +11,13 @@ const claims = new Map();
 const inFlight = new Set();
 const awaitingReply = new Map();
 let socketRegistered = false;
+const messageJobs = new Map();
+function updateRequest(messageId, callback) {
+  const previous = messageJobs.get(messageId) ?? Promise.resolve();
+  const job = previous.then(callback, callback).finally(() => {if (messageJobs.get(messageId) === job) messageJobs.delete(messageId);});
+  messageJobs.set(messageId, job);
+  return job;
+}
 
 function responderFor(message) {
   const author = game.users.get(message?.user);
@@ -38,12 +47,14 @@ async function cardContent(message, request, responses) {
     gmName: author?.name ?? "",
     gmImg: author?.avatar || "icons/svg/d20.svg",
     title: String(request.title ?? "").trim() || buttonLabel,
-    buttonLabel,
+    buttonLabel: request.environment ? game.i18n.localize("TRUDVANG.Environment.roll") : buttonLabel,
     traitKey: request.traitKey,
     sv: request.sv,
     success: request.success ?? "",
     failure: request.failure ?? "",
-    responses: responses.map(responseView)
+    responses: responses.map(responseView),
+    environment: Boolean(request.environment),
+    environmentLines: request.environment ? environmentCardLines(request.environment, key => game.i18n.localize(key)) : []
   });
 }
 
@@ -79,7 +90,10 @@ export function releaseTraitSituationRoll(payload) {
 }
 
 /** Only the card's GM writes the result; the die value comes from the player's local roll. */
-export async function recordTraitSituationResponse(payload) {
+export function recordTraitSituationResponse(payload) {
+  return updateRequest(payload.messageId, () => recordTraitSituationResponseNow(payload));
+}
+async function recordTraitSituationResponseNow(payload) {
   const context = await contextFor(payload);
   if (!context || !Number.isFinite(payload.modifier) || !Number.isInteger(payload.result)
     || payload.result < 1 || payload.result > 20) return "unavailable";
@@ -95,6 +109,7 @@ export async function recordTraitSituationResponse(payload) {
     const hasTrait = request.traitKey !== "aucun";
     const target = request.sv + (hasTrait ? Number(actor.getTraitValue(request.traitKey)) : 0)
       + Number(actor.getRollModifier(hasTrait ? {kind: "trait", traitKey: request.traitKey} : {kind: "situation"}))
+      + (request.environment ? environmentActorValues(actor, request.environment).modifier : 0)
       + payload.modifier;
     const {success} = resolveRollUnderOutcome(payload.result, target);
     const responses = [...(request.responses ?? []), {
@@ -112,6 +127,23 @@ export async function recordTraitSituationResponse(payload) {
     inFlight.delete(key);
     claims.delete(key);
   }
+}
+
+export async function applyEnvironmentFatigue(message, actorUuid) {
+  if (!game.user.isGM) return null;
+  return updateRequest(message.id, async () => {
+    const request = message.getFlag(SYSTEM_ID, "traitSituation");
+    const entry = request?.responses?.find(row => row.actorUuid === actorUuid);
+    if (!request?.environment || !entry || entry.fatigueApplied) return null;
+    const actor = await foundry.utils.fromUuid(actorUuid);
+    const source = game.items.find(item => item.type === "effect" && item.system.catalogId === "trudvang-fatigued");
+    if (!actor || !source) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Environment.missingFatigue"));
+    const result = await applyGradedEffect(actor, source);
+    if (!result) return null;
+    const responses = request.responses.map(row => row.actorUuid === actorUuid ? {...row, fatigueApplied: true} : row);
+    await message.update({content: await cardContent(message, request, responses), [`flags.${SYSTEM_ID}.traitSituation.responses`]: responses});
+    return result;
+  });
 }
 
 export function registerTraitSituationSocket() {

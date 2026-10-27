@@ -4,7 +4,8 @@ import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
 import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
 import {openPortraitPopout} from "./portrait.mjs";
-import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse} from "./trait-situation-request.mjs";
+import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse, applyEnvironmentFatigue} from "./trait-situation-request.mjs";
+import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
 
 const indicatedTraitTokens = new Map();
@@ -285,6 +286,12 @@ function attachListeners(message, html) {
         ? {kind: "trait", traitKey, includeState: false}
         : {kind: "situation", includeState: false});
       const modifierRows = actorStateRollModifiers(actor);
+      const environment = request.environment ? environmentActorValues(actor, request.environment) : null;
+      if (environment) {
+        modifierRows.push({labelKey: environmentKey("conditions"), value: environment.negative},
+          {labelKey: environmentKey("mitigation"), value: environment.mitigation},
+          {labelKey: "TRUDVANG.Knowledge.weathered", value: environment.weathered});
+      }
       const traitLabel = hasTrait
         ? game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey)
         : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
@@ -293,7 +300,8 @@ function attachListeners(message, html) {
         : game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
       button.disabled = true;
       try {
-        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, effectRows: [...(hasTrait ? actor.traitEffectRows?.(traitKey) ?? [] : []), ...(actor.rollEffectRows?.(hasTrait ? {kind: "trait", traitKey} : {kind: "situation"}) ?? [])], sv, modifierRows});
+        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, effectRows: [...(hasTrait ? actor.traitEffectRows?.(traitKey) ?? [] : []), ...(actor.rollEffectRows?.(hasTrait ? {kind: "trait", traitKey} : {kind: "situation"}) ?? [])], sv, modifierRows,
+          extraNumberFields: environment ? [{name: "environment-bonus", value: 0, label: `${game.i18n.localize(environmentKey("knowledgeBonus"))} (${game.i18n.localize(environmentKey(`types.${environment.options.environment}`))})`}] : []});
         if (!options) return;
         const status = await requestTraitSituationResponse({message, actor, token, modifier: options.modifier});
         if (status !== "recorded") ui.notifications.warn(game.i18n.localize(
@@ -301,6 +309,15 @@ function attachListeners(message, html) {
       } finally {
         button.disabled = false;
       }
+    });
+  });
+  html.querySelectorAll("[data-action='apply-environment-fatigue']").forEach(button => {
+    if (!game.user.isGM) {button.remove(); return;}
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      button.disabled = true;
+      try {await applyEnvironmentFatigue(message, button.dataset.actorUuid);} finally {button.disabled = false;}
     });
   });
   html.querySelectorAll("[data-action='show-portrait']").forEach(control => {

@@ -6,6 +6,7 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import { PALETTES } from "./palette.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
+import {isGradedEffect} from "./rules/effect-stacking.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 51 replays the starter import in worlds whose
 // `starterContentVersion` was recorded by the broken v0.92.3 import: it queried the bestiary
@@ -27,7 +28,9 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // and refreshes every managed GM folder to the palette's accent colour.
 // TEMPORARY WORLD MIGRATION — version 60 adds the Environment journal.
 // TEMPORARY WORLD MIGRATION — version 61 installs the three graded GM states.
-const CONTENT_VERSION = 61;
+// TEMPORARY WORLD MIGRATION — version 62 changes historical default stacks to
+// refresh; graded GM states deliberately keep accumulating their degrees.
+const CONTENT_VERSION = 62;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -1004,7 +1007,8 @@ export async function ensureUtilityMacros() {
     ["generic-damage", "DamageRoll", "await game.trudvang.rollGenericDamage();", "icons/svg/sword.svg", players, 3],
     ["generic-fear", "FearRoll", "await game.trudvang.rollGenericFear();", "icons/svg/terror.svg", players, 3],
     ["request-situation", "RequestSituation", "await game.trudvang.requestGenericSituationRoll();", "icons/svg/d20.svg", gm, 0],
-    ["advance-day", "AdvanceDay", "await game.trudvang.advanceDay();", "systems/trudvang-chronicles/assets/icons/advance-day.svg", gm, 0]
+    ["advance-day", "AdvanceDay", "await game.trudvang.advanceDay();", "systems/trudvang-chronicles/assets/icons/advance-day.svg", gm, 0],
+    ["request-environment", "RequestEnvironment", "await game.trudvang.requestEnvironmentRoll();", "systems/trudvang-chronicles/assets/icons/advance-day.svg", gm, 0]
   ]) {
     const data = {name: game.i18n.localize(`TRUDVANG.Macro.${key}`), type: "script", scope: "global", command, img,
       folder: folder.id, ownership: {default: permission}, flags: {[SYSTEM_ID]: {macro: id}}};
@@ -1173,12 +1177,27 @@ async function upsertWelcomeScene() {
   return reportScene(created, "Welcome scene");
 }
 
+// TEMPORARY WORLD MIGRATION — normalize pre-0.115.0 default reapplications.
+// Change behavior only: preserve active copies, modifiers, stages and clocks.
+export async function migrateEffectReapplicationDefaults() {
+  const actors = new Set(Array.from(game.actors ?? []));
+  for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
+  const effects = new Set();
+  const visit = document => {for (const effect of document.effects ?? []) effects.add(effect);};
+  for (const item of game.items ?? []) visit(item);
+  for (const actor of actors) {visit(actor); for (const item of actor.items ?? []) visit(item);}
+  for (const effect of effects) if (["base", "effect"].includes(effect.type) && effect.system?.stacking === "stack" && !isGradedEffect(effect)) {
+    await effect.update({"system.stacking": "refresh"});
+  }
+}
+
 export async function importStarterContent({force = false} = {}) {
   try {
     const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
     const importedLocale = String(game.settings.get(SYSTEM_ID, "starterContentLocale") || "");
     const currentLocale = activeLanguage();
     if (!force && installed >= CONTENT_VERSION && importedLocale === currentLocale) return false;
+    if (installed < 62) await migrateEffectReapplicationDefaults();
 
     ui.notifications.info(game.i18n.localize("TRUDVANG.Import.Started"));
     const response = await fetch(`systems/${SYSTEM_ID}/data/starter-content.json`);

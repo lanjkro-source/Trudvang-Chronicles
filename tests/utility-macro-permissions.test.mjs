@@ -34,7 +34,10 @@ test("existing GM macros replace the ownership mapping without deprecated per-us
   assert.deepEqual(macro.ownership, {default: 0});
   assert.equal(macro.folder, "gm-macros");
   assert.deepEqual(folders.get("gm-macros").ownership, {default: 0});
-  assert.equal(created.length, 5);
+  assert.equal(created.length, 6);
+  const environment = created.find(data => data.flags["trudvang-chronicles"].macro === "request-environment");
+  assert.equal(environment.ownership.default, 0);
+  assert.equal(environment.folder, "gm-macros");
   const day = created.find(data => data.flags["trudvang-chronicles"].macro === "advance-day");
   assert.equal(day.ownership.default, 0);
   assert.equal(day.folder, "gm-macros");

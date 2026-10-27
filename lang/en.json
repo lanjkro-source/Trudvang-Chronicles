@@ -1062,7 +1062,8 @@
       "DieType": "Die type",
       "InvalidDice": "Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none).",
       "TraitSituationRoll": "Request a resistance roll",
-      "LegacyTraitSituationRoll": "Trait situation roll"
+      "LegacyTraitSituationRoll": "Trait situation roll",
+      "RequestEnvironment": "Request an environment roll"
     },
     "Portrait": {
       "ManageMenu": "Choose portraits",
@@ -14708,6 +14709,91 @@
       "Range": "Range (m)",
       "Add": "Add a sense",
       "Remove": "Remove this sense"
+    },
+    "Environment": {
+      "request": "Request an environment roll",
+      "title": "Environment roll",
+      "roll": "Face the environment",
+      "environment": "Environment",
+      "travel": "Travel",
+      "temperature": "Temperature",
+      "precipitation": "Precipitation",
+      "wind": "Wind",
+      "sleep": "Sleep",
+      "comfort": "Comfort",
+      "temperatureClothing": "Appropriate clothing for the temperature",
+      "precipitationClothing": "Appropriate clothing for the precipitation",
+      "protected": "appropriate clothing",
+      "unprotected": "inappropriate clothing: doubled penalty",
+      "frostbite": "Risk of frostbite damage (apply manually)",
+      "conditions": "Travel and adverse conditions",
+      "mitigation": "Favorable circumstances (capped)",
+      "knowledgeBonus": "Environment knowledge: bonus",
+      "addFatigue": "Add one degree of Fatigued",
+      "missingFatigue": "The actor or Fatigued reference is missing. Reinstall starter content if necessary.",
+      "gmOnly": "Only the game master may request an environment roll.",
+      "capHint": "Favorable circumstances offset environment and fatigue penalties without granting a net bonus.",
+      "rulesHint": "French Rules p. 302 / GM Guide pp. 30–31: base Situation Value 10, modified by Psyche. Weathered adds +2 per level; enter the environment knowledge bonus when rolling. Missing required clothing doubles the relevant penalty and may cause frostbite damage. Favorable circumstances cannot grant a net bonus. The GM decides when to request a test and add Fatigued; damage and recovery are not automatic.",
+      "types": {
+        "mountain": "Mountains",
+        "forest": "Forest",
+        "plains": "Plains",
+        "sea": "Sea",
+        "snow": "Snow and cold"
+      },
+      "clothing": {
+        "warm": "Warm clothes",
+        "winter": "Winter clothes",
+        "thickWinter": "Thick winter clothes",
+        "mastomant": "Mastomant-fur winter clothes",
+        "cape": "Cloak",
+        "raincoat": "Raincoat"
+      },
+      "options": {
+        "travel": {
+          "none": "No travel",
+          "foot": "On foot",
+          "horse": "On horseback"
+        },
+        "temperature": {
+          "mild": "Mild temperature",
+          "cool": "Cool (10 to 0 °C)",
+          "cold": "Cold (−1 to −10 °C)",
+          "freezing": "Freezing (−11 to −20 °C)",
+          "intense": "Intense frost (−21 to −40 °C)",
+          "hrim": "Hrim (below −40 °C)"
+        },
+        "precipitation": {
+          "none": "No precipitation",
+          "beautiful": "Incredibly beautiful weather",
+          "rain": "Rain",
+          "torrential": "Torrential rain",
+          "downpour": "Heavy downpour",
+          "hail": "Hail",
+          "lightSnow": "Light snowfall",
+          "snow": "Snowfall",
+          "heavySnow": "Heavy snowfall"
+        },
+        "wind": {
+          "none": "No wind",
+          "breeze": "Breeze",
+          "gale": "Gale",
+          "storm": "Storm",
+          "hurricane": "Hurricane"
+        },
+        "sleep": {
+          "normal": "Ordinary night",
+          "poor": "Poor night’s sleep",
+          "sleepless": "Sleepless night",
+          "refreshing": "Refreshing sleep (over 4 uninterrupted hours)"
+        },
+        "comfort": {
+          "meal": "Prepared meals (full ration, fresh food and cooking equipment)",
+          "clean": "Clean, dry clothes",
+          "rest": "Comfort (over 4 hours of comfortable rest)",
+          "goal": "Destination in sight (arrival within one day)"
+        }
+      }
     }
   }
 }

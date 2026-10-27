@@ -1062,7 +1062,8 @@
       "DieType": "Type de dé",
       "InvalidDice": "Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun).",
       "TraitSituationRoll": "Provoquer un jet de résistance",
-      "LegacyTraitSituationRoll": "Jet de situation de trait"
+      "LegacyTraitSituationRoll": "Jet de situation de trait",
+      "RequestEnvironment": "Provoquer un jet d’environnement"
     },
     "Portrait": {
       "ManageMenu": "Choisir les portraits",
@@ -14708,6 +14709,91 @@
       "Range": "Portée (m)",
       "Add": "Ajouter un sens",
       "Remove": "Retirer ce sens"
+    },
+    "Environment": {
+      "request": "Provoquer un jet d’environnement",
+      "title": "Jet d’environnement",
+      "roll": "Affronter l’environnement",
+      "environment": "Environnement",
+      "travel": "Voyage",
+      "temperature": "Température",
+      "precipitation": "Précipitations",
+      "wind": "Vent",
+      "sleep": "Sommeil",
+      "comfort": "Confort",
+      "temperatureClothing": "Vêtements adaptés à la température",
+      "precipitationClothing": "Vêtements adaptés aux précipitations",
+      "protected": "équipement adapté",
+      "unprotected": "équipement inadapté : malus doublé",
+      "frostbite": "Risque de dégâts de gelures (application manuelle)",
+      "conditions": "Voyage et conditions défavorables",
+      "mitigation": "Circonstances favorables (plafonnées)",
+      "knowledgeBonus": "Connaissance de l’environnement : bonus",
+      "addFatigue": "Ajouter un degré de Fatigué",
+      "missingFatigue": "L’acteur ou l’objet Fatigué est introuvable. Réinstallez le contenu de démarrage si nécessaire.",
+      "gmOnly": "Seul le maître de jeu peut provoquer un jet d’environnement.",
+      "capHint": "Les circonstances favorables compensent les malus d’environnement et de fatigue sans donner de bonus net.",
+      "rulesHint": "Livre des règles, p. 302 : test de situation de base 10, modifié par le Psychisme. Endurci ajoute +2 par niveau ; saisissez le bonus de connaissance de l’environnement lors du jet. Sans vêtements requis, le malus concerné est doublé et des dégâts de gelures sont possibles. Les circonstances favorables ne peuvent pas donner de bonus net. Le MJ décide quand demander ce test et quand ajouter Fatigué ; ni les dégâts ni la récupération ne sont automatiques.",
+      "types": {
+        "mountain": "Montagne",
+        "forest": "Forêt",
+        "plains": "Plaine",
+        "sea": "Mer",
+        "snow": "Neige et froid"
+      },
+      "clothing": {
+        "warm": "Vêtements chauds",
+        "winter": "Vêtements d’hiver",
+        "thickWinter": "Vêtements d’hiver épais",
+        "mastomant": "Vêtements d’hiver en peau de mastomant",
+        "cape": "Cape",
+        "raincoat": "Manteau de pluie"
+      },
+      "options": {
+        "travel": {
+          "none": "Sans déplacement",
+          "foot": "À pied",
+          "horse": "À cheval"
+        },
+        "temperature": {
+          "mild": "Température clémente",
+          "cool": "Frais (10 à 0 °C)",
+          "cold": "Froid (−1 à −10 °C)",
+          "freezing": "Gel (−11 à −20 °C)",
+          "intense": "Gel intense (−21 à −40 °C)",
+          "hrim": "Hrim (en dessous de −40 °C)"
+        },
+        "precipitation": {
+          "none": "Aucune précipitation",
+          "beautiful": "Temps incroyablement beau",
+          "rain": "Pluie",
+          "torrential": "Pluie torrentielle",
+          "downpour": "Grosse averse",
+          "hail": "Grêle",
+          "lightSnow": "Légère chute de neige",
+          "snow": "Chute de neige",
+          "heavySnow": "Forte chute de neige"
+        },
+        "wind": {
+          "none": "Pas de vent",
+          "breeze": "Brise",
+          "gale": "Coup de vent",
+          "storm": "Tempête",
+          "hurricane": "Ouragan"
+        },
+        "sleep": {
+          "normal": "Nuit ordinaire",
+          "poor": "Mauvaise nuit",
+          "sleepless": "Nuit blanche",
+          "refreshing": "Sommeil réparateur (plus de 4 h sans interruption)"
+        },
+        "comfort": {
+          "meal": "Repas préparés (ration complète, produits frais et cuisine)",
+          "clean": "Vêtements propres et secs",
+          "rest": "Confort (plus de 4 h de repos confortable)",
+          "goal": "Objectif en vue (arrivée dans une journée)"
+        }
+      }
     }
   }
 }

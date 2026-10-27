@@ -61,6 +61,7 @@ globalThis.TRUDVANG = {
 };
 
 const {gmTraitSituationDialog, requestTraitSituationRoll, playerTraitSituationDialog, rollConfiguredTraitSituation} = await import("../modules/dice.mjs");
+const {requestEnvironmentRoll} = await import("../modules/environment-request.mjs");
 
 test("gmTraitSituationDialog returns trait and SV from dialog", async () => {
   dialogResult = {traitKey: "perception", situationValue: 12, title: "Resist the call", success: "Keep control", failure: "Follow the voice"};
@@ -179,6 +180,34 @@ test("playerTraitSituationDialog cancel returns null", async () => {
     sv: 10
   });
   assert.equal(result, null);
+});
+
+test("environment request cancellation creates no card; the chosen conditions are persisted on one collective card", async () => {
+  chatMessages.length = 0; dialogResult = false;
+  assert.equal(await requestEnvironmentRoll(), null);
+  assert.equal(chatMessages.length, 0);
+  dialogResult = {environment: "mountain", travel: "horse", temperature: "hrim", temperatureClothing: false, precipitation: "beautiful", wind: "gale", meal: true};
+  await requestEnvironmentRoll();
+  assert.match(dialogConfig.content, /name="temperatureClothing"/);
+  assert.match(dialogConfig.content, /name="precipitationClothing"/);
+  assert.equal(chatMessages.length, 1);
+  const request = chatMessages[0].flags["trudvang-chronicles"].traitSituation;
+  assert.equal(request.traitKey, "psyche"); assert.equal(request.sv, 10);
+  assert.equal(request.environment.temperatureClothing, false);
+  assert.equal(request.environment.environment, "mountain");
+});
+
+test("player environment bonus and final situational modifier are both included in the submitted modifier", async () => {
+  dialogResult = false;
+  await playerTraitSituationDialog({title: "Environment", traitLabel: "Psyche", traitValue: 2, effect: -1, sv: 10,
+    extraNumberFields: [{name: "environment-bonus", label: "Environment knowledge", value: 0}]});
+  assert.match(dialogConfig.content, /name="environment-bonus"/);
+  const values = {sv: "10", modifier: "-2", "environment-bonus": "4"};
+  const root = {querySelector: selector => {
+    const name = selector.match(/name=["']?([^\]"']+)/)?.[1];
+    return values[name] === undefined ? null : {value: values[name]};
+  }};
+  assert.equal(dialogConfig.buttons[0].callback({}, {form: root}, {}).modifier, 2);
 });
 
 test("configured resistance opens its roll dialog without a missing translation namespace", async () => {

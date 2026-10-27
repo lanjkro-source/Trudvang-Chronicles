@@ -1147,7 +1147,7 @@ export async function requestTraitSituationRoll({traitKey, situationValue, title
  * Player dialog for configured resistance tests. Known values are prefilled while
  * conditional and repeated modifiers remain explicit choices in the same roll window.
  */
-export async function playerTraitSituationDialog({title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, effectRows = [], base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = []}) {
+export async function playerTraitSituationDialog({title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, effectRows = [], base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = [], extraNumberFields = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -1157,6 +1157,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
     ? calculateTraitModifier(traitValues.map(row=>Number(row.value)+Number(row.effect||0)),root.querySelector("[name=trait-method]")?.value||traitMethod)
     : trait;
   const multiTrait = traitValues.filter(row => row.key !== "aucun").length > 1;
+  const extraTotal = root => extraNumberFields.reduce((sum, field) => sum + (Number(root.querySelector(`[name="${field.name}"]`)?.value ?? field.value ?? 0) || 0), 0);
   const multiTraitRows = hasTwoTraitSlots ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div></div>` : "";
   const traitMethodControl = multiTrait ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitMethod"))}</label><select name="trait-method">${[
     ["first", game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitFirst")],
@@ -1197,6 +1198,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
     ${modifierChoiceControl}
     ${repeatedModifierControls}
     ${modifierList(modifierRows)}
+    ${extraNumberFields.map(field => `<div class="form-group"><label>${escapeHtml(field.label)}</label><input name="${field.name}" type="number" value="${Number(field.value) || 0}"></div>`).join("")}
     ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${situationBase + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
@@ -1209,7 +1211,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       const refresh = () => {
         const target = root.querySelector("[data-final-target]");
         const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
-        if (target) target.textContent = situationValue + currentTraitModifier(root) + effectModifier + configuredModifierValue() + repeatedModifierTotal(root) + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
+        if (target) target.textContent = situationValue + currentTraitModifier(root) + effectModifier + configuredModifierValue() + repeatedModifierTotal(root) + rollModifierTotal(modifierRows) + extraTotal(root) + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
       root.querySelector("[name=sv-choice]")?.addEventListener("change", event => {
         const choice = event.currentTarget.value === "" ? null : svChoices[Number(event.currentTarget.value)];
@@ -1229,6 +1231,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       root.querySelector("[name=condition-modifier]")?.addEventListener("input", refresh);
       repeatedModifiers.forEach((_, index) => root.querySelector(`[name=repeat-${index}]`)?.addEventListener("input", refresh));
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      extraNumberFields.forEach(field => root.querySelector(`[name="${field.name}"]`)?.addEventListener("input", refresh));
       refresh();
     }
   }
@@ -1241,7 +1244,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
         const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
         const configuredModifier = Number(root.querySelector("[name=condition-modifier]")?.value || 0);
         const repeatedModifier = repeatedModifierTotal(root);
-        const result = {modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+        const result = {modifier: (Number(root.querySelector("[name=modifier]")?.value || 0) || 0) + extraTotal(root)};
         if (multiTrait) result.traitModifier = currentTraitModifier(root);
         if (base !== undefined || svChoices.length || modifierChoices.length || repeatedModifiers.length || svEditable) {
           Object.assign(result, {situationValue, configuredModifier, repeatedModifier});

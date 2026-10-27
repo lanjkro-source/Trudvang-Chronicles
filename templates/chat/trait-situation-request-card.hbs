@@ -1,4 +1,4 @@
-<article class="trudvang chat-card trait-situation-request">
+<article class="trudvang chat-card trait-situation-request{{#if environment}} environment-request{{/if}}">
   <header>
     <img src="{{gmImg}}" alt="">
     <div>
@@ -7,6 +7,7 @@
     </div>
   </header>
   <p class="card-flavor">{{localize "TRUDVANG.Dialog.TraitSituationHint"}}</p>
+  {{#if environment}}<ul class="environment-conditions">{{#each environmentLines}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
   <button type="button" data-action="roll-trait-situation" data-trait="{{traitKey}}" data-sv="{{sv}}">
     <i class="fas fa-shield-halved" aria-hidden="true"></i> {{buttonLabel}}
   </button>
@@ -31,6 +32,7 @@
       {{/if}}
       <strong class="trait-situation-die">{{result}}</strong>
       <strong class="trait-situation-outcome">{{outcomeLabel}}</strong>
+      {{#if ../environment}}<button type="button" data-action="apply-environment-fatigue" data-actor-uuid="{{actorUuid}}" {{#if fatigueApplied}}disabled{{/if}} title="{{localize "TRUDVANG.Environment.addFatigue"}}"><i class="fas fa-person-walking"></i> {{localize "TRUDVANG.Content.Item.Fatigued.Name"}}{{#if fatigueApplied}} ✓{{/if}}</button>{{/if}}
     </li>
     {{/each}}
   </ul>

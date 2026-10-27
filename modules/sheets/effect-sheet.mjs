@@ -109,7 +109,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "durationChanges") {
       partContext.tab = partContext.tabs.durationChanges;
-      partContext.stacking = this.document.system?.stacking || "stack";
+      partContext.stacking = this.document.system?.stacking || "refresh";
       partContext.reapplicationChoices = {refresh: game.i18n.localize("TRUDVANG.Effect.Refresh"), stack: game.i18n.localize("TRUDVANG.Effect.Stack")};
       if (["replace", "highest"].includes(partContext.stacking)) partContext.reapplicationChoices[partContext.stacking] = game.i18n.localize(`TRUDVANG.Effect.${partContext.stacking === "replace" ? "Replace" : "Highest"}`);
       partContext.graded = isGradedEffect(this.document);

@@ -134,6 +134,8 @@ test("effect edit permissions agree in the document, sheet and every tab", async
 });
 
 test("new and copied effects record the current creator, never the template author", async () => {
+  const {TrudvangEffectData} = await import("../modules/effects.mjs");
+  assert.equal(TrudvangEffectData.defineSchema().stacking.options.initial, "refresh");
   for (const flags of [{}, {"trudvang-chronicles": {creatorId: "template-author"}}]) {
     const effect = new TrudvangActiveEffect();
     effect.flags = flags;

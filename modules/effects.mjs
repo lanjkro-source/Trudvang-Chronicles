@@ -35,7 +35,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
       stacking: new fields.StringField({
         required: true,
         nullable: false,
-        initial: "stack",
+        initial: "refresh",
         choices: ["stack", "refresh", "replace", "highest"]
       }),
       potency: integer(0),

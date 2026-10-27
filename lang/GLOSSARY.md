@@ -1225,6 +1225,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.InvalidDice` | Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none). | Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun). |
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
+| `TRUDVANG.Macro.RequestEnvironment` | Request an environment roll | Provoquer un jet d’environnement |
 
 ## `TRUDVANG.Portrait`
 
@@ -12083,3 +12084,113 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Senses.Types.night` | Night vision | Vision nocturne |
 | `TRUDVANG.Senses.Types.dark` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Senses.Types.other` | Other sense | Autre sens |
+
+## `TRUDVANG.Environment`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.request` | Request an environment roll | Provoquer un jet d’environnement |
+| `TRUDVANG.Environment.title` | Environment roll | Jet d’environnement |
+| `TRUDVANG.Environment.roll` | Face the environment | Affronter l’environnement |
+| `TRUDVANG.Environment.environment` | Environment | Environnement |
+| `TRUDVANG.Environment.travel` | Travel | Voyage |
+| `TRUDVANG.Environment.temperature` | Temperature | Température |
+| `TRUDVANG.Environment.precipitation` | Precipitation | Précipitations |
+| `TRUDVANG.Environment.wind` | Wind | Vent |
+| `TRUDVANG.Environment.sleep` | Sleep | Sommeil |
+| `TRUDVANG.Environment.comfort` | Comfort | Confort |
+| `TRUDVANG.Environment.temperatureClothing` | Appropriate clothing for the temperature | Vêtements adaptés à la température |
+| `TRUDVANG.Environment.precipitationClothing` | Appropriate clothing for the precipitation | Vêtements adaptés aux précipitations |
+| `TRUDVANG.Environment.protected` | appropriate clothing | équipement adapté |
+| `TRUDVANG.Environment.unprotected` | inappropriate clothing: doubled penalty | équipement inadapté : malus doublé |
+| `TRUDVANG.Environment.frostbite` | Risk of frostbite damage (apply manually) | Risque de dégâts de gelures (application manuelle) |
+| `TRUDVANG.Environment.conditions` | Travel and adverse conditions | Voyage et conditions défavorables |
+| `TRUDVANG.Environment.mitigation` | Favorable circumstances (capped) | Circonstances favorables (plafonnées) |
+| `TRUDVANG.Environment.knowledgeBonus` | Environment knowledge: bonus | Connaissance de l’environnement : bonus |
+| `TRUDVANG.Environment.addFatigue` | Add one degree of Fatigued | Ajouter un degré de Fatigué |
+| `TRUDVANG.Environment.missingFatigue` | The actor or Fatigued reference is missing. Reinstall starter content if necessary. | L’acteur ou l’objet Fatigué est introuvable. Réinstallez le contenu de démarrage si nécessaire. |
+| `TRUDVANG.Environment.gmOnly` | Only the game master may request an environment roll. | Seul le maître de jeu peut provoquer un jet d’environnement. |
+| `TRUDVANG.Environment.capHint` | Favorable circumstances offset environment and fatigue penalties without granting a net bonus. | Les circonstances favorables compensent les malus d’environnement et de fatigue sans donner de bonus net. |
+| `TRUDVANG.Environment.rulesHint` | French Rules p. 302 / GM Guide pp. 30–31: base Situation Value 10, modified by Psyche. Weathered adds +2 per level; enter the environment knowledge bonus when rolling. Missing required clothing doubles the relevant penalty and may cause frostbite damage. Favorable circumstances cannot grant a net bonus. The GM decides when to request a test and add Fatigued; damage and recovery are not automatic. | Livre des règles, p. 302 : test de situation de base 10, modifié par le Psychisme. Endurci ajoute +2 par niveau ; saisissez le bonus de connaissance de l’environnement lors du jet. Sans vêtements requis, le malus concerné est doublé et des dégâts de gelures sont possibles. Les circonstances favorables ne peuvent pas donner de bonus net. Le MJ décide quand demander ce test et quand ajouter Fatigué ; ni les dégâts ni la récupération ne sont automatiques. |
+
+## `TRUDVANG.Environment.types`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.types.mountain` | Mountains | Montagne |
+| `TRUDVANG.Environment.types.forest` | Forest | Forêt |
+| `TRUDVANG.Environment.types.plains` | Plains | Plaine |
+| `TRUDVANG.Environment.types.sea` | Sea | Mer |
+| `TRUDVANG.Environment.types.snow` | Snow and cold | Neige et froid |
+
+## `TRUDVANG.Environment.clothing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.clothing.warm` | Warm clothes | Vêtements chauds |
+| `TRUDVANG.Environment.clothing.winter` | Winter clothes | Vêtements d’hiver |
+| `TRUDVANG.Environment.clothing.thickWinter` | Thick winter clothes | Vêtements d’hiver épais |
+| `TRUDVANG.Environment.clothing.mastomant` | Mastomant-fur winter clothes | Vêtements d’hiver en peau de mastomant |
+| `TRUDVANG.Environment.clothing.cape` | Cloak | Cape |
+| `TRUDVANG.Environment.clothing.raincoat` | Raincoat | Manteau de pluie |
+
+## `TRUDVANG.Environment.options.travel`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.travel.none` | No travel | Sans déplacement |
+| `TRUDVANG.Environment.options.travel.foot` | On foot | À pied |
+| `TRUDVANG.Environment.options.travel.horse` | On horseback | À cheval |
+
+## `TRUDVANG.Environment.options.temperature`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.temperature.mild` | Mild temperature | Température clémente |
+| `TRUDVANG.Environment.options.temperature.cool` | Cool (10 to 0 °C) | Frais (10 à 0 °C) |
+| `TRUDVANG.Environment.options.temperature.cold` | Cold (−1 to −10 °C) | Froid (−1 à −10 °C) |
+| `TRUDVANG.Environment.options.temperature.freezing` | Freezing (−11 to −20 °C) | Gel (−11 à −20 °C) |
+| `TRUDVANG.Environment.options.temperature.intense` | Intense frost (−21 to −40 °C) | Gel intense (−21 à −40 °C) |
+| `TRUDVANG.Environment.options.temperature.hrim` | Hrim (below −40 °C) | Hrim (en dessous de −40 °C) |
+
+## `TRUDVANG.Environment.options.precipitation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.precipitation.none` | No precipitation | Aucune précipitation |
+| `TRUDVANG.Environment.options.precipitation.beautiful` | Incredibly beautiful weather | Temps incroyablement beau |
+| `TRUDVANG.Environment.options.precipitation.rain` | Rain | Pluie |
+| `TRUDVANG.Environment.options.precipitation.torrential` | Torrential rain | Pluie torrentielle |
+| `TRUDVANG.Environment.options.precipitation.downpour` | Heavy downpour | Grosse averse |
+| `TRUDVANG.Environment.options.precipitation.hail` | Hail | Grêle |
+| `TRUDVANG.Environment.options.precipitation.lightSnow` | Light snowfall | Légère chute de neige |
+| `TRUDVANG.Environment.options.precipitation.snow` | Snowfall | Chute de neige |
+| `TRUDVANG.Environment.options.precipitation.heavySnow` | Heavy snowfall | Forte chute de neige |
+
+## `TRUDVANG.Environment.options.wind`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.wind.none` | No wind | Pas de vent |
+| `TRUDVANG.Environment.options.wind.breeze` | Breeze | Brise |
+| `TRUDVANG.Environment.options.wind.gale` | Gale | Coup de vent |
+| `TRUDVANG.Environment.options.wind.storm` | Storm | Tempête |
+| `TRUDVANG.Environment.options.wind.hurricane` | Hurricane | Ouragan |
+
+## `TRUDVANG.Environment.options.sleep`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.sleep.normal` | Ordinary night | Nuit ordinaire |
+| `TRUDVANG.Environment.options.sleep.poor` | Poor night’s sleep | Mauvaise nuit |
+| `TRUDVANG.Environment.options.sleep.sleepless` | Sleepless night | Nuit blanche |
+| `TRUDVANG.Environment.options.sleep.refreshing` | Refreshing sleep (over 4 uninterrupted hours) | Sommeil réparateur (plus de 4 h sans interruption) |
+
+## `TRUDVANG.Environment.options.comfort`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.options.comfort.meal` | Prepared meals (full ration, fresh food and cooking equipment) | Repas préparés (ration complète, produits frais et cuisine) |
+| `TRUDVANG.Environment.options.comfort.clean` | Clean, dry clothes | Vêtements propres et secs |
+| `TRUDVANG.Environment.options.comfort.rest` | Comfort (over 4 hours of comfortable rest) | Confort (plus de 4 h de repos confortable) |
+| `TRUDVANG.Environment.options.comfort.goal` | Destination in sight (arrival within one day) | Objectif en vue (arrivée dans une journée) |

@@ -1936,7 +1936,7 @@ export class TrudvangActor extends BaseActor {
     prepared.system ??= {};
     const stackId = effectStackId(prepared);
     if (stackId) prepared.system.stackId = stackId;
-    const stacking = prepared.system.stacking || "stack";
+    const stacking = prepared.system.stacking || (isGradedEffect(prepared) ? "stack" : "refresh");
     const existing = stackId ? this.effects.find(effect => ["effect", "base"].includes(effect.type)
       && !effect.duration?.expired && effectStackId(effect) === stackId) : null;
     if (existing && stacking === "stack" && isGradedEffect(prepared)) {
@@ -1970,7 +1970,7 @@ export class TrudvangActor extends BaseActor {
     const effect = await this.createTrudvangEffect({
       name: game.i18n.localize("TRUDVANG.New.Effect"),
       img: "icons/svg/aura.svg",
-      system: {stacking: "stack", changes: []}
+      system: {stacking: "refresh", changes: []}
     });
     effect?.sheet.render({force: true});
     return effect;
