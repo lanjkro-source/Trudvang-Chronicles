@@ -1,6 +1,6 @@
 <section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
   <div class="form-group"><label>{{localize "TRUDVANG.Effect.Reapplication"}}</label><div class="form-fields"><select name="system.stacking">{{selectOptions reapplicationChoices selected=stacking}}</select></div><p class="hint">{{localize "TRUDVANG.Effect.ReapplicationHint"}}</p></div>
-  {{#if graded}}<div class="form-group"><label>{{localize "TRUDVANG.Effect.Degree"}}</label><div class="form-fields"><input name="system.potency" type="number" value="{{degree}}" min="1" step="1"></div><p class="hint">{{localize "TRUDVANG.Effect.DegreeHint"}}</p></div>{{/if}}
+  {{#if graded}}<div class="form-group"><label>{{localize "TRUDVANG.Effect.Degree"}}</label><div class="form-fields"><input name="system.degree" type="number" value="{{degree}}" min="1" step="1"></div><p class="hint">{{degreeHint}}</p></div>{{/if}}
   <fieldset>
     <legend>{{localize "TRUDVANG.Effect.Duration"}}</legend>
     <div class="form-group">

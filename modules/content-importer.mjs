@@ -6,7 +6,7 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import { PALETTES } from "./palette.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
-import {isGradedEffect} from "./rules/effect-stacking.mjs";
+import {isGradedState} from "./rules/effect-stacking.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 51 replays the starter import in worlds whose
 // `starterContentVersion` was recorded by the broken v0.92.3 import: it queried the bestiary
@@ -1186,7 +1186,7 @@ export async function migrateEffectReapplicationDefaults() {
   const visit = document => {for (const effect of document.effects ?? []) effects.add(effect);};
   for (const item of game.items ?? []) visit(item);
   for (const actor of actors) {visit(actor); for (const item of actor.items ?? []) visit(item);}
-  for (const effect of effects) if (["base", "effect"].includes(effect.type) && effect.system?.stacking === "stack" && !isGradedEffect(effect)) {
+  for (const effect of effects) if (["base", "effect"].includes(effect.type) && effect.system?.stacking === "stack" && !isGradedState(effect)) {
     await effect.update({"system.stacking": "refresh"});
   }
 }

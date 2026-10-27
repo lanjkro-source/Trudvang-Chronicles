@@ -1,3 +1,5 @@
+import {isCustomSpecialty} from "./custom-specialties.mjs";
+
 /** Intrinsic traits stay intact; null means the current trait still follows them. */
 export function npcCurrentTrait(system, key) {
   return Number(system.traitCurrent?.[key] ?? system.traits?.[key] ?? 0);
@@ -60,7 +62,7 @@ export function ignoresWoundPenalties(actor) {
     && item.system.ignoreWoundPenalties === true);
 }
 
-const learned = node => Number(node.level || 0) > 0 || Number(node.offHandLevel ?? node.item.system.offHandLevel ?? 0) > 0;
+const learned = node => Number(node.level || 0) > 0 || Number(node.offHandLevel ?? node.item.system.offHandLevel ?? 0) > 0 || isCustomSpecialty(node.item);
 const normalize = name => String(name || "").trim().toLocaleLowerCase();
 const referenceName = name => normalize(name).replace(/\s*\([^)]*\)/g, "").normalize("NFD").replace(/\p{Diacritic}/gu, "");
 

@@ -1,5 +1,6 @@
 import {renderTemplate} from "./helpers.mjs";
 import {TRUDVANG} from "./config.mjs";
+import {canDeleteCustomSpecialty} from "./rules/custom-specialties.mjs";
 import {deterministicId} from "./skill-pack-data.mjs";
 import {findTabletPower} from "./tablet-power-links.mjs";
 import {isCreatureAbility} from "./creature-ability.mjs";
@@ -90,6 +91,18 @@ export function bindSheetListMenus(sheet) {
     }
     return null;
   };
+  const specialtyFrom = args => {
+    const row = rowFrom(args);
+    const bookRow = row?.matches?.(".npc-book-skill") ? sheet._npcBookSkillRows?.()[Number(rowValue(row, "index"))] : null;
+    const catalogId = rowValue(row, "catalogId") ?? bookRow?.catalogId;
+    const items = sheet.actor?.items;
+    const item = items?.get(rowValue(row, "itemId")) ?? (catalogId ? Array.from(items?.values?.() ?? items ?? [])
+      .find(candidate => candidate.type === "ability" && candidate.system.catalogId === catalogId) : null);
+    const entry = item ?? sheet.actor?.getCatalogEntry?.(catalogId);
+    return (item?.system?.kind ?? entry?.kind) === "specialty" ? {id: item?.id || catalogId, item} : null;
+  };
+  const canEditKnowledge = () => sheet.isEditable !== false && Boolean(sheet.actor?.canUserModify?.(game.user, "update"))
+    && (sheet.actor.type !== "npc" || sheet._npcEditMode === true);
   sheet._createContextMenu(() => [
     {label: game.i18n.localize("TRUDVANG.Action.ShowDetails"), icon: '<i class="fas fa-circle-info"></i>',
       onClick: async (...args) => {
@@ -102,7 +115,13 @@ export function bindSheetListMenus(sheet) {
         if (entry?.actor) return sheet._showDetail(entry.name, entry.description);
       }},
     {label: game.i18n.localize("TRUDVANG.Action.ShareInChat"), icon: '<i class="fas fa-comment-dots"></i>',
-      onClick: async (...args) => shareSheetEntry(await sheetEntry(sheet, rowFrom(args)))}
+      onClick: async (...args) => shareSheetEntry(await sheetEntry(sheet, rowFrom(args)))},
+    {label: game.i18n.localize("TRUDVANG.Action.Duplicate"), icon: '<i class="fas fa-copy"></i>',
+      visible: (...args) => canEditKnowledge() && Boolean(specialtyFrom(args)),
+      onClick: (...args) => canEditKnowledge() && sheet.actor.duplicateSpecialty(specialtyFrom(args)?.id)},
+    {label: game.i18n.localize("TRUDVANG.Action.Delete"), icon: '<i class="fas fa-trash"></i>',
+      visible: (...args) => canEditKnowledge() && canDeleteCustomSpecialty(specialtyFrom(args)?.item),
+      onClick: (...args) => canEditKnowledge() && sheet.actor.deleteCustomSpecialty(specialtyFrom(args)?.item?.id)}
   ], ".trudvang-share-row", {container: root});
 }
 

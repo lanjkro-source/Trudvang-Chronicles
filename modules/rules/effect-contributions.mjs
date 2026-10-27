@@ -1,3 +1,4 @@
+import {cumulativeChangeValue} from "./effect-stacking.mjs";
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const numeric = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const priority = change => numeric(change.priority ?? ({multiply: 10, add: 20, subtract: 20, downgrade: 30, upgrade: 40, override: 50}[change.type] ?? 0));
@@ -21,7 +22,7 @@ export function effectContributions(actor, key, {base = 0, total = get(actor, ke
   const rows = [];
   let current = numeric(base);
   for (const {effect, change} of changes) {
-    const raw = String(change.value ?? "").replace(/@([\w.]+)/gu, (_, path) => get(actor.system, path) ?? get(actor, path) ?? 0);
+    const raw = String(cumulativeChangeValue(effect, change, actor) ?? "").replace(/@([\w.]+)/gu, (_, path) => get(actor.system, path) ?? get(actor, path) ?? 0);
     const value = Number(raw);
     if (!Number.isFinite(value)) continue;
     const before = current;

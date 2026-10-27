@@ -140,7 +140,7 @@
           "system": {
             "stackId": "trudvang-fatigued",
             "stacking": "stack",
-            "potency": 1,
+            "degree": 1,
             "stages": [],
             "changes": [
               {
@@ -188,7 +188,7 @@
           "system": {
             "stackId": "trudvang-hungry",
             "stacking": "stack",
-            "potency": 1,
+            "degree": 1,
             "stages": [],
             "changes": [
               {
@@ -236,7 +236,7 @@
           "system": {
             "stackId": "trudvang-thirsty",
             "stacking": "stack",
-            "potency": 1,
+            "degree": 1,
             "stages": [],
             "changes": [
               {

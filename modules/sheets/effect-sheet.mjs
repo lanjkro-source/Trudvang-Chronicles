@@ -2,7 +2,7 @@ import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
 import {effectChangesSource} from "../rules/effect-source.mjs";
-import {isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
+import {isGradedEffect, isGradedState, effectDegree} from "../rules/effect-stacking.mjs";
 import {normalizeEffectDuration, normalizeEffectStage} from "../rules/effect-duration.mjs";
 import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
 
@@ -114,6 +114,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       if (["replace", "highest"].includes(partContext.stacking)) partContext.reapplicationChoices[partContext.stacking] = game.i18n.localize(`TRUDVANG.Effect.${partContext.stacking === "replace" ? "Replace" : "Highest"}`);
       partContext.graded = isGradedEffect(this.document);
       partContext.degree = effectDegree(this.document);
+      partContext.degreeHint = game.i18n.localize(`TRUDVANG.Effect.${isGradedState(this.document) ? "DegreeHint" : "CumulativeDegreeHint"}`);
       const dur = this.document.duration || {};
       // V14 prepares a null duration value as Infinity; read the unprepared
       // source value instead and fall back to 0 when non-finite so the number

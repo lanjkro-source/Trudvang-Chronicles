@@ -11,6 +11,6 @@ export async function applyGradedEffect(actor, source) {
   data.transfer = false;
   data.start = null;
   data.duration = {...data.duration, expired: false};
-  data.system.potency = effectDegree(data);
+  data.system.degree = effectDegree(data);
   return actor.createTrudvangEffect(data);
 }

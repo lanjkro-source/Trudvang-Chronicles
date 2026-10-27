@@ -1,5 +1,6 @@
 import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
+import {isCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
 import {mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
 import { escapeHtml, localizeConfig,renderTemplate } from "../helpers.mjs";
@@ -411,7 +412,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
           canDecrease: itemLevel > Number(item.system.freeLevels || 0), canIncrease: itemLevel < 5 && this.actor.canChooseCatalogKnowledge(item.system.catalogId), exists: true
         };
       };
-      const disciplineNodes = (TRUDVANG.knowledgeTree[key] || []).map(discipline => ({...buildNode(discipline, key, "discipline"), specialties: discipline.specialties.map(specialty => buildNode(specialty, key, "specialty", discipline.name))}));
+      const customSpecialties = abilities.filter(isCustomSpecialty).map(item => this.actor.getCatalogEntry(item.system.catalogId));
+      const disciplineNodes = (TRUDVANG.knowledgeTree[key] || []).map(discipline => ({...buildNode(discipline, key, "discipline"),
+        specialties: [...discipline.specialties, ...customSpecialties.filter(entry => entry.parentCatalogId === discipline.id)]
+          .map(specialty => buildNode(specialty, key, "specialty", discipline.name))}));
       const catalogItemIds = new Set(disciplineNodes.flatMap(node => [node.item.id, ...node.specialties.map(child => child.item.id)]).filter(Boolean));
       // Catalog-backed items always render through their tree node, never as orphans.
       const knownCatalogIds = new Set(Object.values(TRUDVANG.knowledgeTree).flatMap(disciplines => [disciplines.map(d => d.id), ...disciplines.map(d => d.specialties.map(s => s.id))].flat()));

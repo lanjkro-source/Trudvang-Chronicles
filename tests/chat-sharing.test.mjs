@@ -97,3 +97,26 @@ test("base skills, book rows and unlearned knowledge can be shared without creat
   game.packs = new Map([["trudvang-chronicles.skills-fr", {getDocument: async () => knowledge}]]);
   assert.equal((await sheetEntry(sheet, row({catalogId: "unlearned"}))).document, knowledge);
 });
+
+test("specialty menus allow duplication but deletion only for owned added zero-rank copies", async t => {
+  const previous = game.user; t.after(() => {game.user = previous;});
+  game.user = {id: "owner"};
+  const copy = {id: "copy", type: "ability", system: {kind: "specialty", catalogId: "custom-specialty-test", level: 0, offHandLevel: 0}, flags: {"trudvang-chronicles": {customSpecialty: {added: true}}}};
+  const base = {id: "base", type: "ability", system: {kind: "specialty", catalogId: "foreignTongue", level: 0}};
+  let menu, duplicated, deleted;
+  const actor = {type: "character", items: new Map([[copy.id, copy], [base.id, base]]), canUserModify: () => true,
+    getCatalogEntry: id => ({id, kind: "specialty"}), duplicateSpecialty: id => {duplicated = id;}, deleteCustomSpecialty: id => {deleted = id;}};
+  const target = row({itemId: "copy"}), original = row({itemId: "base"}), unlearned = row({catalogId: "loreLegends"});
+  const sheet = {actor, isEditable: true, element: {querySelectorAll: () => [target, original, unlearned]}, _createContextMenu: handler => {menu = handler();}};
+  bindSheetListMenus(sheet);
+  const duplicate = menu.find(entry => entry.label === "TRUDVANG.Action.Duplicate"), remove = menu.find(entry => entry.label === "TRUDVANG.Action.Delete");
+  assert.equal(duplicate.visible(target), true); assert.equal(duplicate.visible(unlearned), true);
+  assert.equal(remove.visible(original), false); assert.equal(remove.visible(target), true);
+  assert.equal(remove.visible(row({catalogId: copy.system.catalogId})), true, "right-clicking the nested name/button resolves its embedded copy too");
+  await duplicate.onClick(target); await remove.onClick(target);
+  assert.equal(duplicated, "copy"); assert.equal(deleted, "copy");
+  copy.system.level = 1; assert.equal(remove.visible(target), false);
+  copy.system.level = 0; copy.system.offHandLevel = 1; assert.equal(remove.visible(target), false);
+  actor.canUserModify = () => false;
+  assert.equal(duplicate.visible(target), false); assert.equal(remove.visible(target), false);
+});

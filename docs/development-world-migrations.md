@@ -102,6 +102,8 @@ La version de contenu 41 ajoute les profils d’armes naturelles de départ par 
 
 ## Hors périmètre
 
+`effectDegree()` dans `modules/rules/effect-stacking.mjs` conserve un repli temporaire vers `system.potency` pour les trois premiers états gradués Fatigué/Affamé/Assoiffé des mondes 0.114–0.115. Les nouveaux degrés utilisent `system.degree`, indépendamment de la puissance des anciens modes de cumul avancés. Supprimer ce repli quand ces mondes ont été recréés ou leurs degrés sauvegardés dans le nouveau champ. Les états qui utilisent encore la source de démarrage historique sont également lus par ce repli jusqu’à leur prochaine réinstallation.
+
 `CONTENT_VERSION = 62` et `migrateEffectReapplicationDefaults()` dans `modules/content-importer.mjs` passent les anciens effets non gradués de « Cumuler » à « Renouveler », sur les objets mondiaux, les acteurs et leurs équipements, y compris les tokens non liés de toutes les scènes. Les trois états à degrés, les modes Remplacer/Plus puissant, les copies actives et leurs durées sont préservés. Retirer cette reprise une fois tous les mondes de développement actualisés ou supprimés ; le nouveau défaut « Renouveler » reste nécessaire.
 
 `CONTENT_VERSION = 61` dans `modules/content-importer.mjs` relance l’import pour installer les objets d’effet Fatigué, Affamé et Assoiffé dans le dossier Maître de jeu des mondes existants. Ce numéro de reprise devient inutile lorsque tous les mondes de développement ont reçu ces objets ou ont été supprimés. Les objets de démarrage et le moteur de cumul restent nécessaires aux nouveaux mondes.

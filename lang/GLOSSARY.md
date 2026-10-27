@@ -282,6 +282,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ApplyEffects` | Apply effects to selected targets | Appliquer les effets aux cibles sélectionnées |
 | `TRUDVANG.Action.ShowInChat` | Show in chat | Afficher dans le chat |
 | `TRUDVANG.Action.ShareInChat` | Share in chat | Partager dans le chat |
+| `TRUDVANG.Action.Duplicate` | Duplicate | Dupliquer |
 
 ## `TRUDVANG.Field`
 
@@ -1567,9 +1568,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.ProfileHelp` | Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{"mode":"flight","method":"replace","value":24}]. Rage damage: system.transformation.damage = {"value":2,"usages":["melee","throwing","natural"]}. Lists and objects must be valid JSON. | Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{"mode":"flight","method":"replace","value":24}]. Pour les dégâts de Rage : system.transformation.damage = {"value":2,"usages":["melee","throwing","natural"]}. Une liste ou un objet doit être un JSON valide. |
 | `TRUDVANG.Effect.InvalidProfileChange` | Invalid value for {path}. See the profile change examples. | Valeur invalide pour {path}. Consultez les exemples des modifications de profil. |
 | `TRUDVANG.Effect.Reapplication` | Reapplication | Nouvelle application |
-| `TRUDVANG.Effect.ReapplicationHint` | Refresh replaces the remaining duration with the new application’s duration without adding modifiers. Stack adds the modifiers of separate instances; graded states gain degrees instead. | Renouveler remplace la durée restante par celle de la nouvelle application, sans additionner les modificateurs. Cumuler additionne les modificateurs des exemplaires ; pour les états à degrés, leur degré augmente. |
+| `TRUDVANG.Effect.ReapplicationHint` | Refresh replaces the remaining duration with the new application’s duration. Stack increases the same effect’s degree; its modifications are applied that many times. | Renouveler remplace la durée restante par celle de la nouvelle application. Cumuler augmente le degré du même effet ; ses modifications s’appliquent autant de fois. |
 | `TRUDVANG.Effect.Degree` | Degree | Degré |
 | `TRUDVANG.Effect.DegreeHint` | Each degree imposes −1 to all Skill and Situation Rolls and to initiative. The penalty is calculated automatically from this degree. | Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré. |
+| `TRUDVANG.Effect.CumulativeDegreeHint` | Base numeric modifications are applied once per degree. In Stack mode, reapplying increases this degree and preserves the current duration. | Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante. |
 
 ## `TRUDVANG.Effect.Profile`
 
@@ -12255,3 +12257,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Environment.compact.comfort.clean` | Clean clothes | Vêtements propres |
 | `TRUDVANG.Environment.compact.comfort.rest` | Rest | Repos |
 | `TRUDVANG.Environment.compact.comfort.goal` | Destination in sight | Objectif en vue |
+
+## `TRUDVANG.CustomSpecialty`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.CustomSpecialty.CopyName` | {name} (copy) | {name} (copie) |

@@ -6,7 +6,7 @@ import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
 import {normalizeEffectDuration, normalizeEffectStage} from "./rules/effect-duration.mjs";
-import {isGradedEffect, effectDegree} from "./rules/effect-stacking.mjs";
+import {isGradedEffect, isGradedState, effectDegree, gradedEffectName, cumulativeChangeValue} from "./rules/effect-stacking.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -39,6 +39,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
         choices: ["stack", "refresh", "replace", "highest"]
       }),
       potency: integer(0),
+      degree: new fields.NumberField({required: true, nullable: true, initial: null, min: 1, integer: true}),
       stage: integer(0, {min: 0}),
       stages: new fields.ArrayField(new fields.SchemaField({
         label: string(),
@@ -68,10 +69,17 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
 
   prepareBaseData() {
     super.prepareBaseData();
+    if (isGradedEffect(this)) this.name = gradedEffectName(this);
     for (const change of this.system?.changes ?? []) {
       change.phase = effectChangePhase(change);
-      if (isGradedEffect(this) && ["system.modifiers.rolls.allActions", "system.modifiers.rolls.initiative"].includes(change.key)) change.value = String(-effectDegree(this));
+      if (isGradedState(this) && ["system.modifiers.rolls.allActions", "system.modifiers.rolls.initiative"].includes(change.key)) change.value = String(-effectDegree(this));
     }
+  }
+
+  static applyChange(targetDoc, change, options = {}) {
+    const value = cumulativeChangeValue(change.effect, change, targetDoc, options.replacementData);
+    if (value === change.value) return super.applyChange(targetDoc, change, options);
+    return super.applyChange(targetDoc, {key: change.key, type: change.type, phase: change.phase, priority: change.priority, effect: change.effect, value}, options);
   }
 
   async toChat() {
@@ -99,7 +107,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // A copied template belongs to the user creating this instance, not its
     // original author. Never infer authorship from lastModifiedBy.
     if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
-    if (isGradedEffect(this)) this.updateSource({showIcon: foundry.CONST.ACTIVE_EFFECT_SHOW_ICON.ALWAYS});
+    if (isGradedEffect(this)) this.updateSource({showIcon: foundry.CONST.ACTIVE_EFFECT_SHOW_ICON.ALWAYS, "system.degree": effectDegree(this)});
     this.updateSource({duration: normalizeEffectDuration(data.duration ?? {value: null, units: "rounds"})});
     if (data.system?.stages) this.updateSource({"system.stages": data.system.stages.map(normalizeEffectStage)});
     if (this.parent?.documentName === "Actor" && data.flags?.["trudvang-chronicles"]?.untilRoundEnd) {
@@ -121,6 +129,9 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   }
 
   async _preUpdate(data, options, user) {
+    // The editable header displays the prepared name, including its degree.
+    // Keep that display suffix out of the stored base name on ordinary saves.
+    if (isGradedEffect(this) && data.name === this.name && this._source.name !== this.name) data.name = this._source.name;
     if (data.duration) data.duration = normalizeEffectDuration({...this._source.duration, ...data.duration});
     if (Array.isArray(data.system?.stages)) data.system.stages = data.system.stages.map(normalizeEffectStage);
     return super._preUpdate(data, options, user);

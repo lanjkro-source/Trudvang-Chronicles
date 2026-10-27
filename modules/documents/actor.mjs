@@ -1,5 +1,6 @@
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
+import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
@@ -370,6 +371,9 @@ export class TrudvangActor extends BaseActor {
   }
 
   catalogKnowledgeRestriction(catalogId) {
+    const custom = this.items?.find(item => item.system?.catalogId === catalogId && isCustomSpecialty(item));
+    const sourceId = customSpecialtyMetadata(custom)?.sourceCatalogId;
+    if (sourceId && sourceId !== catalogId) return this.catalogKnowledgeRestriction(sourceId);
     if (TRUDVANG.vitnerTypes[catalogId]) {
       const selected = this.selectedVitnerType;
       return selected && selected.id !== catalogId ? "TRUDVANG.Warning.VitnerExclusive" : null;
@@ -508,6 +512,10 @@ export class TrudvangActor extends BaseActor {
   }
 
   getCatalogEntry(catalogId) {
+    const custom = this.items?.find(item => item.system?.catalogId === catalogId && isCustomSpecialty(item));
+    if (custom) return {id: catalogId, label: custom.name, name: custom.name, kind: "specialty",
+      skillKey: custom.system.parentSkill, parentDiscipline: custom.system.parentDiscipline,
+      parentCatalogId: customSpecialtyMetadata(custom).parentCatalogId, rollBonus: Number(custom.system.rollBonus || 2)};
     for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
       for (const discipline of disciplines) {
         if (discipline.id === catalogId) return {...discipline, skillKey, kind: "discipline", parentDiscipline: "", rollBonus: 1};
@@ -521,7 +529,40 @@ export class TrudvangActor extends BaseActor {
   findKnowledgeItem(catalogId) {
     const entry = this.getCatalogEntry(catalogId);
     return this.items.find(item => item.type === "ability" && (item.system.catalogId === catalogId
-      || (entry && item.system.parentSkill === entry.skillKey && item.system.kind === entry.kind && String(item.name).trim().toLocaleLowerCase() === entry.name.toLocaleLowerCase())));
+      || (entry && !isCustomSpecialty(item) && item.system.parentSkill === entry.skillKey && item.system.kind === entry.kind && String(item.name).trim().toLocaleLowerCase() === entry.name.toLocaleLowerCase())));
+  }
+
+  async duplicateSpecialty(id) {
+    if (!this.canUserModify(game.user, "update")) return null;
+    const source = this.items.get(id) ?? this.findKnowledgeItem(id);
+    const entry = this.getCatalogEntry(source?.system.catalogId || id);
+    if (source?.system.kind !== "specialty" && entry?.kind !== "specialty") return null;
+    const metadata = customSpecialtyMetadata(source);
+    const sourceCatalogId = metadata?.sourceCatalogId || source?.system.catalogId || entry?.id || "";
+    const system = foundry.utils.deepClone(source?.toObject?.().system ?? source?.system ?? {});
+    system.kind = "specialty";
+    system.parentSkill = system.parentSkill || entry?.skillKey || "";
+    system.parentDiscipline = system.parentDiscipline || entry?.parentDiscipline || "";
+    system.rollBonus = Number(system.rollBonus || entry?.rollBonus || 2);
+    system.costTrait = this.getKnowledgeCostTrait({name: source?.name || entry.name, type: "ability", system: {...system, catalogId: sourceCatalogId}}) || "";
+    system.description ||= this.catalogText(sourceCatalogId, "Description");
+    system.summary ||= this.catalogText(sourceCatalogId, "Summary");
+    system.catalogId = CUSTOM_SPECIALTY_PREFIX + foundry.utils.randomID();
+    system.level = 0; system.offHandLevel = 0; system.freeLevels = 0;
+    const [created] = await this.createEmbeddedDocuments("Item", [{
+      name: game.i18n.format("TRUDVANG.CustomSpecialty.CopyName", {name: source?.name || game.i18n.localize(entry.label)}),
+      img: source?.img || "icons/svg/book.svg", type: "ability", system,
+      flags: {"trudvang-chronicles": {customSpecialty: {added: true, sourceCatalogId,
+        parentCatalogId: entry?.parentCatalogId || metadata?.parentCatalogId || this.findParentDiscipline(source ?? {system})?.system.catalogId || ""}}}
+    }]);
+    created?.sheet.render({force: true});
+    return created;
+  }
+
+  async deleteCustomSpecialty(id) {
+    const item = this.items.get(id);
+    if (!this.canUserModify(game.user, "update") || !canDeleteCustomSpecialty(item)) return null;
+    return item.delete();
   }
 
   /** Book knowledge participates in rules without inventing embedded ability items. */
@@ -704,7 +745,7 @@ export class TrudvangActor extends BaseActor {
     const current = Number(item.system.level ?? 1);
     const next = current + Math.sign(direction);
     const minimum = Number(item.system.freeLevels || 0);
-    if (next < Math.max(1, minimum) || next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
+    if (next < Math.max(isCustomSpecialty(item) ? 0 : 1, minimum) || next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
     if (direction > 0) {
       const restriction = item.system.catalogId ? this.catalogKnowledgeRestriction(item.system.catalogId) : null;
       if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
@@ -738,10 +779,11 @@ export class TrudvangActor extends BaseActor {
         const hasSpecialties = entry.specialties.some(specialty => {
           const specialtyItem = this.findKnowledgeItem(specialty.id);
           return Math.max(Number(specialtyItem?.system.level || 0), Number(specialtyItem?.system.offHandLevel || 0)) > 0;
-        });
+        }) || this.items.some(child => isCustomSpecialty(child) && this.getCatalogEntry(child.system.catalogId)?.parentCatalogId === catalogId
+          && Math.max(Number(child.system.level || 0), Number(child.system.offHandLevel || 0)) > 0);
         if (current === 1 && hasSpecialties) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DisciplineSupportsSpecialty"));
       }
-      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0) return item.delete();
+      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0 && !isCustomSpecialty(item)) return item.delete();
       return item.update({[`system.${levelField}`]: current - 1});
     }
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
@@ -793,10 +835,11 @@ export class TrudvangActor extends BaseActor {
         const hasSpecialties = entry.specialties.some(specialty => {
           const specialtyItem = this.findKnowledgeItem(specialty.id);
           return Math.max(Number(specialtyItem?.system.level || 0), Number(specialtyItem?.system.offHandLevel || 0)) > 0;
-        });
+        }) || this.items.some(child => isCustomSpecialty(child) && this.getCatalogEntry(child.system.catalogId)?.parentCatalogId === catalogId
+          && Math.max(Number(child.system.level || 0), Number(child.system.offHandLevel || 0)) > 0);
         if (current === 1 && hasSpecialties) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DisciplineSupportsSpecialty"));
       }
-      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0) return item.delete();
+      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0 && !isCustomSpecialty(item)) return item.delete();
       return item.update({[`system.${levelField}`]: current - 1});
     }
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
@@ -805,7 +848,7 @@ export class TrudvangActor extends BaseActor {
     const next = current + 1;
     const requirement = this.getRequiredSkillValue(next);
     if (Number(this.getSkillValue(entry.skillKey) || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
-    if (entry.kind === "specialty" && Number(this.findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
+    if (entry.kind === "specialty" && Number(this.findRuleKnowledge(entry.parentCatalogId)?.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
     if (item) return item.update({[`system.${levelField}`]: next});
     const name = game.i18n.localize(entry.label);
     const discipline = entry.parentCatalogId ? this.getCatalogEntry(entry.parentCatalogId) : null;
@@ -834,11 +877,12 @@ export class TrudvangActor extends BaseActor {
       const requirement = this.getRequiredSkillValue(next);
       if (Number(this.getSkillValue(skillKey) || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
       if (item.type === "ability" && item.system.kind === "specialty") {
-        const parent = this.findParentDiscipline(item);
+        const parentId = this.getCatalogEntry(item.system.catalogId)?.parentCatalogId;
+        const parent = parentId ? this.findRuleKnowledge(parentId) : this.findParentDiscipline(item);
         if (!parent || Number(parent.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
       }
     }
-    if (next === 0) return item.delete();
+    if (next === 0 && !isCustomSpecialty(item)) return item.delete();
     return item.update({"system.level": next});
   }
 
@@ -1939,8 +1983,8 @@ export class TrudvangActor extends BaseActor {
     const stacking = prepared.system.stacking || (isGradedEffect(prepared) ? "stack" : "refresh");
     const existing = stackId ? this.effects.find(effect => ["effect", "base"].includes(effect.type)
       && !effect.duration?.expired && effectStackId(effect) === stackId) : null;
-    if (existing && stacking === "stack" && isGradedEffect(prepared)) {
-      await existing.update({"system.potency": effectDegree(existing) + effectDegree(prepared), disabled: false});
+    if (existing && stacking === "stack") {
+      await existing.update({"system.degree": effectDegree(existing) + effectDegree(prepared), "system.stacking": "stack", disabled: false});
       return existing;
     }
     if (existing && stacking !== "stack") {
@@ -1970,7 +2014,7 @@ export class TrudvangActor extends BaseActor {
     const effect = await this.createTrudvangEffect({
       name: game.i18n.localize("TRUDVANG.New.Effect"),
       img: "icons/svg/aura.svg",
-      system: {stacking: "refresh", changes: []}
+      system: {stackId: `authored-${foundry.utils.randomID()}`, stacking: "refresh", changes: []}
     });
     effect?.sheet.render({force: true});
     return effect;

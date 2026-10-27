@@ -14,10 +14,12 @@ const deepClone = value => structuredClone(value);
 class Field { constructor(options) { this.options = options; } }
 
 class StubActiveEffect {
+  static applyChange(target, change) {target.applied = change.value; return {[change.key]: Number(change.value)};}
   prepareBaseData() {}
   canUserModify(user) { return Boolean(user?.isGM || this.parent?.isOwner); }
   get isSuppressed() { return this._superSuppressed ?? false; }
   async _preCreate() { return true; }
+  async _preUpdate() { return true; }
 }
 StubActiveEffect.implementation = {getEffectStart: () => 777};
 
@@ -211,7 +213,8 @@ function makeStackActor({existingPotency = 5, existingDuration = {value: 3, unit
     start: 111,
     update: async changes => {
       for (const [key, value] of Object.entries(changes)) {
-        if (key === "system" && value && typeof value === "object") existing.system = {...existing.system, ...deepClone(value)};
+        if (key.includes(".")) set(existing, key, deepClone(value));
+        else if (key === "system" && value && typeof value === "object") existing.system = {...existing.system, ...deepClone(value)};
         else if (key === "duration" && value && typeof value === "object") {
           existing._source.duration = deepClone(value);
           existing.duration = deepClone(value);
@@ -262,9 +265,9 @@ function makeStackActor({existingPotency = 5, existingDuration = {value: 3, unit
 
 test("createTrudvangEffect stacking matrix replaces atomically without an intermediate effect expiration", async () => {
   const matrix = [
-    {stacking: "stack", incoming: 7, survivor: "both", potency: 7},
-    {stacking: "stack", incoming: 5, survivor: "both", potency: 5},
-    {stacking: "stack", incoming: 3, survivor: "both", potency: 3},
+    {stacking: "stack", incoming: 7, survivor: "degree", potency: 5},
+    {stacking: "stack", incoming: 5, survivor: "degree", potency: 5},
+    {stacking: "stack", incoming: 3, survivor: "degree", potency: 5},
     {stacking: "refresh", incoming: 7, survivor: "existing", potency: 7},
     {stacking: "refresh", incoming: 5, survivor: "existing", potency: 5},
     {stacking: "refresh", incoming: 3, survivor: "existing", potency: 3},
@@ -283,11 +286,11 @@ test("createTrudvangEffect stacking matrix replaces atomically without an interm
       duration: {value: 9, units: "rounds"}
     });
     const label = `stacking=${stacking} incoming=${incoming}`;
-    if (survivor === "both") {
-      assert.equal(actor.effects.length, 2, label);
+    if (survivor === "degree") {
+      assert.equal(actor.effects.length, 1, label);
       assert.ok(actor.effects.includes(existing), label);
-      assert.equal(result.system.potency, potency, label);
-      assert.notEqual(result.id, existing.id, label);
+      assert.equal(result.system.degree, 2, label);
+      assert.equal(result.id, existing.id, label);
     } else if (survivor === "existing") {
       assert.equal(result.id, existing.id, label);
       assert.equal(actor.effects.length, 1, label);
@@ -313,9 +316,30 @@ test("graded GM states accumulate independently without lost degrees on simultan
     await Promise.all([actor.createTrudvangEffect(data), actor.createTrudvangEffect(data), actor.createTrudvangEffect(data)]);
     const matches = actor.effects.filter(effect => effect.system.stackId === id);
     assert.equal(matches.length, 1);
-    assert.equal(matches[0].system.potency, 3);
+    assert.equal(matches[0].system.degree, 3);
   }
   assert.equal(actor.effects.length, 3);
+});
+
+test("every cumulative effect keeps one degree counter and scales numeric contributions without rewriting its source", async () => {
+  const {actor} = makeStackActor(); actor.effects = [];
+  const data = {name: "Blessing 2026", system: {stackId: "blessing", stacking: "stack", degree: 1, changes: [{key: "system.modifiers.rolls.allActions", type: "add", value: "2"}]}};
+  const effects = await Promise.all([actor.createTrudvangEffect(data), actor.createTrudvangEffect(data), actor.createTrudvangEffect(data)]);
+  assert.equal(actor.effects.length, 1); assert.equal(effects[0].system.degree, 3);
+  const effect = new TrudvangActiveEffect();
+  effect.name = data.name; effect._source = {name: data.name}; effect.system = deepClone(effects[0].system);
+  effect.prepareBaseData(); effect.prepareBaseData();
+  assert.equal(effect.name, "Blessing 2026 3");
+  const change = {...effect.system.changes[0], effect}, target = {system: {traits: {strength: 4}}};
+  assert.deepEqual(TrudvangActiveEffect.applyChange(target, change), {"system.modifiers.rolls.allActions": 6});
+  assert.equal(change.value, "2");
+  effect.system.degree = 2;
+  assert.deepEqual(TrudvangActiveEffect.applyChange(target, {...change, value: "-@traits.strength"}), {"system.modifiers.rolls.allActions": -8});
+  const context = await sheetFor({...effect, isOwner: true, duration: {}})._preparePartContext("durationChanges", {});
+  assert.equal(context.graded, true); assert.equal(context.degree, 2);
+  const saved = {name: effect.name, system: {degree: 4}};
+  await effect._preUpdate(saved, {}, {});
+  assert.equal(saved.name, "Blessing 2026", "saving the displayed name must not store its derived degree suffix");
 });
 
 test("refresh works without an authored stack ID, resets the clock and does not add bonuses", async () => {
@@ -340,16 +364,68 @@ test("three GM states prepare exactly minus one per degree without changing thei
     assert.equal(item.folder, "gmItems");
     const effect = new TrudvangActiveEffect();
     effect.system = deepClone(item.effects[0].system);
-    effect.system.potency = 4;
+    effect.name = "Fatigué"; effect._source = {name: "Fatigué"};
+    effect.system.degree = 4;
     effect.prepareBaseData(); effect.prepareBaseData();
+    assert.equal(effect.name, "Fatigué 4");
     assert.deepEqual(effect.system.changes.map(row => row.value), ["-4", "-4"]);
-    effect.system.potency = 2; effect.prepareBaseData();
+    effect.system.degree = 2; effect.prepareBaseData();
+    assert.equal(effect.name, "Fatigué 2");
     assert.deepEqual(effect.system.changes.map(row => row.value), ["-2", "-2"]);
     assert.deepEqual(item.effects[0].system.changes.map(row => row.value), ["-1", "-1"]);
     const context = await sheetFor({isOwner: true, system: effect.system, duration: {}, _source: {}})._preparePartContext("durationChanges", {});
     assert.equal(context.graded, true); assert.equal(context.degree, 2);
     assert.deepEqual(Object.keys(context.reapplicationChoices), ["refresh", "stack"]);
   }
+});
+
+test("custom specialty copies reset all ranks, retain their parent/cost and cannot masquerade as base knowledge", async t => {
+  const previous = {randomID: foundry.utils.randomID, format: game.i18n.format};
+  t.after(() => {foundry.utils.randomID = previous.randomID; game.i18n.format = previous.format;});
+  let serial = 0, opened = 0;
+  foundry.utils.randomID = () => `copy${++serial}`;
+  game.i18n.format = (_key, data) => `${data.name} (copy)`;
+  const actor = new TrudvangActor();
+  actor.type = "character";
+  actor.system = {experience: {creationMode: true}, traits: {intelligence: 2}, skills: {knowledge: {value: 4}}};
+  actor.canUserModify = () => true;
+  actor.items = []; actor.items.get = id => actor.items.find(item => item.id === id);
+  const add = data => {
+    const item = {...data, id: `item${actor.items.length}`, toObject: () => deepClone(data), sheet: {render: () => {opened++;}},
+      update: async changes => {for (const [key, value] of Object.entries(changes)) set(item, key, value);},
+      delete: async () => {actor.items.splice(actor.items.indexOf(item), 1); return item;}};
+    actor.items.push(item); return item;
+  };
+  actor.createEmbeddedDocuments = async (_kind, rows) => rows.map(add);
+  const parent = add({name: "Language", type: "ability", system: {catalogId: "language", kind: "discipline", parentSkill: "knowledge", level: 1}});
+  const base = add({name: "Foreign Tongue", img: "book.webp", type: "ability", system: {catalogId: "foreignTongue", kind: "specialty", parentSkill: "knowledge", parentDiscipline: "Language", level: 3, offHandLevel: 2, freeLevels: 3, rollBonus: 2, description: "Description", summary: "Summary"}});
+  const copy = await actor.duplicateSpecialty(base.id);
+  assert.equal(opened, 1);
+  assert.equal(copy.system.level, 0); assert.equal(copy.system.freeLevels, 0); assert.equal(copy.system.offHandLevel, 0);
+  assert.notEqual(copy.system.catalogId, base.system.catalogId);
+  assert.equal(copy.system.description, "Description"); assert.equal(copy.img, "book.webp");
+  assert.equal(actor.findParentDiscipline(copy), parent);
+  assert.equal(actor.getKnowledgeLevelCost(copy, 1), actor.getKnowledgeLevelCost(base, 1));
+  actor.system.skills.knowledge.value = 1;
+  await actor.adjustCatalogKnowledge(copy.system.catalogId, 1);
+  assert.equal(copy.system.level, 0, "copies still require the normal parent skill value");
+  actor.system.skills.knowledge.value = 4; parent.system.level = 0;
+  await actor.adjustCatalogKnowledge(copy.system.catalogId, 1);
+  assert.equal(copy.system.level, 0, "copies cannot bypass the parent discipline");
+  parent.system.level = 1;
+  copy.name = base.name;
+  actor.items.splice(actor.items.indexOf(base), 1);
+  assert.equal(actor.findKnowledgeItem("foreignTongue"), undefined, "a renamed copy cannot replace the base catalogue entry");
+  actor.items.push(base);
+  copy.system.level = 1;
+  await actor.adjustCatalogKnowledge(copy.system.catalogId, -1);
+  assert.equal(copy.system.level, 0); assert.ok(actor.items.includes(copy), "zero-rank copies stay until explicitly deleted");
+  assert.equal(await actor.deleteCustomSpecialty(base.id), null);
+  copy.system.level = 1; assert.equal(await actor.deleteCustomSpecialty(copy.id), null);
+  copy.system.level = 0; copy.system.offHandLevel = 1; assert.equal(await actor.deleteCustomSpecialty(copy.id), null);
+  copy.system.offHandLevel = 0;
+  await actor.deleteCustomSpecialty(copy.id);
+  assert.ok(!actor.items.includes(copy)); assert.ok(actor.items.includes(base));
 });
 
 test("graded reference application preserves the edited degree, duration and reapplication choice", async () => {
