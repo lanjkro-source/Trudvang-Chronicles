@@ -1387,7 +1387,11 @@
         "sensesReplace": "Replace senses with the form’s senses"
       },
       "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
-      "InvalidProfileChange": "Invalid value for {path}. See the profile change examples."
+      "InvalidProfileChange": "Invalid value for {path}. See the profile change examples.",
+      "Reapplication": "Reapplication",
+      "ReapplicationHint": "Refresh replaces the remaining duration with the new application’s duration without adding modifiers. Stack adds the modifiers of separate instances; graded states gain degrees instead.",
+      "Degree": "Degree",
+      "DegreeHint": "Each degree imposes −1 to all Skill and Situation Rolls and to initiative. The penalty is calculated automatically from this degree."
     },
     "Import": {
       "Started": "Installing the Trudvang starter library...",
@@ -2331,6 +2335,21 @@
         "FirdtursirGold": {
           "Name": "Firdtursir belly gold",
           "Description": "The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1 PV/10 BV)."
+        },
+        "Fatigued": {
+          "Name": "Fatigued",
+          "Summary": "−1 to all actions per degree.",
+          "Description": "<p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p>"
+        },
+        "Hungry": {
+          "Name": "Hungry",
+          "Summary": "−1 to all actions per degree.",
+          "Description": "<p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p>"
+        },
+        "Thirsty": {
+          "Name": "Thirsty",
+          "Summary": "−1 to all actions per degree.",
+          "Description": "<p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p>"
         }
       },
       "Table": {

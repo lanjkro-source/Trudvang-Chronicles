@@ -102,6 +102,8 @@ La version de contenu 41 ajoute les profils d’armes naturelles de départ par 
 
 ## Hors périmètre
 
+`CONTENT_VERSION = 61` dans `modules/content-importer.mjs` relance l’import pour installer les objets d’effet Fatigué, Affamé et Assoiffé dans le dossier Maître de jeu des mondes existants. Ce numéro de reprise devient inutile lorsque tous les mondes de développement ont reçu ces objets ou ont été supprimés. Les objets de démarrage et le moteur de cumul restent nécessaires aux nouveaux mondes.
+
 `ensureUtilityMacros()` dans `modules/content-importer.mjs` actualise les macros de démarrage déjà installées : renommage du test de situation, déplacement des demandes dans « Maitre de jeu », permissions des macros et des dossiers. Le branchement `existing.update(data)` porte le commentaire `TEMPORARY WORLD MIGRATION` ; la création des nouvelles macros et leur organisation restent nécessaires pour les nouveaux mondes.
 
 `availablePortraits()` dans `modules/portrait.mjs` propose les autres images du Bestiaire aux acteurs importés en 0.65.0 dont `system.portraits` est encore vide. Ce repli lit le catalogue généré à partir du flag `bestiaryId`, sans écrire dans les mondes ni remplacer un avatar personnalisé. Il est supprimable lorsque ces exemplaires anciens ont une galerie enregistrée ou ont été effacés. Le repli général vers `actor.img` pour un acteur sans galerie reste, lui, un comportement normal pour les nouvelles fiches à portrait unique.

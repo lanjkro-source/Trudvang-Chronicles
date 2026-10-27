@@ -26,7 +26,8 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // TEMPORARY WORLD MIGRATION — version 59 adds the GM Surprised reference
 // and refreshes every managed GM folder to the palette's accent colour.
 // TEMPORARY WORLD MIGRATION — version 60 adds the Environment journal.
-const CONTENT_VERSION = 60;
+// TEMPORARY WORLD MIGRATION — version 61 installs the three graded GM states.
+const CONTENT_VERSION = 61;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

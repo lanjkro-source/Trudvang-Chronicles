@@ -1387,7 +1387,11 @@
         "sensesReplace": "Remplacer les sens par ceux de la forme"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
-      "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil."
+      "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
+      "Reapplication": "Nouvelle application",
+      "ReapplicationHint": "Renouveler remplace la durée restante par celle de la nouvelle application, sans additionner les modificateurs. Cumuler additionne les modificateurs des exemplaires ; pour les états à degrés, leur degré augmente.",
+      "Degree": "Degré",
+      "DegreeHint": "Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré."
     },
     "Import": {
       "Started": "Installation de la bibliothèque de démarrage Trudvang...",
@@ -2331,6 +2335,21 @@
         "FirdtursirGold": {
           "Name": "Or abdominal de firdtursir",
           "Description": "Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS)."
+        },
+        "Fatigued": {
+          "Name": "Fatigué",
+          "Summary": "−1 à toutes les actions par degré.",
+          "Description": "<p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p>"
+        },
+        "Hungry": {
+          "Name": "Affamé",
+          "Summary": "−1 à toutes les actions par degré.",
+          "Description": "<p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p>"
+        },
+        "Thirsty": {
+          "Name": "Assoiffé",
+          "Summary": "−1 à toutes les actions par degré.",
+          "Description": "<p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p>"
         }
       },
       "Table": {

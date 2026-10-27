@@ -2,6 +2,8 @@ import { renderTemplate } from "../helpers.mjs";
 import { EFFECT_ITEM_TYPES } from "../effects.mjs";
 import {annotateRuleTestDescription} from "../rule-tests.mjs";
 import {SURPRISED_ITEM, applySurprised} from "../combat-effects.mjs";
+import {GRADED_EFFECT_IDS} from "../rules/effect-stacking.mjs";
+import {applyGradedEffect} from "../graded-effects.mjs";
 
 const BaseItem = foundry.documents.Item;
 
@@ -20,7 +22,7 @@ export class TrudvangItem extends BaseItem {
       item: this,
       system: this.system,
       canUseExtract: this.type === "potion",
-      canApplyEffects: (EFFECT_ITEM_TYPES.has(this.type) || this.system.catalogId === SURPRISED_ITEM) && this.effects.some(effect => !effect.transfer && !effect.disabled),
+      canApplyEffects: (EFFECT_ITEM_TYPES.has(this.type) || this.system.catalogId === SURPRISED_ITEM || GRADED_EFFECT_IDS.has(this.system.catalogId)) && this.effects.some(effect => !effect.transfer && !effect.disabled),
       description: annotateRuleTestDescription(
         await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true}), this)
     });
@@ -31,13 +33,13 @@ export class TrudvangItem extends BaseItem {
   }
 
   async applyEffects(targets = null) {
-    if (this.type === "effect" && this.system.catalogId === SURPRISED_ITEM) {
+    if (this.type === "effect" && (this.system.catalogId === SURPRISED_ITEM || GRADED_EFFECT_IDS.has(this.system.catalogId))) {
       const candidates = targets ? Array.from(targets) : Array.from(game.user.targets?.size ? game.user.targets : globalThis.canvas?.tokens?.controlled ?? []);
       if (!candidates.length && this.actor) candidates.push(this.actor);
       const actors = [...new Set(candidates.map(target => target?.actor ?? target).filter(actor => actor?.documentName === "Actor"))];
       if (!actors.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoEffectTarget"));
       let applied = 0;
-      for (const actor of actors) if (await applySurprised(actor, this)) applied++;
+      for (const actor of actors) if (await (GRADED_EFFECT_IDS.has(this.system.catalogId) ? applyGradedEffect : applySurprised)(actor, this)) applied++;
       if (applied) ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectsApplied", {count: applied}));
       return applied;
     }
@@ -60,7 +62,7 @@ export class TrudvangItem extends BaseItem {
         data.start = null;
         data.duration = {...(data.duration || {}), expired: false};
         data.system ??= {};
-        if (!data.system.stackId && data.system.stacking !== "stack") data.system.stackId = `${this.uuid}:${template.name}`;
+        if (!data.system.stackId) data.system.stackId = `${this.uuid}:${template.name}`;
         if (await actor.createTrudvangEffect(data)) applied += 1;
       }
     }

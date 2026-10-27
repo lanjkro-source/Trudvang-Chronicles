@@ -115,6 +115,150 @@
   },
   "items": [
     {
+      "nameKey": "TRUDVANG.Content.Item.Fatigued.Name",
+      "type": "effect",
+      "folder": "gmItems",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/fatigued.svg",
+      "system": {
+        "catalogId": "trudvang-fatigued",
+        "summaryKey": "TRUDVANG.Content.Item.Fatigued.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.Fatigued.Description"
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.Fatigued.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.Fatigued.Description",
+          "type": "effect",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/fatigued.svg",
+          "transfer": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-fatigued",
+            "stacking": "stack",
+            "potency": 1,
+            "stages": [],
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              },
+              {
+                "key": "system.modifiers.rolls.initiative",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Hungry.Name",
+      "type": "effect",
+      "folder": "gmItems",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/hungry.svg",
+      "system": {
+        "catalogId": "trudvang-hungry",
+        "summaryKey": "TRUDVANG.Content.Item.Hungry.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.Hungry.Description"
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.Hungry.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.Hungry.Description",
+          "type": "effect",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/hungry.svg",
+          "transfer": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-hungry",
+            "stacking": "stack",
+            "potency": 1,
+            "stages": [],
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              },
+              {
+                "key": "system.modifiers.rolls.initiative",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Thirsty.Name",
+      "type": "effect",
+      "folder": "gmItems",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/thirsty.svg",
+      "system": {
+        "catalogId": "trudvang-thirsty",
+        "summaryKey": "TRUDVANG.Content.Item.Thirsty.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.Thirsty.Description"
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.Thirsty.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.Thirsty.Description",
+          "type": "effect",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/thirsty.svg",
+          "transfer": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-thirsty",
+            "stacking": "stack",
+            "potency": 1,
+            "stages": [],
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              },
+              {
+                "key": "system.modifiers.rolls.initiative",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "nameKey": "TRUDVANG.Content.Item.Surprised.Name",
       "img": "systems/trudvang-chronicles/assets/icons/statuses/surprised.svg",
       "type": "effect",

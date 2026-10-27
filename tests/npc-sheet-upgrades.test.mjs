@@ -59,6 +59,20 @@ globalThis.ui = {notifications: {warn: text => { warnings.push(text); return tex
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActorSheet, TrudvangNpcSheet} = await import("../modules/sheets/actor-sheet.mjs");
 
+test("direct effect drops use the actor stacking pipeline and clear template lifetime", async () => {
+  let saved;
+  const actor = {canUserModify: () => true, createTrudvangEffect: async data => {saved = data; return data;}};
+  const source = {uuid: "Item.source.ActiveEffect.effect", toObject: () => ({_id: "effect", name: "Same source", transfer: true,
+    system: {stacking: "refresh", changes: []}, start: {time: 12}, duration: {value: 2, units: "hours", expired: true}})};
+  await TrudvangActorSheet.prototype._onDropActiveEffect.call({actor}, {}, source);
+  assert.equal(saved._id, undefined);
+  assert.equal(saved.origin, source.uuid);
+  assert.equal(saved.transfer, false);
+  assert.equal(saved.start, null);
+  assert.equal(saved.duration.expired, false);
+  assert.equal(saved.system.stacking, "refresh");
+});
+
 test("picker filter matches names case- and diacritic-insensitively", () => {
   assert.equal(matchesPickerFilter("Saisie", "saisie"), true);
   assert.equal(matchesPickerFilter("Épée bâtarde", "epee"), true);

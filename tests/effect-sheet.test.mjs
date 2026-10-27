@@ -14,6 +14,7 @@ const deepClone = value => structuredClone(value);
 class Field { constructor(options) { this.options = options; } }
 
 class StubActiveEffect {
+  prepareBaseData() {}
   canUserModify(user) { return Boolean(user?.isGM || this.parent?.isOwner); }
   get isSuppressed() { return this._superSuppressed ?? false; }
   async _preCreate() { return true; }
@@ -75,6 +76,7 @@ const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs")
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks, expireAppliedEffects} = await import("../modules/effects.mjs");
 const {advanceDay} = await import("../modules/world-time.mjs");
+const {applyGradedEffect} = await import("../modules/graded-effects.mjs");
 
 function sheetFor(document) {
   return new TrudvangEffectSheet({document});
@@ -236,7 +238,14 @@ function makeStackActor({existingPotency = 5, existingDuration = {value: 3, unit
         _source: {duration: deepClone(data.duration ?? {value: 0, units: "rounds"})},
         duration: deepClone(data.duration ?? {value: 0, units: "rounds"}),
         start: data.start,
-        update: async () => {},
+        update: async changes => {
+          for (const [key, value] of Object.entries(changes)) {
+            if (key.includes(".")) set(doc, key, deepClone(value));
+            else if (key === "system") doc.system = {...doc.system, ...deepClone(value)};
+            else if (key === "duration") {doc.duration = deepClone(value); doc._source.duration = deepClone(value);}
+            else doc[key] = deepClone(value);
+          }
+        },
         delete: async () => {
           const index = actor.effects.indexOf(doc);
           if (index >= 0) actor.effects.splice(index, 1);
@@ -292,6 +301,70 @@ test("createTrudvangEffect stacking matrix replaces atomically without an interm
       assert.equal(result.duration.value, 9, label);
     }
   }
+});
+
+test("graded GM states accumulate independently without lost degrees on simultaneous drops", async () => {
+  const {actor} = makeStackActor();
+  actor.effects = [];
+  for (const id of ["trudvang-fatigued", "trudvang-hungry", "trudvang-thirsty"]) {
+    const data = {name: id, duration: {value: null, units: "rounds"}, system: {stackId: id, stacking: "stack", potency: 1, changes: []}};
+    await Promise.all([actor.createTrudvangEffect(data), actor.createTrudvangEffect(data), actor.createTrudvangEffect(data)]);
+    const matches = actor.effects.filter(effect => effect.system.stackId === id);
+    assert.equal(matches.length, 1);
+    assert.equal(matches[0].system.potency, 3);
+  }
+  assert.equal(actor.effects.length, 3);
+});
+
+test("refresh works without an authored stack ID, resets the clock and does not add bonuses", async () => {
+  const {actor} = makeStackActor(); actor.effects = [];
+  const data = {name: "Same source", origin: "Item.source", duration: {value: 6, units: "rounds"}, system: {stacking: "refresh", potency: 2, changes: [{key: "system.modifiers.rolls.allActions", type: "add", value: "2"}]}};
+  const first = await actor.createTrudvangEffect(data);
+  first.disabled = true; first.start = 123;
+  await actor.createTrudvangEffect({...data, duration: {value: 2, units: "hours"}});
+  assert.equal(actor.effects.length, 1);
+  assert.equal(first.start, 777);
+  assert.equal(first.duration.value, 2);
+  assert.equal(first.duration.units, "hours");
+  assert.equal(first.system.changes[0].value, "2");
+  assert.equal(first.disabled, false);
+});
+
+test("three GM states prepare exactly minus one per degree without changing their source", async () => {
+  const source = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url)));
+  const graded = source.items.filter(item => ["trudvang-fatigued", "trudvang-hungry", "trudvang-thirsty"].includes(item.system?.catalogId));
+  assert.equal(graded.length, 3);
+  for (const item of graded) {
+    assert.equal(item.folder, "gmItems");
+    const effect = new TrudvangActiveEffect();
+    effect.system = deepClone(item.effects[0].system);
+    effect.system.potency = 4;
+    effect.prepareBaseData(); effect.prepareBaseData();
+    assert.deepEqual(effect.system.changes.map(row => row.value), ["-4", "-4"]);
+    effect.system.potency = 2; effect.prepareBaseData();
+    assert.deepEqual(effect.system.changes.map(row => row.value), ["-2", "-2"]);
+    assert.deepEqual(item.effects[0].system.changes.map(row => row.value), ["-1", "-1"]);
+    const context = await sheetFor({isOwner: true, system: effect.system, duration: {}, _source: {}})._preparePartContext("durationChanges", {});
+    assert.equal(context.graded, true); assert.equal(context.degree, 2);
+    assert.deepEqual(Object.keys(context.reapplicationChoices), ["refresh", "stack"]);
+  }
+});
+
+test("graded reference application preserves the edited degree, duration and reapplication choice", async () => {
+  let applied;
+  const actor = {canUserModify: () => true, createTrudvangEffect: async data => {applied = data; return data;}};
+  const template = {_id: "reference", name: "Hungry", system: {stackId: "trudvang-hungry", stacking: "refresh", potency: 3, changes: []},
+    duration: {value: 2, units: "days", expired: true}, start: {time: 3}, transfer: true};
+  await applyGradedEffect(actor, {uuid: "Item.hunger", effects: [template]});
+  assert.equal(applied._id, undefined);
+  assert.equal(applied.system.potency, 3);
+  assert.equal(applied.system.stacking, "refresh");
+  assert.equal(applied.duration.value, 2);
+  assert.equal(applied.duration.units, "days");
+  assert.equal(applied.duration.expired, false);
+  assert.equal(applied.start, null);
+  assert.equal(applied.transfer, false);
+  assert.equal(applied.origin, "Item.hunger");
 });
 
 // P1-1 intent lock: suppressing transferred effects parented to item types

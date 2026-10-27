@@ -6,6 +6,7 @@ import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
 import {normalizeEffectDuration, normalizeEffectStage} from "./rules/effect-duration.mjs";
+import {isGradedEffect, effectDegree} from "./rules/effect-stacking.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -67,7 +68,10 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
 
   prepareBaseData() {
     super.prepareBaseData();
-    for (const change of this.system?.changes ?? []) change.phase = effectChangePhase(change);
+    for (const change of this.system?.changes ?? []) {
+      change.phase = effectChangePhase(change);
+      if (isGradedEffect(this) && ["system.modifiers.rolls.allActions", "system.modifiers.rolls.initiative"].includes(change.key)) change.value = String(-effectDegree(this));
+    }
   }
 
   async toChat() {
@@ -95,6 +99,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // A copied template belongs to the user creating this instance, not its
     // original author. Never infer authorship from lastModifiedBy.
     if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
+    if (isGradedEffect(this)) this.updateSource({showIcon: foundry.CONST.ACTIVE_EFFECT_SHOW_ICON.ALWAYS});
     this.updateSource({duration: normalizeEffectDuration(data.duration ?? {value: null, units: "rounds"})});
     if (data.system?.stages) this.updateSource({"system.stages": data.system.stages.map(normalizeEffectStage)});
     if (this.parent?.documentName === "Actor" && data.flags?.["trudvang-chronicles"]?.untilRoundEnd) {

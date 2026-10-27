@@ -1,4 +1,5 @@
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
+import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
@@ -32,6 +33,7 @@ import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/bod
 import {effectSource} from "../rules/effect-source.mjs";
 
 const BaseActor = foundry.documents.Actor;
+const effectApplicationJobs = new WeakMap();
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
 
 function getDamageStatus(bodyMax, bodyCurrent) {
@@ -1916,15 +1918,31 @@ export class TrudvangActor extends BaseActor {
   }
 
   async createTrudvangEffect(data) {
+    const run = () => this._createTrudvangEffectNow(data);
+    const previous = effectApplicationJobs.get(this) ?? Promise.resolve();
+    const job = previous.then(run, run).finally(() => {
+      if (effectApplicationJobs.get(this) === job) effectApplicationJobs.delete(this);
+    });
+    effectApplicationJobs.set(this, job);
+    return job;
+  }
+
+  async _createTrudvangEffectNow(data) {
     if (!this.canUserModify(game.user, "update")) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.EffectPermission"));
     }
     const prepared = foundry.utils.deepClone(effectSource(data));
     prepared.type = "effect";
     prepared.system ??= {};
-    const stackId = String(prepared.system.stackId || "").trim();
+    const stackId = effectStackId(prepared);
+    if (stackId) prepared.system.stackId = stackId;
     const stacking = prepared.system.stacking || "stack";
-    const existing = stackId ? this.effects.find(effect => effect.type === "effect" && effect.system.stackId === stackId) : null;
+    const existing = stackId ? this.effects.find(effect => ["effect", "base"].includes(effect.type)
+      && !effect.duration?.expired && effectStackId(effect) === stackId) : null;
+    if (existing && stacking === "stack" && isGradedEffect(prepared)) {
+      await existing.update({"system.potency": effectDegree(existing) + effectDegree(prepared), disabled: false});
+      return existing;
+    }
     if (existing && stacking !== "stack") {
       if (stacking === "highest" && Number(existing.system.potency || 0) > Number(prepared.system.potency || 0)) {
         const start = foundry.documents.ActiveEffect.implementation.getEffectStart();
@@ -1936,7 +1954,7 @@ export class TrudvangActor extends BaseActor {
       if (["refresh","replace"].includes(stacking)) {
         const update = foundry.utils.deepClone(prepared);
         delete update._id;
-        if(stacking==="replace")update.disabled??=false;
+        update.disabled ??= false;
         update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
         update.duration = {...(update.duration || existing._source.duration), expired: false};
         await existing.update(update);

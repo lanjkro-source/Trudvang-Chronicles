@@ -1,4 +1,5 @@
 import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
+import {effectSource} from "../rules/effect-source.mjs";
 import { TRUDVANG } from "../config.mjs";
 import {mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
 import { escapeHtml, localizeConfig,renderTemplate } from "../helpers.mjs";
@@ -740,7 +741,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const {applyTransformation}=await import("../transformations.mjs");
       return applyTransformation(this.actor,key,{source:effect});
     }
-    return super._onDropActiveEffect(event,effect);
+    if (!this.actor.canUserModify(game.user, "update")) return;
+    const data = foundry.utils.deepClone(effectSource(effect));
+    delete data._id;
+    data.origin ??= effect.uuid ?? null;
+    data.transfer = false;
+    data.start = null;
+    data.duration = {...data.duration, expired: false};
+    return this.actor.createTrudvangEffect(data);
   }
 
   async _onDropItem(event, item) {
