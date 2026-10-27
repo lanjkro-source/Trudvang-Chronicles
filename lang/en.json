@@ -14844,6 +14844,18 @@
     },
     "CustomSpecialty": {
       "CopyName": "{name} (copy)"
+    },
+    "AnimalAction": {
+      "jump": "Jump",
+      "fetch": "Fetch",
+      "guard": "Stand guard",
+      "MountTrainingBonus": "Mount training bonus",
+      "Degree": "Training degree",
+      "AnimalValue": "Animal SV",
+      "AnimalRollHint": "The SV depends on the animal’s training degree. The handler’s skills, traits and penalties are not added.",
+      "TrainingValue": "Training: {degree} — SV {target}",
+      "JumpHint": "Jump: +1 per degree of the mount’s training.",
+      "TrackHint": "Track: +2 per degree of the animal’s training."
     }
   }
 }

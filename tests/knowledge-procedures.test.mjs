@@ -1,6 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {procedureValues, procedureOutcome} from "../modules/rules/knowledge-procedures.mjs";
+import {trainedAnimalValue, trainedAnimalActions} from "../modules/rules/trained-animal-actions.mjs";
+
+test("trained-animal actions use fetch and guard SV tables rather than the training-week counts", () => {
+  assert.deepEqual([1, 2, 3, 4, 5].map(degree => trainedAnimalValue("fetch", degree)), [3, 6, 9, 12, 15]);
+  assert.deepEqual([1, 2, 3, 4, 5].map(degree => trainedAnimalValue("guard", degree)), [10, 12, 14, 16, 18]);
+  for (const degree of [0, 6, 1.5, NaN]) assert.equal(trainedAnimalValue("fetch", degree), null);
+  assert.deepEqual(trainedAnimalActions({type: "ability", system: {kind: "specialty", catalogId: "riding"}}), ["jump"]);
+  assert.deepEqual(trainedAnimalActions({type: "ability", system: {kind: "specialty", catalogId: "custom-specialty-abc"},
+    flags: {"trudvang-chronicles": {customSpecialty: {sourceCatalogId: "animalFriend"}}}}), ["fetch", "guard"]);
+});
 const hunt = {size: 0, terrain: 0, hours: 12, carried: 0, hunters: 1, animal: 0};
 test("hunting time, group thresholds and carried bonuses respect the Nature cap", () => {
   assert.equal(procedureValues("hunt", hunt, {skill: 10}).modifier, 6); // 4 time +2 game

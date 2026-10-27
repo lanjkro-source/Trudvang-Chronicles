@@ -13,6 +13,7 @@ import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {spellActorForItem,spellAvailability} from "../rules/spell-availability.mjs";
 import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowledge-procedures.mjs";
+import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 
 const magicSheets=new Set();
 export function registerMagicSheetAvailabilityHooks(){
@@ -61,7 +62,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
       "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
       "roll-rule-test": TrudvangItemSheet.#onRollRuleTest,
-      "knowledge-procedure": function() { return performKnowledgeProcedure(this.item); }
+      "knowledge-procedure": function() { return performKnowledgeProcedure(this.item); },
+      "trained-animal-action": function(event, target) { return performTrainedAnimalAction(this.item, target.dataset.trainingAction); }
     }
   };
 

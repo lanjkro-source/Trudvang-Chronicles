@@ -632,15 +632,17 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
   });
 }
 
-export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = []}) {
+export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = [], extraNumberFields = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   // target is always the intrinsic VC. Every fixed modifier is a separate row.
   const finalTarget = Number(target) + rollModifierTotal(modifierRows);
+  const extraModifiers = root => extraNumberFields.map(field => ({label: field.label, value: Number(root.querySelector(`[name="${field.name}"]`)?.value ?? field.value ?? 0) || 0}));
   const content = `
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target)}))}</p>
       ${modifierList(modifierRows)}
       ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
+      ${extraNumberFields.map(field => `<div class="form-group"><label>${escapeHtml(field.label)}</label><input name="${escapeHtml(field.name)}" type="number" value="${Number(field.value) || 0}">${field.hint ? `<p class="hint">${escapeHtml(field.hint)}</p>` : ""}</div>`).join("")}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
       <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${finalTarget}</strong></p>
@@ -651,9 +653,10 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
       const root = this.element;
       const refresh = () => {
         const output = root.querySelector("[data-final-target]");
-        if (output) output.textContent = finalTarget + Number(root.querySelector("[name=modifier]")?.value || 0);
+        if (output) output.textContent = finalTarget + rollModifierTotal(extraModifiers(root)) + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      extraNumberFields.forEach(field => root.querySelector(`[name="${field.name}"]`)?.addEventListener("input", refresh));
       refresh();
     }
   }
@@ -670,7 +673,8 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
           const root = button.form ?? dialog.element;
           return {
             modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
-            cost: Number(root.querySelector("[name=cost]")?.value || defaultCost)
+            cost: Number(root.querySelector("[name=cost]")?.value || defaultCost),
+            ...(extraNumberFields.length ? {extraModifiers: extraModifiers(root)} : {})
           };
         }
       },

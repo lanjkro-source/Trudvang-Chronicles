@@ -965,10 +965,14 @@ export class TrudvangActor extends BaseActor {
     modifierRows.push(...transformationRollRows(this, {target: breakdown.base + rollModifierTotal(modifierRows), skillKey: item.system.parentSkill, movement: Boolean(context.movement)}));
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])]});
+    const mountTraining = context.mountTraining || (customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker";
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])],
+      extraNumberFields: mountTraining ? [{name: "mount-training", label: game.i18n.localize("TRUDVANG.AnimalAction.MountTrainingBonus"), value: 0,
+        hint: game.i18n.localize(`TRUDVANG.AnimalAction.${(customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker" ? "TrackHint" : "JumpHint"}`)}] : []});
     if (!options) return null;
-    return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
-      flavor: [escapeHtml(breakdown.skillLabel), rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>"), successConsequence: context.successConsequence || "",
+    const trainingRows = options.extraModifiers ?? [];
+    return rollUnder({actor: this, label, target: target + rollModifierTotal(trainingRows), modifier: options.modifier, kind: "ability", item,
+      flavor: [escapeHtml(breakdown.skillLabel), rollModifierFlavor([...modifierRows, ...trainingRows])].filter(Boolean).join("<br>"), successConsequence: context.successConsequence || "",
       failureConsequence: context.failureConsequence || "",
       criticalSuccessConsequence: context.criticalSuccessConsequence || "",
       criticalFailureConsequence: context.criticalFailureConsequence || ""});

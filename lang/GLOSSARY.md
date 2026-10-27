@@ -12263,3 +12263,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.CustomSpecialty.CopyName` | {name} (copy) | {name} (copie) |
+
+## `TRUDVANG.AnimalAction`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.AnimalAction.jump` | Jump | Sauter |
+| `TRUDVANG.AnimalAction.fetch` | Fetch | Rapporter |
+| `TRUDVANG.AnimalAction.guard` | Stand guard | Monter la garde |
+| `TRUDVANG.AnimalAction.MountTrainingBonus` | Mount training bonus | Bonus d’entraînement de la monture |
+| `TRUDVANG.AnimalAction.Degree` | Training degree | Degré de dressage |
+| `TRUDVANG.AnimalAction.AnimalValue` | Animal SV | VC de l’animal |
+| `TRUDVANG.AnimalAction.AnimalRollHint` | The SV depends on the animal’s training degree. The handler’s skills, traits and penalties are not added. | La VC dépend du degré de dressage de l’animal. Les compétences, traits et malus du dresseur ne s’y ajoutent pas. |
+| `TRUDVANG.AnimalAction.TrainingValue` | Training: {degree} — SV {target} | Dressage : {degree} — VC {target} |
+| `TRUDVANG.AnimalAction.JumpHint` | Jump: +1 per degree of the mount’s training. | Sauter : +1 par degré de dressage de la monture. |
+| `TRUDVANG.AnimalAction.TrackHint` | Track: +2 per degree of the animal’s training. | Pister : +2 par degré de dressage de l’animal. |

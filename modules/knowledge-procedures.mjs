@@ -4,14 +4,16 @@ import {testActorForUser} from "./rule-tests.mjs";
 import {rollModifierTotal} from "./rules/roll-state-resolver.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {PROCEDURES, TRAINING_FACTORS, HUNTING_FOOD, procedureValues, procedureOutcome} from "./rules/knowledge-procedures.mjs";
+import {trainedAnimalActions} from "./rules/trained-animal-actions.mjs";
 
 const key = name => `TRUDVANG.Procedure.${name}`;
 const t = name => game.i18n.localize(key(name));
 const e = value => escapeHtml(String(value));
 export function knowledgeProcedureDescription(html, item) {
   const kind = item.type === "ability" ? PROCEDURES[item.system.catalogId] : null;
-  if (!kind) return html;
-  return `${html}<p><button type="button" class="trudvang-inline-rule-test" data-action="knowledge-procedure"><i class="fas fa-dice-d20"></i> ${e(t(kind))}</button></p>`;
+  const buttons = kind ? [`<button type="button" class="trudvang-inline-rule-test" data-action="knowledge-procedure"><i class="fas fa-dice-d20"></i> ${e(t(kind))}</button>`] : [];
+  for (const action of trainedAnimalActions(item)) buttons.push(`<button type="button" class="trudvang-inline-rule-test" data-action="trained-animal-action" data-training-action="${action}"><i class="fas fa-dice-d20"></i> ${e(game.i18n.localize(`TRUDVANG.AnimalAction.${action}`))}</button>`);
+  return buttons.length ? `${html}<p>${buttons.join(" ")}</p>` : html;
 }
 const select = (name, options) => `<div class="form-group"><label>${e(t(name))}</label><select name="${name}">${options.map(([value, label]) => `<option value="${value}"${name === "terrain" && value === 0 ? " selected" : ""}>${e(label)}</option>`).join("")}</select></div>`;
 const number = (name, value, min = 0, max = 9999) => `<div class="form-group"><label>${e(t(name))}</label><input name="${name}" type="number" value="${value}" min="${min}" max="${max}" step="1" required></div>`;

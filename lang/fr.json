@@ -14844,6 +14844,18 @@
     },
     "CustomSpecialty": {
       "CopyName": "{name} (copie)"
+    },
+    "AnimalAction": {
+      "jump": "Sauter",
+      "fetch": "Rapporter",
+      "guard": "Monter la garde",
+      "MountTrainingBonus": "Bonus d’entraînement de la monture",
+      "Degree": "Degré de dressage",
+      "AnimalValue": "VC de l’animal",
+      "AnimalRollHint": "La VC dépend du degré de dressage de l’animal. Les compétences, traits et malus du dresseur ne s’y ajoutent pas.",
+      "TrainingValue": "Dressage : {degree} — VC {target}",
+      "JumpHint": "Sauter : +1 par degré de dressage de la monture.",
+      "TrackHint": "Pister : +2 par degré de dressage de l’animal."
     }
   }
 }

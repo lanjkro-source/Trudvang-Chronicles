@@ -1305,6 +1305,64 @@ function mockActionRuntime(t, {die = 7} = {}) {
   return runtime;
 }
 
+test("tracking training bonus precedes the situation field and contributes once to live VC and chat detail", async t => {
+  const runtime = mockActionRuntime(t);
+  const instance = actor([]);
+  instance.getAbilityBreakdown = () => ({base: 10, skillLabel: "Nature", modifierRows: [{label: "Existing effect", value: -2}]});
+  const ability = {type: "ability", name: "Pister", system: {catalogId: "tracker", kind: "specialty", parentSkill: "wilderness"}};
+  const bonus = {value: "4", addEventListener() {}}, manual = {value: "-1", addEventListener() {}}, output = {textContent: ""};
+  const form = {querySelector: selector => selector.includes("mount-training") ? bonus : selector === "[name=modifier]" ? manual : selector === "[data-final-target]" ? output : null};
+  let content;
+  foundry.applications.api.DialogV2 = class {
+    _onRender() {}
+    static async wait(options) {
+      content = options.content;
+      const dialog = new this(); dialog.element = form; dialog._onRender({}, {});
+      return options.buttons[0].callback({}, {form}, dialog);
+    }
+  };
+  renderedCards.length = 0;
+  const result = await instance.rollAbility(ability);
+  assert.equal(result.target, 11); assert.equal(Number(output.textContent), 11);
+  assert.ok(content.indexOf('name="mount-training"') < content.indexOf('name="modifier"'));
+  assert.match(content, /name="mount-training"[^>]*value="0"/);
+  assert.ok(renderedCards.at(-1).data.flavor.includes("+4"));
+  assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls[0].formula, "1d20");
+});
+
+test("training action buttons preserve Dressage and jumping uses the actor's real Riding specialty", async t => {
+  mockActionRuntime(t);
+  const {knowledgeProcedureDescription} = await import("../modules/knowledge-procedures.mjs");
+  const {performTrainedAnimalAction} = await import("../modules/trained-animal-actions.mjs");
+  const riding = {type: "ability", name: "Équitation", system: {catalogId: "riding", kind: "specialty"}};
+  const animalFriend = {type: "ability", system: {catalogId: "animalFriend", kind: "specialty"}};
+  assert.match(knowledgeProcedureDescription("<p>Text</p>", riding), /data-training-action="jump"/);
+  const buttons = knowledgeProcedureDescription("", animalFriend);
+  assert.match(buttons, /data-action="knowledge-procedure"/);
+  assert.match(buttons, /data-training-action="fetch"/); assert.match(buttons, /data-training-action="guard"/);
+  const instance = actor([]); instance.isOwner = true;
+  const learned = {...riding, system: {...riding.system, level: 4}};
+  instance.findRuleKnowledge = () => learned;
+  instance.rollAbility = async (item, options) => {assert.equal(item, learned); assert.equal(options.mountTraining, true); return "jump";};
+  assert.equal(await performTrainedAnimalAction({...riding, actor: instance}, "jump"), "jump");
+});
+
+test("fetch and guard roll the trained animal's VC with the situation modifier, not the handler's skills or penalties", async t => {
+  const {performTrainedAnimalAction} = await import("../modules/trained-animal-actions.mjs");
+  const runtime = mockActionRuntime(t);
+  const instance = actor([]); instance.isOwner = true;
+  instance.system.modifiers.rolls.allActions = -10;
+  const ability = {type: "ability", name: "Ami des animaux", actor: instance, system: {catalogId: "animalFriend", kind: "specialty", level: 5}};
+  runtime.response = {degree: 3, modifier: -2};
+  assert.equal((await performTrainedAnimalAction(ability, "fetch")).target, 7);
+  runtime.response = {degree: 5, modifier: 2};
+  assert.equal((await performTrainedAnimalAction(ability, "guard")).target, 20);
+  assert.equal(runtime.messages.length, 2); assert.equal(runtime.messages[0].rolls[0].formula, "1d20");
+  runtime.response = false;
+  assert.equal(await performTrainedAnimalAction(ability, "guard"), null);
+  assert.equal(runtime.messages.length, 2, "cancel must produce neither dice nor chat messages");
+});
+
 for (const Sheet of [TrudvangCharacterSheet, TrudvangNpcSheet]) {
   test(`${Sheet.name}: combat weapon/natural damage icons wait for confirmation without spending PC or AA`, async t => {
     const runtime = mockActionRuntime(t, {die: 4});
