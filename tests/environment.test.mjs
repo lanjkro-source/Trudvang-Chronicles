@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {environmentConditions, environmentActorValues, environmentCardLines, normalizeEnvironment, ENVIRONMENT_OPTIONS, environmentKey} from "../modules/rules/environment.mjs";
+import {environmentConditions, environmentActorValues, environmentCardLines, environmentCardView, normalizeEnvironment, ENVIRONMENT_OPTIONS, environmentKey} from "../modules/rules/environment.mjs";
+import Handlebars from "handlebars";
 import {migrateEffectReapplicationDefaults} from "../modules/content-importer.mjs";
 
 test("environment reproduces the p302 travel/weather/sleep penalties and doubles only missing required clothing", () => {
@@ -35,9 +36,29 @@ test("every selectable condition and its requirement has bilingual text, with on
       if (clothing) assert.equal(typeof localize(environmentKey(`clothing.${clothing}`)), "string");
     }
     const lines = environmentCardLines({environment: "sea", travel: "foot", temperature: "cool", temperatureClothing: false, meal: true}, localize);
-    assert.equal(lines.length, 9, "environment + five condition choices + meal + frostbite + cap rule");
+    assert.equal(lines.length, 3, "only foot, cool and meal have nonzero modifiers");
     assert.ok(lines.every(line => typeof line === "string" && !line.includes("undefined")));
   }
+});
+
+test("compact environment card keeps the requested order, total and conditional italic frostbite note after updates", () => {
+  const language = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url)));
+  const localize = key => key.split(".").reduce((value, part) => value?.[part], language);
+  const view = environmentCardView({environment: "forest", travel: "foot", temperature: "freezing", temperatureClothing: false, sleep: "refreshing", meal: true}, localize);
+  assert.equal(view.title, "Jet d’environnement - forêt");
+  assert.deepEqual(view.environmentLines, ["À pied : −1", "Gel (mal vêtu) : −4", "Sommeil : +2", "Repas : +1"]);
+  assert.equal(view.environmentTotal, "−2");
+  assert.equal(view.environmentFrostbite, "Risque de dégâts de gelure : 4");
+  const hbs = Handlebars.create(); hbs.registerHelper("localize", localize);
+  const render = hbs.compile(readFileSync(new URL("../templates/chat/trait-situation-request-card.hbs", import.meta.url), "utf8"));
+  const html = render({...view, environment: true, gmName: "Not displayed", gmImg: "portrait.png"});
+  assert.ok(!html.includes("Not displayed")); assert.ok(!html.includes("portrait.png"));
+  assert.match(html, /<strong>Total : −2<\/strong>/);
+  assert.match(html, /<em>Risque de dégâts de gelure : 4<\/em>/);
+  const mild = environmentCardView({precipitation: "beautiful", sleep: "refreshing"}, localize);
+  assert.equal(mild.environmentTotal, "0", "the display preserves the existing comfort cap");
+  assert.equal(mild.environmentFrostbite, "");
+  assert.ok(!render({...mild, environment: true}).includes("environment-note"));
 });
 
 test("one-time default migration preserves graded stacks, explicit advanced modes and all active durations", async t => {

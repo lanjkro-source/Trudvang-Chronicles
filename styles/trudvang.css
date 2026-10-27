@@ -1100,6 +1100,9 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang-sheet .resource .temporary-health-input { color: inherit; background: inherit; }
 .trudvang-sheet .senses-line {margin: .55rem 0 0; padding-top: .45rem; border-top: 1px solid var(--trudvang-line); color: var(--trudvang-ink);}
 .environment-request-options { max-height: 65vh; overflow-y: auto; }
+.trudvang.chat-card.environment-request .environment-conditions { margin: 4px 8px; padding: 0; list-style: none; }
+.trudvang.chat-card.environment-request .environment-conditions li { margin: 0; padding: 0; }
+.trudvang.chat-card.environment-request .environment-total, .trudvang.chat-card.environment-request .environment-note { margin: 3px 8px; }
 .environment-request-options .checkbox { display: flex; align-items: center; gap: .5em; }
 .trudvang.chat-card.environment-request .trait-situation-result { grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 4px; }
 .trudvang.chat-card .trait-situation-result [data-action="apply-environment-fatigue"] { width: auto; padding: 0 .3em; font-size: .85em; white-space: nowrap; }

@@ -193,7 +193,7 @@ test("environment responses use server-side weather, Weathered, Psyche, effects 
   assert.equal(request.responses.find(row => row.actorUuid === first.uuid).target, 13, "10+2 Psyche-3 effects-3 conditions+1 meal+4 Weathered+2 manual");
   assert.equal(request.responses.find(row => row.actorUuid === second.uuid).target, 7);
   const view = JSON.parse(message.content);
-  assert.ok(view.environmentLines.length >= 7);
+  assert.equal(view.environmentLines.length, 4, "foot, cold, wind and meal remain after response updates");
 });
 
 test("only a GM can add Fatigued once per environment response without another chat message", async t => {

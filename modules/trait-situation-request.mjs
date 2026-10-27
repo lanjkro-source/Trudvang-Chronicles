@@ -1,7 +1,7 @@
 import {renderTemplate} from "./helpers.mjs";
 import {TRUDVANG} from "./config.mjs";
 import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
-import {environmentActorValues, environmentCardLines} from "./rules/environment.mjs";
+import {environmentActorValues, environmentCardView} from "./rules/environment.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -54,7 +54,7 @@ async function cardContent(message, request, responses) {
     failure: request.failure ?? "",
     responses: responses.map(responseView),
     environment: Boolean(request.environment),
-    environmentLines: request.environment ? environmentCardLines(request.environment, key => game.i18n.localize(key)) : []
+    ...(request.environment ? environmentCardView(request.environment, key => game.i18n.localize(key)) : {})
   });
 }
 

@@ -14793,7 +14793,52 @@
           "rest": "Confort (plus de 4 h de repos confortable)",
           "goal": "Objectif en vue (arrivée dans une journée)"
         }
-      }
+      },
+      "cardTitle": "Jet d’environnement - {environment}",
+      "poorlyClothed": "mal vêtu",
+      "total": "Total",
+      "frostbiteCompact": "Risque de dégâts de gelure",
+      "compact": {
+        "travel": {
+          "foot": "À pied",
+          "horse": "À cheval"
+        },
+        "temperature": {
+          "cool": "Frais",
+          "cold": "Froid",
+          "freezing": "Gel",
+          "intense": "Gel intense",
+          "hrim": "Hrim"
+        },
+        "precipitation": {
+          "beautiful": "Beau temps",
+          "rain": "Pluie",
+          "torrential": "Pluie torrentielle",
+          "downpour": "Grosse averse",
+          "hail": "Grêle",
+          "lightSnow": "Neige légère",
+          "snow": "Neige",
+          "heavySnow": "Neige abondante"
+        },
+        "wind": {
+          "breeze": "Brise",
+          "gale": "Coup de vent",
+          "storm": "Tempête",
+          "hurricane": "Ouragan"
+        },
+        "sleep": {
+          "poor": "Mauvaise nuit",
+          "sleepless": "Nuit blanche",
+          "refreshing": "Sommeil"
+        },
+        "comfort": {
+          "meal": "Repas",
+          "clean": "Vêtements propres",
+          "rest": "Repos",
+          "goal": "Objectif en vue"
+        }
+      },
+      "cardHint": "Sélectionnez votre PJ ou PNJ, puis lancez le jet."
     }
   }
 }

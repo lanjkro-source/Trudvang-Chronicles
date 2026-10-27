@@ -43,14 +43,21 @@ export function environmentActorValues(actor, data) {
   return {...conditions, fatigue, mitigation, weathered: 2 * level, modifier: conditions.negative + mitigation + 2 * level};
 }
 export function environmentCardLines(data, localize) {
-  const {options, rows, frostbite} = environmentConditions(data);
-  const lines = [localize(environmentKey(`types.${options.environment}`))];
-  for (const row of rows) {
-    const label = localize(environmentKey(`options.${row.field}.${row.choice}`));
-    const clothing = row.clothing ? ` · ${localize(environmentKey(`clothing.${row.clothing}`))} · ${localize(environmentKey(row.unprotected ? "unprotected" : "protected"))}` : "";
-    lines.push(`${label} (${row.value > 0 ? "+" : ""}${row.value})${clothing}`);
-  }
-  if (frostbite) lines.push(`${localize(environmentKey("frostbite"))} : ${frostbite}`);
-  lines.push(localize(environmentKey("capHint")));
-  return lines;
+  return environmentConditions(data).rows.filter(row => row.value !== 0).map(row => {
+    const label = localize(environmentKey(`compact.${row.field}.${row.choice}`));
+    const clothing = row.unprotected ? ` (${localize(environmentKey("poorlyClothed"))})` : "";
+    const value = row.value < 0 ? `−${Math.abs(row.value)}` : `+${row.value}`;
+    return `${label}${clothing} : ${value}`;
+  });
+}
+export function environmentCardView(data, localize) {
+  const {options, negative, favorable, frostbite} = environmentConditions(data);
+  const environment = localize(environmentKey(`types.${options.environment}`)).toLocaleLowerCase();
+  const total = Math.min(0, negative + favorable);
+  return {
+    title: localize(environmentKey("cardTitle")).replace("{environment}", environment),
+    environmentLines: environmentCardLines(data, localize),
+    environmentTotal: total < 0 ? `−${Math.abs(total)}` : "0",
+    environmentFrostbite: frostbite ? `${localize(environmentKey("frostbiteCompact"))} : ${frostbite}` : ""
+  };
 }

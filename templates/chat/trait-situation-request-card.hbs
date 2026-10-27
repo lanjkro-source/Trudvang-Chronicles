@@ -1,16 +1,20 @@
 <article class="trudvang chat-card trait-situation-request{{#if environment}} environment-request{{/if}}">
-  <header>
+  {{#if environment}}<header><h3>{{title}}</h3></header>{{else}}<header>
     <img src="{{gmImg}}" alt="">
     <div>
       <strong>{{gmName}}</strong>
       <h3>{{title}}</h3>
     </div>
-  </header>
-  <p class="card-flavor">{{localize "TRUDVANG.Dialog.TraitSituationHint"}}</p>
-  {{#if environment}}<ul class="environment-conditions">{{#each environmentLines}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  </header>{{/if}}
+  <p class="card-flavor">{{#if environment}}{{localize "TRUDVANG.Environment.cardHint"}}{{else}}{{localize "TRUDVANG.Dialog.TraitSituationHint"}}{{/if}}</p>
   <button type="button" data-action="roll-trait-situation" data-trait="{{traitKey}}" data-sv="{{sv}}">
     <i class="fas fa-shield-halved" aria-hidden="true"></i> {{buttonLabel}}
   </button>
+  {{#if environment}}
+  {{#if environmentLines.length}}<ul class="environment-conditions">{{#each environmentLines}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  <p class="environment-total"><strong>{{localize "TRUDVANG.Environment.total"}} : {{environmentTotal}}</strong></p>
+  {{#if environmentFrostbite}}<p class="environment-note"><em>{{environmentFrostbite}}</em></p>{{/if}}
+  {{/if}}
   {{#if success}}
   <p class="trait-situation-consequence trait-situation-consequence--success">
     <strong>{{localize "TRUDVANG.Dialog.TraitSituationResult.success"}} :</strong> {{success}}

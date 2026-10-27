@@ -1,5 +1,5 @@
 import {escapeHtml, renderTemplate} from "./helpers.mjs";
-import {ENVIRONMENTS, ENVIRONMENT_OPTIONS, ENVIRONMENT_COMFORTS, environmentKey, normalizeEnvironment, environmentCardLines} from "./rules/environment.mjs";
+import {ENVIRONMENTS, ENVIRONMENT_OPTIONS, ENVIRONMENT_COMFORTS, environmentKey, normalizeEnvironment, environmentCardView} from "./rules/environment.mjs";
 
 const t = key => game.i18n.localize(environmentKey(key));
 export async function requestEnvironmentRoll() {
@@ -14,11 +14,12 @@ export async function requestEnvironmentRoll() {
     }}, {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}], rejectClose: false, modal: false});
   if (!choice || typeof choice !== "object") return null;
   const environment = normalizeEnvironment(choice);
-  const request = {traitKey: "psyche", sv: 10, title: t("title"), environment, responses: []};
+  const view = environmentCardView(environment, key => game.i18n.localize(key));
+  const request = {traitKey: "psyche", sv: 10, title: view.title, environment, responses: []};
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/trait-situation-request-card.hbs", {
     gmName: game.user.name, gmImg: game.user.avatar || "icons/svg/d20.svg", title: request.title,
     buttonLabel: t("roll"), traitKey: "psyche", sv: 10, environment: true,
-    environmentLines: environmentCardLines(environment, key => game.i18n.localize(key)), responses: []
+    ...view, responses: []
   });
   return ChatMessage.create({speaker: ChatMessage.getSpeaker(), content, style: CONST.CHAT_MESSAGE_STYLES.OTHER,
     flags: {"trudvang-chronicles": {traitSituation: request}}});

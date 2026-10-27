@@ -14793,7 +14793,52 @@
           "rest": "Comfort (over 4 hours of comfortable rest)",
           "goal": "Destination in sight (arrival within one day)"
         }
-      }
+      },
+      "cardTitle": "Environment roll - {environment}",
+      "poorlyClothed": "poorly clothed",
+      "total": "Total",
+      "frostbiteCompact": "Risk of frostbite damage",
+      "compact": {
+        "travel": {
+          "foot": "On foot",
+          "horse": "On horseback"
+        },
+        "temperature": {
+          "cool": "Cool",
+          "cold": "Cold",
+          "freezing": "Freezing",
+          "intense": "Intense frost",
+          "hrim": "Hrim"
+        },
+        "precipitation": {
+          "beautiful": "Beautiful weather",
+          "rain": "Rain",
+          "torrential": "Torrential rain",
+          "downpour": "Downpour",
+          "hail": "Hail",
+          "lightSnow": "Light snow",
+          "snow": "Snow",
+          "heavySnow": "Heavy snow"
+        },
+        "wind": {
+          "breeze": "Breeze",
+          "gale": "Gale",
+          "storm": "Storm",
+          "hurricane": "Hurricane"
+        },
+        "sleep": {
+          "poor": "Poor sleep",
+          "sleepless": "No sleep",
+          "refreshing": "Sleep"
+        },
+        "comfort": {
+          "meal": "Meal",
+          "clean": "Clean clothes",
+          "rest": "Rest",
+          "goal": "Destination in sight"
+        }
+      },
+      "cardHint": "Select your PC or NPC, then roll."
     }
   }
 }

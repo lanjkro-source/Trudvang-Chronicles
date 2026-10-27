@@ -12112,6 +12112,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Environment.gmOnly` | Only the game master may request an environment roll. | Seul le maître de jeu peut provoquer un jet d’environnement. |
 | `TRUDVANG.Environment.capHint` | Favorable circumstances offset environment and fatigue penalties without granting a net bonus. | Les circonstances favorables compensent les malus d’environnement et de fatigue sans donner de bonus net. |
 | `TRUDVANG.Environment.rulesHint` | French Rules p. 302 / GM Guide pp. 30–31: base Situation Value 10, modified by Psyche. Weathered adds +2 per level; enter the environment knowledge bonus when rolling. Missing required clothing doubles the relevant penalty and may cause frostbite damage. Favorable circumstances cannot grant a net bonus. The GM decides when to request a test and add Fatigued; damage and recovery are not automatic. | Livre des règles, p. 302 : test de situation de base 10, modifié par le Psychisme. Endurci ajoute +2 par niveau ; saisissez le bonus de connaissance de l’environnement lors du jet. Sans vêtements requis, le malus concerné est doublé et des dégâts de gelures sont possibles. Les circonstances favorables ne peuvent pas donner de bonus net. Le MJ décide quand demander ce test et quand ajouter Fatigué ; ni les dégâts ni la récupération ne sont automatiques. |
+| `TRUDVANG.Environment.cardTitle` | Environment roll - {environment} | Jet d’environnement - {environment} |
+| `TRUDVANG.Environment.poorlyClothed` | poorly clothed | mal vêtu |
+| `TRUDVANG.Environment.total` | Total | Total |
+| `TRUDVANG.Environment.frostbiteCompact` | Risk of frostbite damage | Risque de dégâts de gelure |
+| `TRUDVANG.Environment.cardHint` | Select your PC or NPC, then roll. | Sélectionnez votre PJ ou PNJ, puis lancez le jet. |
 
 ## `TRUDVANG.Environment.types`
 
@@ -12194,3 +12199,59 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Environment.options.comfort.clean` | Clean, dry clothes | Vêtements propres et secs |
 | `TRUDVANG.Environment.options.comfort.rest` | Comfort (over 4 hours of comfortable rest) | Confort (plus de 4 h de repos confortable) |
 | `TRUDVANG.Environment.options.comfort.goal` | Destination in sight (arrival within one day) | Objectif en vue (arrivée dans une journée) |
+
+## `TRUDVANG.Environment.compact.travel`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.travel.foot` | On foot | À pied |
+| `TRUDVANG.Environment.compact.travel.horse` | On horseback | À cheval |
+
+## `TRUDVANG.Environment.compact.temperature`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.temperature.cool` | Cool | Frais |
+| `TRUDVANG.Environment.compact.temperature.cold` | Cold | Froid |
+| `TRUDVANG.Environment.compact.temperature.freezing` | Freezing | Gel |
+| `TRUDVANG.Environment.compact.temperature.intense` | Intense frost | Gel intense |
+| `TRUDVANG.Environment.compact.temperature.hrim` | Hrim | Hrim |
+
+## `TRUDVANG.Environment.compact.precipitation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.precipitation.beautiful` | Beautiful weather | Beau temps |
+| `TRUDVANG.Environment.compact.precipitation.rain` | Rain | Pluie |
+| `TRUDVANG.Environment.compact.precipitation.torrential` | Torrential rain | Pluie torrentielle |
+| `TRUDVANG.Environment.compact.precipitation.downpour` | Downpour | Grosse averse |
+| `TRUDVANG.Environment.compact.precipitation.hail` | Hail | Grêle |
+| `TRUDVANG.Environment.compact.precipitation.lightSnow` | Light snow | Neige légère |
+| `TRUDVANG.Environment.compact.precipitation.snow` | Snow | Neige |
+| `TRUDVANG.Environment.compact.precipitation.heavySnow` | Heavy snow | Neige abondante |
+
+## `TRUDVANG.Environment.compact.wind`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.wind.breeze` | Breeze | Brise |
+| `TRUDVANG.Environment.compact.wind.gale` | Gale | Coup de vent |
+| `TRUDVANG.Environment.compact.wind.storm` | Storm | Tempête |
+| `TRUDVANG.Environment.compact.wind.hurricane` | Hurricane | Ouragan |
+
+## `TRUDVANG.Environment.compact.sleep`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.sleep.poor` | Poor sleep | Mauvaise nuit |
+| `TRUDVANG.Environment.compact.sleep.sleepless` | No sleep | Nuit blanche |
+| `TRUDVANG.Environment.compact.sleep.refreshing` | Sleep | Sommeil |
+
+## `TRUDVANG.Environment.compact.comfort`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Environment.compact.comfort.meal` | Meal | Repas |
+| `TRUDVANG.Environment.compact.comfort.clean` | Clean clothes | Vêtements propres |
+| `TRUDVANG.Environment.compact.comfort.rest` | Rest | Repos |
+| `TRUDVANG.Environment.compact.comfort.goal` | Destination in sight | Objectif en vue |
