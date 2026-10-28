@@ -93,6 +93,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       name: effect.name,
       img: effect.img,
       transfer: effect.transfer,
+      activationLabel: game.i18n.localize(effect.transfer ? `TRUDVANG.Effect.Activation.${effect.system?.activation === "inventory" ? "inventory" : "equipped"}` : "TRUDVANG.Effect.Applied"),
       disabled: effect.disabled,
       summary: effectTooltipSummary(effect)
     })) : [];

@@ -34,6 +34,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
     return {
       ...super.defineSchema(),
       stackId: string(),
+      activation: new fields.StringField({required: true, nullable: false, initial: "equipped", choices: ["equipped", "inventory"]}),
       stacking: new fields.StringField({
         required: true,
         nullable: false,
@@ -53,7 +54,10 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
   }
 }
 
-/** Suppress transferred effects when their source item is not currently usable.
+/** Transferred effects stay on their source item: native inventory membership
+ * adds/removes their contribution, without creating actor-side copies. They
+ * require equipment by default, or merely positive inventory quantity when
+ * activation is "inventory".
  * Only weapon/armor/shield/gear author transfer:true effects (see
  * TrudvangItemSheet, which gates supportsEffects and effect creation on
  * EFFECT_ITEM_TYPES, and forces potion templates to transfer:false); the
@@ -101,7 +105,10 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     if (!this.item || !this.transfer) return false;
     const item = this.item;
     if (!EFFECT_ITEM_TYPES.has(item.type)) return true;
-    if (["weapon", "armor", "shield", "gear"].includes(item.type)) return !item.system.equipped;
+    if (["weapon", "armor", "shield", "gear"].includes(item.type)) {
+      if (this.system?.activation === "inventory") return Number(item.system?.quantity ?? 1) <= 0;
+      return !item.system.equipped;
+    }
     if (item.type === "potion") return true;
     return false;
   }

@@ -109,6 +109,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "durationChanges") {
       partContext.tab = partContext.tabs.durationChanges;
+      const item = this.document.item ?? (this.document.parent?.documentName === "Item" ? this.document.parent : null);
+      partContext.itemActivationEditable = ["weapon", "armor", "shield", "gear"].includes(item?.type);
+      partContext.itemActivation = this.document.transfer ? this.document.system?.activation || "equipped" : "manual";
+      partContext.itemActivationChoices = Object.fromEntries(["manual", "equipped", "inventory"].map(key => [key, game.i18n.localize(`TRUDVANG.Effect.Activation.${key}`)]));
       partContext.stacking = this.document.system?.stacking || "refresh";
       partContext.reapplicationChoices = {refresh: game.i18n.localize("TRUDVANG.Effect.Refresh"), stack: game.i18n.localize("TRUDVANG.Effect.Stack")};
       if (["replace", "highest"].includes(partContext.stacking)) partContext.reapplicationChoices[partContext.stacking] = game.i18n.localize(`TRUDVANG.Effect.${partContext.stacking === "replace" ? "Replace" : "Highest"}`);
@@ -173,7 +177,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         "system.modifiers.rolls.movementActions", "system.modifiers.rolls.attack",
         "system.modifiers.rolls.parry", "system.modifiers.rolls.magic", "system.modifiers.rolls.initiative",
         "system.resources.body.temporaryMax", "system.resources.body.max", ...["melee","ranged","throwing","natural"].map(usage=>`system.modifiers.damageByUsage.${usage}`),
-        "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.damage", "system.modifiers.fearFactor",
+        "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.recovery", "system.modifiers.damage", "system.modifiers.fearFactor",
         "system.modifiers.bodyMax", "system.modifiers.combatMax",
         "system.modifiers.vitnerMax", "system.modifiers.divinityMax",
         "system.modifiers.bodyValue", "system.modifiers.combatValue",
@@ -214,6 +218,13 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     // can only come from the core ActiveEffectConfig path, which must never
     // clobber or duplicate our namespaced storage on save.
     delete submitData.changes;
+    const item = this.document.item ?? (this.document.parent?.documentName === "Item" ? this.document.parent : null);
+    const activation = raw.trudvang?.itemActivation;
+    if (["weapon", "armor", "shield", "gear"].includes(item?.type) && ["manual", "equipped", "inventory"].includes(activation)) {
+      submitData.transfer = activation !== "manual";
+      submitData.system ??= {};
+      submitData.system.activation = activation === "inventory" ? "inventory" : "equipped";
+    }
     const legacy=this.document.flags?.["trudvang-chronicles"]?.transformation;
     if(legacy?.rules&&!legacy.editableChanges&&raw.system?.changes!==undefined){
       submitData.flags ??= {};submitData.flags["trudvang-chronicles"] ??= {};
@@ -288,6 +299,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     // Normalise empty expiry to null
     if (submitData.duration && !submitData.duration.expiry) {
       submitData.duration.expiry = null;
+      if (Number(submitData.duration.value) === 0 && !submitData.system?.stages?.length && !this.document.system?.stages?.length) submitData.duration.value = null;
     }
 
     delete submitData.trudvang;

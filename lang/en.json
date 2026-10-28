@@ -1410,7 +1410,14 @@
       "ReapplicationHint": "Refresh replaces the remaining duration with the new application’s duration. Stack increases the same effect’s degree; its modifications are applied that many times.",
       "Degree": "Degree",
       "DegreeHint": "Each degree imposes −1 to all Skill and Situation Rolls and to initiative. The penalty is calculated automatically from this degree.",
-      "CumulativeDegreeHint": "Base numeric modifications are applied once per degree. In Stack mode, reapplying increases this degree and preserves the current duration."
+      "CumulativeDegreeHint": "Base numeric modifications are applied once per degree. In Stack mode, reapplying increases this degree and preserves the current duration.",
+      "ItemActivation": "Activation on the bearer",
+      "ItemActivationHint": "An automatic effect acts from its item. Inventory mode does not require equipping it; the effect stops when the item leaves the inventory or its quantity reaches zero.",
+      "Activation": {
+        "manual": "Manual",
+        "equipped": "Item equipped",
+        "inventory": "Item in inventory"
+      }
     },
     "Import": {
       "Started": "Installing the Trudvang starter library...",

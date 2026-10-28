@@ -185,3 +185,18 @@ test("the five magical consumables have their own nested folder and migrate exis
   assert.equal(known.system.quantity,3);assert.equal(custom.system.consumable,undefined);
   updates.length=0;await syncStarterConsumables(starter,translations);assert.equal(updates.length,0);
 });
+
+test("amber inventory effects migrate world, actor and unlinked token copies once and preserve custom effects",async t=>{
+ const {syncStarterInventoryEffects}=await import("../modules/content-importer.mjs");const previous=globalThis.game;t.after(()=>{globalThis.game=previous;});
+ const entry=starter.items.find(i=>i.nameKey.endsWith("CentennialVidrjotunAmber.Name")),id=entry.nameKey.replace(/\.Name$/,"");
+ assert.equal(entry.effects[0].system.activation,"inventory");assert.equal(entry.effects[0].system.changes[0].key,"system.modifiers.recovery");assert.equal(entry.effects[0].system.changes[0].value,"1");
+ const made=[];
+ function item(name,flag,source){return {name,type:"gear",uuid:`Item.${name}`,effects:[{name:"Custom",system:{changes:[]}}],system:{quantity:2},getFlag:(scope,key)=>scope==="trudvang-chronicles"?flag:source,
+  async createEmbeddedDocuments(type,rows){assert.equal(type,"ActiveEffect");this.effects.push(...rows);made.push(this);}};}
+ const world=item("World",id),owned=item("Renamed",id),token=item("Token",undefined,world.uuid),custom=item("Other"),already=item("Already",id);
+ already.effects.push({...entry.effects[0],disabled:true});
+ globalThis.game={items:[world],actors:[{items:[owned,custom,already]}],scenes:[{tokens:[{actor:{items:[token]}}]}],i18n:{localize:key=>resolve(locales,"fr",key)}};
+ await syncStarterInventoryEffects(starter,new Map());assert.deepEqual(made,[world,owned,token]);
+ for(const i of made){assert.equal(i.system.quantity,2);assert.equal(i.effects[0].name,"Custom");assert.equal(i.effects[1].transfer,true);assert.equal(i.effects[1].name,"Ambre de sève centenaire de vidrjotun");}
+ made.length=0;await syncStarterInventoryEffects(starter,new Map());assert.equal(made.length,0);assert.equal(already.effects[1].disabled,true);assert.equal(custom.effects.length,1);
+});

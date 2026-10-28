@@ -34,7 +34,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // marks recognized harvest-item copies as consumable without changing quantities.
 // TEMPORARY WORLD MIGRATION — version 64 assigns structured consequence ids to
 // previously imported extracts and harvest consumables; quantities are preserved.
-const CONTENT_VERSION = 64;
+// TEMPORARY WORLD MIGRATION — version 65 installs the amber's inventory effect
+// on previously imported world items and character/token inventory copies.
+const CONTENT_VERSION = 65;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -403,6 +405,27 @@ export async function syncStarterConsumables(source, translationsByKey) {
       return Object.keys(update).length > 1 ? [update] : [];
     });
     if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+  }
+}
+
+// TEMPORARY WORLD MIGRATION — add missing inventory-effect templates to older
+// starter copies. Preserve existing edits, disabled states and unrelated effects.
+export async function syncStarterInventoryEffects(source, translationsByKey) {
+  const entries = source.items.filter(entry => entry.effects?.some(effect => effect.transfer && effect.system?.activation === "inventory"));
+  const byKey = new Map(entries.map(entry => [starterKey(entry.nameKey), entry]));
+  const byName = new Map(entries.flatMap(entry => [...(translationsByKey.get(entry.nameKey) ?? [])].map(name => [name, entry])));
+  const byUuid = new Map(Array.from(game.items ?? []).filter(item => byKey.has(flagOf(item))).map(item => [item.uuid, byKey.get(flagOf(item))]));
+  const actors = new Set(Array.from(game.actors ?? []));
+  for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
+  const items = new Set([...Array.from(game.items ?? []), ...[...actors].flatMap(actor => Array.from(actor.items ?? []))]);
+  for (const item of items) {
+    const entry = byKey.get(flagOf(item)) ?? byUuid.get(item.getFlag("core", "sourceId") || item._stats?.compendiumSource) ?? byName.get(item.name);
+    if (!entry || entry.type !== item.type) continue;
+    const templates = localizeTree(entry.effects).filter(effect => effect.transfer && effect.system?.activation === "inventory");
+    const missing = templates.filter(template => !Array.from(item.effects ?? []).some(effect =>
+      (template.flags?.[SYSTEM_ID]?.starterEffectId && (effect.getFlag?.(SYSTEM_ID, "starterEffectId") ?? effect.flags?.[SYSTEM_ID]?.starterEffectId) === template.flags[SYSTEM_ID].starterEffectId)
+      || (template.system?.stackId && effect.system?.stackId === template.system.stackId)));
+    if (missing.length) await item.createEmbeddedDocuments("ActiveEffect", missing);
   }
 }
 
@@ -1248,6 +1271,7 @@ export async function importStarterContent({force = false} = {}) {
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
     await syncActorExtracts(source, translationsByKey);
     await syncStarterConsumables(source, translationsByKey);
+    await syncStarterInventoryEffects(source, translationsByKey);
 
     // TEMPORARY WORLD MIGRATION — documented in docs/development-world-migrations.md.
     // Tablettes and their powers are now supplied by the Vitner/Religion compendiums;

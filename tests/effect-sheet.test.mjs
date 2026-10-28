@@ -1026,3 +1026,27 @@ test("explicit time jumps expire ordinary round-based stages even if the combat 
   effect.delete=async()=>actor.effects.splice(actor.effects.indexOf(effect),1);actor.effects.push(effect);
   await advanceWorldTime({value:5,unit:"minutes"});assert.equal(actor.effects.length,0);
 });
+
+test("inventory activation applies to carried equipment without equipping and respects empty quantities, disable and core suppression",()=>{
+ for(const type of ["gear","weapon","armor","shield"]){
+  const e=new TrudvangActiveEffect();e.item={type,system:{equipped:false,quantity:3}};e.transfer=true;e.system={activation:"inventory"};
+  assert.equal(e.isSuppressed,false,type);e.item.system.quantity=0;assert.equal(e.isSuppressed,true,type);
+  e.item.system.quantity=1;e.system.activation="equipped";assert.equal(e.isSuppressed,true,type);
+  e.system.activation="inventory";e._superSuppressed=true;assert.equal(e.isSuppressed,true,type);
+ }
+ const potion=new TrudvangActiveEffect();potion.item={type:"potion",system:{quantity:1}};potion.transfer=true;potion.system={activation:"inventory"};assert.equal(potion.isSuppressed,true);
+});
+test("item effect editor saves manual, equipped and inventory activation and keeps indefinite effects permanent",async()=>{
+ const document={item:{type:"gear"},parent:{documentName:"Item",type:"gear"},transfer:true,isOwner:true,_source:{duration:{value:null},system:{stages:[]}},system:{activation:"inventory",stages:[],changes:[]},duration:{}};
+ const sheet=sheetFor(document),context=await sheet._preparePartContext("durationChanges",{});
+ assert.equal(context.itemActivationEditable,true);assert.equal(context.itemActivation,"inventory");assert.ok(context.supportedPaths.includes("system.modifiers.recovery"));
+ const restore=stubCoreFormTransform();try{
+  for(const mode of ["manual","inventory","equipped"]){
+   const result=sheet._processFormData({}, {},{object:{"trudvang.itemActivation":mode,"duration.value":0,"duration.units":"rounds"}});
+   assert.equal(result.transfer,mode!=="manual");assert.equal(result.system.activation,mode==="inventory"?"inventory":"equipped");assert.equal(result.duration.value,null);assert.equal(result.trudvang,undefined);
+  }
+  const actorEffect=sheetFor({...document,item:null,parent:{documentName:"Actor",type:"character"}});
+  assert.equal((await actorEffect._preparePartContext("durationChanges",{})).itemActivationEditable,false);
+  const result=actorEffect._processFormData({}, {},{object:{"trudvang.itemActivation":"inventory"}});assert.equal(result.transfer,undefined);
+ }finally{restore();}
+});

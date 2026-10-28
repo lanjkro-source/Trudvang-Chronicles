@@ -2271,7 +2271,40 @@
       "folder": "magicObjects",
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
-      }
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.CentennialVidrjotunAmber.Description",
+          "type": "effect",
+          "img": "icons/equipment/neck/pendant-rough-orange.webp",
+          "transfer": true,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "activation": "inventory",
+            "stackId": "inventory:centennial-vidrjotun-amber",
+            "stacking": "refresh",
+            "changes": [
+              {
+                "key": "system.modifiers.recovery",
+                "type": "add",
+                "value": "1",
+                "phase": "initial"
+              }
+            ]
+          },
+          "flags": {
+            "trudvang-chronicles": {
+              "starterEffectId": "centennial-vidrjotun-amber"
+            }
+          }
+        }
+      ]
     },
     {
       "nameKey": "TRUDVANG.Content.Item.KnowledgeStone.Name",

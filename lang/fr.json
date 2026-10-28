@@ -1410,7 +1410,14 @@
       "ReapplicationHint": "Renouveler remplace la durée restante par celle de la nouvelle application. Cumuler augmente le degré du même effet ; ses modifications s’appliquent autant de fois.",
       "Degree": "Degré",
       "DegreeHint": "Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré.",
-      "CumulativeDegreeHint": "Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante."
+      "CumulativeDegreeHint": "Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante.",
+      "ItemActivation": "Activation sur le porteur",
+      "ItemActivationHint": "Un effet automatique agit depuis son objet. Le mode inventaire ne nécessite pas de l’équiper ; l’effet cesse si l’objet quitte l’inventaire ou si sa quantité atteint zéro.",
+      "Activation": {
+        "manual": "Manuelle",
+        "equipped": "Objet équipé",
+        "inventory": "Objet dans l’inventaire"
+      }
     },
     "Import": {
       "Started": "Installation de la bibliothèque de démarrage Trudvang...",

@@ -1595,6 +1595,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Degree` | Degree | Degré |
 | `TRUDVANG.Effect.DegreeHint` | Each degree imposes −1 to all Skill and Situation Rolls and to initiative. The penalty is calculated automatically from this degree. | Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré. |
 | `TRUDVANG.Effect.CumulativeDegreeHint` | Base numeric modifications are applied once per degree. In Stack mode, reapplying increases this degree and preserves the current duration. | Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante. |
+| `TRUDVANG.Effect.ItemActivation` | Activation on the bearer | Activation sur le porteur |
+| `TRUDVANG.Effect.ItemActivationHint` | An automatic effect acts from its item. Inventory mode does not require equipping it; the effect stops when the item leaves the inventory or its quantity reaches zero. | Un effet automatique agit depuis son objet. Le mode inventaire ne nécessite pas de l’équiper ; l’effet cesse si l’objet quitte l’inventaire ou si sa quantité atteint zéro. |
 
 ## `TRUDVANG.Effect.Profile`
 
@@ -1637,6 +1639,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.weightBonus` | Weight increase | Augmentation du poids |
 | `TRUDVANG.Effect.Profile.powerIds` | Granted spells and powers (catalogue IDs, JSON list) | Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON) |
 | `TRUDVANG.Effect.Profile.sensesReplace` | Replace senses with the form’s senses | Remplacer les sens par ceux de la forme |
+
+## `TRUDVANG.Effect.Activation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Effect.Activation.manual` | Manual | Manuelle |
+| `TRUDVANG.Effect.Activation.equipped` | Item equipped | Objet équipé |
+| `TRUDVANG.Effect.Activation.inventory` | Item in inventory | Objet dans l’inventaire |
 
 ## `TRUDVANG.Import`
 

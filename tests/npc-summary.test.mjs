@@ -2407,3 +2407,24 @@ test("daily balm recovery is additional every night even with negative Constitut
  instance.update=async data=>{for(const[k,v]of Object.entries(data)){set(instance,k,v);set(instance._source,k,v);}};
  const result=await instance.restForNight();assert.equal(result.healthRecovered,2);assert.equal(instance._source.system.rest.healthRecoveryNights,1);
 });
+
+test("amber recovery follows inventory membership on characters and NPCs without cloning an actor effect",()=>{
+ const template=JSON.parse(readFileSync(new URL("../data/starter-content.json",import.meta.url))).items.find(i=>i.nameKey.endsWith("CentennialVidrjotunAmber.Name")).effects[0];
+ for(const type of ["character","npc"]){
+  const item={type:"gear",system:{equipped:false,quantity:3},effects:[]};
+  const effect=new TrudvangActiveEffect();Object.assign(effect,structuredClone(template),{item});item.effects.push(effect);
+  const instance=actor([item]);instance.type=type;instance._source.system.details.race="human";
+  instance.allApplicableEffects=()=>instance.items.flatMap(i=>i.effects??[]);
+  const prepare=()=>{
+   instance.system=structuredClone(instance._source.system);(type==="npc"?NpcData:CharacterData).prototype.prepareBaseData.call(instance.system);
+   for(const e of instance.allApplicableEffects())if(!e.disabled&&!e.isSuppressed)for(const c of e.system.changes)set(instance,c.key,Number(get(instance,c.key)||0)+Number(c.value));
+   instance.prepareDerivedData();return instance.system.healthRecovery;
+  };
+  assert.equal(prepare().amount,4,type);assert.equal(instance.system.modifiers.recovery,1,"one bonus for the stack, not per quantity");
+  instance.items=[];assert.equal(prepare().amount,3,type);
+  instance.items=[item];item.system.quantity=0;assert.equal(prepare().amount,3,type);
+  item.system.quantity=1;effect.disabled=true;assert.equal(prepare().amount,3,type);
+  effect.disabled=false;assert.equal(prepare().amount,4,type);
+  assert.equal(instance.effects?.length??0,0,"no persistent copy on the actor");
+ }
+});
