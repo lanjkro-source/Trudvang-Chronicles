@@ -1,5 +1,5 @@
 import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
-import { useExtract } from "./extract-roll.mjs";
+import {consumeInventoryItem} from "./consumables.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
 import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
@@ -175,7 +175,11 @@ function attachListeners(message, html) {
       const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
       if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
       const item = await foundry.utils.fromUuid(button.closest("[data-item-uuid]")?.dataset.itemUuid);
-      await useExtract(item, actor);
+      const starterId = item?.getFlag?.("trudvang-chronicles", "starterId");
+      const owned = item?.actor === actor ? item : Array.from(actor.items ?? []).find(candidate => candidate.type === "potion"
+        && ((starterId && candidate.getFlag?.("trudvang-chronicles", "starterId") === starterId) || candidate.name === item?.name));
+      if (!owned) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Consumable.InventoryRequired"));
+      await consumeInventoryItem(owned, actor);
     });
   });
   html.querySelectorAll(".package-availability-roll").forEach(control => {

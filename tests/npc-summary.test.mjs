@@ -2363,3 +2363,38 @@ test("PC and NPC combat lists offer shield PP independently of remaining weapon 
     assert.match(source, /#if entry.isShield/);
   }
 });
+
+test("consumable gear uses directly, decrements one unit and deletes an empty stack", async t => {
+  const runtime = mockActionRuntime(t);
+  const item = {id:"sap", name:"Sève", type:"gear", system:{consumable:true, quantity:2}, toChat:()=>{throw new Error("No intermediate card");}};
+  const instance = actor([item]); instance.isOwner=true;
+  instance.updateEmbeddedDocuments=async (type,updates)=>{assert.equal(type,"Item");item.system.quantity=updates[0]["system.quantity"];};
+  instance.deleteEmbeddedDocuments=async(type,ids)=>{assert.deepEqual(ids,["sap"]);instance.items.splice(0,1);};
+  await instance.rollItem(item);
+  assert.equal(item.system.quantity,1); assert.equal(runtime.messages.length,1);
+  assert.match(runtime.messages[0].content,/Test creature a utilisé Sève/);
+  await instance.rollItem(item);
+  assert.equal(instance.items.length,0); assert.equal(runtime.messages.length,2);
+  assert.equal(await instance.rollItem(item),null); assert.equal(runtime.messages.length,2);
+  instance.items.push(item); item.system.quantity=0;
+  assert.equal(await instance.rollItem(item),null); instance.isOwner=false;item.system.quantity=2;
+  assert.equal(await instance.rollItem(item),null);assert.equal(runtime.messages.length,2);
+});
+
+test("extracts consume only after confirmation and ignore repeated clicks during the prompt", async t => {
+  const runtime=mockActionRuntime(t);
+  globalThis.Roll=class {constructor(formula){this.formula=formula;}async evaluate(){this.total=7;return this;}};
+  const item={id:"extract",name:"Extrait",img:"",type:"potion",system:{quantity:2,strength:1,duration:"1 jour",efficacy:{mild:"A",moderate:"B"}}};
+  const instance=actor([item]);instance.isOwner=true;
+  instance.updateEmbeddedDocuments=async(type,updates)=>{item.system.quantity=updates[0]["system.quantity"];};
+  runtime.response=false;
+  await instance.rollItem(item);
+  assert.equal(item.system.quantity,2); assert.equal(runtime.messages.length,0);
+  let finish;
+  foundry.applications.api.DialogV2=class {static wait(){return new Promise(resolve=>{finish=resolve;});}};
+  const first=instance.rollItem(item);
+  assert.equal(await instance.rollItem(item),null);
+  finish({traitKey:"constitution",strength:1});await first;
+  assert.equal(item.system.quantity,1);assert.equal(runtime.messages.length,1);
+  assert.match(renderedCards.at(-1).path,/extract-use-card/);
+});

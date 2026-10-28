@@ -8,6 +8,7 @@ import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../ta
 import { effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
+import {isConsumable} from "../consumables.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
@@ -300,6 +301,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     };
     for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
       item._hoverTitle = this._getItemHoverTitle(item);
+      item._consumable = isConsumable(item);
       item._damageText = this._getItemDamageText(item);
       item._compactDetail = this._getItemCompactDetail(item);
       item._inspection = prepareEquipmentInspection(item, this.actor);

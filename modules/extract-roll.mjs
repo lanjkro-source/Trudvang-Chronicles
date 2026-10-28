@@ -102,5 +102,6 @@ export async function useExtract(item, actor) {
     nextStageLabel,
     ends: !stage.next
   });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll, ...(duration.roll ? [duration.roll] : [])]});
+  const message = await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll, ...(duration.roll ? [duration.roll] : [])]});
+  return {message, result, stage};
 }

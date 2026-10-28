@@ -1697,6 +1697,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.GMMacros` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.MagicObjects` | Magic Objects | Objets magiques |
 | `TRUDVANG.Content.Folder.Materials` | Materials | Matériaux |
+| `TRUDVANG.Content.Folder.Consumables` | Consumables | Consommables |
 
 ## `TRUDVANG.Content.Scene`
 
@@ -12288,3 +12289,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.PassiveProtection.Hint` | Passive protection: 1d20 ≤ PP. The bearer must be aware of the ranged attack and face the attacker with the shield. No CP or WA cost. | Protection passive : 1d20 ≤ PP. Le porteur doit voir venir l’attaque à distance et présenter son bouclier vers l’attaquant. Aucun coût en PC ou AA. |
 | `TRUDVANG.PassiveProtection.Intercepted` | The projectile hits the shield. | Le projectile touche le bouclier. |
 | `TRUDVANG.PassiveProtection.NotIntercepted` | The projectile is not intercepted by the shield. | Le projectile n’est pas intercepté par le bouclier. |
+
+## `TRUDVANG.Consumable`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Consumable.Label` | Consumable | Consommable |
+| `TRUDVANG.Consumable.Used` | {actor} used {item}. | {actor} a utilisé {item}. |
+| `TRUDVANG.Consumable.InventoryRequired` | This item must be in the character’s inventory to be consumed. | Cet objet doit être présent dans l’inventaire du personnage pour être consommé. |

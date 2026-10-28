@@ -166,3 +166,22 @@ test("every folder name is localized in both shipped languages", () => {
   assert.notEqual(resolve(locales, "en", "TRUDVANG.Content.Folder.Characters"),
     resolve(locales, "fr", "TRUDVANG.Content.Folder.Characters"));
 });
+
+test("the five magical consumables have their own nested folder and migrate existing inventory copies", async t => {
+  const {syncStarterConsumables}=await import("../modules/content-importer.mjs");
+  assert.equal(starter.folders.magicConsumables.parent,"magicObjects");
+  const entries=starter.items.filter(entry=>entry.folder==="magicConsumables");assert.equal(entries.length,5);
+  assert.ok(entries.every(entry=>entry.type==="gear" && entry.system.consumable===true));
+  const previous=globalThis.game;t.after(()=>{globalThis.game=previous;});
+  const sourceEntry=entries[0],id=sourceEntry.nameKey.replace(/\.Name$/,""),updates=[];
+  const gear=(id,name,flag)=>({id,name,type:"gear",system:{quantity:3},getFlag:(scope,key)=>scope==="trudvang-chronicles"?flag:undefined});
+  const known=gear("known","Renommé",id),named=gear("named","Old translated name"),custom=gear("custom","Personal gear");
+  const actor={items:[known,custom],updateEmbeddedDocuments:async(type,rows)=>{updates.push(rows);for(const row of rows)actor.items.find(item=>item.id===row._id).system.consumable=true;}};
+  const tokenActor={items:[named],updateEmbeddedDocuments:async(type,rows)=>{updates.push(rows);named.system.consumable=true;}};
+  globalThis.game={items:[],actors:[actor],scenes:[{tokens:[{actor},{actor:tokenActor}]}]};
+  const translations=new Map([[sourceEntry.nameKey,new Set(["Old translated name"])]]);
+  await syncStarterConsumables(starter,translations);
+  assert.deepEqual(updates,[[{_id:"known","system.consumable":true}],[{_id:"named","system.consumable":true}]]);
+  assert.equal(known.system.quantity,3);assert.equal(custom.system.consumable,undefined);
+  updates.length=0;await syncStarterConsumables(starter,translations);assert.equal(updates.length,0);
+});

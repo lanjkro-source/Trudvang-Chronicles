@@ -1456,7 +1456,8 @@
         "Macros": "Players",
         "GMMacros": "Game Master",
         "MagicObjects": "Magic Objects",
-        "Materials": "Materials"
+        "Materials": "Materials",
+        "Consumables": "Consumables"
       },
       "Scene": {
         "WorldMap": "World Map",
@@ -14863,6 +14864,11 @@
       "Hint": "Passive protection: 1d20 ≤ PP. The bearer must be aware of the ranged attack and face the attacker with the shield. No CP or WA cost.",
       "Intercepted": "The projectile hits the shield.",
       "NotIntercepted": "The projectile is not intercepted by the shield."
+    },
+    "Consumable": {
+      "Label": "Consumable",
+      "Used": "{actor} used {item}.",
+      "InventoryRequired": "This item must be in the character’s inventory to be consumed."
     }
   }
 }

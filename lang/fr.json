@@ -1456,7 +1456,8 @@
         "Macros": "Joueurs",
         "GMMacros": "Maître de jeu",
         "MagicObjects": "Objets magiques",
-        "Materials": "Matériaux"
+        "Materials": "Matériaux",
+        "Consumables": "Consommables"
       },
       "Scene": {
         "WorldMap": "Carte du monde",
@@ -14863,6 +14864,11 @@
       "Hint": "Protection passive : 1d20 ≤ PP. Le porteur doit voir venir l’attaque à distance et présenter son bouclier vers l’attaquant. Aucun coût en PC ou AA.",
       "Intercepted": "Le projectile touche le bouclier.",
       "NotIntercepted": "Le projectile n’est pas intercepté par le bouclier."
+    },
+    "Consumable": {
+      "Label": "Consommable",
+      "Used": "{actor} a utilisé {item}.",
+      "InventoryRequired": "Cet objet doit être présent dans l’inventaire du personnage pour être consommé."
     }
   }
 }

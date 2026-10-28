@@ -30,7 +30,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // TEMPORARY WORLD MIGRATION — version 61 installs the three graded GM states.
 // TEMPORARY WORLD MIGRATION — version 62 changes historical default stacks to
 // refresh; graded GM states deliberately keep accumulating their degrees.
-const CONTENT_VERSION = 62;
+// TEMPORARY WORLD MIGRATION — version 63 installs the consumables folder and
+// marks recognized harvest-item copies as consumable without changing quantities.
+const CONTENT_VERSION = 63;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -337,6 +339,7 @@ async function upsertBaseItems(source, folders, translationsByKey) {
       if (payload.ownership) update.ownership = destination === "gmItems"
         ? foundry.data.operators.ForcedReplacement.create(payload.ownership) : payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
+      if (payload.system?.consumable === true) update["system.consumable"] = true;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
       if (renamedOrCustom(existing, translations)) delete update.name;
       await existing.update(update);
@@ -374,6 +377,23 @@ async function syncActorExtracts(source, translationsByKey) {
       }
       return Object.keys(changes).length > 1 ? changes : null;
     }).filter(Boolean);
+    if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+  }
+}
+
+// TEMPORARY WORLD MIGRATION — recognize older copies, including unlinked tokens.
+// Remove with the development-world migration inventory once pre-release worlds are retired.
+export async function syncStarterConsumables(source, translationsByKey) {
+  const entries = source.items.filter(entry => entry.type === "gear" && entry.system?.consumable === true);
+  const byKey = new Map(entries.map(entry => [starterKey(entry.nameKey), entry]));
+  const byName = new Map(entries.flatMap(entry => [...(translationsByKey.get(entry.nameKey) ?? [])].map(name => [name, entry])));
+  const byUuid = new Map(Array.from(game.items ?? []).filter(item => byKey.has(flagOf(item))).map(item => [item.uuid, byKey.get(flagOf(item))]));
+  const actors = new Set(Array.from(game.actors ?? []));
+  for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
+  for (const actor of actors) {
+    const updates = Array.from(actor.items ?? []).filter(item => item.type === "gear" && item.system?.consumable !== true
+      && (byKey.has(flagOf(item)) || byUuid.has(item.getFlag?.("core", "sourceId") || item._stats?.compendiumSource) || byName.has(item.name)))
+      .map(item => ({_id: item.id, "system.consumable": true}));
     if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
   }
 }
@@ -1219,6 +1239,7 @@ export async function importStarterContent({force = false} = {}) {
 
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
     await syncActorExtracts(source, translationsByKey);
+    await syncStarterConsumables(source, translationsByKey);
 
     // TEMPORARY WORLD MIGRATION — documented in docs/development-world-migrations.md.
     // Tablettes and their powers are now supplied by the Vitner/Religion compendiums;

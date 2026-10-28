@@ -32,6 +32,7 @@ import {transformationProfile, movementDetails, transformationRollRows, temporar
 import {transformationItemActive} from "../transformations.mjs";
 import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
+import {consumeInventoryItem, isConsumable} from "../consumables.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const effectApplicationJobs = new WeakMap();
@@ -2043,6 +2044,7 @@ export class TrudvangActor extends BaseActor {
 
   async rollItem(item) {
     if (!transformationItemActive(item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
+    if (isConsumable(item)) return consumeInventoryItem(item, this);
     if (item.type === "creatureAbility") return useCreatureAbility(item);
     if (item.type === "weapon" || item.type === "shield") return this.rollWeaponAttack(item);
     if (item.type === "spell" || item.type === "divineFeat") return this.rollSpell(item);

@@ -107,6 +107,12 @@
       "type": "Item",
       "defaultRole": "NONE"
     },
+    "magicConsumables": {
+      "nameKey": "TRUDVANG.Content.Folder.Consumables",
+      "type": "Item",
+      "parent": "magicObjects",
+      "defaultRole": "NONE"
+    },
     "materials": {
       "nameKey": "TRUDVANG.Content.Folder.Materials",
       "type": "Item",
@@ -2206,8 +2212,9 @@
       "nameKey": "TRUDVANG.Content.Item.MinokksHeart.Name",
       "type": "gear",
       "img": "icons/commodities/biological/organ-heart-red.webp",
-      "folder": "extracts",
+      "folder": "magicConsumables",
       "system": {
+        "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary24"
       }
     },
@@ -2215,8 +2222,9 @@
       "nameKey": "TRUDVANG.Content.Item.LindwurmRegeneratingHeart.Name",
       "type": "gear",
       "img": "icons/commodities/biological/organ-heart-red.webp",
-      "folder": "extracts",
+      "folder": "magicConsumables",
       "system": {
+        "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary118"
       }
     },
@@ -2224,8 +2232,9 @@
       "nameKey": "TRUDVANG.Content.Item.FreshVidrjotunSap.Name",
       "type": "gear",
       "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
-      "folder": "extracts",
+      "folder": "magicConsumables",
       "system": {
+        "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
       }
     },
@@ -2233,8 +2242,9 @@
       "nameKey": "TRUDVANG.Content.Item.HardenedVidrjotunSap.Name",
       "type": "gear",
       "img": "icons/consumables/plants/dried-stem-vine-root-bramble-brown.webp",
-      "folder": "extracts",
+      "folder": "magicConsumables",
       "system": {
+        "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
       }
     },
@@ -2260,8 +2270,9 @@
       "nameKey": "TRUDVANG.Content.Item.FairyDust.Name",
       "type": "gear",
       "img": "icons/svg/item-bag.svg",
-      "folder": "magicObjects",
+      "folder": "magicConsumables",
       "system": {
+        "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary73"
       }
     },
