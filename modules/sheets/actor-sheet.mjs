@@ -97,6 +97,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
       "item-parry": TrudvangActorSheet.#onAction,
+      "item-passive-protection": TrudvangActorSheet.#onAction,
       "item-damage": TrudvangActorSheet.#onAction,
       "item-advance": TrudvangActorSheet.#onAction,
       "item-edit": TrudvangActorSheet.#onAction,
@@ -308,7 +309,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
       .map(item => {
         const weaponActions = this.actor.getWeaponActionState(item);
-        return {item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
+        return {item, isShield: item.type === "shield", readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
       });
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
     const unarmedActions = this.actor.getWeaponActionState(this.actor.humanoidNaturalWeapon);
@@ -608,6 +609,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "movement-action": return this.actor.rollCombatMovement();
       case "item-roll": return item?.roll();
       case "item-parry": return item ? this.actor.rollWeaponParry(item) : null;
+      case "item-passive-protection": return item ? this.actor.rollPassiveProtection(item) : null;
       case "item-damage": return this.actor.rollDamage(item);
       case "item-advance": return item ? this.actor.advanceItem(item) : null;
       case "item-edit": return item?.sheet.render({force: true});

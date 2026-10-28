@@ -14856,6 +14856,13 @@
       "TrainingValue": "Training: {degree} — SV {target}",
       "JumpHint": "Jump: +1 per degree of the mount’s training.",
       "TrackHint": "Track: +2 per degree of the animal’s training."
+    },
+    "PassiveProtection": {
+      "Title": "Passive protection",
+      "Threshold": "PP",
+      "Hint": "Passive protection: 1d20 ≤ PP. The bearer must be aware of the ranged attack and face the attacker with the shield. No CP or WA cost.",
+      "Intercepted": "The projectile hits the shield.",
+      "NotIntercepted": "The projectile is not intercepted by the shield."
     }
   }
 }

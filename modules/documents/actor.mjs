@@ -1008,6 +1008,23 @@ export class TrudvangActor extends BaseActor {
     return this.rollWeaponAction(item, "attack");
   }
 
+  async rollPassiveProtection(item) {
+    if (!this.isOwner || item?.type !== "shield" || !item.system?.equipped || !Array.from(this.items).includes(item)) return null;
+    // FR Livre des règles, Boucliers, PP: an interception roll, not a skill test.
+    // No PC/AA cost, traits, state penalties or critical outcomes apply.
+    const target = resolveEquipment({item, actor: this}).characteristics.passiveProtection.value;
+    const roll = new Roll("1d20");
+    await roll.evaluate();
+    const success = Number(roll.total) <= target;
+    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/passive-protection.hbs", {
+      actorName: this.name, actorImg: this.img,
+      label: `${item.name} — ${game.i18n.localize("TRUDVANG.PassiveProtection.Title")}`,
+      result: roll.total, target, success
+    });
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: [roll]});
+    return {roll, target, success};
+  }
+
   async rollWeaponParry(item) {
     return this.rollWeaponAction(item, "parry");
   }

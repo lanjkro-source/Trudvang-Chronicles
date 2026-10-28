@@ -169,10 +169,11 @@
         <h2>{{localize "TRUDVANG.Section.Weapons"}}</h2>
         <ol class="item-list combat-action-list npc-combat-actions">
           {{#each npcCombatItems as |entry|}}
-          <li class="item {{#unless entry.readied}}not-readied{{/unless}} {{#if entry.depleted}}depleted{{/if}}" data-item-id="{{entry.item.id}}">
+          <li class="item {{#if entry.isShield}}has-passive-protection{{/if}} {{#unless entry.readied}}not-readied{{/unless}} {{#if entry.depleted}}depleted{{/if}}" data-item-id="{{entry.item.id}}">
             <img src="{{entry.item.img}}" alt=""><button type="button" class="item-name" data-action="item-edit" title="{{entry.hoverTitle}}">{{entry.item.name}}</button><span class="item-detail" title="{{entry.hoverTitle}}">{{entry.item._compactDetail}}</span>
             <button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Attack'}}" {{#unless (and entry.readied entry.canUseAction)}}disabled{{/unless}}><i class="fas fa-sword"></i></button>
             <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless (and entry.readied entry.canUseAction)}}disabled{{/unless}}><i class="fas fa-shield"></i></button>
+            {{#if entry.isShield}}<button type="button" data-action="item-passive-protection" title="{{localize 'TRUDVANG.PassiveProtection.Hint'}}" aria-label="{{localize 'TRUDVANG.PassiveProtection.Title'}}" {{#unless entry.readied}}disabled{{/unless}}><i class="fas fa-shield-halved" aria-hidden="true"></i></button>{{/if}}
             <button type="button" data-action="item-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button>
             <button type="button" class="ready-action {{#if entry.readied}}active{{/if}}" data-action="item-ready" title="{{#if entry.readied}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas {{#if entry.readied}}fa-box-archive{{else}}fa-hand-fist{{/if}}"></i></button>
           </li>

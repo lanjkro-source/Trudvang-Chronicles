@@ -1106,3 +1106,6 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .environment-request-options .checkbox { display: flex; align-items: center; gap: .5em; }
 .trudvang.chat-card.environment-request .trait-situation-result { grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 4px; }
 .trudvang.chat-card .trait-situation-result [data-action="apply-environment-fatigue"] { width: auto; padding: 0 .3em; font-size: .85em; white-space: nowrap; }
+
+.trudvang-sheet .combat-action-list .item.has-passive-protection { grid-template-columns: 30px minmax(125px,.65fr) minmax(120px,1fr) repeat(5,27px); }
+.trudvang-sheet.npc-sheet .npc-combat-actions .item.has-passive-protection { grid-template-columns: 26px minmax(90px,1fr) minmax(0,1fr) repeat(5,25px); }

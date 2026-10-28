@@ -2331,3 +2331,35 @@ test("temporary health is editable on the real actor form and unrelated submissi
  await submit.call(sheet,{target:{name:"trudvang.temporaryHP"}},{},{object:{"trudvang.temporaryHP":"0"}});
  assert.equal(npc._source.system.resources.body.temporary,3);
 });
+
+test("passive protection intercepts at the effective PP threshold without skill criticals or spending resources", async t => {
+  const runtime = mockActionRuntime(t);
+  const shield = {id: "shield", type: "shield", name: "Bouclier", system: {equipped: true, passiveProtection: 4}};
+  const instance = actor([shield]); instance.isOwner = true;
+  instance.update = instance.updateEmbeddedDocuments = () => { throw new Error("Passive protection must not spend PC or AA"); };
+  for (const [die, pp, expected] of [[4,4,true], [5,4,false], [1,0,false], [20,20,true]]) {
+    globalThis.Roll = class {constructor(formula) {this.formula=formula;} async evaluate() {this.total=die;}};
+    shield.system.passiveProtection = pp;
+    const result = await instance.rollPassiveProtection(shield);
+    assert.equal(result.success, expected); assert.equal(result.target, pp);
+    const card = renderedCards.at(-1);
+    assert.match(card.path, /passive-protection/); assert.equal(card.data.success, expected);
+    assert.equal(runtime.messages.at(-1).rolls[0].formula, "1d20");
+  }
+  assert.equal(runtime.messages.length, 4);
+  shield.system.equipped=false; assert.equal(await instance.rollPassiveProtection(shield), null);
+  shield.system.equipped=true; instance.isOwner=false; assert.equal(await instance.rollPassiveProtection(shield), null);
+  instance.isOwner=true; assert.equal(await instance.rollPassiveProtection({...shield}), null);
+  assert.equal(await instance.rollPassiveProtection({type:"weapon",system:{equipped:true}}), null);
+  assert.equal(runtime.messages.length, 4);
+});
+
+test("PC and NPC combat lists offer shield PP independently of remaining weapon actions", () => {
+  assert.equal(typeof TrudvangActorSheet.DEFAULT_OPTIONS.actions["item-passive-protection"], "function");
+  for (const file of ["character-sheet", "npc-sheet"]) {
+    const source = readFileSync(new URL(`../templates/actor/${file}.hbs`, import.meta.url), "utf8");
+    const button = source.match(/<button[^>]*data-action="item-passive-protection"[\s\S]*?<\/button>/)[0];
+    assert.match(button, /entry.readied/); assert.doesNotMatch(button, /canUseAction/);
+    assert.match(source, /#if entry.isShield/);
+  }
+});

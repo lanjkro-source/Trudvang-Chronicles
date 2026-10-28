@@ -12278,3 +12278,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.AnimalAction.TrainingValue` | Training: {degree} — SV {target} | Dressage : {degree} — VC {target} |
 | `TRUDVANG.AnimalAction.JumpHint` | Jump: +1 per degree of the mount’s training. | Sauter : +1 par degré de dressage de la monture. |
 | `TRUDVANG.AnimalAction.TrackHint` | Track: +2 per degree of the animal’s training. | Pister : +2 par degré de dressage de l’animal. |
+
+## `TRUDVANG.PassiveProtection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.PassiveProtection.Title` | Passive protection | Protection passive |
+| `TRUDVANG.PassiveProtection.Threshold` | PP | PP |
+| `TRUDVANG.PassiveProtection.Hint` | Passive protection: 1d20 ≤ PP. The bearer must be aware of the ranged attack and face the attacker with the shield. No CP or WA cost. | Protection passive : 1d20 ≤ PP. Le porteur doit voir venir l’attaque à distance et présenter son bouclier vers l’attaquant. Aucun coût en PC ou AA. |
+| `TRUDVANG.PassiveProtection.Intercepted` | The projectile hits the shield. | Le projectile touche le bouclier. |
+| `TRUDVANG.PassiveProtection.NotIntercepted` | The projectile is not intercepted by the shield. | Le projectile n’est pas intercepté par le bouclier. |

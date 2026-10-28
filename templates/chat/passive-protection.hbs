@@ -1,0 +1,5 @@
+<article class="trudvang chat-card {{#if success}}success{{else}}failure{{/if}}">
+  <header><img src="{{actorImg}}"><div><strong>{{actorName}}</strong><h3>{{label}}</h3></div></header>
+  <div class="roll-result"><span class="die">{{result}}</span><span>{{localize "TRUDVANG.PassiveProtection.Threshold"}} : {{target}}</span></div>
+  <p class="outcome">{{#if success}}{{localize "TRUDVANG.PassiveProtection.Intercepted"}}{{else}}{{localize "TRUDVANG.PassiveProtection.NotIntercepted"}}{{/if}}</p>
+</article>

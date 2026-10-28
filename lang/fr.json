@@ -14856,6 +14856,13 @@
       "TrainingValue": "Dressage : {degree} — VC {target}",
       "JumpHint": "Sauter : +1 par degré de dressage de la monture.",
       "TrackHint": "Pister : +2 par degré de dressage de l’animal."
+    },
+    "PassiveProtection": {
+      "Title": "Protection passive",
+      "Threshold": "PP",
+      "Hint": "Protection passive : 1d20 ≤ PP. Le porteur doit voir venir l’attaque à distance et présenter son bouclier vers l’attaquant. Aucun coût en PC ou AA.",
+      "Intercepted": "Le projectile touche le bouclier.",
+      "NotIntercepted": "Le projectile n’est pas intercepté par le bouclier."
     }
   }
 }
