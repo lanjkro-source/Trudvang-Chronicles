@@ -1218,15 +1218,38 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.DamageRoll` | Generic damage roll | Jet de dégâts générique |
 | `TRUDVANG.Macro.FearRoll` | Generic fear roll | Jet de peur générique |
 | `TRUDVANG.Macro.RequestSituation` | Request a situation test | Provoquer un test de situation |
-| `TRUDVANG.Macro.AdvanceDay` | Advance one day | Passer un jour |
-| `TRUDVANG.Macro.AdvanceDayGMOnly` | Only the game master can advance world time. | Seul le maître de jeu peut faire avancer le temps du monde. |
-| `TRUDVANG.Macro.DayAdvanced` | One day has passed: the clock advanced by 24 hours and effect durations were refreshed. | Un jour s’est écoulé : l’horloge a avancé de 24 heures et les durées des effets ont été actualisées. |
 | `TRUDVANG.Macro.DiceCount` | Number of dice | Nombre de dés |
 | `TRUDVANG.Macro.DieType` | Die type | Type de dé |
 | `TRUDVANG.Macro.InvalidDice` | Choose a positive whole number of dice and an open-roll threshold between 2 and the die size (0 for none). | Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun). |
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 | `TRUDVANG.Macro.RequestEnvironment` | Request an environment roll | Provoquer un jet d’environnement |
+| `TRUDVANG.Macro.AdvanceDuration` | Advance time | Passer une durée |
+| `TRUDVANG.Macro.AdvanceDurationConfirm` | Advance time | Passer cette durée |
+| `TRUDVANG.Macro.AdvanceDurationGMOnly` | Only the game master can advance world time. | Seul le maître de jeu peut faire avancer le temps du monde. |
+| `TRUDVANG.Macro.InvalidDuration` | Choose a positive duration in minutes, hours or days. | Choisissez une durée positive en minutes, en heures ou en jours. |
+| `TRUDVANG.Macro.TimeElapsed` | {value} {unit} later… | {value} {unit} plus tard… |
+
+## `TRUDVANG.Macro.TimeUnits.minutes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Macro.TimeUnits.minutes.one` | minute | minute |
+| `TRUDVANG.Macro.TimeUnits.minutes.other` | minutes | minutes |
+
+## `TRUDVANG.Macro.TimeUnits.hours`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Macro.TimeUnits.hours.one` | hour | heure |
+| `TRUDVANG.Macro.TimeUnits.hours.other` | hours | heures |
+
+## `TRUDVANG.Macro.TimeUnits.days`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Macro.TimeUnits.days.one` | day | jour |
+| `TRUDVANG.Macro.TimeUnits.days.other` | days | jours |
 
 ## `TRUDVANG.Portrait`
 

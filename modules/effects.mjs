@@ -7,7 +7,7 @@ import {editedConsequenceClock} from "./rules/consumable-effects.mjs";
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
-import {normalizeEffectDuration, normalizeEffectStage} from "./rules/effect-duration.mjs";
+import {normalizeEffectDuration, normalizeEffectStage, effectDurationSeconds} from "./rules/effect-duration.mjs";
 import {isGradedEffect, isGradedState, effectDegree, gradedEffectName, cumulativeChangeValue} from "./rules/effect-stacking.mjs";
 
 const fields = foundry.data.fields;
@@ -199,29 +199,29 @@ export function finishExpiredEffect(effect, options = {}) {
       return processWorldConsequences();
     }
     const stages = Array.from(effect.system.stages || []);
-    const nextIndex = Number(effect.system.stage || 0) + 1;
-    const next = stages[nextIndex];
-    if (!next) {
-      await effect.delete();
+    let nextIndex = Number(effect.system.stage || 0) + 1;
+    const sourceStart = effect._source?.start ?? effect.start;
+    const seconds = effectDurationSeconds(effect._source?.duration ?? effect.duration);
+    let stageStart = Number.isFinite(sourceStart?.time) && seconds !== null ? sourceStart.time + seconds : null;
+    const now = Number(game.time?.worldTime);
+    const implementation = foundry.documents.ActiveEffect.implementation;
+    // Preserve elapsed overflow across ordinary, manually authored stages too.
+    // Starting each stage at "now" would lose all excess time in a large jump.
+    while (true) {
+      const next = stages[nextIndex];
+      if (!next) {await effect.delete(); return;}
+      const duration = normalizeEffectDuration({value: Number(next.durationValue || 0), units: next.durationUnit || "rounds", expiry: null, expired: false});
+      const start = implementation.getEffectStart();
+      await effect.update({"system.stage": nextIndex, "system.changes": effectChangesSource(next.changes), duration,
+        disabled: false, start: stageStart === null ? start : {...start, time: stageStart}
+      }, {trudvangStageTransition: true});
+      const nextSeconds = effectDurationSeconds(duration);
+      if (stageStart !== null && nextSeconds !== null && Number.isFinite(now) && stageStart + nextSeconds <= now) {
+        stageStart += nextSeconds; nextIndex++; continue;
+      }
+      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectStageAdvanced", {effect: effect.name, stage: next.label || String(nextIndex + 1)}));
       return;
     }
-    const implementation = foundry.documents.ActiveEffect.implementation;
-    await effect.update({
-      "system.stage": nextIndex,
-      "system.changes": effectChangesSource(next.changes),
-      duration: normalizeEffectDuration({
-        value: Number(next.durationValue || 0),
-        units: next.durationUnit || "rounds",
-        expiry: null,
-        expired: false
-      }),
-      disabled: false,
-      start: implementation.getEffectStart()
-    }, {trudvangStageTransition: true});
-    ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectStageAdvanced", {
-      effect: effect.name,
-      stage: next.label || String(nextIndex + 1)
-    }));
   })().finally(() => expirationJobs.delete(effect));
   expirationJobs.set(effect, job);
   return job;
@@ -252,8 +252,19 @@ export function appliedWorldEffects() {
 }
 
 /** Complete pending expiry on world actors and unlinked tokens on every scene. */
-export async function expireAppliedEffects() {
-  for (const effect of appliedWorldEffects()) if (effect.duration?.expired) await finishExpiredEffect(effect);
+export async function expireAppliedEffects({time = null} = {}) {
+  for (const effect of appliedWorldEffects()) {
+    const pending = expirationJobs.get(effect);
+    if (pending) await pending;
+    else {
+      const start = effect._source?.start ?? effect.start;
+      const seconds = effectDurationSeconds(effect._source?.duration ?? effect.duration);
+      // An explicit world-time jump also consumes round-based durations even
+      // if the native combat registry has not advanced its round counter.
+      const elapsed = Number.isFinite(time) && Number.isFinite(start?.time) && seconds !== null && start.time + seconds <= time;
+      if (effect.duration?.expired || elapsed) await finishExpiredEffect(effect);
+    }
+  }
 }
 
 export function isIncapacitated(actor) {

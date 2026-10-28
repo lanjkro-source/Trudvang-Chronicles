@@ -1056,15 +1056,31 @@
       "DamageRoll": "Jet de dégâts générique",
       "FearRoll": "Jet de peur générique",
       "RequestSituation": "Provoquer un test de situation",
-      "AdvanceDay": "Passer un jour",
-      "AdvanceDayGMOnly": "Seul le maître de jeu peut faire avancer le temps du monde.",
-      "DayAdvanced": "Un jour s’est écoulé : l’horloge a avancé de 24 heures et les durées des effets ont été actualisées.",
       "DiceCount": "Nombre de dés",
       "DieType": "Type de dé",
       "InvalidDice": "Choisissez un nombre entier de dés positif et un seuil de jet ouvert entre 2 et la valeur du dé (0 pour aucun).",
       "TraitSituationRoll": "Provoquer un jet de résistance",
       "LegacyTraitSituationRoll": "Jet de situation de trait",
-      "RequestEnvironment": "Provoquer un jet d’environnement"
+      "RequestEnvironment": "Provoquer un jet d’environnement",
+      "AdvanceDuration": "Passer une durée",
+      "AdvanceDurationConfirm": "Passer cette durée",
+      "AdvanceDurationGMOnly": "Seul le maître de jeu peut faire avancer le temps du monde.",
+      "InvalidDuration": "Choisissez une durée positive en minutes, en heures ou en jours.",
+      "TimeElapsed": "{value} {unit} plus tard…",
+      "TimeUnits": {
+        "minutes": {
+          "one": "minute",
+          "other": "minutes"
+        },
+        "hours": {
+          "one": "heure",
+          "other": "heures"
+        },
+        "days": {
+          "one": "jour",
+          "other": "jours"
+        }
+      }
     },
     "Portrait": {
       "ManageMenu": "Choisir les portraits",

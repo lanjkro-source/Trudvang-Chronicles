@@ -77,7 +77,7 @@ globalThis.CONFIG = {statusEffects: {}};
 const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks, expireAppliedEffects} = await import("../modules/effects.mjs");
-const {advanceDay} = await import("../modules/world-time.mjs");
+const {advanceDay, advanceWorldTime, advanceDuration} = await import("../modules/world-time.mjs");
 const {applyGradedEffect} = await import("../modules/graded-effects.mjs");
 
 function sheetFor(document) {
@@ -832,6 +832,7 @@ test("expiration deletes the final applied effect once and preserves library ref
 });
 
 test("advance-day moves shared time once, refreshes long durations and deletes expired effects on unlinked tokens", async t => {
+  const elapsedMessages = mockTimeChat(t);
   const previous = {game: globalThis.game, registry: StubActiveEffect.implementation.registry, info: ui.notifications.info};
   t.after(() => {globalThis.game = previous.game; StubActiveEffect.implementation.registry = previous.registry; ui.notifications.info = previous.info;});
   const day = 86400, registered = new Set();
@@ -849,7 +850,7 @@ test("advance-day moves shared time once, refreshes long durations and deletes e
   const template = effect(actor, 1, "hours", 3600); template.parent = {type: "effect"}; template.isExpiryTrackable = false;
   let advances = 0, notices = 0;
   globalThis.game = {user: {isGM: true}, users: {activeGM: {isSelf: true}}, actors: [actor],
-    scenes: [{tokens: [{actor}, {actor: tokenActor}]}], i18n: {localize: key => key},
+    scenes: [{tokens: [{actor}, {actor: tokenActor}]}], i18n: {localize: key => key, format: key => key},
     time: {worldTime: 0, async advance(delta) {advances++; assert.equal(delta, day); await Promise.resolve(); return this.worldTime += delta;}}};
   ui.notifications.info = () => {notices++;};
   StubActiveEffect.implementation.registry = {
@@ -866,7 +867,8 @@ test("advance-day moves shared time once, refreshes long durations and deletes e
   };
   assert.deepEqual(await Promise.all([advanceDay(), advanceDay()]), [day, day]);
   assert.equal(advances, 1, "double clicks must not advance two days");
-  assert.equal(notices, 1);
+  assert.equal(notices, 0);
+  assert.equal(elapsedMessages.length, 1);
   assert.ok(!actor.effects.includes(short));
   assert.ok(!tokenActor.effects.includes(tokenShort));
   assert.equal(long.duration.remaining, 24);
@@ -878,10 +880,11 @@ test("advance-day moves shared time once, refreshes long durations and deletes e
 });
 
 test("advance-day rejects players and releases its lock after a failed clock update", async t => {
+  mockTimeChat(t);
   const previous = {game: globalThis.game, registry: StubActiveEffect.implementation.registry, warn: ui.notifications.warn};
   t.after(() => {globalThis.game = previous.game; StubActiveEffect.implementation.registry = previous.registry; ui.notifications.warn = previous.warn;});
   let calls = 0, warnings = 0;
-  globalThis.game = {user: {isGM: false}, actors: [], scenes: [], i18n: {localize: key => key},
+  globalThis.game = {user: {isGM: false}, actors: [], scenes: [], i18n: {localize: key => key, format: key => key},
     time: {async advance(delta) {calls++; if (calls === 1) throw new Error("Clock unavailable"); return delta;}}};
   StubActiveEffect.implementation.registry = {refresh: async () => {}};
   ui.notifications.warn = () => {warnings++;};
@@ -918,4 +921,108 @@ test("Tornrot suppresses fatigue without deleting its accumulated degree",()=>{
  const fatigue=new TrudvangActiveEffect();fatigue.system={stackId:"trudvang-fatigued",degree:3};fatigue.parent={documentName:"Actor",effects:[{disabled:false,flags:{"trudvang-chronicles":{consumablePolicy:{ignoreFatigue:true}}}}]};
  assert.equal(fatigue.isSuppressed,true);assert.equal(fatigue.system.degree,3);
  fatigue.parent.effects[0].disabled=true;assert.equal(fatigue.isSuppressed,false);
+});
+
+function mockTimeChat(t) {
+  const previous={ChatMessage:globalThis.ChatMessage,document:globalThis.document};
+  t.after(()=>Object.assign(globalThis,previous));
+  const messages=[];
+  globalThis.document={createElement:()=>({set textContent(value){this.value=String(value);},get innerHTML(){return this.value;}})};
+  globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{messages.push(data);return data;}};
+  return messages;
+}
+
+async function mockAdvanceRuntime(t) {
+  const previous={game:globalThis.game,registry:StubActiveEffect.implementation.registry,Dialog:foundry.applications.api.DialogV2,operators:foundry.data.operators,Hooks:globalThis.Hooks};
+  t.after(()=>{globalThis.game=previous.game;StubActiveEffect.implementation.registry=previous.registry;foundry.applications.api.DialogV2=previous.Dialog;foundry.data.operators=previous.operators;globalThis.Hooks=previous.Hooks;});
+  const messages=mockTimeChat(t),strings=JSON.parse(readFileSync(new URL("../lang/fr.json",import.meta.url),"utf8")),hooks=new Map(),runtime={messages,dialogs:[],choice:false,advances:[]};
+  globalThis.Hooks={on:(key,callback)=>{const rows=hooks.get(key)??[];rows.push(callback);hooks.set(key,rows);}};
+  globalThis.game={user:{isGM:true},users:{activeGM:{isSelf:true}},actors:[],scenes:[],i18n:{lang:"fr",localize:key=>get(strings,key)??key,format:(key,data)=>String(get(strings,key)??key).replace(/\{(\w+)\}/g,(_,key)=>data[key]??"")},
+    time:{worldTime:0,async advance(seconds){runtime.advances.push(seconds);this.worldTime+=seconds;for(const callback of hooks.get("updateWorldTime")??[])callback(this.worldTime,seconds);return this.worldTime;}}};
+  foundry.applications.api.DialogV2=class {static async wait(options){runtime.dialogs.push(options);return runtime.choice;}};
+  foundry.data.operators={ForcedReplacement:{create:value=>value}};
+  StubActiveEffect.implementation.registry={add(){},async refresh(){}};
+  const {registerConsequenceHooks}=await import("../modules/consequences.mjs");
+  const {appliedWorldEffects}=await import("../modules/effects.mjs");
+  registerConsequenceHooks(appliedWorldEffects);
+  return runtime;
+}
+
+function timedActor(value=10){
+  const actor={id:"timed",name:"Timed",documentName:"Actor",type:"character",isOwner:true,effects:[],items:[],system:{resources:{body:{value,current:value,max:100}},modifiers:{}},allApplicableEffects(){return this.effects;}};
+  actor._source={system:structuredClone(actor.system)};
+  actor.update=async data=>{for(const [key,value]of Object.entries(data)){set(actor,key,value);set(actor._source,key,value);if(key==="system.resources.body.value")actor.system.resources.body.current=value;}};
+  actor.createTrudvangEffect=async data=>{const effect={...structuredClone(data),parent:actor};effect.update=async data=>{for(const [key,value]of Object.entries(data))set(effect,key,value);};effect.delete=async()=>actor.effects.splice(actor.effects.indexOf(effect),1);actor.effects.push(effect);return effect;};
+  return actor;
+}
+
+test("duration macro defaults to one day, can cancel and rejects invalid values without chat or time changes",async t=>{
+  const runtime=await mockAdvanceRuntime(t);
+  assert.equal(await advanceDuration(),null);
+  const dialog=runtime.dialogs[0];assert.match(dialog.content,/name="value"[^>]*value="1"/);assert.match(dialog.content,/value="days" selected/);
+  const root={querySelector:selector=>({value:selector.includes("value")?"2.5":"hours"})};
+  assert.deepEqual(dialog.buttons[0].callback({}, {form:root}),{value:2.5,unit:"hours"});
+  assert.equal(runtime.advances.length,0);assert.equal(runtime.messages.length,0);
+  for(const choice of [{value:0,unit:"days"},{value:-1,unit:"hours"},{value:NaN,unit:"minutes"},{value:Infinity,unit:"days"},{value:1,unit:"years"}])assert.equal(await advanceWorldTime(choice),null);
+  assert.equal(runtime.messages.length,0);assert.equal(runtime.advances.length,0);
+  runtime.choice={value:2.5,unit:"hours"};await advanceDuration();
+  assert.deepEqual(runtime.advances,[9000]);assert.match(runtime.messages[0].content,/2,5 heures plus tard/);assert.deepEqual(runtime.messages[0].whisper,[]);
+});
+
+test("duration selection ignores double clicks and players cannot open the GM prompt",async t=>{
+  const runtime=await mockAdvanceRuntime(t);let resolve;
+  foundry.applications.api.DialogV2=class {static wait(){return new Promise(done=>{resolve=done;});}};
+  const first=advanceDuration();assert.equal(advanceDuration(),first);resolve({value:1,unit:"days"});await first;
+  assert.deepEqual(runtime.advances,[86400]);assert.match(runtime.messages[0].content,/1 jour plus tard/);
+  game.user.isGM=false;assert.equal(await advanceDuration(),null);assert.equal(runtime.advances.length,1);
+});
+
+test("the actual time macro applies Gaveblom 4+2+1 times across stages and does not replay ticks during native refresh",async t=>{
+  const runtime=await mockAdvanceRuntime(t),actor=timedActor();game.actors=[actor];
+  const previousRoll=globalThis.Roll;t.after(()=>{globalThis.Roll=previousRoll;});let dice=0;
+  globalThis.Roll=class {constructor(formula){assert.equal(formula,"1d3");}async evaluate(){dice++;this.total=2;return this;}};
+  const {applyConsumableConsequences}=await import("../modules/consumable-effects.mjs");
+  await applyConsumableConsequences({name:"Gaveblom",type:"potion",system:{consequenceId:"Gaveblom"}},actor,{stage:{id:"strong"}});
+  runtime.choice={value:480,unit:"minutes"};await advanceDuration();
+  assert.equal(dice,4);assert.equal(actor.system.resources.body.current,18);assert.equal(actor.effects[0].system.stage,1);
+  runtime.choice={value:8,unit:"hours"};await advanceDuration();
+  assert.equal(dice,6);assert.equal(actor.system.resources.body.current,22);assert.equal(actor.effects[0].system.stage,2);
+  await advanceDuration();assert.equal(dice,7);assert.equal(actor.system.resources.body.current,24);assert.equal(actor.effects.length,0);
+  assert.equal(runtime.messages.filter(message=>message.content.includes("time-elapsed")).length,3);
+  assert.match(runtime.messages.at(-1).content,/8 heures plus tard/);
+  await advanceWorldTime();assert.equal(dice,7);assert.equal(actor.system.resources.body.current,24);
+});
+
+test("the time macro processes poison 12+8+4+1 damage at minute boundaries on unlinked inactive-scene actors",async t=>{
+  const runtime=await mockAdvanceRuntime(t),actor=timedActor(50);game.scenes=[{tokens:[{actor}]}];
+  const {applyConsumableConsequences}=await import("../modules/consumable-effects.mjs");
+  await applyConsumableConsequences({name:"Pustartobak",type:"potion",system:{consequenceId:"Pustartobak"}},actor,{stage:{id:"total"}});
+  await advanceWorldTime({value:4,unit:"minutes"});assert.equal(actor.system.resources.body.current,38);assert.equal(actor.effects[0].system.stage,1);
+  await advanceWorldTime({value:4,unit:"minutes"});assert.equal(actor.system.resources.body.current,30);assert.equal(actor.effects[0].system.stage,2);
+  await advanceWorldTime({value:4,unit:"minutes"});assert.equal(actor.system.resources.body.current,25);assert.equal(actor.effects[0].system.stage,3);
+  await advanceWorldTime({value:4,unit:"minutes"});assert.equal(actor.system.resources.body.current,25);assert.equal(actor.effects.length,0);
+  assert.match(runtime.messages.at(-1).content,/4 minutes plus tard/);
+});
+
+test("ordinary manually authored stages preserve overflow and the elapsed chat waits for their final deletion",async t=>{
+  const runtime=await mockAdvanceRuntime(t),actor=timedActor();game.actors=[actor];
+  const stages=[{label:"A",durationValue:1,durationUnit:"hours",changes:[]},{label:"B",durationValue:1,durationUnit:"hours",changes:[]},{label:"C",durationValue:1,durationUnit:"hours",changes:[]}];
+  const effect={type:"effect",name:"Manual",parent:actor,system:{stage:0,stages},start:{time:0},duration:{value:1,units:"hours",expired:false},_source:{start:{time:0},duration:{value:1,units:"hours",expired:false}}};
+  effect.update=async data=>{await Promise.resolve();for(const[k,v]of Object.entries(data)){set(effect,k,v);set(effect._source,k,v);}};
+  effect.delete=async()=>{await Promise.resolve();actor.effects.splice(actor.effects.indexOf(effect),1);};actor.effects.push(effect);
+  const {finishExpiredEffect}=await import("../modules/effects.mjs");
+  StubActiveEffect.implementation.registry.refresh=async()=>{
+    if(effect.start.time+effect.duration.value*3600<=game.time.worldTime){effect.duration.expired=true;finishExpiredEffect(effect);}
+  };
+  await advanceWorldTime({value:90,unit:"minutes"});assert.equal(effect.system.stage,1);assert.equal(effect.start.time,3600);assert.equal(actor.effects.length,1);
+  await advanceWorldTime({value:90,unit:"minutes"});assert.equal(actor.effects.length,0);assert.equal(runtime.messages.filter(m=>m.content.includes("time-elapsed")).length,2);
+  assert.match(runtime.messages.at(-1).content,/90 minutes plus tard/);
+});
+
+test("explicit time jumps expire ordinary round-based stages even if the combat registry has not moved",async t=>{
+  await mockAdvanceRuntime(t);const actor=timedActor();game.actors=[actor];
+  const effect={type:"effect",name:"Rounds",parent:actor,system:{stage:0,stages:[{durationValue:24,durationUnit:"rounds",changes:[]},{durationValue:24,durationUnit:"rounds",changes:[]}]},start:{time:0},duration:{value:24,units:"rounds",expired:false},_source:{start:{time:0},duration:{value:24,units:"rounds",expired:false}}};
+  effect.update=async data=>{for(const[k,v]of Object.entries(data)){set(effect,k,v);set(effect._source,k,v);}};
+  effect.delete=async()=>actor.effects.splice(actor.effects.indexOf(effect),1);actor.effects.push(effect);
+  await advanceWorldTime({value:5,unit:"minutes"});assert.equal(actor.effects.length,0);
 });

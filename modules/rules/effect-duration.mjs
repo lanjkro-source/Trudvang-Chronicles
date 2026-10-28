@@ -10,6 +10,13 @@ export function normalizeEffectStage(stage) {
   const duration = normalizeEffectDuration({value: stage.durationValue, units: stage.durationUnit});
   return {...stage, durationValue: duration.value, durationUnit: duration.units};
 }
+/** Fixed-length units used by world-time effect clocks; null means indefinite. */
+export function effectDurationSeconds(duration = {}) {
+  if (duration.value == null) return null;
+  const scale = {rounds: 5, turns: 5, seconds: 1, minutes: 60, hours: 3600, days: 86400, weeks: 604800, months: 2592000, years: 31536000, centuries: 3153600000}[duration.units];
+  const seconds = Number(duration.value) * scale;
+  return Number.isFinite(seconds) && seconds >= 0 ? seconds : null;
+}
 /** Generated power-level duration improvements are measured in seconds.
  * Preserve the chosen unit while adding precisely the same real duration. */
 export function addDurationSeconds(duration, seconds) {
