@@ -1,5 +1,7 @@
 import { TRUDVANG } from "./config.mjs";
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
+import {applyConsumableConsequences} from "./consumable-effects.mjs";
+import {consequenceResultText} from "./consequences.mjs";
 
 const STAGES = [
   {id: "mild", maximum: 5, next: ""},
@@ -87,6 +89,7 @@ export async function useExtract(item, actor) {
   const duration = await resolveDuration(item.system.duration);
   const stageLabel = stageLabelFor(stage);
   const nextStageLabel = stage.next ? stageLabelFor(STAGES.find(entry => entry.id === stage.next) ?? stage) : "";
+  const consequences = await applyConsumableConsequences(item, actor, {stage, durationRoll: duration.roll});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-use-card.hbs", {
     itemName: item.name,
     itemImg: item.img,
@@ -97,11 +100,12 @@ export async function useExtract(item, actor) {
     traitModifier: modifier,
     result,
     stageLabel,
+    consequences: consequences.rows.map(consequenceResultText),
     stageEffect: item.system.efficacy?.[stage.id] || "",
     duration: duration.label || game.i18n.localize("TRUDVANG.Extract.UnknownDuration"),
     nextStageLabel,
     ends: !stage.next
   });
-  const message = await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll, ...(duration.roll ? [duration.roll] : [])]});
+  const message = await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll, ...(duration.roll ? [duration.roll] : []), ...consequences.rolls]});
   return {message, result, stage};
 }

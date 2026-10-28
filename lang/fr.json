@@ -2158,7 +2158,7 @@
           "Mild": "le consommateur devient plutôt heureux.",
           "Moderate": "le corps s’engourdit légèrement et le consommateur ressent à peine la douleur. Il a la tête dans du coton, le corps apathique (ce qui lui inflige -2 à l’initiative et -2 à la compétence Connaissances et de façon générale, à toutes les disciplines et spécialités de connaissance), et il se sent relativement heureux et courageux (-4 points de peur).",
           "Strong": "le corps s’engourdit et le consommateur ne ressent absolument aucune douleur. Il a la tête dans du coton, le corps apathique (ce qui lui inflige -4 à l’initiative et -4 à la compétence Connaissances et de façon générale, à toutes les disciplines et spécialités de connaissance), et il se sent heureux et prêt à tout affronter (-8 points de peur).",
-          "Total": "e la svartljunghed"
+          "Total": "Le corps s’engourdit et le consommateur s’endort. Il se réveille au bout de 1d6 heures, en ayant soif et une légère nausée, en plus de tout effet qui ne serait pas encore arrivé au bout de sa durée."
         },
         "Tornrot": {
           "Name": "Tornrot",
@@ -14869,6 +14869,24 @@
       "Label": "Consommable",
       "Used": "{actor} a utilisé {item}.",
       "InventoryRequired": "Cet objet doit être présent dans l’inventaire du personnage pour être consommé."
+    },
+    "Consequence": {
+      "FindWay": "Ne pas se perdre dans les brumes",
+      "Detect": "Détecter la silhouette",
+      "ResistCharge": "Résister à l’impulsion de charger",
+      "ResistLindwurm": "Résister au cœur de lindwurm",
+      "MinokksDescription": "Le personnage se sent plus vivace et protecteur envers ses amis. Quand un ennemi menace un allié, il doit réussir un test de situation de 10, modifié par le Psychisme, pour résister à l’impulsion de charger cet ennemi. Le MJ décide quand cette impulsion cesse de s’appliquer.",
+      "FairyDust": "+{bonus} à la VC des actions pendant {hours} h.",
+      "Sleep": "Sommeil — Svartljunghed",
+      "RiskTriggered": "risque réalisé : le MJ applique la conséquence décrite",
+      "RiskAvoided": "risque évité",
+      "Result": {
+        "heal": "{source} : +{amount} PS.",
+        "damage": "{source} : −{amount} PS.",
+        "fearReduction": "{source} : −{amount} peur.",
+        "resourceGain": "{source} : +{amount} {resource}.",
+        "risk": "{source} : {rolled} sur 1d20 — {outcome}."
+      }
     }
   }
 }

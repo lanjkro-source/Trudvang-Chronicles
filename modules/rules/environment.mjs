@@ -1,5 +1,6 @@
 import {effectDegree, FATIGUED_ITEM} from "./effect-stacking.mjs";
 import {knowledgeRank} from "./magic-resistance.mjs";
+import {consumablePolicy} from "./consumable-effects.mjs";
 
 export const ENVIRONMENTS = ["mountain", "forest", "plains", "sea", "snow"];
 // FR Rules p. 302; EN GM Guide pp. 30–31. [modifier, required clothing].
@@ -39,8 +40,16 @@ export function environmentActorValues(actor, data) {
     effect.system?.stackId === FATIGUED_ITEM && !effect.disabled && !effect.isSuppressed && !effect.duration?.expired && effect.active !== false)
     .reduce((sum, effect) => sum + effectDegree(effect), 0);
   const level = knowledgeRank(actor, "weathered");
-  const mitigation = Math.min(conditions.favorable, Math.max(0, -conditions.negative + fatigue));
-  return {...conditions, fatigue, mitigation, weathered: 2 * level, modifier: conditions.negative + mitigation + 2 * level};
+  const policy = consumablePolicy(actor);
+  const minimum = {mild: 10, cool: 0, cold: -10, freezing: -20, intense: -40}[conditions.options.temperature];
+  const protectedFields = new Set();
+  if (policy.temperature && Number.isFinite(minimum) && minimum >= policy.temperature[0]) protectedFields.add("temperature");
+  if (policy.sleepHours === 0) protectedFields.add("sleep");
+  const protection = Math.max(0, -conditions.rows.filter(row => protectedFields.has(row.field) && row.value < 0).reduce((sum,row) => sum + row.value,0));
+  const temperature = conditions.rows.find(row => row.field === "temperature");
+  const frostbite = protectedFields.has("temperature") && temperature?.unprotected ? Math.max(0, conditions.frostbite - Math.abs(temperature.value)) : conditions.frostbite;
+  const mitigation = Math.min(conditions.favorable, Math.max(0, -conditions.negative - protection + fatigue));
+  return {...conditions, frostbite, protection, protectionSources: policy.names, fatigue, mitigation, weathered: 2 * level, modifier: conditions.negative + protection + mitigation + 2 * level};
 }
 export function environmentCardLines(data, localize) {
   return environmentConditions(data).rows.filter(row => row.value !== 0).map(row => {

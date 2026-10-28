@@ -12,6 +12,8 @@ function flag(document, key) {
 }
 
 export function ruleTestsForDocument(document) {
+  const configured = document?.flags?.[SYSTEM_ID]?.consequenceTests;
+  if (Array.isArray(configured)) return configured.map(test => ({...test, action: test.actionKey ? game.i18n.localize(test.actionKey) : test.action}));
   if (game.i18n?.lang && game.i18n.lang !== "fr") return [];
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
@@ -150,6 +152,7 @@ function annotateTests(description, document) {
     )).join(" ");
     result = `${result.slice(0, anchor.start)}${buttons}${result.slice(anchor.end)}`;
   }
+  if (document?.flags?.[SYSTEM_ID]?.consequenceTests) result += [...remaining].map(index => inlineTestButton(tests[index], index, tests[index].action)).join(" ");
   return result;
 }
 
@@ -175,6 +178,8 @@ function abilityEntryFor(actor, catalogId) {
 }
 
 export async function performRuleTest({document, index, actor = testActorForUser(), context} = {}) {
+  if (document?.flags?.[SYSTEM_ID]?.consequenceTests && document.parent?.documentName === "Actor") actor = document.parent;
+  if (document?.flags?.[SYSTEM_ID]?.consequenceTests && !actor?.isOwner) return null;
   const test = ruleTestsForDocument(document)[Number(index)];
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));

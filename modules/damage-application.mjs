@@ -4,6 +4,7 @@ import {postActorEvent} from "./actor-event-chat.mjs";
 import {activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
 import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
+import {consumablePolicy} from "./rules/consumable-effects.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -56,9 +57,9 @@ export function calculateArmoredDamage({damage, totalProtection, armor = []} = {
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = ""} = {}) {
   if (!actor?.isOwner) return null;
-  const amount = Math.max(0, Math.trunc(number(damage)));
+  const amount = Math.max(0, Math.ceil(Math.trunc(number(damage)) * (consumablePolicy(actor).damageFactors[damageType] ?? 1)));
   const armor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}

@@ -6,5 +6,6 @@
     <p class="extract-stage"><strong>{{localize "TRUDVANG.Extract.Stage" stage=stageLabel}}</strong></p>
     <p class="extract-duration">({{#if ends}}{{localize "TRUDVANG.Extract.DurationEnds" duration=duration}}{{else}}{{localize "TRUDVANG.Extract.DurationUntil" duration=duration stage=nextStageLabel}}{{/if}})</p>
     <p class="extract-effect">{{stageEffect}}</p>
+    {{#each consequences}}<p>{{this}}</p>{{/each}}
   </div>
 </article>

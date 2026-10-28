@@ -195,7 +195,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       max: Number(body.max || 0),
       percent: percent(body.current, body.max),
       marks: healthThresholdMarks(body.max),
-      recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery),
+      recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery)
+        + (recovery.bonusDaily ? ` + ${game.i18n.format("TRUDVANG.Status.RecoveryDaily", {amount: recovery.bonusDaily})}` : ""),
       level: this.actor.system.damage.level,
       consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`),
       ignoresWounds: ignoresWoundPenalties(this.actor),

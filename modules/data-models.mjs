@@ -170,6 +170,7 @@ function actorCommonSchema() {
       rolls: rollModifiersSchema(),
       movement: integer(0, {persisted: false}),
       protection: integer(0, {persisted: false}),
+      recovery: integer(0, {persisted: false}),
       damage: integer(0, {persisted: false}),
       damageByUsage: schema(Object.fromEntries(["melee","ranged","throwing","natural"].map(key=>[key,integer(0,{persisted:false})]))),
       fearFactor: integer(0, {persisted: false}),
@@ -476,7 +477,7 @@ export class ShieldData extends BaseItemData {
 
 export class GearData extends BaseItemData {
   static defineSchema() {
-    return {...super.defineSchema(), equipped: boolean(false), consumable: boolean(false)};
+    return {...super.defineSchema(), equipped: boolean(false), consumable: boolean(false), consequenceId: string()};
   }
 }
 
@@ -484,6 +485,7 @@ export class PotionData extends BaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      consequenceId: string(),
       strength: integer(0),
       application: string("Drink"),
       duration: string(),

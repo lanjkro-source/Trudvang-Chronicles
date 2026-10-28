@@ -33,6 +33,7 @@ import {transformationItemActive} from "../transformations.mjs";
 import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
 import {consumeInventoryItem, isConsumable} from "../consumables.mjs";
+import {consumablePolicy} from "../rules/consumable-effects.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const effectApplicationJobs = new WeakMap();
@@ -228,6 +229,8 @@ export class TrudvangActor extends BaseActor {
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
     if (ignoresWoundPenalties(this) || this.transformationProfile.ignoreWounds) system.damage.penalty = 0;
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
+    if (system.healthRecovery.days === 1) system.healthRecovery.amount += Number(system.modifiers.recovery || 0);
+    else system.healthRecovery.bonusDaily = Number(system.modifiers.recovery || 0);
     const fear = Number(system.resources.fear.current || 0);
     const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});
     system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
@@ -1651,7 +1654,7 @@ export class TrudvangActor extends BaseActor {
     if (this.type !== "character" || !this.isOwner) return null;
     const rolled = Math.max(0, Math.trunc(Number(factor) || 0));
     const modifier = Number(this.system.fearFactorModifier || 0);
-    const applied = Math.max(0, rolled + modifier);
+    const applied = Math.max(0, Math.ceil((rolled + modifier) * (consumablePolicy(this).fearFactor ?? 1)));
     const stored = Number(this._source.system.resources?.fear?.value || 0);
     await this.update({"system.resources.fear.value": stored + applied});
     if (announce) await postActorEvent({actor: this, kind: "fear", amount: applied});
@@ -1723,7 +1726,7 @@ export class TrudvangActor extends BaseActor {
     const canRecoverHealth = recoveryNights >= Number(recovery.days || 1);
     const bodyBefore = Number(this.system.resources.body.current || 0);
     const bodyMax = Number(this.system.resources.body.max || 0);
-    const healthRecovered = canRecoverHealth ? Math.min(Number(recovery.amount || 0), Math.max(0, bodyMax - bodyBefore)) : 0;
+    const healthRecovered = Math.min((canRecoverHealth ? Number(recovery.amount || 0) : 0) + Number(recovery.bonusDaily || 0), Math.max(0, bodyMax - bodyBefore));
     const updates = {
       "system.rest.healthRecoveryNights": canRecoverHealth ? 0 : recoveryNights,
       ...bodyHealthUpdate(this,Math.min(bodyMax,bodyBefore+healthRecovered)),
@@ -2019,6 +2022,7 @@ export class TrudvangActor extends BaseActor {
       // expire a maximum-HP grant and heal it again during the same refresh.
       if (["refresh","replace"].includes(stacking)) {
         const update = foundry.utils.deepClone(prepared);
+        if (update.flags?.["trudvang-chronicles"]?.consumablePolicy) update.flags["trudvang-chronicles"].consumablePolicy = foundry.data.operators.ForcedReplacement.create(update.flags["trudvang-chronicles"].consumablePolicy);
         delete update._id;
         update.disabled ??= false;
         update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();

@@ -2011,6 +2011,7 @@
       "img": "icons/consumables/plants/mushroom-capped-white-red.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Argmurkla",
         "effectKey": "TRUDVANG.Content.Item.Argmurkla.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook131",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2027,6 +2028,7 @@
       "img": "icons/svg/blood.svg",
       "folder": "extracts",
       "system": {
+        "consequenceId": "DragonBlood",
         "effectKey": "TRUDVANG.Content.Item.DragonBlood.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook133",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2043,6 +2045,7 @@
       "img": "icons/consumables/potions/potion-jar-corked-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "FrostboarFat",
         "effectKey": "TRUDVANG.Content.Item.FrostboarFat.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook132",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2059,6 +2062,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Gaveblom",
         "effectKey": "TRUDVANG.Content.Item.Gaveblom.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook132",
         "applicationKey": "TRUDVANG.Content.ExtractType.Healing",
@@ -2075,6 +2079,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Grindblom",
         "effectKey": "TRUDVANG.Content.Item.Grindblom.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook132",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2091,6 +2096,7 @@
       "img": "icons/svg/poison.svg",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Manetter",
         "effectKey": "TRUDVANG.Content.Item.Manetter.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook133",
         "applicationKey": "TRUDVANG.Content.ExtractType.Poison",
@@ -2107,6 +2113,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Pustartobak",
         "effectKey": "TRUDVANG.Content.Item.Pustartobak.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook133",
         "applicationKey": "TRUDVANG.Content.ExtractType.Poison",
@@ -2123,6 +2130,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Svartljunghed",
         "effectKey": "TRUDVANG.Content.Item.Svartljunghed.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook134",
         "applicationKey": "TRUDVANG.Content.ExtractType.Poison",
@@ -2139,6 +2147,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Tornrot",
         "effectKey": "TRUDVANG.Content.Item.Tornrot.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook134",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2155,6 +2164,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Trollilles",
         "effectKey": "TRUDVANG.Content.Item.Trollilles.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook134",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2171,6 +2181,7 @@
       "img": "icons/consumables/plants/leaf-lobed-full-green.webp",
       "folder": "extracts",
       "system": {
+        "consequenceId": "Tungelin",
         "effectKey": "TRUDVANG.Content.Item.Tungelin.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook135",
         "applicationKey": "TRUDVANG.Content.ExtractType.Alteration",
@@ -2187,6 +2198,7 @@
       "img": "icons/svg/heal.svg",
       "folder": "extracts",
       "system": {
+        "consequenceId": "WoundBalm",
         "effectKey": "TRUDVANG.Content.Item.WoundBalm.Effect",
         "sourceKey": "TRUDVANG.Content.Source.Rulebook132",
         "applicationKey": "TRUDVANG.Content.ExtractType.Healing",
@@ -2214,6 +2226,7 @@
       "img": "icons/commodities/biological/organ-heart-red.webp",
       "folder": "magicConsumables",
       "system": {
+        "consequenceId": "MinokksHeart",
         "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary24"
       }
@@ -2224,6 +2237,7 @@
       "img": "icons/commodities/biological/organ-heart-red.webp",
       "folder": "magicConsumables",
       "system": {
+        "consequenceId": "LindwurmRegeneratingHeart",
         "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary118"
       }
@@ -2234,6 +2248,7 @@
       "img": "icons/consumables/potions/bottle-bulb-corked-green.webp",
       "folder": "magicConsumables",
       "system": {
+        "consequenceId": "FreshVidrjotunSap",
         "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
       }
@@ -2244,6 +2259,7 @@
       "img": "icons/consumables/plants/dried-stem-vine-root-bramble-brown.webp",
       "folder": "magicConsumables",
       "system": {
+        "consequenceId": "HardenedVidrjotunSap",
         "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
       }
@@ -2272,6 +2288,7 @@
       "img": "icons/svg/item-bag.svg",
       "folder": "magicConsumables",
       "system": {
+        "consequenceId": "FairyDust",
         "consumable": true,
         "sourceKey": "TRUDVANG.Content.Source.Bestiary73"
       }

@@ -909,3 +909,13 @@ test("cleanup deletes already-greyed actor and equipment instances even when the
   await expireAppliedEffects();
   assert.deepEqual(deleted, ["direct", "equipment"]);
 });
+
+test("managed consequence clocks keep native expiry from suppressing intermediate stages",async()=>{
+ const e=new TrudvangActiveEffect();e.flags={"trudvang-chronicles":{consequenceClock:{name:"X",stage:0,stageStartedAt:0,ticks:[],stages:[{seconds:10,changes:[]}]}}};e.system={changes:[],stages:[]};e._source={name:"X",duration:{value:2,units:"rounds"}};
+ const data={duration:{expired:true}};await e._preUpdate(data,{},{});assert.equal(data.duration.expired,false);
+});
+test("Tornrot suppresses fatigue without deleting its accumulated degree",()=>{
+ const fatigue=new TrudvangActiveEffect();fatigue.system={stackId:"trudvang-fatigued",degree:3};fatigue.parent={documentName:"Actor",effects:[{disabled:false,flags:{"trudvang-chronicles":{consumablePolicy:{ignoreFatigue:true}}}}]};
+ assert.equal(fatigue.isSuppressed,true);assert.equal(fatigue.system.degree,3);
+ fatigue.parent.effects[0].disabled=true;assert.equal(fatigue.isSuppressed,false);
+});

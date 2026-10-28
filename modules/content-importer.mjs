@@ -32,7 +32,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // refresh; graded GM states deliberately keep accumulating their degrees.
 // TEMPORARY WORLD MIGRATION — version 63 installs the consumables folder and
 // marks recognized harvest-item copies as consumable without changing quantities.
-const CONTENT_VERSION = 63;
+// TEMPORARY WORLD MIGRATION — version 64 assigns structured consequence ids to
+// previously imported extracts and harvest consumables; quantities are preserved.
+const CONTENT_VERSION = 64;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -340,6 +342,7 @@ async function upsertBaseItems(source, folders, translationsByKey) {
         ? foundry.data.operators.ForcedReplacement.create(payload.ownership) : payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
       if (payload.system?.consumable === true) update["system.consumable"] = true;
+      if (payload.system?.consequenceId) update["system.consequenceId"] = payload.system.consequenceId;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
       if (renamedOrCustom(existing, translations)) delete update.name;
       await existing.update(update);
@@ -369,7 +372,7 @@ async function syncActorExtracts(source, translationsByKey) {
       const changes = {_id: item.id};
       const translations = translationsByKey.get(entry.nameKey);
       if (translations?.has(item.name) && item.name !== canonical.name) changes.name = canonical.name;
-      for (const field of ["description", "source", "effect", "appearance", "preparation", "usage", "application", "duration"]) {
+      for (const field of ["description", "source", "effect", "appearance", "preparation", "usage", "application", "duration", "consequenceId"]) {
         if (canonical.system[field] !== item.system[field]) changes[`system.${field}`] = canonical.system[field];
       }
       for (const stage of ["mild", "moderate", "strong", "total"]) {
@@ -384,16 +387,21 @@ async function syncActorExtracts(source, translationsByKey) {
 // TEMPORARY WORLD MIGRATION — recognize older copies, including unlinked tokens.
 // Remove with the development-world migration inventory once pre-release worlds are retired.
 export async function syncStarterConsumables(source, translationsByKey) {
-  const entries = source.items.filter(entry => entry.type === "gear" && entry.system?.consumable === true);
+  const entries = source.items.filter(entry => entry.system?.consequenceId || entry.type === "gear" && entry.system?.consumable === true);
   const byKey = new Map(entries.map(entry => [starterKey(entry.nameKey), entry]));
   const byName = new Map(entries.flatMap(entry => [...(translationsByKey.get(entry.nameKey) ?? [])].map(name => [name, entry])));
   const byUuid = new Map(Array.from(game.items ?? []).filter(item => byKey.has(flagOf(item))).map(item => [item.uuid, byKey.get(flagOf(item))]));
   const actors = new Set(Array.from(game.actors ?? []));
   for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
   for (const actor of actors) {
-    const updates = Array.from(actor.items ?? []).filter(item => item.type === "gear" && item.system?.consumable !== true
-      && (byKey.has(flagOf(item)) || byUuid.has(item.getFlag?.("core", "sourceId") || item._stats?.compendiumSource) || byName.has(item.name)))
-      .map(item => ({_id: item.id, "system.consumable": true}));
+    const updates = Array.from(actor.items ?? []).filter(item => ["gear", "potion"].includes(item.type)).flatMap(item => {
+      const entry = byKey.get(flagOf(item)) || byUuid.get(item.getFlag?.("core", "sourceId") || item._stats?.compendiumSource) || byName.get(item.name);
+      if (!entry || item.type !== entry.type) return [];
+      const update = {_id: item.id};
+      if (entry.system.consumable === true && item.system.consumable !== true) update["system.consumable"] = true;
+      if (entry.system.consequenceId && item.system.consequenceId !== entry.system.consequenceId) update["system.consequenceId"] = entry.system.consequenceId;
+      return Object.keys(update).length > 1 ? [update] : [];
+    });
     if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
   }
 }

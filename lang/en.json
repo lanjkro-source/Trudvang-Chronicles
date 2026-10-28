@@ -2158,7 +2158,7 @@
           "Mild": "The user becomes happy.",
           "Moderate": "Numbed: −2 Initiative and Knowledge, −4 Fear.",
           "Strong": "No pain: −4 Initiative and Knowledge, −8 Fear.",
-          "Total": "The user sleeps for 1d6 hours, waking thirsty and nauseated."
+          "Total": "The body goes numb and the user falls asleep, waking after 1d6 hours with mild nausea and thirst, in addition to any effect that has not yet run its duration."
         },
         "Tornrot": {
           "Name": "Tornrot",
@@ -14869,6 +14869,24 @@
       "Label": "Consumable",
       "Used": "{actor} used {item}.",
       "InventoryRequired": "This item must be in the character’s inventory to be consumed."
+    },
+    "Consequence": {
+      "FindWay": "Avoid getting lost in the mists",
+      "Detect": "Detect the silhouette",
+      "ResistCharge": "Resist the urge to charge",
+      "ResistLindwurm": "Resist the lindwurm heart",
+      "MinokksDescription": "The character feels more alert and protective of their friends. When an enemy threatens an ally, make a Situation roll of 10, modified by Psyche, to resist the urge to charge that enemy. The GM decides when this impulse no longer applies.",
+      "FairyDust": "+{bonus} action SV for {hours} h.",
+      "Sleep": "Sleep — Black Heather",
+      "RiskTriggered": "risk triggered: the GM applies the described consequence",
+      "RiskAvoided": "risk avoided",
+      "Result": {
+        "heal": "{source}: +{amount} BP.",
+        "damage": "{source}: −{amount} BP.",
+        "fearReduction": "{source}: −{amount} Fear Points.",
+        "resourceGain": "{source}: +{amount} {resource}.",
+        "risk": "{source}: {rolled} on 1d20 — {outcome}."
+      }
     }
   }
 }

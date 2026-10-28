@@ -2843,7 +2843,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Item.Svartljunghed.Mild` | The user becomes happy. | le consommateur devient plutôt heureux. |
 | `TRUDVANG.Content.Item.Svartljunghed.Moderate` | Numbed: −2 Initiative and Knowledge, −4 Fear. | le corps s’engourdit légèrement et le consommateur ressent à peine la douleur. Il a la tête dans du coton, le corps apathique (ce qui lui inflige -2 à l’initiative et -2 à la compétence Connaissances et de façon générale, à toutes les disciplines et spécialités de connaissance), et il se sent relativement heureux et courageux (-4 points de peur). |
 | `TRUDVANG.Content.Item.Svartljunghed.Strong` | No pain: −4 Initiative and Knowledge, −8 Fear. | le corps s’engourdit et le consommateur ne ressent absolument aucune douleur. Il a la tête dans du coton, le corps apathique (ce qui lui inflige -4 à l’initiative et -4 à la compétence Connaissances et de façon générale, à toutes les disciplines et spécialités de connaissance), et il se sent heureux et prêt à tout affronter (-8 points de peur). |
-| `TRUDVANG.Content.Item.Svartljunghed.Total` | The user sleeps for 1d6 hours, waking thirsty and nauseated. | e la svartljunghed |
+| `TRUDVANG.Content.Item.Svartljunghed.Total` | The body goes numb and the user falls asleep, waking after 1d6 hours with mild nausea and thirst, in addition to any effect that has not yet run its duration. | Le corps s’engourdit et le consommateur s’endort. Il se réveille au bout de 1d6 heures, en ayant soif et une légère nausée, en plus de tout effet qui ne serait pas encore arrivé au bout de sa durée. |
 
 ## `TRUDVANG.Content.Item.Tornrot`
 
@@ -12297,3 +12297,27 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consumable.Label` | Consumable | Consommable |
 | `TRUDVANG.Consumable.Used` | {actor} used {item}. | {actor} a utilisé {item}. |
 | `TRUDVANG.Consumable.InventoryRequired` | This item must be in the character’s inventory to be consumed. | Cet objet doit être présent dans l’inventaire du personnage pour être consommé. |
+
+## `TRUDVANG.Consequence`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Consequence.FindWay` | Avoid getting lost in the mists | Ne pas se perdre dans les brumes |
+| `TRUDVANG.Consequence.Detect` | Detect the silhouette | Détecter la silhouette |
+| `TRUDVANG.Consequence.ResistCharge` | Resist the urge to charge | Résister à l’impulsion de charger |
+| `TRUDVANG.Consequence.ResistLindwurm` | Resist the lindwurm heart | Résister au cœur de lindwurm |
+| `TRUDVANG.Consequence.MinokksDescription` | The character feels more alert and protective of their friends. When an enemy threatens an ally, make a Situation roll of 10, modified by Psyche, to resist the urge to charge that enemy. The GM decides when this impulse no longer applies. | Le personnage se sent plus vivace et protecteur envers ses amis. Quand un ennemi menace un allié, il doit réussir un test de situation de 10, modifié par le Psychisme, pour résister à l’impulsion de charger cet ennemi. Le MJ décide quand cette impulsion cesse de s’appliquer. |
+| `TRUDVANG.Consequence.FairyDust` | +{bonus} action SV for {hours} h. | +{bonus} à la VC des actions pendant {hours} h. |
+| `TRUDVANG.Consequence.Sleep` | Sleep — Black Heather | Sommeil — Svartljunghed |
+| `TRUDVANG.Consequence.RiskTriggered` | risk triggered: the GM applies the described consequence | risque réalisé : le MJ applique la conséquence décrite |
+| `TRUDVANG.Consequence.RiskAvoided` | risk avoided | risque évité |
+
+## `TRUDVANG.Consequence.Result`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Consequence.Result.heal` | {source}: +{amount} BP. | {source} : +{amount} PS. |
+| `TRUDVANG.Consequence.Result.damage` | {source}: −{amount} BP. | {source} : −{amount} PS. |
+| `TRUDVANG.Consequence.Result.fearReduction` | {source}: −{amount} Fear Points. | {source} : −{amount} peur. |
+| `TRUDVANG.Consequence.Result.resourceGain` | {source}: +{amount} {resource}. | {source} : +{amount} {resource}. |
+| `TRUDVANG.Consequence.Result.risk` | {source}: {rolled} on 1d20 — {outcome}. | {source} : {rolled} sur 1d20 — {outcome}. |

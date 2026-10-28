@@ -2398,3 +2398,12 @@ test("extracts consume only after confirmation and ignore repeated clicks during
   assert.equal(item.system.quantity,1);assert.equal(runtime.messages.length,1);
   assert.match(renderedCards.at(-1).path,/extract-use-card/);
 });
+
+test("daily balm recovery is additional every night even with negative Constitution",async t=>{
+ const runtime=mockActionRuntime(t),instance=actor();instance.isOwner=true;
+ instance.getTraitValue=key=>key==="constitution"?-2:0;instance.system.modifiers.recovery=2;instance.prepareDerivedData();
+ assert.deepEqual(instance.system.healthRecovery,{amount:1,days:2,bonusDaily:2});
+ instance.system.resources.body.current=10;instance.system.resources.body.max=40;instance._source.system.rest={healthRecoveryNights:0};instance.calmFear=async()=>null;
+ instance.update=async data=>{for(const[k,v]of Object.entries(data)){set(instance,k,v);set(instance._source,k,v);}};
+ const result=await instance.restForNight();assert.equal(result.healthRecovered,2);assert.equal(instance._source.system.rest.healthRecoveryNights,1);
+});

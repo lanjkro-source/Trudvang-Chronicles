@@ -1,6 +1,8 @@
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
 import {effectChangesSource} from "./rules/effect-source.mjs";
+import {processWorldConsequences, registerConsequenceHooks} from "./consequences.mjs";
+import {editedConsequenceClock} from "./rules/consumable-effects.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
@@ -93,6 +95,9 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
 
   get isSuppressed() {
     if (super.isSuppressed) return true;
+    if (this.system?.stackId === "trudvang-fatigued" && this.parent?.documentName === "Actor"
+      && Array.from(this.parent.effects ?? []).some(effect => !effect.disabled && !effect.duration?.expired
+        && effect.flags?.["trudvang-chronicles"]?.consumablePolicy?.ignoreFatigue)) return true;
     if (!this.item || !this.transfer) return false;
     const item = this.item;
     if (!EFFECT_ITEM_TYPES.has(item.type)) return true;
@@ -129,6 +134,17 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   }
 
   async _preUpdate(data, options, user) {
+    if (!options?.trudvangStageTransition) {
+      const clock = editedConsequenceClock(this, data);
+      if (clock !== undefined) data["flags.trudvang-chronicles.consequenceClock"] = clock;
+    }
+    // Managed clocks process every elapsed tick and stage before deleting the
+    // instance. Native expiry must not suppress its changes halfway through a
+    // multi-stage catch-up; updateWorldTime drives the authoritative clock.
+    if (this.flags?.["trudvang-chronicles"]?.consequenceClock && !options?.trudvangStageTransition) {
+      if (data.duration?.expired === true) data.duration.expired = false;
+      if (data["duration.expired"] === true) data["duration.expired"] = false;
+    }
     // The editable header displays the prepared name, including its degree.
     // Keep that display suffix out of the stored base name on ordinary saves.
     if (isGradedEffect(this) && data.name === this.name && this._source.name !== this.name) data.name = this._source.name;
@@ -179,6 +195,9 @@ export function finishExpiredEffect(effect, options = {}) {
       || (parent?.documentName === "Item" && parent.parent?.documentName === "Actor" && effect.transfer);
     if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
       || !applied || parent?.type === "effect" || effect.inCompendium) return;
+    if (effect.flags?.["trudvang-chronicles"]?.consequenceClock) {
+      return processWorldConsequences();
+    }
     const stages = Array.from(effect.system.stages || []);
     const nextIndex = Number(effect.system.stage || 0) + 1;
     const next = stages[nextIndex];
@@ -209,6 +228,7 @@ export function finishExpiredEffect(effect, options = {}) {
 }
 
 export function registerEffectHooks() {
+  registerConsequenceHooks(appliedWorldEffects);
   registerCombatEffectHooks();
   Hooks.on("updateActiveEffect", (effect, changed, options) => {
     if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);

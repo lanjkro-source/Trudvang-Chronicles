@@ -182,6 +182,19 @@ function attachListeners(message, html) {
       await consumeInventoryItem(owned, actor);
     });
   });
+  html.querySelectorAll("[data-action='consequence-resistance']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const meta = message.flags?.["trudvang-chronicles"];
+      const actor = await foundry.utils.fromUuid(meta?.consequenceActor);
+      if (!actor?.isOwner) return;
+      button.disabled = true;
+      try {
+        await performRuleTest({document: {name: meta.consequenceSource, flags: {"trudvang-chronicles": {consequenceTests: meta.consequenceTests}}}, actor, index: button.dataset.testIndex});
+      } finally {button.disabled = false;}
+    });
+  });
   html.querySelectorAll(".package-availability-roll").forEach(control => {
     const rollAvailability = async event => {
       event.preventDefault();
@@ -295,6 +308,7 @@ function attachListeners(message, html) {
         modifierRows.push({labelKey: environmentKey("conditions"), value: environment.negative},
           {labelKey: environmentKey("mitigation"), value: environment.mitigation},
           {labelKey: "TRUDVANG.Knowledge.weathered", value: environment.weathered});
+        if (environment.protection) modifierRows.push({label: environment.protectionSources.join(" · "), value: environment.protection});
       }
       const traitLabel = hasTrait
         ? game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey)
