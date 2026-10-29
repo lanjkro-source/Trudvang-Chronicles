@@ -1,5 +1,6 @@
 import {readFile, writeFile} from "node:fs/promises";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
+import {resolvePowerOptionReference} from "./power-option-identity.mjs";
 
 const powers = JSON.parse(await readFile(new URL("../game doc/fr/trudvang-powers-fr.json", import.meta.url), "utf8"));
 const englishPowers = JSON.parse(await readFile(new URL("../game doc/en/trudvang-powers-en.json", import.meta.url), "utf8"));
@@ -11,6 +12,7 @@ function testsFor(entry) {
   return [
     ...(entry.resist ?? []).map((test, index) => {
       const {test:configuredIndex,...configuration}=entry.ruleTestModifiers?.find(row=>row.test===index)??{};
+      if(configuration.powerLevelModifiers)configuration.powerLevelModifiers=configuration.powerLevelModifiers.map(row=>resolvePowerOptionReference(entry,row));
       return {...test,...configuration,kind:"resist",index};
     }),
     ...(entry.skillTest ?? []).map((test, index) => ({...test, kind: "skill", index}))
@@ -25,7 +27,7 @@ for (const entry of powers) {
   for(const row of entry.ruleTestModifiers??[]){
     if(!entry.resist?.[row.test]||configured.has(row.test)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
     configured.add(row.test);
-    for(const p of row.powerLevelModifiers??[])if(!entry.powerLevels?.[p.index]||!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);
+    for(const p of row.powerLevelModifiers??[]){resolvePowerOptionReference(entry,p);if(!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);}
   }
   const tests = testsFor(entry);
   if (tests.length) result[entry.catalogId] = tests;

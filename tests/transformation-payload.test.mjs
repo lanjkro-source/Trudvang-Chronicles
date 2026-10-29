@@ -22,8 +22,10 @@ test("effect links serialize the complete context safely into a quoted HTML attr
  const match=html.match(/data-rule-test-context="([^"]*)"/);assert.ok(match);
  assert.ok(match[1].startsWith("{&quot;sourceId&quot;:"));
  const decoded=match[1].replaceAll("&quot;",'"').replaceAll("&#39;","'").replaceAll("&lt;","<").replaceAll("&gt;",">").replaceAll("&amp;","&");
- assert.deepEqual(JSON.parse(decoded),context);
- assert.deepEqual(transformationRequest(button({ruleTestContext:decoded})).context,context);
+ const saved=JSON.parse(decoded);
+ assert.deepEqual({...saved,countsById:undefined},{...context,countsById:undefined});
+ assert.equal(saved.countsById[`${id}:3`],3);
+ assert.deepEqual(transformationRequest(button({ruleTestContext:decoded})).context,saved);
 });
 
 test("already published truncated JSON recovers the original casting context, including its improvements",()=>{

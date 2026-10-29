@@ -10,3 +10,9 @@ export function validatePowerOptionIdentities(id, french, english) {
   seen.add(fr.optionId);
  }
 }
+
+export function resolvePowerOptionReference(entry, reference) {
+ const index=entry.powerLevels?.findIndex(option=>option.optionId===reference.optionId) ?? -1;
+ if(index<0)throw new Error(`${entry.catalogId}: unknown power option ${reference.optionId ?? ""}`);
+ return {...reference,index};
+}

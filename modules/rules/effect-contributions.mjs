@@ -1,4 +1,5 @@
 import {cumulativeChangeValue, effectDegree as effectDegreeForAttribution} from "./effect-stacking.mjs";
+import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const numeric = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const priority = change => numeric(change.priority ?? ({multiply: 10, add: 20, subtract: 20, downgrade: 30, upgrade: 40, override: 50}[change.type] ?? 0));
@@ -41,9 +42,12 @@ export function effectContributions(actor, key, {base = 0, total = get(actor, ke
       const bonus=parts.reduce((sum,row)=>sum+row.count*row.unit,0);
       if(delta-bonus)rows.push({label:effect.name,value:delta-bonus,...(includeEffect?{effect}:{})});
       for(const part of parts){
-        const descriptionKey=`TRUDVANG.Content.Power.${metadata.sourceId}.PowerLevels.${part.index}`;
+        const currentIndex=(POWER_DETAILS_BY_ID[metadata.sourceId]?.powerLevels??[]).findIndex(option=>option.id===part.optionId);
+        // TEMPORARY WORLD MIGRATION — old active effects have only the original index.
+        const index=currentIndex>=0?currentIndex:part.index;
+        const descriptionKey=`TRUDVANG.Content.Power.${metadata.sourceId}.PowerLevels.${index}`;
         const description=game.i18n.localize(descriptionKey);
-        const label=game.i18n.format("TRUDVANG.Resistance.PowerLevel",{index:part.index+1,description,count:part.count,unit:part.unit});
+        const label=game.i18n.format("TRUDVANG.Resistance.PowerLevel",{index:index+1,description,count:part.count,unit:part.unit});
         rows.push({label:`${effect.name} — ${label}`,value:part.count*part.unit,...(includeEffect?{effect}:{})});
       }
     } else rows.push({label: effect.name, value: delta, ...(includeEffect ? {effect} : {})});

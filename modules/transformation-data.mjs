@@ -54,17 +54,20 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "vitner-soil-craft:petrify-remove-petrification:8:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 2592000
+        "value": 2592000,
+        "optionId": "vitner-soil-craft:petrify-remove-petrification:8:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 31536000
+        "value": 31536000,
+        "optionId": "vitner-soil-craft:petrify-remove-petrification:8:2"
       }
     ]
   },
@@ -161,22 +164,26 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "vitner-witchcraft:tree-curse:7:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 604800
+        "value": 604800,
+        "optionId": "vitner-witchcraft:tree-curse:7:2"
       },
       {
         "index": 3,
         "target": "duration",
-        "value": 2592000
+        "value": 2592000,
+        "optionId": "vitner-witchcraft:tree-curse:7:3"
       },
       {
         "index": 4,
         "target": "duration",
-        "value": 31536000
+        "value": 31536000,
+        "optionId": "vitner-witchcraft:tree-curse:7:4"
       }
     ]
   },
@@ -227,23 +234,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "vitner-body-vitner:hasten:9:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "vitner-body-vitner:hasten:9:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "vitner-body-vitner:hasten:9:0"
       },
       {
         "index": 5,
         "target": "traitDegrees",
         "trait": "dexterity",
-        "value": 1
+        "value": 1,
+        "optionId": "vitner-body-vitner:hasten:9:5"
       }
     ]
   },
@@ -268,23 +279,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "vitner-body-vitner:hasten:9:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "vitner-body-vitner:hasten:9:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "vitner-body-vitner:hasten:9:0"
       },
       {
         "index": 5,
         "target": "traitDegrees",
         "trait": "dexterity",
-        "value": 1
+        "value": 1,
+        "optionId": "vitner-body-vitner:hasten:9:5"
       }
     ]
   },
@@ -309,23 +324,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "vitner-body-vitner:strengthen:8:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "vitner-body-vitner:strengthen:8:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "vitner-body-vitner:strengthen:8:0"
       },
       {
         "index": 5,
         "target": "traitDegrees",
         "trait": "strength",
-        "value": 1
+        "value": 1,
+        "optionId": "vitner-body-vitner:strengthen:8:5"
       }
     ]
   },
@@ -350,23 +369,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "vitner-body-vitner:strengthen:8:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "vitner-body-vitner:strengthen:8:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "vitner-body-vitner:strengthen:8:0"
       },
       {
         "index": 5,
         "target": "traitDegrees",
         "trait": "strength",
-        "value": 1
+        "value": 1,
+        "optionId": "vitner-body-vitner:strengthen:8:5"
       }
     ]
   },
@@ -412,22 +435,26 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "vitner-body-vitner:change-creature:11:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "vitner-body-vitner:change-creature:11:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "vitner-body-vitner:change-creature:11:2"
       },
       {
         "index": 3,
         "target": "duration",
-        "value": 604800
+        "value": 604800,
+        "optionId": "vitner-body-vitner:change-creature:11:3"
       }
     ]
   },
@@ -452,12 +479,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:troll-strength:0:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:troll-strength:0:1"
       }
     ]
   },
@@ -482,12 +511,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:hinji-strength:3:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:hinji-strength:3:1"
       }
     ]
   },
@@ -512,12 +543,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:1"
       }
     ]
   },
@@ -542,12 +575,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:1"
       },
       {
         "index": 4,
@@ -556,7 +591,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": 2,
         "templates": [
           "force-du-jotun-allies"
-        ]
+        ],
+        "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4"
       }
     ]
   },
@@ -581,12 +617,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:willpower:1:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-power-of-enken:willpower:1:1"
       }
     ]
   },
@@ -611,12 +649,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:night-vision:0:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-gerbanis-power-of-enken:night-vision:0:1"
       }
     ]
   },
@@ -641,12 +681,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:bold:2:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-power-of-enken:bold:2:1"
       }
     ]
   },
@@ -671,12 +713,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:1"
       }
     ]
   },
@@ -701,12 +745,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:1"
       },
       {
         "index": 4,
@@ -715,7 +761,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "value": 2,
         "templates": [
           "c-ur-d-enken-allies"
-        ]
+        ],
+        "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:4"
       }
     ]
   },
@@ -775,12 +822,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:stagshape:2:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:stagshape:2:1"
       }
     ]
   },
@@ -833,12 +882,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:salmonshape:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:salmonshape:4:1"
       }
     ]
   },
@@ -905,12 +956,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:ravenshape:8:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:ravenshape:8:1"
       }
     ]
   },
@@ -935,12 +988,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0:1"
       }
     ]
   },
@@ -1037,7 +1092,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:rage:3:0"
       }
     ]
   },
@@ -1081,12 +1137,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2:1"
       }
     ]
   },
@@ -1176,7 +1234,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:madness:5:0"
       }
     ]
   },
@@ -1220,12 +1279,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:1"
       }
     ]
   },
@@ -1322,7 +1383,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:0"
       }
     ]
   },
@@ -1366,13 +1428,15 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:0"
       },
       {
         "index": 1,
         "target": "senseRange",
         "sense": 0,
-        "value": 20
+        "value": 20,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:1"
       }
     ]
   },
@@ -1397,13 +1461,15 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:0"
       },
       {
         "index": 1,
         "target": "senseRange",
         "sense": 0,
-        "value": 100
+        "value": 100,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:1"
       }
     ]
   },
@@ -1447,7 +1513,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-anger:statue:5:0"
       }
     ]
   },
@@ -1545,7 +1612,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-anger:stone-monument:8:0"
       }
     ]
   },
@@ -1631,17 +1699,20 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:1"
       },
       {
         "index": 2,
         "target": "temporaryHP",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:2"
       }
     ]
   },
@@ -1682,12 +1753,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:tree-port:8:0"
       },
       {
         "index": 2,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:tree-port:8:2"
       }
     ]
   },
@@ -1712,12 +1785,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:resilience:0:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:resilience:0:1"
       }
     ]
   },
@@ -1742,12 +1817,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:1"
       },
       {
         "index": 2,
@@ -1774,7 +1851,8 @@ export const TRANSFORMATION_TEMPLATES = {
             "damage": "1d10 + 1",
             "openRoll": 8
           }
-        ]
+        ],
+        "optionId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:2"
       }
     ]
   },
@@ -1799,12 +1877,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3:1"
       }
     ]
   },
@@ -1836,12 +1916,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:1"
       }
     ]
   },
@@ -1908,22 +1990,26 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:mastomantshape:8:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:mastomantshape:8:1"
       },
       {
         "index": 2,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-beast:mastomantshape:8:2"
       },
       {
         "index": 3,
         "target": "temporaryHP",
-        "value": 10
+        "value": 10,
+        "optionId": "holy-haminges-power-of-the-beast:mastomantshape:8:3"
       }
     ]
   },
@@ -1940,12 +2026,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:1"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:0"
       }
     ]
   },
@@ -1962,12 +2050,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:1"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:0"
       }
     ]
   },
@@ -1984,12 +2074,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:1"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:0"
       }
     ]
   },
@@ -2006,12 +2098,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:1"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:0"
       }
     ]
   },
@@ -2028,12 +2122,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 604800
+        "value": 604800,
+        "optionId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8:1"
       }
     ]
   },
@@ -2077,7 +2173,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-the-scale:petrify:7:0"
       }
     ]
   },
@@ -2156,12 +2253,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-men:sight-of-the-dwarves:0:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-men:sight-of-the-dwarves:0:1"
       }
     ]
   },
@@ -2186,12 +2285,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-thurses:troll-strength:1:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:troll-strength:1:1"
       }
     ]
   },
@@ -2216,12 +2317,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3:1"
       }
     ]
   },
@@ -2288,17 +2391,20 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "temporaryHP",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:1"
       },
       {
         "index": 2,
         "target": "damage",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:0"
       }
     ]
   },
@@ -2372,23 +2478,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "temporaryHP",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:1"
       },
       {
         "index": 2,
         "target": "damage",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:0"
       },
       {
         "index": 3,
         "target": "modifier",
         "key": "system.modifiers.rolls.attack",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:3"
       }
     ]
   },
@@ -2413,12 +2523,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-thurses:thurse-strength:7:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:thurse-strength:7:1"
       }
     ]
   },
@@ -2499,23 +2611,27 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "temporaryHP",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:1"
       },
       {
         "index": 2,
         "target": "damage",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:2"
       },
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:0"
       },
       {
         "index": 3,
         "target": "modifier",
         "key": "system.modifiers.rolls.attack",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:3"
       }
     ]
   },
@@ -2540,7 +2656,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1:0"
       }
     ]
   },
@@ -2593,12 +2710,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-dragon:flame-hardened:2:0"
       },
       {
         "index": 1,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-dragon:flame-hardened:2:1"
       }
     ]
   },
@@ -2617,7 +2736,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3:0"
       }
     ]
   },
@@ -2642,7 +2762,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:0"
       }
     ]
   },
@@ -2695,17 +2816,20 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-skin:4:0"
       },
       {
         "index": 1,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-skin:4:1"
       },
       {
         "index": 2,
         "target": "damage",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-skin:4:2"
       }
     ]
   },
@@ -2722,12 +2846,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 604800
+        "value": 604800,
+        "optionId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:1"
       }
     ]
   },
@@ -2766,12 +2892,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-soul:7:0"
       },
       {
         "index": 1,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-soul:7:1"
       },
       {
         "index": 2,
@@ -2781,7 +2909,8 @@ export const TRANSFORMATION_TEMPLATES = {
           "melee",
           "throwing",
           "natural"
-        ]
+        ],
+        "optionId": "holy-haminges-power-of-the-dragon:dragon-soul:7:2"
       }
     ]
   },
@@ -2855,27 +2984,32 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 60
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:1"
       },
       {
         "index": 2,
         "target": "protection",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:2"
       },
       {
         "index": 4,
         "target": "temporaryHP",
-        "value": 10
+        "value": 10,
+        "optionId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:4"
       },
       {
         "index": 3,
         "target": "fearFactor",
-        "value": "1d10"
+        "value": "1d10",
+        "optionId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:3"
       }
     ]
   },
@@ -2940,12 +3074,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
       }
     ]
   },
@@ -2991,12 +3127,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
       }
     ]
   },
@@ -3042,12 +3180,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
       }
     ]
   },
@@ -3093,12 +3233,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
       }
     ]
   },
@@ -3144,12 +3286,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 600
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
       }
     ]
   },
@@ -3202,12 +3346,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 1800
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 10800
+        "value": 10800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
       }
     ]
   },
@@ -3267,12 +3413,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 1800
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 10800
+        "value": 10800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
       }
     ]
   },
@@ -3325,12 +3473,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 1800
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 10800
+        "value": 10800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
       }
     ]
   },
@@ -3383,12 +3533,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 1800
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 10800
+        "value": 10800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
       }
     ]
   },
@@ -3441,12 +3593,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 1800
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:0"
       },
       {
         "index": 1,
         "target": "duration",
-        "value": 10800
+        "value": 10800,
+        "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
       }
     ]
   },
@@ -3478,7 +3632,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:gift-of-water:3:0"
       }
     ]
   },
@@ -3503,12 +3658,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:1"
       }
     ]
   },
@@ -3605,7 +3762,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-joaringfaith-fury-of-ogon:rage:2:0"
       }
     ]
   },
@@ -3649,12 +3807,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:1"
       }
     ]
   },
@@ -3744,7 +3904,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-joaringfaith-fury-of-ogon:madness:4:0"
       }
     ]
   },
@@ -3788,12 +3949,14 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 3600
+        "value": 3600,
+        "optionId": "holy-joaringfaith-fury-of-ogon:bloodfire:6:0"
       },
       {
         "index": 1,
         "target": "vitality",
-        "value": 1
+        "value": 1,
+        "optionId": "holy-joaringfaith-fury-of-ogon:bloodfire:6:1"
       }
     ]
   },
@@ -3890,7 +4053,8 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 0,
         "target": "duration",
-        "value": 5
+        "value": 5,
+        "optionId": "holy-joaringfaith-fury-of-ogon:riastarthae:8:0"
       }
     ]
   },
@@ -3952,22 +4116,26 @@ export const TRANSFORMATION_TEMPLATES = {
       {
         "index": 1,
         "target": "duration",
-        "value": 86400
+        "value": 86400,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:1"
       },
       {
         "index": 2,
         "target": "duration",
-        "value": 604800
+        "value": 604800,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:2"
       },
       {
         "index": 3,
         "target": "duration",
-        "value": 2592000
+        "value": 2592000,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:3"
       },
       {
         "index": 4,
         "target": "duration",
-        "value": 31536000
+        "value": 31536000,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:4"
       }
     ]
   },

@@ -1,3 +1,13 @@
+import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
+
+function countsByOption(sourceId, counts) {
+ const options=POWER_DETAILS_BY_ID[sourceId]?.powerLevels ?? [];
+ return Object.fromEntries(options.map((option,index)=>[option.id,Math.max(0,Number(counts[index])||0)]));
+}
+export function withCastingCounts(context, counts) {
+ const selected=Array.from(counts??[],n=>Math.max(0,Number(n)||0));
+ return {...context,counts:selected,countsById:countsByOption(context.sourceId,selected)};
+}
 /** Casting provenance is a snapshot, never a lookup of the last cast of an Item. */
 export function ruleTestSourceId(document){
  return (document?.flags?.["trudvang-chronicles"]?.transformation?.sourceId||document?.system?.catalogId||"").split("#")[0];
@@ -10,12 +20,17 @@ export function knowledgeRank(actor,id){
 export function ruleTestCastingContext(document,{caster,counts,context}={}){
  const sourceId=ruleTestSourceId(document);
  const stored=context??document?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
- if(stored?.sourceId===sourceId)return {...structuredClone(stored),...(counts?.length?{counts:Array.from(counts,Number)}:{})};
+ if(stored?.sourceId===sourceId){
+  const result=structuredClone(stored);
+  if(counts?.length)return withCastingCounts(result,counts);
+  return result;
+ }
  const isEffect=document?.documentName==="ActiveEffect"||document?.type==="effect";
  if(!isEffect)caster??=document?.actor??(document?.parent?.documentName==="Actor"?document.parent:null);
  const kind=sourceId.startsWith("vitner-")?"spell":sourceId.startsWith("holy-")?"divine":"";
  const specialty=kind==="spell"?"potency":kind==="divine"?"potent":"";
- return {sourceId,kind,counts:Array.from(counts??[],n=>Math.max(0,Number(n)||0)),casterUuid:caster?.uuid??"",casterName:caster?.name??"",
+ const selected=Array.from(counts??[],n=>Math.max(0,Number(n)||0));
+ return {sourceId,kind,counts:selected,countsById:countsByOption(sourceId,selected),casterUuid:caster?.uuid??"",casterName:caster?.name??"",
   specialty,specialtyLevel:specialty?knowledgeRank(caster,specialty):0};
 }
 /** Only explicitly identified resistance tests receive offensive/defensive ranks.
@@ -24,7 +39,8 @@ export function magicResistanceRows(test,{context={},actor}={}){
  const rows=[];
  let improvedBase=typeof test.sv==="number"?test.sv:Number(test.sv?.base);
  for(const p of test.powerLevelModifiers??[]){
-  const count=Math.max(0,Number(context.counts?.[p.index])||0);
+  // TEMPORARY WORLD MIGRATION — older persisted cast contexts only contain positional counts.
+  const count=Math.max(0,Number(p.optionId && Object.hasOwn(context.countsById??{},p.optionId) ? context.countsById[p.optionId] : context.counts?.[p.index])||0);
   if(count&&Number.isFinite(p.value)){
    const value=Number.isFinite(p.minimum)&&Number.isFinite(improvedBase)?Math.max(count*p.value,p.minimum-improvedBase):count*p.value;
    improvedBase+=value;

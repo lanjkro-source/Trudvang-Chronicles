@@ -2,13 +2,14 @@ import fs from "node:fs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {rulesFromChanges,changesFromRules,EFFECT_RULE_PREFIX,validProfileChange} from "../modules/rules/effect-rule-changes.mjs";
+import {resolvePowerOptionReference} from "./power-option-identity.mjs";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
 const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
 const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange"]);
-const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id));
+const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id)).map(p=>entry.catalogId?resolvePowerOptionReference(entry,p):p);
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length);

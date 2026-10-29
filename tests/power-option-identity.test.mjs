@@ -8,3 +8,10 @@ test('stable power-option identities match across languages and reject unsafe re
  assert.throws(()=>validatePowerOptionIdentities('power',fr,[en[1],en[0]]),/differ/);
  assert.throws(()=>validatePowerOptionIdentities('power',[fr[0],fr[0]],[en[0],en[0]]),/duplicate/);
 });
+
+test('option references resolve by identity after a reorder, independently of their historic index', async()=>{
+ const {resolvePowerOptionReference}=await import('../tools/power-option-identity.mjs');
+ const entry={catalogId:'power',powerLevels:[{optionId:'power:1'},{optionId:'power:0'}]};
+ assert.equal(resolvePowerOptionReference(entry,{index:0,optionId:'power:0',value:2}).index,1);
+ assert.throws(()=>resolvePowerOptionReference(entry,{index:0,optionId:'missing'}),/unknown power option/);
+});

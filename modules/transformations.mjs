@@ -8,7 +8,7 @@ import {effectSource} from "./rules/effect-source.mjs";
 import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
 import {TABLET_CATALOG,powerItemData} from "./tablet-catalog.mjs";
 import {TRUDVANG} from "./config.mjs";
-import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
@@ -115,9 +115,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
- const preview=values=>magicResistancePreview({...casting,counts:Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))});
+ const preview=values=>magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
  const answers=await askFields(effectName,fields,preview);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
+ Object.assign(casting,withCastingCounts(casting,casting.counts));
  let formMaximum;
  if(rules.chooseBestiary||rules.formName){
   const form=BESTIARY_ENTRIES.find(e=>e.id===answers.form)||BESTIARY_ENTRIES.find(e=>game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)===rules.formName);
@@ -212,7 +213,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const keys=p.target==="modifier"?[p.key]:p.target==="protection"?["system.modifiers.protection"]:
    p.target==="damage"?(p.usages?.map(u=>`system.modifiers.damageByUsage.${u}`)??["system.modifiers.damage"]):[];
   return keys.flatMap(key=>{const matches=changes.filter(c=>c.key===key&&c.type==="add");
-   return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
+   return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,optionId:p.optionId||"",count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");

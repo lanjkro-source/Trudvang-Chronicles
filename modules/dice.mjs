@@ -14,7 +14,7 @@ import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
 import {transformationLinks} from "./transformations.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
-import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 
@@ -310,7 +310,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
         const resistancePreview=root.querySelector("[data-resistance-preview]");
-        if(resistancePreview&&resistanceContext)resistancePreview.innerHTML=magicResistancePreview({...resistanceContext,counts:countsFrom(root)});
+        if(resistancePreview&&resistanceContext)resistancePreview.innerHTML=magicResistancePreview(withCastingCounts(resistanceContext,countsFrom(root)));
         const output = root.querySelector("[data-final-target]");
         if (output) output.textContent = finalTargetFrom(root, method, strenuousBonus);
         const finalCost = root.querySelector("[data-final-cost]");

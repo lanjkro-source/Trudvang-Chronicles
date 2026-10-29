@@ -134,3 +134,12 @@ test("the real chat listener forwards the message's snapshot and rolls for the c
   assert.equal(cards.at(-1).target,5);assert.equal(button.disabled,false);
  }finally{globalThis.Hooks=previous.Hooks;globalThis.HTMLElement=previous.HTMLElement;game.user.character=previous.character;foundry.utils=previous.utils;}
 });
+
+test("resistance uses the captured option identity instead of an obsolete index",()=>{
+ const reference=tests[haste][0].powerLevelModifiers[0];assert.ok(reference.optionId);
+ const context=ruleTestCastingContext(doc(haste,ranks()),{counts:[0,0,0,3]});
+ const wrongIndex={...tests[haste][0],powerLevelModifiers:[{...reference,index:0}]};
+ assert.equal(magicResistanceRows(wrongIndex,{context,actor:ranks()})[0].value,-3);
+ const legacy={...context};delete legacy.countsById;
+ assert.equal(magicResistanceRows(tests[haste][0],{context:legacy,actor:ranks()})[0].value,-3);
+});

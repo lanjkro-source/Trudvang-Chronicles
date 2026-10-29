@@ -54,7 +54,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-vitner-craft:anti-magic:3:4"
         }
       ],
       "kind": "resist",
@@ -99,7 +100,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-vitner-craft:dispel-vitner:6:0"
         }
       ],
       "kind": "resist",
@@ -144,7 +146,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-vitner-craft:wall-of-vitner:8:0"
         }
       ],
       "kind": "resist",
@@ -188,7 +191,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 5,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-vitner-craft:trace-vitner:7:5"
         }
       ],
       "kind": "resist",
@@ -225,7 +229,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-dimvitner:hand-of-death:1:2"
         }
       ],
       "kind": "resist",
@@ -325,7 +330,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-dimvitner:dismiss-undead:2:0"
         }
       ],
       "kind": "resist",
@@ -347,7 +353,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-dimvitner:vitner-theft:5:0"
         }
       ],
       "kind": "resist",
@@ -417,7 +424,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-dimvitner:control-undead:7:4"
         }
       ],
       "kind": "resist",
@@ -495,7 +503,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-soil-craft:petrify-remove-petrification:8:3"
         }
       ],
       "kind": "resist",
@@ -603,7 +612,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 8,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-wind-craft:lift:5:8"
         }
       ],
       "kind": "resist",
@@ -702,7 +712,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 7,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-wind-craft:wind-catcher:9:7"
         }
       ],
       "kind": "resist",
@@ -829,7 +840,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-perceiving:detect-object:2:0"
         }
       ],
       "kind": "resist",
@@ -903,7 +915,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-perceiving:detect-being:4:0"
         }
       ],
       "kind": "resist",
@@ -976,7 +989,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-perceiving:detect-undead:5:0"
         }
       ],
       "kind": "resist",
@@ -997,7 +1011,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:fear:3:1"
         }
       ],
       "kind": "resist",
@@ -1018,7 +1033,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:ecstasy:5:3"
         }
       ],
       "kind": "resist",
@@ -1038,7 +1054,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:ecstasy:5:3"
         }
       ],
       "kind": "resist",
@@ -1058,7 +1075,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:ecstasy:5:3"
         }
       ],
       "kind": "resist",
@@ -1079,7 +1097,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:imagining:6:2"
         }
       ],
       "kind": "resist",
@@ -1101,7 +1120,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:aura-of-power:9:3"
         }
       ],
       "kind": "resist",
@@ -1122,7 +1142,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:creature-control:8:3"
         }
       ],
       "kind": "resist",
@@ -1159,7 +1180,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 5,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-power-of-thought:possess-creature:10:5"
         }
       ],
       "kind": "resist",
@@ -1204,7 +1226,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-power-of-vision:read-vitner:6:0"
         }
       ],
       "kind": "resist",
@@ -1279,7 +1302,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-witchcraft:phantom-plague:1:0"
         }
       ],
       "kind": "resist",
@@ -1300,7 +1324,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-witchcraft:fever:2:3"
         }
       ],
       "kind": "resist",
@@ -1323,7 +1348,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         {
           "index": 2,
           "value": -1,
-          "minimum": 1
+          "minimum": 1,
+          "optionId": "vitner-witchcraft:amnesia:4:2"
         }
       ],
       "kind": "resist",
@@ -1375,7 +1401,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-animal-vitner:conjure-ravens:3:2"
         }
       ],
       "kind": "resist",
@@ -1397,7 +1424,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:hearing-deafness:2:4"
         }
       ],
       "kind": "resist",
@@ -1419,7 +1447,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:sense-of-smell:3:4"
         }
       ],
       "kind": "resist",
@@ -1441,7 +1470,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:vision-blindness:4:4"
         }
       ],
       "kind": "resist",
@@ -1468,7 +1498,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 5,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:immobilize:6:5"
         }
       ],
       "kind": "resist",
@@ -1490,7 +1521,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:appearance-change:7:3"
         }
       ],
       "kind": "resist",
@@ -1512,7 +1544,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:hasten:9:3"
         }
       ],
       "kind": "resist",
@@ -1534,7 +1567,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:strengthen:8:3"
         }
       ],
       "kind": "resist",
@@ -1556,7 +1590,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:imprison:10:0"
         }
       ],
       "kind": "resist",
@@ -1583,7 +1618,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-body-vitner:change-creature:11:4"
         }
       ],
       "kind": "resist",
@@ -1604,7 +1640,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "vitner-delusion-vitner:ghost-voice:5:3"
         }
       ],
       "kind": "resist",
@@ -1789,7 +1826,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "vitner-vitner-of-objects:unlock-lock:5:0"
         }
       ],
       "kind": "resist",
@@ -1811,7 +1849,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-gerbanis-strength-of-stormi:voice-of-command:1:1"
         }
       ],
       "kind": "resist",
@@ -1832,7 +1871,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:1"
         }
       ],
       "kind": "resist",
@@ -1853,7 +1893,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:1"
         }
       ],
       "kind": "resist",
@@ -1875,7 +1916,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:1"
         }
       ],
       "kind": "resist",
@@ -1897,7 +1939,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5:1"
         }
       ],
       "kind": "resist",
@@ -1918,7 +1961,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:1"
         }
       ],
       "kind": "resist",
@@ -1989,7 +2033,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:3"
         }
       ],
       "kind": "resist",
@@ -2033,7 +2078,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-halawen-s-offering:witch-wall:5:3"
         }
       ],
       "kind": "resist",
@@ -2077,7 +2123,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3"
         }
       ],
       "kind": "resist",
@@ -2114,7 +2161,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0:2"
         }
       ],
       "kind": "resist",
@@ -2135,7 +2183,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:1"
         }
       ],
       "kind": "resist",
@@ -2172,7 +2221,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:2"
         }
       ],
       "kind": "resist",
@@ -2193,7 +2243,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
       "kind": "resist",
@@ -2212,7 +2263,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
       "kind": "resist",
@@ -2232,7 +2284,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
       "kind": "resist",
@@ -2269,7 +2322,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:2"
         }
       ],
       "kind": "resist",
@@ -2290,7 +2344,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1"
         }
       ],
       "kind": "resist",
@@ -2320,7 +2375,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1"
         }
       ],
       "kind": "resist",
@@ -2356,7 +2412,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:3"
         }
       ],
       "kind": "resist",
@@ -2377,7 +2434,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-anger:statue:5:2"
         }
       ],
       "kind": "resist",
@@ -2398,7 +2456,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-anger:stone-monument:8:2"
         }
       ],
       "kind": "resist",
@@ -2420,7 +2479,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:3"
         }
       ],
       "kind": "resist",
@@ -2441,7 +2501,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-tenetnid-tablet-of-grace:hand-of-mercy:0:0"
         }
       ],
       "kind": "resist",
@@ -2462,7 +2523,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2:0"
         }
       ],
       "kind": "resist",
@@ -2483,7 +2545,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0"
         }
       ],
       "kind": "resist",
@@ -2504,7 +2567,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-voices:blood-brothers:2:2"
         }
       ],
       "kind": "resist",
@@ -2525,7 +2589,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:2"
         }
       ],
       "kind": "resist",
@@ -2546,7 +2611,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-voices:divine-pact:8:2"
         }
       ],
       "kind": "resist",
@@ -2567,7 +2633,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:2"
         }
       ],
       "kind": "resist",
@@ -2589,7 +2656,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-tenetnid-tablet-of-the-shield:tree-port:8:1"
         }
       ],
       "kind": "resist",
@@ -2610,7 +2678,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:3"
         }
       ],
       "kind": "resist",
@@ -2632,7 +2701,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 4,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:4"
         }
       ],
       "kind": "resist",
@@ -2653,7 +2723,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:3"
         }
       ],
       "kind": "resist",
@@ -2674,7 +2745,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-the-scale:petrify:7:2"
         }
       ],
       "kind": "resist",
@@ -2695,7 +2767,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:disease-carrier:0:2"
         }
       ],
       "kind": "resist",
@@ -2716,7 +2789,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:contagious:4:1"
         }
       ],
       "kind": "resist",
@@ -2737,7 +2811,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:persuade:5:3"
         }
       ],
       "kind": "resist",
@@ -2758,7 +2833,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:lord-of-the-flies:6:1"
         }
       ],
       "kind": "resist",
@@ -2779,7 +2855,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3"
         }
       ],
       "kind": "resist",
@@ -2799,7 +2876,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3"
         }
       ],
       "kind": "resist",
@@ -2820,7 +2898,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 2,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:2"
         }
       ],
       "kind": "resist",
@@ -2841,7 +2920,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:1"
         }
       ],
       "kind": "resist",
@@ -2862,7 +2942,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3:1"
         }
       ],
       "kind": "resist",
@@ -3035,7 +3116,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 1,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-toikalokke-master-of-elements:purify-water:2:1"
         }
       ],
       "kind": "resist",
@@ -3090,7 +3172,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-joaringfaith-sight-of-lekaba:read-powers:5:0"
         }
       ],
       "kind": "resist",
@@ -3134,7 +3217,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 6,
-          "value": 1
+          "value": 1,
+          "optionId": "holy-joaringfaith-sight-of-lekaba:true-sight:7:6"
         }
       ],
       "kind": "resist",
@@ -3171,7 +3255,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 0,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:0"
         }
       ],
       "kind": "resist",
@@ -3192,7 +3277,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "powerLevelModifiers": [
         {
           "index": 3,
-          "value": -1
+          "value": -1,
+          "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:3"
         }
       ],
       "kind": "resist",
@@ -3215,7 +3301,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         {
           "index": 2,
           "value": -1,
-          "minimum": 1
+          "minimum": 1,
+          "optionId": "holy-joaringfaith-curses-of-sonntag:amnesia:4:2"
         }
       ],
       "kind": "resist",
