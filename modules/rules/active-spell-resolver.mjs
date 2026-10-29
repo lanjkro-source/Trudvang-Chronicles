@@ -10,7 +10,8 @@ export function activeSpellInstances(actor) {
     if (item?.type !== "spell" || item.system?.spellType !== "lasting") return [];
     return [{id: casting.id, item, cost: Math.max(0, Number(casting.cost) || 0),
       startedAt: Number(casting.startedAt) || 0, duration: String(casting.duration || ""),
-      powerLevelCounts: Array.from(casting.powerLevelCounts ?? [], count => Number(count) || 0)}];
+      powerLevelCounts: Array.from(casting.powerLevelCounts ?? [], count => Number(count) || 0),
+      ...(casting.powerLevelSnapshot?.length ? {powerLevelSnapshot: Array.from(casting.powerLevelSnapshot, row => ({id: row.id, index: row.index, description: row.description, count: row.count, unitCost: row.unitCost}))} : {})}];
   });
 }
 
@@ -29,8 +30,8 @@ function legacyActiveSpellCastings(items) {
 }
 
 export function activeSpellRecords(actor) {
-  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts}) =>
-    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts}));
+  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts, powerLevelSnapshot}) =>
+    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts, ...(powerLevelSnapshot?.length ? {powerLevelSnapshot} : {})}));
 }
 
 export function activeSpellCosts(actor, item) {

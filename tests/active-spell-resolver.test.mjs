@@ -43,3 +43,13 @@ test("one old aggregate cost may be adopted, then cannot reappear after migratio
   assert.deepEqual(activeSpellCosts(oldWorld, item), [11]);
   assert.equal(activeSpellInstances(actor([item])).length, 0);
 });
+
+test("each persistent casting retains its own selected option snapshot through record edits", () => {
+ const item=spell("flame"), first={id:"first",itemId:item.id,cost:5,powerLevelCounts:[3],powerLevelSnapshot:[{id:"option:0",index:0,description:"Bonus +1",count:3,unitCost:1}]};
+ const second={id:"second",itemId:item.id,cost:2,powerLevelCounts:[1],powerLevelSnapshot:[{id:"option:0",index:0,description:"Bonus +1",count:1,unitCost:1}]};
+ const records=activeSpellRecords(actor([item],[first,second]));
+ assert.deepEqual(records.map(record=>record.powerLevelSnapshot[0].count),[3,1]);
+ first.powerLevelSnapshot[0].description="Modified later";
+ assert.equal(records[0].powerLevelSnapshot[0].description,"Bonus +1");
+ assert.equal(activeSpellRecords(actor([item],records)).filter(row=>row.id!=="first")[0].powerLevelSnapshot[0].count,1);
+});

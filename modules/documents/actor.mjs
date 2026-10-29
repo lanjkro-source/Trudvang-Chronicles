@@ -1506,7 +1506,8 @@ export class TrudvangActor extends BaseActor {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
         id: foundry.utils.randomID(), itemId: item.id, cost: options.cost,
         startedAt: Number(game.time?.worldTime || 0), duration: String(item.system.duration || ""),
-        powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0)
+        powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
+        powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: Number(entry.count) || 0, unitCost: Number(entry.unitCost) || 0}))
       }], "system.activeSpellCastingsMigrated": true});
     }
     if (!isDivine && result?.critical === "success") {
