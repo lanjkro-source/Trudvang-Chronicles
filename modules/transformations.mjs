@@ -204,9 +204,19 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // Generated trait, vitality and improvement changes share the source spell's
  // priority, just like the fixed changes stored in the reference catalogue.
  if(Number.isFinite(template.priority))for(const change of changes)change.priority??=template.priority;
+ // Capture additive contributions separately from the resolved native change.
+ // They are explanatory metadata: they must never be applied a second time.
+ const powerContributions = resolvedCopy ? (metadata(supplied)?.powerContributions ?? []) : (template.parameters ?? []).flatMap(p => {
+  const count=Math.max(0,Number(answers[`boost${p.index}`]??counts[p.index])||0);
+  if(!count||!Number.isFinite(Number(p.value)))return [];
+  const keys=p.target==="modifier"?[p.key]:p.target==="protection"?["system.modifiers.protection"]:
+   p.target==="damage"?(p.usages?.map(u=>`system.modifiers.damageByUsage.${u}`)??["system.modifiers.damage"]):[];
+  return keys.flatMap(key=>{const matches=changes.filter(c=>c.key===key&&c.type==="add");
+   return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
+ });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
- const meta={key,sourceId:template.sourceId,summary,editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting};
+ const meta={key,sourceId:template.sourceId,summary,editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
   const description=supplied?.description??text(key,"Description");
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId:key,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};

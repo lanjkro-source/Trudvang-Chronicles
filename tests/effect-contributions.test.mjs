@@ -42,3 +42,13 @@ test("all roll contexts select only their applicable modifier paths", () => {
     }
   }
 });
+
+test("power-level contributions explain an additive effect once and stop attributing a manually edited value", t => {
+ const prior=globalThis.game;t.after(()=>{globalThis.game=prior;});
+ globalThis.game={i18n:{localize:key=>key.endsWith('.0')?'Bonus au jet':key,format:(key,data)=>`${data.count} × ${data.unit} : ${data.description}`}};
+ const magic=effect("Enchantement","add",5,{flags:{"trudvang-chronicles":{transformation:{sourceId:"vitner-test",powerContributions:[{key:"stat",index:0,count:3,unit:1,resolved:5}]}}}});
+ const actor={stat:5,effects:[magic]};
+ assert.deepEqual(effectContributions(actor,"stat"),[{label:"Enchantement",value:2},{label:"Enchantement — 3 × 1 : Bonus au jet",value:3}]);
+ magic.system.changes[0].value=7;actor.stat=7;
+ assert.deepEqual(effectContributions(actor,"stat"),[{label:"Enchantement",value:7}]);
+});

@@ -1,4 +1,4 @@
-import {cumulativeChangeValue} from "./effect-stacking.mjs";
+import {cumulativeChangeValue, effectDegree as effectDegreeForAttribution} from "./effect-stacking.mjs";
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const numeric = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const priority = change => numeric(change.priority ?? ({multiply: 10, add: 20, subtract: 20, downgrade: 30, upgrade: 40, override: 50}[change.type] ?? 0));
@@ -34,7 +34,19 @@ export function effectContributions(actor, key, {base = 0, total = get(actor, ke
     else if (type === "downgrade" || type === 3) current = Math.min(current, value);
     else if (type === "override" || type === 5) current = value;
     else continue;
-    rows.push({label: effect.name, value: current - before, ...(includeEffect ? {effect} : {})});
+    const metadata=effect.flags?.["trudvang-chronicles"]?.transformation;
+    const parts=(metadata?.powerContributions??[]).filter(row=>row.key===key&&row.resolved===value&&Number.isFinite(row.unit)&&Number.isInteger(row.count));
+    const delta=current-before;
+    if(parts.length && (type === "add" || type === 2) && effectDegreeForAttribution(effect) === 1) {
+      const bonus=parts.reduce((sum,row)=>sum+row.count*row.unit,0);
+      if(delta-bonus)rows.push({label:effect.name,value:delta-bonus,...(includeEffect?{effect}:{})});
+      for(const part of parts){
+        const descriptionKey=`TRUDVANG.Content.Power.${metadata.sourceId}.PowerLevels.${part.index}`;
+        const description=game.i18n.localize(descriptionKey);
+        const label=game.i18n.format("TRUDVANG.Resistance.PowerLevel",{index:part.index+1,description,count:part.count,unit:part.unit});
+        rows.push({label:`${effect.name} — ${label}`,value:part.count*part.unit,...(includeEffect?{effect}:{})});
+      }
+    } else rows.push({label: effect.name, value: delta, ...(includeEffect ? {effect} : {})});
   }
   const residual = numeric(total) - current;
   if (residual) rows.push({labelKey: "TRUDVANG.Inspection.OtherModifiers", value: residual});
