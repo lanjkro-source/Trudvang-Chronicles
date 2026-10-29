@@ -460,7 +460,17 @@ export class TrudvangActor extends BaseActor {
     if (!compatibility.ok) return ui.notifications.warn(compatibility.data
       ? game.i18n.format(compatibility.reason, compatibility.data) : game.i18n.localize(compatibility.reason));
     const documents = [tabletItemData(tablet), ...tablet.powers.map(power => powerItemData(power, tablet))];
-    return this.createEmbeddedDocuments("Item", documents);
+    const paid = this.type === "character" && !this.system.experience?.creationMode;
+    const cost = paid ? this.getKnowledgeLevelCost(documents[0], 1) : 0;
+    const available = Number(this.system.experience?.adventureAvailable || 0);
+    if (paid && available < cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NotEnoughExperience", {cost}));
+    const created = await this.createEmbeddedDocuments("Item", documents);
+    if (!created?.length || !created.some(item => item.type === "tablet")) return created;
+    if (paid) {
+      await this.update({"system.experience.adventureAvailable": available - cost, "system.experience.adventureSpent": Number(this.system.experience.adventureSpent || 0) + cost});
+      await this._queueAdvancement({kind: "item", itemId: created.find(item => item.type === "tablet").id, itemIds: created.map(item => item.id), field: "level", from: 0, to: 1, cost, created: true});
+    }
+    return created;
   }
 
   get equippedMovementModifier() {
@@ -482,6 +492,10 @@ export class TrudvangActor extends BaseActor {
 
   calculateBuildCost() {
     return this.calculateCreationCosts().total;
+  }
+
+  get creationBudget() {
+    return Number(this.system.experience?.creationTotal || 0) + Number(this.system.experience?.adventureSpent || 0);
   }
 
   calculateCreationCosts() {
@@ -1941,7 +1955,7 @@ export class TrudvangActor extends BaseActor {
     for (const operation of [...queue].reverse()) {
       refund += Number(operation.cost || 0);
       if (operation.kind === "skill") actorChanges[`system.skills.${operation.key}.value`] = operation.from;
-      if (operation.kind === "item" && operation.created) createdItems.add(operation.itemId);
+      if (operation.kind === "item" && operation.created) for (const id of operation.itemIds ?? [operation.itemId]) createdItems.add(id);
       else if (operation.kind === "item" && this.items.get(operation.itemId) && !createdItems.has(operation.itemId)) itemChanges.set(operation.itemId, {_id: operation.itemId, [`system.${operation.field || "level"}`]: operation.from});
     }
     for (const itemId of createdItems) itemChanges.delete(itemId);
@@ -1977,11 +1991,19 @@ export class TrudvangActor extends BaseActor {
         if (skillKey && Number(this.system.skills?.[skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.KnowledgeRequirement", {item: item.name, skill: game.i18n.localize(TRUDVANG.skills[skillKey] || skillKey), sv: requirement}));
         if (item.type === "ability" && item.system.kind === "specialty" && !this.findParentDiscipline(item)) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.MissingParentDiscipline", {item: item.name}));
       }
-      const remaining = Number(this.system.experience.creationTotal || 0) - this.calculateBuildCost();
+      const remaining = this.creationBudget - this.calculateBuildCost();
       if (remaining < 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.CreationBudgetExceeded", {cost: Math.abs(remaining)}));
     }
     const changes = {"system.experience.creationMode": entering};
-    if (!entering) changes["system.experience.creationSpent"] = this.calculateBuildCost();
+    if (!entering) {
+      const cost = this.calculateBuildCost();
+      const creationTotal = Number(this.system.experience.creationTotal || 0);
+      const oldSpent = Number(this.system.experience.adventureSpent || 0);
+      const spent = Math.max(0, cost - creationTotal);
+      changes["system.experience.creationSpent"] = Math.min(cost, creationTotal);
+      changes["system.experience.adventureSpent"] = spent;
+      changes["system.experience.adventureAvailable"] = Number(this.system.experience.adventureAvailable || 0) + oldSpent - spent;
+    }
     await this.update(changes);
     if (entering) await this.syncCreationDefaults();
     ui.notifications.info(game.i18n.localize(entering ? "TRUDVANG.Notification.CreationModeEnabled" : "TRUDVANG.Notification.CreationModeDisabled"));

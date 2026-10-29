@@ -2428,3 +2428,14 @@ test("amber recovery follows inventory membership on characters and NPCs without
   assert.equal(instance.effects?.length??0,0,"no persistent copy on the actor");
  }
 });
+
+test("creation mode includes invested adventure points and returns refunded points when rebuilding",async t=>{
+ const runtime=mockActionRuntime(t),instance=actor([]);instance.type="character";instance.system.experience={creationMode:false,creationTotal:300,creationSpent:300,adventureSpent:21,adventureAvailable:4};
+ instance.system.details={race:"human",culture:Object.keys(TRUDVANG.cultures)[0],archetype:Object.keys(TRUDVANG.archetypes)[0],religion:""};
+ instance.calculateBuildCost=()=>instance.testBuildCost;instance.testBuildCost=321;instance.syncCreationDefaults=async()=>{};
+ instance.update=async changes=>{for(const[key,value]of Object.entries(changes))set(instance,key,value);};
+ await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,true);assert.equal(instance.creationBudget,321);
+ await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,false);assert.equal(instance.system.experience.adventureSpent,21);assert.equal(instance.system.experience.adventureAvailable,4);
+ await instance.toggleCreationMode();instance.testBuildCost=322;await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,true);assert.ok(runtime.warnings.length);
+ instance.testBuildCost=310;await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,false);assert.equal(instance.system.experience.creationSpent,300);assert.equal(instance.system.experience.adventureSpent,10);assert.equal(instance.system.experience.adventureAvailable,15);
+});

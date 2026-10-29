@@ -342,7 +342,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       description: await TextEditorImpl.enrichHTML(this.actor.system.description || "", {async: true, secrets: this.actor.isOwner})
     };
     context.totalWeight = Math.round(this.actor.items.filter(item => ["weapon", "armor", "shield", "gear", "potion"].includes(item.type)).reduce((sum, item) => sum + Number(item.system.weight || 0) * Number(item.system.quantity || 1), 0) * 100) / 100;
-    context.creationRemaining = Number(this.actor.system.experience?.creationTotal || 0) - Number(this.actor.system.buildCost || 0);
+    context.creationRemaining = this.actor.creationBudget - Number(this.actor.system.buildCost || 0);
     context.creationOverBudget = context.creationRemaining < 0;
     context.creationCosts = this.actor.calculateCreationCosts();
     context.traitRows = Object.entries(context.config.traits).map(([key, label]) => {

@@ -166,3 +166,22 @@ test("NPC tabs use the character's Vitner & Faith label and the same icons", () 
   assert.equal(tabs.length, 6);
   for (const tab of tabs) assert.match(tab, /<i class="fas fa-/);
 });
+
+test("learning a holy tablet outside creation spends the rank-one Faith specialty cost and can be cancelled completely", async () => {
+ const instance=actor({faith:7});instance.system.experience={creationMode:false,adventureAvailable:50,adventureSpent:3};instance.system.traits={intelligence:2};
+ let queued;instance._queueAdvancement=async op=>{queued=op;};instance.update=async changes=>{for(const [key,value]of Object.entries(changes))instance.system.experience[key.split('.').at(-1)]=value;};
+ const tablet=TABLET_CATALOG.find(entry=>entry.religion==="gerbanis"),cost=instance.getKnowledgeLevelCost({type:"tablet",name:tablet.name,system:{tabletType:"holy"}},1);
+ const created=await instance.addTabletFromCatalog(tablet.id);
+ assert.equal(instance.system.experience.adventureAvailable,50-cost);assert.equal(instance.system.experience.adventureSpent,3+cost);
+ assert.equal(queued.cost,cost);assert.deepEqual(queued.itemIds,created.map(i=>i.id));assert.equal(queued.created,true);
+ instance.items.get=id=>instance.items.find(i=>i.id===id);instance.deleteEmbeddedDocuments=async(type,ids)=>{instance.items=instance.items.filter(i=>!ids.includes(i.id));};
+ Object.defineProperty(instance,'pendingAdvancements',{value:[queued],configurable:true});instance.unsetFlag=async()=>{};
+ const original=ui.notifications.info;ui.notifications.info=()=>{};try{await instance.cancelAdvancements();}finally{ui.notifications.info=original;}
+ assert.equal(instance.items.length,0);assert.equal(instance.system.experience.adventureAvailable,50);assert.equal(instance.system.experience.adventureSpent,3);
+});
+
+test("learning a tablet with too few adventure points creates neither tablet nor powers", async () => {
+ const instance=actor({faith:7});instance.system.experience={creationMode:false,adventureAvailable:0,adventureSpent:0};instance.system.traits={intelligence:0};
+ const tablet=TABLET_CATALOG.find(entry=>entry.religion==="gerbanis");await instance.addTabletFromCatalog(tablet.id);
+ assert.equal(instance.items.length,0);assert.equal(instance.system.experience.adventureSpent,0);
+});
