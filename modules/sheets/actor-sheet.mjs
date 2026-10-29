@@ -9,6 +9,7 @@ import { effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import {isConsumable} from "../consumables.mjs";
+import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
@@ -289,7 +290,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       disabled: effect.disabled,
       suppressed: effect.isSuppressed,
       transferred: effect.parent?.documentName === "Item",
-      canEdit: effect.canUserModify(game.user, "update")
+      canEdit: effect.canUserModify(game.user, "update"),
+      canDelete: effect.canUserModify(game.user, "delete") && !isCarriedTransferredEffect(effect)
     }));
     context.itemsByGroup = {};
     for (const [group, types] of Object.entries(TRUDVANG.actorItemGroups)) {
@@ -649,7 +651,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "effect-add": return this.actor.createBlankEffect();
       case "effect-edit": return effect?.sheet.render({force: true});
       case "effect-toggle": return effect?.update({disabled: !effect.disabled});
-      case "effect-delete": return effect?.delete();
+      case "effect-delete": return effect && !isCarriedTransferredEffect(effect) ? effect.delete() : null;
       default: return null;
     }
   }

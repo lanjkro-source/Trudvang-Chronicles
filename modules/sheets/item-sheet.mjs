@@ -14,6 +14,7 @@ import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {spellActorForItem,spellAvailability} from "../rules/spell-availability.mjs";
 import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowledge-procedures.mjs";
 import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
+import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 
 const magicSheets=new Set();
 export function registerMagicSheetAvailabilityHooks(){
@@ -93,6 +94,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       name: effect.name,
       img: effect.img,
       transfer: effect.transfer,
+      canDelete: !isCarriedTransferredEffect(effect),
       activationLabel: game.i18n.localize(effect.transfer ? `TRUDVANG.Effect.Activation.${effect.system?.activation === "inventory" ? "inventory" : "equipped"}` : "TRUDVANG.Effect.Applied"),
       disabled: effect.disabled,
       summary: effectTooltipSummary(effect)
@@ -327,7 +329,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onEffectDelete(event, target) {
-    return this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId)?.delete();
+    const effect = this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId);
+    return effect && !isCarriedTransferredEffect(effect) ? effect.delete() : null;
   }
 
   static async #onApplyEffects() {

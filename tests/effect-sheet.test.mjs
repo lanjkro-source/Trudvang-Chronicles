@@ -1050,3 +1050,14 @@ test("item effect editor saves manual, equipped and inventory activation and kee
   const result=actorEffect._processFormData({}, {},{object:{"trudvang.itemActivation":"inventory"}});assert.equal(result.transfer,undefined);
  }finally{restore();}
 });
+
+test("carried item effects cannot be deleted from actor or item sheets while standalone and library effects remain deletable", async () => {
+ const {isCarriedTransferredEffect}=await import("../modules/effects-summary.mjs");
+ const item={documentName:"Item",parent:{documentName:"Actor"}};
+ assert.equal(isCarriedTransferredEffect({transfer:true,parent:item}),true);
+ assert.equal(isCarriedTransferredEffect({transfer:false,parent:item}),false);
+ assert.equal(isCarriedTransferredEffect({transfer:true,parent:{documentName:"Item"}}),false);
+ assert.equal(isCarriedTransferredEffect({transfer:false,parent:{documentName:"Actor"}}),false);
+ for(const file of ["character-sheet","npc-sheet"]){const source=readFileSync(new URL(`../templates/actor/${file}.hbs`,import.meta.url),"utf8");assert.match(source,/\{\{#if effect\.canDelete\}\}<button type="button" data-action="effect-delete"/);}
+ const itemSheet=readFileSync(new URL("../templates/item/item-sheet.hbs",import.meta.url),"utf8");assert.match(itemSheet,/\{\{#if effect\.canDelete\}\}<button type="button" data-action="effect-delete"/);
+});

@@ -5,6 +5,11 @@
  * effects.mjs re-exports them for the rest of the system.
  */
 
+export function isCarriedTransferredEffect(effect) {
+  const item = effect?.item ?? (effect?.parent?.documentName === "Item" ? effect.parent : null);
+  return Boolean(effect?.transfer && item && (item.actor || item.parent?.documentName === "Actor"));
+}
+
 export function effectChangeSummary(effect) {
   return Array.from(effect.system.changes || []).map(change => {
     const value = typeof change.value === "string" ? change.value : JSON.stringify(change.value);

@@ -263,7 +263,7 @@
             <li class="effect-row {{#unless effect.active}}inactive{{/unless}}" data-effect-uuid="{{effect.uuid}}" title="{{effect.summary}}">
               <img src="{{effect.img}}"><button type="button" class="effect-name" data-action="effect-edit" data-effect-uuid="{{effect.uuid}}">{{effect.name}}</button>
               <span class="effect-source">{{effect.source}}</span><span class="effect-duration"><i class="fas fa-clock"></i> {{effect.duration}}</span>
-              {{#if effect.canEdit}}<button type="button" data-action="effect-toggle" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.ToggleEffect'}}"><i class="fas {{#if effect.disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></button><button type="button" data-action="effect-delete" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i></button>{{/if}}
+              {{#if effect.canEdit}}<button type="button" data-action="effect-toggle" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.ToggleEffect'}}"><i class="fas {{#if effect.disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></button>{{#if effect.canDelete}}<button type="button" data-action="effect-delete" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i></button>{{/if}}{{/if}}
             </li>
           {{else}}<li class="empty">{{localize "TRUDVANG.Empty.Effects"}}</li>{{/each}}
         </ol>
