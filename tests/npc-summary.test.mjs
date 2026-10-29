@@ -1621,6 +1621,8 @@ test("NPC casting reads book skills, deducts vitner, rolls and tracks each persi
   assert.equal(npc.system.activeSpellCastings.length, 2);
   assert.deepEqual(npc.system.activeSpellCastings.map(record => record.cost), [3, 3]);
   assert.notEqual(npc.system.activeSpellCastings[0].id, npc.system.activeSpellCastings[1].id);
+  assert.deepEqual(runtime.messages.map(message => message.flags["trudvang-chronicles"].ruleTestContext.castingId),
+    npc.system.activeSpellCastings.map(record => record.id));
   const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
   const context = await sheet._prepareContext({});
   const html = render(context).split('<div class="tab magic"')[1].split('<div class="tab effects"')[0];

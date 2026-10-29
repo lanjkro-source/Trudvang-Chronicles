@@ -1499,9 +1499,12 @@ export class TrudvangActor extends BaseActor {
     const stateFlavor = modifierRows.length ? `<br>${rollModifierFlavor(modifierRows)}` : "";
     const flavor = `${escapeHtml(options.method.breakdown)}${powerModifierFlavor}${stateFlavor}${activeSpellsFlavor}${strenuousFlavor}${situationalFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
     const fatalKind = isDivine ? "faith" : "vitner";
+    // Allocate before publishing the card so its effects and maintained record
+    // share the identity of this particular casting, even for the same spell.
+    const castingId = trackedPersistent ? foundry.utils.randomID() : "";
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
-      flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
         modifier: this.fatalEffectModifier(fatalKind, options.cost)}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
@@ -1518,7 +1521,7 @@ export class TrudvangActor extends BaseActor {
     }
     if (trackedPersistent && result?.success && this.isOwner) {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
-        id: foundry.utils.randomID(), itemId: item.id, cost: options.cost,
+        id: castingId, itemId: item.id, cost: options.cost,
         startedAt: Number(game.time?.worldTime || 0), duration: String(item.system.duration || ""),
         powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
         powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: Number(entry.count) || 0, unitCost: Number(entry.unitCost) || 0}))

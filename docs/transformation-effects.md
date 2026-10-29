@@ -23,7 +23,7 @@ les états, les règles et les liens des 115 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
-au propriétaire de la source ou à l’acteur contrôlé/assigné. Les permissions de
+à l’acteur du token contrôlé par le joueur. Les permissions de
 l’acteur destinataire sont vérifiées avant toute création.
 
 Les variantes prédéfinies sont proposées séparément. Transformation et les formes
@@ -31,6 +31,39 @@ libres de créatures ouvrent un choix dans le bestiaire. Les déguisements en ob
 sans profil chiffré restent descriptifs ; aucun profil n’est inventé. La durée et les
 améliorations numériques reconnues sont ajustables avant application. Une annonce
 de lancement conserve les comptes d’améliorations choisis dans ses offres.
+
+## Suite du chantier : lancements, cibles et maintien
+
+1. **Identité du lancement** : attribuer un identifiant distinct avant le jet de
+   chaque sortilège maintenu ; le transmettre à la carte et aux effets appliqués,
+   avec l'UUID du lanceur. Les anciens messages et effets ne sont pas associés
+   arbitrairement à un lancement et conservent leur fonctionnement actuel.
+2. **Références des effets** : enregistrer les effets effectivement créés par
+   lancement, avec leurs UUID complets, y compris les acteurs de tokens non liés.
+   Prévoir la réconciliation après suppression, expiration ou remplacement, et
+   distinguer les effets pas encore appliqués des effets tous terminés. Vérifier
+   les droits et coordonner les écritures avec le MJ actif ; éviter les doublons et
+   les suppressions en boucle. Plusieurs lancements du même sort restent séparés.
+3. **Maintien bidirectionnel** : supprimer le lancement lorsque son dernier effet
+   lié disparaît, et supprimer tous ses effets lorsqu'il est arrêté. Ne pas
+   supprimer les autres lancements, les effets sans provenance, ni un sort dont
+   aucun effet n'a encore été appliqué. Gérer les documents devenus introuvables,
+   les joueurs déconnectés et les différents moments d'expiration.
+4. **Cibles et améliorations** : ajouter dans les sources des données structurées
+   vérifiées pour les limites et les options de cibles, puis régénérer le catalogue.
+   Les règles p. 142–143 permettent de répartir les niveaux différemment entre
+   cibles : représenter chaque allocation au lieu de copier automatiquement toutes
+   les améliorations. Ne pas inventer de limite pour les zones, cibles variables
+   ou cas illimités. Compter les applications par lancement et cible ; garantir
+   qu'une réapplication ou plusieurs clics concurrents ne contournent pas la limite.
+5. **Généralisation** : ajouter progressivement les effets de sortilèges, pouvoirs
+   et runes depuis les sources, avec tests des améliorations et des règles propres
+   à chaque effet. Les pouvoirs ne deviennent pas des sortilèges maintenus.
+
+À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
+lancements identiques, les durées indépendantes, les tokens liés et non liés,
+les permissions et les anciens messages. La coordination n'est pas encore active
+après la première étape ; son seul résultat est la conservation de la provenance.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre
 sa raideur, et les frénésies leur épuisement. Une description d’effet propose ses

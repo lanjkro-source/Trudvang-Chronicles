@@ -77,6 +77,21 @@ test("a successful cast carries its own improvement and rank snapshot into the a
  }
 });
 
+test("a maintained casting identity follows its chat card into each applied effect",async()=>{
+ const caster=ranks(2),item=doc(haste,caster);
+ await rollUnder({actor:caster,item,label:"Hâte",target:20,kind:"spell",powerLevelCounts:[0,0,0,3],castingId:"cast-one"});
+ const context=messages.at(-1).flags["trudvang-chronicles"].ruleTestContext;
+ assert.equal(context.castingId,"cast-one");assert.equal(context.casterUuid,"Actor.mage");
+ assert.match(cards.at(-1).transformationLinks,/cast-one/);
+ const previous=foundry.applications.api.DialogV2;let created;
+ try{
+  foundry.applications.api.DialogV2=class{static async wait(){return {duration:"1 minute"};}};
+  const recipient={...target(),canUserModify:()=>true,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(recipient,haste+"#hate",{source:item,context});
+  assert.equal(created.flags["trudvang-chronicles"].transformation.ruleTestContext.castingId,"cast-one");
+ }finally{foundry.applications.api.DialogV2=previous;}
+});
+
 test("effect application exposes and persists resistance improvements, with a live preview independent of trait boosts",async()=>{
  const caster=ranks(2),source=doc(haste,caster),context=ruleTestCastingContext(source,{counts:[0,0,0,3]});
  const previous=foundry.applications.api.DialogV2;let created;
