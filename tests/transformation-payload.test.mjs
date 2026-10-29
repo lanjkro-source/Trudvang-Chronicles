@@ -57,3 +57,21 @@ test("the real dragstart hook serializes recoverable old buttons without throwin
   assert.deepEqual(payload.context,context);assert.deepEqual(payload.counts,context.counts);
  }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;}
 });
+
+test("clicking an effect applies it to the controlled actor, never implicitly to the caster",async()=>{
+ const previous={Hooks:globalThis.Hooks,listener:document.addEventListener,canvas:globalThis.canvas,ui:globalThis.ui,game:globalThis.game,utils:foundry.utils,api:foundry.applications.api};
+ const handlers={};let applied=0,warnings=0;
+ try{
+  document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
+  const caster={documentName:"Actor",canUserModify:()=>true,createTrudvangEffect:async()=>{throw Error("caster must not receive effect");}};
+  const selected={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async()=>{applied++;return null;}};
+  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map()};
+  globalThis.canvas={tokens:{controlled:[{actor:selected}]}};globalThis.ui={notifications:{warn:()=>warnings++,error:message=>{throw Error(message);}}};
+  foundry.utils={fromUuid:async()=>({parent:caster,system:{catalogId:id}})};
+  foundry.applications.api={DialogV2:{wait:async()=>({duration:"1 minute"})}};
+  registerTransformationHooks();
+  const event={target:{closest:()=>button()},preventDefault(){},stopPropagation(){}};
+  await handlers.click(event);assert.equal(applied,1);
+  canvas.tokens.controlled=[];await handlers.click(event);assert.equal(applied,1);assert.equal(warnings,1);
+ }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;globalThis.canvas=previous.canvas;globalThis.ui=previous.ui;globalThis.game=previous.game;foundry.utils=previous.utils;foundry.applications.api=previous.api;}
+});

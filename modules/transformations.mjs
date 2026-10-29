@@ -364,7 +364,8 @@ export function registerTransformationHooks(){
   try{
    const request=transformationRequest(button);
    const source=button.dataset.transformationSource?await foundry.utils.fromUuid(button.dataset.transformationSource):null;
-   const actor=source?.parent?.documentName==="Actor"?source.parent:canvas.tokens.controlled.find(t=>t.actor?.isOwner)?.actor||game.user.character;
+   const actor=canvas.tokens.controlled.find(t=>t.actor?.canUserModify(game.user,"update"))?.actor;
+   if(!actor){ui.notifications.warn(game.i18n.localize("TRUDVANG.Procedure.ChooseActor"));return;}
    await applyTransformation(actor,request.key,{source,counts:request.counts,context:request.context,elapsed:metadata(source)?game.time.worldTime-metadata(source).appliedAt:0});
   }catch(error){console.error("Trudvang transformation",error);ui.notifications.error(error.message);}
  },true);
