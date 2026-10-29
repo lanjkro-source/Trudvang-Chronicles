@@ -687,6 +687,20 @@ test("all numeric non-duration improvements resolve from casting counts and comp
  }
 });
 
+test("an older chat card applies the captured option identity even when its saved position differs",async()=>{
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ const [key,t]=Object.entries(templates).find(([,entry])=>entry.parameters.some(p=>p.target==="modifier"&&p.optionId));
+ const parameter=t.parameters.find(p=>p.target==="modifier"&&p.optionId);
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ const context={sourceId:t.sourceId,counts:[99],countsById:{[parameter.optionId]:2}};
+ await applyTransformation(actor,key,{counts:[99],context});
+ const value=rows=>rows.filter(c=>c.key===parameter.key&&c.type==="add").reduce((n,c)=>n+Number(c.value),0);
+ assert.equal(value(created.system.changes),value(t.changes)+2*parameter.value);
+ assert.equal(created.flags[S].transformation.ruleTestContext.countsById[parameter.optionId],2);
+});
+
 test("copying already resolved effects preserves improvements, duration and rolled vitality instead of applying them twice",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
  globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split('.').reduce((o,k)=>o?.[k],language)??key}};

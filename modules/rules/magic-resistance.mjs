@@ -8,6 +8,12 @@ export function withCastingCounts(context, counts) {
  const selected=Array.from(counts??[],n=>Math.max(0,Number(n)||0));
  return {...context,counts:selected,countsById:countsByOption(context.sourceId,selected)};
 }
+/** Rebuild the current display order without losing the identities captured at casting. */
+export function currentCastingCounts(context) {
+ const options=POWER_DETAILS_BY_ID[context?.sourceId]?.powerLevels;
+ if (!context?.countsById || !options) return Array.from(context?.counts??[]);
+ return options.map(option=>Math.max(0,Number(context.countsById[option.id])||0));
+}
 /** Casting provenance is a snapshot, never a lookup of the last cast of an Item. */
 export function ruleTestSourceId(document){
  return (document?.flags?.["trudvang-chronicles"]?.transformation?.sourceId||document?.system?.catalogId||"").split("#")[0];

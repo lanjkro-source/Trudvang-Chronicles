@@ -28,6 +28,16 @@ test("effect links serialize the complete context safely into a quoted HTML attr
  assert.deepEqual(transformationRequest(button({ruleTestContext:decoded})).context,saved);
 });
 
+test("effect links preserve captured identities when positional counts have become stale",()=>{
+ const captured={...context,counts:[3,0,0,0],countsById:{[`${id}:3`]:3}};
+ const html=transformationLinks({uuid:"Actor.mage.Item.haste",system:{catalogId:id}},captured.counts,{context:captured});
+ const encoded=html.match(/data-rule-test-context="([^"]*)"/)[1];
+ const decoded=encoded.replaceAll("&quot;",'"').replaceAll("&#39;","'").replaceAll("&lt;","<").replaceAll("&gt;",">").replaceAll("&amp;","&");
+ const saved=JSON.parse(decoded);
+ assert.equal(saved.countsById[`${id}:3`],3);
+ assert.equal(saved.counts[3],3);assert.equal(saved.counts[0],0);
+});
+
 test("already published truncated JSON recovers the original casting context, including its improvements",()=>{
  const recovered=transformationRequest(button({ruleTestContext:"{"}));
  assert.deepEqual(recovered.context,context);assert.deepEqual(recovered.counts,context.counts);

@@ -8,7 +8,7 @@ import {effectSource} from "./rules/effect-source.mjs";
 import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
 import {TABLET_CATALOG,powerItemData} from "./tablet-catalog.mjs";
 import {TRUDVANG} from "./config.mjs";
-import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext,withCastingCounts,currentCastingCounts,ruleTestSourceId} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
@@ -20,6 +20,15 @@ const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
 const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[doc?.name]?.id;
+function transformationCasting(document,counts,context){
+ const saved=context??metadata(document)?.ruleTestContext;
+ if(saved?.countsById&&saved.sourceId===ruleTestSourceId(document)){
+  const casting=ruleTestCastingContext(document,{context:saved});
+  casting.counts=currentCastingCounts(casting);
+  return casting;
+ }
+ return ruleTestCastingContext(document,{counts,context});
+}
 export function transformationKeys(document){
  const meta=metadata(document);
  if(meta)return (meta.related??[]).map(id=>`${meta.sourceId}#${id}`).filter(key=>TRANSFORMATION_TEMPLATES[key]);
@@ -27,8 +36,8 @@ export function transformationKeys(document){
  return TRANSFORMATION_TEMPLATES[id]?[id]:TRANSFORMATIONS_BY_SOURCE[id]??[];
 }
 export function transformationLinks(document,counts=[],{context}={}){
- const casting=ruleTestCastingContext(document,{counts,context});
- return transformationKeys(document).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeAttribute(key)}" data-transformation-counts="${escapeAttribute(JSON.stringify(counts))}" data-rule-test-context="${escapeAttribute(JSON.stringify(casting))}" data-transformation-source="${escapeAttribute(document.uuid||"")}" title="${escapeAttribute(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
+ const casting=transformationCasting(document,counts,context);
+ return transformationKeys(document).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeAttribute(key)}" data-transformation-counts="${escapeAttribute(JSON.stringify(casting.counts))}" data-rule-test-context="${escapeAttribute(JSON.stringify(casting))}" data-transformation-source="${escapeAttribute(document.uuid||"")}" title="${escapeAttribute(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
 }
 export function annotateTransformationDescription(description,document){
  const links=transformationLinks(document);
@@ -67,7 +76,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(GRADED_EFFECT_IDS.has(key))return applyGradedEffect(actor,source);
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
- const casting=ruleTestCastingContext(source??{system:{catalogId:reference.sourceId}},{counts,context});
+ const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
  counts=casting.counts;
  // A related-effect link keeps its originating document for ownership, elapsed
  // duration and provenance. Its data belongs to a different effect, however.
