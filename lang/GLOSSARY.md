@@ -11260,6 +11260,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Sense0` | Griffon's Sense | Sens du griffon |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.Name` | Stone Senses | Sens pétrifiés |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.Description` | Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually. | Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.SourceName` | Stone Senses | Sens pétrifiés |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.SourcePage` | 194 | 251 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.Duration` | 3 rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue`
 
 | Clé | English | Français |
@@ -11404,6 +11415,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant.SourcePage` | 212 | 270 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant.Attack0` | Tusks | Défenses |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.Name` | Shattered Mind | Esprit brisé |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.Description` | Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually. | Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.SourceName` | Shattered Mind | Esprit brisé |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.SourcePage` | 218 | 270 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.Duration` | 2 rounds | 2 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche`
 

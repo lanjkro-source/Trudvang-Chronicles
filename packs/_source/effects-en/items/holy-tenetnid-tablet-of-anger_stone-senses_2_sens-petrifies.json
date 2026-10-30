@@ -1,0 +1,60 @@
+{
+  "_id": "sfuGsRlRmSnToUpV",
+  "_key": "!items!sfuGsRlRmSnToUpV",
+  "name": "Stone Senses",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies",
+    "description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+    "summary": "Penalizes initiative and combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "N3vkVNiOjPkQlRmS",
+      "_key": "!items.effects!sfuGsRlRmSnToUpV.N3vkVNiOjPkQlRmS",
+      "name": "Stone Senses",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.initiative",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies",
+            "sourceId": "holy-tenetnid-tablet-of-anger:stone-senses:2",
+            "summary": "Penalizes initiative and combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

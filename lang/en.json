@@ -14030,6 +14030,15 @@
           "Duration": "1 minute",
           "Sense0": "Griffon's Sense"
         },
+        "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
+          "Name": "Stone Senses",
+          "Summary": "Penalizes initiative and combat actions.",
+          "Description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+          "SourceName": "Stone Senses",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "194",
+          "Duration": "3 rounds"
+        },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
           "Summary": "Fully petrifies and paralyzes the target, preventing actions and perception of its surroundings.",
@@ -14148,6 +14157,15 @@
           "SourcePage": "212",
           "Duration": "1 minute",
           "Attack0": "Tusks"
+        },
+        "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise": {
+          "Name": "Shattered Mind",
+          "Summary": "Penalizes initiative and combat actions.",
+          "Description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+          "SourceName": "Shattered Mind",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "218",
+          "Duration": "2 rounds"
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Limb of Stone — Left arm",

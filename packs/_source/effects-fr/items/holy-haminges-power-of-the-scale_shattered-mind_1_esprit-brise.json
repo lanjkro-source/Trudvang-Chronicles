@@ -1,0 +1,60 @@
+{
+  "_id": "6IiPR9EaGbHcIdJe",
+  "_key": "!items!6IiPR9EaGbHcIdJe",
+  "name": "Esprit brisé",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+    "description": "Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement.",
+    "summary": "Pénalise l’initiative et les actions de combat.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 270
+    }
+  },
+  "effects": [
+    {
+      "_id": "P7y3OJcIdJeKfLgM",
+      "_key": "!items.effects!6IiPR9EaGbHcIdJe.P7y3OJcIdJeKfLgM",
+      "name": "Esprit brisé",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.initiative",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 10
+          },
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+            "sourceId": "holy-haminges-power-of-the-scale:shattered-mind:1",
+            "summary": "Pénalise l’initiative et les actions de combat.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

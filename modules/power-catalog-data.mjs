@@ -3152,6 +3152,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:shattered-mind:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:shattered-mind:1:0",
@@ -4621,6 +4625,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:stone-senses:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:0",

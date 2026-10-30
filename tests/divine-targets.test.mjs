@@ -321,3 +321,23 @@ test("Voice of Stormi divides duration and resistance modifiers among chosen tar
   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Stone Senses and Shattered Mind scale both combat and initiative penalties",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"3 rounds",boost0:1,boost2:2})};
+  const cases=[["holy-tenetnid-tablet-of-anger:stone-senses:2","sens-petrifies"],["holy-haminges-power-of-the-scale:shattered-mind:1","esprit-brise"]];
+  for(const [index,[power,key]] of cases.entries()){
+   const caster={uuid:`Actor.stone-caster-${index}`,name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);const item={type:"divineFeat",system:{catalogId:power}};
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Stone",castingId:`stone-${index}`,powerLevelCounts:[1,0,2]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   const makeTarget=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.stone`,data};documents.set(effect.uuid,effect);return effect;}});
+   const a=makeTarget(`Actor.stone-a-${index}`),b=makeTarget(`Actor.stone-b-${index}`);documents.set(a.uuid,a);documents.set(b.uuid,b);
+   const result=await applyTransformation(a,`${power}#${key}`,{source:item,context});
+   assert.equal(result.data.system.changes.find(c=>c.key==="system.modifiers.rolls.initiative").value,"-6");
+   assert.equal(result.data.system.changes.find(c=>c.key==="system.modifiers.rolls.combatActions").value,"-3");
+   assert.equal(result.data.duration.value,4);
+   await assert.rejects(()=>applyTransformation(b,`${power}#${key}`,{source:item,context}),/MagicTargetLimit/);
+  }
+ }finally {foundry.applications.api.DialogV2=previous;}
+});

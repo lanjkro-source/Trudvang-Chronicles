@@ -1,0 +1,60 @@
+{
+  "_id": "6IiPR9EaGbHcIdJe",
+  "_key": "!items!6IiPR9EaGbHcIdJe",
+  "name": "Shattered Mind",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+    "description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+    "summary": "Penalizes initiative and combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "P7y3OJcIdJeKfLgM",
+      "_key": "!items.effects!6IiPR9EaGbHcIdJe.P7y3OJcIdJeKfLgM",
+      "name": "Shattered Mind",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Penalty to initiative and combat actions. Applies to creatures of Size 1/2 to 1.5; check size and range manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.initiative",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 10
+          },
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise",
+            "sourceId": "holy-haminges-power-of-the-scale:shattered-mind:1",
+            "summary": "Penalizes initiative and combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

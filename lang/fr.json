@@ -14030,6 +14030,15 @@
           "Duration": "1 minute",
           "Sense0": "Sens du griffon"
         },
+        "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
+          "Name": "Sens pétrifiés",
+          "Summary": "Pénalise l’initiative et les actions de combat.",
+          "Description": "Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement.",
+          "SourceName": "Sens pétrifiés",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "251",
+          "Duration": "3 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
           "Summary": "Pétrifie et paralyse entièrement la cible, qui ne peut plus agir ni percevoir son environnement.",
@@ -14148,6 +14157,15 @@
           "SourcePage": "270",
           "Duration": "1 minute",
           "Attack0": "Défenses"
+        },
+        "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise": {
+          "Name": "Esprit brisé",
+          "Summary": "Pénalise l’initiative et les actions de combat.",
+          "Description": "Malus à l’initiative et aux actions de combat. Réservé aux créatures de Taille 1/2 à 1,5 ; vérifier la taille et la portée manuellement.",
+          "SourceName": "Esprit brisé",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "270",
+          "Duration": "2 tours de jeu"
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Membre de pierre — Bras gauche",

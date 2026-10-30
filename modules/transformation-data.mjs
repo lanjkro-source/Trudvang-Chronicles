@@ -1832,6 +1832,53 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
+    "id": "sens-petrifies",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.initiative",
+        "type": "add",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-anger:stone-senses:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-anger:stone-senses:2:0"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.initiative",
+        "value": -2,
+        "optionId": "holy-tenetnid-tablet-of-anger:stone-senses:2:2"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-anger:stone-senses:2:2"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-anger:statue:5#statue": {
     "id": "statue",
     "icon": "icons/svg/aura.svg",
@@ -2369,6 +2416,53 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "temporaryHP",
         "value": 10,
         "optionId": "holy-haminges-power-of-the-beast:mastomantshape:8:3"
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise": {
+    "id": "esprit-brise",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.initiative",
+        "type": "add",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 10
+      },
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-haminges-power-of-the-scale:shattered-mind:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-scale:shattered-mind:1:0"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.initiative",
+        "value": -2,
+        "optionId": "holy-haminges-power-of-the-scale:shattered-mind:1:2"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": -1,
+        "optionId": "holy-haminges-power-of-the-scale:shattered-mind:1:2"
       }
     ]
   },
@@ -5322,6 +5416,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": [
     "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon"
   ],
+  "holy-tenetnid-tablet-of-anger:stone-senses:2": [
+    "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies"
+  ],
   "holy-tenetnid-tablet-of-anger:statue:5": [
     "holy-tenetnid-tablet-of-anger:statue:5#statue",
     "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half",
@@ -5352,6 +5449,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-the-beast:mastomantshape:8": [
     "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant"
+  ],
+  "holy-haminges-power-of-the-scale:shattered-mind:1": [
+    "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise"
   ],
   "holy-haminges-power-of-the-scale:limb-of-stone:5": [
     "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche",

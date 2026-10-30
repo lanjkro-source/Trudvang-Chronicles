@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 127 variantes.
+les états, les règles et les liens des 129 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -263,3 +263,8 @@ après le test de résistance. La résistance et la durée sont répartissables
 entre les personnes choisies ; Voix de Storme admet trois cibles plus celles
 achetées. La portée, le résultat de la résistance et l'interprétation des
 ordres sont vérifiés par les joueurs (Livre des règles, p. 218–219).
+
+Sens pétrifiés et Esprit brisé appliquent les malus d'initiative et d'actions
+de combat, en tenant compte des niveaux de puissance. Une invocation affecte
+une seule cible ; la taille et la portée restent à vérifier manuellement
+(Livre des règles, p. 251 et 270).
