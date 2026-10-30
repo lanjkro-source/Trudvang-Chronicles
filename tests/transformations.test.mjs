@@ -30,7 +30,36 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,77);
+ assert.equal(Object.keys(sources).length,81);
+});
+
+test("Air Armor improves its protective barrier and duration together",async()=>{
+ const key="vitner-wind-craft:air-armor:4#air-armor";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"5 rounds",boost0:1,boost4:2})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,key);
+ assert.equal(created.system.changes.find(row=>row.key==="system.modifiers.protection").value,"3");
+ assert.equal(effectRules(created).outerProtection,3);
+ assert.deepEqual(created.duration,{value:6,units:"rounds"});
+});
+
+test("Tyrd's combat cries apply the correct ally and enemy modifiers and durations",async()=>{
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"2 rounds",boost0:1,boost1:1,boost2:2,boost3:2,boost4:2,boost5:2})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ const samples=[
+  ["holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally",3,3],
+  ["holy-gerbanis-wrath-of-tyrd:war-cry:4#ally",5,3],
+  ["holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",-5,3],
+  ["holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",6,3],
+  ["holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy",-6,3]
+ ];
+ for(const [key,bonus,rounds]of samples){
+  await applyTransformation(actor,key);
+  assert.equal(created.system.changes.find(row=>row.key==="system.modifiers.rolls.combatActions").value,String(bonus),key);
+  assert.equal(created.duration.value,rounds,key);
+ }
 });
 
 test("Leather Skin adds natural protection and selected duration without armor integrity",async()=>{
@@ -568,7 +597,7 @@ test("effect improvements change their base fields, including inverse traits, at
  }
  for(const [key,template]of Object.entries(templates).filter(([,t])=>t.parameters.some(p=>p.target==="modifier"))){
   const p=template.parameters.find(p=>p.target==="modifier"),base=Number(template.changes.find(c=>c.key===p.key).value);
-  assert.equal((await apply(key,{["boost"+p.index]:7})).system.changes.find(c=>c.key===p.key).value,String(base+7));
+  assert.equal((await apply(key,{["boost"+p.index]:7})).system.changes.find(c=>c.key===p.key).value,String(base+7*p.value));
  }
  const tusks=Object.keys(templates).find(k=>k.endsWith("#defenses-du-mastomant"));assert.ok(tusks);
  for(let count=0;count<=4;count++){

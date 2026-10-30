@@ -8,7 +8,7 @@ const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
-const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange"]);
+const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange"]);
 const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id)).map(p=>entry.catalogId?resolvePowerOptionReference(entry,p):p);
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
@@ -55,6 +55,7 @@ for(const kind of ["powers","feats"]){
     if(!parameterTargets.has(p.target)||!entry.powerLevels?.[p.index])throw Error(`Invalid parameter ${p.target} in ${key}`);
     const native=path=>t.changes.some(c=>c.key===path||c.key.startsWith(path+"."));
     if(p.target==="temporaryHP"&&!native("system.resources.body.temporaryMax")&&sourceRules.temporaryHP===undefined)throw Error(`Temporary HP parameter without matching base in ${key}`);
+    if(p.target==="outerProtection"&&!Number.isFinite(sourceRules.outerProtection))throw Error(`Outer protection parameter without matching base in ${key}`);
     if(p.target==="vitality"&&!sourceRules.vitality&&!(native("system.modifiers.bodyMax")&&native("system.modifiers.bodyValue")))throw Error(`Vitality parameter without matching base in ${key}`);
     if(p.target==="damage"&&!sourceRules.damage&&!native("system.modifiers.damage")&&!native("system.modifiers.damageByUsage"))throw Error(`Damage parameter without matching base in ${key}`);
     if(p.target==="traitDegrees"&&!sourceRules.traits?.some(r=>r.trait===p.trait&&r.method==="degrees"))throw Error(`Trait parameter without matching base in ${key}`);

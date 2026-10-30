@@ -44,15 +44,16 @@ export function prepareDamageTargets(targets) {
  * remaining protection (natural armor and effects). Each armor item loses the
  * excess that passes through its current VP; the remainder reaches Body Points.
  */
-export function calculateArmoredDamage({damage, totalProtection, armor = []} = {}) {
-  let remaining = Math.max(0, Math.trunc(number(damage)));
+export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0} = {}) {
+  const outer=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
+  let remaining = Math.max(0, Math.trunc(number(damage)) - outer);
   const armorProtection = armor.reduce((total, item) => total + protection(item), 0);
   const armorDamage = armor.map(item => {
     const excess = Math.max(0, remaining - protection(item));
     remaining = excess;
     return {item, integrityLoss: excess, integrity: integrity(item) - excess};
   });
-  const otherProtection = Math.max(0, Math.trunc(number(totalProtection)) - armorProtection);
+  const otherProtection = Math.max(0, Math.trunc(number(totalProtection)) - armorProtection - outer);
   return {bodyDamage: Math.max(0, remaining - otherProtection), armorDamage};
 }
 
@@ -63,7 +64,8 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   const armor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}
-    : calculateArmoredDamage({damage: amount, totalProtection: actor.system?.protection, armor});
+    : calculateArmoredDamage({damage: amount, totalProtection: actor.system?.protection, armor,
+      outerProtection:activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0)});
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, "system.breach.value": entry.integrity}));

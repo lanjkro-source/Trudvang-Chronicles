@@ -1728,6 +1728,17 @@ test("state penalties are shared by every test kind, without changing initiative
   assert.equal(instance.getSkillTarget("fighting"), 9, "8 skill +2 all actions +3 skill effects -4 states");
 });
 
+test("combat-action bonuses do not change unrelated magic or ability rolls outside combat",()=>{
+ const instance=actor([]);instance.system.modifiers.rolls={combatActions:3};
+ instance.isInCombatActive=()=>false;
+ assert.equal(instance.getRollModifier({kind:"magic",includeState:false}),0);
+ assert.equal(instance.getRollModifier({kind:"ability",includeState:false}),0);
+ assert.equal(instance.getRollModifier({kind:"attack",includeState:false}),3);
+ instance.isInCombatActive=()=>true;
+ assert.equal(instance.getRollModifier({kind:"magic",includeState:false}),3);
+ assert.equal(instance.getRollModifier({kind:"ability",includeState:false}),3);
+});
+
 test("Tenace suppresses only wounds, and recovering or calming down removes the corresponding test penalty", () => {
   const durable = woundedAndAfraid([feat()]);
   assert.deepEqual(actorStateRollModifiers(durable), [{labelKey: "TRUDVANG.Resource.FearPenalty", value: -1}]);

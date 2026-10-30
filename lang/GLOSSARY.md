@@ -1615,6 +1615,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.preserveHP` | Keep original health | Conserver les PS d’origine |
 | `TRUDVANG.Effect.Profile.statueIntegrity` | Statue integrity | Intégrité de la statue |
 | `TRUDVANG.Effect.Profile.naturalArmor` | Natural armor | Armure naturelle |
+| `TRUDVANG.Effect.Profile.outerProtection` | Protection outside worn armor | Protection extérieure aux armures |
 | `TRUDVANG.Effect.Profile.movement` | Movement modes (JSON list: mode, method, value) | Déplacements (liste JSON : mode, method, value) |
 | `TRUDVANG.Effect.Profile.testFactor` | Test multipliers (JSON object) | Multiplicateurs des tests (objet JSON) |
 | `TRUDVANG.Effect.Profile.traits` | Trait rules (JSON list) | Modifications des traits (liste JSON) |
@@ -10789,6 +10790,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourcePage` | 123 | 162 |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Name` | Air Armor | Armure d’air |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Description` | The enchanter controls the vitner in the air surrounding the enchanted person and forms it into an armor of compressed air with a Protection Value of 1. The air armor also protects any objects worn by the person, such as a backpack or a bag, as long as these items are worn tightly. The air armor forcefully repels everything that isn’t part of the person or held close by the person. Small, loose objects that come into contact with the air armor are blown away if the person gets too close. | L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de protection de 1. L’armure d’air protège également les objets que porte le bénéficiaire, comme son sac à dos ou ses sacoches, tant qu’il les porte près du corps. L’armure d’air repousse avec violence tout ce que la personne enchantée ne tient pas contre elle ou qui ne fait pas partie d’elle. Les petits objets non attachés qui entrent en contact avec l’armure d’air sont repoussés si la personne s’en approche trop. |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourceName` | Air Armor | Armure d’air |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourcePage` | 139 | 171 |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Duration` | 5 action rounds | 5 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre`
 
 | Clé | English | Français |
@@ -10920,6 +10932,61 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourcePage` | 164 | 219 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.Name` | Battle Cry | Cri de bataille |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.Description` | The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale. The battle cry grants the target within range +1 on all combat actions for the duration. | Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +1 à toutes ses actions de combat jusqu’à expiration du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.SourceName` | Battle Cry | Cri de bataille |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.SourcePage` | 171 | 220 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.Duration` | 2 action rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.Name` | War Cry — ally | Cri de guerre — allié |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.Description` | The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration. | Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.SourceName` | War Cry | Cri de guerre |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.Name` | War Cry — enemy | Cri de guerre — ennemi |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.Description` | The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration. | Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.SourceName` | War Cry | Cri de guerre |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.Name` | Thunder of Victory — ally | Tonnerre victorieux — allié |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.Description` | The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration. | Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.SourceName` | Thunder of Victory | Tonnerre victorieux |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.Name` | Thunder of Victory — enemy | Tonnerre victorieux — ennemi |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.Description` | The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration. | Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourceName` | Thunder of Victory | Tonnerre victorieux |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:willpower:1#force-d-ame`
 

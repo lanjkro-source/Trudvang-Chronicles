@@ -1379,6 +1379,7 @@
         "preserveHP": "Keep original health",
         "statueIntegrity": "Statue integrity",
         "naturalArmor": "Natural armor",
+        "outerProtection": "Protection outside worn armor",
         "movement": "Movement modes (JSON list: mode, method, value)",
         "testFactor": "Test multipliers (JSON object)",
         "traits": "Trait rules (JSON list)",
@@ -13641,6 +13642,15 @@
           "SourcePage": "123",
           "Duration": "3 days"
         },
+        "vitner-wind-craft:air-armor:4#air-armor": {
+          "Name": "Air Armor",
+          "Summary": "Wraps the target in protective currents of compressed air.",
+          "Description": "The enchanter controls the vitner in the air surrounding the enchanted person and forms it into an armor of compressed air with a Protection Value of 1. The air armor also protects any objects worn by the person, such as a backpack or a bag, as long as these items are worn tightly. The air armor forcefully repels everything that isn’t part of the person or held close by the person. Small, loose objects that come into contact with the air armor are blown away if the person gets too close.",
+          "SourceName": "Air Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "5 action rounds"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -13748,6 +13758,51 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
           "Duration": "1 minute"
+        },
+        "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
+          "Name": "Battle Cry",
+          "Summary": "Improves combat actions.",
+          "Description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale. The battle cry grants the target within range +1 on all combat actions for the duration.",
+          "SourceName": "Battle Cry",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "2 action rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
+          "Name": "War Cry — ally",
+          "Summary": "Improves combat actions.",
+          "Description": "The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration.",
+          "SourceName": "War Cry",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy": {
+          "Name": "War Cry — enemy",
+          "Summary": "Penalizes combat actions.",
+          "Description": "The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration.",
+          "SourceName": "War Cry",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally": {
+          "Name": "Thunder of Victory — ally",
+          "Summary": "Improves combat actions.",
+          "Description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration.",
+          "SourceName": "Thunder of Victory",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "5 action rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy": {
+          "Name": "Thunder of Victory — enemy",
+          "Summary": "Penalizes combat actions.",
+          "Description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration.",
+          "SourceName": "Thunder of Victory",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "5 action rounds"
         },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Willpower",

@@ -1,0 +1,60 @@
+{
+  "_id": "hVT9i3x3y4z5A6B7",
+  "_key": "!items!hVT9i3x3y4z5A6B7",
+  "name": "Armure d’air",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:air-armor:4#air-armor",
+    "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de protection de 1. L’armure d’air protège également les objets que porte le bénéficiaire, comme son sac à dos ou ses sacoches, tant qu’il les porte près du corps. L’armure d’air repousse avec violence tout ce que la personne enchantée ne tient pas contre elle ou qui ne fait pas partie d’elle. Les petits objets non attachés qui entrent en contact avec l’armure d’air sont repoussés si la personne s’en approche trop.",
+    "summary": "Entoure une créature d’air comprimé pour la protéger des attaques.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "CPBFq5w2x3y4z5A6",
+      "_key": "!items.effects!hVT9i3x3y4z5A6B7.CPBFq5w2x3y4z5A6",
+      "name": "Armure d’air",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de protection de 1. L’armure d’air protège également les objets que porte le bénéficiaire, comme son sac à dos ou ses sacoches, tant qu’il les porte près du corps. L’armure d’air repousse avec violence tout ce que la personne enchantée ne tient pas contre elle ou qui ne fait pas partie d’elle. Les petits objets non attachés qui entrent en contact avec l’armure d’air sont repoussés si la personne s’en approche trop.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:air-armor:4#air-armor",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.outerProtection",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:air-armor:4#air-armor",
+            "sourceId": "vitner-wind-craft:air-armor:4",
+            "summary": "Entoure une créature d’air comprimé pour la protéger des attaques.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "pHYB91v1w2x3y4z5",
+  "_key": "!items!pHYB91v1w2x3y4z5",
+  "name": "War Cry — enemy",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",
+    "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration.",
+    "summary": "Penalizes combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "MhXDN9D9EaGbHcId",
+      "_key": "!items.effects!pHYB91v1w2x3y4z5.MhXDN9D9EaGbHcId",
+      "name": "War Cry — enemy",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming t hunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The war cry grants the target within range +3 on all combat actions for the duration. One of the dimwalker’s enemies within range also receives -3 on all combat actions for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-3",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:war-cry:4",
+            "summary": "Penalizes combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

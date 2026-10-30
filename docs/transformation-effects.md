@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 116 variantes.
+les états, les règles et les liens des 122 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -50,7 +50,7 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    Les nouveaux liens s'appuient sur les identifiants introduits en 0.122 : les
    anciennes cartes et anciens effets ne sont pas associés arbitrairement. Sans MJ
    actif, les suppressions entre propriétaires ne peuvent pas être coordonnées.
-4. **Cibles et améliorations** : Hâte, Vigueur et Peau de cuir disposent d'une définition
+4. **Cibles et améliorations** : Hâte, Vigueur, Peau de cuir et Armure d’air disposent d'une définition
    structurée des cibles dans les sources FR/EN. Pour ces deux sortilèges, le MJ
    actif réserve les cibles et les améliorations par lancement ; les attributions
    concurrentes sont sérialisées et validées contre les niveaux achetés. Les
@@ -69,7 +69,7 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
 À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
 lancements identiques, les durées indépendantes, les tokens liés et non liés,
 les permissions et les anciens messages. Les limites et allocations sont actives
-seulement pour Hâte, Vigueur et Peau de cuir, lorsque l'effet est appliqué depuis la carte d'un
+seulement pour Hâte, Vigueur, Peau de cuir et Armure d’air, lorsque l'effet est appliqué depuis la carte d'un
 nouveau lancement maintenu. Les anciens messages sans identité restent inchangés.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre

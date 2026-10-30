@@ -31,7 +31,7 @@
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:1",
         "cost": 1,
-        "maxCount": 6,
+        "maxCount": 5,
         "effect": "Augmente le nombre d’alliés affectées par ce pouvoir de : 1"
       },
       {
@@ -49,13 +49,13 @@
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:4",
         "cost": 2,
-        "maxCount": 6,
+        "maxCount": 3,
         "effect": "Augmente le bonus aux actions de combat de : 1"
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:5",
         "cost": 2,
-        "maxCount": 6,
+        "maxCount": 3,
         "effect": "Augmente le malus infligé aux ennemis de : -1"
       }
     ],

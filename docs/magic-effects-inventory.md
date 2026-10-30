@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 62.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 66.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -56,7 +56,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Maîtrise du vent | Purification de l’air | sortilège | `vitner-wind-craft:purify-air:0` | 4 | 0 | 0 |
 | Maîtrise du vent | Brouillard | sortilège | `vitner-wind-craft:fog:2` | 4 | 0 | 0 |
 | Maîtrise du vent | Contrôle du vent | sortilège | `vitner-wind-craft:control-wind:3` | 4 | 0 | 0 |
-| Maîtrise du vent | Armure d’air | sortilège | `vitner-wind-craft:air-armor:4` | 5 | 0 | 0 |
+| Maîtrise du vent | Armure d’air | sortilège | `vitner-wind-craft:air-armor:4` | 5 | 0 | 1 |
 | Maîtrise du vent | Vent porteur | sortilège | `vitner-wind-craft:lift:5` | 10 | 2 | 0 |
 | Maîtrise du vent | Bouclier d’air | sortilège | `vitner-wind-craft:air-shield:6` | 6 | 1 | 0 |
 | Maîtrise du vent | Rafale de vent | sortilège | `vitner-wind-craft:wind-blast:7` | 3 | 1 | 0 |
@@ -158,14 +158,14 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Force de Storme | Force du jotun | pouvoir | `holy-gerbanis-strength-of-stormi:jotun-strength:6` | 5 | 0 | 2 |
 | Force de Storme | Voix de Storme | pouvoir | `holy-gerbanis-strength-of-stormi:voice-of-stormi:7` | 4 | 1 | 0 |
 | Force de Storme | Einharjar | pouvoir | `holy-gerbanis-strength-of-stormi:einharjar:8` | 3 | 0 | 0 |
-| Fureur de Tyrd | Cri de bataille | pouvoir | `holy-gerbanis-wrath-of-tyrd:battle-cry:1` | 4 | 0 | 0 |
+| Fureur de Tyrd | Cri de bataille | pouvoir | `holy-gerbanis-wrath-of-tyrd:battle-cry:1` | 4 | 0 | 1 |
 | Fureur de Tyrd | Tisonnier | pouvoir | `holy-gerbanis-wrath-of-tyrd:fire-iron:0` | 2 | 0 | 0 |
 | Fureur de Tyrd | Langue du loup | pouvoir | `holy-gerbanis-wrath-of-tyrd:wolf-tongue:2` | 2 | 0 | 0 |
 | Fureur de Tyrd | Marque du brasier | pouvoir | `holy-gerbanis-wrath-of-tyrd:pyre-mark:3` | 3 | 0 | 0 |
-| Fureur de Tyrd | Cri de guerre | pouvoir | `holy-gerbanis-wrath-of-tyrd:war-cry:4` | 6 | 0 | 0 |
+| Fureur de Tyrd | Cri de guerre | pouvoir | `holy-gerbanis-wrath-of-tyrd:war-cry:4` | 6 | 0 | 2 |
 | Fureur de Tyrd | Figure sinistre | pouvoir | `holy-gerbanis-wrath-of-tyrd:dark-visage:5` | 3 | 0 | 0 |
 | Fureur de Tyrd | Tempête de feu | pouvoir | `holy-gerbanis-wrath-of-tyrd:firestorm:6` | 2 | 0 | 0 |
-| Fureur de Tyrd | Tonnerre victorieux | pouvoir | `holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7` | 4 | 0 | 0 |
+| Fureur de Tyrd | Tonnerre victorieux | pouvoir | `holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7` | 4 | 0 | 2 |
 | Fureur de Tyrd | Grondement de Tyrd | pouvoir | `holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8` | 2 | 0 | 0 |
 | Influence de Jorn | Mur du crépuscule | pouvoir | `holy-gerbanis-influence-of-jorn:wall-of-dusk:1` | 4 | 0 | 0 |
 | Influence de Jorn | Souffle de mort | pouvoir | `holy-gerbanis-influence-of-jorn:death-gust:0` | 2 | 0 | 0 |

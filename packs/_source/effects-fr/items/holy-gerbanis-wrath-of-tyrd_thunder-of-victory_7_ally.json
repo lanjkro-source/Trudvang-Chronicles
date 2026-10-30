@@ -1,0 +1,53 @@
+{
+  "_id": "0jzbdaB6B7C8D9Ea",
+  "_key": "!items!0jzbdaB6B7C8D9Ea",
+  "name": "Tonnerre victorieux — allié",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
+    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif.",
+    "summary": "Améliore les actions de combat.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "R45cFOgMhNiOjPkQ",
+      "_key": "!items.effects!0jzbdaB6B7C8D9Ea.R45cFOgMhNiOjPkQ",
+      "name": "Tonnerre victorieux — allié",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "4",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+            "summary": "Améliore les actions de combat.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

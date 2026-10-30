@@ -1921,7 +1921,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:0",
         "cost": 1,
-        "maxCount": 3
+        "maxCount": 2
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:1",
@@ -1936,7 +1936,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:3",
         "cost": 2,
-        "maxCount": 3
+        "maxCount": 2
       }
     ],
     "spellType": "lasting",
@@ -2082,7 +2082,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:1",
         "cost": 1,
-        "maxCount": 6
+        "maxCount": 5
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:2",
@@ -2097,12 +2097,12 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:4",
         "cost": 2,
-        "maxCount": 6
+        "maxCount": 3
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:5",
         "cost": 2,
-        "maxCount": 6
+        "maxCount": 3
       }
     ],
     "spellType": "lasting",
@@ -10286,6 +10286,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:air-armor:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-wind-craft:air-armor:4:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-wind-craft:air-armor:4:0",

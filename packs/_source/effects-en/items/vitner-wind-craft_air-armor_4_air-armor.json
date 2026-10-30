@@ -1,0 +1,60 @@
+{
+  "_id": "hVT9i3x3y4z5A6B7",
+  "_key": "!items!hVT9i3x3y4z5A6B7",
+  "name": "Air Armor",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:air-armor:4#air-armor",
+    "description": "The enchanter controls the vitner in the air surrounding the enchanted person and forms it into an armor of compressed air with a Protection Value of 1. The air armor also protects any objects worn by the person, such as a backpack or a bag, as long as these items are worn tightly. The air armor forcefully repels everything that isn’t part of the person or held close by the person. Small, loose objects that come into contact with the air armor are blown away if the person gets too close.",
+    "summary": "Wraps the target in protective currents of compressed air.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "CPBFq5w2x3y4z5A6",
+      "_key": "!items.effects!hVT9i3x3y4z5A6B7.CPBFq5w2x3y4z5A6",
+      "name": "Air Armor",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "The enchanter controls the vitner in the air surrounding the enchanted person and forms it into an armor of compressed air with a Protection Value of 1. The air armor also protects any objects worn by the person, such as a backpack or a bag, as long as these items are worn tightly. The air armor forcefully repels everything that isn’t part of the person or held close by the person. Small, loose objects that come into contact with the air armor are blown away if the person gets too close.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:air-armor:4#air-armor",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          },
+          {
+            "key": "system.transformation.outerProtection",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:air-armor:4#air-armor",
+            "sourceId": "vitner-wind-craft:air-armor:4",
+            "summary": "Wraps the target in protective currents of compressed air.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

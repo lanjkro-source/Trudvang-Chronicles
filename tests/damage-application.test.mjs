@@ -16,6 +16,25 @@ test("natural protection absorbs the remainder after worn armor", () => {
   assert.equal(result.armorDamage[0].integrityLoss, 3);
 });
 
+test("an outer barrier protects both the wearer and worn armor without counting twice",()=>{
+ const mail=armor("mail",50);
+ const result=calculateArmoredDamage({damage:8,totalProtection:8,outerProtection:3,armor:[mail]});
+ assert.equal(result.bodyDamage,0);assert.equal(result.armorDamage[0].integrityLoss,0);
+ const penetrating=calculateArmoredDamage({damage:11,totalProtection:8,outerProtection:3,armor:[mail]});
+ assert.equal(penetrating.bodyDamage,3);assert.equal(penetrating.armorDamage[0].integrityLoss,3);
+});
+
+test("Air Armor protects worn armor when applying damage and is bypassed with armor",async()=>{
+ const changes=[],armorUpdates=[];
+ const barrier={system:{changes:[{key:"system.transformation.outerProtection",type:"override",value:"3"}]}};
+ const actor={isOwner:true,items:[armor("mail",50)],effects:[barrier],system:{protection:8,resources:{body:{current:20,max:20}}},
+  updateEmbeddedDocuments:async(_type,updates)=>armorUpdates.push(updates),update:async data=>changes.push(data)};
+ const hit=await applyDamageToActor({actor,damage:8,announce:false});
+ assert.equal(hit.bodyDamage,0);assert.equal(armorUpdates.length,0);assert.equal(changes.length,0);
+ const bypass=await applyDamageToActor({actor,damage:8,ignoreArmor:true,announce:false});
+ assert.equal(bypass.bodyDamage,8);assert.equal(armorUpdates.length,0);assert.equal(changes.at(-1)["system.resources.body.value"],12);
+});
+
 test("damage that ignores armor bypasses every source of protection", async () => {
   const updates = [];
   const actor = {

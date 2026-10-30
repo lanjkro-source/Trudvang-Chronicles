@@ -1,0 +1,53 @@
+{
+  "_id": "sa44C5y4z5A6B7C8",
+  "_key": "!items!sa44C5y4z5A6B7C8",
+  "name": "Thunder of Victory — enemy",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy",
+    "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration.",
+    "summary": "Penalizes combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "jwYzbbFaGbHcIdJe",
+      "_key": "!items.effects!sa44C5y4z5A6B7C8.jwYzbbFaGbHcIdJe",
+      "name": "Thunder of Victory — enemy",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies. The thunderous cry grants the dimwalker and all allies within range +4 on all combat actions for the duration. All of the dimwalker’s enemies within range receive -4 on all combat actions for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+            "summary": "Penalizes combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

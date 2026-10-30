@@ -186,6 +186,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    if(row)row.value=String(Number(row.value)+count*p.value);
    else changes.push({key:"system.modifiers.protection",type:"add",value:String(count*p.value),phase:"initial"});
   }
+  if(p.target==="outerProtection")rules.outerProtection=Number(rules.outerProtection??0)+count*p.value;
   if(p.target==="damage"){
    const keys=p.usages?.map(u=>`system.modifiers.damageByUsage.${u}`);
    const rows=changes.filter(c=>keys?keys.includes(c.key):c.key==="system.modifiers.damage"||c.key.startsWith("system.modifiers.damageByUsage."));

@@ -125,6 +125,57 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
+  "vitner-wind-craft:air-armor:4#air-armor": {
+    "id": "air-armor",
+    "icon": "icons/svg/shield.svg",
+    "duration": "5 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.protection",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 30
+      },
+      {
+        "key": "system.transformation.outerProtection",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 30,
+    "sourceId": "vitner-wind-craft:air-armor:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-wind-craft:air-armor:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-wind-craft:air-armor:4:1"
+      },
+      {
+        "index": 4,
+        "target": "protection",
+        "value": 1,
+        "optionId": "vitner-wind-craft:air-armor:4:4"
+      },
+      {
+        "index": 4,
+        "target": "outerProtection",
+        "value": 1,
+        "optionId": "vitner-wind-craft:air-armor:4:4"
+      }
+    ]
+  },
   "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -637,6 +688,183 @@ export const TRANSFORMATION_TEMPLATES = {
           "force-du-jotun-allies"
         ],
         "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4"
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
+    "id": "ally",
+    "icon": "icons/svg/sword.svg",
+    "duration": "2 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 10,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:1"
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": 1,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:3"
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
+    "id": "ally",
+    "icon": "icons/svg/sword.svg",
+    "duration": "3 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 30,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:war-cry:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:0"
+      },
+      {
+        "index": 4,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": 1,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:4",
+        "templates": [
+          "ally"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy": {
+    "id": "enemy",
+    "icon": "icons/svg/sword.svg",
+    "duration": "3 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-3",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 30,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:war-cry:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:0"
+      },
+      {
+        "index": 5,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": -1,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:5",
+        "templates": [
+          "enemy"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally": {
+    "id": "ally",
+    "icon": "icons/svg/sword.svg",
+    "duration": "5 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "4",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 40,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": 1,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:2",
+        "templates": [
+          "ally"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy": {
+    "id": "enemy",
+    "icon": "icons/svg/sword.svg",
+    "duration": "5 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-4",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 40,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0"
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.combatActions",
+        "value": -1,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:3",
+        "templates": [
+          "enemy"
+        ]
       }
     ]
   },
@@ -4871,6 +5099,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds"
   ],
+  "vitner-wind-craft:air-armor:4": [
+    "vitner-wind-craft:air-armor:4#air-armor"
+  ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
@@ -4898,6 +5129,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": [
     "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
     "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies"
+  ],
+  "holy-gerbanis-wrath-of-tyrd:battle-cry:1": [
+    "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally"
+  ],
+  "holy-gerbanis-wrath-of-tyrd:war-cry:4": [
+    "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally",
+    "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy"
+  ],
+  "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": [
+    "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
+    "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy"
   ],
   "holy-gerbanis-power-of-enken:willpower:1": [
     "holy-gerbanis-power-of-enken:willpower:1#force-d-ame"

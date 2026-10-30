@@ -37,7 +37,7 @@ test("all roll contexts select only their applicable modifier paths", () => {
       assert.ok(keys.includes("system.modifiers.rolls.movementActions"));
       assert.ok(keys.includes("system.modifiers.rolls.skills.agility"));
       assert.ok(keys.includes("system.modifiers.rolls.traits.dexterity"));
-      assert.equal(keys.includes("system.modifiers.rolls.combatActions"), ["ability", "magic", "attack", "parry"].includes(kind) || (combat && kind === "skill"));
+      assert.equal(keys.includes("system.modifiers.rolls.combatActions"), ["attack", "parry"].includes(kind) || (combat && ["ability", "magic", "skill"].includes(kind)));
       assert.equal(keys.includes("system.modifiers.rolls.magic"), kind === "magic");
     }
   }
