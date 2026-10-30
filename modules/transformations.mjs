@@ -48,7 +48,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields,preview=()=>"",intro=""){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}">`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -115,7 +115,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.attacks)rules.attacks=rules.attacks.map(a=>({...a,name:game.i18n.localize(a.name)}));
  const resolvedCopy=Boolean(metadata(supplied)?.resolved||metadata(supplied)?.appliedAt!==undefined);
  const targeting=!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
- let allocationRecord=null,allocationIntro="",availableById={};
+ let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set();
  if(targeting){
   if(casting.kind==="divine"){
    const entry=game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.divineAllocation;
@@ -131,12 +131,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const chosen=Object.fromEntries(Array.from(allocationRecord.powerLevelSnapshot??[],row=>[row.id,Number(row.count)||0]));
   const already=Object.fromEntries(Array.from(own?.counts??[],row=>[row.optionId,Number(row.count)||0]));
   const options=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels??[];
-  availableById=Object.fromEntries(options.map(option=>[option.id,Math.max(0,(chosen[option.id]??0)-others.reduce((sum,row)=>sum+Array.from(row.counts??[]).filter(c=>c.optionId===option.id).reduce((n,c)=>n+Number(c.count||0),0),0))]));
-  counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
-  const group=magicTargetGroup(targeting,key);
+  const group=magicTargetGroup(targeting,key),definition=targeting.groups?.find(row=>row.id===group);
   if(!group)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
+  sharedIds=new Set(definition?.sharedOptions??[]);
+  availableById=Object.fromEntries(options.map(option=>[option.id,definition?.sharedOptions?.includes(option.id)?(chosen[option.id]??0):Math.max(0,(chosen[option.id]??0)-others.reduce((sum,row)=>sum+Array.from(row.counts??[]).filter(c=>c.optionId===option.id).reduce((n,c)=>n+Number(c.count||0),0),0))]));
+  counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
   const groupUsed=Array.from(allocationRecord.targetAllocations??[]).filter(row=>magicTargetGroup(targeting,row.effectKey)===group).length;
-  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:magicTargetCapacity(targeting,chosen,group)});
+  const maximum=magicTargetCapacity(targeting,chosen,group);
+  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:Number.isFinite(maximum)?maximum:"∞"});
   Object.assign(casting,withCastingCounts(casting,counts));
  }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
@@ -145,7 +147,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const fields=[{name:"duration",label:local("Duration"),value:durationText}];
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
-  fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0});}
+  fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);

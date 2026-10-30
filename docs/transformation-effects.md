@@ -63,8 +63,10 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    augmenter son coût maintenu. Cri de bataille et Cri de guerre utilisent leur
    carte de chat comme registre d'invocation, sans devenir des sortilèges maintenus.
    Pour Cri de guerre, les plafonds d'alliés et d'ennemis sont indépendants et les
-   améliorations sont partagées entre leurs cibles. Les autres pouvoirs et les
-   runes restent à traiter, notamment les effets de zone.
+   niveaux sont répartis entre leurs cibles. Pour Tonnerre victorieux, les cibles
+   n'ont pas de plafond numérique et les améliorations du pouvoir s'appliquent à
+   tous les alliés ou ennemis concernés. La sélection des personnes à portée
+   reste manuelle. Les autres pouvoirs et les runes restent à traiter.
 5. **Généralisation** : ajouter progressivement les effets de sortilèges, pouvoirs
    et runes depuis les sources, avec tests des améliorations et des règles propres
    à chaque effet. Les pouvoirs ne deviennent pas des sortilèges maintenus.
@@ -72,7 +74,7 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
 À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
 lancements identiques, les durées indépendantes, les tokens liés et non liés,
 les permissions et les anciens messages. Les limites et allocations sont actives
-pour Hâte, Vigueur, Peau de cuir, Armure d’air, Cri de bataille et Cri de guerre depuis la carte
+pour Hâte, Vigueur, Peau de cuir, Armure d’air, Cri de bataille, Cri de guerre et Tonnerre victorieux depuis la carte
 d'un nouveau lancement. Les anciens messages sans identité restent inchangés.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre

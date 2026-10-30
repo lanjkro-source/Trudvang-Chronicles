@@ -24,12 +24,13 @@ export function validatePowerTargeting(entry, english) {
  const groups=target.groups??[target],seen=new Set(),groupIds=new Set(),variants=new Set();
  if(!Array.isArray(groups)||!groups.length)throw new Error(`${entry.catalogId}: invalid target groups`);
  for(const group of groups){
-  if(!Number.isInteger(group.baseTargets)||group.baseTargets<1||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
+  if((group.baseTargets!==null&&(!Number.isInteger(group.baseTargets)||group.baseTargets<1))||(!target.groups&&group.baseTargets===null)||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
   if(target.groups){
    if(typeof group.id!=="string"||!group.id||groupIds.has(group.id)||!Array.isArray(group.variants)||!group.variants.length||!Array.isArray(group.allocatableOptions))throw new Error(`${entry.catalogId}: invalid target group`);
    groupIds.add(group.id);
    for(const variant of group.variants){if(variants.has(variant)||!entry.effectTemplates?.some(t=>t.id===variant))throw new Error(`${entry.catalogId}: invalid target variant`);variants.add(variant);}
    for(const optionId of group.allocatableOptions)resolvePowerOptionReference(entry,{optionId});
+   if(group.sharedOptions&&(!Array.isArray(group.sharedOptions)||group.sharedOptions.some(id=>!group.allocatableOptions.includes(id))))throw new Error(`${entry.catalogId}: invalid shared options`);
   }
   for(const row of group.additionalTargets){
    resolvePowerOptionReference(entry,row);

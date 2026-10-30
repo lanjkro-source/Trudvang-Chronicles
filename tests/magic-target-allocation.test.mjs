@@ -31,3 +31,15 @@ test("ally and enemy limits are separate while improvements share the purchased 
  assert.equal(validateMagicAllocations({targeting,selected,allocations:[row("a","power#enemy",{bonus:1})]}).reason,"invalid-allocation");
  assert.equal(validateMagicAllocations({targeting,selected,allocations:[row("a","power#unknown",{})]}).reason,"invalid-allocation");
 });
+
+test("unlimited area targets share the same enhancements without consuming them again",()=>{
+ const targeting={groups:[{id:"ally",baseTargets:null,variants:["ally"],additionalTargets:[],allocatableOptions:["duration","bonus"],sharedOptions:["duration","bonus"]},
+  {id:"enemy",baseTargets:null,variants:["enemy"],additionalTargets:[],allocatableOptions:["duration","penalty"],sharedOptions:["duration","penalty"]}]};
+ const selected={duration:2,bonus:1,penalty:3};
+ const allocations=Array.from({length:10},(_,i)=>({targetUuid:`a${i}`,effectKey:"power#ally",countsById:{duration:2,bonus:1}}));
+ allocations.push({targetUuid:"enemy",effectKey:"power#enemy",countsById:{duration:2,penalty:3}});
+ assert.equal(magicTargetCapacity(targeting,selected,"ally"),Infinity);
+ assert.equal(validateMagicAllocations({targeting,selected,allocations}).ok,true);
+ allocations[0].countsById.bonus=0;
+ assert.equal(validateMagicAllocations({targeting,selected,allocations}).reason,"invalid-allocation");
+});

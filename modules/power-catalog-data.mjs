@@ -2036,6 +2036,42 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "ally",
+          "baseTargets": null,
+          "variants": [
+            "ally"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:2"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:2"
+          ]
+        },
+        {
+          "id": "enemy",
+          "baseTargets": null,
+          "variants": [
+            "enemy"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:3"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",
+            "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",

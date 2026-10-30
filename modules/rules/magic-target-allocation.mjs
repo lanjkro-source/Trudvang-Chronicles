@@ -9,7 +9,7 @@ export function magicTargetCapacity(targeting, selected, groupId="default") {
  if (!targeting) return null;
  const group=targeting.groups?.find(row=>row.id===groupId) ?? (targeting.groups?null:targeting);
  if(!group)return null;
- return group.baseTargets + group.additionalTargets.reduce((total,row)=>total + row.count * (selected[row.optionId] ?? 0),0);
+ return group.baseTargets===null?Infinity:group.baseTargets + group.additionalTargets.reduce((total,row)=>total + row.count * (selected[row.optionId] ?? 0),0);
 }
 
 export function validateMagicAllocations({targeting, selected, allocations}) {
@@ -29,9 +29,11 @@ export function validateMagicAllocations({targeting, selected, allocations}) {
   const group=groups.find(row=>row.id===magicTargetGroup(targeting,allocation.effectKey));
   for (const [id,count] of Object.entries(allocation.countsById ?? {})) {
    if (!Object.hasOwn(selected,id) || capacityIds.has(id) || (group.allocatableOptions&&!group.allocatableOptions.includes(id)) || !Number.isInteger(count) || count<0) return {ok:false,reason:"invalid-allocation"};
+   if(group.sharedOptions?.includes(id)){if(count!==selected[id])return {ok:false,reason:"invalid-allocation"};continue;}
    spent[id]=(spent[id]??0)+count;
    if (spent[id]>selected[id]) return {ok:false,reason:"exceeds-improvements",optionId:id};
   }
+  for(const id of group.sharedOptions??[])if((allocation.countsById?.[id]??0)!==(selected[id]??0))return {ok:false,reason:"invalid-allocation"};
  }
  return {ok:true,capacity:targeting.groups?undefined:magicTargetCapacity(targeting,selected),spent};
 }

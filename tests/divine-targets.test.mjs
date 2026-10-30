@@ -109,3 +109,23 @@ test("War Cry tracks ally and enemy targets separately from its chat card",async
   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,3);
  }finally{foundry.applications.api.DialogV2=previous;}
 });
+
+test("Thunder of Victory shares purchased enhancements with all allies and enemies",async()=>{
+ const previous=foundry.applications.api.DialogV2,power="holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7";
+ try{
+  const dialogs=[];foundry.applications.api.DialogV2={wait:async options=>{dialogs.push(options.content);return {duration:"5 rounds",boost0:2,boost2:1,boost3:1};}};
+  const caster={uuid:"Actor.thunder-priest",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={uuid:"Actor.thunder-priest.Item.cry",type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",label:"Tonnerre",target:12,castingId:"thunder-cast",powerLevelCounts:[2,0,1,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.thunder`,data};documents.set(effect.uuid,effect);return effect;}});
+  for(const [n,variant] of [[1,"ally"],[2,"ally"],[3,"enemy"],[4,"enemy"]]){
+   const actor=makeTarget(`Actor.thunder-${n}`);documents.set(actor.uuid,actor);
+   const effect=await applyTransformation(actor,`${power}#${variant}`,{source:item,context});
+   assert.equal(effect.data.system.changes.find(row=>row.key==="system.modifiers.rolls.combatActions").value,variant==="ally"?"5":"-5");
+   assert.equal(effect.data.duration.value,7);
+  }
+  assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
+  assert.match(dialogs[0],/∞/);assert.match(dialogs[0],/name="boost0"[^>]*readonly/);
+ }finally{foundry.applications.api.DialogV2=previous;}
+});
