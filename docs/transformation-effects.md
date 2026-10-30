@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 135 variantes.
+les états, les règles et les liens des 139 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -275,3 +275,9 @@ même invocation ne peut pas soigner la même personne deux fois, même en cas
 de demandes concurrentes ; l'annonce indique les points réellement rendus.
 Le nombre de points dépend des niveaux alloués. La fin des saignements est
 un rappel à gérer manuellement, en l'absence d'un état de saignement dédié.
+
+Chaleur guérisseuse et Souffle de Solvei ou de Sille améliorent automatiquement
+la récupération pendant le repos. Le bonus conditionnel pour vaincre une
+maladie, neutraliser un poison ou dissiper une malédiction est calculé et
+inscrit sur l'effet, mais doit être ajouté manuellement au jet approprié ; il
+ne modifie pas tous les jets de situation. La rupture du repos reste manuelle.

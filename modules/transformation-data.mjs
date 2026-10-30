@@ -608,6 +608,47 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse": {
+    "id": "chaleur-guerisseuse",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 jours",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.HealingDiseaseNote",
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5:1"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 2,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5:2"
+      }
+    ]
+  },
   "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
     "id": "pouvoir-de-firon",
     "icon": "icons/svg/aura.svg",
@@ -627,6 +668,47 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "instant",
         "value": 2,
         "optionId": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0"
+      }
+    ]
+  },
+  "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle": {
+    "id": "souffle",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 jours",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "5",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 10,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.HealingPoisonCurseNote",
+        "optionId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:1"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 3,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:2"
       }
     ]
   },
@@ -4651,6 +4733,47 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse": {
+    "id": "chaleur-guerisseuse",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 jours",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "sourceId": "holy-joaringfaith-power-of-sille:healing-warmth:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-power-of-sille:healing-warmth:4:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.HealingDiseaseNote",
+        "optionId": "holy-joaringfaith-power-of-sille:healing-warmth:4:1"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 2,
+        "optionId": "holy-joaringfaith-power-of-sille:healing-warmth:4:2"
+      }
+    ]
+  },
   "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
     "id": "pouvoir-de-firon",
     "icon": "icons/svg/aura.svg",
@@ -4670,6 +4793,47 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "instant",
         "value": 2,
         "optionId": "holy-joaringfaith-power-of-sille:firon-power:5:0"
+      }
+    ]
+  },
+  "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
+    "id": "souffle",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 jours",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "5",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-joaringfaith-power-of-sille:breath-of-sille:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-power-of-sille:breath-of-sille:7:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 10,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.HealingPoisonCurseNote",
+        "optionId": "holy-joaringfaith-power-of-sille:breath-of-sille:7:1"
+      },
+      {
+        "index": 2,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 3,
+        "optionId": "holy-joaringfaith-power-of-sille:breath-of-sille:7:2"
       }
     ]
   },
@@ -5472,8 +5636,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-warmth-of-sunvei:healing-glow:2": [
     "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse"
   ],
+  "holy-gerbanis-warmth-of-sunvei:healing-warmth:5": [
+    "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse"
+  ],
   "holy-gerbanis-warmth-of-sunvei:firon-power:4": [
     "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon"
+  ],
+  "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7": [
+    "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle"
   ],
   "holy-gerbanis-warmth-of-sunvei:healing-sun:8": [
     "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur"
@@ -5700,8 +5870,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-joaringfaith-power-of-sille:healing-glow:3": [
     "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse"
   ],
+  "holy-joaringfaith-power-of-sille:healing-warmth:4": [
+    "holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse"
+  ],
   "holy-joaringfaith-power-of-sille:firon-power:5": [
     "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon"
+  ],
+  "holy-joaringfaith-power-of-sille:breath-of-sille:7": [
+    "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle"
   ],
   "holy-joaringfaith-power-of-sille:healing-sun:8": [
     "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur"

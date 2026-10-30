@@ -13747,6 +13747,15 @@
           "SourcePage": "166",
           "Duration": ""
         },
+        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse": {
+          "Name": "Healing Warmth (Sunvei)",
+          "Summary": "Improves recovery while resting and helps overcome an affliction.",
+          "Description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+          "SourceName": "Healing Warmth",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "2 days"
+        },
         "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
           "Name": "Firon Power (Sunvei)",
           "Summary": "Immediately restores health and stops bleeding.",
@@ -13755,6 +13764,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "166",
           "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle": {
+          "Name": "Breath of Sunvei (Sunvei)",
+          "Summary": "Improves recovery while resting and helps overcome an affliction.",
+          "Description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+          "SourceName": "Breath of Sunvei",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "3 days"
         },
         "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur": {
           "Name": "Healing Sun (Sunvei)",
@@ -14626,6 +14644,15 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse": {
+          "Name": "Healing Warmth (Sille)",
+          "Summary": "Improves recovery while resting and helps overcome an affliction.",
+          "Description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+          "SourceName": "Healing Warmth",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "2 days"
+        },
         "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
           "Name": "Firon Power (Sille)",
           "Summary": "Immediately restores health and stops bleeding.",
@@ -14634,6 +14661,15 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
+          "Name": "Breath of Sille (Sille)",
+          "Summary": "Improves recovery while resting and helps overcome an affliction.",
+          "Description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+          "SourceName": "Breath of Sille",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 days"
         },
         "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur": {
           "Name": "Healing Sun (Sille)",
@@ -14884,6 +14920,8 @@
     "Transformation": {
       "DragHint": "Drag onto an actor or click to apply",
       "AllocationTargets": "Targets already affected: {used} / {max}. Distribute power levels among targets.",
+      "HealingDiseaseNote": "Bonus to the test to overcome the disease: +{value}. Apply manually.",
+      "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}. Apply manually.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",
       "Cancel": "Cancel",

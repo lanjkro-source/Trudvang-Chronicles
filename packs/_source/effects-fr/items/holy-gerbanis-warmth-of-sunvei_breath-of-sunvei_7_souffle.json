@@ -1,0 +1,53 @@
+{
+  "_id": "w8pinNfLgMhNiOjP",
+  "_key": "!items!w8pinNfLgMhNiOjP",
+  "name": "Souffle de Solvei (Solvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+    "description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+    "summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "5GeEbNfLgMhNiOjP",
+      "_key": "!items.effects!w8pinNfLgMhNiOjP.5GeEbNfLgMhNiOjP",
+      "name": "Souffle de Solvei (Solvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "5",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
+            "summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

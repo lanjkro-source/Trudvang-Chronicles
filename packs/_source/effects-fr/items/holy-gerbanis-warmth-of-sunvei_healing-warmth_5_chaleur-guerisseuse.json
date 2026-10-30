@@ -1,0 +1,53 @@
+{
+  "_id": "uWUcgdIdJeKfLgMh",
+  "_key": "!items!uWUcgdIdJeKfLgMh",
+  "name": "Chaleur guérisseuse (Solvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+    "description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+    "summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 217
+    }
+  },
+  "effects": [
+    {
+      "_id": "pwnXMeIdJeKfLgMh",
+      "_key": "!items.effects!uWUcgdIdJeKfLgMh.pwnXMeIdJeKfLgMh",
+      "name": "Chaleur guérisseuse (Solvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "3",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+            "summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

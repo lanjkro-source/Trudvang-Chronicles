@@ -10917,6 +10917,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.SourcePage` | 166 | 217 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.Duration` |  |  |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.Name` | Healing Warmth (Sunvei) | Chaleur guérisseuse (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.Description` | Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then. | La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.SourceName` | Healing Warmth | Chaleur guérisseuse |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.SourcePage` | 166 | 217 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse.Duration` | 2 days | 2 jours |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon`
 
 | Clé | English | Français |
@@ -10927,6 +10938,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourcePage` | 166 | 217 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.Name` | Breath of Sunvei (Sunvei) | Souffle de Solvei (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.Description` | Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then. | La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.SourceName` | Breath of Sunvei | Souffle de Solvei |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.SourcePage` | 166 | 218 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle.Duration` | 3 days | 3 jours |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur`
 
@@ -11984,6 +12006,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.Duration` |  |  |
 
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.Name` | Healing Warmth (Sille) | Chaleur guérisseuse (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.Description` | Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then. | La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.SourceName` | Healing Warmth | Chaleur guérisseuse |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse.Duration` | 2 days | 2 jours |
+
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon`
 
 | Clé | English | Français |
@@ -11994,6 +12027,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.Name` | Breath of Sille (Sille) | Souffle de Sille (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.Description` | Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then. | La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.SourceName` | Breath of Sille | Souffle de Sille |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle.Duration` | 3 days | 3 jours |
 
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur`
 
@@ -12297,6 +12341,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Transformation.DragHint` | Drag onto an actor or click to apply | Glisser sur un acteur ou cliquer pour appliquer |
 | `TRUDVANG.Transformation.AllocationTargets` | Targets already affected: {used} / {max}. Distribute power levels among targets. | Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles. |
+| `TRUDVANG.Transformation.HealingDiseaseNote` | Bonus to the test to overcome the disease: +{value}. Apply manually. | Bonus au test pour vaincre la maladie : +{value}. À appliquer manuellement. |
+| `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. Apply manually. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. À appliquer manuellement. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |
 | `TRUDVANG.Transformation.Cancel` | Cancel | Annuler |

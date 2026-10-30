@@ -1,0 +1,53 @@
+{
+  "_id": "w8pinNfLgMhNiOjP",
+  "_key": "!items!w8pinNfLgMhNiOjP",
+  "name": "Breath of Sunvei (Sunvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+    "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+    "summary": "Improves recovery while resting and helps overcome an affliction.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "5GeEbNfLgMhNiOjP",
+      "_key": "!items.effects!w8pinNfLgMhNiOjP.5GeEbNfLgMhNiOjP",
+      "name": "Breath of Sunvei (Sunvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "5",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
+            "summary": "Improves recovery while resting and helps overcome an affliction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

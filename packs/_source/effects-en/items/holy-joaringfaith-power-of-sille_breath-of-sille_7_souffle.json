@@ -1,0 +1,53 @@
+{
+  "_id": "XxRYuE8D9EaGbHcI",
+  "_key": "!items!XxRYuE8D9EaGbHcI",
+  "name": "Breath of Sille (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle",
+    "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+    "summary": "Improves recovery while resting and helps overcome an affliction.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "wtbN8OjPkQlRmSnT",
+      "_key": "!items.effects!XxRYuE8D9EaGbHcI.wtbN8OjPkQlRmSnT",
+      "name": "Breath of Sille (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "5",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle",
+            "sourceId": "holy-joaringfaith-power-of-sille:breath-of-sille:7",
+            "summary": "Improves recovery while resting and helps overcome an affliction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

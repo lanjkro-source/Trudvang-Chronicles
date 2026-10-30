@@ -271,7 +271,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  const meta={key,sourceId:template.sourceId,summary,editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
-  const description=supplied?.description??text(key,"Description");
+ let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
+  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
+  description+=`<p>${escapeHtml(game.i18n.format(p.labelKey,{value}))}</p>`;
+ }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  let effect;

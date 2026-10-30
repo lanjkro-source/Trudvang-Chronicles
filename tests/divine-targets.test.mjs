@@ -386,3 +386,21 @@ test("failed immediate healing releases the reservation without changing the tar
  try{assert.equal(await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"instant-fail",messageId:message.id,targetUuid:target.uuid,countsById:{[`${power}:0`]:0},data,userId:"gm"}),false);}finally{console.error=previous;}
  assert.equal(target.system.resources.body.current,0);assert.deepEqual(allocation.targetAllocations,[]);
 });
+
+test("enhanced recovery powers retain their separate conditional test bonus",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"2 days",boost0:1,boost1:2,boost2:1})};
+  const cases=[["holy-gerbanis-warmth-of-sunvei:healing-warmth:5","chaleur-guerisseuse",5,5,"HealingDiseaseNote"],["holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7","souffle",8,12,"HealingPoisonCurseNote"],["holy-joaringfaith-power-of-sille:healing-warmth:4","chaleur-guerisseuse",5,5,"HealingDiseaseNote"],["holy-joaringfaith-power-of-sille:breath-of-sille:7","souffle",8,12,"HealingPoisonCurseNote"]];
+  for(const [index,[power,key,recovery,conditional,label]] of cases.entries()){
+   const caster={uuid:`Actor.nurse-caster-${index}`,name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);const item={type:"divineFeat",system:{catalogId:power}};
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Healing",castingId:`nurse-${index}`,powerLevelCounts:[1,2,1]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   const target={uuid:`Actor.nurse-target-${index}`,name:"Patient",items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`Actor.nurse-target-${index}.ActiveEffect.healing`,data};documents.set(effect.uuid,effect);return effect;}};documents.set(target.uuid,target);
+   const result=await applyTransformation(target,`${power}#${key}`,{source:item,context});
+   assert.equal(result.data.system.changes.find(c=>c.key==="system.modifiers.recovery").value,String(recovery));
+   assert.match(result.data.description,new RegExp(label));assert.match(result.data.description,new RegExp(`&quot;value&quot;:${conditional}|"value":${conditional}`));
+   assert.equal(result.data.system.changes.some(c=>c.key==="system.modifiers.rolls.allActions"),false);
+  }
+ }finally {foundry.applications.api.DialogV2=previous;}
+});

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,94);
+ assert.equal(Object.keys(sources).length,98);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -107,7 +107,7 @@ test("legacy temporary health balances initialize one shared reserve without res
 });
 test("the seven Joaring powers have all eight generated tests and a link for each test",()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
- globalThis.game={i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ globalThis.game={i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key,format:(key,data)=>(key.split(".").reduce((o,k)=>o?.[k],language)??key).replaceAll("{value}",String(data.value))}};
  globalThis.CONFIG={TRUDVANG:{}};
  const ids=Object.keys(RULE_TESTS_BY_CATALOG_ID).filter(id=>id.startsWith("holy-joaringfaith"));
  assert.equal(ids.length,7);assert.equal(ids.reduce((n,id)=>n+RULE_TESTS_BY_CATALOG_ID[id].length,0),8);
@@ -580,7 +580,7 @@ test("rolled vitality posts the actual dice to the normal chat pipeline for Dice
 
 test("effect improvements change their base fields, including inverse traits, attack dice and unrestricted manual counts",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key,format:(key,data)=>(key.split(".").reduce((o,k)=>o?.[k],language)??key).replaceAll("{value}",String(data.value))}};
  let created,answers,dialog;
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
@@ -700,7 +700,7 @@ test("huvfurwurm effects grant real weapon profiles with reserved CP, gated ordi
 
 test("all numeric non-duration improvements resolve from casting counts and compendium copies",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key,format:(key,data)=>(key.split(".").reduce((o,k)=>o?.[k],language)??key).replaceAll("{value}",String(data.value))}};
  let created;
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
@@ -746,7 +746,7 @@ test("an older chat card applies the captured option identity even when its save
 
 test("copying already resolved effects preserves improvements, duration and rolled vitality instead of applying them twice",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split('.').reduce((o,k)=>o?.[k],language)??key}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key,format:(key,data)=>(key.split(".").reduce((o,k)=>o?.[k],language)??key).replaceAll("{value}",String(data.value))}};
  let created,rolls=0;
  const oldRoll=globalThis.Roll,oldChat=globalThis.ChatMessage;
  try{

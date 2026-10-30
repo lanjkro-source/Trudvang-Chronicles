@@ -1,0 +1,53 @@
+{
+  "_id": "uWUcgdIdJeKfLgMh",
+  "_key": "!items!uWUcgdIdJeKfLgMh",
+  "name": "Healing Warmth (Sunvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+    "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+    "summary": "Improves recovery while resting and helps overcome an affliction.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "pwnXMeIdJeKfLgMh",
+      "_key": "!items.effects!uWUcgdIdJeKfLgMh.pwnXMeIdJeKfLgMh",
+      "name": "Healing Warmth (Sunvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Natural recovery improves while the recipient rests. The power ends if they stop resting: remove the effect then.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "3",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+            "summary": "Improves recovery while resting and helps overcome an affliction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

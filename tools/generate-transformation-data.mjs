@@ -8,7 +8,7 @@ const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
-const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange","instant"]);
+const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange","instant","note"]);
 const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id)).map(p=>entry.catalogId?resolvePowerOptionReference(entry,p):p);
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
@@ -56,6 +56,7 @@ for(const kind of ["powers","feats"]){
    for(const p of parameters){
     if(!parameterTargets.has(p.target)||!entry.powerLevels?.[p.index])throw Error(`Invalid parameter ${p.target} in ${key}`);
     if(p.target==="instant"&&(!t.instant||!Number.isInteger(p.value)||p.value<0))throw Error(`Invalid instant improvement for ${key}`);
+    if(p.target==="note"&&(!Number.isFinite(p.base)||!Number.isFinite(p.value)||!/^TRUDVANG\.Transformation\.[A-Za-z]+$/.test(p.labelKey)||!["fr","en"].every(c=>p.labelKey.split(".").reduce((value,key)=>value?.[key],lang[c]))))throw Error(`Invalid note improvement for ${key}`);
     const native=path=>t.changes.some(c=>c.key===path||c.key.startsWith(path+"."));
     if(p.target==="temporaryHP"&&!native("system.resources.body.temporaryMax")&&sourceRules.temporaryHP===undefined)throw Error(`Temporary HP parameter without matching base in ${key}`);
     if(p.target==="outerProtection"&&!Number.isFinite(sourceRules.outerProtection))throw Error(`Outer protection parameter without matching base in ${key}`);

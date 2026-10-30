@@ -13747,6 +13747,15 @@
           "SourcePage": "217",
           "Duration": ""
         },
+        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5#chaleur-guerisseuse": {
+          "Name": "Chaleur guérisseuse (Solvei)",
+          "Summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+          "Description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+          "SourceName": "Chaleur guérisseuse",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "217",
+          "Duration": "2 jours"
+        },
         "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
           "Name": "Pouvoir de Firon (Solvei)",
           "Summary": "Restaure immédiatement la santé et arrête les saignements.",
@@ -13755,6 +13764,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "217",
           "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle": {
+          "Name": "Souffle de Solvei (Solvei)",
+          "Summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+          "Description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+          "SourceName": "Souffle de Solvei",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "218",
+          "Duration": "3 jours"
         },
         "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur": {
           "Name": "Soleil guérisseur (Solvei)",
@@ -14626,6 +14644,15 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-power-of-sille:healing-warmth:4#chaleur-guerisseuse": {
+          "Name": "Chaleur guérisseuse (Sille)",
+          "Summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+          "Description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+          "SourceName": "Chaleur guérisseuse",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "2 jours"
+        },
         "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
           "Name": "Pouvoir de Firon (Sille)",
           "Summary": "Restaure immédiatement la santé et arrête les saignements.",
@@ -14634,6 +14661,15 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
+          "Name": "Souffle de Sille (Sille)",
+          "Summary": "Améliore la récupération au repos et aide à surmonter une affection.",
+          "Description": "La récupération naturelle est améliorée tant que le bénéficiaire se repose. Le pouvoir prend fin s’il cesse de se reposer : retirer alors l’effet.",
+          "SourceName": "Souffle de Sille",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 jours"
         },
         "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur": {
           "Name": "Soleil guérisseur (Sille)",
@@ -14884,6 +14920,8 @@
     "Transformation": {
       "DragHint": "Glisser sur un acteur ou cliquer pour appliquer",
       "AllocationTargets": "Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles.",
+      "HealingDiseaseNote": "Bonus au test pour vaincre la maladie : +{value}. À appliquer manuellement.",
+      "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. À appliquer manuellement.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",
       "Cancel": "Annuler",
