@@ -1179,6 +1179,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:bold:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:bold:2:0",
@@ -1220,6 +1224,50 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:heart-of-enken:6": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "chosen",
+          "baseTargets": 1,
+          "variants": [
+            "c-ur-d-enken"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:3",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:1"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:1"
+          ]
+        },
+        {
+          "id": "allies",
+          "baseTargets": 3,
+          "maxOtherThanCaster": 2,
+          "variants": [
+            "c-ur-d-enken-allies"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:1",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:4"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:1",
+            "holy-gerbanis-power-of-enken:heart-of-enken:6:4"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
@@ -1365,6 +1413,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:willpower:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:willpower:1:0",

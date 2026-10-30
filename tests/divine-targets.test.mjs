@@ -211,3 +211,25 @@ test("Jotun Strength shares duration and ally enhancement while limiting chosen 
   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,3);
  } finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Heart of Enken permits the caster and two friends in addition to the chosen targets",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"2 minutes",boost0:1,boost4:1})};
+  const power="holy-gerbanis-power-of-enken:heart-of-enken:6";
+  const makeTarget=uuid=>({uuid,name:uuid,isOwner:false,items:[],getTraitValue:()=>0,canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.enken`,data};documents.set(effect.uuid,effect);return effect;}});
+  const caster=makeTarget("Actor.enken-caster"),chosen=makeTarget("Actor.enken-chosen"),friends=[1,2,3].map(n=>makeTarget(`Actor.enken-friend-${n}`));for(const t of [caster,chosen,...friends])documents.set(t.uuid,t);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Enken",castingId:"enken",powerLevelCounts:[1,0,0,0,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const effect=await applyTransformation(chosen,`${power}#c-ur-d-enken`,{source:item,context});
+  assert.equal(effect.data.system.changes.find(row=>row.key==="system.effective.traits.psyche").value,"8");
+  for(const t of friends.slice(0,2)) {
+   const ally=await applyTransformation(t,`${power}#c-ur-d-enken-allies`,{source:item,context});
+   assert.equal(ally.data.system.changes.find(row=>row.key==="system.effective.traits.psyche").value,"6");
+  }
+  await assert.rejects(()=>applyTransformation(friends[2],`${power}#c-ur-d-enken-allies`,{source:item,context}),/MagicTargetLimit/);
+  const casterEffect=await applyTransformation(caster,`${power}#c-ur-d-enken-allies`,{source:item,context});assert.ok(casterEffect);
+  assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
+ } finally {foundry.applications.api.DialogV2=previous;}
+});

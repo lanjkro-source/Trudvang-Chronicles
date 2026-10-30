@@ -12,7 +12,7 @@ export function magicTargetCapacity(targeting, selected, groupId="default") {
  return group.baseTargets===null?Infinity:group.baseTargets + group.additionalTargets.reduce((total,row)=>total + row.count * (selected[row.optionId] ?? 0),0);
 }
 
-export function validateMagicAllocations({targeting, selected, allocations}) {
+export function validateMagicAllocations({targeting, selected, allocations, casterUuid}) {
  if (!targeting) return {ok:false, reason:"unknown-targeting"};
  if (!selected || Object.values(selected).some(n=>!Number.isInteger(n)||n<0)) return {ok:false,reason:"invalid-selection"};
  const groups=targeting.groups??[{id:"default",...targeting}],targets=new Set(),spent={},used={};
@@ -24,6 +24,11 @@ export function validateMagicAllocations({targeting, selected, allocations}) {
   used[group]=(used[group]??0)+1;
  }
  for(const group of groups){const capacity=magicTargetCapacity(targeting,selected,group.id);if((used[group.id]??0)>capacity)return {ok:false,reason:"exceeds-targets",capacity,group:group.id};}
+ for(const group of groups)if(group.maxOtherThanCaster!==undefined){
+  if(!casterUuid)return {ok:false,reason:"invalid-allocation"};
+  const others=allocations.filter(row=>magicTargetGroup(targeting,row.effectKey)===group.id&&row.targetUuid!==casterUuid).length;
+  if(others>group.maxOtherThanCaster)return {ok:false,reason:"exceeds-targets",capacity:group.maxOtherThanCaster,group:group.id};
+ }
  const capacityIds=new Set(groups.flatMap(group=>group.additionalTargets.map(row=>row.optionId)));
  for (const allocation of allocations) {
   const group=groups.find(row=>row.id===magicTargetGroup(targeting,allocation.effectKey));

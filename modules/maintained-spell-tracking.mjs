@@ -103,7 +103,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
   const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==targetUuid).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
   allocations.push({targetUuid,effectKey,countsById});
-  const validation=validateMagicAllocations({targeting,selected,allocations});
+  const validation=validateMagicAllocations({targeting,selected,allocations,casterUuid});
   if(!validation.ok)return {status:validation.reason};
   const prior=structuredClone(record.targetAllocations??[]);
   record.targetAllocations=allocations.map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,counts:Object.entries(row.countsById).map(([optionId,count])=>({optionId,count}))}));

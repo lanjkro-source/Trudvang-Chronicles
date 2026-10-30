@@ -226,3 +226,9 @@ bénéficiaires choisis à +8, dont le nombre dépend des niveaux achetés, des 
 alliés à portée, sans plafond numérique. Sa durée et l'amélioration des alliés
 sont communes à toutes les personnes concernées ; le choix des alliés à portée
 reste manuel (Livre des règles, p. 218–219).
+
+Force d'âme et Témérité ont chacun un bénéficiaire. Cœur d'Enken distingue
+le bénéficiaire principal à +8 en Psychisme, ses éventuels bénéficiaires
+supplémentaires et le lanceur accompagné d'au plus deux amis à +4 ou +6.
+La durée et l'amélioration des amis sont communes ; la portée et le choix
+des amis restent à vérifier par les joueurs (Livre des règles, p. 224–225).
