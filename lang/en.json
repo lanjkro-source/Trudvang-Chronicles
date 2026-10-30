@@ -1156,6 +1156,7 @@
       "MaintainedSpellUnavailable": "The spell and its effects could not be ended. Check that a game master is connected.",
       "MagicAllocationUnavailable": "The effect could not be applied: the casting must be active and a game master connected.",
       "MagicTargetLimit": "This casting has reached its target limit.",
+      "MagicInstantAlreadyApplied": "This casting has already applied its consequence to this target.",
       "MagicCasterOnly": "This power can only be applied to its caster with the selected power levels.",
       "MagicTargetAlreadyAffected": "This target has already received another variant of this spell.",
       "MagicPowerBudget": "The selected power levels are already allocated to other targets.",
@@ -13737,6 +13738,33 @@
           "SourcePage": "166",
           "Duration": "1 day"
         },
+        "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
+          "Name": "Healing Glow (Sunvei)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Healing Glow",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
+          "Name": "Firon Power (Sunvei)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Firon Power",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur": {
+          "Name": "Healing Sun (Sunvei)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Healing Sun",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": ""
+        },
         "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
           "Name": "Voice of Command",
           "Summary": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
@@ -14588,6 +14616,33 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "1 day"
+        },
+        "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
+          "Name": "Healing Glow (Sille)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Healing Glow",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
+          "Name": "Firon Power (Sille)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Firon Power",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur": {
+          "Name": "Healing Sun (Sille)",
+          "Summary": "Immediately restores health and stops bleeding.",
+          "Description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+          "SourceName": "Healing Sun",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Curses of Sonntag)",

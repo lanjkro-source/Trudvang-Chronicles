@@ -1,0 +1,45 @@
+{
+  "_id": "Dj6x3RlRmSnToUpV",
+  "_key": "!items!Dj6x3RlRmSnToUpV",
+  "name": "Healing Glow (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse",
+    "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+    "summary": "Immediately restores health and stops bleeding.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "Cx3XVtYtZu0v1w2x",
+      "_key": "!items.effects!Dj6x3RlRmSnToUpV.Cx3XVtYtZu0v1w2x",
+      "name": "Healing Glow (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse",
+            "sourceId": "holy-joaringfaith-power-of-sille:healing-glow:3",
+            "summary": "Immediately restores health and stops bleeding.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

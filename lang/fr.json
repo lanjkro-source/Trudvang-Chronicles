@@ -1153,6 +1153,7 @@
       "MaintainedSpellUnavailable": "Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté.",
       "MagicAllocationUnavailable": "Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté.",
       "MagicTargetLimit": "Le nombre de cibles permis par ce lancement est atteint.",
+      "MagicInstantAlreadyApplied": "Ce lancement a déjà appliqué sa conséquence à cette cible.",
       "MagicCasterOnly": "Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis.",
       "MagicTargetAlreadyAffected": "Cette cible a déjà reçu une autre variante de ce sortilège.",
       "MagicPowerBudget": "Les niveaux de puissance choisis sont déjà attribués à d’autres cibles.",
@@ -13737,6 +13738,33 @@
           "SourcePage": "216",
           "Duration": "1 jour"
         },
+        "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
+          "Name": "Lumière guérisseuse (Solvei)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Lumière guérisseuse",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "217",
+          "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
+          "Name": "Pouvoir de Firon (Solvei)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Pouvoir de Firon",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "217",
+          "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur": {
+          "Name": "Soleil guérisseur (Solvei)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Soleil guérisseur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "218",
+          "Duration": ""
+        },
         "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
           "Name": "Autorité",
           "Summary": "En cas d’échec au test de situation, la personne accepte sans condition les paroles du stormikjalt pendant la durée du pouvoir.",
@@ -14588,6 +14616,33 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "1 jour"
+        },
+        "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
+          "Name": "Lumière guérisseuse (Sille)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Lumière guérisseuse",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
+          "Name": "Pouvoir de Firon (Sille)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Pouvoir de Firon",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur": {
+          "Name": "Soleil guérisseur (Sille)",
+          "Summary": "Restaure immédiatement la santé et arrête les saignements.",
+          "Description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+          "SourceName": "Soleil guérisseur",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Malédictions de Sonntag)",

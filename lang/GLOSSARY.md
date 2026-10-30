@@ -1343,6 +1343,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.MaintainedSpellUnavailable` | The spell and its effects could not be ended. Check that a game master is connected. | Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté. |
 | `TRUDVANG.Warning.MagicAllocationUnavailable` | The effect could not be applied: the casting must be active and a game master connected. | Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté. |
 | `TRUDVANG.Warning.MagicTargetLimit` | This casting has reached its target limit. | Le nombre de cibles permis par ce lancement est atteint. |
+| `TRUDVANG.Warning.MagicInstantAlreadyApplied` | This casting has already applied its consequence to this target. | Ce lancement a déjà appliqué sa conséquence à cette cible. |
 | `TRUDVANG.Warning.MagicCasterOnly` | This power can only be applied to its caster with the selected power levels. | Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis. |
 | `TRUDVANG.Warning.MagicTargetAlreadyAffected` | This target has already received another variant of this spell. | Cette cible a déjà reçu une autre variante de ce sortilège. |
 | `TRUDVANG.Warning.MagicPowerBudget` | The selected power levels are already allocated to other targets. | Les niveaux de puissance choisis sont déjà attribués à d’autres cibles. |
@@ -10905,6 +10906,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourcePage` | 166 | 216 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Duration` | 1 day | 1 jour |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.Name` | Healing Glow (Sunvei) | Lumière guérisseuse (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.SourceName` | Healing Glow | Lumière guérisseuse |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.SourcePage` | 166 | 217 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.Name` | Firon Power (Sunvei) | Pouvoir de Firon (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourceName` | Firon Power | Pouvoir de Firon |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourcePage` | 166 | 217 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.Name` | Healing Sun (Sunvei) | Soleil guérisseur (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.SourceName` | Healing Sun | Soleil guérisseur |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.SourcePage` | 166 | 218 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite`
 
 | Clé | English | Français |
@@ -11938,6 +11972,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.Duration` | 1 day | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.Name` | Healing Glow (Sille) | Lumière guérisseuse (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.SourceName` | Healing Glow | Lumière guérisseuse |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.Name` | Firon Power (Sille) | Pouvoir de Firon (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.SourceName` | Firon Power | Pouvoir de Firon |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.Name` | Healing Sun (Sille) | Soleil guérisseur (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.Description` | Immediately restores Body Points. Bleeding stops: the GM must handle this manually. | Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.SourceName` | Healing Sun | Soleil guérisseur |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre`
 

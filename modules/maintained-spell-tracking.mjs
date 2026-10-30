@@ -1,6 +1,7 @@
 import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
+import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 
 const jobs = new Map();
 const oldContexts = new WeakMap();
@@ -99,7 +100,10 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
    ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!=="divine")))return {status:"unavailable"};
   const selected=divine?divine.selected:Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
+  const template=TRANSFORMATION_TEMPLATES[effectKey];
+  const instant=template?.sourceId===sourceId?template.instant:null;
   const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===targetUuid);
+  if(existing&&instant)return {status:"already-applied"};
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
   const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==targetUuid).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
   allocations.push({targetUuid,effectKey,countsById});
@@ -110,6 +114,15 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":record.targetAllocations});
   else await caster.update({"system.activeSpellCastings":records,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});
   try{
+   if(instant){
+    const {executeConsequences,announceConsequences}=await import("./consequences.mjs");
+    const bonus=(template.parameters??[]).filter(p=>p.target==="instant").reduce((sum,p)=>sum+Number(p.value)*(countsById[p.optionId]??0),0);
+    const result=await executeConsequences({actor:target,operations:[{operation:instant.operation,formula:String(instant.base+bonus)}],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
+    if(!result.rows.length)throw Error("Failed to apply instant consequence");
+    // A notification failure must not allow the already applied healing to be replayed.
+    try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}
+    return {status:"ok",instant:true};
+   }
    const effect=await target.createTrudvangEffect(data);
    if(!effect)throw Error("Failed to create allocated effect");
    return {status:"ok",effectUuid:effect.uuid};

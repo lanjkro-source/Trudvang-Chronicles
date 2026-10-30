@@ -1,0 +1,45 @@
+{
+  "_id": "k3VPYA5A6B7C8D9E",
+  "_key": "!items!k3VPYA5A6B7C8D9E",
+  "name": "Pouvoir de Firon (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+    "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+    "summary": "Restaure immédiatement la santé et arrête les saignements.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "5llJ05x3y4z5A6B7",
+      "_key": "!items.effects!k3VPYA5A6B7C8D9E.5llJ05x3y4z5A6B7",
+      "name": "Pouvoir de Firon (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+            "sourceId": "holy-joaringfaith-power-of-sille:firon-power:5",
+            "summary": "Restaure immédiatement la santé et arrête les saignements.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

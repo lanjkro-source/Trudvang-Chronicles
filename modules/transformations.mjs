@@ -19,6 +19,7 @@ import {normalizeEffectDuration, addDurationSeconds} from "./rules/effect-durati
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
+import {executeConsequences,announceConsequences} from "./consequences.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -152,7 +153,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
- const fields=[{name:"duration",label:local("Duration"),value:durationText}];
+ const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -178,7 +179,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   Object.assign(rules,selected.rules);
   if(!rules.preserveHP)formMaximum=selected.maximum;
  }
- const duration=await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
+ const duration=template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  if(Number.isFinite(formMaximum))changes.push({key:"system.resources.body.max",type:"override",value:String(formMaximum),phase:"initial"});
  if(!resolvedCopy&&template.levelParameter)for(const id of template.levelParameter.knowledge??[])if(rules.knowledge?.[id]!==undefined)rules.knowledge[id]*=Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0);
@@ -278,8 +279,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.kind==="divine"?casting.messageId:"",targetUuid:actor.uuid,countsById:allocation,data});
-  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
+  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
+  if(result.instant)return result;
   effect=await foundry.utils.fromUuid(result.effectUuid);
+ }else if(template.instant){
+  const bonus=(template.parameters??[]).filter(p=>p.target==="instant").reduce((sum,p)=>sum+Number(p.value)*(casting.counts[p.index]??0),0);
+  const result=await executeConsequences({actor,operations:[{operation:template.instant.operation,formula:String(template.instant.base+bonus)}],source:effectName});
+  await announceConsequences(actor,result,effectName);
+  return result;
  }else effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;
  await syncEffectGrants(effect,actor);

@@ -1822,6 +1822,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:firon-power:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0",
@@ -1835,6 +1839,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:healing-glow:2:0",
@@ -1848,6 +1856,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing-sun:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:healing-sun:8:0",
@@ -4094,6 +4106,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:firon-power:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:firon-power:5:0",
@@ -4107,6 +4123,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing-glow:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:healing-glow:3:0",
@@ -4120,6 +4140,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing-sun:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:healing-sun:8:0",

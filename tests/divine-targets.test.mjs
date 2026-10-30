@@ -341,3 +341,48 @@ test("Stone Senses and Shattered Mind scale both combat and initiative penalties
   }
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("instant healing is applied once, uses purchased levels and reserves one target",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({boost0:2})};
+  const cases=[["holy-gerbanis-warmth-of-sunvei:healing-glow:2","lumiere-guerisseuse",1,1],["holy-gerbanis-warmth-of-sunvei:firon-power:4","pouvoir-de-firon",5,2],["holy-gerbanis-warmth-of-sunvei:healing-sun:8","soleil-guerisseur",10,3],["holy-joaringfaith-power-of-sille:healing-glow:3","lumiere-guerisseuse",1,1],["holy-joaringfaith-power-of-sille:firon-power:5","pouvoir-de-firon",5,2],["holy-joaringfaith-power-of-sille:healing-sun:8","soleil-guerisseur",10,3]];
+  for(const [index,[power,key,base,bonus]] of cases.entries()){
+   const caster={uuid:`Actor.instant-caster-${index}`,name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);const item={type:"divineFeat",system:{catalogId:power}};
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Healing",castingId:`instant-${index}`,powerLevelCounts:[2]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   const makeTarget=uuid=>({uuid,name:uuid,items:[],isOwner:true,canUserModify:()=>true,system:{resources:{body:{current:-3,max:100}},modifiers:{}},_source:{system:{resources:{body:{value:-3}}}},async update(data){this.system.resources.body.current=data["system.resources.body.value"];this._source.system.resources.body.value=this.system.resources.body.current;}});
+   const a=makeTarget(`Actor.instant-a-${index}`),b=makeTarget(`Actor.instant-b-${index}`);documents.set(a.uuid,a);documents.set(b.uuid,b);
+   const result=await applyTransformation(a,`${power}#${key}`,{source:item,context});assert.equal(result.instant,true);
+   assert.equal(a.system.resources.body.current,-3+base+2*bonus);
+   await assert.rejects(()=>applyTransformation(a,`${power}#${key}`,{source:item,context}),/MagicInstantAlreadyApplied/);
+   await assert.rejects(()=>applyTransformation(b,`${power}#${key}`,{source:item,context}),/MagicTargetLimit/);
+   assert.equal(a.system.resources.body.current,-3+base+2*bonus);
+   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,1);
+  }
+ }finally {foundry.applications.api.DialogV2=previous;}
+});
+
+test("concurrent immediate applications cannot heal the same target twice",async()=>{
+ const power="holy-gerbanis-warmth-of-sunvei:healing-glow:2",caster={uuid:"Actor.instant-race",canUserModify:()=>true};
+ const target={uuid:"Actor.instant-race-target",name:"Target",items:[],isOwner:true,canUserModify:()=>true,system:{resources:{body:{current:0,max:2}},modifiers:{}},_source:{system:{resources:{body:{value:0}}}},updates:0,async update(data){this.updates++;this.system.resources.body.current=data["system.resources.body.value"];}};
+ documents.set(caster.uuid,caster);documents.set(target.uuid,target);
+ const allocation={castingId:"instant-race",casterUuid:caster.uuid,sourceId:power,selected:{[`${power}:0`]:5},targetAllocations:[]};
+ const message={id:"instant-race-message",flags:{[scope]:{divineAllocation:allocation}},async update(changes){allocation.targetAllocations=structuredClone(changes[`flags.${scope}.divineAllocation.targetAllocations`]);}};messages.set(message.id,message);
+ const data={flags:{[scope]:{transformation:{key:`${power}#lumiere-guerisseuse`,ruleTestContext:{kind:"divine",casterUuid:caster.uuid,castingId:"instant-race",sourceId:power}}}}};
+ const payload={casterUuid:caster.uuid,castingId:"instant-race",messageId:message.id,targetUuid:target.uuid,countsById:{[`${power}:0`]:5},data,userId:"gm"};
+ const result=await Promise.all([applyAllocatedEffectOnGM(payload),applyAllocatedEffectOnGM(payload)]);
+ assert.deepEqual(result.map(x=>x.status),["ok","already-applied"]);assert.equal(target.updates,1);assert.equal(target.system.resources.body.current,2);
+});
+
+test("failed immediate healing releases the reservation without changing the target",async()=>{
+ const power="holy-gerbanis-warmth-of-sunvei:healing-glow:2",caster={uuid:"Actor.instant-fail-caster",canUserModify:()=>true};
+ const target={uuid:"Actor.instant-fail-target",name:"Target",isOwner:true,canUserModify:()=>true,system:{resources:{body:{current:0,max:10}},modifiers:{}},_source:{system:{resources:{body:{value:0}}}},async update(){throw Error("denied");}};
+ documents.set(caster.uuid,caster);documents.set(target.uuid,target);
+ const allocation={castingId:"instant-fail",casterUuid:caster.uuid,sourceId:power,selected:{[`${power}:0`]:0},targetAllocations:[]};
+ const message={id:"instant-fail-message",flags:{[scope]:{divineAllocation:allocation}},async update(changes){allocation.targetAllocations=structuredClone(changes[`flags.${scope}.divineAllocation.targetAllocations`]);}};messages.set(message.id,message);
+ const data={flags:{[scope]:{transformation:{key:`${power}#lumiere-guerisseuse`,ruleTestContext:{kind:"divine",casterUuid:caster.uuid,castingId:"instant-fail",sourceId:power}}}}};
+ const previous=console.error;console.error=()=>{};
+ try{assert.equal(await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"instant-fail",messageId:message.id,targetUuid:target.uuid,countsById:{[`${power}:0`]:0},data,userId:"gm"}),false);}finally{console.error=previous;}
+ assert.equal(target.system.resources.body.current,0);assert.deepEqual(allocation.targetAllocations,[]);
+});

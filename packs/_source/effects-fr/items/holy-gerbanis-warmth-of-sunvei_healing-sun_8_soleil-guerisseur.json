@@ -1,0 +1,45 @@
+{
+  "_id": "M8toA5x3y4z5A6B7",
+  "_key": "!items!M8toA5x3y4z5A6B7",
+  "name": "Soleil guérisseur (Solvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur",
+    "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+    "summary": "Restaure immédiatement la santé et arrête les saignements.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "vDyj9SnToUpVqWrX",
+      "_key": "!items.effects!M8toA5x3y4z5A6B7.vDyj9SnToUpVqWrX",
+      "name": "Soleil guérisseur (Solvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8",
+            "summary": "Restaure immédiatement la santé et arrête les saignements.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

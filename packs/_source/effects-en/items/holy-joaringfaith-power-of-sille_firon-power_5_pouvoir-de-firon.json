@@ -1,0 +1,45 @@
+{
+  "_id": "k3VPYA5A6B7C8D9E",
+  "_key": "!items!k3VPYA5A6B7C8D9E",
+  "name": "Firon Power (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+    "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+    "summary": "Immediately restores health and stops bleeding.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "5llJ05x3y4z5A6B7",
+      "_key": "!items.effects!k3VPYA5A6B7C8D9E.5llJ05x3y4z5A6B7",
+      "name": "Firon Power (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon",
+            "sourceId": "holy-joaringfaith-power-of-sille:firon-power:5",
+            "summary": "Immediately restores health and stops bleeding.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

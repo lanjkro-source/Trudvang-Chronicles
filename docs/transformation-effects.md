@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 129 variantes.
+les états, les règles et les liens des 135 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -268,3 +268,10 @@ Sens pétrifiés et Esprit brisé appliquent les malus d'initiative et d'actions
 de combat, en tenant compte des niveaux de puissance. Une invocation affecte
 une seule cible ; la taille et la portée restent à vérifier manuellement
 (Livre des règles, p. 251 et 270).
+
+Les soins instantanés de Solvei et Sille utilisent les conséquences immédiates :
+le MJ actif réserve la cible de l'invocation avant de restaurer les PS. Une
+même invocation ne peut pas soigner la même personne deux fois, même en cas
+de demandes concurrentes ; l'annonce indique les points réellement rendus.
+Le nombre de points dépend des niveaux alloués. La fin des saignements est
+un rappel à gérer manuellement, en l'absence d'un état de saignement dédié.

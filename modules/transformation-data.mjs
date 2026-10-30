@@ -586,6 +586,72 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
+    "id": "lumiere-guerisseuse",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 1
+    },
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 1,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2:0"
+      }
+    ]
+  },
+  "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon": {
+    "id": "pouvoir-de-firon",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 5
+    },
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 2,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0"
+      }
+    ]
+  },
+  "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur": {
+    "id": "soleil-guerisseur",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 10
+    },
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 3,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8:0"
+      }
+    ]
+  },
   "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
     "id": "autorite",
     "icon": "icons/svg/aura.svg",
@@ -4563,6 +4629,72 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
+    "id": "lumiere-guerisseuse",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 1
+    },
+    "sourceId": "holy-joaringfaith-power-of-sille:healing-glow:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 1,
+        "optionId": "holy-joaringfaith-power-of-sille:healing-glow:3:0"
+      }
+    ]
+  },
+  "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon": {
+    "id": "pouvoir-de-firon",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 5
+    },
+    "sourceId": "holy-joaringfaith-power-of-sille:firon-power:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 2,
+        "optionId": "holy-joaringfaith-power-of-sille:firon-power:5:0"
+      }
+    ]
+  },
+  "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur": {
+    "id": "soleil-guerisseur",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 10
+    },
+    "sourceId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "instant",
+        "value": 3,
+        "optionId": "holy-joaringfaith-power-of-sille:healing-sun:8:0"
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -5337,6 +5469,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
   ],
+  "holy-gerbanis-warmth-of-sunvei:healing-glow:2": [
+    "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse"
+  ],
+  "holy-gerbanis-warmth-of-sunvei:firon-power:4": [
+    "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon"
+  ],
+  "holy-gerbanis-warmth-of-sunvei:healing-sun:8": [
+    "holy-gerbanis-warmth-of-sunvei:healing-sun:8#soleil-guerisseur"
+  ],
   "holy-gerbanis-strength-of-stormi:voice-of-command:1": [
     "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite"
   ],
@@ -5555,6 +5696,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-power-of-sille:healing:0": [
     "holy-joaringfaith-power-of-sille:healing:0#guerison"
+  ],
+  "holy-joaringfaith-power-of-sille:healing-glow:3": [
+    "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse"
+  ],
+  "holy-joaringfaith-power-of-sille:firon-power:5": [
+    "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon"
+  ],
+  "holy-joaringfaith-power-of-sille:healing-sun:8": [
+    "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur"
   ],
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": [
     "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",

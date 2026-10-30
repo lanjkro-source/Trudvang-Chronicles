@@ -1,0 +1,45 @@
+{
+  "_id": "kwhtzToUpVqWrXsY",
+  "_key": "!items!kwhtzToUpVqWrXsY",
+  "name": "Healing Sun (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+    "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+    "summary": "Immediately restores health and stops bleeding.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "9b9UtUoUpVqWrXsY",
+      "_key": "!items.effects!kwhtzToUpVqWrXsY.9b9UtUoUpVqWrXsY",
+      "name": "Healing Sun (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+            "sourceId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+            "summary": "Immediately restores health and stops bleeding.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

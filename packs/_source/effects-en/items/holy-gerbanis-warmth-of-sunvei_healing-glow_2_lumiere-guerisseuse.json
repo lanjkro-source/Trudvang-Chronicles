@@ -1,0 +1,45 @@
+{
+  "_id": "u5OSpSlRmSnToUpV",
+  "_key": "!items!u5OSpSlRmSnToUpV",
+  "name": "Healing Glow (Sunvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse",
+    "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+    "summary": "Immediately restores health and stops bleeding.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "T3OtHhLgMhNiOjPk",
+      "_key": "!items.effects!u5OSpSlRmSnToUpV.T3OtHhLgMhNiOjPk",
+      "name": "Healing Glow (Sunvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
+            "summary": "Immediately restores health and stops bleeding.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

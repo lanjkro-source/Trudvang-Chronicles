@@ -8,7 +8,7 @@ const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
-const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange"]);
+const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange","instant"]);
 const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id)).map(p=>entry.catalogId?resolvePowerOptionReference(entry,p):p);
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
@@ -36,6 +36,8 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=englishEntry?.effectTemplates?.find(v=>v.id===t.id);
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
+   if(t.instant&&(!["heal"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
    if(!t.summary?.trim()||!translated.summary?.trim())throw Error(`Missing effect summary ${key}`);
    if([...t.changes,...translated.changes].some(c=>!validProfileChange(c)))throw Error(`Invalid profile change ${key}`);
    if(translated.priority!==t.priority||(t.priority!==undefined&&(translated.changes??[]).some(c=>c.priority!==t.priority)))throw Error(`Unaligned EN effect priority ${key}`);
@@ -53,6 +55,7 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(changeMechanics(t.changes))!==JSON.stringify(changeMechanics(translated.changes)))throw Error(`Unaligned EN effect mechanics for ${key}`);
    for(const p of parameters){
     if(!parameterTargets.has(p.target)||!entry.powerLevels?.[p.index])throw Error(`Invalid parameter ${p.target} in ${key}`);
+    if(p.target==="instant"&&(!t.instant||!Number.isInteger(p.value)||p.value<0))throw Error(`Invalid instant improvement for ${key}`);
     const native=path=>t.changes.some(c=>c.key===path||c.key.startsWith(path+"."));
     if(p.target==="temporaryHP"&&!native("system.resources.body.temporaryMax")&&sourceRules.temporaryHP===undefined)throw Error(`Temporary HP parameter without matching base in ${key}`);
     if(p.target==="outerProtection"&&!Number.isFinite(sourceRules.outerProtection))throw Error(`Outer protection parameter without matching base in ${key}`);

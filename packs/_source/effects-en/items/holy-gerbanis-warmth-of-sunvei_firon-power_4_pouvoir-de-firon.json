@@ -1,0 +1,45 @@
+{
+  "_id": "NqkR8RkQlRmSnToU",
+  "_key": "!items!NqkR8RkQlRmSnToU",
+  "name": "Firon Power (Sunvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+    "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+    "summary": "Immediately restores health and stops bleeding.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "qn95ThKfLgMhNiOj",
+      "_key": "!items.effects!NqkR8RkQlRmSnToU.qn95ThKfLgMhNiOj",
+      "name": "Firon Power (Sunvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately restores Body Points. Bleeding stops: the GM must handle this manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
+            "summary": "Immediately restores health and stops bleeding.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

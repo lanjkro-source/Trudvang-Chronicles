@@ -1,0 +1,45 @@
+{
+  "_id": "kwhtzToUpVqWrXsY",
+  "_key": "!items!kwhtzToUpVqWrXsY",
+  "name": "Soleil guérisseur (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+    "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+    "summary": "Restaure immédiatement la santé et arrête les saignements.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "9b9UtUoUpVqWrXsY",
+      "_key": "!items.effects!kwhtzToUpVqWrXsY.9b9UtUoUpVqWrXsY",
+      "name": "Soleil guérisseur (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur",
+            "sourceId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+            "summary": "Restaure immédiatement la santé et arrête les saignements.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

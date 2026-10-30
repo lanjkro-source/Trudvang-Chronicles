@@ -1,0 +1,45 @@
+{
+  "_id": "NqkR8RkQlRmSnToU",
+  "_key": "!items!NqkR8RkQlRmSnToU",
+  "name": "Pouvoir de Firon (Solvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+    "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+    "summary": "Restaure immédiatement la santé et arrête les saignements.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 217
+    }
+  },
+  "effects": [
+    {
+      "_id": "qn95ThKfLgMhNiOj",
+      "_key": "!items.effects!NqkR8RkQlRmSnToU.qn95ThKfLgMhNiOj",
+      "name": "Pouvoir de Firon (Solvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Restaure immédiatement des points de santé. Les saignements cessent : le MJ doit gérer cet effet manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
+            "summary": "Restaure immédiatement la santé et arrête les saignements.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

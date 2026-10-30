@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,88);
+ assert.equal(Object.keys(sources).length,94);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
