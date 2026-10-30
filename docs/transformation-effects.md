@@ -50,21 +50,25 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    Les nouveaux liens s'appuient sur les identifiants introduits en 0.122 : les
    anciennes cartes et anciens effets ne sont pas associés arbitrairement. Sans MJ
    actif, les suppressions entre propriétaires ne peuvent pas être coordonnées.
-4. **Cibles et améliorations** : ajouter dans les sources des données structurées
-   vérifiées pour les limites et les options de cibles, puis régénérer le catalogue.
-   Les règles p. 142–143 permettent de répartir les niveaux différemment entre
-   cibles : représenter chaque allocation au lieu de copier automatiquement toutes
-   les améliorations. Ne pas inventer de limite pour les zones, cibles variables
-   ou cas illimités. Compter les applications par lancement et cible ; garantir
-   qu'une réapplication ou plusieurs clics concurrents ne contournent pas la limite.
+4. **Cibles et améliorations** : Hâte et Vigueur disposent d'une définition
+   structurée des cibles dans les sources FR/EN. Pour ces deux sortilèges, le MJ
+   actif réserve les cibles et les améliorations par lancement ; les attributions
+   concurrentes sont sérialisées et validées contre les niveaux achetés. Les
+   règles p. 142–143 permettent de répartir ces niveaux entre cibles. Une cible
+   déjà affectée peut réappliquer la même variante, sans en recevoir une autre.
+   Les autres sorts ne sont pas encore soumis à ces limites : ajouter leurs
+   définitions après vérification, sans inventer de limite pour les zones,
+   cibles variables ou cas illimités. Les améliorations offertes par un succès
+   critique et les pouvoirs/runes demandent encore leur propre prise en charge.
 5. **Généralisation** : ajouter progressivement les effets de sortilèges, pouvoirs
    et runes depuis les sources, avec tests des améliorations et des règles propres
    à chaque effet. Les pouvoirs ne deviennent pas des sortilèges maintenus.
 
 À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
 lancements identiques, les durées indépendantes, les tokens liés et non liés,
-les permissions et les anciens messages. Les limites de cibles et leurs
-allocations restent à implémenter.
+les permissions et les anciens messages. Les limites et allocations sont actives
+seulement pour Hâte et Vigueur, lorsque l'effet est appliqué depuis la carte d'un
+nouveau lancement maintenu. Les anciens messages sans identité restent inchangés.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre
 sa raideur, et les frénésies leur épuisement. Une description d’effet propose ses

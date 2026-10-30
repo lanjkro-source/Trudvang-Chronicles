@@ -16,6 +16,9 @@ import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 import {normalizeEffectDuration, addDurationSeconds} from "./rules/effect-duration.mjs";
+import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
+import {magicTargetCapacity} from "./rules/magic-target-allocation.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -43,9 +46,9 @@ export function annotateTransformationDescription(description,document){
  const links=transformationLinks(document);
  return links?`${description}<div class="trudvang-transformation-links">${links}</div>`:description;
 }
-async function askFields(title,fields,preview=()=>""){
+async function askFields(title,fields,preview=()=>"",intro=""){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div>${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}">`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}">`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -111,12 +114,29 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.capabilities)rules.capabilities=rules.capabilities.map(s=>game.i18n.localize(s));
  if(rules.attacks)rules.attacks=rules.attacks.map(a=>({...a,name:game.i18n.localize(a.name)}));
  const resolvedCopy=Boolean(metadata(supplied)?.resolved||metadata(supplied)?.appliedAt!==undefined);
+ const targeting=!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
+ let allocationRecord=null,allocationIntro="",availableById={};
+ if(targeting){
+  const caster=await foundry.utils.fromUuid(casting.casterUuid);
+  allocationRecord=Array.from(caster?.system?.activeSpellCastings??[]).find(row=>row.id===casting.castingId);
+  if(!allocationRecord)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
+  const others=Array.from(allocationRecord.targetAllocations??[]).filter(row=>row.targetUuid!==actor.uuid);
+  const own=Array.from(allocationRecord.targetAllocations??[]).find(row=>row.targetUuid===actor.uuid);
+  const chosen=Object.fromEntries(Array.from(allocationRecord.powerLevelSnapshot??[],row=>[row.id,Number(row.count)||0]));
+  const already=Object.fromEntries(Array.from(own?.counts??[],row=>[row.optionId,Number(row.count)||0]));
+  const options=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels??[];
+  availableById=Object.fromEntries(options.map(option=>[option.id,Math.max(0,(chosen[option.id]??0)-others.reduce((sum,row)=>sum+Array.from(row.counts??[]).filter(c=>c.optionId===option.id).reduce((n,c)=>n+Number(c.count||0),0),0))]));
+  counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
+  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:Array.from(allocationRecord.targetAllocations??[]).length,max:magicTargetCapacity(targeting,chosen)});
+  Object.assign(casting,withCastingCounts(casting,counts));
+ }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=[{name:"duration",label:local("Duration"),value:durationText}];
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
- for(const index of indices)fields.push({name:`boost${index}`,label:game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),value:counts[index]??0});
+ for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
+  fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0});}
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
@@ -126,7 +146,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
  const preview=values=>magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
- const answers=await askFields(effectName,fields,preview);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ const answers=await askFields(effectName,fields,preview,allocationIntro);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
  let formMaximum;
@@ -231,7 +251,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const description=supplied?.description??text(key,"Description");
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
- const effect=await actor.createTrudvangEffect(data);
+ let effect;
+ if(targeting){
+  const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;
+  const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
+  const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,targetUuid:actor.uuid,countsById:allocation,data});
+  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
+  effect=await foundry.utils.fromUuid(result.effectUuid);
+ }else effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;
  await syncEffectGrants(effect,actor);
  await syncTransformationTokens(actor);

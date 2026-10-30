@@ -83,16 +83,41 @@ test("a maintained casting identity follows its chat card into each applied effe
  const context=messages.at(-1).flags["trudvang-chronicles"].ruleTestContext;
  assert.equal(context.castingId,"cast-one");assert.equal(context.casterUuid,"Actor.mage");
  assert.match(cards.at(-1).transformationLinks,/cast-one/);
- const previous=foundry.applications.api.DialogV2;let created;
+ const previous=foundry.applications.api.DialogV2,previousUtils=foundry.utils,previousUsers=game.users;let created;
  try{
   foundry.applications.api.DialogV2=class{static async wait(){return {duration:"1 minute"};}};
-  const recipient={...target(),canUserModify:()=>true,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+  item.id="haste";item.system.spellType="lasting";caster.items=[item];caster.canUserModify=()=>true;
+  caster.system={activeSpellCastingsMigrated:true,activeSpellCastings:["cast-one","cast-two"].map(id=>({id,itemId:"haste",powerLevelSnapshot:Array.from({length:7},(_,i)=>({id:`${haste}:${i}`,count:i===3?3:0}))}))};
+  caster.update=async changed=>{caster.system.activeSpellCastings=changed["system.activeSpellCastings"];};
+  const recipient={...target(),uuid:"Actor.target",canUserModify:()=>true,items:[],createTrudvangEffect:async data=>{created=data;return {uuid:"Actor.target.ActiveEffect.e"};}};
+  game.users={activeGM:{isSelf:true},get:()=>game.user};game.actors=[caster,recipient];game.scenes=[];
+  foundry.utils={fromUuid:async uuid=>uuid===caster.uuid?caster:uuid===recipient.uuid?recipient:null};
   await applyTransformation(recipient,haste+"#hate",{source:item,context});
   assert.equal(created.flags["trudvang-chronicles"].transformation.ruleTestContext.castingId,"cast-one");
   const firstStackId=created.system.stackId;
   await applyTransformation(recipient,haste+"#hate",{source:item,context:{...context,castingId:"cast-two"}});
   assert.notEqual(created.system.stackId,firstStackId,"different castings must not replace each other");
- }finally{foundry.applications.api.DialogV2=previous;}
+ }finally{foundry.applications.api.DialogV2=previous;foundry.utils=previousUtils;game.users=previousUsers;}
+});
+
+test("Hâte distributes its purchased levels among targets and rejects an extra target",async()=>{
+ const old={utils:foundry.utils,dialog:foundry.applications.api.DialogV2,users:game.users,actors:game.actors,scenes:game.scenes};
+ try{
+  const caster=ranks(0),item=doc(haste,caster);item.id="haste";item.system.spellType="lasting";caster.items=[item];caster.canUserModify=()=>true;
+  caster.system={activeSpellCastingsMigrated:true,activeSpellCastings:[{id:"cast",itemId:item.id,powerLevelSnapshot:Array.from({length:7},(_,i)=>({id:`${haste}:${i}`,count:i===0?2:i===6?1:0}))}]};
+  caster.update=async changed=>{caster.system.activeSpellCastings=changed["system.activeSpellCastings"];};
+  const recipient=uuid=>({...target(),uuid,canUserModify:()=>true,items:[],createTrudvangEffect:async data=>{return {uuid:uuid+".ActiveEffect.test",data};}});
+  const a=recipient("Actor.a"),b=recipient("Actor.b"),c=recipient("Actor.c"),docs=new Map([caster,a,b,c].map(o=>[o.uuid,o]));
+  game.users={activeGM:{isSelf:true},get:()=>game.user};game.actors=[caster,a,b,c];game.scenes=[];
+  foundry.utils={fromUuid:async uuid=>docs.get(uuid)};
+  const context={...ruleTestCastingContext(item,{counts:[2,0,0,0,0,0,1]}),castingId:"cast"};
+  const displayed=[];foundry.applications.api.DialogV2=class{static async wait(options){displayed.push(options.content);return {duration:"1 minute",boost0:1};}};
+  await applyTransformation(a,haste+"#hate",{source:item,context});
+  await applyTransformation(b,haste+"#hate",{source:item,context});
+  assert.match(displayed[0],/0 \/ 2/);assert.match(displayed[1],/1 \/ 2/);
+  assert.deepEqual(caster.system.activeSpellCastings[0].targetAllocations.map(a=>a.counts.find(c=>c.optionId===`${haste}:0`).count),[1,1]);
+  await assert.rejects(()=>applyTransformation(c,haste+"#hate",{source:item,context}),/nombre de cibles/);
+ }finally{foundry.utils=old.utils;foundry.applications.api.DialogV2=old.dialog;game.users=old.users;game.actors=old.actors;game.scenes=old.scenes;}
 });
 
 test("effect application exposes and persists resistance improvements, with a live preview independent of trait boosts",async()=>{

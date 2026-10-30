@@ -1,4 +1,6 @@
 import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
+import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
 
 const jobs = new Map();
 const oldContexts = new WeakMap();
@@ -78,9 +80,63 @@ export async function requestEndMaintainedSpell(caster, castingId) {
  });
 }
 
+/** Reserve a target and its improvements on the elected GM before creating the
+ * effect. All casts of the same caster share the existing serialized queue. */
+export async function applyAllocatedEffectOnGM({casterUuid,castingId,targetUuid,countsById,data,userId}) {
+ if(!isWriter())return {status:"unavailable"};
+ return queueCaster(casterUuid,async()=>{
+  const caster=await foundry.utils.fromUuid(casterUuid), target=await foundry.utils.fromUuid(targetUuid), user=game.users.get(userId);
+  if(!user || !target?.canUserModify?.(user,"update") || !caster?.canUserModify?.(game.user,"update"))return {status:"unavailable"};
+  const records=activeSpellRecords(caster), record=records.find(row=>row.id===castingId);
+  const item=record&&Array.from(caster.items??[]).find(row=>row.id===record.itemId);
+  const targeting=POWER_DETAILS_BY_ID[item?.system?.catalogId]?.targeting;
+  const provenance=data?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
+  if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==item.system.catalogId)return {status:"unavailable"};
+  const selected=Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
+  const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
+  const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===targetUuid);
+  if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
+  const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==targetUuid).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
+  allocations.push({targetUuid,effectKey,countsById});
+  const validation=validateMagicAllocations({targeting,selected,allocations});
+  if(!validation.ok)return {status:validation.reason};
+  const prior=structuredClone(record.targetAllocations??[]);
+  record.targetAllocations=allocations.map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,counts:Object.entries(row.countsById).map(([optionId,count])=>({optionId,count}))}));
+  await caster.update({"system.activeSpellCastings":records,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});
+  try{
+   const effect=await target.createTrudvangEffect(data);
+   if(!effect)throw Error("Failed to create allocated effect");
+   return {status:"ok",effectUuid:effect.uuid};
+  }catch(error){
+   const current=activeSpellRecords(caster),existing=current.find(row=>row.id===castingId);
+   if(existing){existing.targetAllocations=prior;await caster.update({"system.activeSpellCastings":current,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});}
+   throw error;
+  }
+ });
+}
+
+export async function requestAllocatedEffect(payload) {
+ if(isWriter())return (await applyAllocatedEffectOnGM({...payload,userId:game.user.id})) || {status:"unavailable"};
+ if(!game.users?.activeGM || !game.socket)return {status:"unavailable"};
+ const requestId=crypto.randomUUID();
+ return new Promise(resolve=>{
+  const timeout=setTimeout(()=>{replies.delete(requestId);resolve({status:"unavailable"});},30000);
+  replies.set(requestId,{resolve,timeout,allocation:true});
+  game.socket.emit(channel,{type:"applyAllocatedEffect",requestId,userId:game.user.id,...payload});
+ });
+}
+
 function registerSocket() {
  if (!game.socket) return;
  game.socket.on(channel, async payload => {
+  if(payload?.type==="applyAllocatedEffectReply" && payload.userId===game.user.id){
+   const pending=replies.get(payload.requestId);if(!pending?.allocation)return;
+   clearTimeout(pending.timeout);replies.delete(payload.requestId);pending.resolve(payload.result??{status:"unavailable"});return;
+  }
+  if(payload?.type==="applyAllocatedEffect" && isWriter()){
+   const result=await applyAllocatedEffectOnGM(payload)||{status:"unavailable"};
+   game.socket.emit(channel,{type:"applyAllocatedEffectReply",requestId:payload.requestId,userId:payload.userId,result});return;
+  }
   if (payload?.type === "endMaintainedSpellReply" && payload.userId === game.user.id) {
    const pending=replies.get(payload.requestId);if(!pending)return;
    clearTimeout(pending.timeout);replies.delete(payload.requestId);pending.resolve(Boolean(payload.success));return;

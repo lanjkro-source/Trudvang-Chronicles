@@ -16,3 +16,16 @@ export function resolvePowerOptionReference(entry, reference) {
  if(index<0)throw new Error(`${entry.catalogId}: unknown power option ${reference.optionId ?? ""}`);
  return {...reference,index};
 }
+
+export function validatePowerTargeting(entry, english) {
+ const target=entry.targeting;
+ if(JSON.stringify(target??null)!==JSON.stringify(english.targeting??null))throw new Error(`${entry.catalogId}: target definitions differ between languages`);
+ if(!target)return;
+ if(!Number.isInteger(target.baseTargets)||target.baseTargets<1||!Array.isArray(target.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
+ const seen=new Set();
+ for(const row of target.additionalTargets){
+  resolvePowerOptionReference(entry,row);
+  if(seen.has(row.optionId)||!Number.isInteger(row.count)||row.count<1)throw new Error(`${entry.catalogId}: invalid additional target option`);
+  seen.add(row.optionId);
+ }
+}

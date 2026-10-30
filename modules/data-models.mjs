@@ -206,6 +206,7 @@ function actorCommonSchema() {
       duration: string(),
       effectUuids: new fields.ArrayField(new fields.StringField({required: true}), {required: true, initial: []}),
       effectsApplied: boolean(false),
+      targetAllocations: new fields.ArrayField(schema({targetUuid:string(), effectKey:string(), counts:new fields.ArrayField(schema({optionId:string(), count:integer(0,{min:0})}), {required:true,initial:[]})}), {required:true,initial:[]}),
       powerLevelCounts: new fields.ArrayField(new fields.NumberField({required: true, integer: true, min: 0}), {required: true, initial: []}),
       powerLevelSnapshot: new fields.ArrayField(schema({id: string(), index: integer(0, {min: 0}), description: string(), count: integer(0, {min: 0}), unitCost: integer(0, {min: 0})}), {required: true, initial: []})
     }), {required: true, initial: []}),

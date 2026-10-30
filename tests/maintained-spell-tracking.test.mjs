@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {reconcileMaintainedSpell, endMaintainedSpellOnGM, registerMaintainedSpellTracking} from "../modules/maintained-spell-tracking.mjs";
+import {reconcileMaintainedSpell, endMaintainedSpellOnGM, registerMaintainedSpellTracking,applyAllocatedEffectOnGM} from "../modules/maintained-spell-tracking.mjs";
 
 test("the GM records independent effect UUIDs and retains the fact that effects existed", async () => {
  const old = globalThis.game;
@@ -29,6 +29,25 @@ test("the GM records independent effect UUIDs and retains the fact that effects 
   game.users.activeGM.isSelf=false;
   assert.equal(await reconcileMaintainedSpell(caster,"second"),false);
  } finally {globalThis.game=old;}
+});
+
+test("simultaneous targets share one casting's target and improvement budget",async()=>{
+ const old={game:globalThis.game,foundry:globalThis.foundry};
+ try{
+  const id="vitner-body-vitner:hasten:9",user={id:"owner"},item={id:"spell",type:"spell",system:{spellType:"lasting",catalogId:id}};
+  const caster={uuid:"Actor.mage",items:[item],canUserModify:()=>true,system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:"cast",itemId:"spell",powerLevelSnapshot:Array.from({length:7},(_,i)=>({id:`${id}:${i}`,count:i===6?1:i===0?2:0}))}]},async update(changed){this.system.activeSpellCastings=changed["system.activeSpellCastings"];}};
+  const target=uuid=>({uuid,canUserModify:()=>true,async createTrudvangEffect(){return {uuid:`${uuid}.ActiveEffect.test`};}});
+  const a=target("Actor.a"),b=target("Actor.b"),c=target("Actor.c"),docs=new Map([caster,a,b,c].map(x=>[x.uuid,x]));
+  globalThis.game={user:{id:"gm"},users:{activeGM:{isSelf:true},get:()=>user},actors:[caster,a,b,c],scenes:[]};globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid)}};
+  const data={flags:{"trudvang-chronicles":{transformation:{key:"hate",ruleTestContext:{casterUuid:caster.uuid,castingId:"cast",sourceId:id}}}}};
+  const apply=(who,count)=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:who.uuid,countsById:{[`${id}:0`]:count},data,userId:user.id});
+  const result=await Promise.all([apply(a,1),apply(b,1),apply(c,0)]);
+  assert.deepEqual(result.map(row=>row.status),["ok","ok","exceeds-targets"]);
+  assert.equal((await apply(b,2)).status,"exceeds-improvements");
+  const other=structuredClone(data);other.flags["trudvang-chronicles"].transformation.key="hate-inverse";
+  assert.equal((await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:a.uuid,countsById:{},data:other,userId:user.id})).status,"duplicate-target");
+  assert.equal(caster.system.activeSpellCastings[0].targetAllocations.length,2);
+ }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
 
 test("actual effect hooks keep a casting until the last target's effect is deleted", async () => {

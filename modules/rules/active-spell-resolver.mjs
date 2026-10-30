@@ -11,6 +11,7 @@ export function activeSpellInstances(actor) {
     return [{id: casting.id, item, cost: Math.max(0, Number(casting.cost) || 0),
       startedAt: Number(casting.startedAt) || 0, duration: String(casting.duration || ""),
       effectUuids: Array.from(casting.effectUuids ?? []), effectsApplied: Boolean(casting.effectsApplied),
+      targetAllocations: Array.from(casting.targetAllocations ?? [],row=>({targetUuid:row.targetUuid,effectKey:row.effectKey??"",counts:Array.from(row.counts??[],count=>({optionId:count.optionId,count:count.count}))})),
       powerLevelCounts: Array.from(casting.powerLevelCounts ?? [], count => Number(count) || 0),
       ...(casting.powerLevelSnapshot?.length ? {powerLevelSnapshot: Array.from(casting.powerLevelSnapshot, row => ({id: row.id, index: row.index, description: row.description, count: row.count, unitCost: row.unitCost}))} : {})}];
   });
@@ -31,8 +32,8 @@ function legacyActiveSpellCastings(items) {
 }
 
 export function activeSpellRecords(actor) {
-  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts, powerLevelSnapshot, effectUuids, effectsApplied}) =>
-    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts, effectUuids, effectsApplied, ...(powerLevelSnapshot?.length ? {powerLevelSnapshot} : {})}));
+  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts, powerLevelSnapshot, effectUuids, effectsApplied, targetAllocations}) =>
+    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts, effectUuids, effectsApplied, targetAllocations, ...(powerLevelSnapshot?.length ? {powerLevelSnapshot} : {})}));
 }
 
 export function activeSpellCosts(actor, item) {

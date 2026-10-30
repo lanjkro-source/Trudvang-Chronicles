@@ -9,7 +9,7 @@
 import {readFileSync, writeFileSync} from "node:fs";
 import {resolve} from "node:path";
 import {englishPowerField} from "./power-source-fields.mjs";
-import {validatePowerOptionIdentities} from "./power-option-identity.mjs";
+import {validatePowerOptionIdentities,validatePowerTargeting} from "./power-option-identity.mjs";
 
 const root = process.cwd();
 const check = process.argv.includes("--check");
@@ -89,6 +89,7 @@ for (const id of [...french.keys()].sort()) {
     fail(`${id}: power-level count differs`);
   }
   validatePowerOptionIdentities(id, f.powerLevels, e.powerLevels);
+  validatePowerTargeting(f,e);
   for (let index = 0; index < f.powerLevels.length; index++) {
     const a = f.powerLevels[index], b = e.powerLevels[index];
     if (!Number.isInteger(a.cost) || !same([b.cost, b.maxCount ?? null], [a.cost, a.maxCount ?? null])) {
@@ -102,6 +103,7 @@ for (const id of [...french.keys()].sort()) {
   optionCount += f.powerLevels.length;
   powerDetails[id] = {
     isRune: rune,
+    ...(f.targeting ? {targeting: f.targeting} : {}),
     powerLevels: f.powerLevels.map(level => ({id: level.optionId, cost: level.cost, maxCount: level.maxCount ?? null})),
     spellType: types.get(f.type)[1],
     page: e.source.page,

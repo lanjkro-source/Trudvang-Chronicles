@@ -15,3 +15,12 @@ test('option references resolve by identity after a reorder, independently of th
  assert.equal(resolvePowerOptionReference(entry,{index:0,optionId:'power:0',value:2}).index,1);
  assert.throws(()=>resolvePowerOptionReference(entry,{index:0,optionId:'missing'}),/unknown power option/);
 });
+
+test('target metadata must agree across languages and refer to a real option',async()=>{
+ const {validatePowerTargeting}=await import('../tools/power-option-identity.mjs');
+ const entry={catalogId:'power',powerLevels:levels(),targeting:{baseTargets:1,additionalTargets:[{optionId:'power:1',count:1}]}};
+ assert.doesNotThrow(()=>validatePowerTargeting(entry,structuredClone(entry)));
+ assert.throws(()=>validatePowerTargeting(entry,{...entry,targeting:{...entry.targeting,baseTargets:2}}),/differ/);
+ const wrong=structuredClone(entry);wrong.targeting.additionalTargets[0].optionId='missing';
+ assert.throws(()=>validatePowerTargeting(wrong,structuredClone(wrong)),/unknown/);
+});

@@ -1336,6 +1336,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.CannotRollForActor` | You cannot roll for this actor. | Vous ne pouvez pas lancer le jet de cet acteur. |
 | `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort. |
 | `TRUDVANG.Warning.MaintainedSpellUnavailable` | The spell and its effects could not be ended. Check that a game master is connected. | Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté. |
+| `TRUDVANG.Warning.MagicAllocationUnavailable` | The effect could not be applied: the casting must be active and a game master connected. | Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté. |
+| `TRUDVANG.Warning.MagicTargetLimit` | This casting has reached its target limit. | Le nombre de cibles permis par ce lancement est atteint. |
+| `TRUDVANG.Warning.MagicTargetAlreadyAffected` | This target has already received another variant of this spell. | Cette cible a déjà reçu une autre variante de ce sortilège. |
+| `TRUDVANG.Warning.MagicPowerBudget` | The selected power levels are already allocated to other targets. | Les niveaux de puissance choisis sont déjà attribués à d’autres cibles. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
 | `TRUDVANG.Warning.NotEnoughExperience` | The next level costs {cost} Adventure Points. | Le niveau suivant coûte {cost} PA. |
@@ -12061,6 +12065,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Transformation.DragHint` | Drag onto an actor or click to apply | Glisser sur un acteur ou cliquer pour appliquer |
+| `TRUDVANG.Transformation.AllocationTargets` | Targets already affected: {used} / {max}. Distribute power levels among targets. | Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles. |
+| `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |
 | `TRUDVANG.Transformation.Cancel` | Cancel | Annuler |
 | `TRUDVANG.Transformation.Duration` | Duration (e.g. 3 days; blank: no expiry) | Durée (ex. 3 jours ; vide : sans expiration) |

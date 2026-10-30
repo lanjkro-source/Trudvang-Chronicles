@@ -6873,6 +6873,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:hasten:9": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:hasten:9:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:hasten:9:0",
@@ -7116,6 +7125,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:strengthen:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:strengthen:8:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:strengthen:8:0",
