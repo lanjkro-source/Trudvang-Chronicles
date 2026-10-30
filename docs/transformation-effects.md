@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 122 variantes.
+les états, les règles et les liens des 124 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -251,3 +251,9 @@ Les pétrifications, Statue, Monument en pierre et les deux Malédictions de
 l'arbre ont une cible par lancement. Leurs effets de récupération liés restent
 manuels : ils conservent leur provenance, mais ne réservent pas une nouvelle
 cible et ne prolongent pas le maintien du sort d'origine.
+
+Guérison de Solvei et Guérison de Sille ajoutent leur bonus à la récupération
+naturelle lors d'une nuit de sommeil, avec durée et bonus ajustés par les
+niveaux de puissance. Le bénéficiaire doit rester au repos : si cette condition
+cesse, le MJ retire l'effet manuellement (Livre des règles, p. 216 ; Stormlands,
+p. 123). Chaque invocation ne concerne qu'une personne.

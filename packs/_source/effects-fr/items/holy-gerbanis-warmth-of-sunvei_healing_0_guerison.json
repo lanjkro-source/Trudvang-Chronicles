@@ -1,0 +1,53 @@
+{
+  "_id": "u25SucGbHcIdJeKf",
+  "_key": "!items!u25SucGbHcIdJeKf",
+  "name": "Guérison (Solvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+    "description": "Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet.",
+    "summary": "Augmente la récupération quotidienne tant que le bénéficiaire se repose.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "rRSNUYsYtZu0v1w2",
+      "_key": "!items.effects!u25SucGbHcIdJeKf.rRSNUYsYtZu0v1w2",
+      "name": "Guérison (Solvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+            "summary": "Augmente la récupération quotidienne tant que le bénéficiaire se repose.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

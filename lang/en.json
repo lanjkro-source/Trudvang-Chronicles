@@ -13725,6 +13725,15 @@
           "SourcePage": "96",
           "Duration": "5 minutes"
         },
+        "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
+          "Name": "Healing (Sunvei)",
+          "Summary": "Increases daily recovery while the recipient rests.",
+          "Description": "Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then.",
+          "SourceName": "Healing",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "1 day"
+        },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
           "Name": "Troll Strength (Strength of Stormi)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
@@ -14522,6 +14531,15 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": ""
+        },
+        "holy-joaringfaith-power-of-sille:healing:0#guerison": {
+          "Name": "Healing (Sille)",
+          "Summary": "Increases daily recovery while the recipient rests.",
+          "Description": "Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then.",
+          "SourceName": "Healing",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 day"
         },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Curses of Sonntag)",

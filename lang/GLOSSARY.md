@@ -10891,6 +10891,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:change-creature:11#transformation.SourcePage` | 96 | 196 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:change-creature:11#transformation.Duration` | 5 minutes | 5 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Name` | Healing (Sunvei) | Guérison (Solvei) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Description` | Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then. | Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourceName` | Healing | Guérison |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourcePage` | 166 | 216 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll`
 
 | Clé | English | Français |
@@ -11858,6 +11869,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.Name` | Healing (Sille) | Guérison (Sille) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.Description` | Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then. | Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.SourceName` | Healing | Guérison |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing:0#guerison.Duration` | 1 day | 1 jour |
 
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre`
 

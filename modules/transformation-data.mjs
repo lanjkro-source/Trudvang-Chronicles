@@ -553,6 +553,39 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
+    "id": "guerison",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing:0:0"
+      },
+      {
+        "index": 1,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 1,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:healing:0:1"
+      }
+    ]
+  },
   "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
     "id": "force-du-troll",
     "icon": "icons/svg/aura.svg",
@@ -4349,6 +4382,39 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
     "parameters": []
   },
+  "holy-joaringfaith-power-of-sille:healing:0#guerison": {
+    "id": "guerison",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-joaringfaith-power-of-sille:healing:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-power-of-sille:healing:0:0"
+      },
+      {
+        "index": 1,
+        "target": "modifier",
+        "key": "system.modifiers.recovery",
+        "value": 1,
+        "optionId": "holy-joaringfaith-power-of-sille:healing:0:1"
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -5120,6 +5186,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-body-vitner:change-creature:11": [
     "vitner-body-vitner:change-creature:11#transformation"
   ],
+  "holy-gerbanis-warmth-of-sunvei:healing:0": [
+    "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
+  ],
   "holy-gerbanis-strength-of-stormi:troll-strength:0": [
     "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll"
   ],
@@ -5320,6 +5389,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-joaringfaith-fury-of-ogon:riastarthae:8": [
     "holy-joaringfaith-fury-of-ogon:riastarthae:8#riastarthae",
     "holy-joaringfaith-fury-of-ogon:riastarthae:8#frenzy-exhaustion"
+  ],
+  "holy-joaringfaith-power-of-sille:healing:0": [
+    "holy-joaringfaith-power-of-sille:healing:0#guerison"
   ],
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": [
     "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",

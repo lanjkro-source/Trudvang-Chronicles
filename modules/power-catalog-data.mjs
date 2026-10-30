@@ -1867,6 +1867,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:healing:0:0",
@@ -4131,6 +4135,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:healing:0:0",

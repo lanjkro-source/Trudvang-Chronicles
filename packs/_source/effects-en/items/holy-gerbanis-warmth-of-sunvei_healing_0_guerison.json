@@ -1,0 +1,53 @@
+{
+  "_id": "u25SucGbHcIdJeKf",
+  "_key": "!items!u25SucGbHcIdJeKf",
+  "name": "Healing (Sunvei)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+    "description": "Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then.",
+    "summary": "Increases daily recovery while the recipient rests.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "rRSNUYsYtZu0v1w2",
+      "_key": "!items.effects!u25SucGbHcIdJeKf.rRSNUYsYtZu0v1w2",
+      "name": "Healing (Sunvei)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Increases natural recovery by 1 Body Point per day. The power ends if the recipient stops resting; remove this effect then.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:healing:0#guerison",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+            "summary": "Increases daily recovery while the recipient rests.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

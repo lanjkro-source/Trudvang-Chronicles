@@ -1,0 +1,53 @@
+{
+  "_id": "mrm8VPjPkQlRmSnT",
+  "_key": "!items!mrm8VPjPkQlRmSnT",
+  "name": "Guérison (Sille)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing:0#guerison",
+    "description": "Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet.",
+    "summary": "Augmente la récupération quotidienne tant que le bénéficiaire se repose.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "dXwTW2v1w2x3y4z5",
+      "_key": "!items.effects!mrm8VPjPkQlRmSnT.dXwTW2v1w2x3y4z5",
+      "name": "Guérison (Sille)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Augmente la récupération naturelle de 1 point de santé par jour. Le pouvoir prend fin si le bénéficiaire cesse de se reposer ; retirer alors cet effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:healing:0#guerison",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:healing:0#guerison",
+            "sourceId": "holy-joaringfaith-power-of-sille:healing:0",
+            "summary": "Augmente la récupération quotidienne tant que le bénéficiaire se repose.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -282,3 +282,22 @@ test("Limb of Stone cannot target a second limb or a second creature from one in
   await assert.rejects(()=>applyTransformation(second,`${power}#membre-de-pierrebras-droit`,{source:item,context}),/MagicTargetLimit/);
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("healing powers grant the selected daily recovery and duration to one beneficiary",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"1 day",boost0:1,boost1:2})};
+  for(const [index,power] of ["holy-gerbanis-warmth-of-sunvei:healing:0","holy-joaringfaith-power-of-sille:healing:0"].entries()){
+   const caster={uuid:`Actor.healer-${index}`,name:"Healer",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+   const item={type:"divineFeat",system:{catalogId:power}};
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Healing",castingId:`healing-${index}`,powerLevelCounts:[1,2]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   const makeTarget=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.healing`,data};documents.set(effect.uuid,effect);return effect;}});
+   const a=makeTarget(`Actor.healed-${index}`),b=makeTarget(`Actor.extra-${index}`);documents.set(a.uuid,a);documents.set(b.uuid,b);
+   const effect=await applyTransformation(a,`${power}#guerison`,{source:item,context});
+   assert.equal(effect.data.system.changes.find(c=>c.key==="system.modifiers.recovery").value,"3");
+   assert.equal(effect.data.duration.value,2);assert.equal(effect.data.duration.units,"days");
+   await assert.rejects(()=>applyTransformation(b,`${power}#guerison`,{source:item,context}),/MagicTargetLimit/);
+  }
+ }finally {foundry.applications.api.DialogV2=previous;}
+});
