@@ -1148,6 +1148,7 @@
       "NotEnoughPower": "There are not enough points in this power reserve.",
       "CannotRollForActor": "You cannot roll for this actor.",
       "ActiveSpellLimit": "The active-spell limit has been reached; end one before casting this spell.",
+      "MaintainedSpellUnavailable": "The spell and its effects could not be ended. Check that a game master is connected.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
       "NotEnoughExperience": "The next level costs {cost} Adventure Points.",

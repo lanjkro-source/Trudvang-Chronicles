@@ -25,6 +25,7 @@ import { registerCombatHooks } from "./modules/combat.mjs";
 import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
 import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
 import {registerTransformationHooks} from "./modules/transformations.mjs";
+import {registerMaintainedSpellTracking} from "./modules/maintained-spell-tracking.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
@@ -33,6 +34,7 @@ Hooks.once("init", () => {
   registerEffectHooks();
   registerMagicSheetAvailabilityHooks();
   registerTransformationHooks();
+  registerMaintainedSpellTracking();
   registerActorStatusHooks();
   registerCombatHooks();
   // Directory context menus are built once at sidebar first render (before

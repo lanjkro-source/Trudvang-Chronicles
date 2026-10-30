@@ -78,6 +78,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
  counts=casting.counts;
+ const stackId=casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
  // A related-effect link keeps its originating document for ownership, elapsed
  // duration and provenance. Its data belongs to a different effect, however.
  // Unidentified custom effects remain copyable; identified ones must match.
@@ -177,8 +178,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // Replacing a dynamic effect must resolve against the actor without the old
  // instance. A detached clone retains all other effects and equipment; it never
  // deletes the live effect before the replacement has been prepared.
- const replacing=(rules.traits?.length&&Array.from(actor.effects??[]).some(e=>e.system?.stackId===key));
- const traitActor=replacing?await actor.clone({effects:Array.from(actor.effects).filter(e=>e.system?.stackId!==key).map(e=>effectSource(e))},{keepId:true}):actor;
+ const replacing=(rules.traits?.length&&Array.from(actor.effects??[]).some(e=>e.system?.stackId===stackId));
+ const traitActor=replacing?await actor.clone({effects:Array.from(actor.effects).filter(e=>e.system?.stackId!==stackId).map(e=>effectSource(e))},{keepId:true}):actor;
   for(const row of rules.traits??[]){
     const base=Number(traitActor.getTraitValue(row.trait)||0);
     const numeric=row.method==="degrees"||row.min!==undefined||row.max!==undefined;
@@ -229,7 +230,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const meta={key,sourceId:template.sourceId,summary,editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
   const description=supplied?.description??text(key,"Description");
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
-  system:{stackId:key,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
+  system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  const effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;
  await syncEffectGrants(effect,actor);

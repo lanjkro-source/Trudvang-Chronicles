@@ -1335,6 +1335,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CannotRollForActor` | You cannot roll for this actor. | Vous ne pouvez pas lancer le jet de cet acteur. |
 | `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort. |
+| `TRUDVANG.Warning.MaintainedSpellUnavailable` | The spell and its effects could not be ended. Check that a game master is connected. | Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
 | `TRUDVANG.Warning.NotEnoughExperience` | The next level costs {cost} Adventure Points. | Le niveau suivant coûte {cost} PA. |

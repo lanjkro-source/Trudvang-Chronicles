@@ -40,18 +40,16 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    arbitrairement à un lancement et conservent leur fonctionnement actuel.
 2. **Références des effets** : le repérage en lecture seule retrouve maintenant
    les UUID des effets par lanceur et lancement, y compris sur les acteurs de
-   tokens non liés de toutes les scènes, sans doublonner les tokens liés. Il ne
-   considère pas une liste vide comme une preuve de fin. Reste à enregistrer les effets effectivement créés par
-   lancement, avec leurs UUID complets, y compris les acteurs de tokens non liés.
-   Prévoir la réconciliation après suppression, expiration ou remplacement, et
-   distinguer les effets pas encore appliqués des effets tous terminés. Vérifier
-   les droits et coordonner les écritures avec le MJ actif ; éviter les doublons et
-   les suppressions en boucle. Plusieurs lancements du même sort restent séparés.
-3. **Maintien bidirectionnel** : supprimer le lancement lorsque son dernier effet
-   lié disparaît, et supprimer tous ses effets lorsqu'il est arrêté. Ne pas
-   supprimer les autres lancements, les effets sans provenance, ni un sort dont
-   aucun effet n'a encore été appliqué. Gérer les documents devenus introuvables,
-   les joueurs déconnectés et les différents moments d'expiration.
+   tokens non liés de toutes les scènes, sans doublonner les tokens liés. Le MJ
+   actif enregistre les références et conserve la trace d'une première application.
+   Les instances de plusieurs lancements restent distinctes sur un même acteur.
+3. **Maintien bidirectionnel** : la disparition du dernier effet lié termine le
+   lancement ; l'arrêt depuis la fiche demande au MJ actif de supprimer tous ses
+   effets. Les autres lancements et les effets sans provenance sont conservés ;
+   un sort auquel aucun effet n'a été appliqué ne se termine pas sur une liste vide.
+   Les nouveaux liens s'appuient sur les identifiants introduits en 0.122 : les
+   anciennes cartes et anciens effets ne sont pas associés arbitrairement. Sans MJ
+   actif, les suppressions entre propriétaires ne peuvent pas être coordonnées.
 4. **Cibles et améliorations** : ajouter dans les sources des données structurées
    vérifiées pour les limites et les options de cibles, puis régénérer le catalogue.
    Les règles p. 142–143 permettent de répartir les niveaux différemment entre
@@ -65,8 +63,8 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
 
 À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
 lancements identiques, les durées indépendantes, les tokens liés et non liés,
-les permissions et les anciens messages. La coordination n'est pas encore active
-après la première étape ; son seul résultat est la conservation de la provenance.
+les permissions et les anciens messages. Les limites de cibles et leurs
+allocations restent à implémenter.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre
 sa raideur, et les frénésies leur épuisement. Une description d’effet propose ses

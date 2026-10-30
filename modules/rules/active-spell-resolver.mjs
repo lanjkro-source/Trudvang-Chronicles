@@ -10,6 +10,7 @@ export function activeSpellInstances(actor) {
     if (item?.type !== "spell" || item.system?.spellType !== "lasting") return [];
     return [{id: casting.id, item, cost: Math.max(0, Number(casting.cost) || 0),
       startedAt: Number(casting.startedAt) || 0, duration: String(casting.duration || ""),
+      effectUuids: Array.from(casting.effectUuids ?? []), effectsApplied: Boolean(casting.effectsApplied),
       powerLevelCounts: Array.from(casting.powerLevelCounts ?? [], count => Number(count) || 0),
       ...(casting.powerLevelSnapshot?.length ? {powerLevelSnapshot: Array.from(casting.powerLevelSnapshot, row => ({id: row.id, index: row.index, description: row.description, count: row.count, unitCost: row.unitCost}))} : {})}];
   });
@@ -30,8 +31,8 @@ function legacyActiveSpellCastings(items) {
 }
 
 export function activeSpellRecords(actor) {
-  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts, powerLevelSnapshot}) =>
-    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts, ...(powerLevelSnapshot?.length ? {powerLevelSnapshot} : {})}));
+  return activeSpellInstances(actor).map(({id, item, cost, startedAt, duration, powerLevelCounts, powerLevelSnapshot, effectUuids, effectsApplied}) =>
+    ({id, itemId: item.id, cost, startedAt, duration, powerLevelCounts, effectUuids, effectsApplied, ...(powerLevelSnapshot?.length ? {powerLevelSnapshot} : {})}));
 }
 
 export function activeSpellCosts(actor, item) {
@@ -55,7 +56,9 @@ export function maintainedSpellEffects({actors = [], scenes = []} = {}, {casterU
     seenActors.add(actor.uuid);
     for (const effect of actor.effects ?? []) {
       const context = effect.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
-      if (context?.casterUuid !== casterUuid || context?.castingId !== castingId || effect.duration?.expired) continue;
+      // An expired stage can be advanced in place: keep it linked until the
+      // document is actually removed, rather than ending its casting early.
+      if (context?.casterUuid !== casterUuid || context?.castingId !== castingId) continue;
       if (!effect.uuid || seenEffects.has(effect.uuid)) continue;
       seenEffects.add(effect.uuid);
       result.push({actorUuid: actor.uuid, effectUuid: effect.uuid});

@@ -7,6 +7,7 @@ import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
+import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
@@ -1617,8 +1618,7 @@ export class TrudvangActor extends BaseActor {
     if (!this.isOwner || item?.parent !== this || item.type !== "spell") return;
     const castings = activeSpellRecords(this);
     if (!castings.some(casting => casting.id === castId && casting.itemId === item.id)) return;
-    await this.update({"system.activeSpellCastings": castings.filter(casting => casting.id !== castId),
-      "system.activeSpellCastingsMigrated": true});
+    if (!await requestEndMaintainedSpell(this, castId)) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MaintainedSpellUnavailable"));
   }
 
   async resetCombatPoints({cycle = null} = {}) {

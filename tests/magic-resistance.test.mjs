@@ -89,6 +89,9 @@ test("a maintained casting identity follows its chat card into each applied effe
   const recipient={...target(),canUserModify:()=>true,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
   await applyTransformation(recipient,haste+"#hate",{source:item,context});
   assert.equal(created.flags["trudvang-chronicles"].transformation.ruleTestContext.castingId,"cast-one");
+  const firstStackId=created.system.stackId;
+  await applyTransformation(recipient,haste+"#hate",{source:item,context:{...context,castingId:"cast-two"}});
+  assert.notEqual(created.system.stackId,firstStackId,"different castings must not replace each other");
  }finally{foundry.applications.api.DialogV2=previous;}
 });
 

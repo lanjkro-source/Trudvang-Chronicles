@@ -61,7 +61,8 @@ test("effect discovery distinguishes castings and includes unlinked tokens on ot
  const unrelated={uuid:"Actor.other",effects:[effect("Actor.other.ActiveEffect.d","Actor.othercaster","first"),{uuid:"Actor.other.ActiveEffect.old"}]};
  const world={actors:[shared,unrelated],scenes:[{tokens:[{actor:shared},{actor:unlinked}]}]};
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"first"}),[
-  {actorUuid:shared.uuid,effectUuid:"Actor.recipient.ActiveEffect.a"},{actorUuid:unlinked.uuid,effectUuid:"Scene.other.Token.t.Actor.synthetic.ActiveEffect.c"}]);
+  {actorUuid:shared.uuid,effectUuid:"Actor.recipient.ActiveEffect.a"},{actorUuid:unlinked.uuid,effectUuid:"Scene.other.Token.t.Actor.synthetic.ActiveEffect.c"},
+  {actorUuid:unlinked.uuid,effectUuid:"Scene.other.Token.t.Actor.synthetic.ActiveEffect.expired"}]);
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"second"}),[{actorUuid:shared.uuid,effectUuid:"Actor.recipient.ActiveEffect.b"}]);
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"never-applied"}),[]);
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"",castingId:"first"}),[]);

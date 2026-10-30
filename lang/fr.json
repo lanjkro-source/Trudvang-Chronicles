@@ -1145,6 +1145,7 @@
       "NoShareableDocument": "Cette entrée ne peut pas être partagée dans le chat.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "ActiveSpellLimit": "La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort.",
+      "MaintainedSpellUnavailable": "Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté.",
       "CannotRollForActor": "Vous ne pouvez pas lancer le jet de cet acteur.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
