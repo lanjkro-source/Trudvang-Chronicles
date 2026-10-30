@@ -135,7 +135,8 @@
 .trudvang-sheet .temporary-hp { color: var(--trudvang-positive); white-space: nowrap; margin-left: .2em; font-weight: bold; }
 .trudvang-sheet .resource input { width: 34px; height: 20px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-on-header) 6%, transparent); text-align: center; }
 .trudvang-sheet .resource button { position: absolute; right: 3px; bottom: 2px; width: 18px; color: var(--trudvang-on-header-muted); }
-.trudvang-sheet.npc-sheet .resource-bar.npc-resources { grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr); }
+.trudvang-sheet.npc-sheet .resource-bar.npc-resources { grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr); }
+.trudvang-sheet.npc-sheet .resource.body input { width: 48px; flex: 0 0 48px; padding: 0 2px; }
 .trudvang-sheet.npc-sheet .npc-health-label { display: flex; align-items: center; gap: 5px; }
 .trudvang-sheet.npc-sheet .resource .npc-health-roll { position: static; width: 20px; height: 20px; min-height: 20px; margin: 0; padding: 0; color: var(--trudvang-on-header); }
 .trudvang-sheet.npc-sheet .npc-movement { padding: 4px 10px; }
