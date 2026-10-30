@@ -1522,6 +1522,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.DefenseDamageApplied` | {damage} damage applied to {item}. | {damage} dégâts appliqués à {item}. |
 | `TRUDVANG.Notification.FearApplied` | {amount} Fear point(s) applied to {targets} character(s). | {amount} point(s) de peur appliqué(s) à {targets} personnage(s). |
 | `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
+| `TRUDVANG.Notification.RestChat` | {actor} sleeps through the night: +{health} BP; Vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax}; Divinity {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}. | {actor} passe une nuit de sommeil : +{health} PS ; vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax} ; divinité {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}. |
+| `TRUDVANG.Notification.RestUnchanged` |  (not restored) |  (non renouvelée) |
+| `TRUDVANG.Notification.RestTemporary` | ; −{amount} temporary Divinity Points |  ; −{amount} points de divinité temporaires |
 | `TRUDVANG.Notification.NotRestored` | not restored | non renouvelée |
 | `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |
 | `TRUDVANG.Notification.SurvivalRounds` | {actor} is dying: the last spark of life will go out in {rounds} rounds. | {actor} est mourant : la dernière étincelle de vie s’éteindra dans {rounds} rounds. |

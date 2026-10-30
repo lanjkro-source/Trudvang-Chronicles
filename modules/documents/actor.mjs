@@ -1747,16 +1747,30 @@ export class TrudvangActor extends BaseActor {
     const canRecoverHealth = recoveryNights >= Number(recovery.days || 1);
     const bodyBefore = Number(this.system.resources.body.current || 0);
     const bodyMax = Number(this.system.resources.body.max || 0);
+    const vitnerBefore = Number(this.system.resources.vitner.value || 0);
+    const divinityBefore = Number(this.system.resources.divinity.value || 0);
+    const divinityTemporary = Number(this.system.resources.divinity.temporary || 0);
+    const vitnerMax = Number(this.system.resources.vitner.max || 0);
+    const divinityMax = Number(this.system.resources.divinity.max || 0);
+    const isThuuldom = this.selectedReligion?.id === "thuuldom";
     const healthRecovered = Math.min((canRecoverHealth ? Number(recovery.amount || 0) : 0) + Number(recovery.bonusDaily || 0), Math.max(0, bodyMax - bodyBefore));
     const updates = {
       "system.rest.healthRecoveryNights": canRecoverHealth ? 0 : recoveryNights,
       ...bodyHealthUpdate(this,Math.min(bodyMax,bodyBefore+healthRecovered)),
-      "system.resources.vitner.value": Number(this.system.resources.vitner.max || 0),
+      "system.resources.vitner.value": vitnerMax,
       "system.resources.divinity.temporary": 0
     };
     if (bodyBefore <= 0 && bodyBefore + healthRecovered > 0) updates["system.survivalRounds"] = -1;
-    if (this.selectedReligion?.id !== "thuuldom") updates["system.resources.divinity.value"] = Number(this.system.resources.divinity.max || 0);
+    if (!isThuuldom) updates["system.resources.divinity.value"] = divinityMax;
     await this.update(updates);
+    const restMessage = game.i18n.format("TRUDVANG.Notification.RestChat", {
+      actor: this.name, health: healthRecovered, vitnerBefore, vitnerAfter: vitnerMax, vitnerMax,
+      divinityBefore, divinityAfter: isThuuldom ? divinityBefore : divinityMax, divinityMax,
+      divinityNote: isThuuldom ? game.i18n.localize("TRUDVANG.Notification.RestUnchanged") : "",
+      temporary: divinityTemporary ? game.i18n.format("TRUDVANG.Notification.RestTemporary", {amount: divinityTemporary}) : ""
+    });
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}),
+      content: `<p class="trudvang fear-recovery"><i class="fas fa-moon"></i> ${escapeHtml(restMessage)}</p>`});
     const fear = await this.calmFear();
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.RestCompleted", {
       health: healthRecovered,

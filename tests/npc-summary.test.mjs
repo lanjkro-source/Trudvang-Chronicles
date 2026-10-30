@@ -2487,3 +2487,27 @@ test("creation mode includes invested adventure points and returns refunded poin
  await instance.toggleCreationMode();instance.testBuildCost=322;await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,true);assert.ok(runtime.warnings.length);
  instance.testBuildCost=310;await instance.toggleCreationMode();assert.equal(instance.system.experience.creationMode,false);assert.equal(instance.system.experience.creationSpent,300);assert.equal(instance.system.experience.adventureSpent,10);assert.equal(instance.system.experience.adventureAvailable,15);
 });
+
+test("night rest posts a compact recovery message and keeps fear recovery separate",async t=>{
+ const runtime=mockActionRuntime(t,{die:3}),instance=actor();instance.isOwner=true;instance.name="Eira";
+ instance.system.healthRecovery={amount:3,days:1};instance.system.resources.body.current=9;instance.system.resources.body.max=10;
+ Object.assign(instance.system.resources.vitner,{value:2,max:8});Object.assign(instance.system.resources.divinity,{value:3,max:9,temporary:4});
+ instance.system.resources.fear.current=5;instance._source.system.resources.fear.value=5;instance._source.system.rest={healthRecoveryNights:0};
+ instance.update=async data=>{for(const [k,v] of Object.entries(data)){set(instance,k,v);set(instance._source,k,v);}};
+ Object.defineProperty(instance,"selectedReligion",{value:{id:"gerbanis"},configurable:true});
+ await instance.restForNight();
+ assert.equal(runtime.messages.length,2);assert.match(runtime.messages[0].content,/Eira/);assert.match(runtime.messages[0].content,/\+1 PS/);
+ assert.match(runtime.messages[0].content,/2 → 8\/8/);assert.match(runtime.messages[0].content,/3 → 9\/9/);assert.match(runtime.messages[0].content,/−4/);
+ assert.match(runtime.messages[1].content,/fear-recovery/);assert.equal(instance.system.resources.divinity.temporary,0);
+});
+
+test("night rest shows Thuuldom's unchanged divinity and posts nothing for non-owners",async t=>{
+ const runtime=mockActionRuntime(t),instance=actor();instance.isOwner=true;instance.name="Thuul";
+ instance.system.healthRecovery={amount:1,days:1};instance.system.resources.body.current=10;instance.system.resources.body.max=10;
+ Object.assign(instance.system.resources.vitner,{value:0,max:4});Object.assign(instance.system.resources.divinity,{value:2,max:7,temporary:0});
+ instance._source.system.rest={healthRecoveryNights:0};instance.calmFear=async()=>null;
+ instance.update=async data=>{for(const [k,v] of Object.entries(data)){set(instance,k,v);set(instance._source,k,v);}};
+ Object.defineProperty(instance,"selectedReligion",{value:{id:"thuuldom"},configurable:true});
+ await instance.restForNight();assert.equal(runtime.messages.length,1);assert.match(runtime.messages[0].content,/2 → 2\/7/);assert.match(runtime.messages[0].content,/non renouvelée/);
+ instance.isOwner=false;await instance.restForNight();assert.equal(runtime.messages.length,1);
+});
