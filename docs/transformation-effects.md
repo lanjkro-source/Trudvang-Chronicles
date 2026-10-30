@@ -58,8 +58,10 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    déjà affectée peut réappliquer la même variante, sans en recevoir une autre.
    Les autres sorts ne sont pas encore soumis à ces limites : ajouter leurs
    définitions après vérification, sans inventer de limite pour les zones,
-   cibles variables ou cas illimités. Les améliorations offertes par un succès
-   critique et les pouvoirs/runes demandent encore leur propre prise en charge.
+   cibles variables ou cas illimités. Les niveaux achetés avec les points gratuits
+   d'une réussite parfaite rejoignent ceux du lancement pour la répartition, sans
+   augmenter son coût maintenu. Les pouvoirs/runes demandent encore leur propre
+   prise en charge pour les cibles.
 5. **Généralisation** : ajouter progressivement les effets de sortilèges, pouvoirs
    et runes depuis les sources, avec tests des améliorations et des règles propres
    à chaque effet. Les pouvoirs ne deviennent pas des sortilèges maintenus.

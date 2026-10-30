@@ -657,7 +657,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Power.SelectedLevel` | {count} × {effect}: {total} points ({unit} per level) | {count} × {effect} : {total} points ({unit} par niveau) |
 | `TRUDVANG.Power.AffinityCost` | Cost adjusted by affinity: {base} → {adjusted} per level | Coût ajusté par l'affinité : {base} → {adjusted} par niveau |
 | `TRUDVANG.Power.AffinitySource` | {type} affinity of {tablet}: {effect} | Affinité {type} de {tablet} : {effect} |
-| `TRUDVANG.Power.PerfectBonus` | Perfect success: {points} free Vitner points to enhance the spell (allocate manually). | Réussite parfaite : {points} points de vitner gratuits pour renforcer le sort (à répartir manuellement). |
+| `TRUDVANG.Power.PerfectBonus` | Perfect success: {points} free Vitner points to enhance the spell. | Réussite parfaite : {points} points de vitner gratuits pour renforcer le sort. |
+| `TRUDVANG.Power.PerfectBudget` | Allocate up to {points} free Vitner points to additional power levels. | Répartissez jusqu’à {points} points de vitner gratuits entre les niveaux de puissance supplémentaires. |
+| `TRUDVANG.Power.PerfectRemaining` | Free Vitner points remaining | Points de vitner gratuits restants |
+| `TRUDVANG.Power.PerfectLevel` | Perfect success: {count} × {effect} | Réussite parfaite : {count} × {effect} |
+| `TRUDVANG.Power.InvalidPerfectBudget` | Check the selected levels and the available free Vitner points. | Vérifiez les niveaux choisis et le nombre de points de vitner gratuits disponibles. |
 | `TRUDVANG.Power.SacrificeOffer` | Insufficient vitner reserve: {health} Body Points will be sacrificed to generate {vitner} Vitner Points. | Réserve de vitner insuffisante : {health} points de santé seront sacrifiés pour générer {vitner} points de vitner. |
 | `TRUDVANG.Power.SacrificeTitle` | Sacrifice health for vitner | Sacrifier de la santé pour du vitner |
 | `TRUDVANG.Power.SacrificeConfirm` | Sacrifice {health} Body Points to generate {vitner} Vitner Points? Remaining health: {hp} ({state}). | Sacrifier {health} points de santé pour générer {vitner} points de vitner ? Santé restante : {hp} ({state}). |

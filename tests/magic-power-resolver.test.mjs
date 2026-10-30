@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice, spentMagicPoints} from "../modules/rules/magic-power-resolver.mjs";
+import {powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice, spentMagicPoints,resolvePerfectBonusSelection} from "../modules/rules/magic-power-resolver.mjs";
 
 test("Vitner affinity changes each chosen power level, never the base cost", () => {
   const levels = [{id: "duration", cost: 2, maxCount: null}, {id: "range", cost: 1, maxCount: 2}];
@@ -8,6 +8,13 @@ test("Vitner affinity changes each chosen power level, never the base cost", () 
   assert.deepEqual([-1, 0, 1, 2].map(affinity => resolve(affinity).total), [7, 9, 12, 14]);
   assert.equal(powerLevelUnitCost(1, -1), 1);
   assert.equal(resolve(1).entries[0].total, 6);
+});
+
+test("perfect success buys extra levels at the captured affinity cost without exceeding limits",()=>{
+ const powerLevels=[{cost:3,maxCount:3},{cost:2,maxCount:null}],entries=[{count:1,unitCost:2},{count:0,unitCost:1}];
+ assert.deepEqual(resolvePerfectBonusSelection({powerLevels,entries,bonus:5,increments:[2,1]}),{counts:[3,1],spent:5,remaining:0});
+ assert.throws(()=>resolvePerfectBonusSelection({powerLevels,entries,bonus:4,increments:[2,1]}),/budget/);
+ assert.throws(()=>resolvePerfectBonusSelection({powerLevels,entries,bonus:20,increments:[3,0]}),/level/);
 });
 
 test("Power-level limits and counts are validated before spending", () => {

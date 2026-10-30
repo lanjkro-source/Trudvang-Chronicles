@@ -3,7 +3,7 @@ import { TRUDVANG } from "./config.mjs";
 import { resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { prepareDamageRoll, damageRollChoice, signedDamage } from "./rules/damage-roll-resolver.mjs";
 import { prepareDamageTargets } from "./damage-application.mjs";
-import { powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice } from "./rules/magic-power-resolver.mjs";
+import { powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice,resolvePerfectBonusSelection } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-resolver.mjs";
@@ -58,9 +58,9 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null}) {
   const finalTarget = Number(target) + Number(modifier || 0);
-  const ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
+  let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -73,7 +73,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     return {...row, target, attackMargin: attackMargin(target), ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
+  const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
+  const card = {
     actorName: actor.name,
     actorImg: actor.img,
     label,
@@ -97,14 +98,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
-    ruleTests: success && item && (["spell", "divine", "rune"].includes(kind)
+    transformationLinks: !pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
+    ruleTests: !pendingPerfect&&success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
     actorUuid: actor.uuid,
     usage,
     longRange: Boolean(longRange)
-  });
+  };
+  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", card);
   const useDiceSoNice = animateWithDiceSoNice
     && game.modules?.get("dice-so-nice")?.active
     && typeof game.dice3d?.showForRoll === "function";
@@ -124,7 +126,19 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       console.error("Trudvang | Dice So Nice could not animate a concentration roll", error);
     }
   }
-  return {roll, result, target: targetResults.length === 1 ? targetResults[0].target : finalTarget, success, critical, margin, effectTarget, attackTargets: targetResults};
+  let perfectSelection=null;
+  if(pendingPerfect){
+    try{perfectSelection=await resolvePerfectSuccess();}
+    catch(error){console.error("Trudvang | Perfect-success allocation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidPerfectBudget"));}
+    if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
+    if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
+    ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
+    card.transformationLinks=transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
+    card.ruleTests=ruleTestActionViews(item);
+    const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
+    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext});
+  }
+  return {roll, result, target: targetResults.length === 1 ? targetResults[0].target : finalTarget, success, critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {})};
 }
 
 function numericModifier(value) {
@@ -257,6 +271,36 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
     modal: false,
     rejectClose: false
   });
+}
+
+export async function perfectSuccessDialog({title, powerLevels=[], entries=[], bonus=0}) {
+ const base=resolvePerfectBonusSelection({powerLevels,entries,bonus});
+ if(!powerLevels.length)return base;
+ const Base=foundry.applications.api.DialogV2;
+ const DialogClass=typeof Base!=="function"?Base:class extends Base{
+  _onRender(context,options){super._onRender(context,options);const root=this.element;
+   const refresh=()=>{const spent=powerLevels.reduce((sum,level,index)=>sum+(Number(root.querySelector(`[name="bonus${index}"]`)?.value)||0)*Number(entries[index]?.unitCost??level.cost),0);
+    const remaining=root.querySelector("[data-perfect-remaining]");if(remaining)remaining.textContent=String(bonus-spent);};
+   root.addEventListener("input",refresh);refresh();
+  }
+ };
+ const rows=powerLevels.map((level,index)=>{
+  const remaining=level.maxCount==null?"":` max="${Math.max(0,Number(level.maxCount)-(Number(entries[index]?.count)||0))}"`;
+  return `<div class="form-group"><label>${escapeHtml(level.effect||"")} — ${escapeHtml(game.i18n.format("TRUDVANG.Power.CostPerLevel",{cost:entries[index]?.unitCost??level.cost}))}</label><input type="number" name="bonus${index}" min="0" step="1"${remaining} value="0"></div>`;
+ }).join("");
+ const content=`<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBudget",{points:bonus}))}</p>${rows}<p>${escapeHtml(game.i18n.localize("TRUDVANG.Power.PerfectRemaining"))} : <strong data-perfect-remaining>${bonus}</strong></p></div>`;
+ while(true){
+  const result=await DialogClass.wait({window:{title},content,buttons:[
+   {action:"apply",label:game.i18n.localize("TRUDVANG.Action.Continue"),default:true,callback:(_event,button)=>{
+    const increments=powerLevels.map((_,index)=>Number(button.form.querySelector(`[name="bonus${index}"]`)?.value??0));
+    try{return resolvePerfectBonusSelection({powerLevels,entries,bonus,increments});}catch{return {invalid:true};}
+   }},
+   {action:"cancel",label:game.i18n.localize("TRUDVANG.Action.Cancel"),callback:()=>null}
+  ],close:()=>null});
+  if(!result)return base;
+  if(result.invalid){ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidPerfectBudget"));continue;}
+  return result;
+ }
 }
 
 export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = [], sacrifice = null,ruleDocument=null,castingActor=null}) {

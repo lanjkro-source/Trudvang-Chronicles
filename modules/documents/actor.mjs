@@ -2,7 +2,7 @@ import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
-import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, perfectSuccessDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-resolver.mjs";
@@ -1506,6 +1506,13 @@ export class TrudvangActor extends BaseActor {
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
       flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      resolvePerfectSuccess:isDivine?null:async()=>{
+        const bonusRoll=await new Roll("1d10+1").evaluate();
+        await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]});
+        const selection=await perfectSuccessDialog({title:item.name,powerLevels,entries:options.costBreakdown.entries,bonus:Number(bonusRoll.total)});
+        const details=selection.counts.map((count,index)=>({count:count-(Number(options.costBreakdown.entries[index]?.count)||0),level:powerLevels[index]})).filter(row=>row.count>0);
+        return {...selection,flavor:details.map(row=>escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectLevel",{count:row.count,effect:row.level.effect}))).join("<br>")};
+      },
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
         modifier: this.fatalEffectModifier(fatalKind, options.cost)}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
@@ -1524,14 +1531,9 @@ export class TrudvangActor extends BaseActor {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
         id: castingId, itemId: item.id, cost: options.cost,
         startedAt: Number(game.time?.worldTime || 0), duration: String(item.system.duration || ""),
-        powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
-        powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: Number(entry.count) || 0, unitCost: Number(entry.unitCost) || 0}))
+        powerLevelCounts: result.perfectSelection?.counts ?? options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
+        powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: result.perfectSelection?.counts[index] ?? (Number(entry.count) || 0), unitCost: Number(entry.unitCost) || 0}))
       }], "system.activeSpellCastingsMigrated": true});
-    }
-    if (!isDivine && result?.critical === "success") {
-      const bonusRoll = new Roll("1d10+1");
-      await bonusRoll.evaluate();
-      await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content: `<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus", {points: bonusRoll.total}))}</p>`, rolls: [bonusRoll]});
     }
     return result;
   }

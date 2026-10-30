@@ -1631,6 +1631,26 @@ test("NPC casting reads book skills, deducts vitner, rolls and tracks each persi
   assert.doesNotMatch(html, /TRUDVANG\./);
 });
 
+test("perfect spell success spends only the original vitner cost and stores free improvements",async t=>{
+ const runtime=mockActionRuntime(t,{die:1}),npc=magicalNpc("Démon tangible");
+ Object.defineProperty(npc,"selectedVitnerType",{value:{id:"vaagritalja",level:3,perfectSuccessMax:1},configurable:true});
+ const id="vitner-body-vitner:hasten:9",levels=[{id:`${id}:0`,effect:"Durée",cost:1,maxCount:null}];
+ const spell={id:"spell",uuid:"Actor.npc.Item.spell",type:"spell",name:"Hâte",system:{catalogId:id,cost:3,modifier:0,spellType:"lasting",powerLevels:levels}};
+ npc.items.push(spell);
+ const response={method:{label:"Galda",breakdown:"VC 17"},target:17,modifier:0,cost:4,costBreakdown:{entries:[{id:levels[0].id,effect:"Durée",count:1,unitCost:1,baseUnitCost:1,total:1}]}};
+ let dialogCount=0;
+ foundry.applications.api.DialogV2=class{static async wait(options){dialogCount++;if(dialogCount===1)return response;return options.buttons[0].callback(null,{form:{querySelector:()=>({value:"2"})}});}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=this.formula==="1d20"?1:5;return this;}};
+ globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.id}),create:async data=>{const message={...data,async update(changed){this.updated=changed;}};runtime.messages.push(message);return message;}};
+ const result=await npc.rollSpell(spell);
+ assert.equal(result.critical,"success",JSON.stringify(runtime.warnings));assert.deepEqual(result.perfectSelection.counts,[3]);
+ assert.equal(npc._source.system.resources.vitner.value,91);
+ assert.equal(npc.system.activeSpellCastings[0].cost,4);
+ assert.equal(npc.system.activeSpellCastings[0].powerLevelSnapshot[0].count,3);
+ assert.equal(runtime.messages[0].updated["flags.trudvang-chronicles.ruleTestContext"].countsById[levels[0].id],3);
+ assert.equal(runtime.messages[1].rolls[0].formula,"1d10+1");
+});
+
 test("innate NPC magic requires an explicit casting SV and respects the unlimited-vitner feat", async t => {
   const runtime = mockActionRuntime(t);
   const npc = magicalNpc("Fjoltroll");

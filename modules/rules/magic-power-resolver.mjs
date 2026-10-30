@@ -30,6 +30,20 @@ export function spentMagicPoints({isDivine = false, success = false, critical = 
   return isDivine && !success && critical !== "failure" ? Number(baseCost) : Number(totalCost);
 }
 
+/** Free perfect-success points buy additional levels at the original unit costs. */
+export function resolvePerfectBonusSelection({powerLevels=[], entries=[], bonus=0, increments=[]}={}) {
+ const budget=Number(bonus);
+ if(!Number.isInteger(budget)||budget<0)throw new RangeError("Invalid perfect-success budget");
+ let spent=0;
+ const counts=powerLevels.map((level,index)=>{
+  const previous=Number(entries[index]?.count??0),addition=Number(increments[index]??0),cost=Number(entries[index]?.unitCost??level.cost);
+  if(!Number.isInteger(previous)||previous<0||!Number.isInteger(addition)||addition<0||!Number.isInteger(cost)||cost<0||(level.maxCount!=null&&previous+addition>Number(level.maxCount)))throw new RangeError("Invalid perfect-success level");
+  spent+=addition*cost;return previous+addition;
+ });
+ if(spent>budget)throw new RangeError("Perfect-success budget exceeded");
+ return {counts,spent,remaining:budget-spent};
+}
+
 /**
  * Health-for-vitner sacrifice (FR Rules, pp. 141-142, "Se sacrifier pour du vitner"):
  * 2 temporary vitner per 1 sacrificed health point. Returns null when the current
