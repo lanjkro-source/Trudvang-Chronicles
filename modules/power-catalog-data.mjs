@@ -1917,6 +1917,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:battle-cry:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:0",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:0",

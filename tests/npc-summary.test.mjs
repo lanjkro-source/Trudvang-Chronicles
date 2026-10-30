@@ -1631,6 +1631,21 @@ test("NPC casting reads book skills, deducts vitner, rolls and tracks each persi
   assert.doesNotMatch(html, /TRUDVANG\./);
 });
 
+test("a targeted divine invocation creates a chat allocation record but no maintained spell",async t=>{
+ const runtime=mockActionRuntime(t),id="holy-gerbanis-wrath-of-tyrd:battle-cry:1";
+ const knowledge=["invoke","stormkelt"].map((catalogId,index)=>({type:"ability",name:catalogId,system:{catalogId,kind:index?"specialty":"discipline",level:1}}));
+ const instance=woundedAndAfraid(knowledge,"npc");
+ instance.system.resources.divinity={value:20,current:20,max:20};instance._source.system.resources.divinity={value:20,max:20};
+ const power={id:"cry",uuid:"Actor.npc.Item.cry",type:"divineFeat",name:"Cri de bataille",system:{catalogId:id,cost:2,modifier:0,spellType:"lasting",powerLevels:[]}};
+ instance.items.push(power);
+ runtime.response={method:{label:"Stormikjalt",breakdown:"VC 12"},target:12,modifier:0,cost:3,costBreakdown:{entries:[{id:`${id}:0`,count:1,unitCost:1}]}};
+ await instance.rollSpell(power);
+ const flags=runtime.messages[0].flags["trudvang-chronicles"];
+ assert.equal(flags.divineAllocation.castingId,flags.ruleTestContext.castingId);
+ assert.equal(flags.divineAllocation.selected[`${id}:0`],1);
+ assert.equal(instance.system.activeSpellCastings?.length??0,0);
+});
+
 test("perfect spell success spends only the original vitner cost and stores free improvements",async t=>{
  const runtime=mockActionRuntime(t,{die:1}),npc=magicalNpc("Démon tangible");
  Object.defineProperty(npc,"selectedVitnerType",{value:{id:"vaagritalja",level:3,perfectSuccessMax:1},configurable:true});

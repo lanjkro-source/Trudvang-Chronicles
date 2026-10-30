@@ -17,6 +17,7 @@ import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {mountedCombatValues} from "./rules/mounted-combat.mjs";
+import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -110,13 +111,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const useDiceSoNice = animateWithDiceSoNice
     && game.modules?.get("dice-so-nice")?.active
     && typeof game.dice3d?.showForRoll === "function";
+  const divineAllocation=kind==="divine"&&success&&castingId&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.targeting
+    ?{castingId,casterUuid:actor.uuid,sourceId:ruleTestContext.sourceId,selected:ruleTestContext.countsById,targetAllocations:[]}:null;
   const message = await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({actor}),
     content,
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{})}} : {})
+      ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{})}} : {})
     }} : {})
   });
   if (useDiceSoNice) {

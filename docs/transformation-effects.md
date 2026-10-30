@@ -51,7 +51,7 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    anciennes cartes et anciens effets ne sont pas associés arbitrairement. Sans MJ
    actif, les suppressions entre propriétaires ne peuvent pas être coordonnées.
 4. **Cibles et améliorations** : Hâte, Vigueur, Peau de cuir et Armure d’air disposent d'une définition
-   structurée des cibles dans les sources FR/EN. Pour ces deux sortilèges, le MJ
+   structurée des cibles dans les sources FR/EN. Pour ces sortilèges, le MJ
    actif réserve les cibles et les améliorations par lancement ; les attributions
    concurrentes sont sérialisées et validées contre les niveaux achetés. Les
    règles p. 142–143 permettent de répartir ces niveaux entre cibles. Une cible
@@ -60,8 +60,10 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    définitions après vérification, sans inventer de limite pour les zones,
    cibles variables ou cas illimités. Les niveaux achetés avec les points gratuits
    d'une réussite parfaite rejoignent ceux du lancement pour la répartition, sans
-   augmenter son coût maintenu. Les pouvoirs/runes demandent encore leur propre
-   prise en charge pour les cibles.
+   augmenter son coût maintenu. Cri de bataille utilise sa carte de chat comme
+   registre d'invocation, sans devenir un sortilège maintenu. Les autres pouvoirs
+   et les runes restent à traiter, notamment les cibles alliées et ennemies et les
+   effets de zone.
 5. **Généralisation** : ajouter progressivement les effets de sortilèges, pouvoirs
    et runes depuis les sources, avec tests des améliorations et des règles propres
    à chaque effet. Les pouvoirs ne deviennent pas des sortilèges maintenus.
@@ -69,8 +71,8 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
 À chaque étape, tester les cas sans effet, une et plusieurs cibles, deux
 lancements identiques, les durées indépendantes, les tokens liés et non liés,
 les permissions et les anciens messages. Les limites et allocations sont actives
-seulement pour Hâte, Vigueur, Peau de cuir et Armure d’air, lorsque l'effet est appliqué depuis la carte d'un
-nouveau lancement maintenu. Les anciens messages sans identité restent inchangés.
+pour Hâte, Vigueur, Peau de cuir, Armure d’air et Cri de bataille depuis la carte
+d'un nouveau lancement. Les anciens messages sans identité restent inchangés.
 
 La pétrification propose les deux effets de récupération, la malédiction de l’arbre
 sa raideur, et les frénésies leur épuisement. Une description d’effet propose ses

@@ -82,17 +82,22 @@ export async function requestEndMaintainedSpell(caster, castingId) {
 
 /** Reserve a target and its improvements on the elected GM before creating the
  * effect. All casts of the same caster share the existing serialized queue. */
-export async function applyAllocatedEffectOnGM({casterUuid,castingId,targetUuid,countsById,data,userId}) {
+export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="",targetUuid,countsById,data,userId}) {
  if(!isWriter())return {status:"unavailable"};
  return queueCaster(casterUuid,async()=>{
   const caster=await foundry.utils.fromUuid(casterUuid), target=await foundry.utils.fromUuid(targetUuid), user=game.users.get(userId);
   if(!user || !target?.canUserModify?.(user,"update") || !caster?.canUserModify?.(game.user,"update"))return {status:"unavailable"};
-  const records=activeSpellRecords(caster), record=records.find(row=>row.id===castingId);
-  const item=record&&Array.from(caster.items??[]).find(row=>row.id===record.itemId);
-  const targeting=POWER_DETAILS_BY_ID[item?.system?.catalogId]?.targeting;
+  const message=messageId?game.messages?.get(messageId):null;
+  const divine=message?.flags?.["trudvang-chronicles"]?.divineAllocation;
+  if(messageId&&!divine)return {status:"unavailable"};
+  const records=divine?null:activeSpellRecords(caster), record=divine??records?.find(row=>row.id===castingId);
+  const item=!divine&&record?Array.from(caster.items??[]).find(row=>row.id===record.itemId):null;
+  const sourceId=divine?.sourceId??item?.system?.catalogId;
+  const targeting=POWER_DETAILS_BY_ID[sourceId]?.targeting;
   const provenance=data?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
-  if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==item.system.catalogId)return {status:"unavailable"};
-  const selected=Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
+  if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==sourceId
+   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!=="divine")))return {status:"unavailable"};
+  const selected=divine?divine.selected:Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===targetUuid);
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
@@ -102,14 +107,16 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,targetUuid,
   if(!validation.ok)return {status:validation.reason};
   const prior=structuredClone(record.targetAllocations??[]);
   record.targetAllocations=allocations.map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,counts:Object.entries(row.countsById).map(([optionId,count])=>({optionId,count}))}));
-  await caster.update({"system.activeSpellCastings":records,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});
+  if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":record.targetAllocations});
+  else await caster.update({"system.activeSpellCastings":records,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});
   try{
    const effect=await target.createTrudvangEffect(data);
    if(!effect)throw Error("Failed to create allocated effect");
    return {status:"ok",effectUuid:effect.uuid};
   }catch(error){
-   const current=activeSpellRecords(caster),existing=current.find(row=>row.id===castingId);
-   if(existing){existing.targetAllocations=prior;await caster.update({"system.activeSpellCastings":current,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});}
+   if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":prior});
+   else {const current=activeSpellRecords(caster),existing=current.find(row=>row.id===castingId);
+    if(existing){existing.targetAllocations=prior;await caster.update({"system.activeSpellCastings":current,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});}}
    throw error;
   }
  });

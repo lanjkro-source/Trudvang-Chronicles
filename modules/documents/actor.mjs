@@ -7,6 +7,7 @@ import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
+import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
@@ -1502,7 +1503,7 @@ export class TrudvangActor extends BaseActor {
     const fatalKind = isDivine ? "faith" : "vitner";
     // Allocate before publishing the card so its effects and maintained record
     // share the identity of this particular casting, even for the same spell.
-    const castingId = trackedPersistent ? foundry.utils.randomID() : "";
+    const castingId = trackedPersistent || (isDivine && POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting) ? foundry.utils.randomID() : "";
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
       flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,

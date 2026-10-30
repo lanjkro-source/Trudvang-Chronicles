@@ -81,7 +81,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
  counts=casting.counts;
- const stackId=casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
+ const stackId=casting.kind==="spell"&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
  // A related-effect link keeps its originating document for ownership, elapsed
  // duration and provenance. Its data belongs to a different effect, however.
  // Unidentified custom effects remain copyable; identified ones must match.
@@ -117,8 +117,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const targeting=!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  let allocationRecord=null,allocationIntro="",availableById={};
  if(targeting){
-  const caster=await foundry.utils.fromUuid(casting.casterUuid);
-  allocationRecord=Array.from(caster?.system?.activeSpellCastings??[]).find(row=>row.id===casting.castingId);
+  if(casting.kind==="divine"){
+   const entry=game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.divineAllocation;
+   if(entry?.castingId===casting.castingId&&entry?.casterUuid===casting.casterUuid&&entry?.sourceId===template.sourceId)
+    allocationRecord={targetAllocations:entry.targetAllocations??[],powerLevelSnapshot:Object.entries(entry.selected??{}).map(([id,count])=>({id,count}))};
+  }else{
+   const caster=await foundry.utils.fromUuid(casting.casterUuid);
+   allocationRecord=Array.from(caster?.system?.activeSpellCastings??[]).find(row=>row.id===casting.castingId);
+  }
   if(!allocationRecord)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
   const others=Array.from(allocationRecord.targetAllocations??[]).filter(row=>row.targetUuid!==actor.uuid);
   const own=Array.from(allocationRecord.targetAllocations??[]).find(row=>row.targetUuid===actor.uuid);
@@ -256,7 +262,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(targeting){
   const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
-  const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,targetUuid:actor.uuid,countsById:allocation,data});
+  const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.kind==="divine"?casting.messageId:"",targetUuid:actor.uuid,countsById:allocation,data});
   if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   effect=await foundry.utils.fromUuid(result.effectUuid);
  }else effect=await actor.createTrudvangEffect(data);
@@ -377,7 +383,8 @@ export function transformationRequest(button){
  const messageId=button.closest?.("[data-message-id]")?.dataset.messageId;
  const saved=messageId?game.messages?.get(messageId)?.flags?.[SCOPE]?.ruleTestContext:null;
  const parse=(value,fallback)=>{try{return value?JSON.parse(value):fallback;}catch{return fallback;}};
- const context=parse(button.dataset.ruleTestContext,saved??null);
+ let context=parse(button.dataset.ruleTestContext,saved??null);
+ if(context?.kind==="divine"&&messageId)context={...context,messageId};
  const counts=parse(button.dataset.transformationCounts,context?.counts??[]);
  return {type:"TrudvangTransformation",key:button.dataset.transformationKey,sourceUuid:button.dataset.transformationSource,
   counts:Array.isArray(counts)?counts:context?.counts??[],context};
