@@ -10,6 +10,13 @@ const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
 const protection = item => Math.ceil(Math.max(0, integrity(item)) / 10);
 
+// System clarification: the breaking hit can make integrity negative; later hits cannot lower it further.
+function damageIntegrity(item, loss) {
+  const current = integrity(item);
+  const integrityLoss = current > 0 ? loss : 0;
+  return {integrityLoss, integrity: current - integrityLoss};
+}
+
 /** The shield-hand item (or a two-handed weapon) which can receive a parried hit. */
 export function defensiveItem(actor) {
   const equipment = Array.from(actor?.items || []).filter(item => item?.system?.equipped);
@@ -51,7 +58,7 @@ export function calculateArmoredDamage({damage, totalProtection, armor = [], out
   const armorDamage = armor.map(item => {
     const excess = Math.max(0, remaining - protection(item));
     remaining = excess;
-    return {item, integrityLoss: excess, integrity: integrity(item) - excess};
+    return {item, ...damageIntegrity(item, excess)};
   });
   const otherProtection = Math.max(0, Math.trunc(number(totalProtection)) - armorProtection - outer);
   return {bodyDamage: Math.max(0, remaining - otherProtection), armorDamage};
@@ -96,8 +103,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
 export async function applyDamageToDefenseItem({item, damage} = {}) {
   if (!item?.isOwner) return null;
   const amount = Math.max(0, Math.trunc(number(damage)));
-  const integrityLoss = Math.max(0, amount - protection(item));
-  const nextIntegrity = integrity(item) - integrityLoss;
-  if (integrityLoss) await item.update({"system.breach.value": nextIntegrity});
-  return {integrityLoss, integrity: nextIntegrity};
+  const result = damageIntegrity(item, Math.max(0, amount - protection(item)));
+  if (result.integrityLoss) await item.update({"system.breach.value": result.integrity});
+  return result;
 }
