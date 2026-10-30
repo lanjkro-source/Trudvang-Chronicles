@@ -21,11 +21,21 @@ export function validatePowerTargeting(entry, english) {
  const target=entry.targeting;
  if(JSON.stringify(target??null)!==JSON.stringify(english.targeting??null))throw new Error(`${entry.catalogId}: target definitions differ between languages`);
  if(!target)return;
- if(!Number.isInteger(target.baseTargets)||target.baseTargets<1||!Array.isArray(target.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
- const seen=new Set();
- for(const row of target.additionalTargets){
-  resolvePowerOptionReference(entry,row);
-  if(seen.has(row.optionId)||!Number.isInteger(row.count)||row.count<1)throw new Error(`${entry.catalogId}: invalid additional target option`);
-  seen.add(row.optionId);
+ const groups=target.groups??[target],seen=new Set(),groupIds=new Set(),variants=new Set();
+ if(!Array.isArray(groups)||!groups.length)throw new Error(`${entry.catalogId}: invalid target groups`);
+ for(const group of groups){
+  if(!Number.isInteger(group.baseTargets)||group.baseTargets<1||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
+  if(target.groups){
+   if(typeof group.id!=="string"||!group.id||groupIds.has(group.id)||!Array.isArray(group.variants)||!group.variants.length||!Array.isArray(group.allocatableOptions))throw new Error(`${entry.catalogId}: invalid target group`);
+   groupIds.add(group.id);
+   for(const variant of group.variants){if(variants.has(variant)||!entry.effectTemplates?.some(t=>t.id===variant))throw new Error(`${entry.catalogId}: invalid target variant`);variants.add(variant);}
+   for(const optionId of group.allocatableOptions)resolvePowerOptionReference(entry,{optionId});
+  }
+  for(const row of group.additionalTargets){
+   resolvePowerOptionReference(entry,row);
+   if(seen.has(row.optionId)||!Number.isInteger(row.count)||row.count<1)throw new Error(`${entry.catalogId}: invalid additional target option`);
+   seen.add(row.optionId);
+  }
  }
+ for(const group of groups)if(group.allocatableOptions?.some(id=>seen.has(id)))throw new Error(`${entry.catalogId}: target option cannot be allocated`);
 }

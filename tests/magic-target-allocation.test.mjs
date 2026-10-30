@@ -18,3 +18,16 @@ test("target limits, unique targets and valid option counts are enforced",()=>{
  assert.equal(validateMagicAllocations({targeting,selected,allocations:[target("a",{duration:-1})]}).reason,"invalid-allocation");
  assert.equal(validateMagicAllocations({targeting:null,selected,allocations:[]}).reason,"unknown-targeting");
 });
+
+test("ally and enemy limits are separate while improvements share the purchased budget",()=>{
+ const targeting={groups:[{id:"ally",baseTargets:1,variants:["ally"],additionalTargets:[{optionId:"extraAlly",count:1}],allocatableOptions:["duration","bonus"]},
+  {id:"enemy",baseTargets:1,variants:["enemy"],additionalTargets:[{optionId:"extraEnemy",count:1}],allocatableOptions:["duration","penalty"]}]};
+ const selected={extraAlly:1,extraEnemy:0,duration:2,bonus:1,penalty:1};
+ const row=(targetUuid,effectKey,countsById)=>({targetUuid,effectKey,countsById});
+ const allocations=[row("a","power#ally",{duration:1,bonus:1}),row("b","power#ally",{}),row("c","power#enemy",{duration:1,penalty:1})];
+ assert.equal(validateMagicAllocations({targeting,selected,allocations}).ok,true);
+ assert.equal(validateMagicAllocations({targeting,selected,allocations:[...allocations,row("d","power#enemy",{})]}).reason,"exceeds-targets");
+ assert.equal(validateMagicAllocations({targeting,selected,allocations:[...allocations.slice(0,2),row("c","power#enemy",{duration:2})]}).reason,"exceeds-improvements");
+ assert.equal(validateMagicAllocations({targeting,selected,allocations:[row("a","power#enemy",{bonus:1})]}).reason,"invalid-allocation");
+ assert.equal(validateMagicAllocations({targeting,selected,allocations:[row("a","power#unknown",{})]}).reason,"invalid-allocation");
+});

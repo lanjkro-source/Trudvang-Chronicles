@@ -24,3 +24,15 @@ test('target metadata must agree across languages and refer to a real option',as
  const wrong=structuredClone(entry);wrong.targeting.additionalTargets[0].optionId='missing';
  assert.throws(()=>validatePowerTargeting(wrong,structuredClone(wrong)),/unknown/);
 });
+
+test('target groups must use distinct existing variants and valid option identities',async()=>{
+ const {validatePowerTargeting}=await import('../tools/power-option-identity.mjs');
+ const entry={catalogId:'power',powerLevels:levels(),effectTemplates:[{id:'ally'},{id:'enemy'}],targeting:{groups:[
+  {id:'ally',baseTargets:1,variants:['ally'],additionalTargets:[{optionId:'power:1',count:1}],allocatableOptions:['power:0']},
+  {id:'enemy',baseTargets:1,variants:['enemy'],additionalTargets:[],allocatableOptions:['power:0']}]}};
+ assert.doesNotThrow(()=>validatePowerTargeting(entry,structuredClone(entry)));
+ const duplicate=structuredClone(entry);duplicate.targeting.groups[1].variants=['ally'];
+ assert.throws(()=>validatePowerTargeting(duplicate,structuredClone(duplicate)),/variant/);
+ const invalid=structuredClone(entry);invalid.targeting.groups[1].allocatableOptions=['power:1'];
+ assert.throws(()=>validatePowerTargeting(invalid,structuredClone(invalid)),/target option/);
+});

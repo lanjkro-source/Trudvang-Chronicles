@@ -87,3 +87,25 @@ test("a player can request an allocation from the GM without owning the caster",
   assert.equal((await pending).status,"ok");assert.equal(allocation.targetAllocations[0].targetUuid,target.uuid);
  }finally{game.user=old.user;game.users=old.users;game.socket=old.socket;globalThis.Hooks=old.Hooks;}
 });
+
+test("War Cry tracks ally and enemy targets separately from its chat card",async()=>{
+ const previous=foundry.applications.api.DialogV2,war="holy-gerbanis-wrath-of-tyrd:war-cry:4";
+ try{
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"3 rounds",boost0:1,boost4:1,boost5:1})};
+  const caster={uuid:"Actor.war-priest",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={uuid:"Actor.war-priest.Item.cry",type:"divineFeat",system:{catalogId:war}};
+  await rollUnder({actor:caster,item,kind:"divine",label:"Cri de guerre",target:12,castingId:"war-cast",powerLevelCounts:[2,1,0,0,1,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.war`,data};documents.set(effect.uuid,effect);return effect;}});
+  const a=makeTarget("Actor.war-a"),b=makeTarget("Actor.war-b"),enemy=makeTarget("Actor.war-enemy"),other=makeTarget("Actor.war-other");
+  for(const target of [a,b,enemy,other])documents.set(target.uuid,target);
+  const ally=await applyTransformation(a,`${war}#ally`,{source:item,context});
+  const foe=await applyTransformation(enemy,`${war}#enemy`,{source:item,context});
+  assert.equal(ally.data.system.changes.find(row=>row.key==="system.modifiers.rolls.combatActions").value,"4");
+  assert.equal(foe.data.system.changes.find(row=>row.key==="system.modifiers.rolls.combatActions").value,"-4");
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"3 rounds",boost0:0,boost4:0,boost5:0})};
+  await applyTransformation(b,`${war}#ally`,{source:item,context});
+  await assert.rejects(()=>applyTransformation(other,`${war}#enemy`,{source:item,context}),/MagicTargetLimit/);
+  assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,3);
+ }finally{foundry.applications.api.DialogV2=previous;}
+});

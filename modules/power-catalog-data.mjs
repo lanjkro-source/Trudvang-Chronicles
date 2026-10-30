@@ -2082,6 +2082,44 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:war-cry:4": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "ally",
+          "baseTargets": 1,
+          "variants": [
+            "ally"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:1",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:war-cry:4:0",
+            "holy-gerbanis-wrath-of-tyrd:war-cry:4:4"
+          ]
+        },
+        {
+          "id": "enemy",
+          "baseTargets": 1,
+          "variants": [
+            "enemy"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:2",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:war-cry:4:0",
+            "holy-gerbanis-wrath-of-tyrd:war-cry:4:5"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:0",

@@ -18,7 +18,7 @@ import {applyGradedEffect} from "./graded-effects.mjs";
 import {normalizeEffectDuration, addDurationSeconds} from "./rules/effect-duration.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
-import {magicTargetCapacity} from "./rules/magic-target-allocation.mjs";
+import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -133,7 +133,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const options=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels??[];
   availableById=Object.fromEntries(options.map(option=>[option.id,Math.max(0,(chosen[option.id]??0)-others.reduce((sum,row)=>sum+Array.from(row.counts??[]).filter(c=>c.optionId===option.id).reduce((n,c)=>n+Number(c.count||0),0),0))]));
   counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
-  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:Array.from(allocationRecord.targetAllocations??[]).length,max:magicTargetCapacity(targeting,chosen)});
+  const group=magicTargetGroup(targeting,key);
+  if(!group)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
+  const groupUsed=Array.from(allocationRecord.targetAllocations??[]).filter(row=>magicTargetGroup(targeting,row.effectKey)===group).length;
+  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:magicTargetCapacity(targeting,chosen,group)});
   Object.assign(casting,withCastingCounts(casting,counts));
  }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
