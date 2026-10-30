@@ -1452,6 +1452,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:hinji-strength:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:hinji-strength:3:0",
@@ -1493,6 +1497,49 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "chosen",
+          "baseTargets": 1,
+          "variants": [
+            "force-du-jotun"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:2",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:1"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:1"
+          ]
+        },
+        {
+          "id": "allies",
+          "baseTargets": null,
+          "variants": [
+            "force-du-jotun-allies"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:1",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:4"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:1",
+            "holy-gerbanis-strength-of-stormi:jotun-strength:6:4"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
@@ -1549,6 +1596,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:troll-strength:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:0",

@@ -219,3 +219,10 @@ niveau conservent leurs priorités usuelles.
 Tests isolés des offres bilingues, liens Joaring, profils, réserves temporaires,
 application des attaques accordées, pénalités de récupération et restauration de la
 vision. Aucun accès à une installation Foundry n’est utilisé.
+
+Les pouvoirs Force du troll et Force de hinje de la tablette Force de Storme
+admettent chacun un bénéficiaire par invocation. Force du jotun distingue les
+bénéficiaires choisis à +8, dont le nombre dépend des niveaux achetés, des autres
+alliés à portée, sans plafond numérique. Sa durée et l'amélioration des alliés
+sont communes à toutes les personnes concernées ; le choix des alliés à portée
+reste manuel (Livre des règles, p. 218–219).

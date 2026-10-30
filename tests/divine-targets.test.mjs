@@ -171,3 +171,43 @@ test("one click distributes a limited invocation sequentially and reports an exc
   assert.deepEqual(errors,["TRUDVANG.Warning.MagicTargetLimit"]);
  }finally{foundry.applications.api.DialogV2=previous.dialog;document.addEventListener=previous.listener;globalThis.Hooks=previous.Hooks;globalThis.canvas=previous.canvas;ui.notifications.error=previous.error;}
 });
+
+test("Stormi strength powers each permit one target per invocation",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"2 minutes",boost0:1})};
+  for(const [index,power] of ["holy-gerbanis-strength-of-stormi:troll-strength:0","holy-gerbanis-strength-of-stormi:hinji-strength:3"].entries()) {
+   const caster={uuid:`Actor.strength-caster-${index}`,name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+   const item={type:"divineFeat",system:{catalogId:power}};
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Strength",castingId:`strength-${index}`,powerLevelCounts:[1,0]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   const makeTarget=uuid=>({uuid,name:uuid,isOwner:false,items:[],getTraitValue:()=>0,canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.strength`,data};documents.set(effect.uuid,effect);return effect;}});
+   const first=makeTarget(`Actor.strength-first-${index}`),second=makeTarget(`Actor.strength-second-${index}`);documents.set(first.uuid,first);documents.set(second.uuid,second);
+   const effect=await applyTransformation(first,`${power}#${index===0?"force-du-troll":"force-de-hinje"}`,{source:item,context});
+   assert.ok(effect);
+   await assert.rejects(()=>applyTransformation(second,`${power}#${index===0?"force-du-troll":"force-de-hinje"}`,{source:item,context}),/MagicTargetLimit/);
+   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,1);
+  }
+ } finally {foundry.applications.api.DialogV2=previous;}
+});
+
+test("Jotun Strength shares duration and ally enhancement while limiting chosen recipients",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"2 minutes",boost0:1,boost4:1})};
+  const power="holy-gerbanis-strength-of-stormi:jotun-strength:6",caster={uuid:"Actor.jotun-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Jotun",castingId:"jotun",powerLevelCounts:[1,0,0,0,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,name:uuid,isOwner:false,items:[],getTraitValue:()=>0,canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.jotun`,data};documents.set(effect.uuid,effect);return effect;}});
+  const targets=["chosen","extra","ally1","ally2"].map(n=>makeTarget(`Actor.jotun-${n}`));for(const t of targets)documents.set(t.uuid,t);
+  const chosen=await applyTransformation(targets[0],`${power}#force-du-jotun`,{source:item,context});
+  assert.equal(chosen.data.system.changes.find(row=>row.key==="system.effective.traits.strength").value,"8");
+  await assert.rejects(()=>applyTransformation(targets[1],`${power}#force-du-jotun`,{source:item,context}),/MagicTargetLimit/);
+  for(const t of targets.slice(2)) {
+   const ally=await applyTransformation(t,`${power}#force-du-jotun-allies`,{source:item,context});
+   assert.equal(ally.data.system.changes.find(row=>row.key==="system.effective.traits.strength").value,"6");
+  }
+  assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,3);
+ } finally {foundry.applications.api.DialogV2=previous;}
+});
