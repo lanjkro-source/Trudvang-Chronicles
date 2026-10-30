@@ -724,6 +724,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:0",
@@ -842,6 +847,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:0",
@@ -3031,6 +3041,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:limb-of-stone:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:0",
@@ -5049,6 +5063,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:0",
@@ -7164,6 +7182,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:change-creature:11": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:change-creature:11:0",

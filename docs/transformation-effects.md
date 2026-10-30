@@ -239,3 +239,10 @@ d'Enken permet de choisir une autre personne si l'amélioration de portée au
 contact a été achetée ; elle conserve une seule cible. La rune Poings d'acier
 concerne le porteur de son équipement et n'est pas soumise à cette restriction.
 Les références d'effets appliquées hors d'une carte de lancement restent libres.
+
+Ouïe du hibou et Sens du griffon améliorent les sens du lanceur : leur portée
+indique la distance d'audition, pas une distance d'application sur autrui.
+Peau d'écorce, Membre de pierre et Transformation n'admettent qu'une cible
+par invocation ou lancement ; le membre affecté est choisi parmi les variantes.
+Leur portée, les conditions de taille et les résistances restent à vérifier
+selon les règles (Livre des règles, p. 196, 244–245, 258 et 271).

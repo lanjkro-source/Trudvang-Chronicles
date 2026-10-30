@@ -124,3 +124,16 @@ test("failure to delete an effect keeps the maintained casting", async () => {
   assert.equal(caster.system.activeSpellCastings.length,1);
  } finally {console.error=originalError;globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
+
+test("Change Creature reserves one target per maintained casting",async()=>{
+ const old={game:globalThis.game,foundry:globalThis.foundry};
+ try {
+  const id="vitner-body-vitner:change-creature:11",user={id:"owner"},item={id:"spell",type:"spell",system:{spellType:"lasting",catalogId:id}};
+  const caster={uuid:"Actor.mage-form",items:[item],canUserModify:()=>true,system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:"form-cast",itemId:"spell",powerLevelSnapshot:Array.from({length:11},(_,i)=>({id:`${id}:${i}`,count:i===0?2:0}))}]},async update(changed){this.system.activeSpellCastings=changed["system.activeSpellCastings"];}};
+  const target=uuid=>({uuid,canUserModify:()=>true,async createTrudvangEffect(){return {uuid:`${uuid}.ActiveEffect.test`};}}),a=target("Actor.form-a"),b=target("Actor.form-b"),docs=new Map([caster,a,b].map(x=>[x.uuid,x]));
+  globalThis.game={user:{id:"gm"},users:{activeGM:{isSelf:true},get:()=>user},actors:[caster,a,b],scenes:[]};globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid)}};
+  const data={flags:{"trudvang-chronicles":{transformation:{key:`${id}#transformation`,ruleTestContext:{casterUuid:caster.uuid,castingId:"form-cast",sourceId:id}}}}};
+  const apply=who=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"form-cast",targetUuid:who.uuid,countsById:{[`${id}:0`]:2},data,userId:user.id});
+  assert.equal((await apply(a)).status,"ok");assert.equal((await apply(b)).status,"exceeds-targets");
+ }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
+});

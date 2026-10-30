@@ -250,3 +250,35 @@ test("Enken Night Vision can only be given to someone else when contact is bough
   }
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Bark Skin has one beneficiary and preserves purchased extra temporary health",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"1 minute",boost2:2})};
+  const power="holy-tenetnid-tablet-of-the-shield:bark-skin:4",caster={uuid:"Actor.bark-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Bark",castingId:"bark",powerLevelCounts:[0,0,2]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.bark`,data};documents.set(effect.uuid,effect);return effect;}});
+  const first=makeTarget("Actor.bark-first"),second=makeTarget("Actor.bark-second");documents.set(first.uuid,first);documents.set(second.uuid,second);
+  const result=await applyTransformation(first,`${power}#peau-d-ecorce`,{source:item,context});
+  assert.equal(result.data.system.changes.find(c=>c.key==="system.resources.body.temporaryMax").value,"12");
+  await assert.rejects(()=>applyTransformation(second,`${power}#peau-d-ecorce`,{source:item,context}),/MagicTargetLimit/);
+ }finally {foundry.applications.api.DialogV2=previous;}
+});
+
+test("Limb of Stone cannot target a second limb or a second creature from one invocation",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"3 rounds"})};
+  const power="holy-haminges-power-of-the-scale:limb-of-stone:5",caster={uuid:"Actor.limb-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Limb",castingId:"limb",powerLevelCounts:[0,0,0,0]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.limb`,data};documents.set(effect.uuid,effect);return effect;}});
+  const first=makeTarget("Actor.limb-first"),second=makeTarget("Actor.limb-second");documents.set(first.uuid,first);documents.set(second.uuid,second);
+  assert.ok(await applyTransformation(first,`${power}#membre-de-pierrebras-gauche`,{source:item,context}));
+  await assert.rejects(()=>applyTransformation(first,`${power}#membre-de-pierrebras-droit`,{source:item,context}),/MagicTargetAlreadyAffected/);
+  await assert.rejects(()=>applyTransformation(second,`${power}#membre-de-pierrebras-droit`,{source:item,context}),/MagicTargetLimit/);
+ }finally {foundry.applications.api.DialogV2=previous;}
+});
