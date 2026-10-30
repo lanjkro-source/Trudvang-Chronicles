@@ -7044,6 +7044,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:leather-skin:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:leather-skin:5:0",

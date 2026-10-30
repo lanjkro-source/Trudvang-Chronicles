@@ -1,0 +1,53 @@
+{
+  "_id": "8L6kY3x3y4z5A6B7",
+  "_key": "!items!8L6kY3x3y4z5A6B7",
+  "name": "Peau de cuir",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:leather-skin:5#leather-skin",
+    "description": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir. De plus, la peau revêt une couleur brunâtre qu’on pourrait aisément confondre avec du vrai cuir. Peau de cuir confère au bénéficiaire une valeur de protection naturelle de 1, qui vient s’ajouter à toute autre protection existante. Malgré l’épaisseur de sa peau, la créature enchantée peut se déplacer normalement et ne pèse pas plus lourd qu’avant le sort. Si la créature enchantée reçoit suffisamment de niveaux de puissance supplémentaires pour voir la valeur de protection dépasser 4, la peau de cuir prend un aspect plus métallique.",
+    "summary": "Durcit la peau du bénéficiaire et augmente sa protection naturelle.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "BB09pUnToUpVqWrX",
+      "_key": "!items.effects!8L6kY3x3y4z5A6B7.BB09pUnToUpVqWrX",
+      "name": "Peau de cuir",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir. De plus, la peau revêt une couleur brunâtre qu’on pourrait aisément confondre avec du vrai cuir. Peau de cuir confère au bénéficiaire une valeur de protection naturelle de 1, qui vient s’ajouter à toute autre protection existante. Malgré l’épaisseur de sa peau, la créature enchantée peut se déplacer normalement et ne pèse pas plus lourd qu’avant le sort. Si la créature enchantée reçoit suffisamment de niveaux de puissance supplémentaires pour voir la valeur de protection dépasser 4, la peau de cuir prend un aspect plus métallique.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:leather-skin:5#leather-skin",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:leather-skin:5#leather-skin",
+            "sourceId": "vitner-body-vitner:leather-skin:5",
+            "summary": "Durcit la peau du bénéficiaire et augmente sa protection naturelle.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

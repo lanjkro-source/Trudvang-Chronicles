@@ -13659,6 +13659,15 @@
           "SourcePage": "143",
           "Duration": "3 days"
         },
+        "vitner-body-vitner:leather-skin:5#leather-skin": {
+          "Name": "Leather Skin",
+          "Summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+          "Description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather. In addition, the skin takes on a brownish color as to be easily confused with actual leather. The leather skin grants the enchanted a natural Protection Value of 1, which is added to any other protection that already exists. Despite the tough skin, the enchanted creature can move normally and weighs no more than they did before the spell. If the beneficiary of the spell gains enough levels of power to increase the protective value above 4, the leathercolored skin takes on a more metallic shade.",
+          "SourceName": "Leather Skin",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "6 action rounds"
+        },
         "vitner-body-vitner:hasten:9#hate": {
           "Name": "Hasten",
           "Summary": "Increases Dexterity, movement, initiative and Agility and Fighting SVs.",

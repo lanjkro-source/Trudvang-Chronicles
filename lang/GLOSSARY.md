@@ -10811,6 +10811,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourcePage` | 143 | 187 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.Name` | Leather Skin | Peau de cuir |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.Description` | This spell alters a creature’s skin, which thickens to the hardness and durability of leather. In addition, the skin takes on a brownish color as to be easily confused with actual leather. The leather skin grants the enchanted a natural Protection Value of 1, which is added to any other protection that already exists. Despite the tough skin, the enchanted creature can move normally and weighs no more than they did before the spell. If the beneficiary of the spell gains enough levels of power to increase the protective value above 4, the leathercolored skin takes on a more metallic shade. | Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir. De plus, la peau revêt une couleur brunâtre qu’on pourrait aisément confondre avec du vrai cuir. Peau de cuir confère au bénéficiaire une valeur de protection naturelle de 1, qui vient s’ajouter à toute autre protection existante. Malgré l’épaisseur de sa peau, la créature enchantée peut se déplacer normalement et ne pèse pas plus lourd qu’avant le sort. Si la créature enchantée reçoit suffisamment de niveaux de puissance supplémentaires pour voir la valeur de protection dépasser 4, la peau de cuir prend un aspect plus métallique. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.SourceName` | Leather Skin | Peau de cuir |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.SourcePage` | 96 | 194 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin.Duration` | 6 action rounds | 6 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:hasten:9#hate`
 
 | Clé | English | Français |

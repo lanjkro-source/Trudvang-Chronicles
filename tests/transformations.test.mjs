@@ -30,7 +30,21 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,76);
+ assert.equal(Object.keys(sources).length,77);
+});
+
+test("Leather Skin adds natural protection and selected duration without armor integrity",async()=>{
+ const key="vitner-body-vitner:leather-skin:5#leather-skin";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"6 rounds",boost0:1,boost1:1,boost3:2})}};
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,key);
+ assert.equal(created.system.changes.find(row=>row.key==="system.modifiers.protection").value,"3");
+ assert.deepEqual(created.duration,{value:19,units:"rounds"});
+ assert.ok(!created.system.changes.some(row=>/integrity|breach/i.test(row.key)));
+ const {calculateArmoredDamage}=await import("../modules/damage-application.mjs");
+ assert.equal(calculateArmoredDamage({damage:6,totalProtection:3,armor:[]}).bodyDamage,3);
 });
 test("forms compose without modifying source data and disabled or expired effects do not contribute",()=>{
  const actor={type:"character",system:{effective:{traits:{strength:1,dexterity:0}}},effects:[effect({size:7,traits:[{trait:"strength",method:"highest",value:6}],suspendEquipment:true}),effect({size:10},{disabled:true}),effect({size:3},{duration:{expired:true}})]};

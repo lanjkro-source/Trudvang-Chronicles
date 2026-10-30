@@ -213,6 +213,50 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
   },
+  "vitner-body-vitner:leather-skin:5#leather-skin": {
+    "id": "leather-skin",
+    "icon": "icons/svg/shield.svg",
+    "duration": "6 tours de jeu",
+    "changes": [
+      {
+        "key": "system.modifiers.protection",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "statuses": [],
+    "related": [],
+    "priority": 30,
+    "sourceId": "vitner-body-vitner:leather-skin:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-body-vitner:leather-skin:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:leather-skin:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:leather-skin:5:2"
+      },
+      {
+        "index": 3,
+        "target": "protection",
+        "value": 1,
+        "optionId": "vitner-body-vitner:leather-skin:5:3"
+      }
+    ]
+  },
   "vitner-body-vitner:hasten:9#hate": {
     "id": "hate",
     "icon": "icons/svg/aura.svg",
@@ -4830,6 +4874,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
+  ],
+  "vitner-body-vitner:leather-skin:5": [
+    "vitner-body-vitner:leather-skin:5#leather-skin"
   ],
   "vitner-body-vitner:hasten:9": [
     "vitner-body-vitner:hasten:9#hate",

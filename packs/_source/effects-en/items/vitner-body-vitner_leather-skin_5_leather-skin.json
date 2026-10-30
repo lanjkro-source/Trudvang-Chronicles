@@ -1,0 +1,53 @@
+{
+  "_id": "8L6kY3x3y4z5A6B7",
+  "_key": "!items!8L6kY3x3y4z5A6B7",
+  "name": "Leather Skin",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:leather-skin:5#leather-skin",
+    "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather. In addition, the skin takes on a brownish color as to be easily confused with actual leather. The leather skin grants the enchanted a natural Protection Value of 1, which is added to any other protection that already exists. Despite the tough skin, the enchanted creature can move normally and weighs no more than they did before the spell. If the beneficiary of the spell gains enough levels of power to increase the protective value above 4, the leathercolored skin takes on a more metallic shade.",
+    "summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "BB09pUnToUpVqWrX",
+      "_key": "!items.effects!8L6kY3x3y4z5A6B7.BB09pUnToUpVqWrX",
+      "name": "Leather Skin",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather. In addition, the skin takes on a brownish color as to be easily confused with actual leather. The leather skin grants the enchanted a natural Protection Value of 1, which is added to any other protection that already exists. Despite the tough skin, the enchanted creature can move normally and weighs no more than they did before the spell. If the beneficiary of the spell gains enough levels of power to increase the protective value above 4, the leathercolored skin takes on a more metallic shade.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:leather-skin:5#leather-skin",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:leather-skin:5#leather-skin",
+            "sourceId": "vitner-body-vitner:leather-skin:5",
+            "summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

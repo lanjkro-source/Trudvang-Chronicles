@@ -50,6 +50,20 @@ test("simultaneous targets share one casting's target and improvement budget",as
  }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
 
+test("Leather Skin permits only one target for a casting",async()=>{
+ const old={game:globalThis.game,foundry:globalThis.foundry};
+ try{
+  const id="vitner-body-vitner:leather-skin:5",user={id:"owner"},item={id:"spell",type:"spell",system:{spellType:"lasting",catalogId:id}};
+  const caster={uuid:"Actor.mage",items:[item],canUserModify:()=>true,system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:"cast",itemId:"spell",powerLevelSnapshot:Array.from({length:4},(_,i)=>({id:`${id}:${i}`,count:i===3?2:0}))}]},async update(changed){this.system.activeSpellCastings=changed["system.activeSpellCastings"];}};
+  const target=uuid=>({uuid,canUserModify:()=>true,async createTrudvangEffect(){return {uuid:`${uuid}.ActiveEffect.test`};}});
+  const a=target("Actor.a"),b=target("Actor.b"),docs=new Map([caster,a,b].map(x=>[x.uuid,x]));
+  globalThis.game={user:{id:"gm"},users:{activeGM:{isSelf:true},get:()=>user},actors:[caster,a,b],scenes:[]};globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid)}};
+  const data={flags:{"trudvang-chronicles":{transformation:{key:`${id}#leather-skin`,ruleTestContext:{casterUuid:caster.uuid,castingId:"cast",sourceId:id}}}}};
+  const apply=who=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:who.uuid,countsById:{[`${id}:3`]:2},data,userId:user.id});
+  assert.equal((await apply(a)).status,"ok");assert.equal((await apply(b)).status,"exceeds-targets");
+ }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
+});
+
 test("actual effect hooks keep a casting until the last target's effect is deleted", async () => {
  const old={game:globalThis.game,foundry:globalThis.foundry,Hooks:globalThis.Hooks};
  try {

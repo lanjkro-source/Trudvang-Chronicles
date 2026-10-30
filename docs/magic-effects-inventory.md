@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 61.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 62.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -114,7 +114,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner corporel | Vision/cécité | sortilège | `vitner-body-vitner:vision-blindness:4` | 7 | 1 | 0 |
 | Vitner corporel | Immobilisation | sortilège | `vitner-body-vitner:immobilize:6` | 7 | 1 | 0 |
 | Vitner corporel | Modification d’apparence | sortilège | `vitner-body-vitner:appearance-change:7` | 4 | 1 | 0 |
-| Vitner corporel | Peau de cuir | sortilège | `vitner-body-vitner:leather-skin:5` | 4 | 0 | 0 |
+| Vitner corporel | Peau de cuir | sortilège | `vitner-body-vitner:leather-skin:5` | 4 | 0 | 1 |
 | Vitner corporel | Hâte | sortilège | `vitner-body-vitner:hasten:9` | 7 | 1 | 2 |
 | Vitner corporel | Vigueur | sortilège | `vitner-body-vitner:strengthen:8` | 7 | 1 | 2 |
 | Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 0 |
