@@ -38,7 +38,10 @@ de lancement conserve les comptes d’améliorations choisis dans ses offres.
    chaque sortilège maintenu ; le transmettre à la carte et aux effets appliqués,
    avec l'UUID du lanceur. Les anciens messages et effets ne sont pas associés
    arbitrairement à un lancement et conservent leur fonctionnement actuel.
-2. **Références des effets** : enregistrer les effets effectivement créés par
+2. **Références des effets** : le repérage en lecture seule retrouve maintenant
+   les UUID des effets par lanceur et lancement, y compris sur les acteurs de
+   tokens non liés de toutes les scènes, sans doublonner les tokens liés. Il ne
+   considère pas une liste vide comme une preuve de fin. Reste à enregistrer les effets effectivement créés par
    lancement, avec leurs UUID complets, y compris les acteurs de tokens non liés.
    Prévoir la réconciliation après suppression, expiration ou remplacement, et
    distinguer les effets pas encore appliqués des effets tous terminés. Vérifier

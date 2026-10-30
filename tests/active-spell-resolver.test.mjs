@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {activeSpellCosts, activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../modules/rules/active-spell-resolver.mjs";
+import {activeSpellCosts, activeSpellInstances, activeSpellRecords, fatalActiveSpellCost, maintainedSpellEffects} from "../modules/rules/active-spell-resolver.mjs";
 
 const spell = (id, type = "lasting", legacyCosts = [], active = false, activeCost = 0) => ({
   id, type: "spell", system: {spellType: type, activeCastCosts: legacyCosts,
@@ -52,4 +52,17 @@ test("each persistent casting retains its own selected option snapshot through r
  first.powerLevelSnapshot[0].description="Modified later";
  assert.equal(records[0].powerLevelSnapshot[0].description,"Bonus +1");
  assert.equal(activeSpellRecords(actor([item],records)).filter(row=>row.id!=="first")[0].powerLevelSnapshot[0].count,1);
+});
+
+test("effect discovery distinguishes castings and includes unlinked tokens on other scenes", () => {
+ const effect=(uuid,casterUuid,castingId,expired=false)=>({uuid,duration:{expired},flags:{"trudvang-chronicles":{transformation:{ruleTestContext:{casterUuid,castingId}}}}});
+ const shared={uuid:"Actor.recipient",effects:[effect("Actor.recipient.ActiveEffect.a","Actor.caster","first"),effect("Actor.recipient.ActiveEffect.b","Actor.caster","second")]};
+ const unlinked={uuid:"Scene.other.Token.t.Actor.synthetic",effects:[effect("Scene.other.Token.t.Actor.synthetic.ActiveEffect.c","Actor.caster","first"),effect("Scene.other.Token.t.Actor.synthetic.ActiveEffect.expired","Actor.caster","first",true)]};
+ const unrelated={uuid:"Actor.other",effects:[effect("Actor.other.ActiveEffect.d","Actor.othercaster","first"),{uuid:"Actor.other.ActiveEffect.old"}]};
+ const world={actors:[shared,unrelated],scenes:[{tokens:[{actor:shared},{actor:unlinked}]}]};
+ assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"first"}),[
+  {actorUuid:shared.uuid,effectUuid:"Actor.recipient.ActiveEffect.a"},{actorUuid:unlinked.uuid,effectUuid:"Scene.other.Token.t.Actor.synthetic.ActiveEffect.c"}]);
+ assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"second"}),[{actorUuid:shared.uuid,effectUuid:"Actor.recipient.ActiveEffect.b"}]);
+ assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"never-applied"}),[]);
+ assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"",castingId:"first"}),[]);
 });

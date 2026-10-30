@@ -41,3 +41,25 @@ export function activeSpellCosts(actor, item) {
 export function fatalActiveSpellCost(actor) {
   return activeSpellInstances(actor).reduce((sum, casting) => sum + casting.cost, 0);
 }
+
+/** Find extant effects by the provenance stored on them, including synthetic
+ * token actors on inactive scenes. An empty result does not prove that a cast
+ * has ended: it may not have been applied yet or a document may be unavailable. */
+export function maintainedSpellEffects({actors = [], scenes = []} = {}, {casterUuid, castingId} = {}) {
+  if (!casterUuid || !castingId) return [];
+  const candidates = [...actors];
+  for (const scene of scenes) for (const token of scene.tokens ?? []) if (token.actor) candidates.push(token.actor);
+  const seenActors = new Set(), seenEffects = new Set(), result = [];
+  for (const actor of candidates) {
+    if (!actor?.uuid || seenActors.has(actor.uuid)) continue;
+    seenActors.add(actor.uuid);
+    for (const effect of actor.effects ?? []) {
+      const context = effect.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
+      if (context?.casterUuid !== casterUuid || context?.castingId !== castingId || effect.duration?.expired) continue;
+      if (!effect.uuid || seenEffects.has(effect.uuid)) continue;
+      seenEffects.add(effect.uuid);
+      result.push({actorUuid: actor.uuid, effectUuid: effect.uuid});
+    }
+  }
+  return result;
+}
