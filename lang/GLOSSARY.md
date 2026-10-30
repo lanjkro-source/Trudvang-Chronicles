@@ -1343,6 +1343,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.MaintainedSpellUnavailable` | The spell and its effects could not be ended. Check that a game master is connected. | Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté. |
 | `TRUDVANG.Warning.MagicAllocationUnavailable` | The effect could not be applied: the casting must be active and a game master connected. | Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté. |
 | `TRUDVANG.Warning.MagicTargetLimit` | This casting has reached its target limit. | Le nombre de cibles permis par ce lancement est atteint. |
+| `TRUDVANG.Warning.MagicCasterOnly` | This power can only be applied to its caster with the selected power levels. | Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis. |
 | `TRUDVANG.Warning.MagicTargetAlreadyAffected` | This target has already received another variant of this spell. | Cette cible a déjà reçu une autre variante de ce sortilège. |
 | `TRUDVANG.Warning.MagicPowerBudget` | The selected power levels are already allocated to other targets. | Les niveaux de puissance choisis sont déjà attribués à d’autres cibles. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |

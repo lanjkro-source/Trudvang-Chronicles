@@ -1153,6 +1153,7 @@
       "MaintainedSpellUnavailable": "Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté.",
       "MagicAllocationUnavailable": "Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté.",
       "MagicTargetLimit": "Le nombre de cibles permis par ce lancement est atteint.",
+      "MagicCasterOnly": "Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis.",
       "MagicTargetAlreadyAffected": "Cette cible a déjà reçu une autre variante de ce sortilège.",
       "MagicPowerBudget": "Les niveaux de puissance choisis sont déjà attribués à d’autres cibles.",
       "CannotRollForActor": "Vous ne pouvez pas lancer le jet de cet acteur.",

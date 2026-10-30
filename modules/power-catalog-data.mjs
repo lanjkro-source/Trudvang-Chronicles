@@ -111,6 +111,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:ravenshape:8:0",
@@ -129,6 +134,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:salmonshape:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:salmonshape:4:0",
@@ -147,6 +157,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:stagshape:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:stagshape:2:0",
@@ -881,6 +896,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:0",
@@ -899,6 +919,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:boiling-blood:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2:0",
@@ -917,6 +942,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:madness:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:madness:5:0",
@@ -930,6 +960,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:rage:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:rage:3:0",
@@ -943,6 +978,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:riastarthae:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:0",
@@ -974,6 +1014,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0:0",
@@ -1334,6 +1379,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:night-vision:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true,
+      "contactOptionId": "holy-gerbanis-power-of-enken:night-vision:0:2"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:night-vision:0:0",
@@ -2451,6 +2502,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:sight-of-the-dwarves:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:0",
@@ -2482,6 +2538,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3:0",
@@ -2500,6 +2561,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:0",
@@ -2564,6 +2630,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mastomant-s-tusks:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:0",
@@ -2587,6 +2658,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mastomantshape:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:mastomantshape:8:0",
@@ -2638,6 +2714,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:resilience:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:resilience:0:0",
@@ -2679,6 +2760,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:0",
@@ -2710,6 +2796,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:dragon-skin:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:0",
@@ -2733,6 +2824,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:dragon-soul:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:0",
@@ -2756,6 +2852,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:flame-hardened:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:flame-hardened:2:0",
@@ -2774,6 +2875,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:giant-snakeshape:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:0",
@@ -2807,6 +2913,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:0",
@@ -2848,6 +2959,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1:0",
@@ -2892,6 +3008,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8:0",
@@ -3066,6 +3187,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:0",
@@ -3089,6 +3215,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:0",
@@ -3130,6 +3261,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3:0",
@@ -3148,6 +3284,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:0",
@@ -3204,6 +3345,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:thurse-strength:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:thurse-strength:7:0",
@@ -3222,6 +3368,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:troll-strength:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:troll-strength:1:0",
@@ -3732,6 +3883,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:bloodfire:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:0",
@@ -3750,6 +3906,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:boiling-blood:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:0",
@@ -3768,6 +3929,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:madness:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:madness:4:0",
@@ -3781,6 +3947,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:rage:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:rage:2:0",
@@ -3794,6 +3965,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:riastarthae:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:riastarthae:8:0",
@@ -3825,6 +4001,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:simmering-blood:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:0",
@@ -5011,6 +5192,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:0",
@@ -6057,6 +6243,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-shape:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:animal-shape:6:0",
@@ -6075,6 +6266,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-spirit:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:animal-spirit:4:0",
@@ -6548,6 +6744,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:gift-of-water:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:gift-of-water:3:0",

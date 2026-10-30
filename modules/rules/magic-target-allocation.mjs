@@ -21,6 +21,9 @@ export function validateMagicAllocations({targeting, selected, allocations, cast
   targets.add(allocation.targetUuid);
   const group=magicTargetGroup(targeting,allocation.effectKey);
   if(!group)return {ok:false,reason:"invalid-allocation"};
+  const groupDefinition=groups.find(row=>row.id===group);
+  if(groupDefinition.casterOnly && !casterUuid)return {ok:false,reason:"invalid-allocation"};
+  if(groupDefinition.casterOnly && allocation.targetUuid!==casterUuid && !(groupDefinition.contactOptionId && selected[groupDefinition.contactOptionId]>0))return {ok:false,reason:"caster-only"};
   used[group]=(used[group]??0)+1;
  }
  for(const group of groups){const capacity=magicTargetCapacity(targeting,selected,group.id);if((used[group.id]??0)>capacity)return {ok:false,reason:"exceeds-targets",capacity,group:group.id};}

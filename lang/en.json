@@ -1156,6 +1156,7 @@
       "MaintainedSpellUnavailable": "The spell and its effects could not be ended. Check that a game master is connected.",
       "MagicAllocationUnavailable": "The effect could not be applied: the casting must be active and a game master connected.",
       "MagicTargetLimit": "This casting has reached its target limit.",
+      "MagicCasterOnly": "This power can only be applied to its caster with the selected power levels.",
       "MagicTargetAlreadyAffected": "This target has already received another variant of this spell.",
       "MagicPowerBudget": "The selected power levels are already allocated to other targets.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",

@@ -26,6 +26,8 @@ export function validatePowerTargeting(entry, english) {
  for(const group of groups){
   if((group.baseTargets!==null&&(!Number.isInteger(group.baseTargets)||group.baseTargets<1))||(!target.groups&&group.baseTargets===null)||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
    if(group.maxOtherThanCaster!==undefined&&(!target.groups||!Number.isInteger(group.maxOtherThanCaster)||group.maxOtherThanCaster<0))throw new Error(`${entry.catalogId}: invalid non-caster target limit`);
+   if(group.casterOnly!==undefined&&typeof group.casterOnly!=="boolean")throw new Error(`${entry.catalogId}: invalid caster restriction`);
+   if(group.contactOptionId!==undefined){if(!group.casterOnly)throw new Error(`${entry.catalogId}: contact option requires a caster restriction`);resolvePowerOptionReference(entry,{optionId:group.contactOptionId});}
   if(target.groups){
    if(typeof group.id!=="string"||!group.id||groupIds.has(group.id)||!Array.isArray(group.variants)||!group.variants.length||!Array.isArray(group.allocatableOptions))throw new Error(`${entry.catalogId}: invalid target group`);
    groupIds.add(group.id);

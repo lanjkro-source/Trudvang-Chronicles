@@ -232,3 +232,10 @@ le bénéficiaire principal à +8 en Psychisme, ses éventuels bénéficiaires
 supplémentaires et le lanceur accompagné d'au plus deux amis à +4 ou +6.
 La durée et l'amélioration des amis sont communes ; la portée et le choix
 des amis restent à vérifier par les joueurs (Livre des règles, p. 224–225).
+
+Les pouvoirs divins personnels dont les effets sont déjà définis ne peuvent
+être appliqués qu'au lanceur depuis la carte de l'invocation. Vision nocturne
+d'Enken permet de choisir une autre personne si l'amélioration de portée au
+contact a été achetée ; elle conserve une seule cible. La rune Poings d'acier
+concerne le porteur de son équipement et n'est pas soumise à cette restriction.
+Les références d'effets appliquées hors d'une carte de lancement restent libres.

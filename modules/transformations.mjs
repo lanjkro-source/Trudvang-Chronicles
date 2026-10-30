@@ -270,7 +270,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.kind==="divine"?casting.messageId:"",targetUuid:actor.uuid,countsById:allocation,data});
-  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
+  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   effect=await foundry.utils.fromUuid(result.effectUuid);
  }else effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;

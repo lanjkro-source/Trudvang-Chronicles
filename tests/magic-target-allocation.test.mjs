@@ -43,3 +43,23 @@ test("unlimited area targets share the same enhancements without consuming them 
  allocations[0].countsById.bonus=0;
  assert.equal(validateMagicAllocations({targeting,selected,allocations}).reason,"invalid-allocation");
 });
+
+test("personal powers reject other targets unless the contact improvement is purchased",()=>{
+ const self={baseTargets:1,additionalTargets:[],casterOnly:true};
+ const target=uuid=>({targetUuid:uuid,effectKey:"power#effect",countsById:{}});
+ assert.equal(validateMagicAllocations({targeting:self,selected:{},allocations:[target("Actor.caster")],casterUuid:"Actor.caster"}).ok,true);
+ assert.equal(validateMagicAllocations({targeting:self,selected:{},allocations:[target("Actor.friend")],casterUuid:"Actor.caster"}).reason,"caster-only");
+ assert.equal(validateMagicAllocations({targeting:self,selected:{},allocations:[target("Actor.caster")]}).reason,"invalid-allocation");
+ const contact={...self,contactOptionId:"contact"};
+ assert.equal(validateMagicAllocations({targeting:contact,selected:{contact:0},allocations:[target("Actor.friend")],casterUuid:"Actor.caster"}).reason,"caster-only");
+ assert.equal(validateMagicAllocations({targeting:contact,selected:{contact:1},allocations:[target("Actor.friend")],casterUuid:"Actor.caster"}).ok,true);
+ assert.equal(validateMagicAllocations({targeting:contact,selected:{contact:1},allocations:[target("Actor.friend"),target("Actor.caster")],casterUuid:"Actor.caster"}).reason,"exceeds-targets");
+});
+
+test("catalogued personal divine powers restrict their target, without treating the equipment rune as caster-only",async()=>{
+ const {POWER_DETAILS_BY_ID}=await import("../modules/power-catalog-data.mjs");
+ for(const id of ["holy-ealdtradition-gift-of-thanja:stagshape:2","holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4","holy-joaringfaith-fury-of-ogon:rage:2","holy-toikalokke-animal-mind:animal-shape:6"]){
+  assert.equal(POWER_DETAILS_BY_ID[id].targeting.casterOnly,true,id);
+ }
+ assert.notEqual(POWER_DETAILS_BY_ID["holy-thuuldom-hammer-fists:hammer-fists:0"].targeting?.casterOnly,true);
+});

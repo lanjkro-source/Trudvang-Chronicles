@@ -233,3 +233,20 @@ test("Heart of Enken permits the caster and two friends in addition to the chose
   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
  } finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Enken Night Vision can only be given to someone else when contact is bought",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"1 minute"})};
+  const power="holy-gerbanis-power-of-enken:night-vision:0";
+  const caster={uuid:"Actor.vision-caster",name:"Priest",items:[],canUserModify:()=>true},target={uuid:"Actor.vision-target",name:"Friend",items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:"Actor.vision-target.ActiveEffect.effect",data};documents.set(effect.uuid,effect);return effect;}};
+  documents.set(caster.uuid,caster);documents.set(target.uuid,target);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  for(const bought of [0,1]){
+   await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Vision",castingId:`vision-${bought}`,powerLevelCounts:[0,0,bought]});
+   const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+   if(!bought)await assert.rejects(()=>applyTransformation(target,`${power}#vision-nocturne`,{source:item,context}),/MagicCasterOnly/);
+   else assert.ok(await applyTransformation(target,`${power}#vision-nocturne`,{source:item,context}));
+  }
+ }finally {foundry.applications.api.DialogV2=previous;}
+});
