@@ -301,3 +301,23 @@ test("healing powers grant the selected daily recovery and duration to one benef
   }
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Voice of Stormi divides duration and resistance modifiers among chosen targets",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  const forms=[{duration:"3 rounds",boost0:1,boost1:1},{duration:"3 rounds",boost0:1,boost1:1},{duration:"3 rounds",boost0:0,boost1:0},{duration:"3 rounds",boost0:0,boost1:0},{duration:"3 rounds",boost0:0,boost1:0}];
+  foundry.applications.api.DialogV2={wait:async()=>forms.shift()};
+  const power="holy-gerbanis-strength-of-stormi:voice-of-stormi:7",caster={uuid:"Actor.voice-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Voice",castingId:"voice",powerLevelCounts:[2,2,0,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  const makeTarget=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.voice`,data};documents.set(effect.uuid,effect);return effect;}});
+  const targets=Array.from({length:5},(_,i)=>makeTarget(`Actor.voice-${i}`));for(const t of targets)documents.set(t.uuid,t);
+  const effects=[];for(const target of targets.slice(0,4))effects.push(await applyTransformation(target,`${power}#voix-de-storme`,{source:item,context}));
+  assert.equal(effects[0].data.flags[scope].transformation.ruleTestContext.countsById[`${power}:1`],1);
+  assert.equal(effects[2].data.flags[scope].transformation.ruleTestContext.countsById[`${power}:1`],0);
+  assert.equal(effects[0].data.duration.value,4);assert.equal(effects[2].data.duration.value,3);
+  await assert.rejects(()=>applyTransformation(targets[4],`${power}#voix-de-storme`,{source:item,context}),/MagicTargetLimit/);
+  assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
+ }finally {foundry.applications.api.DialogV2=previous;}
+});

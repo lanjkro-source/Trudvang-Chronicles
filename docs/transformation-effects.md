@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 124 variantes.
+les états, les règles et les liens des 127 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -257,3 +257,9 @@ naturelle lors d'une nuit de sommeil, avec durée et bonus ajustés par les
 niveaux de puissance. Le bénéficiaire doit rester au repos : si cette condition
 cesse, le MJ retire l'effet manuellement (Livre des règles, p. 216 ; Stormlands,
 p. 123). Chaque invocation ne concerne qu'une personne.
+
+Autorité, Appel du jarl et Voix de Storme proposent des effets descriptifs
+après le test de résistance. La résistance et la durée sont répartissables
+entre les personnes choisies ; Voix de Storme admet trois cibles plus celles
+achetées. La portée, le résultat de la résistance et l'interprétation des
+ordres sont vérifiés par les joueurs (Livre des règles, p. 218–219).

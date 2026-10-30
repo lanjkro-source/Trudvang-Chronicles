@@ -10905,6 +10905,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourcePage` | 166 | 216 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Duration` | 1 day | 1 jour |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.Name` | Voice of Command | Autorité |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.Description` | On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration. | En cas d’échec au test de situation, la personne accepte sans condition les paroles du stormikjalt pendant la durée du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.SourceName` | Voice of Command | Autorité |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.SourcePage` | 164 | 218 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll`
 
 | Clé | English | Français |
@@ -10927,6 +10938,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje.SourcePage` | 164 | 218 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.Name` | Jarl’s Call | Appel du jarl |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.Description` | On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity. | En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.SourceName` | Jarl's Call | Appel du jarl |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.SourcePage` | 164 | 219 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.Duration` | 3 rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun`
 
 | Clé | English | Français |
@@ -10948,6 +10970,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.SourcePage` | 164 | 219 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.Name` | Voice of Stormi | Voix de Storme |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.Description` | On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity. | En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.SourceName` | Voice of Stormi | Voix de Storme |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.SourcePage` | 164 | 219 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.Duration` | 3 rounds | 3 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally`
 

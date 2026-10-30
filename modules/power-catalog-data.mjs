@@ -1587,6 +1587,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:jarl-s-call:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:0",
@@ -1731,6 +1735,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:0",
@@ -1754,6 +1762,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 3,
+      "additionalTargets": [
+        {
+          "optionId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:0",

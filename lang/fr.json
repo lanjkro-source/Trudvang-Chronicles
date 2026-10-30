@@ -13737,6 +13737,15 @@
           "SourcePage": "216",
           "Duration": "1 jour"
         },
+        "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
+          "Name": "Autorité",
+          "Summary": "En cas d’échec au test de situation, la personne accepte sans condition les paroles du stormikjalt pendant la durée du pouvoir.",
+          "Description": "En cas d’échec au test de situation, la personne accepte sans condition les paroles du stormikjalt pendant la durée du pouvoir.",
+          "SourceName": "Autorité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "218",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
           "Name": "Force du troll (Force de Storme)",
           "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
@@ -13755,6 +13764,15 @@
           "SourcePage": "218",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
+          "Name": "Appel du jarl",
+          "Summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+          "Description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+          "SourceName": "Appel du jarl",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "219",
+          "Duration": "3 tours de jeu"
+        },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Force du jotun",
           "Summary": "Porte la Force au niveau exceptionnel d’un jotun.",
@@ -13772,6 +13790,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "219",
           "Duration": "1 minute"
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme": {
+          "Name": "Voix de Storme",
+          "Summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+          "Description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+          "SourceName": "Voix de Storme",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "219",
+          "Duration": "3 tours de jeu"
         },
         "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
           "Name": "Cri de bataille",

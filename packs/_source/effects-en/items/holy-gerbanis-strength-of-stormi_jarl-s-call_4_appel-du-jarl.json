@@ -1,0 +1,45 @@
+{
+  "_id": "eEczbF8D9EaGbHcI",
+  "_key": "!items!eEczbF8D9EaGbHcI",
+  "name": "Jarl’s Call",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+    "description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+    "summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "Zop5aD6B7C8D9EaG",
+      "_key": "!items.effects!eEczbF8D9EaGbHcI.Zop5aD6B7C8D9EaG",
+      "name": "Jarl’s Call",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
+            "summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

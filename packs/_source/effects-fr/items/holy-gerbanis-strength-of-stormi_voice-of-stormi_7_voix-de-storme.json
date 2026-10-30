@@ -1,0 +1,45 @@
+{
+  "_id": "r7Xl40rXsYtZu0v1",
+  "_key": "!items!r7Xl40rXsYtZu0v1",
+  "name": "Voix de Storme",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+    "description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+    "summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 219
+    }
+  },
+  "effects": [
+    {
+      "_id": "GrS949EaGbHcIdJe",
+      "_key": "!items.effects!r7Xl40rXsYtZu0v1.GrS949EaGbHcIdJe",
+      "name": "Voix de Storme",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+            "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7",
+            "summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

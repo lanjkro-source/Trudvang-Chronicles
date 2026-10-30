@@ -586,6 +586,24 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
+    "id": "autorite",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:voice-of-command:1:0"
+      }
+    ]
+  },
   "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
     "id": "force-du-troll",
     "icon": "icons/svg/aura.svg",
@@ -647,6 +665,24 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-gerbanis-strength-of-stormi:hinji-strength:3:1"
+      }
+    ]
+  },
+  "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
+    "id": "appel-du-jarl",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:0"
       }
     ]
   },
@@ -721,6 +757,24 @@ export const TRANSFORMATION_TEMPLATES = {
           "force-du-jotun-allies"
         ],
         "optionId": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4"
+      }
+    ]
+  },
+  "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme": {
+    "id": "voix-de-storme",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:0"
       }
     ]
   },
@@ -5189,15 +5243,24 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
   ],
+  "holy-gerbanis-strength-of-stormi:voice-of-command:1": [
+    "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite"
+  ],
   "holy-gerbanis-strength-of-stormi:troll-strength:0": [
     "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll"
   ],
   "holy-gerbanis-strength-of-stormi:hinji-strength:3": [
     "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje"
   ],
+  "holy-gerbanis-strength-of-stormi:jarl-s-call:4": [
+    "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl"
+  ],
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": [
     "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
     "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun-allies"
+  ],
+  "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": [
+    "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme"
   ],
   "holy-gerbanis-wrath-of-tyrd:battle-cry:1": [
     "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally"

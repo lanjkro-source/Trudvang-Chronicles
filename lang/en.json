@@ -13737,6 +13737,15 @@
           "SourcePage": "166",
           "Duration": "1 day"
         },
+        "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite": {
+          "Name": "Voice of Command",
+          "Summary": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+          "Description": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+          "SourceName": "Voice of Command",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-strength-of-stormi:troll-strength:0#force-du-troll": {
           "Name": "Troll Strength (Strength of Stormi)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
@@ -13755,6 +13764,15 @@
           "SourcePage": "164",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
+          "Name": "Jarl’s Call",
+          "Summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+          "Description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+          "SourceName": "Jarl's Call",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "3 rounds"
+        },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Jotun Strength",
           "Summary": "Raises Strength to a jotun’s exceptional level.",
@@ -13772,6 +13790,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
           "Duration": "1 minute"
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme": {
+          "Name": "Voice of Stormi",
+          "Summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+          "Description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+          "SourceName": "Voice of Stormi",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "3 rounds"
         },
         "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
           "Name": "Battle Cry",

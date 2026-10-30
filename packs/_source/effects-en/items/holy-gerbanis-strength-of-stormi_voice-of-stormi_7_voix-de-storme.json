@@ -1,0 +1,45 @@
+{
+  "_id": "r7Xl40rXsYtZu0v1",
+  "_key": "!items!r7Xl40rXsYtZu0v1",
+  "name": "Voice of Stormi",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+    "description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+    "summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "GrS949EaGbHcIdJe",
+      "_key": "!items.effects!r7Xl40rXsYtZu0v1.GrS949EaGbHcIdJe",
+      "name": "Voice of Stormi",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme",
+            "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7",
+            "summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "eEczbF8D9EaGbHcI",
+  "_key": "!items!eEczbF8D9EaGbHcI",
+  "name": "Appel du jarl",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+    "description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+    "summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 219
+    }
+  },
+  "effects": [
+    {
+      "_id": "Zop5aD6B7C8D9EaG",
+      "_key": "!items.effects!eEczbF8D9EaGbHcI.Zop5aD6B7C8D9EaG",
+      "name": "Appel du jarl",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
+            "summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

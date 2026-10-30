@@ -1,0 +1,45 @@
+{
+  "_id": "QDsAnbFaGbHcIdJe",
+  "_key": "!items!QDsAnbFaGbHcIdJe",
+  "name": "Voice of Command",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite",
+    "description": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+    "summary": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "J2iVcqVqWrXsYtZu",
+      "_key": "!items.effects!QDsAnbFaGbHcIdJe.J2iVcqVqWrXsYtZu",
+      "name": "Voice of Command",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:voice-of-command:1#autorite",
+            "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
+            "summary": "On a failed Situation roll, the recipient accepts the Stormkelt’s words without question for the duration.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
