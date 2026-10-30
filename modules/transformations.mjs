@@ -80,6 +80,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
+ // A successor is a separate consequence, not another recipient of the
+ // original casting. Keep its provenance and explanatory counts without
+ // keeping the original target reservation or maintained-spell lifetime.
+ const predecessor=metadata(source)??Array.from(source?.effects??[],effect=>metadata(effect)).find(meta=>meta?.sourceId===reference.sourceId&&meta.related?.includes(reference.id));
+ if(predecessor?.sourceId===reference.sourceId&&predecessor.key!==key&&predecessor.related?.includes(reference.id)){
+  delete casting.castingId;
+  delete casting.messageId;
+ }
  counts=casting.counts;
  const stackId=casting.kind==="spell"&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
  // A related-effect link keeps its originating document for ownership, elapsed

@@ -63,3 +63,13 @@ test("catalogued personal divine powers restrict their target, without treating 
  }
  assert.notEqual(POWER_DETAILS_BY_ID["holy-thuuldom-hammer-fists:hammer-fists:0"].targeting?.casterOnly,true);
 });
+
+test("petrification and tree curses reserve one target while recovery remains a linked consequence",async()=>{
+ const {POWER_DETAILS_BY_ID}=await import("../modules/power-catalog-data.mjs");
+ for(const id of ["vitner-soil-craft:petrify-remove-petrification:8","vitner-witchcraft:tree-curse:7","holy-tenetnid-tablet-of-anger:statue:5","holy-tenetnid-tablet-of-anger:stone-monument:8","holy-haminges-power-of-the-scale:petrify:7","holy-joaringfaith-curses-of-sonntag:tree-curse:7"]){
+  const targeting=POWER_DETAILS_BY_ID[id].targeting;
+  const row=targetUuid=>({targetUuid,effectKey:`${id}#effect`,countsById:{}});
+  assert.equal(validateMagicAllocations({targeting,selected:{},allocations:[row("Actor.one")]}).ok,true,id);
+  assert.equal(validateMagicAllocations({targeting,selected:{},allocations:[row("Actor.one"),row("Actor.two")]}).reason,"exceeds-targets",id);
+ }
+});

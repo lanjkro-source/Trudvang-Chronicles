@@ -3073,6 +3073,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:petrify:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:petrify:7:0",
@@ -3800,6 +3804,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:0",
@@ -4534,6 +4542,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:statue:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:statue:5:0",
@@ -4557,6 +4569,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:stone-monument:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:stone-monument:8:0",
@@ -9420,6 +9436,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:petrify-remove-petrification:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:petrify-remove-petrification:8:0",
@@ -11237,6 +11257,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:tree-curse:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-witchcraft:tree-curse:7:0",

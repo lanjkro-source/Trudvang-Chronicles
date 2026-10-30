@@ -785,3 +785,18 @@ test("selected bestiary forms transfer localized, editable sensory profiles rath
  assert.equal(transformationProfile(actor).sensory.some(s=>s.type==="night"),false);
  actor.effects=[];assert.equal(transformationProfile(actor).sensory[0].type,"night");
 });
+
+test("a linked recovery is independent of the original casting target reservation and lifetime",async()=>{
+ const id="vitner-soil-craft:petrify-remove-petrification:8",parentKey=`${id}#petrification-annuler-une-petrification`,childKey=`${id}#petrification-recovery-half`;
+ const prior={game:globalThis.game,dialog:foundry.applications.api.DialogV2.wait};
+ try {
+  globalThis.game={user:{id:"gm"},time:{worldTime:120},i18n:{localize:key=>key,format:key=>key}};
+  foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+  const parent={documentName:"ActiveEffect",uuid:"Actor.a.ActiveEffect.petrified",system:{stackId:parentKey},flags:{[S]:{transformation:{key:parentKey,sourceId:id,related:["petrification-recovery-half"],ruleTestContext:{sourceId:id,kind:"spell",castingId:"old-cast",casterUuid:"Actor.mage",counts:[],countsById:{}}}}}};
+  let created;const actor={uuid:"Actor.a",canUserModify:()=>true,createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(actor,childKey,{source:parent});
+  assert.equal(created.flags[S].transformation.ruleTestContext.castingId,undefined);
+  assert.equal(created.flags[S].transformation.ruleTestContext.casterUuid,"Actor.mage");
+  assert.equal(created.flags[S].transformation.key,childKey);
+ }finally {globalThis.game=prior.game;foundry.applications.api.DialogV2.wait=prior.dialog;}
+});

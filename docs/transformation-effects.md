@@ -246,3 +246,8 @@ Peau d'écorce, Membre de pierre et Transformation n'admettent qu'une cible
 par invocation ou lancement ; le membre affecté est choisi parmi les variantes.
 Leur portée, les conditions de taille et les résistances restent à vérifier
 selon les règles (Livre des règles, p. 196, 244–245, 258 et 271).
+
+Les pétrifications, Statue, Monument en pierre et les deux Malédictions de
+l'arbre ont une cible par lancement. Leurs effets de récupération liés restent
+manuels : ils conservent leur provenance, mais ne réservent pas une nouvelle
+cible et ne prolongent pas le maintien du sort d'origine.
