@@ -10,7 +10,7 @@ globalThis.game={user:gm,users:{activeGM:{isSelf:true},get:id=>id==="gm"?gm:null
 foundry.utils.fromUuid=async uuid=>documents.get(uuid);
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const m={...data,id:`message-${messages.size}`,async update(changes){for(const [path,value]of Object.entries(changes)){if(path==="flags.trudvang-chronicles.divineAllocation.targetAllocations")this.flags["trudvang-chronicles"].divineAllocation.targetAllocations=structuredClone(value);}}};messages.set(m.id,m);return m;}};
 const {rollUnder}=await import("../modules/dice.mjs");
-const {applyTransformation,transformationRequest}=await import("../modules/transformations.mjs");
+const {applyTransformation,transformationRequest,registerTransformationHooks}=await import("../modules/transformations.mjs");
 const {applyAllocatedEffectOnGM,requestAllocatedEffect,registerMaintainedSpellTracking}=await import("../modules/maintained-spell-tracking.mjs");
 const id="holy-gerbanis-wrath-of-tyrd:battle-cry:1",scope="trudvang-chronicles";
 
@@ -128,4 +128,46 @@ test("Thunder of Victory shares purchased enhancements with all allies and enemi
   assert.equal(message.flags[scope].divineAllocation.targetAllocations.length,4);
   assert.match(dialogs[0],/∞/);assert.match(dialogs[0],/name="boost0"[^>]*readonly/);
  }finally{foundry.applications.api.DialogV2=previous;}
+});
+
+test("one click applies a shared area effect to every controlled actor without dialogs",async()=>{
+ const previous={dialog:foundry.applications.api.DialogV2,listener:document.addEventListener,Hooks:globalThis.Hooks,canvas:globalThis.canvas};
+ try{
+  const power="holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",caster={uuid:"Actor.area-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={uuid:"Actor.area-caster.Item.cry",type:"divineFeat",system:{catalogId:power}};documents.set(item.uuid,item);
+  await rollUnder({actor:caster,item,kind:"divine",label:"Tonnerre",target:12,castingId:"area-cast",powerLevelCounts:[2,0,1,0]});
+  const message=Array.from(messages.values()).at(-1),created=[];
+  const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{created.push({uuid,data});const effect={uuid:`${uuid}.ActiveEffect.area`,data};documents.set(effect.uuid,effect);return effect;}});
+  const a=makeTarget("Actor.area-a"),b=makeTarget("Actor.area-b");documents.set(a.uuid,a);documents.set(b.uuid,b);
+  globalThis.canvas={tokens:{controlled:[{name:"A",actor:a},{name:"Copie",actor:a},{name:"B",actor:b}]}};
+  const handlers={};document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
+  foundry.applications.api.DialogV2={wait:async()=>{throw Error("area effect must not show a dialog");}};
+  registerTransformationHooks();
+  const button={dataset:{transformationKey:`${power}#ally`,transformationSource:item.uuid,ruleTestContext:JSON.stringify(message.flags[scope].ruleTestContext)},closest:()=>({dataset:{messageId:message.id}})};
+  await handlers.click({target:{closest:()=>button},preventDefault(){},stopPropagation(){}});
+  assert.deepEqual(created.map(row=>row.uuid),[a.uuid,b.uuid]);
+  for(const row of created){assert.equal(row.data.system.changes.find(c=>c.key==="system.modifiers.rolls.combatActions").value,"5");assert.equal(row.data.duration.value,7);}
+ }finally{foundry.applications.api.DialogV2=previous.dialog;document.addEventListener=previous.listener;globalThis.Hooks=previous.Hooks;globalThis.canvas=previous.canvas;}
+});
+
+test("one click distributes a limited invocation sequentially and reports an excess target",async()=>{
+ const previous={dialog:foundry.applications.api.DialogV2,listener:document.addEventListener,Hooks:globalThis.Hooks,canvas:globalThis.canvas,error:ui.notifications.error};
+ try{
+  const caster={uuid:"Actor.batch-priest",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
+  const item={uuid:"Actor.batch-priest.Item.cry",type:"divineFeat",system:{catalogId:id}};documents.set(item.uuid,item);
+  await rollUnder({actor:caster,item,kind:"divine",label:"Cri",target:12,castingId:"batch-cast",powerLevelCounts:[1,2,0,2]});
+  const message=Array.from(messages.values()).at(-1),created=[],errors=[],titles=[];
+  const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{created.push({uuid,data});const effect={uuid:`${uuid}.ActiveEffect.cry`,data};documents.set(effect.uuid,effect);return effect;}});
+  const targets=[makeTarget("Actor.batch-a"),makeTarget("Actor.batch-b"),makeTarget("Actor.batch-c")];for(const actor of targets)documents.set(actor.uuid,actor);
+  globalThis.canvas={tokens:{controlled:targets.map((actor,index)=>({name:`Cible ${index+1}`,actor}))}};
+  const handlers={};document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};ui.notifications.error=message=>errors.push(message);
+  let open=false;foundry.applications.api.DialogV2={wait:async options=>{assert.equal(open,false);open=true;titles.push(options.window.title);await new Promise(resolve=>setImmediate(resolve));open=false;return {duration:"2 rounds",boost1:1,boost3:1};}};
+  registerTransformationHooks();
+  const button={dataset:{transformationKey:`${id}#ally`,transformationSource:item.uuid,ruleTestContext:JSON.stringify(message.flags[scope].ruleTestContext)},closest:()=>({dataset:{messageId:message.id}})};
+  const priorLog=console.error;console.error=()=>{};
+  try{await handlers.click({target:{closest:()=>button},preventDefault(){},stopPropagation(){}});}finally{console.error=priorLog;}
+  assert.equal(titles.length,3);for(let i=0;i<3;i++)assert.match(titles[i],new RegExp(`Cible ${i+1}`));
+  assert.deepEqual(created.map(row=>row.uuid),targets.slice(0,2).map(actor=>actor.uuid));
+  assert.deepEqual(errors,["TRUDVANG.Warning.MagicTargetLimit"]);
+ }finally{foundry.applications.api.DialogV2=previous.dialog;document.addEventListener=previous.listener;globalThis.Hooks=previous.Hooks;globalThis.canvas=previous.canvas;ui.notifications.error=previous.error;}
 });

@@ -23,7 +23,11 @@ les états, les règles et les liens des 122 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
-à l’acteur du token contrôlé par le joueur. Les permissions de
+aux acteurs des tokens contrôlés par le joueur, une seule fois par acteur lié.
+Lorsqu'une répartition est nécessaire, une fenêtre portant le nom de la cible est
+ouverte pour chaque acteur, successivement. Les effets de zone dont tous les
+paramètres sont communs et la durée déterministe s'appliquent directement à la
+sélection ; les autres conservent leur fenêtre. Les permissions de
 l’acteur destinataire sont vérifiées avant toute création.
 
 Les variantes prédéfinies sont proposées séparément. Transformation et les formes

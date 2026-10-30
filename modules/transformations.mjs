@@ -74,7 +74,7 @@ export function selectFormData(form,policy){
  r.sensesReplace=true;
  return {rules:r,maximum:Number(s.resources.body.max)};
 }
-export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[],context}={}){
+export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[],context,targetName="",skipDialog=false}={}){
  if(key===SURPRISED_ITEM)return applySurprised(actor,source);
  if(GRADED_EFFECT_IDS.has(key))return applyGradedEffect(actor,source);
  if(!actor?.canUserModify(game.user,"update")){ui.notifications.warn(local("Permission"));return null;}
@@ -157,7 +157,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
  const preview=values=>magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
- const answers=await askFields(effectName,fields,preview,allocationIntro);if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ const answers=skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
+  await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro);
+ if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
  let formMaximum;
@@ -394,6 +396,18 @@ export function transformationRequest(button){
  return {type:"TrudvangTransformation",key:button.dataset.transformationKey,sourceUuid:button.dataset.transformationSource,
   counts:Array.isArray(counts)?counts:context?.counts??[],context};
 }
+/** Only fully shared area effects with deterministic duration need no input. */
+function automaticAreaApplication(request){
+ const template=TRANSFORMATION_TEMPLATES[request.key],context=request.context;
+ const targeting=template&&context?.castingId&&context?.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
+ const group=targeting?.groups?.find(row=>row.id===magicTargetGroup(targeting,request.key));
+ if(!group||group.baseTargets!==null||!group.sharedOptions?.length||template.levelParameter)return false;
+ if(!/^\s*\d+(?:\.\d+)?\s+[^\d]+$/u.test(template.duration??""))return false;
+ const rules=rulesFromChanges(template.changes);
+ if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||rules.durationFromElapsed)return false;
+ const ids=[...(template.parameters??[]).map(p=>p.optionId),...(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.optionId))];
+ return ids.every(id=>id&&group.sharedOptions.includes(id));
+}
 export function registerTransformationHooks(){
  document.addEventListener("dragstart",event=>{
   const button=event.target.closest?.("[data-transformation-key]");if(!button)return;
@@ -402,13 +416,24 @@ export function registerTransformationHooks(){
  document.addEventListener("click",async event=>{
   const button=event.target.closest?.("[data-transformation-key]");if(!button)return;
   event.preventDefault();event.stopPropagation();
+  if(button.disabled)return;
+  button.disabled=true;
   try{
    const request=transformationRequest(button);
    const source=button.dataset.transformationSource?await foundry.utils.fromUuid(button.dataset.transformationSource):null;
-   const actor=canvas.tokens.controlled.find(t=>t.actor?.canUserModify(game.user,"update"))?.actor;
-   if(!actor){ui.notifications.warn(game.i18n.localize("TRUDVANG.Procedure.ChooseActor"));return;}
-   await applyTransformation(actor,request.key,{source,counts:request.counts,context:request.context,elapsed:metadata(source)?game.time.worldTime-metadata(source).appliedAt:0});
+   const seen=new Set(),tokens=Array.from(canvas.tokens.controlled??[]).filter(token=>{
+    const actor=token.actor,identity=actor?.uuid||actor;
+    if(!actor?.canUserModify(game.user,"update")||seen.has(identity))return false;
+    seen.add(identity);return true;
+   });
+   if(!tokens.length){ui.notifications.warn(game.i18n.localize("TRUDVANG.Procedure.ChooseActor"));return;}
+   const skipDialog=tokens.length>1&&automaticAreaApplication(request);
+   for(const token of tokens){
+    try{await applyTransformation(token.actor,request.key,{source,counts:request.counts,context:request.context,targetName:token.name||token.actor.name,skipDialog,elapsed:metadata(source)?game.time.worldTime-metadata(source).appliedAt:0});}
+    catch(error){console.error("Trudvang transformation",error);ui.notifications.error(error.message);}
+   }
   }catch(error){console.error("Trudvang transformation",error);ui.notifications.error(error.message);}
+  finally{button.disabled=false;}
  },true);
  Hooks.on("dropCanvasData",(canvas,data)=>{
   const referencePack=/^Compendium\.trudvang-chronicles\.effects-(?:fr|en)\./.test(data.uuid??"");

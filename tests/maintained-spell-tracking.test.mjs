@@ -47,6 +47,9 @@ test("simultaneous targets share one casting's target and improvement budget",as
   const other=structuredClone(data);other.flags["trudvang-chronicles"].transformation.key="hate-inverse";
   assert.equal((await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:a.uuid,countsById:{},data:other,userId:user.id})).status,"duplicate-target");
   assert.equal(caster.system.activeSpellCastings[0].targetAllocations.length,2);
+  assert.deepEqual((await Promise.all([apply(a,0),apply(a,1)])).map(row=>row.status),["ok","ok"]);
+  const allocations=caster.system.activeSpellCastings[0].targetAllocations;
+  assert.equal(allocations.length,2);assert.equal(allocations.find(row=>row.targetUuid===a.uuid).counts[0].count,1);
  }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
 

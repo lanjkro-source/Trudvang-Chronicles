@@ -75,3 +75,22 @@ test("clicking an effect applies it to the controlled actor, never implicitly to
   canvas.tokens.controlled=[];await handlers.click(event);assert.equal(applied,1);assert.equal(warnings,1);
  }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;globalThis.canvas=previous.canvas;globalThis.ui=previous.ui;globalThis.game=previous.game;foundry.utils=previous.utils;foundry.applications.api=previous.api;}
 });
+
+test("one click opens target-labelled allocation dialogs sequentially and skips duplicate tokens",async()=>{
+ const previous={Hooks:globalThis.Hooks,listener:document.addEventListener,canvas:globalThis.canvas,ui:globalThis.ui,game:globalThis.game,utils:foundry.utils,api:foundry.applications.api};
+ const handlers={},titles=[],created=[];let open=false;
+ try{
+  document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
+  const makeActor=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,getTraitValue:()=>0,createTrudvangEffect:async()=>{created.push(uuid);return null;}});
+  const first=makeActor("Actor.first"),second=makeActor("Actor.second");
+  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map()};
+  globalThis.canvas={tokens:{controlled:[{name:"Premier",actor:first},{name:"Doublon",actor:first},{name:"Second",actor:second}]}};
+  globalThis.ui={notifications:{warn:()=>{},error:message=>{throw Error(message);}}};
+  foundry.utils={fromUuid:async()=>({system:{catalogId:id}})};
+  foundry.applications.api={DialogV2:{wait:async options=>{assert.equal(open,false);open=true;titles.push(options.window.title);await new Promise(resolve=>setImmediate(resolve));open=false;return {duration:"1 minute"};}}};
+  registerTransformationHooks();const event={target:{closest:()=>button()},preventDefault(){},stopPropagation(){}};
+  await handlers.click(event);
+  assert.equal(titles.length,2);assert.match(titles[0],/Premier/);assert.match(titles[1],/Second/);
+  assert.deepEqual(created,[first.uuid,second.uuid]);
+ }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;globalThis.canvas=previous.canvas;globalThis.ui=previous.ui;globalThis.game=previous.game;foundry.utils=previous.utils;foundry.applications.api=previous.api;}
+});
