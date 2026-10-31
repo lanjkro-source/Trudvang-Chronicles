@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import {RULE_TESTS_BY_CATALOG_ID} from "../modules/rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 
@@ -56,5 +57,45 @@ test("rule-test annotations follow test-of-situation and skill-test order", asyn
   assert.match(annotateRuleTestDescription("<p>Aucun jet indiqué.</p>", document), /Aucun jet indiqué/);
   const multiTrait = annotateRuleTestDescription("<p>test de Force</p>", {system: {catalogId: "a0A7iPhNiOjPkQlR"}});
   assert.match(multiTrait, /data-test-index="0"/);
+});
+
+function buttonsIn(html) {
+  return [...String(html).matchAll(/<button[^>]*data-test-index="(\d+)"[^>]*title="([^"]*)"[^>]*>([\s\S]*?)<\/button>/g)]
+    .map(match => ({index: Number(match[1]), title: match[2], label: match[3].replace(/<[^>]*>/g, "").trim()}));
+}
+
+test("configured anchors place every test beside its own rule sentence", async () => {
+  globalThis.foundry = {applications: {handlebars: {renderTemplate: async () => ""}}};
+  globalThis.document = {createElement: () => {
+    let value = "";
+    return {set textContent(next) { value = String(next); }, get innerHTML() {
+      return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+    }};
+  }};
+  globalThis.CONFIG = {TRUDVANG: {traits: {}, skills: {}, knowledgeTree: {}}};
+  const fr = JSON.parse(fs.readFileSync(new URL("../lang/fr.json", import.meta.url)));
+  globalThis.game = {i18n: {
+    lang: "fr",
+    localize: key => key.split(".").reduce((value, part) => value?.[part], fr) ?? key
+  }};
+  const {annotateRuleTestDescription} = await import(`../modules/rule-tests.mjs?anchors=${Date.now()}`);
+  const content = fr.TRUDVANG.Content;
+
+  const hylja = content.CreatureAbility.a3RzraE9EaGbHcId;
+  const hyljaButtons = buttonsIn(annotateRuleTestDescription(hylja.Description, {system: {catalogId: "a3RzraE9EaGbHcId"}}));
+  assert.deepEqual(hyljaButtons.map(button => button.label), [
+    "test d’Arts des ombres avec un modificateur de -10 pour repérer le serpent s’il reste immobile",
+    "le modificateur passe alors à -5"
+  ]);
+  assert.equal(hyljaButtons[1].title, "Trouver &amp; remarquer à -5");
+
+  const landscape = content.Power["vitner-delusion-vitner:landscape-illusion:8"];
+  const landscapeButtons = buttonsIn(annotateRuleTestDescription(landscape.Description, {system: {catalogId: "vitner-delusion-vitner:landscape-illusion:8"}}));
+  assert.deepEqual(landscapeButtons.map(button => button.label), ["+5", "+2", "+0", "-2", "-5", "-10"]);
+  assert.deepEqual(landscapeButtons.map(button => button.index), [0, 1, 2, 3, 4, 5]);
+
+  assert.equal(RULE_TESTS_BY_CATALOG_ID["holy-toikalokke-master-of-elements:gift-of-water:3"], undefined);
+  const gift = content.Power["holy-toikalokke-master-of-elements:gift-of-water:3"];
+  assert.deepEqual(buttonsIn(annotateRuleTestDescription(gift.Description, {system: {catalogId: "holy-toikalokke-master-of-elements:gift-of-water:3"}})), []);
 });
 

@@ -49,8 +49,30 @@ function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function explicitAnchorsFor(source, tests) {
+  const anchors = [];
+  const byRange = new Map();
+  tests.forEach((test, index) => {
+    if (!test.anchor) return;
+    const start = source.indexOf(test.anchor);
+    if (start < 0) return;
+    const end = start + test.anchor.length;
+    const key = `${start}:${end}`;
+    const existing = byRange.get(key);
+    if (existing) {
+      if (!existing.tests.includes(index)) existing.tests.push(index);
+      return;
+    }
+    const anchor = {start, end, phrase: test.anchor, kind: test.kind, tests: [index], explicit: true};
+    byRange.set(key, anchor);
+    anchors.push(anchor);
+  });
+  return anchors;
+}
+
 function descriptionAnchors(description, tests) {
   const source = String(description ?? "");
+  const explicit = explicitAnchorsFor(source, tests);
   const anchors = [];
   const addMatches = (pattern, classify) => {
     for (const match of source.matchAll(pattern)) {
@@ -97,7 +119,10 @@ function descriptionAnchors(description, tests) {
   }
 
   anchors.sort((a, b) => a.start - b.start || b.end - a.end);
-  return anchors.filter((anchor, index) => !anchors.slice(0, index).some(previous => anchor.start < previous.end && previous.start < anchor.end));
+  const generic = anchors.filter((anchor, index) => !anchors.slice(0, index).some(previous => anchor.start < previous.end && previous.start < anchor.end));
+  const overlaps = (a, b) => a.start < b.end && b.start < a.end;
+  return [...explicit, ...generic.filter(anchor => !explicit.some(configured => overlaps(anchor, configured)))]
+    .sort((a, b) => a.start - b.start || b.end - a.end);
 }
 
 function testMatchesAnchor(test, anchor) {
@@ -111,7 +136,7 @@ function testMatchesAnchor(test, anchor) {
 
 function inlineTestButton(test, index, phrase, label = phrase) {
   const kind = test.kind;
-  const buttonTitle = game.i18n.localize(kind === "resist"
+  const buttonTitle = test.tooltip || game.i18n.localize(kind === "resist"
     ? "TRUDVANG.RuleTest.RollResistance" : "TRUDVANG.RuleTest.RollSkill");
   return `<button type="button" class="trudvang-inline-rule-test" data-action="roll-rule-test" data-test-index="${index}" title="${escapeHtml(buttonTitle)}"><i class="fas fa-dice-d20" aria-hidden="true"></i> ${escapeHtml(label)}</button>`;
 }
@@ -124,10 +149,15 @@ export function annotateRuleTestDescription(description, document) {
 function annotateTests(description, document) {
   const tests = ruleTestsForDocument(document);
   if (!tests.length) return String(description ?? "");
-  const anchors = descriptionAnchors(description, tests).map(anchor => ({...anchor, rows: []}));
+  const anchors = descriptionAnchors(description, tests)
+    .map(anchor => ({...anchor, rows: anchor.tests ? [...anchor.tests] : []}));
   const remaining = new Set(tests.map((test, index) => index));
+  for (const anchor of anchors) {
+    if (anchor.explicit) for (const index of anchor.rows) remaining.delete(index);
+  }
 
   for (const anchor of anchors) {
+    if (anchor.explicit) continue;
     const index = [...remaining].find(candidate => testMatchesAnchor(tests[candidate], anchor));
     if (index === undefined) continue;
     anchor.rows.push(index);
@@ -137,7 +167,7 @@ function annotateTests(description, document) {
   // A single phrase can describe several configured variants (for example, one test per distance band).
   // Keep every variant reachable beside the shared phrase, with its value visible as the link label.
   for (const index of remaining) {
-    const anchor = anchors.find(candidate => testMatchesAnchor(tests[index], candidate));
+    const anchor = anchors.find(candidate => !candidate.explicit && testMatchesAnchor(tests[index], candidate));
     if (!anchor) continue;
     anchor.rows.push(index);
     remaining.delete(index);

@@ -96,6 +96,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "neutralise et disperse le vitner du sort.",
       "traitMethod": "first",
+      "anchor": "l’enchanteur doit effectuer un test de situation",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -576,6 +577,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "rend sa forme d’origine à la victime; elle se réveille au bout d’un tour.",
       "condition": "version Annuler une pétrification",
       "traitMethod": "first",
+      "anchor": "cette dernière doit réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Constitution), modifiée en fonction du temps que la victime a passé sous forme de statue",
       "magicResistance": false,
       "kind": "resist",
       "index": 1
@@ -1050,6 +1052,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "reste éveillé.",
       "condition": "émotion Fatigué, dans les cinq prochaines minutes",
       "traitMethod": "first",
+      "anchor": "La cible doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur de Psychisme) pour ne pas s’endormir au cours des 5 prochaines minutes.",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1071,6 +1074,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "ne révèle pas ses secrets importants ou incriminants.",
       "condition": "émotion Sincère",
       "traitMethod": "first",
+      "anchor": "Elle doit réussir un nouveau test de situation avec une valeur de situation de 10 (en prenant en compte son modificateur de Psychisme) pour s’empêcher de partager des secrets importants ou particulièrement incriminants",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1222,6 +1226,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "identifie le type, les effets et le mode d’activation du sort.",
       "traitMethod": "first",
+      "anchor": "Un test de situation réussi signifie que l’enchanteur est parvenu à identifier un sort tissé sur l’objet ou la créature",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -1420,6 +1425,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1443,6 +1449,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1466,6 +1473,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
       "traitMethod": "first",
+      "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1540,6 +1548,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve sa Dextérité normale.",
       "condition": "utilisation inversée du sort",
       "traitMethod": "first",
+      "anchor": "La victime peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution).",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1563,6 +1572,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "conserve sa Force normale.",
       "condition": "utilisation inversée du sort",
       "traitMethod": "first",
+      "anchor": "La victime peut résister à l’effet de ce sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte les modificateurs de Constitution).",
       "magicResistance": true,
       "powerLevelModifiers": [
         {
@@ -1686,6 +1696,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire entre 50 et 100 mètres",
       "skill": "findingSpotting",
       "sv": 5,
+      "anchor": "+5",
       "kind": "skill",
       "index": 0
     },
@@ -1693,6 +1704,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire entre 101 et 200 mètres",
       "skill": "findingSpotting",
       "sv": 2,
+      "anchor": "+2",
       "kind": "skill",
       "index": 1
     },
@@ -1700,6 +1712,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire entre 201 et 400 mètres",
       "skill": "findingSpotting",
       "sv": 0,
+      "anchor": "+0",
       "kind": "skill",
       "index": 2
     },
@@ -1707,6 +1720,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire entre 401 et 600 mètres",
       "skill": "findingSpotting",
       "sv": -2,
+      "anchor": "-2",
       "kind": "skill",
       "index": 3
     },
@@ -1714,6 +1728,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire entre 601 et 1 000 mètres",
       "skill": "findingSpotting",
       "sv": -5,
+      "anchor": "-5",
       "kind": "skill",
       "index": 4
     },
@@ -1721,6 +1736,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "action": "percer à jour le paysage illusoire à plus de 1 000 mètres",
       "skill": "findingSpotting",
       "sv": -10,
+      "anchor": "-10",
       "kind": "skill",
       "index": 5
     }
@@ -1731,6 +1747,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -10,
       "condition": "si le sujet reste immobile",
+      "anchor": "Un témoin doit réussir un test de compétence d’Arts des ombres extrêmement difficile (-10) pour déceler un sujet qui se tient immobile",
       "kind": "skill",
       "index": 0
     },
@@ -1739,6 +1756,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -3,
       "condition": "si le sujet se déplace lentement",
+      "anchor": "un test difficile (-3) si le sujet se déplace lentement",
       "kind": "skill",
       "index": 1
     },
@@ -1747,6 +1765,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": 5,
       "condition": "si le sujet court, attaque ou fait un geste brusque",
+      "anchor": "tous les témoins reçoivent un bonus de +5 à leur test de compétence pour le percevoir",
       "kind": "skill",
       "index": 2
     }
@@ -2239,6 +2258,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "annule l’effet qui retient la personne.",
       "traitMethod": "first",
+      "anchor": "14 si l’objet à libérer est sous l’effet du Souffle libérateur",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2259,6 +2279,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "débloque ou libère l’obstacle.",
       "traitMethod": "first",
+      "anchor": "8 si l’objet est verrouillé ou bloqué",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2280,6 +2301,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "libère la cible du contrôle.",
       "condition": "sort de niveau 1 à 3; aucun test n’est indiqué pour les niveaux 4 et 5",
       "traitMethod": "first",
+      "anchor": "le bruide doit réussir un test de situation avec une valeur de situation de 6",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2997,6 +3019,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "success": "se rappelle la distance et la direction.",
       "condition": "déplacement subi alors que le thuul était inconscient",
       "traitMethod": "first",
+      "anchor": "sa valeur de situation tombe à 4 (+1/niveau de la rune)",
       "magicResistance": false,
       "kind": "resist",
       "index": 1
@@ -3089,16 +3112,6 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "index": 0
     }
   ],
-  "holy-toikalokke-master-of-elements:gift-of-water:3": [
-    {
-      "action": "nager lorsqu’un test d’Agilité est nécessaire",
-      "skill": "swimming",
-      "sv": null,
-      "modifier": "bonus de +2 par niveau du pouvoir ; malus de -2 par mètre de profondeur au-delà de trois fois la taille de l’ihana",
-      "kind": "skill",
-      "index": 0
-    }
-  ],
   "holy-toikalokke-master-of-elements:purify-water:2": [
     {
       "action": "purifier une boisson empoisonnée ou magique",
@@ -3168,6 +3181,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "identifie le type, les effets et le mode d’activation du sort.",
       "traitMethod": "first",
+      "anchor": "Un test de situation réussi signifie que la mopor est parvenu à identifier un pouvoir tissé sur l’objet ou la créature",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -3404,6 +3418,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "condition": "après l’échec du premier test",
       "repeat": "à chaque tour pendant les 1d10 tours du baiser",
       "traitMethod": "first",
+      "anchor": "la victime peut effectuer un test de situation avec une valeur de situation de 5 (le modificateur de Psychisme s’applique) pour voir si elle se réveille",
       "kind": "resist",
       "index": 2
     }
@@ -3422,6 +3437,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -8,
       "condition": "compétence de détection déduite de la mention explicite des Arts des ombres dans la même description",
+      "anchor": "ceux qui se déplacent tout en essayant d’être discrets sont toujours très difficiles à repérer (-8)",
       "kind": "skill",
       "index": 1
     }
@@ -3440,6 +3456,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -8,
       "condition": "compétence de détection déduite de la mention explicite des Arts des ombres dans la même description",
+      "anchor": "ceux qui se déplacent discrètement sont encore plus difficiles à repérer (-8)",
       "kind": "skill",
       "index": 1
     }
@@ -3896,6 +3913,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -10,
       "condition": "si le serpent reste immobile",
+      "anchor": "test d’Arts des ombres avec un modificateur de -10 pour repérer le serpent s’il reste immobile",
       "kind": "skill",
       "index": 0
     },
@@ -3904,6 +3922,8 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "skill": "findingSpotting",
       "sv": -5,
       "condition": "si le serpent bouge",
+      "anchor": "le modificateur passe alors à -5",
+      "tooltip": "Trouver & remarquer à -5",
       "kind": "skill",
       "index": 1
     }
