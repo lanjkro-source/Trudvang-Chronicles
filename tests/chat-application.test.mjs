@@ -317,6 +317,12 @@ test("damage target names use the shared hover/centering control and both editin
   assert.match(css, /\.damage-target-edit\s*\{[^}]*width: 18px;[^}]*background: transparent; border: 0; box-shadow: none/);
 });
 
+test("applied damage rows stay compact and ignore native button height", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.trudvang\.chat-card \.application-result \{[^}]*padding: 1px 6px;[^}]*line-height: 1\.2/);
+  assert.match(css, /\.trudvang\.chat-card \.application-result :is\(\.trait-situation-token, \.trait-situation-token-name\) \{[^}]*min-height: 0;[^}]*height: auto/);
+});
+
 test("a real damage roll stores its initial targets and the final halved amount on the expandable card", async t => {
   const {makeActor, makeToken} = runtime(t);
   const previous = {Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage};
