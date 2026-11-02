@@ -1,0 +1,45 @@
+{
+  "_id": "mRTe5A3y4z5A6B7C",
+  "_key": "!items!mRTe5A3y4z5A6B7C",
+  "name": "Sagesse de Gave",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+    "description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+    "summary": "Langue choisie : +3 en Connaissances.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 257
+    }
+  },
+  "effects": [
+    {
+      "_id": "n2s6bjMhNiOjPkQl",
+      "_key": "!items.effects!mRTe5A3y4z5A6B7C.n2s6bjMhNiOjPkQl",
+      "name": "Sagesse de Gave",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
+            "summary": "Langue choisie : +3 en Connaissances.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

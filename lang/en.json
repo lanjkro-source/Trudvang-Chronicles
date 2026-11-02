@@ -14335,6 +14335,24 @@
           "SourcePage": "194",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
+          "Name": "Sirowerd’s Tongue",
+          "Summary": "Chosen language: +2 to Knowledge.",
+          "Description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+          "SourceName": "Sirowerd's Tongue",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
+          "Name": "Sanity of Gave",
+          "Summary": "Chosen language: +3 to Knowledge.",
+          "Description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+          "SourceName": "Sanity of Gave",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Bark Skin",
           "Summary": "Adds temporary health points that absorb damage.",
@@ -15133,6 +15151,8 @@
       "HearingPenalty": "Tests involving hearing: {value}. At −10 or below, the target is deaf.",
       "SightBonus": "Tests involving sight: +{value}.",
       "SightPenalty": "Tests involving sight: {value}. At −10 or below, the target is blind.",
+      "SpokenLanguage": "Chosen language",
+      "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",

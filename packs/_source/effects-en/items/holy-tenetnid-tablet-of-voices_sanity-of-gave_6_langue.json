@@ -1,0 +1,45 @@
+{
+  "_id": "mRTe5A3y4z5A6B7C",
+  "_key": "!items!mRTe5A3y4z5A6B7C",
+  "name": "Sanity of Gave",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+    "description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+    "summary": "Chosen language: +3 to Knowledge.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 206
+    }
+  },
+  "effects": [
+    {
+      "_id": "n2s6bjMhNiOjPkQl",
+      "_key": "!items.effects!mRTe5A3y4z5A6B7C.n2s6bjMhNiOjPkQl",
+      "name": "Sanity of Gave",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
+            "summary": "Chosen language: +3 to Knowledge.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

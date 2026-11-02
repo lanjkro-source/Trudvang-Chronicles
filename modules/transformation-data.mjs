@@ -2786,6 +2786,80 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
   },
+  "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
+    "id": "langue",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.SpokenLanguage",
+    "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "skillOnly": true,
+        "restrictedSkill": "knowledge",
+        "labelKey": "TRUDVANG.Transformation.SpokenLanguageBonus",
+        "optionId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
+    "id": "langue",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.SpokenLanguage",
+    "sourceId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "skillOnly": true,
+        "restrictedSkill": "knowledge",
+        "labelKey": "TRUDVANG.Transformation.SpokenLanguageBonus",
+        "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
     "id": "peau-d-ecorce",
     "icon": "icons/svg/aura.svg",
@@ -6358,6 +6432,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds"
+  ],
+  "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": [
+    "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue"
+  ],
+  "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": [
+    "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue"
   ],
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": [
     "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce"

@@ -11617,6 +11617,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourcePage` | 194 | 252 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.Name` | Sirowerd’s Tongue | Langue de Siro Werte |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.Description` | Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language. | Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.SourceName` | Sirowerd's Tongue | Langue de Siro Werte |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.SourcePage` | 206 | 256 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Name` | Sanity of Gave | Sagesse de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Description` | Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language. | Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourceName` | Sanity of Gave | Sagesse de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourcePage` | 206 | 257 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce`
 
 | Clé | English | Français |
@@ -12584,6 +12606,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.HearingPenalty` | Tests involving hearing: {value}. At −10 or below, the target is deaf. | Tests faisant appel à l’ouïe : {value}. À −10 ou moins, la cible est sourde. |
 | `TRUDVANG.Transformation.SightBonus` | Tests involving sight: +{value}. | Tests faisant appel à la vue : +{value}. |
 | `TRUDVANG.Transformation.SightPenalty` | Tests involving sight: {value}. At −10 or below, the target is blind. | Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle. |
+| `TRUDVANG.Transformation.SpokenLanguage` | Chosen language | Langue choisie |
+| `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

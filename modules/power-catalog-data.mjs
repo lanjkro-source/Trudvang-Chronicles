@@ -5782,6 +5782,28 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "allies",
+          "baseTargets": null,
+          "variants": [
+            "langue"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:0",
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1",
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:0",
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1",
+            "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:0",
@@ -5796,7 +5818,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
         "cost": 2,
-        "maxCount": 8
+        "maxCount": 5
       }
     ],
     "spellType": "lasting",
@@ -5823,6 +5845,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:0",
@@ -5837,7 +5863,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2",
         "cost": 2,
-        "maxCount": 5
+        "maxCount": 3
       }
     ],
     "spellType": "lasting",

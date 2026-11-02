@@ -1,0 +1,45 @@
+{
+  "_id": "FK48XNhNiOjPkQlR",
+  "_key": "!items!FK48XNhNiOjPkQlR",
+  "name": "Sirowerd’s Tongue",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+    "description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+    "summary": "Chosen language: +2 to Knowledge.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 206
+    }
+  },
+  "effects": [
+    {
+      "_id": "c7iMPZrXsYtZu0v1",
+      "_key": "!items.effects!FK48XNhNiOjPkQlR.c7iMPZrXsYtZu0v1",
+      "name": "Sirowerd’s Tongue",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Allows understanding and speaking the chosen language, but not reading or writing it. The bonus applies only to tests involving that language.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+            "summary": "Chosen language: +2 to Knowledge.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

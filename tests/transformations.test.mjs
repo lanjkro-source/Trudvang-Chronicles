@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,109);
+ assert.equal(Object.keys(sources).length,111);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -865,5 +865,21 @@ test("impaired hearing and sight add their status at the loss threshold",async()
   const counts=[];counts[5]=8;
   await applyTransformation(actor,`${id}#ameliore`,{counts});
   assert.deepEqual(created.statuses,[]);
+ }
+});
+
+test("language blessings keep their chosen language and only offer Knowledge bonuses",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute",effectInput:"Vrok"});
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const [id,base] of [["holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",2],["holy-tenetnid-tablet-of-voices:sanity-of-gave:6",3]]){
+  const counts=[];counts[2]=2;await applyTransformation(actor,`${id}#langue`,{counts});
+  assert.match(created.description,/Vrok/);assert.match(created.flags[S].transformation.summary,/Vrok/);
+  assert.deepEqual(conditionalSkillModifiers({effects:[created]},"knowledge"),[{label:`${created.name} — Vrok`,value:base+2}]);
+  assert.deepEqual(conditionalSkillModifiers({effects:[created]},"agility"),[]);
  }
 });

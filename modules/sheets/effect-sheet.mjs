@@ -98,7 +98,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         {async: true, secrets: this.document.isOwner}
       ), this.document);
       partContext.conditionalSituationButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
-        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,label:bonus.skill?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
+        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly).map(({bonus,index})=>({index,label:bonus.skill?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
       partContext.origin = this.document.origin || "";
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
@@ -320,7 +320,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static async onRollConditionalSituation(event, target) {
     event.preventDefault();
     const actor=this.document.parent, bonus=conditionalSituationBonuses(this.document)[Number(target.dataset.index)];
-    if(actor?.documentName!=="Actor" || !actor.isOwner || !bonus)return null;
+    if(actor?.documentName!=="Actor" || !actor.isOwner || !bonus || bonus.skillOnly)return null;
     if(bonus.skill)return actor.rollSkill(bonus.skill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name});
     const {rollGenericSituation}=await import("../dice.mjs");
     return rollGenericSituation({actor,defaultLabel:this.document.name,bonusRows:[{label:this.document.name,value:bonus.value}]});

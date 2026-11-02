@@ -14335,6 +14335,24 @@
           "SourcePage": "252",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
+          "Name": "Langue de Siro Werte",
+          "Summary": "Langue choisie : +2 en Connaissances.",
+          "Description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+          "SourceName": "Langue de Siro Werte",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "256",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
+          "Name": "Sagesse de Gave",
+          "Summary": "Langue choisie : +3 en Connaissances.",
+          "Description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+          "SourceName": "Sagesse de Gave",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "257",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Peau d’écorce",
           "Summary": "Ajoute des points de santé temporaires qui absorbent les dégâts.",
@@ -15133,6 +15151,8 @@
       "HearingPenalty": "Tests faisant appel à l’ouïe : {value}. À −10 ou moins, la cible est sourde.",
       "SightBonus": "Tests faisant appel à la vue : +{value}.",
       "SightPenalty": "Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle.",
+      "SpokenLanguage": "Langue choisie",
+      "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",

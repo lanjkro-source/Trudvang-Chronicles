@@ -154,6 +154,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];
+ if(!resolvedCopy&&template.inputKey)fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:""});
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -274,8 +275,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
   summary=game.i18n.format(p.labelKey,{value});
  }
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
   description+=`<p>${escapeHtml(game.i18n.format(p.labelKey,{value}))}</p>`;
@@ -426,7 +429,7 @@ function automaticAreaApplication(request){
  const template=TRANSFORMATION_TEMPLATES[request.key],context=request.context;
  const targeting=template&&context?.castingId&&context?.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  const group=targeting?.groups?.find(row=>row.id===magicTargetGroup(targeting,request.key));
- if(!group||group.baseTargets!==null||!group.sharedOptions?.length||template.levelParameter)return false;
+ if(!group||group.baseTargets!==null||!group.sharedOptions?.length||template.levelParameter||template.inputKey)return false;
  if(!/^\s*\d+(?:\.\d+)?\s+[^\d]+$/u.test(template.duration??""))return false;
  const rules=rulesFromChanges(template.changes);
  if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||rules.durationFromElapsed)return false;

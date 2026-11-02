@@ -37,7 +37,7 @@
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2",
         "cost": 2,
-        "maxCount": 5,
+        "maxCount": 3,
         "effect": "Augmente le bonus à la compétence Connaissances pour comprendre et parler cette langue de : +1"
       }
     ],

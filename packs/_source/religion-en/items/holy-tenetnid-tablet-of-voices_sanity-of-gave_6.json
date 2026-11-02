@@ -37,7 +37,7 @@
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
         "cost": 2,
-        "maxCount": 8,
+        "maxCount": 5,
         "effect": "Increase the Knowledge skill bonus for understanding and speaking a foreign language by +1"
       }
     ],

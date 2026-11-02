@@ -37,7 +37,7 @@
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
         "cost": 2,
-        "maxCount": 8,
+        "maxCount": 5,
         "effect": "Augmente le bonus à la compétence de Connaissance (pour comprendre et parler une langue étrangère) de : +1"
       }
     ],

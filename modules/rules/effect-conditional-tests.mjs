@@ -12,12 +12,14 @@ export function conditionalSituationBonuses(effect) {
   labelKey:p.labelKey,
   skill:p.skill ?? "",
   skillChoice:p.skillChoice === true,
+  skillOnly:p.skillOnly === true,
+  restrictedSkill:p.restrictedSkill ?? "",
   value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)
  }));
 }
 
 /** Optional modifiers whose relevance must be decided by the player. */
-export function conditionalSkillModifiers(actor) {
+export function conditionalSkillModifiers(actor,skillKey="") {
  return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).flatMap(effect =>
-  conditionalSituationBonuses(effect).filter(row => row.skillChoice).map(row => ({label:effect.name,value:row.value})));
+  conditionalSituationBonuses(effect).filter(row => row.skillChoice && (!row.restrictedSkill || row.restrictedSkill===skillKey)).map(row => ({label:[effect.name,effect.flags?.["trudvang-chronicles"]?.transformation?.input].filter(Boolean).join(" — "),value:row.value})));
 }

@@ -946,7 +946,7 @@ export class TrudvangActor extends BaseActor {
     if(bonusLabel && Number(bonus))modifierRows.push({label:bonusLabel,value:Number(bonus)});
     modifierRows.push(...transformationRollRows(this, {target: base + rollModifierTotal(modifierRows), skillKey}));
     const target = base + rollModifierTotal(modifierRows);
-    const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))], optionalModifiers:conditionalSkillModifiers(this)});
+    const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))], optionalModifiers:conditionalSkillModifiers(this,skillKey)});
     if (!options) return null;
     const extraRows=options.extraModifiers ?? [];
     return rollUnder({actor: this, label: name, target:target+rollModifierTotal(extraRows), modifier: options.modifier, kind: "skill", flavor: [escapeHtml(this.skillValueLabel(skillKey)), rollModifierFlavor([...modifierRows,...extraRows])].filter(Boolean).join("<br>")});
@@ -990,7 +990,7 @@ export class TrudvangActor extends BaseActor {
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
     const mountTraining = context.mountTraining || (customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker";
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])], optionalModifiers:conditionalSkillModifiers(this),
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])], optionalModifiers:conditionalSkillModifiers(this,item.system.parentSkill),
       extraNumberFields: mountTraining ? [{name: "mount-training", label: game.i18n.localize("TRUDVANG.AnimalAction.MountTrainingBonus"), value: 0,
         hint: game.i18n.localize(`TRUDVANG.AnimalAction.${(customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker" ? "TrackHint" : "JumpHint"}`)}] : []});
     if (!options) return null;

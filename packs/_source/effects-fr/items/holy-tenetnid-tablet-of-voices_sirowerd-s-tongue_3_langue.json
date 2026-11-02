@@ -1,0 +1,45 @@
+{
+  "_id": "FK48XNhNiOjPkQlR",
+  "_key": "!items!FK48XNhNiOjPkQlR",
+  "name": "Langue de Siro Werte",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+    "description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+    "summary": "Langue choisie : +2 en Connaissances.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 256
+    }
+  },
+  "effects": [
+    {
+      "_id": "c7iMPZrXsYtZu0v1",
+      "_key": "!items.effects!FK48XNhNiOjPkQlR.c7iMPZrXsYtZu0v1",
+      "name": "Langue de Siro Werte",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Permet de comprendre et de parler la langue choisie, sans la lire ni l’écrire. Le bonus ne s’applique qu’aux tests concernant cette langue.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+            "summary": "Langue choisie : +2 en Connaissances.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
