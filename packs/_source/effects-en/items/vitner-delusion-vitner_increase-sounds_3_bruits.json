@@ -1,0 +1,45 @@
+{
+  "_id": "lFxMsQkQlRmSnToU",
+  "_key": "!items!lFxMsQkQlRmSnToU",
+  "name": "Amplified Movements",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3#bruits",
+    "description": "The target’s movements, footsteps, clothing and branches underfoot produce amplified sounds.",
+    "summary": "Amplifies sounds caused by movement.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "eqJt35w2x3y4z5A6",
+      "_key": "!items.effects!lFxMsQkQlRmSnToU.eqJt35w2x3y4z5A6",
+      "name": "Amplified Movements",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The target’s movements, footsteps, clothing and branches underfoot produce amplified sounds.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:increase-sounds:3#bruits",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:increase-sounds:3#bruits",
+            "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+            "summary": "Amplifies sounds caused by movement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

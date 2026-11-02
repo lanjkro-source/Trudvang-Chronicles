@@ -3603,6 +3603,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:illusion-tricks:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:illusion-tricks:2:0",
@@ -7989,6 +7993,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:ghost-voice:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:ghost-voice:5:0",
@@ -8017,6 +8025,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:increase-sounds:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:increase-sounds:3:0",
@@ -8256,6 +8268,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:traceless:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-delusion-vitner:traceless:4:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:traceless:4:0",

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,128);
+ assert.equal(Object.keys(sources).length,132);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1070,4 +1070,21 @@ test("Imagining preserves the thought and exposes a resistance test",async()=>{
  assert.match(created.description,/La porte est sûre/);assert.match(created.flags[S].transformation.summary,/La porte est sûre/);
  assert.match(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
  assert.equal(created.flags[S].transformation.ruleTestContext.countsById["vitner-power-of-thought:imagining:6:2"],2);
+});
+
+test("illusion variants preserve their distinctions, duration and selected range",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"holy-haminges-power-of-trolls:illusion-tricks:2#illusions",{counts:[0,0,2]});
+ assert.match(created.flags[S].transformation.summary,/15 m/);assert.match(created.description,/autres sens/);
+ await applyTransformation(actor,"vitner-delusion-vitner:ghost-voice:5#voix");
+ assert.match(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
+ const head=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:increase-sounds:3#voix"].Description;
+ const body=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:increase-sounds:3#bruits"].Description;
+ assert.match(head,/paroles/);assert.match(body,/mouvements/);
+ const trail=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:traceless:4#trace"].Description;
+ assert.match(trail,/odeurs/);
 });

@@ -1,0 +1,45 @@
+{
+  "_id": "yAwxAgJeKfLgMhNi",
+  "_key": "!items!yAwxAgJeKfLgMhNi",
+  "name": "Amplified Voice",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3#voix",
+    "description": "The target’s speech becomes distinctly audible, even when whispering, and dominates surrounding noise.",
+    "summary": "Amplifies speech, including whispers.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "PFkKI1sYtZu0v1w2",
+      "_key": "!items.effects!yAwxAgJeKfLgMhNi.PFkKI1sYtZu0v1w2",
+      "name": "Amplified Voice",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The target’s speech becomes distinctly audible, even when whispering, and dominates surrounding noise.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:increase-sounds:3#voix",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:increase-sounds:3#voix",
+            "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+            "summary": "Amplifies speech, including whispers.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "yAwxAgJeKfLgMhNi",
+  "_key": "!items!yAwxAgJeKfLgMhNi",
+  "name": "Voix amplifiée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3#voix",
+    "description": "Les paroles de la cible deviennent distinctement audibles, même lorsqu’elle murmure, et dominent les bruits ambiants.",
+    "summary": "Amplifie les paroles, même murmurées.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 197
+    }
+  },
+  "effects": [
+    {
+      "_id": "PFkKI1sYtZu0v1w2",
+      "_key": "!items.effects!yAwxAgJeKfLgMhNi.PFkKI1sYtZu0v1w2",
+      "name": "Voix amplifiée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les paroles de la cible deviennent distinctement audibles, même lorsqu’elle murmure, et dominent les bruits ambiants.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:increase-sounds:3#voix",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:increase-sounds:3#voix",
+            "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+            "summary": "Amplifie les paroles, même murmurées.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

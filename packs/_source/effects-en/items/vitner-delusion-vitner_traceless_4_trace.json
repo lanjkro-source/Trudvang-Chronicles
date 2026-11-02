@@ -1,0 +1,45 @@
+{
+  "_id": "d5xt0QiOjPkQlRmS",
+  "_key": "!items!d5xt0QiOjPkQlRmS",
+  "name": "Traceless",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:traceless:4#trace",
+    "description": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+    "summary": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "kL7bpnPkQlRmSnTo",
+      "_key": "!items.effects!d5xt0QiOjPkQlRmS.kL7bpnPkQlRmSnTo",
+      "name": "Traceless",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:traceless:4#trace",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:traceless:4#trace",
+            "sourceId": "vitner-delusion-vitner:traceless:4",
+            "summary": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

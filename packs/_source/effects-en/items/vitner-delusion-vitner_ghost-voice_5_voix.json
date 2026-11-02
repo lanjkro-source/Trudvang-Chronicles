@@ -1,0 +1,45 @@
+{
+  "_id": "TSabsaC7C8D9EaGb",
+  "_key": "!items!TSabsaC7C8D9EaGb",
+  "name": "Ghost Voice",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:ghost-voice:5#voix",
+    "description": "Projects the voice to another place within range and can alter its tone. An unwilling target may resist with a Constitution situation roll against 8.",
+    "summary": "Projects and alters the voice.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "cFSzW6y4z5A6B7C8",
+      "_key": "!items.effects!TSabsaC7C8D9EaGb.cFSzW6y4z5A6B7C8",
+      "name": "Ghost Voice",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Projects the voice to another place within range and can alter its tone. An unwilling target may resist with a Constitution situation roll against 8.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:ghost-voice:5#voix",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:ghost-voice:5#voix",
+            "sourceId": "vitner-delusion-vitner:ghost-voice:5",
+            "summary": "Projects and alters the voice.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

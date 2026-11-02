@@ -1,0 +1,45 @@
+{
+  "_id": "TSabsaC7C8D9EaGb",
+  "_key": "!items!TSabsaC7C8D9EaGb",
+  "name": "Voix illusoire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:ghost-voice:5#voix",
+    "description": "Projette la voix à un autre endroit à portée et peut en modifier les intonations. Une cible non consentante peut résister par un test de situation de Constitution contre 8.",
+    "summary": "Projette et modifie la voix.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 198
+    }
+  },
+  "effects": [
+    {
+      "_id": "cFSzW6y4z5A6B7C8",
+      "_key": "!items.effects!TSabsaC7C8D9EaGb.cFSzW6y4z5A6B7C8",
+      "name": "Voix illusoire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Projette la voix à un autre endroit à portée et peut en modifier les intonations. Une cible non consentante peut résister par un test de situation de Constitution contre 8.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:ghost-voice:5#voix",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:ghost-voice:5#voix",
+            "sourceId": "vitner-delusion-vitner:ghost-voice:5",
+            "summary": "Projette et modifie la voix.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

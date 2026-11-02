@@ -1198,6 +1198,126 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-delusion-vitner:increase-sounds:3#voix": {
+    "id": "voix",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:2"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:increase-sounds:3#bruits": {
+    "id": "bruits",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:increase-sounds:3:2"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:traceless:4#trace": {
+    "id": "trace",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-delusion-vitner:traceless:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:traceless:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-delusion-vitner:traceless:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-delusion-vitner:traceless:4:2"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:ghost-voice:5#voix": {
+    "id": "voix",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-delusion-vitner:ghost-voice:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:ghost-voice:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:ghost-voice:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-delusion-vitner:ghost-voice:5:2"
+      }
+    ]
+  },
   "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
     "id": "guerison",
     "icon": "icons/svg/aura.svg",
@@ -3921,6 +4041,48 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-haminges-power-of-trolls:willpower:1:1"
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:illusion-tricks:2#illusions": {
+    "id": "illusions",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "summaryParts": {
+      "labelKey": "TRUDVANG.Transformation.IllusionRange",
+      "parts": [
+        {
+          "index": 2,
+          "base": 5,
+          "value": 5,
+          "singularKey": "TRUDVANG.Transformation.DistanceMeterOne",
+          "pluralKey": "TRUDVANG.Transformation.DistanceMeterMany"
+        }
+      ]
+    },
+    "sourceId": "holy-haminges-power-of-trolls:illusion-tricks:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-trolls:illusion-tricks:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-trolls:illusion-tricks:2:1"
+      },
+      {
+        "index": 2,
+        "target": "summaryPart",
+        "value": 1,
+        "optionId": "holy-haminges-power-of-trolls:illusion-tricks:2:2"
       }
     ]
   },
@@ -6913,6 +7075,16 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-body-vitner:change-creature:11": [
     "vitner-body-vitner:change-creature:11#transformation"
   ],
+  "vitner-delusion-vitner:increase-sounds:3": [
+    "vitner-delusion-vitner:increase-sounds:3#voix",
+    "vitner-delusion-vitner:increase-sounds:3#bruits"
+  ],
+  "vitner-delusion-vitner:traceless:4": [
+    "vitner-delusion-vitner:traceless:4#trace"
+  ],
+  "vitner-delusion-vitner:ghost-voice:5": [
+    "vitner-delusion-vitner:ghost-voice:5#voix"
+  ],
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
   ],
@@ -7103,6 +7275,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-trolls:willpower:1": [
     "holy-haminges-power-of-trolls:willpower:1#volonte"
+  ],
+  "holy-haminges-power-of-trolls:illusion-tricks:2": [
+    "holy-haminges-power-of-trolls:illusion-tricks:2#illusions"
   ],
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"

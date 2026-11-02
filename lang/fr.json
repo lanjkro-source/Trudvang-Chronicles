@@ -13926,6 +13926,42 @@
           "SourcePage": "196",
           "Duration": "5 minutes"
         },
+        "vitner-delusion-vitner:increase-sounds:3#voix": {
+          "Name": "Voix amplifiée",
+          "Summary": "Amplifie les paroles, même murmurées.",
+          "Description": "Les paroles de la cible deviennent distinctement audibles, même lorsqu’elle murmure, et dominent les bruits ambiants.",
+          "SourceName": "Amplification des sons",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "197",
+          "Duration": "5 tours de jeu"
+        },
+        "vitner-delusion-vitner:increase-sounds:3#bruits": {
+          "Name": "Bruits amplifiés",
+          "Summary": "Amplifie les bruits produits par les mouvements.",
+          "Description": "Les mouvements de la cible, ses pas, ses vêtements et les branches sous ses pieds produisent des bruits amplifiés.",
+          "SourceName": "Amplification des sons",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "197",
+          "Duration": "5 tours de jeu"
+        },
+        "vitner-delusion-vitner:traceless:4#trace": {
+          "Name": "Sans trace",
+          "Summary": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+          "Description": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+          "SourceName": "Sans trace",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "198",
+          "Duration": "1 heure"
+        },
+        "vitner-delusion-vitner:ghost-voice:5#voix": {
+          "Name": "Voix illusoire",
+          "Summary": "Projette et modifie la voix.",
+          "Description": "Projette la voix à un autre endroit à portée et peut en modifier les intonations. Une cible non consentante peut résister par un test de situation de Constitution contre 8.",
+          "SourceName": "Voix illusoire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "198",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
           "Name": "Guérison (Solvei)",
           "Summary": "Augmente la récupération quotidienne tant que le bénéficiaire se repose.",
@@ -14614,6 +14650,15 @@
           "Summary": "Points de peur reçus : −4.",
           "Description": "Réduit de 4 les points de peur reçus à chaque jet de facteur de peur.",
           "SourceName": "Volonté",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "274",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:illusion-tricks:2#illusions": {
+          "Name": "Tours illusoires",
+          "Summary": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+          "Description": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+          "SourceName": "Tours illusoires",
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
           "Duration": "1 minute"
@@ -15320,6 +15365,9 @@
       "MemoryYearMany": "{value} ans",
       "MemoryLifetime": "vie entière",
       "ImplantedThought": "Pensée implantée",
+      "IllusionRange": "Illusions visuelles ; portée : {value}.",
+      "DistanceMeterOne": "{value} m",
+      "DistanceMeterMany": "{value} m",
       "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",

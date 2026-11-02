@@ -1,0 +1,45 @@
+{
+  "_id": "rMWSRbD8D9EaGbHc",
+  "_key": "!items!rMWSRbD8D9EaGbHc",
+  "name": "Illusion Tricks",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+    "description": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+    "summary": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "AjQIXSmSnToUpVqW",
+      "_key": "!items.effects!rMWSRbD8D9EaGbHc.AjQIXSmSnToUpVqW",
+      "name": "Illusion Tricks",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+            "sourceId": "holy-haminges-power-of-trolls:illusion-tricks:2",
+            "summary": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "rMWSRbD8D9EaGbHc",
+  "_key": "!items!rMWSRbD8D9EaGbHc",
+  "name": "Tours illusoires",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+    "description": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+    "summary": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 274
+    }
+  },
+  "effects": [
+    {
+      "_id": "AjQIXSmSnToUpVqW",
+      "_key": "!items.effects!rMWSRbD8D9EaGbHc.AjQIXSmSnToUpVqW",
+      "name": "Tours illusoires",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:illusion-tricks:2#illusions",
+            "sourceId": "holy-haminges-power-of-trolls:illusion-tricks:2",
+            "summary": "Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

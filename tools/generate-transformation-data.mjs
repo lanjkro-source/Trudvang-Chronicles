@@ -40,8 +40,9 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(t.summaryParts){
-    const s=t.summaryParts,keys=[s.labelKey,s.overrideKey,...(s.parts??[]).flatMap(p=>[p.singularKey,p.pluralKey])];
-    const indices=[s.overrideIndex,...(s.parts??[]).map(p=>p.index)];
+    const s=t.summaryParts,keys=[s.labelKey,...(s.overrideKey?[s.overrideKey]:[]),...(s.parts??[]).flatMap(p=>[p.singularKey,p.pluralKey])];
+    const indices=[...(s.overrideIndex===undefined?[]:[s.overrideIndex]),...(s.parts??[]).map(p=>p.index)];
+    if((s.overrideIndex===undefined)!==(s.overrideKey===undefined))throw Error(`Invalid summary override for ${key}`);
     if(!Array.isArray(s.parts)||!s.parts.length||keys.some(k=>typeof k!=="string"||!["fr","en"].every(c=>k.split(".").reduce((v,p)=>v?.[p],lang[c])))||indices.some(i=>!Number.isInteger(i)||!(entry.effectParameters??[]).some(p=>p.target==="summaryPart"&&p.index===i)))throw Error(`Invalid summary components for ${key}`);
    }
    if(t.onApply&&(!["fearReduction"].includes(t.onApply.operation)||!Array.isArray(t.onApply.formulas)||!t.onApply.formulas.length||!t.onApply.formulas.every(formula=>/^\d+d\d+(?:x>=\d+)?(?:\s*\+\s*\d+)?$/i.test(formula))))throw Error(`Invalid application consequence for ${key}`);

@@ -1,0 +1,45 @@
+{
+  "_id": "lFxMsQkQlRmSnToU",
+  "_key": "!items!lFxMsQkQlRmSnToU",
+  "name": "Bruits amplifiés",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3#bruits",
+    "description": "Les mouvements de la cible, ses pas, ses vêtements et les branches sous ses pieds produisent des bruits amplifiés.",
+    "summary": "Amplifie les bruits produits par les mouvements.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 197
+    }
+  },
+  "effects": [
+    {
+      "_id": "eqJt35w2x3y4z5A6",
+      "_key": "!items.effects!lFxMsQkQlRmSnToU.eqJt35w2x3y4z5A6",
+      "name": "Bruits amplifiés",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les mouvements de la cible, ses pas, ses vêtements et les branches sous ses pieds produisent des bruits amplifiés.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:increase-sounds:3#bruits",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:increase-sounds:3#bruits",
+            "sourceId": "vitner-delusion-vitner:increase-sounds:3",
+            "summary": "Amplifie les bruits produits par les mouvements.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

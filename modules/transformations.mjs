@@ -305,7 +305,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!resolvedCopy&&template.senseTooltip&&rules.senses?.[template.senseTooltip.sense])summary=game.i18n.format(template.senseTooltip.labelKey,{value:rules.senses[template.senseTooltip.sense].range});
  if(!resolvedCopy&&template.summaryParts){
   const config=template.summaryParts;
-  const lifetime=Number(casting.counts[config.overrideIndex]??0)>0;
+  const lifetime=config.overrideIndex!==undefined&&Number(casting.counts[config.overrideIndex]??0)>0;
   const parts=lifetime?[game.i18n.localize(config.overrideKey)]:config.parts.flatMap(part=>{
    const value=Number(part.base??0)+Math.max(0,Math.trunc(Number(casting.counts[part.index])||0))*Number(part.value??1);
    return value?[game.i18n.format(value===1?part.singularKey:part.pluralKey,{value})]:[];

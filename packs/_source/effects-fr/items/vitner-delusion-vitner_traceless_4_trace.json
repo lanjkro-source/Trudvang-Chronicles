@@ -1,0 +1,45 @@
+{
+  "_id": "d5xt0QiOjPkQlRmS",
+  "_key": "!items!d5xt0QiOjPkQlRmS",
+  "name": "Sans trace",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:traceless:4#trace",
+    "description": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+    "summary": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 198
+    }
+  },
+  "effects": [
+    {
+      "_id": "kL7bpnPkQlRmSnTo",
+      "_key": "!items.effects!d5xt0QiOjPkQlRmS.kL7bpnPkQlRmSnTo",
+      "name": "Sans trace",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:traceless:4#trace",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:traceless:4#trace",
+            "sourceId": "vitner-delusion-vitner:traceless:4",
+            "summary": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13926,6 +13926,42 @@
           "SourcePage": "96",
           "Duration": "5 minutes"
         },
+        "vitner-delusion-vitner:increase-sounds:3#voix": {
+          "Name": "Amplified Voice",
+          "Summary": "Amplifies speech, including whispers.",
+          "Description": "The target’s speech becomes distinctly audible, even when whispering, and dominates surrounding noise.",
+          "SourceName": "Increase Sounds",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "5 action rounds"
+        },
+        "vitner-delusion-vitner:increase-sounds:3#bruits": {
+          "Name": "Amplified Movements",
+          "Summary": "Amplifies sounds caused by movement.",
+          "Description": "The target’s movements, footsteps, clothing and branches underfoot produce amplified sounds.",
+          "SourceName": "Increase Sounds",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "5 action rounds"
+        },
+        "vitner-delusion-vitner:traceless:4#trace": {
+          "Name": "Traceless",
+          "Summary": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+          "Description": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
+          "SourceName": "Traceless",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "1 hour"
+        },
+        "vitner-delusion-vitner:ghost-voice:5#voix": {
+          "Name": "Ghost Voice",
+          "Summary": "Projects and alters the voice.",
+          "Description": "Projects the voice to another place within range and can alter its tone. An unwilling target may resist with a Constitution situation roll against 8.",
+          "SourceName": "Ghost Voice",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
           "Name": "Healing (Sunvei)",
           "Summary": "Increases daily recovery while the recipient rests.",
@@ -14614,6 +14650,15 @@
           "Summary": "Fear points received: −4.",
           "Description": "Reduces fear points received from each fear factor roll by 4.",
           "SourceName": "Willpower",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:illusion-tricks:2#illusions": {
+          "Name": "Illusion Tricks",
+          "Summary": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+          "Description": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
+          "SourceName": "Illusion Tricks",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"
@@ -15320,6 +15365,9 @@
       "MemoryYearMany": "{value} years",
       "MemoryLifetime": "entire life",
       "ImplantedThought": "Implanted thought",
+      "IllusionRange": "Visual illusions; range: {value}.",
+      "DistanceMeterOne": "{value} m",
+      "DistanceMeterMany": "{value} m",
       "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",

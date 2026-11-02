@@ -11120,6 +11120,50 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:change-creature:11#transformation.SourcePage` | 96 | 196 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:change-creature:11#transformation.Duration` | 5 minutes | 5 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.Name` | Amplified Voice | Voix amplifiée |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.Description` | The target’s speech becomes distinctly audible, even when whispering, and dominates surrounding noise. | Les paroles de la cible deviennent distinctement audibles, même lorsqu’elle murmure, et dominent les bruits ambiants. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.SourceName` | Increase Sounds | Amplification des sons |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.SourcePage` | 101 | 197 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#voix.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.Name` | Amplified Movements | Bruits amplifiés |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.Description` | The target’s movements, footsteps, clothing and branches underfoot produce amplified sounds. | Les mouvements de la cible, ses pas, ses vêtements et les branches sous ses pieds produisent des bruits amplifiés. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourceName` | Increase Sounds | Amplification des sons |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourcePage` | 101 | 197 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.Name` | Traceless | Sans trace |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.Description` | Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them. | Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.SourceName` | Traceless | Sans trace |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.SourcePage` | 101 | 198 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.Name` | Ghost Voice | Voix illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.Description` | Projects the voice to another place within range and can alter its tone. An unwilling target may resist with a Constitution situation roll against 8. | Projette la voix à un autre endroit à portée et peut en modifier les intonations. Une cible non consentante peut résister par un test de situation de Constitution contre 8. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.SourceName` | Ghost Voice | Voix illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.SourcePage` | 101 | 198 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison`
 
 | Clé | English | Français |
@@ -11961,6 +12005,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourcePage` | 223 | 274 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.Name` | Illusion Tricks | Tours illusoires |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.Description` | Simple illusions affecting sight only; other senses automatically reveal the deception. | Illusions simples affectant uniquement la vue ; les autres sens révèlent automatiquement la supercherie. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourceName` | Illusion Tricks | Tours illusoires |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourcePage` | 223 | 274 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll`
 
@@ -12809,6 +12864,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.MemoryYearMany` | {value} years | {value} ans |
 | `TRUDVANG.Transformation.MemoryLifetime` | entire life | vie entière |
 | `TRUDVANG.Transformation.ImplantedThought` | Implanted thought | Pensée implantée |
+| `TRUDVANG.Transformation.IllusionRange` | Visual illusions; range: {value}. | Illusions visuelles ; portée : {value}. |
+| `TRUDVANG.Transformation.DistanceMeterOne` | {value} m | {value} m |
+| `TRUDVANG.Transformation.DistanceMeterMany` | {value} m | {value} m |
 | `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |
