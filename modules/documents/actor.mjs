@@ -943,10 +943,11 @@ export class TrudvangActor extends BaseActor {
     const base = this.getSkillValue(skillKey);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
     const modifierRows = this.skillRollModifierRows(skillKey, {bonus: bonusLabel ? 0 : bonus});
+    modifierRows.push(...conditionalSkillModifiers(this,skillKey,null,excludeEffectId,{automatic:true}));
     if(bonusLabel && Number(bonus))modifierRows.push({label:bonusLabel,value:Number(bonus)});
     modifierRows.push(...transformationRollRows(this, {target: base + rollModifierTotal(modifierRows), skillKey}));
     const target = base + rollModifierTotal(modifierRows);
-    const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))], optionalModifiers:conditionalSkillModifiers(this,skillKey,null,excludeEffectId)});
+    const options = await modifierDialog({title: name, target: base, modifierRows, optionalModifiers:conditionalSkillModifiers(this,skillKey,null,excludeEffectId)});
     if (!options) return null;
     const extraRows=options.extraModifiers ?? [];
     return rollUnder({actor: this, label: name, target:target+rollModifierTotal(extraRows), modifier: options.modifier, kind: "skill", flavor: [escapeHtml(this.skillValueLabel(skillKey)), rollModifierFlavor([...modifierRows,...extraRows])].filter(Boolean).join("<br>")});
@@ -985,12 +986,13 @@ export class TrudvangActor extends BaseActor {
     if (!this.canPerformAction()) return this.warnCannotAct();
     const breakdown = this.getAbilityBreakdown(item, context);
     const modifierRows = [...breakdown.modifierRows];
+    modifierRows.push(...conditionalSkillModifiers(this,item.system.parentSkill,item,context.excludeEffectId,{automatic:true}));
     if (Number(context.bonus || 0)) modifierRows.push(context.bonusLabel ? {label:context.bonusLabel,value:Number(context.bonus)} : {labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
     modifierRows.push(...transformationRollRows(this, {target: breakdown.base + rollModifierTotal(modifierRows), skillKey: item.system.parentSkill, movement: Boolean(context.movement)}));
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
     const mountTraining = context.mountTraining || (customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker";
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])], optionalModifiers:conditionalSkillModifiers(this,item.system.parentSkill,item,context.excludeEffectId),
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: context.notes ?? [], optionalModifiers:conditionalSkillModifiers(this,item.system.parentSkill,item,context.excludeEffectId),
       extraNumberFields: mountTraining ? [{name: "mount-training", label: game.i18n.localize("TRUDVANG.AnimalAction.MountTrainingBonus"), value: 0,
         hint: game.i18n.localize(`TRUDVANG.AnimalAction.${(customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker" ? "TrackHint" : "JumpHint"}`)}] : []});
     if (!options) return null;

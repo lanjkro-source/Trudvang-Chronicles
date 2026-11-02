@@ -1330,6 +1330,21 @@ test("tracking training bonus precedes the situation field and contributes once 
   assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls[0].formula, "1d20");
 });
 
+test("Dwarven Smith automatically modifies only its chosen specialty and skill dialogs omit the redundant number",async t=>{
+ const runtime=mockActionRuntime(t),instance=actor([]);
+ instance.getAbilityBreakdown=()=>({base:10,skillLabel:"7",modifierRows:[]});
+ const id="holy-haminges-power-of-men:dwarven-smith:6";
+ const effect={name:"Forgeron nain",flags:{"trudvang-chronicles":{transformation:{key:`${id}#forge`,sourceId:id,inputId:"hardMaterials",input:"Matériaux durs",ruleTestContext:{}}}}};
+ instance.allApplicableEffects=()=>[effect];runtime.response={modifier:0};
+ const ability={type:"ability",name:"Matériaux durs",system:{kind:"specialty",catalogId:"hardMaterials",parentSkill:"care"}};
+ const result=await instance.rollAbility(ability);
+ assert.equal(result.target,16);assert.match(runtime.dialogs.at(-1).content,/Forgeron nain.*\+6/);
+ assert.doesNotMatch(runtime.dialogs.at(-1).content,/data-optional-modifier|rule-test-notes/);
+ assert.match(renderedCards.at(-1).data.flavor,/Forgeron nain.*\+6/);
+ ability.system.catalogId="softMaterials";ability.name="Matériaux souples";
+ const other=await instance.rollAbility(ability);assert.equal(other.target,10);
+});
+
 test("training action buttons preserve Dressage and jumping uses the actor's real Riding specialty", async t => {
   mockActionRuntime(t);
   const {knowledgeProcedureDescription} = await import("../modules/knowledge-procedures.mjs");

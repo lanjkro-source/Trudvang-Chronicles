@@ -1,0 +1,53 @@
+{
+  "_id": "ZJY60QjPkQlRmSnT",
+  "_key": "!items!ZJY60QjPkQlRmSnT",
+  "name": "Courage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:courage:2#courage",
+    "description": "Dissipe immédiatement 1d10 points de peur puis réduit les points de peur reçus pendant la durée du sort.",
+    "summary": "Points de peur reçus : −4.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 177
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ux9CZVpVqWrXsYtZ",
+      "_key": "!items.effects!ZJY60QjPkQlRmSnT.Ux9CZVpVqWrXsYtZ",
+      "name": "Courage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Dissipe immédiatement 1d10 points de peur puis réduit les points de peur reçus pendant la durée du sort.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:courage:2#courage",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.fearFactor",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:courage:2#courage",
+            "sourceId": "vitner-power-of-thought:courage:2",
+            "summary": "Points de peur reçus : −4.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

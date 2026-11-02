@@ -13744,6 +13744,15 @@
           "SourcePage": "177",
           "Duration": "1 minute"
         },
+        "vitner-power-of-thought:courage:2#courage": {
+          "Name": "Courage",
+          "Summary": "Points de peur reçus : −4.",
+          "Description": "Dissipe immédiatement 1d10 points de peur puis réduit les points de peur reçus pendant la durée du sort.",
+          "SourceName": "Courage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "177",
+          "Duration": "5 minutes"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -14573,6 +14582,15 @@
           "SourcePage": "273",
           "Duration": "2 heures"
         },
+        "holy-haminges-power-of-trolls:willpower:1#volonte": {
+          "Name": "Volonté des trolls",
+          "Summary": "Points de peur reçus : −4.",
+          "Description": "Réduit de 4 les points de peur reçus à chaque jet de facteur de peur.",
+          "SourceName": "Volonté",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "274",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Force du troll (Puissance des tursirs)",
           "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
@@ -15265,6 +15283,7 @@
       "SpeechListeners": "Comprend la langue ; propos traduits pour {value} créature(s).",
       "AnimalLinkRange": "Lien avec un animal : portée {value} m.",
       "AimBonus": "Attaques à distance : +{value}.",
+      "FearReduction": "Points de peur reçus : {value}.",
       "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",

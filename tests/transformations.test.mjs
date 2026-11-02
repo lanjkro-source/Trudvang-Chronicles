@@ -30,12 +30,12 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,123);
+ assert.equal(Object.keys(sources).length,125);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
  const key="vitner-wind-craft:air-armor:4#air-armor";
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:(key)=>key}};
  foundry.applications.api={DialogV2:{wait:async()=>({duration:"5 rounds",boost0:1,boost4:2})}};
  let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  await applyTransformation(actor,key);
@@ -731,7 +731,7 @@ test("all numeric non-duration improvements resolve from casting counts and comp
 });
 
 test("an older chat card applies the captured option identity even when its saved position differs",async()=>{
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
  foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
  const [key,t]=Object.entries(templates).find(([,entry])=>entry.parameters.some(p=>p.target==="modifier"&&p.optionId));
  const parameter=t.parameters.find(p=>p.target==="modifier"&&p.optionId);
@@ -889,9 +889,10 @@ test("Dwarven Smith only applies to the chosen Handicraft specialty",async()=>{
  const id="holy-haminges-power-of-men:dwarven-smith:6",effect={name:"Forgeron nain",flags:{[S]:{transformation:{key:`${id}#forge`,sourceId:id,input:"Matériaux durs",ruleTestContext:{countsById:{[`${id}:0`]:3}}}}}};
  const actor={effects:[effect],getCatalogEntry:id=>({parentCatalogId:id==="hardMaterials"?"handicraft":"healing"})};
  const item=(id,name)=>({name,system:{kind:"specialty",catalogId:id}});
- assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux durs")),[{label:"Forgeron nain — Matériaux durs",value:6}]);
- assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux souples")),[]);
- assert.deepEqual(conditionalSkillModifiers(actor,"care",item("healing","Matériaux durs")),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux durs"),"",{automatic:true}),[{label:"Forgeron nain — Matériaux durs",value:6}]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux durs")),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux souples"),"",{automatic:true}),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("healing","Matériaux durs"),"",{automatic:true}),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
 });
 
@@ -912,8 +913,8 @@ test("Dwarven Smith offers learned specialties and remembers their stable identi
  assert.match(dialog.content,/<select name="effectInput">/);assert.match(dialog.content,/Forge runique/);assert.doesNotMatch(dialog.content,/Matériaux souples/);
  assert.equal(created.flags[S].transformation.inputId,"custom-specialty-a");assert.match(created.description,/Forge runique/);
  actor.effects=[created];custom.name="Forge renommée";
- assert.equal(conditionalSkillModifiers(actor,"care",custom)[0].value,6);
- assert.deepEqual(conditionalSkillModifiers(actor,"care",hard),[]);
+ assert.equal(conditionalSkillModifiers(actor,"care",custom,"",{automatic:true})[0].value,6);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",hard,"",{automatic:true}),[]);
 });
 
 test("Dwarven Smith reads NPC book specialties and reports an empty selection",async()=>{
@@ -1010,4 +1011,27 @@ test("Aim scales its ranged attack modifier and its displayed explanation",async
  await applyTransformation(actor,"holy-toikalokke-lynx-power:aim:5#visee",{counts:[0,2]});
  assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.rolls.rangedAttack").value,"3");
  assert.match(created.flags[S].transformation.summary,/\+3/);
+});
+
+test("Courage reduces fear on application with its chosen open-roll step exactly once",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ const oldRoll=globalThis.Roll,oldChat=globalThis.ChatMessage;
+ try{
+  let formula="",created;globalThis.Roll=class {constructor(value){formula=value;}async evaluate(){this.total=7;}};
+  globalThis.ChatMessage={getSpeaker:()=>({}),create:async()=>({})};
+  const actor={isOwner:true,canUserModify:()=>true,items:[],getActiveTokens:()=>[],getTraitValue:()=>0,system:{resources:{fear:{current:12,value:12}}},_source:{system:{resources:{fear:{value:12}}}},
+   update:async values=>{actor._source.system.resources.fear.value=values["system.resources.fear.value"];actor.system.resources.fear.current=values["system.resources.fear.value"];},
+   createTrudvangEffect:async data=>(created=data)};
+  foundry.applications.api.DialogV2.wait=async()=>({duration:"5 minutes"});
+  const counts=[];counts[3]=2;counts[4]=2;
+  await applyTransformation(actor,"vitner-power-of-thought:courage:2#courage",{counts});
+  assert.equal(formula,"1d10x>=9");assert.equal(actor.system.resources.fear.current,5);
+  assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.fearFactor").value,"-6");
+  assert.match(created.flags[S].transformation.summary,/-6/);
+  const source={documentName:"ActiveEffect",...structuredClone(created)};formula="";
+  await applyTransformation(actor,"vitner-power-of-thought:courage:2#courage",{source});
+  assert.equal(formula,"");assert.equal(actor.system.resources.fear.current,5);
+ }finally{globalThis.Roll=oldRoll;globalThis.ChatMessage=oldChat;}
 });

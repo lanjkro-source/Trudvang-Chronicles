@@ -3723,6 +3723,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:willpower:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:willpower:1:0",
@@ -9078,6 +9082,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:courage:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-thought:courage:2:0",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:courage:2:0",

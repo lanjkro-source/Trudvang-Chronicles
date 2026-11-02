@@ -13,6 +13,7 @@ export function conditionalSituationBonuses(effect) {
   skill:p.skill ?? "",
   ability:p.ability ?? "",
   skillChoice:p.skillChoice === true,
+  automatic:p.automatic === true,
   skillOnly:p.skillOnly === true,
   restrictedSkill:p.restrictedSkill ?? "",
   restrictedDiscipline:p.restrictedDiscipline ?? "",
@@ -22,13 +23,13 @@ export function conditionalSituationBonuses(effect) {
 }
 
 /** Optional modifiers whose relevance must be decided by the player. */
-export function conditionalSkillModifiers(actor,skillKey="",ability=null,excludeEffectId="") {
+export function conditionalSkillModifiers(actor,skillKey="",ability=null,excludeEffectId="",{automatic=false}={}) {
  return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(effect=>!excludeEffectId||effect.id!==excludeEffectId).flatMap(effect =>
   conditionalSituationBonuses(effect).filter(row => {
    const meta=effect.flags?.["trudvang-chronicles"]?.transformation;
    const input=String(meta?.input??"").trim();
    const entry=ability && actor.getCatalogEntry?.(ability.system?.catalogId);
-   return row.skillChoice && (!row.restrictedSkill || row.restrictedSkill===skillKey)
+   return row.skillChoice && row.automatic===automatic && (!row.restrictedSkill || row.restrictedSkill===skillKey)
     && (!row.restrictedDiscipline || (ability?.system?.kind==="specialty" && entry?.parentCatalogId===row.restrictedDiscipline))
     // TEMPORARY WORLD MIGRATION — 0.151 effects recorded the specialty name only.
     && (!row.requiresInput || (meta?.inputId ? meta.inputId===ability?.system?.catalogId : input && input.localeCompare(String(ability?.name??"").trim(),undefined,{sensitivity:"base"})===0));

@@ -10898,6 +10898,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.SourcePage` | 116 | 177 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.Name` | Courage | Courage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.Description` | Immediately removes 1d10 fear points, then reduces fear points received for the spell’s duration. | Dissipe immédiatement 1d10 points de peur puis réduit les points de peur reçus pendant la durée du sort. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.SourceName` | Courage | Courage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.SourcePage` | 116 | 177 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.Duration` | 5 minutes | 5 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre`
 
 | Clé | English | Français |
@@ -11907,6 +11918,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourcePage` | 216 | 273 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.Duration` | 2 hours | 2 heures |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.Name` | Troll Willpower | Volonté des trolls |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.Description` | Reduces fear points received from each fear factor roll by 4. | Réduit de 4 les points de peur reçus à chaque jet de facteur de peur. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourceName` | Willpower | Volonté |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourcePage` | 223 | 274 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll`
 
 | Clé | English | Français |
@@ -12744,6 +12766,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SpeechListeners` | Understands the language; speech translated for {value} creature(s). | Comprend la langue ; propos traduits pour {value} créature(s). |
 | `TRUDVANG.Transformation.AnimalLinkRange` | Link to one animal: range {value} m. | Lien avec un animal : portée {value} m. |
 | `TRUDVANG.Transformation.AimBonus` | Ranged attacks: +{value}. | Attaques à distance : +{value}. |
+| `TRUDVANG.Transformation.FearReduction` | Fear points received: {value}. | Points de peur reçus : {value}. |
 | `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |

@@ -1,0 +1,53 @@
+{
+  "_id": "0vZo8YtZu0v1w2x3",
+  "_key": "!items!0vZo8YtZu0v1w2x3",
+  "name": "Volonté des trolls",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:willpower:1#volonte",
+    "description": "Réduit de 4 les points de peur reçus à chaque jet de facteur de peur.",
+    "summary": "Points de peur reçus : −4.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 274
+    }
+  },
+  "effects": [
+    {
+      "_id": "Vx1u5PiOjPkQlRmS",
+      "_key": "!items.effects!0vZo8YtZu0v1w2x3.Vx1u5PiOjPkQlRmS",
+      "name": "Volonté des trolls",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Réduit de 4 les points de peur reçus à chaque jet de facteur de peur.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:willpower:1#volonte",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.fearFactor",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:willpower:1#volonte",
+            "sourceId": "holy-haminges-power-of-trolls:willpower:1",
+            "summary": "Points de peur reçus : −4.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

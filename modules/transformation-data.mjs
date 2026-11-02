@@ -235,6 +235,65 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-thought:courage:2#courage": {
+    "id": "courage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.fearFactor",
+        "type": "add",
+        "value": "-4",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "onApply": {
+      "operation": "fearReduction",
+      "formulas": [
+        "1d10",
+        "1d10x>=10",
+        "1d10x>=9",
+        "1d10x>=8",
+        "1d10x>=8 + 1"
+      ]
+    },
+    "sourceId": "vitner-power-of-thought:courage:2",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:courage:2:1"
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.fearFactor",
+        "value": -1,
+        "optionId": "vitner-power-of-thought:courage:2:3"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": -4,
+        "value": -1,
+        "tooltip": true,
+        "skillOnly": true,
+        "labelKey": "TRUDVANG.Transformation.FearReduction",
+        "optionId": "vitner-power-of-thought:courage:2:3"
+      },
+      {
+        "index": 4,
+        "target": "onApplyStep",
+        "value": 1,
+        "optionId": "vitner-power-of-thought:courage:2:4"
+      }
+    ]
+  },
   "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -3708,7 +3767,40 @@ export const TRANSFORMATION_TEMPLATES = {
         "restrictedDiscipline": "handicraft",
         "requiresInput": true,
         "labelKey": "TRUDVANG.Transformation.CraftSpecialtyBonus",
-        "optionId": "holy-haminges-power-of-men:dwarven-smith:6:0"
+        "optionId": "holy-haminges-power-of-men:dwarven-smith:6:0",
+        "automatic": true
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:willpower:1#volonte": {
+    "id": "volonte",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.fearFactor",
+        "type": "add",
+        "value": "-4",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-haminges-power-of-trolls:willpower:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-trolls:willpower:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-trolls:willpower:1:1"
       }
     ]
   },
@@ -6653,6 +6745,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-thought:understanding-speech:1": [
     "vitner-power-of-thought:understanding-speech:1#oral"
   ],
+  "vitner-power-of-thought:courage:2": [
+    "vitner-power-of-thought:courage:2#courage"
+  ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
@@ -6876,6 +6971,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-men:dwarven-smith:6": [
     "holy-haminges-power-of-men:dwarven-smith:6#forge"
+  ],
+  "holy-haminges-power-of-trolls:willpower:1": [
+    "holy-haminges-power-of-trolls:willpower:1#volonte"
   ],
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"

@@ -1,0 +1,53 @@
+{
+  "_id": "ZJY60QjPkQlRmSnT",
+  "_key": "!items!ZJY60QjPkQlRmSnT",
+  "name": "Courage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:courage:2#courage",
+    "description": "Immediately removes 1d10 fear points, then reduces fear points received for the spell’s duration.",
+    "summary": "Fear points received: −4.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ux9CZVpVqWrXsYtZ",
+      "_key": "!items.effects!ZJY60QjPkQlRmSnT.Ux9CZVpVqWrXsYtZ",
+      "name": "Courage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Immediately removes 1d10 fear points, then reduces fear points received for the spell’s duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:courage:2#courage",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.fearFactor",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:courage:2#courage",
+            "sourceId": "vitner-power-of-thought:courage:2",
+            "summary": "Fear points received: −4.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

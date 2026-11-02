@@ -1,0 +1,53 @@
+{
+  "_id": "0vZo8YtZu0v1w2x3",
+  "_key": "!items!0vZo8YtZu0v1w2x3",
+  "name": "Troll Willpower",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:willpower:1#volonte",
+    "description": "Reduces fear points received from each fear factor roll by 4.",
+    "summary": "Fear points received: −4.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "Vx1u5PiOjPkQlRmS",
+      "_key": "!items.effects!0vZo8YtZu0v1w2x3.Vx1u5PiOjPkQlRmS",
+      "name": "Troll Willpower",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Reduces fear points received from each fear factor roll by 4.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:willpower:1#volonte",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.fearFactor",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:willpower:1#volonte",
+            "sourceId": "holy-haminges-power-of-trolls:willpower:1",
+            "summary": "Fear points received: −4.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

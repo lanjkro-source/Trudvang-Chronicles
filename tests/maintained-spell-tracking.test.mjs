@@ -67,6 +67,20 @@ test("Leather Skin permits only one target for a casting",async()=>{
  }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
 
+test("an effect with an immediate consequence reserves each target only once",async()=>{
+ const old={game:globalThis.game,foundry:globalThis.foundry};
+ try{
+  const id="vitner-power-of-thought:courage:2",user={id:"owner"},item={id:"spell",type:"spell",system:{spellType:"lasting",catalogId:id}};
+  const caster={uuid:"Actor.mage",items:[item],canUserModify:()=>true,system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:"cast",itemId:"spell",powerLevelSnapshot:[]}]},async update(changed){this.system.activeSpellCastings=changed["system.activeSpellCastings"];}};
+  let created=0;const target={uuid:"Actor.target",canUserModify:()=>true,async createTrudvangEffect(){created++;return {uuid:`${this.uuid}.ActiveEffect.test`};}};
+  const docs=new Map([caster,target].map(x=>[x.uuid,x]));
+  globalThis.game={user:{id:"gm"},users:{activeGM:{isSelf:true},get:()=>user},actors:[caster,target],scenes:[]};globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid)}};
+  const data={flags:{"trudvang-chronicles":{transformation:{key:`${id}#courage`,ruleTestContext:{casterUuid:caster.uuid,castingId:"cast",sourceId:id}}}}};
+  const apply=()=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:target.uuid,countsById:{},data,userId:user.id});
+  assert.deepEqual((await Promise.all([apply(),apply()])).map(row=>row.status),["ok","already-applied"]);assert.equal(created,1);
+ }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
+});
+
 test("actual effect hooks keep a casting until the last target's effect is deleted", async () => {
  const old={game:globalThis.game,foundry:globalThis.foundry,Hooks:globalThis.Hooks};
  try {

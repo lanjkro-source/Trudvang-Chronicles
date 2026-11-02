@@ -330,6 +330,13 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   return result;
  }else effect=await actor.createTrudvangEffect(data);
  if(!effect)return null;
+ if(!resolvedCopy&&template.onApply){
+  const step=(template.parameters??[]).find(p=>p.target==="onApplyStep");
+  const count=Math.max(0,Math.trunc(Number(step?casting.counts[step.index]:0)||0));
+  const formula=template.onApply.formulas[Math.min(count,template.onApply.formulas.length-1)];
+  const result=await executeConsequences({actor,operations:[{operation:template.onApply.operation,formula}],source:effectName});
+  await announceConsequences(actor,result,effectName);
+ }
  await syncEffectGrants(effect,actor);
  await syncTransformationTokens(actor);
  return effect;

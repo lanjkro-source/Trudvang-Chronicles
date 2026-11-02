@@ -13744,6 +13744,15 @@
           "SourcePage": "116",
           "Duration": "1 minute"
         },
+        "vitner-power-of-thought:courage:2#courage": {
+          "Name": "Courage",
+          "Summary": "Fear points received: −4.",
+          "Description": "Immediately removes 1d10 fear points, then reduces fear points received for the spell’s duration.",
+          "SourceName": "Courage",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "5 minutes"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -14573,6 +14582,15 @@
           "SourcePage": "216",
           "Duration": "2 hours"
         },
+        "holy-haminges-power-of-trolls:willpower:1#volonte": {
+          "Name": "Troll Willpower",
+          "Summary": "Fear points received: −4.",
+          "Description": "Reduces fear points received from each fear factor roll by 4.",
+          "SourceName": "Willpower",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Troll Strength (Power of the Thurses)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
@@ -15265,6 +15283,7 @@
       "SpeechListeners": "Understands the language; speech translated for {value} creature(s).",
       "AnimalLinkRange": "Link to one animal: range {value} m.",
       "AimBonus": "Ranged attacks: +{value}.",
+      "FearReduction": "Fear points received: {value}.",
       "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",
