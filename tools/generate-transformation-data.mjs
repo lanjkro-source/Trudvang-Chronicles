@@ -8,7 +8,7 @@ const lang=Object.fromEntries(["fr","en"].map(c=>[c,read(`lang/${c}.json`)]));
 const registry={}, bySource={};
 const references={fr:[],en:[]};
 const powerIds=new Set(read("game doc/fr/trudvang-powers-fr.json").map(p=>p.catalogId));
-const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange","instant","onApplyStep","note"]);
+const parameterTargets=new Set(["duration","vitality","temporaryHP","protection","outerProtection","damage","traitDegrees","traitValue","modifier","fearFactor","attackStep","senseRange","instant","onApplyStep","summaryPart","note"]);
 const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.effectParameters??[]).filter(p=>!p.templates||p.templates.includes(t.id)).map(p=>entry.catalogId?resolvePowerOptionReference(entry,p):p);
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
@@ -38,6 +38,12 @@ for(const kind of ["powers","feats"]){
    if(!translated)throw Error(`Missing EN effect ${key}`);
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
+   if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
+   if(t.summaryParts){
+    const s=t.summaryParts,keys=[s.labelKey,s.overrideKey,...(s.parts??[]).flatMap(p=>[p.singularKey,p.pluralKey])];
+    const indices=[s.overrideIndex,...(s.parts??[]).map(p=>p.index)];
+    if(!Array.isArray(s.parts)||!s.parts.length||keys.some(k=>typeof k!=="string"||!["fr","en"].every(c=>k.split(".").reduce((v,p)=>v?.[p],lang[c])))||indices.some(i=>!Number.isInteger(i)||!(entry.effectParameters??[]).some(p=>p.target==="summaryPart"&&p.index===i)))throw Error(`Invalid summary components for ${key}`);
+   }
    if(t.onApply&&(!["fearReduction"].includes(t.onApply.operation)||!Array.isArray(t.onApply.formulas)||!t.onApply.formulas.length||!t.onApply.formulas.every(formula=>/^\d+d\d+(?:x>=\d+)?(?:\s*\+\s*\d+)?$/i.test(formula))))throw Error(`Invalid application consequence for ${key}`);
    if(t.instant&&(!["heal"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
    if(!t.summary?.trim()||!translated.summary?.trim())throw Error(`Missing effect summary ${key}`);

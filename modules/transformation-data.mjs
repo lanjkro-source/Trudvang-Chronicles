@@ -294,6 +294,126 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-thought:telepathy:4#lien": {
+    "id": "lien",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-power-of-thought:telepathy:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:telepathy:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-power-of-thought:telepathy:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:telepathy:4:2"
+      }
+    ]
+  },
+  "vitner-power-of-thought:imagining:6#pensee": {
+    "id": "pensee",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.ImplantedThought",
+    "sourceId": "vitner-power-of-thought:imagining:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:imagining:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:imagining:6:1"
+      }
+    ]
+  },
+  "vitner-power-of-thought:memory:7#memoire": {
+    "id": "memoire",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "summaryParts": {
+      "labelKey": "TRUDVANG.Transformation.MemoryWindow",
+      "overrideIndex": 4,
+      "overrideKey": "TRUDVANG.Transformation.MemoryLifetime",
+      "parts": [
+        {
+          "index": 1,
+          "base": 1,
+          "singularKey": "TRUDVANG.Transformation.MemoryWeekOne",
+          "pluralKey": "TRUDVANG.Transformation.MemoryWeekMany"
+        },
+        {
+          "index": 2,
+          "singularKey": "TRUDVANG.Transformation.MemoryMonthOne",
+          "pluralKey": "TRUDVANG.Transformation.MemoryMonthMany"
+        },
+        {
+          "index": 3,
+          "singularKey": "TRUDVANG.Transformation.MemoryYearOne",
+          "pluralKey": "TRUDVANG.Transformation.MemoryYearMany"
+        }
+      ]
+    },
+    "sourceId": "vitner-power-of-thought:memory:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-power-of-thought:memory:7:0"
+      },
+      {
+        "index": 1,
+        "target": "summaryPart",
+        "value": 1,
+        "optionId": "vitner-power-of-thought:memory:7:1"
+      },
+      {
+        "index": 2,
+        "target": "summaryPart",
+        "value": 1,
+        "optionId": "vitner-power-of-thought:memory:7:2"
+      },
+      {
+        "index": 3,
+        "target": "summaryPart",
+        "value": 1,
+        "optionId": "vitner-power-of-thought:memory:7:3"
+      },
+      {
+        "index": 4,
+        "target": "summaryPart",
+        "value": 1,
+        "optionId": "vitner-power-of-thought:memory:7:4"
+      }
+    ]
+  },
   "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -6747,6 +6867,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-power-of-thought:courage:2": [
     "vitner-power-of-thought:courage:2#courage"
+  ],
+  "vitner-power-of-thought:telepathy:4": [
+    "vitner-power-of-thought:telepathy:4#lien"
+  ],
+  "vitner-power-of-thought:imagining:6": [
+    "vitner-power-of-thought:imagining:6#pensee"
+  ],
+  "vitner-power-of-thought:memory:7": [
+    "vitner-power-of-thought:memory:7#memoire"
   ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",

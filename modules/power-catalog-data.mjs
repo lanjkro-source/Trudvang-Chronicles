@@ -9213,6 +9213,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:imagining:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:imagining:6:0",
@@ -9241,6 +9245,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:memory:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:memory:7:0",
@@ -9345,6 +9353,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:telepathy:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-thought:telepathy:4:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:telepathy:4:0",

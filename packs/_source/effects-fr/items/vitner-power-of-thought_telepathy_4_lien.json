@@ -1,0 +1,45 @@
+{
+  "_id": "BQJ1hiMhNiOjPkQl",
+  "_key": "!items!BQJ1hiMhNiOjPkQl",
+  "name": "Lien télépathique",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:telepathy:4#lien",
+    "description": "Les personnes liées peuvent échanger les pensées qu’elles choisissent de partager, quelle que soit ensuite la distance entre elles. Le sort ne permet pas de lire les pensées non partagées.",
+    "summary": "Communication mentale volontaire entre les participants liés.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "mC014ToUpVqWrXsY",
+      "_key": "!items.effects!BQJ1hiMhNiOjPkQl.mC014ToUpVqWrXsY",
+      "name": "Lien télépathique",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les personnes liées peuvent échanger les pensées qu’elles choisissent de partager, quelle que soit ensuite la distance entre elles. Le sort ne permet pas de lire les pensées non partagées.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:telepathy:4#lien",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:telepathy:4#lien",
+            "sourceId": "vitner-power-of-thought:telepathy:4",
+            "summary": "Communication mentale volontaire entre les participants liés.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

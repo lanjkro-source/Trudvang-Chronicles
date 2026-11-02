@@ -10909,6 +10909,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.SourcePage` | 116 | 177 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:courage:2#courage.Duration` | 5 minutes | 5 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.Name` | Telepathic Link | Lien télépathique |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.Description` | Linked participants can exchange thoughts they choose to share, regardless of subsequent distance. The spell does not reveal unshared thoughts. | Les personnes liées peuvent échanger les pensées qu’elles choisissent de partager, quelle que soit ensuite la distance entre elles. Le sort ne permet pas de lire les pensées non partagées. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.SourceName` | Telepathy | Télépathie |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.SourcePage` | 116 | 178 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:telepathy:4#lien.Duration` | 10 minutes | 10 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.Name` | Implanted Thought | Pensée implantée |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.Description` | The target believes the implanted thought is its own. The GM decides its reaction: the idea normally cannot overcome common sense. The target may resist with a Psyche situation roll against 8. | La cible croit que la pensée implantée est la sienne. Le MJ détermine sa réaction : une idée ne supplante généralement pas le bon sens. La cible peut résister par un test de situation de Psychisme contre 8. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.SourceName` | Imagining | Influence |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.SourcePage` | 116 | 179 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:imagining:6#pensee.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.Name` | Recovered Memory | Mémoire retrouvée |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.Description` | One event lasting up to an hour can be recalled in detail each round. Memory loss within the period is restored; recovered memories remain after the spell with less detail. The spell does not improve learning. | Un événement d’une heure au plus peut être revécu en détail par tour. Les pertes de mémoire de la période sont corrigées ; les souvenirs restaurés subsistent après le sort, avec moins de détails. Aucun apprentissage supplémentaire. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.SourceName` | Memory | Mémoire |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.SourcePage` | 116 | 179 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.Duration` | 5 action rounds | 5 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre`
 
 | Clé | English | Français |
@@ -12767,6 +12800,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.AnimalLinkRange` | Link to one animal: range {value} m. | Lien avec un animal : portée {value} m. |
 | `TRUDVANG.Transformation.AimBonus` | Ranged attacks: +{value}. | Attaques à distance : +{value}. |
 | `TRUDVANG.Transformation.FearReduction` | Fear points received: {value}. | Points de peur reçus : {value}. |
+| `TRUDVANG.Transformation.MemoryWindow` | Period remembered: {value}. | Période des souvenirs : {value}. |
+| `TRUDVANG.Transformation.MemoryWeekOne` | {value} week | {value} semaine |
+| `TRUDVANG.Transformation.MemoryWeekMany` | {value} weeks | {value} semaines |
+| `TRUDVANG.Transformation.MemoryMonthOne` | {value} month | {value} mois |
+| `TRUDVANG.Transformation.MemoryMonthMany` | {value} months | {value} mois |
+| `TRUDVANG.Transformation.MemoryYearOne` | {value} year | {value} an |
+| `TRUDVANG.Transformation.MemoryYearMany` | {value} years | {value} ans |
+| `TRUDVANG.Transformation.MemoryLifetime` | entire life | vie entière |
+| `TRUDVANG.Transformation.ImplantedThought` | Implanted thought | Pensée implantée |
 | `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |

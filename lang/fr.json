@@ -13753,6 +13753,33 @@
           "SourcePage": "177",
           "Duration": "5 minutes"
         },
+        "vitner-power-of-thought:telepathy:4#lien": {
+          "Name": "Lien télépathique",
+          "Summary": "Communication mentale volontaire entre les participants liés.",
+          "Description": "Les personnes liées peuvent échanger les pensées qu’elles choisissent de partager, quelle que soit ensuite la distance entre elles. Le sort ne permet pas de lire les pensées non partagées.",
+          "SourceName": "Télépathie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "178",
+          "Duration": "10 minutes"
+        },
+        "vitner-power-of-thought:imagining:6#pensee": {
+          "Name": "Pensée implantée",
+          "Summary": "La cible prend une pensée suggérée pour la sienne.",
+          "Description": "La cible croit que la pensée implantée est la sienne. Le MJ détermine sa réaction : une idée ne supplante généralement pas le bon sens. La cible peut résister par un test de situation de Psychisme contre 8.",
+          "SourceName": "Influence",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "179",
+          "Duration": "5 minutes"
+        },
+        "vitner-power-of-thought:memory:7#memoire": {
+          "Name": "Mémoire retrouvée",
+          "Summary": "Restaure les souvenirs récents.",
+          "Description": "Un événement d’une heure au plus peut être revécu en détail par tour. Les pertes de mémoire de la période sont corrigées ; les souvenirs restaurés subsistent après le sort, avec moins de détails. Aucun apprentissage supplémentaire.",
+          "SourceName": "Mémoire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "179",
+          "Duration": "5 tours de jeu"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -15284,6 +15311,15 @@
       "AnimalLinkRange": "Lien avec un animal : portée {value} m.",
       "AimBonus": "Attaques à distance : +{value}.",
       "FearReduction": "Points de peur reçus : {value}.",
+      "MemoryWindow": "Période des souvenirs : {value}.",
+      "MemoryWeekOne": "{value} semaine",
+      "MemoryWeekMany": "{value} semaines",
+      "MemoryMonthOne": "{value} mois",
+      "MemoryMonthMany": "{value} mois",
+      "MemoryYearOne": "{value} an",
+      "MemoryYearMany": "{value} ans",
+      "MemoryLifetime": "vie entière",
+      "ImplantedThought": "Pensée implantée",
       "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",

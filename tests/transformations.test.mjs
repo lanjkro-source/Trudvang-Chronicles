@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,125);
+ assert.equal(Object.keys(sources).length,128);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1034,4 +1034,40 @@ test("Courage reduces fear on application with its chosen open-roll step exactly
   await applyTransformation(actor,"vitner-power-of-thought:courage:2#courage",{source});
   assert.equal(formula,"");assert.equal(actor.system.resources.fear.current,5);
  }finally{globalThis.Roll=oldRoll;globalThis.ChatMessage=oldChat;}
+});
+
+test("Memory keeps each allocated time unit and lifetime takes precedence",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"5 tours de jeu"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ const id="vitner-power-of-thought:memory:7#memoire";
+ await applyTransformation(actor,id,{counts:[0,1,2,1,0]});
+ assert.match(created.flags[S].transformation.summary,/2 semaines \+ 2 mois \+ 1 an/);
+ assert.match(created.description,/2 semaines \+ 2 mois \+ 1 an/);
+ await applyTransformation(actor,id,{counts:[0,1,2,1,1]});
+ assert.match(created.flags[S].transformation.summary,/vie entière/);
+ assert.doesNotMatch(created.flags[S].transformation.summary,/mois|semaines/);
+});
+
+test("Telepathy permits bought additional targets and never grants mind reading",()=>{
+ const key="vitner-power-of-thought:telepathy:4#lien",t=templates[key];
+ assert.deepEqual(t.statuses,[]);assert.deepEqual(t.changes,[]);
+ for(const code of ["fr","en"]){const language=JSON.parse(fs.readFileSync(new URL(`../lang/${code}.json`,import.meta.url)));
+  assert.match(language.TRUDVANG.Content.Transformation[key].Description,code==="fr"?/ne permet pas de lire/:/does not reveal/);
+ }
+});
+
+test("Imagining preserves the thought and exposes a resistance test",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"5 minutes",effectInput:"La porte est sûre"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ const counts=[];counts[2]=2;
+ await applyTransformation(actor,"vitner-power-of-thought:imagining:6#pensee",{counts});
+ assert.match(created.description,/La porte est sûre/);assert.match(created.flags[S].transformation.summary,/La porte est sûre/);
+ assert.match(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
+ assert.equal(created.flags[S].transformation.ruleTestContext.countsById["vitner-power-of-thought:imagining:6:2"],2);
 });

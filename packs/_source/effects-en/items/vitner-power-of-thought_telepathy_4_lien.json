@@ -1,0 +1,45 @@
+{
+  "_id": "BQJ1hiMhNiOjPkQl",
+  "_key": "!items!BQJ1hiMhNiOjPkQl",
+  "name": "Telepathic Link",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:telepathy:4#lien",
+    "description": "Linked participants can exchange thoughts they choose to share, regardless of subsequent distance. The spell does not reveal unshared thoughts.",
+    "summary": "Voluntary mental communication among the linked participants.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "mC014ToUpVqWrXsY",
+      "_key": "!items.effects!BQJ1hiMhNiOjPkQl.mC014ToUpVqWrXsY",
+      "name": "Telepathic Link",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Linked participants can exchange thoughts they choose to share, regardless of subsequent distance. The spell does not reveal unshared thoughts.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:telepathy:4#lien",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:telepathy:4#lien",
+            "sourceId": "vitner-power-of-thought:telepathy:4",
+            "summary": "Voluntary mental communication among the linked participants.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

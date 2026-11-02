@@ -1,0 +1,45 @@
+{
+  "_id": "NQTzLVpVqWrXsYtZ",
+  "_key": "!items!NQTzLVpVqWrXsYtZ",
+  "name": "Mémoire retrouvée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:memory:7#memoire",
+    "description": "Un événement d’une heure au plus peut être revécu en détail par tour. Les pertes de mémoire de la période sont corrigées ; les souvenirs restaurés subsistent après le sort, avec moins de détails. Aucun apprentissage supplémentaire.",
+    "summary": "Restaure les souvenirs récents.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 179
+    }
+  },
+  "effects": [
+    {
+      "_id": "yhYFPVoUpVqWrXsY",
+      "_key": "!items.effects!NQTzLVpVqWrXsYtZ.yhYFPVoUpVqWrXsY",
+      "name": "Mémoire retrouvée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Un événement d’une heure au plus peut être revécu en détail par tour. Les pertes de mémoire de la période sont corrigées ; les souvenirs restaurés subsistent après le sort, avec moins de détails. Aucun apprentissage supplémentaire.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:memory:7#memoire",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:memory:7#memoire",
+            "sourceId": "vitner-power-of-thought:memory:7",
+            "summary": "Restaure les souvenirs récents.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

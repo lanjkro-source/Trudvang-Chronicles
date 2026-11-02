@@ -13753,6 +13753,33 @@
           "SourcePage": "116",
           "Duration": "5 minutes"
         },
+        "vitner-power-of-thought:telepathy:4#lien": {
+          "Name": "Telepathic Link",
+          "Summary": "Voluntary mental communication among the linked participants.",
+          "Description": "Linked participants can exchange thoughts they choose to share, regardless of subsequent distance. The spell does not reveal unshared thoughts.",
+          "SourceName": "Telepathy",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "10 minutes"
+        },
+        "vitner-power-of-thought:imagining:6#pensee": {
+          "Name": "Implanted Thought",
+          "Summary": "The target believes the suggested thought is its own.",
+          "Description": "The target believes the implanted thought is its own. The GM decides its reaction: the idea normally cannot overcome common sense. The target may resist with a Psyche situation roll against 8.",
+          "SourceName": "Imagining",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "5 minutes"
+        },
+        "vitner-power-of-thought:memory:7#memoire": {
+          "Name": "Recovered Memory",
+          "Summary": "Restores recent memories.",
+          "Description": "One event lasting up to an hour can be recalled in detail each round. Memory loss within the period is restored; recovered memories remain after the spell with less detail. The spell does not improve learning.",
+          "SourceName": "Memory",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "5 action rounds"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -15284,6 +15311,15 @@
       "AnimalLinkRange": "Link to one animal: range {value} m.",
       "AimBonus": "Ranged attacks: +{value}.",
       "FearReduction": "Fear points received: {value}.",
+      "MemoryWindow": "Period remembered: {value}.",
+      "MemoryWeekOne": "{value} week",
+      "MemoryWeekMany": "{value} weeks",
+      "MemoryMonthOne": "{value} month",
+      "MemoryMonthMany": "{value} months",
+      "MemoryYearOne": "{value} year",
+      "MemoryYearMany": "{value} years",
+      "MemoryLifetime": "entire life",
+      "ImplantedThought": "Implanted thought",
       "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",

@@ -1,0 +1,45 @@
+{
+  "_id": "NQTzLVpVqWrXsYtZ",
+  "_key": "!items!NQTzLVpVqWrXsYtZ",
+  "name": "Recovered Memory",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:memory:7#memoire",
+    "description": "One event lasting up to an hour can be recalled in detail each round. Memory loss within the period is restored; recovered memories remain after the spell with less detail. The spell does not improve learning.",
+    "summary": "Restores recent memories.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "yhYFPVoUpVqWrXsY",
+      "_key": "!items.effects!NQTzLVpVqWrXsYtZ.yhYFPVoUpVqWrXsY",
+      "name": "Recovered Memory",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "One event lasting up to an hour can be recalled in detail each round. Memory loss within the period is restored; recovered memories remain after the spell with less detail. The spell does not improve learning.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:memory:7#memoire",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:memory:7#memoire",
+            "sourceId": "vitner-power-of-thought:memory:7",
+            "summary": "Restores recent memories.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

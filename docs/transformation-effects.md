@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 170 variantes.
+les états, les règles et les liens des 173 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
