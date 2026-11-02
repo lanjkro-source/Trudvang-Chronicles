@@ -996,11 +996,11 @@ export async function fixedAttackDialog({title, baseVC = 0, targets = [], target
  * Ask for a Situation Value (SV) without requiring any actor: the dialog used by
  * the generic situation-roll macro and by `game.trudvang.rollGenericSituation()`.
  */
-export async function genericSituationDialog({defaultTarget = 10, modifierRows = []} = {}) {
+export async function genericSituationDialog({defaultTarget = 10, modifierRows = [], defaultLabel = ""} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
     <div class="trudvang roll-dialog">
-      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(defaultLabel || game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationSV"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
       ${modifierList(modifierRows)}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationModifier"))}</label><input name="modifier" type="number" value="0"></div>
@@ -1056,16 +1056,16 @@ export async function genericSituationDialog({defaultTarget = 10, modifierRows =
  * resolution: selected token actor, then the user's character, then a fallback
  * on the current user. Natural 1 always succeeds, natural 20 always fails.
  */
-export async function rollGenericSituation({target, label, modifier} = {}) {
+export async function rollGenericSituation({target, label, modifier, actor: requestedActor, bonusRows = [], defaultLabel = ""} = {}) {
   // Fix the performer before opening the dialog: displayed states and the
   // resulting roll must belong to the same actor even if selection changes.
-  const actor = globalThis.canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
-  const modifierRows = actor ? [...(actor.rollEffectRows?.({kind: "situation"}) ?? []), ...actorStateRollModifiers(actor)] : [];
+  const actor = requestedActor ?? globalThis.canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
+  const modifierRows = [...(actor ? [...(actor.rollEffectRows?.({kind: "situation"}) ?? []), ...actorStateRollModifiers(actor)] : []), ...bonusRows];
   let situationTarget = target;
   let situationLabel = label;
   let situationModifier = modifier;
   if (situationTarget === undefined && situationLabel === undefined && situationModifier === undefined) {
-    const answered = await genericSituationDialog({modifierRows});
+    const answered = await genericSituationDialog({modifierRows, defaultLabel});
     if (!answered) return null;
     ({target: situationTarget, label: situationLabel, modifier: situationModifier} = answered);
   }

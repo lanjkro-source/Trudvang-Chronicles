@@ -1061,3 +1061,15 @@ test("carried item effects cannot be deleted from actor or item sheets while sta
  for(const file of ["character-sheet","npc-sheet"]){const source=readFileSync(new URL(`../templates/actor/${file}.hbs`,import.meta.url),"utf8");assert.match(source,/\{\{#if effect\.canDelete\}\}<button type="button" data-action="effect-delete"/);}
  const itemSheet=readFileSync(new URL("../templates/item/item-sheet.hbs",import.meta.url),"utf8");assert.match(itemSheet,/\{\{#if effect\.canDelete\}\}<button type="button" data-action="effect-delete"/);
 });
+
+test("conditional situation buttons belong to the effect owner and sit outside the editor",async()=>{
+ const id="holy-gerbanis-warmth-of-sunvei:healing-warmth:5",actor={documentName:"Actor",isOwner:true};
+ const effect={uuid:"Actor.a.ActiveEffect.healing",isOwner:true,parent:actor,description:"<p>Test</p>",_source:{},statuses:[],duration:{},flags:{"trudvang-chronicles":{transformation:{key:`${id}#chaleur-guerisseuse`,sourceId:id,ruleTestContext:{countsById:{[`${id}:1`]:2}}}}}};
+ const sheet=sheetFor(effect),context=await sheet._preparePartContext("details",{});
+ assert.equal(context.conditionalSituationButtons.length,1);assert.equal(context.conditionalSituationButtons[0].index,0);
+ const template=readFileSync(new URL("../templates/effect/details.hbs",import.meta.url),"utf8");
+ assert.ok(template.indexOf('data-action="roll-conditional-situation"')>template.indexOf('</prose-mirror>'));
+ effect.disabled=true;assert.equal((await sheet._preparePartContext("details",{})).conditionalSituationButtons.length,0);
+ effect.disabled=false;actor.isOwner=false;assert.equal((await sheet._preparePartContext("details",{})).conditionalSituationButtons.length,0);
+ assert.equal(await TrudvangEffectSheet.onRollConditionalSituation.call(sheet,{preventDefault(){}},{dataset:{index:"0"}}),null);
+});

@@ -279,5 +279,6 @@ un rappel à gérer manuellement, en l'absence d'un état de saignement dédié.
 Chaleur guérisseuse et Souffle de Solvei ou de Sille améliorent automatiquement
 la récupération pendant le repos. Le bonus conditionnel pour vaincre une
 maladie, neutraliser un poison ou dissiper une malédiction est calculé et
-inscrit sur l'effet, mais doit être ajouté manuellement au jet approprié ; il
-ne modifie pas tous les jets de situation. La rupture du repos reste manuelle.
+inscrit sur l'effet et un bouton ouvre un jet de situation avec ce bonus ; il
+ne modifie pas tous les jets de situation. Le joueur renseigne la valeur et le
+trait applicables à l'affection dans la fenêtre. La rupture du repos reste manuelle.

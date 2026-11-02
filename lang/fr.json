@@ -14920,8 +14920,8 @@
     "Transformation": {
       "DragHint": "Glisser sur un acteur ou cliquer pour appliquer",
       "AllocationTargets": "Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles.",
-      "HealingDiseaseNote": "Bonus au test pour vaincre la maladie : +{value}. À appliquer manuellement.",
-      "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. À appliquer manuellement.",
+      "HealingDiseaseNote": "Bonus au test pour vaincre la maladie : +{value}.",
+      "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",
       "Cancel": "Annuler",

@@ -182,3 +182,12 @@ test("the generic situation macro applies states from the controlled actor or as
   assert.equal(cards.at(-1).flavor, "");
   assert.ok(messages.every(message => message.rolls[0].formula === "1d20"));
 });
+
+test("conditional situation bonus uses its effect actor instead of the selected token",async()=>{
+ const messages=[];globalThis.Roll=class {constructor(formula){this.formula=formula;}async evaluate(){this.total=8;}};
+ globalThis.ChatMessage={getSpeaker:({actor}={})=>({actor:actor?.uuid}),create:async data=>messages.push(data)};
+ const patient={name:"Patient",uuid:"Actor.patient",items:[],system:{damage:{penalty:-2},fearPenalty:0}},other={name:"Other",uuid:"Actor.other",items:[],system:{damage:{penalty:0},fearPenalty:0}};
+ globalThis.canvas={tokens:{controlled:[{actor:other}]}};game.user={name:"User",character:null};
+ const result=await rollGenericSituation({target:10,actor:patient,bonusRows:[{label:"Healing Warmth",value:5}]});
+ assert.equal(result.target,13);assert.match(cards.at(-1).flavor,/Healing Warmth: \+5/);assert.equal(messages[0].speaker.actor,"Actor.patient");
+});

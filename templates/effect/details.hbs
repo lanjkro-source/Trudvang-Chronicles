@@ -3,6 +3,7 @@
     <legend>{{localize "EFFECT.Description"}}</legend>
 
     <div class="form-group stacked editor-container">{{#if editable}}<prose-mirror name="description" button="true" value="{{description}}" data-document-uuid="{{documentUuid}}" toggled>{{{enrichedDescription}}}</prose-mirror>{{else}}<div class="editor-content">{{{enrichedDescription}}}</div>{{/if}}</div>
+    {{#if conditionalSituationButtons}}<div class="trudvang-transformation-links">{{#each conditionalSituationButtons}}<button type="button" data-action="roll-conditional-situation" data-index="{{index}}"><i class="fas fa-dice-d20"></i> {{label}}</button>{{/each}}</div>{{/if}}
     {{#if editable}}<button type="button" data-action="saveDescription" title="{{localize 'TRUDVANG.Effect.SaveDescription'}}"><i class="fa-solid fa-floppy-disk"></i> {{localize "TRUDVANG.Effect.SaveDescription"}}</button>{{/if}}
   </fieldset>
   <fieldset>

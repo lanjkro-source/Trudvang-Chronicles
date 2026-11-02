@@ -5,6 +5,7 @@ import {effectChangesSource} from "../rules/effect-source.mjs";
 import {isGradedEffect, isGradedState, effectDegree} from "../rules/effect-stacking.mjs";
 import {normalizeEffectDuration, normalizeEffectStage} from "../rules/effect-duration.mjs";
 import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
+import {conditionalSituationBonuses} from "../rules/effect-conditional-tests.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -38,7 +39,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       addChange: TrudvangEffectSheet.onAddChange,
       deleteChange: TrudvangEffectSheet.onDeleteChange,
       saveDescription: TrudvangEffectSheet.onSaveDescription,
-      "roll-rule-test": TrudvangEffectSheet.onRollRuleTest
+      "roll-rule-test": TrudvangEffectSheet.onRollRuleTest,
+      "roll-conditional-situation": TrudvangEffectSheet.onRollConditionalSituation
     }
   };
 
@@ -95,6 +97,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         this.document.description || "",
         {async: true, secrets: this.document.isOwner}
       ), this.document);
+      partContext.conditionalSituationButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
+        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,label:`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
       partContext.origin = this.document.origin || "";
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
@@ -311,6 +315,14 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static async onRollRuleTest(event, target) {
     event.preventDefault();
     return performRuleTest({document: this.document, index: target.dataset.testIndex});
+  }
+
+  static async onRollConditionalSituation(event, target) {
+    event.preventDefault();
+    const actor=this.document.parent, bonus=conditionalSituationBonuses(this.document)[Number(target.dataset.index)];
+    if(actor?.documentName!=="Actor" || !actor.isOwner || !bonus)return null;
+    const {rollGenericSituation}=await import("../dice.mjs");
+    return rollGenericSituation({actor,defaultLabel:this.document.name,bonusRows:[{label:this.document.name,value:bonus.value}]});
   }
 
   /* ------------------------------------------------------------------ */

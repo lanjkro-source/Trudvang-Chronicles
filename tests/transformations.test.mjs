@@ -800,3 +800,11 @@ test("a linked recovery is independent of the original casting target reservatio
   assert.equal(created.flags[S].transformation.key,childKey);
  }finally {globalThis.game=prior.game;foundry.applications.api.DialogV2.wait=prior.dialog;}
 });
+
+test("conditional healing bonus reads the originating frozen levels and disappears when disabled",async()=>{
+ const {conditionalSituationBonuses}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="holy-gerbanis-warmth-of-sunvei:healing-warmth:5",effect={flags:{"trudvang-chronicles":{transformation:{key:`${id}#chaleur-guerisseuse`,sourceId:id,ruleTestContext:{countsById:{[`${id}:1`]:2}}}}}};
+ assert.deepEqual(conditionalSituationBonuses(effect).map(row=>row.value),[5]);
+ effect.disabled=true;assert.deepEqual(conditionalSituationBonuses(effect),[]);
+ effect.disabled=false;effect.duration={expired:true};assert.deepEqual(conditionalSituationBonuses(effect),[]);
+});

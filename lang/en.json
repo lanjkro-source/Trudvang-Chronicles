@@ -14920,8 +14920,8 @@
     "Transformation": {
       "DragHint": "Drag onto an actor or click to apply",
       "AllocationTargets": "Targets already affected: {used} / {max}. Distribute power levels among targets.",
-      "HealingDiseaseNote": "Bonus to the test to overcome the disease: +{value}. Apply manually.",
-      "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}. Apply manually.",
+      "HealingDiseaseNote": "Bonus to the test to overcome the disease: +{value}.",
+      "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",
       "Cancel": "Cancel",
