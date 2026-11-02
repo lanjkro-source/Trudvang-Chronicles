@@ -1,0 +1,53 @@
+{
+  "_id": "u50sJ0u0v1w2x3y4",
+  "_key": "!items!u50sJ0u0v1w2x3y4",
+  "name": "Weapon Prowess",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+    "description": "Grants 5 free Combat Points per round for the duration of the power.",
+    "summary": "Grants 5 free Combat Points.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "BTLl1D6B7C8D9EaG",
+      "_key": "!items.effects!u50sJ0u0v1w2x3y4.BTLl1D6B7C8D9EaG",
+      "name": "Weapon Prowess",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants 5 free Combat Points per round for the duration of the power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.combatMax",
+            "type": "add",
+            "value": "5",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+            "sourceId": "holy-haminges-power-of-men:weapon-prowess:5",
+            "summary": "Grants 5 free Combat Points.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

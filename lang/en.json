@@ -14518,6 +14518,15 @@
           "Duration": "1 minute",
           "Sense0": "Accomplished"
         },
+        "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
+          "Name": "Weapon Prowess",
+          "Summary": "Grants 5 free Combat Points.",
+          "Description": "Grants 5 free Combat Points per round for the duration of the power.",
+          "SourceName": "Weapon Prowess",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": "4 action rounds"
+        },
         "holy-haminges-power-of-men:dwarven-smith:6#forge": {
           "Name": "Dwarven Smith",
           "Summary": "Chosen Handicraft specialty: +6.",

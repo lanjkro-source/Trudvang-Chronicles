@@ -3524,6 +3524,32 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
+    "id": "prouesse",
+    "icon": "icons/svg/aura.svg",
+    "duration": "4 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.combatMax",
+        "type": "add",
+        "value": "5",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "sourceId": "holy-haminges-power-of-men:weapon-prowess:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-haminges-power-of-men:weapon-prowess:5:0"
+      }
+    ]
+  },
   "holy-haminges-power-of-men:dwarven-smith:6#forge": {
     "id": "forge",
     "icon": "icons/svg/aura.svg",
@@ -6558,6 +6584,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-men:sight-of-the-dwarves:0": [
     "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains"
+  ],
+  "holy-haminges-power-of-men:weapon-prowess:5": [
+    "holy-haminges-power-of-men:weapon-prowess:5#prouesse"
   ],
   "holy-haminges-power-of-men:dwarven-smith:6": [
     "holy-haminges-power-of-men:dwarven-smith:6#forge"

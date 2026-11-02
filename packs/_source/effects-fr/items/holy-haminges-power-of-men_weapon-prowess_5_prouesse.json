@@ -1,0 +1,53 @@
+{
+  "_id": "u50sJ0u0v1w2x3y4",
+  "_key": "!items!u50sJ0u0v1w2x3y4",
+  "name": "Prouesse martiale",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+    "description": "Accorde 5 points de combat libres par tour pendant la durée du pouvoir.",
+    "summary": "Accorde 5 points de combat libres.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 273
+    }
+  },
+  "effects": [
+    {
+      "_id": "BTLl1D6B7C8D9EaG",
+      "_key": "!items.effects!u50sJ0u0v1w2x3y4.BTLl1D6B7C8D9EaG",
+      "name": "Prouesse martiale",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Accorde 5 points de combat libres par tour pendant la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.combatMax",
+            "type": "add",
+            "value": "5",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:weapon-prowess:5#prouesse",
+            "sourceId": "holy-haminges-power-of-men:weapon-prowess:5",
+            "summary": "Accorde 5 points de combat libres.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

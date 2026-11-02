@@ -14518,6 +14518,15 @@
           "Duration": "1 minute",
           "Sense0": "Vision des nains"
         },
+        "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
+          "Name": "Prouesse martiale",
+          "Summary": "Accorde 5 points de combat libres.",
+          "Description": "Accorde 5 points de combat libres par tour pendant la durée du pouvoir.",
+          "SourceName": "Prouesse martiale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "273",
+          "Duration": "4 tours de jeu"
+        },
         "holy-haminges-power-of-men:dwarven-smith:6#forge": {
           "Name": "Forgeron nain",
           "Summary": "Spécialité d’Artisanat choisie : +6.",

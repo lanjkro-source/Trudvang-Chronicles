@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import {TRANSFORMATION_TEMPLATES} from "../modules/transformation-data.mjs";
 
 import {
   ARMOR_ENCUMBRANCE_PENALTIES,
@@ -465,6 +466,16 @@ test("Battle Experience contributes to free CP while linked pools retain distinc
   assert.equal(result.pools.find(pool => pool.id === "combatActions").max, 6);
   assert.equal(result.pools.find(pool => pool.id === "shieldParry").max, 4);
   assert.deepEqual(result.active.slice(0, 3).map(pool => pool.id), ["free", "combatActions", "attacksParries"]);
+});
+
+test("Weapon Prowess adds its combat points to both free-hand capacities",()=>{
+  const effect=TRANSFORMATION_TEMPLATES["holy-haminges-power-of-men:weapon-prowess:5#prouesse"];
+  const change=effect.changes.find(row=>row.key==="system.modifiers.combatMax");
+  assert.equal(change.type,"add");assert.equal(Number(change.value),5);
+  const actor=combatActor({}, {fighting:9});
+  assert.equal(resolveCombatPools({actor}).pools.find(pool=>pool.id==="free").max,9);
+  actor.system.modifiers.combatMax=Number(change.value);
+  assert.equal(resolveCombatPools({actor}).pools.find(pool=>pool.id==="free").max,14);
 });
 
 test("a light-weapon attack exposes only compatible pools", () => {

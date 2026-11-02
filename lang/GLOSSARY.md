@@ -11840,6 +11840,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0` | Accomplished | Vision des nains |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.Name` | Weapon Prowess | Prouesse martiale |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.Description` | Grants 5 free Combat Points per round for the duration of the power. | Accorde 5 points de combat libres par tour pendant la durée du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.SourceName` | Weapon Prowess | Prouesse martiale |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.SourcePage` | 216 | 273 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse.Duration` | 4 action rounds | 4 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge`
 
 | Clé | English | Français |
