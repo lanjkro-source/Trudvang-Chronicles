@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {auraCasterToken,auraRadius,auraLightUpdate,reconcileAuraToken,registerAuraSupport} from "../modules/aura.mjs";
+import {auraCasterToken,auraRadius,auraLightUpdate,auraColor,reconcileAuraToken,registerAuraSupport} from "../modules/aura.mjs";
 const S="trudvang-chronicles",id="holy-tenetnid-tablet-of-the-sun:thermal-light:3";
 const deletion=Symbol("delete");
 globalThis.game={users:{activeGM:{isSelf:true}},i18n:{localize:key=>key,format:(key,values)=>`${key}: ${values.value??values.name}`}};
@@ -12,6 +12,10 @@ function keys(a){return a.effects[0].system.changes.map(change=>change.key);}
 test("caster selection is unambiguous and the purchased radius is preserved",()=>{
  const a=actor("Actor.c"),b=actor("Actor.b"),t={uuid:"Token.c",actor:a},u={uuid:"Token.u",actor:a};
  assert.equal(auraCasterToken(a,[{document:t}],[u]),t);assert.equal(auraCasterToken(a,[],[t,u]),null);assert.equal(auraCasterToken(a,[],[{actor:b}]),null);assert.equal(auraRadius(source),5);
+});
+test("aura colour is a neutral grey derived from the current palette",()=>{
+ const previous=globalThis.getComputedStyle;globalThis.getComputedStyle=()=>({getPropertyValue:key=>key==="--trudvang-muted"?"#733b2d":"#f4ecd9"});
+ try{assert.match(auraColor(),/^#([0-9a-f]{2})\1\1$/);assert.notEqual(auraColor(),"#733b2d");}finally{globalThis.getComputedStyle=previous;}
 });
 test("light preserves stronger sources, overlapping radii, and manual changes",()=>{
  let token={light:{bright:1,dim:4},flags:{}};const first=auraLightUpdate(token,[2]);
@@ -66,7 +70,7 @@ test("a source creates an attached wall-restricted region and restores the caste
  }};
  scene.tokens=[token,{id:"other",actor:child}];foundry.utils.fromUuid=async uuid=>uuid===token.uuid?token:marker;
  await synchronizeAuraSource(marker);
- assert.equal(regionData.attachment.token,"c");assert.deepEqual(regionData.restriction,{enabled:true,type:"light"});assert.equal(regionData.shapes[0].radius,500);assert.equal(regionData.behaviors[0].type,"trudvangAura");assert.equal(regionData.highlightMode,"coverage");assert.equal(regionData.visibility,2);assert.equal(token.light.bright,5);assert.equal(token.light.dim,5);
+ assert.equal(regionData.attachment.token,"c");assert.deepEqual(regionData.restriction,{enabled:true,type:"light"});assert.equal(regionData.shapes[0].radius,500);assert.equal(regionData.behaviors[0].type,"trudvangAura");assert.equal(regionData.highlightMode,"coverage");assert.equal(regionData.visibility,2);assert.match(regionData.color,/^#([0-9a-f]{2})\1\1$/);assert.equal(token.light.bright,5);assert.equal(token.light.dim,5);
  assert.equal(a.effects.length,2);assert.match(a.effects[1].name,/AllyName/);
  child.effects=[{id:"child",flags:{[S]:{auraRecipient:{regionUuid:scene.regions[0].uuid}}}}];a.effects=[];
  await synchronizeAuraSource(marker,{removed:true});assert.equal(scene.regions.length,0);assert.equal(child.effects.length,0);assert.equal(token.light.bright,1);assert.equal(token.light.dim,3);

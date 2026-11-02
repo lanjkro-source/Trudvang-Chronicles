@@ -34,9 +34,16 @@ export function auraBonusDescription(changes){
  if(!Number.isFinite(value))return "";
  return game.i18n.format("TRUDVANG.Aura.EffectiveBonus",{value:value>=0?`+${value}`:String(value)});
 }
-function auraColor(){
- const value=globalThis.getComputedStyle?.(globalThis.document?.documentElement)?.getPropertyValue("--trudvang-accent")?.trim();
- return /^#[\da-f]{6}$/i.test(value??"")?value:"#733b2d";
+export function auraColor(){
+ const style=globalThis.getComputedStyle?.(globalThis.document?.documentElement);
+ const grayscale=(property,fallback)=>{
+  const hex=style?.getPropertyValue(property)?.trim();
+  if(!/^#[\da-f]{6}$/i.test(hex??""))return fallback;
+  const rgb=[1,3,5].map(offset=>parseInt(hex.slice(offset,offset+2),16));
+  return Math.round(rgb[0]*0.2126+rgb[1]*0.7152+rgb[2]*0.0722);
+ };
+ const value=Math.round((grayscale("--trudvang-muted",100)+grayscale("--trudvang-paper-light",235))/2);
+ const channel=value.toString(16).padStart(2,"0");return `#${channel}${channel}${channel}`;
 }
 function metresToSceneUnits(scene,value){const units=String(scene?.grid?.units??"m").toLowerCase();return value*(/^(ft|feet|foot|pi|pieds?)$/.test(units)?1/0.3048:/^(km|kilom)/.test(units)?0.001:1);}
 
@@ -135,6 +142,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
   if(regions[0].highlightMode!=="coverage")update.highlightMode="coverage";
   if(regions[0].visibility!==CONST.REGION_VISIBILITY.ALWAYS)update.visibility=CONST.REGION_VISIBILITY.ALWAYS;
+  if(String(regions[0].color??"").toLowerCase()!==auraColor())update.color=auraColor();
   if(Object.keys(update).length)await regions[0].update(update);
   for(const region of regions.slice(1))await region.delete();
   for(const target of regions[0].tokens??[])await reconcileAuraToken(regions[0],target);

@@ -37,6 +37,28 @@ Lueur de l'aube produit une lumière mobile de rayon connu ; son effet reste à 
 Les autres sources lumineuses non assimilables à une aura sont recensées dans
 `inventaire-effets-lumineux.md` et seront traitées séparément.
 
+## Capacités du bestiaire à portée ou à zone
+
+Les capacités suivantes sont présentes dans le catalogue des créatures, mais leurs
+zones et conséquences ne sont pas automatisées par le mécanisme d'aura :
+
+- **Puanteur terrifiante** (bête épineuse, p. 18) : peur à moins de 5 m, avec
+  exception pour les personnes habituées. L'odeur est perceptible jusqu'à 50 m.
+- **Puanteur du bein** (beinbaiter, p. 36) : exposition à moins de 5 m, durée
+  persistante dépendant du temps d'exposition ; la victime devient à son tour
+  une source de puanteur jusqu'à 10 m.
+- **Vecteur de maladies** (troll malade, p. 151) : test à moins de 2 m, immunité
+  d'un mois en cas de réussite et table de conséquences persistantes en cas d'échec.
+- **Surchauffe** (logewurm, p. 124) : activation et durée limitées, dégâts
+  répétés avec deux zones de 10 et 20 m et jets ouverts différents.
+- **Puanteur envoûtante**, **Hurlement**, **Hurlement funeste** et **Hurlement
+  sauvage** : dépendent notamment de l'odorat ou de l'ouïe, de résistances et,
+  selon le cas, d'une activation ou d'effets persistants. Ne pas les assimiler
+  sans vérification à un simple bonus retiré à la sortie d'un cercle.
+
+Les facteurs de peur des créatures disposent déjà de leur jet et de son application
+manuelle, mais ne créent pas une aura automatique générale.
+
 Cri de guerre et Tonnerre victorieux distinguent alliés et ennemis à portée lors de l’application ; leur texte ne dit pas que l’effet s’interrompt dès qu’une cible quitte une aura. Ne pas leur appliquer automatiquement une région mobile sans vérifier cette règle.
 
 Œil d’Enken (p. 226) et Regard de l’âme (p. 225) sont des capacités de perception, pas des auras appliquant un effet aux personnages détectés. La distinction entre détection de tokens et révélation du décor à travers les murs reste à traiter avec le MJ.
