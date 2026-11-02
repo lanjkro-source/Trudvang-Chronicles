@@ -6,12 +6,12 @@ export const roundEffectValue = value => Math.round((value + Number.EPSILON) * 1
 export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegrity", "naturalArmor",
   "movement", "testFactor", "traits", "chooseBestiary", "formPolicy", "formName", "senses",
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
-  "ignoreFear", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
+  "ignoreFear", "ignoreFearPenalty", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
   "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection"];
 const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds"]);
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge"]);
-const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
+const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreFearPenalty","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
 const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){

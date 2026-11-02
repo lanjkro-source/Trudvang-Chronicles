@@ -1,0 +1,45 @@
+{
+  "_id": "zlkHiRjPkQlRmSnT",
+  "_key": "!items!zlkHiRjPkQlRmSnT",
+  "name": "Soul Sight",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+    "description": "The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 10-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view e verything that is happening within range. This means that objects such as walls are unable to block the vision of the S tormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +5 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps.",
+    "summary": "Soul Sight",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "2O6dZdGbHcIdJeKf",
+      "_key": "!items.effects!zlkHiRjPkQlRmSnT.2O6dZdGbHcIdJeKf",
+      "name": "Soul Sight",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 10-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view e verything that is happening within range. This means that objects such as walls are unable to block the vision of the S tormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +5 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+            "sourceId": "holy-gerbanis-power-of-enken:soul-sight:4",
+            "summary": "Soul Sight",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

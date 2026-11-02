@@ -239,7 +239,7 @@ export class TrudvangActor extends BaseActor {
     const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});
     system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
     system.fearPenalty = fearStatus.penalty;
-    if (this.transformationProfile.ignoreFear) system.fearPenalty = 0;
+    if (this.transformationProfile.ignoreFear || this.transformationProfile.ignoreFearPenalty) system.fearPenalty = 0;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);

@@ -1,0 +1,45 @@
+{
+  "_id": "Pi7TONhNiOjPkQlR",
+  "_key": "!items!Pi7TONhNiOjPkQlR",
+  "name": "Majestic Revelation",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect",
+    "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. People around the priest fall silent and prefer to flee rather than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +3 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -3 to their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a S ituation value of 6 (Psyche modifiers apply).",
+    "summary": "Majestic Revelation",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "8pH4F6x3y4z5A6B7",
+      "_key": "!items.effects!Pi7TONhNiOjPkQlR.8pH4F6x3y4z5A6B7",
+      "name": "Majestic Revelation",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. People around the priest fall silent and prefer to flee rather than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +3 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -3 to their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a S ituation value of 6 (Psyche modifiers apply).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",
+            "summary": "Majestic Revelation",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

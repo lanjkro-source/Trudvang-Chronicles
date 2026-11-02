@@ -2564,3 +2564,12 @@ test("item sheet handles transformation drops once in capture phase", async () =
  drop.handler({dataTransfer:{getData:()=>JSON.stringify({type:"Item"})},preventDefault(){throw Error("unrelated drop");}});
  assert.equal(calls,1);
 });
+
+test("sacred light suppresses fear penalties without preventing new fear",async()=>{
+ const instance=spendableNpc([]);instance.type="character";instance.system.resources.fear.value=15;instance._source.system.resources.fear.value=15;
+ const light={name:"Lumière",system:{changes:[{key:"system.transformation.ignoreFearPenalty",type:"override",value:"true"}]}};
+ instance.allApplicableEffects=()=>[light];instance.prepareDerivedData();
+ assert.equal(instance.system.fearPenalty,0);assert.equal(instance.transformationProfile.ignoreFearPenalty,true);assert.notEqual(instance.transformationProfile.ignoreFear,true);
+ const result=await instance.applyFearFactor(3,{announce:false});assert.equal(result.applied,3);assert.equal(instance._source.system.resources.fear.value,18);
+ instance.allApplicableEffects=()=>[];instance.prepareDerivedData();assert.ok(instance.system.fearPenalty<0);
+});

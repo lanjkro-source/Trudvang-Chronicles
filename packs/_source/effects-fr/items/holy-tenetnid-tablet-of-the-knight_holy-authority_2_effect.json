@@ -1,0 +1,45 @@
+{
+  "_id": "zzG45LeKfLgMhNiO",
+  "_key": "!items!zzG45LeKfLgMhNiO",
+  "name": "Sainte autorité",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+    "description": "Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +1 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, quiconque tente de s’opposer aux propos du prêtre subit un malus de -1 à sa valeur de situation.",
+    "summary": "Sainte autorité",
+    "source": {
+      "book": "Livre des règles",
+      "page": 260
+    }
+  },
+  "effects": [
+    {
+      "_id": "G42wXYpVqWrXsYtZ",
+      "_key": "!items.effects!zzG45LeKfLgMhNiO.G42wXYpVqWrXsYtZ",
+      "name": "Sainte autorité",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +1 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, quiconque tente de s’opposer aux propos du prêtre subit un malus de -1 à sa valeur de situation.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
+            "summary": "Sainte autorité",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

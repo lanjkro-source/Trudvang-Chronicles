@@ -1,0 +1,53 @@
+{
+  "_id": "RJ6fsjLgMhNiOjPk",
+  "_key": "!items!RJ6fsjLgMhNiOjPk",
+  "name": "Apaisement — Radiance sacrée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only",
+    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+    "summary": "Annule les malus de peur dans la lumière.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 264
+    }
+  },
+  "effects": [
+    {
+      "_id": "qNaUxwXsYtZu0v1w",
+      "_key": "!items.effects!RJ6fsjLgMhNiOjPk.qNaUxwXsYtZu0v1w",
+      "name": "Apaisement — Radiance sacrée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.ignoreFearPenalty",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only",
+            "sourceId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
+            "summary": "Annule les malus de peur dans la lumière.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "zzG45LeKfLgMhNiO",
+  "_key": "!items!zzG45LeKfLgMhNiO",
+  "name": "Holy Authority",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+    "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. In this way the priest can quiet a crowd and receives a bonus modifier of +1 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -1 to their Situation value to do so.",
+    "summary": "Holy Authority",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "G42wXYpVqWrXsYtZ",
+      "_key": "!items.effects!zzG45LeKfLgMhNiO.G42wXYpVqWrXsYtZ",
+      "name": "Holy Authority",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. In this way the priest can quiet a crowd and receives a bonus modifier of +1 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -1 to their Situation value to do so.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
+            "summary": "Holy Authority",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

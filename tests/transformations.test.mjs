@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,228);
+ assert.equal(Object.keys(sources).length,238);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1164,4 +1164,25 @@ test("environment and language effects retain their spell durations and selected
  await applyTransformation(actor,"vitner-vitner-craft:vitner-pouch:1#effect",{counts:[2,0,0,1]});
  assert.deepEqual(created.duration,{value:2,units:"hours"});
  assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.vitner-vitner-craft:vitner-pouch:1\.PowerLevels\.0/);
+});
+
+test("Enken detection and Nid persuasion expose their allocated conditional bonuses",async()=>{
+ const {conditionalSituationBonuses,conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ for(const [id,index,base,skill] of [["holy-gerbanis-power-of-enken:soul-sight:4",2,5,"shadowArts"],["holy-gerbanis-power-of-enken:eye-of-enken:8",2,8,"shadowArts"],["holy-tenetnid-tablet-of-the-knight:holy-authority:2",1,1,""],["holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",1,3,""],["holy-tenetnid-tablet-of-the-knight:guise-of-gave:8",2,6,""]]){
+  const effect={name:id,flags:{[S]:{transformation:{key:`${id}#effect`,sourceId:id,ruleTestContext:{countsById:{[`${id}:${index}`]:2}}}}}};
+  const row=conditionalSituationBonuses(effect).find(r=>r.skillChoice);assert.equal(row.value,base+2);assert.equal(row.skill,skill);
+  assert.equal(conditionalSkillModifiers({effects:[effect]},skill||"knowledge").length,1);
+  if(skill)assert.equal(conditionalSkillModifiers({effects:[effect]},"agility").length,0);
+ }
+});
+
+test("long sight and sacred lights scale their combat bonus without granting fear immunity",async()=>{
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const [id,index,expected,path] of [["vitner-power-of-vision:far-sight:2",7,3,"system.modifiers.rolls.rangedAttack"],["holy-joaringfaith-sight-of-lekaba:far-sight:2",7,3,"system.modifiers.rolls.rangedAttack"],["holy-tenetnid-tablet-of-the-sun:thermal-light:3",3,3,"system.modifiers.rolls.allActions"],["holy-tenetnid-tablet-of-the-sun:holy-radiance:7",1,5,"system.modifiers.rolls.allActions"]]){
+  foundry.applications.api={DialogV2:{wait:async()=>({duration:"1 minute",[`boost${index}`]:2})}};
+  const counts=[];counts[index]=2;await applyTransformation(actor,`${id}#effect`,{counts});
+  assert.equal(created.system.changes.find(change=>change.key===path).value,String(expected));
+  if(id.includes("tablet-of-the-sun")){const rules=effectRules(created);assert.equal(rules.ignoreFearPenalty,true);assert.notEqual(rules.ignoreFear,true);}
+ }
 });

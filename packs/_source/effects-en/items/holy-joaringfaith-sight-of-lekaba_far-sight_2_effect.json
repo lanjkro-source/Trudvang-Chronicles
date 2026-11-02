@@ -1,0 +1,53 @@
+{
+  "_id": "dJwVULeKfLgMhNiO",
+  "_key": "!items!dJwVULeKfLgMhNiO",
+  "name": "Far Sight — Sight of Lekaba",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+    "description": "The mopor concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the mopor looks through the tunnel, the power works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between her. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+    "summary": "Far Sight — Sight of Lekaba",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "mlmlc4x3y4z5A6B7",
+      "_key": "!items.effects!dJwVULeKfLgMhNiO.mlmlc4x3y4z5A6B7",
+      "name": "Far Sight — Sight of Lekaba",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mopor concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the mopor looks through the tunnel, the power works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between her. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.rangedAttack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+            "summary": "Far Sight — Sight of Lekaba",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

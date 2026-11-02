@@ -334,7 +334,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       if(bonus.restrictedSkill)return actor.rollSkill(bonus.restrictedSkill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name,excludeEffectId:this.document.id});
       return null;
     }
-    if(bonus.skill)return actor.rollSkill(bonus.skill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name});
+    if(bonus.skill)return actor.rollSkill(bonus.skill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name,excludeEffectId:this.document.id});
     const {rollGenericSituation}=await import("../dice.mjs");
     return rollGenericSituation({actor,defaultLabel:this.document.name,bonusRows:[{label:this.document.name,value:bonus.value}]});
   }

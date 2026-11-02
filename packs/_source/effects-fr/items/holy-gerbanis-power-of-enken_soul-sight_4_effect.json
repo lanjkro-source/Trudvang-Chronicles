@@ -1,0 +1,45 @@
+{
+  "_id": "zlkHiRjPkQlRmSnT",
+  "_key": "!items!zlkHiRjPkQlRmSnT",
+  "name": "Regard de l’âme",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges.",
+    "summary": "Regard de l’âme",
+    "source": {
+      "book": "Livre des règles",
+      "page": 225
+    }
+  },
+  "effects": [
+    {
+      "_id": "2O6dZdGbHcIdJeKf",
+      "_key": "!items.effects!zlkHiRjPkQlRmSnT.2O6dZdGbHcIdJeKf",
+      "name": "Regard de l’âme",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:soul-sight:4#effect",
+            "sourceId": "holy-gerbanis-power-of-enken:soul-sight:4",
+            "summary": "Regard de l’âme",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

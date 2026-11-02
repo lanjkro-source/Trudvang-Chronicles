@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 274 variantes.
+les états, les règles et les liens des 286 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -323,3 +323,5 @@ Vingt pouvoirs divins de météo, de voyage et d’invocation proposent un effet
 Enchantement de créature et Malédiction de créature appliquent automatiquement leur bonus ou malus aux tests de compétence et de situation, avec les niveaux alloués. La levée de la malédiction à la mort du lanceur reste manuelle. Les détections, contrôles et perceptions ajoutés conservent leur description, durée, améliorations et jets de résistance ; leurs effets narratifs et les résultats des tables restent à gérer en jeu.
 
 Cinquante effets supplémentaires couvrent la météo, les perceptions, les objets, les communications, les voyages et diverses invocations. Les durées sont calculées depuis les niveaux de puissance et les autres améliorations allouées sont rappelées au survol et dans le détail. Les zones, changements du décor, créatures invoquées, effets sur les objets, bonus conditionnels et conséquences des descriptions restent à gérer manuellement.
+
+Vision lointaine apporte son bonus aux attaques à distance ; sa portée visuelle et la modification éventuelle de portée de l’arme restent à interpréter. Regard de l’âme et Œil d’Enken proposent leur bonus conditionnel et un jet d’Arts des ombres. Les trois pouvoirs d’autorité proposent leur bonus de persuasion pour les jets pertinents. Lumière rassurante et Radiance sacrée annulent les malus de peur sans empêcher l’acquisition de peur ; appliquer ou retirer leurs effets aux alliés reste manuel selon leur position. La malédiction joar requiert une levée manuelle à la mort de la mopor.

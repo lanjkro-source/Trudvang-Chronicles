@@ -1662,6 +1662,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.weightBonus` | Weight increase | Augmentation du poids |
 | `TRUDVANG.Effect.Profile.powerIds` | Granted spells and powers (catalogue IDs, JSON list) | Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON) |
 | `TRUDVANG.Effect.Profile.sensesReplace` | Replace senses with the form’s senses | Remplacer les sens par ceux de la forme |
+| `TRUDVANG.Effect.Profile.ignoreFearPenalty` | Ignore fear penalties | Ignore les malus de peur |
 
 ## `TRUDVANG.Effect.Activation`
 
@@ -11341,6 +11342,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.SourcePage` | 120 | 182 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.Duration` | 9 action rounds | 9 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.Name` | Far Sight | Vision lointaine |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.Description` | The mage concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the enchanted character looks through the tunnel, the vitner works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between them. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon. | L’enchanteur se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que l’enchanteur regarde à travers ce tunnel, le vitner fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La personne enchantée peut se concentrer sur n’importe quel endroit à portée du sort avec la même précision. Le sort Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.SourceName` | Far Sight | Vision lointaine |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.SourcePage` | 120 | 182 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:far-sight:2#effect.Duration` | 2 action rounds | 2 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage`
 
 | Clé | English | Français |
@@ -12103,6 +12115,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:bold:2#temerite.SourcePage` | 162 | 224 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:bold:2#temerite.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.Name` | Soul Sight | Regard de l’âme |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.Description` | The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 10-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view e verything that is happening within range. This means that objects such as walls are unable to block the vision of the S tormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +5 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps. | Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.SourceName` | Soul Sight | Regard de l’âme |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.SourcePage` | 162 | 225 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken`
 
 | Clé | English | Français |
@@ -12124,6 +12147,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourcePage` | 162 | 225 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.Name` | Eye of Enken | Œil d’Enken |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.Description` | The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 100-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view everything that is happening within range. This means that objects such as walls are unable to block the vision of the Stormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +8 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps. The Stormkelt also has a chance to see things hidden or altered by magic if they succeed on a Shadow Arts Skill roll. | Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 100 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +8 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges. Il peut également parvenir à percevoir les choses dissimulées ou altérées par magie s’il réussit un test de compétence d’Arts des ombres. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.SourceName` | Eye of Enken | Œil d’Enken |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.SourcePage` | 162 | 226 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect`
 
@@ -12775,6 +12809,83 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourcePage` | 201 | 259 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.Duration` | 1 jour | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.Name` | Holy Authority | Sainte autorité |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.Description` | The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. In this way the priest can quiet a crowd and receives a bonus modifier of +1 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -1 to their Situation value to do so. | Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +1 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, quiconque tente de s’opposer aux propos du prêtre subit un malus de -1 à sa valeur de situation. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.SourceName` | Holy Authority | Sainte autorité |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.SourcePage` | 199 | 260 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.Name` | Majestic Revelation | Révélation majestueuse |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.Description` | The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. People around the priest fall silent and prefer to flee rather than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +3 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -3 to their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a S ituation value of 6 (Psyche modifiers apply). | Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Les gens autour du prêtre se taisent soudainement et préféreraient s’enfuir plutôt que de s’opposer à lui. Cela lui permet de calmer une foule et de recevoir un bonus de +3 à tous ses tests de compétence ou de situation pour persuader les gens jusqu’à expiration du pouvoir. De plus, toute personne qui tente de s’opposer à ce que dit le prêtre subit un malus de -3 à sa valeur de situation. Quiconque tente d’attaquer le prêtre ou de proférer des mensonges en sa présence doit commencer par réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourceName` | Majestic Revelation | Révélation majestueuse |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourcePage` | 199 | 261 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.Name` | Guise of Gave | Aura de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.Description` | The priest positively radiates with divine power while the surrounding air is saturated with the god’s tangible presence. Anyone in the priest’s presence falls quiet and would rather flee or kneel in submission than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +6 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -5 to the their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a Situation value of 4 (Psyche modifiers apply). Even those who wish to plot against the priest while in their vicinity (within range) need to succeed on the aforementioned Situation roll. | Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu. Toute personne en présence du prêtre se tait et préférerait fuir ou s’agenouiller en signe de soumission plutôt que de s’opposer à lui. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +6 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, toute personne qui tente de s’opposer à ce que dit le prêtre subit un malus de -5 à sa valeur de situation. Quiconque tente d’attaquer le prêtre ou de proférer des mensonges en sa présence doit commencer par réussir un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Même ceux qui veulent intriguer contre le prêtre et se trouvent à proximité de lui (à portée du sort) doivent réussir ce test de situation. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.SourceName` | Guise of Gave | Aura de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.SourcePage` | 199 | 261 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Name` | Thermal Light | Lumière rassurante |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Description` | The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. The light brings safety and tranquility to all within its reach. Any negative modifiers from fear levels disappear, and the priest and all allies gain +1 to their Skill Values and Situation values as long as they remain within range. Within its range, the light counts as daylight for all intents and purposes. | Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourceName` | Thermal Light | Lumière rassurante |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourcePage` | 203 | 262 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.Name` | Calm — Thermal Light | Apaisement — Lumière rassurante |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.Description` | The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. The light brings safety and tranquility to all within its reach. Any negative modifiers from fear levels disappear, and the priest and all allies gain +1 to their Skill Values and Situation values as long as they remain within range. Within its range, the light counts as daylight for all intents and purposes. | Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.SourceName` | Thermal Light | Lumière rassurante |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.SourcePage` | 203 | 262 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Name` | Holy Radiance | Radiance sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Description` | The priest asks her god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. The light brings safety and tranquility to all within its reach. Any negative m odifiers from fear levels disappear, and the priest and all allies gain +3 to their Skill Values and Situation values as long as they remain within range. Within its range, the light counts as daylight for all intents and purposes. | Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourceName` | Holy Radiance | Radiance sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourcePage` | 203 | 264 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.Name` | Calm — Holy Radiance | Apaisement — Radiance sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.Description` | The priest asks her god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. The light brings safety and tranquility to all within its reach. Any negative m odifiers from fear levels disappear, and the priest and all allies gain +3 to their Skill Values and Situation values as long as they remain within range. Within its range, the light counts as daylight for all intents and purposes. | Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.SourceName` | Holy Radiance | Radiance sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.SourcePage` | 203 | 264 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur`
 
@@ -13609,6 +13720,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur.Duration` |  |  |
 
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.Name` | Far Sight — Sight of Lekaba | Vision lointaine — Vue de Lekaba |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.Description` | The mopor concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the mopor looks through the tunnel, the power works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between her. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon. | La mopor se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que la mopor regarde à travers ce tunnel, le pouvoir fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La mopor peut se concentrer sur n’importe quel endroit à portée du pouvoir avec la même précision. Le pouvoir Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.SourceName` | Far Sight | Vision lointaine |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-sight-of-lekaba:far-sight:2#effect.Duration` | 2 action rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.Name` | Curse Creature — Curses of Sonntag | Malédiction de créature — Malédictions de Sonntag |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.Description` | To curse a creature, the mopor has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through powers such as Detect Being). With this power, the mopor twists the composition of energies around the target. This subtle change cannot be perceived through normal senses, but is picked up on intuitively. It is a disharmony that is hard to describe in words, as if a high, cutting, relentless, and unnerving sound is constantly emanating from the target, a sound that is constantly rising and gnawing at the limit of our consciousness. All living creatures that encounter the target are struck by this uncomfortable feeling, an intense aversion, a powerful sense of something both supernatural and wrong. All living beings instinctively shun and avoid the target as much as possible. Additionally, intelligent beings are filled with fear and often believe that anything the target carries or comes into contact with might be contagious as well. Even the target’s friends often feel a powerful aversion and cannot stand being in their presence, no matter how dearly they would like to. Merchants and traders cancel transactions with the target, mothers pull their children away and shield them from view, people leave wide chasms of space around the target on the streets and in inns, and adventuring colleagues cannot sleep in their presence and never wake up feeling rested. In short, people avoid the cursed character as if they were a leper. The most tragic thing about the curse is that the target is unaware of it, and initially has no idea why others have these reactions. If the target has no knowledge about magic and powers, it’s possible they might never understand. Against the cursed victims will, they become increasingly more isolated and shunned, filled with doubt and trepidation. Given enough time, the cursed victim risks becoming insane. The twisted power surrounding the target does more than make life unbearable for the afflicted. All Skill Values and Situation values have a negative modifier of -1 for the duration of the curse. If the mopor that caused the curse dies, it is immediately broken. | Pour maudire une créature, la mopor doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de pouvoirs tels que Détection des êtres vivants. Ce pouvoir permet à la mopor d’altérer la composition des énergies autour de la cible. Les sens conventionnels ne peuvent percevoir cette subtile modification, mais l’intuition permet de la ressentir. C’est un manque d’harmonie difficile à décrire avec des mots, un peu comme un son aigu, strident et insistant qui émanerait en permanence de la cible, un son qui ne cesse de faire écho à la limite de notre conscience. Toutes les créatures vivantes qui croisent la cible sont frappées par cette sensation étrange, une violente aversion, une puissante impression de quelque chose d’à la fois déplacé et surnaturel. L’instinct pousse tous les êtres vivants à éviter autant que possible la cible. En outre, les êtres intelligents sont remplis de peur et croient que tout ce que la cible porte ou touche pourrait également s’avérer contagieux. Même les amis de la cible ressentent souvent une puissante aversion et ne supportent pas de rester en sa présence malgré toute l’affection qu’ils lui portent. Les marchands et les négociants annulent leurs transactions avec la cible, les mères chassent leurs enfants et les maintiennent hors de leur vue, les gens gardent leurs distances dans la rue et dans les tavernes, et les compagnons d’aventure ne peuvent pas dormir en présence de la cible et leur repos n’est pas réparateur. Pour faire court, les gens évitent le personnage maudit comme s’il avait la lèpre. Le plus tragique dans cette malédiction, c’est que la cible n’en a pas conscience, et n’a au début aucune idée de ce qui pousse les autres à réagir ainsi en sa présence. Si la cible ne connaît rien à la magie et aux pouvoirs, elle pourrait très bien ne jamais comprendre. Quoi qu’elle fasse, elle se retrouvera de plus en plus isolée et submergée par le doute et l’inquiétude. Avec le temps, la victime risque fort de sombrer dans la folie. Le pouvoir maléfique qui entoure la cible ne se contente pas de lui rendre la vie insupportable. Il inflige également un malus de -1 à toutes ses valeurs de compétence et de situation jusqu’à expiration de la malédiction. Si la mopor à l’origine de la malédiction meurt, cette dernière est immédiatement levée. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.SourceName` | Curse Creature | Malédiction de créature |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect.Duration` | 10 days | 10 jours |
+
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre`
 
 | Clé | English | Français |
@@ -13954,6 +14087,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.WeaponRequired` | Choose a weapon for the additional actions. | Choisissez une arme pour les actions supplémentaires. |
 | `TRUDVANG.Transformation.OrdinaryActionsFirst` | Use all ordinary weapon actions before the additional actions. | Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires. |
 | `TRUDVANG.Transformation.AdditionalTerrainCount` | Additional terrain types: {value} | Terrains supplémentaires : {value} |
+| `TRUDVANG.Transformation.HiddenDetectionBonus` | Finding doors and traps: +{value} Shadow Arts. | Recherche de portes et pièges : +{value} en Arts des ombres. |
+| `TRUDVANG.Transformation.PersuasionBonus` | Persuasion: +{value} bonus. | Persuasion : bonus de +{value}. |
 
 ## `TRUDVANG.Transformation.Modes`
 

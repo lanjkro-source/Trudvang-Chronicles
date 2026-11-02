@@ -1323,6 +1323,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:eye-of-enken:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:eye-of-enken:8:0",
@@ -1485,6 +1489,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:soul-sight:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:soul-sight:4:0",
@@ -3810,6 +3818,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:0",
@@ -4401,6 +4413,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:far-sight:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-joaringfaith-sight-of-lekaba:far-sight:2:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:0",
@@ -5072,6 +5093,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:0",
@@ -5105,6 +5130,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:holy-authority:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:0",
@@ -5133,6 +5162,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:0",
@@ -9566,6 +9599,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:far-sight:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-vision:far-sight:2:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:far-sight:2:0",

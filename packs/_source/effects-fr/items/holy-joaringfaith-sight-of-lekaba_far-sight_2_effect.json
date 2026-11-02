@@ -1,0 +1,53 @@
+{
+  "_id": "dJwVULeKfLgMhNiO",
+  "_key": "!items!dJwVULeKfLgMhNiO",
+  "name": "Vision lointaine — Vue de Lekaba",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+    "description": "La mopor se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que la mopor regarde à travers ce tunnel, le pouvoir fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La mopor peut se concentrer sur n’importe quel endroit à portée du pouvoir avec la même précision. Le pouvoir Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+    "summary": "Vision lointaine — Vue de Lekaba",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "mlmlc4x3y4z5A6B7",
+      "_key": "!items.effects!dJwVULeKfLgMhNiO.mlmlc4x3y4z5A6B7",
+      "name": "Vision lointaine — Vue de Lekaba",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La mopor se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que la mopor regarde à travers ce tunnel, le pouvoir fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La mopor peut se concentrer sur n’importe quel endroit à portée du pouvoir avec la même précision. Le pouvoir Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.rangedAttack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+            "summary": "Vision lointaine — Vue de Lekaba",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

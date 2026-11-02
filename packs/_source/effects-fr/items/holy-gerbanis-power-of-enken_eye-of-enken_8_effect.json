@@ -1,0 +1,45 @@
+{
+  "_id": "P2Zo7Zu0v1w2x3y4",
+  "_key": "!items!P2Zo7Zu0v1w2x3y4",
+  "name": "Œil d’Enken",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 100 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +8 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges. Il peut également parvenir à percevoir les choses dissimulées ou altérées par magie s’il réussit un test de compétence d’Arts des ombres.",
+    "summary": "Œil d’Enken",
+    "source": {
+      "book": "Livre des règles",
+      "page": 226
+    }
+  },
+  "effects": [
+    {
+      "_id": "giObfRiOjPkQlRmS",
+      "_key": "!items.effects!P2Zo7Zu0v1w2x3y4.giObfRiOjPkQlRmS",
+      "name": "Œil d’Enken",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 100 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +8 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges. Il peut également parvenir à percevoir les choses dissimulées ou altérées par magie s’il réussit un test de compétence d’Arts des ombres.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+            "sourceId": "holy-gerbanis-power-of-enken:eye-of-enken:8",
+            "summary": "Œil d’Enken",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

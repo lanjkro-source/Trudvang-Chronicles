@@ -1425,7 +1425,8 @@
         "heightBonus": "Augmentation de la taille corporelle",
         "weightBonus": "Augmentation du poids",
         "powerIds": "Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON)",
-        "sensesReplace": "Remplacer les sens par ceux de la forme"
+        "sensesReplace": "Remplacer les sens par ceux de la forme",
+        "ignoreFearPenalty": "Ignore les malus de peur"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
       "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
@@ -14107,6 +14108,15 @@
           "SourcePage": "182",
           "Duration": "9 tours de jeu"
         },
+        "vitner-power-of-vision:far-sight:2#effect": {
+          "Name": "Vision lointaine",
+          "Summary": "Vision lointaine",
+          "Description": "L’enchanteur se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que l’enchanteur regarde à travers ce tunnel, le vitner fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La personne enchantée peut se concentrer sur n’importe quel endroit à portée du sort avec la même précision. Le sort Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+          "SourceName": "Vision lointaine",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "182",
+          "Duration": "2 tours de jeu"
+        },
         "vitner-power-of-vision:espionage:4#espionage": {
           "Name": "Espionnage",
           "Summary": "Permet de percevoir à distance autour de l’objet enchanté.",
@@ -14731,6 +14741,15 @@
           "SourcePage": "224",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-power-of-enken:soul-sight:4#effect": {
+          "Name": "Regard de l’âme",
+          "Summary": "Regard de l’âme",
+          "Description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges.",
+          "SourceName": "Regard de l’âme",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "225",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Cœur d’Enken",
           "Summary": "Augmente le Psychisme.",
@@ -14747,6 +14766,15 @@
           "SourceName": "Cœur d’Enken",
           "SourceBook": "Livre des règles",
           "SourcePage": "225",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-power-of-enken:eye-of-enken:8#effect": {
+          "Name": "Œil d’Enken",
+          "Summary": "Œil d’Enken",
+          "Description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 100 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +8 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges. Il peut également parvenir à percevoir les choses dissimulées ou altérées par magie s’il réussit un test de compétence d’Arts des ombres.",
+          "SourceName": "Œil d’Enken",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "226",
           "Duration": "1 minute"
         },
         "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
@@ -15283,6 +15311,69 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "259",
           "Duration": "1 jour"
+        },
+        "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
+          "Name": "Sainte autorité",
+          "Summary": "Sainte autorité",
+          "Description": "Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +1 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, quiconque tente de s’opposer aux propos du prêtre subit un malus de -1 à sa valeur de situation.",
+          "SourceName": "Sainte autorité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "260",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect": {
+          "Name": "Révélation majestueuse",
+          "Summary": "Révélation majestueuse",
+          "Description": "Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Les gens autour du prêtre se taisent soudainement et préféreraient s’enfuir plutôt que de s’opposer à lui. Cela lui permet de calmer une foule et de recevoir un bonus de +3 à tous ses tests de compétence ou de situation pour persuader les gens jusqu’à expiration du pouvoir. De plus, toute personne qui tente de s’opposer à ce que dit le prêtre subit un malus de -3 à sa valeur de situation. Quiconque tente d’attaquer le prêtre ou de proférer des mensonges en sa présence doit commencer par réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique).",
+          "SourceName": "Révélation majestueuse",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "261",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect": {
+          "Name": "Aura de Gave",
+          "Summary": "Aura de Gave",
+          "Description": "Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu. Toute personne en présence du prêtre se tait et préférerait fuir ou s’agenouiller en signe de soumission plutôt que de s’opposer à lui. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +6 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, toute personne qui tente de s’opposer à ce que dit le prêtre subit un malus de -5 à sa valeur de situation. Quiconque tente d’attaquer le prêtre ou de proférer des mensonges en sa présence doit commencer par réussir un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Même ceux qui veulent intriguer contre le prêtre et se trouvent à proximité de lui (à portée du sort) doivent réussir ce test de situation.",
+          "SourceName": "Aura de Gave",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "261",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
+          "Name": "Lumière rassurante",
+          "Summary": "Lumière rassurante",
+          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "SourceName": "Lumière rassurante",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "262",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only": {
+          "Name": "Apaisement — Lumière rassurante",
+          "Summary": "Annule les malus de peur dans la lumière.",
+          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "SourceName": "Lumière rassurante",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "262",
+          "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
+          "Name": "Radiance sacrée",
+          "Summary": "Radiance sacrée",
+          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "SourceName": "Radiance sacrée",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "264",
+          "Duration": "1 heure"
+        },
+        "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only": {
+          "Name": "Apaisement — Radiance sacrée",
+          "Summary": "Annule les malus de peur dans la lumière.",
+          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "SourceName": "Radiance sacrée",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "264",
+          "Duration": "1 heure"
         },
         "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur": {
           "Name": "Instinct du prédateur",
@@ -15969,6 +16060,24 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect": {
+          "Name": "Vision lointaine — Vue de Lekaba",
+          "Summary": "Vision lointaine — Vue de Lekaba",
+          "Description": "La mopor se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que la mopor regarde à travers ce tunnel, le pouvoir fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La mopor peut se concentrer sur n’importe quel endroit à portée du pouvoir avec la même précision. Le pouvoir Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+          "SourceName": "Vision lointaine",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "2 tours de jeu"
+        },
+        "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
+          "Name": "Malédiction de créature — Malédictions de Sonntag",
+          "Summary": "Malédiction de créature — Malédictions de Sonntag",
+          "Description": "Pour maudire une créature, la mopor doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de pouvoirs tels que Détection des êtres vivants. Ce pouvoir permet à la mopor d’altérer la composition des énergies autour de la cible. Les sens conventionnels ne peuvent percevoir cette subtile modification, mais l’intuition permet de la ressentir. C’est un manque d’harmonie difficile à décrire avec des mots, un peu comme un son aigu, strident et insistant qui émanerait en permanence de la cible, un son qui ne cesse de faire écho à la limite de notre conscience. Toutes les créatures vivantes qui croisent la cible sont frappées par cette sensation étrange, une violente aversion, une puissante impression de quelque chose d’à la fois déplacé et surnaturel. L’instinct pousse tous les êtres vivants à éviter autant que possible la cible. En outre, les êtres intelligents sont remplis de peur et croient que tout ce que la cible porte ou touche pourrait également s’avérer contagieux. Même les amis de la cible ressentent souvent une puissante aversion et ne supportent pas de rester en sa présence malgré toute l’affection qu’ils lui portent. Les marchands et les négociants annulent leurs transactions avec la cible, les mères chassent leurs enfants et les maintiennent hors de leur vue, les gens gardent leurs distances dans la rue et dans les tavernes, et les compagnons d’aventure ne peuvent pas dormir en présence de la cible et leur repos n’est pas réparateur. Pour faire court, les gens évitent le personnage maudit comme s’il avait la lèpre. Le plus tragique dans cette malédiction, c’est que la cible n’en a pas conscience, et n’a au début aucune idée de ce qui pousse les autres à réagir ainsi en sa présence. Si la cible ne connaît rien à la magie et aux pouvoirs, elle pourrait très bien ne jamais comprendre. Quoi qu’elle fasse, elle se retrouvera de plus en plus isolée et submergée par le doute et l’inquiétude. Avec le temps, la victime risque fort de sombrer dans la folie. Le pouvoir maléfique qui entoure la cible ne se contente pas de lui rendre la vie insupportable. Il inflige également un malus de -1 à toutes ses valeurs de compétence et de situation jusqu’à expiration de la malédiction. Si la mopor à l’origine de la malédiction meurt, cette dernière est immédiatement levée.",
+          "SourceName": "Malédiction de créature",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "10 jours"
+        },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Malédictions de Sonntag)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -16267,7 +16376,9 @@
       "PowerLevel": "Niveau du pouvoir",
       "WeaponRequired": "Choisissez une arme pour les actions supplémentaires.",
       "OrdinaryActionsFirst": "Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires.",
-      "AdditionalTerrainCount": "Terrains supplémentaires : {value}"
+      "AdditionalTerrainCount": "Terrains supplémentaires : {value}",
+      "HiddenDetectionBonus": "Recherche de portes et pièges : +{value} en Arts des ombres.",
+      "PersuasionBonus": "Persuasion : bonus de +{value}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

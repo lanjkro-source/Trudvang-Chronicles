@@ -1,0 +1,45 @@
+{
+  "_id": "P2Zo7Zu0v1w2x3y4",
+  "_key": "!items!P2Zo7Zu0v1w2x3y4",
+  "name": "Eye of Enken",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+    "description": "The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 100-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view everything that is happening within range. This means that objects such as walls are unable to block the vision of the Stormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +8 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps. The Stormkelt also has a chance to see things hidden or altered by magic if they succeed on a Shadow Arts Skill roll.",
+    "summary": "Eye of Enken",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "giObfRiOjPkQlRmS",
+      "_key": "!items.effects!P2Zo7Zu0v1w2x3y4.giObfRiOjPkQlRmS",
+      "name": "Eye of Enken",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 100-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view everything that is happening within range. This means that objects such as walls are unable to block the vision of the Stormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +8 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps. The Stormkelt also has a chance to see things hidden or altered by magic if they succeed on a Shadow Arts Skill roll.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:eye-of-enken:8#effect",
+            "sourceId": "holy-gerbanis-power-of-enken:eye-of-enken:8",
+            "summary": "Eye of Enken",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

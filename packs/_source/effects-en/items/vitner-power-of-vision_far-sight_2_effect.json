@@ -1,0 +1,53 @@
+{
+  "_id": "4hR50WnToUpVqWrX",
+  "_key": "!items!4hR50WnToUpVqWrX",
+  "name": "Far Sight",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:far-sight:2#effect",
+    "description": "The mage concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the enchanted character looks through the tunnel, the vitner works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between them. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+    "summary": "Far Sight",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "fZR7eYpVqWrXsYtZ",
+      "_key": "!items.effects!4hR50WnToUpVqWrX.fZR7eYpVqWrXsYtZ",
+      "name": "Far Sight",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the enchanted character looks through the tunnel, the vitner works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between them. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:far-sight:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.rangedAttack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:far-sight:2#effect",
+            "sourceId": "vitner-power-of-vision:far-sight:2",
+            "summary": "Far Sight",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

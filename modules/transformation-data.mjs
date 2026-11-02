@@ -1440,6 +1440,51 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-vision:far-sight:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.rangedAttack",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-power-of-vision:far-sight:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-power-of-vision:far-sight:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-vision:far-sight:2:1"
+      },
+      {
+        "index": 7,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.rangedAttack",
+        "value": 1,
+        "optionId": "vitner-power-of-vision:far-sight:2:7"
+      }
+    ]
+  },
   "vitner-power-of-vision:espionage:4#espionage": {
     "id": "espionage",
     "icon": "icons/svg/aura.svg",
@@ -3792,6 +3837,39 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-power-of-enken:soul-sight:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-power-of-enken:soul-sight:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:soul-sight:4:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 5,
+        "value": 1,
+        "skill": "shadowArts",
+        "skillChoice": true,
+        "restrictedSkill": "shadowArts",
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.HiddenDetectionBonus",
+        "optionId": "holy-gerbanis-power-of-enken:soul-sight:4:2"
+      }
+    ]
+  },
   "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
     "id": "c-ur-d-enken",
     "icon": "icons/svg/aura.svg",
@@ -3863,6 +3941,39 @@ export const TRANSFORMATION_TEMPLATES = {
           "c-ur-d-enken-allies"
         ],
         "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:4"
+      }
+    ]
+  },
+  "holy-gerbanis-power-of-enken:eye-of-enken:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-power-of-enken:eye-of-enken:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:eye-of-enken:8:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 8,
+        "value": 1,
+        "skill": "shadowArts",
+        "skillChoice": true,
+        "restrictedSkill": "shadowArts",
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.HiddenDetectionBonus",
+        "optionId": "holy-gerbanis-power-of-enken:eye-of-enken:8:2"
       }
     ]
   },
@@ -5752,6 +5863,264 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "protection",
         "value": 1,
         "optionId": "holy-tenetnid-tablet-of-the-shield:tree-port:8:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
+        "optionId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      4
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
+        "optionId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 6,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
+        "optionId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.ignoreFearPenalty",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:1"
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:3",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only": {
+    "id": "fear-only",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.ignoreFearPenalty",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "3",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.ignoreFearPenalty",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:2"
+      },
+      {
+        "index": 1,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:1",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only": {
+    "id": "fear-only",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.ignoreFearPenalty",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:2"
       }
     ]
   },
@@ -8837,6 +9206,102 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.rangedAttack",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:far-sight:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:far-sight:2:1"
+      },
+      {
+        "index": 7,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.rangedAttack",
+        "value": 1,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:far-sight:2:7"
+      }
+    ]
+  },
+  "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 jours",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 2592000,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 31536000,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:3"
+      },
+      {
+        "index": 4,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": -1,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:4"
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -9716,6 +10181,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-vision:scanning:1": [
     "vitner-power-of-vision:scanning:1#effect"
   ],
+  "vitner-power-of-vision:far-sight:2": [
+    "vitner-power-of-vision:far-sight:2#effect"
+  ],
   "vitner-power-of-vision:espionage:4": [
     "vitner-power-of-vision:espionage:4#espionage"
   ],
@@ -9903,9 +10371,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-power-of-enken:bold:2": [
     "holy-gerbanis-power-of-enken:bold:2#temerite"
   ],
+  "holy-gerbanis-power-of-enken:soul-sight:4": [
+    "holy-gerbanis-power-of-enken:soul-sight:4#effect"
+  ],
   "holy-gerbanis-power-of-enken:heart-of-enken:6": [
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies"
+  ],
+  "holy-gerbanis-power-of-enken:eye-of-enken:8": [
+    "holy-gerbanis-power-of-enken:eye-of-enken:8#effect"
   ],
   "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": [
     "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect"
@@ -10064,6 +10538,23 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": [
     "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:holy-authority:2": [
+    "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": [
+    "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": [
+    "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-sun:thermal-light:3": [
+    "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect",
+    "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only"
+  ],
+  "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": [
+    "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect",
+    "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only"
   ],
   "holy-haminges-power-of-the-beast:mind-of-the-predator:1": [
     "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur"
@@ -10254,6 +10745,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-power-of-sille:healing-sun:8": [
     "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:far-sight:2": [
+    "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
+    "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"
   ],
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": [
     "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",
