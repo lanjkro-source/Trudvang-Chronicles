@@ -5,7 +5,7 @@ import { TRUDVANG } from "../config.mjs";
 import {mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
 import { escapeHtml, localizeConfig,renderTemplate } from "../helpers.mjs";
 import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../tablet-catalog.mjs";
-import { effectTooltipSummary } from "../effects.mjs";
+import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import {isConsumable} from "../consumables.mjs";
@@ -742,8 +742,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { /* Other native drop formats. */ }
     if (data?.type === "TrudvangTransformation") {
       const {applyTransformation} = await import("../transformations.mjs");
+      const {effectTargetsFor} = await import("../effect-targets.mjs");
       const source = data.sourceUuid ? await foundry.utils.fromUuid(data.sourceUuid) : null;
-      return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? [],context:data.context});
+      const message=data.context?.messageId?game.messages?.get(data.context.messageId):null;
+      const row=message?effectTargetsFor(message,data.key).find(target=>target.actorUuid===this.actor.uuid):null;
+      const itemId=event.target?.closest?.(".item-list [data-item-id]")?.dataset.itemId;
+      const item=itemId?this.actor.items.get(itemId):null;
+      const destinationItem=item&&EFFECT_ITEM_TYPES.has(item.type)?item:null;
+      return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? [],context:data.context,delegateTokenUuid:row?.tokenUuid??"",destinationItem,targetName:destinationItem?.name??""});
     }
     return super._onDrop(event);
   }

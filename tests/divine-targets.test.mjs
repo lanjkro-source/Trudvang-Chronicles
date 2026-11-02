@@ -5,7 +5,7 @@ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=S
 globalThis.foundry={applications:{api:{DialogV2:{wait:async()=>({duration:"2 rounds",boost1:1,boost3:1})}},handlebars:{renderTemplate:async()=>"card"}},utils:{}};
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=7;return this;}};
 globalThis.ui={notifications:{warn(){},error(){}}};
-const documents=new Map(),messages=new Map(),gm={id:"gm"};
+const documents=new Map(),messages=new Map(),gm={id:"gm",isGM:true,active:true};
 globalThis.game={user:gm,users:{activeGM:{isSelf:true},get:id=>id==="gm"?gm:null},messages,actors:[],scenes:[],time:{worldTime:0},i18n:{localize:key=>key,format:(key,data)=>`${key}:${JSON.stringify(data)}`}};
 foundry.utils.fromUuid=async uuid=>documents.get(uuid);
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const m={...data,id:`message-${messages.size}`,async update(changes){for(const [path,value]of Object.entries(changes)){if(path==="flags.trudvang-chronicles.divineAllocation.targetAllocations")this.flags["trudvang-chronicles"].divineAllocation.targetAllocations=structuredClone(value);}}};messages.set(m.id,m);return m;}};
@@ -130,7 +130,7 @@ test("Thunder of Victory shares purchased enhancements with all allies and enemi
  }finally{foundry.applications.api.DialogV2=previous;}
 });
 
-test("one click applies a shared area effect to every controlled actor without dialogs",async()=>{
+test("one click applies a shared area effect to every listed target without dialogs",async()=>{
  const previous={dialog:foundry.applications.api.DialogV2,listener:document.addEventListener,Hooks:globalThis.Hooks,canvas:globalThis.canvas};
  try{
   const power="holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",caster={uuid:"Actor.area-caster",name:"Priest",items:[],canUserModify:()=>true};documents.set(caster.uuid,caster);
@@ -139,7 +139,8 @@ test("one click applies a shared area effect to every controlled actor without d
   const message=Array.from(messages.values()).at(-1),created=[];
   const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{created.push({uuid,data});const effect={uuid:`${uuid}.ActiveEffect.area`,data};documents.set(effect.uuid,effect);return effect;}});
   const a=makeTarget("Actor.area-a"),b=makeTarget("Actor.area-b");documents.set(a.uuid,a);documents.set(b.uuid,b);
-  globalThis.canvas={tokens:{controlled:[{name:"A",actor:a},{name:"Copie",actor:a},{name:"B",actor:b}]}};
+  const tokens=[{uuid:"Token.area-a",name:"A",actor:a},{uuid:"Token.area-b",name:"B",actor:b}];for(const token of tokens)documents.set(token.uuid,token);message.flags[scope].transformationTargets={[`${power}#ally`]:tokens.map(t=>({tokenUuid:t.uuid,actorUuid:t.actor.uuid}))};
+  globalThis.canvas={tokens:{controlled:[]}};
   const handlers={};document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
   foundry.applications.api.DialogV2={wait:async()=>{throw Error("area effect must not show a dialog");}};
   registerTransformationHooks();
@@ -159,7 +160,8 @@ test("one click distributes a limited invocation sequentially and reports an exc
   const message=Array.from(messages.values()).at(-1),created=[],errors=[],titles=[];
   const makeTarget=uuid=>({uuid,isOwner:false,items:[],canUserModify:()=>true,createTrudvangEffect:async data=>{created.push({uuid,data});const effect={uuid:`${uuid}.ActiveEffect.cry`,data};documents.set(effect.uuid,effect);return effect;}});
   const targets=[makeTarget("Actor.batch-a"),makeTarget("Actor.batch-b"),makeTarget("Actor.batch-c")];for(const actor of targets)documents.set(actor.uuid,actor);
-  globalThis.canvas={tokens:{controlled:targets.map((actor,index)=>({name:`Cible ${index+1}`,actor}))}};
+  const tokens=targets.map((actor,index)=>({uuid:`Token.batch-${index}`,name:`Cible ${index+1}`,actor}));for(const token of tokens)documents.set(token.uuid,token);message.flags[scope].transformationTargets={[`${id}#ally`]:tokens.map(t=>({tokenUuid:t.uuid,actorUuid:t.actor.uuid}))};
+  globalThis.canvas={tokens:{controlled:[]}};
   const handlers={};document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};ui.notifications.error=message=>errors.push(message);
   let open=false;foundry.applications.api.DialogV2={wait:async options=>{assert.equal(open,false);open=true;titles.push(options.window.title);await new Promise(resolve=>setImmediate(resolve));open=false;return {duration:"2 rounds",boost1:1,boost3:1};}};
   registerTransformationHooks();

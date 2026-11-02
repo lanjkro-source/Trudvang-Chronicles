@@ -14,11 +14,24 @@ function flag(document, key) {
 export function ruleTestsForDocument(document) {
   const configured = document?.flags?.[SYSTEM_ID]?.consequenceTests;
   if (Array.isArray(configured)) return configured.map(test => ({...test, action: test.actionKey ? game.i18n.localize(test.actionKey) : test.action}));
-  if (game.i18n?.lang && game.i18n.lang !== "fr") return [];
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
-  return id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : [];
+  const tests=id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : [];
+  if(!game.i18n?.lang || game.i18n.lang==="fr")return tests;
+  return tests.map((test,index)=>{
+    const {action,anchor,success,failure,criticalSuccess,criticalFailure,condition,repeat,note,traitRule,...mechanics}=test;
+    const sv=mechanics.sv;
+    if(sv&&typeof sv==="object"){
+      const clean={...sv};
+      for(const field of ["rule","determinedBy","otherValues","modifier","modifierRule","bonus","noTest","immune"])if(typeof clean[field]==="string")delete clean[field];
+      for(const field of ["by","modifiers"])if(Array.isArray(clean[field]))clean[field]=clean[field].map((row,i)=>({...row,condition:game.i18n.format("TRUDVANG.RuleTest.ValueOption",{index:i+1})}));
+      for(const field of ["repeatedModifier","increment","decrement"])if(clean[field])clean[field]={...clean[field],condition:game.i18n.localize("TRUDVANG.RuleTest.ConsultDescription")};
+      mechanics.sv=clean;
+    }
+    if(typeof mechanics.modifier==="string" && !/^[+-]?\d+(?:\.\d+)?$/.test(mechanics.modifier.trim()))delete mechanics.modifier;
+    return {...mechanics,action:game.i18n.format(test.kind==="skill"?"TRUDVANG.RuleTest.GenericSkill":"TRUDVANG.RuleTest.GenericResistance",{index:index+1}),note:game.i18n.localize("TRUDVANG.RuleTest.ConsultDescription")};
+  });
 }
 
 /** Usage cards label each response with the action from the French source data. */
@@ -182,7 +195,7 @@ function annotateTests(description, document) {
     )).join(" ");
     result = `${result.slice(0, anchor.start)}${buttons}${result.slice(anchor.end)}`;
   }
-  if (document?.flags?.[SYSTEM_ID]?.consequenceTests) result += [...remaining].map(index => inlineTestButton(tests[index], index, tests[index].action)).join(" ");
+  if (document?.flags?.[SYSTEM_ID]?.consequenceTests || (game.i18n?.lang && game.i18n.lang!=="fr")) result += [...remaining].map(index => inlineTestButton(tests[index], index, tests[index].action)).join(" ");
   return result;
 }
 

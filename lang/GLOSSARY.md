@@ -1317,6 +1317,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.RuleTest.AvailableTests` | Available tests | Tests disponibles |
+| `TRUDVANG.RuleTest.GenericResistance` | Resistance {index} | Résistance {index} |
+| `TRUDVANG.RuleTest.GenericSkill` | Skill test {index} | Test de compétence {index} |
+| `TRUDVANG.RuleTest.ConsultDescription` | See the description for this test’s conditions and consequences. | Consultez la description pour les conditions et conséquences de ce test. |
 | `TRUDVANG.RuleTest.ResistanceShort` | Resistance | Résistance |
 | `TRUDVANG.RuleTest.SkillShort` | Skill test | Test de compétence |
 | `TRUDVANG.RuleTest.VariableValue` | variable SV | SV variable |
@@ -12864,6 +12867,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.MemoryYearMany` | {value} years | {value} ans |
 | `TRUDVANG.Transformation.MemoryLifetime` | entire life | vie entière |
 | `TRUDVANG.Transformation.ImplantedThought` | Implanted thought | Pensée implantée |
+| `TRUDVANG.Transformation.Targets` | Targets | Cibles |
+| `TRUDVANG.Transformation.AddTargets` | Add current targets | Ajouter les cibles actuelles |
+| `TRUDVANG.Transformation.RemoveTarget` | Remove this target | Retirer cette cible |
+| `TRUDVANG.Transformation.NoTargets` | Target at least one token. | Sélectionnez au moins une cible. |
 | `TRUDVANG.Transformation.IllusionRange` | Visual illusions; range: {value}. | Illusions visuelles ; portée : {value}. |
 | `TRUDVANG.Transformation.DistanceMeterOne` | {value} m | {value} m |
 | `TRUDVANG.Transformation.DistanceMeterMany` | {value} m | {value} m |

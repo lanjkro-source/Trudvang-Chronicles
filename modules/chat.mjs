@@ -7,6 +7,7 @@ import {openPortraitPopout} from "./portrait.mjs";
 import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse, applyEnvironmentFatigue} from "./trait-situation-request.mjs";
 import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
+import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -25,6 +26,7 @@ export function registerChatListeners() {
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
   registerChatApplicationSocket();
+  registerEffectTargetSocket();
 }
 
 /**
@@ -59,6 +61,25 @@ function attachListeners(message, html) {
   html.dataset.trudvangBound = "true";
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
+  void canManageEffectTargets(message,game.user).then(editable=>{
+    for(const button of html.querySelectorAll("[data-transformation-key]")){
+      const key=button.dataset.transformationKey;
+      if(!message.flags?.["trudvang-chronicles"]?.ruleTestContext || button.nextElementSibling?.classList?.contains("effect-target-list"))continue;
+      button.setAttribute("aria-disabled",editable?"false":"true");
+      button.insertAdjacentHTML("afterend",effectTargetListHTML(effectTargetsFor(message,key),{editable}));
+      const list=button.nextElementSibling;
+      list?.querySelector("[data-action='effect-target-add']")?.addEventListener("click",async event=>{
+        event.preventDefault();const tokens=Array.from(game.user.targets??[]);
+        if(!tokens.length)return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.NoTargets"));
+        const result=await requestEffectTargetUpdate(message,key,{tokens});
+        if(result.status==="unavailable")ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+      });
+      list?.querySelectorAll("[data-action='effect-target-remove']").forEach(control=>control.addEventListener("click",async event=>{
+        event.preventDefault();const result=await requestEffectTargetUpdate(message,key,{remove:control.dataset.actorUuid});
+        if(result.status==="unavailable")ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+      }));
+    }
+  }).catch(error=>console.error("Trudvang | Effect target list",error));
   html.querySelectorAll("[data-action='toggle-roll-details']").forEach(button => {
     const details = button.closest(".chat-card")?.querySelector("[data-roll-details]");
     if (details) {

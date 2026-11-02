@@ -12,7 +12,8 @@ import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
 import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
-import {transformationLinks} from "./transformations.mjs";
+import {transformationLinks,transformationKeys} from "./transformations.mjs";
+import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
@@ -120,7 +121,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{})}} : {})
+      ...((targetResults.length||ruleTestContext) ? {[SYSTEM_ID]: {...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(transformationKeys(item),game.user?.targets)}:{})}} : {})
     }} : {})
   });
   if (useDiceSoNice) {

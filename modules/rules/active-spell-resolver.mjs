@@ -55,7 +55,7 @@ export function maintainedSpellEffects({actors = [], scenes = []} = {}, {casterU
   for (const actor of candidates) {
     if (!actor?.uuid || seenActors.has(actor.uuid)) continue;
     seenActors.add(actor.uuid);
-    for (const effect of actor.effects ?? []) {
+    for (const effect of [...(actor.effects ?? []),...Array.from(actor.items??[]).flatMap(item=>Array.from(item.effects??[]))]) {
       const context = effect.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
       // An expired stage can be advanced in place: keep it linked until the
       // document is actually removed, rather than ending its casting early.

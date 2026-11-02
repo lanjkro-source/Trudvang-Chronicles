@@ -25,7 +25,7 @@ test("effect links serialize the complete context safely into a quoted HTML attr
  const saved=JSON.parse(decoded);
  assert.deepEqual({...saved,countsById:undefined},{...context,countsById:undefined});
  assert.equal(saved.countsById[`${id}:3`],3);
- assert.deepEqual(transformationRequest(button({ruleTestContext:decoded})).context,saved);
+ assert.deepEqual(transformationRequest(button({ruleTestContext:decoded})).context,{...saved,messageId:"cast"});
 });
 
 test("effect links preserve captured identities when positional counts have become stale",()=>{
@@ -40,7 +40,7 @@ test("effect links preserve captured identities when positional counts have beco
 
 test("already published truncated JSON recovers the original casting context, including its improvements",()=>{
  const recovered=transformationRequest(button({ruleTestContext:"{"}));
- assert.deepEqual(recovered.context,context);assert.deepEqual(recovered.counts,context.counts);
+ assert.deepEqual(recovered.context,{...context,messageId:"cast"});assert.deepEqual(recovered.counts,context.counts);
  const absentCounts=transformationRequest(button({ruleTestContext:"{",transformationCounts:"[broken"}));
  assert.deepEqual(absentCounts.counts,context.counts);
  const unbound=button({ruleTestContext:"{"});unbound.closest=()=>null;
@@ -54,25 +54,27 @@ test("the real dragstart hook serializes recoverable old buttons without throwin
   registerTransformationHooks();
   let payload;
   handlers.dragstart({target:{closest:()=>button({ruleTestContext:"{"})},dataTransfer:{setData:(type,value)=>{assert.equal(type,"text/plain");payload=JSON.parse(value);}}});
-  assert.deepEqual(payload.context,context);assert.deepEqual(payload.counts,context.counts);
+  assert.deepEqual(payload.context,{...context,messageId:"cast"});assert.deepEqual(payload.counts,context.counts);
  }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;}
 });
 
-test("clicking an effect applies it to the controlled actor, never implicitly to the caster",async()=>{
+test("clicking an effect applies it to the listed target, never implicitly to the caster",async()=>{
  const previous={Hooks:globalThis.Hooks,listener:document.addEventListener,canvas:globalThis.canvas,ui:globalThis.ui,game:globalThis.game,utils:foundry.utils,api:foundry.applications.api};
  const handlers={};let applied=0,warnings=0;
  try{
   document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
   const caster={documentName:"Actor",canUserModify:()=>true,createTrudvangEffect:async()=>{throw Error("caster must not receive effect");}};
   const selected={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async()=>{applied++;return null;}};
-  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map()};
-  globalThis.canvas={tokens:{controlled:[{actor:selected}]}};globalThis.ui={notifications:{warn:()=>warnings++,error:message=>{throw Error(message);}}};
-  foundry.utils={fromUuid:async()=>({parent:caster,system:{catalogId:id}})};
+  const token={uuid:"Token.selected",name:"Selected",actor:selected};selected.uuid="Actor.selected";
+  const message={author:{id:"player"},flags:{[scope]:{ruleTestContext:context,transformationTargets:{[id+"#hate"]:[{tokenUuid:token.uuid,actorUuid:selected.uuid}]}}}};
+  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map([["cast",message]])};
+  globalThis.canvas={tokens:{controlled:[]}};globalThis.ui={notifications:{warn:()=>warnings++,error:message=>{throw Error(message);}}};
+  foundry.utils={fromUuid:async uuid=>uuid===token.uuid?token:({parent:caster,system:{catalogId:id}})};
   foundry.applications.api={DialogV2:{wait:async()=>({duration:"1 minute"})}};
   registerTransformationHooks();
   const event={target:{closest:()=>button()},preventDefault(){},stopPropagation(){}};
   await handlers.click(event);assert.equal(applied,1);
-  canvas.tokens.controlled=[];await handlers.click(event);assert.equal(applied,1);assert.equal(warnings,1);
+  message.flags[scope].transformationTargets[id+"#hate"]=[];await handlers.click(event);assert.equal(applied,1);assert.equal(warnings,1);
  }finally{globalThis.Hooks=previous.Hooks;document.addEventListener=previous.listener;globalThis.canvas=previous.canvas;globalThis.ui=previous.ui;globalThis.game=previous.game;foundry.utils=previous.utils;foundry.applications.api=previous.api;}
 });
 
@@ -83,10 +85,12 @@ test("one click opens target-labelled allocation dialogs sequentially and skips 
   document.addEventListener=(name,fn)=>{handlers[name]=fn;};globalThis.Hooks={on(){}};
   const makeActor=uuid=>({uuid,name:uuid,items:[],canUserModify:()=>true,getTraitValue:()=>0,createTrudvangEffect:async()=>{created.push(uuid);return null;}});
   const first=makeActor("Actor.first"),second=makeActor("Actor.second");
-  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map()};
-  globalThis.canvas={tokens:{controlled:[{name:"Premier",actor:first},{name:"Doublon",actor:first},{name:"Second",actor:second}]}};
+  const tokens=[{uuid:"Token.first",name:"Premier",actor:first},{uuid:"Token.second",name:"Second",actor:second}];
+  const message={author:{id:"player"},flags:{[scope]:{ruleTestContext:context,transformationTargets:{[id+"#hate"]:tokens.map(t=>({tokenUuid:t.uuid,actorUuid:t.actor.uuid}))}}}};
+  globalThis.game={user:{id:"player"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key},messages:new Map([["cast",message]])};
+  globalThis.canvas={tokens:{controlled:[]}};
   globalThis.ui={notifications:{warn:()=>{},error:message=>{throw Error(message);}}};
-  foundry.utils={fromUuid:async()=>({system:{catalogId:id}})};
+  foundry.utils={fromUuid:async uuid=>tokens.find(t=>t.uuid===uuid)??({system:{catalogId:id}})};
   foundry.applications.api={DialogV2:{wait:async options=>{assert.equal(open,false);open=true;titles.push(options.window.title);await new Promise(resolve=>setImmediate(resolve));open=false;return {duration:"1 minute"};}}};
   registerTransformationHooks();const event={target:{closest:()=>button()},preventDefault(){},stopPropagation(){}};
   await handlers.click(event);

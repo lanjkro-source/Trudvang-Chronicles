@@ -67,3 +67,10 @@ test("effect discovery distinguishes castings and includes unlinked tokens on ot
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"Actor.caster",castingId:"never-applied"}),[]);
  assert.deepEqual(maintainedSpellEffects(world,{casterUuid:"",castingId:"first"}),[]);
 });
+
+test("maintained effects on carried items are discovered independently of actor effects", () => {
+  const context = {casterUuid: "Actor.caster", castingId: "cast"};
+  const effect = {uuid: "Actor.target.Item.sword.ActiveEffect.magic", flags: {"trudvang-chronicles": {transformation: {ruleTestContext: context}}}};
+  const target = {uuid: "Actor.target", effects: [], items: [{effects: [effect]}]};
+  assert.deepEqual(maintainedSpellEffects({actors: [target]}, context), [{actorUuid: target.uuid, effectUuid: effect.uuid}]);
+});

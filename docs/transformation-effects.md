@@ -35,14 +35,17 @@ pour chaque cible ; le joueur doit choisir la même langue pour toutes.
 Forgeron nain propose les spécialités d’Artisanat connues du bénéficiaire : son
 bonus s’applique automatiquement à la spécialité choisie dans les fenêtres de test.
 
-Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
-peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
-aux acteurs des tokens contrôlés par le joueur, une seule fois par acteur lié.
-Lorsqu'une répartition est nécessaire, une fenêtre portant le nom de la cible est
-ouverte pour chaque acteur, successivement. Les effets de zone dont tous les
-paramètres sont communs et la durée déterministe s'appliquent directement à la
-sélection ; les autres conservent leur fenêtre. Les permissions de
-l’acteur destinataire sont vérifiées avant toute création.
+Les descriptions et les annonces proposent des boutons d’effets. On peut les glisser
+sur la fiche d’un acteur, son token ou un objet de son inventaire. Le lanceur et le
+MJ peuvent aussi cliquer sur un bouton : l’effet s’applique aux cibles enregistrées
+pour cette variante. La liste reprend initialement les cibles du lancement ; ses
+boutons + et − permettent au lanceur ou au MJ de la modifier. Les propriétaires
+des cibles peuvent également glisser les effets. Lorsqu’une répartition est
+nécessaire, une fenêtre portant le nom de la cible est ouverte successivement
+pour chaque acteur. Les effets de zone aux paramètres communs et à la durée
+déterministe s’appliquent directement. Le MJ actif arbitre les créations nécessitant
+ses permissions et les limites de chaque lancement. Pour les anciens messages sans
+liste enregistrée, on peut ajouter les cibles avec +.
 
 Les variantes prédéfinies sont proposées séparément. Transformation et les formes
 libres de créatures ouvrent un choix dans le bestiaire. Les déguisements en objets

@@ -83,14 +83,16 @@ export async function requestEndMaintainedSpell(caster, castingId) {
 
 /** Reserve a target and its improvements on the elected GM before creating the
  * effect. All casts of the same caster share the existing serialized queue. */
-export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="",targetUuid,countsById,data,userId}) {
+export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="",targetUuid,itemUuid="",countsById,data,userId}) {
  if(!isWriter())return {status:"unavailable"};
  return queueCaster(casterUuid,async()=>{
   const caster=await foundry.utils.fromUuid(casterUuid), target=await foundry.utils.fromUuid(targetUuid), user=game.users.get(userId);
   if(!user || !target?.canUserModify?.(user,"update") || !caster?.canUserModify?.(game.user,"update"))return {status:"unavailable"};
+  const targetItem=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
+  if(itemUuid&&(!targetItem||targetItem.parent?.uuid!==target.uuid||!targetItem.canUserModify?.(user,"update")))return {status:"unavailable"};
   const message=messageId?game.messages?.get(messageId):null;
   const divine=message?.flags?.["trudvang-chronicles"]?.divineAllocation;
-  if(messageId&&!divine)return {status:"unavailable"};
+  if(messageId&&!message)return {status:"unavailable"};
   const records=divine?null:activeSpellRecords(caster), record=divine??records?.find(row=>row.id===castingId);
   const item=!divine&&record?Array.from(caster.items??[]).find(row=>row.id===record.itemId):null;
   const sourceId=divine?.sourceId??item?.system?.catalogId;
@@ -123,7 +125,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
     try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}
     return {status:"ok",instant:true};
    }
-   const effect=await target.createTrudvangEffect(data);
+   const effect=targetItem?(await targetItem.createEmbeddedDocuments("ActiveEffect",[data]))[0]:await target.createTrudvangEffect(data);
    if(!effect)throw Error("Failed to create allocated effect");
    return {status:"ok",effectUuid:effect.uuid};
   }catch(error){
@@ -185,17 +187,19 @@ function enqueuePreviousReference(effectUuid, currentContext) {
 }
 
 export function registerMaintainedSpellTracking() {
- Hooks.on("createActiveEffect", effect => {if (effect.parent?.documentName === "Actor") void enqueueContext(contextOf(effect), {effectCreated:true});});
- Hooks.on("preUpdateActiveEffect", effect => {if (effect.parent?.documentName === "Actor") oldContexts.set(effect, structuredClone(contextOf(effect) ?? null));});
+ const tracked=effect=>effect.parent?.documentName==="Actor"||(effect.parent?.documentName==="Item"&&effect.parent.parent?.documentName==="Actor");
+ Hooks.on("createActiveEffect", effect => {if (tracked(effect)) void enqueueContext(contextOf(effect), {effectCreated:true});});
+ Hooks.on("preUpdateActiveEffect", effect => {if (tracked(effect)) oldContexts.set(effect, structuredClone(contextOf(effect) ?? null));});
  Hooks.on("updateActiveEffect", effect => {
-  if (effect.parent?.documentName !== "Actor") return;
+  if (!tracked(effect)) return;
   const previous = oldContexts.get(effect); oldContexts.delete(effect);
   const current = contextOf(effect);
   enqueuePreviousReference(effect.uuid, current);
   if (previous && (previous.casterUuid !== current?.casterUuid || previous.castingId !== current?.castingId)) void enqueueContext(previous, {removed:true});
   void enqueueContext(current);
  });
- Hooks.on("deleteActiveEffect", effect => {if (effect.parent?.documentName === "Actor") void enqueueContext(contextOf(effect), {removed:true});});
+ Hooks.on("deleteActiveEffect", effect => {if (tracked(effect)) void enqueueContext(contextOf(effect), {removed:true});});
+ Hooks.on("deleteItem", item=>{if(item.parent?.documentName==="Actor")for(const effect of item.effects??[])void enqueueContext(contextOf(effect),{removed:true});});
  Hooks.on("updateActor", (actor, changed, options) => {
   if (options?.trudvangSpellTracking || (!changed.system?.activeSpellCastings && !Object.hasOwn(changed, "system.activeSpellCastings"))) return;
   for (const record of activeSpellRecords(actor)) void enqueue(actor.uuid, record.id);

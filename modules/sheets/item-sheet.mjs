@@ -163,6 +163,18 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     bindSheetListMenus(this);
     if(["spell","divineFeat"].includes(this.item.type)){magicSheets.add(this);this.refreshMagicCastingButton();}
     const root = this.element;
+    if (root?.addEventListener && this._transformationDropRoot !== root) {
+      this._transformationDropRoot = root;
+      root.addEventListener("dragover", event => {
+        if (EFFECT_ITEM_TYPES.has(this.item.type) && this.item.parent?.documentName === "Actor") event.preventDefault();
+      });
+      root.addEventListener("drop", event => {
+        let data; try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { return; }
+        if (data?.type !== "TrudvangTransformation") return;
+        event.preventDefault(); event.stopPropagation();
+        void this._onDrop(event).catch(error => ui.notifications.error(error.message));
+      });
+    }
     if (!this.isEditable || !this.item.isOwner) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
     }
@@ -200,6 +212,19 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       });
     });
     this._activateTabs(root);
+  }
+
+  async _onDrop(event) {
+    let data;try{data=JSON.parse(event.dataTransfer?.getData("text/plain")||"null");}catch{}
+    if(data?.type==="TrudvangTransformation"&&EFFECT_ITEM_TYPES.has(this.item.type)&&this.item.parent?.documentName==="Actor"){
+      const {applyTransformation}=await import("../transformations.mjs");
+      const {effectTargetsFor}=await import("../effect-targets.mjs");
+      const source=data.sourceUuid?await foundry.utils.fromUuid(data.sourceUuid):null;
+      const message=data.context?.messageId?game.messages?.get(data.context.messageId):null;
+      const row=message?effectTargetsFor(message,data.key).find(target=>target.actorUuid===this.item.parent.uuid):null;
+      return applyTransformation(this.item.parent,data.key,{source,counts:data.counts??[],context:data.context,destinationItem:this.item,targetName:this.item.name,delegateTokenUuid:row?.tokenUuid??""});
+    }
+    return super._onDrop?.(event);
   }
 
   refreshMagicCastingButton(){

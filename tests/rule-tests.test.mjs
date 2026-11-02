@@ -29,6 +29,19 @@ test("every resistance test has two trait slots and an explicit method", () => {
   }
 });
 
+test("English offers mechanically identical tests with neutral localized labels",async()=>{
+ const fr=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url))),en=JSON.parse(fs.readFileSync(new URL("../lang/en.json",import.meta.url)));
+ const get=(o,key)=>key.split(".").reduce((v,k)=>v?.[k],o);
+ globalThis.game={i18n:{lang:"en",localize:key=>get(en,key)??key,format:(key,data)=>String(get(en,key)??key).replace(/\{(\w+)\}/g,(_,name)=>data[name]??"")}};
+ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value);}})};
+ globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
+ const {ruleTestsForDocument,annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
+ const document={system:{catalogId:"vitner-vitner-craft:vitner-pouch:1"}},test=ruleTestsForDocument(document)[0];
+ assert.equal(test.sv,8);assert.deepEqual(test.trait,["psyche","aucun"]);assert.match(test.action,/Resistance 1/);assert.match(test.note,/description/);
+ assert.match(annotateRuleTestDescription("<p>A creature can resist the spell.</p>",document),/data-test-index="0"/);
+ assert.ok(fr.TRUDVANG.RuleTest.ConsultDescription);
+});
+
 test("rule-test annotations follow test-of-situation and skill-test order", async () => {
   globalThis.foundry = {applications: {handlebars: {renderTemplate: async () => ""}}};
   globalThis.document = {createElement: () => {
