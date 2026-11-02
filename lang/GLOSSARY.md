@@ -1343,6 +1343,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.MaintainedSpellUnavailable` | The spell and its effects could not be ended. Check that a game master is connected. | Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté. |
 | `TRUDVANG.Warning.MagicAllocationUnavailable` | The effect could not be applied: the casting must be active and a game master connected. | Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté. |
 | `TRUDVANG.Warning.MagicTargetLimit` | This casting has reached its target limit. | Le nombre de cibles permis par ce lancement est atteint. |
+| `TRUDVANG.Warning.MagicRequiresOtherTarget` | First apply the primary effect to someone other than the caster. | Appliquez d’abord l’effet principal à une autre personne que le lanceur. |
 | `TRUDVANG.Warning.MagicInstantAlreadyApplied` | This casting has already applied its consequence to this target. | Ce lancement a déjà appliqué sa conséquence à cette cible. |
 | `TRUDVANG.Warning.MagicCasterOnly` | This power can only be applied to its caster with the selected power levels. | Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis. |
 | `TRUDVANG.Warning.MagicTargetAlreadyAffected` | This target has already received another variant of this spell. | Cette cible a déjà reçu une autre variante de ce sortilège. |
@@ -11192,6 +11193,50 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Sense1` | perceives invisible and intangible creatures | perçoit les créatures invisibles et intangibles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability0` | ravens | corbeaux |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability1` | undead | morts-vivants |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.Name` | Willpower of the Ancestors | Volonté des ancêtres |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.Description` | Psyche is replaced with the exceptional trait +4. | Le Psychisme est remplacé par le trait exceptionnel +4. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.SourceName` | Willpower of the Ancestors | Volonté des ancêtres |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.SourcePage` | 178 | 239 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.Name` | Boldness of the Ancestors | Courage des ancêtres |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.Description` | Psyche is replaced with the exceptional trait +6. | Le Psychisme est remplacé par le trait exceptionnel +6. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.SourceName` | Boldness of the Ancestors | Courage des ancêtres |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.SourcePage` | 178 | 239 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.Name` | Fearless (Halawen) | Sans peur (Halawen) |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.Description` | Psyche is replaced with the exceptional trait +6. | Le Psychisme est remplacé par le trait exceptionnel +6. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.SourceName` | Fearless | Sans peur |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.SourcePage` | 178 | 240 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.Name` | Fearless (Halawen’s allies) | Sans peur (alliés d’Halawen) |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.Description` | Psyche is replaced with the exceptional trait +4; the corresponding power level can raise it to +6. | Le Psychisme est remplacé par le trait exceptionnel +4 ; le niveau de puissance approprié peut le porter à +6. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.SourceName` | Fearless | Sans peur |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.SourcePage` | 178 | 240 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood`
 

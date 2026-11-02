@@ -198,6 +198,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:0",
@@ -234,6 +238,50 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:fearless:6": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "chosen",
+          "baseTargets": 1,
+          "variants": [
+            "principal"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:2",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-ealdtradition-halawen-s-offering:fearless:6:0",
+            "holy-ealdtradition-halawen-s-offering:fearless:6:1"
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-halawen-s-offering:fearless:6:0",
+            "holy-ealdtradition-halawen-s-offering:fearless:6:1"
+          ]
+        },
+        {
+          "id": "allies",
+          "baseTargets": 3,
+          "maxOtherThanCaster": 2,
+          "requiresOtherTargetGroup": "chosen",
+          "variants": [
+            "allie"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-ealdtradition-halawen-s-offering:fearless:6:0",
+            "holy-ealdtradition-halawen-s-offering:fearless:6:1",
+            "holy-ealdtradition-halawen-s-offering:fearless:6:4"
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-halawen-s-offering:fearless:6:0",
+            "holy-ealdtradition-halawen-s-offering:fearless:6:1"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:fearless:6:0",
@@ -346,6 +394,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:0",

@@ -1153,6 +1153,7 @@
       "MaintainedSpellUnavailable": "Impossible de terminer ce sortilège et ses effets. Vérifiez qu’un maître de jeu est connecté.",
       "MagicAllocationUnavailable": "Impossible d’appliquer cet effet : le lancement doit être actif et un maître de jeu connecté.",
       "MagicTargetLimit": "Le nombre de cibles permis par ce lancement est atteint.",
+      "MagicRequiresOtherTarget": "Appliquez d’abord l’effet principal à une autre personne que le lanceur.",
       "MagicInstantAlreadyApplied": "Ce lancement a déjà appliqué sa conséquence à cette cible.",
       "MagicCasterOnly": "Ce pouvoir ne peut être appliqué qu’à son lanceur avec les niveaux de puissance choisis.",
       "MagicTargetAlreadyAffected": "Cette cible a déjà reçu une autre variante de ce sortilège.",
@@ -13974,6 +13975,42 @@
           "Sense1": "perçoit les créatures invisibles et intangibles",
           "Capability0": "corbeaux",
           "Capability1": "morts-vivants"
+        },
+        "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
+          "Name": "Volonté des ancêtres",
+          "Summary": "Accorde un trait exceptionnel de Psychisme.",
+          "Description": "Le Psychisme est remplacé par le trait exceptionnel +4.",
+          "SourceName": "Volonté des ancêtres",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "239",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal": {
+          "Name": "Courage des ancêtres",
+          "Summary": "Accorde un trait exceptionnel de Psychisme.",
+          "Description": "Le Psychisme est remplacé par le trait exceptionnel +6.",
+          "SourceName": "Courage des ancêtres",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "239",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6#principal": {
+          "Name": "Sans peur (Halawen)",
+          "Summary": "Accorde un trait exceptionnel de Psychisme.",
+          "Description": "Le Psychisme est remplacé par le trait exceptionnel +6.",
+          "SourceName": "Sans peur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "240",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6#allie": {
+          "Name": "Sans peur (alliés d’Halawen)",
+          "Summary": "Accorde un trait exceptionnel de Psychisme.",
+          "Description": "Le Psychisme est remplacé par le trait exceptionnel +4 ; le niveau de puissance approprié peut le porter à +6.",
+          "SourceName": "Sans peur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "240",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Sang brûlant (Tribut de Morgu)",

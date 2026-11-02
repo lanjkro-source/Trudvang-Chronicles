@@ -1,0 +1,53 @@
+{
+  "_id": "SLz5ZVoUpVqWrXsY",
+  "_key": "!items!SLz5ZVoUpVqWrXsY",
+  "name": "Boldness of the Ancestors",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+    "description": "Psyche is replaced with the exceptional trait +6.",
+    "summary": "Grants an exceptional Psyche trait.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "LHnRPlQlRmSnToUp",
+      "_key": "!items.effects!SLz5ZVoUpVqWrXsY.LHnRPlQlRmSnToUp",
+      "name": "Boldness of the Ancestors",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Psyche is replaced with the exceptional trait +6.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+            "summary": "Grants an exceptional Psyche trait.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

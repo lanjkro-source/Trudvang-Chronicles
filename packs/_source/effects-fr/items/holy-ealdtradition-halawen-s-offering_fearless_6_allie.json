@@ -1,0 +1,53 @@
+{
+  "_id": "OJEzdhKfLgMhNiOj",
+  "_key": "!items!OJEzdhKfLgMhNiOj",
+  "name": "Sans peur (alliés d’Halawen)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:fearless:6#allie",
+    "description": "Le Psychisme est remplacé par le trait exceptionnel +4 ; le niveau de puissance approprié peut le porter à +6.",
+    "summary": "Accorde un trait exceptionnel de Psychisme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 240
+    }
+  },
+  "effects": [
+    {
+      "_id": "3iXARjOjPkQlRmSn",
+      "_key": "!items.effects!OJEzdhKfLgMhNiOj.3iXARjOjPkQlRmSn",
+      "name": "Sans peur (alliés d’Halawen)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le Psychisme est remplacé par le trait exceptionnel +4 ; le niveau de puissance approprié peut le porter à +6.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:fearless:6#allie",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:fearless:6#allie",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:fearless:6",
+            "summary": "Accorde un trait exceptionnel de Psychisme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

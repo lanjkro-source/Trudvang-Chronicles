@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 139 variantes.
+les états, les règles et les liens des 143 variantes.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
@@ -282,3 +282,10 @@ maladie, neutraliser un poison ou dissiper une malédiction est calculé et
 inscrit sur l'effet et un bouton ouvre un jet de situation avec ce bonus ; il
 ne modifie pas tous les jets de situation. Le joueur renseigne la valeur et le
 trait applicables à l'affection dans la fenêtre. La rupture du repos reste manuelle.
+
+Volonté et Courage des ancêtres remplacent le Psychisme du bénéficiaire par le
+trait indiqué. Sans peur (Halawen) offre un effet principal à une ou plusieurs
+personnes et, si au moins l'une d'elles est autre que le lanceur, un effet
+secondaire au lanceur et à deux alliés au maximum. La durée est commune ;
+l'amélioration de l'effet secondaire est attribuée à un allié. La portée reste
+à vérifier manuellement (Livre des règles, p. 239–240).

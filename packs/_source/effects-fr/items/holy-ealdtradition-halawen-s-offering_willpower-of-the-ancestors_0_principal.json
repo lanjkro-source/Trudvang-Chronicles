@@ -1,0 +1,53 @@
+{
+  "_id": "aEwM3IbHcIdJeKfL",
+  "_key": "!items!aEwM3IbHcIdJeKfL",
+  "name": "Volonté des ancêtres",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+    "description": "Le Psychisme est remplacé par le trait exceptionnel +4.",
+    "summary": "Accorde un trait exceptionnel de Psychisme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "zYdRxdHcIdJeKfLg",
+      "_key": "!items.effects!aEwM3IbHcIdJeKfL.zYdRxdHcIdJeKfLg",
+      "name": "Volonté des ancêtres",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le Psychisme est remplacé par le trait exceptionnel +4.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+            "summary": "Accorde un trait exceptionnel de Psychisme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "SLz5ZVoUpVqWrXsY",
+  "_key": "!items!SLz5ZVoUpVqWrXsY",
+  "name": "Courage des ancêtres",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+    "description": "Le Psychisme est remplacé par le trait exceptionnel +6.",
+    "summary": "Accorde un trait exceptionnel de Psychisme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "LHnRPlQlRmSnToUp",
+      "_key": "!items.effects!SLz5ZVoUpVqWrXsY.LHnRPlQlRmSnToUp",
+      "name": "Courage des ancêtres",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le Psychisme est remplacé par le trait exceptionnel +6.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+            "summary": "Accorde un trait exceptionnel de Psychisme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

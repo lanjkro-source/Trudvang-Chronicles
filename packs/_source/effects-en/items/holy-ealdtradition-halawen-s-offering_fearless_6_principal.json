@@ -1,0 +1,53 @@
+{
+  "_id": "FaitoG8D9EaGbHcI",
+  "_key": "!items!FaitoG8D9EaGbHcI",
+  "name": "Fearless (Halawen)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:fearless:6#principal",
+    "description": "Psyche is replaced with the exceptional trait +6.",
+    "summary": "Grants an exceptional Psyche trait.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "kQwBuKbHcIdJeKfL",
+      "_key": "!items.effects!FaitoG8D9EaGbHcI.kQwBuKbHcIdJeKfL",
+      "name": "Fearless (Halawen)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Psyche is replaced with the exceptional trait +6.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:fearless:6#principal",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:fearless:6#principal",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:fearless:6",
+            "summary": "Grants an exceptional Psyche trait.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

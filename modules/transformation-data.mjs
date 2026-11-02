@@ -1474,6 +1474,144 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
+    "id": "principal",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal": {
+    "id": "principal",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:fearless:6#principal": {
+    "id": "principal",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":6}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:fearless:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:fearless:6#allie": {
+    "id": "allie",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.traits",
+        "type": "override",
+        "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:fearless:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:1"
+      },
+      {
+        "index": 4,
+        "target": "traitValue",
+        "trait": "psyche",
+        "value": 2,
+        "templates": [
+          "allie"
+        ],
+        "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:4"
+      }
+    ]
+  },
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
     "id": "simmering-blood",
     "icon": "icons/svg/blood.svg",
@@ -5699,6 +5837,16 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": [
     "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau"
+  ],
+  "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": [
+    "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal"
+  ],
+  "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": [
+    "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal"
+  ],
+  "holy-ealdtradition-halawen-s-offering:fearless:6": [
+    "holy-ealdtradition-halawen-s-offering:fearless:6#principal",
+    "holy-ealdtradition-halawen-s-offering:fearless:6#allie"
   ],
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": [
     "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood"

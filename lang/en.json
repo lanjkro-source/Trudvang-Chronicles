@@ -1156,6 +1156,7 @@
       "MaintainedSpellUnavailable": "The spell and its effects could not be ended. Check that a game master is connected.",
       "MagicAllocationUnavailable": "The effect could not be applied: the casting must be active and a game master connected.",
       "MagicTargetLimit": "This casting has reached its target limit.",
+      "MagicRequiresOtherTarget": "First apply the primary effect to someone other than the caster.",
       "MagicInstantAlreadyApplied": "This casting has already applied its consequence to this target.",
       "MagicCasterOnly": "This power can only be applied to its caster with the selected power levels.",
       "MagicTargetAlreadyAffected": "This target has already received another variant of this spell.",
@@ -13974,6 +13975,42 @@
           "Sense1": "perceives invisible and intangible creatures",
           "Capability0": "ravens",
           "Capability1": "undead"
+        },
+        "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
+          "Name": "Willpower of the Ancestors",
+          "Summary": "Grants an exceptional Psyche trait.",
+          "Description": "Psyche is replaced with the exceptional trait +4.",
+          "SourceName": "Willpower of the Ancestors",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal": {
+          "Name": "Boldness of the Ancestors",
+          "Summary": "Grants an exceptional Psyche trait.",
+          "Description": "Psyche is replaced with the exceptional trait +6.",
+          "SourceName": "Boldness of the Ancestors",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6#principal": {
+          "Name": "Fearless (Halawen)",
+          "Summary": "Grants an exceptional Psyche trait.",
+          "Description": "Psyche is replaced with the exceptional trait +6.",
+          "SourceName": "Fearless",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6#allie": {
+          "Name": "Fearless (Halawen’s allies)",
+          "Summary": "Grants an exceptional Psyche trait.",
+          "Description": "Psyche is replaced with the exceptional trait +4; the corresponding power level can raise it to +6.",
+          "SourceName": "Fearless",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Simmering Blood (Tribute of Morgu)",

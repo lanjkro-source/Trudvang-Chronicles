@@ -404,3 +404,26 @@ test("enhanced recovery powers retain their separate conditional test bonus",asy
   }
  }finally {foundry.applications.api.DialogV2=previous;}
 });
+
+test("Fearless requires an empowered other person before applying the secondary allies",async()=>{
+ const previous=foundry.applications.api.DialogV2;
+ try {
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"1 minute",boost0:1,boost1:0,boost4:1})};
+  const power="holy-ealdtradition-halawen-s-offering:fearless:6";
+  const makeTarget=uuid=>({uuid,name:uuid,isOwner:false,items:[],getTraitValue:()=>0,canUserModify:()=>true,createTrudvangEffect:async data=>{const effect={uuid:`${uuid}.ActiveEffect.fearless`,data};documents.set(effect.uuid,effect);return effect;}});
+  const caster=makeTarget("Actor.fearless-caster"),primary=makeTarget("Actor.fearless-primary"),friends=[1,2,3].map(i=>makeTarget(`Actor.fearless-friend-${i}`));for(const t of [caster,primary,...friends])documents.set(t.uuid,t);
+  const item={type:"divineFeat",system:{catalogId:power}};
+  await rollUnder({actor:caster,item,kind:"divine",target:12,label:"Fearless",castingId:"fearless",powerLevelCounts:[1,0,0,0,1]});
+  const message=Array.from(messages.values()).at(-1),context={...message.flags[scope].ruleTestContext,messageId:message.id};
+  await assert.rejects(()=>applyTransformation(friends[0],`${power}#allie`,{source:item,context}),/MagicRequiresOtherTarget/);
+  const main=await applyTransformation(primary,`${power}#principal`,{source:item,context});
+  assert.equal(main.data.system.changes.find(c=>c.key==="system.effective.traits.psyche").value,"6");
+  const first=await applyTransformation(friends[0],`${power}#allie`,{source:item,context});
+  assert.equal(first.data.system.changes.find(c=>c.key==="system.effective.traits.psyche").value,"6");
+  foundry.applications.api.DialogV2={wait:async()=>({duration:"1 minute",boost0:1,boost1:0,boost4:0})};
+  const second=await applyTransformation(friends[1],`${power}#allie`,{source:item,context});
+  assert.equal(second.data.system.changes.find(c=>c.key==="system.effective.traits.psyche").value,"4");
+  await assert.rejects(()=>applyTransformation(friends[2],`${power}#allie`,{source:item,context}),/MagicTargetLimit/);
+  assert.ok(await applyTransformation(caster,`${power}#allie`,{source:item,context}));
+ }finally{foundry.applications.api.DialogV2=previous;}
+});

@@ -1,0 +1,53 @@
+{
+  "_id": "aEwM3IbHcIdJeKfL",
+  "_key": "!items!aEwM3IbHcIdJeKfL",
+  "name": "Willpower of the Ancestors",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+    "description": "Psyche is replaced with the exceptional trait +4.",
+    "summary": "Grants an exceptional Psyche trait.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "zYdRxdHcIdJeKfLg",
+      "_key": "!items.effects!aEwM3IbHcIdJeKfL.zYdRxdHcIdJeKfLg",
+      "name": "Willpower of the Ancestors",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Psyche is replaced with the exceptional trait +4.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.traits",
+            "type": "override",
+            "value": "[{\"trait\":\"psyche\",\"method\":\"replace\",\"value\":4}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+            "summary": "Grants an exceptional Psyche trait.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
