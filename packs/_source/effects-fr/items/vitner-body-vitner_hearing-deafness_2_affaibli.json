@@ -1,0 +1,45 @@
+{
+  "_id": "LE5dd9z5A6B7C8D9",
+  "_key": "!items!LE5dd9z5A6B7C8D9",
+  "name": "Ouïe affaiblie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:hearing-deafness:2#affaibli",
+    "description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est sourde ; elle peut résister à la perte de ce sens.",
+    "summary": "Ouïe affaiblie : −3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 192
+    }
+  },
+  "effects": [
+    {
+      "_id": "YXIgkSmSnToUpVqW",
+      "_key": "!items.effects!LE5dd9z5A6B7C8D9.YXIgkSmSnToUpVqW",
+      "name": "Ouïe affaiblie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est sourde ; elle peut résister à la perte de ce sens.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:hearing-deafness:2#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:hearing-deafness:2#affaibli",
+            "sourceId": "vitner-body-vitner:hearing-deafness:2",
+            "summary": "Ouïe affaiblie : −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

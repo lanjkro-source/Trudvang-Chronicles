@@ -1,0 +1,45 @@
+{
+  "_id": "tmNc7uZu0v1w2x3y",
+  "_key": "!items!tmNc7uZu0v1w2x3y",
+  "name": "Ouïe améliorée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:hearing-deafness:2#ameliore",
+    "description": "Les tests où l’ouïe est importante bénéficient du bonus indiqué. L’effet atténue les bruits indésirables ou dangereux.",
+    "summary": "Ouïe améliorée : +3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 192
+    }
+  },
+  "effects": [
+    {
+      "_id": "iSrVI3y4z5A6B7C8",
+      "_key": "!items.effects!tmNc7uZu0v1w2x3y.iSrVI3y4z5A6B7C8",
+      "name": "Ouïe améliorée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les tests où l’ouïe est importante bénéficient du bonus indiqué. L’effet atténue les bruits indésirables ou dangereux.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:hearing-deafness:2#ameliore",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:hearing-deafness:2#ameliore",
+            "sourceId": "vitner-body-vitner:hearing-deafness:2",
+            "summary": "Ouïe améliorée : +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

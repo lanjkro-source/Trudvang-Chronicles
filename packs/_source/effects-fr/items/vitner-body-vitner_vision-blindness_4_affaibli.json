@@ -1,0 +1,45 @@
+{
+  "_id": "wRifWUoUpVqWrXsY",
+  "_key": "!items!wRifWUoUpVqWrXsY",
+  "name": "Vue affaiblie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4#affaibli",
+    "description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est aveugle ; elle peut résister à la perte de ce sens.",
+    "summary": "Vue affaiblie : −3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 193
+    }
+  },
+  "effects": [
+    {
+      "_id": "RmEkyYtZu0v1w2x3",
+      "_key": "!items.effects!wRifWUoUpVqWrXsY.RmEkyYtZu0v1w2x3",
+      "name": "Vue affaiblie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est aveugle ; elle peut résister à la perte de ce sens.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:vision-blindness:4#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:vision-blindness:4#affaibli",
+            "sourceId": "vitner-body-vitner:vision-blindness:4",
+            "summary": "Vue affaiblie : −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

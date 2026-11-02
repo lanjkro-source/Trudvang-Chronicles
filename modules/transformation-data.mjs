@@ -303,6 +303,108 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-body-vitner:hearing-deafness:2#ameliore": {
+    "id": "ameliore",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:hearing-deafness:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:3"
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.HearingBonus",
+        "templates": [
+          "ameliore"
+        ],
+        "optionId": "vitner-body-vitner:hearing-deafness:2:5"
+      }
+    ]
+  },
+  "vitner-body-vitner:hearing-deafness:2#affaibli": {
+    "id": "affaibli",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:hearing-deafness:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:hearing-deafness:2:3"
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": -3,
+        "value": -1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.HearingPenalty",
+        "templates": [
+          "affaibli"
+        ],
+        "optionId": "vitner-body-vitner:hearing-deafness:2:5",
+        "statusAtOrBelow": {
+          "threshold": -10,
+          "status": "deaf"
+        }
+      }
+    ]
+  },
   "vitner-body-vitner:sense-of-smell:3#ameliore": {
     "id": "ameliore",
     "icon": "icons/svg/aura.svg",
@@ -426,6 +528,108 @@ export const TRANSFORMATION_TEMPLATES = {
           "affaibli"
         ],
         "optionId": "vitner-body-vitner:sense-of-smell:3:7"
+      }
+    ]
+  },
+  "vitner-body-vitner:vision-blindness:4#ameliore": {
+    "id": "ameliore",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:vision-blindness:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:vision-blindness:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:vision-blindness:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:vision-blindness:4:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:vision-blindness:4:3"
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.SightBonus",
+        "templates": [
+          "ameliore"
+        ],
+        "optionId": "vitner-body-vitner:vision-blindness:4:5"
+      }
+    ]
+  },
+  "vitner-body-vitner:vision-blindness:4#affaibli": {
+    "id": "affaibli",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:vision-blindness:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:vision-blindness:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:vision-blindness:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:vision-blindness:4:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:vision-blindness:4:3"
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": -3,
+        "value": -1,
+        "tooltip": true,
+        "skillChoice": true,
+        "labelKey": "TRUDVANG.Transformation.SightPenalty",
+        "templates": [
+          "affaibli"
+        ],
+        "optionId": "vitner-body-vitner:vision-blindness:4:5",
+        "statusAtOrBelow": {
+          "threshold": -10,
+          "status": "blind"
+        }
       }
     ]
   },
@@ -6000,9 +6204,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"
   ],
+  "vitner-body-vitner:hearing-deafness:2": [
+    "vitner-body-vitner:hearing-deafness:2#ameliore",
+    "vitner-body-vitner:hearing-deafness:2#affaibli"
+  ],
   "vitner-body-vitner:sense-of-smell:3": [
     "vitner-body-vitner:sense-of-smell:3#ameliore",
     "vitner-body-vitner:sense-of-smell:3#affaibli"
+  ],
+  "vitner-body-vitner:vision-blindness:4": [
+    "vitner-body-vitner:vision-blindness:4#ameliore",
+    "vitner-body-vitner:vision-blindness:4#affaibli"
   ],
   "vitner-body-vitner:leather-skin:5": [
     "vitner-body-vitner:leather-skin:5#leather-skin"

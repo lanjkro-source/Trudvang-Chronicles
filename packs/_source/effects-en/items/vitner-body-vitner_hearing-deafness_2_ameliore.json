@@ -1,0 +1,45 @@
+{
+  "_id": "tmNc7uZu0v1w2x3y",
+  "_key": "!items!tmNc7uZu0v1w2x3y",
+  "name": "Enhanced hearing",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:hearing-deafness:2#ameliore",
+    "description": "Tests relying on hearing receive the indicated bonus. The effect also filters unwanted or harmful sounds.",
+    "summary": "Enhanced hearing : +3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "iSrVI3y4z5A6B7C8",
+      "_key": "!items.effects!tmNc7uZu0v1w2x3y.iSrVI3y4z5A6B7C8",
+      "name": "Enhanced hearing",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Tests relying on hearing receive the indicated bonus. The effect also filters unwanted or harmful sounds.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:hearing-deafness:2#ameliore",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:hearing-deafness:2#ameliore",
+            "sourceId": "vitner-body-vitner:hearing-deafness:2",
+            "summary": "Enhanced hearing : +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

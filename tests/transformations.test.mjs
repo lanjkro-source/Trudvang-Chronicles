@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,107);
+ assert.equal(Object.keys(sources).length,109);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -846,5 +846,24 @@ test("Sense of Smell applies the selected potency and range to the resulting eff
   await applyTransformation(actor,`${id}#${variant}`,{counts});
   assert.match(created.flags[S].transformation.summary,new RegExp(String(expected)));
   if(variant==="ameliore")assert.equal(rulesFromChanges(created.system.changes).senses[0].range,70);
+ }
+});
+
+test("impaired hearing and sight add their status at the loss threshold",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const [id,status] of [["vitner-body-vitner:hearing-deafness:2","deaf"],["vitner-body-vitner:vision-blindness:4","blind"]]){
+  for(const [count,expected] of [[6,[]],[7,[status]],[8,[status]]]){
+   const counts=[];counts[5]=count;
+   await applyTransformation(actor,`${id}#affaibli`,{counts});
+   assert.deepEqual(created.statuses,expected);
+  }
+  const counts=[];counts[5]=8;
+  await applyTransformation(actor,`${id}#ameliore`,{counts});
+  assert.deepEqual(created.statuses,[]);
  }
 });

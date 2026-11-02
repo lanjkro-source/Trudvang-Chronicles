@@ -280,7 +280,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
   description+=`<p>${escapeHtml(game.i18n.format(p.labelKey,{value}))}</p>`;
  }
- const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:template.statuses??[],duration,
+ const statuses=new Set(template.statuses??[]);
+ if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && p.statusAtOrBelow && Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)<=Number(p.statusAtOrBelow.threshold))statuses.add(p.statusAtOrBelow.status);
+ const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  let effect;
  if(targeting){

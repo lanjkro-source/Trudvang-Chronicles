@@ -7499,6 +7499,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:hearing-deafness:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:hearing-deafness:2:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:hearing-deafness:2:0",
@@ -7787,6 +7796,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:vision-blindness:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:vision-blindness:4:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:vision-blindness:4:0",

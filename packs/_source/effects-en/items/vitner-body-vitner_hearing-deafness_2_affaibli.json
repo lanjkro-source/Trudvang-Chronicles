@@ -1,0 +1,45 @@
+{
+  "_id": "LE5dd9z5A6B7C8D9",
+  "_key": "!items!LE5dd9z5A6B7C8D9",
+  "name": "Impaired hearing",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:hearing-deafness:2#affaibli",
+    "description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes deaf; it may resist the loss of this sense.",
+    "summary": "Impaired hearing : −3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "YXIgkSmSnToUpVqW",
+      "_key": "!items.effects!LE5dd9z5A6B7C8D9.YXIgkSmSnToUpVqW",
+      "name": "Impaired hearing",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes deaf; it may resist the loss of this sense.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:hearing-deafness:2#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:hearing-deafness:2#affaibli",
+            "sourceId": "vitner-body-vitner:hearing-deafness:2",
+            "summary": "Impaired hearing : −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

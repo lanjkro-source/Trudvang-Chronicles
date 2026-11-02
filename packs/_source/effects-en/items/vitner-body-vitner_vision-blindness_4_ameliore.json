@@ -1,0 +1,45 @@
+{
+  "_id": "6uvb40v1w2x3y4z5",
+  "_key": "!items!6uvb40v1w2x3y4z5",
+  "name": "Enhanced sight",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4#ameliore",
+    "description": "Tests relying on sight receive the indicated bonus.",
+    "summary": "Enhanced sight : +3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "LftD3aFaGbHcIdJe",
+      "_key": "!items.effects!6uvb40v1w2x3y4z5.LftD3aFaGbHcIdJe",
+      "name": "Enhanced sight",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Tests relying on sight receive the indicated bonus.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:vision-blindness:4#ameliore",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:vision-blindness:4#ameliore",
+            "sourceId": "vitner-body-vitner:vision-blindness:4",
+            "summary": "Enhanced sight : +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

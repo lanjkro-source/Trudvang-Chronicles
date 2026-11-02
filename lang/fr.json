@@ -13753,6 +13753,24 @@
           "SourcePage": "192",
           "Duration": "10 tours de jeu"
         },
+        "vitner-body-vitner:hearing-deafness:2#ameliore": {
+          "Name": "Ouïe améliorée",
+          "Summary": "Ouïe améliorée : +3.",
+          "Description": "Les tests où l’ouïe est importante bénéficient du bonus indiqué. L’effet atténue les bruits indésirables ou dangereux.",
+          "SourceName": "Acuité auditive/surdité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "192",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:hearing-deafness:2#affaibli": {
+          "Name": "Ouïe affaiblie",
+          "Summary": "Ouïe affaiblie : −3.",
+          "Description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est sourde ; elle peut résister à la perte de ce sens.",
+          "SourceName": "Acuité auditive/surdité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "192",
+          "Duration": "1 minute"
+        },
         "vitner-body-vitner:sense-of-smell:3#ameliore": {
           "Name": "Odorat amélioré",
           "Summary": "Odorat : +3.",
@@ -13768,6 +13786,24 @@
           "Summary": "Odorat : −3.",
           "Description": "Les tests où l’odorat est important subissent le malus indiqué ; la cible peut résister à la perte du sens.",
           "SourceName": "Sens de l’odorat",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "193",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:vision-blindness:4#ameliore": {
+          "Name": "Vue améliorée",
+          "Summary": "Vue améliorée : +3.",
+          "Description": "Les tests où la vue est importante bénéficient du bonus indiqué.",
+          "SourceName": "Vision/cécité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "193",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:vision-blindness:4#affaibli": {
+          "Name": "Vue affaiblie",
+          "Summary": "Vue affaiblie : −3.",
+          "Description": "Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est aveugle ; elle peut résister à la perte de ce sens.",
+          "SourceName": "Vision/cécité",
           "SourceBook": "Livre des règles",
           "SourcePage": "193",
           "Duration": "1 minute"
@@ -15093,6 +15129,10 @@
       "ClimbingNote": "Jet d’escalade : bonus de +{value} en Agilité.",
       "SmellBonus": "Tests faisant appel à l’odorat : +{value}.",
       "SmellPenalty": "Tests faisant appel à l’odorat : {value}. À −10 ou moins, l’odorat disparaît.",
+      "HearingBonus": "Tests faisant appel à l’ouïe : +{value}.",
+      "HearingPenalty": "Tests faisant appel à l’ouïe : {value}. À −10 ou moins, la cible est sourde.",
+      "SightBonus": "Tests faisant appel à la vue : +{value}.",
+      "SightPenalty": "Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",

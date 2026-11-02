@@ -10909,6 +10909,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourcePage` | 96 | 192 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Duration` | 10 rounds | 10 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.Name` | Enhanced hearing | Ouïe améliorée |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.Description` | Tests relying on hearing receive the indicated bonus. The effect also filters unwanted or harmful sounds. | Les tests où l’ouïe est importante bénéficient du bonus indiqué. L’effet atténue les bruits indésirables ou dangereux. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.SourceName` | Hearing/Deafness | Acuité auditive/surdité |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.SourcePage` | 96 | 192 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.Name` | Impaired hearing | Ouïe affaiblie |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.Description` | Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes deaf; it may resist the loss of this sense. | Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est sourde ; elle peut résister à la perte de ce sens. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.SourceName` | Hearing/Deafness | Acuité auditive/surdité |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.SourcePage` | 96 | 192 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#affaibli.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore`
 
 | Clé | English | Français |
@@ -10931,6 +10953,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.SourcePage` | 96 | 193 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.Name` | Enhanced sight | Vue améliorée |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.Description` | Tests relying on sight receive the indicated bonus. | Les tests où la vue est importante bénéficient du bonus indiqué. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.SourceName` | Vision/Blindness | Vision/cécité |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.SourcePage` | 96 | 193 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#ameliore.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.Name` | Impaired sight | Vue affaiblie |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.Description` | Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes blind; it may resist the loss of this sense. | Les tests faisant appel à ce sens subissent le malus indiqué. À −10 ou moins, la cible est aveugle ; elle peut résister à la perte de ce sens. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.SourceName` | Vision/Blindness | Vision/cécité |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.SourcePage` | 96 | 193 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:vision-blindness:4#affaibli.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin`
 
@@ -12536,6 +12580,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ClimbingNote` | Climbing roll: +{value} Agility bonus. | Jet d’escalade : bonus de +{value} en Agilité. |
 | `TRUDVANG.Transformation.SmellBonus` | Tests involving smell: +{value}. | Tests faisant appel à l’odorat : +{value}. |
 | `TRUDVANG.Transformation.SmellPenalty` | Tests involving smell: {value}. At −10 or below, the sense of smell is lost. | Tests faisant appel à l’odorat : {value}. À −10 ou moins, l’odorat disparaît. |
+| `TRUDVANG.Transformation.HearingBonus` | Tests involving hearing: +{value}. | Tests faisant appel à l’ouïe : +{value}. |
+| `TRUDVANG.Transformation.HearingPenalty` | Tests involving hearing: {value}. At −10 or below, the target is deaf. | Tests faisant appel à l’ouïe : {value}. À −10 ou moins, la cible est sourde. |
+| `TRUDVANG.Transformation.SightBonus` | Tests involving sight: +{value}. | Tests faisant appel à la vue : +{value}. |
+| `TRUDVANG.Transformation.SightPenalty` | Tests involving sight: {value}. At −10 or below, the target is blind. | Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

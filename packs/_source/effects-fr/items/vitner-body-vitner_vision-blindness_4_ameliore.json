@@ -1,0 +1,45 @@
+{
+  "_id": "6uvb40v1w2x3y4z5",
+  "_key": "!items!6uvb40v1w2x3y4z5",
+  "name": "Vue améliorée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4#ameliore",
+    "description": "Les tests où la vue est importante bénéficient du bonus indiqué.",
+    "summary": "Vue améliorée : +3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 193
+    }
+  },
+  "effects": [
+    {
+      "_id": "LftD3aFaGbHcIdJe",
+      "_key": "!items.effects!6uvb40v1w2x3y4z5.LftD3aFaGbHcIdJe",
+      "name": "Vue améliorée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les tests où la vue est importante bénéficient du bonus indiqué.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:vision-blindness:4#ameliore",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:vision-blindness:4#ameliore",
+            "sourceId": "vitner-body-vitner:vision-blindness:4",
+            "summary": "Vue améliorée : +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

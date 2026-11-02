@@ -13753,6 +13753,24 @@
           "SourcePage": "96",
           "Duration": "10 rounds"
         },
+        "vitner-body-vitner:hearing-deafness:2#ameliore": {
+          "Name": "Enhanced hearing",
+          "Summary": "Enhanced hearing : +3.",
+          "Description": "Tests relying on hearing receive the indicated bonus. The effect also filters unwanted or harmful sounds.",
+          "SourceName": "Hearing/Deafness",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:hearing-deafness:2#affaibli": {
+          "Name": "Impaired hearing",
+          "Summary": "Impaired hearing : −3.",
+          "Description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes deaf; it may resist the loss of this sense.",
+          "SourceName": "Hearing/Deafness",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute"
+        },
         "vitner-body-vitner:sense-of-smell:3#ameliore": {
           "Name": "Enhanced smell",
           "Summary": "Smell: +3.",
@@ -13768,6 +13786,24 @@
           "Summary": "Smell: −3.",
           "Description": "The listed penalty applies to tests where smell matters; the target can resist the loss of the sense.",
           "SourceName": "Sense of Smell",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:vision-blindness:4#ameliore": {
+          "Name": "Enhanced sight",
+          "Summary": "Enhanced sight : +3.",
+          "Description": "Tests relying on sight receive the indicated bonus.",
+          "SourceName": "Vision/Blindness",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute"
+        },
+        "vitner-body-vitner:vision-blindness:4#affaibli": {
+          "Name": "Impaired sight",
+          "Summary": "Impaired sight : −3.",
+          "Description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes blind; it may resist the loss of this sense.",
+          "SourceName": "Vision/Blindness",
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
           "Duration": "1 minute"
@@ -15093,6 +15129,10 @@
       "ClimbingNote": "Climbing roll: +{value} Agility bonus.",
       "SmellBonus": "Tests involving smell: +{value}.",
       "SmellPenalty": "Tests involving smell: {value}. At −10 or below, the sense of smell is lost.",
+      "HearingBonus": "Tests involving hearing: +{value}.",
+      "HearingPenalty": "Tests involving hearing: {value}. At −10 or below, the target is deaf.",
+      "SightBonus": "Tests involving sight: +{value}.",
+      "SightPenalty": "Tests involving sight: {value}. At −10 or below, the target is blind.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",

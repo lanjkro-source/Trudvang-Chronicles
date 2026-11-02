@@ -1,0 +1,45 @@
+{
+  "_id": "wRifWUoUpVqWrXsY",
+  "_key": "!items!wRifWUoUpVqWrXsY",
+  "name": "Impaired sight",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4#affaibli",
+    "description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes blind; it may resist the loss of this sense.",
+    "summary": "Impaired sight : −3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "RmEkyYtZu0v1w2x3",
+      "_key": "!items.effects!wRifWUoUpVqWrXsY.RmEkyYtZu0v1w2x3",
+      "name": "Impaired sight",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Tests relying on this sense suffer the indicated penalty. At −10 or less the target becomes blind; it may resist the loss of this sense.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:vision-blindness:4#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:vision-blindness:4#affaibli",
+            "sourceId": "vitner-body-vitner:vision-blindness:4",
+            "summary": "Impaired sight : −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

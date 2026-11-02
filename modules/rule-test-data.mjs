@@ -1423,7 +1423,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "aucun"
       ],
       "success": "évite l’effet négatif sur le sens concerné.",
-      "condition": "lorsque le malus de perception atteindrait −10",
+      "condition": "pour la version affaiblie",
       "traitMethod": "first",
       "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
@@ -1447,7 +1447,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "aucun"
       ],
       "success": "évite l’effet négatif sur le sens concerné.",
-      "condition": "lorsque le malus de perception atteindrait −10",
+      "condition": "pour la version affaiblie",
       "traitMethod": "first",
       "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
@@ -1471,7 +1471,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "aucun"
       ],
       "success": "évite l’effet négatif sur le sens concerné.",
-      "condition": "lorsque le malus de perception atteindrait −10",
+      "condition": "pour la version affaiblie",
       "traitMethod": "first",
       "anchor": "peut y résister en réussissant un test de situation",
       "magicResistance": true,
