@@ -2573,3 +2573,14 @@ test("sacred light suppresses fear penalties without preventing new fear",async(
  const result=await instance.applyFearFactor(3,{announce:false});assert.equal(result.applied,3);assert.equal(instance._source.system.resources.fear.value,18);
  instance.allApplicableEffects=()=>[];instance.prepareDerivedData();assert.ok(instance.system.fearPenalty<0);
 });
+
+test("fear summary preserves its level but reports when its penalty is suppressed",async()=>{
+ const sheet=new TrudvangNpcSheet();sheet.actor=actor();sheet.isEditable=true;
+ sheet.actor.system.resources.fear.current=15;
+ sheet.actor.transformationProfile={...sheet.actor.transformationProfile,ignoreFearPenalty:false};
+ let context=await sheet._prepareContext({});assert.equal(context.fearStatus.level,"two");assert.match(context.fearStatus.consequence,/−1/);
+ sheet.actor.transformationProfile.ignoreFearPenalty=true;
+ context=await sheet._prepareContext({});assert.equal(context.fearStatus.level,"two");assert.equal(context.fearStatus.consequence,"Ignore les malus de peur");
+ sheet.actor.system.resources.fear.current=55;context=await sheet._prepareContext({});assert.equal(context.fearStatus.level,"mad");assert.equal(context.fearStatus.consequence,"Ignore les malus de peur");
+ sheet.actor.transformationProfile.ignoreFearPenalty=false;context=await sheet._prepareContext({});assert.match(context.fearStatus.consequence,/−7/);
+});

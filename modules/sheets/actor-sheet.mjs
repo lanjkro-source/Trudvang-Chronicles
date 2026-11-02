@@ -213,7 +213,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       percent: percent(fear.current, fear.max),
       ...fearStatus,
       state: game.i18n.localize(`TRUDVANG.Status.FearState.${fearStatus.level}`),
-      consequence: game.i18n.localize(`TRUDVANG.Status.FearConsequence.${fearStatus.level}`)
+      consequence: game.i18n.localize(fearStatus.penalty < 0 && (this.actor.transformationProfile?.ignoreFear || this.actor.transformationProfile?.ignoreFearPenalty)
+        ? "TRUDVANG.Effect.Profile.ignoreFearPenalty" : `TRUDVANG.Status.FearConsequence.${fearStatus.level}`)
     };
     context.creationMode = Boolean(this.actor.system.experience?.creationMode);
     context.pendingAdvancements = this.actor.pendingAdvancements ?? [];
