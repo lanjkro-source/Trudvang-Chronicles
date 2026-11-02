@@ -14682,6 +14682,15 @@
           "SourcePage": "294",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
+          "Name": "Invisibilité aux animaux",
+          "Summary": "Invisible et inaudible aux animaux peu intelligents.",
+          "Description": "Le bénéficiaire peut devenir invisible et inaudible aux animaux d’intelligence inférieure pendant la durée du pouvoir.",
+          "SourceName": "Invisibilité aux animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "295",
+          "Duration": "5 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Esprit de la bête — Ours",
           "Summary": "Augmente la Force et la Protection, et accorde une attaque de griffes sans changer de forme.",
@@ -15180,8 +15189,9 @@
       "SightPenalty": "Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle.",
       "SpokenLanguage": "Langue choisie",
       "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
-      "CraftSpecialty": "Nom exact de la spécialité d’Artisanat choisie",
+      "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
+      "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",
       "TrackedCreature": "Créature suivie",
       "TrackingBonus": "Pister la créature suivie : +{value}.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",

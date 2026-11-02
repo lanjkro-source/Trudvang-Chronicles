@@ -3559,6 +3559,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "changes": [],
     "inputKey": "TRUDVANG.Transformation.CraftSpecialty",
+    "inputDiscipline": "handicraft",
     "sourceId": "holy-haminges-power-of-men:dwarven-smith:6",
     "parameters": [
       {
@@ -4391,6 +4392,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "ability": "tracker",
         "labelKey": "TRUDVANG.Transformation.TrackingBonus",
         "optionId": "holy-toikalokke-lynx-power:track:6:2"
+      }
+    ]
+  },
+  "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
+    "id": "animaux",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-animal-mind:invisible-to-animals:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:invisible-to-animals:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:invisible-to-animals:3:1"
       }
     ]
   },
@@ -6638,6 +6663,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-lynx-power:track:6": [
     "holy-toikalokke-lynx-power:track:6#pistage"
+  ],
+  "holy-toikalokke-animal-mind:invisible-to-animals:3": [
+    "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux"
   ],
   "holy-toikalokke-animal-mind:animal-spirit:4": [
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",

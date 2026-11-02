@@ -25,10 +25,12 @@ export function conditionalSituationBonuses(effect) {
 export function conditionalSkillModifiers(actor,skillKey="",ability=null,excludeEffectId="") {
  return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(effect=>!excludeEffectId||effect.id!==excludeEffectId).flatMap(effect =>
   conditionalSituationBonuses(effect).filter(row => {
-   const input=String(effect.flags?.["trudvang-chronicles"]?.transformation?.input??"").trim();
+   const meta=effect.flags?.["trudvang-chronicles"]?.transformation;
+   const input=String(meta?.input??"").trim();
    const entry=ability && actor.getCatalogEntry?.(ability.system?.catalogId);
    return row.skillChoice && (!row.restrictedSkill || row.restrictedSkill===skillKey)
     && (!row.restrictedDiscipline || (ability?.system?.kind==="specialty" && entry?.parentCatalogId===row.restrictedDiscipline))
-    && (!row.requiresInput || (input && input.localeCompare(String(ability?.name??"").trim(),undefined,{sensitivity:"base"})===0));
+    // TEMPORARY WORLD MIGRATION — 0.151 effects recorded the specialty name only.
+    && (!row.requiresInput || (meta?.inputId ? meta.inputId===ability?.system?.catalogId : input && input.localeCompare(String(ability?.name??"").trim(),undefined,{sensitivity:"base"})===0));
   }).map(row => ({label:[effect.name,effect.flags?.["trudvang-chronicles"]?.transformation?.input].filter(Boolean).join(" — "),value:row.value})));
 }

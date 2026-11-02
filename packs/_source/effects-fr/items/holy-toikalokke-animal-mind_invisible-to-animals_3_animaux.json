@@ -1,0 +1,45 @@
+{
+  "_id": "DE91h8C8D9EaGbHc",
+  "_key": "!items!DE91h8C8D9EaGbHc",
+  "name": "Invisibilité aux animaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+    "description": "Le bénéficiaire peut devenir invisible et inaudible aux animaux d’intelligence inférieure pendant la durée du pouvoir.",
+    "summary": "Invisible et inaudible aux animaux peu intelligents.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 295
+    }
+  },
+  "effects": [
+    {
+      "_id": "47TBeSkQlRmSnToU",
+      "_key": "!items.effects!DE91h8C8D9EaGbHc.47TBeSkQlRmSnToU",
+      "name": "Invisibilité aux animaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire peut devenir invisible et inaudible aux animaux d’intelligence inférieure pendant la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+            "sourceId": "holy-toikalokke-animal-mind:invisible-to-animals:3",
+            "summary": "Invisible et inaudible aux animaux peu intelligents.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

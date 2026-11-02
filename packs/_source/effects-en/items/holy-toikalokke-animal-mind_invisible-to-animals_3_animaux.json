@@ -1,0 +1,45 @@
+{
+  "_id": "DE91h8C8D9EaGbHc",
+  "_key": "!items!DE91h8C8D9EaGbHc",
+  "name": "Invisible to Animals",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+    "description": "For the duration, the beneficiary may become invisible and inaudible to animals of limited intelligence.",
+    "summary": "Invisible and inaudible to animals of limited intelligence.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "47TBeSkQlRmSnToU",
+      "_key": "!items.effects!DE91h8C8D9EaGbHc.47TBeSkQlRmSnToU",
+      "name": "Invisible to Animals",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "For the duration, the beneficiary may become invisible and inaudible to animals of limited intelligence.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",
+            "sourceId": "holy-toikalokke-animal-mind:invisible-to-animals:3",
+            "summary": "Invisible and inaudible to animals of limited intelligence.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

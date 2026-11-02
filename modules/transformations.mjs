@@ -8,6 +8,7 @@ import {effectSource} from "./rules/effect-source.mjs";
 import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
 import {TABLET_CATALOG,powerItemData} from "./tablet-catalog.mjs";
 import {TRUDVANG} from "./config.mjs";
+import {npcBookSkillRows} from "./rules/npc-summary.mjs";
 import {ruleTestCastingContext,withCastingCounts,currentCastingCounts,ruleTestSourceId} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
@@ -24,6 +25,20 @@ const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
 const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[doc?.name]?.id;
+/** Learned specialties of the recipient, including custom entries and NPC book rows. */
+export function specialtyChoices(actor,discipline){
+ const entries=new Map();
+ for(const item of actor?.items??[]){
+  const id=item.system?.catalogId, entry=id && actor.getCatalogEntry?.(id);
+  if(item.type==="ability" && item.system?.kind==="specialty" && Number(item.system.level)>0 && entry?.parentCatalogId===discipline)entries.set(id,{value:id,label:item.name});
+ }
+ if(actor?.type==="npc" && actor.system?.skillTree?.length){
+  for(const row of npcBookSkillRows(actor.system.skillTree,{skills:TRUDVANG.skills,knowledgeTree:TRUDVANG.knowledgeTree,localize:key=>game.i18n.localize(key)})){
+   if(row.kind==="specialty" && row.value>0 && row.catalogId && actor.getCatalogEntry?.(row.catalogId)?.parentCatalogId===discipline && !entries.has(row.catalogId))entries.set(row.catalogId,{value:row.catalogId,label:row.name});
+  }
+ }
+ return [...entries.values()].sort((a,b)=>a.label.localeCompare(b.label,game.i18n.lang));
+}
 function transformationCasting(document,counts,context){
  const saved=context??metadata(document)?.ruleTestContext;
  if(saved?.countsById&&saved.sourceId===ruleTestSourceId(document)){
@@ -154,7 +169,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];
- if(!resolvedCopy&&template.inputKey)fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:""});
+ let inputOptions=[];
+ if(!resolvedCopy&&template.inputKey){
+  if(template.inputDiscipline){
+   inputOptions=specialtyChoices(actor,template.inputDiscipline);
+   if(!inputOptions.length){ui.notifications.warn(local("NoCraftSpecialty"));return null;}
+  }
+  fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
+ }
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -170,6 +192,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const answers=skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
   await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro);
  if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ if(inputOptions.length){
+  const selected=inputOptions.find(option=>option.value===answers.effectInput);
+  if(!selected)return null;
+  answers.effectInputId=selected.value;answers.effectInput=selected.label;
+ }
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
  let formMaximum;
@@ -276,7 +303,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   summary=game.i18n.format(p.labelKey,{value});
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
@@ -454,6 +481,10 @@ export function registerTransformationHooks(){
     if(!actor?.canUserModify(game.user,"update")||seen.has(identity))return false;
     seen.add(identity);return true;
    });
+   if(!tokens.length && TRANSFORMATION_TEMPLATES[request.key]?.inputDiscipline){
+    const caster=(request.context?.casterUuid?await foundry.utils.fromUuid(request.context.casterUuid):null)??source?.actor;
+    if(caster?.canUserModify(game.user,"update"))tokens.push({actor:caster,name:caster.name});
+   }
    if(!tokens.length){ui.notifications.warn(game.i18n.localize("TRUDVANG.Procedure.ChooseActor"));return;}
    const skipDialog=tokens.length>1&&automaticAreaApplication(request);
    for(const token of tokens){

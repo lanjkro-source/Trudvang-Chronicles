@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,114);
+ assert.equal(Object.keys(sources).length,115);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -752,8 +752,8 @@ test("copying already resolved effects preserves improvements, duration and roll
  try{
   globalThis.Roll=class {async evaluate(){this.total=7;rolls++;return this;}async toMessage(){}};
   globalThis.ChatMessage={getSpeaker:()=>({})};
-  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
-  foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute"});
+  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[{type:"ability",name:"Matériaux durs",system:{kind:"specialty",catalogId:"hardMaterials",level:1}}],getCatalogEntry:()=>({parentCatalogId:"handicraft"}),createTrudvangEffect:async data=>{created=data;return null;}};
+  foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute",effectInput:"hardMaterials"});
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){
    const rules=rulesFromChanges(t.changes);
@@ -895,6 +895,39 @@ test("Dwarven Smith only applies to the chosen Handicraft specialty",async()=>{
  assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
 });
 
+test("Dwarven Smith offers learned specialties and remembers their stable identity",async()=>{
+ const {specialtyChoices}=await import("../modules/transformations.mjs");
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ const item=(id,name,level=1)=>({type:"ability",name,system:{kind:"specialty",catalogId:id,level}});
+ const hard=item("hardMaterials","Matériaux durs"),custom=item("custom-specialty-a","Forge runique"),other=item("healing","Soins"),unlearned=item("softMaterials","Matériaux souples",0);
+ let created,dialog;
+ const actor={canUserModify:()=>true,items:[hard,custom,other,unlearned],getTraitValue:()=>0,getCatalogEntry:id=>({parentCatalogId:id==="healing"?"healing":"handicraft"}),createTrudvangEffect:async data=>{created=data;return null;}};
+ assert.deepEqual(specialtyChoices(actor,"handicraft").map(row=>row.value),["custom-specialty-a","hardMaterials"]);
+ foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"2 heures",effectInput:"custom-specialty-a"};};
+ const id="holy-haminges-power-of-men:dwarven-smith:6";
+ await applyTransformation(actor,`${id}#forge`);
+ assert.match(dialog.content,/<select name="effectInput">/);assert.match(dialog.content,/Forge runique/);assert.doesNotMatch(dialog.content,/Matériaux souples/);
+ assert.equal(created.flags[S].transformation.inputId,"custom-specialty-a");assert.match(created.description,/Forge runique/);
+ actor.effects=[created];custom.name="Forge renommée";
+ assert.equal(conditionalSkillModifiers(actor,"care",custom)[0].value,6);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",hard),[]);
+});
+
+test("Dwarven Smith reads NPC book specialties and reports an empty selection",async()=>{
+ const {specialtyChoices}=await import("../modules/transformations.mjs");
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ const actor={type:"npc",items:[],system:{skillTree:[{kind:"skill",name:"Savoir-faire",skillId:"care",value:7},{kind:"discipline",name:"Artisanat",catalogId:"handicraft",value:2},{kind:"specialty",name:"Matériaux durs",catalogId:"hardMaterials",value:1}]},canUserModify:()=>true,getCatalogEntry:id=>({parentCatalogId:id==="hardMaterials"?"handicraft":"other"})};
+ assert.deepEqual(specialtyChoices(actor,"handicraft"),[{value:"hardMaterials",label:"Matériaux durs"}]);
+ actor.system.skillTree=[];let warned="";globalThis.ui={notifications:{warn:text=>{warned=text;}}};
+ assert.equal(await applyTransformation(actor,"holy-haminges-power-of-men:dwarven-smith:6#forge"),null);
+ assert.match(warned,/aucune spécialité/);
+});
+
 test("Track remembers the creature and scales its bonus without applying it to other skills",async()=>{
  const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
  const id="holy-toikalokke-lynx-power:track:6",effect={id:"e",name:"Pistage",flags:{[S]:{transformation:{key:`${id}#pistage`,sourceId:id,input:"Loup",ruleTestContext:{countsById:{[`${id}:2`]:2}}}}}};
@@ -902,4 +935,10 @@ test("Track remembers the creature and scales its bonus without applying it to o
  assert.deepEqual(conditionalSkillModifiers(actor,"wilderness"),[{label:"Pistage — Loup",value:5}]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"wilderness",null,"e"),[]);
+});
+
+test("Invisible to Animals remains descriptive and only improves its duration",()=>{
+ const key="holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",t=templates[key];
+ assert.deepEqual(t.statuses,[]);assert.deepEqual(t.changes,[]);
+ assert.deepEqual(t.parameters.map(p=>[p.target,p.value]),[["duration",600],["duration",3600]]);
 });

@@ -18,6 +18,12 @@ Toute nouvelle migration de monde doit :
 |---|---|---|
 | Conversion de `transformation.rules` dans `applyTransformation()` | Les références antérieures à 0.97 stockaient les modifications dynamiques dans les flags ; Hâte avait donc `system.changes: []`. Lors d'un nouveau dépôt, convertir ces règles en lignes éditables avant de calculer les traits. Compléter l'ancienne règle de Hâte avec sa table de VC actuelle issue du catalogue JSON, sans remplacer les choix de trait du MJ. Ne pas recalculer les traits déjà résolus (`traitsApplied`), ni rétablir les lignes d'une référence au format actuel volontairement vidée. Aucun document source n'est réécrit. | Toutes les références des mondes de développement utilisent les modifications éditables ; supprimer le bloc identifié `TEMPORARY WORLD MIGRATION`. Conserver la lecture des données source et la validation des lignes. |
 
+## `modules/rules/effect-conditional-tests.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| Repli sur le nom de spécialité | Les effets Forgeron nain créés en 0.151 à 0.153 n'enregistraient que le nom saisi ; ils restent utilisables sans identifiant. | Les anciens effets ont expiré ou les mondes de développement ont été supprimés ; conserver la comparaison par identifiant. |
+
 ## `modules/documents/actor.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |

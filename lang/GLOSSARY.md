@@ -12040,6 +12040,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourcePage` | 239 | 294 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.Name` | Invisible to Animals | Invisibilité aux animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.Description` | For the duration, the beneficiary may become invisible and inaudible to animals of limited intelligence. | Le bénéficiaire peut devenir invisible et inaudible aux animaux d’intelligence inférieure pendant la durée du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.SourceName` | Invisible to Animals | Invisibilité aux animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.SourcePage` | 237 | 295 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.Duration` | 5 minutes | 5 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours`
 
 | Clé | English | Français |
@@ -12641,8 +12652,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SightPenalty` | Tests involving sight: {value}. At −10 or below, the target is blind. | Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle. |
 | `TRUDVANG.Transformation.SpokenLanguage` | Chosen language | Langue choisie |
 | `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
-| `TRUDVANG.Transformation.CraftSpecialty` | Exact name of the chosen Handicraft specialty | Nom exact de la spécialité d’Artisanat choisie |
+| `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
+| `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |
 | `TRUDVANG.Transformation.TrackedCreature` | Tracked creature | Créature suivie |
 | `TRUDVANG.Transformation.TrackingBonus` | Track the chosen creature: +{value}. | Pister la créature suivie : +{value}. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |

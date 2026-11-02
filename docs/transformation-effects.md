@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 159 variantes.
+les états, les règles et les liens des 160 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -32,8 +32,8 @@ Langue de Siro Werte et Sagesse de Gave enregistrent la langue choisie et
 proposent leur bonus sur les seuls tests de Connaissances. Pour plusieurs alliés,
 les mêmes améliorations sont partagées, mais la langue doit encore être saisie
 pour chaque cible ; le joueur doit choisir la même langue pour toutes.
-Forgeron nain demande le nom exact d’une spécialité d’Artisanat : son bonus est
-proposé uniquement pour cette spécialité dans les fenêtres de test.
+Forgeron nain propose les spécialités d’Artisanat connues du bénéficiaire : son
+bonus est proposé uniquement pour la spécialité choisie dans les fenêtres de test.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet

@@ -7074,7 +7074,7 @@
         "holy-toikalokke-animal-mind:invisible-to-animals:3": {
           "Name": "Invisible to Animals",
           "Summary": "The chosen one can, when desired, become completely invisible to unintelligent animals.",
-          "Description": "The chosen one can, when desired, become completely invisible to unintelligent animals. The animals can neither see nor smell the Ihana.",
+          "Description": "The chosen one can, when desired, become completely invisible to unintelligent animals. The animals can neither see nor hear the Ihana.",
           "SwedishName": "",
           "Duration": "5 minutes",
           "Range": "personal",
@@ -14682,6 +14682,15 @@
           "SourcePage": "239",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
+          "Name": "Invisible to Animals",
+          "Summary": "Invisible and inaudible to animals of limited intelligence.",
+          "Description": "For the duration, the beneficiary may become invisible and inaudible to animals of limited intelligence.",
+          "SourceName": "Invisible to Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "237",
+          "Duration": "5 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Animal Spirit — Bear",
           "Summary": "Increases Strength and Protection, and grants a claw attack without changing form.",
@@ -15180,8 +15189,9 @@
       "SightPenalty": "Tests involving sight: {value}. At −10 or below, the target is blind.",
       "SpokenLanguage": "Chosen language",
       "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
-      "CraftSpecialty": "Exact name of the chosen Handicraft specialty",
+      "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
+      "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",
       "TrackedCreature": "Tracked creature",
       "TrackingBonus": "Track the chosen creature: +{value}.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
