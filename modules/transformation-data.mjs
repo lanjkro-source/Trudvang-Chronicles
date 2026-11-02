@@ -5988,6 +5988,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       2
     ],
+    "aura": {
+      "radius": 2,
+      "radiusOptionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:2",
+      "light": true
+    },
     "sourceId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3",
     "parameters": [
       {
@@ -6075,6 +6080,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       0
     ],
+    "aura": {
+      "radius": 3,
+      "radiusOptionId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:0",
+      "light": true
+    },
     "sourceId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
     "parameters": [
       {

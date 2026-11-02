@@ -1,0 +1,21 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");}})};
+globalThis.foundry={utils:{randomID:()=>"cast-id"},applications:{handlebars:{renderTemplate:async()=>"card"}}};
+globalThis.Roll=class{async evaluate(){this.total=globalThis.testDie;return this;}};
+const messages=[],warnings=[];
+globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{messages.push(data);return {...data,id:"message"};}};
+globalThis.game={user:{id:"p",targets:new Set()},users:{activeGM:{id:"gm"}},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key,format:key=>key}};
+globalThis.ui={notifications:{warn:value=>warnings.push(value)}};
+const {rollUnder}=await import("../modules/dice.mjs");
+test("a successful light invocation applies one source effect to the selected caster token",async()=>{
+ const id="holy-tenetnid-tablet-of-the-sun:thermal-light:3",created=[];
+ const actor={uuid:"Actor.priest",name:"Priest",items:[],canUserModify:()=>true,getTraitValue:()=>0,async createTrudvangEffect(data){created.push(data);return null;}};
+ const token={uuid:"Scene.s.Token.priest",actor};globalThis.canvas={tokens:{controlled:[{document:token}],placeables:[{document:token}]}};
+ const item={uuid:"Actor.priest.Item.light",type:"divineFeat",system:{catalogId:id}};
+ globalThis.testDie=5;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});
+ assert.equal(created.length,1);const meta=created[0].flags["trudvang-chronicles"].transformation;
+ assert.equal(meta.ruleTestContext.casterTokenUuid,token.uuid);assert.equal(meta.ruleTestContext.auraSource,true);assert.equal(meta.ruleTestContext.countsById[`${id}:2`],2);
+ assert.equal(created[0].system.changes.find(row=>row.key==="system.modifiers.rolls.allActions").value,"2");assert.deepEqual(created[0].duration,{value:24,units:"rounds"});
+ globalThis.testDie=20;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});assert.equal(created.length,1);
+});

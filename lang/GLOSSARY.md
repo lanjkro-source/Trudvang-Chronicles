@@ -14367,3 +14367,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.fearReduction` | {source}: −{amount} Fear Points. | {source} : −{amount} peur. |
 | `TRUDVANG.Consequence.Result.resourceGain` | {source}: +{amount} {resource}. | {source} : +{amount} {resource}. |
 | `TRUDVANG.Consequence.Result.risk` | {source}: {rolled} on 1d20 — {outcome}. | {source} : {rolled} sur 1d20 — {outcome}. |
+
+## `TRUDVANG.Aura`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Aura.Behavior` | Aura Trudvang | Aura Trudvang |
+| `TRUDVANG.Aura.NoToken` | Select the caster’s token to create the aura. | Sélectionnez le token du lanceur pour créer l’aura. |
+| `TRUDVANG.Aura.NoGM` | A connected GM is required to create and synchronize the aura. | Un MJ connecté est nécessaire pour créer et synchroniser l’aura. |
+| `TRUDVANG.Aura.Failed` | The aura could not be created; check the console. | Impossible de créer l’aura ; vérifiez la console. |
+| `TRUDVANG.Aura.Automatic` | Aura effects are applied automatically within its area. | Les effets de l’aura sont appliqués automatiquement dans sa zone. |

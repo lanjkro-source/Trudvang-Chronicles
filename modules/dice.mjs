@@ -12,7 +12,9 @@ import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
 import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
-import {transformationLinks,transformationKeys} from "./transformations.mjs";
+import {transformationLinks,transformationKeys,applyTransformation} from "./transformations.mjs";
+import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
+import {auraCasterToken} from "./aura.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
@@ -63,6 +65,8 @@ export async function openD10(options = {}) {
 
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null}) {
   const finalTarget = Number(target) + Number(modifier || 0);
+  const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
+  if(auraKey&&!castingId)castingId=foundry.utils.randomID();
   let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
   const roll = await evaluate("1d20");
@@ -142,6 +146,19 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.ruleTests=ruleTestActionViews(item);
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
     await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext});
+  }
+  if(success&&auraKey){
+    const token=auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables);
+    if(!token)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoToken"));
+    else if(!game.users?.activeGM)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoGM"));
+    else try{
+      const applied=await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,auraSource:true,casterTokenUuid:token.uuid}});
+      if(applied){
+        card.transformationLinks="";
+        card.successConsequence=[card.successConsequence,game.i18n.localize("TRUDVANG.Aura.Automatic")].filter(Boolean).join(" ");
+        await message.update({content:await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card)});
+      }
+    }catch(error){console.error("Trudvang | Aura activation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.Failed"));}
   }
   return {roll, result, target: targetResults.length === 1 ? targetResults[0].target : finalTarget, success, critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {})};
 }

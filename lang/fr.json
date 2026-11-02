@@ -16581,6 +16581,13 @@
         "resourceGain": "{source} : +{amount} {resource}.",
         "risk": "{source} : {rolled} sur 1d20 — {outcome}."
       }
+    },
+    "Aura": {
+      "Behavior": "Aura Trudvang",
+      "NoToken": "Sélectionnez le token du lanceur pour créer l’aura.",
+      "NoGM": "Un MJ connecté est nécessaire pour créer et synchroniser l’aura.",
+      "Failed": "Impossible de créer l’aura ; vérifiez la console.",
+      "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone."
     }
   }
 }

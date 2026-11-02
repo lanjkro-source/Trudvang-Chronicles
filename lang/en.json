@@ -16581,6 +16581,13 @@
         "resourceGain": "{source}: +{amount} {resource}.",
         "risk": "{source}: {rolled} on 1d20 — {outcome}."
       }
+    },
+    "Aura": {
+      "Behavior": "Aura Trudvang",
+      "NoToken": "Select the caster’s token to create the aura.",
+      "NoGM": "A connected GM is required to create and synchronize the aura.",
+      "Failed": "The aura could not be created; check the console.",
+      "Automatic": "Aura effects are applied automatically within its area."
     }
   }
 }

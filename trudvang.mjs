@@ -26,11 +26,13 @@ import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.
 import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
 import {registerTransformationHooks} from "./modules/transformations.mjs";
 import {registerMaintainedSpellTracking} from "./modules/maintained-spell-tracking.mjs";
+import {registerAuraSupport} from "./modules/aura.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
   configureEffects();
+  registerAuraSupport();
   registerEffectHooks();
   registerMagicSheetAvailabilityHooks();
   registerTransformationHooks();

@@ -111,7 +111,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   delete casting.messageId;
  }
  counts=casting.counts;
- const stackId=casting.kind==="spell"&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
+ const stackId=(casting.kind==="spell"||casting.auraSource)&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
  // A related-effect link keeps its originating document for ownership, elapsed
  // duration and provenance. Its data belongs to a different effect, however.
  // Unidentified custom effects remain copyable; identified ones must match.
