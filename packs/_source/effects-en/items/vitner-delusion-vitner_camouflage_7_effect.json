@@ -1,0 +1,45 @@
+{
+  "_id": "2Oy1rz1w2x3y4z5A",
+  "_key": "!items!2Oy1rz1w2x3y4z5A",
+  "name": "Camouflage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:camouflage:7#effect",
+    "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings. Anyone searching for the target needs to succeed on a d ifficult (-3 to SV) Skill roll for the Shadow Arts skill in order to discover them. Depending on the environment, the camouflage will differ from place to place. For example, if the target stands next to a wall, they could appear to be a shrub or part of the wall itself; if they stand in a forest clearing, they could appear as a tree, a rock, or a bush. Their physical appearance does not change; it is the vitner that surrounds them that adopts the appearance of the intended camouflage. The target must stand completely still for the spell to work. It is broken if they make any significant movements or noises, or if someone touches them. However, the spell will be restored as soon as the target stops moving or causing the noise that is breaking the illusion. The spell can also be used on an object instead of a living being. The object must be something that is not attached to or carried by a creature. Beings that are not actively looking for hidden things do not get to make Skill rolls to discover the camouflaged object, unless it is a trap or an assault.",
+    "summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "L0rGcbC7C8D9EaGb",
+      "_key": "!items.effects!2Oy1rz1w2x3y4z5A.L0rGcbC7C8D9EaGb",
+      "name": "Camouflage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings. Anyone searching for the target needs to succeed on a d ifficult (-3 to SV) Skill roll for the Shadow Arts skill in order to discover them. Depending on the environment, the camouflage will differ from place to place. For example, if the target stands next to a wall, they could appear to be a shrub or part of the wall itself; if they stand in a forest clearing, they could appear as a tree, a rock, or a bush. Their physical appearance does not change; it is the vitner that surrounds them that adopts the appearance of the intended camouflage. The target must stand completely still for the spell to work. It is broken if they make any significant movements or noises, or if someone touches them. However, the spell will be restored as soon as the target stops moving or causing the noise that is breaking the illusion. The spell can also be used on an object instead of a living being. The object must be something that is not attached to or carried by a creature. Beings that are not actively looking for hidden things do not get to make Skill rolls to discover the camouflaged object, unless it is a trap or an assault.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:camouflage:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:camouflage:7#effect",
+            "sourceId": "vitner-delusion-vitner:camouflage:7",
+            "summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

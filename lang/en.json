@@ -13748,6 +13748,15 @@
           "SourcePage": "105",
           "Duration": "5 minutes"
         },
+        "vitner-soil-craft:shape-soil:1#effect": {
+          "Name": "Shape Soil",
+          "Summary": "Softens and reshapes nearby earth and soil according to the mage's will.",
+          "Description": "The spell transforms all forms of local ground and soil, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to its original consistency, in the new shape the enchanter has given it. If an area of land is flat and low, it can almost seem as if new soil is created out of thin air as the enchanter uses the vitner to mold upward. However, it only appears to create new land because the spell draws from such a wide area around the enchanter that the minor drop in elevation is hardly noticeable (though it is up to the game master to decide if an area has enough soil). Likewise, if the enchanter chooses to level a clay structure or giant landmark, the subtle rise in elevation would hardly be noticed as the stone and soil spreads beneath one’s feet. The duration for the spell is 5 minutes, which indicates how long the molded land is able to maintain the new shape. As soon as the spell expires, the soil immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted soil at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning mass of land; someone on a molded staircase is likely to have their legs stuck in mud and soil once it shifts back to its original form.",
+          "SourceName": "Shape Soil",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "123",
+          "Duration": "5 minutes"
+        },
         "vitner-soil-craft:quagmire:3#effect": {
           "Name": "Quagmire",
           "Summary": "Quagmire",
@@ -13765,6 +13774,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "123",
           "Duration": "2 minutes"
+        },
+        "vitner-soil-craft:shape-stone:6#effect": {
+          "Name": "Shape Stone",
+          "Summary": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay.",
+          "Description": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to the stone’s original c onsistency, in the new shape the enchanter has given it. If there doesn’t appear to be much stone in an area where the spell is woven, it can almost seem as if the stone is created out of thin air as the enchanter begins gathering and molding. However, it only appears to create new stone because it is drawing every bit of rocky sediment from the ground and amassing it in a single spot. It is up to the game master to decide if the area has enough stone. The duration for the spell is 5 minutes, which indicates how long the stone is able to maintain the new shape. As soon as the spell expires, the stone immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted rock at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning stone; someone on a molded staircase is likely to have their legs stuck in rock once it shifts back to its original form.",
+          "SourceName": "Shape Stone",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "123",
+          "Duration": "5 minutes"
         },
         "vitner-soil-craft:stone-walk:7#stone-walk": {
           "Name": "Stone Walk",
@@ -13819,6 +13837,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "135",
           "Duration": "3 minutes"
+        },
+        "vitner-water-craft:create-water:4#effect": {
+          "Name": "Create Water",
+          "Summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+          "Description": "The enchanter creates a fountain of water that spurts from a desired place in the ground. In total, 30 liters of water flow out from the magical source (10 liters per action round). The water is as clean as spring water, and as long as the enchanter has something to collect it in, they never need to be thirsty.",
+          "SourceName": "Create Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "3 action rounds"
         },
         "vitner-water-craft:solid-water:5#effect": {
           "Name": "Solid Water",
@@ -13909,6 +13936,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "139",
           "Duration": "5 action rounds"
+        },
+        "vitner-wind-craft:lift:5#effect": {
+          "Name": "Lift",
+          "Summary": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground.",
+          "Description": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground. In order for the lift to work, the person must weigh no more than 60 kg. The conjured winds cause the person to lift off the ground and float slowly in whichever direction the enchanter chooses, with a speed of 3 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 8 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche m odifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted person begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a S ituation roll (with the same Situation value), as long as the spell duration c ontinues. An enchanted person who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the person hits the ground, they take the usual fall damage for the total distance fallen.",
+          "SourceName": "Lift",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "6 action rounds"
+        },
+        "vitner-wind-craft:wind-catcher:9#effect": {
+          "Name": "Wind Catcher",
+          "Summary": "Controlled winds lift one or more characters and carry them through the air at the enchanter's direction.",
+          "Description": "The spell creates controlled flurries of wind around one or several c haracters, causing each of them to lift off the ground. For the lift to work, an enchanted person must weigh no more than 100 kg. The conjured winds cause the enchanted character(s) to lift off the ground and float slowly in whichever direction the enchanter chooses, at a speed of 10 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 6 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche modifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted character begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a Situation roll (with the same Situation value), as long as the spell duration continues. An enchanted character who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the character hits the ground, they take the usual fall damage for the total distance fallen. Victims who are directed by this spell into walls or other solid objects take fall damage. If the fall is normal, the fall damage is normal, but if the victim is thrown sideways, the fall is calculated as the distance the victim traveled during the current action round (maximum 10 meters).",
+          "SourceName": "Wind Catcher",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "6 action rounds"
         },
         "vitner-wind-craft:storm:8#effect": {
           "Name": "Storm",
@@ -14126,6 +14171,15 @@
           "SourcePage": "120",
           "Duration": "1 hour"
         },
+        "vitner-power-of-vision:seeing:3#effect": {
+          "Name": "Seeing",
+          "Summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+          "Description": "The spell enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the spell, the enchanted character’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or spells that impair vision. However, the enchanted character cannot detect things that they would not be able to see under normal c onditions. The Seeing spell can also be used to cancel the effects of spells that impair vision (effective for the spell’s duration), such as Vision/Blindness.",
+          "SourceName": "Seeing",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "1 hour"
+        },
         "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
           "Name": "Astral Voyage",
           "Summary": "Projects the spirit outside the body.",
@@ -14134,6 +14188,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "120",
           "Duration": "5 minutes"
+        },
+        "vitner-power-of-vision:true-sight:7#effect": {
+          "Name": "True Sight",
+          "Summary": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects.",
+          "Description": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects. The target is immediately able to see through all illusions, camouflage, and magical images. The spell also grants the target the ability to see any objects and beings who might be invisible (whether by their very nature or through an ability). Objects or creatures that are invisible or camouflaged through spells appear to the target as if they are not enchanted at all. The effective range of this true sight is 25 meters in the basic version. The enchanter can also use the spell to determine if an object or creature has been enchanted and had its vitner manipulated in other ways beyond that of illusions. To achieve this, a successful Situation roll is required with a Situation value based on the spell woven over the object or creature (see the table below). The roll may be modified according to the game master’s wishes, and should always be rolled in secret by the GM, if the player is asked to roll, they will realize that there is something to be<table><thead><tr><th colspan=\"1\">TRUE SIGHT SITUATION VALUES</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>found in the object. However, the enchanter has no way of identifying what spell the creature or object has been enchanted with without also using the spell Read Vitner. TRUE SIGHT SITUATION VALUES Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+          "SourceName": "True Sight",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "1 minute"
         },
         "vitner-witchcraft:uprooted-tree:0#effect": {
           "Name": "Uprooted Tree",
@@ -14290,6 +14353,24 @@
           "SourcePage": "96",
           "Duration": "1 minute"
         },
+        "vitner-body-vitner:immobilize:6#effect": {
+          "Name": "Immobilize",
+          "Summary": "This spell creates a prohibitive energy that immobilizes a chosen victim.",
+          "Description": "This spell creates a prohibitive energy that immobilizes a chosen victim. The vitner makes it impossible for the victim to move, no matter how hard they try. The spell can be broken only if the enchanter chooses to release the victim, the victim is subjected to violence and takes 1 or more points of damage, the duration expires, or someone uses the spell Dispel Vitner to break the enchantment. The victim can resist the enchantment by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). Exceptionally large creatures and monsters can also be affected by the spell, but for every increase in size equivalent to that of a human, the Situation value to resist the spell increases by +2. So a creature that is three times larger than a normal human would receive a bonus of +4, which results in a Situation value of 10 to resist the spell.",
+          "SourceName": "Immobilize",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "5 action rounds"
+        },
+        "vitner-body-vitner:appearance-change:7#effect": {
+          "Name": "Appearance Change",
+          "Summary": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+          "Description": "This spell’s energy creates an imbalance in the enchanted character’s body, which results in an immediate change of their physical appearance. These changes may include hair, skin and eye color, facial features, and voice. The enchanter decides what to change and what the final appearance should look like. The changes are purely cosmetic, however, and do not affect physical ability or traits beyond appearance. A target who chooses to resist the change may do so with a successful Situation roll with a Situation value of 6 (Constitution modifiers apply). However, the victim must be aware of the spell in order to resist. If the enchanter weaves the spell upon a person who is sleeping or unaware of what’s going on, the victim does not realize that a change has taken place. The enchanter can remove the appearance change at any time. Once the change is removed, it takes 5 rounds before the enchanted resumes their original appearance.",
+          "SourceName": "Appearance Change",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "10 minutes"
+        },
         "vitner-body-vitner:leather-skin:5#leather-skin": {
           "Name": "Leather Skin",
           "Summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
@@ -14389,6 +14470,15 @@
           "SourcePage": "101",
           "Duration": "1 minute"
         },
+        "vitner-delusion-vitner:camouflage:7#effect": {
+          "Name": "Camouflage",
+          "Summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+          "Description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings. Anyone searching for the target needs to succeed on a d ifficult (-3 to SV) Skill roll for the Shadow Arts skill in order to discover them. Depending on the environment, the camouflage will differ from place to place. For example, if the target stands next to a wall, they could appear to be a shrub or part of the wall itself; if they stand in a forest clearing, they could appear as a tree, a rock, or a bush. Their physical appearance does not change; it is the vitner that surrounds them that adopts the appearance of the intended camouflage. The target must stand completely still for the spell to work. It is broken if they make any significant movements or noises, or if someone touches them. However, the spell will be restored as soon as the target stops moving or causing the noise that is breaking the illusion. The spell can also be used on an object instead of a living being. The object must be something that is not attached to or carried by a creature. Beings that are not actively looking for hidden things do not get to make Skill rolls to discover the camouflaged object, unless it is a trap or an assault.",
+          "SourceName": "Camouflage",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "5 minutes"
+        },
         "vitner-delusion-vitner:landscape-illusion:8#effect": {
           "Name": "Landscape Illusion",
           "Summary": "Landscape Illusion",
@@ -14397,6 +14487,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "101",
           "Duration": "2 hours"
+        },
+        "vitner-delusion-vitner:invisibility:11#effect": {
+          "Name": "Invisibility",
+          "Summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective.",
+          "Description": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective. The vitner gives the target, and their clothing and equipment, the look of whatever the observer would normally see if the target were not present. The target becomes virtually er and life force from the livinginvisible in this way. An observer must succeed on an extremely difficult (-10) Skill roll for the Shadow Arts skill in order to detect a target who stands still, or on a d ifficult (-3) Skill roll when the target moves slowly. If the target makes any sudden or extreme er and life force from the er and life force from the livinglivingmovements, such as running or fighting, the vitner can no longer c amouflage them as well, and anyone viewing them receives +5 on their Skill rolls to see the target; this lasts until the target slows down their movements. Any person trying to attack the invisible target or parry their attacks must succeed on a Skill roll for Agility in order to avoid modifiers. A person who fails this Skill roll suffers -10 in all attacks against the invisible target as well as any attempts to parry the unseen’s attacks.",
+          "SourceName": "Invisibility",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "5 minutes"
         },
         "vitner-vitner-of-objects:detect-composition:0#effect": {
           "Name": "Detect Composition",

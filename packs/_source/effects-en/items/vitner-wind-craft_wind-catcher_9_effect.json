@@ -1,0 +1,45 @@
+{
+  "_id": "aYO9zQlRmSnToUpV",
+  "_key": "!items!aYO9zQlRmSnToUpV",
+  "name": "Wind Catcher",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:wind-catcher:9#effect",
+    "description": "The spell creates controlled flurries of wind around one or several c haracters, causing each of them to lift off the ground. For the lift to work, an enchanted person must weigh no more than 100 kg. The conjured winds cause the enchanted character(s) to lift off the ground and float slowly in whichever direction the enchanter chooses, at a speed of 10 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 6 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche modifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted character begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a Situation roll (with the same Situation value), as long as the spell duration continues. An enchanted character who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the character hits the ground, they take the usual fall damage for the total distance fallen. Victims who are directed by this spell into walls or other solid objects take fall damage. If the fall is normal, the fall damage is normal, but if the victim is thrown sideways, the fall is calculated as the distance the victim traveled during the current action round (maximum 10 meters).",
+    "summary": "Controlled winds lift one or more characters and carry them through the air at the enchanter's direction.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "pB7YJmOjPkQlRmSn",
+      "_key": "!items.effects!aYO9zQlRmSnToUpV.pB7YJmOjPkQlRmSn",
+      "name": "Wind Catcher",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates controlled flurries of wind around one or several c haracters, causing each of them to lift off the ground. For the lift to work, an enchanted person must weigh no more than 100 kg. The conjured winds cause the enchanted character(s) to lift off the ground and float slowly in whichever direction the enchanter chooses, at a speed of 10 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 6 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche modifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted character begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a Situation roll (with the same Situation value), as long as the spell duration continues. An enchanted character who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the character hits the ground, they take the usual fall damage for the total distance fallen. Victims who are directed by this spell into walls or other solid objects take fall damage. If the fall is normal, the fall damage is normal, but if the victim is thrown sideways, the fall is calculated as the distance the victim traveled during the current action round (maximum 10 meters).",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:wind-catcher:9#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:wind-catcher:9#effect",
+            "sourceId": "vitner-wind-craft:wind-catcher:9",
+            "summary": "Controlled winds lift one or more characters and carry them through the air at the enchanter's direction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

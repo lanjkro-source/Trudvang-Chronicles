@@ -1,0 +1,45 @@
+{
+  "_id": "VkaEDtVqWrXsYtZu",
+  "_key": "!items!VkaEDtVqWrXsYtZu",
+  "name": "Création d’eau",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:create-water:4#effect",
+    "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi. Au total, cette source magique produit 30 litres d’eau (à raison de 10 litres par tour de jeu). L’eau est aussi pure que celle d’un torrent, et pour peu que l’enchanteur dispose d’un réceptacle pour la recueillir, il ne souffrira jamais de la soif.",
+    "summary": "Fait jaillir une source d’eau à l’endroit choisi.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "ScHuwfIdJeKfLgMh",
+      "_key": "!items.effects!VkaEDtVqWrXsYtZu.ScHuwfIdJeKfLgMh",
+      "name": "Création d’eau",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi. Au total, cette source magique produit 30 litres d’eau (à raison de 10 litres par tour de jeu). L’eau est aussi pure que celle d’un torrent, et pour peu que l’enchanteur dispose d’un réceptacle pour la recueillir, il ne souffrira jamais de la soif.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:create-water:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:create-water:4#effect",
+            "sourceId": "vitner-water-craft:create-water:4",
+            "summary": "Fait jaillir une source d’eau à l’endroit choisi.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

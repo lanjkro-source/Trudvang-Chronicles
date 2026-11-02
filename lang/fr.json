@@ -13748,6 +13748,15 @@
           "SourcePage": "157",
           "Duration": "5 minutes"
         },
+        "vitner-soil-craft:shape-soil:1#effect": {
+          "Name": "Façonnage de la terre",
+          "Summary": "Ramollit la terre pour la creuser, la modeler ou modifier le terrain.",
+          "Description": "Ce sort transforme toute la terre alentour en une glaise épaisse, lisse et malléable. L’enchanteur peut alors utiliser le vitner pour modeler cette glaise enchantée et lui donner la forme de son choix, sans pouvoir dépasser la taille d’une halle de Storme. Il dispose de trois minutes pour façonner la glaise, après quoi la glaise reprend sa consistance d’origine tout en conservant la forme que l’enchanteur lui a donnée. Si l’enchanteur se trouve dans une région plate, on pourrait presque croire qu’il crée de la terre à partir de rien tandis qu’il utilise le vitner pour sculpter le sol et le faire monter vers lui. Cela dit, ce n’est qu’une illusion d’optique : le sort attire de la terre depuis une zone si large que la dépression ainsi créée est à peine perceptible (le maître de jeu doit tout de même déterminer si la zone affectée présente assez de terre). De même, si l’enchanteur choisit de niveler une structure en glaise ou un élément topographique, la légère augmentation du niveau du sol sera difficile à remarquer étant donné que la terre et la pierre se répandent sous les pieds des témoins. La durée de ce sort est de 5 minutes, ce qui indique le temps durant lequel la terre façonnée est capable de conserver sa nouvelle forme. Dès que le sort expire, la terre reprend immédiatement sa forme et son emplacement d’origine. S’il reste des créatures ou des objets dans ou sur la terre façonnée à ce moment-là, c’est au maître de jeu de déterminer ce qui leur arrive. Une personne dans un trou ou un passage créé dans la terre se retrouvera piégé par le retour de la terre et de la roche, tandis qu’un personnage qui se tient sur un escalier créé par le biais de ce sort se retrouvera probablement les jambes piégées dans la boue et la terre une fois que l’escalier aura retrouvé sa forme originelle.",
+          "SourceName": "Façonnage de la terre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "159",
+          "Duration": "5 minutes"
+        },
         "vitner-soil-craft:quagmire:3#effect": {
           "Name": "Bourbier",
           "Summary": "Bourbier",
@@ -13765,6 +13774,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "161",
           "Duration": "2 minutes"
+        },
+        "vitner-soil-craft:shape-stone:6#effect": {
+          "Name": "Façonnage de la pierre",
+          "Summary": "Ramollit pierre et minerai pour les tailler, les creuser ou les remodeler.",
+          "Description": "Ce sort transforme tous types de pierres et de minerais, les rendant lisses et malléables comme de la glaise épaisse. L’enchanteur peut alors utiliser le vitner pour modeler cette glaise enchantée et lui donner la forme de son choix, sans pouvoir dépasser la taille d’une halle de Storme. Il dispose de trois minutes pour façonner la glaise, après quoi elle reprend sa consistance d’origine tout en conservant la forme que l’enchanteur lui a donnée. Si l’enchanteur se trouve dans une région plate, on pourrait presque croire qu’il crée de la pierre à partir de rien tandis qu’il utilise le vitner pour sculpter la roche et la faire monter vers lui. Cela dit, ce n’est qu’une illusion d’optique : le sort attire de la pierre depuis une zone si large que la dépression ainsi créée est à peine perceptible (le maître de jeu doit tout de même déterminer si la zone affectée présente assez de pierre). La durée de ce sort est de 5 minutes, et correspond au temps durant lequel la roche façonnée est capable de conserver sa nouvelle forme. Dès que le sort expire, la pierre reprend immédiatement sa forme et son emplacement d’origine. S’il reste des créatures ou des objets dans ou sur la roche façonnée à ce moment-là, c’est au maître de jeu de déterminer ce qui leur arrive. Une personne dans un trou ou un passage créé dans la pierre se retrouvera piégé par le retour de la roche, tandis qu’un personnage qui se tient sur un escalier créé par le biais de ce sort se retrouvera probablement les jambes piégées dans la pierre une fois que l’escalier aura retrouvé sa forme originelle.",
+          "SourceName": "Façonnage de la pierre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "161",
+          "Duration": "5 minutes"
         },
         "vitner-soil-craft:stone-walk:7#stone-walk": {
           "Name": "Marche dans la pierre",
@@ -13819,6 +13837,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "164",
           "Duration": "3 minutes"
+        },
+        "vitner-water-craft:create-water:4#effect": {
+          "Name": "Création d’eau",
+          "Summary": "Fait jaillir une source d’eau à l’endroit choisi.",
+          "Description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi. Au total, cette source magique produit 30 litres d’eau (à raison de 10 litres par tour de jeu). L’eau est aussi pure que celle d’un torrent, et pour peu que l’enchanteur dispose d’un réceptacle pour la recueillir, il ne souffrira jamais de la soif.",
+          "SourceName": "Création d’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "164",
+          "Duration": "3 tours de jeu"
         },
         "vitner-water-craft:solid-water:5#effect": {
           "Name": "Eau solide",
@@ -13909,6 +13936,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "171",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-wind-craft:lift:5#effect": {
+          "Name": "Vent porteur",
+          "Summary": "Soulève une créature et lui permet de se déplacer dans les airs.",
+          "Description": "Ce sort génère des vents dirigés autour de la personne enchantée, qu’ils soulèvent du sol. Pour que le vent porteur puisse fonctionner, la personne visée ne doit pas faire plus de 60 kg. Les vents conjurés soulèvent la personne et la font flotter lentement dans la direction choisie par l’enchanteur à une vitesse de 3 mètres par tour de jeu. Toute personne touchée par ce sort contre son gré peut tenter d’y résister par un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Force). Si l’enchanteur subit des dégâts ou est déconcentré pendant qu’il maintient ce sort actif, il doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) ou perdre temporairement le contrôle des vents : la personne enchantée commence alors à tomber. Toutefois, à chaque nouveau tour, l’enchanteur peut tenter de reprendre le contrôle des vents en effectuant un test de situation (avec la même valeur de situation), tant que le sort n’a pas expiré. Une personne enchantée qui tombe le fait à une vitesse de 10 mètres lors du tour où l’enchanteur perd le contrôle des vents, puis de 100 mètres par tour de jeu tant que l’enchanteur ne reprend pas le contrôle de son sort. Si la personne percute le sol, elle subit les dégâts habituels correspondant à sa distance de chute.",
+          "SourceName": "Vent porteur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "171",
+          "Duration": "6 tours de jeu"
+        },
+        "vitner-wind-craft:wind-catcher:9#effect": {
+          "Name": "Seigneur des vents",
+          "Summary": "Soulève et déplace des créatures ou objets grâce à des vents puissants.",
+          "Description": "Ce sort déchaîne des rafales de vent autour d’un ou plusieurs personnages, qui les soulèvent du sol. Pour que ce sort fonctionne, une personne enchantée ne doit pas peser plus de 100 kg. Les vents ainsi conjurés soulèvent le ou les personnages enchantés, qui flottent lentement dans la direction choisie par l’enchanteur, à une vitesse de 10 mètres par tour de jeu. Toute personne touchée par ce sort contre son gré peut tenter d’y résister par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Force). Si l’enchanteur subit des dégâts ou est déconcentré pendant qu’il maintient ce sort actif, il doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) ou perdre temporairement le contrôle des vents : la personne enchantée commence alors à tomber. Toutefois, à chaque nouveau tour, l’enchanteur peut tenter de reprendre le contrôle des vents en effectuant un test de situation (avec la même valeur de situation), tant que le sort n’a pas expiré. Une personne enchantée qui tombe le fait à une vitesse de 10 lors du tour où l’enchanteur perd le contrôle des vents, puis de 100 mètres par tour de jeu tant que l’enchanteur ne reprend pas le contrôle de son sort. Si la personne percute le sol, elle subit les dégâts habituels correspondant à sa distance de chute. Les victimes que ce sort projette contre un mur ou quelque autre objet solide subissent des dégâts de chute. S’il s’agit d’une chute normale, les dégâts sont calculés normalement, mais si la victime est projetée sur le côté, on calcule les dégâts en fonction de la distance franchie par la victime au cours du tour de jeu (10 mètres maximum).",
+          "SourceName": "Seigneur des vents",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "172",
+          "Duration": "6 tours de jeu"
         },
         "vitner-wind-craft:storm:8#effect": {
           "Name": "Tempête",
@@ -14126,6 +14171,15 @@
           "SourcePage": "182",
           "Duration": "1 heure"
         },
+        "vitner-power-of-vision:seeing:3#effect": {
+          "Name": "Vision parfaite",
+          "Summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+          "Description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du sort, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des sorts gênant la vision. Ce sort ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce sort peut également servir à annuler les effets des sorts qui gênent la vision (du moins pendant la durée du sort) comme par exemple le sort Vision/cécité.",
+          "SourceName": "Vision parfaite",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "182",
+          "Duration": "1 heure"
+        },
         "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
           "Name": "Voyage astral",
           "Summary": "Projette l’esprit hors du corps.",
@@ -14134,6 +14188,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "183",
           "Duration": "5 minutes"
+        },
+        "vitner-power-of-vision:true-sight:7#effect": {
+          "Name": "Vision véritable",
+          "Summary": "Permet de voir à travers les illusions, l’invisibilité et les camouflages magiques.",
+          "Description": "Ce sort permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de vitner illusoire qui entourent les êtres et les objets. Le bénéficiaire du sort est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce sort lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de sorts comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce sort, la portée effective de la Vision véritable est de 25 mètres. L’enchanteur peut également se servir de ce sort pour déterminer si un objet ou une créature ont été enchantés et si leur vitner a été manipulé autrement que par des illusions. Pour ce faire, il doit réussir un test de situation avec une valeur de situation qui dépend du sort tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, l’enchanteur n’a aucun moyen de deviner la véritable nature du sort découvert sans recourir également au sort Lecture du vitner. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SourceName": "Vision véritable",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "183",
+          "Duration": "1 minute"
         },
         "vitner-witchcraft:uprooted-tree:0#effect": {
           "Name": "Déracinement",
@@ -14290,6 +14353,24 @@
           "SourcePage": "193",
           "Duration": "1 minute"
         },
+        "vitner-body-vitner:immobilize:6#effect": {
+          "Name": "Immobilisation",
+          "Summary": "Immobilise une créature en l’enserrant dans une énergie restrictive.",
+          "Description": "Ce sort crée une énergie restrictive qui immobilise la victime choisie. Le vitner empêche la victime de bouger, quels que soient les efforts qu’elle déploie. Le sort n’est brisé que si l’enchanteur choisit de libérer la victime, si la victime subit des violences et encaisse au moins 1 point de dégâts, quand la durée du sort arrive à expiration, ou quand quelqu’un a recours au sort Dissipation du vitner pour briser l’enchantement. La victime peut résister à l’enchantement en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). Il est possible d’imposer ce sort à des créatures exceptionnellement grandes ainsi qu’à des monstres, et pour chaque augmentation de taille correspondant à celle d’un humain, la valeur de situation pour résister au sort augmente de +2. Ainsi, une créature trois fois plus grande qu’un humain normal recevra un bonus de +4, et bénéficiera donc d’une valeur de situation de 10 pour résister au sort.",
+          "SourceName": "Immobilisation",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "194",
+          "Duration": "5 tours de jeu"
+        },
+        "vitner-body-vitner:appearance-change:7#effect": {
+          "Name": "Modification d’apparence",
+          "Summary": "Modifie l’apparence physique d’une créature pour la déguiser ou la déformer.",
+          "Description": "L’énergie de ce sort crée un déséquilibre dans le corps de la personne enchantée, ce qui a pour conséquence de modifier immédiatement son apparence physique. Ces changements peuvent affecter les cheveux, la couleur de la peau et des yeux, les traits du visage ainsi que la voix. C’est l’enchanteur qui décide de la nature précise des changements et de l’apparence finale du sujet. Cela dit, ces modifications sont purement cosmétiques et n’affectent en rien les aptitudes physiques ou les traits du bénéficiaire en dehors de son apparence. Une cible qui choisit de résister à ces modifications peut le faire en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution). Toutefois, la victime doit être consciente du sort pour pouvoir y résister. Si l’enchanteur tisse ce sort sur une personne endormie ou qui n’a pas conscience de ce qui se passe, la victime ne réalise pas les changements qui l’affectent. L’enchanteur peut à tout moment annuler la modification d’apparence. Une fois les changements annulés, il faut cinq tours de jeu à la personne enchantée pour recouvrer son apparence d’origine.",
+          "SourceName": "Modification d’apparence",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "194",
+          "Duration": "10 minutes"
+        },
         "vitner-body-vitner:leather-skin:5#leather-skin": {
           "Name": "Peau de cuir",
           "Summary": "Durcit la peau du bénéficiaire et augmente sa protection naturelle.",
@@ -14389,6 +14470,15 @@
           "SourcePage": "198",
           "Duration": "1 minute"
         },
+        "vitner-delusion-vitner:camouflage:7#effect": {
+          "Name": "Camouflage",
+          "Summary": "Fond le bénéficiaire dans son environnement afin de le rendre difficile à repérer.",
+          "Description": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement. Toute personne à la recherche du sujet doit réussir un test de compétence d’Arts des ombres difficile (VC -3) afin de le déceler. En fonction de l’environnement, le camouflage pourra varier d’un endroit à l’autre. Par exemple, si le sujet se trouve devant un mur, il pourra prendre l’aspect d’un arbuste ou même du mur luimême. S’il se trouve dans une clairière forestière, il pourra se faire passer pour un arbre, un rocher ou un buisson. Son apparence physique ne change pas réellement : c’est le vitner qui l’entoure qui prend l’apparence du camouflage désiré. La cible doit rester complètement immobile pour que l’effet magique fonctionne. Le sort est brisé si le bénéficiaire bouge ou fait du bruit, ou si quelqu’un le touche. Cela dit, le sort est rétabli dès que le sujet cesse de bouger ou de faire du bruit. On peut également utiliser ce sort sur un objet au lieu d’un être vivant, mais cet objet ne peut pas être tenu ou porté par une créature. Les êtres qui ne cherchent pas activement des objets dissimulés n’ont droit à aucun test pour découvrir l’objet camouflé, à moins qu’il ne s’agisse d’un piège ou d’une attaque.",
+          "SourceName": "Camouflage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "198",
+          "Duration": "5 minutes"
+        },
         "vitner-delusion-vitner:landscape-illusion:8#effect": {
           "Name": "Paysage illusoire",
           "Summary": "Paysage illusoire",
@@ -14397,6 +14487,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "199",
           "Duration": "2 heures"
+        },
+        "vitner-delusion-vitner:invisibility:11#effect": {
+          "Name": "Invisibilité",
+          "Summary": "Rend une créature très difficile à voir en adaptant son apparence à chaque observateur.",
+          "Description": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur. Le vitner donne au bénéficiaire, ainsi qu’à ses vêtements et à tout son équipement, l’aspect de ce que l’observateur verrait normalement si le bénéficiaire n’était pas là. Ainsi, le bénéficiaire du sort devient virtuellement invisible. Un témoin doit réussir un test de compétence d’Arts des ombres extrêmement difficile (-10) pour déceler un sujet qui se tient immobile, ou un test difficile (-3) si le sujet se déplace lentement. Si le sujet fait un geste brusque (par exemple s’il court ou s’il attaque), le vitner ne peut plus le camoufler et tous les témoins reçoivent un bonus de +5 à leur test de compétence pour le percevoir ; cela dure jusqu’à ce que le bénéficiaire du sort ralentisse ses mouvements. Toute personne qui tente d’attaquer la cible invisible ou de parer ses attaques doit réussir un test de compétence d’Agilité ou subir un malus de -10 à toutes ses attaques et parades contre le personnage invisible.",
+          "SourceName": "Invisibilité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "200",
+          "Duration": "5 minutes"
         },
         "vitner-vitner-of-objects:detect-composition:0#effect": {
           "Name": "Analyse de la composition",

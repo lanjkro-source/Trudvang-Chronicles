@@ -1,0 +1,45 @@
+{
+  "_id": "VkaEDtVqWrXsYtZu",
+  "_key": "!items!VkaEDtVqWrXsYtZu",
+  "name": "Create Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:create-water:4#effect",
+    "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground. In total, 30 liters of water flow out from the magical source (10 liters per action round). The water is as clean as spring water, and as long as the enchanter has something to collect it in, they never need to be thirsty.",
+    "summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "ScHuwfIdJeKfLgMh",
+      "_key": "!items.effects!VkaEDtVqWrXsYtZu.ScHuwfIdJeKfLgMh",
+      "name": "Create Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground. In total, 30 liters of water flow out from the magical source (10 liters per action round). The water is as clean as spring water, and as long as the enchanter has something to collect it in, they never need to be thirsty.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:create-water:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:create-water:4#effect",
+            "sourceId": "vitner-water-craft:create-water:4",
+            "summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,238);
+ assert.equal(Object.keys(sources).length,249);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1119,6 +1119,18 @@ test("descriptive spells retain selected improvements and calculate duration",as
  assert.deepEqual(created.duration,{value:132,units:"rounds"});
  assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.3/);
  assert.match(created.flags[S].transformation.summary,/1 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.4/);
+});
+
+test("movement, vision and concealment effects preserve individual duration and immobilization",async()=>{
+ const immobilize="vitner-body-vitner:immobilize:6#effect",soil="vitner-soil-craft:shape-soil:1#effect";
+ assert.deepEqual(templates[immobilize].statuses,["restrain"]);
+ assert.deepEqual(templates[soil].parameters.filter(p=>p.target==="duration").map(p=>p.value),[60,3600]);
+ assert.ok(templates[soil].displayPowerOptions.includes(2),"the shaping-time option must not extend the spell duration");
+ for(const id of ["vitner-delusion-vitner:invisibility:11","vitner-delusion-vitner:camouflage:7","vitner-power-of-vision:seeing:3","vitner-power-of-vision:true-sight:7"])assert.ok(templates[`${id}#effect`],id);
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,immobilize,{counts:[1,1,0,0,0,0,0],skipDialog:true});
+ assert.deepEqual(created.statuses,["restrain"]);assert.deepEqual(created.duration,{value:18,units:"rounds"});
 });
 
 test("divine weather, travel and summoning effects preserve their duration improvements",async()=>{

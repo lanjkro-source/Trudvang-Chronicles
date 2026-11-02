@@ -7426,6 +7426,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:appearance-change:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:appearance-change:7:0",
@@ -7662,6 +7666,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:immobilize:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:immobilize:6:6",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:immobilize:6:0",
@@ -7959,6 +7972,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:camouflage:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-delusion-vitner:camouflage:7:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:camouflage:7:0",
@@ -8094,6 +8116,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:invisibility:11": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-delusion-vitner:invisibility:11:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:invisibility:11:0",
@@ -9692,6 +9723,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:seeing:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-vision:seeing:3:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:seeing:3:0",
@@ -9743,6 +9783,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:true-sight:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-vision:true-sight:7:7",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:true-sight:7:0",
@@ -11252,6 +11301,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:lift:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-wind-craft:lift:5:0",

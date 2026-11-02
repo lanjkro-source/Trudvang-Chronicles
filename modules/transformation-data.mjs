@@ -194,6 +194,34 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-soil-craft:shape-soil:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-soil-craft:shape-soil:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-soil-craft:shape-soil:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-soil-craft:shape-soil:1:1"
+      }
+    ]
+  },
   "vitner-soil-craft:quagmire:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -249,6 +277,34 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 600,
         "optionId": "vitner-soil-craft:soil-walk:5:1"
+      }
+    ]
+  },
+  "vitner-soil-craft:shape-stone:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-soil-craft:shape-stone:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-soil-craft:shape-stone:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-soil-craft:shape-stone:6:1"
       }
     ]
   },
@@ -467,6 +523,39 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "vitner-water-craft:breathe:2:2"
+      }
+    ]
+  },
+  "vitner-water-craft:create-water:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-water-craft:create-water:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-water-craft:create-water:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:create-water:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-water-craft:create-water:4:2"
       }
     ]
   },
@@ -782,6 +871,83 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "outerProtection",
         "value": 1,
         "optionId": "vitner-wind-craft:air-armor:4:4"
+      }
+    ]
+  },
+  "vitner-wind-craft:lift:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "6 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "sourceId": "vitner-wind-craft:lift:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-wind-craft:lift:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-wind-craft:lift:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-wind-craft:lift:5:2"
+      }
+    ]
+  },
+  "vitner-wind-craft:wind-catcher:9#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "6 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "sourceId": "vitner-wind-craft:wind-catcher:9",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-wind-craft:wind-catcher:9:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-wind-craft:wind-catcher:9:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-wind-craft:wind-catcher:9:2"
       }
     ]
   },
@@ -1515,6 +1681,33 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-vision:seeing:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "vitner-power-of-vision:seeing:3",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-vision:seeing:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-power-of-vision:seeing:3:2"
+      }
+    ]
+  },
   "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
     "id": "astral-voyage",
     "icon": "icons/svg/aura.svg",
@@ -1545,6 +1738,42 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-power-of-vision:astral-voyage:5:2"
+      }
+    ]
+  },
+  "vitner-power-of-vision:true-sight:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "vitner-power-of-vision:true-sight:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-vision:true-sight:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-power-of-vision:true-sight:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-vision:true-sight:7:2"
       }
     ]
   },
@@ -2261,6 +2490,81 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-body-vitner:immobilize:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 30,
+    "statuses": [
+      "restrain"
+    ],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      4,
+      5
+    ],
+    "sourceId": "vitner-body-vitner:immobilize:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-body-vitner:immobilize:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:immobilize:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:immobilize:6:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:immobilize:6:3"
+      }
+    ]
+  },
+  "vitner-body-vitner:appearance-change:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-body-vitner:appearance-change:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:appearance-change:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:appearance-change:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:appearance-change:7:2"
+      }
+    ]
+  },
   "vitner-body-vitner:leather-skin:5#leather-skin": {
     "id": "leather-skin",
     "icon": "icons/svg/shield.svg",
@@ -2692,6 +2996,39 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-delusion-vitner:camouflage:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-delusion-vitner:camouflage:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:camouflage:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:camouflage:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-delusion-vitner:camouflage:7:2"
+      }
+    ]
+  },
   "vitner-delusion-vitner:landscape-illusion:8#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -2724,6 +3061,34 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 604800,
         "optionId": "vitner-delusion-vitner:landscape-illusion:8:5"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:invisibility:11#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-delusion-vitner:invisibility:11",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:invisibility:11:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:invisibility:11:1"
       }
     ]
   },
@@ -10080,11 +10445,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-dimvitner:control-undead:7": [
     "vitner-dimvitner:control-undead:7#effect"
   ],
+  "vitner-soil-craft:shape-soil:1": [
+    "vitner-soil-craft:shape-soil:1#effect"
+  ],
   "vitner-soil-craft:quagmire:3": [
     "vitner-soil-craft:quagmire:3#effect"
   ],
   "vitner-soil-craft:soil-walk:5": [
     "vitner-soil-craft:soil-walk:5#soil-walk"
+  ],
+  "vitner-soil-craft:shape-stone:6": [
+    "vitner-soil-craft:shape-stone:6#effect"
   ],
   "vitner-soil-craft:stone-walk:7": [
     "vitner-soil-craft:stone-walk:7#stone-walk"
@@ -10099,6 +10470,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-water-craft:breathe:2": [
     "vitner-water-craft:breathe:2#respiration"
+  ],
+  "vitner-water-craft:create-water:4": [
+    "vitner-water-craft:create-water:4#effect"
   ],
   "vitner-water-craft:solid-water:5": [
     "vitner-water-craft:solid-water:5#effect"
@@ -10129,6 +10503,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-wind-craft:air-armor:4": [
     "vitner-wind-craft:air-armor:4#air-armor"
+  ],
+  "vitner-wind-craft:lift:5": [
+    "vitner-wind-craft:lift:5#effect"
+  ],
+  "vitner-wind-craft:wind-catcher:9": [
+    "vitner-wind-craft:wind-catcher:9#effect"
   ],
   "vitner-wind-craft:storm:8": [
     "vitner-wind-craft:storm:8#effect"
@@ -10202,8 +10582,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-vision:espionage:4": [
     "vitner-power-of-vision:espionage:4#espionage"
   ],
+  "vitner-power-of-vision:seeing:3": [
+    "vitner-power-of-vision:seeing:3#effect"
+  ],
   "vitner-power-of-vision:astral-voyage:5": [
     "vitner-power-of-vision:astral-voyage:5#astral-voyage"
+  ],
+  "vitner-power-of-vision:true-sight:7": [
+    "vitner-power-of-vision:true-sight:7#effect"
   ],
   "vitner-witchcraft:uprooted-tree:0": [
     "vitner-witchcraft:uprooted-tree:0#effect"
@@ -10248,6 +10634,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-body-vitner:vision-blindness:4#ameliore",
     "vitner-body-vitner:vision-blindness:4#affaibli"
   ],
+  "vitner-body-vitner:immobilize:6": [
+    "vitner-body-vitner:immobilize:6#effect"
+  ],
+  "vitner-body-vitner:appearance-change:7": [
+    "vitner-body-vitner:appearance-change:7#effect"
+  ],
   "vitner-body-vitner:leather-skin:5": [
     "vitner-body-vitner:leather-skin:5#leather-skin"
   ],
@@ -10275,8 +10667,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-delusion-vitner:ghost-voice:5": [
     "vitner-delusion-vitner:ghost-voice:5#voix"
   ],
+  "vitner-delusion-vitner:camouflage:7": [
+    "vitner-delusion-vitner:camouflage:7#effect"
+  ],
   "vitner-delusion-vitner:landscape-illusion:8": [
     "vitner-delusion-vitner:landscape-illusion:8#effect"
+  ],
+  "vitner-delusion-vitner:invisibility:11": [
+    "vitner-delusion-vitner:invisibility:11#effect"
   ],
   "vitner-vitner-of-objects:detect-composition:0": [
     "vitner-vitner-of-objects:detect-composition:0#effect"

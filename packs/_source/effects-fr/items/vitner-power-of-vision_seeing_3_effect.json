@@ -1,0 +1,45 @@
+{
+  "_id": "bPPV5aGbHcIdJeKf",
+  "_key": "!items!bPPV5aGbHcIdJeKf",
+  "name": "Vision parfaite",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:seeing:3#effect",
+    "description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du sort, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des sorts gênant la vision. Ce sort ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce sort peut également servir à annuler les effets des sorts qui gênent la vision (du moins pendant la durée du sort) comme par exemple le sort Vision/cécité.",
+    "summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 182
+    }
+  },
+  "effects": [
+    {
+      "_id": "UKcAFuZu0v1w2x3y",
+      "_key": "!items.effects!bPPV5aGbHcIdJeKf.UKcAFuZu0v1w2x3y",
+      "name": "Vision parfaite",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du sort, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des sorts gênant la vision. Ce sort ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce sort peut également servir à annuler les effets des sorts qui gênent la vision (du moins pendant la durée du sort) comme par exemple le sort Vision/cécité.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:seeing:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:seeing:3#effect",
+            "sourceId": "vitner-power-of-vision:seeing:3",
+            "summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

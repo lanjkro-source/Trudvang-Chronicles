@@ -1,0 +1,45 @@
+{
+  "_id": "2Oy1rz1w2x3y4z5A",
+  "_key": "!items!2Oy1rz1w2x3y4z5A",
+  "name": "Camouflage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:camouflage:7#effect",
+    "description": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement. Toute personne à la recherche du sujet doit réussir un test de compétence d’Arts des ombres difficile (VC -3) afin de le déceler. En fonction de l’environnement, le camouflage pourra varier d’un endroit à l’autre. Par exemple, si le sujet se trouve devant un mur, il pourra prendre l’aspect d’un arbuste ou même du mur luimême. S’il se trouve dans une clairière forestière, il pourra se faire passer pour un arbre, un rocher ou un buisson. Son apparence physique ne change pas réellement : c’est le vitner qui l’entoure qui prend l’apparence du camouflage désiré. La cible doit rester complètement immobile pour que l’effet magique fonctionne. Le sort est brisé si le bénéficiaire bouge ou fait du bruit, ou si quelqu’un le touche. Cela dit, le sort est rétabli dès que le sujet cesse de bouger ou de faire du bruit. On peut également utiliser ce sort sur un objet au lieu d’un être vivant, mais cet objet ne peut pas être tenu ou porté par une créature. Les êtres qui ne cherchent pas activement des objets dissimulés n’ont droit à aucun test pour découvrir l’objet camouflé, à moins qu’il ne s’agisse d’un piège ou d’une attaque.",
+    "summary": "Fond le bénéficiaire dans son environnement afin de le rendre difficile à repérer.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 198
+    }
+  },
+  "effects": [
+    {
+      "_id": "L0rGcbC7C8D9EaGb",
+      "_key": "!items.effects!2Oy1rz1w2x3y4z5A.L0rGcbC7C8D9EaGb",
+      "name": "Camouflage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement. Toute personne à la recherche du sujet doit réussir un test de compétence d’Arts des ombres difficile (VC -3) afin de le déceler. En fonction de l’environnement, le camouflage pourra varier d’un endroit à l’autre. Par exemple, si le sujet se trouve devant un mur, il pourra prendre l’aspect d’un arbuste ou même du mur luimême. S’il se trouve dans une clairière forestière, il pourra se faire passer pour un arbre, un rocher ou un buisson. Son apparence physique ne change pas réellement : c’est le vitner qui l’entoure qui prend l’apparence du camouflage désiré. La cible doit rester complètement immobile pour que l’effet magique fonctionne. Le sort est brisé si le bénéficiaire bouge ou fait du bruit, ou si quelqu’un le touche. Cela dit, le sort est rétabli dès que le sujet cesse de bouger ou de faire du bruit. On peut également utiliser ce sort sur un objet au lieu d’un être vivant, mais cet objet ne peut pas être tenu ou porté par une créature. Les êtres qui ne cherchent pas activement des objets dissimulés n’ont droit à aucun test pour découvrir l’objet camouflé, à moins qu’il ne s’agisse d’un piège ou d’une attaque.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:camouflage:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:camouflage:7#effect",
+            "sourceId": "vitner-delusion-vitner:camouflage:7",
+            "summary": "Fond le bénéficiaire dans son environnement afin de le rendre difficile à repérer.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

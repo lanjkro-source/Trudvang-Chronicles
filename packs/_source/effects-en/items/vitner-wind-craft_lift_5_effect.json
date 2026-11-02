@@ -1,0 +1,45 @@
+{
+  "_id": "2czXID8D9EaGbHcI",
+  "_key": "!items!2czXID8D9EaGbHcI",
+  "name": "Lift",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:lift:5#effect",
+    "description": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground. In order for the lift to work, the person must weigh no more than 60 kg. The conjured winds cause the person to lift off the ground and float slowly in whichever direction the enchanter chooses, with a speed of 3 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 8 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche m odifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted person begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a S ituation roll (with the same Situation value), as long as the spell duration c ontinues. An enchanted person who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the person hits the ground, they take the usual fall damage for the total distance fallen.",
+    "summary": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "7ITjH9B7C8D9EaGb",
+      "_key": "!items.effects!2czXID8D9EaGbHcI.7ITjH9B7C8D9EaGb",
+      "name": "Lift",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground. In order for the lift to work, the person must weigh no more than 60 kg. The conjured winds cause the person to lift off the ground and float slowly in whichever direction the enchanter chooses, with a speed of 3 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 8 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche m odifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted person begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a S ituation roll (with the same Situation value), as long as the spell duration c ontinues. An enchanted person who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the person hits the ground, they take the usual fall damage for the total distance fallen.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:lift:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:lift:5#effect",
+            "sourceId": "vitner-wind-craft:lift:5",
+            "summary": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "2pedleIdJeKfLgMh",
+  "_key": "!items!2pedleIdJeKfLgMh",
+  "name": "Appearance Change",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:appearance-change:7#effect",
+    "description": "This spell’s energy creates an imbalance in the enchanted character’s body, which results in an immediate change of their physical appearance. These changes may include hair, skin and eye color, facial features, and voice. The enchanter decides what to change and what the final appearance should look like. The changes are purely cosmetic, however, and do not affect physical ability or traits beyond appearance. A target who chooses to resist the change may do so with a successful Situation roll with a Situation value of 6 (Constitution modifiers apply). However, the victim must be aware of the spell in order to resist. If the enchanter weaves the spell upon a person who is sleeping or unaware of what’s going on, the victim does not realize that a change has taken place. The enchanter can remove the appearance change at any time. Once the change is removed, it takes 5 rounds before the enchanted resumes their original appearance.",
+    "summary": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "v73gQNhNiOjPkQlR",
+      "_key": "!items.effects!2pedleIdJeKfLgMh.v73gQNhNiOjPkQlR",
+      "name": "Appearance Change",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This spell’s energy creates an imbalance in the enchanted character’s body, which results in an immediate change of their physical appearance. These changes may include hair, skin and eye color, facial features, and voice. The enchanter decides what to change and what the final appearance should look like. The changes are purely cosmetic, however, and do not affect physical ability or traits beyond appearance. A target who chooses to resist the change may do so with a successful Situation roll with a Situation value of 6 (Constitution modifiers apply). However, the victim must be aware of the spell in order to resist. If the enchanter weaves the spell upon a person who is sleeping or unaware of what’s going on, the victim does not realize that a change has taken place. The enchanter can remove the appearance change at any time. Once the change is removed, it takes 5 rounds before the enchanted resumes their original appearance.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:appearance-change:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:appearance-change:7#effect",
+            "sourceId": "vitner-body-vitner:appearance-change:7",
+            "summary": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

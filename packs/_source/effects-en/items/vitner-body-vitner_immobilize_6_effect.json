@@ -1,0 +1,47 @@
+{
+  "_id": "Hc0zK2v1w2x3y4z5",
+  "_key": "!items!Hc0zK2v1w2x3y4z5",
+  "name": "Immobilize",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:immobilize:6#effect",
+    "description": "This spell creates a prohibitive energy that immobilizes a chosen victim. The vitner makes it impossible for the victim to move, no matter how hard they try. The spell can be broken only if the enchanter chooses to release the victim, the victim is subjected to violence and takes 1 or more points of damage, the duration expires, or someone uses the spell Dispel Vitner to break the enchantment. The victim can resist the enchantment by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). Exceptionally large creatures and monsters can also be affected by the spell, but for every increase in size equivalent to that of a human, the Situation value to resist the spell increases by +2. So a creature that is three times larger than a normal human would receive a bonus of +4, which results in a Situation value of 10 to resist the spell.",
+    "summary": "This spell creates a prohibitive energy that immobilizes a chosen victim.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "mw6H3ZqWrXsYtZu0",
+      "_key": "!items.effects!Hc0zK2v1w2x3y4z5.mw6H3ZqWrXsYtZu0",
+      "name": "Immobilize",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This spell creates a prohibitive energy that immobilizes a chosen victim. The vitner makes it impossible for the victim to move, no matter how hard they try. The spell can be broken only if the enchanter chooses to release the victim, the victim is subjected to violence and takes 1 or more points of damage, the duration expires, or someone uses the spell Dispel Vitner to break the enchantment. The victim can resist the enchantment by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). Exceptionally large creatures and monsters can also be affected by the spell, but for every increase in size equivalent to that of a human, the Situation value to resist the spell increases by +2. So a creature that is three times larger than a normal human would receive a bonus of +4, which results in a Situation value of 10 to resist the spell.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:immobilize:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "restrain"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:immobilize:6#effect",
+            "sourceId": "vitner-body-vitner:immobilize:6",
+            "summary": "This spell creates a prohibitive energy that immobilizes a chosen victim.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

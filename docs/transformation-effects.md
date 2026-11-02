@@ -29,7 +29,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 286 variantes.
+les états, les règles et les liens des 297 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -334,4 +334,17 @@ Enchantement de créature et Malédiction de créature appliquent automatiquemen
 
 Cinquante effets supplémentaires couvrent la météo, les perceptions, les objets, les communications, les voyages et diverses invocations. Les durées sont calculées depuis les niveaux de puissance et les autres améliorations allouées sont rappelées au survol et dans le détail. Les zones, changements du décor, créatures invoquées, effets sur les objets, bonus conditionnels et conséquences des descriptions restent à gérer manuellement.
 
-Vision lointaine apporte son bonus aux attaques à distance ; sa portée visuelle et la modification éventuelle de portée de l’arme restent à interpréter. Regard de l’âme et Œil d’Enken proposent leur bonus conditionnel et un jet d’Arts des ombres. Les trois pouvoirs d’autorité proposent leur bonus de persuasion pour les jets pertinents. Lumière rassurante et Radiance sacrée annulent les malus de peur sans empêcher l’acquisition de peur ; appliquer ou retirer leurs effets aux alliés reste manuel selon leur position. La malédiction joar requiert une levée manuelle à la mort de la mopor.
+Immobilisation applique l'état entravé et bloque le déplacement ; sa levée par
+un dégât, les gestes impossibles et la taille pour le test de résistance restent
+à gérer manuellement. Camouflage, Invisibilité, Vision parfaite, Vision véritable,
+Modification d'apparence, Façonnage de la terre et de la pierre, Création d'eau,
+Vent porteur et Seigneur des vents proposent leurs descriptions et durées
+améliorées. Le camouflage et l'invisibilité restent détectables selon les règles :
+ils ne masquent pas automatiquement le token. Les changements de décor, la vision,
+le poids soulevé et les déplacements en vol restent à gérer manuellement. Les
+trois minutes supplémentaires pour façonner la terre ou la pierre n'allongent pas
+la durée pendant laquelle la forme obtenue subsiste ; elles sont indiquées dans
+les améliorations. Les capacités de cibles supplémentaires sont prises en compte
+pour Immobilisation, Camouflage, Invisibilité et les deux visions.
+
+Vision lointaine apporte son bonus aux attaques à distance ; sa portée visuelle et la modification éventuelle de portée de l’arme restent à interpréter. Regard de l’âme et Œil d’Enken proposent leur bonus conditionnel et un jet d’Arts des ombres. Les trois pouvoirs d’autorité proposent leur bonus de persuasion pour les jets pertinents. Lumière rassurante et Radiance sacrée annulent les malus de peur sans empêcher l’acquisition de peur ; leurs auras appliquent et retirent automatiquement les effets selon la position et la disposition des occupants. La malédiction joar requiert une levée manuelle à la mort de la mopor.

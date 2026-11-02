@@ -1,0 +1,45 @@
+{
+  "_id": "stgqt0tZu0v1w2x3",
+  "_key": "!items!stgqt0tZu0v1w2x3",
+  "name": "Invisibility",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:invisibility:11#effect",
+    "description": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective. The vitner gives the target, and their clothing and equipment, the look of whatever the observer would normally see if the target were not present. The target becomes virtually er and life force from the livinginvisible in this way. An observer must succeed on an extremely difficult (-10) Skill roll for the Shadow Arts skill in order to detect a target who stands still, or on a d ifficult (-3) Skill roll when the target moves slowly. If the target makes any sudden or extreme er and life force from the er and life force from the livinglivingmovements, such as running or fighting, the vitner can no longer c amouflage them as well, and anyone viewing them receives +5 on their Skill rolls to see the target; this lasts until the target slows down their movements. Any person trying to attack the invisible target or parry their attacks must succeed on a Skill roll for Agility in order to avoid modifiers. A person who fails this Skill roll suffers -10 in all attacks against the invisible target as well as any attempts to parry the unseen’s attacks.",
+    "summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "hIn6RXrXsYtZu0v1",
+      "_key": "!items.effects!stgqt0tZu0v1w2x3.hIn6RXrXsYtZu0v1",
+      "name": "Invisibility",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective. The vitner gives the target, and their clothing and equipment, the look of whatever the observer would normally see if the target were not present. The target becomes virtually er and life force from the livinginvisible in this way. An observer must succeed on an extremely difficult (-10) Skill roll for the Shadow Arts skill in order to detect a target who stands still, or on a d ifficult (-3) Skill roll when the target moves slowly. If the target makes any sudden or extreme er and life force from the er and life force from the livinglivingmovements, such as running or fighting, the vitner can no longer c amouflage them as well, and anyone viewing them receives +5 on their Skill rolls to see the target; this lasts until the target slows down their movements. Any person trying to attack the invisible target or parry their attacks must succeed on a Skill roll for Agility in order to avoid modifiers. A person who fails this Skill roll suffers -10 in all attacks against the invisible target as well as any attempts to parry the unseen’s attacks.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:invisibility:11#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:invisibility:11#effect",
+            "sourceId": "vitner-delusion-vitner:invisibility:11",
+            "summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

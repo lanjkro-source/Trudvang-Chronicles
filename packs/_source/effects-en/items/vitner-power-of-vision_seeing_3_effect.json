@@ -1,0 +1,45 @@
+{
+  "_id": "bPPV5aGbHcIdJeKf",
+  "_key": "!items!bPPV5aGbHcIdJeKf",
+  "name": "Seeing",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:seeing:3#effect",
+    "description": "The spell enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the spell, the enchanted character’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or spells that impair vision. However, the enchanted character cannot detect things that they would not be able to see under normal c onditions. The Seeing spell can also be used to cancel the effects of spells that impair vision (effective for the spell’s duration), such as Vision/Blindness.",
+    "summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "UKcAFuZu0v1w2x3y",
+      "_key": "!items.effects!bPPV5aGbHcIdJeKf.UKcAFuZu0v1w2x3y",
+      "name": "Seeing",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the spell, the enchanted character’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or spells that impair vision. However, the enchanted character cannot detect things that they would not be able to see under normal c onditions. The Seeing spell can also be used to cancel the effects of spells that impair vision (effective for the spell’s duration), such as Vision/Blindness.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:seeing:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:seeing:3#effect",
+            "sourceId": "vitner-power-of-vision:seeing:3",
+            "summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
