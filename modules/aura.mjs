@@ -29,6 +29,15 @@ function childFlags(effect){return effect?.flags?.[S]?.auraRecipient;}
 function actorEffects(actor){return Array.from(actor?.effects??[]);}
 function sameActor(a,b){return Boolean(a?.actor?.uuid&&a.actor.uuid===b?.actor?.uuid);}
 const friendly=token=>Number(token.disposition)===Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY??1);
+export function auraBonusDescription(changes){
+ const value=Number(Array.from(changes??[]).find(row=>row.key==="system.modifiers.rolls.allActions")?.value);
+ if(!Number.isFinite(value))return "";
+ return game.i18n.format("TRUDVANG.Aura.EffectiveBonus",{value:value>=0?`+${value}`:String(value)});
+}
+function auraColor(){
+ const value=globalThis.getComputedStyle?.(globalThis.document?.documentElement)?.getPropertyValue("--trudvang-accent")?.trim();
+ return /^#[\da-f]{6}$/i.test(value??"")?value:"#733b2d";
+}
 function metresToSceneUnits(scene,value){const units=String(scene?.grid?.units??"m").toLowerCase();return value*(/^(ft|feet|foot|pi|pieds?)$/.test(units)?1/0.3048:/^(km|kilom)/.test(units)?0.001:1);}
 
 /** Reconcile a single actor with the current region membership. */
@@ -47,7 +56,8 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const aura=getAura(source),fearLight=aura?.light===true;
  const changes=Array.from(source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
  const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
- const description=game.i18n.localize(`TRUDVANG.Content.Transformation.${descriptionKey}.Description`);
+ let description=game.i18n.localize(`TRUDVANG.Content.Transformation.${descriptionKey}.Description`);
+ if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
  const data={name:source.name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
   flags:{[S]:{auraRecipient:{regionUuid:region.uuid}}}};
@@ -109,9 +119,13 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  const center=token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*Number(scene.grid?.size||1)/2,y:Number(token.y||0)+Number(token.height||1)*Number(scene.grid?.size||1)/2};
  const shapes=[{type:"circle",x:center.x,y:center.y,radius:radius*scale}];
  if(!regions.length){
-  await scene.createEmbeddedDocuments("Region",[{name:effect.name,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
+  await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
  }else {
-  if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)await regions[0].update({shapes});
+  const update={};
+  if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
+  if(regions[0].highlightMode!=="coverage")update.highlightMode="coverage";
+  if(regions[0].visibility!==CONST.REGION_VISIBILITY.ALWAYS)update.visibility=CONST.REGION_VISIBILITY.ALWAYS;
+  if(Object.keys(update).length)await regions[0].update(update);
   for(const region of regions.slice(1))await region.delete();
   for(const target of regions[0].tokens??[])await reconcileAuraToken(regions[0],target);
  }

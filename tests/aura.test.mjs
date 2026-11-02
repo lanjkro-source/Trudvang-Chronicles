@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import {auraCasterToken,auraRadius,auraLightUpdate,reconcileAuraToken,registerAuraSupport} from "../modules/aura.mjs";
 const S="trudvang-chronicles",id="holy-tenetnid-tablet-of-the-sun:thermal-light:3";
 const deletion=Symbol("delete");
-globalThis.game={users:{activeGM:{isSelf:true}},i18n:{localize:key=>key}};
-globalThis.CONST={TOKEN_DISPOSITIONS:{FRIENDLY:1,HOSTILE:-1}};
+globalThis.game={users:{activeGM:{isSelf:true}},i18n:{localize:key=>key,format:(key,{value})=>`${key}: ${value}`}};
+globalThis.CONST={TOKEN_DISPOSITIONS:{FRIENDLY:1,HOSTILE:-1},REGION_VISIBILITY:{ALWAYS:2}};
 globalThis.foundry={utils:{fromUuid:async()=>source},data:{operators:{ForcedDeletion:{create:()=>deletion}}}};
 const source={uuid:"Actor.c.ActiveEffect.a",name:"Lumière",img:"sun",parent:{uuid:"Actor.c"},system:{changes:[{key:"system.modifiers.rolls.allActions",type:"add",value:"2",phase:"initial"},{key:"system.transformation.ignoreFearPenalty",type:"override",value:"true",phase:"initial"}]},flags:{[S]:{transformation:{key:`${id}#effect`,sourceId:id,ruleTestContext:{casterUuid:"Actor.c",casterTokenUuid:"Scene.s.Token.c",countsById:{[`${id}:2`]:3}}}}},toObject:()=>({start:{worldTime:1}})};
 function actor(uuid){return {uuid,effects:[],async createEmbeddedDocuments(type,rows){assert.equal(type,"ActiveEffect");const row=structuredClone(rows[0]);row.id=`e${this.effects.length}`;row.update=async changes=>Object.assign(row,structuredClone(changes));this.effects.push(row);return [row];},async deleteEmbeddedDocuments(type,ids){assert.equal(type,"ActiveEffect");this.effects=this.effects.filter(effect=>!ids.includes(effect.id));}};}
@@ -25,7 +25,7 @@ test("light preserves stronger sources, overlapping radii, and manual changes",(
 });
 test("region entry applies fear relief to all and bonus only to friendly tokens; exits remove it",async()=>{
  const a=actor("Actor.a"),t={id:"t",actor:a,disposition:1};const region={uuid:"Scene.s.Region.r",flags:{[S]:{aura:{sourceEffectUuid:source.uuid,casterUuid:"Actor.c"}}},tokens:new Set([t])};
- await Promise.all([reconcileAuraToken(region,t),reconcileAuraToken(region,t)]);assert.equal(a.effects.length,1);assert.deepEqual(keys(a),["system.modifiers.rolls.allActions","system.transformation.ignoreFearPenalty"]);
+ await Promise.all([reconcileAuraToken(region,t),reconcileAuraToken(region,t)]);assert.equal(a.effects.length,1);assert.deepEqual(keys(a),["system.modifiers.rolls.allActions","system.transformation.ignoreFearPenalty"]);assert.match(a.effects[0].description,/EffectiveBonus: \+2/);
  t.disposition=-1;await reconcileAuraToken(region,t);assert.deepEqual(keys(a),["system.transformation.ignoreFearPenalty"]);assert.match(a.effects[0].description,/#fear-only\.Description/);
  await reconcileAuraToken(region,t,{leaving:true});assert.equal(a.effects.length,0);
 });
@@ -66,7 +66,7 @@ test("a source creates an attached wall-restricted region and restores the caste
  }};
  scene.tokens=[token,{id:"other",actor:child}];foundry.utils.fromUuid=async uuid=>uuid===token.uuid?token:marker;
  await synchronizeAuraSource(marker);
- assert.equal(regionData.attachment.token,"c");assert.deepEqual(regionData.restriction,{enabled:true,type:"light"});assert.equal(regionData.shapes[0].radius,500);assert.equal(regionData.behaviors[0].type,"trudvangAura");assert.equal(token.light.bright,5);assert.equal(token.light.dim,5);
+ assert.equal(regionData.attachment.token,"c");assert.deepEqual(regionData.restriction,{enabled:true,type:"light"});assert.equal(regionData.shapes[0].radius,500);assert.equal(regionData.behaviors[0].type,"trudvangAura");assert.equal(regionData.highlightMode,"coverage");assert.equal(regionData.visibility,2);assert.equal(token.light.bright,5);assert.equal(token.light.dim,5);
  child.effects=[{id:"child",flags:{[S]:{auraRecipient:{regionUuid:scene.regions[0].uuid}}}}];a.effects=[];
  await synchronizeAuraSource(marker,{removed:true});assert.equal(scene.regions.length,0);assert.equal(child.effects.length,0);assert.equal(token.light.bright,1);assert.equal(token.light.dim,3);
 });

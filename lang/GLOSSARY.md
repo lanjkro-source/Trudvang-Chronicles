@@ -12848,7 +12848,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Name` | Thermal Light | Lumière rassurante |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Description` | The recipient ignores fear penalties and gains a base +1 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus. | Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +1 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.Description` | The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light. | Le bénéficiaire ignore ses malus de peur et reçoit un bonus à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourceName` | Thermal Light | Lumière rassurante |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect.SourcePage` | 203 | 262 |
@@ -12870,7 +12870,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Name` | Holy Radiance | Radiance sacrée |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Description` | The recipient ignores fear penalties and gains a base +3 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus. | Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +3 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.Description` | The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light. | Le bénéficiaire ignore ses malus de peur et reçoit un bonus à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourceName` | Holy Radiance | Radiance sacrée |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect.SourcePage` | 203 | 264 |
@@ -14377,3 +14377,4 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Aura.NoGM` | A connected GM is required to create and synchronize the aura. | Un MJ connecté est nécessaire pour créer et synchroniser l’aura. |
 | `TRUDVANG.Aura.Failed` | The aura could not be created; check the console. | Impossible de créer l’aura ; vérifiez la console. |
 | `TRUDVANG.Aura.Automatic` | Aura effects are applied automatically within its area. | Les effets de l’aura sont appliqués automatiquement dans sa zone. |
+| `TRUDVANG.Aura.EffectiveBonus` | Effective bonus to Skill and Situation Values: {value}. | Bonus effectif aux valeurs de compétence et de situation : {value}. |

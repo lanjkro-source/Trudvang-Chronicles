@@ -15342,7 +15342,7 @@
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Thermal Light",
           "Summary": "Thermal Light",
-          "Description": "The recipient ignores fear penalties and gains a base +1 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus.",
+          "Description": "The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light.",
           "SourceName": "Thermal Light",
           "SourceBook": "Player's Handbook",
           "SourcePage": "203",
@@ -15360,7 +15360,7 @@
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
           "Name": "Holy Radiance",
           "Summary": "Holy Radiance",
-          "Description": "The recipient ignores fear penalties and gains a base +3 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus.",
+          "Description": "The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light.",
           "SourceName": "Holy Radiance",
           "SourceBook": "Player's Handbook",
           "SourcePage": "203",
@@ -16587,7 +16587,8 @@
       "NoToken": "Select the caster’s token to create the aura.",
       "NoGM": "A connected GM is required to create and synchronize the aura.",
       "Failed": "The aura could not be created; check the console.",
-      "Automatic": "Aura effects are applied automatically within its area."
+      "Automatic": "Aura effects are applied automatically within its area.",
+      "EffectiveBonus": "Effective bonus to Skill and Situation Values: {value}."
     }
   }
 }

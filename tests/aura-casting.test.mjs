@@ -5,7 +5,7 @@ globalThis.foundry={utils:{randomID:()=>"cast-id"},applications:{handlebars:{ren
 globalThis.Roll=class{async evaluate(){this.total=globalThis.testDie;return this;}};
 const messages=[],warnings=[];
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{messages.push(data);return {...data,id:"message"};}};
-globalThis.game={user:{id:"p",targets:new Set()},users:{activeGM:{id:"gm"}},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key,format:key=>key}};
+globalThis.game={user:{id:"p",targets:new Set()},users:{activeGM:{id:"gm"}},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key,format:(key,values)=>`${key} ${values?.value??""}`}};
 globalThis.ui={notifications:{warn:value=>warnings.push(value)}};
 const {rollUnder}=await import("../modules/dice.mjs");
 test("a successful light invocation applies one source effect to the selected caster token",async()=>{
@@ -17,5 +17,6 @@ test("a successful light invocation applies one source effect to the selected ca
  assert.equal(created.length,1);const meta=created[0].flags["trudvang-chronicles"].transformation;
  assert.equal(meta.ruleTestContext.casterTokenUuid,token.uuid);assert.equal(meta.ruleTestContext.auraSource,true);assert.equal(meta.ruleTestContext.countsById[`${id}:2`],2);
  assert.equal(created[0].system.changes.find(row=>row.key==="system.modifiers.rolls.allActions").value,"2");assert.deepEqual(created[0].duration,{value:24,units:"rounds"});
+ assert.match(created[0].description,/TRUDVANG\.Aura\.EffectiveBonus \+2/);
  globalThis.testDie=20;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});assert.equal(created.length,1);
 });

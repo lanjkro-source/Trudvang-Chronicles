@@ -23,6 +23,7 @@ import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocat
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
+import {auraBonusDescription} from "./aura.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -328,6 +329,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){
   const options=template.displayPowerOptions.flatMap(index=>{
    const count=Math.max(0,Math.trunc(Number(casting.counts[index])||0));

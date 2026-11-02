@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect",
-    "description": "The recipient ignores fear penalties and gains a base +3 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus.",
+    "description": "The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light.",
     "summary": "Holy Radiance",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Holy Radiance",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The recipient ignores fear penalties and gains a base +3 bonus to Skill and Situation Values while in the light. Power levels can increase this bonus.",
+      "description": "The recipient ignores fear penalties and gains a bonus to Skill and Situation Values while in the light.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect",

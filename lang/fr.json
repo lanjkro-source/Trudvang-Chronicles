@@ -15342,7 +15342,7 @@
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Lumière rassurante",
           "Summary": "Lumière rassurante",
-          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +1 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus.",
+          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus à ses valeurs de compétence et de situation tant qu’il reste dans la lumière.",
           "SourceName": "Lumière rassurante",
           "SourceBook": "Livre des règles",
           "SourcePage": "262",
@@ -15360,7 +15360,7 @@
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
           "Name": "Radiance sacrée",
           "Summary": "Radiance sacrée",
-          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +3 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus.",
+          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus à ses valeurs de compétence et de situation tant qu’il reste dans la lumière.",
           "SourceName": "Radiance sacrée",
           "SourceBook": "Livre des règles",
           "SourcePage": "264",
@@ -16587,7 +16587,8 @@
       "NoToken": "Sélectionnez le token du lanceur pour créer l’aura.",
       "NoGM": "Un MJ connecté est nécessaire pour créer et synchroniser l’aura.",
       "Failed": "Impossible de créer l’aura ; vérifiez la console.",
-      "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone."
+      "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone.",
+      "EffectiveBonus": "Bonus effectif aux valeurs de compétence et de situation : {value}."
     }
   }
 }
