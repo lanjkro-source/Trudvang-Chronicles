@@ -1,0 +1,45 @@
+{
+  "_id": "DqAaTiKfLgMhNiOj",
+  "_key": "!items!DqAaTiKfLgMhNiOj",
+  "name": "Piste des brumes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect",
+    "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+    "summary": "Piste des brumes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 245
+    }
+  },
+  "effects": [
+    {
+      "_id": "EbztewZu0v1w2x3y",
+      "_key": "!items.effects!DqAaTiKfLgMhNiOj.EbztewZu0v1w2x3y",
+      "name": "Piste des brumes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect",
+            "sourceId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+            "summary": "Piste des brumes",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

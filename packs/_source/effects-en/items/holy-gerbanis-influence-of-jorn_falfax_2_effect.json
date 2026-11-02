@@ -1,0 +1,45 @@
+{
+  "_id": "Yz84P9EaGbHcIdJe",
+  "_key": "!items!Yz84P9EaGbHcIdJe",
+  "name": "Falfax",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:falfax:2#effect",
+    "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon a Falfax, one of the spirit horses of the storm, who becomes their steed for the duration of the ability. The horse is a medium-sized warhorse equipped with leather armor as protection over its body and head. The horse is o bediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Falfax at a time. Only once Falfax has disappeared may the Stormkelt call on him<hr>again. ✦ Falfax: Strength +4, Body Points 60, Protection Value 2, combat movement 16 meters per action round, obedient warhorse.",
+    "summary": "Falfax",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 160
+    }
+  },
+  "effects": [
+    {
+      "_id": "5TEcj9D9EaGbHcId",
+      "_key": "!items.effects!Yz84P9EaGbHcIdJe.5TEcj9D9EaGbHcId",
+      "name": "Falfax",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon a Falfax, one of the spirit horses of the storm, who becomes their steed for the duration of the ability. The horse is a medium-sized warhorse equipped with leather armor as protection over its body and head. The horse is o bediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Falfax at a time. Only once Falfax has disappeared may the Stormkelt call on him<hr>again. ✦ Falfax: Strength +4, Body Points 60, Protection Value 2, combat movement 16 meters per action round, obedient warhorse.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:falfax:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:falfax:2#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:falfax:2",
+            "summary": "Falfax",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

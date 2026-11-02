@@ -1,0 +1,45 @@
+{
+  "_id": "oWAfjkLgMhNiOjPk",
+  "_key": "!items!oWAfjkLgMhNiOjPk",
+  "name": "Storm Protection",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+    "description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
+    "summary": "Storm Protection",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "b2etNw1w2x3y4z5A",
+      "_key": "!items.effects!oWAfjkLgMhNiOjPk.b2etNw1w2x3y4z5A",
+      "name": "Storm Protection",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2",
+            "summary": "Storm Protection",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

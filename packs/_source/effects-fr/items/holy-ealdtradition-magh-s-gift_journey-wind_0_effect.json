@@ -1,0 +1,45 @@
+{
+  "_id": "ZBfYcRkQlRmSnToU",
+  "_key": "!items!ZBfYcRkQlRmSnToU",
+  "name": "Brise du voyage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+    "description": "Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats.",
+    "summary": "Brise du voyage",
+    "source": {
+      "book": "Livre des règles",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "C33lGIbHcIdJeKfL",
+      "_key": "!items.effects!ZBfYcRkQlRmSnToU.C33lGIbHcIdJeKfL",
+      "name": "Brise du voyage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
+            "summary": "Brise du voyage",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

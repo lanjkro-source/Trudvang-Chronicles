@@ -1,0 +1,45 @@
+{
+  "_id": "ZBfYcRkQlRmSnToU",
+  "_key": "!items!ZBfYcRkQlRmSnToU",
+  "name": "Journey Wind",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+    "description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+    "summary": "Journey Wind",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "C33lGIbHcIdJeKfL",
+      "_key": "!items.effects!ZBfYcRkQlRmSnToU.C33lGIbHcIdJeKfL",
+      "name": "Journey Wind",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:journey-wind:0#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
+            "summary": "Journey Wind",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

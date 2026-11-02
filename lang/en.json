@@ -14073,6 +14073,24 @@
           "SourcePage": "166",
           "Duration": "1 day"
         },
+        "holy-gerbanis-warmth-of-sunvei:sunray:1#effect": {
+          "Name": "Sunray",
+          "Summary": "Sunray",
+          "Description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the Stormkelt and an area surrounding them with a radius determined by their Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the Stormkelt moves away.",
+          "SourceName": "Sunray",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "1 hour"
+        },
+        "holy-gerbanis-warmth-of-sunvei:summer-place:3#effect": {
+          "Name": "Summer Place",
+          "Summary": "Summer Place",
+          "Description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area ( determined by the dimwalker’s Skill Value in the Faith skill). This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. If the duration lasts until after dusk, a warm summer evening and night will continue within the blessed area until the spell ends. As long as the ability persists, any hunting grounds in the vicinity of the Stormkelt (SV x 100 meters) also become more prosperous (+3 for the Wilderness skill when hunting).",
+          "SourceName": "Summer Place",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "3 hours"
+        },
         "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
           "Name": "Healing Glow (Sunvei)",
           "Summary": "Immediately restores health and stops bleeding.",
@@ -14099,6 +14117,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "166",
           "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect": {
+          "Name": "Time of the Hunt",
+          "Summary": "Time of the Hunt",
+          "Description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area. This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within range of this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. For the duration of the ability, any hunting grounds within 10 k ilometers of the dimwalker also become extremely prosperous (+6 on rolls for the Wilderness skill when hunting or fishing).",
+          "SourceName": "Time of the Hunt",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "166",
+          "Duration": "1 day"
         },
         "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle": {
           "Name": "Breath of Sunvei (Sunvei)",
@@ -14145,6 +14172,15 @@
           "SourcePage": "164",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:havar:2#effect": {
+          "Name": "Havar",
+          "Summary": "Havar",
+          "Description": "The Stormkelt begs Stormi for protection. In return, Stormi sends a “Havar, a holy warrior from the Stormvakk to protect his subject. The spirit appears as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warrior disappears into it and leaves the dimwalker. If the warrior dies, he settles back into fog and disappears. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where he is in immediate danger. The warrior never moves farther than 10 meters away from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warrior does not communicate; it only performs its task. A Stormkelt can have only one Havar active at one time through this ability. Havar is a tall warrior equipped in leather, and his face is hidden by a leather coif with a nose protector. He carries a normal round shield and a regular battle axe. ✦ Havar: Strength +1, Body Points 25, Protection Value 2, Combat Points 16, initiative 1d10 (OR 10) + 4, Shield Bearer specialty (+4 Combat Points).",
+          "SourceName": "Havar",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
           "Name": "Jarl’s Call",
           "Summary": "On a failed Situation roll, the recipient instinctively obeys the Stormkelt. They do not harm themselves or perform tasks requiring initiative or creativity.",
@@ -14153,6 +14189,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
           "Duration": "3 rounds"
+        },
+        "holy-gerbanis-strength-of-stormi:shield-disir:5#effect": {
+          "Name": "Shield Dísir",
+          "Summary": "Shield Dísir",
+          "Description": "The Stormkelt begs Stormi for protection. In return, Stormi sends holy warriors from the Stormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, she settles back into fog and disappears. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of three Shield Dísir active at one time. The Shield Dísir are impressive female warriors armored in fortified leather, with long manes of blond hair and faces painted with blue spiraled patterns. They usually carry battle swords and fortified great round shields. ✦ Shield<hr>Dísir: Strength +2, Body Points 30, Protection Value 3, Combat Points 20, initiative 1d10 (OR 10) + 2, Shield Bearer specialty (+8 Combat Points).",
+          "SourceName": "Shield Dísir",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "1 minute"
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Jotun Strength",
@@ -14180,6 +14225,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "164",
           "Duration": "3 rounds"
+        },
+        "holy-gerbanis-strength-of-stormi:einharjar:8#effect": {
+          "Name": "Einharjar",
+          "Summary": "Einharjar",
+          "Description": "The Stormkelt begs Stormi for protection. In return, Stormi sends the Einharjar, holy warriors from the S tormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, they settle back into fog and disappear. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of six Einharjar active at one time. Einharjar are heavily built berserkers with long, lank hair, sacrificial blood streaked on their faces, and bare upper bodies painted with soot symbols. They usually carry two-handed swords. ✦ Einharjar:<hr>Strength +4, Body Points 35, Protection Value 5, Combat Points 30, initiative 1d10 (OR 10) + 4, Armed Fighting discipline and Shield Bearer specialty (+13 Combat Points).",
+          "SourceName": "Einharjar",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "164",
+          "Duration": "1 minute"
         },
         "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
           "Name": "Battle Cry",
@@ -14226,6 +14280,60 @@
           "SourcePage": "171",
           "Duration": "5 action rounds"
         },
+        "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
+          "Name": "Wall of Dusk",
+          "Summary": "Wall of Dusk",
+          "Description": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters. The Stormkelt is given 20 square meters of darkness to shape to their liking. A dimwalker who has 20 m² can thus make a wall that is 1 m wide and 20 m long, a wall 5 m wide and 4 m long, and so on. The height of this area extends as far as the eye can see. If a wall of darkness is raised in an area already occupied by a creature, that creature is immediately affected by the darkness and is given modifiers accordingly. The Stormkelt calls on Jorn, who grants a piece of the dusk that’s as dark and thick as night. This darkness, shaped by the dimwalker, gives a negative modifier of -3 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision, dark vision, or true vision is unaffected by the darkness.",
+          "SourceName": "Wall of Dusk",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-influence-of-jorn:falfax:2#effect": {
+          "Name": "Falfax",
+          "Summary": "Falfax",
+          "Description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon a Falfax, one of the spirit horses of the storm, who becomes their steed for the duration of the ability. The horse is a medium-sized warhorse equipped with leather armor as protection over its body and head. The horse is o bediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Falfax at a time. Only once Falfax has disappeared may the Stormkelt call on him<hr>again. ✦ Falfax: Strength +4, Body Points 60, Protection Value 2, combat movement 16 meters per action round, obedient warhorse.",
+          "SourceName": "Falfax",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "1 hour"
+        },
+        "holy-gerbanis-influence-of-jorn:night-curtain:3#effect": {
+          "Name": "Night Curtain",
+          "Summary": "Night Curtain",
+          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness.",
+          "SourceName": "Night Curtain",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect": {
+          "Name": "The Coat of Jorn",
+          "Summary": "The Coat of Jorn",
+          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
+          "SourceName": "The Coat of Jorn",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-influence-of-jorn:asiblack:6#effect": {
+          "Name": "Asiblack",
+          "Summary": "Asiblack",
+          "Description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon an Asiblack, one of the Einharjar’s black war horses, which becomes their steed for the duration of the ability. The horse is a medium-sized war horse equipped with chainmail as protection over its body and head. The horse is obediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Asiblack at a time. Only once Asiblack has disappeared may the Stormkelt call on him again. ✦ Asiblack:<hr>Strength +5, Body Points 75, Protection Value 3, combat movement 20 meters per action round, excellently war-trained.",
+          "SourceName": "Asiblack",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "1 hour"
+        },
+        "holy-gerbanis-influence-of-jorn:snarfari:8#effect": {
+          "Name": "Snarfari",
+          "Summary": "Snarfari",
+          "Description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse d isappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another permission with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon Stormi’s black steed, a Snarfari, who Jorn has lured away from Stormi. A Snarfari is a very large steed with six legs and two heads. It is regarded as a masterfully war-trained horse. A Snarfari always rides with the wind at his back, and can make a five-day journey in a single day. A Snarfari breathes fog from his muzzle (which gives all who try to attack Snarfari or his rider -3 in accuracy), and heals 1 Body Point every action round. A Stormkelt cannot call on more than one Snarfari at a time. Only once the Snarfari has disappeared may the Stormkelt call on him again.<hr>✦ Snarfari: Strength +6, Body Points 90, Protection Value 4, movement 24 meters per action round, masterfully war-trained, fear factor 1d5.",
+          "SourceName": "Snarfari",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "160",
+          "Duration": "30 minutes"
+        },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Willpower",
           "Summary": "Increases Psyche.",
@@ -14271,6 +14379,33 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
+          "Name": "Journey Wind",
+          "Summary": "Journey Wind",
+          "Description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+          "SourceName": "Journey Wind",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "1 hour"
+        },
+        "holy-ealdtradition-magh-s-gift:elf-summer:3#effect": {
+          "Name": "Elf Summer",
+          "Summary": "Elf Summer",
+          "Description": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area. This ability can increase the temperature by up to 40 degrees. However, the t emperature cannot be raised higher than 30 degrees. (For example, if the temperature is -30 degrees, the Bruid can raise it to a maximum of +10 degrees.)",
+          "SourceName": "Elf Summer",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "1 hour"
+        },
+        "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
+          "Name": "Harvest Year",
+          "Summary": "Harvest Year",
+          "Description": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility, and unnaturally pleasant weather. The risk of diseases and infant mortality is minimal.",
+          "SourceName": "Harvest Year",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "1 year"
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Stagshape",
@@ -14464,6 +14599,24 @@
           "Duration": "1 minute",
           "Sense0": "Owl Hearing"
         },
+        "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect": {
+          "Name": "Gloomy Trail",
+          "Summary": "Gloomy Trail",
+          "Description": "The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively double the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to a two-day march. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace.",
+          "SourceName": "Gloomy Trail",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "185",
+          "Duration": "1 day"
+        },
+        "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect": {
+          "Name": "Meall's Trail",
+          "Summary": "Meall's Trail",
+          "Description": "The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively quadruple (x4) the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to four full days of marching. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace.",
+          "SourceName": "Meall's Trail",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "185",
+          "Duration": "1 day"
+        },
         "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon": {
           "Name": "Griffon's Sense",
           "Summary": "Sharpens hearing to perceive sounds within range.",
@@ -14473,6 +14626,15 @@
           "SourcePage": "185",
           "Duration": "1 minute",
           "Sense0": "Griffon's Sense"
+        },
+        "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect": {
+          "Name": "Mongfind's Travel",
+          "Summary": "Mongfind's Travel",
+          "Description": "The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively cover seven times (x7) the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to seven full days of marching. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace.",
+          "SourceName": "Mongfind's Travel",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "185",
+          "Duration": "1 day"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Stone Senses",
@@ -14563,6 +14725,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "206",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
+          "Name": "Sheltering",
+          "Summary": "Sheltering",
+          "Description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 20°C as the dimwalker wishes to create a milder climate.",
+          "SourceName": "Sheltering",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "201",
+          "Duration": "1 hour"
+        },
+        "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
+          "Name": "Storm Protection",
+          "Summary": "Storm Protection",
+          "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
+          "SourceName": "Storm Protection",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "201",
+          "Duration": "1 hour"
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Bark Skin",

@@ -1,0 +1,45 @@
+{
+  "_id": "m35I4MfLgMhNiOjP",
+  "_key": "!items!m35I4MfLgMhNiOjP",
+  "name": "Night Curtain",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+    "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness.",
+    "summary": "Night Curtain",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 160
+    }
+  },
+  "effects": [
+    {
+      "_id": "PSJAiy1w2x3y4z5A",
+      "_key": "!items.effects!m35I4MfLgMhNiOjP.PSJAiy1w2x3y4z5A",
+      "name": "Night Curtain",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
+            "summary": "Night Curtain",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

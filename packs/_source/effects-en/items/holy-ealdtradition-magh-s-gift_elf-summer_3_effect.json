@@ -1,0 +1,45 @@
+{
+  "_id": "cY3TiMgMhNiOjPkQ",
+  "_key": "!items!cY3TiMgMhNiOjPkQ",
+  "name": "Elf Summer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:elf-summer:3#effect",
+    "description": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area. This ability can increase the temperature by up to 40 degrees. However, the t emperature cannot be raised higher than 30 degrees. (For example, if the temperature is -30 degrees, the Bruid can raise it to a maximum of +10 degrees.)",
+    "summary": "Elf Summer",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "XpVIZbD8D9EaGbHc",
+      "_key": "!items.effects!cY3TiMgMhNiOjPkQ.XpVIZbD8D9EaGbHc",
+      "name": "Elf Summer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area. This ability can increase the temperature by up to 40 degrees. However, the t emperature cannot be raised higher than 30 degrees. (For example, if the temperature is -30 degrees, the Bruid can raise it to a maximum of +10 degrees.)",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:elf-summer:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:elf-summer:3#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
+            "summary": "Elf Summer",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

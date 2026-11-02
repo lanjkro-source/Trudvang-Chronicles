@@ -1,0 +1,45 @@
+{
+  "_id": "mZWKxHcIdJeKfLgM",
+  "_key": "!items!mZWKxHcIdJeKfLgM",
+  "name": "Heure de la chasse",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect",
+    "description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour du stormikjalt deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+    "summary": "Heure de la chasse",
+    "source": {
+      "book": "Livre des règles",
+      "page": 217
+    }
+  },
+  "effects": [
+    {
+      "_id": "LtvKd9B7C8D9EaGb",
+      "_key": "!items.effects!mZWKxHcIdJeKfLgM.LtvKd9B7C8D9EaGb",
+      "name": "Heure de la chasse",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour du stormikjalt deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect",
+            "sourceId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6",
+            "summary": "Heure de la chasse",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

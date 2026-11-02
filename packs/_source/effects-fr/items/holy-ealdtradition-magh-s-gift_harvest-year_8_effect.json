@@ -1,0 +1,45 @@
+{
+  "_id": "hHrp3xZu0v1w2x3y",
+  "_key": "!items!hHrp3xZu0v1w2x3y",
+  "name": "Année de récolte",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+    "description": "Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité miraculeuse et un temps inhabituellement plaisant. Le risque de maladies et de mortalité infantile y est réduit au minimum.",
+    "summary": "Année de récolte",
+    "source": {
+      "book": "Livre des règles",
+      "page": 234
+    }
+  },
+  "effects": [
+    {
+      "_id": "6P5hwpUpVqWrXsYt",
+      "_key": "!items.effects!hHrp3xZu0v1w2x3y.6P5hwpUpVqWrXsYt",
+      "name": "Année de récolte",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité miraculeuse et un temps inhabituellement plaisant. Le risque de maladies et de mortalité infantile y est réduit au minimum.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:harvest-year:8",
+            "summary": "Année de récolte",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

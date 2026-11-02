@@ -1,0 +1,45 @@
+{
+  "_id": "Cy9e0bE9EaGbHcId",
+  "_key": "!items!Cy9e0bE9EaGbHcId",
+  "name": "Asiblack",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:asiblack:6#effect",
+    "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon an Asiblack, one of the Einharjar’s black war horses, which becomes their steed for the duration of the ability. The horse is a medium-sized war horse equipped with chainmail as protection over its body and head. The horse is obediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Asiblack at a time. Only once Asiblack has disappeared may the Stormkelt call on him again. ✦ Asiblack:<hr>Strength +5, Body Points 75, Protection Value 3, combat movement 20 meters per action round, excellently war-trained.",
+    "summary": "Asiblack",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 160
+    }
+  },
+  "effects": [
+    {
+      "_id": "XA1IVB6B7C8D9EaG",
+      "_key": "!items.effects!Cy9e0bE9EaGbHcId.XA1IVB6B7C8D9EaG",
+      "name": "Asiblack",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon an Asiblack, one of the Einharjar’s black war horses, which becomes their steed for the duration of the ability. The horse is a medium-sized war horse equipped with chainmail as protection over its body and head. The horse is obediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Asiblack at a time. Only once Asiblack has disappeared may the Stormkelt call on him again. ✦ Asiblack:<hr>Strength +5, Body Points 75, Protection Value 3, combat movement 20 meters per action round, excellently war-trained.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:asiblack:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:asiblack:6#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:asiblack:6",
+            "summary": "Asiblack",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

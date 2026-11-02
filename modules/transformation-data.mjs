@@ -1668,6 +1668,42 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-warmth-of-sunvei:sunray:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:sunray:1:0"
+      }
+    ]
+  },
+  "holy-gerbanis-warmth-of-sunvei:summer-place:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:summer-place:3:0"
+      }
+    ]
+  },
   "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
     "id": "lumiere-guerisseuse",
     "icon": "icons/svg/aura.svg",
@@ -1750,6 +1786,27 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "instant",
         "value": 2,
         "optionId": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0"
+      }
+    ]
+  },
+  "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6:0"
       }
     ]
   },
@@ -1898,6 +1955,30 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-strength-of-stormi:havar:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-strength-of-stormi:havar:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:havar:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:havar:2:1"
+      }
+    ]
+  },
   "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
     "id": "appel-du-jarl",
     "icon": "icons/svg/aura.svg",
@@ -1913,6 +1994,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 5,
         "optionId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:0"
+      }
+    ]
+  },
+  "holy-gerbanis-strength-of-stormi:shield-disir:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-gerbanis-strength-of-stormi:shield-disir:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:shield-disir:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:shield-disir:5:1"
       }
     ]
   },
@@ -2005,6 +2113,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 5,
         "optionId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:0"
+      }
+    ]
+  },
+  "holy-gerbanis-strength-of-stormi:einharjar:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-gerbanis-strength-of-stormi:einharjar:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-strength-of-stormi:einharjar:8:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-strength-of-stormi:einharjar:8:1"
       }
     ]
   },
@@ -2185,6 +2320,156 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1"
+      }
+    ]
+  },
+  "holy-gerbanis-influence-of-jorn:falfax:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-influence-of-jorn:falfax:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-influence-of-jorn:falfax:2:0"
+      }
+    ]
+  },
+  "holy-gerbanis-influence-of-jorn:night-curtain:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:2"
+      }
+    ]
+  },
+  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:2"
+      }
+    ]
+  },
+  "holy-gerbanis-influence-of-jorn:asiblack:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-influence-of-jorn:asiblack:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-influence-of-jorn:asiblack:6:0"
+      }
+    ]
+  },
+  "holy-gerbanis-influence-of-jorn:snarfari:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "30 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-influence-of-jorn:snarfari:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-gerbanis-influence-of-jorn:snarfari:8:0"
+      }
+    ]
+  },
   "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
     "id": "force-d-ame",
     "icon": "icons/svg/aura.svg",
@@ -2354,6 +2639,63 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-gerbanis-power-of-enken:heart-of-enken:6:4"
       }
     ]
+  },
+  "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-magh-s-gift:journey-wind:0:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-magh-s-gift:elf-summer:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-magh-s-gift:elf-summer:3:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 année",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:harvest-year:8",
+    "parameters": []
   },
   "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
     "id": "aspect-du-cerf",
@@ -3221,6 +3563,48 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5:0"
+      }
+    ]
+  },
   "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon": {
     "id": "sens-du-griffon",
     "icon": "icons/svg/aura.svg",
@@ -3251,6 +3635,27 @@ export const TRANSFORMATION_TEMPLATES = {
         "sense": 0,
         "value": 100,
         "optionId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8:0"
       }
     ]
   },
@@ -3595,6 +4000,48 @@ export const TRANSFORMATION_TEMPLATES = {
         "restrictedSkill": "knowledge",
         "labelKey": "TRUDVANG.Transformation.SpokenLanguageBonus",
         "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:sheltering:1:0"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2:0"
       }
     ]
   },
@@ -7471,6 +7918,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
   ],
+  "holy-gerbanis-warmth-of-sunvei:sunray:1": [
+    "holy-gerbanis-warmth-of-sunvei:sunray:1#effect"
+  ],
+  "holy-gerbanis-warmth-of-sunvei:summer-place:3": [
+    "holy-gerbanis-warmth-of-sunvei:summer-place:3#effect"
+  ],
   "holy-gerbanis-warmth-of-sunvei:healing-glow:2": [
     "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse"
   ],
@@ -7479,6 +7932,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-gerbanis-warmth-of-sunvei:firon-power:4": [
     "holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon"
+  ],
+  "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6": [
+    "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect"
   ],
   "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7": [
     "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle"
@@ -7495,8 +7951,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-strength-of-stormi:hinji-strength:3": [
     "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje"
   ],
+  "holy-gerbanis-strength-of-stormi:havar:2": [
+    "holy-gerbanis-strength-of-stormi:havar:2#effect"
+  ],
   "holy-gerbanis-strength-of-stormi:jarl-s-call:4": [
     "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl"
+  ],
+  "holy-gerbanis-strength-of-stormi:shield-disir:5": [
+    "holy-gerbanis-strength-of-stormi:shield-disir:5#effect"
   ],
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": [
     "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
@@ -7504,6 +7966,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": [
     "holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme"
+  ],
+  "holy-gerbanis-strength-of-stormi:einharjar:8": [
+    "holy-gerbanis-strength-of-stormi:einharjar:8#effect"
   ],
   "holy-gerbanis-wrath-of-tyrd:battle-cry:1": [
     "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally"
@@ -7515,6 +7980,24 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": [
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy"
+  ],
+  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": [
+    "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect"
+  ],
+  "holy-gerbanis-influence-of-jorn:falfax:2": [
+    "holy-gerbanis-influence-of-jorn:falfax:2#effect"
+  ],
+  "holy-gerbanis-influence-of-jorn:night-curtain:3": [
+    "holy-gerbanis-influence-of-jorn:night-curtain:3#effect"
+  ],
+  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": [
+    "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect"
+  ],
+  "holy-gerbanis-influence-of-jorn:asiblack:6": [
+    "holy-gerbanis-influence-of-jorn:asiblack:6#effect"
+  ],
+  "holy-gerbanis-influence-of-jorn:snarfari:8": [
+    "holy-gerbanis-influence-of-jorn:snarfari:8#effect"
   ],
   "holy-gerbanis-power-of-enken:willpower:1": [
     "holy-gerbanis-power-of-enken:willpower:1#force-d-ame"
@@ -7528,6 +8011,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-power-of-enken:heart-of-enken:6": [
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies"
+  ],
+  "holy-ealdtradition-magh-s-gift:journey-wind:0": [
+    "holy-ealdtradition-magh-s-gift:journey-wind:0#effect"
+  ],
+  "holy-ealdtradition-magh-s-gift:elf-summer:3": [
+    "holy-ealdtradition-magh-s-gift:elf-summer:3#effect"
+  ],
+  "holy-ealdtradition-magh-s-gift:harvest-year:8": [
+    "holy-ealdtradition-magh-s-gift:harvest-year:8#effect"
   ],
   "holy-ealdtradition-gift-of-thanja:stagshape:2": [
     "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf"
@@ -7581,8 +8073,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": [
     "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou"
   ],
+  "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2": [
+    "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect"
+  ],
+  "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5": [
+    "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect"
+  ],
   "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": [
     "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon"
+  ],
+  "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": [
+    "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect"
   ],
   "holy-tenetnid-tablet-of-anger:stone-senses:2": [
     "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies"
@@ -7605,6 +8106,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": [
     "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue"
+  ],
+  "holy-tenetnid-tablet-of-the-shield:sheltering:1": [
+    "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-shield:storm-protection:2": [
+    "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect"
   ],
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": [
     "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce"

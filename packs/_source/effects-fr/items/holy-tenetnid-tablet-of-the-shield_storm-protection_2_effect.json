@@ -1,0 +1,45 @@
+{
+  "_id": "oWAfjkLgMhNiOjPk",
+  "_key": "!items!oWAfjkLgMhNiOjPk",
+  "name": "Protection contre les éléments",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+    "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum.",
+    "summary": "Protection contre les éléments",
+    "source": {
+      "book": "Livre des règles",
+      "page": 258
+    }
+  },
+  "effects": [
+    {
+      "_id": "b2etNw1w2x3y4z5A",
+      "_key": "!items.effects!oWAfjkLgMhNiOjPk.b2etNw1w2x3y4z5A",
+      "name": "Protection contre les éléments",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2",
+            "summary": "Protection contre les éléments",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

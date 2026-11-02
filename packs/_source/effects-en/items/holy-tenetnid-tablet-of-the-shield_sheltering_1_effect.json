@@ -1,0 +1,45 @@
+{
+  "_id": "T4uoORjPkQlRmSnT",
+  "_key": "!items!T4uoORjPkQlRmSnT",
+  "name": "Sheltering",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+    "description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 20°C as the dimwalker wishes to create a milder climate.",
+    "summary": "Sheltering",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "u8L6CcHcIdJeKfLg",
+      "_key": "!items.effects!T4uoORjPkQlRmSnT.u8L6CcHcIdJeKfLg",
+      "name": "Sheltering",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 20°C as the dimwalker wishes to create a milder climate.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
+            "summary": "Sheltering",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,144);
+ assert.equal(Object.keys(sources).length,164);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1119,4 +1119,23 @@ test("descriptive spells retain selected improvements and calculate duration",as
  assert.deepEqual(created.duration,{value:132,units:"rounds"});
  assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.3/);
  assert.match(created.flags[S].transformation.summary,/1 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.4/);
+});
+
+test("divine weather, travel and summoning effects preserve their duration improvements",async()=>{
+ const cases={
+  "holy-gerbanis-warmth-of-sunvei:sunray:1":[3600],"holy-gerbanis-warmth-of-sunvei:summer-place:3":[3600],"holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6":[86400],
+  "holy-gerbanis-strength-of-stormi:havar:2":[60,3600],"holy-gerbanis-strength-of-stormi:shield-disir:5":[60,3600],"holy-gerbanis-strength-of-stormi:einharjar:8":[60,3600],
+  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1":[5,60],"holy-gerbanis-influence-of-jorn:falfax:2":[3600],"holy-gerbanis-influence-of-jorn:night-curtain:3":[5,60,86400],
+  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4":[5,60,3600],"holy-gerbanis-influence-of-jorn:asiblack:6":[3600],"holy-gerbanis-influence-of-jorn:snarfari:8":[3600],
+  "holy-ealdtradition-magh-s-gift:journey-wind:0":[3600],"holy-ealdtradition-magh-s-gift:elf-summer:3":[3600],"holy-ealdtradition-magh-s-gift:harvest-year:8":[],
+  "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2":[86400],"holy-ealdtradition-nema-s-usefulness:meall-s-trail:5":[86400],"holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8":[86400],
+  "holy-tenetnid-tablet-of-the-shield:sheltering:1":[3600],"holy-tenetnid-tablet-of-the-shield:storm-protection:2":[3600]
+ };
+ for(const [id,durations] of Object.entries(cases))assert.deepEqual(templates[`${id}#effect`].parameters.filter(p=>p.target==="duration").map(p=>p.value),durations,id);
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"1 minute",boost0:1,boost2:2})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"holy-gerbanis-strength-of-stormi:shield-disir:5#effect",{counts:[1,0,2]});
+ assert.deepEqual(created.duration,{value:24,units:"rounds"});
+ assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.holy-gerbanis-strength-of-stormi:shield-disir:5\.PowerLevels\.2/);
 });

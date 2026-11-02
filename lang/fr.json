@@ -14073,6 +14073,24 @@
           "SourcePage": "216",
           "Duration": "1 jour"
         },
+        "holy-gerbanis-warmth-of-sunvei:sunray:1#effect": {
+          "Name": "Rayons du soleil",
+          "Summary": "Rayons du soleil",
+          "Description": "Solvei répond au souhait de l’arpenteur des brumes et fait briller les rayons du soleil sur lui. Pendant la durée du pouvoir, le soleil brille sur le stormikjalt et dans une zone qui l’entoure dont le rayon dépend de sa valeur de compétence en Foi. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Cela dit, ce pouvoir ne fonctionne qu’à l’extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. La zone affectée est déterminée au moment où le stormikjalt active ce pouvoir, et elle ne se déplace pas si ce dernier s’éloigne.",
+          "SourceName": "Rayons du soleil",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "216",
+          "Duration": "1 heure"
+        },
+        "holy-gerbanis-warmth-of-sunvei:summer-place:3#effect": {
+          "Name": "Cœur de l’été",
+          "Summary": "Cœur de l’été",
+          "Description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée (qui dépend de la valeur de compétence en Foi de l’arpenteur des brumes). Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Si la durée du pouvoir se prolonge après le crépuscule, une chaude soirée d’été se poursuit dans la zone bénie jusqu’à expiration du pouvoir. Tant que ce pouvoir perdure, les terrains de chasse situés à proximité du stormikjalt (VC × 100 mètres) deviennent également plus giboyeux (+3 en compétence Nature pour chasser).",
+          "SourceName": "Cœur de l’été",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "217",
+          "Duration": "3 heures"
+        },
         "holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse": {
           "Name": "Lumière guérisseuse (Solvei)",
           "Summary": "Restaure immédiatement la santé et arrête les saignements.",
@@ -14099,6 +14117,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "217",
           "Duration": ""
+        },
+        "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect": {
+          "Name": "Heure de la chasse",
+          "Summary": "Heure de la chasse",
+          "Description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour du stormikjalt deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+          "SourceName": "Heure de la chasse",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "217",
+          "Duration": "1 jour"
         },
         "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle": {
           "Name": "Souffle de Solvei (Solvei)",
@@ -14145,6 +14172,15 @@
           "SourcePage": "218",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-strength-of-stormi:havar:2#effect": {
+          "Name": "Havar",
+          "Summary": "Havar",
+          "Description": "Le stormikjalt implore la protection de Storme, qui lui envoie un havar, un guerrier saint venu de Stormvakk pour le protéger. L’esprit apparaît sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et le guerrier abandonne le stormikjalt et disparaît à l’intérieur. Si le guerrier meurt, il se change en brume et disparaît. L’esprit guerrier s’interpose ou protège l’arpenteur des brumes au combat ou dans toute autre situation où le stormikjalt se trouve en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du stormikjalt et ne peut rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il ne fait qu’accomplir sa mission. Un stormikjalt ne peut avoir qu’un seul havar actif à un moment donné par le biais de ce pouvoir. Le havar est un grand guerrier vêtu de cuir, et son visage est caché par une calotte en cuir équipée d’un nasal. Il porte un bouclier rond normal et une hache de bataille traditionnelle.<hr>Havar : Force +1, PS:25, VP:2, PC:16, initiative 1d10JO10 + 4, spécialité Porteur de bouclier (+4 PC).",
+          "SourceName": "Havar",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "218",
+          "Duration": "1 minute"
+        },
         "holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl": {
           "Name": "Appel du jarl",
           "Summary": "En cas d’échec au test de situation, la personne obéit instinctivement au stormikjalt. Elle ne se blesse pas elle-même et ne réalise pas de tâche exigeant initiative ou créativité.",
@@ -14153,6 +14189,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "219",
           "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-strength-of-stormi:shield-disir:5#effect": {
+          "Name": "Skölddíser",
+          "Summary": "Skölddíser",
+          "Description": "Le stormikjalt implore la protection de Storme, qui lui envoie des skölddísers, des guerrières sacrées venues de Stormvakk pour le protéger. Les esprits apparaissent sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et les guerrières abandonnent le stormikjalt et disparaissent à l’intérieur. Si une guerrière meurt, elle se change en brume et disparaît. Les esprits guerriers s’interposent ou protègent l’arpenteur des brumes au combat ou dans toute autre situation où le stormikjalt se trouve en danger immédiat. Les skölddísers ne s’éloignent jamais à plus de 10 mètres du stormikjalt et elles ne peuvent rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. Les esprits guerriers ne communiquent pas : ils ne font qu’accomplir leur mission. Un stormikjalt ne peut avoir plus de trois skölddísers actives à un moment donné. Les skölddísers sont d’impressionnantes guerrières vêtues de cuir renforcé, avec de longues crinières blondes et le visage couvert de peintures en forme de spirales bleues. En règle générale, elles portent des épées de bataille et de grands boucliers ronds renforcés.<hr>Skölddíser : Force +2, points de santé 30, valeur de protection 3, points de combat 20, initiative 1d10 (JO 10) + 2, spécialité Porteur de bouclier (+8 points de combat)",
+          "SourceName": "Skölddíser",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "219",
+          "Duration": "1 minute"
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun": {
           "Name": "Force du jotun",
@@ -14180,6 +14225,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "219",
           "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-strength-of-stormi:einharjar:8#effect": {
+          "Name": "Einharjar",
+          "Summary": "Einharjar",
+          "Description": "Le stormikjalt implore la protection de Storme, qui lui envoie les einharjars, des guerriers sacrés venus de Stormvakk pour le protéger. Les esprits apparaissent sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et les guerriers abandonnent le stormikjalt et disparaissent à l’intérieur. Si un guerrier meurt, il se change en brume et disparaît. Les esprits guerriers s’interposent ou protègent l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le stormikjalt se trouve en danger immédiat. Les einharjars ne s’éloignent jamais à plus de 10 mètres du stormikjalt et ne peuvent rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. Les esprits guerriers ne communiquent pas : ils ne font qu’accomplir leur mission. Un stormikjalt ne peut avoir plus de six einharjars actifs à un moment donné. Les einharjars sont des berserkers solidement bâtis aux longs cheveux fins, au visage couvert de sang sacrificiel, et au torse nu couvert de symboles tracés à la suie. Ils brandissent le plus souvent des épées à deux mains.<hr>Einharjar : Force +4, points de santé 35, valeur de protection 5, points de combat 30, initiative 1d10 (JO 10) + 4, discipline Combat armé et spécialité Porteur de bouclier (+13 points de combat)",
+          "SourceName": "Einharjar",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "220",
+          "Duration": "1 minute"
         },
         "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally": {
           "Name": "Cri de bataille",
@@ -14226,6 +14280,60 @@
           "SourcePage": "221",
           "Duration": "5 tours de jeu"
         },
+        "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
+          "Name": "Mur du crépuscule",
+          "Summary": "Mur du crépuscule",
+          "Description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui. Le stormikjalt dispose d’une surface de 20 mètres carrés sur laquelle il peut façonner les fondations de son mur comme bon lui semble. Un arpenteur des brumes peut ainsi utiliser ces 20 m² pour créer un mur de 1 m d’épaisseur et 20 m de long, ou de 5 m d’épaisseur sur 4 m de long, etc. Ce mur s’étend aussi haut que le regard peut porter. Si un stormikjalt lève un mur de ténèbres à un endroit déjà occupé par une créature, cette dernière est immédiatement affectée par les ténèbres et reçoit les modificateurs adéquats. Le stormikjalt fait appel à Jorn, qui lui offre un morceau du crépuscule aussi noir et épais que la nuit. Ces ténèbres, auxquelles l’arpenteur des brumes peut donner la forme de son choix, confèrent un malus de -3 à toutes les actions de combat entreprises à l’intérieur des ténèbres ou qui visent une cible qui s’y trouve, comme en pleine nuit. Toute personne bénéficiant d’une vision de nuit, d’une vision dans le noir ou d’une vision véritable n’est pas affectée par ces ténèbres.",
+          "SourceName": "Mur du crépuscule",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "222",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-influence-of-jorn:falfax:2#effect": {
+          "Name": "Falfax",
+          "Summary": "Falfax",
+          "Description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval meurt, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un falfax, l’un des esprits-chevaux de la tempête, qui devient sa monture pendant la durée du pouvoir. Il prend la forme d’un cheval de guerre de taille moyenne équipé d’une armure en cuir qui protège l’ensemble de son corps et de sa tête. Il est dressé à obéir mais ne possède pas de capacité particulière par rapport à un destrier classique. Un stormikjalt ne peut pas appeler plus d’un falfax à la fois. Ce n’est qu’une fois que le falfax a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Falfax : Force +4, points de santé 60, valeur de protection 2, Mouvement de combat 16 mètres par tour de jeu, cheval de guerre obéissant.",
+          "SourceName": "Falfax",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "222",
+          "Duration": "1 heure"
+        },
+        "holy-gerbanis-influence-of-jorn:night-curtain:3#effect": {
+          "Name": "Rideau de la nuit",
+          "Summary": "Rideau de la nuit",
+          "Description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+          "SourceName": "Rideau de la nuit",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "222",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect": {
+          "Name": "Manteau de Jorn",
+          "Summary": "Manteau de Jorn",
+          "Description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Rideau de la nuit, mais les ténèbres ont une surface de base de 100m2. Quand on dresse un Manteau de Jorn dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -15 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -8 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+          "SourceName": "Manteau de Jorn",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "223",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-influence-of-jorn:asiblack:6#effect": {
+          "Name": "Svartasi",
+          "Summary": "Svartasi",
+          "Description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un svartasi, l’un des destriers noirs d’Einharjar, qui devient sa monture pendant la durée du pouvoir. Il prend la forme d’un cheval de guerre de taille moyenne équipé d’une cotte de mailles qui protège l’ensemble de son corps et de sa tête. Il est dressé à obéir mais ne possède pas de capacité particulière par rapport à un destrier classique. Un stormikjalt ne peut pas appeler plus d’un svartasi à la fois. Ce n’est qu’une fois que le svartasi a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Svartasi : Force +5, points de santé 75, valeur de protection 3, Mouvement de combat 20 mètres par tour de jeu, dressage Excellent.",
+          "SourceName": "Svartasi",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "223",
+          "Duration": "1 heure"
+        },
+        "holy-gerbanis-influence-of-jorn:snarfari:8#effect": {
+          "Name": "Snarfari",
+          "Summary": "Snarfari",
+          "Description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un snarfari, l’un des destriers noirs que Jorn a volés à Storme. Un snarfari est un très grand étalon doté de six pattes et de deux têtes. On le considère comme un destrier de maître. Un snarfari cavale toujours avec le vent dans le dos, et il peut faire un voyage de cinq jours en une journée seulement. Les naseaux d’un snarfari crachent de la brume (ce qui impose un malus d’imprécision de -3 à toute personne tentant de l’attaquer) et il récupère 1 point de santé par tour de jeu. Un stormikjalt ne peut pas appeler plus d’un snarfari à la fois. Ce n’est qu’une fois que le premier snarfari a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Snarfari : Force +6, points de santé 90, valeur de protection 6, Mouvement de combat 24 mètres par tour de jeu, dressage magistral, facteur de peur 1d5.",
+          "SourceName": "Snarfari",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "224",
+          "Duration": "30 minutes"
+        },
         "holy-gerbanis-power-of-enken:willpower:1#force-d-ame": {
           "Name": "Force d’âme",
           "Summary": "Augmente le Psychisme.",
@@ -14271,6 +14379,33 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "225",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
+          "Name": "Brise du voyage",
+          "Summary": "Brise du voyage",
+          "Description": "Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats.",
+          "SourceName": "Brise du voyage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "232",
+          "Duration": "1 heure"
+        },
+        "holy-ealdtradition-magh-s-gift:elf-summer:3#effect": {
+          "Name": "Été elfique",
+          "Summary": "Été elfique",
+          "Description": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée. Ce pouvoir peut faire monter la température d’un maximum de 40 degrés. Cependant, la température ne peut pas dépasser 30 degrés (par exemple, si la température est de -30 degrés, le bruide peut la faire monter jusqu’à 10 degrés).",
+          "SourceName": "Été elfique",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "233",
+          "Duration": "1 heure"
+        },
+        "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
+          "Name": "Année de récolte",
+          "Summary": "Année de récolte",
+          "Description": "Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité miraculeuse et un temps inhabituellement plaisant. Le risque de maladies et de mortalité infantile y est réduit au minimum.",
+          "SourceName": "Année de récolte",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "234",
+          "Duration": "1 année"
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Aspect du cerf",
@@ -14464,6 +14599,24 @@
           "Duration": "1 minute",
           "Sense0": "Ouïe du hibou"
         },
+        "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect": {
+          "Name": "Piste des brumes",
+          "Summary": "Piste des brumes",
+          "Description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+          "SourceName": "Piste des brumes",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "245",
+          "Duration": "1 jour"
+        },
+        "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect": {
+          "Name": "Piste de Meall",
+          "Summary": "Piste de Meall",
+          "Description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accéléré. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est quadruplée, et une journée de voyage leur permettra de couvrir une distance égale à quatre jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+          "SourceName": "Piste de Meall",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "245",
+          "Duration": "1 jour"
+        },
         "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon": {
           "Name": "Sens du griffon",
           "Summary": "Affûte l’ouïe jusqu’à percevoir les sons à portée.",
@@ -14473,6 +14626,15 @@
           "SourcePage": "245",
           "Duration": "1 minute",
           "Sense0": "Sens du griffon"
+        },
+        "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect": {
+          "Name": "Voyage de Mongfind",
+          "Summary": "Voyage de Mongfind",
+          "Description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est multipliée par sept, et une journée de voyage leur permettra de couvrir une distance égale à sept jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+          "SourceName": "Voyage de Mongfind",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "246",
+          "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Sens pétrifiés",
@@ -14563,6 +14725,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "257",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
+          "Name": "Refuge",
+          "Summary": "Refuge",
+          "Description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 20°C au maximum.",
+          "SourceName": "Refuge",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "258",
+          "Duration": "1 heure"
+        },
+        "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
+          "Name": "Protection contre les éléments",
+          "Summary": "Protection contre les éléments",
+          "Description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum.",
+          "SourceName": "Protection contre les éléments",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "258",
+          "Duration": "1 heure"
         },
         "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce": {
           "Name": "Peau d’écorce",

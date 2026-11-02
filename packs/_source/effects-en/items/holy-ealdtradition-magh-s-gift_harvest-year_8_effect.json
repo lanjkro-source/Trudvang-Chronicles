@@ -1,0 +1,45 @@
+{
+  "_id": "hHrp3xZu0v1w2x3y",
+  "_key": "!items!hHrp3xZu0v1w2x3y",
+  "name": "Harvest Year",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+    "description": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility, and unnaturally pleasant weather. The risk of diseases and infant mortality is minimal.",
+    "summary": "Harvest Year",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "6P5hwpUpVqWrXsYt",
+      "_key": "!items.effects!hHrp3xZu0v1w2x3y.6P5hwpUpVqWrXsYt",
+      "name": "Harvest Year",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility, and unnaturally pleasant weather. The risk of diseases and infant mortality is minimal.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:harvest-year:8#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:harvest-year:8",
+            "summary": "Harvest Year",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -11299,6 +11299,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.SourcePage` | 166 | 216 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison.Duration` | 1 day | 1 jour |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.Name` | Sunray | Rayons du soleil |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.Description` | Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the Stormkelt and an area surrounding them with a radius determined by their Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the Stormkelt moves away. | Solvei répond au souhait de l’arpenteur des brumes et fait briller les rayons du soleil sur lui. Pendant la durée du pouvoir, le soleil brille sur le stormikjalt et dans une zone qui l’entoure dont le rayon dépend de sa valeur de compétence en Foi. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Cela dit, ce pouvoir ne fonctionne qu’à l’extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. La zone affectée est déterminée au moment où le stormikjalt active ce pouvoir, et elle ne se déplace pas si ce dernier s’éloigne. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.SourceName` | Sunray | Rayons du soleil |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.SourcePage` | 166 | 216 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:sunray:1#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.Name` | Summer Place | Cœur de l’été |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.Description` | Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area ( determined by the dimwalker’s Skill Value in the Faith skill). This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. If the duration lasts until after dusk, a warm summer evening and night will continue within the blessed area until the spell ends. As long as the ability persists, any hunting grounds in the vicinity of the Stormkelt (SV x 100 meters) also become more prosperous (+3 for the Wilderness skill when hunting). | Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée (qui dépend de la valeur de compétence en Foi de l’arpenteur des brumes). Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Si la durée du pouvoir se prolonge après le crépuscule, une chaude soirée d’été se poursuit dans la zone bénie jusqu’à expiration du pouvoir. Tant que ce pouvoir perdure, les terrains de chasse situés à proximité du stormikjalt (VC × 100 mètres) deviennent également plus giboyeux (+3 en compétence Nature pour chasser). |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.SourceName` | Summer Place | Cœur de l’été |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.SourcePage` | 166 | 217 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:summer-place:3#effect.Duration` | 3 hours | 3 heures |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing-glow:2#lumiere-guerisseuse`
 
 | Clé | English | Français |
@@ -11331,6 +11353,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.SourcePage` | 166 | 217 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:firon-power:4#pouvoir-de-firon.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.Name` | Time of the Hunt | Heure de la chasse |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.Description` | Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area. This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within range of this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. For the duration of the ability, any hunting grounds within 10 k ilometers of the dimwalker also become extremely prosperous (+6 on rolls for the Wilderness skill when hunting or fishing). | Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour du stormikjalt deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher). |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.SourceName` | Time of the Hunt | Heure de la chasse |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.SourcePage` | 166 | 217 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6#effect.Duration` | 1 day | 1 jour |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7#souffle`
 
@@ -11387,6 +11420,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje.SourcePage` | 164 | 218 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.Name` | Havar | Havar |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.Description` | The Stormkelt begs Stormi for protection. In return, Stormi sends a “Havar, a holy warrior from the Stormvakk to protect his subject. The spirit appears as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warrior disappears into it and leaves the dimwalker. If the warrior dies, he settles back into fog and disappears. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where he is in immediate danger. The warrior never moves farther than 10 meters away from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warrior does not communicate; it only performs its task. A Stormkelt can have only one Havar active at one time through this ability. Havar is a tall warrior equipped in leather, and his face is hidden by a leather coif with a nose protector. He carries a normal round shield and a regular battle axe. ✦ Havar: Strength +1, Body Points 25, Protection Value 2, Combat Points 16, initiative 1d10 (OR 10) + 4, Shield Bearer specialty (+4 Combat Points). | Le stormikjalt implore la protection de Storme, qui lui envoie un havar, un guerrier saint venu de Stormvakk pour le protéger. L’esprit apparaît sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et le guerrier abandonne le stormikjalt et disparaît à l’intérieur. Si le guerrier meurt, il se change en brume et disparaît. L’esprit guerrier s’interpose ou protège l’arpenteur des brumes au combat ou dans toute autre situation où le stormikjalt se trouve en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du stormikjalt et ne peut rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il ne fait qu’accomplir sa mission. Un stormikjalt ne peut avoir qu’un seul havar actif à un moment donné par le biais de ce pouvoir. Le havar est un grand guerrier vêtu de cuir, et son visage est caché par une calotte en cuir équipée d’un nasal. Il porte un bouclier rond normal et une hache de bataille traditionnelle.<hr>Havar : Force +1, PS:25, VP:2, PC:16, initiative 1d10JO10 + 4, spécialité Porteur de bouclier (+4 PC). |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.SourceName` | Havar | Havar |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.SourcePage` | 164 | 218 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:havar:2#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl`
 
 | Clé | English | Français |
@@ -11397,6 +11441,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.SourcePage` | 164 | 219 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jarl-s-call:4#appel-du-jarl.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.Name` | Shield Dísir | Skölddíser |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.Description` | The Stormkelt begs Stormi for protection. In return, Stormi sends holy warriors from the Stormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, she settles back into fog and disappears. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of three Shield Dísir active at one time. The Shield Dísir are impressive female warriors armored in fortified leather, with long manes of blond hair and faces painted with blue spiraled patterns. They usually carry battle swords and fortified great round shields. ✦ Shield<hr>Dísir: Strength +2, Body Points 30, Protection Value 3, Combat Points 20, initiative 1d10 (OR 10) + 2, Shield Bearer specialty (+8 Combat Points). | Le stormikjalt implore la protection de Storme, qui lui envoie des skölddísers, des guerrières sacrées venues de Stormvakk pour le protéger. Les esprits apparaissent sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et les guerrières abandonnent le stormikjalt et disparaissent à l’intérieur. Si une guerrière meurt, elle se change en brume et disparaît. Les esprits guerriers s’interposent ou protègent l’arpenteur des brumes au combat ou dans toute autre situation où le stormikjalt se trouve en danger immédiat. Les skölddísers ne s’éloignent jamais à plus de 10 mètres du stormikjalt et elles ne peuvent rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. Les esprits guerriers ne communiquent pas : ils ne font qu’accomplir leur mission. Un stormikjalt ne peut avoir plus de trois skölddísers actives à un moment donné. Les skölddísers sont d’impressionnantes guerrières vêtues de cuir renforcé, avec de longues crinières blondes et le visage couvert de peintures en forme de spirales bleues. En règle générale, elles portent des épées de bataille et de grands boucliers ronds renforcés.<hr>Skölddíser : Force +2, points de santé 30, valeur de protection 3, points de combat 20, initiative 1d10 (JO 10) + 2, spécialité Porteur de bouclier (+8 points de combat) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.SourceName` | Shield Dísir | Skölddíser |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.SourcePage` | 164 | 219 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:shield-disir:5#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun`
 
@@ -11430,6 +11485,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.SourcePage` | 164 | 219 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:voice-of-stormi:7#voix-de-storme.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.Name` | Einharjar | Einharjar |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.Description` | The Stormkelt begs Stormi for protection. In return, Stormi sends the Einharjar, holy warriors from the S tormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, they settle back into fog and disappear. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of six Einharjar active at one time. Einharjar are heavily built berserkers with long, lank hair, sacrificial blood streaked on their faces, and bare upper bodies painted with soot symbols. They usually carry two-handed swords. ✦ Einharjar:<hr>Strength +4, Body Points 35, Protection Value 5, Combat Points 30, initiative 1d10 (OR 10) + 4, Armed Fighting discipline and Shield Bearer specialty (+13 Combat Points). | Le stormikjalt implore la protection de Storme, qui lui envoie les einharjars, des guerriers sacrés venus de Stormvakk pour le protéger. Les esprits apparaissent sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et les guerriers abandonnent le stormikjalt et disparaissent à l’intérieur. Si un guerrier meurt, il se change en brume et disparaît. Les esprits guerriers s’interposent ou protègent l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le stormikjalt se trouve en danger immédiat. Les einharjars ne s’éloignent jamais à plus de 10 mètres du stormikjalt et ne peuvent rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. Les esprits guerriers ne communiquent pas : ils ne font qu’accomplir leur mission. Un stormikjalt ne peut avoir plus de six einharjars actifs à un moment donné. Les einharjars sont des berserkers solidement bâtis aux longs cheveux fins, au visage couvert de sang sacrificiel, et au torse nu couvert de symboles tracés à la suie. Ils brandissent le plus souvent des épées à deux mains.<hr>Einharjar : Force +4, points de santé 35, valeur de protection 5, points de combat 30, initiative 1d10 (JO 10) + 4, discipline Combat armé et spécialité Porteur de bouclier (+13 points de combat) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.SourceName` | Einharjar | Einharjar |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.SourcePage` | 164 | 220 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-strength-of-stormi:einharjar:8#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally`
 
@@ -11486,6 +11552,72 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourcePage` | 171 | 221 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Name` | Wall of Dusk | Mur du crépuscule |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Description` | With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters. The Stormkelt is given 20 square meters of darkness to shape to their liking. A dimwalker who has 20 m² can thus make a wall that is 1 m wide and 20 m long, a wall 5 m wide and 4 m long, and so on. The height of this area extends as far as the eye can see. If a wall of darkness is raised in an area already occupied by a creature, that creature is immediately affected by the darkness and is given modifiers accordingly. The Stormkelt calls on Jorn, who grants a piece of the dusk that’s as dark and thick as night. This darkness, shaped by the dimwalker, gives a negative modifier of -3 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision, dark vision, or true vision is unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui. Le stormikjalt dispose d’une surface de 20 mètres carrés sur laquelle il peut façonner les fondations de son mur comme bon lui semble. Un arpenteur des brumes peut ainsi utiliser ces 20 m² pour créer un mur de 1 m d’épaisseur et 20 m de long, ou de 5 m d’épaisseur sur 4 m de long, etc. Ce mur s’étend aussi haut que le regard peut porter. Si un stormikjalt lève un mur de ténèbres à un endroit déjà occupé par une créature, cette dernière est immédiatement affectée par les ténèbres et reçoit les modificateurs adéquats. Le stormikjalt fait appel à Jorn, qui lui offre un morceau du crépuscule aussi noir et épais que la nuit. Ces ténèbres, auxquelles l’arpenteur des brumes peut donner la forme de son choix, confèrent un malus de -3 à toutes les actions de combat entreprises à l’intérieur des ténèbres ou qui visent une cible qui s’y trouve, comme en pleine nuit. Toute personne bénéficiant d’une vision de nuit, d’une vision dans le noir ou d’une vision véritable n’est pas affectée par ces ténèbres. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourceName` | Wall of Dusk | Mur du crépuscule |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourcePage` | 160 | 222 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.Name` | Falfax | Falfax |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.Description` | The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon a Falfax, one of the spirit horses of the storm, who becomes their steed for the duration of the ability. The horse is a medium-sized warhorse equipped with leather armor as protection over its body and head. The horse is o bediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Falfax at a time. Only once Falfax has disappeared may the Stormkelt call on him<hr>again. ✦ Falfax: Strength +4, Body Points 60, Protection Value 2, combat movement 16 meters per action round, obedient warhorse. | Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval meurt, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un falfax, l’un des esprits-chevaux de la tempête, qui devient sa monture pendant la durée du pouvoir. Il prend la forme d’un cheval de guerre de taille moyenne équipé d’une armure en cuir qui protège l’ensemble de son corps et de sa tête. Il est dressé à obéir mais ne possède pas de capacité particulière par rapport à un destrier classique. Un stormikjalt ne peut pas appeler plus d’un falfax à la fois. Ce n’est qu’une fois que le falfax a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Falfax : Force +4, points de santé 60, valeur de protection 2, Mouvement de combat 16 mètres par tour de jeu, cheval de guerre obéissant. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.SourceName` | Falfax | Falfax |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.SourcePage` | 160 | 222 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Name` | Night Curtain | Rideau de la nuit |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Description` | With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourceName` | Night Curtain | Rideau de la nuit |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourcePage` | 160 | 222 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Name` | The Coat of Jorn | Manteau de Jorn |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Description` | With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Rideau de la nuit, mais les ténèbres ont une surface de base de 100m2. Quand on dresse un Manteau de Jorn dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -15 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -8 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourceName` | The Coat of Jorn | Manteau de Jorn |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourcePage` | 160 | 223 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.Name` | Asiblack | Svartasi |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.Description` | The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse disappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another person with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon an Asiblack, one of the Einharjar’s black war horses, which becomes their steed for the duration of the ability. The horse is a medium-sized war horse equipped with chainmail as protection over its body and head. The horse is obediently trained and has no abilities beyond those of any other war-trained steed. A Stormkelt cannot call on more than one Asiblack at a time. Only once Asiblack has disappeared may the Stormkelt call on him again. ✦ Asiblack:<hr>Strength +5, Body Points 75, Protection Value 3, combat movement 20 meters per action round, excellently war-trained. | Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un svartasi, l’un des destriers noirs d’Einharjar, qui devient sa monture pendant la durée du pouvoir. Il prend la forme d’un cheval de guerre de taille moyenne équipé d’une cotte de mailles qui protège l’ensemble de son corps et de sa tête. Il est dressé à obéir mais ne possède pas de capacité particulière par rapport à un destrier classique. Un stormikjalt ne peut pas appeler plus d’un svartasi à la fois. Ce n’est qu’une fois que le svartasi a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Svartasi : Force +5, points de santé 75, valeur de protection 3, Mouvement de combat 20 mètres par tour de jeu, dressage Excellent. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.SourceName` | Asiblack | Svartasi |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.SourcePage` | 160 | 223 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.Name` | Snarfari | Snarfari |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.Description` | The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi. After the ability’s duration expires, the fog appears again and the horse d isappears back into it and leaves the Stormkelt behind. If the steed were to die, it would turn into fog and disappear. The horse permits only the Stormkelt (or another permission with explicit permission of the Stormkelt) to ride it. It takes 1d10 action rounds for the horse to appear once the ability is successfully activated. The dimwalker calls upon Stormi’s black steed, a Snarfari, who Jorn has lured away from Stormi. A Snarfari is a very large steed with six legs and two heads. It is regarded as a masterfully war-trained horse. A Snarfari always rides with the wind at his back, and can make a five-day journey in a single day. A Snarfari breathes fog from his muzzle (which gives all who try to attack Snarfari or his rider -3 in accuracy), and heals 1 Body Point every action round. A Stormkelt cannot call on more than one Snarfari at a time. Only once the Snarfari has disappeared may the Stormkelt call on him again.<hr>✦ Snarfari: Strength +6, Body Points 90, Protection Value 4, movement 24 meters per action round, masterfully war-trained, fear factor 1d5. | Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un snarfari, l’un des destriers noirs que Jorn a volés à Storme. Un snarfari est un très grand étalon doté de six pattes et de deux têtes. On le considère comme un destrier de maître. Un snarfari cavale toujours avec le vent dans le dos, et il peut faire un voyage de cinq jours en une journée seulement. Les naseaux d’un snarfari crachent de la brume (ce qui impose un malus d’imprécision de -3 à toute personne tentant de l’attaquer) et il récupère 1 point de santé par tour de jeu. Un stormikjalt ne peut pas appeler plus d’un snarfari à la fois. Ce n’est qu’une fois que le premier snarfari a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Snarfari : Force +6, points de santé 90, valeur de protection 6, Mouvement de combat 24 mètres par tour de jeu, dressage magistral, facteur de peur 1d5. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.SourceName` | Snarfari | Snarfari |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.SourcePage` | 160 | 224 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:snarfari:8#effect.Duration` | 30 minutes | 30 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:willpower:1#force-d-ame`
 
 | Clé | English | Français |
@@ -11541,6 +11673,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourcePage` | 162 | 225 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Name` | Journey Wind | Brise du voyage |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Description` | The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area. | Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourceName` | Journey Wind | Brise du voyage |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourcePage` | 183 | 232 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.Name` | Elf Summer | Été elfique |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.Description` | The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area. This ability can increase the temperature by up to 40 degrees. However, the t emperature cannot be raised higher than 30 degrees. (For example, if the temperature is -30 degrees, the Bruid can raise it to a maximum of +10 degrees.) | Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée. Ce pouvoir peut faire monter la température d’un maximum de 40 degrés. Cependant, la température ne peut pas dépasser 30 degrés (par exemple, si la température est de -30 degrés, le bruide peut la faire monter jusqu’à 10 degrés). |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.SourceName` | Elf Summer | Été elfique |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.SourcePage` | 183 | 233 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.Name` | Harvest Year | Année de récolte |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.Description` | The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility, and unnaturally pleasant weather. The risk of diseases and infant mortality is minimal. | Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité miraculeuse et un temps inhabituellement plaisant. Le risque de maladies et de mortalité infantile y est réduit au minimum. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.SourceName` | Harvest Year | Année de récolte |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.SourcePage` | 183 | 234 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.Duration` | 1 year | 1 année |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf`
 
@@ -11774,6 +11939,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou.Sense0` | Owl Hearing | Ouïe du hibou |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.Name` | Gloomy Trail | Piste des brumes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.Description` | The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively double the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to a two-day march. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace. | Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.SourceName` | Gloomy Trail | Piste des brumes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.SourcePage` | 185 | 245 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2#effect.Duration` | 1 day | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.Name` | Meall's Trail | Piste de Meall |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.Description` | The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively quadruple (x4) the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to four full days of marching. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace. | Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accéléré. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est quadruplée, et une journée de voyage leur permettra de couvrir une distance égale à quatre jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.SourceName` | Meall's Trail | Piste de Meall |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.SourcePage` | 185 | 245 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5#effect.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon`
 
 | Clé | English | Français |
@@ -11785,6 +11972,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.SourcePage` | 185 | 245 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon.Sense0` | Griffon's Sense | Sens du griffon |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.Name` | Mongfind's Travel | Voyage de Mongfind |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.Description` | The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively cover seven times (x7) the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to seven full days of marching. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace. | Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est multipliée par sept, et une journée de voyage leur permettra de couvrir une distance égale à sept jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.SourceName` | Mongfind's Travel | Voyage de Mongfind |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.SourcePage` | 185 | 246 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.Duration` | 1 day | 1 jour |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies`
 
@@ -11895,6 +12093,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourcePage` | 206 | 257 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.Name` | Sheltering | Refuge |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.Description` | The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 20°C as the dimwalker wishes to create a milder climate. | Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 20°C au maximum. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.SourceName` | Sheltering | Refuge |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.SourcePage` | 201 | 258 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Name` | Storm Protection | Protection contre les éléments |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Description` | The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate. | Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourceName` | Storm Protection | Protection contre les éléments |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourcePage` | 201 | 258 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce`
 

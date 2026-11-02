@@ -1,0 +1,45 @@
+{
+  "_id": "m35I4MfLgMhNiOjP",
+  "_key": "!items!m35I4MfLgMhNiOjP",
+  "name": "Rideau de la nuit",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+    "summary": "Rideau de la nuit",
+    "source": {
+      "book": "Livre des règles",
+      "page": 222
+    }
+  },
+  "effects": [
+    {
+      "_id": "PSJAiy1w2x3y4z5A",
+      "_key": "!items.effects!m35I4MfLgMhNiOjP.PSJAiy1w2x3y4z5A",
+      "name": "Rideau de la nuit",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:night-curtain:3#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
+            "summary": "Rideau de la nuit",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

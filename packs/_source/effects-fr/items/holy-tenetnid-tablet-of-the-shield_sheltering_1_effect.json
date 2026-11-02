@@ -1,0 +1,45 @@
+{
+  "_id": "T4uoORjPkQlRmSnT",
+  "_key": "!items!T4uoORjPkQlRmSnT",
+  "name": "Refuge",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+    "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 20°C au maximum.",
+    "summary": "Refuge",
+    "source": {
+      "book": "Livre des règles",
+      "page": 258
+    }
+  },
+  "effects": [
+    {
+      "_id": "u8L6CcHcIdJeKfLg",
+      "_key": "!items.effects!T4uoORjPkQlRmSnT.u8L6CcHcIdJeKfLg",
+      "name": "Refuge",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 20°C au maximum.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
+            "summary": "Refuge",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

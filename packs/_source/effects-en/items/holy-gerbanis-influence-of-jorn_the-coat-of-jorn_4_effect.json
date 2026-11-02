@@ -1,0 +1,45 @@
+{
+  "_id": "hYN8wPiOjPkQlRmS",
+  "_key": "!items!hYN8wPiOjPkQlRmS",
+  "name": "The Coat of Jorn",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+    "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
+    "summary": "The Coat of Jorn",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 160
+    }
+  },
+  "effects": [
+    {
+      "_id": "EviLQYtZu0v1w2x3",
+      "_key": "!items.effects!hYN8wPiOjPkQlRmS.EviLQYtZu0v1w2x3",
+      "name": "The Coat of Jorn",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+            "summary": "The Coat of Jorn",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

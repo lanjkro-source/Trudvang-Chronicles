@@ -1,0 +1,45 @@
+{
+  "_id": "7i8Ic8B7C8D9EaGb",
+  "_key": "!items!7i8Ic8B7C8D9EaGb",
+  "name": "Shield Dísir",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:shield-disir:5#effect",
+    "description": "The Stormkelt begs Stormi for protection. In return, Stormi sends holy warriors from the Stormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, she settles back into fog and disappears. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of three Shield Dísir active at one time. The Shield Dísir are impressive female warriors armored in fortified leather, with long manes of blond hair and faces painted with blue spiraled patterns. They usually carry battle swords and fortified great round shields. ✦ Shield<hr>Dísir: Strength +2, Body Points 30, Protection Value 3, Combat Points 20, initiative 1d10 (OR 10) + 2, Shield Bearer specialty (+8 Combat Points).",
+    "summary": "Shield Dísir",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "Sgwqk6z5A6B7C8D9",
+      "_key": "!items.effects!7i8Ic8B7C8D9EaGb.Sgwqk6z5A6B7C8D9",
+      "name": "Shield Dísir",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt begs Stormi for protection. In return, Stormi sends holy warriors from the Stormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, she settles back into fog and disappears. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of three Shield Dísir active at one time. The Shield Dísir are impressive female warriors armored in fortified leather, with long manes of blond hair and faces painted with blue spiraled patterns. They usually carry battle swords and fortified great round shields. ✦ Shield<hr>Dísir: Strength +2, Body Points 30, Protection Value 3, Combat Points 20, initiative 1d10 (OR 10) + 2, Shield Bearer specialty (+8 Combat Points).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:shield-disir:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:shield-disir:5#effect",
+            "sourceId": "holy-gerbanis-strength-of-stormi:shield-disir:5",
+            "summary": "Shield Dísir",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

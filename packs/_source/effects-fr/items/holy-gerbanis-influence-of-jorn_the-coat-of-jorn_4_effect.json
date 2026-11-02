@@ -1,0 +1,45 @@
+{
+  "_id": "hYN8wPiOjPkQlRmS",
+  "_key": "!items!hYN8wPiOjPkQlRmS",
+  "name": "Manteau de Jorn",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Rideau de la nuit, mais les ténèbres ont une surface de base de 100m2. Quand on dresse un Manteau de Jorn dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -15 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -8 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+    "summary": "Manteau de Jorn",
+    "source": {
+      "book": "Livre des règles",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "EviLQYtZu0v1w2x3",
+      "_key": "!items.effects!hYN8wPiOjPkQlRmS.EviLQYtZu0v1w2x3",
+      "name": "Manteau de Jorn",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Rideau de la nuit, mais les ténèbres ont une surface de base de 100m2. Quand on dresse un Manteau de Jorn dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -15 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -8 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect",
+            "sourceId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+            "summary": "Manteau de Jorn",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
