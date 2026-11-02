@@ -23,9 +23,9 @@ les états, les règles et les liens des 150 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
-situation depuis l’effet. La portée améliorée et la perte d’odorat à −10 sont
-informatives ; les tests de compétence concernés demandent une saisie manuelle du
-modificateur.
+situation depuis l’effet. Les fenêtres de compétence et de spécialité proposent
+une case pour appliquer ce modificateur lorsque l’odorat intervient dans le test.
+La portée améliorée et la perte d’odorat à −10 restent informatives.
 
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet

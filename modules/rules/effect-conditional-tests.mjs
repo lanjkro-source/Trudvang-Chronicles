@@ -11,6 +11,13 @@ export function conditionalSituationBonuses(effect) {
  return (template.parameters??[]).filter(p=>p.target==="note").map(p=>({
   labelKey:p.labelKey,
   skill:p.skill ?? "",
+  skillChoice:p.skillChoice === true,
   value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)
  }));
+}
+
+/** Optional modifiers whose relevance must be decided by the player. */
+export function conditionalSkillModifiers(actor) {
+ return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).flatMap(effect =>
+  conditionalSituationBonuses(effect).filter(row => row.skillChoice).map(row => ({label:effect.name,value:row.value})));
 }

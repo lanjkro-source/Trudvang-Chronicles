@@ -825,6 +825,14 @@ test("Sense of Smell has distinct bonuses and penalties with the allocated level
  }
 });
 
+test("only active effects explicitly marked for skills offer an optional modifier",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="vitner-body-vitner:sense-of-smell:3";
+ const effect={name:"Odorat",flags:{[S]:{transformation:{key:`${id}#affaibli`,sourceId:id,ruleTestContext:{countsById:{[`${id}:7`]:2}}}}}};
+ assert.deepEqual(conditionalSkillModifiers({effects:[effect]}),[{label:"Odorat",value:-5}]);
+ effect.disabled=true;assert.deepEqual(conditionalSkillModifiers({effects:[effect]}),[]);
+});
+
 test("Sense of Smell applies the selected potency and range to the resulting effects",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
  const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;

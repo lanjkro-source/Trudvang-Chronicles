@@ -371,6 +371,7 @@ export const TRANSFORMATION_TEMPLATES = {
         "base": 3,
         "value": 1,
         "tooltip": true,
+        "skillChoice": true,
         "labelKey": "TRUDVANG.Transformation.SmellBonus",
         "templates": [
           "ameliore"
@@ -419,6 +420,7 @@ export const TRANSFORMATION_TEMPLATES = {
         "base": -3,
         "value": -1,
         "tooltip": true,
+        "skillChoice": true,
         "labelKey": "TRUDVANG.Transformation.SmellPenalty",
         "templates": [
           "affaibli"

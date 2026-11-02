@@ -685,16 +685,17 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
   });
 }
 
-export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = [], extraNumberFields = []}) {
+export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = [], extraNumberFields = [], optionalModifiers = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   // target is always the intrinsic VC. Every fixed modifier is a separate row.
   const finalTarget = Number(target) + rollModifierTotal(modifierRows);
-  const extraModifiers = root => extraNumberFields.map(field => ({label: field.label, value: Number(root.querySelector(`[name="${field.name}"]`)?.value ?? field.value ?? 0) || 0}));
+  const extraModifiers = root => [...extraNumberFields.map(field => ({label: field.label, value: Number(root.querySelector(`[name="${field.name}"]`)?.value ?? field.value ?? 0) || 0})), ...optionalModifiers.filter((_,index)=>root.querySelector(`[data-optional-modifier="${index}"]`)?.checked)];
   const content = `
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target)}))}</p>
       ${modifierList(modifierRows)}
       ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
+      ${optionalModifiers.map((row,index)=>`<label class="checkbox"><input type="checkbox" data-optional-modifier="${index}"> ${escapeHtml(row.label)} (${signedModifier(row.value)})</label>`).join("")}
       ${extraNumberFields.map(field => `<div class="form-group"><label>${escapeHtml(field.label)}</label><input name="${escapeHtml(field.name)}" type="number" value="${Number(field.value) || 0}">${field.hint ? `<p class="hint">${escapeHtml(field.hint)}</p>` : ""}</div>`).join("")}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
@@ -710,6 +711,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
       };
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       extraNumberFields.forEach(field => root.querySelector(`[name="${field.name}"]`)?.addEventListener("input", refresh));
+      optionalModifiers.forEach((_,index)=>root.querySelector(`[data-optional-modifier="${index}"]`)?.addEventListener("change",refresh));
       refresh();
     }
   }
@@ -727,7 +729,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
           return {
             modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
             cost: Number(root.querySelector("[name=cost]")?.value || defaultCost),
-            ...(extraNumberFields.length ? {extraModifiers: extraModifiers(root)} : {})
+            ...(extraNumberFields.length || optionalModifiers.length ? {extraModifiers: extraModifiers(root)} : {})
           };
         }
       },

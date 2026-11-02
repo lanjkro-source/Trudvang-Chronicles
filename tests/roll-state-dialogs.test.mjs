@@ -52,6 +52,19 @@ test("skill dialogs explain the already-applied states and update the final VC w
   assert.equal(confirm().modifier, 2);
 });
 
+test("conditional skill bonuses are optional, update the final target, and retain their label", async () => {
+  const selector='[data-optional-modifier="0"]';
+  form=fields({"[name=modifier]":"0",[selector]:""},["[data-final-target]"]);
+  await modifierDialog({title:"Skill",target:8,optionalModifiers:[{label:"Odorat",value:3}]});
+  assert.equal(output("[data-final-target]"),8);
+  assert.deepEqual(confirm().extraModifiers,[]);
+  form.nodes[selector].checked=true;form.nodes[selector].listeners.change();
+  assert.equal(output("[data-final-target]"),11);
+  assert.deepEqual(confirm().extraModifiers,[{label:"Odorat",value:3}]);
+  form.nodes[selector].checked=false;form.nodes[selector].listeners.change();
+  assert.equal(output("[data-final-target]"),8);
+});
+
 test("magic dialogs keep method VC intrinsic, then combine states, power, maintenance, effort and situation", async () => {
   form = fields({"[name=method]": "first", "[name=modifier]": "0", "[name=strenuous]": "0"},
     ["[data-final-target]", "[data-final-cost]", "[data-level-cost]", ".magic-breakdown"]);
