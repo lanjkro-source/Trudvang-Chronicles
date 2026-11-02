@@ -102,6 +102,9 @@
       "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
       "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM-2.jpg"
     ],
+    "tags": [
+      "dragon"
+    ],
     "traits": {
       "intelligence": -4,
       "perception": 2,

@@ -936,11 +936,12 @@ export class TrudvangActor extends BaseActor {
     ].filter(row => row.value !== 0);
   }
 
-  async rollSkill(skillKey, {label = null, bonus = 0} = {}) {
+  async rollSkill(skillKey, {label = null, bonus = 0, bonusLabel = ""} = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
     const base = this.getSkillValue(skillKey);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
-    const modifierRows = this.skillRollModifierRows(skillKey, {bonus});
+    const modifierRows = this.skillRollModifierRows(skillKey, {bonus: bonusLabel ? 0 : bonus});
+    if(bonusLabel && Number(bonus))modifierRows.push({label:bonusLabel,value:Number(bonus)});
     modifierRows.push(...transformationRollRows(this, {target: base + rollModifierTotal(modifierRows), skillKey}));
     const target = base + rollModifierTotal(modifierRows);
     const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))]});

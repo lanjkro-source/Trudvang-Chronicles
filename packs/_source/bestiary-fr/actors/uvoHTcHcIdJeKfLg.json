@@ -3258,6 +3258,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg"
     ],
+    "tags": [
+      "dragon"
+    ],
     "traits": {
       "intelligence": 6,
       "perception": 4,

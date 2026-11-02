@@ -59,6 +59,7 @@ export function buildBestiaryPackDocuments({code, localize, format, isFrench, st
       return value;
     });
     actor.system.details.source.page = entry.pages[code];
+    actor.system.tags = (actor.system.tags ?? []).map(tag => localize(tag));
     actor.items.push(...entry.featIds.map(id => creatureAbilityItemData(abilities.get(id), {code, localize, strict})));
     for (const {id, level} of entry.tablets) {
       const tablet = TABLET_BY_ID.get(id);

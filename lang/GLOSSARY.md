@@ -902,6 +902,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Npc.Tags` | Tags | Tags |
+| `TRUDVANG.Npc.TagsHint` | Separate tags with commas | Séparer les tags par des virgules |
 | `TRUDVANG.Npc.MagicTab` | Vitner & Faith | Vitner & Foi |
 | `TRUDVANG.Npc.NoMagic` | No known tablets, spells or divine powers. | Aucune tablette, aucun sortilège ni pouvoir connu. |
 | `TRUDVANG.Npc.UnlimitedVitner` | Unlimited daily vitner | Vitner sans limite quotidienne |
@@ -9063,6 +9065,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon1Part0` | Impaling leg | Patte empaleuse |
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Name` | Net Spider | Araignée tisseuse |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Description` | This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs. | C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos. |
@@ -9078,6 +9081,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon1Part0` | Impaling leg | Patte empaleuse |
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Name` | Eye Spider | Araignée hypnotique |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Description` | This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes with a paralyzing power, and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs. | C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux au pouvoir paralysant et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos. |
@@ -9093,6 +9097,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Name` | Thorn Beast | Bête épineuse |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Description` | This gigantic winged lizard arose from a small bat that became monstrous. Its broad-winged body stands about two and a half meters high. Its jaws hold long, strong fangs. Its empty eyes reflect a pale gleam of death at night. Its body continually rots from within, trailing an acrid stench of dead flesh and decay. Clawed feet and a powerful bite complete its shape as a flying predator. | C'est un gigantesque lézard ailé né d'une petite chauve-souris devenue monstrueuse. Son corps ailé de grande envergure culmine à environ deux mètres et demi de haut. Sa gueule est garnie de crocs longs et solides. Ses yeux vides reflètent pendant la nuit une pâle lueur de mort. Son corps pourrit continuellement de l'intérieur et traîne une âcre pestilence de chair morte et de décomposition. Ses pattes griffues et sa morsure puissante complètent sa silhouette de prédateur volant. |
@@ -9120,6 +9125,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon2` | Split axi (hand axe) | Split axi (hache à une main) |
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Armor0` | Fur / Leather Armor | Cuir |
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Name` | Galtir | Galtir |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Description` | This humanoid is slightly smaller than a dwarf. Its stocky, powerful body resembles a strange cross between a small troll and a boar. Its porcine head is armed with a bite and protruding tusks. Its short, resilient limbs carry muscles quick to violence. Its tough skin is supplemented by worn leather armor. Its stubborn appearance as a woodland warrior makes it immediately recognizable. | C'est un humanoïde un peu plus petit qu'un nain. Son corps trapu et puissant ressemble à un croisement étrange entre un petit troll et un sanglier. Sa tête porcine est armée d'une morsure et de défenses saillantes. Ses membres courts et résilients portent une musculature prompte à la violence. Sa peau dure s'accompagne d'un cuir porté en armure. Son allure obstinée de guerrier des bois le rend immédiatement reconnaissable. |
 | `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Age` | 15, max. 35 | 15, max. 35 |
@@ -9134,6 +9140,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Name` | Gryphon | Griffon |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Sense1` | Darkvision (10-60 m) | Vision dans le noir (10 à 60 m) |
 | `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Description` | This powerful beast has a fur-covered lynx's body, also described as a warg's body. Its head, forelegs, and wings are those of an eagle. Its great beak is as hard as flint. Its eyes pick out the smallest details of prey from high in the sky. Its enormous claws, like eagle talons, are sharp enough to sink deep into flesh. Beautiful feathers and fur cover its broad-spanned form. | C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure. |
@@ -9174,6 +9181,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon4Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Armor0` | Fur / Leather Armor | Armure de fourrure |
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Name` | Troll Bull | Minokks |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Description` | This large humanoid has immensely developed muscles. Its imposing body is covered in thick fur, thicker in the north. Its massive torso houses four small stomachs. Its impressive bull's head bears long horns, longer in Soj, which it uses in battle. Its powerful arms wield great iron clubs. Its figure, like a bull standing on two legs, towers over the plains. | C'est un grand humanoïde à la musculature très développée. Son corps imposant est couvert d'une fourrure épaisse, plus épaisse au nord. Son torse massif abrite quatre petits estomacs. Son impressionnante tête de taureau est affublée de longues cornes, plus longues à Soj, dont il se sert au combat. Ses bras puissants manient d'imposantes massues de fer. Sa stature de taureau dressé sur deux jambes domine les plaines. |
 | `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Age` | 40, max. 75 | 40, max. 75 |
@@ -9188,6 +9196,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Name` | Night Ulm | Nattulm |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Description` | This elusive creature has bat wings and glides from tree to tree. Its dark body is adapted to the night and loathes sunlight. Its mouth delivers a very dangerous bloodsucking bite. Its prized long claws are sharp, and its clawed feet let it sleep hanging from cave ceilings. Its nocturnal silhouette moves deftly through the pine crowns. | C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité. |
@@ -9202,6 +9211,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Name` | Giant Snake | Serpent géant |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Description` | This colossal serpent winds its elongated body among trees, rocks, and waters. Its great head rises far above the ground, and its sense of smell is excellent. Its skin varies by kind: pale yellow, almost albino, in forest snakes; black scales and gleaming amber eyes in cave snakes; dark green scales with brown, fish-like spots in lake snakes. An excellent climber, and in some varieties an excellent swimmer, it raises its nose above the surface to breathe. Powerful jaws complete its constricting body. | C'est un serpent colossal au corps allongé qui serpente entre les arbres, les rochers et les eaux. Sa grande tête se relève très au-dessus du sol et son odorat est excellent. Sa peau varie selon la variété : jaune clair presque albinos pour le serpent des forêts, écailles noires aux yeux couleur d'ambre luisante pour le serpent des cavernes, écailles vert foncé tachées de brun comme celles des poissons pour le serpent lacustre. Excellent grimpeur et, pour certaines variétés, excellent nageur, il laisse dépasser son nez de la surface pour respirer. Sa gueule puissante complète son corps constricteur. |
 | `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Age` | 30, max. 60 | 30, max. 60 |
@@ -9216,6 +9226,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Name` | Warg | Warg |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Description` | This terrible canine predator is as bulky as a wolf but more strongly built. Its four-legged body is covered in thick fur. Its head is larger than its wolf cousin's. Its jaws carry fangs and its feet claws. Its stocky, fast-moving figure makes it a prized mount among trolls and wild folk. Packs of these formidable wolf-like beasts prowl around farms. | C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes. |
@@ -9231,6 +9242,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Name` | Wolf | Loup |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Description` | This is the smallest of the warg lineage and a distant cousin of the warg. Its four-legged canine body is of conventional size. Its head is smaller and finer than a warg's. Fur covers an agile, fast-moving body. Its biting jaws and clawed feet serve it in pack hunting. Its familiar silhouette provides a reference against which to compare wargs, skolls, and garms. | C'est le plus petit de la lignée des wargs et le cousin éloigné du warg. Son corps canin à quatre pattes est de taille conventionnelle. Sa tête est plus petite et plus fine que celle du warg. Sa fourrure couvre un corps agile et rapide. Sa gueule mordante et ses pattes griffues servent à la chasse en meute. Sa silhouette familière est la référence face aux wargs, skolls et garms. |
@@ -9246,6 +9258,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Name` | Skoll | Skoll |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Description` | This four-legged canine is twice the size of a normal wolf. Its wolf-like body is larger and more powerful than a warg's or wolf's. Its massive head carries a fearsome bite. Clawed feet support a frame built for leaping and pursuit. Thick fur covers the muscles of this intermediate predator. Its silhouette dominates the packs without reaching a garm's size. | C'est un canidé à quatre pattes deux fois plus gros qu'un loup normal. Son corps lupin est plus grand et plus puissant que celui du warg et du loup. Sa tête massive est armée d'une morsure redoutable. Ses pattes griffues portent une charpente taillée pour le saut et la poursuite. Sa fourrure épaisse recouvre une musculature de prédateur intermédiaire. Sa silhouette domine les meutes sans atteindre la taille du garm. |
@@ -9261,6 +9274,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Name` | Garm | Garm |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Tag0` | beast | bête |
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Description` | This largest of wargs is trained as a mount like a horse. Its four-legged wolf-like body stands two to four meters at the shoulder. Its thick fur offers excellent protection against the cold of the great frozen plains. Its enormous head bears a massive bite, and its feet powerful claws. Its sought-after hide is as good as a mastomant's but much lighter. Its colossal figure embodies Trudvang's most terrible predator. | C'est le plus imposant des wargs, dressé comme monture comme un cheval. Son corps lupin à quatre pattes mesure de deux à quatre mètres au garrot. Son épaisse fourrure offre une excellente protection contre le froid des grandes plaines glacées. Sa tête énorme est armée d'une morsure massive et ses pattes de griffes puissantes. Sa peau très recherchée est aussi qualitative que celle d'un mastomant mais bien plus légère. Sa silhouette colossale incarne le plus terrible prédateur de Trudvang. |
@@ -9338,6 +9352,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Armor0` | Chain Mail | cotte de mailles |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Attack0Step1` | Horns/Claws | Cornes/griffes |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Name` | Physical Demon | Démon tangible |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Tag0` | demon | démon |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Sense2` | Darkvision | Vision dans le noir |
@@ -9388,6 +9403,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4` | Small Wooden Shield | Petit bouclier en bois |
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Armor0` | Chain Mail | cotte de mailles |
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Name` | Draugr | Draugr |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Description` | A draugr is undead and can change its appearance, size, and physical traits. Depending on how long it has been dead, its body shows varying decay, from apparently intact flesh to a skeleton with missing bones. Any remaining skin is dull gray. Its eyes have lost their color, leaving only the darkness of the pupils. Many draugrs can also turn their physical bodies into smoke. | Le draugr est un mort-vivant capable de changer d'apparence, de taille et de traits physiques. Selon le temps écoulé depuis sa mort, son corps présente un stade de décomposition variable, d'un état apparemment intact à celui de squelette aux os manquants. Sa peau, quand il en reste, est d'un gris terne. La couleur de ses yeux a disparu pour ne laisser que la noirceur des pupilles. De nombreux draugrs peuvent aussi transformer leur corps physique en fumée. |
@@ -9403,6 +9419,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Name` | Lyktgubbe | Lyktgubbe |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Description` | The lyktgubbe is undead, its decomposing body covered with dried mud. This crust camouflages it and holds its body together. Its characteristic feature is its large mist-filled eyes. They shine like a milky moon and cast a mist with a paralyzing halo. A close look reveals that the mist within them never stops moving. | Le lyktgubbe est un mort-vivant dont le corps en décomposition est recouvert d'une couche de boue séchée. Cette croûte de boue le camoufle et maintient son unité physique. Son élément caractéristique réside dans ses grands yeux embrumés. Ses yeux luisent comme une lune laiteuse et projettent une brume au halo paralysant. En les regardant de près, on voit que la brume à l'intérieur ne cesse de bouger. |
 | `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Age` | variable, max variable | variable, max variable |
@@ -9417,6 +9434,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon1Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Name` | Myling | Myling |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Description` | A myling has a child's build and small stature. Its deceptive childlike appearance lures travelers into traps. It can pose as a human child splashing in the water, about to drown. Its voice mimics human sounds and endlessly repeats: Give me your name. Seen from afar in dim light, it resembles a child peering from the forest edge. | Le myling a la même corpulence qu'un enfant et une petite taille enfantine. Son apparence enfantine trompeuse lui sert à attirer les voyageurs dans des pièges. Il sait se faire passer pour un enfant humain qui barbote dans l'eau sur le point de se noyer. Sa voix imite les sons humains et répète sans cesse : Donne-moi ton nom. Vu de loin dans la pénombre, il ressemble à un enfant qui épie depuis la lisière de la forêt. |
@@ -9456,6 +9474,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2` | Medium Wooden Shield | Bouclier moyen en bois |
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Armor0` | Chain Mail | cotte de mailles |
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Name` | Barrow Wight | Revenant des tumulus |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Description` | A barrow wight looks much as it did in life, since it returns shortly after burial. Only humans and elves can become one. It often keeps its flesh and skin intact. After sunset, a bone-white light shines in its empty eye sockets. It can hide these glowing eyes beneath a broad hood to mingle with the living. | Le revenant des tumulus ressemble beaucoup à ce qu'il était de son vivant, car il revient à la vie peu de temps après l'inhumation. Seuls les humains et les elfes peuvent le devenir. Il conserve souvent ses chairs et sa peau intactes. Dès que le soleil s'est couché, une lueur blanche comme l'os brille dans ses orbites vides. Il peut dissimuler ses yeux luisants sous une ample capuche pour se mêler à la population. |
@@ -9489,6 +9508,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4` | Small Wooden Shield | Petit bouclier en bois |
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Armor0` | Hardened Leather Armor | armure de cuir |
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Name` | Sálhele | Sálhele |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense1` | Sense Living | Perception des êtres vivants |
 | `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Sense2` | Darkvision | Vision dans le noir |
@@ -9768,6 +9788,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Name` | Log Troll | Troll de bois |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Description` | The log troll is assembled from pine cones, branches, leaves, and stones. Metal objects, skeletal pieces, and decorative carvings are also mixed in. Its maker usually carves a face on the creation. A star-pine seed germinates within it to bring it to life. Its serpentine roots writhe through the earth toward its victims, and it almost merges with the forest. | Le troll de bois est une créature assemblée à partir de pommes de pin, de branches, de feuilles et de pierres. On y mêle aussi des objets métalliques, des morceaux de squelettes et des sculptures ornementales. Son créateur sculpte le plus souvent un visage sur sa création. Une graine de pin étoile germe en lui pour lui donner vie. Ses racines serpentines ondulent dans la terre vers ses victimes et il fusionne presque avec la forêt. |
@@ -9797,6 +9818,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Name` | Braskelwurm | Braskelwurm |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Description` | This small four-legged creature is wolf-sized and rarely reaches above the knee. It has a large head with clear glowing eyes. It resembles both a rock cock and a lindwurm. Its body is covered with thin white, almost transparent scales. These scales can turn green and gray like those of the breijtja lizard, allowing it to hide easily. | C'est une petite créature de la taille d'un loup marchant sur quatre pattes, qui dépasse rarement le genou. Elle possède une grosse tête dotée d'yeux clairs et luisants. Elle ressemble à la fois à un coq des roches et à un lindwurm. Son corps est couvert de fines écailles blanches, presque transparentes. Ces écailles peuvent prendre une teinte verte et grise comme celles du lézard breijtja, ce qui lui permet de se camoufler facilement. |
 | `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Age` | 100, max 250 | 100, max 250 |
@@ -9810,6 +9832,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Name` | Huvfurwurm | Huvfurwurm |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Description` | The huvfurwurm closely resembles the lindwurm and braskelwurm. It is born with a single head and then resembles other wurms. Its neck and body bear great knobs and growths that distinguish it from its cousins. Hundreds, perhaps thousands, of these growths generate new heads as it ages or suffers. Every new head is unique and can become more powerful and dangerous. It may grow more than a hundred heads, until it can no longer move and collapses beneath their number. | Le huvfurwurm ressemble beaucoup au lindwurm et au braskelwurm. Il naît avec une seule tête et ressemble alors à tous les autres wurms. Son cou et son corps portent de grosses protubérances et excroissances qui le différencient de ses cousins. Ces excroissances disséminées partout sur son corps, par centaines et peut-être par milliers, génèrent de nouvelles têtes au fur et à mesure qu'il vieillit ou souffre. Chaque nouvelle tête est toujours unique et peut devenir plus puissante et dangereuse. Il peut ainsi porter plus d'une centaine de têtes, au point de ne plus pouvoir se déplacer et de s'effondrer sous leur nombre. |
@@ -9823,6 +9846,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Name` | Huvfurwurm Head | Tête de huvfurwurm |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Description` | One head of a huvfurwurm. | Une tête du huvfurwurm. |
 | `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Age` | variable, max variable | variable, max variable |
@@ -9838,6 +9862,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon2Part0` | Ice breath | Souffle de glace |
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Name` | Hrimwurm | Hrimwurm |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense1` | Darkvision (100-300 m) | Vision dans le noir (100 à 300 m) |
 | `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Sense2` | Thermal Sight | Vision thermique |
@@ -9855,6 +9880,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon2Part0` | Magma breath | Souffle magmatique |
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Name` | Jarnwurm | Jarnwurm |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense1` | Darkvision (100-300 m) | Vision dans le noir (100 à 300 m) |
 | `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Sense2` | Thermal Sight | Vision thermique |
@@ -9870,6 +9896,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Name` | Lindwurm | Lindwurm |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Description` | The lindwurm resembles a snake much more than other dragon creatures. Its massive body can reach sixty meters long. It is as thick as the greatest oak on the Viranne plains. This immense serpentine creature crawls and coils around its victims. Its jaws can swallow a goat in two bites and seize prey to carry away as it crawls. Its skin can be old and broad enough for followers to wrap themselves in during blood oaths. | Le lindwurm ressemble beaucoup plus à un serpent que les autres créatures draconiques. Son corps massif peut atteindre une longueur de 60 mètres. Il est aussi épais que le plus imposant des chênes des plaines de Viranne. C'est une massive créature serpentine qui se déplace en rampant et enserre ses victimes dans ses anneaux. Sa gueule peut engloutir une chèvre en deux bouchées et saisir une proie pour l'emporter en rampant. Sa peau est assez vieille et grande pour que les fidèles s'en enveloppent lors des serments de sang. |
@@ -9886,6 +9913,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon2Part0` | Fire breath | Souffle de feu |
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Name` | Logiwurm | Logewurm |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense1` | Darkvision (100-300 m) | Vision dans le noir (100 à 300 m) |
 | `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Sense2` | Thermal Sight | Vision thermique |
@@ -9907,6 +9935,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Name` | Yggwurm | Yggwurm |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Tag0` | dragon | dragon |
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Description` | This most legendary dragon has a long, sinuous body. It is so immense that its wingspan is almost twice a jarnwurm's. Its wings are so large that it can ride the waves of the wind for years without beating them. Its long, sinuous body prevents it from walking like other dragon creatures. It is not strong enough to lift its mass from the ground through wing power alone. It touches the ground only twice, at birth and when it crashes to die, living aloft on invisible air currents. | C'est le plus mythique des dragons, au corps long et sinueux. Il est si imposant que l'envergure de ses ailes est presque deux fois aussi importante que celle du jarnwurm. Ses ailes sont si grandes qu'il peut rester en lévitation sur les vagues du vent pendant des années sans jamais les agiter. À cause de son corps long et sinueux, il ne peut pas marcher comme les autres créatures draconiques. Il n'est pas assez puissant pour soulever sa masse du sol par la seule force de ses ailes. Il ne touche le sol que deux fois, à sa naissance et lorsqu'il s'écrase pour mourir, vivant en vol sur les courants d'air invisibles. |
@@ -9925,6 +9954,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon1` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Name` | Firdtursir | Firdtursir |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Tag0` | giant | géant |
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Description` | The firdtursir is a colossal giant usually twenty to twenty-two meters tall. Born from stone, its massive body seems to merge with the mountains as it sleeps, becoming part of nature. Its powerful frame lets it tear great rocks from mountainsides. Its belly truly holds gold, of a special kind that becomes harder and lighter when refined and worked. Adapted to the mountains, it withstands cold almost as well as a hrimtursir. Sleeping, it blends into the rock of slopes and cliffs. | Le firdtursir est un géant colossal mesurant le plus souvent entre vingt et vingt-deux mètres de haut. Issu de la pierre, son corps massif semble fusionner avec les montagnes lorsqu'il dort et devient partie intégrante de la nature. Sa carrure puissante lui permet d'arracher de grands rochers aux flancs des montagnes. Son ventre recèle véritablement de l'or, d'un type spécial qui devient plus dur et plus léger une fois raffiné et travaillé. Taillé pour la montagne, il résiste au froid presque aussi bien que les hrimtursirs. Endormi, il se confond avec la roche des versants et des falaises. |
@@ -9942,6 +9972,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon1` | Breid spjót (broad spear) | Breid spjót (lance à lame large) |
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Name` | Hrimtursir | Hrimtursir |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Tag0` | giant | géant |
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Description` | The hrimtursir is the smallest giant, usually fourteen to fifteen meters tall. It walks bent forward, and its face resembles a gray troll's. Its body has absorbed the cold and is described as an ice body that constantly releases cold around it. It bears great horns used in battle to strike and throw enemies into the air. Giants carry many skulls and objects tied to their bodies and clothing. Its belly holds white gold called hrimguld, or ice gold. | Le hrimtursir est le plus petit des géants, mesurant le plus souvent entre quatorze et quinze mètres de haut. Il marche penché vers l'avant et son visage ressemble à celui des trolls gris. Son corps a intégré le froid et est décrit comme un corps de glace qui relâche en permanence le froid autour de lui. Il porte de grandes cornes qu'il utilise au combat pour frapper et projeter ses ennemis dans les airs. Les géants portent sur le corps et les vêtements un nombre considérable de crânes et d'objets attachés. Son ventre recèle de l'or blanc, appelé hrimguld ou or de glace. |
 | `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Age` | 100, max 175 | 100, max 175 |
@@ -9955,6 +9986,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Name` | Logrjotun | Logrjotun |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Tag0` | giant | géant |
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Description` | The logrjotun is the largest giant, of imposing shape and impressive height. Shellfish, algae, and seaweed cover its green-and-blue skin. Its great head shelters seabirds that circle it looking for nesting places. After nightfall its large luminous eyes give off a glow like the full moon. From afar at night, they resemble two small round moons in the distance. Sitting motionless in the sea for decades, it can be mistaken for a small island. | Le logrjotun est le plus grand des géants, à la silhouette imposante et à la taille impressionnante. Sa peau verte et bleue est recouverte de crustacés, d'algues et de varech. Sa grande tête sert d'abri aux oiseaux marins qui volent en cercle autour et y cherchent un endroit où nicher. Ses grands yeux lumineux diffusent après la tombée de la nuit une lueur semblable à celle de la pleine lune. Vus de loin la nuit, ses yeux ressemblent à deux petites lunes rondes dans le lointain. Assis immobile dans la mer pendant des dizaines d'années, il peut être confondu avec une petite île. |
@@ -9969,6 +10001,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Name` | Muspeljotun | Muspeljotun |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Tag0` | giant | géant |
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Description` | The muspeljotun is a tall, clumsy giant usually twenty-five to twenty-seven meters high. Its soot-black body is protected by a hard black shell covered with cracks. Through these fissures in its petrified skin, its ever-burning innards and flowing lava can be seen. Its facial features make it seem happy, although it is a sorrowful race. At birth it resembles ancient giants of flame, then its skin slowly hardens from outside inward. At life's end, fully solidified and unable to move, it is little more than a great giant-shaped block of stone. | Le muspeljotun est un géant grand et maladroit mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut. Son corps est aussi noir que la suie, protégé par une carapace noire et dure couverte de fissures. À travers les fissures de sa peau pétrifiée, on aperçoit ses entrailles toujours ardentes où coule de la lave brûlante. Les traits de son visage donnent l'impression qu'il est heureux, alors qu'il s'agit d'une race triste. À la naissance, il ressemble aux anciens géants de feu faits de flammes, puis sa peau durcit lentement de l'extérieur vers l'intérieur. En fin de vie, totalement solidifié et incapable de bouger, il n'est guère plus qu'un gros bloc de pierre en forme de géant. |
@@ -9987,6 +10020,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon1` | Tvei klubb (two-handed club) | Arbre déraciné ou rocher |
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Name` | Vidrjotun | Vidrjotun |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Tag0` | giant | géant |
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Description` | The vidrjotun is a massive giant usually twenty-five to twenty-seven meters tall, its lower body often half buried in earth. Earth rather than skin forms its surface, making it resemble a great mound or grass-covered hill. Sleeping for generations, it lets trees and bushes grow on it, and every plant flourishes in its fertile soil. Its size depends on where it sleeps: small in rocky, barren ground and much larger in fertile earth. Instead of blood, tree-like sap runs through its veins, sticky and hardening in the air. It carries the seeds of countless flowers, trees, and other plants, spreading them as it wakes. | Le vidrjotun est un géant massif mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut, dont la partie inférieure du corps est souvent à moitié enfouie dans la terre. La surface de son corps se compose de terre et non de peau, ce qui le fait ressembler à un grand monticule ou à une colline tapissée d'herbe. Assoupi pendant des générations, il laisse arbres et buissons pousser sur lui et fait fleurir tout végétal sur son sol fertile. Sa taille dépend de la nature du sol où il s'est assoupi : petite dans les sols rocheux et arides, bien plus grande dans les sols fertiles. Au lieu de sang, il a de la sève dans les veines, comme les arbres, une sève collante qui durcit à l'air. Il porte en lui les semences d'innombrables fleurs, arbres et autres végétaux qu'il dissémine à son réveil. |
 | `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Age` | 350, max 600 | 350, max 600 |
@@ -10027,6 +10061,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon0Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon1` | Stafur (staff) | Stafur (bâton) |
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Name` | Fjol Troll | Fjoltroll |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Description` | Fjol trolls are extremely rare creatures able to assume almost any imaginable form. In their original shape, they resemble both gray trolls and king trolls. They have grayish skin and a long nose. Their eyes are as deep as a well. Those eyes are said to reflect all the knowledge they have accumulated. | Les fjoltrolls sont des créatures extrêmement rares capables d'adopter pratiquement toutes les formes possibles et imaginables. Lorsqu'ils reprennent leur forme d'origine, ils ressemblent à la fois à un gråtroll et à un kungstroll. Ils ont une peau grisâtre et un long nez. Leurs yeux sont aussi profonds qu'un puits. Ces yeux reflèteraient, dit-on, tout le savoir qu'ils ont accumulé. |
@@ -10065,6 +10100,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon1` | Split axi (hand axe) | Split axi (hache à une main) |
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Armor0` | Fur / Leather Armor | cuir |
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Name` | Goblin | Gobelin |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Description` | Goblins are small creatures, about one meter tall, with gray skin. Almost all have a small muscular body and an elongated head and nose. Nose shape distinguishes individuals. Most have noses somewhat like pigs'. Some have noses more like those of humans or trolls. | Les gobelins sont des créatures de petite taille, mesurant environ un mètre de haut, avec la peau grise. Pratiquement tous ont un petit corps musclé, avec une tête et un nez allongés. La forme du nez permet de les différencier entre eux. La plupart ont un nez qui ressemble quelque peu à celui du cochon. Certains ont un nez qui ressemble davantage à celui des humains ou à celui des trolls. |
@@ -10112,6 +10148,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4` | Small fur-reinforced shield | Petit bouclier renforcé de fourrure |
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Name` | Gray Troll | Gråtroll |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Description` | Most gray trolls have bodies slightly larger than humans'. A thick head with a large projecting nose crowns the body. They have muscular arms, short bowed legs, and oversized feet. Like king trolls, gray trolls have long cow-like tails. Their sense of smell is reputed to be very keen. | Le corps de la plupart des trolls gris est légèrement plus imposant que celui des humains. Il est orné d'une tête plutôt épaisse avec un gros nez protubérant. Ils ont des bras musclés, des petites jambes arquées et de trop grands pieds. Comme les kungstrolls, les gråtrolls ont une longue queue semblable à celle des vaches. Leur odorat est réputé très poussé. |
@@ -10156,6 +10193,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Name` | Young Hrim Troll | Jeune hrimtroll |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Tag0` | troll | troll |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Tag1` | giant | géant |
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Description` | The young hrim troll is a large troll resembling a large king troll, but with small tusks. Its thick tusks protrude from its mouth, still light and short. Thick hair on its skull continues down its back as a mane, and it also has a beard. Its body has absorbed cold for so long that it constantly releases it into its surroundings. It still stands upright and walks in a less bestial fashion. | Le jeune hrimtroll est un grand troll qui ressemble à un grand kungstroll, mais avec de petites défenses. Ses épaisses défenses sortent de sa bouche et restent encore légères et courtes. Il possède une tignasse épaisse sur le crâne qui se prolonge le long du dos pour former une crinière, ainsi qu'une barbe. Son corps a intégré le froid depuis si longtemps qu'il le relâche en permanence autour de lui. Il se tient encore en position debout et marche de manière peu bestiale. |
@@ -10201,6 +10240,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Armor0` | Fur / Leather Armor | fourrure |
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Attack0Step0` | Tusk Throw | Projection à coup de défenses |
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Name` | Old Hrim Troll | Vieux hrimtroll |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Tag0` | troll | troll |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Tag1` | giant | géant |
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Description` | With age, the old hrim troll has become gigantic and bestial as its tusks have grown heavier. They are so thick and heavy that they prevent it from standing upright. It grows larger and walks more and more like a beast, hurling enemies upward with its tusks. Thick hair on its skull continues down its back as a mane, and it also has a beard. Its body has absorbed cold and continually releases it as a sphere around itself. | Le vieux hrimtroll est devenu gigantesque et bestial avec l'âge, au fur et à mesure que ses défenses ont poussé et se sont alourdies. Ses défenses sont devenues si épaisses et si lourdes qu'elles l'empêchent de se tenir en position debout. Il grossit et marche de manière de plus en plus bestiale, projetant ses ennemis d'un coup de défenses vers le haut. Il possède une tignasse épaisse sur le crâne prolongée en crinière le long du dos, ainsi qu'une barbe. Son corps a intégré le froid et le relâche en permanence sous la forme d'une sphère autour de lui. |
@@ -10254,6 +10295,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Armor0` | Fur / Leather Armor | fourrure |
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Attack1Step0` | Wrestling | Lutte |
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Name` | King Troll | Kungstroll |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Description` | The king troll has long black hair, a pointed nose and ears, and a long hairy cow's tail. As it grows, it usually becomes taller than other trolls. Its body is nevertheless finer, more muscular, and leaner than a gray troll's, for example. From dry land, it uses its long tail to fish. It likes to wear rings, bracelets, and other shining ornaments. | Le kungstroll a de longs cheveux noirs, un nez et des oreilles pointus, et une longue queue de vache poilue. En grandissant, il dépasse généralement en taille les autres trolls. Son corps est cependant plus fin, plus musculeux et plus sec que celui des gråtrolls, par exemple. Il utilise sa longue queue depuis la terre ferme pour pêcher. Il aime porter des anneaux, des bracelets et d'autres ornements brillants. |
 | `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Age` | 75, max 200 | 75, max 200 |
@@ -10291,6 +10333,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon2` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Name` | Ogre | Ogre |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Tag0` | troll | troll |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Tag1` | giant | géant |
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Description` | The ogre is the smallest member of the giant and troll family. The contemporary common ogre inherited the size of mountain ogres. It inherited the great teeth of forest ogres. It inherited the greenish skin of river ogres. Its clothing is extremely primitive, as are the weapons and tools it carries. | L'ogre est le plus petit des membres de la famille des géants et des trolls. L'ogre commun contemporain a hérité de la taille des ogres des montagnes. Il a hérité des grandes dents des ogres des forêts. Il a hérité de la peau verdâtre des ogres des rivières. Sa tenue est extrêmement primitive, tout comme les armes et les outils qu'il porte. |
 | `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Age` | 30, max 70 | 30, max 70 |
@@ -10339,6 +10383,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Armor0` | Fur / Leather Armor | cuir |
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Attack0Step0` | Bite/Claws | Morsure/Griffes |
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Name` | Forest Troll | Skogstroll |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Tag0` | troll | troll |
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Description` | The forest troll has a hunched muscular body with brown, sometimes green skin. Its nose is as long as its ears. The fangs emerging from its mouth are less sturdy than those of other trolls. Its teeth are nevertheless razor-sharp. It paints its body with blue mud, also called pig mud. | Le skogstroll a un corps voûté et musclé, avec une peau marron ou parfois verte. Son nez est aussi long que ses oreilles. Les crocs qui émergent de sa bouche ne sont pas aussi solides que ceux des autres trolls. Ses dents sont toutefois aussi tranchantes que des rasoirs. Il peint son corps avec de la boue bleue, aussi appelée boue de cochon. |
@@ -10353,6 +10398,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Weapon0Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Name` | Eagle | Aigle |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Description` | This large bird of prey has a massive body and broad chest, covered in dark brown plumage with golden highlights on its nape. Its powerful head bears a sharp hooked beak, yellow at the base and black at the tip, above piercing amber eyes. Broad rectangular wings with long fingered flight feathers give it an impressive span. Its strong legs, feathered down to the talons, end in formidable curved black claws. Its short wedge-shaped tail, lighter in older birds, beats the air strongly on takeoff. | C'est un grand rapace au corps massif et à la poitrine large, couvert d'un plumage brun sombre aux reflets dorés sur la nuque. Sa tête puissante porte un bec crochu et tranchant, jaune à la base et noir à la pointe, surmontant des yeux perçants au regard ambré. Ses larges ailes rectangulaires, aux rémiges longuement digitées, lui donnent une envergure impressionnante. Ses pattes robustes et emplumées jusqu'aux serres se terminent par des griffes noires redoutablement recourbées. Sa queue courte et cunéiforme, plus claire chez les vieux individus, bat l'air avec force lors du décollage. |
 | `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Age` | null | null |
@@ -10366,6 +10412,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Weapon0Part0` | Horns | Cornes |
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Name` | Ram/Goat | Bélier/chèvre |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Description` | This stocky hoofed animal has a compact body covered in thick woolly, often tangled gray or brown fleece. Its bearded head bears horizontally pupiled eyes and great ridged horns that curl into spirals in rams. Short muscular legs end in cloven hooves that grip rocks firmly. Its thick neck supports a massive skull reinforced for headbutting. A short tail and chin beard complete its rustic shape. | C'est un ongulé trapu au corps compact, couvert d'une toison épaisse, laineuse et souvent emmêlée, grise ou brune. Sa tête barbue porte des yeux à pupilles horizontales et de grandes cornes striées recourbées en spirale chez le bélier. Ses pattes courtes et musclées se terminent par des sabots fendus très adhérents aux rochers. Son cou épais supporte un crâne massif renforcé pour les coups de tête. Sa queue courte et sa barbe sous le menton complètent sa silhouette rustique. |
 | `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Age` | null | null |
@@ -10379,6 +10426,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Weapon0Part0` | Horns | Cornes |
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Name` | Ox/Bull | Boeuf/taureau |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Description` | This massive beast has a deep chest and thick neck crowned with a muscular hump. Its broad head bears a wet muzzle and flared nostrils, with two thick curved pointed horns. Rough dense fur, brown-black or brindled, thickens around neck and shoulders in winter. Pillar-like legs end in broad cloven hooves capable of trampling snow. Its long tuft-ended tail drives away insects with nervous flicks. | C'est une bête massive au poitrail profond et à l'encolure épaisse surmontée d'une bosse musculaire. Sa tête large porte un mufle humide et naseaux dilatés, ainsi que deux cornes épaisses, courbes et pointues. Son pelage rude et dense, brun-noir ou bringé, s'épaissit en hiver autour du cou et des épaules. Ses pattes colonnaires se terminent par de larges sabots fendus capables de piétiner la neige. Sa longue queue touffue à l'extrémité chasse les insectes d'un mouvement nerveux. |
 | `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Age` | null | null |
@@ -10393,6 +10441,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Name` | Wolverine | Carcajou |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Description` | This stocky, short-legged mustelid has an elongated body and a plantigrade gait like a small bear's. Its long dense coarse fur is dark brown, with tawny side stripes running from shoulders to tail. Its broad short-muzzled head bears small rounded ears and powerful jaws with crushing teeth. Short legs carry long curved claws ideal for digging and climbing. Its bushy, relatively short tail balances its compact form. | C'est un mustélidé trapu et bas sur pattes, au corps allongé et à la démarche plantigrade évoquant un petit ours. Sa fourrure longue, dense et grossière est brun sombre, marquée de bandes latérales fauves allant des épaules à la queue. Sa tête large au museau court porte de petites oreilles arrondies et une mâchoire puissante aux dents broyeuses. Ses pattes courtes sont armées de griffes longues et recourbées, idéales pour creuser et grimper. Sa queue touffue et relativement courte équilibre sa silhouette ramassée. |
 | `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Age` | null | null |
@@ -10406,6 +10455,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Weapon0Part0` | Horns | Cornes |
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Name` | Deer/Elk | Cerf/élan |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Description` | This slender deer has long fine legs and a graceful body covered in reddish-brown summer fur and gray-brown winter fur. Its long neck carries a fine dark-muzzled head, crowned in males by branching antlers shed and regrown each year. Large mobile ears turn at the slightest sound, and its black eyes are gentle and watchful. Narrow cloven hooves clatter on hard ground and sink little into peat bogs. Its short white-bottomed tail rises in alarm. | C'est un cervidé élancé aux longues pattes fines et au corps svelte couvert d'un pelage brun-roux en été, gris-brun en hiver. Son cou allongé porte une tête fine au museau sombre, surmontée chez le mâle d'une ramure ramifiée qui tombe et repousse chaque année. Ses grandes oreilles mobiles pivotent au moindre bruit et ses yeux noirs sont doux et vigilants. Ses sabots étroits et fendus claquent sur les sols durs et s'enfoncent peu dans les tourbières. Sa courte queue blanche en dessous se relève en cas d'alerte. |
 | `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Age` | null | null |
@@ -10419,6 +10469,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Weapon0Part0` | Kick | Ruade |
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Name` | Horse (large) | Cheval (grand) |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Description` | This imposing warhorse stands tall, with a deep chest and powerful shoulders. Its arched neck carries a thick, often braided mane matching its bay, black, or gray coat. Its long straight-profiled head has broad nostrils and lively wide-set eyes. Long muscular limbs with lean tendons end in broad strong hooves. Its full tail and prominent thigh muscles emphasize its strength for pulling and charging. | C'est un destrier imposant à la stature haute, à la poitrine profonde et aux épaules puissantes. Son encolure arquée porte une crinière épaisse et souvent tressée, assortie à sa robe baie, noire ou grise. Sa tête longue au profil rectiligne présente de larges naseaux et des yeux vifs bien espacés. Ses membres longs et musclés, aux tendons secs, se terminent par de larges sabots solides. Sa queue fournie et ses muscles saillants des cuisses soulignent sa force de traction et de charge. |
 | `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Age` | null | null |
@@ -10432,6 +10483,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Weapon0Part0` | Kick | Ruade |
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Name` | Horse (normal) | Cheval (normal) |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Description` | This medium-sized horse has a balanced silhouette, both sturdy and agile. Its short smooth bay, chestnut, or dapple-gray coat covers a straight back and rounded rump. Its medium-length neck bears a hanging mane and a proportionate broad-browed head. Fine but sinewy legs end in hard medium-sized hooves. A long silky tail and upright attentive ears give it an alert appearance. | C'est un cheval de taille moyenne à la silhouette équilibrée, à la fois solide et agile. Son pelage court et lisse, bai, alezan ou gris pommelé, couvre un dos droit et une croupe arrondie. Son encolure de longueur moyenne porte une crinière tombante et une tête proportionnée au front large. Ses jambes fines mais nerveuses se terminent par des sabots durs de taille moyenne. Sa queue longue et soyeuse et ses oreilles droites et attentives lui donnent un air alerte. |
 | `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Age` | null | null |
@@ -10445,6 +10497,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Weapon0Part0` | Kick | Ruade |
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Name` | Horse (small) | Cheval (petit) |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Description` | This small sturdy horse has a compact body, round belly, and short strong legs. Its thick shaggy winter coat, often bay, brown, or piebald, protects it from cold. A rather heavy head bears an abundant forelock, small hairy ears, and gentle eyes. Its dense mane and very full tail are almost never trimmed. Its small but extremely hard hooves handle stony terrain easily. | C'est un petit cheval robuste au corps compact, au ventre rond et aux jambes courtes et solides. Sa robe épaisse et hirsute en hiver, souvent baie, brune ou pie, le protège du froid. Sa tête un peu forte porte un toupet abondant, de petites oreilles poilues et des yeux doux. Sa crinière drue et sa queue très fournie ne sont presque jamais taillées. Ses sabots petits mais très durs supportent sans peine les terrains pierreux. |
 | `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Age` | null | null |
@@ -10458,6 +10511,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Name` | Dog (medium) | Chien (moyen) |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Description` | This medium-sized dog has an athletic, well-proportioned body and deep chest. Its double gray, sandy, or black-and-white coat is thicker around neck and tail. Its wedge-shaped head bears a long black-nosed muzzle, upright or partly drooping ears, and intelligent eyes. Agile feet end in thick pads and nonretractile claws. Its plumed tail, held high when active, constantly expresses its attention. | C'est un chien de taille moyenne au corps athlétique et bien proportionné, à la poitrine descendue. Son pelage double, gris, sable ou noir marqué de blanc, est plus épais autour du cou et de la queue. Sa tête en forme de coin porte un museau allongé à la truffe noire, des oreilles dressées ou semi-tombantes et des yeux intelligents. Ses pattes agiles se terminent par des coussinets épais et des griffes non rétractiles. Sa queue en panache, portée haute en action, exprime constamment son attention. |
 | `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Age` | null | null |
@@ -10472,6 +10526,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Name` | Drauglo | Drauglo |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Description` | This slender predator is the size of a large wolf, its lean muscular body built for running. Shaggy ash-gray fur, striped black along the spine, rises on its nape when it threatens. Its long head carries a tapering muzzle with curled lips, slanted sickly yellow eyes, and pointed ears always upright. Long lean legs end in sharp black claws that clatter on stone. Its thin low tail, barely bushy, lashes the air as it circles prey. | C'est un prédateur élancé de la taille d'un grand loup, au corps maigre et musclé taillé pour la course. Son pelage hirsute et gris-cendré, strié de noir le long de l'échine, se hérisse sur la nuque quand il menace. Sa tête allongée porte un museau effilé aux babines retroussées, des yeux obliques d'un jaune maladif et des oreilles pointues toujours dressées. Ses longues pattes sèches se terminent par des griffes noires acérées qui claquent sur la pierre. Sa queue maigre et basse, à peine touffue, fouette l'air lorsqu'il encercle sa proie. |
 | `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Age` | null | null |
@@ -10485,6 +10540,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Weapon0Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Name` | Falcon | Faucon |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Description` | This small slender raptor has a streamlined body and compact chest, with blue-gray plumage on its back and white below, finely barred in black. Its round head bears a short strongly hooked beak with a tomial tooth, and a dark moustache below piercing yellow-ringed eyes. Long narrow pointed sickle-shaped wings give it lightning-fast flight. Fine yellow feet end in sharp talons. Its narrow barred tail steers its dizzying dives. | C'est un petit rapace svelte au corps fuselé et à la poitrine compacte, couvert d'un plumage gris-bleuté sur le dos et blanc finement barré de noir dessous. Sa tête ronde porte un bec court et fortement crochu muni d'une dent tomiale, ainsi qu'une moustache sombre sous ses yeux perçants cerclés de jaune. Ses ailes longues, étroites et pointues en faucille lui donnent un vol fulgurant. Ses pattes jaunes et fines se terminent par des serres acérées. Sa queue étroite et barrée sert de gouvernail dans ses piqués vertigineux. |
 | `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Age` | null | null |
@@ -10499,6 +10555,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon0Part0` | Sweep | Balayage |
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon1Part0` | Tusks | Défense |
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Name` | Mastomant | Mastomant |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Description` | This colossal barrel-bodied beast is covered in incredibly thick long brown fur over a woolly undercoat. Its massive head bears small hairy ears, tiny sunken eyes, and a muscular trunk hanging to its knees. Two immense curved ivory tusks rise from its upper jaw and turn toward the sky. Trunk-like pillar legs end in broad padded feet with thick nails. Its short rope-like tail beats against its shaggy flanks. | C'est une bête colossale au corps en forme de tonneau, couverte d'une fourrure incroyablement épaisse, longue et brune, doublée d'un sous-poil laineux. Sa tête massive porte de petites oreilles poilues, de minuscules yeux enfoncés et une trompe musculeuse pendant jusqu'aux genoux. Deux défenses immenses, courbes et ivoirines, s'élancent de sa mâchoire supérieure et se recourbent vers le ciel. Ses pattes colonnaires, semblables à des troncs, se terminent par de larges pieds coussinés aux ongles épais. Sa queue courte et cordée bat contre ses flancs velus. |
 | `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Age` | null | null |
@@ -10512,6 +10569,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Weapon0Part0` | Kick | Ruade |
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Name` | Mule/Donkey | Mule/âne |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Description` | This sturdy equine has a compact body, prominent spine, and straight hard back. Its coarse short gray, brown, or reddish coat is lighter around muzzle and belly. Its long head bears very large mobile ears, gentle eyes, and a narrow tough-mouthed muzzle. Fine but surprisingly strong legs end in narrow very durable hooves. A thin tail with a dark tuft and a short upright mane complete its frugal appearance. | C'est un équidé robuste au corps compact, à l'échine saillante et au dos droit et dur. Son pelage rude et court, gris, brun ou vineux, est plus clair autour du museau et du ventre. Sa tête longue porte de très grandes oreilles mobiles, des yeux doux et un museau étroit à la bouche dure. Ses jambes fines mais étonnamment solides se terminent par des sabots étroits et très résistants. Sa queue fine terminée par un toupet sombre et sa crinière rase et dressée complètent son aspect frugal. |
 | `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Age` | null | null |
@@ -10525,6 +10583,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Weapon0Part0` | Horns | Cornes |
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Name` | Moose | Orignal |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Description` | This largest deer has a massive body, humped shoulders, and very long pale legs. Its thick brown-black fur contrasts with an enormous hanging hairy muzzle and broad nostrils. Males bear gigantic palmate antlers like toothed shovels, spanning several fathoms. Broad ears and small eyes give its head a heavy expression. Wide splayed hooves carry it easily through marshes and deep snow. | C'est le plus grand des cervidés, au corps massif, au garrot bossu et aux pattes très longues et pâles. Son pelage épais brun-noir contraste avec son museau énorme, pendant et velu, surmonté de naseaux larges. Le mâle porte une ramure palmée et gigantesque, en forme de pelles dentelées pouvant s'étendre sur plusieurs brasses. Ses oreilles larges et ses yeux petits donnent à sa tête une expression lourde. Ses sabots larges et évasés le portent sans peine dans les marais et la neige profonde. |
 | `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Age` | null | null |
@@ -10539,6 +10598,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon1Part0` | Claws | Griffes |
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Name` | Bear | Ours |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Description` | This massive plantigrade animal has a barrel-shaped body, humped shoulders, and a broad round head. Thick shaggy brown-to-black fur forms a neck ruff and sometimes lightens to silver tips on its back. Its elongated muzzle has a wet black nose, small dark eyes, and short rounded ears. Powerful feet bear long nonretractile claws that plow the ground. Its tiny tail almost vanishes beneath the rump's fur. | C'est un plantigrade massif au corps en tonneau, aux épaules bossues et à la tête large et ronde. Sa fourrure épaisse et hirsute, brune à noire, forme une collerette autour du cou et s'éclaircit parfois en pointe argentée sur le dos. Son museau allongé porte une truffe noire et humide, de petits yeux sombres et de courtes oreilles arrondies. Ses pattes puissantes sont armées de longues griffes non rétractiles qui labourent le sol. Sa queue minuscule disparaît presque sous les poils de sa croupe. |
 | `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Age` | null | null |
@@ -10552,6 +10612,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Name` | Fox | Renard |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Description` | This small slender canine has an elongated body, fine legs, and a light carriage. Dense silky fur, bright red on the back, white beneath the throat, and black on lower legs and ear backs, thickens in winter. Its fine head bears a pointed black-nosed muzzle, upright triangular ears, and amber slit-pupiled eyes. Delicate feet have hairy pads adapted to snow. Its long thick bushy white-tipped tail serves as both balance and blanket. | C'est un petit canidé svelte au corps allongé, aux pattes fines et au port léger. Son pelage dense et soyeux, roux vif sur le dos, blanc sous la gorge et noir sur le bas des pattes et l'arrière des oreilles, s'épaissit en hiver. Sa tête fine porte un museau pointu à la truffe noire, des oreilles triangulaires dressées et des yeux ambrés à pupilles fendues. Ses pattes délicates se terminent par des coussinets poilus adaptés à la neige. Sa queue longue, épaisse et touffue, terminée de blanc, lui sert de balancier et de couverture. |
 | `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Age` | null | null |
@@ -10565,6 +10626,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Weapon0Part0` | Tusks | Défense |
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Name` | Snow Boar | Sanglier des neiges |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Description` | This stocky wild pig has a wedge-shaped body, taller in front than behind, covered in long rough whitish bristles over dense underfur. Its massive wedge-shaped head bears a broad mobile snout, small sunken eyes, and pointed hair-fringed ears. Two yellowish upward-curving tusks protrude from its jaws and sharpen against each other. Short muscular legs end in dark hooves that scrape snow. Its thin tuft-ended tail flicks nervously when it charges. | C'est un porc sauvage trapu au corps en forme de coin, plus haut à l'avant qu'à l'arrière, couvert de soies longues, rêches et blanchâtres mêlées d'un sous-poil dense. Sa tête massive et cunéiforme porte un groin large et mobile, de petits yeux enfoncés et des oreilles pointues bordées de poils. Deux défenses jaunâtres recourbées vers le haut saillent de sa gueule et s'aiguisent l'une contre l'autre. Ses pattes courtes et musclées se terminent par des sabots noirâtres qui raclent la neige. Sa queue fine terminée par un pinceau claque nerveusement quand il charge. |
 | `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Age` | null | null |
@@ -10578,6 +10640,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Weapon0Part0` | Horns | Cornes |
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Name` | Cow | Vache |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Description` | This peaceful bovine has a full body, broad belly, and straight back covered in short soft brown, black, white, or piebald fur. Its long head bears a broad pink or black muzzle, great long-lashed eyes, and mobile side-facing ears. Small curved horns, or no horns depending on the individual, adorn its forehead. Strong legs end in cloven hooves suited to wet pasture. Its full udder and long fly-swatting tail mark its familiar silhouette. | C'est un bovidé paisible au corps plein, au ventre large et au dos droit, couvert d'un pelage court et doux, brun, noir, blanc ou pie. Sa tête allongée porte un large mufle rose ou noir, de grands yeux bordés de longs cils et des oreilles latérales mobiles. De petites cornes courbes ou une simple absence de cornes selon les individus ornent son front. Ses pattes robustes se terminent par des sabots fendus bien adaptés aux pâtures humides. Sa mamelle pleine et sa queue longue chassant les mouches marquent sa silhouette familière. |
 | `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Age` | null | null |
@@ -10591,6 +10654,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Name` | Wulter | Wulter |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Description` | This titanic sea monster has an elongated serpentine body covered in thick slate-colored skin shining as if oiled. Its enormous flattened head bears gaping jaws with rows of conical teeth, bulging eyes gleaming underwater, and hissing blowholes. Powerful side fins and a massive paddle-shaped tail drive it through raging seas. Ridges of spines or rough baleen bristle on its back and neck. Pale scars and encrusted barnacles mottle its ancient hide. | C'est un monstre marin titanesque au corps allongé et serpentiforme, couvert d'une peau épaisse, ardoisée et luisante comme huilée. Sa tête énorme et aplatie porte une gueule béante hérissée de rangées de dents coniques, des yeux globuleux luisant sous l'eau et des évents sifflants. Des nageoires latérales puissantes et une queue massive en forme de rame le propulsent dans les flots déchaînés. Des crêtes d'épines ou de fanons rugueux hérissent son dos et sa nuque. Des cicatrices pâles et des balanes incrustées marbrent son cuir ancien. |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Age` | null | null |
@@ -10733,6 +10797,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Name` | Animated Undead Slave | Esclave mort-vivant |
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Description` | The ritual animates a reasonably complete corpse or skeleton and gives the creator control over its actions. The base profile rolls 1d10 (OR 10) + 5 health points and 1d10 (OR 10) + 20 skill points to distribute. It has exceptional traits Dexterity −4 and Intelligence −4, plus an untrained sense that can detect living beings within 10 metres after a situation test SV 8, even if invisible or camouflaged (except grindblom or the Domain of Mists). The power must expire before the ritual can be cast again. This compendium template shows the ordinary 1–10 result range before open rolls; skill points remain unallocated. | Le rituel anime un cadavre ou squelette raisonnablement complet et permet au créateur de contrôler ses actes. Le profil de base tire 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir. Il reçoit les traits exceptionnels Dextérité -4 et Intelligence -4, ainsi qu’un sens inné qui détecte les êtres vivants dans un rayon de 10 mètres après un test de situation SV 8, même invisibles ou camouflés (sauf grindblom ou Domaine des Brumes). Le sort doit expirer avant que le rituel puisse être relancé. Ce modèle du compendium affiche la plage ordinaire de 1 à 10 avant jets ouverts; les points de compétence restent à répartir. |
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Age` | not specified | non précisé |
@@ -10746,6 +10811,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Skill0` | Fighting | Combat |
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Weapon0Part0` | Beak | Bec |
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Name` | Raven | Corbeau |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Description` | A small glossy-black corvid with faintly iridescent plumage, a heavy curved beak and startlingly clever eyes. Ravens are bold opportunists that follow armies, feast on the fallen and haunt old battlefields, remembering favours and slights with equal precision. | Petit corvidé noir au plumage lustré aux reflets irisés, au bec lourd et incurvé, aux ailes larges et aux yeux d'une intelligence redoutable. Hardis opportunistes, les corbeaux suivent les armées, se repaissent des morts et hantent les anciens champs de bataille ; ils se souviennent avec la même précision des faveurs reçues et des outrages subis. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du corbeau. |
@@ -10758,6 +10824,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Name` | Salmon | Saumon |
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Tag0` | animal | animal |
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Description` | A silvery salmon of Trudvang's rivers, dark-spotted along the flank and heavy of jaw. Salmon migrate upstream from the sea to lay their eggs, leaping the shallows on the way. | Saumon argenté des rivières et fleuves de Trudvang, moucheté de noir sur les flancs et doté d'un maxillaire robuste et accrocheur. Il remonte des estuaires vers les sources pour y frayer, franchissant les cataractes à contre-courant, puis meurt après la ponte sans jamais redescendre. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du saumon. |
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Age` | null | null |
@@ -10829,6 +10896,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourcePage` | 143 | 187 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Duration` | 3 days | 3 days |
+
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Name` | Grip | Adhérence |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Description` | Bare hands and feet adhere to surfaces, walls and ceilings. The recipient controls the grip and climbs at half movement. | Les mains et pieds nus adhèrent aux surfaces, murs et plafonds. Le bénéficiaire contrôle son adhérence ; il se déplace à la moitié de son mouvement en escaladant. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourceName` | Grip | Adhérence |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourcePage` | 96 | 192 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Duration` | 10 rounds | 10 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin`
 
@@ -12387,6 +12465,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.DragHint` | Drag onto an actor or click to apply | Glisser sur un acteur ou cliquer pour appliquer |
 | `TRUDVANG.Transformation.AllocationTargets` | Targets already affected: {used} / {max}. Distribute power levels among targets. | Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles. |
 | `TRUDVANG.Transformation.HealingDiseaseNote` | Bonus to the test to overcome the disease: +{value}. | Bonus au test pour vaincre la maladie : +{value}. |
+| `TRUDVANG.Transformation.ClimbingNote` | Climbing roll: +{value} Agility bonus. | Jet d’escalade : bonus de +{value} en Agilité. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

@@ -264,6 +264,45 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
   },
+  "vitner-body-vitner:grip:0#adherence": {
+    "id": "adherence",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:grip:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-body-vitner:grip:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:grip:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-body-vitner:grip:0:2"
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 5,
+        "value": 1,
+        "skill": "agility",
+        "labelKey": "TRUDVANG.Transformation.ClimbingNote",
+        "optionId": "vitner-body-vitner:grip:0:4"
+      }
+    ]
+  },
   "vitner-body-vitner:leather-skin:5#leather-skin": {
     "id": "leather-skin",
     "icon": "icons/svg/shield.svg",
@@ -5753,6 +5792,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
+  ],
+  "vitner-body-vitner:grip:0": [
+    "vitner-body-vitner:grip:0#adherence"
   ],
   "vitner-body-vitner:leather-skin:5": [
     "vitner-body-vitner:leather-skin:5#leather-skin"

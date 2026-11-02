@@ -289,3 +289,10 @@ personnes et, si au moins l'une d'elles est autre que le lanceur, un effet
 secondaire au lanceur et à deux alliés au maximum. La durée est commune ;
 l'amélioration de l'effet secondaire est attribuée à un allié. La portée reste
 à vérifier manuellement (Livre des règles, p. 239–240).
+
+Les effets dont les conséquences sont contextuelles peuvent exposer un bouton
+de jet de compétence conditionnel et un résumé calculé depuis les niveaux du
+lancement. Adhérence utilise cette méthode pour l'escalade : le bonus d'Agilité
+ne s'applique pas aux autres jets, et le déplacement particulier reste descriptif.
+Les tags éditables des PNJ proviennent des références bilingues du bestiaire ;
+ils servent à décrire les catégories et ne déclenchent pas encore de bonus.

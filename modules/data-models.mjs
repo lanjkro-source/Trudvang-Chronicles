@@ -285,6 +285,7 @@ export class NpcData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       ...actorCommonSchema(),
+      tags: new fields.ArrayField(string(), {required: true, initial: []}),
       traitCurrent: schema(Object.fromEntries(["charisma", "constitution", "dexterity", "intelligence", "perception", "psyche", "strength"]
         .map(key => [key, new fields.NumberField({required: true, nullable: true, integer: true, initial: null})]))),
       details: schema({

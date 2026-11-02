@@ -164,6 +164,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
     context.editable = this.isEditable && this.actor.isOwner;
     context.owner = this.actor.isOwner;
+    context.npcTags = Array.from(this.actor.system.tags ?? []).join(", ");
     context.isGM = game.user.isGM;
     context.effectiveFearFactor = parseFearFactor(this.actor.transformationProfile?.fearFactor ?? this.actor.system.details?.fearFactor);
     context.fearFactor = context.effectiveFearFactor;
@@ -660,6 +661,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (!this.isEditable || !this.actor.isOwner) return;
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
+    if(this.actor.type==="npc" && editedPath==="trudvang.tags")foundry.utils.setProperty(changes,"system.tags",[...new Set(String(formData.object[editedPath]??"").split(",").map(tag=>tag.trim()).filter(Boolean))]);
+    if(changes.trudvang)delete changes.trudvang.tags;
     if(editedPath==="trudvang.size")foundry.utils.setProperty(changes,"system.details.size",formData.object[editedPath]);
     if(changes.trudvang)delete changes.trudvang.size;
     if(editedPath==="trudvang.temporaryHP")await setTemporaryHealth(this.actor,formData.object[editedPath]);

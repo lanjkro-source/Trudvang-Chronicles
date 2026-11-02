@@ -9031,6 +9031,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg"
     ],
+    "tags": [
+      "troll"
+    ],
     "traits": {
       "dexterity": -2,
       "intelligence": 10,

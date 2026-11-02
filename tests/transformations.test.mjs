@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,101);
+ assert.equal(Object.keys(sources).length,102);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -807,4 +807,10 @@ test("conditional healing bonus reads the originating frozen levels and disappea
  assert.deepEqual(conditionalSituationBonuses(effect).map(row=>row.value),[5]);
  effect.disabled=true;assert.deepEqual(conditionalSituationBonuses(effect),[]);
  effect.disabled=false;effect.duration={expired:true};assert.deepEqual(conditionalSituationBonuses(effect),[]);
+});
+
+test("Grip exposes its climbing skill bonus from the frozen power levels",async()=>{
+ const {conditionalSituationBonuses}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="vitner-body-vitner:grip:0",effect={flags:{"trudvang-chronicles":{transformation:{key:`${id}#adherence`,sourceId:id,ruleTestContext:{countsById:{[`${id}:4`]:3}}}}}};
+ assert.deepEqual(conditionalSituationBonuses(effect).map(({skill,value})=>({skill,value})),[{skill:"agility",value:8}]);
 });

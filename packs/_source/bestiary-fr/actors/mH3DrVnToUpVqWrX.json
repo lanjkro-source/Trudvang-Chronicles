@@ -217,6 +217,10 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpg"
     ],
+    "tags": [
+      "troll",
+      "géant"
+    ],
     "traits": {
       "constitution": 4,
       "dexterity": -4,

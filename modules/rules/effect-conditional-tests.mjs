@@ -10,6 +10,7 @@ export function conditionalSituationBonuses(effect) {
  const context=meta.ruleTestContext??{};
  return (template.parameters??[]).filter(p=>p.target==="note").map(p=>({
   labelKey:p.labelKey,
+  skill:p.skill ?? "",
   value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)
  }));
 }

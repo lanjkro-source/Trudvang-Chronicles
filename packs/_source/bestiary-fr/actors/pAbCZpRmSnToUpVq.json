@@ -213,6 +213,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg"
     ],
+    "tags": [
+      "troll"
+    ],
     "traits": {
       "constitution": 1,
       "intelligence": -2,

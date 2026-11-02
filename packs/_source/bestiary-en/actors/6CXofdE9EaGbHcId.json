@@ -22,6 +22,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
     ],
+    "tags": [
+      "undead"
+    ],
     "traits": {
       "intelligence": -4,
       "dexterity": -4

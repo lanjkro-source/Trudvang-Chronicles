@@ -101,6 +101,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpg"
     ],
+    "tags": [
+      "troll"
+    ],
     "traits": {
       "intelligence": -4,
       "strength": 6

@@ -1,0 +1,45 @@
+{
+  "_id": "Ag7HG1v1w2x3y4z5",
+  "_key": "!items!Ag7HG1v1w2x3y4z5",
+  "name": "Adhérence",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:grip:0#adherence",
+    "description": "Les mains et pieds nus adhèrent aux surfaces, murs et plafonds. Le bénéficiaire contrôle son adhérence ; il se déplace à la moitié de son mouvement en escaladant.",
+    "summary": "Escalade : +5 en Agilité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 192
+    }
+  },
+  "effects": [
+    {
+      "_id": "BFHQa1u0v1w2x3y4",
+      "_key": "!items.effects!Ag7HG1v1w2x3y4z5.BFHQa1u0v1w2x3y4",
+      "name": "Adhérence",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les mains et pieds nus adhèrent aux surfaces, murs et plafonds. Le bénéficiaire contrôle son adhérence ; il se déplace à la moitié de son mouvement en escaladant.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:grip:0#adherence",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:grip:0#adherence",
+            "sourceId": "vitner-body-vitner:grip:0",
+            "summary": "Escalade : +5 en Agilité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

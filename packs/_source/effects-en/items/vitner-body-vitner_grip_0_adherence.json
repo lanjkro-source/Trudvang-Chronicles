@@ -1,0 +1,45 @@
+{
+  "_id": "Ag7HG1v1w2x3y4z5",
+  "_key": "!items!Ag7HG1v1w2x3y4z5",
+  "name": "Grip",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:grip:0#adherence",
+    "description": "Bare hands and feet adhere to surfaces, walls and ceilings. The recipient controls the grip and climbs at half movement.",
+    "summary": "Climbing: +5 Agility.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "BFHQa1u0v1w2x3y4",
+      "_key": "!items.effects!Ag7HG1v1w2x3y4z5.BFHQa1u0v1w2x3y4",
+      "name": "Grip",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Bare hands and feet adhere to surfaces, walls and ceilings. The recipient controls the grip and climbs at half movement.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:grip:0#adherence",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:grip:0#adherence",
+            "sourceId": "vitner-body-vitner:grip:0",
+            "summary": "Climbing: +5 Agility.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

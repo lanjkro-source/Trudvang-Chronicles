@@ -122,3 +122,10 @@ test("known tablets and powers carry their full localized cast data and unique e
     }
   }
 });
+
+test("bestiary creature tags are localized and preserve overlapping giant and troll categories",()=>{
+ for(const [code,needle,expected] of [["fr","hrimtroll",["troll","géant"]],["en","hrim troll",["troll","giant"]]]){
+  const matches=packs[code].actors.filter(actor=>actor.name.toLowerCase().includes(needle));assert.equal(matches.length,2);
+  for(const actor of matches)for(const tag of expected)assert.ok(actor.system.tags.includes(tag),`${code}: ${actor.name} missing ${tag}`);
+ }
+});

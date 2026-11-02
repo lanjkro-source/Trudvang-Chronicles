@@ -191,6 +191,9 @@
       "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpg",
       "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe-2.jpg"
     ],
+    "tags": [
+      "troll"
+    ],
     "traits": {
       "dexterity": 2,
       "intelligence": -4,

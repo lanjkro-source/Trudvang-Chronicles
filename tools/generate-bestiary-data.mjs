@@ -20,6 +20,7 @@ if (sources.fr.length !== sources.en.length) throw new Error("Bilingual creature
 for(const [i,entry]of sources.fr.entries()){
  const mechanics=senses=>(senses??[]).map(({label,...data})=>data);
  if(JSON.stringify(mechanics(entry.senses))!==JSON.stringify(mechanics(sources.en[i].senses)))throw new Error(`Unaligned creature senses: ${entry.name}`);
+ if((entry.tags??[]).length!==(sources.en[i].tags??[]).length)throw new Error(`Unaligned creature tags: ${entry.name}`);
 }
 const languages = Object.fromEntries(["fr", "en"].map(code => [code, load(`lang/${code}.json`)]));
 for (const language of Object.values(languages)) language.TRUDVANG.Content.Creature = {};
@@ -164,7 +165,7 @@ const entries = sources.fr.map((creature, index) => {
   const actor = {nameKey: key("Name", creature.name, english.name), type: "npc", img, items, effects: [],
     flags: {"trudvang-chronicles": {bestiaryId: id, inventoryInitialized: true}},
     prototypeToken: {actorLink: false, ...creatureTokenDimensions(creature.size), texture: {src: img}},
-    system: {portraits, traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
+    system: {portraits, tags: (creature.tags ?? []).map((tag,i)=>key(`Tag${i}`,tag,english.tags?.[i] ?? tag)), traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
       if (!traitKeys[trait]) throw new Error(`Unknown trait ${trait}`); return [traitKeys[trait], value];
     })), skills: Object.fromEntries(rawRows.filter(row => row.kind === "skill" && row.skillKey).map(row => [row.skillKey, {value: row.value, bonus: 0}])),
     senses:(creature.senses??[]).map((s,i)=>({...s,labelKey:key(`Sense${i}`,s.label,english.senses[i].label),label:undefined})),

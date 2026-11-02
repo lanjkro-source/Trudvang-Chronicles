@@ -77,6 +77,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Tag0"
+        ],
         "traits": {
           "strength": 6
         },
@@ -259,6 +262,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/mlmpT0u0v1w2x3y4.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Tag0"
         ],
         "traits": {
           "strength": 6
@@ -443,6 +449,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV.jpg",
           "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Tag0"
         ],
         "traits": {
           "strength": 6
@@ -680,6 +689,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/Vj5tquWrXsYtZu0v.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Tag0"
         ],
         "traits": {
           "dexterity": -1,
@@ -947,6 +959,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg",
           "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Tag0"
         ],
         "traits": {
           "strength": 4
@@ -1232,6 +1247,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Tag0"
         ],
         "traits": {
           "constitution": 4,
@@ -1646,6 +1664,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -1810,6 +1831,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/i4meLKfLgMhNiOjP.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Tag0"
         ],
         "traits": {
           "strength": 6
@@ -1986,6 +2010,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -2183,6 +2210,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/YjHk2sXsYtZu0v1w.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -2377,6 +2407,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/vQylEPiOjPkQlRmS.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -2580,6 +2613,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/vdNvhdE9EaGbHcId.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -2782,6 +2818,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": -2,
           "constitution": 2,
@@ -3152,6 +3189,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/vRp0IPgMhNiOjPkQ.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Tag0"
         ],
         "traits": {
           "constitution": 6,
@@ -3701,6 +3741,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
           "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG-2.jpg"
         ],
+        "tags": [],
         "traits": {},
         "skills": {},
         "senses": [
@@ -3972,6 +4013,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7.jpg",
           "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Tag0"
         ],
         "traits": {
           "psyche": 3,
@@ -4379,6 +4423,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-3.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Tag0"
+        ],
         "traits": {
           "dexterity": -2,
           "strength": 1
@@ -4555,6 +4602,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Tag0"
         ],
         "traits": {
           "dexterity": 1
@@ -4798,6 +4848,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpg",
           "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-3.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Tag0"
         ],
         "traits": {
           "strength": 4
@@ -5326,6 +5379,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-3.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Tag0"
+        ],
         "traits": {
           "charisma": -4,
           "constitution": -4,
@@ -5712,6 +5768,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
           "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY-2.jpg"
         ],
+        "tags": [],
         "traits": {
           "constitution": 1,
           "intelligence": -4,
@@ -5959,6 +6016,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": -4,
           "constitution": -4,
@@ -6360,6 +6418,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/yhighfHcIdJeKfLg.jpg"
         ],
+        "tags": [],
         "traits": {
           "dexterity": 4,
           "intelligence": 2
@@ -6517,6 +6576,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpg"
         ],
+        "tags": [],
         "traits": {
           "constitution": 6,
           "dexterity": -2,
@@ -6704,6 +6764,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-3.jpg"
         ],
+        "tags": [],
         "traits": {
           "constitution": -2,
           "dexterity": 2,
@@ -6867,6 +6928,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-3.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": 4,
           "dexterity": 2,
@@ -7037,6 +7099,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg"
         ],
+        "tags": [],
         "traits": {},
         "skills": {
           "fighting": {
@@ -7171,6 +7234,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg"
         ],
+        "tags": [],
         "traits": {},
         "skills": {},
         "senses": [
@@ -7310,6 +7374,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/JgkUG6A6B7C8D9Ea.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": -2,
           "psyche": 3,
@@ -7489,6 +7554,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/C2JQJUlRmSnToUpV.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": 1,
           "dexterity": 1,
@@ -7680,6 +7746,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpg",
           "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN-2.jpg"
         ],
+        "tags": [],
         "traits": {
           "charisma": 2,
           "intelligence": 1
@@ -8050,6 +8117,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
           "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf-2.jpg"
         ],
+        "tags": [],
         "traits": {
           "dexterity": 4,
           "intelligence": 2
@@ -8384,6 +8452,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg",
           "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8-2.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 6
         },
@@ -8574,6 +8643,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Tag0"
+        ],
         "traits": {
           "intelligence": -4,
           "strength": 6
@@ -8734,6 +8806,7 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg",
           "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6-2.jpg"
         ],
+        "tags": [],
         "traits": {
           "intelligence": 4,
           "perception": 4
@@ -8889,6 +8962,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Tag0"
         ],
         "traits": {
           "perception": 2
@@ -9073,6 +9149,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
           "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Tag0"
+        ],
         "traits": {
           "intelligence": -4,
           "perception": 2,
@@ -9239,6 +9318,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc-3.jpg",
           "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc-4.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Tag0"
+        ],
         "traits": {
           "strength": 6
         },
@@ -9396,6 +9478,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Tag0"
         ],
         "traits": {
           "perception": 2,
@@ -9616,6 +9701,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/gP59DE9EaGbHcIdJ.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Tag0"
+        ],
         "traits": {
           "intelligence": 4,
           "strength": 10
@@ -9792,6 +9880,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg",
           "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb-2.jpg",
           "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb-3.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Tag0"
         ],
         "traits": {
           "constitution": 4,
@@ -10001,6 +10092,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0.jpg",
           "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Tag0"
+        ],
         "traits": {
           "intelligence": 4,
           "strength": 10
@@ -10203,6 +10297,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Tag0"
         ],
         "traits": {
           "intelligence": 6,
@@ -10451,6 +10548,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Tag0"
+        ],
         "traits": {
           "psyche": 2,
           "strength": 8
@@ -10655,6 +10755,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpg",
           "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Tag0"
+        ],
         "traits": {
           "strength": 8
         },
@@ -10821,6 +10924,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpg",
           "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Tag0"
+        ],
         "traits": {
           "intelligence": -4,
           "strength": 8
@@ -10977,6 +11083,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpg",
           "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Tag0"
         ],
         "traits": {
           "strength": 8
@@ -11154,6 +11263,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpg",
           "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Tag0"
         ],
         "traits": {
           "intelligence": -1,
@@ -11357,6 +11469,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Tag0"
         ],
         "traits": {
           "dexterity": -2,
@@ -11836,6 +11951,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpg",
           "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Tag0"
+        ],
         "traits": {
           "dexterity": 2,
           "intelligence": -4,
@@ -12306,6 +12424,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Tag0"
         ],
         "traits": {
           "constitution": 1,
@@ -12838,6 +12959,10 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpg",
           "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Tag0",
+          "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Tag1"
+        ],
         "traits": {
           "constitution": 4,
           "strength": 6
@@ -13319,6 +13444,10 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Tag0",
+          "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Tag1"
         ],
         "traits": {
           "constitution": 4,
@@ -13837,6 +13966,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpg",
           "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Tag0"
         ],
         "traits": {
           "intelligence": 4,
@@ -14403,6 +14535,10 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Tag0",
+          "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Tag1"
+        ],
         "traits": {
           "constitution": 2,
           "dexterity": -2,
@@ -14885,6 +15021,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpg",
           "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW-2.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Tag0"
+        ],
         "traits": {
           "dexterity": 2,
           "intelligence": -4
@@ -15300,6 +15439,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -15445,6 +15587,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/wprpkdFaGbHcIdJe.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -15581,6 +15726,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -15747,6 +15895,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/OjaxlXoUpVqWrXsY.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -15896,6 +16047,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/x4cqdG9EaGbHcIdJ.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -16035,6 +16189,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/0o5gF9A6B7C8D9Ea.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -16171,6 +16328,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/1bVcYSlRmSnToUpV.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -16311,6 +16471,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -16449,6 +16612,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/Ii4dUOiOjPkQlRmS.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -16617,6 +16783,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/wVmetmRmSnToUpVq.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -16767,6 +16936,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/qvQbCJeKfLgMhNiO.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -16935,6 +17107,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/wYxOQTmSnToUpVqW.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17078,6 +17253,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17214,6 +17392,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/2sZ3UZtZu0v1w2x3.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -17374,6 +17555,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/h3NsTz4z5A6B7C8D.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17523,6 +17707,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/cP0QED8D9EaGbHcI.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17668,6 +17855,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/8Yv3GSkQlRmSnToU.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17811,6 +18001,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg"
         ],
+        "tags": [
+          "TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Tag0"
+        ],
         "traits": {},
         "skills": {
           "fighting": {
@@ -17947,6 +18140,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Tag0"
         ],
         "traits": {},
         "skills": {
@@ -18144,6 +18340,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.jpg"
         ],
+        "tags": [],
         "traits": {},
         "skills": {},
         "senses": [
@@ -18315,6 +18512,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 1
         },
@@ -18440,6 +18638,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 4
         },
@@ -18557,6 +18756,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 4
         },
@@ -18730,6 +18930,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 1
         },
@@ -18901,6 +19102,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 2
         },
@@ -19021,6 +19223,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 4
         },
@@ -19138,6 +19341,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 5
         },
@@ -19232,6 +19436,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.jpg"
         ],
+        "tags": [],
         "traits": {
           "strength": 6
         },
@@ -19326,6 +19531,7 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.jpg"
         ],
+        "tags": [],
         "traits": {},
         "skills": {},
         "senses": [
@@ -19417,6 +19623,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Tag0"
         ],
         "traits": {
           "intelligence": -4,
@@ -19529,6 +19738,9 @@ export const BESTIARY_ENTRIES = [
       "system": {
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Tag0"
         ],
         "traits": {
           "dexterity": 4,
@@ -19662,6 +19874,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
           "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW-2.jpg"
+        ],
+        "tags": [
+          "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Tag0"
         ],
         "traits": {},
         "skills": {},

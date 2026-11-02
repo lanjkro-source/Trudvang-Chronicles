@@ -24,6 +24,7 @@ export function effectTooltipSummary(effect) {
   const summary=meta?.summary
     || effect?.system?.summary
     || parentSummary;
+  if(meta?.summaryResolved && summary)return summary;
   // Catalogue wording also updates the tooltip of existing world copies;
   // their descriptions and mechanical changes remain untouched.
   if(!effect?.system?.summary&&meta?.key){

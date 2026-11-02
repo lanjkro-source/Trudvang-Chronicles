@@ -161,6 +161,9 @@
     "portraits": [
       "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg"
     ],
+    "tags": [
+      "undead"
+    ],
     "traits": {
       "dexterity": 1
     },

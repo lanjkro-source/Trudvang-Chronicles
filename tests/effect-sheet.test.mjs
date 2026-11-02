@@ -1073,3 +1073,10 @@ test("conditional situation buttons belong to the effect owner and sit outside t
  effect.disabled=false;actor.isOwner=false;assert.equal((await sheet._preparePartContext("details",{})).conditionalSituationButtons.length,0);
  assert.equal(await TrudvangEffectSheet.onRollConditionalSituation.call(sheet,{preventDefault(){}},{dataset:{index:"0"}}),null);
 });
+
+test("Grip effect launches the owner's agility roll with its allocated climbing bonus",async()=>{
+ const id="vitner-body-vitner:grip:0",calls=[],actor={documentName:"Actor",isOwner:true,rollSkill:async(...args)=>{calls.push(args);return "rolled";}};
+ const document={name:"Adhérence",parent:actor,flags:{"trudvang-chronicles":{transformation:{key:`${id}#adherence`,sourceId:id,ruleTestContext:{countsById:{[`${id}:4`]:2}}}}}};
+ const result=await TrudvangEffectSheet.onRollConditionalSituation.call(sheetFor(document),{preventDefault(){}},{dataset:{index:"0"}});
+ assert.equal(result,"rolled");assert.deepEqual(calls,[["agility",{label:"Adhérence",bonus:7,bonusLabel:"Adhérence"}]]);
+});
