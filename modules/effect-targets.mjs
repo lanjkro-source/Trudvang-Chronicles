@@ -90,5 +90,5 @@ export async function requestEffectTargetUpdate(message,key,{tokens=[],remove=""
 }
 export function effectTargetListHTML(rows,{editable=false}={}){
  const t=key=>game.i18n.localize(`TRUDVANG.Transformation.${key}`);
- return `<div class="effect-target-list"><span>${escapeHtml(t("Targets"))}</span>${editable?` <button type="button" class="damage-target-edit" data-action="effect-target-add" title="${escapeAttribute(t("AddTargets"))}"><i class="fas fa-plus"></i></button>`:""}<ul>${rows.map(row=>`<li>${escapeHtml(row.name)}${editable?` <button type="button" class="damage-target-edit" data-action="effect-target-remove" data-actor-uuid="${escapeAttribute(row.actorUuid)}" title="${escapeAttribute(t("RemoveTarget"))}"><i class="fas fa-minus"></i></button>`:""}</li>`).join("")}</ul></div>`;
+ return `<div class="effect-target-list">${editable?`<button type="button" class="damage-target-edit" data-action="effect-target-add" title="${escapeAttribute(t("AddTargets"))}"><i class="fas fa-plus"></i></button>`:""}<ul>${rows.map(row=>`<li><span>${escapeHtml(row.name)}</span>${editable?`<button type="button" class="damage-target-edit" data-action="effect-target-remove" data-actor-uuid="${escapeAttribute(row.actorUuid)}" title="${escapeAttribute(t("RemoveTarget"))}"><i class="fas fa-minus"></i></button>`:""}</li>`).join("")}</ul></div>`;
 }

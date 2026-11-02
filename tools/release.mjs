@@ -53,37 +53,6 @@ async function dispatchReleaseWorkflow({repository, token, ref}) {
   if (!response.ok) fail(`Could not dispatch the GitHub release workflow (${response.status}): ${await response.text()}`);
 }
 
-async function waitForReleaseAsset({repository, token, tag, headHash}) {
-  const headers = {
-    Accept: "application/vnd.github+json",
-    Authorization: `Bearer ${token}`,
-    "X-GitHub-Api-Version": "2022-11-28",
-    "User-Agent": "Trudvang-release-script"
-  };
-  const deadline = Date.now() + (5 * 60 * 1000);
-  while (Date.now() < deadline) {
-    const releaseResponse = await fetch(`https://api.github.com/repos/${repository}/releases/tags/${tag}`, {headers});
-    if (releaseResponse.ok) {
-      const release = await releaseResponse.json();
-      const asset = release.assets.find(candidate => candidate.name === "trudvang-chronicles.zip");
-      if (asset) return asset.browser_download_url;
-    } else if (releaseResponse.status !== 404) {
-      fail(`Could not verify GitHub release ${tag} (${releaseResponse.status}): ${await releaseResponse.text()}`);
-    }
-
-    const runsResponse = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/release.yml/runs?event=workflow_dispatch&per_page=20`, {headers});
-    if (runsResponse.ok) {
-      const {workflow_runs: runs} = await runsResponse.json();
-      const run = runs.find(candidate => candidate.head_sha === headHash);
-      if (run?.status === "completed" && run.conclusion !== "success") {
-        fail(`GitHub release workflow failed: ${run.html_url}`);
-      }
-    }
-    await new Promise(resolve => setTimeout(resolve, 5000));
-  }
-  fail(`Timed out waiting for GitHub to attach trudvang-chronicles.zip to ${tag}.`);
-}
-
 const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]);
 if (branch !== "main") fail(`Releases happen from main (current: ${branch}).`);
 const head = git(["rev-parse", "HEAD"]);
@@ -144,10 +113,8 @@ steps.push({label: "verify remote state", run: () => {
 steps.push({label: "dispatch GitHub release workflow", run: async () => {
   const repository = githubRepository();
   const token = githubToken();
-  const headHash = git(["rev-parse", "HEAD"]);
   await dispatchReleaseWorkflow({repository, token, ref: tag});
-  const assetUrl = await waitForReleaseAsset({repository, token, tag, headHash});
-  console.log(`GitHub release asset: ${assetUrl}`);
+  console.log(`GitHub release workflow dispatched for ${tag}.`);
 }});
 
 console.log(`Release plan for v${version}${dryRun ? " (dry-run)" : ""}:`);

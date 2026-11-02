@@ -66,6 +66,10 @@ function attachListeners(message, html) {
       const key=button.dataset.transformationKey;
       if(!message.flags?.["trudvang-chronicles"]?.ruleTestContext || button.nextElementSibling?.classList?.contains("effect-target-list"))continue;
       button.setAttribute("aria-disabled",editable?"false":"true");
+      const group=document.createElement("div");
+      group.className="effect-target-group";
+      button.before(group);
+      group.append(button);
       button.insertAdjacentHTML("afterend",effectTargetListHTML(effectTargetsFor(message,key),{editable}));
       const list=button.nextElementSibling;
       list?.querySelector("[data-action='effect-target-add']")?.addEventListener("click",async event=>{

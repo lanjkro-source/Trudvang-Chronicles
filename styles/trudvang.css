@@ -1097,9 +1097,10 @@
 /* Effect offers share the normal text rhythm in descriptions and chat. */
 .trudvang-transformation-links { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: .5rem; }
 .trudvang-transformation-links:has(.effect-target-list) { display: block; }
-.effect-target-list { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; margin: .1rem 0 .45rem; font-size: .9em; }
-.effect-target-list ul { display: inline-flex; flex-wrap: wrap; gap: .35rem; list-style: none; margin: 0; padding: 0; }
-.effect-target-list li { display: inline-flex; align-items: center; }
+.effect-target-group { display: grid; grid-template-columns: minmax(0, 1fr) 18px; align-items: center; gap: .1rem .25rem; margin-bottom: .35rem; }
+.effect-target-list { display: contents; font-size: .9em; }
+.effect-target-list ul { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; }
+.effect-target-list li { display: flex; align-items: center; justify-content: space-between; gap: .25rem; }
 .trudvang.chat-card .effect-target-list .damage-target-edit { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; min-width: 0; min-height: 0; padding: 0; color: var(--trudvang-accent); background: transparent; border: 0; box-shadow: none; }
 button.trudvang-transformation-link { width: auto; min-height: 0; height: auto; line-height: inherit; padding: .1em .4em; cursor: grab; color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-gold) 20%, transparent); border: 1px solid currentColor; border-radius: .3em; }
 button.trudvang-transformation-link:hover { filter: brightness(1.2); }
