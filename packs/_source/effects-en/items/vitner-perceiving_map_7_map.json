@@ -1,0 +1,45 @@
+{
+  "_id": "viGPp9B7C8D9EaGb",
+  "_key": "!items!viGPp9B7C8D9EaGb",
+  "name": "Map",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:map:7#map",
+    "description": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or miniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In addition, the enchanter gets an idea of how many people, animals, and other beings are present in the surrounding area, as well as where they are, but not their identity, since the mage cannot make out details such as facial features or distinguishing marks. In the basic version, the enchanter can reach out with their mind up to a radius of 1 kilometer.",
+    "summary": "Perceives the general layout of the surroundings.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 112
+    }
+  },
+  "effects": [
+    {
+      "_id": "cG8GiSlRmSnToUpV",
+      "_key": "!items.effects!viGPp9B7C8D9EaGb.cG8GiSlRmSnToUpV",
+      "name": "Map",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or miniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In addition, the enchanter gets an idea of how many people, animals, and other beings are present in the surrounding area, as well as where they are, but not their identity, since the mage cannot make out details such as facial features or distinguishing marks. In the basic version, the enchanter can reach out with their mind up to a radius of 1 kilometer.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:map:7#map",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:map:7#map",
+            "sourceId": "vitner-perceiving:map:7",
+            "summary": "Perceives the general layout of the surroundings.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

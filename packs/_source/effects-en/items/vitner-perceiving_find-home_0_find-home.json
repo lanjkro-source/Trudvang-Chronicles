@@ -1,0 +1,45 @@
+{
+  "_id": "EaS5YA4z5A6B7C8D",
+  "_key": "!items!EaS5YA4z5A6B7C8D",
+  "name": "Find Home",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:find-home:0#find-home",
+    "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction.",
+    "summary": "Indicates the direction of a familiar place.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 112
+    }
+  },
+  "effects": [
+    {
+      "_id": "xuLbObE9EaGbHcId",
+      "_key": "!items.effects!EaS5YA4z5A6B7C8D.xuLbObE9EaGbHcId",
+      "name": "Find Home",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:find-home:0#find-home",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:find-home:0#find-home",
+            "sourceId": "vitner-perceiving:find-home:0",
+            "summary": "Indicates the direction of a familiar place.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

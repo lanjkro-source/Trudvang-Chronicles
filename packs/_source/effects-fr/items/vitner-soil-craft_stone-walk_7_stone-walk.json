@@ -1,0 +1,45 @@
+{
+  "_id": "p2DFAdFaGbHcIdJe",
+  "_key": "!items!p2DFAdFaGbHcIdJe",
+  "name": "Marche dans la pierre",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-soil-craft:stone-walk:7#stone-walk",
+    "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de métaux ou de pierre. À chaque tour de jeu, le bénéficiaire du sort peut avancer à travers ces matériaux d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la pierre et le métal statiques et immobiles. Il ne permet pas de traverser les armes en métal ou en pierre étant donné qu’elles sont en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans la pierre à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours dans la pierre, il se retrouve emprisonné par la roche qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve dans la roche au moment où le sort prend fin, il commence également à suffoquer.",
+    "summary": "Permet de traverser la pierre et le métal immobiles.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "UyHep5w2x3y4z5A6",
+      "_key": "!items.effects!p2DFAdFaGbHcIdJe.UyHep5w2x3y4z5A6",
+      "name": "Marche dans la pierre",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de métaux ou de pierre. À chaque tour de jeu, le bénéficiaire du sort peut avancer à travers ces matériaux d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la pierre et le métal statiques et immobiles. Il ne permet pas de traverser les armes en métal ou en pierre étant donné qu’elles sont en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans la pierre à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours dans la pierre, il se retrouve emprisonné par la roche qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve dans la roche au moment où le sort prend fin, il commence également à suffoquer.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-soil-craft:stone-walk:7#stone-walk",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-soil-craft:stone-walk:7#stone-walk",
+            "sourceId": "vitner-soil-craft:stone-walk:7",
+            "summary": "Permet de traverser la pierre et le métal immobiles.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

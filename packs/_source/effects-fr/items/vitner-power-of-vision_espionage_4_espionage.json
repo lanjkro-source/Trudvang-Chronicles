@@ -1,0 +1,45 @@
+{
+  "_id": "2ywQkXqWrXsYtZu0",
+  "_key": "!items!2ywQkXqWrXsYtZu0",
+  "name": "Espionnage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:espionage:4#espionage",
+    "description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
+    "summary": "Permet de percevoir à distance autour de l’objet enchanté.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 182
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZtOKyiLgMhNiOjPk",
+      "_key": "!items.effects!2ywQkXqWrXsYtZu0.ZtOKyiLgMhNiOjPk",
+      "name": "Espionnage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:espionage:4#espionage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:espionage:4#espionage",
+            "sourceId": "vitner-power-of-vision:espionage:4",
+            "summary": "Permet de percevoir à distance autour de l’objet enchanté.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

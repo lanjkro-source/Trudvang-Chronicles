@@ -13693,6 +13693,24 @@
         }
       },
       "Transformation": {
+        "vitner-soil-craft:soil-walk:5#soil-walk": {
+          "Name": "Marche dans la terre",
+          "Summary": "Permet de traverser la terre immobile.",
+          "Description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de sol. À chaque tour de jeu, le bénéficiaire du sort peut avancer dans la terre d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la terre statique et immobile. Il ne protège pas le bénéficiaire des glissements de terrain et autres attaques à base de terre, à moins qu’il ne se déplace sous la terre en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans le sol à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours sous terre, il se retrouve emprisonné par le sol qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve sous terre au moment où le sort prend fin, il commence également à suffoquer.",
+          "SourceName": "Marche dans la terre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "161",
+          "Duration": "2 minutes"
+        },
+        "vitner-soil-craft:stone-walk:7#stone-walk": {
+          "Name": "Marche dans la pierre",
+          "Summary": "Permet de traverser la pierre et le métal immobiles.",
+          "Description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de métaux ou de pierre. À chaque tour de jeu, le bénéficiaire du sort peut avancer à travers ces matériaux d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la pierre et le métal statiques et immobiles. Il ne permet pas de traverser les armes en métal ou en pierre étant donné qu’elles sont en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans la pierre à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours dans la pierre, il se retrouve emprisonné par la roche qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve dans la roche au moment où le sort prend fin, il commence également à suffoquer.",
+          "SourceName": "Marche dans la pierre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "162",
+          "Duration": "2 minutes"
+        },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification": {
           "Name": "Pétrification/Annuler une pétrification",
           "Summary": "Pétrifie la cible et la transforme en statue.",
@@ -13720,6 +13738,15 @@
           "SourcePage": "162",
           "Duration": "3 days"
         },
+        "vitner-water-craft:find-water:0#find-water": {
+          "Name": "Sourcier",
+          "Summary": "Localise les sources et masses d’eau.",
+          "Description": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchanteur peut localiser toutes les sources et masses d’eau situées à portée. Une fois que l’enchanteur a perçu l’odeur d’une source, il reste conscient de la direction dans laquelle elle se trouve pendant toute la durée du sort. Cependant, il peut à tout moment annuler le vitner qui le conduit vers une source spécifique afin de suivre une nouvelle source découverte pendant le tissage du sort. L’eau qu’il trouve par ce biais peut très bien être contaminée, stagnante ou située loin sous terre. Ce sort ne fonctionne pas très bien sous la pluie : les gouttes d’eau déconcentrent l’enchanteur. Ce dernier doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur ­d’Intelligence) pour ne pas être distrait ou désorienté par la pluie.",
+          "SourceName": "Sourcier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "163",
+          "Duration": "10 minutes"
+        },
         "vitner-water-craft:breathe:2#respiration": {
           "Name": "Respiration aquatique",
           "Summary": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
@@ -13738,6 +13765,15 @@
           "SourcePage": "171",
           "Duration": "5 tours de jeu"
         },
+        "vitner-perceiving:find-home:0#find-home": {
+          "Name": "Chemin du retour",
+          "Summary": "Indique la direction d’un lieu familier.",
+          "Description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact.",
+          "SourceName": "Chemin du retour",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "173",
+          "Duration": "1 heure"
+        },
         "vitner-perceiving:retrace-tracks:1#traces": {
           "Name": "Traces",
           "Summary": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
@@ -13755,6 +13791,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "174",
           "Duration": "1 heure"
+        },
+        "vitner-perceiving:surrounding:6#surrounding": {
+          "Name": "Environnement",
+          "Summary": "Perçoit la configuration des environs.",
+          "Description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres.",
+          "SourceName": "Environnement",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "176",
+          "Duration": "3 minutes"
+        },
+        "vitner-perceiving:map:7#map": {
+          "Name": "Cartographie",
+          "Summary": "Perçoit la configuration générale des environs.",
+          "Description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre.",
+          "SourceName": "Cartographie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "176",
+          "Duration": "5 minutes"
         },
         "vitner-power-of-thought:understanding-script:0#ecrits": {
           "Name": "Compréhension des écrits",
@@ -13809,6 +13863,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "179",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-power-of-vision:espionage:4#espionage": {
+          "Name": "Espionnage",
+          "Summary": "Permet de percevoir à distance autour de l’objet enchanté.",
+          "Description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
+          "SourceName": "Espionnage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "182",
+          "Duration": "1 heure"
+        },
+        "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
+          "Name": "Voyage astral",
+          "Summary": "Projette l’esprit hors du corps.",
+          "Description": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de l’enchanteur se déplace à la frontière entre Trudvang et Dimhall. Là, il peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la personne enchantée quitte son enveloppe charnelle, cette dernière entre en hibernation. L’enchanteur entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de l’enchanteur. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. L’enchanteur doit prendre soin de se rapprocher de son corps avant l’expiration du corps. S’il ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que l’enchanteur subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de vitner, et qui le plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au sort Vision véritable. Un autre enchanteur qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le sort Dissipation du vitner. Le personnage ainsi banni subit alors les mêmes effets que si le sort avait expiré.",
+          "SourceName": "Voyage astral",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "183",
+          "Duration": "5 minutes"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",

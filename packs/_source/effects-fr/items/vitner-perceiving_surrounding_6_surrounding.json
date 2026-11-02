@@ -1,0 +1,45 @@
+{
+  "_id": "UPTEHF6B7C8D9EaG",
+  "_key": "!items!UPTEHF6B7C8D9EaG",
+  "name": "Environnement",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:surrounding:6#surrounding",
+    "description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres.",
+    "summary": "Perçoit la configuration des environs.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "PbmmBfJeKfLgMhNi",
+      "_key": "!items.effects!UPTEHF6B7C8D9EaG.PbmmBfJeKfLgMhNi",
+      "name": "Environnement",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:surrounding:6#surrounding",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:surrounding:6#surrounding",
+            "sourceId": "vitner-perceiving:surrounding:6",
+            "summary": "Perçoit la configuration des environs.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

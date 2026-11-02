@@ -1,0 +1,45 @@
+{
+  "_id": "p2DFAdFaGbHcIdJe",
+  "_key": "!items!p2DFAdFaGbHcIdJe",
+  "name": "Stone Walk",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-soil-craft:stone-walk:7#stone-walk",
+    "description": "The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well.",
+    "summary": "Allows travel through stationary stone and metal.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "UyHep5w2x3y4z5A6",
+      "_key": "!items.effects!p2DFAdFaGbHcIdJe.UyHep5w2x3y4z5A6",
+      "name": "Stone Walk",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-soil-craft:stone-walk:7#stone-walk",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-soil-craft:stone-walk:7#stone-walk",
+            "sourceId": "vitner-soil-craft:stone-walk:7",
+            "summary": "Allows travel through stationary stone and metal.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

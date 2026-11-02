@@ -1,0 +1,45 @@
+{
+  "_id": "EaS5YA4z5A6B7C8D",
+  "_key": "!items!EaS5YA4z5A6B7C8D",
+  "name": "Chemin du retour",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:find-home:0#find-home",
+    "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact.",
+    "summary": "Indique la direction d’un lieu familier.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 173
+    }
+  },
+  "effects": [
+    {
+      "_id": "xuLbObE9EaGbHcId",
+      "_key": "!items.effects!EaS5YA4z5A6B7C8D.xuLbObE9EaGbHcId",
+      "name": "Chemin du retour",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:find-home:0#find-home",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:find-home:0#find-home",
+            "sourceId": "vitner-perceiving:find-home:0",
+            "summary": "Indique la direction d’un lieu familier.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

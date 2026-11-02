@@ -1,0 +1,45 @@
+{
+  "_id": "0Xvm8eGbHcIdJeKf",
+  "_key": "!items!0Xvm8eGbHcIdJeKf",
+  "name": "Find Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:find-water:0#find-water",
+    "description": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range. Once the enchanter picks up the scent of a water source, they maintain this sense of direction for the duration of the spell. However, at any time, they can cancel the vitner that is leading toward a specific source and instead pursue a new one discovered through the weaving. Water that is found this way could be foul, stagnant, or located deep underground. The spell does not work as easily when it is raining, because the raindrops disturb the enchanter’s attempt. To find a water source in the rain, a Situation roll is needed with a Situation value of 10 (Intelligence modifiers apply) to keep from being distracted or misled by the rain.",
+    "summary": "Locates sources and bodies of water.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "HuccBJeKfLgMhNiO",
+      "_key": "!items.effects!0Xvm8eGbHcIdJeKf.HuccBJeKfLgMhNiO",
+      "name": "Find Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range. Once the enchanter picks up the scent of a water source, they maintain this sense of direction for the duration of the spell. However, at any time, they can cancel the vitner that is leading toward a specific source and instead pursue a new one discovered through the weaving. Water that is found this way could be foul, stagnant, or located deep underground. The spell does not work as easily when it is raining, because the raindrops disturb the enchanter’s attempt. To find a water source in the rain, a Situation roll is needed with a Situation value of 10 (Intelligence modifiers apply) to keep from being distracted or misled by the rain.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:find-water:0#find-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:find-water:0#find-water",
+            "sourceId": "vitner-water-craft:find-water:0",
+            "summary": "Locates sources and bodies of water.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

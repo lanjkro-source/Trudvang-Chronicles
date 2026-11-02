@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 182 variantes.
+les états, les règles et les liens des 190 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -315,3 +315,5 @@ Les tags éditables des PNJ proviennent des références bilingues du bestiaire 
 ils servent à décrire les catégories et ne déclenchent pas encore de bonus.
 
 Respiration aquatique, Traces et les deux variantes d’Orientation disposent d’effets descriptifs avec leurs durées améliorées. Les terrains supplémentaires de l’ihana sont comptés ; le joueur note les types choisis. Les cibles supplémentaires de Respiration aquatique, Traces et Orientation sont limitées aux niveaux achetés.
+
+Sourcier, Marches dans la terre et la pierre, Chemin du retour, Environnement, Cartographie, Espionnage et Voyage astral exposent leurs règles descriptives et les améliorations choisies dans la description et l’infobulle. Leur durée est calculée ; les mouvements particuliers, la portée, les conditions et les conséquences restent à gérer en jeu. Chemin du retour limite ses cibles supplémentaires aux niveaux achetés. Les marches à travers la terre et la pierre étant soutenues, leurs restrictions de contact et de nombre de cibles restent à contrôler manuellement.

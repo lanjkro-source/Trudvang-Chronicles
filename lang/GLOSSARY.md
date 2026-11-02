@@ -10835,6 +10835,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Environment` | Rivers and streams of Trudvang, during their upstream migration. | Rivières et fleuves de Trudvang, pendant la remontée de la montaison. |
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.SourceBook` | Player's Handbook | Livre des règles |
 
+## `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.Name` | Soil Walk | Marche dans la terre |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.Description` | The spell creates a coating of vitner around the target that pushes away any soil that comes close to them. In this way, the vitner permits the target to move through all types of soil uninhibited. Each action round, they can move through soil at a number of meters equal to their movement capacity divided by 4. The vitner only repels soil that is static and unmoving. This spell cannot be used to avoid landslides or soil attacks unless the target were to travel below the soil that is moving. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to their body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the ground at a speed of 1 meter per action round. If the spell’s duration expires while the target is still in the soil, it compacts tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in soil when the spell runs out, they begin to suffocate as well. | Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de sol. À chaque tour de jeu, le bénéficiaire du sort peut avancer dans la terre d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la terre statique et immobile. Il ne protège pas le bénéficiaire des glissements de terrain et autres attaques à base de terre, à moins qu’il ne se déplace sous la terre en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans le sol à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours sous terre, il se retrouve emprisonné par le sol qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve sous terre au moment où le sort prend fin, il commence également à suffoquer. |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.SourceName` | Soil Walk | Marche dans la terre |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.SourcePage` | 123 | 161 |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk.Duration` | 2 minutes | 2 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.Name` | Stone Walk | Marche dans la pierre |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.Description` | The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well. | Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de métaux ou de pierre. À chaque tour de jeu, le bénéficiaire du sort peut avancer à travers ces matériaux d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la pierre et le métal statiques et immobiles. Il ne permet pas de traverser les armes en métal ou en pierre étant donné qu’elles sont en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans la pierre à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours dans la pierre, il se retrouve emprisonné par la roche qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve dans la roche au moment où le sort prend fin, il commence également à suffoquer. |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.SourceName` | Stone Walk | Marche dans la pierre |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.SourcePage` | 123 | 162 |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:stone-walk:7#stone-walk.Duration` | 2 minutes | 2 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification`
 
 | Clé | English | Français |
@@ -10868,6 +10890,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourcePage` | 123 | 162 |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.Name` | Find Water | Sourcier |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.Description` | By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range. Once the enchanter picks up the scent of a water source, they maintain this sense of direction for the duration of the spell. However, at any time, they can cancel the vitner that is leading toward a specific source and instead pursue a new one discovered through the weaving. Water that is found this way could be foul, stagnant, or located deep underground. The spell does not work as easily when it is raining, because the raindrops disturb the enchanter’s attempt. To find a water source in the rain, a Situation roll is needed with a Situation value of 10 (Intelligence modifiers apply) to keep from being distracted or misled by the rain. | En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchanteur peut localiser toutes les sources et masses d’eau situées à portée. Une fois que l’enchanteur a perçu l’odeur d’une source, il reste conscient de la direction dans laquelle elle se trouve pendant toute la durée du sort. Cependant, il peut à tout moment annuler le vitner qui le conduit vers une source spécifique afin de suivre une nouvelle source découverte pendant le tissage du sort. L’eau qu’il trouve par ce biais peut très bien être contaminée, stagnante ou située loin sous terre. Ce sort ne fonctionne pas très bien sous la pluie : les gouttes d’eau déconcentrent l’enchanteur. Ce dernier doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur ­d’Intelligence) pour ne pas être distrait ou désorienté par la pluie. |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.SourceName` | Find Water | Sourcier |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.SourcePage` | 135 | 163 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.Duration` | 10 minutes | 10 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration`
 
 | Clé | English | Français |
@@ -10890,6 +10923,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourcePage` | 139 | 171 |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.Name` | Find Home | Chemin du retour |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.Description` | The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction. | Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact. |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.SourceName` | Find Home | Chemin du retour |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.SourcePage` | 112 | 173 |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces`
 
 | Clé | English | Français |
@@ -10911,6 +10955,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.SourcePage` | 112 | 174 |
 | `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.Name` | Surrounding | Environnement |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.Description` | The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters. | Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres. |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.SourceName` | Surrounding | Environnement |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.SourcePage` | 112 | 176 |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:surrounding:6#surrounding.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.Name` | Map | Cartographie |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.Description` | Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or miniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In addition, the enchanter gets an idea of how many people, animals, and other beings are present in the surrounding area, as well as where they are, but not their identity, since the mage cannot make out details such as facial features or distinguishing marks. In the basic version, the enchanter can reach out with their mind up to a radius of 1 kilometer. | À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre. |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.SourceName` | Map | Cartographie |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.SourcePage` | 112 | 176 |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:map:7#map.Duration` | 5 minutes | 5 minutes |
 
 ## `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits`
 
@@ -10977,6 +11043,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.SourcePage` | 116 | 179 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:memory:7#memoire.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.Name` | Espionage | Espionnage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.Description` | action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories. | L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.SourceName` | Espionage | Espionnage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.SourcePage` | 120 | 182 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.Name` | Astral Voyage | Voyage astral |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.Description` | By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The enchanter’s spirit travels on the border between Trudvang and Dimhall where they can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the enchanter’s spirit has left their physical body, the body goes into hibernation. The enchanter can see and hear as normal while in spirit form. However, they are unable to interfere or communicate with their environment. The astral body is completely transparent, as it is purely composed of the enchanter’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The enchanter must be careful to return to their body before the spell runs out. If the enchanter fails to do so, their consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the enchanter undergoes extreme shock, permanently loses 1d6 in vitner capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the spell True Sight. Another enchanter who discovers the astral body can banish it back to its physical body using the spell Dispel Vitner. The banished one then experiences the same effects as if the duration of the spell ended. | En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de l’enchanteur se déplace à la frontière entre Trudvang et Dimhall. Là, il peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la personne enchantée quitte son enveloppe charnelle, cette dernière entre en hibernation. L’enchanteur entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de l’enchanteur. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. L’enchanteur doit prendre soin de se rapprocher de son corps avant l’expiration du corps. S’il ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que l’enchanteur subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de vitner, et qui le plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au sort Vision véritable. Un autre enchanteur qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le sort Dissipation du vitner. Le personnage ainsi banni subit alors les mêmes effets que si le sort avait expiré. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.SourceName` | Astral Voyage | Voyage astral |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.SourcePage` | 120 | 183 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.Duration` | 5 minutes | 5 minutes |
 
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre`
 

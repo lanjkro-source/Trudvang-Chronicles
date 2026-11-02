@@ -39,6 +39,7 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
+   if(JSON.stringify(t.displayPowerOptions??[])!==JSON.stringify(translated.displayPowerOptions??[]) || (t.displayPowerOptions??[]).some(i=>!Number.isInteger(i)||!entry.powerLevels?.[i]))throw Error(`Invalid displayed power options for ${key}`);
    if(t.summaryParts){
     const s=t.summaryParts,keys=[s.labelKey,...(s.overrideKey?[s.overrideKey]:[]),...(s.parts??[]).flatMap(p=>[p.singularKey,p.pluralKey])];
     const indices=[...(s.overrideIndex===undefined?[]:[s.overrideIndex]),...(s.parts??[]).map(p=>p.index)];

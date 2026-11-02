@@ -8934,6 +8934,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:find-home:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-perceiving:find-home:0:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-perceiving:find-home:0:0",

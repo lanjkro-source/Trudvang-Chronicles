@@ -13693,6 +13693,24 @@
         }
       },
       "Transformation": {
+        "vitner-soil-craft:soil-walk:5#soil-walk": {
+          "Name": "Soil Walk",
+          "Summary": "Allows travel through stationary soil.",
+          "Description": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them. In this way, the vitner permits the target to move through all types of soil uninhibited. Each action round, they can move through soil at a number of meters equal to their movement capacity divided by 4. The vitner only repels soil that is static and unmoving. This spell cannot be used to avoid landslides or soil attacks unless the target were to travel below the soil that is moving. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to their body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the ground at a speed of 1 meter per action round. If the spell’s duration expires while the target is still in the soil, it compacts tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in soil when the spell runs out, they begin to suffocate as well.",
+          "SourceName": "Soil Walk",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "123",
+          "Duration": "2 minutes"
+        },
+        "vitner-soil-craft:stone-walk:7#stone-walk": {
+          "Name": "Stone Walk",
+          "Summary": "Allows travel through stationary stone and metal.",
+          "Description": "The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well.",
+          "SourceName": "Stone Walk",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "123",
+          "Duration": "2 minutes"
+        },
         "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification": {
           "Name": "Petrify/Remove Petrification",
           "Summary": "Petrifies the target, turning it into a statue.",
@@ -13720,6 +13738,15 @@
           "SourcePage": "123",
           "Duration": "3 days"
         },
+        "vitner-water-craft:find-water:0#find-water": {
+          "Name": "Find Water",
+          "Summary": "Locates sources and bodies of water.",
+          "Description": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range. Once the enchanter picks up the scent of a water source, they maintain this sense of direction for the duration of the spell. However, at any time, they can cancel the vitner that is leading toward a specific source and instead pursue a new one discovered through the weaving. Water that is found this way could be foul, stagnant, or located deep underground. The spell does not work as easily when it is raining, because the raindrops disturb the enchanter’s attempt. To find a water source in the rain, a Situation roll is needed with a Situation value of 10 (Intelligence modifiers apply) to keep from being distracted or misled by the rain.",
+          "SourceName": "Find Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "10 minutes"
+        },
         "vitner-water-craft:breathe:2#respiration": {
           "Name": "Breathe",
           "Summary": "Gills allow breathing underwater as easily as in air.",
@@ -13738,6 +13765,15 @@
           "SourcePage": "139",
           "Duration": "5 action rounds"
         },
+        "vitner-perceiving:find-home:0#find-home": {
+          "Name": "Find Home",
+          "Summary": "Indicates the direction of a familiar place.",
+          "Description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction.",
+          "SourceName": "Find Home",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "1 hour"
+        },
         "vitner-perceiving:retrace-tracks:1#traces": {
           "Name": "Retrace Tracks",
           "Summary": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
@@ -13755,6 +13791,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "112",
           "Duration": "1 hour"
+        },
+        "vitner-perceiving:surrounding:6#surrounding": {
+          "Name": "Surrounding",
+          "Summary": "Perceives the surrounding terrain.",
+          "Description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters.",
+          "SourceName": "Surrounding",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "3 minutes"
+        },
+        "vitner-perceiving:map:7#map": {
+          "Name": "Map",
+          "Summary": "Perceives the general layout of the surroundings.",
+          "Description": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or miniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In addition, the enchanter gets an idea of how many people, animals, and other beings are present in the surrounding area, as well as where they are, but not their identity, since the mage cannot make out details such as facial features or distinguishing marks. In the basic version, the enchanter can reach out with their mind up to a radius of 1 kilometer.",
+          "SourceName": "Map",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "5 minutes"
         },
         "vitner-power-of-thought:understanding-script:0#ecrits": {
           "Name": "Understanding Script",
@@ -13809,6 +13863,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "116",
           "Duration": "5 action rounds"
+        },
+        "vitner-power-of-vision:espionage:4#espionage": {
+          "Name": "Espionage",
+          "Summary": "Allows remote perception around the enchanted object.",
+          "Description": "action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories.",
+          "SourceName": "Espionage",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "1 hour"
+        },
+        "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
+          "Name": "Astral Voyage",
+          "Summary": "Projects the spirit outside the body.",
+          "Description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The enchanter’s spirit travels on the border between Trudvang and Dimhall where they can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the enchanter’s spirit has left their physical body, the body goes into hibernation. The enchanter can see and hear as normal while in spirit form. However, they are unable to interfere or communicate with their environment. The astral body is completely transparent, as it is purely composed of the enchanter’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The enchanter must be careful to return to their body before the spell runs out. If the enchanter fails to do so, their consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the enchanter undergoes extreme shock, permanently loses 1d6 in vitner capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the spell True Sight. Another enchanter who discovers the astral body can banish it back to its physical body using the spell Dispel Vitner. The banished one then experiences the same effects as if the duration of the spell ended.",
+          "SourceName": "Astral Voyage",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "5 minutes"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",

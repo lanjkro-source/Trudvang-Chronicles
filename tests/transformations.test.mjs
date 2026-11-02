@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,136);
+ assert.equal(Object.keys(sources).length,144);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1107,4 +1107,16 @@ test("water breathing and orientation effects retain their durations, target lim
  foundry.applications.api={DialogV2:{wait:async()=>({duration:"3 minutes",boost0:1,boost1:1,boost2:0})}};
  let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  await applyTransformation(actor,samples[0][0],{counts:[1,1,0]});assert.deepEqual(created.duration,{value:168,units:"rounds"});
+});
+
+test("descriptive spells retain selected improvements and calculate duration",async()=>{
+ const keys=["vitner-water-craft:find-water:0#find-water","vitner-soil-craft:soil-walk:5#soil-walk","vitner-soil-craft:stone-walk:7#stone-walk","vitner-perceiving:find-home:0#find-home","vitner-perceiving:surrounding:6#surrounding","vitner-perceiving:map:7#map","vitner-power-of-vision:espionage:4#espionage","vitner-power-of-vision:astral-voyage:5#astral-voyage"];
+ for(const key of keys)assert.ok(templates[key],key);
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"10 minutes",boost0:1,boost3:2,boost4:1})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,keys[0],{counts:[1,0,0,2,1]});
+ assert.deepEqual(created.duration,{value:132,units:"rounds"});
+ assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.3/);
+ assert.match(created.flags[S].transformation.summary,/1 × TRUDVANG\.Content\.Power\.vitner-water-craft:find-water:0\.PowerLevels\.4/);
 });

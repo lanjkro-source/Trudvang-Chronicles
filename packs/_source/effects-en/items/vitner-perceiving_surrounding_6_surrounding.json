@@ -1,0 +1,45 @@
+{
+  "_id": "UPTEHF6B7C8D9EaG",
+  "_key": "!items!UPTEHF6B7C8D9EaG",
+  "name": "Surrounding",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:surrounding:6#surrounding",
+    "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters.",
+    "summary": "Perceives the surrounding terrain.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 112
+    }
+  },
+  "effects": [
+    {
+      "_id": "PbmmBfJeKfLgMhNi",
+      "_key": "!items.effects!UPTEHF6B7C8D9EaG.PbmmBfJeKfLgMhNi",
+      "name": "Surrounding",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:surrounding:6#surrounding",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:surrounding:6#surrounding",
+            "sourceId": "vitner-perceiving:surrounding:6",
+            "summary": "Perceives the surrounding terrain.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

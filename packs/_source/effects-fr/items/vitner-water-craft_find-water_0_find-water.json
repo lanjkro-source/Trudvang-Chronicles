@@ -1,0 +1,45 @@
+{
+  "_id": "0Xvm8eGbHcIdJeKf",
+  "_key": "!items!0Xvm8eGbHcIdJeKf",
+  "name": "Sourcier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:find-water:0#find-water",
+    "description": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchanteur peut localiser toutes les sources et masses d’eau situées à portée. Une fois que l’enchanteur a perçu l’odeur d’une source, il reste conscient de la direction dans laquelle elle se trouve pendant toute la durée du sort. Cependant, il peut à tout moment annuler le vitner qui le conduit vers une source spécifique afin de suivre une nouvelle source découverte pendant le tissage du sort. L’eau qu’il trouve par ce biais peut très bien être contaminée, stagnante ou située loin sous terre. Ce sort ne fonctionne pas très bien sous la pluie : les gouttes d’eau déconcentrent l’enchanteur. Ce dernier doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur ­d’Intelligence) pour ne pas être distrait ou désorienté par la pluie.",
+    "summary": "Localise les sources et masses d’eau.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 163
+    }
+  },
+  "effects": [
+    {
+      "_id": "HuccBJeKfLgMhNiO",
+      "_key": "!items.effects!0Xvm8eGbHcIdJeKf.HuccBJeKfLgMhNiO",
+      "name": "Sourcier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchanteur peut localiser toutes les sources et masses d’eau situées à portée. Une fois que l’enchanteur a perçu l’odeur d’une source, il reste conscient de la direction dans laquelle elle se trouve pendant toute la durée du sort. Cependant, il peut à tout moment annuler le vitner qui le conduit vers une source spécifique afin de suivre une nouvelle source découverte pendant le tissage du sort. L’eau qu’il trouve par ce biais peut très bien être contaminée, stagnante ou située loin sous terre. Ce sort ne fonctionne pas très bien sous la pluie : les gouttes d’eau déconcentrent l’enchanteur. Ce dernier doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur ­d’Intelligence) pour ne pas être distrait ou désorienté par la pluie.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:find-water:0#find-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:find-water:0#find-water",
+            "sourceId": "vitner-water-craft:find-water:0",
+            "summary": "Localise les sources et masses d’eau.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

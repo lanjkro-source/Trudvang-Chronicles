@@ -1,0 +1,45 @@
+{
+  "_id": "2ywQkXqWrXsYtZu0",
+  "_key": "!items!2ywQkXqWrXsYtZu0",
+  "name": "Espionage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:espionage:4#espionage",
+    "description": "action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories.",
+    "summary": "Allows remote perception around the enchanted object.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZtOKyiLgMhNiOjPk",
+      "_key": "!items.effects!2ywQkXqWrXsYtZu0.ZtOKyiLgMhNiOjPk",
+      "name": "Espionage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:espionage:4#espionage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:espionage:4#espionage",
+            "sourceId": "vitner-power-of-vision:espionage:4",
+            "summary": "Allows remote perception around the enchanted object.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

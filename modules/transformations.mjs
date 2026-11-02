@@ -183,7 +183,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   }
   fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
- const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
@@ -328,6 +328,15 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy&&template.displayPowerOptions?.length){
+  const options=template.displayPowerOptions.flatMap(index=>{
+   const count=Math.max(0,Math.trunc(Number(casting.counts[index])||0));
+   if(!count)return [];
+   const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`);
+   return [`${count} × ${label}`];
+  });
+  if(options.length){summary+=` — ${options.join(" ; ")}`;meta.summary=summary;meta.summaryResolved=true;description+=`<ul>${options.map(option=>`<li>${escapeHtml(option)}</li>`).join("")}</ul>`;}
+ }
  if(!resolvedCopy&&template.summaryParts)description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){

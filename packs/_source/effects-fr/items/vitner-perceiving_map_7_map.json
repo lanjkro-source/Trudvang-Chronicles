@@ -1,0 +1,45 @@
+{
+  "_id": "viGPp9B7C8D9EaGb",
+  "_key": "!items!viGPp9B7C8D9EaGb",
+  "name": "Cartographie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:map:7#map",
+    "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre.",
+    "summary": "Perçoit la configuration générale des environs.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "cG8GiSlRmSnToUpV",
+      "_key": "!items.effects!viGPp9B7C8D9EaGb.cG8GiSlRmSnToUpV",
+      "name": "Cartographie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:map:7#map",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:map:7#map",
+            "sourceId": "vitner-perceiving:map:7",
+            "summary": "Perçoit la configuration générale des environs.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

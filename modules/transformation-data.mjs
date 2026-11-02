@@ -1,5 +1,63 @@
 // Generated from authoritative FR effectTemplates. Text belongs to lang/*.json.
 export const TRANSFORMATION_TEMPLATES = {
+  "vitner-soil-craft:soil-walk:5#soil-walk": {
+    "id": "soil-walk",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4
+    ],
+    "sourceId": "vitner-soil-craft:soil-walk:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-soil-craft:soil-walk:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-soil-craft:soil-walk:5:1"
+      }
+    ]
+  },
+  "vitner-soil-craft:stone-walk:7#stone-walk": {
+    "id": "stone-walk",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      3,
+      4
+    ],
+    "sourceId": "vitner-soil-craft:stone-walk:7",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-soil-craft:stone-walk:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-soil-craft:stone-walk:7:2"
+      }
+    ]
+  },
   "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification": {
     "id": "petrification-annuler-une-petrification",
     "icon": "icons/svg/aura.svg",
@@ -125,6 +183,40 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
+  "vitner-water-craft:find-water:0#find-water": {
+    "id": "find-water",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-water-craft:find-water:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:find-water:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-water-craft:find-water:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-water-craft:find-water:0:2"
+      }
+    ]
+  },
   "vitner-water-craft:breathe:2#respiration": {
     "id": "respiration",
     "icon": "icons/svg/aura.svg",
@@ -206,6 +298,34 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-perceiving:find-home:0#find-home": {
+    "id": "find-home",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-perceiving:find-home:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:find-home:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-perceiving:find-home:0:1"
+      }
+    ]
+  },
   "vitner-perceiving:retrace-tracks:1#traces": {
     "id": "traces",
     "icon": "icons/svg/aura.svg",
@@ -251,6 +371,62 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-perceiving:orientation:3:1"
+      }
+    ]
+  },
+  "vitner-perceiving:surrounding:6#surrounding": {
+    "id": "surrounding",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "sourceId": "vitner-perceiving:surrounding:6",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-perceiving:surrounding:6:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:surrounding:6:3"
+      }
+    ]
+  },
+  "vitner-perceiving:map:7#map": {
+    "id": "map",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-perceiving:map:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-perceiving:map:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:map:7:1"
       }
     ]
   },
@@ -489,6 +665,69 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "summaryPart",
         "value": 1,
         "optionId": "vitner-power-of-thought:memory:7:4"
+      }
+    ]
+  },
+  "vitner-power-of-vision:espionage:4#espionage": {
+    "id": "espionage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-power-of-vision:espionage:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-vision:espionage:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-power-of-vision:espionage:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-power-of-vision:espionage:4:2"
+      }
+    ]
+  },
+  "vitner-power-of-vision:astral-voyage:5#astral-voyage": {
+    "id": "astral-voyage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-power-of-vision:astral-voyage:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-vision:astral-voyage:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-vision:astral-voyage:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-power-of-vision:astral-voyage:5:2"
       }
     ]
   },
@@ -7124,10 +7363,19 @@ export const TRANSFORMATION_TEMPLATES = {
   }
 };
 export const TRANSFORMATIONS_BY_SOURCE = {
+  "vitner-soil-craft:soil-walk:5": [
+    "vitner-soil-craft:soil-walk:5#soil-walk"
+  ],
+  "vitner-soil-craft:stone-walk:7": [
+    "vitner-soil-craft:stone-walk:7#stone-walk"
+  ],
   "vitner-soil-craft:petrify-remove-petrification:8": [
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-annuler-une-petrification",
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds"
+  ],
+  "vitner-water-craft:find-water:0": [
+    "vitner-water-craft:find-water:0#find-water"
   ],
   "vitner-water-craft:breathe:2": [
     "vitner-water-craft:breathe:2#respiration"
@@ -7135,11 +7383,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-wind-craft:air-armor:4": [
     "vitner-wind-craft:air-armor:4#air-armor"
   ],
+  "vitner-perceiving:find-home:0": [
+    "vitner-perceiving:find-home:0#find-home"
+  ],
   "vitner-perceiving:retrace-tracks:1": [
     "vitner-perceiving:retrace-tracks:1#traces"
   ],
   "vitner-perceiving:orientation:3": [
     "vitner-perceiving:orientation:3#orientation"
+  ],
+  "vitner-perceiving:surrounding:6": [
+    "vitner-perceiving:surrounding:6#surrounding"
+  ],
+  "vitner-perceiving:map:7": [
+    "vitner-perceiving:map:7#map"
   ],
   "vitner-power-of-thought:understanding-script:0": [
     "vitner-power-of-thought:understanding-script:0#ecrits"
@@ -7158,6 +7415,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-power-of-thought:memory:7": [
     "vitner-power-of-thought:memory:7#memoire"
+  ],
+  "vitner-power-of-vision:espionage:4": [
+    "vitner-power-of-vision:espionage:4#espionage"
+  ],
+  "vitner-power-of-vision:astral-voyage:5": [
+    "vitner-power-of-vision:astral-voyage:5#astral-voyage"
   ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
