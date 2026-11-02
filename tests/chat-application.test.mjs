@@ -359,3 +359,18 @@ test("application rows escape custom token names and provide the same map-locati
   assert.match(message.content, /&lt;img/);
   assert.doesNotMatch(message.content, /<img src=x/);
 });
+
+test("conditional damage applies only to matching tags and is halved with the base at long range",async t=>{
+ const {flags,makeActor,addDamageTarget,payload}=runtime(t);
+ const troll=makeActor('Troll'),other=makeActor('Other');troll.system.tags=['troll','géant'];other.system.tags=['dragon'];
+ flags.conditionalDamage=[{name:'Tueur de trolls',tags:['troll'],damage:3}];
+ addDamageTarget(troll);addDamageTarget(other);
+ assert.deepEqual(await applyChatApplication(payload(troll)),{status:'applied',amount:11});
+ assert.deepEqual(await applyChatApplication(payload(other)),{status:'applied',amount:8});
+});
+
+test("conditional long-range damage rounds after adding the target-specific bonus",async t=>{
+ const {flags,makeActor,addDamageTarget,payload}=runtime(t);const troll=makeActor('Troll');troll.system.tags=['troll'];addDamageTarget(troll);
+ flags.conditionalDamage=[{tags:['troll'],damage:3}];flags.conditionalDamageBeforeRange=15;flags.conditionalDamageLongRange=true;
+ assert.deepEqual(await applyChatApplication(payload(troll)),{status:'applied',amount:9});
+});

@@ -25,6 +25,7 @@ import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
 import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
 import {postActorEvent} from "../actor-event-chat.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-resolver.mjs";
+import {creatureConditionalBonuses,matchingCreatureBonus} from "../rules/creature-conditional-bonus.mjs";
 import {mountedCombatValues, mountedCombatCost, isMounted} from "../rules/mounted-combat.mjs";
 import {applyMounted, currentRoundExpiry} from "../combat-effects.mjs";
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
@@ -1262,6 +1263,7 @@ export class TrudvangActor extends BaseActor {
     const canThrow = kind === "attack" && canThrowWeapon(item);
     const defaultThrowing = canThrow && (throwing ?? isThrowingWeapon(item));
     const targetTokens = Array.from(game.user.targets || []);
+    const creatureRows=creatureConditionalBonuses(this).filter(row=>(kind==="attack"||kind==="parry"&&row.parry)&&targetTokens.some(token=>matchingCreatureBonus(row,token.actor))).map(row=>({label:row.name,value:row.attack}));
     const sizeTargets = kind === "attack" ? attackSizeTargets(this, targetTokens) : [];
     const targetLabels = targetTokens.map(token => token?.name || token?.actor?.name || "");
     const targetActor = targetTokens.map(target => target?.actor).find(Boolean);
@@ -1297,6 +1299,7 @@ export class TrudvangActor extends BaseActor {
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item: defaultMode.usageItem, actor: this, context: {usage: kind, hand: item.system.hand}});
     const modifierRows = [
+      ...creatureRows,
       ...this.rollEffectRows({kind, movement: true}),
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
       ...stateRows,
@@ -1370,7 +1373,7 @@ export class TrudvangActor extends BaseActor {
       actor: this,
       label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : mode.throwing ? "TRUDVANG.Action.Throw" : "TRUDVANG.Action.Attack")}`,
       target: allocatedCombatVC(spending.total, feint, sizeTargets[0]?.modifier || 0),
-      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows) + mounted.total,
+      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows) + mounted.total + rollModifierTotal(creatureRows),
       kind,
       attackTargets: sizeTargets,
       flavor,

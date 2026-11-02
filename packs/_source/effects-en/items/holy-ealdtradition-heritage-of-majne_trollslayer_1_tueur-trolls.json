@@ -1,0 +1,45 @@
+{
+  "_id": "GzFWQIcIdJeKfLgM",
+  "_key": "!items!GzFWQIcIdJeKfLgM",
+  "name": "Trollslayer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+    "description": "Bonuses apply only against the relevant creature category.",
+    "summary": "Bonuses apply only against the relevant creature category.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "hLLZOXrXsYtZu0v1",
+      "_key": "!items.effects!GzFWQIcIdJeKfLgM.hLLZOXrXsYtZu0v1",
+      "name": "Trollslayer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Bonuses apply only against the relevant creature category.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:trollslayer:1",
+            "summary": "Bonuses apply only against the relevant creature category.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

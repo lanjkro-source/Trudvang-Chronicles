@@ -911,6 +911,7 @@
       }
     },
     "DamageRoll": {
+      "BeforeHalving": "avant demi-dégâts",
       "Title": "Jet de dégâts : {item}",
       "DiceCount": "Nombre de dés",
       "Formula": "Formule de dégâts",
@@ -14052,6 +14053,33 @@
           "Capability0": "corbeaux",
           "Capability1": "morts-vivants"
         },
+        "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
+          "Name": "Tueur de trolls",
+          "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+          "Description": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+          "SourceName": "Tueur de trolls",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "237",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
+          "Name": "Tueur de géants",
+          "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+          "Description": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+          "SourceName": "Tueur de géants",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "237",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
+          "Name": "Tueur de dragons",
+          "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+          "Description": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+          "SourceName": "Tueur de dragons",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "238",
+          "Duration": "3 tours de jeu"
+        },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Volonté des ancêtres",
           "Summary": "Accorde un trait exceptionnel de Psychisme.",
@@ -14269,6 +14297,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "259",
           "Duration": "1 jour"
+        },
+        "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur": {
+          "Name": "Instinct du prédateur",
+          "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+          "Description": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+          "SourceName": "Instinct du prédateur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "268",
+          "Duration": "3 tours de jeu"
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Résilience",

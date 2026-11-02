@@ -911,6 +911,7 @@
       }
     },
     "DamageRoll": {
+      "BeforeHalving": "before halving",
       "Title": "Damage roll: {item}",
       "DiceCount": "Number of dice",
       "Formula": "Damage formula",
@@ -14052,6 +14053,33 @@
           "Capability0": "ravens",
           "Capability1": "undead"
         },
+        "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
+          "Name": "Trollslayer",
+          "Summary": "Bonuses apply only against the relevant creature category.",
+          "Description": "Bonuses apply only against the relevant creature category.",
+          "SourceName": "Trollslayer",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "3 rounds"
+        },
+        "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
+          "Name": "Giantslayer",
+          "Summary": "Bonuses apply only against the relevant creature category.",
+          "Description": "Bonuses apply only against the relevant creature category.",
+          "SourceName": "Giantslayer",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "3 rounds"
+        },
+        "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
+          "Name": "Dragonslayer",
+          "Summary": "Bonuses apply only against the relevant creature category.",
+          "Description": "Bonuses apply only against the relevant creature category.",
+          "SourceName": "Dragonslayer",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "3 rounds"
+        },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Willpower of the Ancestors",
           "Summary": "Grants an exceptional Psyche trait.",
@@ -14269,6 +14297,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "201",
           "Duration": "1 jour"
+        },
+        "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur": {
+          "Name": "Mind of the Predator",
+          "Summary": "Bonuses apply only against the relevant creature category.",
+          "Description": "Bonuses apply only against the relevant creature category.",
+          "SourceName": "Mind of the Predator",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "212",
+          "Duration": "3 rounds"
         },
         "holy-haminges-power-of-the-beast:resilience:0#resilience": {
           "Name": "Resilience",

@@ -1513,6 +1513,60 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
+    "id": "tueur-trolls",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:trollslayer:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-heritage-of-majne:trollslayer:1:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
+    "id": "tueur-geants",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-heritage-of-majne:giantslayer:2:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
+    "id": "tueur-dragons",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6:0"
+      }
+    ]
+  },
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
     "id": "principal",
     "icon": "icons/svg/aura.svg",
@@ -2492,6 +2546,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "protection",
         "value": 1,
         "optionId": "holy-tenetnid-tablet-of-the-shield:tree-port:8:2"
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur": {
+    "id": "instinct-predateur",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:1"
       }
     ]
   },
@@ -5880,6 +5958,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": [
     "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau"
   ],
+  "holy-ealdtradition-heritage-of-majne:trollslayer:1": [
+    "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls"
+  ],
+  "holy-ealdtradition-heritage-of-majne:giantslayer:2": [
+    "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants"
+  ],
+  "holy-ealdtradition-heritage-of-majne:dragonslayer:6": [
+    "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons"
+  ],
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": [
     "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal"
   ],
@@ -5935,6 +6022,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": [
     "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole"
+  ],
+  "holy-haminges-power-of-the-beast:mind-of-the-predator:1": [
+    "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur"
   ],
   "holy-haminges-power-of-the-beast:resilience:0": [
     "holy-haminges-power-of-the-beast:resilience:0#resilience"

@@ -1,0 +1,45 @@
+{
+  "_id": "GzFWQIcIdJeKfLgM",
+  "_key": "!items!GzFWQIcIdJeKfLgM",
+  "name": "Tueur de trolls",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+    "description": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+    "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+    "source": {
+      "book": "Livre des règles",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "hLLZOXrXsYtZu0v1",
+      "_key": "!items.effects!GzFWQIcIdJeKfLgM.hLLZOXrXsYtZu0v1",
+      "name": "Tueur de trolls",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:trollslayer:1",
+            "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

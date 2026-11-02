@@ -1,5 +1,6 @@
 import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from "./damage-application.mjs";
 import {renderTemplate} from "./helpers.mjs";
+import {matchingCreatureBonus} from "./rules/creature-conditional-bonus.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -88,11 +89,17 @@ async function applyOnGM(payload) {
   const user = game.users.get(payload.userId);
   if (!game.user.isGM || !message || !user?.active || !["body", "fear", "defense"].includes(payload.channel)) return {status: "unavailable"};
   if (!canReadMessage(message, user)) return {status: "unavailable"};
-  const amount = sourceAmount(message, payload.channel);
+  let amount = sourceAmount(message, payload.channel);
   if (amount === null) return {status: "unavailable"};
   const actor = await foundry.utils.fromUuid(payload.actorUuid);
   if (!actor?.isOwner || !["character", "npc"].includes(actor.type)
     || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
+  if(payload.channel!=="fear"){
+    const rows=message.getFlag(SYSTEM_ID,"conditionalDamage")??[];
+    const bonus=rows.filter(row=>Array.isArray(row.tags)&&matchingCreatureBonus(row,actor)).reduce((sum,row)=>sum+Math.max(0,Number(row.damage)||0),0);
+    const before=Number(message.getFlag(SYSTEM_ID,"conditionalDamageBeforeRange"));
+    amount=message.getFlag(SYSTEM_ID,"conditionalDamageLongRange")&&Number.isFinite(before)?Math.ceil((before+bonus)/2):amount+bonus;
+  }
   let item = null;
   if (payload.channel === "body" && !String(message.content).includes(`data-target-actor-uuid="${actor.uuid}"`)) return {status: "unavailable"};
   if (payload.channel === "defense") {

@@ -1,0 +1,45 @@
+{
+  "_id": "J9FffeGbHcIdJeKf",
+  "_key": "!items!J9FffeGbHcIdJeKf",
+  "name": "Tueur de géants",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+    "description": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+    "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+    "source": {
+      "book": "Livre des règles",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "wKWbUUpVqWrXsYtZ",
+      "_key": "!items.effects!J9FffeGbHcIdJeKf.wKWbUUpVqWrXsYtZ",
+      "name": "Tueur de géants",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
+            "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -2511,3 +2511,13 @@ test("night rest shows Thuuldom's unchanged divinity and posts nothing for non-o
  await instance.restForNight();assert.equal(runtime.messages.length,1);assert.match(runtime.messages[0].content,/2 → 2\/7/);assert.match(runtime.messages[0].content,/non renouvelée/);
  instance.isOwner=false;await instance.restForNight();assert.equal(runtime.messages.length,1);
 });
+
+test("a matching target grants the conditional attack bonus to a multi-target roll",async t=>{
+ const runtime=mockActionRuntime(t,{die:7}),oldTargets=game.user.targets;t.after(()=>{game.user.targets=oldTargets;});
+ const item=inventoryItem('weapon','Axe',{equipped:true}),npc=spendableNpc([item]);npc.system.damage.penalty=0;npc.system.details.size='1';
+ npc.spendCombatPoints=async()=>{};npc.spendWeaponAction=async()=>{};npc.getWeaponActionState=()=>({current:1});game.combat={started:true,combatants:[{actor:npc}]};
+ const id='holy-ealdtradition-heritage-of-majne:trollslayer:1',effect={name:'Tueur de trolls',system:{changes:[]},flags:{'trudvang-chronicles':{transformation:{sourceId:id,ruleTestContext:{countsById:{[`${id}:1`]:1}}}}}};
+ npc.allApplicableEffects=()=>[effect];game.user.targets=[{name:'Troll',document:{uuid:'Scene.s.Token.a'},actor:{uuid:'Actor.a',system:{tags:['troll'],details:{size:'1'}}}},{name:'Other',document:{uuid:'Scene.s.Token.b'},actor:{uuid:'Actor.b',system:{tags:['dragon'],details:{size:'1'}}}}];
+ runtime.response={allocation:{free:4},feint:0,modifier:0};const result=await npc.rollWeaponAction(item,'attack');
+ assert.deepEqual(result.attackTargets.map(row=>row.target),[6,6]);assert.match(runtime.dialogs[0].content,/Tueur de trolls/);
+});

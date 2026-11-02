@@ -1,0 +1,45 @@
+{
+  "_id": "CkcuaKeKfLgMhNiO",
+  "_key": "!items!CkcuaKeKfLgMhNiO",
+  "name": "Mind of the Predator",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+    "description": "Bonuses apply only against the relevant creature category.",
+    "summary": "Bonuses apply only against the relevant creature category.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "VVAhS3v1w2x3y4z5",
+      "_key": "!items.effects!CkcuaKeKfLgMhNiO.VVAhS3v1w2x3y4z5",
+      "name": "Mind of the Predator",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Bonuses apply only against the relevant creature category.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+            "sourceId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
+            "summary": "Bonuses apply only against the relevant creature category.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

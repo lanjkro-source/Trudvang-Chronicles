@@ -1,0 +1,45 @@
+{
+  "_id": "J9FffeGbHcIdJeKf",
+  "_key": "!items!J9FffeGbHcIdJeKf",
+  "name": "Giantslayer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+    "description": "Bonuses apply only against the relevant creature category.",
+    "summary": "Bonuses apply only against the relevant creature category.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "wKWbUUpVqWrXsYtZ",
+      "_key": "!items.effects!J9FffeGbHcIdJeKf.wKWbUUpVqWrXsYtZ",
+      "name": "Giantslayer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Bonuses apply only against the relevant creature category.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
+            "summary": "Bonuses apply only against the relevant creature category.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

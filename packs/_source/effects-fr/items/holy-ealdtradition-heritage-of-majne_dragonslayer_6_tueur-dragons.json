@@ -1,0 +1,45 @@
+{
+  "_id": "FbeBcw0v1w2x3y4z",
+  "_key": "!items!FbeBcw0v1w2x3y4z",
+  "name": "Tueur de dragons",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+    "description": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+    "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+    "source": {
+      "book": "Livre des règles",
+      "page": 238
+    }
+  },
+  "effects": [
+    {
+      "_id": "iLY0Q0u0v1w2x3y4",
+      "_key": "!items.effects!FbeBcw0v1w2x3y4z.iLY0Q0u0v1w2x3y4",
+      "name": "Tueur de dragons",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
+            "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

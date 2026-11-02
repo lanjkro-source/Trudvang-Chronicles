@@ -1,0 +1,45 @@
+{
+  "_id": "FbeBcw0v1w2x3y4z",
+  "_key": "!items!FbeBcw0v1w2x3y4z",
+  "name": "Dragonslayer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+    "description": "Bonuses apply only against the relevant creature category.",
+    "summary": "Bonuses apply only against the relevant creature category.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "iLY0Q0u0v1w2x3y4",
+      "_key": "!items.effects!FbeBcw0v1w2x3y4z.iLY0Q0u0v1w2x3y4",
+      "name": "Dragonslayer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Bonuses apply only against the relevant creature category.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
+            "summary": "Bonuses apply only against the relevant creature category.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

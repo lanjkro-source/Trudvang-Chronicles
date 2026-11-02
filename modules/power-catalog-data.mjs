@@ -449,6 +449,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:dragonslayer:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:dragonslayer:6:0",
@@ -467,6 +472,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:giantslayer:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:giantslayer:2:0",
@@ -593,6 +603,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:trollslayer:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:trollslayer:1:0",
@@ -2794,6 +2809,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:0",

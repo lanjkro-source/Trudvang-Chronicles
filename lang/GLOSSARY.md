@@ -1064,6 +1064,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.DamageRoll.BeforeHalving` | before halving | avant demi-dégâts |
 | `TRUDVANG.DamageRoll.Title` | Damage roll: {item} | Jet de dégâts : {item} |
 | `TRUDVANG.DamageRoll.DiceCount` | Number of dice | Nombre de dés |
 | `TRUDVANG.DamageRoll.Formula` | Damage formula | Formule de dégâts |
@@ -11272,6 +11273,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability0` | ravens | corbeaux |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability1` | undead | morts-vivants |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.Name` | Trollslayer | Tueur de trolls |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.Description` | Bonuses apply only against the relevant creature category. | Les bonus ne s’appliquent que contre la catégorie concernée (troll). |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.SourceName` | Trollslayer | Tueur de trolls |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.SourcePage` | 181 | 237 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.Name` | Giantslayer | Tueur de géants |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.Description` | Bonuses apply only against the relevant creature category. | Les bonus ne s’appliquent que contre la catégorie concernée (géant). |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.SourceName` | Giantslayer | Tueur de géants |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.SourcePage` | 181 | 237 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.Name` | Dragonslayer | Tueur de dragons |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.Description` | Bonuses apply only against the relevant creature category. | Les bonus ne s’appliquent que contre la catégorie concernée (dragon). |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.SourceName` | Dragonslayer | Tueur de dragons |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.SourcePage` | 181 | 238 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.Duration` | 3 rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal`
 
 | Clé | English | Français |
@@ -11537,6 +11571,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourcePage` | 201 | 259 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.Duration` | 1 jour | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.Name` | Mind of the Predator | Instinct du prédateur |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.Description` | Bonuses apply only against the relevant creature category. | Les bonus ne s’appliquent que contre la catégorie concernée (animal). |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.SourceName` | Mind of the Predator | Instinct du prédateur |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.SourcePage` | 212 | 268 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur.Duration` | 3 rounds | 3 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:resilience:0#resilience`
 

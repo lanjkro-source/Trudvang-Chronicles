@@ -18,6 +18,7 @@ import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -587,12 +588,14 @@ export async function rollDamage({actor, item, context = {}}) {
   if (total !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
   }
+  const beforeRange=total;
   if (choice.longRange) {
     const beforeLongRange = total;
     total = Math.ceil(total / 2);
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
   const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
+  const conditionalDamage=creatureConditionalBonuses(actor).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
@@ -600,12 +603,14 @@ export async function rollDamage({actor, item, context = {}}) {
     itemName: item.name,
     itemImg: item.img,
     total,
+    conditionalDamage,
+    conditionalLongRange: Boolean(choice.longRange),
     detail,
     openRoll: parsed ? choice.openRoll : 0,
     modifierDetails,
     targetsHTML
   });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets}}});
+  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets,conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return total;
 }
 

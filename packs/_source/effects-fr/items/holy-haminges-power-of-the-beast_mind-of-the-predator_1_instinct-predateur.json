@@ -1,0 +1,45 @@
+{
+  "_id": "CkcuaKeKfLgMhNiO",
+  "_key": "!items!CkcuaKeKfLgMhNiO",
+  "name": "Instinct du prédateur",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+    "description": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+    "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+    "source": {
+      "book": "Livre des règles",
+      "page": 268
+    }
+  },
+  "effects": [
+    {
+      "_id": "VVAhS3v1w2x3y4z5",
+      "_key": "!items.effects!CkcuaKeKfLgMhNiO.VVAhS3v1w2x3y4z5",
+      "name": "Instinct du prédateur",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mind-of-the-predator:1#instinct-predateur",
+            "sourceId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
+            "summary": "Les bonus ne s’appliquent que contre la catégorie concernée (animal).",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
