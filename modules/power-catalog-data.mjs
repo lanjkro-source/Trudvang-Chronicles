@@ -9204,6 +9204,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:ecstasy:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-power-of-thought:ecstasy:5:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:ecstasy:5:0",
@@ -10120,6 +10129,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:enchant-being:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-vitner-craft:enchant-being:4:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:enchant-being:4:0",
@@ -11471,6 +11489,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:curse-creature:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-witchcraft:curse-creature:5:0",

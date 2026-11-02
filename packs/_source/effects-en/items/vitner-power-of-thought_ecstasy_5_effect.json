@@ -1,0 +1,45 @@
+{
+  "_id": "jxUj7w0v1w2x3y4z",
+  "_key": "!items!jxUj7w0v1w2x3y4z",
+  "name": "Ecstasy",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:ecstasy:5#effect",
+    "description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target with a wave<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.</td></tr></tbody></table>of emotions. The enchanter must choose what emotions the target will feel (see the table below for examples) before weaving the spell. The enchanted character can resist the effect of the spell by making a successful Situation roll with a Situation value of 10 (Psyche modifiers apply). Some further effects that emerge from emotions listed below can also be avoided with a separate Situation roll.",
+    "summary": "Ecstasy",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "szYkH1sYtZu0v1w2",
+      "_key": "!items.effects!jxUj7w0v1w2x3y4z.szYkH1sYtZu0v1w2",
+      "name": "Ecstasy",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target with a wave<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.</td></tr></tbody></table>of emotions. The enchanter must choose what emotions the target will feel (see the table below for examples) before weaving the spell. The enchanted character can resist the effect of the spell by making a successful Situation roll with a Situation value of 10 (Psyche modifiers apply). Some further effects that emerge from emotions listed below can also be avoided with a separate Situation roll.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:ecstasy:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:ecstasy:5#effect",
+            "sourceId": "vitner-power-of-thought:ecstasy:5",
+            "summary": "Ecstasy",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "mHEuceGbHcIdJeKf",
+  "_key": "!items!mHEuceGbHcIdJeKf",
+  "name": "Détection des êtres vivants",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:detect-being:4#effect",
+    "description": "Ce sort permet à l’enchanteur de percevoir une personne ou une créature située à portée. Pour pouvoir pratiquer ce rituel, il doit toutefois connaître le nom de la cible et posséder un objet lui ayant appartenu. Moins il s’est écoulé de temps depuis que la cible s’est séparée de cet objet, plus il sera facile de la retrouver. Le maître de jeu doit commencer par déterminer la valeur de l’objet aux yeux de la cible (ce qui est subjectif, mais correspond également au temps que l’objet a passé entre les mains de la cible) et lui attribuer la valeur appropriée sur une échelle de 1 à 100. Contrairement au sort Détection d’objet, une valeur de 1 indique un objet de valeur et utilisé récemment, comme une arme de famille portée quelques heures plus tôt seulement, tandis que 100 indique quelque chose comme une vieille chaussette portée pour la dernière fois il y a plusieurs années. Pour percevoir un être vivant, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table p. 174 (Cf. le sort Détection d’objet). Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table ci-dessous pour déterminer la quantité d’informations qu’il reçoit au sujet de la position de la cible, en consultant la table Détection d’objet/des êtres vivants : résultat, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur s’est fait une idée de l’emplacement de la cible, cette sensation persiste jusqu’à expiration du sort. Si la cible se déplace, l’enchanteur le perçoit, et le sort l’informe de sa nouvelle position.",
+    "summary": "Détection des êtres vivants",
+    "source": {
+      "book": "Livre des règles",
+      "page": 174
+    }
+  },
+  "effects": [
+    {
+      "_id": "tR92pXrXsYtZu0v1",
+      "_key": "!items.effects!mHEuceGbHcIdJeKf.tR92pXrXsYtZu0v1",
+      "name": "Détection des êtres vivants",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet à l’enchanteur de percevoir une personne ou une créature située à portée. Pour pouvoir pratiquer ce rituel, il doit toutefois connaître le nom de la cible et posséder un objet lui ayant appartenu. Moins il s’est écoulé de temps depuis que la cible s’est séparée de cet objet, plus il sera facile de la retrouver. Le maître de jeu doit commencer par déterminer la valeur de l’objet aux yeux de la cible (ce qui est subjectif, mais correspond également au temps que l’objet a passé entre les mains de la cible) et lui attribuer la valeur appropriée sur une échelle de 1 à 100. Contrairement au sort Détection d’objet, une valeur de 1 indique un objet de valeur et utilisé récemment, comme une arme de famille portée quelques heures plus tôt seulement, tandis que 100 indique quelque chose comme une vieille chaussette portée pour la dernière fois il y a plusieurs années. Pour percevoir un être vivant, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table p. 174 (Cf. le sort Détection d’objet). Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table ci-dessous pour déterminer la quantité d’informations qu’il reçoit au sujet de la position de la cible, en consultant la table Détection d’objet/des êtres vivants : résultat, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur s’est fait une idée de l’emplacement de la cible, cette sensation persiste jusqu’à expiration du sort. Si la cible se déplace, l’enchanteur le perçoit, et le sort l’informe de sa nouvelle position.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:detect-being:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:detect-being:4#effect",
+            "sourceId": "vitner-perceiving:detect-being:4",
+            "summary": "Détection des êtres vivants",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

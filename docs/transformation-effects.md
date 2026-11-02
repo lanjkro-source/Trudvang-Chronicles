@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 210 variantes.
+les états, les règles et les liens des 224 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -319,3 +319,5 @@ Respiration aquatique, Traces et les deux variantes d’Orientation disposent d�
 Sourcier, Marches dans la terre et la pierre, Chemin du retour, Environnement, Cartographie, Espionnage et Voyage astral exposent leurs règles descriptives et les améliorations choisies dans la description et l’infobulle. Leur durée est calculée ; les mouvements particuliers, la portée, les conditions et les conséquences restent à gérer en jeu. Chemin du retour limite ses cibles supplémentaires aux niveaux achetés. Les marches à travers la terre et la pierre étant soutenues, leurs restrictions de contact et de nombre de cibles restent à contrôler manuellement.
 
 Vingt pouvoirs divins de météo, de voyage et d’invocation proposent un effet descriptif : la durée et ses améliorations sont calculées, les autres niveaux achetés sont rappelés en détail et au survol. Les aires et leurs conditions sont gérées par les joueurs ; les esprits et montures ne sont pas créés automatiquement. Les bonus de chasse, la météo et les vitesses de voyage sont indiqués par les descriptions et ne modifient pas automatiquement les jets ou les déplacements.
+
+Enchantement de créature et Malédiction de créature appliquent automatiquement leur bonus ou malus aux tests de compétence et de situation, avec les niveaux alloués. La levée de la malédiction à la mort du lanceur reste manuelle. Les détections, contrôles et perceptions ajoutés conservent leur description, durée, améliorations et jets de résistance ; leurs effets narratifs et les résultats des tables restent à gérer en jeu.

@@ -1,0 +1,45 @@
+{
+  "_id": "nYYNQvZu0v1w2x3y",
+  "_key": "!items!nYYNQvZu0v1w2x3y",
+  "name": "Contrôle des créatures",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:creature-control:8#effect",
+    "description": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision. La cible peut tenter de résister à ce sort par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la cible obéit aveuglément à tous les ordres que l’enchanteur lui donne. Ce faisant, la cible peut exécuter toute action qu’elle serait normalement en mesure d’accomplir. Toutefois, l’enchanteur ne peut pas obliger la créature à commettre des actes en totale opposition à ce qu’elle ferait normalement. Par exemple, l’enchanteur ne peut pas ordonner à la cible d’assassiner une personne innocente, à moins que la cible en soit normalement capable. L’enchanteur ne pourrait pas non plus pousser une cible à se blesser volontairement elle-même. Enfin, il est impossible d’ordonner à la cible d’entreprendre des actions autonomes qui lui demandent de réfléchir par elle-même, ce qui impliquerait de relâcher le contrôle. La portée indiquée ne s’applique qu’au temps de tissage : une fois le sort tissé, l’enchanteur peut envoyer la cible bien plus loin tout en en conservant le contrôle. L’effet de ce sort est rompu si l’enchanteur est déconcentré de quelque façon que ce soit, si la cible quitte le champ de vision de l’enchanteur, ou si la cible subit au moins 1 point de dégâts.",
+    "summary": "Contrôle des créatures",
+    "source": {
+      "book": "Livre des règles",
+      "page": 179
+    }
+  },
+  "effects": [
+    {
+      "_id": "ChfGAdFaGbHcIdJe",
+      "_key": "!items.effects!nYYNQvZu0v1w2x3y.ChfGAdFaGbHcIdJe",
+      "name": "Contrôle des créatures",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision. La cible peut tenter de résister à ce sort par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la cible obéit aveuglément à tous les ordres que l’enchanteur lui donne. Ce faisant, la cible peut exécuter toute action qu’elle serait normalement en mesure d’accomplir. Toutefois, l’enchanteur ne peut pas obliger la créature à commettre des actes en totale opposition à ce qu’elle ferait normalement. Par exemple, l’enchanteur ne peut pas ordonner à la cible d’assassiner une personne innocente, à moins que la cible en soit normalement capable. L’enchanteur ne pourrait pas non plus pousser une cible à se blesser volontairement elle-même. Enfin, il est impossible d’ordonner à la cible d’entreprendre des actions autonomes qui lui demandent de réfléchir par elle-même, ce qui impliquerait de relâcher le contrôle. La portée indiquée ne s’applique qu’au temps de tissage : une fois le sort tissé, l’enchanteur peut envoyer la cible bien plus loin tout en en conservant le contrôle. L’effet de ce sort est rompu si l’enchanteur est déconcentré de quelque façon que ce soit, si la cible quitte le champ de vision de l’enchanteur, ou si la cible subit au moins 1 point de dégâts.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:creature-control:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:creature-control:8#effect",
+            "sourceId": "vitner-power-of-thought:creature-control:8",
+            "summary": "Contrôle des créatures",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

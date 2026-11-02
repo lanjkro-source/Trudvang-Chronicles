@@ -1,0 +1,45 @@
+{
+  "_id": "2yF95cIdJeKfLgMh",
+  "_key": "!items!2yF95cIdJeKfLgMh",
+  "name": "Aura of Power",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:aura-of-power:9#effect",
+    "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority, and glory. Anyone who looks at the enchanter must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately believes that the enchanter is excessively i mpressive and powerful, and will obey their commands. (A person who is known for loyalty to rulers is more likely to obey than someone who commonly defies authority). A successful Situation roll means that the victim sees through the aura and observes the enchanter as they really appear. Once the duration of the spell ends, all who have been bewitched also see the enchanter for who they really are. If the enchanter asks for anything out of the ordinary, the victim has a new opportunity to make a Situation roll to see through the aura. Being captivated by the Aura of Power does not mean that a victim blindly follows orders, but that the enchanter’s words hold significant gravity. To disagree with or oppose the enchanter feels very uncomfortable and maybe even dangerous.",
+    "summary": "Aura of Power",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "dcdOulQlRmSnToUp",
+      "_key": "!items.effects!2yF95cIdJeKfLgMh.dcdOulQlRmSnToUp",
+      "name": "Aura of Power",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority, and glory. Anyone who looks at the enchanter must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately believes that the enchanter is excessively i mpressive and powerful, and will obey their commands. (A person who is known for loyalty to rulers is more likely to obey than someone who commonly defies authority). A successful Situation roll means that the victim sees through the aura and observes the enchanter as they really appear. Once the duration of the spell ends, all who have been bewitched also see the enchanter for who they really are. If the enchanter asks for anything out of the ordinary, the victim has a new opportunity to make a Situation roll to see through the aura. Being captivated by the Aura of Power does not mean that a victim blindly follows orders, but that the enchanter’s words hold significant gravity. To disagree with or oppose the enchanter feels very uncomfortable and maybe even dangerous.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:aura-of-power:9#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:aura-of-power:9#effect",
+            "sourceId": "vitner-power-of-thought:aura-of-power:9",
+            "summary": "Aura of Power",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

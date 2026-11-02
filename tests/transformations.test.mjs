@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,164);
+ assert.equal(Object.keys(sources).length,178);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1138,4 +1138,15 @@ test("divine weather, travel and summoning effects preserve their duration impro
  await applyTransformation(actor,"holy-gerbanis-strength-of-stormi:shield-disir:5#effect",{counts:[1,0,2]});
  assert.deepEqual(created.duration,{value:24,units:"rounds"});
  assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.holy-gerbanis-strength-of-stormi:shield-disir:5\.PowerLevels\.2/);
+});
+
+test("enchantment and curse scale their global skill and situation modifiers",async()=>{
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const [id,boost,expected,baseDuration] of [["vitner-vitner-craft:enchant-being:4",5,3,"4 tours de jeu"],["vitner-witchcraft:curse-creature:5",4,-3,"10 jours"]]){
+  foundry.applications.api={DialogV2:{wait:async()=>({duration:baseDuration,[`boost${boost}`]:2})}};
+  const counts=[];counts[boost]=2;await applyTransformation(actor,`${id}#effect`,{counts});
+  assert.equal(created.system.changes.find(change=>change.key==="system.modifiers.rolls.allActions").value,String(expected));
+  assert.equal(created.flags[S].transformation.powerContributions[0].resolved,expected);
+ }
 });

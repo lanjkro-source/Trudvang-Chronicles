@@ -1,0 +1,45 @@
+{
+  "_id": "7WDvMUlRmSnToUpV",
+  "_key": "!items!7WDvMUlRmSnToUpV",
+  "name": "Mind Reading",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:mind-reading:11#effect",
+    "description": "The enchanter can read a creature’s memories simply by touching it. The enchanter observes a sequence of images that broadly explains the creature’s history, ranging up to one year back in time. For every 2 action rounds that pass during the spell, the enchanter can try to learn one big secret that the creature is trying to hide. The enchanted creature immediately senses that someone else is in their mind and searching the scattered memories (at increased ranges, the creature cannot know who is reading their memories). The creature can hide a particular secret from the enchanter with a Situation roll with a Situation value of 6 (Psyche m odifiers apply). On a success, the enchanter has to weave a new Mind Reading spell over the creature to try to discover the withheld information. But even if the enchanter is blocked from learning that secret, they can continue to look for other secrets until the duration of the spell is up.",
+    "summary": "Mind Reading",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "ss1nX6y4z5A6B7C8",
+      "_key": "!items.effects!7WDvMUlRmSnToUpV.ss1nX6y4z5A6B7C8",
+      "name": "Mind Reading",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter can read a creature’s memories simply by touching it. The enchanter observes a sequence of images that broadly explains the creature’s history, ranging up to one year back in time. For every 2 action rounds that pass during the spell, the enchanter can try to learn one big secret that the creature is trying to hide. The enchanted creature immediately senses that someone else is in their mind and searching the scattered memories (at increased ranges, the creature cannot know who is reading their memories). The creature can hide a particular secret from the enchanter with a Situation roll with a Situation value of 6 (Psyche m odifiers apply). On a success, the enchanter has to weave a new Mind Reading spell over the creature to try to discover the withheld information. But even if the enchanter is blocked from learning that secret, they can continue to look for other secrets until the duration of the spell is up.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:mind-reading:11#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:mind-reading:11#effect",
+            "sourceId": "vitner-power-of-thought:mind-reading:11",
+            "summary": "Mind Reading",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

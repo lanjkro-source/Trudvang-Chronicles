@@ -1,0 +1,45 @@
+{
+  "_id": "jgAs44v1w2x3y4z5",
+  "_key": "!items!jgAs44v1w2x3y4z5",
+  "name": "Contrôle des animaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:control-animals:4#effect",
+    "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelligents. Il peut contrôler un seul animal ayant au maximum 10 points de santé, ou un certain nombre d’animaux plus petits dont le total des points de santé cumulés ne dépasse pas 10 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux, p. 189). Ce sort est tissé sous la forme d’une chanson douce et apaisante accompagnée de gestes lents afin de ne pas effrayer les animaux. Le contrôle que l’enchanteur exerce sur les animaux est complet, même en combat, mais il ne peut rien faire d’autre que se concentrer sur le sort. Le contrôle est immédiatement brisé si une créature s’éloigne au-delà de la portée du sort, subit au moins la moitié de ses points de santé en dégâts, ou si l’enchanteur est déconcentré.",
+    "summary": "Contrôle des animaux",
+    "source": {
+      "book": "Livre des règles",
+      "page": 190
+    }
+  },
+  "effects": [
+    {
+      "_id": "8siQW2x3y4z5A6B7",
+      "_key": "!items.effects!jgAs44v1w2x3y4z5.8siQW2x3y4z5A6B7",
+      "name": "Contrôle des animaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelligents. Il peut contrôler un seul animal ayant au maximum 10 points de santé, ou un certain nombre d’animaux plus petits dont le total des points de santé cumulés ne dépasse pas 10 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux, p. 189). Ce sort est tissé sous la forme d’une chanson douce et apaisante accompagnée de gestes lents afin de ne pas effrayer les animaux. Le contrôle que l’enchanteur exerce sur les animaux est complet, même en combat, mais il ne peut rien faire d’autre que se concentrer sur le sort. Le contrôle est immédiatement brisé si une créature s’éloigne au-delà de la portée du sort, subit au moins la moitié de ses points de santé en dégâts, ou si l’enchanteur est déconcentré.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:control-animals:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:control-animals:4#effect",
+            "sourceId": "vitner-animal-vitner:control-animals:4",
+            "summary": "Contrôle des animaux",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

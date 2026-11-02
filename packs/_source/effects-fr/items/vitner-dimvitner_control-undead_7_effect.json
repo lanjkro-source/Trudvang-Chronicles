@@ -1,0 +1,45 @@
+{
+  "_id": "3gRG62v1w2x3y4z5",
+  "_key": "!items!3gRG62v1w2x3y4z5",
+  "name": "Contrôle des morts-vivants",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:control-undead:7#effect",
+    "description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons. En prenant le contrôle du lien entre les morts-vivants et leur royaume, l’enchanteur peut asseoir son pouvoir sur les âmes des morts-vivants. Pour ce faire, toutefois, l’enchanteur doit commencer par réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Psychisme), modifiée en fonction du nombre maximal de points de santé du mort-vivant, comme l’indique la table cidessous. Si l’enchanteur parvient à prendre le contrôle d’un mort-vivant, ce dernier obéit à tous ses ordres. Ce contrôle est immédiatement rompu si l’enchanteur perd conscience. L’enchanteur peut contrôler autant de morts-vivants situés à portée du sort qu’il le désire, mais on calcule alors la somme des points de santé de tous les morts-vivants ciblés pour calculer la difficulté du test de situation. <table><thead><tr><th colspan=\"2\">MODIFICATEUR</th></tr><tr><th>Points de santé</th><th>Modificateur</th></tr></thead><tbody><tr><td>1–10</td><td>+8</td></tr><tr><td>11–15</td><td>+4</td></tr><tr><td>16–19</td><td>+2</td></tr><tr><td>20–25</td><td>+0</td></tr><tr><td>26–30</td><td>-2</td></tr><tr><td>31–35</td><td>-4</td></tr><tr><td>36–45</td><td>-6</td></tr><tr><td>46–55</td><td>-8</td></tr><tr><td>56–65</td><td>-10</td></tr><tr><td>66–75</td><td>-12</td></tr><tr><td>76 et plus</td><td>-4</td></tr></tbody></table>",
+    "summary": "Contrôle des morts-vivants",
+    "source": {
+      "book": "Livre des règles",
+      "page": 157
+    }
+  },
+  "effects": [
+    {
+      "_id": "eF4XzeJeKfLgMhNi",
+      "_key": "!items.effects!3gRG62v1w2x3y4z5.eF4XzeJeKfLgMhNi",
+      "name": "Contrôle des morts-vivants",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons. En prenant le contrôle du lien entre les morts-vivants et leur royaume, l’enchanteur peut asseoir son pouvoir sur les âmes des morts-vivants. Pour ce faire, toutefois, l’enchanteur doit commencer par réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Psychisme), modifiée en fonction du nombre maximal de points de santé du mort-vivant, comme l’indique la table cidessous. Si l’enchanteur parvient à prendre le contrôle d’un mort-vivant, ce dernier obéit à tous ses ordres. Ce contrôle est immédiatement rompu si l’enchanteur perd conscience. L’enchanteur peut contrôler autant de morts-vivants situés à portée du sort qu’il le désire, mais on calcule alors la somme des points de santé de tous les morts-vivants ciblés pour calculer la difficulté du test de situation. <table><thead><tr><th colspan=\"2\">MODIFICATEUR</th></tr><tr><th>Points de santé</th><th>Modificateur</th></tr></thead><tbody><tr><td>1–10</td><td>+8</td></tr><tr><td>11–15</td><td>+4</td></tr><tr><td>16–19</td><td>+2</td></tr><tr><td>20–25</td><td>+0</td></tr><tr><td>26–30</td><td>-2</td></tr><tr><td>31–35</td><td>-4</td></tr><tr><td>36–45</td><td>-6</td></tr><tr><td>46–55</td><td>-8</td></tr><tr><td>56–65</td><td>-10</td></tr><tr><td>66–75</td><td>-12</td></tr><tr><td>76 et plus</td><td>-4</td></tr></tbody></table>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:control-undead:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:control-undead:7#effect",
+            "sourceId": "vitner-dimvitner:control-undead:7",
+            "summary": "Contrôle des morts-vivants",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "2yF95cIdJeKfLgMh",
+  "_key": "!items!2yF95cIdJeKfLgMh",
+  "name": "Aura de puissance",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:aura-of-power:9#effect",
+    "description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puissance, d’autorité et de gloire. Quiconque le regarde doit immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la victime prend l’enchanteur pour quelqu’un d’extrêmement puissant et impressionnant, et se soumet à son autorité (Une personne connue pour sa loyauté envers les dirigeants obéira plus facilement que quelqu’un qui défie régulièrement l’autorité). Si la victime réussit son test de situation, elle voit à travers l’aura et perçoit l’enchanteur tel qu’il est en réalité. Une fois la durée du sort expirée, tous ceux qui se sont fait ensorceler perçoivent eux aussi l’enchanteur sous ses véritables traits. Si l’enchanteur demande quelque chose sortant de l’ordinaire, la victime a l’occasion de faire un nouveau test de situation afin de voir à travers l’aura. Une personne victime de l’Aura de puissance n’obéit pas pour autant aveuglément aux ordres : elle accorde simplement beaucoup d’importance aux paroles de l’enchanteur. Une cible qui désobéit ou s’oppose à l’enchanteur ressentira un certain malaise, voire une sensation de danger.",
+    "summary": "Aura de puissance",
+    "source": {
+      "book": "Livre des règles",
+      "page": 179
+    }
+  },
+  "effects": [
+    {
+      "_id": "dcdOulQlRmSnToUp",
+      "_key": "!items.effects!2yF95cIdJeKfLgMh.dcdOulQlRmSnToUp",
+      "name": "Aura de puissance",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puissance, d’autorité et de gloire. Quiconque le regarde doit immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la victime prend l’enchanteur pour quelqu’un d’extrêmement puissant et impressionnant, et se soumet à son autorité (Une personne connue pour sa loyauté envers les dirigeants obéira plus facilement que quelqu’un qui défie régulièrement l’autorité). Si la victime réussit son test de situation, elle voit à travers l’aura et perçoit l’enchanteur tel qu’il est en réalité. Une fois la durée du sort expirée, tous ceux qui se sont fait ensorceler perçoivent eux aussi l’enchanteur sous ses véritables traits. Si l’enchanteur demande quelque chose sortant de l’ordinaire, la victime a l’occasion de faire un nouveau test de situation afin de voir à travers l’aura. Une personne victime de l’Aura de puissance n’obéit pas pour autant aveuglément aux ordres : elle accorde simplement beaucoup d’importance aux paroles de l’enchanteur. Une cible qui désobéit ou s’oppose à l’enchanteur ressentira un certain malaise, voire une sensation de danger.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:aura-of-power:9#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:aura-of-power:9#effect",
+            "sourceId": "vitner-power-of-thought:aura-of-power:9",
+            "summary": "Aura de puissance",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

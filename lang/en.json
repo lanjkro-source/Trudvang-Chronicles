@@ -13693,6 +13693,42 @@
         }
       },
       "Transformation": {
+        "vitner-vitner-craft:enchant-being:4#effect": {
+          "Name": "Enchant Being",
+          "Summary": "Enchant Being",
+          "Description": "The spell weaves together a layer of beneficial vitner around a target within range. The energy grants the target an additional positive modifier of +1 on all Skill Values and Situation values for the duration of the spell.",
+          "SourceName": "Enchant Being",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "129",
+          "Duration": "4 action rounds"
+        },
+        "vitner-dimvitner:speak-to-undead:3#effect": {
+          "Name": "Speak to Undead",
+          "Summary": "Speak to Undead",
+          "Description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse. However, the spirit can choose whether to converse with the mage or not. Because it is an incredibly hard task to find the spirit of the corpse in Dimhall, the enchanter is not always certain that the spell has succeeded, even if the bond is created. Mages who use this spell have to be wary of the risks that are associated with creating a bond of death. RESULTS OF SPEAK TO UNDEAD 1d20 Results 1–12 The mage establishes contact with with it for the duration of the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.</td></tr></tbody></table>spell. master to decide. 13-14 The mage establishes contact with one sought. This spirit may still what it has to say is up to the game 15-16 The mage cannot establish contact 17-18 The mage establishes contact with the mage can see through its lie by value of 10 (Intelligence modifiers 19 The mage establishes contact with the mage can see through its lie by value of 6 (Intelligence modifiers 20+ The mage establishes contact with Trudvang through the bond of death. succeeds in possessing the corpse (a Once the possession is complete, attacks. The game master decides various undead creatures in Game The table above describes what happens when a mage tries to contact a spirit in Dimhall. The game master should roll 1d20 and reference the table so that the mage does not know whether they succeeded. For this spell to work best, the corpse being sought cannot have been dead for longer than a week. For every day beyond a week that the corpse has been dead, the mage gets a modifier of +1 on the roll on the table below (making success less likely, and the endeavor more dangerous).",
+          "SourceName": "Speak to Undead",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "105",
+          "Duration": "1 minute"
+        },
+        "vitner-dimvitner:vitner-theft:5#effect": {
+          "Name": "Vitner Theft",
+          "Summary": "Vitner Theft",
+          "Description": "The spell creates a spiritual bond between the mage and a chosen victim. Through this bond, the mage can suck 1d6 of the victim’s vitner per action round. The casting mage adds the vitner to their own capacity, while the victim loses the same amount. Because vitner is life, a victim who is not an enchanter (and has no vitner capacity) suffers the resulting number of damage to Body Points. Armor gives no protection. A mage can replenish Vitner Points through this spell only up to their full vitner capacity. These points remain until they are used, just as if the mage had gathered the vitner naturally. The mage can stop the spell at any time. The victim can try to resist the vitner theft once per action round by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the roll is successful, the theft is avoided in that action round. However, if the victim fails, the casting mage continues to receive 1d6 Vitner Points each round that the spell is maintained, and the victim loses the same amount from their own Vitner Points (or Body Points if vitner is unavailable). The victim is allowed to attempt the Situation roll before every new action round for as long as the spell lasts.",
+          "SourceName": "Vitner Theft",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "105",
+          "Duration": "2 action rounds"
+        },
+        "vitner-dimvitner:control-undead:7#effect": {
+          "Name": "Control Undead",
+          "Summary": "Control Undead",
+          "Description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons. By taking control of the bond between the undead and their realm, the mage succeeds in controlling the souls of the undead as well. In order to do so, however, the mage has to succeed on a Situation roll with a S ituation value of 12 (Psyche modifiers apply), modified depending on the undead’s full Body Points according to the table below (even if the undead is injured, modifiers are determined as though it were uninjured). If the mage succeeds in controlling<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.</td></tr></tbody></table>an undead, it will obey everything the mage commands it to do. This control is immediately lost if the mage loses consciousness. The mage can control any number of undead within the spell’s range, but the Body Points for all of the targeted undead are totaled to determine how difficult the Situation roll will be.",
+          "SourceName": "Control Undead",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "105",
+          "Duration": "5 minutes"
+        },
         "vitner-soil-craft:soil-walk:5#soil-walk": {
           "Name": "Soil Walk",
           "Summary": "Allows travel through stationary soil.",
@@ -13783,6 +13819,15 @@
           "SourcePage": "112",
           "Duration": "1 hour"
         },
+        "vitner-perceiving:detect-object:2#effect": {
+          "Name": "Detect Object",
+          "Summary": "Detect Object",
+          "Description": "The spell makes it possible for the enchanter to find designated objects within the range. The enchanter first must specify the object sought by determining its value (which is subjective according to the enchanter’s point of view, but also corresponds to the object’s material value) and assigning it the appropriate value between 1 and 100. A value of 1 indicates something as common as a wooden spoon, and 100 is more on par with the magical crown of a king. In order to perceive<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell makes it possible for the enchanter to find designated objects within the range.</td></tr></tbody></table>the object, the enchanter makes a Situation roll with a Situation value of 10 that is modified according to the object’s value, as shown on the table below. DETECT OBJECT MODIFIER Value Modifier 1-10 +8 11-20 +4 21-25 +2 26-35 ±0 36-45 -2 46-55 -4 56-65 -8 66-75 -10 76-85 -12 86-90 -16 91-95 -20 96-100 -30 If the enchanter is successful on the Situation roll, they roll 1d20 to determine how much information they learn regarding the object’s location. Check the result on the table below. Once the enchanter has a sense of where an object is located, that feeling remains for the spell’s duration. If the object is moved, the enchanter senses it, and the direction sense is altered accordingly. RESULTS, DETECT<table><tbody><tr><td>The spell makes it possible for the enchanter to find designated objects within the range.</td></tr></tbody></table>OBJECT 1d20 Result 1-3 The enchanter knows the exact location of the object. 4-8 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 100 m. 9-11 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 500 m. 12-13 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 1,000 m. 14-15 The enchanter knows the exact compass point toward the location of the object. 16-17 The enchanter has a good sense of the compass point toward the location of the object, with accuracy ± 10 degrees. 18-20 The enchanter has a good sense of the compass point toward the location of the object, with accuracy ± 30 degrees.",
+          "SourceName": "Detect Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "1 hour"
+        },
         "vitner-perceiving:orientation:3#orientation": {
           "Name": "Orientation",
           "Summary": "The recipient knows the cardinal directions and their height or depth.",
@@ -13791,6 +13836,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "112",
           "Duration": "1 hour"
+        },
+        "vitner-perceiving:detect-being:4#effect": {
+          "Name": "Detect Being",
+          "Summary": "Detect Being",
+          "Description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range. However, they need to know the name of the target being sought and must possess an object that belonged to that individual to use for the ritual. The less time that has elapsed since the target had the object, the easier it is to find them. The game master must first determine the object’s value to the target (which is subjective according to the target’s point of view, but also corresponds to how long the individual had the object) and assign it an appropriate value between 1 and 100. Unlike with the Detect Object spell, 1 indicates something valuable and recently used, such as an heirloom weapon that the target had just a few hours ago, while 100 indicates something like an old sock that was last worn several years ago. If the enchanter is successful on the Situation roll, they roll 1d20 to determine how much information they DETECT BEING/UNDEAD MODIFIER Value Body Points Modifier 1-10 1-10 +8 11-20 11-20 +4 21-25 21-25 +2 26-35 26-35 ±0 36-45 36-45 -2 46-55 46-55 -4 56-65 56-65 -8 66-75 66-75 -10 76-85 76-85 -12 86-90 86-90 -16 91-95 91-95 -20 96-100 &gt; 95 -30 learn about the target’s location. The result corresponds with the Detect Object table listed above (under the Detect Object spell). Once the enchanter has a sense of where a target is currently located, that feeling remains for the spell’s duration. If the target moves, the enchanter senses it, and the direction sense is altered accordingly.",
+          "SourceName": "Detect Being",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "1 hour"
+        },
+        "vitner-perceiving:detect-undead:5#effect": {
+          "Name": "Detect Undead",
+          "Summary": "Detect Undead",
+          "Description": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range. To detect the undead being, a Situation roll is used with a Situation value of 10, modified according to the undead’s Body Points as shown in the table for the Detect Being/Undead Spell, below. If the enchanter is successful with the Situation roll, 1d20 is then rolled to determine how much information the enchanter receives about<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell makes it possible for the enchanter to sense the presence of an undead creature within range.</td></tr></tbody></table>the undead. The result corresponds with the table for the Detect Object spell, above. Once the enchanter has a sense of where the undead is currently located, that sense remains for the spell’s duration. Even if the undead moves, the enchanter senses it, and the direction sense is altered accordingly.",
+          "SourceName": "Detect Undead",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "2 hours"
         },
         "vitner-perceiving:surrounding:6#surrounding": {
           "Name": "Surrounding",
@@ -13846,6 +13909,15 @@
           "SourcePage": "116",
           "Duration": "10 minutes"
         },
+        "vitner-power-of-thought:ecstasy:5#effect": {
+          "Name": "Ecstasy",
+          "Summary": "Ecstasy",
+          "Description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target with a wave<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.</td></tr></tbody></table>of emotions. The enchanter must choose what emotions the target will feel (see the table below for examples) before weaving the spell. The enchanted character can resist the effect of the spell by making a successful Situation roll with a Situation value of 10 (Psyche modifiers apply). Some further effects that emerge from emotions listed below can also be avoided with a separate Situation roll.",
+          "SourceName": "Ecstasy",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "1 minute"
+        },
         "vitner-power-of-thought:imagining:6#pensee": {
           "Name": "Implanted Thought",
           "Summary": "The target believes the suggested thought is its own.",
@@ -13864,6 +13936,42 @@
           "SourcePage": "116",
           "Duration": "5 action rounds"
         },
+        "vitner-power-of-thought:aura-of-power:9#effect": {
+          "Name": "Aura of Power",
+          "Summary": "Aura of Power",
+          "Description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority, and glory. Anyone who looks at the enchanter must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately believes that the enchanter is excessively i mpressive and powerful, and will obey their commands. (A person who is known for loyalty to rulers is more likely to obey than someone who commonly defies authority). A successful Situation roll means that the victim sees through the aura and observes the enchanter as they really appear. Once the duration of the spell ends, all who have been bewitched also see the enchanter for who they really are. If the enchanter asks for anything out of the ordinary, the victim has a new opportunity to make a Situation roll to see through the aura. Being captivated by the Aura of Power does not mean that a victim blindly follows orders, but that the enchanter’s words hold significant gravity. To disagree with or oppose the enchanter feels very uncomfortable and maybe even dangerous.",
+          "SourceName": "Aura of Power",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "5 minutes"
+        },
+        "vitner-power-of-thought:creature-control:8#effect": {
+          "Name": "Creature Control",
+          "Summary": "Creature Control",
+          "Description": "The enchanter can control and direct an intelligent creature (not an animal) that is within range and line of sight. The target can attempt to resist the spell by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the roll fails, the target blindly obeys everything the enchanter commands it to do. In doing so, the target can perform any action that would normally be possible. However, the enchanter cannot command the target to commit acts that are extremely different from what it would normally be willing to do. For example, the enchanter cannot command a target to murder an innocent person unless the target is otherwise inclined to do just that. Nor could the enchanter command a target to willfully harm itself. Finally, it is not possible to command a target to perform autonomous actions that require the creature to think for itself, as doing so would break the control. The listed range applies only to the weaving time, which means that after the spell has been woven, the enchanter can send the target far beyond the range and still maintain control. The effect of the spell is broken if the enchanter loses concentration for any reason, if the target disappears out of sight from the enchanter, or if the target takes 1 or more points of damage.",
+          "SourceName": "Creature Control",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "3 minutes"
+        },
+        "vitner-power-of-thought:mind-reading:11#effect": {
+          "Name": "Mind Reading",
+          "Summary": "Mind Reading",
+          "Description": "The enchanter can read a creature’s memories simply by touching it. The enchanter observes a sequence of images that broadly explains the creature’s history, ranging up to one year back in time. For every 2 action rounds that pass during the spell, the enchanter can try to learn one big secret that the creature is trying to hide. The enchanted creature immediately senses that someone else is in their mind and searching the scattered memories (at increased ranges, the creature cannot know who is reading their memories). The creature can hide a particular secret from the enchanter with a Situation roll with a Situation value of 6 (Psyche m odifiers apply). On a success, the enchanter has to weave a new Mind Reading spell over the creature to try to discover the withheld information. But even if the enchanter is blocked from learning that secret, they can continue to look for other secrets until the duration of the spell is up.",
+          "SourceName": "Mind Reading",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "6 action rounds"
+        },
+        "vitner-power-of-thought:possess-creature:10#effect": {
+          "Name": "Possess Creature",
+          "Summary": "Possess Creature",
+          "Description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body. To accomplish this, the enchanter must have the victim within the spell’s range and line of sight. It is not possible to possess a creature who, for some reason, cannot be seen. The victim can resist this intrusion by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the spell is successful, the e nchanter’s consciousness transfers to the victim, who loses all control over its body. From this point, the enchanter can embrace the creature’s characteristics such as speech and abilities as if their own, without any resistance. When the enchanter leaves their own body to take control of the victim, their body is left behind in a deep slumber. Once inside the victim, the enchanter can move as far as desired from their own body without having to maintain spell range. However, the enchanter must be careful to return within range before the spell ends. If the victim is killed or the spell’s duration expires before the enchanter returns within range, the e nchanter’s consciousness is ripped v iolently back to their body. The e xperience is so traumatic that the enchanter undergoes extreme shock, p ermanently loses 1d6 of their vitner capacity, and falls into a deep slumber for 1d6 days.",
+          "SourceName": "Possess Creature",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "10 minutes"
+        },
         "vitner-power-of-vision:espionage:4#espionage": {
           "Name": "Espionage",
           "Summary": "Allows remote perception around the enchanted object.",
@@ -13881,6 +13989,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "120",
           "Duration": "5 minutes"
+        },
+        "vitner-witchcraft:curse-creature:5#effect": {
+          "Name": "Curse Creature",
+          "Summary": "Curse Creature",
+          "Description": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being). With this spell, the mage twists the composition of energies around the target. This subtle change cannot be perceived through normal senses, but is picked up on intuitively. It is a disharmony that is hard to describe in words, as if a high, cutting, relentless, and unnerving sound is constantly emanating from the target, a sound that is constantly rising and gnawing at the limit of our consciousness. All living creatures that encounter the target are struck by this uncomfortable feeling, an intense aversion, a powerful sense of something both supernatural and wrong. All living beings instinctively shun and avoid the target as much as possible. Additionally, intelligent beings are filled with fear and often believe that anything the target carries or comes into contact with might be contagious as well. Even the target’s friends often feel a powerful aversion and cannot stand being in their presence, no matter how dearly they would like to. Merchants and traders cancel transactions with the target, mothers pull their children away and shield them from view, people leave wide chasms of space around the target on the streets and in inns, and adventuring colleagues cannot sleep in their presence and never wake up feeling rested. In short, people avoid the cursed character as if they were a leper. The most tragic thing about the curse is that the target is unaware of it, and initially has no idea why others have these reactions. If the target has no knowledge about magic and spells, it’s possible they might never understand. Against the cursed victims will, they become increasingly more isolated and shunned, filled with doubt and trepidation. Given enough time, the cursed victim risks becoming insane. The twisted vitner surrounding the target does more than make life unbearable for the afflicted. All Skill Values and Situation values have a negative modifier of -1 for the duration of the curse. If the mage that caused the curse dies, it is immediately broken.",
+          "SourceName": "Curse Creature",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "10 days"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
@@ -13909,6 +14026,15 @@
           "SourcePage": "92",
           "Duration": "1 minute",
           "Sense0": "Animal link range"
+        },
+        "vitner-animal-vitner:control-animals:4#effect": {
+          "Name": "Control Animals",
+          "Summary": "Control Animals",
+          "Description": "The mage can control and direct one or more unintelligent animals. In total they can control one animal with a maximum amount of 10 Body Points, or a number of smaller animals that together total up to 10 Body Points (see table on previous page for direction) Resuluts,. The spell is woven in the form of a soothing song and slow, soft movements so as not to scare the animals away. The mage can control and direct the animals completely, even in battle, but cannot do anything other than concentrate on the spell. The control is broken immediately if a creature gets outside of the spell’s range, if the animal suffers half of its Body Points in damage, or if the mage loses concentration.",
+          "SourceName": "Control Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "1 minute"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Grip",

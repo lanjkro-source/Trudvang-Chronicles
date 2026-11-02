@@ -1,5 +1,128 @@
 // Generated from authoritative FR effectTemplates. Text belongs to lang/*.json.
 export const TRANSFORMATION_TEMPLATES = {
+  "vitner-vitner-craft:enchant-being:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "4 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-vitner-craft:enchant-being:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-craft:enchant-being:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-craft:enchant-being:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-craft:enchant-being:4:2"
+      },
+      {
+        "index": 5,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": 1,
+        "optionId": "vitner-vitner-craft:enchant-being:4:5"
+      }
+    ]
+  },
+  "vitner-dimvitner:speak-to-undead:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "vitner-dimvitner:speak-to-undead:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-dimvitner:speak-to-undead:3:0"
+      }
+    ]
+  },
+  "vitner-dimvitner:vitner-theft:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "vitner-dimvitner:vitner-theft:5",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-dimvitner:vitner-theft:5:2"
+      }
+    ]
+  },
+  "vitner-dimvitner:control-undead:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-dimvitner:control-undead:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-dimvitner:control-undead:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-dimvitner:control-undead:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-dimvitner:control-undead:7:2"
+      }
+    ]
+  },
   "vitner-soil-craft:soil-walk:5#soil-walk": {
     "id": "soil-walk",
     "icon": "icons/svg/aura.svg",
@@ -350,6 +473,30 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-perceiving:detect-object:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sourceId": "vitner-perceiving:detect-object:2",
+    "parameters": [
+      {
+        "index": 5,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:detect-object:2:5"
+      }
+    ]
+  },
   "vitner-perceiving:orientation:3#orientation": {
     "id": "orientation",
     "icon": "icons/svg/aura.svg",
@@ -371,6 +518,53 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-perceiving:orientation:3:1"
+      }
+    ]
+  },
+  "vitner-perceiving:detect-being:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3
+    ],
+    "sourceId": "vitner-perceiving:detect-being:4",
+    "parameters": [
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:detect-being:4:4"
+      }
+    ]
+  },
+  "vitner-perceiving:detect-undead:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sourceId": "vitner-perceiving:detect-undead:5",
+    "parameters": [
+      {
+        "index": 5,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:detect-undead:5:5"
       }
     ]
   },
@@ -578,6 +772,33 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-thought:ecstasy:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "vitner-power-of-thought:ecstasy:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:ecstasy:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:ecstasy:5:1"
+      }
+    ]
+  },
   "vitner-power-of-thought:imagining:6#pensee": {
     "id": "pensee",
     "icon": "icons/svg/aura.svg",
@@ -668,6 +889,126 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-thought:aura-of-power:9#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-power-of-thought:aura-of-power:9",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:aura-of-power:9:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:aura-of-power:9:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-power-of-thought:aura-of-power:9:2"
+      }
+    ]
+  },
+  "vitner-power-of-thought:creature-control:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "vitner-power-of-thought:creature-control:8",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:creature-control:8:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:creature-control:8:2"
+      }
+    ]
+  },
+  "vitner-power-of-thought:mind-reading:11#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "6 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4
+    ],
+    "sourceId": "vitner-power-of-thought:mind-reading:11",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 10,
+        "optionId": "vitner-power-of-thought:mind-reading:11:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:mind-reading:11:1"
+      }
+    ]
+  },
+  "vitner-power-of-thought:possess-creature:10#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "sourceId": "vitner-power-of-thought:possess-creature:10",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:possess-creature:10:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:possess-creature:10:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-power-of-thought:possess-creature:10:4"
+      }
+    ]
+  },
   "vitner-power-of-vision:espionage:4#espionage": {
     "id": "espionage",
     "icon": "icons/svg/aura.svg",
@@ -728,6 +1069,57 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-power-of-vision:astral-voyage:5:2"
+      }
+    ]
+  },
+  "vitner-witchcraft:curse-creature:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 jours",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "vitner-witchcraft:curse-creature:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-witchcraft:curse-creature:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-witchcraft:curse-creature:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 2592000,
+        "optionId": "vitner-witchcraft:curse-creature:5:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 31536000,
+        "optionId": "vitner-witchcraft:curse-creature:5:3"
+      },
+      {
+        "index": 4,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": -1,
+        "optionId": "vitner-witchcraft:curse-creature:5:4"
       }
     ]
   },
@@ -854,6 +1246,46 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 60,
         "optionId": "vitner-animal-vitner:speak-to-animals:1:1"
+      }
+    ]
+  },
+  "vitner-animal-vitner:control-animals:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      4,
+      5
+    ],
+    "sourceId": "vitner-animal-vitner:control-animals:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-animal-vitner:control-animals:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-animal-vitner:control-animals:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-animal-vitner:control-animals:4:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-animal-vitner:control-animals:4:3"
       }
     ]
   },
@@ -7810,6 +8242,18 @@ export const TRANSFORMATION_TEMPLATES = {
   }
 };
 export const TRANSFORMATIONS_BY_SOURCE = {
+  "vitner-vitner-craft:enchant-being:4": [
+    "vitner-vitner-craft:enchant-being:4#effect"
+  ],
+  "vitner-dimvitner:speak-to-undead:3": [
+    "vitner-dimvitner:speak-to-undead:3#effect"
+  ],
+  "vitner-dimvitner:vitner-theft:5": [
+    "vitner-dimvitner:vitner-theft:5#effect"
+  ],
+  "vitner-dimvitner:control-undead:7": [
+    "vitner-dimvitner:control-undead:7#effect"
+  ],
   "vitner-soil-craft:soil-walk:5": [
     "vitner-soil-craft:soil-walk:5#soil-walk"
   ],
@@ -7836,8 +8280,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-perceiving:retrace-tracks:1": [
     "vitner-perceiving:retrace-tracks:1#traces"
   ],
+  "vitner-perceiving:detect-object:2": [
+    "vitner-perceiving:detect-object:2#effect"
+  ],
   "vitner-perceiving:orientation:3": [
     "vitner-perceiving:orientation:3#orientation"
+  ],
+  "vitner-perceiving:detect-being:4": [
+    "vitner-perceiving:detect-being:4#effect"
+  ],
+  "vitner-perceiving:detect-undead:5": [
+    "vitner-perceiving:detect-undead:5#effect"
   ],
   "vitner-perceiving:surrounding:6": [
     "vitner-perceiving:surrounding:6#surrounding"
@@ -7857,11 +8310,26 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-thought:telepathy:4": [
     "vitner-power-of-thought:telepathy:4#lien"
   ],
+  "vitner-power-of-thought:ecstasy:5": [
+    "vitner-power-of-thought:ecstasy:5#effect"
+  ],
   "vitner-power-of-thought:imagining:6": [
     "vitner-power-of-thought:imagining:6#pensee"
   ],
   "vitner-power-of-thought:memory:7": [
     "vitner-power-of-thought:memory:7#memoire"
+  ],
+  "vitner-power-of-thought:aura-of-power:9": [
+    "vitner-power-of-thought:aura-of-power:9#effect"
+  ],
+  "vitner-power-of-thought:creature-control:8": [
+    "vitner-power-of-thought:creature-control:8#effect"
+  ],
+  "vitner-power-of-thought:mind-reading:11": [
+    "vitner-power-of-thought:mind-reading:11#effect"
+  ],
+  "vitner-power-of-thought:possess-creature:10": [
+    "vitner-power-of-thought:possess-creature:10#effect"
   ],
   "vitner-power-of-vision:espionage:4": [
     "vitner-power-of-vision:espionage:4#espionage"
@@ -7869,12 +8337,18 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-vision:astral-voyage:5": [
     "vitner-power-of-vision:astral-voyage:5#astral-voyage"
   ],
+  "vitner-witchcraft:curse-creature:5": [
+    "vitner-witchcraft:curse-creature:5#effect"
+  ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
   ],
   "vitner-animal-vitner:speak-to-animals:1": [
     "vitner-animal-vitner:speak-to-animals:1#lien"
+  ],
+  "vitner-animal-vitner:control-animals:4": [
+    "vitner-animal-vitner:control-animals:4#effect"
   ],
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"

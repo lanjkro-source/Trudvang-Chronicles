@@ -1,0 +1,53 @@
+{
+  "_id": "JSGOiaE9EaGbHcId",
+  "_key": "!items!JSGOiaE9EaGbHcId",
+  "name": "Enchant Being",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:enchant-being:4#effect",
+    "description": "The spell weaves together a layer of beneficial vitner around a target within range. The energy grants the target an additional positive modifier of +1 on all Skill Values and Situation values for the duration of the spell.",
+    "summary": "Enchant Being",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 129
+    }
+  },
+  "effects": [
+    {
+      "_id": "k4kZ7E9EaGbHcIdJ",
+      "_key": "!items.effects!JSGOiaE9EaGbHcId.k4kZ7E9EaGbHcIdJ",
+      "name": "Enchant Being",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell weaves together a layer of beneficial vitner around a target within range. The energy grants the target an additional positive modifier of +1 on all Skill Values and Situation values for the duration of the spell.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:enchant-being:4#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:enchant-being:4#effect",
+            "sourceId": "vitner-vitner-craft:enchant-being:4",
+            "summary": "Enchant Being",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

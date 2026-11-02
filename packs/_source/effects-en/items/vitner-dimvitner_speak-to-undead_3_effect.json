@@ -1,0 +1,45 @@
+{
+  "_id": "0Pp0eaE9EaGbHcId",
+  "_key": "!items!0Pp0eaE9EaGbHcId",
+  "name": "Speak to Undead",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:speak-to-undead:3#effect",
+    "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse. However, the spirit can choose whether to converse with the mage or not. Because it is an incredibly hard task to find the spirit of the corpse in Dimhall, the enchanter is not always certain that the spell has succeeded, even if the bond is created. Mages who use this spell have to be wary of the risks that are associated with creating a bond of death. RESULTS OF SPEAK TO UNDEAD 1d20 Results 1–12 The mage establishes contact with with it for the duration of the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.</td></tr></tbody></table>spell. master to decide. 13-14 The mage establishes contact with one sought. This spirit may still what it has to say is up to the game 15-16 The mage cannot establish contact 17-18 The mage establishes contact with the mage can see through its lie by value of 10 (Intelligence modifiers 19 The mage establishes contact with the mage can see through its lie by value of 6 (Intelligence modifiers 20+ The mage establishes contact with Trudvang through the bond of death. succeeds in possessing the corpse (a Once the possession is complete, attacks. The game master decides various undead creatures in Game The table above describes what happens when a mage tries to contact a spirit in Dimhall. The game master should roll 1d20 and reference the table so that the mage does not know whether they succeeded. For this spell to work best, the corpse being sought cannot have been dead for longer than a week. For every day beyond a week that the corpse has been dead, the mage gets a modifier of +1 on the roll on the table below (making success less likely, and the endeavor more dangerous).",
+    "summary": "Speak to Undead",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 105
+    }
+  },
+  "effects": [
+    {
+      "_id": "tAAt38C8D9EaGbHc",
+      "_key": "!items.effects!0Pp0eaE9EaGbHcId.tAAt38C8D9EaGbHc",
+      "name": "Speak to Undead",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse. However, the spirit can choose whether to converse with the mage or not. Because it is an incredibly hard task to find the spirit of the corpse in Dimhall, the enchanter is not always certain that the spell has succeeded, even if the bond is created. Mages who use this spell have to be wary of the risks that are associated with creating a bond of death. RESULTS OF SPEAK TO UNDEAD 1d20 Results 1–12 The mage establishes contact with with it for the duration of the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.</td></tr></tbody></table>spell. master to decide. 13-14 The mage establishes contact with one sought. This spirit may still what it has to say is up to the game 15-16 The mage cannot establish contact 17-18 The mage establishes contact with the mage can see through its lie by value of 10 (Intelligence modifiers 19 The mage establishes contact with the mage can see through its lie by value of 6 (Intelligence modifiers 20+ The mage establishes contact with Trudvang through the bond of death. succeeds in possessing the corpse (a Once the possession is complete, attacks. The game master decides various undead creatures in Game The table above describes what happens when a mage tries to contact a spirit in Dimhall. The game master should roll 1d20 and reference the table so that the mage does not know whether they succeeded. For this spell to work best, the corpse being sought cannot have been dead for longer than a week. For every day beyond a week that the corpse has been dead, the mage gets a modifier of +1 on the roll on the table below (making success less likely, and the endeavor more dangerous).",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:speak-to-undead:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:speak-to-undead:3#effect",
+            "sourceId": "vitner-dimvitner:speak-to-undead:3",
+            "summary": "Speak to Undead",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

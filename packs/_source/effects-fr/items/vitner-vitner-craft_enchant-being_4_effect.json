@@ -1,0 +1,53 @@
+{
+  "_id": "JSGOiaE9EaGbHcId",
+  "_key": "!items!JSGOiaE9EaGbHcId",
+  "name": "Enchantement de créature",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:enchant-being:4#effect",
+    "description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
+    "summary": "Enchantement de créature",
+    "source": {
+      "book": "Livre des règles",
+      "page": 153
+    }
+  },
+  "effects": [
+    {
+      "_id": "k4kZ7E9EaGbHcIdJ",
+      "_key": "!items.effects!JSGOiaE9EaGbHcId.k4kZ7E9EaGbHcIdJ",
+      "name": "Enchantement de créature",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:enchant-being:4#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:enchant-being:4#effect",
+            "sourceId": "vitner-vitner-craft:enchant-being:4",
+            "summary": "Enchantement de créature",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

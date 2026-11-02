@@ -1,0 +1,45 @@
+{
+  "_id": "oAjfhXpVqWrXsYtZ",
+  "_key": "!items!oAjfhXpVqWrXsYtZ",
+  "name": "Vol de vitner",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:vitner-theft:5#effect",
+    "description": "Ce sort crée un lien spirituel entre l’enchanteur et la victime de son choix. À travers ce lien, l’enchanteur peut aspirer 1d6 des points de vitner de la victime à chaque tour de jeu, qu’il ajoute à sa propre réserve, tandis que la réserve de la victime perd le même montant. Comme le vitner est la vie, une victime qui n’est pas un enchanteur (et n’a donc aucune réserve de vitner) subit une perte équivalente en points de santé, contre laquelle l’armure n’offre aucune protection. Ce sort ne permet pas à l’enchanteur de dépasser la capacité maximale de sa réserve de vitner. Il conserve les points ainsi gagnés jusqu’à ce qu’il les utilise, exactement comme s’il les avait obtenus de façon naturelle. L’enchanteur peut mettre fin à ce sort à tout moment. La victime peut tenter de résister au vol de vitner une fois par tour de jeu en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, le vol n’a pas lieu à ce tour de jeu. Dans le cas contraire, l’enchanteur à l’origine du sort continue de recevoir 1d6 points de vitner à chaque tour durant lequel il maintient ce sort, et la victime subit une perte équivalente de points de vitner (ou de points de santé si la victime n’a pas de vitner). La victime a droit à un test de situation au début de chaque tour de jeu aussi longtemps que dure ce sort.",
+    "summary": "Vol de vitner",
+    "source": {
+      "book": "Livre des règles",
+      "page": 157
+    }
+  },
+  "effects": [
+    {
+      "_id": "NDviwlPkQlRmSnTo",
+      "_key": "!items.effects!oAjfhXpVqWrXsYtZ.NDviwlPkQlRmSnTo",
+      "name": "Vol de vitner",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort crée un lien spirituel entre l’enchanteur et la victime de son choix. À travers ce lien, l’enchanteur peut aspirer 1d6 des points de vitner de la victime à chaque tour de jeu, qu’il ajoute à sa propre réserve, tandis que la réserve de la victime perd le même montant. Comme le vitner est la vie, une victime qui n’est pas un enchanteur (et n’a donc aucune réserve de vitner) subit une perte équivalente en points de santé, contre laquelle l’armure n’offre aucune protection. Ce sort ne permet pas à l’enchanteur de dépasser la capacité maximale de sa réserve de vitner. Il conserve les points ainsi gagnés jusqu’à ce qu’il les utilise, exactement comme s’il les avait obtenus de façon naturelle. L’enchanteur peut mettre fin à ce sort à tout moment. La victime peut tenter de résister au vol de vitner une fois par tour de jeu en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, le vol n’a pas lieu à ce tour de jeu. Dans le cas contraire, l’enchanteur à l’origine du sort continue de recevoir 1d6 points de vitner à chaque tour durant lequel il maintient ce sort, et la victime subit une perte équivalente de points de vitner (ou de points de santé si la victime n’a pas de vitner). La victime a droit à un test de situation au début de chaque tour de jeu aussi longtemps que dure ce sort.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:vitner-theft:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:vitner-theft:5#effect",
+            "sourceId": "vitner-dimvitner:vitner-theft:5",
+            "summary": "Vol de vitner",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

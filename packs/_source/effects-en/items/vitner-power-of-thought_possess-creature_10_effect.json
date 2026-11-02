@@ -1,0 +1,45 @@
+{
+  "_id": "bIr1Q2w2x3y4z5A6",
+  "_key": "!items!bIr1Q2w2x3y4z5A6",
+  "name": "Possess Creature",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:possess-creature:10#effect",
+    "description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body. To accomplish this, the enchanter must have the victim within the spell’s range and line of sight. It is not possible to possess a creature who, for some reason, cannot be seen. The victim can resist this intrusion by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the spell is successful, the e nchanter’s consciousness transfers to the victim, who loses all control over its body. From this point, the enchanter can embrace the creature’s characteristics such as speech and abilities as if their own, without any resistance. When the enchanter leaves their own body to take control of the victim, their body is left behind in a deep slumber. Once inside the victim, the enchanter can move as far as desired from their own body without having to maintain spell range. However, the enchanter must be careful to return within range before the spell ends. If the victim is killed or the spell’s duration expires before the enchanter returns within range, the e nchanter’s consciousness is ripped v iolently back to their body. The e xperience is so traumatic that the enchanter undergoes extreme shock, p ermanently loses 1d6 of their vitner capacity, and falls into a deep slumber for 1d6 days.",
+    "summary": "Possess Creature",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 116
+    }
+  },
+  "effects": [
+    {
+      "_id": "qsUlLHbHcIdJeKfL",
+      "_key": "!items.effects!bIr1Q2w2x3y4z5A6.qsUlLHbHcIdJeKfL",
+      "name": "Possess Creature",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body. To accomplish this, the enchanter must have the victim within the spell’s range and line of sight. It is not possible to possess a creature who, for some reason, cannot be seen. The victim can resist this intrusion by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the spell is successful, the e nchanter’s consciousness transfers to the victim, who loses all control over its body. From this point, the enchanter can embrace the creature’s characteristics such as speech and abilities as if their own, without any resistance. When the enchanter leaves their own body to take control of the victim, their body is left behind in a deep slumber. Once inside the victim, the enchanter can move as far as desired from their own body without having to maintain spell range. However, the enchanter must be careful to return within range before the spell ends. If the victim is killed or the spell’s duration expires before the enchanter returns within range, the e nchanter’s consciousness is ripped v iolently back to their body. The e xperience is so traumatic that the enchanter undergoes extreme shock, p ermanently loses 1d6 of their vitner capacity, and falls into a deep slumber for 1d6 days.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:possess-creature:10#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:possess-creature:10#effect",
+            "sourceId": "vitner-power-of-thought:possess-creature:10",
+            "summary": "Possess Creature",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

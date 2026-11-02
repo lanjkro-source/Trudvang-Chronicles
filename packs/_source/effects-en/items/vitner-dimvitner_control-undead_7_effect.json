@@ -1,0 +1,45 @@
+{
+  "_id": "3gRG62v1w2x3y4z5",
+  "_key": "!items!3gRG62v1w2x3y4z5",
+  "name": "Control Undead",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:control-undead:7#effect",
+    "description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons. By taking control of the bond between the undead and their realm, the mage succeeds in controlling the souls of the undead as well. In order to do so, however, the mage has to succeed on a Situation roll with a S ituation value of 12 (Psyche modifiers apply), modified depending on the undead’s full Body Points according to the table below (even if the undead is injured, modifiers are determined as though it were uninjured). If the mage succeeds in controlling<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.</td></tr></tbody></table>an undead, it will obey everything the mage commands it to do. This control is immediately lost if the mage loses consciousness. The mage can control any number of undead within the spell’s range, but the Body Points for all of the targeted undead are totaled to determine how difficult the Situation roll will be.",
+    "summary": "Control Undead",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 105
+    }
+  },
+  "effects": [
+    {
+      "_id": "eF4XzeJeKfLgMhNi",
+      "_key": "!items.effects!3gRG62v1w2x3y4z5.eF4XzeJeKfLgMhNi",
+      "name": "Control Undead",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons. By taking control of the bond between the undead and their realm, the mage succeeds in controlling the souls of the undead as well. In order to do so, however, the mage has to succeed on a Situation roll with a S ituation value of 12 (Psyche modifiers apply), modified depending on the undead’s full Body Points according to the table below (even if the undead is injured, modifiers are determined as though it were uninjured). If the mage succeeds in controlling<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.</td></tr></tbody></table>an undead, it will obey everything the mage commands it to do. This control is immediately lost if the mage loses consciousness. The mage can control any number of undead within the spell’s range, but the Body Points for all of the targeted undead are totaled to determine how difficult the Situation roll will be.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:control-undead:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:control-undead:7#effect",
+            "sourceId": "vitner-dimvitner:control-undead:7",
+            "summary": "Control Undead",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

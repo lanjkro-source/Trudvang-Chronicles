@@ -13693,6 +13693,42 @@
         }
       },
       "Transformation": {
+        "vitner-vitner-craft:enchant-being:4#effect": {
+          "Name": "Enchantement de créature",
+          "Summary": "Enchantement de créature",
+          "Description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
+          "SourceName": "Enchantement de créature",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "153",
+          "Duration": "4 tours de jeu"
+        },
+        "vitner-dimvitner:speak-to-undead:3#effect": {
+          "Name": "Conversation de l’au-delà",
+          "Summary": "Conversation de l’au-delà",
+          "Description": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre. Cela dit, cet esprit est libre d’accepter de converser avec l’enchanteur ou non. Étant donné qu’il est extrêmement difficile de trouver l’esprit du cadavre dans le Domaine des Brumes, l’enchanteur ne peut jamais avoir la certitude que son sort a réussi, même s’il est parvenu à créer le lien. Les enchanteurs qui ont recours à ce sort doivent être conscients des risques associés à la création d’un lien funeste. La table cicontre décrit ce qui se passe quand un enchanteur tente de contacter un esprit dans le Domaine des Brumes. Le maître de jeu doit lancer 1d20 et consulter la table lui-même afin que l’enchanteur ne sache pas s’il a réussi ou non. Pour que ce sort ait les meilleures chances de succès, le cadavre utilisé doit être mort depuis moins d’une semaine. Pour chaque journée supplémentaire, l’enchanteur subit un modificateur de +1 sur la table cicontre (ce qui réduit ses chances de succès et rend la pratique plus dangereuse). <table><thead><tr><th colspan=\"2\">RÉSULTATS</th></tr><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1–12</td><td>L’enchanteur établit le contact avec l’esprit du cadavre et peut facilement converser avec lui pendant la durée du sort. Il revient au maître de jeu de déterminer ce que l’esprit a à dire.</td></tr><tr><td>13–14</td><td>L’enchanteur établit le contact avec un esprit qui s’excuse platement de ne pas être celui recherché. Cet esprit peut tout de même converser avec l’enchanteur pendant la durée du sort, mais il revient au maître de jeu de déterminer ce que l’esprit a à dire.</td></tr><tr><td>15–16</td><td>L’enchanteur ne parvient pas à établir de contact avec un esprit quel qu’il soit.</td></tr><tr><td>17–18</td><td>L’enchanteur établit le contact avec un esprit qui prétend être celui recherché. L’enchanteur peut se rendre compte de la supercherie en réussissant un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur d’Intelligence).</td></tr><tr><td>19</td><td>L’enchanteur établit le contact avec un esprit qui prétend être celui recherché. L’enchanteur peut se rendre compte de la supercherie en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur d’Intelligence).</td></tr><tr><td>20+</td><td>L’enchanteur établit le contact avec un esprit qui tente immédiatement de passer par le lien funeste pour s’introduire sur Trudvang. Lancez de nouveau 1d20 : sur un résultat de 1 à 5, l’esprit parvient à posséder le cadavre (un processus qui prend 1d6 tours de jeu au total). Une fois la possession complète, le cadavre devient un mort-vivant qui passe immédiatement à l’attaque. Il revient au maître de jeu de déterminer les traits de personnage dont dispose ce mort-vivant (pour quelques idées, jetez un œil au profil technique des différentes créatures mortes-vivantes dans le Bestiaire de Jorge.</td></tr></tbody></table>",
+          "SourceName": "Conversation de l’au-delà",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "156",
+          "Duration": "1 minute"
+        },
+        "vitner-dimvitner:vitner-theft:5#effect": {
+          "Name": "Vol de vitner",
+          "Summary": "Vol de vitner",
+          "Description": "Ce sort crée un lien spirituel entre l’enchanteur et la victime de son choix. À travers ce lien, l’enchanteur peut aspirer 1d6 des points de vitner de la victime à chaque tour de jeu, qu’il ajoute à sa propre réserve, tandis que la réserve de la victime perd le même montant. Comme le vitner est la vie, une victime qui n’est pas un enchanteur (et n’a donc aucune réserve de vitner) subit une perte équivalente en points de santé, contre laquelle l’armure n’offre aucune protection. Ce sort ne permet pas à l’enchanteur de dépasser la capacité maximale de sa réserve de vitner. Il conserve les points ainsi gagnés jusqu’à ce qu’il les utilise, exactement comme s’il les avait obtenus de façon naturelle. L’enchanteur peut mettre fin à ce sort à tout moment. La victime peut tenter de résister au vol de vitner une fois par tour de jeu en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, le vol n’a pas lieu à ce tour de jeu. Dans le cas contraire, l’enchanteur à l’origine du sort continue de recevoir 1d6 points de vitner à chaque tour durant lequel il maintient ce sort, et la victime subit une perte équivalente de points de vitner (ou de points de santé si la victime n’a pas de vitner). La victime a droit à un test de situation au début de chaque tour de jeu aussi longtemps que dure ce sort.",
+          "SourceName": "Vol de vitner",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "157",
+          "Duration": "2 tours de jeu"
+        },
+        "vitner-dimvitner:control-undead:7#effect": {
+          "Name": "Contrôle des morts-vivants",
+          "Summary": "Contrôle des morts-vivants",
+          "Description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons. En prenant le contrôle du lien entre les morts-vivants et leur royaume, l’enchanteur peut asseoir son pouvoir sur les âmes des morts-vivants. Pour ce faire, toutefois, l’enchanteur doit commencer par réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Psychisme), modifiée en fonction du nombre maximal de points de santé du mort-vivant, comme l’indique la table cidessous. Si l’enchanteur parvient à prendre le contrôle d’un mort-vivant, ce dernier obéit à tous ses ordres. Ce contrôle est immédiatement rompu si l’enchanteur perd conscience. L’enchanteur peut contrôler autant de morts-vivants situés à portée du sort qu’il le désire, mais on calcule alors la somme des points de santé de tous les morts-vivants ciblés pour calculer la difficulté du test de situation. <table><thead><tr><th colspan=\"2\">MODIFICATEUR</th></tr><tr><th>Points de santé</th><th>Modificateur</th></tr></thead><tbody><tr><td>1–10</td><td>+8</td></tr><tr><td>11–15</td><td>+4</td></tr><tr><td>16–19</td><td>+2</td></tr><tr><td>20–25</td><td>+0</td></tr><tr><td>26–30</td><td>-2</td></tr><tr><td>31–35</td><td>-4</td></tr><tr><td>36–45</td><td>-6</td></tr><tr><td>46–55</td><td>-8</td></tr><tr><td>56–65</td><td>-10</td></tr><tr><td>66–75</td><td>-12</td></tr><tr><td>76 et plus</td><td>-4</td></tr></tbody></table>",
+          "SourceName": "Contrôle des morts-vivants",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "157",
+          "Duration": "5 minutes"
+        },
         "vitner-soil-craft:soil-walk:5#soil-walk": {
           "Name": "Marche dans la terre",
           "Summary": "Permet de traverser la terre immobile.",
@@ -13783,6 +13819,15 @@
           "SourcePage": "173",
           "Duration": "1 heure"
         },
+        "vitner-perceiving:detect-object:2#effect": {
+          "Name": "Détection d’objet",
+          "Summary": "Détection d’objet",
+          "Description": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée. L’enchanteur doit commencer par préciser l’objet qu’il recherche. Le maître de jeu en détermine ensuite la valeur (qui est subjective et dépend du point de vue de l’enchanteur, mais correspond également à la valeur matérielle de l’objet) sur une échelle de 1 à 100. Une valeur de 1 indique un objet aussi commun qu’une cuillère en bois, et 100 correspond davantage à la couronne magique d’un roi. Pour percevoir l’objet, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table ci-contre. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Valeur</th><th>Modificateur</th></tr></thead><tbody><tr><td>1-10</td><td>+8</td></tr><tr><td>11-20</td><td>+4</td></tr><tr><td>21-25</td><td>+2</td></tr><tr><td>26-35</td><td>+0</td></tr><tr><td>36-45</td><td>-2</td></tr><tr><td>46-55</td><td>-4</td></tr><tr><td>56-65</td><td>-8</td></tr><tr><td>66-75</td><td>-10</td></tr><tr><td>76-85</td><td>-12</td></tr><tr><td>86-90</td><td>-16</td></tr><tr><td>91-95</td><td>-20</td></tr><tr><td>96-100</td><td>-30</td></tr></tbody></table> Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table de résultat (Cf. ci-dessous) pour déterminer la quantité d’informations qu’il reçoit au sujet de l’emplacement de l’objet. Une fois que l’enchanteur s’est fait une idée de l’emplacement de l’objet, cette sensation persiste jusqu’à expiration du sort. Si l’objet est déplacé, l’enchanteur le perçoit, et le sort l’informe de la nouvelle position de l’objet. <table><thead><tr><th colspan=\"2\">RÉSULTAT</th></tr><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1-3</td><td>L’enchanteur connaît la position exacte de l’objet.</td></tr><tr><td>4-8</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 100 mètres près.</td></tr><tr><td>9-11</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 500 mètres près.</td></tr><tr><td>12-13</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 1 kilomètre près.</td></tr><tr><td>14-15</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet.</td></tr><tr><td>16-17</td><td>L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 10 degrés près sur une boussole)</td></tr><tr><td>18-20</td><td>L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 30 degrés près sur une boussole)</td></tr></tbody></table>",
+          "SourceName": "Détection d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "174",
+          "Duration": "1 heure"
+        },
         "vitner-perceiving:orientation:3#orientation": {
           "Name": "Orientation",
           "Summary": "Le bénéficiaire connaît les points cardinaux et sa hauteur ou sa profondeur.",
@@ -13791,6 +13836,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "174",
           "Duration": "1 heure"
+        },
+        "vitner-perceiving:detect-being:4#effect": {
+          "Name": "Détection des êtres vivants",
+          "Summary": "Détection des êtres vivants",
+          "Description": "Ce sort permet à l’enchanteur de percevoir une personne ou une créature située à portée. Pour pouvoir pratiquer ce rituel, il doit toutefois connaître le nom de la cible et posséder un objet lui ayant appartenu. Moins il s’est écoulé de temps depuis que la cible s’est séparée de cet objet, plus il sera facile de la retrouver. Le maître de jeu doit commencer par déterminer la valeur de l’objet aux yeux de la cible (ce qui est subjectif, mais correspond également au temps que l’objet a passé entre les mains de la cible) et lui attribuer la valeur appropriée sur une échelle de 1 à 100. Contrairement au sort Détection d’objet, une valeur de 1 indique un objet de valeur et utilisé récemment, comme une arme de famille portée quelques heures plus tôt seulement, tandis que 100 indique quelque chose comme une vieille chaussette portée pour la dernière fois il y a plusieurs années. Pour percevoir un être vivant, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table p. 174 (Cf. le sort Détection d’objet). Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table ci-dessous pour déterminer la quantité d’informations qu’il reçoit au sujet de la position de la cible, en consultant la table Détection d’objet/des êtres vivants : résultat, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur s’est fait une idée de l’emplacement de la cible, cette sensation persiste jusqu’à expiration du sort. Si la cible se déplace, l’enchanteur le perçoit, et le sort l’informe de sa nouvelle position.",
+          "SourceName": "Détection des êtres vivants",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "174",
+          "Duration": "1 heure"
+        },
+        "vitner-perceiving:detect-undead:5#effect": {
+          "Name": "Détection des morts-vivants",
+          "Summary": "Détection des morts-vivants",
+          "Description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vivante à portée. Pour ce faire, il doit effectuer un test de situation avec une valeur de situation de 10, modifiée en fonction du nombre de points de santé du mort-vivant, comme indiqué sur la table Détection des morts-vivants : modificateurs, ci-dessous. Si l’enchanteur réussit son test de situation, le maître de jeu lance alors 1d20 pour déterminer la quantité d’informations que l’enchanteur reçoit au sujet du mort-vivant, en consultant la table Détection d’objet : résultats, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur a déterminé où se trouve actuellement le mort-vivant, cette perception perdure pour toute la durée du sort, et ce, même si le mort-vivant se déplace. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Points de Santé</th><th>Modificateur</th></tr></thead><tbody><tr><td>1-10</td><td>+8</td></tr><tr><td>11-20</td><td>+4</td></tr><tr><td>21-25</td><td>+2</td></tr><tr><td>26-35</td><td>+0</td></tr><tr><td>36-45</td><td>-2</td></tr><tr><td>46-55</td><td>-4</td></tr><tr><td>56-65</td><td>-8</td></tr><tr><td>66-75</td><td>-10</td></tr><tr><td>76-85</td><td>-12</td></tr><tr><td>86-90</td><td>-16</td></tr><tr><td>91-95</td><td>-20</td></tr><tr><td>>95</td><td>-30</td></tr></tbody></table>",
+          "SourceName": "Détection des morts-vivants",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "175",
+          "Duration": "2 heures"
         },
         "vitner-perceiving:surrounding:6#surrounding": {
           "Name": "Environnement",
@@ -13846,6 +13909,15 @@
           "SourcePage": "178",
           "Duration": "10 minutes"
         },
+        "vitner-power-of-thought:ecstasy:5#effect": {
+          "Name": "Extase",
+          "Summary": "Extase",
+          "Description": "L’enchanteur projette son énergie manipulatrice vers la personne de son choix, qui se sent immédiatement submergée par une vague d’émotions. L’enchanteur choisit le genre d’émotion que la cible va ressentir (Cf. la table ci-dessous pour quelques exemples) avant de lancer le sort. Le personnage enchanté peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur de Psychisme). Quelques effets secondaires qui peuvent émaner des émotions indiquées ci-dessous peuvent eux aussi être évités par un autre test de situation. <table><thead><tr><th colspan=\"2\">TRAITS</th></tr><tr><th>Sentiments</th><th>Caractéristiques</th></tr></thead><tbody><tr><td>Joyeux</td><td>La cible devient extrêmement joyeuse : elle chante, plaisante et batifole.</td></tr><tr><td>Fatigué</td><td>La cible doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur de Psychisme) pour ne pas s’endormir au cours des 5 prochaines minutes.</td></tr><tr><td>Amoureux</td><td>La cible part à la recherche de la personne qu’elle aime (à elle de décider de qui elle tombe amoureuse).</td></tr><tr><td>Agressif</td><td>La cible se sent irritée par tout et n’importe quoi. Elle cherche la bagarre avec un individu ou un groupe dès qu’elle en a l’occasion.</td></tr><tr><td>Mélancolique</td><td>La cible sombre dans un état de dépression, et rien ne l’intéresse à part raconter combien elle se sent triste et combien ses amis lui manquent.</td></tr><tr><td>Malicieux</td><td>La cible a envie de faire toutes sortes de plaisanteries malicieuses : retirer la chaise de quelqu’un sur le point de s’asseoir, farfouiller dans les effets personnels de quelqu’un, ou tisser des mensonges sophistiqués sont quelques-unes des blagues courantes que le personnage trouve amusantes.</td></tr><tr><td>Condescendant</td><td>La cible s’adresse de manière condescendante à toutes les personnes qu’elle croise, et affirme que personne n’est aussi important qu’elle.</td></tr><tr><td>Vantard</td><td>La cible parle de tout ce qu’elle a fait (ou ce qu’elle aimerait avoir fait) et exagère délibérément les détails.</td></tr><tr><td>Sincère</td><td>La cible ouvre son cœur et partage des secrets et des désirs inavoués avec ses amis proches. Elle doit réussir un nouveau test de situation avec une valeur de situation de 10 (en prenant en compte son modificateur de Psychisme) pour s’empêcher de partager des secrets importants ou particulièrement incriminants (c’est au maître de jeu de déterminer si un secret est révélé ou non).</td></tr><tr><td>Inquiet</td></tr></tbody></table>",
+          "SourceName": "Extase",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "178",
+          "Duration": "1 minute"
+        },
         "vitner-power-of-thought:imagining:6#pensee": {
           "Name": "Pensée implantée",
           "Summary": "La cible prend une pensée suggérée pour la sienne.",
@@ -13864,6 +13936,42 @@
           "SourcePage": "179",
           "Duration": "5 tours de jeu"
         },
+        "vitner-power-of-thought:aura-of-power:9#effect": {
+          "Name": "Aura de puissance",
+          "Summary": "Aura de puissance",
+          "Description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puissance, d’autorité et de gloire. Quiconque le regarde doit immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la victime prend l’enchanteur pour quelqu’un d’extrêmement puissant et impressionnant, et se soumet à son autorité (Une personne connue pour sa loyauté envers les dirigeants obéira plus facilement que quelqu’un qui défie régulièrement l’autorité). Si la victime réussit son test de situation, elle voit à travers l’aura et perçoit l’enchanteur tel qu’il est en réalité. Une fois la durée du sort expirée, tous ceux qui se sont fait ensorceler perçoivent eux aussi l’enchanteur sous ses véritables traits. Si l’enchanteur demande quelque chose sortant de l’ordinaire, la victime a l’occasion de faire un nouveau test de situation afin de voir à travers l’aura. Une personne victime de l’Aura de puissance n’obéit pas pour autant aveuglément aux ordres : elle accorde simplement beaucoup d’importance aux paroles de l’enchanteur. Une cible qui désobéit ou s’oppose à l’enchanteur ressentira un certain malaise, voire une sensation de danger.",
+          "SourceName": "Aura de puissance",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "179",
+          "Duration": "5 minutes"
+        },
+        "vitner-power-of-thought:creature-control:8#effect": {
+          "Name": "Contrôle des créatures",
+          "Summary": "Contrôle des créatures",
+          "Description": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision. La cible peut tenter de résister à ce sort par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la cible obéit aveuglément à tous les ordres que l’enchanteur lui donne. Ce faisant, la cible peut exécuter toute action qu’elle serait normalement en mesure d’accomplir. Toutefois, l’enchanteur ne peut pas obliger la créature à commettre des actes en totale opposition à ce qu’elle ferait normalement. Par exemple, l’enchanteur ne peut pas ordonner à la cible d’assassiner une personne innocente, à moins que la cible en soit normalement capable. L’enchanteur ne pourrait pas non plus pousser une cible à se blesser volontairement elle-même. Enfin, il est impossible d’ordonner à la cible d’entreprendre des actions autonomes qui lui demandent de réfléchir par elle-même, ce qui impliquerait de relâcher le contrôle. La portée indiquée ne s’applique qu’au temps de tissage : une fois le sort tissé, l’enchanteur peut envoyer la cible bien plus loin tout en en conservant le contrôle. L’effet de ce sort est rompu si l’enchanteur est déconcentré de quelque façon que ce soit, si la cible quitte le champ de vision de l’enchanteur, ou si la cible subit au moins 1 point de dégâts.",
+          "SourceName": "Contrôle des créatures",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "179",
+          "Duration": "3 minutes"
+        },
+        "vitner-power-of-thought:mind-reading:11#effect": {
+          "Name": "Lecture des pensées",
+          "Summary": "Lecture des pensées",
+          "Description": "L’enchanteur peut lire les souvenirs de la créature qu’il touche. Il contemple une suite d’images qui explique dans les grandes lignes l’histoire de la créature au cours de l’année écoulée. Pour chaque tranche de 2 tours de jeu que dure ce sort, l’enchanteur peut tenter de découvrir un grand secret que la créature tente de dissimuler. La créature enchantée perçoit immédiatement que quelqu’un tente de pénétrer son esprit et de fouiller sa mémoire (à longue distance, la créature ne peut pas savoir qui tente de lire ses souvenirs). Elle peut dissimuler un secret en particulier aux yeux de l’enchanteur en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, l’enchanteur doit tisser un nouveau sort de Lecture des pensées s’il veut essayer de découvrir l’information camouflée. Mais même si l’enchanteur se voit interdire l’accès à ce secret en particulier, il peut continuer de chercher d’autres secrets jusqu’à expiration du sort.",
+          "SourceName": "Lecture des pensées",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "180",
+          "Duration": "6 tours de jeu"
+        },
+        "vitner-power-of-thought:possess-creature:10#effect": {
+          "Name": "Possession de créature",
+          "Summary": "Possession de créature",
+          "Description": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente. Pour ce faire, la cible doit se trouver à portée du sort et dans le champ de vision de l’enchanteur. Il est impossible de posséder une créature qu’on ne peut pas voir pour quelque raison que ce soit. La victime peut tenter de résister à cette intrusion dans sa conscience par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). Si le sort réussit, la conscience de l’enchanteur est transférée dans l’enveloppe physique de la victime, qui perd le contrôle de son corps. Dès lors, l’enchanteur peut utiliser les caractéristiques de la créature comme la parole ou les aptitudes particulières sans qu’elle puisse s’y opposer. Quand l’enchanteur quitte son propre corps pour prendre contrôle de celui de la victime, il abandonne son enveloppe physique dans un profond sommeil. Une fois à l’intérieur de la victime, l’enchanteur peut s’éloigner autant qu’il le souhaite de son propre corps sans devoir rester dans la portée du sort. Cela dit, l’enchanteur doit prendre soin de revenir à portée avant l’expiration du sort. Si la victime est tuée ou si la durée du sort expire avant que l’enchanteur ne revienne à portée, la conscience de l’enchanteur est violemment extirpée du corps de la victime et renvoyée dans son propre corps. C’est une expérience si traumatisante que l’enchanteur subit une diminution permanente de sa réserve de vitner de 1d6 points et qu’il sombre dans un profond sommeil pendant 1d6 jours.",
+          "SourceName": "Possession de créature",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "180",
+          "Duration": "10 minutes"
+        },
         "vitner-power-of-vision:espionage:4#espionage": {
           "Name": "Espionnage",
           "Summary": "Permet de percevoir à distance autour de l’objet enchanté.",
@@ -13881,6 +13989,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "183",
           "Duration": "5 minutes"
+        },
+        "vitner-witchcraft:curse-creature:5#effect": {
+          "Name": "Malédiction de créature",
+          "Summary": "Malédiction de créature",
+          "Description": "Pour maudire une créature, l’enchanteur doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de sorts tels que Détection des êtres vivants. Ce sort permet à l’enchanteur d’altérer la composition des énergies autour de la cible. Les sens conventionnels ne peuvent percevoir cette subtile modification, mais l’intuition permet de la ressentir. C’est un manque d’harmonie difficile à décrire avec des mots, un peu comme un son aigu, strident et insistant qui émanerait en permanence de la cible, un son qui ne cesse de faire écho à la limite de notre conscience. Toutes les créatures vivantes qui croisent la cible sont frappées par cette sensation étrange, une violente aversion, une puissante impression de quelque chose d’à la fois déplacé et surnaturel. L’instinct pousse tous les êtres vivants à éviter autant que possible la cible. En outre, les êtres intelligents sont remplis de peur et croient que tout ce que la cible porte ou touche pourrait également s’avérer contagieux. Même les amis de la cible ressentent souvent une puissante aversion et ne supportent pas de rester en sa présence malgré toute l’affection qu’ils lui portent. Les marchands et les négociants annulent leurs transactions avec la cible, les mères chassent leurs enfants et les maintiennent hors de leur vue, les gens gardent leurs distances dans la rue et dans les tavernes, et les compagnons d’aventure ne peuvent pas dormir en présence de la cible et leur repos n’est pas réparateur. Pour faire court, les gens évitent le personnage maudit comme s’il avait la lèpre. Le plus tragique dans cette malédiction, c’est que la cible n’en a pas conscience, et n’a au début aucune idée de ce qui pousse les autres à réagir ainsi en sa présence. Si la cible ne connaît rien à la magie et aux sorts, elle pourrait très bien ne jamais comprendre. Quoi qu’elle fasse, elle se retrouvera de plus en plus isolée et submergée par le doute et l’inquiétude. Avec le temps, la victime risque fort de sombrer dans la folie. Le vitner maléfique qui entoure la cible ne se contente pas de lui rendre la vie insupportable. Il inflige également un malus de -1 à toutes ses valeurs de compétence et de situation jusqu’à expiration de la malédiction. Si l’enchanteur à l’origine de la malédiction meurt, cette dernière est immédiatement levée.",
+          "SourceName": "Malédiction de créature",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "185",
+          "Duration": "10 jours"
         },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
@@ -13909,6 +14026,15 @@
           "SourcePage": "188",
           "Duration": "1 minute",
           "Sense0": "Portée du lien avec l’animal"
+        },
+        "vitner-animal-vitner:control-animals:4#effect": {
+          "Name": "Contrôle des animaux",
+          "Summary": "Contrôle des animaux",
+          "Description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelligents. Il peut contrôler un seul animal ayant au maximum 10 points de santé, ou un certain nombre d’animaux plus petits dont le total des points de santé cumulés ne dépasse pas 10 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux, p. 189). Ce sort est tissé sous la forme d’une chanson douce et apaisante accompagnée de gestes lents afin de ne pas effrayer les animaux. Le contrôle que l’enchanteur exerce sur les animaux est complet, même en combat, mais il ne peut rien faire d’autre que se concentrer sur le sort. Le contrôle est immédiatement brisé si une créature s’éloigne au-delà de la portée du sort, subit au moins la moitié de ses points de santé en dégâts, ou si l’enchanteur est déconcentré.",
+          "SourceName": "Contrôle des animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "190",
+          "Duration": "1 minute"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Adhérence",

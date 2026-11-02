@@ -1,0 +1,45 @@
+{
+  "_id": "jgAs44v1w2x3y4z5",
+  "_key": "!items!jgAs44v1w2x3y4z5",
+  "name": "Control Animals",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:control-animals:4#effect",
+    "description": "The mage can control and direct one or more unintelligent animals. In total they can control one animal with a maximum amount of 10 Body Points, or a number of smaller animals that together total up to 10 Body Points (see table on previous page for direction) Resuluts,. The spell is woven in the form of a soothing song and slow, soft movements so as not to scare the animals away. The mage can control and direct the animals completely, even in battle, but cannot do anything other than concentrate on the spell. The control is broken immediately if a creature gets outside of the spell’s range, if the animal suffers half of its Body Points in damage, or if the mage loses concentration.",
+    "summary": "Control Animals",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "8siQW2x3y4z5A6B7",
+      "_key": "!items.effects!jgAs44v1w2x3y4z5.8siQW2x3y4z5A6B7",
+      "name": "Control Animals",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage can control and direct one or more unintelligent animals. In total they can control one animal with a maximum amount of 10 Body Points, or a number of smaller animals that together total up to 10 Body Points (see table on previous page for direction) Resuluts,. The spell is woven in the form of a soothing song and slow, soft movements so as not to scare the animals away. The mage can control and direct the animals completely, even in battle, but cannot do anything other than concentrate on the spell. The control is broken immediately if a creature gets outside of the spell’s range, if the animal suffers half of its Body Points in damage, or if the mage loses concentration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:control-animals:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:control-animals:4#effect",
+            "sourceId": "vitner-animal-vitner:control-animals:4",
+            "summary": "Control Animals",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
