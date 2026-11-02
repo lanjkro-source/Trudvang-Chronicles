@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only",
-    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+    "description": "Le bénéficiaire ignore ses malus de peur tant qu’il reste dans la lumière. Cet effet ne confère pas de bonus aux valeurs de compétence ou de situation.",
     "summary": "Annule les malus de peur dans la lumière.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Apaisement — Lumière rassurante",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+      "description": "Le bénéficiaire ignore ses malus de peur tant qu’il reste dans la lumière. Cet effet ne confère pas de bonus aux valeurs de compétence ou de situation.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only",

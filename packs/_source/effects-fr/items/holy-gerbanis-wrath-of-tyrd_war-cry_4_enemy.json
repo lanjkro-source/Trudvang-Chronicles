@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",
-    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
+    "description": "Le bénéficiaire subit un malus de base de −3 à toutes ses actions de combat. Les niveaux de puissance peuvent aggraver ce malus.",
     "summary": "Pénalise les actions de combat.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Cri de guerre — ennemi",
       "type": "effect",
       "img": "icons/svg/sword.svg",
-      "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
+      "description": "Le bénéficiaire subit un malus de base de −3 à toutes ses actions de combat. Les niveaux de puissance peuvent aggraver ce malus.",
       "transfer": false,
       "system": {
         "stackId": "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy",

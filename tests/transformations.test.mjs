@@ -1186,3 +1186,18 @@ test("long sight and sacred lights scale their combat bonus without granting fea
   if(id.includes("tablet-of-the-sun")){const rules=effectRules(created);assert.equal(rules.ignoreFearPenalty,true);assert.notEqual(rules.ignoreFear,true);}
  }
 });
+
+test("ally and non-ally variants describe only their own applied effect",()=>{
+ for(const lang of ["fr","en"]){
+  const data=JSON.parse(fs.readFileSync(new URL(`../lang/${lang}.json`,import.meta.url),"utf8"));
+  const rows=data.TRUDVANG.Content.Transformation;
+  for(const id of ["holy-tenetnid-tablet-of-the-sun:thermal-light:3","holy-tenetnid-tablet-of-the-sun:holy-radiance:7"]){
+   const main=rows[`${id}#effect`].Description,other=rows[`${id}#fear-only`].Description;
+   assert.notEqual(main,other);assert.match(other,lang==="fr"?/ne confère pas de bonus/i:/grants no.*bonus/i);
+  }
+  for(const id of ["holy-gerbanis-wrath-of-tyrd:war-cry:4","holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7"]){
+   assert.match(rows[`${id}#ally`].Description,/\+/);assert.doesNotMatch(rows[`${id}#ally`].Description,/−/);
+   assert.match(rows[`${id}#enemy`].Description,/−/);assert.doesNotMatch(rows[`${id}#enemy`].Description,/\+/);
+  }
+ }
+});

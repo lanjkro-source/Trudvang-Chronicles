@@ -14626,7 +14626,7 @@
         "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
           "Name": "Cri de guerre — allié",
           "Summary": "Améliore les actions de combat.",
-          "Description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
+          "Description": "Le bénéficiaire reçoit un bonus de base de +3 à toutes ses actions de combat. Les niveaux de puissance peuvent augmenter ce bonus.",
           "SourceName": "Cri de guerre",
           "SourceBook": "Livre des règles",
           "SourcePage": "221",
@@ -14635,7 +14635,7 @@
         "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy": {
           "Name": "Cri de guerre — ennemi",
           "Summary": "Pénalise les actions de combat.",
-          "Description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
+          "Description": "Le bénéficiaire subit un malus de base de −3 à toutes ses actions de combat. Les niveaux de puissance peuvent aggraver ce malus.",
           "SourceName": "Cri de guerre",
           "SourceBook": "Livre des règles",
           "SourcePage": "221",
@@ -14644,7 +14644,7 @@
         "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally": {
           "Name": "Tonnerre victorieux — allié",
           "Summary": "Améliore les actions de combat.",
-          "Description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif.",
+          "Description": "Le bénéficiaire reçoit un bonus de base de +4 à toutes ses actions de combat. Les niveaux de puissance peuvent augmenter ce bonus.",
           "SourceName": "Tonnerre victorieux",
           "SourceBook": "Livre des règles",
           "SourcePage": "221",
@@ -14653,7 +14653,7 @@
         "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy": {
           "Name": "Tonnerre victorieux — ennemi",
           "Summary": "Pénalise les actions de combat.",
-          "Description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif.",
+          "Description": "Le bénéficiaire subit un malus de base de −4 à toutes ses actions de combat. Les niveaux de puissance peuvent aggraver ce malus.",
           "SourceName": "Tonnerre victorieux",
           "SourceBook": "Livre des règles",
           "SourcePage": "221",
@@ -15342,7 +15342,7 @@
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Lumière rassurante",
           "Summary": "Lumière rassurante",
-          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +1 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus.",
           "SourceName": "Lumière rassurante",
           "SourceBook": "Livre des règles",
           "SourcePage": "262",
@@ -15351,7 +15351,7 @@
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only": {
           "Name": "Apaisement — Lumière rassurante",
           "Summary": "Annule les malus de peur dans la lumière.",
-          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +1 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "Description": "Le bénéficiaire ignore ses malus de peur tant qu’il reste dans la lumière. Cet effet ne confère pas de bonus aux valeurs de compétence ou de situation.",
           "SourceName": "Lumière rassurante",
           "SourceBook": "Livre des règles",
           "SourcePage": "262",
@@ -15360,7 +15360,7 @@
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
           "Name": "Radiance sacrée",
           "Summary": "Radiance sacrée",
-          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "Description": "Le bénéficiaire ignore ses malus de peur et reçoit un bonus de base de +3 à ses valeurs de compétence et de situation tant qu’il reste dans la lumière. Les niveaux de puissance peuvent augmenter ce bonus.",
           "SourceName": "Radiance sacrée",
           "SourceBook": "Livre des règles",
           "SourcePage": "264",
@@ -15369,7 +15369,7 @@
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#fear-only": {
           "Name": "Apaisement — Radiance sacrée",
           "Summary": "Annule les malus de peur dans la lumière.",
-          "Description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Cette lumière apporte la sécurité et la tranquillité dans toute la zone affectée. Tous les malus dus à la peur disparaissent, et le prêtre et ses alliés reçoivent un bonus de +3 à leurs valeurs de compétence et de situation tant qu’ils restent à portée. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+          "Description": "Le bénéficiaire ignore ses malus de peur tant qu’il reste dans la lumière. Cet effet ne confère pas de bonus aux valeurs de compétence ou de situation.",
           "SourceName": "Radiance sacrée",
           "SourceBook": "Livre des règles",
           "SourcePage": "264",
