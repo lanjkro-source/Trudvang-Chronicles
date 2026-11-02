@@ -1,0 +1,45 @@
+{
+  "_id": "H7KI0iMhNiOjPkQl",
+  "_key": "!items!H7KI0iMhNiOjPkQl",
+  "name": "Compréhension orale",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:understanding-speech:1#oral",
+    "description": "Comprend la langue choisie comme une langue maternelle. Les niveaux de puissance peuvent traduire ses paroles pour les créatures indiquées.",
+    "summary": "Comprend la langue choisie.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 177
+    }
+  },
+  "effects": [
+    {
+      "_id": "A5zQQqUpVqWrXsYt",
+      "_key": "!items.effects!H7KI0iMhNiOjPkQl.A5zQQqUpVqWrXsYt",
+      "name": "Compréhension orale",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Comprend la langue choisie comme une langue maternelle. Les niveaux de puissance peuvent traduire ses paroles pour les créatures indiquées.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:understanding-speech:1#oral",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:understanding-speech:1#oral",
+            "sourceId": "vitner-power-of-thought:understanding-speech:1",
+            "summary": "Comprend la langue choisie.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -7016,7 +7016,7 @@
         },
         "holy-toikalokke-animal-mind:animal-master:5": {
           "Name": "Maître des animaux",
-          "Summary": "Permet de contrôler et commander des animaux.",
+          "Summary": "Apprivoise temporairement un animal sans le dresser.",
           "Description": "L’ihana peut domestiquer un animal sauvage ou une bête, qui se comporte alors comme un chat de ferme domestique. La créature ne bénéficie d’aucun dressage particulier et n’obéit pas aux ordres, mais elle considère l’arpenteur des brumes comme un maître ou un membre de sa meute. Le warg le plus féroce se couche pour que l’elfe le gratte derrière les oreilles, et il adore se frotter contre ses jambes. Ce pouvoir demande que la créature possède une certaine forme d’intelligence, et ne fonctionnera pas sur les créatures moins intelligentes qu’un rat. De fait, les créatures telles que les bœufs de chêne et les poissons ne réagissent pas à ce pouvoir, contrairement aux blaireaux et aux corbeaux. Ce pouvoir ne fonctionne pas sur les créatures dont la taille dépasse celle d’un mastomant, ou celles qui ont une intelligence proche de celle d’un humain.",
           "SwedishName": "",
           "Duration": "1 heure",
@@ -13726,6 +13726,24 @@
           "SourcePage": "171",
           "Duration": "5 tours de jeu"
         },
+        "vitner-power-of-thought:understanding-script:0#ecrits": {
+          "Name": "Compréhension des écrits",
+          "Summary": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+          "Description": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+          "SourceName": "Compréhension des écrits",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "177",
+          "Duration": "10 minutes"
+        },
+        "vitner-power-of-thought:understanding-speech:1#oral": {
+          "Name": "Compréhension orale",
+          "Summary": "Comprend la langue choisie.",
+          "Description": "Comprend la langue choisie comme une langue maternelle. Les niveaux de puissance peuvent traduire ses paroles pour les créatures indiquées.",
+          "SourceName": "Compréhension orale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "177",
+          "Duration": "1 minute"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -13743,6 +13761,16 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "187",
           "Duration": "3 days"
+        },
+        "vitner-animal-vitner:speak-to-animals:1#lien": {
+          "Name": "Lien avec un animal",
+          "Summary": "Lien spirituel avec un animal choisi ; seules des questions et réponses simples sont possibles et les renseignements peuvent être imprécis.",
+          "Description": "Lien spirituel avec un animal choisi ; seules des questions et réponses simples sont possibles et les renseignements peuvent être imprécis.",
+          "SourceName": "Parler aux animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "188",
+          "Duration": "1 minute",
+          "Sense0": "Portée du lien avec l’animal"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Adhérence",
@@ -14335,6 +14363,15 @@
           "SourcePage": "252",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
+          "Name": "Oreille de Siro Werte",
+          "Summary": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+          "Description": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+          "SourceName": "Oreille de Siro Werte",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "255",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
           "Name": "Langue de Siro Werte",
           "Summary": "Langue choisie : +2 en Connaissances.",
@@ -14682,6 +14719,15 @@
           "SourcePage": "294",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
+          "Name": "Traces animales",
+          "Summary": "Permet de laisser des traces animales permanentes ; l’odeur du bénéficiaire reste inchangée.",
+          "Description": "Permet de laisser des traces animales permanentes ; l’odeur du bénéficiaire reste inchangée.",
+          "SourceName": "Traces animales",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "295",
+          "Duration": "10 tours de jeu"
+        },
         "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
           "Name": "Invisibilité aux animaux",
           "Summary": "Invisible et inaudible aux animaux peu intelligents.",
@@ -14690,6 +14736,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "295",
           "Duration": "5 minutes"
+        },
+        "holy-toikalokke-animal-mind:talk-to-animals:2#parler": {
+          "Name": "Parler avec les animaux",
+          "Summary": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+          "Description": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+          "SourceName": "Parler avec les animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "295",
+          "Duration": "10 tours de jeu"
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Esprit de la bête — Ours",
@@ -14740,6 +14795,15 @@
           "SourcePage": "295",
           "Duration": "10 minutes",
           "Attack0": "Cornes"
+        },
+        "holy-toikalokke-animal-mind:animal-master:5#apprivoise": {
+          "Name": "Maître des animaux",
+          "Summary": "Apprivoise temporairement un animal sans le dresser.",
+          "Description": "L’animal considère l’ihana comme un maître ou un membre de sa meute, sans apprendre à obéir aux ordres. Il doit être au moins aussi intelligent qu’un rat, moins intelligent qu’un humain et ne pas dépasser la taille d’un mastomant.",
+          "SourceName": "Maître des animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "296",
+          "Duration": "1 heure"
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Aspect animal — Ours",
@@ -15189,6 +15253,8 @@
       "SightPenalty": "Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle.",
       "SpokenLanguage": "Langue choisie",
       "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
+      "SpeechListeners": "Comprend la langue ; propos traduits pour {value} créature(s).",
+      "AnimalLinkRange": "Lien avec un animal : portée {value} m.",
       "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",

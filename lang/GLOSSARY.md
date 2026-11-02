@@ -10876,6 +10876,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourcePage` | 139 | 171 |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.Name` | Understanding Script | Compréhension des écrits |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.Description` | Deciphers writing by converting it to a language the beneficiary can read and write; requires literacy in at least one language. | Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.SourceName` | Understanding Script | Compréhension des écrits |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.SourcePage` | 116 | 177 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits.Duration` | 10 minutes | 10 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.Name` | Understanding Speech | Compréhension orale |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.Description` | Understands the chosen language as a native language. Power levels may translate the caster’s speech for the indicated creatures. | Comprend la langue choisie comme une langue maternelle. Les niveaux de puissance peuvent traduire ses paroles pour les créatures indiquées. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.SourceName` | Understanding Speech | Compréhension orale |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.SourcePage` | 116 | 177 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-speech:1#oral.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#malediction-de-l-arbre`
 
 | Clé | English | Français |
@@ -10897,6 +10919,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourcePage` | 143 | 187 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Duration` | 3 days | 3 days |
+
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Name` | Link to an Animal | Lien avec un animal |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Description` | A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable. | Lien spirituel avec un animal choisi ; seules des questions et réponses simples sont possibles et les renseignements peuvent être imprécis. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.SourceName` | Speak to Animals | Parler aux animaux |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.SourcePage` | 92 | 188 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Duration` | 1 minute | 1 minute |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Sense0` | Animal link range | Portée du lien avec l’animal |
 
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence`
 
@@ -11617,6 +11651,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourcePage` | 194 | 252 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.Name` | Sirowerd’s Ear | Oreille de Siro Werte |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.Description` | Understands the chosen spoken language, without speaking, reading or writing it. | Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.SourceName` | Sirowerd's Ear | Oreille de Siro Werte |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.SourcePage` | 206 | 255 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue`
 
 | Clé | English | Français |
@@ -12040,6 +12085,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourcePage` | 239 | 294 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.Name` | Animal Tracks | Traces animales |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.Description` | Allows leaving permanent animal tracks; the beneficiary’s scent is unchanged. | Permet de laisser des traces animales permanentes ; l’odeur du bénéficiaire reste inchangée. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.SourceName` | Animal Tracks | Traces animales |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.SourcePage` | 237 | 295 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces.Duration` | 10 action rounds | 10 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux`
 
 | Clé | English | Français |
@@ -12050,6 +12106,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:invisible-to-animals:3#animaux.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.Name` | Talk to Animals | Parler avec les animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.Description` | Allows communication with animals within the limits of their understanding. | Permet de communiquer avec les animaux dans les limites de leur compréhension. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.SourceName` | Talk to Animals | Parler avec les animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.SourcePage` | 237 | 295 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:talk-to-animals:2#parler.Duration` | 10 action rounds | 10 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours`
 
@@ -12110,6 +12177,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.SourcePage` | 237 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Duration` | 10 minutes | 10 minutes |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf.Attack0` | Horns | Cornes |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.Name` | Animal Master | Maître des animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.Description` | The animal regards the Ihana as a master or pack member, but does not learn to obey commands. It must be at least as intelligent as a rat, less intelligent than a human, and no larger than a mastomant. | L’animal considère l’ihana comme un maître ou un membre de sa meute, sans apprendre à obéir aux ordres. Il doit être au moins aussi intelligent qu’un rat, moins intelligent qu’un humain et ne pas dépasser la taille d’un mastomant. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.SourceName` | Animal Master | Maître des animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.SourcePage` | 237 | 296 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-master:5#apprivoise.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours`
 
@@ -12652,6 +12730,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SightPenalty` | Tests involving sight: {value}. At −10 or below, the target is blind. | Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle. |
 | `TRUDVANG.Transformation.SpokenLanguage` | Chosen language | Langue choisie |
 | `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
+| `TRUDVANG.Transformation.SpeechListeners` | Understands the language; speech translated for {value} creature(s). | Comprend la langue ; propos traduits pour {value} créature(s). |
+| `TRUDVANG.Transformation.AnimalLinkRange` | Link to one animal: range {value} m. | Lien avec un animal : portée {value} m. |
 | `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |

@@ -1,0 +1,45 @@
+{
+  "_id": "I4fk0E9EaGbHcIdJ",
+  "_key": "!items!I4fk0E9EaGbHcIdJ",
+  "name": "Parler avec les animaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:talk-to-animals:2#parler",
+    "description": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+    "summary": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 295
+    }
+  },
+  "effects": [
+    {
+      "_id": "zXzYcQjPkQlRmSnT",
+      "_key": "!items.effects!I4fk0E9EaGbHcIdJ.zXzYcQjPkQlRmSnT",
+      "name": "Parler avec les animaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:talk-to-animals:2#parler",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:talk-to-animals:2#parler",
+            "sourceId": "holy-toikalokke-animal-mind:talk-to-animals:2",
+            "summary": "Permet de communiquer avec les animaux dans les limites de leur compréhension.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

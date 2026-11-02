@@ -302,8 +302,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
   summary=game.i18n.format(p.labelKey,{value});
  }
+ if(!resolvedCopy&&template.senseTooltip&&rules.senses?.[template.senseTooltip.sense])summary=game.i18n.format(template.senseTooltip.labelKey,{value:rules.senses[template.senseTooltip.sense].range});
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){

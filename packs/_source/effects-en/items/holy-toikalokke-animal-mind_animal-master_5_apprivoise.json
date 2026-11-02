@@ -1,0 +1,45 @@
+{
+  "_id": "kAcTcOiOjPkQlRmS",
+  "_key": "!items!kAcTcOiOjPkQlRmS",
+  "name": "Animal Master",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+    "description": "The animal regards the Ihana as a master or pack member, but does not learn to obey commands. It must be at least as intelligent as a rat, less intelligent than a human, and no larger than a mastomant.",
+    "summary": "Temporarily tames an animal without training it.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "lt3VlcHcIdJeKfLg",
+      "_key": "!items.effects!kAcTcOiOjPkQlRmS.lt3VlcHcIdJeKfLg",
+      "name": "Animal Master",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The animal regards the Ihana as a master or pack member, but does not learn to obey commands. It must be at least as intelligent as a rat, less intelligent than a human, and no larger than a mastomant.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+            "sourceId": "holy-toikalokke-animal-mind:animal-master:5",
+            "summary": "Temporarily tames an animal without training it.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

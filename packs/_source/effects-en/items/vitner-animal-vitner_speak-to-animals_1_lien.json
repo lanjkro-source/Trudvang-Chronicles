@@ -1,0 +1,53 @@
+{
+  "_id": "utq29PhNiOjPkQlR",
+  "_key": "!items!utq29PhNiOjPkQlR",
+  "name": "Link to an Animal",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:speak-to-animals:1#lien",
+    "description": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+    "summary": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "tsFqz2x3y4z5A6B7",
+      "_key": "!items.effects!utq29PhNiOjPkQlR.tsFqz2x3y4z5A6B7",
+      "name": "Link to an Animal",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:speak-to-animals:1#lien",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Sense0\",\"range\":50,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:speak-to-animals:1#lien",
+            "sourceId": "vitner-animal-vitner:speak-to-animals:1",
+            "summary": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

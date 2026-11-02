@@ -176,6 +176,65 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-thought:understanding-script:0#ecrits": {
+    "id": "ecrits",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-power-of-thought:understanding-script:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:understanding-script:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:understanding-script:0:1"
+      }
+    ]
+  },
+  "vitner-power-of-thought:understanding-speech:1#oral": {
+    "id": "oral",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.SpokenLanguage",
+    "sourceId": "vitner-power-of-thought:understanding-speech:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-power-of-thought:understanding-speech:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-thought:understanding-speech:1:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 0,
+        "value": 1,
+        "tooltip": true,
+        "skillOnly": true,
+        "labelKey": "TRUDVANG.Transformation.SpeechListeners",
+        "optionId": "vitner-power-of-thought:understanding-speech:1:2"
+      }
+    ]
+  },
   "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -263,6 +322,44 @@ export const TRANSFORMATION_TEMPLATES = {
     "priority": 50,
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
+  },
+  "vitner-animal-vitner:speak-to-animals:1#lien": {
+    "id": "lien",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Sense0\",\"range\":50,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "inputKey": "TRUDVANG.Procedure.animalName",
+    "senseTooltip": {
+      "sense": 0,
+      "labelKey": "TRUDVANG.Transformation.AnimalLinkRange"
+    },
+    "sourceId": "vitner-animal-vitner:speak-to-animals:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 10,
+        "optionId": "vitner-animal-vitner:speak-to-animals:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-animal-vitner:speak-to-animals:1:1"
+      }
+    ]
   },
   "vitner-body-vitner:grip:0#adherence": {
     "id": "adherence",
@@ -2786,6 +2883,31 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
   },
+  "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
+    "id": "oreille",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.SpokenLanguage",
+    "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1:1"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
     "id": "langue",
     "icon": "icons/svg/aura.svg",
@@ -4395,6 +4517,36 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
+    "id": "traces",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-animal-mind:animal-tracks:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:animal-tracks:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-tracks:1:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 43200,
+        "optionId": "holy-toikalokke-animal-mind:animal-tracks:1:2"
+      }
+    ]
+  },
   "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
     "id": "animaux",
     "icon": "icons/svg/aura.svg",
@@ -4416,6 +4568,36 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-toikalokke-animal-mind:invisible-to-animals:3:1"
+      }
+    ]
+  },
+  "holy-toikalokke-animal-mind:talk-to-animals:2#parler": {
+    "id": "parler",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-animal-mind:talk-to-animals:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-animal-mind:talk-to-animals:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:talk-to-animals:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 43200,
+        "optionId": "holy-toikalokke-animal-mind:talk-to-animals:2:2"
       }
     ]
   },
@@ -4681,6 +4863,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-toikalokke-animal-mind:animal-spirit:4:1"
+      }
+    ]
+  },
+  "holy-toikalokke-animal-mind:animal-master:5#apprivoise": {
+    "id": "apprivoise",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-animal-mind:animal-master:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 1800,
+        "optionId": "holy-toikalokke-animal-mind:animal-master:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 14400,
+        "optionId": "holy-toikalokke-animal-mind:animal-master:5:1"
       }
     ]
   },
@@ -6398,9 +6604,18 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-wind-craft:air-armor:4": [
     "vitner-wind-craft:air-armor:4#air-armor"
   ],
+  "vitner-power-of-thought:understanding-script:0": [
+    "vitner-power-of-thought:understanding-script:0#ecrits"
+  ],
+  "vitner-power-of-thought:understanding-speech:1": [
+    "vitner-power-of-thought:understanding-speech:1#oral"
+  ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
+  ],
+  "vitner-animal-vitner:speak-to-animals:1": [
+    "vitner-animal-vitner:speak-to-animals:1#lien"
   ],
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"
@@ -6560,6 +6775,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds"
   ],
+  "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": [
+    "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille"
+  ],
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue"
   ],
@@ -6664,8 +6882,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-toikalokke-lynx-power:track:6": [
     "holy-toikalokke-lynx-power:track:6#pistage"
   ],
+  "holy-toikalokke-animal-mind:animal-tracks:1": [
+    "holy-toikalokke-animal-mind:animal-tracks:1#traces"
+  ],
   "holy-toikalokke-animal-mind:invisible-to-animals:3": [
     "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux"
+  ],
+  "holy-toikalokke-animal-mind:talk-to-animals:2": [
+    "holy-toikalokke-animal-mind:talk-to-animals:2#parler"
   ],
   "holy-toikalokke-animal-mind:animal-spirit:4": [
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
@@ -6673,6 +6897,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-lievre",
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-corbeau",
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf"
+  ],
+  "holy-toikalokke-animal-mind:animal-master:5": [
+    "holy-toikalokke-animal-mind:animal-master:5#apprivoise"
   ],
   "holy-toikalokke-animal-mind:animal-shape:6": [
     "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours",

@@ -1,0 +1,45 @@
+{
+  "_id": "Tst5RHcIdJeKfLgM",
+  "_key": "!items!Tst5RHcIdJeKfLgM",
+  "name": "Oreille de Siro Werte",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+    "description": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+    "summary": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 255
+    }
+  },
+  "effects": [
+    {
+      "_id": "AxgfdrToUpVqWrXs",
+      "_key": "!items.effects!Tst5RHcIdJeKfLgM.AxgfdrToUpVqWrXs",
+      "name": "Oreille de Siro Werte",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
+            "summary": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

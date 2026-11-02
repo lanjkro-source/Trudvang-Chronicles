@@ -1,0 +1,45 @@
+{
+  "_id": "Tst5RHcIdJeKfLgM",
+  "_key": "!items!Tst5RHcIdJeKfLgM",
+  "name": "Sirowerd’s Ear",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+    "description": "Understands the chosen spoken language, without speaking, reading or writing it.",
+    "summary": "Understands the chosen spoken language, without speaking, reading or writing it.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 206
+    }
+  },
+  "effects": [
+    {
+      "_id": "AxgfdrToUpVqWrXs",
+      "_key": "!items.effects!Tst5RHcIdJeKfLgM.AxgfdrToUpVqWrXs",
+      "name": "Sirowerd’s Ear",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Understands the chosen spoken language, without speaking, reading or writing it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille",
+            "sourceId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
+            "summary": "Understands the chosen spoken language, without speaking, reading or writing it.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

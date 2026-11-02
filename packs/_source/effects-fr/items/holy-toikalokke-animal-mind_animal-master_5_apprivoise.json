@@ -1,0 +1,45 @@
+{
+  "_id": "kAcTcOiOjPkQlRmS",
+  "_key": "!items!kAcTcOiOjPkQlRmS",
+  "name": "Maître des animaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+    "description": "L’animal considère l’ihana comme un maître ou un membre de sa meute, sans apprendre à obéir aux ordres. Il doit être au moins aussi intelligent qu’un rat, moins intelligent qu’un humain et ne pas dépasser la taille d’un mastomant.",
+    "summary": "Apprivoise temporairement un animal sans le dresser.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 296
+    }
+  },
+  "effects": [
+    {
+      "_id": "lt3VlcHcIdJeKfLg",
+      "_key": "!items.effects!kAcTcOiOjPkQlRmS.lt3VlcHcIdJeKfLg",
+      "name": "Maître des animaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’animal considère l’ihana comme un maître ou un membre de sa meute, sans apprendre à obéir aux ordres. Il doit être au moins aussi intelligent qu’un rat, moins intelligent qu’un humain et ne pas dépasser la taille d’un mastomant.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-master:5#apprivoise",
+            "sourceId": "holy-toikalokke-animal-mind:animal-master:5",
+            "summary": "Apprivoise temporairement un animal sans le dresser.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

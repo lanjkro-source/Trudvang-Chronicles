@@ -1,0 +1,45 @@
+{
+  "_id": "RcnKzxYtZu0v1w2x",
+  "_key": "!items!RcnKzxYtZu0v1w2x",
+  "name": "Compréhension des écrits",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-thought:understanding-script:0#ecrits",
+    "description": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+    "summary": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 177
+    }
+  },
+  "effects": [
+    {
+      "_id": "uXnQY4z5A6B7C8D9",
+      "_key": "!items.effects!RcnKzxYtZu0v1w2x.uXnQY4z5A6B7C8D9",
+      "name": "Compréhension des écrits",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-thought:understanding-script:0#ecrits",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-thought:understanding-script:0#ecrits",
+            "sourceId": "vitner-power-of-thought:understanding-script:0",
+            "summary": "Déchiffre les textes en les convertissant dans une langue que le bénéficiaire sait lire et écrire ; nécessite de savoir lire et écrire au moins une langue.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

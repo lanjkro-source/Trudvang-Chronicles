@@ -7016,7 +7016,7 @@
         },
         "holy-toikalokke-animal-mind:animal-master:5": {
           "Name": "Animal Master",
-          "Summary": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat.",
+          "Summary": "Temporarily tames an animal without training it.",
           "Description": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat. The creature does not automatically receive any degree of training and cannot heed any commands, but it sees the chosen one as a member of the pack or as a master. The most feral warg bounds forth to be scratched behind its ears and adoringly nuzzles against the elf’s leg. The ability requires a certain basic intelligence from the creature and will not work on those with less intelligence than rats. Therefore, c reatures such as oak oxen and fish cannot be affected, but badgers and ravens work just fine. The ability does not work on animals or beasts that are larger than a m astomant or that have human-like intelligence.",
           "SwedishName": "",
           "Duration": "1 hour",
@@ -13726,6 +13726,24 @@
           "SourcePage": "139",
           "Duration": "5 action rounds"
         },
+        "vitner-power-of-thought:understanding-script:0#ecrits": {
+          "Name": "Understanding Script",
+          "Summary": "Deciphers writing by converting it to a language the beneficiary can read and write; requires literacy in at least one language.",
+          "Description": "Deciphers writing by converting it to a language the beneficiary can read and write; requires literacy in at least one language.",
+          "SourceName": "Understanding Script",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "10 minutes"
+        },
+        "vitner-power-of-thought:understanding-speech:1#oral": {
+          "Name": "Understanding Speech",
+          "Summary": "Understands the chosen language.",
+          "Description": "Understands the chosen language as a native language. Power levels may translate the caster’s speech for the indicated creatures.",
+          "SourceName": "Understanding Speech",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "116",
+          "Duration": "1 minute"
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -13743,6 +13761,16 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "143",
           "Duration": "3 days"
+        },
+        "vitner-animal-vitner:speak-to-animals:1#lien": {
+          "Name": "Link to an Animal",
+          "Summary": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+          "Description": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
+          "SourceName": "Speak to Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "1 minute",
+          "Sense0": "Animal link range"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Grip",
@@ -14335,6 +14363,15 @@
           "SourcePage": "194",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
+          "Name": "Sirowerd’s Ear",
+          "Summary": "Understands the chosen spoken language, without speaking, reading or writing it.",
+          "Description": "Understands the chosen spoken language, without speaking, reading or writing it.",
+          "SourceName": "Sirowerd's Ear",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
           "Name": "Sirowerd’s Tongue",
           "Summary": "Chosen language: +2 to Knowledge.",
@@ -14682,6 +14719,15 @@
           "SourcePage": "239",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
+          "Name": "Animal Tracks",
+          "Summary": "Allows leaving permanent animal tracks; the beneficiary’s scent is unchanged.",
+          "Description": "Allows leaving permanent animal tracks; the beneficiary’s scent is unchanged.",
+          "SourceName": "Animal Tracks",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "237",
+          "Duration": "10 action rounds"
+        },
         "holy-toikalokke-animal-mind:invisible-to-animals:3#animaux": {
           "Name": "Invisible to Animals",
           "Summary": "Invisible and inaudible to animals of limited intelligence.",
@@ -14690,6 +14736,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "237",
           "Duration": "5 minutes"
+        },
+        "holy-toikalokke-animal-mind:talk-to-animals:2#parler": {
+          "Name": "Talk to Animals",
+          "Summary": "Allows communication with animals within the limits of their understanding.",
+          "Description": "Allows communication with animals within the limits of their understanding.",
+          "SourceName": "Talk to Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "237",
+          "Duration": "10 action rounds"
         },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Animal Spirit — Bear",
@@ -14740,6 +14795,15 @@
           "SourcePage": "237",
           "Duration": "10 minutes",
           "Attack0": "Horns"
+        },
+        "holy-toikalokke-animal-mind:animal-master:5#apprivoise": {
+          "Name": "Animal Master",
+          "Summary": "Temporarily tames an animal without training it.",
+          "Description": "The animal regards the Ihana as a master or pack member, but does not learn to obey commands. It must be at least as intelligent as a rat, less intelligent than a human, and no larger than a mastomant.",
+          "SourceName": "Animal Master",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "237",
+          "Duration": "1 hour"
         },
         "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-ours": {
           "Name": "Animal Shape — Bear",
@@ -15189,6 +15253,8 @@
       "SightPenalty": "Tests involving sight: {value}. At −10 or below, the target is blind.",
       "SpokenLanguage": "Chosen language",
       "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
+      "SpeechListeners": "Understands the language; speech translated for {value} creature(s).",
+      "AnimalLinkRange": "Link to one animal: range {value} m.",
       "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",

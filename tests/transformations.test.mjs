@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,115);
+ assert.equal(Object.keys(sources).length,122);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -941,4 +941,62 @@ test("Invisible to Animals remains descriptive and only improves its duration",(
  const key="holy-toikalokke-animal-mind:invisible-to-animals:3#animaux",t=templates[key];
  assert.deepEqual(t.statuses,[]);assert.deepEqual(t.changes,[]);
  assert.deepEqual(t.parameters.map(p=>[p.target,p.value]),[["duration",600],["duration",3600]]);
+});
+
+test("animal tracks and animal speech preserve their narrative limits and allocated duration",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"10 tours de jeu"});
+ let created;
+ const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const key of ["holy-toikalokke-animal-mind:animal-tracks:1#traces","holy-toikalokke-animal-mind:talk-to-animals:2#parler"]){
+  assert.deepEqual(templates[key].statuses,[]);assert.deepEqual(templates[key].changes,[]);
+  await applyTransformation(actor,key,{counts:[1,0,0]});assert.deepEqual(created.duration,{value:130,units:"rounds"});
+ }
+});
+
+test("Animal Master is a descriptive taming effect rather than mind control",()=>{
+ const key="holy-toikalokke-animal-mind:animal-master:5#apprivoise",t=templates[key];
+ assert.deepEqual(t.statuses,[]);assert.deepEqual(t.changes,[]);
+ assert.deepEqual(t.parameters.map(p=>[p.target,p.value]),[["duration",1800],["duration",14400]]);
+ for(const code of ["fr","en"]){const language=JSON.parse(fs.readFileSync(new URL(`../lang/${code}.json`,import.meta.url)));
+  assert.match(language.TRUDVANG.Content.Transformation[key].Description,code==="fr"?/sans apprendre à obéir/:/does not learn to obey/);
+ }
+});
+
+test("script understanding and Sirowerd’s Ear keep reading and speech distinct",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute",effectInput:"Vrok"});
+ const ear="holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille";
+ await applyTransformation(actor,ear);assert.match(created.description,/sans pouvoir la parler/);
+ assert.equal(created.flags[S].transformation.input,"Vrok");assert.match(created.flags[S].transformation.summary,/Vrok/);
+ const reading="vitner-power-of-thought:understanding-script:0#ecrits";
+ assert.match(language.TRUDVANG.Content.Transformation[reading].Description,/savoir lire et écrire au moins une langue/);
+ assert.deepEqual(templates[reading].statuses,[]);assert.deepEqual(templates[ear].statuses,[]);
+});
+
+test("Understanding Speech records the chosen language and number of listeners",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute",effectInput:"Vrok"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ const counts=[];counts[2]=2;
+ await applyTransformation(actor,"vitner-power-of-thought:understanding-speech:1#oral",{counts});
+ assert.match(created.flags[S].transformation.summary,/2 créature/);assert.match(created.flags[S].transformation.summary,/Vrok/);
+});
+
+test("Speak to Animals retains the chosen animal and the improved range",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute",effectInput:"Loup"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"vitner-animal-vitner:speak-to-animals:1#lien",{counts:[2,0]});
+ assert.equal(rulesFromChanges(created.system.changes).senses[0].range,70);
+ assert.match(created.flags[S].transformation.summary,/70 m/);assert.match(created.flags[S].transformation.summary,/Loup/);
 });

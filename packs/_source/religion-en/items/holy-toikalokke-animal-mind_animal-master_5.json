@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat. The creature does not automatically receive any degree of training and cannot heed any commands, but it sees the chosen one as a member of the pack or as a master. The most feral warg bounds forth to be scratched behind its ears and adoringly nuzzles against the elf’s leg. The ability requires a certain basic intelligence from the creature and will not work on those with less intelligence than rats. Therefore, c reatures such as oak oxen and fish cannot be affected, but badgers and ravens work just fine. The ability does not work on animals or beasts that are larger than a m astomant or that have human-like intelligence.",
-    "summary": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat.",
+    "summary": "Temporarily tames an animal without training it.",
     "swedishName": "",
     "duration": "1 hour",
     "range": "personal",

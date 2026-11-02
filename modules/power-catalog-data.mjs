@@ -5835,6 +5835,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1:0",
@@ -6438,6 +6442,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-master:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:animal-master:5:0",
@@ -6502,6 +6510,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-tracks:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:animal-tracks:1:0",
@@ -6547,6 +6559,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:talk-to-animals:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:talk-to-animals:2:0",
@@ -7339,6 +7355,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:speak-to-animals:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:speak-to-animals:1:0",
@@ -9351,6 +9371,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:understanding-script:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:understanding-script:0:0",
@@ -9369,6 +9393,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:understanding-speech:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:understanding-speech:1:0",
