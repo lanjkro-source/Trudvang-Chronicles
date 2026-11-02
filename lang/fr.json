@@ -14719,6 +14719,15 @@
           "SourcePage": "294",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-lynx-power:aim:5#visee": {
+          "Name": "Visée",
+          "Summary": "Attaques à distance : +1.",
+          "Description": "Confère un bonus aux attaques à distance pendant la durée du pouvoir.",
+          "SourceName": "Visée",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "294",
+          "Duration": "2 tours de jeu"
+        },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Traces animales",
           "Summary": "Permet de laisser des traces animales permanentes ; l’odeur du bénéficiaire reste inchangée.",
@@ -15255,6 +15264,7 @@
       "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
       "SpeechListeners": "Comprend la langue ; propos traduits pour {value} créature(s).",
       "AnimalLinkRange": "Lien avec un animal : portée {value} m.",
+      "AimBonus": "Attaques à distance : +{value}.",
       "CraftSpecialty": "Spécialité d’Artisanat",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "NoCraftSpecialty": "Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner.",

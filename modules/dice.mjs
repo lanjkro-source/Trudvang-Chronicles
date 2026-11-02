@@ -776,6 +776,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     ? `<span class="combat-target-names">${targetLabels.map(name => escapeHtml(name)).join(", ")}</span>`
     : `<p class="combat-no-targets">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoAttackTargets"))}</p>`}</section>` : "";
   const renderMode = mode => {
+    const modeBreakdown=(mode.modifierRows??[]).map(row=>`<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
     const modePools = mode.pools || [];
     const allocation = mode.defaultAllocation || {};
     const initialTotal = Object.values(allocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
@@ -805,12 +806,12 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${sizeRows.length ? `<ul class="combat-modifier-breakdown combat-size-modifiers">${varyingSizes ? sizeRows.map(target => `<li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))} · ${escapeHtml(target.name)}</span><b>${signedModifier(target.modifier)}</b></li>`).join("") : `<li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))}</span><b>${signedModifier(sizeModifier)}</b></li>`}</ul>` : ""}
       ${varyingSizes ? `<div class="combat-size-values"><span>${escapeHtml(game.i18n.localize(totalLabelKey))}</span><ul>${sizeTargets.map(target => `<li>${escapeHtml(target.name)} : <strong data-combat-target-total data-size-modifier="${target.modifier}">${allocatedCombatVC(sliderInitial, 0, target.modifier, targetPointCost)}</strong></li>`).join("")}</ul></div>` : `<p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${allocatedCombatVC(sliderInitial, 0, sizeModifier, targetPointCost)}</strong></p>`}
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
-      ${breakdown || defenseBreakdown ? `<ul class="combat-modifier-breakdown">${breakdown}${defenseBreakdown}</ul>` : ""}
+      ${breakdown || defenseBreakdown || modeBreakdown ? `<ul class="combat-modifier-breakdown">${breakdown}${defenseBreakdown}${modeBreakdown}</ul>` : ""}
       ${rangedTargetOptions}
       ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
       ${mountedCombat ? `<ul class="combat-modifier-breakdown" data-mounted-breakdown><li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MountBonus"))}</span><b data-mounted-bonus></b></li></ul>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
-      ${showModifier || combatPointBonus || breakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span>${varyingSizes ? `<span>${sizeTargets.map(target => `<span>${escapeHtml(target.name)} : <strong data-combat-target-final data-size-modifier="${target.modifier}" data-defense-modifier="${Number(target.defenseModifier || 0)}"></strong></span>`).join("<br>")}</span>` : `<strong data-combat-final-target></strong>`}</p>` : ""}
+      ${showModifier || combatPointBonus || breakdown || modeBreakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span>${varyingSizes ? `<span>${sizeTargets.map(target => `<span>${escapeHtml(target.name)} : <strong data-combat-target-final data-size-modifier="${target.modifier}" data-defense-modifier="${Number(target.defenseModifier || 0)}"></strong></span>`).join("<br>")}</span>` : `<strong data-combat-final-target></strong>`}</p>` : ""}
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
@@ -866,11 +867,11 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const finalTarget = section.querySelector("[data-combat-final-target]");
         if (finalTarget) {
           const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
-          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0) + mounted.total;
+          const fixed = rollModifierTotal(modifierRows) + rollModifierTotal(selectedMode().modifierRows??[]) + Number(combatPointBonus || 0) + mounted.total;
           finalTarget.textContent = String(attackTotal + manual + fixed + rangedModifier + Number(sizeTargets[0]?.defenseModifier || 0));
         }
         section.querySelectorAll("[data-combat-target-final]").forEach(output => {
-          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0) + mounted.total;
+          const fixed = rollModifierTotal(modifierRows) + rollModifierTotal(selectedMode().modifierRows??[]) + Number(combatPointBonus || 0) + mounted.total;
           output.textContent = String(allocatedCombatVC(total, feint, Number(output.dataset.sizeModifier), targetPointCost) + Number(section.querySelector("[name=modifier]")?.value || 0) + fixed + rangedModifier + Number(output.dataset.defenseModifier || 0));
         });
         const slider = section.querySelector("[data-combat-slider]");

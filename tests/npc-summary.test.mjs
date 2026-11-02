@@ -1431,6 +1431,21 @@ test("the improvised throwing penalty is visible only in thrown mode and never s
   assert.doesNotMatch(runtime.dialogs.at(-1).content, /-5 dégâts/);
 });
 
+test("ranged effects modify thrown attacks once and leave melee and parries unchanged",async t=>{
+ const runtime=mockActionRuntime(t),item=inventoryItem("weapon","Axe",{equipped:true,rangeSelection:"short"});
+ item.update=async changes=>{for(const [key,value]of Object.entries(changes))set(item,key,value);};
+ const npc=spendableNpc([item]);npc.system.modifiers.rolls.rangedAttack=3;
+ npc.effects=[{name:"Visée",system:{changes:[{key:"system.modifiers.rolls.rangedAttack",type:"add",value:"3"}]}}];
+ npc.allApplicableEffects=()=>npc.effects;
+ runtime.response={mode:"melee",modifier:0,allocation:{free:4}};
+ const melee=await npc.rollWeaponAction(item,"attack");
+ runtime.response={...runtime.response,mode:"throwing",ranged:{rangeSelection:"short"}};
+ const thrown=await npc.rollWeaponAction(item,"attack");
+ assert.equal(thrown.target,melee.target+3);assert.match(renderedCards.at(-1).data.flavor,/Visée.*\+3/);
+ runtime.response={mode:"melee",modifier:0,allocation:{free:4}};
+ const parry=await npc.rollWeaponAction(item,"parry");assert.equal(parry.target,melee.target);
+});
+
 test("mounted attack/parry use only the mount bonus and remember it while the status remains", async t => {
   const runtime = mockActionRuntime(t);
   const weapon = inventoryItem("weapon", "Sword", {equipped: true, weaponActions: 4});

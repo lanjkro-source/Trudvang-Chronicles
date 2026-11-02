@@ -1,0 +1,53 @@
+{
+  "_id": "GPsp6mRmSnToUpVq",
+  "_key": "!items!GPsp6mRmSnToUpVq",
+  "name": "Visée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:aim:5#visee",
+    "description": "Confère un bonus aux attaques à distance pendant la durée du pouvoir.",
+    "summary": "Attaques à distance : +1.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 294
+    }
+  },
+  "effects": [
+    {
+      "_id": "THP1vkMhNiOjPkQl",
+      "_key": "!items.effects!GPsp6mRmSnToUpVq.THP1vkMhNiOjPkQl",
+      "name": "Visée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Confère un bonus aux attaques à distance pendant la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:aim:5#visee",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.rangedAttack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:aim:5#visee",
+            "sourceId": "holy-toikalokke-lynx-power:aim:5",
+            "summary": "Attaques à distance : +1.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -150,6 +150,7 @@ function rollModifiersSchema() {
     combatActions: integer(0, {persisted: false}),
     movementActions: integer(0, {persisted: false}),
     attack: integer(0, {persisted: false}),
+    rangedAttack: integer(0, {persisted: false}),
     parry: integer(0, {persisted: false}),
     initiative: integer(0, {persisted: false}),
     magic: integer(0, {persisted: false}),

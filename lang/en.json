@@ -14719,6 +14719,15 @@
           "SourcePage": "239",
           "Duration": "10 minutes"
         },
+        "holy-toikalokke-lynx-power:aim:5#visee": {
+          "Name": "Aim",
+          "Summary": "Ranged attacks: +1.",
+          "Description": "Grants a bonus to ranged attacks for the duration of the power.",
+          "SourceName": "Aim",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "2 action rounds"
+        },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Animal Tracks",
           "Summary": "Allows leaving permanent animal tracks; the beneficiary’s scent is unchanged.",
@@ -15255,6 +15264,7 @@
       "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
       "SpeechListeners": "Understands the language; speech translated for {value} creature(s).",
       "AnimalLinkRange": "Link to one animal: range {value} m.",
+      "AimBonus": "Ranged attacks: +{value}.",
       "CraftSpecialty": "Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "NoCraftSpecialty": "This character has no Handicraft specialty to choose.",

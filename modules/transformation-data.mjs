@@ -4517,6 +4517,49 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-lynx-power:aim:5#visee": {
+    "id": "visee",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.rangedAttack",
+        "type": "add",
+        "value": "1",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "sourceId": "holy-toikalokke-lynx-power:aim:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 10,
+        "optionId": "holy-toikalokke-lynx-power:aim:5:0"
+      },
+      {
+        "index": 1,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.rangedAttack",
+        "value": 1,
+        "optionId": "holy-toikalokke-lynx-power:aim:5:1"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "tooltip": true,
+        "skillOnly": true,
+        "labelKey": "TRUDVANG.Transformation.AimBonus",
+        "optionId": "holy-toikalokke-lynx-power:aim:5:1"
+      }
+    ]
+  },
   "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
     "id": "traces",
     "icon": "icons/svg/aura.svg",
@@ -6881,6 +6924,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-lynx-power:track:6": [
     "holy-toikalokke-lynx-power:track:6#pistage"
+  ],
+  "holy-toikalokke-lynx-power:aim:5": [
+    "holy-toikalokke-lynx-power:aim:5#visee"
   ],
   "holy-toikalokke-animal-mind:animal-tracks:1": [
     "holy-toikalokke-animal-mind:animal-tracks:1#traces"

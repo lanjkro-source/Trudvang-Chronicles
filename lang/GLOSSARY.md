@@ -12085,6 +12085,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourcePage` | 239 | 294 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.Name` | Aim | Visée |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.Description` | Grants a bonus to ranged attacks for the duration of the power. | Confère un bonus aux attaques à distance pendant la durée du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourceName` | Aim | Visée |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourcePage` | 239 | 294 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.Duration` | 2 action rounds | 2 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces`
 
 | Clé | English | Français |
@@ -12732,6 +12743,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
 | `TRUDVANG.Transformation.SpeechListeners` | Understands the language; speech translated for {value} creature(s). | Comprend la langue ; propos traduits pour {value} créature(s). |
 | `TRUDVANG.Transformation.AnimalLinkRange` | Link to one animal: range {value} m. | Lien avec un animal : portée {value} m. |
+| `TRUDVANG.Transformation.AimBonus` | Ranged attacks: +{value}. | Attaques à distance : +{value}. |
 | `TRUDVANG.Transformation.CraftSpecialty` | Handicraft specialty | Spécialité d’Artisanat |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.NoCraftSpecialty` | This character has no Handicraft specialty to choose. | Ce personnage ne possède aucune spécialité d’Artisanat à sélectionner. |

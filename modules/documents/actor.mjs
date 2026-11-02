@@ -1285,6 +1285,7 @@ export class TrudvangActor extends BaseActor {
         pools: poolResolution.eligible,
         defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, poolResolution.eligibleCurrent)),
         ranged,
+        modifierRows:ranged?effectContributions(this,"system.modifiers.rolls.rangedAttack"):[],
         rangeSelection: item.system.rangeSelection === "long" ? "long" : "short",
         feintMax: kind === "attack" && !ranged ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0,
         range: range ? {short: range.short.value, long: range.long.value} : null
@@ -1334,6 +1335,8 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const mode = modes.find(candidate => candidate.id === options.mode) ?? defaultMode;
+    const modeModifier=rollModifierTotal(mode.modifierRows??[]);
+    modifierRows.push(...(mode.modifierRows??[]));
     const mounted = mountedCombatValues({...options.mountedCombat, enabled: isMounted(this)});
     if (this.isOwner && typeof this.setFlag === "function") await this.setFlag("trudvang-chronicles", "mountedCombat", {enabled: mounted.enabled, bonus: mounted.bonus});
     if (mounted.enabled) modifierRows.push({labelKey: "TRUDVANG.Dialog.MountBonus", value: mounted.bonus});
@@ -1375,7 +1378,7 @@ export class TrudvangActor extends BaseActor {
       actor: this,
       label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : mode.throwing ? "TRUDVANG.Action.Throw" : "TRUDVANG.Action.Attack")}`,
       target: allocatedCombatVC(spending.total, feint, sizeTargets[0]?.modifier || 0),
-      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows) + mounted.total + rollModifierTotal(creatureRows),
+      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows) + mounted.total + rollModifierTotal(creatureRows) + modeModifier,
       kind,
       attackTargets: sizeTargets,
       flavor,

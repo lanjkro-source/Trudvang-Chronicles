@@ -1,0 +1,53 @@
+{
+  "_id": "GPsp6mRmSnToUpVq",
+  "_key": "!items!GPsp6mRmSnToUpVq",
+  "name": "Aim",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:aim:5#visee",
+    "description": "Grants a bonus to ranged attacks for the duration of the power.",
+    "summary": "Ranged attacks: +1.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "THP1vkMhNiOjPkQl",
+      "_key": "!items.effects!GPsp6mRmSnToUpVq.THP1vkMhNiOjPkQl",
+      "name": "Aim",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants a bonus to ranged attacks for the duration of the power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:aim:5#visee",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.rangedAttack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:aim:5#visee",
+            "sourceId": "holy-toikalokke-lynx-power:aim:5",
+            "summary": "Ranged attacks: +1.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

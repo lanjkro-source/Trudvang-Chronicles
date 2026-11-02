@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,122);
+ assert.equal(Object.keys(sources).length,123);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -999,4 +999,15 @@ test("Speak to Animals retains the chosen animal and the improved range",async()
  await applyTransformation(actor,"vitner-animal-vitner:speak-to-animals:1#lien",{counts:[2,0]});
  assert.equal(rulesFromChanges(created.system.changes).senses[0].range,70);
  assert.match(created.flags[S].transformation.summary,/70 m/);assert.match(created.flags[S].transformation.summary,/Loup/);
+});
+
+test("Aim scales its ranged attack modifier and its displayed explanation",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"2 tours de jeu"});
+ let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"holy-toikalokke-lynx-power:aim:5#visee",{counts:[0,2]});
+ assert.equal(created.system.changes.find(c=>c.key==="system.modifiers.rolls.rangedAttack").value,"3");
+ assert.match(created.flags[S].transformation.summary,/\+3/);
 });

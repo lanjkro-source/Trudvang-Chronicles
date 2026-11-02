@@ -45,6 +45,26 @@ test("combat final skill value remains last when only fixed modifiers are shown"
   assert.match(dialogs[0].content, /<p class="combat-final-target">[\s\S]*?<\/p>\s*<\/section>\s*<\/div>$/);
 });
 
+test("mode-specific bonuses appear and count only in the selected ranged mode",async t=>{
+ const dialogs=runtime(t), modes=[{id:"melee",pools},{id:"throwing",pools,ranged:true,modifierRows:[{label:"Visée",value:3}]}];
+ const config={title:"Attack",pools,combatModes:{toggle:true,uncheckedMode:"melee",checkedMode:"throwing",defaultMode:"melee",modes}};
+ await combatPointDialog(config);
+ const parts=dialogs[0].content.split('<section data-combat-mode=');
+ assert.doesNotMatch(parts[1],/Visée/);assert.match(parts[2],/Visée<\/span><b>\+3/);
+ const toggle={checked:false,addEventListener(_event,fn){this.handler=fn;}};
+ const makeSection=id=>{
+  const allocation={value:"5",dataset:{poolId:"free"}},output={textContent:""},modifier={value:"0"};
+  return {dataset:{combatMode:id},hidden:false,output,querySelector:s=>({"[data-combat-final-target]":output,"[name=modifier]":modifier})[s]??null,querySelectorAll:s=>s==="[data-pool-id]"?[allocation]:[]};
+ };
+ const melee=makeSection("melee"),thrown=makeSection("throwing");
+ const root={querySelector:s=>s==="[data-combat-mode-toggle]"?toggle:s.includes('"melee"')?melee:s.includes('"throwing"')?thrown:null,
+  querySelectorAll:s=>s==="[data-combat-mode-toggle]"?[toggle]:s==="[data-combat-mode]"?[melee,thrown]:[]};
+ foundry.applications.api.DialogV2=class {_onRender(){} static async wait(){const d=new this();d.element=root;d._onRender({},{});return null;}};
+ await combatPointDialog(config);assert.equal(melee.output.textContent,"5");
+ toggle.checked=true;toggle.handler();assert.equal(thrown.output.textContent,"8");
+ toggle.checked=false;toggle.handler();assert.equal(melee.output.textContent,"5");
+});
+
 test("plain combat-point spending still omits the unused skill value", async t => {
   const dialogs = runtime(t);
   await combatPointDialog({title: "Other action", pools, showModifier: false});
