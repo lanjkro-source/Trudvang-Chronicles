@@ -5,6 +5,16 @@ Les modèles sont écrits dans `effectTemplates` et `effectParameters` des JSON 
 EN portent les noms et descriptions traduits. L’inventaire des métamorphoses conserve
 les références des règles ; ses anciens identifiants de pouvoirs ont été normalisés.
 
+Pour chaque nouvel effet, vérifier dans les deux éditions s'il concerne une zone :
+identifier son origine et ses déplacements, sa forme et son rayon, ses améliorations,
+les obstacles, les bénéficiaires, les conditions d'entrée et de sortie, la durée et
+l'éventuelle lumière. Automatiser une aura mobile lorsque ses règles le permettent ;
+vérifier sa création, ses mouvements, ses frontières, sa suppression et les tokens
+liés ou non. Une zone fixe, une zone à conditions particulières ou une lumière ne
+fonctionnant pas comme une aura est inscrite dans `docs/aura-light-audit.md` pour
+le chantier ultérieur. Ne pas assimiler une sélection à portée au lancement à une
+aura qui suit le lanceur.
+
 `node tools/generate-transformation-data.mjs` génère le catalogue structurel et les
 textes de `lang/*.json`. `--check`, exécuté par la validation locale quand les sources
 sont disponibles, détecte un catalogue périmé. Les modèles sont indépendants des

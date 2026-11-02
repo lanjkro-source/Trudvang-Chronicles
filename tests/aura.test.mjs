@@ -36,6 +36,17 @@ test("linked tokens retain an effect until the final token leaves; caster is not
  await reconcileAuraToken(region,u,{leaving:true,force:true});assert.equal(a.effects.length,0);
  const self={id:"c",actor:actor("Actor.c"),disposition:1};await reconcileAuraToken(region,self);assert.equal(self.actor.effects.length,0);
 });
+test("a descriptive weather aura applies its own description to every occupant without changing light",async()=>{
+ const wind="holy-ealdtradition-magh-s-gift:journey-wind:0";
+ const windSource={...source,system:{changes:[]},flags:{[S]:{transformation:{key:`${wind}#effect`,sourceId:wind,ruleTestContext:{countsById:{[`${wind}:1`]:2}}}}}};
+ const previous=foundry.utils.fromUuid;foundry.utils.fromUuid=async()=>windSource;
+ try{
+  const a=actor("Actor.wind"),t={id:"w",actor:a,disposition:-1};const region={uuid:"Scene.s.Region.wind",flags:{[S]:{aura:{sourceEffectUuid:windSource.uuid,casterUuid:"Actor.c"}}},tokens:new Set([t])};
+  assert.equal(auraRadius(windSource),5);await reconcileAuraToken(region,t);
+  assert.deepEqual(keys(a),[]);assert.match(a.effects[0].description,/journey-wind:0#effect\.Description/);
+  await reconcileAuraToken(region,t,{leaving:true});assert.equal(a.effects.length,0);
+ }finally{foundry.utils.fromUuid=previous;}
+});
 test("the registered native region behavior handles entry, exit and deactivation",()=>{
  const hooks={};globalThis.Hooks={on:(name,fn)=>{hooks[name]=fn;}};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};
  foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();

@@ -44,8 +44,9 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const eligible=inside&&active(source)&&!self;
  if(!eligible){if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));return;}
  const allies=(!leaving&&friendly(token))||others.some(friendly);
- const changes=Array.from(source.system?.changes??[]).filter(row=>row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
- const descriptionKey=allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
+ const aura=getAura(source),fearLight=aura?.light===true;
+ const changes=Array.from(source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
+ const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
  const description=game.i18n.localize(`TRUDVANG.Content.Transformation.${descriptionKey}.Description`);
  const data={name:source.name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},

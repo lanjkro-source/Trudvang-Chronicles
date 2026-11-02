@@ -4045,6 +4045,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 3,
+      "radiusOptionId": "holy-ealdtradition-magh-s-gift:journey-wind:0:1",
+      "light": false
+    },
     "sourceId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
     "parameters": [
       {
