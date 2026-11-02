@@ -12,6 +12,12 @@ Toute nouvelle migration de monde doit :
 
 À la première release publique, ces chemins pourront être retirés après suppression des mondes de développement historiques.
 
+## `modules/aura.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| Conversion des sources d'aura antérieures à la séparation des effets | À la synchronisation, conserve les modifications et états de la source dans ses métadonnées et les retire de celle-ci pour que le lanceur reçoive un effet de zone distinct ; ajoute la portée et le rappel des bénéficiaires. | Les anciens effets d'aura actifs ont expiré ou les mondes de développement ont été supprimés ; retirer le bloc `TEMPORARY WORLD MIGRATION`. |
+
 ## `modules/transformations.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |

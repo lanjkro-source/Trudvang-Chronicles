@@ -16588,7 +16588,11 @@
       "NoGM": "Un MJ connecté est nécessaire pour créer et synchroniser l’aura.",
       "Failed": "Impossible de créer l’aura ; vérifiez la console.",
       "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone.",
-      "EffectiveBonus": "Bonus effectif aux valeurs de compétence et de situation : {value}."
+      "EffectiveBonus": "Bonus effectif aux valeurs de compétence et de situation : {value}.",
+      "RecipientName": "Aura : {name}",
+      "AllyName": "Aura : {name} (allié)",
+      "Radius": "Rayon effectif : {value} m.",
+      "LightRecipients": "Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué."
     }
   }
 }

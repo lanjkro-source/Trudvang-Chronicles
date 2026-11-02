@@ -48,17 +48,17 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const children=actorEffects(actor).filter(effect=>childFlags(effect)?.regionUuid===region.uuid);
  const others=Array.from(region.tokens??[]).filter(candidate=>candidate.id!==token.id&&sameActor(candidate,token));
  const inside=!force&&(!leaving||others.length>0);
- // The source effect already applies both benefits to its own actor.
  const self=actor.uuid===info.casterUuid;
- const eligible=inside&&active(source)&&!self;
+ const eligible=inside&&active(source);
  if(!eligible){if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));return;}
- const allies=(!leaving&&friendly(token))||others.some(friendly);
+ const allies=self||(!leaving&&friendly(token))||others.some(friendly);
  const aura=getAura(source),fearLight=aura?.light===true;
- const changes=Array.from(source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
+ const changes=Array.from(sourceMeta(source)?.auraChanges??source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
  const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
  let description=game.i18n.localize(`TRUDVANG.Content.Transformation.${descriptionKey}.Description`);
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
- const data={name:source.name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,
+ const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
+ const data={name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,statuses:sourceMeta(source)?.auraStatuses??[],
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
   flags:{[S]:{auraRecipient:{regionUuid:region.uuid}}}};
  const existing=children[0];
@@ -115,11 +115,21 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   }
   await refreshLight(token);return;
  }
+ // TEMPORARY WORLD MIGRATION: move pre-0.170 aura changes off the source so
+ // the caster receives the same separate recipient effect as everyone else.
+ if(!Array.isArray(sourceMeta(effect)?.auraChanges)){
+  const auraChanges=Array.from(effect.system?.changes??[],change=>({...change}));
+  const auraStatuses=Array.from(effect.statuses??[]);
+  const details=[game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius(effect)}),...(getAura(effect)?.light?[game.i18n.localize("TRUDVANG.Aura.LightRecipients")]:[])];
+  const description=String(effect.description??"")+details.map(detail=>`<p>${String(detail).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char])}</p>`).join("");
+  await effect.update({[`flags.${S}.transformation.auraChanges`]:auraChanges,[`flags.${S}.transformation.auraStatuses`]:auraStatuses,"system.changes":[],statuses:[],description});
+ }
  const radius=auraRadius(effect),scale=Number(scene.grid?.size||1)/Number(scene.grid?.distance||1)*metresToSceneUnits(scene,1);
  const center=token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*Number(scene.grid?.size||1)/2,y:Number(token.y||0)+Number(token.height||1)*Number(scene.grid?.size||1)/2};
  const shapes=[{type:"circle",x:center.x,y:center.y,radius:radius*scale}];
  if(!regions.length){
-  await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
+  const [region]=await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
+  if(region)await reconcileAuraToken(region,token);
  }else {
   const update={};
   if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
@@ -128,6 +138,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   if(Object.keys(update).length)await regions[0].update(update);
   for(const region of regions.slice(1))await region.delete();
   for(const target of regions[0].tokens??[])await reconcileAuraToken(regions[0],target);
+  if(!Array.from(regions[0].tokens??[]).some(target=>target.id===token.id))await reconcileAuraToken(regions[0],token);
  }
  await refreshLight(token);
 }

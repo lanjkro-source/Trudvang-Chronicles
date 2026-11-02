@@ -16,7 +16,8 @@ test("a successful light invocation applies one source effect to the selected ca
  globalThis.testDie=5;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});
  assert.equal(created.length,1);const meta=created[0].flags["trudvang-chronicles"].transformation;
  assert.equal(meta.ruleTestContext.casterTokenUuid,token.uuid);assert.equal(meta.ruleTestContext.auraSource,true);assert.equal(meta.ruleTestContext.countsById[`${id}:2`],2);
- assert.equal(created[0].system.changes.find(row=>row.key==="system.modifiers.rolls.allActions").value,"2");assert.deepEqual(created[0].duration,{value:24,units:"rounds"});
+ assert.equal(created[0].system.changes.length,0);assert.equal(meta.auraChanges.find(row=>row.key==="system.modifiers.rolls.allActions").value,"2");assert.deepEqual(created[0].duration,{value:24,units:"rounds"});
  assert.match(created[0].description,/TRUDVANG\.Aura\.EffectiveBonus \+2/);
+ assert.match(created[0].description,/TRUDVANG\.Aura\.Radius 4/);
  globalThis.testDie=20;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});assert.equal(created.length,1);
 });

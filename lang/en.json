@@ -16588,7 +16588,11 @@
       "NoGM": "A connected GM is required to create and synchronize the aura.",
       "Failed": "The aura could not be created; check the console.",
       "Automatic": "Aura effects are applied automatically within its area.",
-      "EffectiveBonus": "Effective bonus to Skill and Situation Values: {value}."
+      "EffectiveBonus": "Effective bonus to Skill and Situation Values: {value}.",
+      "RecipientName": "Aura: {name}",
+      "AllyName": "Aura: {name} (ally)",
+      "Radius": "Effective radius: {value} m.",
+      "LightRecipients": "All occupants ignore fear penalties; the caster and allies also gain the indicated bonus."
     }
   }
 }

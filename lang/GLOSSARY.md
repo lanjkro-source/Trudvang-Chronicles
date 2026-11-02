@@ -14378,3 +14378,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Aura.Failed` | The aura could not be created; check the console. | Impossible de créer l’aura ; vérifiez la console. |
 | `TRUDVANG.Aura.Automatic` | Aura effects are applied automatically within its area. | Les effets de l’aura sont appliqués automatiquement dans sa zone. |
 | `TRUDVANG.Aura.EffectiveBonus` | Effective bonus to Skill and Situation Values: {value}. | Bonus effectif aux valeurs de compétence et de situation : {value}. |
+| `TRUDVANG.Aura.RecipientName` | Aura: {name} | Aura : {name} |
+| `TRUDVANG.Aura.AllyName` | Aura: {name} (ally) | Aura : {name} (allié) |
+| `TRUDVANG.Aura.Radius` | Effective radius: {value} m. | Rayon effectif : {value} m. |
+| `TRUDVANG.Aura.LightRecipients` | All occupants ignore fear penalties; the caster and allies also gain the indicated bonus. | Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué. |

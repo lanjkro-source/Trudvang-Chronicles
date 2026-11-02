@@ -23,7 +23,7 @@ import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocat
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
-import {auraBonusDescription} from "./aura.mjs";
+import {auraBonusDescription,auraRadius} from "./aura.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -347,6 +347,12 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const statuses=new Set(template.statuses??[]);
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && p.statusAtOrBelow && Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)<=Number(p.statusAtOrBelow.threshold))statuses.add(p.statusAtOrBelow.status);
+ if(template.aura&&casting.auraSource){
+  meta.auraChanges=changes.map(change=>({...change}));meta.auraStatuses=[...statuses];
+  description+=`<p>${escapeHtml(game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius({flags:{[SCOPE]:{transformation:meta}}})}))}</p>`;
+  if(template.aura.light)description+=`<p>${escapeHtml(game.i18n.localize("TRUDVANG.Aura.LightRecipients"))}</p>`;
+  changes.length=0;statuses.clear();
+ }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  let effect;
