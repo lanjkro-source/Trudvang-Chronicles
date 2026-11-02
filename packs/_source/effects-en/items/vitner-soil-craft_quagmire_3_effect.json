@@ -1,0 +1,45 @@
+{
+  "_id": "D4SfgPjPkQlRmSnT",
+  "_key": "!items!D4SfgPjPkQlRmSnT",
+  "name": "Quagmire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-soil-craft:quagmire:3#effect",
+    "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
+    "summary": "Quagmire",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "Q6fOu9A6B7C8D9Ea",
+      "_key": "!items.effects!D4SfgPjPkQlRmSnT.Q6fOu9A6B7C8D9Ea",
+      "name": "Quagmire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-soil-craft:quagmire:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-soil-craft:quagmire:3#effect",
+            "sourceId": "vitner-soil-craft:quagmire:3",
+            "summary": "Quagmire",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

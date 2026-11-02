@@ -1,0 +1,45 @@
+{
+  "_id": "CFjk01w2x3y4z5A6",
+  "_key": "!items!CFjk01w2x3y4z5A6",
+  "name": "Waterproof",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:waterproof:1#effect",
+    "description": "✦ Modifier: None The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction. The enchanted surface becomes completely impermeable, but receives no other enhanced characteristics. The enchanter can waterproof any surface up to the area of a large tent by touching the material.",
+    "summary": "Waterproof",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "rIeJltVqWrXsYtZu",
+      "_key": "!items.effects!CFjk01w2x3y4z5A6.rIeJltVqWrXsYtZu",
+      "name": "Waterproof",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "✦ Modifier: None The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction. The enchanted surface becomes completely impermeable, but receives no other enhanced characteristics. The enchanter can waterproof any surface up to the area of a large tent by touching the material.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:waterproof:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:waterproof:1#effect",
+            "sourceId": "vitner-vitner-of-objects:waterproof:1",
+            "summary": "Waterproof",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

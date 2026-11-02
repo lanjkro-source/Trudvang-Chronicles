@@ -1,0 +1,45 @@
+{
+  "_id": "T7oIp2u0v1w2x3y4",
+  "_key": "!items!T7oIp2u0v1w2x3y4",
+  "name": "Flammèche",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:spark:1#effect",
+    "description": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique.",
+    "summary": "Flammèche",
+    "source": {
+      "book": "Livre des règles",
+      "page": 167
+    }
+  },
+  "effects": [
+    {
+      "_id": "COcFhD5A6B7C8D9E",
+      "_key": "!items.effects!T7oIp2u0v1w2x3y4.COcFhD5A6B7C8D9E",
+      "name": "Flammèche",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:spark:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:spark:1#effect",
+            "sourceId": "vitner-flame-craft:spark:1",
+            "summary": "Flammèche",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "E0JBYD7C8D9EaGbH",
+  "_key": "!items!E0JBYD7C8D9EaGbH",
+  "name": "Tracking",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:tracking:0#effect",
+    "description": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature.",
+    "summary": "Tracking",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "BXqWBXqWrXsYtZu0",
+      "_key": "!items.effects!E0JBYD7C8D9EaGbH.BXqWBXqWrXsYtZu0",
+      "name": "Tracking",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:tracking:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:tracking:0#effect",
+            "sourceId": "vitner-power-of-vision:tracking:0",
+            "summary": "Tracking",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

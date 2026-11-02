@@ -1,0 +1,45 @@
+{
+  "_id": "I3IED2tZu0v1w2x3",
+  "_key": "!items!I3IED2tZu0v1w2x3",
+  "name": "The Nine Kings",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+    "description": "The Bruid calls upon the nine great Kings, who send a memory of their past strength and spirit to the dimwalker to aid in the most difficult situations. The nine Kings are men of tall stature, and they wear crowns and long, dark mantles that cover their bodies. Their faces are pale and radiate the essence of spirits. Each is armed with a two-handed sword. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of nine active Kings at one time. If the dimwalker spends 1 raud, the Kings will stay until<hr>the next morning. ✦ King: Strength +4, Body Points 50, Protection Value 9, battle points 32, initiative +1d10 (OR 10) + 4, Sacred Two-handed Sword 1d10 (OR 8-10) + 2 in basic damage. Fear factor 1d10 (OR 9-10) for all opponents.",
+    "summary": "Royal warriors",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "dE0LCmPkQlRmSnTo",
+      "_key": "!items.effects!I3IED2tZu0v1w2x3.dE0LCmPkQlRmSnTo",
+      "name": "The Nine Kings",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid calls upon the nine great Kings, who send a memory of their past strength and spirit to the dimwalker to aid in the most difficult situations. The nine Kings are men of tall stature, and they wear crowns and long, dark mantles that cover their bodies. Their faces are pale and radiate the essence of spirits. Each is armed with a two-handed sword. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of nine active Kings at one time. If the dimwalker spends 1 raud, the Kings will stay until<hr>the next morning. ✦ King: Strength +4, Body Points 50, Protection Value 9, battle points 32, initiative +1d10 (OR 10) + 4, Sacred Two-handed Sword 1d10 (OR 8-10) + 2 in basic damage. Fear factor 1d10 (OR 9-10) for all opponents.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8",
+            "summary": "Royal warriors",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "l8uHt6x3y4z5A6B7",
+  "_key": "!items!l8uHt6x3y4z5A6B7",
+  "name": "Dragon Tongue",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+    "description": "The Bruid can communicate in the language of dragons and their kin. This does not mean that dragons will suddenly become friendly with the dimwalker or wish to answer his questions, but they will miraculously be able to comprehend his words. By speaking with dragons, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that all dragons have extremely good hearing and can distinguish sounds from several kilometers away.",
+    "summary": "Dragon Tongue",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "c61c5dIdJeKfLgMh",
+      "_key": "!items.effects!l8uHt6x3y4z5A6B7.c61c5dIdJeKfLgMh",
+      "name": "Dragon Tongue",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid can communicate in the language of dragons and their kin. This does not mean that dragons will suddenly become friendly with the dimwalker or wish to answer his questions, but they will miraculously be able to comprehend his words. By speaking with dragons, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that all dragons have extremely good hearing and can distinguish sounds from several kilometers away.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
+            "summary": "Dragon Tongue",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

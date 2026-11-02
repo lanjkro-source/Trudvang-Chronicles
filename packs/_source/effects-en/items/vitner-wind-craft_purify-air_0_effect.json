@@ -1,0 +1,45 @@
+{
+  "_id": "4m4Cj1u0v1w2x3y4",
+  "_key": "!items!4m4Cj1u0v1w2x3y4",
+  "name": "Purify Air",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:purify-air:0#effect",
+    "description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely. The spell can also be woven over a person, which creates a filter around their mouth and nose to purify the air they breathe. In this way, they can breathe in all environments that have enough air to keep them alive, no matter which gases, spores, or dangerous p articles are present.",
+    "summary": "Purify Air",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "TkDtY5A6B7C8D9Ea",
+      "_key": "!items.effects!4m4Cj1u0v1w2x3y4.TkDtY5A6B7C8D9Ea",
+      "name": "Purify Air",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely. The spell can also be woven over a person, which creates a filter around their mouth and nose to purify the air they breathe. In this way, they can breathe in all environments that have enough air to keep them alive, no matter which gases, spores, or dangerous p articles are present.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:purify-air:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:purify-air:0#effect",
+            "sourceId": "vitner-wind-craft:purify-air:0",
+            "summary": "Purify Air",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

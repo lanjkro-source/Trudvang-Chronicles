@@ -1,0 +1,45 @@
+{
+  "_id": "sLh4cTkQlRmSnToU",
+  "_key": "!items!sLh4cTkQlRmSnToU",
+  "name": "Tree Walk",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+    "description": "The Ihana can move among the trees at half their normal movement rate. If the trees stand so close to each other that the chosen one can reach from one tree’s branches to another’s, they can also climb from tree to tree through the canopy (up to the game master to decide). In areas that are more difficult to traverse, the Ihana can still attempt such an act by making a Situation roll with a Situation value determined by the game master (Dexterity traits apply) or a Skill roll for the Agility skill.",
+    "summary": "Tree Walk",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "Z41kvRjPkQlRmSnT",
+      "_key": "!items.effects!sLh4cTkQlRmSnToU.Z41kvRjPkQlRmSnT",
+      "name": "Tree Walk",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can move among the trees at half their normal movement rate. If the trees stand so close to each other that the chosen one can reach from one tree’s branches to another’s, they can also climb from tree to tree through the canopy (up to the game master to decide). In areas that are more difficult to traverse, the Ihana can still attempt such an act by making a Situation roll with a Situation value determined by the game master (Dexterity traits apply) or a Skill roll for the Agility skill.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+            "sourceId": "holy-toikalokke-lynx-power:tree-walk:1",
+            "summary": "Tree Walk",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

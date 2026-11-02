@@ -1,0 +1,45 @@
+{
+  "_id": "h8WQWQlRmSnToUpV",
+  "_key": "!items!h8WQWQlRmSnToUpV",
+  "name": "Fourrure du mastomant",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+    "description": "Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir.",
+    "summary": "Fourrure du mastomant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "6OT0a5z5A6B7C8D9",
+      "_key": "!items.effects!h8WQWQlRmSnToUpV.6OT0a5z5A6B7C8D9",
+      "name": "Fourrure du mastomant",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+            "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4",
+            "summary": "Fourrure du mastomant",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

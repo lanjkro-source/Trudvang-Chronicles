@@ -1,0 +1,45 @@
+{
+  "_id": "f0QYU0tZu0v1w2x3",
+  "_key": "!items!f0QYU0tZu0v1w2x3",
+  "name": "Storm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:storm:8#effect",
+    "description": "The spell summons a violent storm around the enchanter. It sweeps up debris and creatures weighing less than 50 kg within a 20-meter radius. Creatures must make a Strength-modified Situation roll to resist being hurled away. Those blown into obstacles suffer falling damage; those who remain inside must test again to move through the storm and suffer penalties to their actions.",
+    "summary": "Storm",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "SgynmF8D9EaGbHcI",
+      "_key": "!items.effects!f0QYU0tZu0v1w2x3.SgynmF8D9EaGbHcI",
+      "name": "Storm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell summons a violent storm around the enchanter. It sweeps up debris and creatures weighing less than 50 kg within a 20-meter radius. Creatures must make a Strength-modified Situation roll to resist being hurled away. Those blown into obstacles suffer falling damage; those who remain inside must test again to move through the storm and suffer penalties to their actions.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:storm:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:storm:8#effect",
+            "sourceId": "vitner-wind-craft:storm:8",
+            "summary": "Storm",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

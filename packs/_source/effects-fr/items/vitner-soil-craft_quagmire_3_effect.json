@@ -1,0 +1,45 @@
+{
+  "_id": "D4SfgPjPkQlRmSnT",
+  "_key": "!items!D4SfgPjPkQlRmSnT",
+  "name": "Bourbier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-soil-craft:quagmire:3#effect",
+    "description": "Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier.",
+    "summary": "Bourbier",
+    "source": {
+      "book": "Livre des règles",
+      "page": 159
+    }
+  },
+  "effects": [
+    {
+      "_id": "Q6fOu9A6B7C8D9Ea",
+      "_key": "!items.effects!D4SfgPjPkQlRmSnT.Q6fOu9A6B7C8D9Ea",
+      "name": "Bourbier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-soil-craft:quagmire:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-soil-craft:quagmire:3#effect",
+            "sourceId": "vitner-soil-craft:quagmire:3",
+            "summary": "Bourbier",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

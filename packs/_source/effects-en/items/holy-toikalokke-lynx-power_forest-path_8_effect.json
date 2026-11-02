@@ -1,0 +1,45 @@
+{
+  "_id": "qJRFiqUpVqWrXsYt",
+  "_key": "!items!qJRFiqUpVqWrXsYt",
+  "name": "Forest Path",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:forest-path:8#effect",
+    "description": "The Ihana can move through the forest at double their normal movement rate.",
+    "summary": "Forest Path",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "pTZiodIdJeKfLgMh",
+      "_key": "!items.effects!qJRFiqUpVqWrXsYt.pTZiodIdJeKfLgMh",
+      "name": "Forest Path",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can move through the forest at double their normal movement rate.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:forest-path:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:forest-path:8#effect",
+            "sourceId": "holy-toikalokke-lynx-power:forest-path:8",
+            "summary": "Forest Path",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

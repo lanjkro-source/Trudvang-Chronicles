@@ -1,0 +1,45 @@
+{
+  "_id": "rDTbvF7C8D9EaGbH",
+  "_key": "!items!rDTbvF7C8D9EaGbH",
+  "name": "Alarm Object",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alarm-object:4#effect",
+    "description": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on.",
+    "summary": "Alarm Object",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "m3uzvy2x3y4z5A6B",
+      "_key": "!items.effects!rDTbvF7C8D9EaGbH.m3uzvy2x3y4z5A6B",
+      "name": "Alarm Object",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alarm-object:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alarm-object:4#effect",
+            "sourceId": "vitner-vitner-of-objects:alarm-object:4",
+            "summary": "Alarm Object",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

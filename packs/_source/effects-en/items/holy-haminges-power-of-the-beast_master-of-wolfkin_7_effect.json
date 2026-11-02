@@ -1,0 +1,45 @@
+{
+  "_id": "rewpFeIdJeKfLgMh",
+  "_key": "!items!rewpFeIdJeKfLgMh",
+  "name": "Master of Wolfkin",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+    "description": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby. The dimwalker must be outside, and it will take 1d10 action rounds before the wolfkin appears. The wolfkin is friendly to the spirit conjurer, neutral to the conjurer’s allies, and hostile to the conjurer’s enemies. In its basic form, the ability calls a standard wolf, but the spirit conjurer can call upon much larger wolfkin with extra levels of power. Once the duration has ended, the wolfkin leaves its temporary master and returns to its previous area and task. If the wolfkin receives damage that exceeds two-thirds of its total Body Points while serving the dimwalker, it will attempt to escape and will not return for the rest of the duration.",
+    "summary": "Master of Wolfkin",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "CoIvXaE9EaGbHcId",
+      "_key": "!items.effects!rewpFeIdJeKfLgMh.CoIvXaE9EaGbHcId",
+      "name": "Master of Wolfkin",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby. The dimwalker must be outside, and it will take 1d10 action rounds before the wolfkin appears. The wolfkin is friendly to the spirit conjurer, neutral to the conjurer’s allies, and hostile to the conjurer’s enemies. In its basic form, the ability calls a standard wolf, but the spirit conjurer can call upon much larger wolfkin with extra levels of power. Once the duration has ended, the wolfkin leaves its temporary master and returns to its previous area and task. If the wolfkin receives damage that exceeds two-thirds of its total Body Points while serving the dimwalker, it will attempt to escape and will not return for the rest of the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+            "sourceId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7",
+            "summary": "Master of Wolfkin",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

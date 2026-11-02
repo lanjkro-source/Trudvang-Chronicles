@@ -1,0 +1,45 @@
+{
+  "_id": "mZHgtWnToUpVqWrX",
+  "_key": "!items!mZHgtWnToUpVqWrX",
+  "name": "Analyse de la composition",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:detect-composition:0#effect",
+    "description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes. Un enchanteur qui trouve un objet, tisse ce sort et touche l’objet saura immédiatement de quelles substances il se compose et en quelles proportions. Il pourrait même deviner comment un objet est construit. Si l’enchanteur ne peut pas véritablement voir à travers l’objet, il pourrait tout de même sentir qu’il contient un autre objet en métal, ou qu’il comporte une cavité destinée à contenir autre chose, etc. L’enchanteur est incapable d’évaluer les matériaux qui composent l’objet à moins d’avoir une idée de sa valeur. Ce sort ne permet pas à l’enchanteur de percevoir les caractéristiques magiques de l’objet.",
+    "summary": "Analyse de la composition",
+    "source": {
+      "book": "Livre des règles",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "97TL58z5A6B7C8D9",
+      "_key": "!items.effects!mZHgtWnToUpVqWrX.97TL58z5A6B7C8D9",
+      "name": "Analyse de la composition",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes. Un enchanteur qui trouve un objet, tisse ce sort et touche l’objet saura immédiatement de quelles substances il se compose et en quelles proportions. Il pourrait même deviner comment un objet est construit. Si l’enchanteur ne peut pas véritablement voir à travers l’objet, il pourrait tout de même sentir qu’il contient un autre objet en métal, ou qu’il comporte une cavité destinée à contenir autre chose, etc. L’enchanteur est incapable d’évaluer les matériaux qui composent l’objet à moins d’avoir une idée de sa valeur. Ce sort ne permet pas à l’enchanteur de percevoir les caractéristiques magiques de l’objet.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:detect-composition:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:detect-composition:0#effect",
+            "sourceId": "vitner-vitner-of-objects:detect-composition:0",
+            "summary": "Analyse de la composition",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

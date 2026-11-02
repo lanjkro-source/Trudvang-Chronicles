@@ -1,0 +1,45 @@
+{
+  "_id": "rDTbvF7C8D9EaGbH",
+  "_key": "!items!rDTbvF7C8D9EaGbH",
+  "name": "Objet d’alarme",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alarm-object:4#effect",
+    "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc.",
+    "summary": "Objet d’alarme",
+    "source": {
+      "book": "Livre des règles",
+      "page": 202
+    }
+  },
+  "effects": [
+    {
+      "_id": "m3uzvy2x3y4z5A6B",
+      "_key": "!items.effects!rDTbvF7C8D9EaGbH.m3uzvy2x3y4z5A6B",
+      "name": "Objet d’alarme",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alarm-object:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alarm-object:4#effect",
+            "sourceId": "vitner-vitner-of-objects:alarm-object:4",
+            "summary": "Objet d’alarme",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

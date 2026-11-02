@@ -1,0 +1,45 @@
+{
+  "_id": "hKJx1MhNiOjPkQlR",
+  "_key": "!items!hKJx1MhNiOjPkQlR",
+  "name": "Contrôle du vent",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:control-wind:3#effect",
+    "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon. L’enchanteur peut augmenter ou réduire d’un degré la force actuelle du vent dans cette sphère, comme l’indique la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un lieu ou un objet statique, mais en ajoutant des niveaux de puissance au sort, il est possible d’enchanter un objet mobile, que la zone affectée suivra dans ses déplacements. <table><thead><tr><th colspan=\"2\">DEGRÉS ET VENT</th></tr><tr><th>Degré</th><th>Force du vent</th></tr></thead><tbody><tr><td>1</td><td>Calme</td></tr><tr><td>2</td><td>Brise</td></tr><tr><td>3</td><td>Vent (-1)</td></tr><tr><td>4</td><td>Tempête (-2)</td></tr><tr><td>5</td><td>Ouragan (-4)</td></tr><tr><td>6</td><td>Ouragan titanesque (-6)</td></tr></tbody></table> Les termes utilisés dans cette table ne sont qu’une indication des forces qui peuvent se produire. C’est au maître de jeu de déterminer ce qui se produit exactement en fonction de la situation actuelle. La table mentionne également des valeurs entre parenthèses : elles indiquent les modificateurs normaux appliqués aux tests de situation de toute action de mouvement, de concentration ou de précision entreprise sous ces conditions.",
+    "summary": "Contrôle du vent",
+    "source": {
+      "book": "Livre des règles",
+      "page": 170
+    }
+  },
+  "effects": [
+    {
+      "_id": "w4miJiLgMhNiOjPk",
+      "_key": "!items.effects!hKJx1MhNiOjPkQlR.w4miJiLgMhNiOjPk",
+      "name": "Contrôle du vent",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon. L’enchanteur peut augmenter ou réduire d’un degré la force actuelle du vent dans cette sphère, comme l’indique la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un lieu ou un objet statique, mais en ajoutant des niveaux de puissance au sort, il est possible d’enchanter un objet mobile, que la zone affectée suivra dans ses déplacements. <table><thead><tr><th colspan=\"2\">DEGRÉS ET VENT</th></tr><tr><th>Degré</th><th>Force du vent</th></tr></thead><tbody><tr><td>1</td><td>Calme</td></tr><tr><td>2</td><td>Brise</td></tr><tr><td>3</td><td>Vent (-1)</td></tr><tr><td>4</td><td>Tempête (-2)</td></tr><tr><td>5</td><td>Ouragan (-4)</td></tr><tr><td>6</td><td>Ouragan titanesque (-6)</td></tr></tbody></table> Les termes utilisés dans cette table ne sont qu’une indication des forces qui peuvent se produire. C’est au maître de jeu de déterminer ce qui se produit exactement en fonction de la situation actuelle. La table mentionne également des valeurs entre parenthèses : elles indiquent les modificateurs normaux appliqués aux tests de situation de toute action de mouvement, de concentration ou de précision entreprise sous ces conditions.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:control-wind:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:control-wind:3#effect",
+            "sourceId": "vitner-wind-craft:control-wind:3",
+            "summary": "Contrôle du vent",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "cWisVQhNiOjPkQlR",
+  "_key": "!items!cWisVQhNiOjPkQlR",
+  "name": "Hero's Song",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed for 2 Body Points per minute for the duration of the ability. This song can heal a maximum of 10 Body Points per person per day.",
+    "summary": "Hero's Song",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "jOn7nwXsYtZu0v1w",
+      "_key": "!items.effects!cWisVQhNiOjPkQlR.jOn7nwXsYtZu0v1w",
+      "name": "Hero's Song",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed for 2 Body Points per minute for the duration of the ability. This song can heal a maximum of 10 Body Points per person per day.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
+            "summary": "Hero's Song",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

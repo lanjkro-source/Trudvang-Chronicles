@@ -1,0 +1,45 @@
+{
+  "_id": "l8uHt6x3y4z5A6B7",
+  "_key": "!items!l8uHt6x3y4z5A6B7",
+  "name": "Langue des dragons",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+    "description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins. Cela ne signifie pas que les dragons deviendront soudainement amicaux envers l’arpenteur des brumes ou qu’ils accepteront de répondre à ses questions, mais ils seront miraculeusement capables de comprendre ses paroles. En s’entretenant avec les dragons, le bruide peut également tenter de négocier avec eux, les intimider, les tromper ou les persuader. Gardez à l’esprit que tous les dragons ont une ouïe exceptionnelle et qu’ils sont en mesure de distinguer un bruit à plusieurs kilomètres de distance.",
+    "summary": "Langue des dragons",
+    "source": {
+      "book": "Livre des règles",
+      "page": 236
+    }
+  },
+  "effects": [
+    {
+      "_id": "c61c5dIdJeKfLgMh",
+      "_key": "!items.effects!l8uHt6x3y4z5A6B7.c61c5dIdJeKfLgMh",
+      "name": "Langue des dragons",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins. Cela ne signifie pas que les dragons deviendront soudainement amicaux envers l’arpenteur des brumes ou qu’ils accepteront de répondre à ses questions, mais ils seront miraculeusement capables de comprendre ses paroles. En s’entretenant avec les dragons, le bruide peut également tenter de négocier avec eux, les intimider, les tromper ou les persuader. Gardez à l’esprit que tous les dragons ont une ouïe exceptionnelle et qu’ils sont en mesure de distinguer un bruit à plusieurs kilomètres de distance.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
+            "summary": "Langue des dragons",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "znLVosWrXsYtZu0v",
+  "_key": "!items!znLVosWrXsYtZu0v",
+  "name": "King's Anthem",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 4 Body Points per minute for the duration of the ability. This song can heal a maximum of 20 Body Points per person per day.",
+    "summary": "King's Anthem",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "GutoloRmSnToUpVq",
+      "_key": "!items.effects!znLVosWrXsYtZu0v.GutoloRmSnToUpVq",
+      "name": "King's Anthem",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 4 Body Points per minute for the duration of the ability. This song can heal a maximum of 20 Body Points per person per day.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+            "summary": "King's Anthem",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

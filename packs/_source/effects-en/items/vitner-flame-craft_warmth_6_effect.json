@@ -1,0 +1,45 @@
+{
+  "_id": "ylknL0sYtZu0v1w2",
+  "_key": "!items!ylknL0sYtZu0v1w2",
+  "name": "Warmth",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:warmth:6#effect",
+    "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+    "summary": "Warmth",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "R21bCTlRmSnToUpV",
+      "_key": "!items.effects!ylknL0sYtZu0v1w2.R21bCTlRmSnToUpV",
+      "name": "Warmth",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:warmth:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:warmth:6#effect",
+            "sourceId": "vitner-flame-craft:warmth:6",
+            "summary": "Warmth",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

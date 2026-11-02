@@ -1,0 +1,45 @@
+{
+  "_id": "sLh4cTkQlRmSnToU",
+  "_key": "!items!sLh4cTkQlRmSnToU",
+  "name": "Chemin forestier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+    "description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mouvement normale. Si les arbres sont si proches les uns des autres que l’élu peut tendre les bras et toucher les branches de deux arbres en même temps, il peut également grimper et se déplacer d’arbre en arbre à travers la canopée (au maître de jeu de décider). Dans les zones plus difficiles à traverser, l’ihana peut tout de même tenter de progresser à l’aide d’un jet de situation avec une valeur de situation laissée à l’appréciation du maître de jeu (le modificateur de Dextérité s’applique) ou un test de compétence d’Agilité.",
+    "summary": "Chemin forestier",
+    "source": {
+      "book": "Livre des règles",
+      "page": 293
+    }
+  },
+  "effects": [
+    {
+      "_id": "Z41kvRjPkQlRmSnT",
+      "_key": "!items.effects!sLh4cTkQlRmSnToU.Z41kvRjPkQlRmSnT",
+      "name": "Chemin forestier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mouvement normale. Si les arbres sont si proches les uns des autres que l’élu peut tendre les bras et toucher les branches de deux arbres en même temps, il peut également grimper et se déplacer d’arbre en arbre à travers la canopée (au maître de jeu de décider). Dans les zones plus difficiles à traverser, l’ihana peut tout de même tenter de progresser à l’aide d’un jet de situation avec une valeur de situation laissée à l’appréciation du maître de jeu (le modificateur de Dextérité s’applique) ou un test de compétence d’Agilité.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:tree-walk:1#effect",
+            "sourceId": "holy-toikalokke-lynx-power:tree-walk:1",
+            "summary": "Chemin forestier",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

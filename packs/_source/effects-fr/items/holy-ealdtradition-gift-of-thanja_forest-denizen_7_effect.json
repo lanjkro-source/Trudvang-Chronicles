@@ -1,0 +1,45 @@
+{
+  "_id": "XCL4u4x3y4z5A6B7",
+  "_key": "!items!XCL4u4x3y4z5A6B7",
+  "name": "Enfant de la forêt",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-10 à la VC) en Arts des ombres pour pouvoir le repérer.",
+    "summary": "Enfant de la forêt",
+    "source": {
+      "book": "Livre des règles",
+      "page": 236
+    }
+  },
+  "effects": [
+    {
+      "_id": "6FKHt6z5A6B7C8D9",
+      "_key": "!items.effects!XCL4u4x3y4z5A6B7.6FKHt6z5A6B7C8D9",
+      "name": "Enfant de la forêt",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-10 à la VC) en Arts des ombres pour pouvoir le repérer.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
+            "summary": "Enfant de la forêt",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "k0EPnIcIdJeKfLgM",
+  "_key": "!items!k0EPnIcIdJeKfLgM",
+  "name": "Messager magique",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:send-message:8#effect",
+    "description": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’enchanteur. Dans la version de base du sort, le message est limité à dix mots, et peut être destiné à un maximum de cinq créatures dans un rayon de 10 kilomètres. L’être de vitner est incroyablement rapide et peut franchir 1 kilomètre par tour de jeu. Le message doit être émis dans une langue que l’enchanteur maîtrise.",
+    "summary": "Messager magique",
+    "source": {
+      "book": "Livre des règles",
+      "page": 191
+    }
+  },
+  "effects": [
+    {
+      "_id": "tlKoUD7C8D9EaGbH",
+      "_key": "!items.effects!k0EPnIcIdJeKfLgM.tlKoUD7C8D9EaGbH",
+      "name": "Messager magique",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’enchanteur. Dans la version de base du sort, le message est limité à dix mots, et peut être destiné à un maximum de cinq créatures dans un rayon de 10 kilomètres. L’être de vitner est incroyablement rapide et peut franchir 1 kilomètre par tour de jeu. Le message doit être émis dans une langue que l’enchanteur maîtrise.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:send-message:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:send-message:8#effect",
+            "sourceId": "vitner-animal-vitner:send-message:8",
+            "summary": "Messager magique",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "wPrGQE9EaGbHcIdJ",
+  "_key": "!items!wPrGQE9EaGbHcIdJ",
+  "name": "Gaze of Windinna",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect",
+    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker can then read that person’s mind for the duration of the ability. The target can attempt to resist the effect by succeeding on a Situation roll with a Situation value of 4 (Psyche modifiers apply).",
+    "summary": "Gaze of Windinna",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "jTeJ0rVqWrXsYtZu",
+      "_key": "!items.effects!wPrGQE9EaGbHcIdJ.jTeJ0rVqWrXsYtZu",
+      "name": "Gaze of Windinna",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker can then read that person’s mind for the duration of the ability. The target can attempt to resist the effect by succeeding on a Situation roll with a Situation value of 4 (Psyche modifiers apply).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect",
+            "sourceId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
+            "summary": "Gaze of Windinna",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

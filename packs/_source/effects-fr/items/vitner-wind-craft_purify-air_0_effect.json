@@ -1,0 +1,45 @@
+{
+  "_id": "4m4Cj1u0v1w2x3y4",
+  "_key": "!items!4m4Cj1u0v1w2x3y4",
+  "name": "Purification de l’air",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:purify-air:0#effect",
+    "description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’enchanteur, ce qui lui permet de respirer en toute sécurité. On peut également tisser ce sort sur une personne, ce qui crée un filtre autour de sa bouche et de son nez afin de purifier l’air qu’elle respire. De cette façon, elle peut respirer dans n’importe quel environnement contenant suffisamment d’air pour lui permettre de survivre, et ce, quels que soient les gaz, spores et autres particules dangereuses que l’air peut contenir.",
+    "summary": "Purification de l’air",
+    "source": {
+      "book": "Livre des règles",
+      "page": 170
+    }
+  },
+  "effects": [
+    {
+      "_id": "TkDtY5A6B7C8D9Ea",
+      "_key": "!items.effects!4m4Cj1u0v1w2x3y4.TkDtY5A6B7C8D9Ea",
+      "name": "Purification de l’air",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’enchanteur, ce qui lui permet de respirer en toute sécurité. On peut également tisser ce sort sur une personne, ce qui crée un filtre autour de sa bouche et de son nez afin de purifier l’air qu’elle respire. De cette façon, elle peut respirer dans n’importe quel environnement contenant suffisamment d’air pour lui permettre de survivre, et ce, quels que soient les gaz, spores et autres particules dangereuses que l’air peut contenir.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:purify-air:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:purify-air:0#effect",
+            "sourceId": "vitner-wind-craft:purify-air:0",
+            "summary": "Purification de l’air",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

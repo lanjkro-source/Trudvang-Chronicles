@@ -1,0 +1,45 @@
+{
+  "_id": "JmT9qIcIdJeKfLgM",
+  "_key": "!items!JmT9qIcIdJeKfLgM",
+  "name": "Vitner Pouch",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:vitner-pouch:1#effect",
+    "description": "The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch.",
+    "summary": "Vitner Pouch",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 129
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ktaf6TmSnToUpVqW",
+      "_key": "!items.effects!JmT9qIcIdJeKfLgM.Ktaf6TmSnToUpVqW",
+      "name": "Vitner Pouch",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:vitner-pouch:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:vitner-pouch:1#effect",
+            "sourceId": "vitner-vitner-craft:vitner-pouch:1",
+            "summary": "Vitner Pouch",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

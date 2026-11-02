@@ -1,0 +1,45 @@
+{
+  "_id": "T7oIp2u0v1w2x3y4",
+  "_key": "!items!T7oIp2u0v1w2x3y4",
+  "name": "Spark",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:spark:1#effect",
+    "description": "The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame.",
+    "summary": "Spark",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "COcFhD5A6B7C8D9E",
+      "_key": "!items.effects!T7oIp2u0v1w2x3y4.COcFhD5A6B7C8D9E",
+      "name": "Spark",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:spark:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:spark:1#effect",
+            "sourceId": "vitner-flame-craft:spark:1",
+            "summary": "Spark",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

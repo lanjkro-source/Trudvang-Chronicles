@@ -18,6 +18,7 @@ globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.uuid}), create
 globalThis.Roll = class {async evaluate() {this.total = die; return this;}};
 globalThis.ui = {notifications: {warn: () => null}};
 globalThis.canvas = {tokens: {controlled: []}};
+globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");}})};
 
 const {rollUnder} = await import("../modules/dice.mjs");
 const {useCreatureAbility} = await import("../modules/rule-use.mjs");

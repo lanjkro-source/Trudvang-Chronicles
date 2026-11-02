@@ -10835,6 +10835,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Environment` | Rivers and streams of Trudvang, during their upstream migration. | Rivières et fleuves de Trudvang, pendant la remontée de la montaison. |
 | `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.SourceBook` | Player's Handbook | Livre des règles |
 
+## `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.Name` | Vitner Pouch | Bourse de vitner |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.Description` | The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch. | L’enchanteur tisse le vitner de façon à créer une bourse astrale. Ce sac n’est pas visible dans le monde physique, et seul l’enchanteur et ceux qui comprennent le vitner sont capables de le percevoir. En outre, seuls ceux qui sont en mesure de voir la bourse peuvent la porter. Ce sac peut contenir tous les objets ou créatures dont le poids total n’excède pas 2 kg. Tout ce qu’on place dans la bourse ne représente aucun poids supplémentaire pour celui qui la porte. Une créature qui se retrouve piégée contre son gré dans la bourse peut se libérer en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). Si la durée du sort expire alors que la bourse contient encore des objets, ces derniers tombent tous à côté du personnage. Il faut 1 tour de jeu pour extraire un objet de la bourse. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.SourceName` | Vitner Pouch | Bourse de vitner |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.SourcePage` | 129 | 152 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-being:4#effect`
 
 | Clé | English | Français |
@@ -10845,6 +10856,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-being:4#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-being:4#effect.SourcePage` | 129 | 153 |
 | `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-being:4#effect.Duration` | 4 action rounds | 4 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.Name` | Wall of Vitner | Mur de vitner |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.Description` | The enchanter forms a circular wall of vitner with a diameter of 2 meters. This wall protects against any spells that try to affect something on the other side of the wall. If a spell is centered outside the wall but has an area of effect that reaches beyond the wall, the spell needs to get past the vitner wall’s defense in order to have any effect. To protect against spells attempting to breach the vitner wall, the enchanter must succeed on a Situation roll every time a spell tries to break through. The Situation value depends on the level of the incoming magic,<table><thead><tr><th colspan="1">WALL OF VITNER’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>as shown in the table below. If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall. WALL OF VITNER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4 | L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre. Ce mur confère une protection contre tous les sorts qui tentent d’affecter quelque chose se trouvant de l’autre côté. Si un sort a pour centre un point situé à l’extérieur du mur mais dispose d’une aire d’effet qui franchit le mur, le sort doit passer outre les défenses du Mur de vitner pour pouvoir avoir le moindre effet. Pour que le mur de vitner accorde sa protection contre les sorts qui tentent de le traverser, l’enchanteur doit réussir un test de situation à chaque tentative. La valeur de situation dépend du niveau du sort adverse, comme indiqué par la table ci-dessous. Si le Mur de vitner parvient à protéger contre un sort, aucun des effets de ce dernier ne peut traverser le mur. <table><thead><tr><th colspan="2">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.SourceName` | Wall of Vitner | Mur de vitner |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.SourcePage` | 129 | 154 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:wall-of-vitner:8#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.vitner-dimvitner:speak-to-undead:3#effect`
 
@@ -10878,6 +10900,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:control-undead:7#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:control-undead:7#effect.SourcePage` | 105 | 157 |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:control-undead:7#effect.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Name` | Quagmire | Bourbier |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Description` | The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire. | Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier. |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourceName` | Quagmire | Bourbier |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourcePage` | 123 | 159 |
+| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk`
 
@@ -10956,6 +10989,105 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.SourcePage` | 135 | 164 |
 | `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.Duration` | 3 minutes | 3 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.Name` | Solid Water | Eau solide |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.Description` | The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet. The enchanted person can then walk on water as if it were solid ground and move up to 5 meters per round in this manner. The affected area has a diameter of 1 meter and can hold up to 70 kg (only a creature of normal size will fit). The affected area moves constantly so it is always located beneath the individual the spell was woven over, who can direct the area by simply turning the way they want to go and walking on. | L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse de 5 mètres par tour de jeu. La zone affectée fait 1 mètre de diamètre et peut soutenir jusqu’à 70 kg (une seule créature de taille humaine pourra s’y tenir). La zone affectée se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix. |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.SourceName` | Solid Water | Eau solide |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.SourcePage` | 135 | 165 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:solid-water:5#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.Name` | Control Precipitation | Contrôle des précipitations |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.Description` | The spell can change the amount of precipitation that falls to the ground. The area that the enchanter can affect in this manner has a radius of 50 meters from the point where the enchanter wove the spell. The enchanter can increase or decrease the amount of precipitation one degree from the current amount, as outlined in the table below. In the spell’s basic version, the center of the enchanted area is a static object or location, but by adding a power level it is possible to enchant a movable object,<table><thead><tr><th colspan="1">DEGREES</th></tr><tr><th>Degree Precipitation</th></tr></thead><tbody><tr><td>0 Clear blue sky</td></tr><tr><td>1 Cloudy. No precipitation</td></tr><tr><td>2 Light rain or very light</td></tr></tbody></table>which means that the affected area can then be moved. An enchanter cannot, without extra levels of power, create rain and snow from a clear blue sky. CONTROL PRECIPITATION DEGREES Degree Precipitation 0 Clear blue sky 1 Cloudy. No precipitation 2 Light rain or very light snowfall 3 Rain or light snowfall 4 Persistent rain or snowfall 5 Pouring rain or snowstorm | Ce sort permet de modifier l’importance des précipitations. La zone qui peut être affectée de la sorte est un cercle de 50 mètres de rayon autour du point où l’enchanteur a tissé le sort. Ce dernier peut augmenter ou réduire d’un degré les précipitations actuelles, comme indiqué par la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un objet statique ou un lieu, mais en ajoutant un niveau de puissance il est possible d’enchanter un objet mobile, ce qui signifie que la zone affectée peut alors être déplacée. Un enchanteur ne peut pas faire tomber la neige ou la pluie d’un ciel bleu sans nuages sans utiliser de niveaux de puissance supplémentaires. <table><thead><tr><th colspan="2">DEGRÉS DES PRÉCIPITATIONS</th></tr><tr><th>Degré</th><th>Précipitation</th></tr></thead><tbody><tr><td>0</td><td>Ciel bleu sans nuage.</td></tr><tr><td>1</td><td>Nuageux. Aucune précipitation.</td></tr><tr><td>2</td><td>Pluies éparses ou quelques flocons de neige.</td></tr><tr><td>3</td><td>Pluie ou légère chute de neige.</td></tr><tr><td>4</td><td>Pluie ou neige persistante.</td></tr><tr><td>5</td><td>Pluie battante ou tempête de neige.</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.SourceName` | Control Precipitation | Contrôle des précipitations |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.SourcePage` | 135 | 165 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:control-precipitation:6#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Name` | Heat Water | Ébullition |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Description` | By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water. | En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante. |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourceName` | Heat Water | Ébullition |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourcePage` | 109 | 167 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.Name` | Spark | Flammèche |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.Description` | The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame. | L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique. |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.SourceName` | Spark | Flammèche |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.SourcePage` | 109 | 167 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.Name` | Warmth | Chaleur |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.Description` | The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round | L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. <table><thead><tr><th colspan="2">TEMPÉRATURE ET DÉGÂTS</th></tr><tr><th>Température</th><th>Dégâts</th></tr></thead><tbody><tr><td>50°C</td><td>1d6 + 1 PS par jour</td></tr><tr><td>60°C</td><td>1 PS par heure</td></tr><tr><td>70°C</td><td>1d6 + 1 PS par heure</td></tr><tr><td>80°C</td><td>1 PS par minute</td></tr><tr><td>90°C</td><td>1 PS par tour de jeu</td></tr><tr><td>100°C et plus</td><td>1d6 PS par tour de jeu</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.SourceName` | Warmth | Chaleur |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.SourcePage` | 109 | 168 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect.Duration` | 5 hours | 5 heures |
+
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.Name` | Flame Control | Contrôle des flammes |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.Description` | The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room. | L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce. |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.SourceName` | Flame Control | Contrôle des flammes |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.SourcePage` | 109 | 169 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:flame-control:5#effect.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.Name` | Purify Air | Purification de l’air |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.Description` | The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely. The spell can also be woven over a person, which creates a filter around their mouth and nose to purify the air they breathe. In this way, they can breathe in all environments that have enough air to keep them alive, no matter which gases, spores, or dangerous p articles are present. | Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’enchanteur, ce qui lui permet de respirer en toute sécurité. On peut également tisser ce sort sur une personne, ce qui crée un filtre autour de sa bouche et de son nez afin de purifier l’air qu’elle respire. De cette façon, elle peut respirer dans n’importe quel environnement contenant suffisamment d’air pour lui permettre de survivre, et ce, quels que soient les gaz, spores et autres particules dangereuses que l’air peut contenir. |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.SourceName` | Purify Air | Purification de l’air |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.SourcePage` | 139 | 170 |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Name` | Fog | Brouillard |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Description` | The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2. | L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC. |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourceName` | Fog | Brouillard |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourcePage` | 139 | 170 |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.Name` | Control Wind | Contrôle du vent |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.Description` | The Ihana controls the force of the wind within a sphere that is 10 meters in radius. The chosen one can increase or decrease the power of the wind by one degree within that sphere. In the ability’s basic version, the affected area is a static object or place that cannot be moved, but by adding a level of power,<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.</td></tr></tbody></table>it is possible to move the area. CONTROL WIND, DEGREES Degree Wind Power 1 Calm 2 Breeze 3 Windy (-1) 4 Storm (-2) 5 Hurricane (-4) 6 Godly hurricane (-6) The wind conditions in the table are only the names of forces that can occur. It is up to the game master to decide what happens in each condition according to the situation. The table also lists values in parentheses, which indicate the normal modifiers applied to the Situation value of anything attempted within that condition that requires movement, precision, or focus. | Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon. L’enchanteur peut augmenter ou réduire d’un degré la force actuelle du vent dans cette sphère, comme l’indique la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un lieu ou un objet statique, mais en ajoutant des niveaux de puissance au sort, il est possible d’enchanter un objet mobile, que la zone affectée suivra dans ses déplacements. <table><thead><tr><th colspan="2">DEGRÉS ET VENT</th></tr><tr><th>Degré</th><th>Force du vent</th></tr></thead><tbody><tr><td>1</td><td>Calme</td></tr><tr><td>2</td><td>Brise</td></tr><tr><td>3</td><td>Vent (-1)</td></tr><tr><td>4</td><td>Tempête (-2)</td></tr><tr><td>5</td><td>Ouragan (-4)</td></tr><tr><td>6</td><td>Ouragan titanesque (-6)</td></tr></tbody></table> Les termes utilisés dans cette table ne sont qu’une indication des forces qui peuvent se produire. C’est au maître de jeu de déterminer ce qui se produit exactement en fonction de la situation actuelle. La table mentionne également des valeurs entre parenthèses : elles indiquent les modificateurs normaux appliqués aux tests de situation de toute action de mouvement, de concentration ou de précision entreprise sous ces conditions. |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.SourceName` | Control Wind | Contrôle du vent |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.SourcePage` | 139 | 170 |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor`
 
 | Clé | English | Français |
@@ -10966,6 +11098,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourcePage` | 139 | 171 |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.Name` | Storm | Tempête |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.Description` | The spell summons a violent storm around the enchanter. It sweeps up debris and creatures weighing less than 50 kg within a 20-meter radius. Creatures must make a Strength-modified Situation roll to resist being hurled away. Those blown into obstacles suffer falling damage; those who remain inside must test again to move through the storm and suffer penalties to their actions. | Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur. Pour résister à la tempête, une créature doit réussir un test de situation avec la valeur de situation indiquée par la table cicontre (prendre en compte le modificateur de Force). Cette table montre également la distance à laquelle un objet ou un personnage d’un certain poids est projeté en cas d’échec au test de situation. Si la victime est projetée contre un mur, on calcule les dégâts comme pour une chute d’une distance équivalente à celle sur laquelle la victime a été balayée. Si une victime se trouve toujours dans le rayon d’action de la tempête après avoir été projetée, elle peut se relever mais doit faire un nouveau test pour pouvoir se déplacer dans la zone sans être de nouveau balayée (même VC que plus haut). Toute créature qui tient tête à la tempête et parvient à ne pas être balayée peut continuer d’agir normalement dans la zone affectée, mais toutes ses actions subissent le malus indiqué par la table ci-contre. |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.SourceName` | Storm | Tempête |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.SourcePage` | 139 | 173 |
+| `TRUDVANG.Content.Transformation.vitner-wind-craft:storm:8#effect.Duration` | 2 action rounds | 2 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.vitner-perceiving:find-home:0#find-home`
 
@@ -11176,6 +11319,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:possess-creature:10#effect.SourcePage` | 116 | 180 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-thought:possess-creature:10#effect.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.Name` | Tracking | Pistage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.Description` | The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature. | Ce sort permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la personne enchantée peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. L’enchanteur peut également suivre les traces d’une créature ayant bénéficié du sort Sans trace. Pour pouvoir utiliser le vitner en vue de pister une créature, l’enchanteur doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le tissage du sort réussi : l’enchanteur ne peut donc pas répéter le même sort à moins de se procurer un autre échantillon de la créature visée. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.SourceName` | Tracking | Pistage |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.SourcePage` | 120 | 181 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:tracking:0#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.Name` | Scanning | Examen d’objet |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.Description` | By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine. | L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément. |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.SourceName` | Scanning | Examen d’objet |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.SourcePage` | 120 | 182 |
+| `TRUDVANG.Content.Transformation.vitner-power-of-vision:scanning:1#effect.Duration` | 9 action rounds | 9 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-power-of-vision:espionage:4#espionage`
 
 | Clé | English | Français |
@@ -11197,6 +11362,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.SourcePage` | 120 | 183 |
 | `TRUDVANG.Content.Transformation.vitner-power-of-vision:astral-voyage:5#astral-voyage.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.Name` | Uprooted Tree | Déracinement |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.Description` | The spell causes a tree to uproot and collapse. The vitner is laid in the ground directly beneath a tree and there forms a small uproot. As soon as the spell has been woven, the vitner begins to swell up like a bloated cow’s stomach. Soon the vitner expands so much that the tree above it is wrenched from the soil and tipped over. An observer can see that something is happening because the soil suddenly starts to shift and rise. In the fourth action round of the spell, the uproot grows so large that it bursts out of the ground, and in the fifth action round it finally tips the tree over and then disappears. For a tree to be toppled in this manner, it cannot have a trunk with a circumference larger than 1.5 meters at ground level. If the trunk is larger, the vitner will not have enough strength to tip it over. The mage, who must c oncentrate on the uprooting at all times, can choose which way the tree will fall. If they lose concentration or lose control over the uproot for any reason, it will still continue to swell until the tree falls, but the game master will determine the direction. Everyone who observes this occurrence and was unaware of the mage’s actions must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply) to avoid receiving 1d10 Fear Points when the uproot breaks out of the ground. On a success, an observer receives no Fear Points. The uproot could just as easily be placed under a large rock, open ground, or even a house. The final results of such an action and how much of the object collapses or is tipped over is up to the game master to decide. The uproot in the spell’s basic version can lift or tip approximately 100 kg. | Ce sort déracine un arbre et provoque son effondrement. L’enchanteur insuffle le vitner dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le sort a été tissé, le vitner commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du sort, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le vitner n’aura pas la force de le soulever. L’enchanteur, qui doit se concentrer constamment sur ce sort, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du sort pour quelque raison que ce soit, le vitner continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de l’enchanteur doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce sort et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce sort peut soulever ou renverser environ 100 kg. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.SourceName` | Uprooted Tree | Déracinement |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.SourcePage` | 143 | 184 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-creature:5#effect`
 
@@ -11243,6 +11419,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien.Sense0` | Animal link range | Portée du lien avec l’animal |
 
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.Name` | Call on Animals | Appel des animaux |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.Description` | TYPES OF ANIMALS FOR CALL ON Type of Animal Small bird, rat Cat, bird, hen, small dog, fox Large bird, dog, roe deer, wolf Large dog, deer, drauglo Donkey [1.5x] Horse, frostboar [2x] Cave boar, bear, ox Mastomant Dragon The mage can call on one or more unintelligent animals. In total they can call on one animal with a maximum amount of 15 Body Points, or a number of smaller animals that together total up to 15 Body Points, see table below for direction. The mage can specify what type of species to call, if desired, or call the ANIMALS AND CONTROL ANIMALS Size BP [&lt;1/3] Size of a piglet 1-2 [1/3] Size of a lamb 3-9 [1/2] Size of a foal 10-16 [1x] Size of a calf 17-30 Size of the largest tame swine 31-41 Size of the largest tame sow 42-52 [4x] Size of an ox 53-84 [7x] Size of a mastomant 85-199 [&gt; 10x] Size of a dragon 200+ closest animals. Regardless, the animals are cautious with the mage. Any fast or aggressive movements from the mage or anyone else in the vicinity might startle the animals and cause them to flee. If someone tries to get close to an animal, this is normally regarded as an aggressive move. Once the spell’s duration ends, the animals continue to be watchful and eventually move away from the place as the compulsion to stay is lifted. | L’enchanteur peut appeler un ou plusieurs animaux non intelligents. Il peut convoquer un seul animal ayant au maximum 15 points de santé, ou un certain nombre d’animaux plus petits dont le total de points de santé cumulés ne dépasse pas 15 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux page suivante). L’enchanteur peut préciser le type d’espèce qu’il désire appeler s’il le souhaite, ou bien appeler les animaux les plus proches. Quoi qu’il en soit, les animaux se montrent prudents envers l’enchanteur. Tout mouvement rapide ou agressif de sa part ou de toute autre personne se trouvant à proximité risque d’effaroucher les animaux et de les pousser à fuir. Si quelqu’un tente de s’approcher d’un animal, on peut généralement considérer cela comme un mouvement agressif. Lorsque le sort prend fin, les animaux continuent de faire preuve de prudence et finiront par s’éloigner puisqu’ils n’ont plus l’obligation de rester. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.SourceName` | Call on Animals | Appel des animaux |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.SourcePage` | 92 | 188 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.Duration` | 10 minutes | 10 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-animal-vitner:control-animals:4#effect`
 
 | Clé | English | Français |
@@ -11253,6 +11440,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:control-animals:4#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:control-animals:4#effect.SourcePage` | 92 | 190 |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:control-animals:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.Name` | Mind of the Wolf | Esprit du loup |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.Description` | The one affected by the spell gains something that resembles a wolf’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety, and strength. By studying a group or individual’s astral reflection(s) (within 10 meters), the affected can, for example, tell the strong from the weak, friend from foe, or if someone is unusually anxious or cowardly and has a will that can be influenced. But the affected can never be sure of who the leader of a group is, since the strongest individual is not always the leader. The spell also gives the target a distinct wolf-like appearance for the duration. | La personne affectée par ce sort développe une faculté semblable à la capacité d’un loup à percevoir dans les odeurs des choses subtiles comme la peur, l’agressivité, l’anxiété et la force. En étudiant le reflet astral d’une personne ou d’un groupe situé à moins de 10 mètres de lui, le bénéficiaire peut, par exemple, distinguer les forts des faibles, les amis des ennemis, ou percevoir si un sujet est particulièrement anxieux ou peureux et pourrait être manipulé. Mais le bénéficiaire de ce sort ne peut jamais deviner avec certitude qui est le chef d’un groupe, étant donné que l’individu le plus fort n’est pas toujours le chef. Le bénéficiaire développe aussi une apparence distinctement lupine pendant la durée du sort. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.SourceName` | Mind of the Wolf | Esprit du loup |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.SourcePage` | 92 | 190 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.Name` | Possess Animals | Possession animale |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.Description` | This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body. To accomplish this, the mage has to be within the spell’s range of the creature, as well as have it in sight. You cannot possess an animal that you cannot see. If the spell is successful, the enchanter’s consciousness is shifted to the intended creature, which loses all direct control over its body. The mage can, without any difficulty, embrace all of the animal’s traits as their own. The mage keeps their own intelligence but cannot use Vitner Craft or Speak, as well as any other skills that would not be physically possible for that creature’s form. On the other hand, the mage receives a bonus for the Agility and Shadow Arts skills when in animal form (the size of the bonus is up to the game master). The mage is also able to attempt communication by using body movements. While in animal form, the mage cannot understand or communicate with other animals, not even those of the same species. When the mage possess the animal, their own body falls into deep slumber. Once inside the animal, the mage can move as far as desired from their own body, but they must be careful to return within the spell’s range before its duration is over. If the animal is killed while possessed by the mage, or if the duration runs out before the mage returns within the spell’s range, the mage’s consciousness returns to their body automatically, but with complications. The experience is so t raumatic that they undergo extreme shock. The incredible stress on the mind is so powerful that the mage loses 1d6 in vitner capacity permanently, and falls into a deep slumber that lasts for 1d6 days. | Ce sort permet à l’enchanteur de projeter sa conscience dans le corps d’un vertébré non intelligent. Pour ce faire, l’enchanteur doit se trouver à portée de la créature, qui doit également se trouver dans son champ de vision. Il est impossible de posséder un animal qu’on ne voit pas. Si le sort est réussi, la conscience de l’enchanteur est transférée dans la créature visée, qui perd tout contrôle direct de son corps. L’enchanteur peut, sans la moindre difficulté, utiliser toutes les particularités de l’animal comme si c’était les siennes. L’enchanteur conserve sa propre intelligence mais ne peut pas utiliser les compétences Maîtrise du vitner ou Langage (il ne peut pas parler), ainsi que toute autre compétence qu’il est physiquement impossible d’utiliser sous forme animale. D’un autre côté, l’enchanteur reçoit un bonus aux compétences Agilité et Arts des ombres quand il évolue sous forme animale (la valeur du bonus est laissée à l’appréciation du maître de jeu). De plus, l’enchanteur peut tenter d’établir une communication par le biais de mouvements corporels. Tant qu’il est sous forme animale, l’enchanteur ne peut pas comprendre ou communiquer avec d’autres animaux, pas même ceux de la même espèce. Quand l’enchanteur prend possession de l’animal, son propre corps sombre dans un profond sommeil. Une fois à l’intérieur de l’animal, l’enchanteur peut s’éloigner autant qu’il le désire de son propre corps, mais il doit prendre garde à être de retour à portée de son corps avant que le sort ne prenne fin. Si l’animal est tué pendant que l’enchanteur le possède, ou si la durée du sort prend fin avant que l’enchanteur ne revienne à portée de son corps, la conscience de l’enchanteur réintègre automatiquement son corps, mais avec quelques complications. L’expérience est si traumatisante que l’enchanteur subit un choc extrême. Le stress encaissé par son esprit est si puissant que l’enchanteur subit une diminution permanente de 1d6 points de sa réserve de vitner, et sombre dans un profond sommeil qui dure 1d6 jours. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.SourceName` | Possess Animals | Possession animale |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.SourcePage` | 92 | 191 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect.Duration` | 10 minutes | 10 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.Name` | Send Message | Messager magique |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.Description` | The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing. In the spell’s basic version, the message can contain a maximum of ten words, and can be received by up to five beings within a radius of 10 kilometers. The vitner being is incredibly fast and can travel 1 kilometer per action round. The message must be in a language that the mage has mastered. | L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’enchanteur. Dans la version de base du sort, le message est limité à dix mots, et peut être destiné à un maximum de cinq créatures dans un rayon de 10 kilomètres. L’être de vitner est incroyablement rapide et peut franchir 1 kilomètre par tour de jeu. Le message doit être émis dans une langue que l’enchanteur maîtrise. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.SourceName` | Send Message | Messager magique |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.SourcePage` | 92 | 191 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:send-message:8#effect.Duration` | 10 minutes | 10 minutes |
 
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence`
 
@@ -11420,6 +11640,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourcePage` | 101 | 197 |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.Name` | Phantom Sound | Son illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.Description` | The spell suddenly generates one or more noises within the designated range. The sound or sounds consist of audible illusions that fit the current environment and situation. They may be steps approaching, a twig breaking, a growl, a collection of whispers, a knock on the door, or any other noise. | Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.SourceName` | Phantom Sound | Son illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.SourcePage` | 101 | 198 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect.Duration` | 10 action rounds | 10 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:traceless:4#trace`
 
 | Clé | English | Français |
@@ -11441,6 +11672,72 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.SourcePage` | 101 | 198 |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:ghost-voice:5#voix.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.Name` | Landscape Illusion | Paysage illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.Description` | The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape. The sphere has a radius of up to 300 meters around the enchanter and can depict things like a great hill, a forest, or even a city (the enchanter chooses the size of the illusion). It might also be an illusion of nothing at all, used to mask whatever landscape is really there. The enchanter cannot create an illusion of movement, so the illusion must depict something that remains static. In order to recognize from a distance that the landscape is an enormous illusion, the observer must succeed on a Skill roll for the Shadow Arts skill, modified according to the distance between the observer and the illusion. These<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.</td></tr></tbody></table>modifiers are outlined in the table below. The observer gets to make a new Skill roll for each new distance range they reach when approaching the illusion. LANDSCAPE ILLUSION MODIFIERS Distance Modifier &lt;50 Illusion is discovered 50-100 m +5 101-200 m +2 201-400 m ±0 401-600 m -2 601-1,000 m -5 &gt; 1,000 m -10 The illusion remains in the location where it was woven until the spell expires, even if the enchanter moves away. If an observer ventures into the illusion, it disappears completely from their field of vision, and they see the area as it really appears, though other observers who are outside the enchanted realm still see the illusion. | Ce sort crée une immense sphère d’illusion autour de l’enchanteur qui imite le paysage de son choix. Cette sphère centrée sur l’enchanteur a un rayon de 300 mètres et peut représenter un paysage comme une grande colline, une forêt, ou même une cité (l’enchanteur choisit la taille de l’illusion). L’illusion peut également ne rien représenter et servir à dissimuler le véritable paysage. L’enchanteur n’a pas la possibilité de simuler le mouvement, l’illusion doit donc représenter quelque chose de statique. Pour pouvoir se rendre compte de loin que ce paysage est une immense illusion, un observateur doit réussir un test de compétence d’Arts des ombres, en prenant en compte la distance qui le sépare de l’illusion (Cf. la table ci-contre). L’observateur a droit à un nouveau test de compétence à chaque fois qu’il se rapproche de l’illusion d’un palier sur cette table. <table><thead><tr><th colspan="2">MODIFICATEURS</th></tr><tr><th>Distance</th><th>Modificateur</th></tr></thead><tbody><tr><td><50 m</td><td>L’illusion est découverte</td></tr><tr><td>50 à 100 m</td><td>+5</td></tr><tr><td>101 à 200 m</td><td>+2</td></tr><tr><td>201 à 400 m</td><td>+0</td></tr><tr><td>401 à 600 m</td><td>-2</td></tr><tr><td>601 à 1000 m</td><td>-5</td></tr><tr><td>> 1000 m</td><td>-10</td></tr></tbody></table> L’illusion reste à l’endroit où elle a été tissée jusqu’à expiration du sort, même si l’enchanteur s’en va. Si un observateur s’aventure dans l’illusion, elle disparaît complètement de son champ de vision et il découvre le véritable paysage autour de lui, mais les autres observateurs à l’extérieur du royaume enchanté continuent d’être affectés par l’illusion. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.SourceName` | Landscape Illusion | Paysage illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.SourcePage` | 101 | 199 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:landscape-illusion:8#effect.Duration` | 2 hours | 2 heures |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.Name` | Detect Composition | Analyse de la composition |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.Description` | The enchanter can identify all nonorganic materials, such as metals and gemstones. An enchanter who finds an object, weaves this spell, and touches the object will immediately know what substances it is composed of and the quantities of each substance. They might even discover how an object is constructed. Although the enchanter cannot see straight through the object, they might discover that inside the object is another object altogether composed of metal, that inside the object is a hollow cavity created to contain something else, and so on. The enchanter is unable to evaluate the object’s material unless they have an idea of how much it is worth. The spell does not allow the enchanter to discover magical characteristics of the object. | L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes. Un enchanteur qui trouve un objet, tisse ce sort et touche l’objet saura immédiatement de quelles substances il se compose et en quelles proportions. Il pourrait même deviner comment un objet est construit. Si l’enchanteur ne peut pas véritablement voir à travers l’objet, il pourrait tout de même sentir qu’il contient un autre objet en métal, ou qu’il comporte une cavité destinée à contenir autre chose, etc. L’enchanteur est incapable d’évaluer les matériaux qui composent l’objet à moins d’avoir une idée de sa valeur. Ce sort ne permet pas à l’enchanteur de percevoir les caractéristiques magiques de l’objet. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.SourceName` | Detect Composition | Analyse de la composition |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.SourcePage` | 132 | 201 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect.Duration` | 10 action rounds | 10 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.Name` | Waterproof | Résistance à l’eau |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.Description` | ✦ Modifier: None The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction. The enchanted surface becomes completely impermeable, but receives no other enhanced characteristics. The enchanter can waterproof any surface up to the area of a large tent by touching the material. | Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.SourceName` | Waterproof | Résistance à l’eau |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.SourcePage` | 132 | 201 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:waterproof:1#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.Name` | Bind | Lien |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.Description` | The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue. The items must fit well together, not be in motion, and not consist of living matter. For example, one cannot bind a door frame to an unlucky person passing through it. Appropriate targets to bind include door and door frame, lid and box, sword and scabbard, boulder and cave opening, drawer and hatch, or cork and bottle. The two objects become one for the spell’s duration and cannot be separated by normal means. It is possible to use force on the objects, such as by bashing through a door that is bound to a door frame, but the objects will not open in a normal fashion or separate cleanly. The enchanter, however, can separate the objects whenever they want to. | Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante. Les objets doivent aller bien ensemble, ne pas être en mouvement, et ne pas se composer de matière vivante. Par exemple, il est impossible de lier une embrasure de porte à une personne qui la traverse malencontreusement. Il est par contre tout à fait envisageable de lier un chambranle et une porte, un couvercle et une boîte, une épée et un fourreau, un rocher et l’entrée d’une caverne, un tiroir et une commode, ou un bouchon et une bouteille. Les deux objets n’en forment plus qu’un seul jusqu’à expiration du sort et il est impossible de les séparer par des moyens conventionnels. On peut recourir à la force contre ces objets, par exemple en défonçant une porte liée à son chambranle, mais les objets ne se sépareront pas de façon nette. En revanche, l’enchanteur peut séparer les deux objets quand bon lui semble. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.SourceName` | Bind | Lien |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.SourcePage` | 132 | 201 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.Name` | Alarm Object | Objet d’alarme |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.Description` | The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on. | L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.SourceName` | Alarm Object | Objet d’alarme |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.SourcePage` | 132 | 202 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect.Duration` | 5 hours | 5 heures |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.Name` | Enlarge/Reduce Object | Agrandissement/ rapetissement d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.Description` | The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length). | Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2000 cm³ ou 2 dm³). L’enchanteur peut doubler la taille de l’objet, ou la réduire de moitié. Dans un cas comme dans l’autre, le poids de l’objet demeure identique. L’enchanteur peut également modifier légèrement les proportions de l’objet de sorte que, par exemple, il s’allonge sans devenir plus large, comme une corde qui s’allonge sans pour autant devenir plus épaisse. Une corde de 5 mètres de long (2 cm × 2 cm × 500 cm) qu’on agrandit peut atteindre 10 mètres de long (sa longueur est doublée). Si on la réduit, la corde peut descendre à 2,5 mètres de long (sa longueur diminue de moitié). |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.SourceName` | Enlarge/Reduce Object | Agrandissement/ rapetissement d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.SourcePage` | 132 | 202 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.Duration` | 4 minutes | 4 minutes |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-warmth-of-sunvei:healing:0#guerison`
 
@@ -11828,6 +12125,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.SourcePage` | 162 | 225 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.Name` | Wave of Truth | Vague de vérité |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.Description` | The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker directs the ability toward a person within range and can use it to judge if the person is lying or telling the truth. The ability lasts for one minute. | Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur dirige ce pouvoir vers une personne située à portée et peut s’en servir pour déterminer si cette personne ment ou dit la vérité. Ce pouvoir fonctionne pendant 1 minute. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.SourceName` | Wave of Truth | Vague de vérité |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.SourcePage` | 168 | 228 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.Name` | Gaze of Windinna | Regard de Windinna |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.Description` | The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker can then read that person’s mind for the duration of the ability. The target can attempt to resist the effect by succeeding on a Situation roll with a Situation value of 4 (Psyche modifiers apply). | Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur peut alors lire les pensées du sujet tant que ce pouvoir est actif. La cible peut tenter de résister en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.SourceName` | Gaze of Windinna | Regard de Windinna |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.SourcePage` | 168 | 228 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.Name` | Swine Rush | Ruée du porc |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.Description` | With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi. Windinna hears the dimwalker and sends Djofur, the swine spirit, to create a common object. When he does so, he grunts and digs in the ground. Left in the place where Djofur was digging is the object. It can be anything the dimwalker chooses, such as a sword, a gold coin, or even a boat, as long as it is not alive or magical. The object also has to be movable. Thus, Djofur cannot create a horse, a forest, or a flower because these are living things. Nor can he create a stronghold or a wall since these are not movable. It takes one minute for Djofur to create an object, which will then exist for one day. The quality of the object is masterful. Djofur can be called only once per day. Be aware that neither Windinna nor Djofur cares for greedy dimwalkers, so if a Stormkelt were to use this ability to sate their own greed, it would awaken the wrath of the goddess. | Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Windinna répond à l’appel de l’arpenteur des brumes et lui envoie Djofur, l’esprit du porc, afin de créer un objet courant. Pour ce faire, Djofur grogne et creuse la terre, et l’objet apparaît au fond de l’excavation. Il peut s’agir de n’importe quel objet au choix de l’arpenteur des brumes, comme une épée, une pièce d’or ou même un bateau, tant que ce n’est rien de vivant ou de magique. L’objet doit également être mobile. De fait, Djofur ne peut pas créer un cheval, une forêt ou une fleur puisqu’il s’agit de choses vivantes. Il ne peut pas non plus créer une forteresse ou un mur puisque ces objets ne sont pas mobiles. Il faut une minute à Djofur pour créer un objet, qui existe ensuite pendant une journée. Il s’agit d’un objet de qualité Magistrale. On ne peut faire appel à Djofur qu’une fois par jour. Gardez à l’esprit que ni Windinna ni Djofur n’ont de respect pour les arpenteurs de brumes cupides, et si un stormikjalt utilise ce pouvoir pour satisfaire sa soif de richesse, il risque fort de susciter la colère de la déesse. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.SourceName` | Swine Rush | Ruée du porc |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.SourcePage` | 168 | 228 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect`
 
 | Clé | English | Français |
@@ -11838,6 +12168,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourcePage` | 183 | 232 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.Name` | Rider's Melody | Mélodie du cavalier |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.Description` | The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day. | Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent tous 1 point de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 5 points de santé par personne et par jour |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.SourceName` | Rider's Melody | Mélodie du cavalier |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.SourcePage` | 183 | 232 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect`
 
@@ -11850,6 +12191,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.SourcePage` | 183 | 233 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:elf-summer:3#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.Name` | Hero's Song | Chant du héros |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.Description` | The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed for 2 Body Points per minute for the duration of the ability. This song can heal a maximum of 10 Body Points per person per day. | Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.SourceName` | Hero's Song | Chant du héros |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.SourcePage` | 183 | 233 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:hero-s-song:4#effect.Duration` | 2 minutes | 2 minutes |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.Name` | King's Anthem | Hymne royal |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.Description` | The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 4 Body Points per minute for the duration of the ability. This song can heal a maximum of 20 Body Points per person per day. | Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.SourceName` | King's Anthem | Hymne royal |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.SourcePage` | 183 | 234 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect.Duration` | 3 minutes | 3 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect`
 
 | Clé | English | Français |
@@ -11860,6 +12223,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.SourcePage` | 183 | 234 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:harvest-year:8#effect.Duration` | 1 year | 1 année |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.Name` | Behind Tree and Pine | Derrière le frêne et le pin |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.Description` | The Bruid alters their appearance to blend into the surrounding environment. They must remain completely still or the effect breaks. Anyone searching for the Bruid must succeed on a Shadow Arts Skill roll with a -3 SV penalty to detect them. | Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque le recherche doit réussir un test de compétence difficile (-3 à la VC) en Arts des ombres pour pouvoir le repérer. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.SourceName` | Behind Tree and Pine | Derrière le frêne et le pin |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.SourcePage` | 176 | 234 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.Name` | Animal Speech | Langue animale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.Description` | The Bruid is able to speak with ordinary animals for the duration of the ability. He can also understand anything that the animals are saying. However, this does not mean that the animals will immediately become comfortable or friendly toward the dimwalker, or even wish to answer his questions, but they will miraculously be able to comprehend his words. How much they will understand depends on how intelligent the animals are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the animals have no context or understanding of. By speaking with animals, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that animals often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning. | Le bruide développe la faculté de parler aux animaux ordinaires jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’ils disent. Cela dit, les animaux ne se montrent pas forcément tout de suite à l’aise ou amicaux envers l’arpenteur des brumes, ni même désireux de répondre à ses questions, mais ils comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les animaux. En parlant avec les animaux, le bruide peut également négocier avec eux, les intimider, les tromper ou les convaincre. Gardez à l’esprit que les animaux se comportent souvent d’une façon que les humains considèrent comme puérile, égoïste et parfois avide et sournoise. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.SourceName` | Animal Speech | Langue animale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.SourcePage` | 176 | 234 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:animal-speech:1#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf`
 
@@ -11875,6 +12260,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Sense0` | low-light vision | vision nocturne |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf.Capability0` | stags | cerfs |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.Name` | Bestial Tongue | Langage des bêtes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.Description` | The Bruid is able to speak with beasts for the duration of the ability. She can also understand anything that the beasts are saying. However, this does not mean that the beasts will immediately become comfortable or friendly toward the dimwalker, or even wish to answer her questions, but they will miraculously be able to comprehend her words. How much they will understand depends on how intelligent the beasts are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the creatures have no context or understanding of. By speaking with beasts, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that beasts often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning. Beasts are creatures such as wolfkin (skolls and garms), braskelwurm, troll bulls, griffons, mastomants, and lindwurms. The Bruid cannot communicate with trolls or dragons through this ability. | Le bruide développe la faculté de parler aux bêtes normales jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’elles disent. Cela dit, les bêtes ne se montrent pas forcément tout de suite à l’aise ou amicales envers l’arpenteur des brumes, ni même désireuses de répondre à ses questions, mais elles comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les bêtes. En parlant avec les bêtes, le bruide peut également négocier avec elles, les intimider, les tromper ou les persuader. Gardez à l’esprit que les bêtes se comportent souvent d’une façon que les humains considèreront comme puérile, égoïste et parfois avide et sournoise. Les bêtes sont les créatures comme les wargs (skolls et garms), les minokks, les griffons et les mastomants. Ce pouvoir ne permet pas au bruide de communiquer avec les trolls ou les dragons. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.SourceName` | Bestial Tongue | Langage des bêtes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.SourcePage` | 176 | 235 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon`
 
 | Clé | English | Français |
@@ -11888,6 +12284,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Sense0` | excellente vision aquatique | excellente vision aquatique |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability0` | salmon | saumons |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon.Capability1` | breathes in water and on land | respire dans l’eau et sur terre |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.Name` | Beneath Root and Rock | Sous la roche et l’écorce |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.Description` | The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-5 to SV) Skill roll with the Shadow Arts skill in order to detect them. | Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-5 à la VC) en Arts des ombres pour pouvoir le repérer. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.SourceName` | Beneath Root and Rock | Sous la roche et l’écorce |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.SourcePage` | 176 | 236 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.Name` | Forest Denizen | Enfant de la forêt |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.Description` | The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-10 to SV) Skill roll with the Shadow Arts skill in order to detect them. | Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-10 à la VC) en Arts des ombres pour pouvoir le repérer. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.SourceName` | Forest Denizen | Enfant de la forêt |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.SourcePage` | 176 | 236 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.Name` | Dragon Tongue | Langue des dragons |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.Description` | The Bruid can communicate in the language of dragons and their kin. This does not mean that dragons will suddenly become friendly with the dimwalker or wish to answer his questions, but they will miraculously be able to comprehend his words. By speaking with dragons, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that all dragons have extremely good hearing and can distinguish sounds from several kilometers away. | Le bruide peut communiquer dans la langue des dragons et de leurs cousins. Cela ne signifie pas que les dragons deviendront soudainement amicaux envers l’arpenteur des brumes ou qu’ils accepteront de répondre à ses questions, mais ils seront miraculeusement capables de comprendre ses paroles. En s’entretenant avec les dragons, le bruide peut également tenter de négocier avec eux, les intimider, les tromper ou les persuader. Gardez à l’esprit que tous les dragons ont une ouïe exceptionnelle et qu’ils sont en mesure de distinguer un bruit à plusieurs kilomètres de distance. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.SourceName` | Dragon Tongue | Langue des dragons |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.SourcePage` | 176 | 236 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau`
 
@@ -11916,6 +12345,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.SourcePage` | 181 | 237 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls.Duration` | 3 rounds | 3 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.Name` | King's Militia | Milice royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.Description` | The Bruid summons a spirit warrior from the great King’s militia. The militiamen are simple warriors in leather armor with an ordinary short sword and an ordinary small shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again, and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A Bruid can have a maximum of two active militia warriors at<hr>one time. ✦ Militia Warrior: Body Points 20, Protection Value 2, battle points 10, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+4 battle points). | Le bruide invoque un esprit guerrier venant de la grande milice du roi. Ce milicien est un guerrier simple qui porte une armure en cuir et manie une épée courte et un petit bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide serait en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de deux miliciens en même temps.<hr>Milicien : points de santé 20, valeur de protection 2, points de combat 10, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+4 points de combat) |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.SourceName` | King's Militia | Milice royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.SourcePage` | 181 | 237 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants`
 
 | Clé | English | Français |
@@ -11927,6 +12367,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.SourcePage` | 181 | 237 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.Duration` | 3 rounds | 3 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.Name` | King's Guard | Garde royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.Description` | The Bruid summons a spirit warrior from the great King’s guard. The guard is a disciplined warrior who wears leather armor and is armed with a broad sword and a shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of four active guard warriors at one<hr>time. ✦ Guard Warrior: Strength +1, Body Points 25, Protection Value 3, battle points 15, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+8 battle points). | Le bruide invoque un esprit guerrier venant de la grande garde royale. Ce soldat est un guerrier discipliné qui porte une armure en cuir et manie une épée large et un bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de quatre gardes en même temps.<hr>Garde : Force +1, points de santé 25, valeur de protection 3, points de combat 15, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+8 points de combat). |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.SourceName` | King's Guard | Garde royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.SourcePage` | 181 | 238 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons`
 
 | Clé | English | Français |
@@ -11937,6 +12388,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.SourcePage` | 181 | 238 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.Name` | The Nine Kings | Les neuf rois |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.Description` | The Bruid calls upon the nine great Kings, who send a memory of their past strength and spirit to the dimwalker to aid in the most difficult situations. The nine Kings are men of tall stature, and they wear crowns and long, dark mantles that cover their bodies. Their faces are pale and radiate the essence of spirits. Each is armed with a two-handed sword. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of nine active Kings at one time. If the dimwalker spends 1 raud, the Kings will stay until<hr>the next morning. ✦ King: Strength +4, Body Points 50, Protection Value 9, battle points 32, initiative +1d10 (OR 10) + 4, Sacred Two-handed Sword 1d10 (OR 8-10) + 2 in basic damage. Fear factor 1d10 (OR 9-10) for all opponents. | Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’arpenteur des brumes dans les situations les plus délicates. Les neuf rois sont des hommes de grande stature, et ils portent des couronnes et de longs manteaux sombres qui recouvrent leur corps. Leurs visages sont pâles et irradient de l’essence des esprits. Chacun est armé d’une épée à deux mains. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de neuf rois en même temps.<hr>Roi : Force +4, points de santé 50, valeur de protection 9, points de combat 32, initiative 1d10 (JO 10) + 4, épée à deux mains sacrée 1d10 (JO 8-10) + 2 points de dégâts. Facteur de peur 1d10 (JO 9-10) pour tous les adversaires. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.SourceName` | The Nine Kings | Les neuf rois |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.SourcePage` | 181 | 238 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal`
 
@@ -12259,6 +12721,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.SourcePage` | 201 | 258 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.Name` | Thornwall | Mur d’épines |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.Description` | The one praying invokes the force of the black oak. Within the range, thorny branches spring from the ground that fill a space of 1d10 + 10 m³, which the dimwalker may then shape to their own satisfaction. For example, if a priest has 20 m³ at their disposal, they can shape the branches to be 20 m long x 1 m high x 1 m wide, or 10 m long x 2 m high x 1 m wide, or other dimensions. It takes 1 action round for the branches to grow to fill a space of 5 m³, meaning that branches filling 20 m³ of space would take 4 rounds. Attempting to pass through these thorny branches without cutting them down deals 1d5 points of damage for every cubic meter passed through, and requires 2 action rounds of movement per meter. Each cubic meter has a number of thorny branches equivalent to 10 Body Points, should one wish to hack through in order to push through the wall without taking any damage. | Par cette prière, le prêtre invoque la force du chêne noir. Dans le rayon d’effet autour du prêtre, des branches épineuses jaillissent du sol pour remplir un volume de 1d10 + 10 m3, auquel l’arpenteur des brumes peut donner la forme de son choix. Par exemple, si le prêtre a un volume de 20 m3 à sa disposition, il peut donner aux branches la forme d’un mur de 20 m de long sur 1 m de haut et 1 m de large. Il faut 1 tour de jeu aux branches pour remplir un espace de 5 m3, ce qui signifie que des branches occupant un volume de 20 m3 mettront 4 tours de jeu pour se mettre en place. Toute personne tentant de traverser les branches épineuses sans les couper subit 1d5 points de dégâts pour chaque mètre cube traversé, et cela lui prend 2 tours de jeu par mètre à traverser. Chaque mètre cube contient des branches épineuses ayant l’équivalent de 10 points de santé, si quelqu’un désire se tailler un chemin à travers le mur sans subir de dégâts. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.SourceName` | Thornwall | Mur d’épines |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.SourcePage` | 201 | 258 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:thornwall:3#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect`
 
 | Clé | English | Français |
@@ -12269,6 +12742,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourcePage` | 201 | 258 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.Name` | Demonic Impotence | Impuissance des démons |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.Description` | The priest prays to Gave, and as a result their hands begin to glow. For the next 10 action rounds, the priest gains the ability to rip one feat from a demon simply by touching the demon with their glowing hands (a successful unarmed attack). If the priest successfully purges a demon of one of its abilities, the demon cannot use it for the duration listed above. A priest can rip only one ability away from any demon. If the priest spends a raud when successfully ripping an ability from a demon, the demon loses the purged ability permanently. | Le prêtre adresse une prière à Gave, et ses mains se mettent à luire. Pendant les 10 tours de jeu suivants, il obtient la faculté d’arracher une capacité à un démon simplement en le touchant à l’aide de ses mains luisantes (ce qui exige de réussir une attaque à mains nues). Si le prêtre parvient à voler l’un de ses pouvoirs au démon, ce dernier ne peut plus l’utiliser jusqu’à expiration de ce pouvoir. Un prêtre ne peut voler qu’une seule capacité à un démon. Si le prêtre dépense un point de raud quand il parvient à arracher une capacité à un démon, ce dernier la perd de façon définitive. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.SourceName` | Demonic Impotence | Impuissance des démons |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.SourcePage` | 201 | 258 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce`
 
@@ -12337,6 +12821,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier.SourcePage` | 212 | 269 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.Name` | Mastomant's Fur | Fourrure du mastomant |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.Description` | The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability. | Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.SourceName` | Mastomant's Fur | Fourrure du mastomant |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.SourcePage` | 212 | 269 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant`
 
 | Clé | English | Français |
@@ -12347,6 +12842,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant.SourcePage` | 212 | 269 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.Name` | Master of Wolfkin | Maître des loups |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.Description` | By howling, the spirit conjurer can summon a wolfkin from somewhere nearby. The dimwalker must be outside, and it will take 1d10 action rounds before the wolfkin appears. The wolfkin is friendly to the spirit conjurer, neutral to the conjurer’s allies, and hostile to the conjurer’s enemies. In its basic form, the ability calls a standard wolf, but the spirit conjurer can call upon much larger wolfkin with extra levels of power. Once the duration has ended, the wolfkin leaves its temporary master and returns to its previous area and task. If the wolfkin receives damage that exceeds two-thirds of its total Body Points while serving the dimwalker, it will attempt to escape and will not return for the rest of the duration. | En poussant un hurlement, le conjurateur peut appeler un loup situé à proximité. L’arpenteur des brumes doit se trouver à l’extérieur, et il faut 1d10 tours de jeu au loup pour apparaître. Le loup se montre amical envers le conjurateur, neutre envers ses alliés et hostile envers ses ennemis. Dans sa forme de base, ce pouvoir appelle un loup standard, mais le conjurateur peut convoquer un loup de taille supérieure en y consacrant des niveaux de puissance supplémentaires. Une fois la durée du pouvoir expirée, le loup quitte son maître temporaire et retourne là où il se trouvait au moment de la convocation. Si le loup subit des dégâts qui dépassent deux tiers de son total de points de santé alors qu’il se trouve au service de l’arpenteur des brumes, il tente de s’enfuir et ne revient pas avant l’expiration du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.SourceName` | Master of Wolfkin | Maître des loups |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.SourcePage` | 212 | 269 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant`
 
@@ -12682,6 +13188,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourcePage` | 231 | 287 |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Duration` | permanente tant que les deux runes sont portées et alimentées en points de divinité | permanente tant que les deux runes sont portées et alimentées en points de divinité |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.Name` | Tree Walk | Chemin forestier |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.Description` | The Ihana can move among the trees at half their normal movement rate. If the trees stand so close to each other that the chosen one can reach from one tree’s branches to another’s, they can also climb from tree to tree through the canopy (up to the game master to decide). In areas that are more difficult to traverse, the Ihana can still attempt such an act by making a Situation roll with a Situation value determined by the game master (Dexterity traits apply) or a Skill roll for the Agility skill. | L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mouvement normale. Si les arbres sont si proches les uns des autres que l’élu peut tendre les bras et toucher les branches de deux arbres en même temps, il peut également grimper et se déplacer d’arbre en arbre à travers la canopée (au maître de jeu de décider). Dans les zones plus difficiles à traverser, l’ihana peut tout de même tenter de progresser à l’aide d’un jet de situation avec une valeur de situation laissée à l’appréciation du maître de jeu (le modificateur de Dextérité s’applique) ou un test de compétence d’Agilité. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.SourceName` | Tree Walk | Chemin forestier |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.SourcePage` | 239 | 293 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:tree-walk:1#effect.Duration` | 10 minutes | 10 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation`
 
 | Clé | English | Français |
@@ -12714,6 +13231,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourcePage` | 239 | 294 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.Duration` | 2 action rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.Name` | Forest Path | Sentier forestier |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.Description` | The Ihana can move through the forest at double their normal movement rate. | L’ihana peut traverser la forêt au double de sa capacité de mouvement normale. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.SourceName` | Forest Path | Sentier forestier |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.SourcePage` | 239 | 294 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect.Duration` | 3 hours | 3 heures |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.Name` | Pathfinder | Éclaireur |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.Description` | The Ihana can travel through otherwise impassable forest or shrubbery when desired. The forest or undergrowth parts as the dimwalker approaches and then closes once they have passed. This temporary path leaves no visible trace whatsoever. The path that opens around the Ihana stretches for 3 meters in front of and behind the elf, with a width equal to half the elf’s length. | L’ihana peut traverser des forêts infranchissables ou des fourrés denses sans la moindre difficulté. La végétation s’écarte à l’approche de l’arpenteur des brumes et se referme sur son passage. Le sentier temporaire ne laisse aucune trace. La végétation s’écarte de 3 mètres devant et derrière l’ihana, et la largeur du sentier correspond à la longueur de bras de l’elfe. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.SourceName` | Pathfinder | Éclaireur |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.SourcePage` | 239 | 295 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.Duration` | 3 hours | 3 heures |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces`
 
@@ -12882,6 +13421,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Duration` | 1 heure | 1 heure |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Attack0` | Horns | Cornes |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf.Sense0` | low-light vision | vision nocturne |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.Name` | Control Fire | Contrôle du feu |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.Description` | The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it. | L’ihana développe un certain contrôle des flammes. À chaque tour de jeu, il peut déplacer 1 mètre cube de feu sur une distance de 2 mètres. L’elfe ne peut pas directement créer ou éteindre des flammes de cette façon (en augmentant ou en réduisant sa taille), mais il peut mettre le feu à d’autres objets en faisant passer les flammes à proximité, ou bien étouffer un feu en le déplaçant jusqu’à un endroit où il ne peut pas persister. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.SourceName` | Control Fire | Contrôle du feu |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.SourcePage` | 241 | 297 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-fire:1#effect.Duration` | 10 action rounds | 10 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau`
 

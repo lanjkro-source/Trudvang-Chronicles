@@ -1,0 +1,45 @@
+{
+  "_id": "WGzhrjLgMhNiOjPk",
+  "_key": "!items!WGzhrjLgMhNiOjPk",
+  "name": "Swine Rush",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi. Windinna hears the dimwalker and sends Djofur, the swine spirit, to create a common object. When he does so, he grunts and digs in the ground. Left in the place where Djofur was digging is the object. It can be anything the dimwalker chooses, such as a sword, a gold coin, or even a boat, as long as it is not alive or magical. The object also has to be movable. Thus, Djofur cannot create a horse, a forest, or a flower because these are living things. Nor can he create a stronghold or a wall since these are not movable. It takes one minute for Djofur to create an object, which will then exist for one day. The quality of the object is masterful. Djofur can be called only once per day. Be aware that neither Windinna nor Djofur cares for greedy dimwalkers, so if a Stormkelt were to use this ability to sate their own greed, it would awaken the wrath of the goddess.",
+    "summary": "Swine Rush",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "Zhkh8PhNiOjPkQlR",
+      "_key": "!items.effects!WGzhrjLgMhNiOjPk.Zhkh8PhNiOjPkQlR",
+      "name": "Swine Rush",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi. Windinna hears the dimwalker and sends Djofur, the swine spirit, to create a common object. When he does so, he grunts and digs in the ground. Left in the place where Djofur was digging is the object. It can be anything the dimwalker chooses, such as a sword, a gold coin, or even a boat, as long as it is not alive or magical. The object also has to be movable. Thus, Djofur cannot create a horse, a forest, or a flower because these are living things. Nor can he create a stronghold or a wall since these are not movable. It takes one minute for Djofur to create an object, which will then exist for one day. The quality of the object is masterful. Djofur can be called only once per day. Be aware that neither Windinna nor Djofur cares for greedy dimwalkers, so if a Stormkelt were to use this ability to sate their own greed, it would awaken the wrath of the goddess.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect",
+            "sourceId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6",
+            "summary": "Swine Rush",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

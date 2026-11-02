@@ -1,0 +1,45 @@
+{
+  "_id": "rBZnkMgMhNiOjPkQ",
+  "_key": "!items!rBZnkMgMhNiOjPkQ",
+  "name": "Derrière le frêne et le pin",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque le recherche doit réussir un test de compétence difficile (-3 à la VC) en Arts des ombres pour pouvoir le repérer.",
+    "summary": "Derrière le frêne et le pin",
+    "source": {
+      "book": "Livre des règles",
+      "page": 234
+    }
+  },
+  "effects": [
+    {
+      "_id": "epaUaZsYtZu0v1w2",
+      "_key": "!items.effects!rBZnkMgMhNiOjPkQ.epaUaZsYtZu0v1w2",
+      "name": "Derrière le frêne et le pin",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque le recherche doit réussir un test de compétence difficile (-3 à la VC) en Arts des ombres pour pouvoir le repérer.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+            "summary": "Derrière le frêne et le pin",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

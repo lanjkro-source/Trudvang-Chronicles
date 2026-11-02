@@ -1,0 +1,45 @@
+{
+  "_id": "TsiRs2v1w2x3y4z5",
+  "_key": "!items!TsiRs2v1w2x3y4z5",
+  "name": "Pathfinder",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:pathfinder:9#effect",
+    "description": "The Ihana can travel through otherwise impassable forest or shrubbery when desired. The forest or undergrowth parts as the dimwalker approaches and then closes once they have passed. This temporary path leaves no visible trace whatsoever. The path that opens around the Ihana stretches for 3 meters in front of and behind the elf, with a width equal to half the elf’s length.",
+    "summary": "Pathfinder",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "KWDYsWrXsYtZu0v1",
+      "_key": "!items.effects!TsiRs2v1w2x3y4z5.KWDYsWrXsYtZu0v1",
+      "name": "Pathfinder",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can travel through otherwise impassable forest or shrubbery when desired. The forest or undergrowth parts as the dimwalker approaches and then closes once they have passed. This temporary path leaves no visible trace whatsoever. The path that opens around the Ihana stretches for 3 meters in front of and behind the elf, with a width equal to half the elf’s length.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:pathfinder:9#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:pathfinder:9#effect",
+            "sourceId": "holy-toikalokke-lynx-power:pathfinder:9",
+            "summary": "Pathfinder",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

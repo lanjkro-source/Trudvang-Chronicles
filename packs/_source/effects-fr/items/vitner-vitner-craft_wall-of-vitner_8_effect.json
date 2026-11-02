@@ -1,0 +1,45 @@
+{
+  "_id": "PMSBGVpVqWrXsYtZ",
+  "_key": "!items!PMSBGVpVqWrXsYtZ",
+  "name": "Mur de vitner",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:wall-of-vitner:8#effect",
+    "description": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre. Ce mur confère une protection contre tous les sorts qui tentent d’affecter quelque chose se trouvant de l’autre côté. Si un sort a pour centre un point situé à l’extérieur du mur mais dispose d’une aire d’effet qui franchit le mur, le sort doit passer outre les défenses du Mur de vitner pour pouvoir avoir le moindre effet. Pour que le mur de vitner accorde sa protection contre les sorts qui tentent de le traverser, l’enchanteur doit réussir un test de situation à chaque tentative. La valeur de situation dépend du niveau du sort adverse, comme indiqué par la table ci-dessous. Si le Mur de vitner parvient à protéger contre un sort, aucun des effets de ce dernier ne peut traverser le mur. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+    "summary": "Mur de vitner",
+    "source": {
+      "book": "Livre des règles",
+      "page": 154
+    }
+  },
+  "effects": [
+    {
+      "_id": "GRFLkYqWrXsYtZu0",
+      "_key": "!items.effects!PMSBGVpVqWrXsYtZ.GRFLkYqWrXsYtZu0",
+      "name": "Mur de vitner",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre. Ce mur confère une protection contre tous les sorts qui tentent d’affecter quelque chose se trouvant de l’autre côté. Si un sort a pour centre un point situé à l’extérieur du mur mais dispose d’une aire d’effet qui franchit le mur, le sort doit passer outre les défenses du Mur de vitner pour pouvoir avoir le moindre effet. Pour que le mur de vitner accorde sa protection contre les sorts qui tentent de le traverser, l’enchanteur doit réussir un test de situation à chaque tentative. La valeur de situation dépend du niveau du sort adverse, comme indiqué par la table ci-dessous. Si le Mur de vitner parvient à protéger contre un sort, aucun des effets de ce dernier ne peut traverser le mur. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:wall-of-vitner:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:wall-of-vitner:8#effect",
+            "sourceId": "vitner-vitner-craft:wall-of-vitner:8",
+            "summary": "Mur de vitner",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

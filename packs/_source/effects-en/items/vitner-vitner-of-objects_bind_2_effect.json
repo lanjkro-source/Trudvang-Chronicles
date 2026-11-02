@@ -1,0 +1,45 @@
+{
+  "_id": "ToObrC5A6B7C8D9E",
+  "_key": "!items!ToObrC5A6B7C8D9E",
+  "name": "Bind",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:bind:2#effect",
+    "description": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue. The items must fit well together, not be in motion, and not consist of living matter. For example, one cannot bind a door frame to an unlucky person passing through it. Appropriate targets to bind include door and door frame, lid and box, sword and scabbard, boulder and cave opening, drawer and hatch, or cork and bottle. The two objects become one for the spell’s duration and cannot be separated by normal means. It is possible to use force on the objects, such as by bashing through a door that is bound to a door frame, but the objects will not open in a normal fashion or separate cleanly. The enchanter, however, can separate the objects whenever they want to.",
+    "summary": "Bind",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "icUnBXoUpVqWrXsY",
+      "_key": "!items.effects!ToObrC5A6B7C8D9E.icUnBXoUpVqWrXsY",
+      "name": "Bind",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue. The items must fit well together, not be in motion, and not consist of living matter. For example, one cannot bind a door frame to an unlucky person passing through it. Appropriate targets to bind include door and door frame, lid and box, sword and scabbard, boulder and cave opening, drawer and hatch, or cork and bottle. The two objects become one for the spell’s duration and cannot be separated by normal means. It is possible to use force on the objects, such as by bashing through a door that is bound to a door frame, but the objects will not open in a normal fashion or separate cleanly. The enchanter, however, can separate the objects whenever they want to.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:bind:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:bind:2#effect",
+            "sourceId": "vitner-vitner-of-objects:bind:2",
+            "summary": "Bind",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

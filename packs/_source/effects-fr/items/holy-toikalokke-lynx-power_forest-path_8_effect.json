@@ -1,0 +1,45 @@
+{
+  "_id": "qJRFiqUpVqWrXsYt",
+  "_key": "!items!qJRFiqUpVqWrXsYt",
+  "name": "Sentier forestier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:forest-path:8#effect",
+    "description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
+    "summary": "Sentier forestier",
+    "source": {
+      "book": "Livre des règles",
+      "page": 294
+    }
+  },
+  "effects": [
+    {
+      "_id": "pTZiodIdJeKfLgMh",
+      "_key": "!items.effects!qJRFiqUpVqWrXsYt.pTZiodIdJeKfLgMh",
+      "name": "Sentier forestier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:forest-path:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:forest-path:8#effect",
+            "sourceId": "holy-toikalokke-lynx-power:forest-path:8",
+            "summary": "Sentier forestier",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

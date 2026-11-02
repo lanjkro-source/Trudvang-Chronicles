@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,178);
+ assert.equal(Object.keys(sources).length,228);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1149,4 +1149,19 @@ test("enchantment and curse scale their global skill and situation modifiers",as
   assert.equal(created.system.changes.find(change=>change.key==="system.modifiers.rolls.allActions").value,String(expected));
   assert.equal(created.flags[S].transformation.powerContributions[0].resolved,expected);
  }
+});
+
+test("environment and language effects retain their spell durations and selected options",async()=>{
+ for(const [key,values] of [
+  ["vitner-vitner-craft:vitner-pouch:1#effect",[3600,86400,604800]],
+  ["vitner-water-craft:control-precipitation:6#effect",[3600,18000,86400,604800]],
+  ["holy-toikalokke-lynx-power:tree-walk:1#effect",[3600,10800]],
+  ["holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",[60]]
+ ])assert.deepEqual(templates[key].parameters.filter(p=>p.target==="duration").map(p=>p.value),values,key);
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"1 heure",boost0:2,boost3:1})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"vitner-vitner-craft:vitner-pouch:1#effect",{counts:[2,0,0,1]});
+ assert.deepEqual(created.duration,{value:2,units:"hours"});
+ assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.vitner-vitner-craft:vitner-pouch:1\.PowerLevels\.0/);
 });

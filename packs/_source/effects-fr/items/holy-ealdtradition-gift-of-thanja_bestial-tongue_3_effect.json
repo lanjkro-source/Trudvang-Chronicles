@@ -1,0 +1,45 @@
+{
+  "_id": "Lf5xEUlRmSnToUpV",
+  "_key": "!items!Lf5xEUlRmSnToUpV",
+  "name": "Langage des bêtes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect",
+    "description": "Le bruide développe la faculté de parler aux bêtes normales jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’elles disent. Cela dit, les bêtes ne se montrent pas forcément tout de suite à l’aise ou amicales envers l’arpenteur des brumes, ni même désireuses de répondre à ses questions, mais elles comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les bêtes. En parlant avec les bêtes, le bruide peut également négocier avec elles, les intimider, les tromper ou les persuader. Gardez à l’esprit que les bêtes se comportent souvent d’une façon que les humains considèreront comme puérile, égoïste et parfois avide et sournoise. Les bêtes sont les créatures comme les wargs (skolls et garms), les minokks, les griffons et les mastomants. Ce pouvoir ne permet pas au bruide de communiquer avec les trolls ou les dragons.",
+    "summary": "Langage des bêtes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 235
+    }
+  },
+  "effects": [
+    {
+      "_id": "4eCiqA4z5A6B7C8D",
+      "_key": "!items.effects!Lf5xEUlRmSnToUpV.4eCiqA4z5A6B7C8D",
+      "name": "Langage des bêtes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide développe la faculté de parler aux bêtes normales jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’elles disent. Cela dit, les bêtes ne se montrent pas forcément tout de suite à l’aise ou amicales envers l’arpenteur des brumes, ni même désireuses de répondre à ses questions, mais elles comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les bêtes. En parlant avec les bêtes, le bruide peut également négocier avec elles, les intimider, les tromper ou les persuader. Gardez à l’esprit que les bêtes se comportent souvent d’une façon que les humains considèreront comme puérile, égoïste et parfois avide et sournoise. Les bêtes sont les créatures comme les wargs (skolls et garms), les minokks, les griffons et les mastomants. Ce pouvoir ne permet pas au bruide de communiquer avec les trolls ou les dragons.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3",
+            "summary": "Langage des bêtes",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "QCjWRUpVqWrXsYtZ",
+  "_key": "!items!QCjWRUpVqWrXsYtZ",
+  "name": "Demonic Impotence",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+    "description": "The priest prays to Gave, and as a result their hands begin to glow. For the next 10 action rounds, the priest gains the ability to rip one feat from a demon simply by touching the demon with their glowing hands (a successful unarmed attack). If the priest successfully purges a demon of one of its abilities, the demon cannot use it for the duration listed above. A priest can rip only one ability away from any demon. If the priest spends a raud when successfully ripping an ability from a demon, the demon loses the purged ability permanently.",
+    "summary": "Demonic Impotence",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "9CWgtQjPkQlRmSnT",
+      "_key": "!items.effects!QCjWRUpVqWrXsYtZ.9CWgtQjPkQlRmSnT",
+      "name": "Demonic Impotence",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest prays to Gave, and as a result their hands begin to glow. For the next 10 action rounds, the priest gains the ability to rip one feat from a demon simply by touching the demon with their glowing hands (a successful unarmed attack). If the priest successfully purges a demon of one of its abilities, the demon cannot use it for the duration listed above. A priest can rip only one ability away from any demon. If the priest spends a raud when successfully ripping an ability from a demon, the demon loses the purged ability permanently.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+            "summary": "Demonic Impotence",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

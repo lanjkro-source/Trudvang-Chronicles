@@ -1,0 +1,45 @@
+{
+  "_id": "giuwcOfLgMhNiOjP",
+  "_key": "!items!giuwcOfLgMhNiOjP",
+  "name": "Fog",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:fog:2#effect",
+    "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
+    "summary": "Fog",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "byChrUlRmSnToUpV",
+      "_key": "!items.effects!giuwcOfLgMhNiOjP.byChrUlRmSnToUpV",
+      "name": "Fog",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:fog:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:fog:2#effect",
+            "sourceId": "vitner-wind-craft:fog:2",
+            "summary": "Fog",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

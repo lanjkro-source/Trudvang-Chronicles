@@ -1,0 +1,45 @@
+{
+  "_id": "V2DIp4v1w2x3y4z5",
+  "_key": "!items!V2DIp4v1w2x3y4z5",
+  "name": "Enlarge/Reduce Object",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6#effect",
+    "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length).",
+    "summary": "Enlarge/Reduce Object",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "c8aLshLgMhNiOjPk",
+      "_key": "!items.effects!V2DIp4v1w2x3y4z5.c8aLshLgMhNiOjPk",
+      "name": "Enlarge/Reduce Object",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length).",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:enlarge-reduce-object:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:enlarge-reduce-object:6#effect",
+            "sourceId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+            "summary": "Enlarge/Reduce Object",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

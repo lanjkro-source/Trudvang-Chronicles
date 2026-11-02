@@ -1,0 +1,45 @@
+{
+  "_id": "d8VK0cFaGbHcIdJe",
+  "_key": "!items!d8VK0cFaGbHcIdJe",
+  "name": "Heat Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:heat-water:0#effect",
+    "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+    "summary": "Heat Water",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "4WwI0QjPkQlRmSnT",
+      "_key": "!items.effects!d8VK0cFaGbHcIdJe.4WwI0QjPkQlRmSnT",
+      "name": "Heat Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:heat-water:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:heat-water:0#effect",
+            "sourceId": "vitner-flame-craft:heat-water:0",
+            "summary": "Heat Water",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "rewpFeIdJeKfLgMh",
+  "_key": "!items!rewpFeIdJeKfLgMh",
+  "name": "Maître des loups",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+    "description": "En poussant un hurlement, le conjurateur peut appeler un loup situé à proximité. L’arpenteur des brumes doit se trouver à l’extérieur, et il faut 1d10 tours de jeu au loup pour apparaître. Le loup se montre amical envers le conjurateur, neutre envers ses alliés et hostile envers ses ennemis. Dans sa forme de base, ce pouvoir appelle un loup standard, mais le conjurateur peut convoquer un loup de taille supérieure en y consacrant des niveaux de puissance supplémentaires. Une fois la durée du pouvoir expirée, le loup quitte son maître temporaire et retourne là où il se trouvait au moment de la convocation. Si le loup subit des dégâts qui dépassent deux tiers de son total de points de santé alors qu’il se trouve au service de l’arpenteur des brumes, il tente de s’enfuir et ne revient pas avant l’expiration du pouvoir.",
+    "summary": "Maître des loups",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "CoIvXaE9EaGbHcId",
+      "_key": "!items.effects!rewpFeIdJeKfLgMh.CoIvXaE9EaGbHcId",
+      "name": "Maître des loups",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En poussant un hurlement, le conjurateur peut appeler un loup situé à proximité. L’arpenteur des brumes doit se trouver à l’extérieur, et il faut 1d10 tours de jeu au loup pour apparaître. Le loup se montre amical envers le conjurateur, neutre envers ses alliés et hostile envers ses ennemis. Dans sa forme de base, ce pouvoir appelle un loup standard, mais le conjurateur peut convoquer un loup de taille supérieure en y consacrant des niveaux de puissance supplémentaires. Une fois la durée du pouvoir expirée, le loup quitte son maître temporaire et retourne là où il se trouvait au moment de la convocation. Si le loup subit des dégâts qui dépassent deux tiers de son total de points de santé alors qu’il se trouve au service de l’arpenteur des brumes, il tente de s’enfuir et ne revient pas avant l’expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect",
+            "sourceId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7",
+            "summary": "Maître des loups",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

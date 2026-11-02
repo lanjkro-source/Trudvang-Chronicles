@@ -1,0 +1,45 @@
+{
+  "_id": "hKJx1MhNiOjPkQlR",
+  "_key": "!items!hKJx1MhNiOjPkQlR",
+  "name": "Control Wind",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:control-wind:3#effect",
+    "description": "The Ihana controls the force of the wind within a sphere that is 10 meters in radius. The chosen one can increase or decrease the power of the wind by one degree within that sphere. In the ability’s basic version, the affected area is a static object or place that cannot be moved, but by adding a level of power,<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.</td></tr></tbody></table>it is possible to move the area. CONTROL WIND, DEGREES Degree Wind Power 1 Calm 2 Breeze 3 Windy (-1) 4 Storm (-2) 5 Hurricane (-4) 6 Godly hurricane (-6) The wind conditions in the table are only the names of forces that can occur. It is up to the game master to decide what happens in each condition according to the situation. The table also lists values in parentheses, which indicate the normal modifiers applied to the Situation value of anything attempted within that condition that requires movement, precision, or focus.",
+    "summary": "Control Wind",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 139
+    }
+  },
+  "effects": [
+    {
+      "_id": "w4miJiLgMhNiOjPk",
+      "_key": "!items.effects!hKJx1MhNiOjPkQlR.w4miJiLgMhNiOjPk",
+      "name": "Control Wind",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana controls the force of the wind within a sphere that is 10 meters in radius. The chosen one can increase or decrease the power of the wind by one degree within that sphere. In the ability’s basic version, the affected area is a static object or place that cannot be moved, but by adding a level of power,<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.</td></tr></tbody></table>it is possible to move the area. CONTROL WIND, DEGREES Degree Wind Power 1 Calm 2 Breeze 3 Windy (-1) 4 Storm (-2) 5 Hurricane (-4) 6 Godly hurricane (-6) The wind conditions in the table are only the names of forces that can occur. It is up to the game master to decide what happens in each condition according to the situation. The table also lists values in parentheses, which indicate the normal modifiers applied to the Situation value of anything attempted within that condition that requires movement, precision, or focus.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:control-wind:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:control-wind:3#effect",
+            "sourceId": "vitner-wind-craft:control-wind:3",
+            "summary": "Control Wind",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

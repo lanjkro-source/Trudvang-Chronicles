@@ -1,0 +1,45 @@
+{
+  "_id": "XCL4u4x3y4z5A6B7",
+  "_key": "!items!XCL4u4x3y4z5A6B7",
+  "name": "Forest Denizen",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-10 to SV) Skill roll with the Shadow Arts skill in order to detect them.",
+    "summary": "Forest Denizen",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "6FKHt6z5A6B7C8D9",
+      "_key": "!items.effects!XCL4u4x3y4z5A6B7.6FKHt6z5A6B7C8D9",
+      "name": "Forest Denizen",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-10 to SV) Skill roll with the Shadow Arts skill in order to detect them.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
+            "summary": "Forest Denizen",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

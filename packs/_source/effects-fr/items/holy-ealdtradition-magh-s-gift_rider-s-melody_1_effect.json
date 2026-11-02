@@ -1,0 +1,45 @@
+{
+  "_id": "WnhKL7B7C8D9EaGb",
+  "_key": "!items!WnhKL7B7C8D9EaGb",
+  "name": "Mélodie du cavalier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent tous 1 point de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 5 points de santé par personne et par jour",
+    "summary": "Mélodie du cavalier",
+    "source": {
+      "book": "Livre des règles",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "pDmz0jPkQlRmSnTo",
+      "_key": "!items.effects!WnhKL7B7C8D9EaGb.pDmz0jPkQlRmSnTo",
+      "name": "Mélodie du cavalier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent tous 1 point de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 5 points de santé par personne et par jour",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
+            "summary": "Mélodie du cavalier",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

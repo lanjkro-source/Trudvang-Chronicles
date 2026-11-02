@@ -1,0 +1,45 @@
+{
+  "_id": "I3IED2tZu0v1w2x3",
+  "_key": "!items!I3IED2tZu0v1w2x3",
+  "name": "Les neuf rois",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+    "description": "Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’arpenteur des brumes dans les situations les plus délicates. Les neuf rois sont des hommes de grande stature, et ils portent des couronnes et de longs manteaux sombres qui recouvrent leur corps. Leurs visages sont pâles et irradient de l’essence des esprits. Chacun est armé d’une épée à deux mains. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de neuf rois en même temps.<hr>Roi : Force +4, points de santé 50, valeur de protection 9, points de combat 32, initiative 1d10 (JO 10) + 4, épée à deux mains sacrée 1d10 (JO 8-10) + 2 points de dégâts. Facteur de peur 1d10 (JO 9-10) pour tous les adversaires.",
+    "summary": "Guerriers royaux",
+    "source": {
+      "book": "Livre des règles",
+      "page": 238
+    }
+  },
+  "effects": [
+    {
+      "_id": "dE0LCmPkQlRmSnTo",
+      "_key": "!items.effects!I3IED2tZu0v1w2x3.dE0LCmPkQlRmSnTo",
+      "name": "Les neuf rois",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’arpenteur des brumes dans les situations les plus délicates. Les neuf rois sont des hommes de grande stature, et ils portent des couronnes et de longs manteaux sombres qui recouvrent leur corps. Leurs visages sont pâles et irradient de l’essence des esprits. Chacun est armé d’une épée à deux mains. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de neuf rois en même temps.<hr>Roi : Force +4, points de santé 50, valeur de protection 9, points de combat 32, initiative 1d10 (JO 10) + 4, épée à deux mains sacrée 1d10 (JO 8-10) + 2 points de dégâts. Facteur de peur 1d10 (JO 9-10) pour tous les adversaires.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8",
+            "summary": "Guerriers royaux",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

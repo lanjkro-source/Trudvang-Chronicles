@@ -1,0 +1,45 @@
+{
+  "_id": "Vm06anOjPkQlRmSn",
+  "_key": "!items!Vm06anOjPkQlRmSn",
+  "name": "Control Fire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+    "description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+    "summary": "Control Fire",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "uUkJMOjPkQlRmSnT",
+      "_key": "!items.effects!Vm06anOjPkQlRmSn.uUkJMOjPkQlRmSnT",
+      "name": "Control Fire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:control-fire:1",
+            "summary": "Control Fire",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

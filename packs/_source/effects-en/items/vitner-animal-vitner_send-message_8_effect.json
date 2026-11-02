@@ -1,0 +1,45 @@
+{
+  "_id": "k0EPnIcIdJeKfLgM",
+  "_key": "!items!k0EPnIcIdJeKfLgM",
+  "name": "Send Message",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:send-message:8#effect",
+    "description": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing. In the spell’s basic version, the message can contain a maximum of ten words, and can be received by up to five beings within a radius of 10 kilometers. The vitner being is incredibly fast and can travel 1 kilometer per action round. The message must be in a language that the mage has mastered.",
+    "summary": "Send Message",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "tlKoUD7C8D9EaGbH",
+      "_key": "!items.effects!k0EPnIcIdJeKfLgM.tlKoUD7C8D9EaGbH",
+      "name": "Send Message",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing. In the spell’s basic version, the message can contain a maximum of ten words, and can be received by up to five beings within a radius of 10 kilometers. The vitner being is incredibly fast and can travel 1 kilometer per action round. The message must be in a language that the mage has mastered.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:send-message:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:send-message:8#effect",
+            "sourceId": "vitner-animal-vitner:send-message:8",
+            "summary": "Send Message",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13693,6 +13693,15 @@
         }
       },
       "Transformation": {
+        "vitner-vitner-craft:vitner-pouch:1#effect": {
+          "Name": "Bourse de vitner",
+          "Summary": "Bourse de vitner",
+          "Description": "L’enchanteur tisse le vitner de façon à créer une bourse astrale. Ce sac n’est pas visible dans le monde physique, et seul l’enchanteur et ceux qui comprennent le vitner sont capables de le percevoir. En outre, seuls ceux qui sont en mesure de voir la bourse peuvent la porter. Ce sac peut contenir tous les objets ou créatures dont le poids total n’excède pas 2 kg. Tout ce qu’on place dans la bourse ne représente aucun poids supplémentaire pour celui qui la porte. Une créature qui se retrouve piégée contre son gré dans la bourse peut se libérer en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). Si la durée du sort expire alors que la bourse contient encore des objets, ces derniers tombent tous à côté du personnage. Il faut 1 tour de jeu pour extraire un objet de la bourse.",
+          "SourceName": "Bourse de vitner",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "152",
+          "Duration": "1 heure"
+        },
         "vitner-vitner-craft:enchant-being:4#effect": {
           "Name": "Enchantement de créature",
           "Summary": "Enchantement de créature",
@@ -13701,6 +13710,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "153",
           "Duration": "4 tours de jeu"
+        },
+        "vitner-vitner-craft:wall-of-vitner:8#effect": {
+          "Name": "Mur de vitner",
+          "Summary": "Mur de vitner",
+          "Description": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre. Ce mur confère une protection contre tous les sorts qui tentent d’affecter quelque chose se trouvant de l’autre côté. Si un sort a pour centre un point situé à l’extérieur du mur mais dispose d’une aire d’effet qui franchit le mur, le sort doit passer outre les défenses du Mur de vitner pour pouvoir avoir le moindre effet. Pour que le mur de vitner accorde sa protection contre les sorts qui tentent de le traverser, l’enchanteur doit réussir un test de situation à chaque tentative. La valeur de situation dépend du niveau du sort adverse, comme indiqué par la table ci-dessous. Si le Mur de vitner parvient à protéger contre un sort, aucun des effets de ce dernier ne peut traverser le mur. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SourceName": "Mur de vitner",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "154",
+          "Duration": "5 tours de jeu"
         },
         "vitner-dimvitner:speak-to-undead:3#effect": {
           "Name": "Conversation de l’au-delà",
@@ -13728,6 +13746,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "157",
           "Duration": "5 minutes"
+        },
+        "vitner-soil-craft:quagmire:3#effect": {
+          "Name": "Bourbier",
+          "Summary": "Bourbier",
+          "Description": "Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier.",
+          "SourceName": "Bourbier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "159",
+          "Duration": "1 minute"
         },
         "vitner-soil-craft:soil-walk:5#soil-walk": {
           "Name": "Marche dans la terre",
@@ -13792,6 +13819,87 @@
           "SourcePage": "164",
           "Duration": "3 minutes"
         },
+        "vitner-water-craft:solid-water:5#effect": {
+          "Name": "Eau solide",
+          "Summary": "Eau solide",
+          "Description": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse de 5 mètres par tour de jeu. La zone affectée fait 1 mètre de diamètre et peut soutenir jusqu’à 70 kg (une seule créature de taille humaine pourra s’y tenir). La zone affectée se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix.",
+          "SourceName": "Eau solide",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "165",
+          "Duration": "1 minute"
+        },
+        "vitner-water-craft:control-precipitation:6#effect": {
+          "Name": "Contrôle des précipitations",
+          "Summary": "Contrôle des précipitations",
+          "Description": "Ce sort permet de modifier l’importance des précipitations. La zone qui peut être affectée de la sorte est un cercle de 50 mètres de rayon autour du point où l’enchanteur a tissé le sort. Ce dernier peut augmenter ou réduire d’un degré les précipitations actuelles, comme indiqué par la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un objet statique ou un lieu, mais en ajoutant un niveau de puissance il est possible d’enchanter un objet mobile, ce qui signifie que la zone affectée peut alors être déplacée. Un enchanteur ne peut pas faire tomber la neige ou la pluie d’un ciel bleu sans nuages sans utiliser de niveaux de puissance supplémentaires. <table><thead><tr><th colspan=\"2\">DEGRÉS DES PRÉCIPITATIONS</th></tr><tr><th>Degré</th><th>Précipitation</th></tr></thead><tbody><tr><td>0</td><td>Ciel bleu sans nuage.</td></tr><tr><td>1</td><td>Nuageux. Aucune précipitation.</td></tr><tr><td>2</td><td>Pluies éparses ou quelques flocons de neige.</td></tr><tr><td>3</td><td>Pluie ou légère chute de neige.</td></tr><tr><td>4</td><td>Pluie ou neige persistante.</td></tr><tr><td>5</td><td>Pluie battante ou tempête de neige.</td></tr></tbody></table>",
+          "SourceName": "Contrôle des précipitations",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "165",
+          "Duration": "1 heure"
+        },
+        "vitner-flame-craft:heat-water:0#effect": {
+          "Name": "Ébullition",
+          "Summary": "Ébullition",
+          "Description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante.",
+          "SourceName": "Ébullition",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "167",
+          "Duration": "5 minutes"
+        },
+        "vitner-flame-craft:spark:1#effect": {
+          "Name": "Flammèche",
+          "Summary": "Flammèche",
+          "Description": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique.",
+          "SourceName": "Flammèche",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "167",
+          "Duration": "1 minute"
+        },
+        "vitner-flame-craft:warmth:6#effect": {
+          "Name": "Chaleur",
+          "Summary": "Chaleur",
+          "Description": "L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. <table><thead><tr><th colspan=\"2\">TEMPÉRATURE ET DÉGÂTS</th></tr><tr><th>Température</th><th>Dégâts</th></tr></thead><tbody><tr><td>50°C</td><td>1d6 + 1 PS par jour</td></tr><tr><td>60°C</td><td>1 PS par heure</td></tr><tr><td>70°C</td><td>1d6 + 1 PS par heure</td></tr><tr><td>80°C</td><td>1 PS par minute</td></tr><tr><td>90°C</td><td>1 PS par tour de jeu</td></tr><tr><td>100°C et plus</td><td>1d6 PS par tour de jeu</td></tr></tbody></table>",
+          "SourceName": "Chaleur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "168",
+          "Duration": "5 heures"
+        },
+        "vitner-flame-craft:flame-control:5#effect": {
+          "Name": "Contrôle des flammes",
+          "Summary": "Contrôle des flammes",
+          "Description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
+          "SourceName": "Contrôle des flammes",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "169",
+          "Duration": "5 minutes"
+        },
+        "vitner-wind-craft:purify-air:0#effect": {
+          "Name": "Purification de l’air",
+          "Summary": "Purification de l’air",
+          "Description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’enchanteur, ce qui lui permet de respirer en toute sécurité. On peut également tisser ce sort sur une personne, ce qui crée un filtre autour de sa bouche et de son nez afin de purifier l’air qu’elle respire. De cette façon, elle peut respirer dans n’importe quel environnement contenant suffisamment d’air pour lui permettre de survivre, et ce, quels que soient les gaz, spores et autres particules dangereuses que l’air peut contenir.",
+          "SourceName": "Purification de l’air",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "170",
+          "Duration": "3 minutes"
+        },
+        "vitner-wind-craft:fog:2#effect": {
+          "Name": "Brouillard",
+          "Summary": "Brouillard",
+          "Description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
+          "SourceName": "Brouillard",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "170",
+          "Duration": "5 minutes"
+        },
+        "vitner-wind-craft:control-wind:3#effect": {
+          "Name": "Contrôle du vent",
+          "Summary": "Contrôle du vent",
+          "Description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon. L’enchanteur peut augmenter ou réduire d’un degré la force actuelle du vent dans cette sphère, comme l’indique la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un lieu ou un objet statique, mais en ajoutant des niveaux de puissance au sort, il est possible d’enchanter un objet mobile, que la zone affectée suivra dans ses déplacements. <table><thead><tr><th colspan=\"2\">DEGRÉS ET VENT</th></tr><tr><th>Degré</th><th>Force du vent</th></tr></thead><tbody><tr><td>1</td><td>Calme</td></tr><tr><td>2</td><td>Brise</td></tr><tr><td>3</td><td>Vent (-1)</td></tr><tr><td>4</td><td>Tempête (-2)</td></tr><tr><td>5</td><td>Ouragan (-4)</td></tr><tr><td>6</td><td>Ouragan titanesque (-6)</td></tr></tbody></table> Les termes utilisés dans cette table ne sont qu’une indication des forces qui peuvent se produire. C’est au maître de jeu de déterminer ce qui se produit exactement en fonction de la situation actuelle. La table mentionne également des valeurs entre parenthèses : elles indiquent les modificateurs normaux appliqués aux tests de situation de toute action de mouvement, de concentration ou de précision entreprise sous ces conditions.",
+          "SourceName": "Contrôle du vent",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "170",
+          "Duration": "1 heure"
+        },
         "vitner-wind-craft:air-armor:4#air-armor": {
           "Name": "Armure d’air",
           "Summary": "Entoure une créature d’air comprimé pour la protéger des attaques.",
@@ -13800,6 +13908,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "171",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-wind-craft:storm:8#effect": {
+          "Name": "Tempête",
+          "Summary": "Tempête",
+          "Description": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur. Pour résister à la tempête, une créature doit réussir un test de situation avec la valeur de situation indiquée par la table cicontre (prendre en compte le modificateur de Force). Cette table montre également la distance à laquelle un objet ou un personnage d’un certain poids est projeté en cas d’échec au test de situation. Si la victime est projetée contre un mur, on calcule les dégâts comme pour une chute d’une distance équivalente à celle sur laquelle la victime a été balayée. Si une victime se trouve toujours dans le rayon d’action de la tempête après avoir été projetée, elle peut se relever mais doit faire un nouveau test pour pouvoir se déplacer dans la zone sans être de nouveau balayée (même VC que plus haut). Toute créature qui tient tête à la tempête et parvient à ne pas être balayée peut continuer d’agir normalement dans la zone affectée, mais toutes ses actions subissent le malus indiqué par la table ci-contre.",
+          "SourceName": "Tempête",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "173",
+          "Duration": "2 tours de jeu"
         },
         "vitner-perceiving:find-home:0#find-home": {
           "Name": "Chemin du retour",
@@ -13972,6 +14089,24 @@
           "SourcePage": "180",
           "Duration": "10 minutes"
         },
+        "vitner-power-of-vision:tracking:0#effect": {
+          "Name": "Pistage",
+          "Summary": "Pistage",
+          "Description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la personne enchantée peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. L’enchanteur peut également suivre les traces d’une créature ayant bénéficié du sort Sans trace. Pour pouvoir utiliser le vitner en vue de pister une créature, l’enchanteur doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le tissage du sort réussi : l’enchanteur ne peut donc pas répéter le même sort à moins de se procurer un autre échantillon de la créature visée.",
+          "SourceName": "Pistage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "181",
+          "Duration": "1 heure"
+        },
+        "vitner-power-of-vision:scanning:1#effect": {
+          "Name": "Examen d’objet",
+          "Summary": "Examen d’objet",
+          "Description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
+          "SourceName": "Examen d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "182",
+          "Duration": "9 tours de jeu"
+        },
         "vitner-power-of-vision:espionage:4#espionage": {
           "Name": "Espionnage",
           "Summary": "Permet de percevoir à distance autour de l’objet enchanté.",
@@ -13989,6 +14124,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "183",
           "Duration": "5 minutes"
+        },
+        "vitner-witchcraft:uprooted-tree:0#effect": {
+          "Name": "Déracinement",
+          "Summary": "Déracinement",
+          "Description": "Ce sort déracine un arbre et provoque son effondrement. L’enchanteur insuffle le vitner dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le sort a été tissé, le vitner commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du sort, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le vitner n’aura pas la force de le soulever. L’enchanteur, qui doit se concentrer constamment sur ce sort, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du sort pour quelque raison que ce soit, le vitner continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de l’enchanteur doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce sort et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce sort peut soulever ou renverser environ 100 kg.",
+          "SourceName": "Déracinement",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "184",
+          "Duration": "5 tours de jeu"
         },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Malédiction de créature",
@@ -14027,6 +14171,15 @@
           "Duration": "1 minute",
           "Sense0": "Portée du lien avec l’animal"
         },
+        "vitner-animal-vitner:call-on-animals:2#effect": {
+          "Name": "Appel des animaux",
+          "Summary": "Appel des animaux",
+          "Description": "L’enchanteur peut appeler un ou plusieurs animaux non intelligents. Il peut convoquer un seul animal ayant au maximum 15 points de santé, ou un certain nombre d’animaux plus petits dont le total de points de santé cumulés ne dépasse pas 15 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux page suivante). L’enchanteur peut préciser le type d’espèce qu’il désire appeler s’il le souhaite, ou bien appeler les animaux les plus proches. Quoi qu’il en soit, les animaux se montrent prudents envers l’enchanteur. Tout mouvement rapide ou agressif de sa part ou de toute autre personne se trouvant à proximité risque d’effaroucher les animaux et de les pousser à fuir. Si quelqu’un tente de s’approcher d’un animal, on peut généralement considérer cela comme un mouvement agressif. Lorsque le sort prend fin, les animaux continuent de faire preuve de prudence et finiront par s’éloigner puisqu’ils n’ont plus l’obligation de rester.",
+          "SourceName": "Appel des animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "188",
+          "Duration": "10 minutes"
+        },
         "vitner-animal-vitner:control-animals:4#effect": {
           "Name": "Contrôle des animaux",
           "Summary": "Contrôle des animaux",
@@ -14035,6 +14188,33 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "190",
           "Duration": "1 minute"
+        },
+        "vitner-animal-vitner:mind-of-the-wolf:5#effect": {
+          "Name": "Esprit du loup",
+          "Summary": "Esprit du loup",
+          "Description": "La personne affectée par ce sort développe une faculté semblable à la capacité d’un loup à percevoir dans les odeurs des choses subtiles comme la peur, l’agressivité, l’anxiété et la force. En étudiant le reflet astral d’une personne ou d’un groupe situé à moins de 10 mètres de lui, le bénéficiaire peut, par exemple, distinguer les forts des faibles, les amis des ennemis, ou percevoir si un sujet est particulièrement anxieux ou peureux et pourrait être manipulé. Mais le bénéficiaire de ce sort ne peut jamais deviner avec certitude qui est le chef d’un groupe, étant donné que l’individu le plus fort n’est pas toujours le chef. Le bénéficiaire développe aussi une apparence distinctement lupine pendant la durée du sort.",
+          "SourceName": "Esprit du loup",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "190",
+          "Duration": "3 minutes"
+        },
+        "vitner-animal-vitner:possess-animals:6#effect": {
+          "Name": "Possession animale",
+          "Summary": "Possession animale",
+          "Description": "Ce sort permet à l’enchanteur de projeter sa conscience dans le corps d’un vertébré non intelligent. Pour ce faire, l’enchanteur doit se trouver à portée de la créature, qui doit également se trouver dans son champ de vision. Il est impossible de posséder un animal qu’on ne voit pas. Si le sort est réussi, la conscience de l’enchanteur est transférée dans la créature visée, qui perd tout contrôle direct de son corps. L’enchanteur peut, sans la moindre difficulté, utiliser toutes les particularités de l’animal comme si c’était les siennes. L’enchanteur conserve sa propre intelligence mais ne peut pas utiliser les compétences Maîtrise du vitner ou Langage (il ne peut pas parler), ainsi que toute autre compétence qu’il est physiquement impossible d’utiliser sous forme animale. D’un autre côté, l’enchanteur reçoit un bonus aux compétences Agilité et Arts des ombres quand il évolue sous forme animale (la valeur du bonus est laissée à l’appréciation du maître de jeu). De plus, l’enchanteur peut tenter d’établir une communication par le biais de mouvements corporels. Tant qu’il est sous forme animale, l’enchanteur ne peut pas comprendre ou communiquer avec d’autres animaux, pas même ceux de la même espèce. Quand l’enchanteur prend possession de l’animal, son propre corps sombre dans un profond sommeil. Une fois à l’intérieur de l’animal, l’enchanteur peut s’éloigner autant qu’il le désire de son propre corps, mais il doit prendre garde à être de retour à portée de son corps avant que le sort ne prenne fin. Si l’animal est tué pendant que l’enchanteur le possède, ou si la durée du sort prend fin avant que l’enchanteur ne revienne à portée de son corps, la conscience de l’enchanteur réintègre automatiquement son corps, mais avec quelques complications. L’expérience est si traumatisante que l’enchanteur subit un choc extrême. Le stress encaissé par son esprit est si puissant que l’enchanteur subit une diminution permanente de 1d6 points de sa réserve de vitner, et sombre dans un profond sommeil qui dure 1d6 jours.",
+          "SourceName": "Possession animale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "191",
+          "Duration": "10 minutes"
+        },
+        "vitner-animal-vitner:send-message:8#effect": {
+          "Name": "Messager magique",
+          "Summary": "Messager magique",
+          "Description": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’enchanteur. Dans la version de base du sort, le message est limité à dix mots, et peut être destiné à un maximum de cinq créatures dans un rayon de 10 kilomètres. L’être de vitner est incroyablement rapide et peut franchir 1 kilomètre par tour de jeu. Le message doit être émis dans une langue que l’enchanteur maîtrise.",
+          "SourceName": "Messager magique",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "191",
+          "Duration": "10 minutes"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Adhérence",
@@ -14172,6 +14352,15 @@
           "SourcePage": "197",
           "Duration": "5 tours de jeu"
         },
+        "vitner-delusion-vitner:phantom-sound:1#effect": {
+          "Name": "Son illusoire",
+          "Summary": "Son illusoire",
+          "Description": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit.",
+          "SourceName": "Son illusoire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "198",
+          "Duration": "10 tours de jeu"
+        },
         "vitner-delusion-vitner:traceless:4#trace": {
           "Name": "Sans trace",
           "Summary": "Efface les traces, indices et odeurs laissés par le bénéficiaire, en restaurant le terrain derrière lui.",
@@ -14189,6 +14378,60 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "198",
           "Duration": "1 minute"
+        },
+        "vitner-delusion-vitner:landscape-illusion:8#effect": {
+          "Name": "Paysage illusoire",
+          "Summary": "Paysage illusoire",
+          "Description": "Ce sort crée une immense sphère d’illusion autour de l’enchanteur qui imite le paysage de son choix. Cette sphère centrée sur l’enchanteur a un rayon de 300 mètres et peut représenter un paysage comme une grande colline, une forêt, ou même une cité (l’enchanteur choisit la taille de l’illusion). L’illusion peut également ne rien représenter et servir à dissimuler le véritable paysage. L’enchanteur n’a pas la possibilité de simuler le mouvement, l’illusion doit donc représenter quelque chose de statique. Pour pouvoir se rendre compte de loin que ce paysage est une immense illusion, un observateur doit réussir un test de compétence d’Arts des ombres, en prenant en compte la distance qui le sépare de l’illusion (Cf. la table ci-contre). L’observateur a droit à un nouveau test de compétence à chaque fois qu’il se rapproche de l’illusion d’un palier sur cette table. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Distance</th><th>Modificateur</th></tr></thead><tbody><tr><td><50 m</td><td>L’illusion est découverte</td></tr><tr><td>50 à 100 m</td><td>+5</td></tr><tr><td>101 à 200 m</td><td>+2</td></tr><tr><td>201 à 400 m</td><td>+0</td></tr><tr><td>401 à 600 m</td><td>-2</td></tr><tr><td>601 à 1000 m</td><td>-5</td></tr><tr><td>> 1000 m</td><td>-10</td></tr></tbody></table> L’illusion reste à l’endroit où elle a été tissée jusqu’à expiration du sort, même si l’enchanteur s’en va. Si un observateur s’aventure dans l’illusion, elle disparaît complètement de son champ de vision et il découvre le véritable paysage autour de lui, mais les autres observateurs à l’extérieur du royaume enchanté continuent d’être affectés par l’illusion.",
+          "SourceName": "Paysage illusoire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "199",
+          "Duration": "2 heures"
+        },
+        "vitner-vitner-of-objects:detect-composition:0#effect": {
+          "Name": "Analyse de la composition",
+          "Summary": "Analyse de la composition",
+          "Description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes. Un enchanteur qui trouve un objet, tisse ce sort et touche l’objet saura immédiatement de quelles substances il se compose et en quelles proportions. Il pourrait même deviner comment un objet est construit. Si l’enchanteur ne peut pas véritablement voir à travers l’objet, il pourrait tout de même sentir qu’il contient un autre objet en métal, ou qu’il comporte une cavité destinée à contenir autre chose, etc. L’enchanteur est incapable d’évaluer les matériaux qui composent l’objet à moins d’avoir une idée de sa valeur. Ce sort ne permet pas à l’enchanteur de percevoir les caractéristiques magiques de l’objet.",
+          "SourceName": "Analyse de la composition",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "201",
+          "Duration": "10 tours de jeu"
+        },
+        "vitner-vitner-of-objects:waterproof:1#effect": {
+          "Name": "Résistance à l’eau",
+          "Summary": "Résistance à l’eau",
+          "Description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau.",
+          "SourceName": "Résistance à l’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "201",
+          "Duration": "1 heure"
+        },
+        "vitner-vitner-of-objects:bind:2#effect": {
+          "Name": "Lien",
+          "Summary": "Lien",
+          "Description": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante. Les objets doivent aller bien ensemble, ne pas être en mouvement, et ne pas se composer de matière vivante. Par exemple, il est impossible de lier une embrasure de porte à une personne qui la traverse malencontreusement. Il est par contre tout à fait envisageable de lier un chambranle et une porte, un couvercle et une boîte, une épée et un fourreau, un rocher et l’entrée d’une caverne, un tiroir et une commode, ou un bouchon et une bouteille. Les deux objets n’en forment plus qu’un seul jusqu’à expiration du sort et il est impossible de les séparer par des moyens conventionnels. On peut recourir à la force contre ces objets, par exemple en défonçant une porte liée à son chambranle, mais les objets ne se sépareront pas de façon nette. En revanche, l’enchanteur peut séparer les deux objets quand bon lui semble.",
+          "SourceName": "Lien",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "201",
+          "Duration": "3 minutes"
+        },
+        "vitner-vitner-of-objects:alarm-object:4#effect": {
+          "Name": "Objet d’alarme",
+          "Summary": "Objet d’alarme",
+          "Description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc.",
+          "SourceName": "Objet d’alarme",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "202",
+          "Duration": "5 heures"
+        },
+        "vitner-vitner-of-objects:enlarge-reduce-object:6#effect": {
+          "Name": "Agrandissement/ rapetissement d’objet",
+          "Summary": "Agrandissement/ rapetissement d’objet",
+          "Description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2000 cm³ ou 2 dm³). L’enchanteur peut doubler la taille de l’objet, ou la réduire de moitié. Dans un cas comme dans l’autre, le poids de l’objet demeure identique. L’enchanteur peut également modifier légèrement les proportions de l’objet de sorte que, par exemple, il s’allonge sans devenir plus large, comme une corde qui s’allonge sans pour autant devenir plus épaisse. Une corde de 5 mètres de long (2 cm × 2 cm × 500 cm) qu’on agrandit peut atteindre 10 mètres de long (sa longueur est doublée). Si on la réduit, la corde peut descendre à 2,5 mètres de long (sa longueur diminue de moitié).",
+          "SourceName": "Agrandissement/ rapetissement d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "202",
+          "Duration": "4 minutes"
         },
         "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
           "Name": "Guérison (Solvei)",
@@ -14506,6 +14749,33 @@
           "SourcePage": "225",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
+          "Name": "Vague de vérité",
+          "Summary": "Vague de vérité",
+          "Description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur dirige ce pouvoir vers une personne située à portée et peut s’en servir pour déterminer si cette personne ment ou dit la vérité. Ce pouvoir fonctionne pendant 1 minute.",
+          "SourceName": "Vague de vérité",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "228",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect": {
+          "Name": "Regard de Windinna",
+          "Summary": "Regard de Windinna",
+          "Description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur peut alors lire les pensées du sujet tant que ce pouvoir est actif. La cible peut tenter de résister en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique).",
+          "SourceName": "Regard de Windinna",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "228",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect": {
+          "Name": "Ruée du porc",
+          "Summary": "Ruée du porc",
+          "Description": "Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Windinna répond à l’appel de l’arpenteur des brumes et lui envoie Djofur, l’esprit du porc, afin de créer un objet courant. Pour ce faire, Djofur grogne et creuse la terre, et l’objet apparaît au fond de l’excavation. Il peut s’agir de n’importe quel objet au choix de l’arpenteur des brumes, comme une épée, une pièce d’or ou même un bateau, tant que ce n’est rien de vivant ou de magique. L’objet doit également être mobile. De fait, Djofur ne peut pas créer un cheval, une forêt ou une fleur puisqu’il s’agit de choses vivantes. Il ne peut pas non plus créer une forteresse ou un mur puisque ces objets ne sont pas mobiles. Il faut une minute à Djofur pour créer un objet, qui existe ensuite pendant une journée. Il s’agit d’un objet de qualité Magistrale. On ne peut faire appel à Djofur qu’une fois par jour. Gardez à l’esprit que ni Windinna ni Djofur n’ont de respect pour les arpenteurs de brumes cupides, et si un stormikjalt utilise ce pouvoir pour satisfaire sa soif de richesse, il risque fort de susciter la colère de la déesse.",
+          "SourceName": "Ruée du porc",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "228",
+          "Duration": "1 jour"
+        },
         "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
           "Name": "Brise du voyage",
           "Summary": "Brise du voyage",
@@ -14514,6 +14784,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "232",
           "Duration": "1 heure"
+        },
+        "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect": {
+          "Name": "Mélodie du cavalier",
+          "Summary": "Mélodie du cavalier",
+          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent tous 1 point de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 5 points de santé par personne et par jour",
+          "SourceName": "Mélodie du cavalier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "232",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-magh-s-gift:elf-summer:3#effect": {
           "Name": "Été elfique",
@@ -14524,6 +14803,24 @@
           "SourcePage": "233",
           "Duration": "1 heure"
         },
+        "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect": {
+          "Name": "Chant du héros",
+          "Summary": "Chant du héros",
+          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour.",
+          "SourceName": "Chant du héros",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "233",
+          "Duration": "2 minutes"
+        },
+        "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect": {
+          "Name": "Hymne royal",
+          "Summary": "Hymne royal",
+          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+          "SourceName": "Hymne royal",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "234",
+          "Duration": "3 minutes"
+        },
         "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
           "Name": "Année de récolte",
           "Summary": "Année de récolte",
@@ -14532,6 +14829,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "234",
           "Duration": "1 année"
+        },
+        "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect": {
+          "Name": "Derrière le frêne et le pin",
+          "Summary": "Derrière le frêne et le pin",
+          "Description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque le recherche doit réussir un test de compétence difficile (-3 à la VC) en Arts des ombres pour pouvoir le repérer.",
+          "SourceName": "Derrière le frêne et le pin",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "234",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect": {
+          "Name": "Langue animale",
+          "Summary": "Langue animale",
+          "Description": "Le bruide développe la faculté de parler aux animaux ordinaires jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’ils disent. Cela dit, les animaux ne se montrent pas forcément tout de suite à l’aise ou amicaux envers l’arpenteur des brumes, ni même désireux de répondre à ses questions, mais ils comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les animaux. En parlant avec les animaux, le bruide peut également négocier avec eux, les intimider, les tromper ou les convaincre. Gardez à l’esprit que les animaux se comportent souvent d’une façon que les humains considèrent comme puérile, égoïste et parfois avide et sournoise.",
+          "SourceName": "Langue animale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "234",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Aspect du cerf",
@@ -14545,6 +14860,15 @@
           "Sense0": "vision nocturne",
           "Capability0": "cerfs"
         },
+        "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect": {
+          "Name": "Langage des bêtes",
+          "Summary": "Langage des bêtes",
+          "Description": "Le bruide développe la faculté de parler aux bêtes normales jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’elles disent. Cela dit, les bêtes ne se montrent pas forcément tout de suite à l’aise ou amicales envers l’arpenteur des brumes, ni même désireuses de répondre à ses questions, mais elles comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les bêtes. En parlant avec les bêtes, le bruide peut également négocier avec elles, les intimider, les tromper ou les persuader. Gardez à l’esprit que les bêtes se comportent souvent d’une façon que les humains considèreront comme puérile, égoïste et parfois avide et sournoise. Les bêtes sont les créatures comme les wargs (skolls et garms), les minokks, les griffons et les mastomants. Ce pouvoir ne permet pas au bruide de communiquer avec les trolls ou les dragons.",
+          "SourceName": "Langage des bêtes",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "235",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Aspect du saumon",
           "Summary": "Augmente la Dextérité et permet de nager et de respirer sous l’eau sous forme de saumon.",
@@ -14556,6 +14880,33 @@
           "Sense0": "excellente vision aquatique",
           "Capability0": "saumons",
           "Capability1": "respire dans l’eau et sur terre"
+        },
+        "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect": {
+          "Name": "Sous la roche et l’écorce",
+          "Summary": "Sous la roche et l’écorce",
+          "Description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-5 à la VC) en Arts des ombres pour pouvoir le repérer.",
+          "SourceName": "Sous la roche et l’écorce",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "236",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect": {
+          "Name": "Enfant de la forêt",
+          "Summary": "Enfant de la forêt",
+          "Description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-10 à la VC) en Arts des ombres pour pouvoir le repérer.",
+          "SourceName": "Enfant de la forêt",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "236",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect": {
+          "Name": "Langue des dragons",
+          "Summary": "Langue des dragons",
+          "Description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins. Cela ne signifie pas que les dragons deviendront soudainement amicaux envers l’arpenteur des brumes ou qu’ils accepteront de répondre à ses questions, mais ils seront miraculeusement capables de comprendre ses paroles. En s’entretenant avec les dragons, le bruide peut également tenter de négocier avec eux, les intimider, les tromper ou les persuader. Gardez à l’esprit que tous les dragons ont une ouïe exceptionnelle et qu’ils sont en mesure de distinguer un bruit à plusieurs kilomètres de distance.",
+          "SourceName": "Langue des dragons",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "236",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Aspect du corbeau",
@@ -14580,6 +14931,15 @@
           "SourcePage": "237",
           "Duration": "3 tours de jeu"
         },
+        "holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect": {
+          "Name": "Milice royale",
+          "Summary": "Milice royale",
+          "Description": "Le bruide invoque un esprit guerrier venant de la grande milice du roi. Ce milicien est un guerrier simple qui porte une armure en cuir et manie une épée courte et un petit bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide serait en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de deux miliciens en même temps.<hr>Milicien : points de santé 20, valeur de protection 2, points de combat 10, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+4 points de combat)",
+          "SourceName": "Milice royale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "237",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
           "Name": "Tueur de géants",
           "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (géant).",
@@ -14589,6 +14949,15 @@
           "SourcePage": "237",
           "Duration": "3 tours de jeu"
         },
+        "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
+          "Name": "Garde royale",
+          "Summary": "Garde royale",
+          "Description": "Le bruide invoque un esprit guerrier venant de la grande garde royale. Ce soldat est un guerrier discipliné qui porte une armure en cuir et manie une épée large et un bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de quatre gardes en même temps.<hr>Garde : Force +1, points de santé 25, valeur de protection 3, points de combat 15, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+8 points de combat).",
+          "SourceName": "Garde royale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "238",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
           "Name": "Tueur de dragons",
           "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (dragon).",
@@ -14597,6 +14966,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "238",
           "Duration": "3 tours de jeu"
+        },
+        "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect": {
+          "Name": "Les neuf rois",
+          "Summary": "Guerriers royaux",
+          "Description": "Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’arpenteur des brumes dans les situations les plus délicates. Les neuf rois sont des hommes de grande stature, et ils portent des couronnes et de longs manteaux sombres qui recouvrent leur corps. Leurs visages sont pâles et irradient de l’essence des esprits. Chacun est armé d’une épée à deux mains. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de neuf rois en même temps.<hr>Roi : Force +4, points de santé 50, valeur de protection 9, points de combat 32, initiative 1d10 (JO 10) + 4, épée à deux mains sacrée 1d10 (JO 8-10) + 2 points de dégâts. Facteur de peur 1d10 (JO 9-10) pour tous les adversaires.",
+          "SourceName": "Les neuf rois",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "238",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Volonté des ancêtres",
@@ -14861,11 +15239,29 @@
           "SourcePage": "258",
           "Duration": "1 heure"
         },
+        "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect": {
+          "Name": "Mur d’épines",
+          "Summary": "Mur d’épines",
+          "Description": "Par cette prière, le prêtre invoque la force du chêne noir. Dans le rayon d’effet autour du prêtre, des branches épineuses jaillissent du sol pour remplir un volume de 1d10 + 10 m3, auquel l’arpenteur des brumes peut donner la forme de son choix. Par exemple, si le prêtre a un volume de 20 m3 à sa disposition, il peut donner aux branches la forme d’un mur de 20 m de long sur 1 m de haut et 1 m de large. Il faut 1 tour de jeu aux branches pour remplir un espace de 5 m3, ce qui signifie que des branches occupant un volume de 20 m3 mettront 4 tours de jeu pour se mettre en place. Toute personne tentant de traverser les branches épineuses sans les couper subit 1d5 points de dégâts pour chaque mètre cube traversé, et cela lui prend 2 tours de jeu par mètre à traverser. Chaque mètre cube contient des branches épineuses ayant l’équivalent de 10 points de santé, si quelqu’un désire se tailler un chemin à travers le mur sans subir de dégâts.",
+          "SourceName": "Mur d’épines",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "258",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
           "Name": "Protection contre les éléments",
           "Summary": "Protection contre les éléments",
           "Description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum.",
           "SourceName": "Protection contre les éléments",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "258",
+          "Duration": "1 heure"
+        },
+        "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect": {
+          "Name": "Impuissance des démons",
+          "Summary": "Impuissance des démons",
+          "Description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire. Pendant les 10 tours de jeu suivants, il obtient la faculté d’arracher une capacité à un démon simplement en le touchant à l’aide de ses mains luisantes (ce qui exige de réussir une attaque à mains nues). Si le prêtre parvient à voler l’un de ses pouvoirs au démon, ce dernier ne peut plus l’utiliser jusqu’à expiration de ce pouvoir. Un prêtre ne peut voler qu’une seule capacité à un démon. Si le prêtre dépense un point de raud quand il parvient à arracher une capacité à un démon, ce dernier la perd de façon définitive.",
+          "SourceName": "Impuissance des démons",
           "SourceBook": "Livre des règles",
           "SourcePage": "258",
           "Duration": "1 heure"
@@ -14925,6 +15321,15 @@
           "SourcePage": "269",
           "Duration": "1 minute"
         },
+        "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect": {
+          "Name": "Fourrure du mastomant",
+          "Summary": "Fourrure du mastomant",
+          "Description": "Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir.",
+          "SourceName": "Fourrure du mastomant",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "269",
+          "Duration": "1 heure"
+        },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance du géant",
           "Summary": "Augmente la Constitution et le maximum de points de santé, et immunise aux poisons et aux maladies.",
@@ -14933,6 +15338,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "269",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect": {
+          "Name": "Maître des loups",
+          "Summary": "Maître des loups",
+          "Description": "En poussant un hurlement, le conjurateur peut appeler un loup situé à proximité. L’arpenteur des brumes doit se trouver à l’extérieur, et il faut 1d10 tours de jeu au loup pour apparaître. Le loup se montre amical envers le conjurateur, neutre envers ses alliés et hostile envers ses ennemis. Dans sa forme de base, ce pouvoir appelle un loup standard, mais le conjurateur peut convoquer un loup de taille supérieure en y consacrant des niveaux de puissance supplémentaires. Une fois la durée du pouvoir expirée, le loup quitte son maître temporaire et retourne là où il se trouvait au moment de la convocation. Si le loup subit des dégâts qui dépassent deux tiers de son total de points de santé alors qu’il se trouve au service de l’arpenteur des brumes, il tente de s’enfuir et ne revient pas avant l’expiration du pouvoir.",
+          "SourceName": "Maître des loups",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "269",
+          "Duration": "1 heure"
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Aspect du mastomant",
@@ -15208,6 +15622,15 @@
           "SourcePage": "287",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:tree-walk:1#effect": {
+          "Name": "Chemin forestier",
+          "Summary": "Chemin forestier",
+          "Description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mouvement normale. Si les arbres sont si proches les uns des autres que l’élu peut tendre les bras et toucher les branches de deux arbres en même temps, il peut également grimper et se déplacer d’arbre en arbre à travers la canopée (au maître de jeu de décider). Dans les zones plus difficiles à traverser, l’ihana peut tout de même tenter de progresser à l’aide d’un jet de situation avec une valeur de situation laissée à l’appréciation du maître de jeu (le modificateur de Dextérité s’applique) ou un test de compétence d’Agilité.",
+          "SourceName": "Chemin forestier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "293",
+          "Duration": "10 minutes"
+        },
         "holy-toikalokke-lynx-power:orientation:0#orientation": {
           "Name": "Orientation de l’ihana",
           "Summary": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
@@ -15234,6 +15657,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "294",
           "Duration": "2 tours de jeu"
+        },
+        "holy-toikalokke-lynx-power:forest-path:8#effect": {
+          "Name": "Sentier forestier",
+          "Summary": "Sentier forestier",
+          "Description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
+          "SourceName": "Sentier forestier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "294",
+          "Duration": "3 heures"
+        },
+        "holy-toikalokke-lynx-power:pathfinder:9#effect": {
+          "Name": "Éclaireur",
+          "Summary": "Éclaireur",
+          "Description": "L’ihana peut traverser des forêts infranchissables ou des fourrés denses sans la moindre difficulté. La végétation s’écarte à l’approche de l’arpenteur des brumes et se referme sur son passage. Le sentier temporaire ne laisse aucune trace. La végétation s’écarte de 3 mètres devant et derrière l’ihana, et la largeur du sentier correspond à la longueur de bras de l’elfe.",
+          "SourceName": "Éclaireur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "295",
+          "Duration": "3 heures"
         },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Traces animales",
@@ -15374,6 +15815,15 @@
           "Duration": "1 heure",
           "Attack0": "Cornes",
           "Sense0": "vision nocturne"
+        },
+        "holy-toikalokke-master-of-elements:control-fire:1#effect": {
+          "Name": "Contrôle du feu",
+          "Summary": "Contrôle du feu",
+          "Description": "L’ihana développe un certain contrôle des flammes. À chaque tour de jeu, il peut déplacer 1 mètre cube de feu sur une distance de 2 mètres. L’elfe ne peut pas directement créer ou éteindre des flammes de cette façon (en augmentant ou en réduisant sa taille), mais il peut mettre le feu à d’autres objets en faisant passer les flammes à proximité, ou bien étouffer un feu en le déplaçant jusqu’à un endroit où il ne peut pas persister.",
+          "SourceName": "Contrôle du feu",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "297",
+          "Duration": "10 tours de jeu"
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Don de l’eau",

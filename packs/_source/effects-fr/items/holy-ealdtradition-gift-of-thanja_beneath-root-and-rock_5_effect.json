@@ -1,0 +1,45 @@
+{
+  "_id": "imKtj9A6B7C8D9Ea",
+  "_key": "!items!imKtj9A6B7C8D9Ea",
+  "name": "Sous la roche et l’écorce",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-5 à la VC) en Arts des ombres pour pouvoir le repérer.",
+    "summary": "Sous la roche et l’écorce",
+    "source": {
+      "book": "Livre des règles",
+      "page": 236
+    }
+  },
+  "effects": [
+    {
+      "_id": "fWCcxNeKfLgMhNiO",
+      "_key": "!items.effects!imKtj9A6B7C8D9Ea.fWCcxNeKfLgMhNiO",
+      "name": "Sous la roche et l’écorce",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-5 à la VC) en Arts des ombres pour pouvoir le repérer.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+            "summary": "Sous la roche et l’écorce",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "lRnc5D8D9EaGbHcI",
+  "_key": "!items!lRnc5D8D9EaGbHcI",
+  "name": "Contrôle des flammes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:flame-control:5#effect",
+    "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
+    "summary": "Contrôle des flammes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 169
+    }
+  },
+  "effects": [
+    {
+      "_id": "oRn3IQlRmSnToUpV",
+      "_key": "!items.effects!lRnc5D8D9EaGbHcI.oRn3IQlRmSnToUpV",
+      "name": "Contrôle des flammes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:flame-control:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:flame-control:5#effect",
+            "sourceId": "vitner-flame-craft:flame-control:5",
+            "summary": "Contrôle des flammes",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

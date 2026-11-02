@@ -1,0 +1,45 @@
+{
+  "_id": "0HpQcLfLgMhNiOjP",
+  "_key": "!items!0HpQcLfLgMhNiOjP",
+  "name": "Vague de vérité",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect",
+    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur dirige ce pouvoir vers une personne située à portée et peut s’en servir pour déterminer si cette personne ment ou dit la vérité. Ce pouvoir fonctionne pendant 1 minute.",
+    "summary": "Vague de vérité",
+    "source": {
+      "book": "Livre des règles",
+      "page": 228
+    }
+  },
+  "effects": [
+    {
+      "_id": "1bX9Oz1w2x3y4z5A",
+      "_key": "!items.effects!0HpQcLfLgMhNiOjP.1bX9Oz1w2x3y4z5A",
+      "name": "Vague de vérité",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur dirige ce pouvoir vers une personne située à portée et peut s’en servir pour déterminer si cette personne ment ou dit la vérité. Ce pouvoir fonctionne pendant 1 minute.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect",
+            "sourceId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4",
+            "summary": "Vague de vérité",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

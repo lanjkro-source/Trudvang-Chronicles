@@ -1,0 +1,45 @@
+{
+  "_id": "h8WQWQlRmSnToUpV",
+  "_key": "!items!h8WQWQlRmSnToUpV",
+  "name": "Mastomant's Fur",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+    "description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
+    "summary": "Mastomant's Fur",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "6OT0a5z5A6B7C8D9",
+      "_key": "!items.effects!h8WQWQlRmSnToUpV.6OT0a5z5A6B7C8D9",
+      "name": "Mastomant's Fur",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect",
+            "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4",
+            "summary": "Mastomant's Fur",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

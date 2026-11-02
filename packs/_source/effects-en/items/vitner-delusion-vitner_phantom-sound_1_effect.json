@@ -1,0 +1,45 @@
+{
+  "_id": "J6YzxwXsYtZu0v1w",
+  "_key": "!items!J6YzxwXsYtZu0v1w",
+  "name": "Phantom Sound",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:phantom-sound:1#effect",
+    "description": "The spell suddenly generates one or more noises within the designated range. The sound or sounds consist of audible illusions that fit the current environment and situation. They may be steps approaching, a twig breaking, a growl, a collection of whispers, a knock on the door, or any other noise.",
+    "summary": "Phantom Sound",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "UkXbYbHcIdJeKfLg",
+      "_key": "!items.effects!J6YzxwXsYtZu0v1w.UkXbYbHcIdJeKfLg",
+      "name": "Phantom Sound",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell suddenly generates one or more noises within the designated range. The sound or sounds consist of audible illusions that fit the current environment and situation. They may be steps approaching, a twig breaking, a growl, a collection of whispers, a knock on the door, or any other noise.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:phantom-sound:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:phantom-sound:1#effect",
+            "sourceId": "vitner-delusion-vitner:phantom-sound:1",
+            "summary": "Phantom Sound",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

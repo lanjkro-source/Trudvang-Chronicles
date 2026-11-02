@@ -13693,6 +13693,15 @@
         }
       },
       "Transformation": {
+        "vitner-vitner-craft:vitner-pouch:1#effect": {
+          "Name": "Vitner Pouch",
+          "Summary": "Vitner Pouch",
+          "Description": "The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch.",
+          "SourceName": "Vitner Pouch",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "129",
+          "Duration": "1 hour"
+        },
         "vitner-vitner-craft:enchant-being:4#effect": {
           "Name": "Enchant Being",
           "Summary": "Enchant Being",
@@ -13701,6 +13710,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "129",
           "Duration": "4 action rounds"
+        },
+        "vitner-vitner-craft:wall-of-vitner:8#effect": {
+          "Name": "Wall of Vitner",
+          "Summary": "Wall of Vitner",
+          "Description": "The enchanter forms a circular wall of vitner with a diameter of 2 meters. This wall protects against any spells that try to affect something on the other side of the wall. If a spell is centered outside the wall but has an area of effect that reaches beyond the wall, the spell needs to get past the vitner wall’s defense in order to have any effect. To protect against spells attempting to breach the vitner wall, the enchanter must succeed on a Situation roll every time a spell tries to break through. The Situation value depends on the level of the incoming magic,<table><thead><tr><th colspan=\"1\">WALL OF VITNER’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>as shown in the table below. If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall. WALL OF VITNER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+          "SourceName": "Wall of Vitner",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "129",
+          "Duration": "5 action rounds"
         },
         "vitner-dimvitner:speak-to-undead:3#effect": {
           "Name": "Speak to Undead",
@@ -13728,6 +13746,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "105",
           "Duration": "5 minutes"
+        },
+        "vitner-soil-craft:quagmire:3#effect": {
+          "Name": "Quagmire",
+          "Summary": "Quagmire",
+          "Description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
+          "SourceName": "Quagmire",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "123",
+          "Duration": "1 minute"
         },
         "vitner-soil-craft:soil-walk:5#soil-walk": {
           "Name": "Soil Walk",
@@ -13792,6 +13819,87 @@
           "SourcePage": "135",
           "Duration": "3 minutes"
         },
+        "vitner-water-craft:solid-water:5#effect": {
+          "Name": "Solid Water",
+          "Summary": "Solid Water",
+          "Description": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet. The enchanted person can then walk on water as if it were solid ground and move up to 5 meters per round in this manner. The affected area has a diameter of 1 meter and can hold up to 70 kg (only a creature of normal size will fit). The affected area moves constantly so it is always located beneath the individual the spell was woven over, who can direct the area by simply turning the way they want to go and walking on.",
+          "SourceName": "Solid Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "1 minute"
+        },
+        "vitner-water-craft:control-precipitation:6#effect": {
+          "Name": "Control Precipitation",
+          "Summary": "Control Precipitation",
+          "Description": "The spell can change the amount of precipitation that falls to the ground. The area that the enchanter can affect in this manner has a radius of 50 meters from the point where the enchanter wove the spell. The enchanter can increase or decrease the amount of precipitation one degree from the current amount, as outlined in the table below. In the spell’s basic version, the center of the enchanted area is a static object or location, but by adding a power level it is possible to enchant a movable object,<table><thead><tr><th colspan=\"1\">DEGREES</th></tr><tr><th>Degree Precipitation</th></tr></thead><tbody><tr><td>0 Clear blue sky</td></tr><tr><td>1 Cloudy. No precipitation</td></tr><tr><td>2 Light rain or very light</td></tr></tbody></table>which means that the affected area can then be moved. An enchanter cannot, without extra levels of power, create rain and snow from a clear blue sky. CONTROL PRECIPITATION DEGREES Degree Precipitation 0 Clear blue sky 1 Cloudy. No precipitation 2 Light rain or very light snowfall 3 Rain or light snowfall 4 Persistent rain or snowfall 5 Pouring rain or snowstorm",
+          "SourceName": "Control Precipitation",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "1 hour"
+        },
+        "vitner-flame-craft:heat-water:0#effect": {
+          "Name": "Heat Water",
+          "Summary": "Heat Water",
+          "Description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+          "SourceName": "Heat Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "5 minutes"
+        },
+        "vitner-flame-craft:spark:1#effect": {
+          "Name": "Spark",
+          "Summary": "Spark",
+          "Description": "The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame.",
+          "SourceName": "Spark",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "1 minute"
+        },
+        "vitner-flame-craft:warmth:6#effect": {
+          "Name": "Warmth",
+          "Summary": "Warmth",
+          "Description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+          "SourceName": "Warmth",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "5 hours"
+        },
+        "vitner-flame-craft:flame-control:5#effect": {
+          "Name": "Flame Control",
+          "Summary": "Flame Control",
+          "Description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+          "SourceName": "Flame Control",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "5 minutes"
+        },
+        "vitner-wind-craft:purify-air:0#effect": {
+          "Name": "Purify Air",
+          "Summary": "Purify Air",
+          "Description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely. The spell can also be woven over a person, which creates a filter around their mouth and nose to purify the air they breathe. In this way, they can breathe in all environments that have enough air to keep them alive, no matter which gases, spores, or dangerous p articles are present.",
+          "SourceName": "Purify Air",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "3 minutes"
+        },
+        "vitner-wind-craft:fog:2#effect": {
+          "Name": "Fog",
+          "Summary": "Fog",
+          "Description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
+          "SourceName": "Fog",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "5 minutes"
+        },
+        "vitner-wind-craft:control-wind:3#effect": {
+          "Name": "Control Wind",
+          "Summary": "Control Wind",
+          "Description": "The Ihana controls the force of the wind within a sphere that is 10 meters in radius. The chosen one can increase or decrease the power of the wind by one degree within that sphere. In the ability’s basic version, the affected area is a static object or place that cannot be moved, but by adding a level of power,<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.</td></tr></tbody></table>it is possible to move the area. CONTROL WIND, DEGREES Degree Wind Power 1 Calm 2 Breeze 3 Windy (-1) 4 Storm (-2) 5 Hurricane (-4) 6 Godly hurricane (-6) The wind conditions in the table are only the names of forces that can occur. It is up to the game master to decide what happens in each condition according to the situation. The table also lists values in parentheses, which indicate the normal modifiers applied to the Situation value of anything attempted within that condition that requires movement, precision, or focus.",
+          "SourceName": "Control Wind",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "1 hour"
+        },
         "vitner-wind-craft:air-armor:4#air-armor": {
           "Name": "Air Armor",
           "Summary": "Wraps the target in protective currents of compressed air.",
@@ -13800,6 +13908,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "139",
           "Duration": "5 action rounds"
+        },
+        "vitner-wind-craft:storm:8#effect": {
+          "Name": "Storm",
+          "Summary": "Storm",
+          "Description": "The spell summons a violent storm around the enchanter. It sweeps up debris and creatures weighing less than 50 kg within a 20-meter radius. Creatures must make a Strength-modified Situation roll to resist being hurled away. Those blown into obstacles suffer falling damage; those who remain inside must test again to move through the storm and suffer penalties to their actions.",
+          "SourceName": "Storm",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "139",
+          "Duration": "2 action rounds"
         },
         "vitner-perceiving:find-home:0#find-home": {
           "Name": "Find Home",
@@ -13972,6 +14089,24 @@
           "SourcePage": "116",
           "Duration": "10 minutes"
         },
+        "vitner-power-of-vision:tracking:0#effect": {
+          "Name": "Tracking",
+          "Summary": "Tracking",
+          "Description": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature.",
+          "SourceName": "Tracking",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "1 hour"
+        },
+        "vitner-power-of-vision:scanning:1#effect": {
+          "Name": "Scanning",
+          "Summary": "Scanning",
+          "Description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine.",
+          "SourceName": "Scanning",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "120",
+          "Duration": "9 action rounds"
+        },
         "vitner-power-of-vision:espionage:4#espionage": {
           "Name": "Espionage",
           "Summary": "Allows remote perception around the enchanted object.",
@@ -13989,6 +14124,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "120",
           "Duration": "5 minutes"
+        },
+        "vitner-witchcraft:uprooted-tree:0#effect": {
+          "Name": "Uprooted Tree",
+          "Summary": "Uprooted Tree",
+          "Description": "The spell causes a tree to uproot and collapse. The vitner is laid in the ground directly beneath a tree and there forms a small uproot. As soon as the spell has been woven, the vitner begins to swell up like a bloated cow’s stomach. Soon the vitner expands so much that the tree above it is wrenched from the soil and tipped over. An observer can see that something is happening because the soil suddenly starts to shift and rise. In the fourth action round of the spell, the uproot grows so large that it bursts out of the ground, and in the fifth action round it finally tips the tree over and then disappears. For a tree to be toppled in this manner, it cannot have a trunk with a circumference larger than 1.5 meters at ground level. If the trunk is larger, the vitner will not have enough strength to tip it over. The mage, who must c oncentrate on the uprooting at all times, can choose which way the tree will fall. If they lose concentration or lose control over the uproot for any reason, it will still continue to swell until the tree falls, but the game master will determine the direction. Everyone who observes this occurrence and was unaware of the mage’s actions must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply) to avoid receiving 1d10 Fear Points when the uproot breaks out of the ground. On a success, an observer receives no Fear Points. The uproot could just as easily be placed under a large rock, open ground, or even a house. The final results of such an action and how much of the object collapses or is tipped over is up to the game master to decide. The uproot in the spell’s basic version can lift or tip approximately 100 kg.",
+          "SourceName": "Uprooted Tree",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "5 action rounds"
         },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Curse Creature",
@@ -14027,6 +14171,15 @@
           "Duration": "1 minute",
           "Sense0": "Animal link range"
         },
+        "vitner-animal-vitner:call-on-animals:2#effect": {
+          "Name": "Call on Animals",
+          "Summary": "Call on Animals",
+          "Description": "TYPES OF ANIMALS FOR CALL ON Type of Animal Small bird, rat Cat, bird, hen, small dog, fox Large bird, dog, roe deer, wolf Large dog, deer, drauglo Donkey [1.5x] Horse, frostboar [2x] Cave boar, bear, ox Mastomant Dragon The mage can call on one or more unintelligent animals. In total they can call on one animal with a maximum amount of 15 Body Points, or a number of smaller animals that together total up to 15 Body Points, see table below for direction. The mage can specify what type of species to call, if desired, or call the ANIMALS AND CONTROL ANIMALS Size BP [&lt;1/3] Size of a piglet 1-2 [1/3] Size of a lamb 3-9 [1/2] Size of a foal 10-16 [1x] Size of a calf 17-30 Size of the largest tame swine 31-41 Size of the largest tame sow 42-52 [4x] Size of an ox 53-84 [7x] Size of a mastomant 85-199 [&gt; 10x] Size of a dragon 200+ closest animals. Regardless, the animals are cautious with the mage. Any fast or aggressive movements from the mage or anyone else in the vicinity might startle the animals and cause them to flee. If someone tries to get close to an animal, this is normally regarded as an aggressive move. Once the spell’s duration ends, the animals continue to be watchful and eventually move away from the place as the compulsion to stay is lifted.",
+          "SourceName": "Call on Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "10 minutes"
+        },
         "vitner-animal-vitner:control-animals:4#effect": {
           "Name": "Control Animals",
           "Summary": "Control Animals",
@@ -14035,6 +14188,33 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "92",
           "Duration": "1 minute"
+        },
+        "vitner-animal-vitner:mind-of-the-wolf:5#effect": {
+          "Name": "Mind of the Wolf",
+          "Summary": "Mind of the Wolf",
+          "Description": "The one affected by the spell gains something that resembles a wolf’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety, and strength. By studying a group or individual’s astral reflection(s) (within 10 meters), the affected can, for example, tell the strong from the weak, friend from foe, or if someone is unusually anxious or cowardly and has a will that can be influenced. But the affected can never be sure of who the leader of a group is, since the strongest individual is not always the leader. The spell also gives the target a distinct wolf-like appearance for the duration.",
+          "SourceName": "Mind of the Wolf",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "3 minutes"
+        },
+        "vitner-animal-vitner:possess-animals:6#effect": {
+          "Name": "Possess Animals",
+          "Summary": "Possess Animals",
+          "Description": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body. To accomplish this, the mage has to be within the spell’s range of the creature, as well as have it in sight. You cannot possess an animal that you cannot see. If the spell is successful, the enchanter’s consciousness is shifted to the intended creature, which loses all direct control over its body. The mage can, without any difficulty, embrace all of the animal’s traits as their own. The mage keeps their own intelligence but cannot use Vitner Craft or Speak, as well as any other skills that would not be physically possible for that creature’s form. On the other hand, the mage receives a bonus for the Agility and Shadow Arts skills when in animal form (the size of the bonus is up to the game master). The mage is also able to attempt communication by using body movements. While in animal form, the mage cannot understand or communicate with other animals, not even those of the same species. When the mage possess the animal, their own body falls into deep slumber. Once inside the animal, the mage can move as far as desired from their own body, but they must be careful to return within the spell’s range before its duration is over. If the animal is killed while possessed by the mage, or if the duration runs out before the mage returns within the spell’s range, the mage’s consciousness returns to their body automatically, but with complications. The experience is so t raumatic that they undergo extreme shock. The incredible stress on the mind is so powerful that the mage loses 1d6 in vitner capacity permanently, and falls into a deep slumber that lasts for 1d6 days.",
+          "SourceName": "Possess Animals",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "10 minutes"
+        },
+        "vitner-animal-vitner:send-message:8#effect": {
+          "Name": "Send Message",
+          "Summary": "Send Message",
+          "Description": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing. In the spell’s basic version, the message can contain a maximum of ten words, and can be received by up to five beings within a radius of 10 kilometers. The vitner being is incredibly fast and can travel 1 kilometer per action round. The message must be in a language that the mage has mastered.",
+          "SourceName": "Send Message",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": "10 minutes"
         },
         "vitner-body-vitner:grip:0#adherence": {
           "Name": "Grip",
@@ -14172,6 +14352,15 @@
           "SourcePage": "101",
           "Duration": "5 action rounds"
         },
+        "vitner-delusion-vitner:phantom-sound:1#effect": {
+          "Name": "Phantom Sound",
+          "Summary": "Phantom Sound",
+          "Description": "The spell suddenly generates one or more noises within the designated range. The sound or sounds consist of audible illusions that fit the current environment and situation. They may be steps approaching, a twig breaking, a growl, a collection of whispers, a knock on the door, or any other noise.",
+          "SourceName": "Phantom Sound",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "10 action rounds"
+        },
         "vitner-delusion-vitner:traceless:4#trace": {
           "Name": "Traceless",
           "Summary": "Erases tracks, clues and scent left by the beneficiary, restoring the ground behind them.",
@@ -14189,6 +14378,60 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "101",
           "Duration": "1 minute"
+        },
+        "vitner-delusion-vitner:landscape-illusion:8#effect": {
+          "Name": "Landscape Illusion",
+          "Summary": "Landscape Illusion",
+          "Description": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape. The sphere has a radius of up to 300 meters around the enchanter and can depict things like a great hill, a forest, or even a city (the enchanter chooses the size of the illusion). It might also be an illusion of nothing at all, used to mask whatever landscape is really there. The enchanter cannot create an illusion of movement, so the illusion must depict something that remains static. In order to recognize from a distance that the landscape is an enormous illusion, the observer must succeed on a Skill roll for the Shadow Arts skill, modified according to the distance between the observer and the illusion. These<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.</td></tr></tbody></table>modifiers are outlined in the table below. The observer gets to make a new Skill roll for each new distance range they reach when approaching the illusion. LANDSCAPE ILLUSION MODIFIERS Distance Modifier &lt;50 Illusion is discovered 50-100 m +5 101-200 m +2 201-400 m ±0 401-600 m -2 601-1,000 m -5 &gt; 1,000 m -10 The illusion remains in the location where it was woven until the spell expires, even if the enchanter moves away. If an observer ventures into the illusion, it disappears completely from their field of vision, and they see the area as it really appears, though other observers who are outside the enchanted realm still see the illusion.",
+          "SourceName": "Landscape Illusion",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "2 hours"
+        },
+        "vitner-vitner-of-objects:detect-composition:0#effect": {
+          "Name": "Detect Composition",
+          "Summary": "Detect Composition",
+          "Description": "The enchanter can identify all nonorganic materials, such as metals and gemstones. An enchanter who finds an object, weaves this spell, and touches the object will immediately know what substances it is composed of and the quantities of each substance. They might even discover how an object is constructed. Although the enchanter cannot see straight through the object, they might discover that inside the object is another object altogether composed of metal, that inside the object is a hollow cavity created to contain something else, and so on. The enchanter is unable to evaluate the object’s material unless they have an idea of how much it is worth. The spell does not allow the enchanter to discover magical characteristics of the object.",
+          "SourceName": "Detect Composition",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "10 action rounds"
+        },
+        "vitner-vitner-of-objects:waterproof:1#effect": {
+          "Name": "Waterproof",
+          "Summary": "Waterproof",
+          "Description": "✦ Modifier: None The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction. The enchanted surface becomes completely impermeable, but receives no other enhanced characteristics. The enchanter can waterproof any surface up to the area of a large tent by touching the material.",
+          "SourceName": "Waterproof",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "1 hour"
+        },
+        "vitner-vitner-of-objects:bind:2#effect": {
+          "Name": "Bind",
+          "Summary": "Bind",
+          "Description": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue. The items must fit well together, not be in motion, and not consist of living matter. For example, one cannot bind a door frame to an unlucky person passing through it. Appropriate targets to bind include door and door frame, lid and box, sword and scabbard, boulder and cave opening, drawer and hatch, or cork and bottle. The two objects become one for the spell’s duration and cannot be separated by normal means. It is possible to use force on the objects, such as by bashing through a door that is bound to a door frame, but the objects will not open in a normal fashion or separate cleanly. The enchanter, however, can separate the objects whenever they want to.",
+          "SourceName": "Bind",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "3 minutes"
+        },
+        "vitner-vitner-of-objects:alarm-object:4#effect": {
+          "Name": "Alarm Object",
+          "Summary": "Alarm Object",
+          "Description": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on.",
+          "SourceName": "Alarm Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 hours"
+        },
+        "vitner-vitner-of-objects:enlarge-reduce-object:6#effect": {
+          "Name": "Enlarge/Reduce Object",
+          "Summary": "Enlarge/Reduce Object",
+          "Description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length).",
+          "SourceName": "Enlarge/Reduce Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "4 minutes"
         },
         "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
           "Name": "Healing (Sunvei)",
@@ -14506,6 +14749,33 @@
           "SourcePage": "162",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
+          "Name": "Wave of Truth",
+          "Summary": "Wave of Truth",
+          "Description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker directs the ability toward a person within range and can use it to judge if the person is lying or telling the truth. The ability lasts for one minute.",
+          "SourceName": "Wave of Truth",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "168",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect": {
+          "Name": "Gaze of Windinna",
+          "Summary": "Gaze of Windinna",
+          "Description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker can then read that person’s mind for the duration of the ability. The target can attempt to resist the effect by succeeding on a Situation roll with a Situation value of 4 (Psyche modifiers apply).",
+          "SourceName": "Gaze of Windinna",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "168",
+          "Duration": "1 minute"
+        },
+        "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect": {
+          "Name": "Swine Rush",
+          "Summary": "Swine Rush",
+          "Description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi. Windinna hears the dimwalker and sends Djofur, the swine spirit, to create a common object. When he does so, he grunts and digs in the ground. Left in the place where Djofur was digging is the object. It can be anything the dimwalker chooses, such as a sword, a gold coin, or even a boat, as long as it is not alive or magical. The object also has to be movable. Thus, Djofur cannot create a horse, a forest, or a flower because these are living things. Nor can he create a stronghold or a wall since these are not movable. It takes one minute for Djofur to create an object, which will then exist for one day. The quality of the object is masterful. Djofur can be called only once per day. Be aware that neither Windinna nor Djofur cares for greedy dimwalkers, so if a Stormkelt were to use this ability to sate their own greed, it would awaken the wrath of the goddess.",
+          "SourceName": "Swine Rush",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "168",
+          "Duration": "1 day"
+        },
         "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
           "Name": "Journey Wind",
           "Summary": "Journey Wind",
@@ -14514,6 +14784,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
           "Duration": "1 hour"
+        },
+        "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect": {
+          "Name": "Rider's Melody",
+          "Summary": "Rider's Melody",
+          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
+          "SourceName": "Rider's Melody",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-magh-s-gift:elf-summer:3#effect": {
           "Name": "Elf Summer",
@@ -14524,6 +14803,24 @@
           "SourcePage": "183",
           "Duration": "1 hour"
         },
+        "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect": {
+          "Name": "Hero's Song",
+          "Summary": "Hero's Song",
+          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed for 2 Body Points per minute for the duration of the ability. This song can heal a maximum of 10 Body Points per person per day.",
+          "SourceName": "Hero's Song",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "2 minutes"
+        },
+        "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect": {
+          "Name": "King's Anthem",
+          "Summary": "King's Anthem",
+          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 4 Body Points per minute for the duration of the ability. This song can heal a maximum of 20 Body Points per person per day.",
+          "SourceName": "King's Anthem",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "183",
+          "Duration": "3 minutes"
+        },
         "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
           "Name": "Harvest Year",
           "Summary": "Harvest Year",
@@ -14532,6 +14829,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
           "Duration": "1 year"
+        },
+        "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect": {
+          "Name": "Behind Tree and Pine",
+          "Summary": "Behind Tree and Pine",
+          "Description": "The Bruid alters their appearance to blend into the surrounding environment. They must remain completely still or the effect breaks. Anyone searching for the Bruid must succeed on a Shadow Arts Skill roll with a -3 SV penalty to detect them.",
+          "SourceName": "Behind Tree and Pine",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect": {
+          "Name": "Animal Speech",
+          "Summary": "Animal Speech",
+          "Description": "The Bruid is able to speak with ordinary animals for the duration of the ability. He can also understand anything that the animals are saying. However, this does not mean that the animals will immediately become comfortable or friendly toward the dimwalker, or even wish to answer his questions, but they will miraculously be able to comprehend his words. How much they will understand depends on how intelligent the animals are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the animals have no context or understanding of. By speaking with animals, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that animals often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning.",
+          "SourceName": "Animal Speech",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
           "Name": "Stagshape",
@@ -14545,6 +14860,15 @@
           "Sense0": "low-light vision",
           "Capability0": "stags"
         },
+        "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect": {
+          "Name": "Bestial Tongue",
+          "Summary": "Bestial Tongue",
+          "Description": "The Bruid is able to speak with beasts for the duration of the ability. She can also understand anything that the beasts are saying. However, this does not mean that the beasts will immediately become comfortable or friendly toward the dimwalker, or even wish to answer her questions, but they will miraculously be able to comprehend her words. How much they will understand depends on how intelligent the beasts are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the creatures have no context or understanding of. By speaking with beasts, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that beasts often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning. Beasts are creatures such as wolfkin (skolls and garms), braskelwurm, troll bulls, griffons, mastomants, and lindwurms. The Bruid cannot communicate with trolls or dragons through this ability.",
+          "SourceName": "Bestial Tongue",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
           "Name": "Salmonshape",
           "Summary": "Increases Dexterity and allows swimming and breathing underwater in salmon form.",
@@ -14556,6 +14880,33 @@
           "Sense0": "excellente vision aquatique",
           "Capability0": "salmon",
           "Capability1": "breathes in water and on land"
+        },
+        "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect": {
+          "Name": "Beneath Root and Rock",
+          "Summary": "Beneath Root and Rock",
+          "Description": "The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-5 to SV) Skill roll with the Shadow Arts skill in order to detect them.",
+          "SourceName": "Beneath Root and Rock",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect": {
+          "Name": "Forest Denizen",
+          "Summary": "Forest Denizen",
+          "Description": "The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-10 to SV) Skill roll with the Shadow Arts skill in order to detect them.",
+          "SourceName": "Forest Denizen",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect": {
+          "Name": "Dragon Tongue",
+          "Summary": "Dragon Tongue",
+          "Description": "The Bruid can communicate in the language of dragons and their kin. This does not mean that dragons will suddenly become friendly with the dimwalker or wish to answer his questions, but they will miraculously be able to comprehend his words. By speaking with dragons, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that all dragons have extremely good hearing and can distinguish sounds from several kilometers away.",
+          "SourceName": "Dragon Tongue",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "176",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau": {
           "Name": "Ravenshape",
@@ -14580,6 +14931,15 @@
           "SourcePage": "181",
           "Duration": "3 rounds"
         },
+        "holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect": {
+          "Name": "King's Militia",
+          "Summary": "King's Militia",
+          "Description": "The Bruid summons a spirit warrior from the great King’s militia. The militiamen are simple warriors in leather armor with an ordinary short sword and an ordinary small shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again, and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A Bruid can have a maximum of two active militia warriors at<hr>one time. ✦ Militia Warrior: Body Points 20, Protection Value 2, battle points 10, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+4 battle points).",
+          "SourceName": "King's Militia",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
           "Name": "Giantslayer",
           "Summary": "Bonuses apply only against the relevant creature category.",
@@ -14589,6 +14949,15 @@
           "SourcePage": "181",
           "Duration": "3 rounds"
         },
+        "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
+          "Name": "King's Guard",
+          "Summary": "King's Guard",
+          "Description": "The Bruid summons a spirit warrior from the great King’s guard. The guard is a disciplined warrior who wears leather armor and is armed with a broad sword and a shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of four active guard warriors at one<hr>time. ✦ Guard Warrior: Strength +1, Body Points 25, Protection Value 3, battle points 15, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+8 battle points).",
+          "SourceName": "King's Guard",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 minute"
+        },
         "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
           "Name": "Dragonslayer",
           "Summary": "Bonuses apply only against the relevant creature category.",
@@ -14597,6 +14966,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "181",
           "Duration": "3 rounds"
+        },
+        "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect": {
+          "Name": "The Nine Kings",
+          "Summary": "Royal warriors",
+          "Description": "The Bruid calls upon the nine great Kings, who send a memory of their past strength and spirit to the dimwalker to aid in the most difficult situations. The nine Kings are men of tall stature, and they wear crowns and long, dark mantles that cover their bodies. Their faces are pale and radiate the essence of spirits. Each is armed with a two-handed sword. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of nine active Kings at one time. If the dimwalker spends 1 raud, the Kings will stay until<hr>the next morning. ✦ King: Strength +4, Body Points 50, Protection Value 9, battle points 32, initiative +1d10 (OR 10) + 4, Sacred Two-handed Sword 1d10 (OR 8-10) + 2 in basic damage. Fear factor 1d10 (OR 9-10) for all opponents.",
+          "SourceName": "The Nine Kings",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 minute"
         },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Willpower of the Ancestors",
@@ -14861,11 +15239,29 @@
           "SourcePage": "201",
           "Duration": "1 hour"
         },
+        "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect": {
+          "Name": "Thornwall",
+          "Summary": "Thornwall",
+          "Description": "The one praying invokes the force of the black oak. Within the range, thorny branches spring from the ground that fill a space of 1d10 + 10 m³, which the dimwalker may then shape to their own satisfaction. For example, if a priest has 20 m³ at their disposal, they can shape the branches to be 20 m long x 1 m high x 1 m wide, or 10 m long x 2 m high x 1 m wide, or other dimensions. It takes 1 action round for the branches to grow to fill a space of 5 m³, meaning that branches filling 20 m³ of space would take 4 rounds. Attempting to pass through these thorny branches without cutting them down deals 1d5 points of damage for every cubic meter passed through, and requires 2 action rounds of movement per meter. Each cubic meter has a number of thorny branches equivalent to 10 Body Points, should one wish to hack through in order to push through the wall without taking any damage.",
+          "SourceName": "Thornwall",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "201",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
           "Name": "Storm Protection",
           "Summary": "Storm Protection",
           "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
           "SourceName": "Storm Protection",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "201",
+          "Duration": "1 hour"
+        },
+        "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect": {
+          "Name": "Demonic Impotence",
+          "Summary": "Demonic Impotence",
+          "Description": "The priest prays to Gave, and as a result their hands begin to glow. For the next 10 action rounds, the priest gains the ability to rip one feat from a demon simply by touching the demon with their glowing hands (a successful unarmed attack). If the priest successfully purges a demon of one of its abilities, the demon cannot use it for the duration listed above. A priest can rip only one ability away from any demon. If the priest spends a raud when successfully ripping an ability from a demon, the demon loses the purged ability permanently.",
+          "SourceName": "Demonic Impotence",
           "SourceBook": "Player's Handbook",
           "SourcePage": "201",
           "Duration": "1 hour"
@@ -14925,6 +15321,15 @@
           "SourcePage": "212",
           "Duration": "1 minute"
         },
+        "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect": {
+          "Name": "Mastomant's Fur",
+          "Summary": "Mastomant's Fur",
+          "Description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
+          "SourceName": "Mastomant's Fur",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "212",
+          "Duration": "1 hour"
+        },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance of the Giant",
           "Summary": "Increases Constitution and maximum health points, and grants immunity to poison and disease.",
@@ -14933,6 +15338,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "212",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect": {
+          "Name": "Master of Wolfkin",
+          "Summary": "Master of Wolfkin",
+          "Description": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby. The dimwalker must be outside, and it will take 1d10 action rounds before the wolfkin appears. The wolfkin is friendly to the spirit conjurer, neutral to the conjurer’s allies, and hostile to the conjurer’s enemies. In its basic form, the ability calls a standard wolf, but the spirit conjurer can call upon much larger wolfkin with extra levels of power. Once the duration has ended, the wolfkin leaves its temporary master and returns to its previous area and task. If the wolfkin receives damage that exceeds two-thirds of its total Body Points while serving the dimwalker, it will attempt to escape and will not return for the rest of the duration.",
+          "SourceName": "Master of Wolfkin",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "212",
+          "Duration": "1 hour"
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant": {
           "Name": "Mastomantshape",
@@ -15208,6 +15622,15 @@
           "SourcePage": "231",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:tree-walk:1#effect": {
+          "Name": "Tree Walk",
+          "Summary": "Tree Walk",
+          "Description": "The Ihana can move among the trees at half their normal movement rate. If the trees stand so close to each other that the chosen one can reach from one tree’s branches to another’s, they can also climb from tree to tree through the canopy (up to the game master to decide). In areas that are more difficult to traverse, the Ihana can still attempt such an act by making a Situation roll with a Situation value determined by the game master (Dexterity traits apply) or a Skill roll for the Agility skill.",
+          "SourceName": "Tree Walk",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "10 minutes"
+        },
         "holy-toikalokke-lynx-power:orientation:0#orientation": {
           "Name": "Ihana Orientation",
           "Summary": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
@@ -15234,6 +15657,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "239",
           "Duration": "2 action rounds"
+        },
+        "holy-toikalokke-lynx-power:forest-path:8#effect": {
+          "Name": "Forest Path",
+          "Summary": "Forest Path",
+          "Description": "The Ihana can move through the forest at double their normal movement rate.",
+          "SourceName": "Forest Path",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "3 hours"
+        },
+        "holy-toikalokke-lynx-power:pathfinder:9#effect": {
+          "Name": "Pathfinder",
+          "Summary": "Pathfinder",
+          "Description": "The Ihana can travel through otherwise impassable forest or shrubbery when desired. The forest or undergrowth parts as the dimwalker approaches and then closes once they have passed. This temporary path leaves no visible trace whatsoever. The path that opens around the Ihana stretches for 3 meters in front of and behind the elf, with a width equal to half the elf’s length.",
+          "SourceName": "Pathfinder",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "3 hours"
         },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Animal Tracks",
@@ -15374,6 +15815,15 @@
           "Duration": "1 heure",
           "Attack0": "Horns",
           "Sense0": "low-light vision"
+        },
+        "holy-toikalokke-master-of-elements:control-fire:1#effect": {
+          "Name": "Control Fire",
+          "Summary": "Control Fire",
+          "Description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+          "SourceName": "Control Fire",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "241",
+          "Duration": "10 action rounds"
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau": {
           "Name": "Gift of Water",

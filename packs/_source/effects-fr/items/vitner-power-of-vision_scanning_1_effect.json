@@ -1,0 +1,45 @@
+{
+  "_id": "PKnpHLeKfLgMhNiO",
+  "_key": "!items!PKnpHLeKfLgMhNiO",
+  "name": "Examen d’objet",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:scanning:1#effect",
+    "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
+    "summary": "Examen d’objet",
+    "source": {
+      "book": "Livre des règles",
+      "page": 182
+    }
+  },
+  "effects": [
+    {
+      "_id": "WfGqWdHcIdJeKfLg",
+      "_key": "!items.effects!PKnpHLeKfLgMhNiO.WfGqWdHcIdJeKfLg",
+      "name": "Examen d’objet",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:scanning:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:scanning:1#effect",
+            "sourceId": "vitner-power-of-vision:scanning:1",
+            "summary": "Examen d’objet",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

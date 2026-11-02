@@ -1,0 +1,45 @@
+{
+  "_id": "cWisVQhNiOjPkQlR",
+  "_key": "!items!cWisVQhNiOjPkQlR",
+  "name": "Chant du héros",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour.",
+    "summary": "Chant du héros",
+    "source": {
+      "book": "Livre des règles",
+      "page": 233
+    }
+  },
+  "effects": [
+    {
+      "_id": "jOn7nwXsYtZu0v1w",
+      "_key": "!items.effects!cWisVQhNiOjPkQlR.jOn7nwXsYtZu0v1w",
+      "name": "Chant du héros",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
+            "summary": "Chant du héros",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

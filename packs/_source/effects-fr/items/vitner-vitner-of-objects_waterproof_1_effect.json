@@ -1,0 +1,45 @@
+{
+  "_id": "CFjk01w2x3y4z5A6",
+  "_key": "!items!CFjk01w2x3y4z5A6",
+  "name": "Résistance à l’eau",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:waterproof:1#effect",
+    "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau.",
+    "summary": "Résistance à l’eau",
+    "source": {
+      "book": "Livre des règles",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "rIeJltVqWrXsYtZu",
+      "_key": "!items.effects!CFjk01w2x3y4z5A6.rIeJltVqWrXsYtZu",
+      "name": "Résistance à l’eau",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:waterproof:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:waterproof:1#effect",
+            "sourceId": "vitner-vitner-of-objects:waterproof:1",
+            "summary": "Résistance à l’eau",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

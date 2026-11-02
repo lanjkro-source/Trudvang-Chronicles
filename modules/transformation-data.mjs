@@ -1,5 +1,40 @@
 // Generated from authoritative FR effectTemplates. Text belongs to lang/*.json.
 export const TRANSFORMATION_TEMPLATES = {
+  "vitner-vitner-craft:vitner-pouch:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2
+    ],
+    "sourceId": "vitner-vitner-craft:vitner-pouch:1",
+    "parameters": [
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-craft:vitner-pouch:1:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-craft:vitner-pouch:1:4"
+      },
+      {
+        "index": 5,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-vitner-craft:vitner-pouch:1:5"
+      }
+    ]
+  },
   "vitner-vitner-craft:enchant-being:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -45,6 +80,42 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.allActions",
         "value": 1,
         "optionId": "vitner-vitner-craft:enchant-being:4:5"
+      }
+    ]
+  },
+  "vitner-vitner-craft:wall-of-vitner:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "vitner-vitner-craft:wall-of-vitner:8",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-craft:wall-of-vitner:8:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-craft:wall-of-vitner:8:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-craft:wall-of-vitner:8:3"
       }
     ]
   },
@@ -120,6 +191,35 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-dimvitner:control-undead:7:2"
+      }
+    ]
+  },
+  "vitner-soil-craft:quagmire:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2
+    ],
+    "sourceId": "vitner-soil-craft:quagmire:3",
+    "parameters": [
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-soil-craft:quagmire:3:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-soil-craft:quagmire:3:4"
       }
     ]
   },
@@ -370,6 +470,270 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-water-craft:solid-water:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      5,
+      6
+    ],
+    "sourceId": "vitner-water-craft:solid-water:5",
+    "parameters": [
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:solid-water:5:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-water-craft:solid-water:5:4"
+      }
+    ]
+  },
+  "vitner-water-craft:control-precipitation:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      4,
+      5
+    ],
+    "sourceId": "vitner-water-craft:control-precipitation:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-water-craft:control-precipitation:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 18000,
+        "optionId": "vitner-water-craft:control-precipitation:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-water-craft:control-precipitation:6:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-water-craft:control-precipitation:6:3"
+      }
+    ]
+  },
+  "vitner-flame-craft:heat-water:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sourceId": "vitner-flame-craft:heat-water:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-flame-craft:heat-water:0:0"
+      }
+    ]
+  },
+  "vitner-flame-craft:spark:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-flame-craft:spark:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-flame-craft:spark:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-flame-craft:spark:1:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-flame-craft:spark:1:2"
+      }
+    ]
+  },
+  "vitner-flame-craft:warmth:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "vitner-flame-craft:warmth:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-flame-craft:warmth:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-flame-craft:warmth:6:1"
+      }
+    ]
+  },
+  "vitner-flame-craft:flame-control:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-flame-craft:flame-control:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-flame-craft:flame-control:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-flame-craft:flame-control:5:1"
+      }
+    ]
+  },
+  "vitner-wind-craft:purify-air:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-wind-craft:purify-air:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-wind-craft:purify-air:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 1200,
+        "optionId": "vitner-wind-craft:purify-air:0:1"
+      }
+    ]
+  },
+  "vitner-wind-craft:fog:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3
+    ],
+    "sourceId": "vitner-wind-craft:fog:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 300,
+        "optionId": "vitner-wind-craft:fog:2:0"
+      }
+    ]
+  },
+  "vitner-wind-craft:control-wind:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3
+    ],
+    "sourceId": "vitner-wind-craft:control-wind:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-wind-craft:control-wind:3:0"
+      }
+    ]
+  },
   "vitner-wind-craft:air-armor:4#air-armor": {
     "id": "air-armor",
     "icon": "icons/svg/shield.svg",
@@ -420,6 +784,25 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "vitner-wind-craft:air-armor:4:4"
       }
     ]
+  },
+  "vitner-wind-craft:storm:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-wind-craft:storm:8",
+    "parameters": []
   },
   "vitner-perceiving:find-home:0#find-home": {
     "id": "find-home",
@@ -1009,6 +1392,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-power-of-vision:tracking:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "vitner-power-of-vision:tracking:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-power-of-vision:tracking:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 43200,
+        "optionId": "vitner-power-of-vision:tracking:0:1"
+      }
+    ]
+  },
+  "vitner-power-of-vision:scanning:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "9 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "vitner-power-of-vision:scanning:1",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 15,
+        "optionId": "vitner-power-of-vision:scanning:1:1"
+      }
+    ]
+  },
   "vitner-power-of-vision:espionage:4#espionage": {
     "id": "espionage",
     "icon": "icons/svg/aura.svg",
@@ -1071,6 +1502,23 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "vitner-power-of-vision:astral-voyage:5:2"
       }
     ]
+  },
+  "vitner-witchcraft:uprooted-tree:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceId": "vitner-witchcraft:uprooted-tree:0",
+    "parameters": []
   },
   "vitner-witchcraft:curse-creature:5#effect": {
     "id": "effect",
@@ -1249,6 +1697,34 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-animal-vitner:call-on-animals:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "vitner-animal-vitner:call-on-animals:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-animal-vitner:call-on-animals:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-animal-vitner:call-on-animals:2:1"
+      }
+    ]
+  },
   "vitner-animal-vitner:control-animals:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -1288,6 +1764,88 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "vitner-animal-vitner:control-animals:4:3"
       }
     ]
+  },
+  "vitner-animal-vitner:mind-of-the-wolf:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-animal-vitner:mind-of-the-wolf:5",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-animal-vitner:mind-of-the-wolf:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-animal-vitner:mind-of-the-wolf:5:2"
+      }
+    ]
+  },
+  "vitner-animal-vitner:possess-animals:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-animal-vitner:possess-animals:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-animal-vitner:possess-animals:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-animal-vitner:possess-animals:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-animal-vitner:possess-animals:6:2"
+      }
+    ]
+  },
+  "vitner-animal-vitner:send-message:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceId": "vitner-animal-vitner:send-message:8",
+    "parameters": []
   },
   "vitner-body-vitner:grip:0#adherence": {
     "id": "adherence",
@@ -2007,6 +2565,28 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-delusion-vitner:phantom-sound:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2
+    ],
+    "sourceId": "vitner-delusion-vitner:phantom-sound:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-delusion-vitner:phantom-sound:1:0"
+      }
+    ]
+  },
   "vitner-delusion-vitner:traceless:4#trace": {
     "id": "trace",
     "icon": "icons/svg/aura.svg",
@@ -2064,6 +2644,220 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 86400,
         "optionId": "vitner-delusion-vitner:ghost-voice:5:2"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:landscape-illusion:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2
+    ],
+    "sourceId": "vitner-delusion-vitner:landscape-illusion:8",
+    "parameters": [
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:landscape-illusion:8:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-delusion-vitner:landscape-illusion:8:4"
+      },
+      {
+        "index": 5,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-delusion-vitner:landscape-illusion:8:5"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:detect-composition:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-vitner-of-objects:detect-composition:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-of-objects:detect-composition:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:detect-composition:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:detect-composition:0:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:waterproof:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-vitner-of-objects:waterproof:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:waterproof:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-of-objects:waterproof:1:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-vitner-of-objects:waterproof:1:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:bind:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      4
+    ],
+    "sourceId": "vitner-vitner-of-objects:bind:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:bind:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:bind:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:bind:2:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-of-objects:bind:2:3"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:alarm-object:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 heures",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "vitner-vitner-of-objects:alarm-object:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:alarm-object:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-of-objects:alarm-object:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-vitner-of-objects:alarm-object:4:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:enlarge-reduce-object:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "4 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:enlarge-reduce-object:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:enlarge-reduce-object:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:enlarge-reduce-object:6:2"
       }
     ]
   },
@@ -3072,6 +3866,63 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4:0"
+      }
+    ]
+  },
+  "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:0"
+      }
+    ]
+  },
+  "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6:0"
+      }
+    ]
+  },
   "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -3090,6 +3941,27 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-ealdtradition-magh-s-gift:journey-wind:0:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1:0"
       }
     ]
   },
@@ -3115,6 +3987,48 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-magh-s-gift:hero-s-song:4:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6:0"
+      }
+    ]
+  },
   "holy-ealdtradition-magh-s-gift:harvest-year:8#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -3128,6 +4042,51 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "sourceId": "holy-ealdtradition-magh-s-gift:harvest-year:8",
     "parameters": []
+  },
+  "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:animal-speech:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:animal-speech:1:0"
+      }
+    ]
   },
   "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf": {
     "id": "aspect-du-cerf",
@@ -3196,6 +4155,27 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3:0"
+      }
+    ]
+  },
   "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon": {
     "id": "aspect-du-saumon",
     "icon": "icons/svg/aura.svg",
@@ -3253,6 +4233,75 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-ealdtradition-gift-of-thanja:salmonshape:4:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:0"
       }
     ]
   },
@@ -3348,6 +4397,33 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:1"
+      }
+    ]
+  },
   "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants": {
     "id": "tueur-geants",
     "icon": "icons/svg/aura.svg",
@@ -3366,6 +4442,33 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:1"
+      }
+    ]
+  },
   "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
     "id": "tueur-dragons",
     "icon": "icons/svg/aura.svg",
@@ -3381,6 +4484,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 5,
         "optionId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6:0"
+      }
+    ]
+  },
+  "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8:1"
       }
     ]
   },
@@ -4456,6 +5586,37 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:thornwall:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:thornwall:3:1"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -4474,6 +5635,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2:0"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:1"
       }
     ]
   },
@@ -4718,6 +5903,27 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:mastomant-s-fur:4:0"
+      }
+    ]
+  },
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
     "id": "endurance-du-geant",
     "icon": "icons/svg/aura.svg",
@@ -4754,6 +5960,29 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:1"
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3
+    ],
+    "sourceId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:0"
       }
     ]
   },
@@ -6050,6 +7279,33 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "parameters": []
   },
+  "holy-toikalokke-lynx-power:tree-walk:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-toikalokke-lynx-power:tree-walk:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:tree-walk:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 10800,
+        "optionId": "holy-toikalokke-lynx-power:tree-walk:1:1"
+      }
+    ]
+  },
   "holy-toikalokke-lynx-power:orientation:0#orientation": {
     "id": "orientation",
     "icon": "icons/svg/aura.svg",
@@ -6160,6 +7416,60 @@ export const TRANSFORMATION_TEMPLATES = {
         "skillOnly": true,
         "labelKey": "TRUDVANG.Transformation.AimBonus",
         "optionId": "holy-toikalokke-lynx-power:aim:5:1"
+      }
+    ]
+  },
+  "holy-toikalokke-lynx-power:forest-path:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-toikalokke-lynx-power:forest-path:8",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:forest-path:8:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 10800,
+        "optionId": "holy-toikalokke-lynx-power:forest-path:8:2"
+      }
+    ]
+  },
+  "holy-toikalokke-lynx-power:pathfinder:9#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-toikalokke-lynx-power:pathfinder:9",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:pathfinder:9:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 10800,
+        "optionId": "holy-toikalokke-lynx-power:pathfinder:9:2"
       }
     ]
   },
@@ -6840,6 +8150,36 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 10800,
         "optionId": "holy-toikalokke-animal-mind:animal-shape:6:1"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:control-fire:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-master-of-elements:control-fire:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 50,
+        "optionId": "holy-toikalokke-master-of-elements:control-fire:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-master-of-elements:control-fire:1:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:control-fire:1:2"
       }
     ]
   },
@@ -8242,8 +9582,14 @@ export const TRANSFORMATION_TEMPLATES = {
   }
 };
 export const TRANSFORMATIONS_BY_SOURCE = {
+  "vitner-vitner-craft:vitner-pouch:1": [
+    "vitner-vitner-craft:vitner-pouch:1#effect"
+  ],
   "vitner-vitner-craft:enchant-being:4": [
     "vitner-vitner-craft:enchant-being:4#effect"
+  ],
+  "vitner-vitner-craft:wall-of-vitner:8": [
+    "vitner-vitner-craft:wall-of-vitner:8#effect"
   ],
   "vitner-dimvitner:speak-to-undead:3": [
     "vitner-dimvitner:speak-to-undead:3#effect"
@@ -8253,6 +9599,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-dimvitner:control-undead:7": [
     "vitner-dimvitner:control-undead:7#effect"
+  ],
+  "vitner-soil-craft:quagmire:3": [
+    "vitner-soil-craft:quagmire:3#effect"
   ],
   "vitner-soil-craft:soil-walk:5": [
     "vitner-soil-craft:soil-walk:5#soil-walk"
@@ -8271,8 +9620,38 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-water-craft:breathe:2": [
     "vitner-water-craft:breathe:2#respiration"
   ],
+  "vitner-water-craft:solid-water:5": [
+    "vitner-water-craft:solid-water:5#effect"
+  ],
+  "vitner-water-craft:control-precipitation:6": [
+    "vitner-water-craft:control-precipitation:6#effect"
+  ],
+  "vitner-flame-craft:heat-water:0": [
+    "vitner-flame-craft:heat-water:0#effect"
+  ],
+  "vitner-flame-craft:spark:1": [
+    "vitner-flame-craft:spark:1#effect"
+  ],
+  "vitner-flame-craft:warmth:6": [
+    "vitner-flame-craft:warmth:6#effect"
+  ],
+  "vitner-flame-craft:flame-control:5": [
+    "vitner-flame-craft:flame-control:5#effect"
+  ],
+  "vitner-wind-craft:purify-air:0": [
+    "vitner-wind-craft:purify-air:0#effect"
+  ],
+  "vitner-wind-craft:fog:2": [
+    "vitner-wind-craft:fog:2#effect"
+  ],
+  "vitner-wind-craft:control-wind:3": [
+    "vitner-wind-craft:control-wind:3#effect"
+  ],
   "vitner-wind-craft:air-armor:4": [
     "vitner-wind-craft:air-armor:4#air-armor"
+  ],
+  "vitner-wind-craft:storm:8": [
+    "vitner-wind-craft:storm:8#effect"
   ],
   "vitner-perceiving:find-home:0": [
     "vitner-perceiving:find-home:0#find-home"
@@ -8331,11 +9710,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-power-of-thought:possess-creature:10": [
     "vitner-power-of-thought:possess-creature:10#effect"
   ],
+  "vitner-power-of-vision:tracking:0": [
+    "vitner-power-of-vision:tracking:0#effect"
+  ],
+  "vitner-power-of-vision:scanning:1": [
+    "vitner-power-of-vision:scanning:1#effect"
+  ],
   "vitner-power-of-vision:espionage:4": [
     "vitner-power-of-vision:espionage:4#espionage"
   ],
   "vitner-power-of-vision:astral-voyage:5": [
     "vitner-power-of-vision:astral-voyage:5#astral-voyage"
+  ],
+  "vitner-witchcraft:uprooted-tree:0": [
+    "vitner-witchcraft:uprooted-tree:0#effect"
   ],
   "vitner-witchcraft:curse-creature:5": [
     "vitner-witchcraft:curse-creature:5#effect"
@@ -8347,8 +9735,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-animal-vitner:speak-to-animals:1": [
     "vitner-animal-vitner:speak-to-animals:1#lien"
   ],
+  "vitner-animal-vitner:call-on-animals:2": [
+    "vitner-animal-vitner:call-on-animals:2#effect"
+  ],
   "vitner-animal-vitner:control-animals:4": [
     "vitner-animal-vitner:control-animals:4#effect"
+  ],
+  "vitner-animal-vitner:mind-of-the-wolf:5": [
+    "vitner-animal-vitner:mind-of-the-wolf:5#effect"
+  ],
+  "vitner-animal-vitner:possess-animals:6": [
+    "vitner-animal-vitner:possess-animals:6#effect"
+  ],
+  "vitner-animal-vitner:send-message:8": [
+    "vitner-animal-vitner:send-message:8#effect"
   ],
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"
@@ -8383,11 +9783,32 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-delusion-vitner:increase-sounds:3#voix",
     "vitner-delusion-vitner:increase-sounds:3#bruits"
   ],
+  "vitner-delusion-vitner:phantom-sound:1": [
+    "vitner-delusion-vitner:phantom-sound:1#effect"
+  ],
   "vitner-delusion-vitner:traceless:4": [
     "vitner-delusion-vitner:traceless:4#trace"
   ],
   "vitner-delusion-vitner:ghost-voice:5": [
     "vitner-delusion-vitner:ghost-voice:5#voix"
+  ],
+  "vitner-delusion-vitner:landscape-illusion:8": [
+    "vitner-delusion-vitner:landscape-illusion:8#effect"
+  ],
+  "vitner-vitner-of-objects:detect-composition:0": [
+    "vitner-vitner-of-objects:detect-composition:0#effect"
+  ],
+  "vitner-vitner-of-objects:waterproof:1": [
+    "vitner-vitner-of-objects:waterproof:1#effect"
+  ],
+  "vitner-vitner-of-objects:bind:2": [
+    "vitner-vitner-of-objects:bind:2#effect"
+  ],
+  "vitner-vitner-of-objects:alarm-object:4": [
+    "vitner-vitner-of-objects:alarm-object:4#effect"
+  ],
+  "vitner-vitner-of-objects:enlarge-reduce-object:6": [
+    "vitner-vitner-of-objects:enlarge-reduce-object:6#effect"
   ],
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
@@ -8486,20 +9907,56 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken-allies"
   ],
+  "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": [
+    "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect"
+  ],
+  "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7": [
+    "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7#effect"
+  ],
+  "holy-gerbanis-wisdom-of-windinna:swine-rush:6": [
+    "holy-gerbanis-wisdom-of-windinna:swine-rush:6#effect"
+  ],
   "holy-ealdtradition-magh-s-gift:journey-wind:0": [
     "holy-ealdtradition-magh-s-gift:journey-wind:0#effect"
+  ],
+  "holy-ealdtradition-magh-s-gift:rider-s-melody:1": [
+    "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect"
   ],
   "holy-ealdtradition-magh-s-gift:elf-summer:3": [
     "holy-ealdtradition-magh-s-gift:elf-summer:3#effect"
   ],
+  "holy-ealdtradition-magh-s-gift:hero-s-song:4": [
+    "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect"
+  ],
+  "holy-ealdtradition-magh-s-gift:king-s-anthem:6": [
+    "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect"
+  ],
   "holy-ealdtradition-magh-s-gift:harvest-year:8": [
     "holy-ealdtradition-magh-s-gift:harvest-year:8#effect"
+  ],
+  "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0": [
+    "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect"
+  ],
+  "holy-ealdtradition-gift-of-thanja:animal-speech:1": [
+    "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect"
   ],
   "holy-ealdtradition-gift-of-thanja:stagshape:2": [
     "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf"
   ],
+  "holy-ealdtradition-gift-of-thanja:bestial-tongue:3": [
+    "holy-ealdtradition-gift-of-thanja:bestial-tongue:3#effect"
+  ],
   "holy-ealdtradition-gift-of-thanja:salmonshape:4": [
     "holy-ealdtradition-gift-of-thanja:salmonshape:4#aspect-du-saumon"
+  ],
+  "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5": [
+    "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5#effect"
+  ],
+  "holy-ealdtradition-gift-of-thanja:forest-denizen:7": [
+    "holy-ealdtradition-gift-of-thanja:forest-denizen:7#effect"
+  ],
+  "holy-ealdtradition-gift-of-thanja:dragon-tongue:6": [
+    "holy-ealdtradition-gift-of-thanja:dragon-tongue:6#effect"
   ],
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": [
     "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau"
@@ -8507,11 +9964,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-heritage-of-majne:trollslayer:1": [
     "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls"
   ],
+  "holy-ealdtradition-heritage-of-majne:king-s-militia:3": [
+    "holy-ealdtradition-heritage-of-majne:king-s-militia:3#effect"
+  ],
   "holy-ealdtradition-heritage-of-majne:giantslayer:2": [
     "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants"
   ],
+  "holy-ealdtradition-heritage-of-majne:king-s-guard:5": [
+    "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect"
+  ],
   "holy-ealdtradition-heritage-of-majne:dragonslayer:6": [
     "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons"
+  ],
+  "holy-ealdtradition-heritage-of-majne:the-nine-kings:8": [
+    "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect"
   ],
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": [
     "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal"
@@ -8584,8 +10050,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-the-shield:sheltering:1": [
     "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect"
   ],
+  "holy-tenetnid-tablet-of-the-shield:thornwall:3": [
+    "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect"
+  ],
   "holy-tenetnid-tablet-of-the-shield:storm-protection:2": [
     "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5": [
+    "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect"
   ],
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": [
     "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce"
@@ -8605,8 +10077,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": [
     "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier"
   ],
+  "holy-haminges-power-of-the-beast:mastomant-s-fur:4": [
+    "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect"
+  ],
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": [
     "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant"
+  ],
+  "holy-haminges-power-of-the-beast:master-of-wolfkin:7": [
+    "holy-haminges-power-of-the-beast:master-of-wolfkin:7#effect"
   ],
   "holy-haminges-power-of-the-beast:mastomantshape:8": [
     "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant"
@@ -8688,6 +10166,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-thuuldom-hammer-fists:hammer-fists:0": [
     "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier"
   ],
+  "holy-toikalokke-lynx-power:tree-walk:1": [
+    "holy-toikalokke-lynx-power:tree-walk:1#effect"
+  ],
   "holy-toikalokke-lynx-power:orientation:0": [
     "holy-toikalokke-lynx-power:orientation:0#orientation"
   ],
@@ -8696,6 +10177,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-lynx-power:aim:5": [
     "holy-toikalokke-lynx-power:aim:5#visee"
+  ],
+  "holy-toikalokke-lynx-power:forest-path:8": [
+    "holy-toikalokke-lynx-power:forest-path:8#effect"
+  ],
+  "holy-toikalokke-lynx-power:pathfinder:9": [
+    "holy-toikalokke-lynx-power:pathfinder:9#effect"
   ],
   "holy-toikalokke-animal-mind:animal-tracks:1": [
     "holy-toikalokke-animal-mind:animal-tracks:1#traces"
@@ -8722,6 +10209,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-lievre",
     "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-corbeau",
     "holy-toikalokke-animal-mind:animal-shape:6#aspect-animal-cerf"
+  ],
+  "holy-toikalokke-master-of-elements:control-fire:1": [
+    "holy-toikalokke-master-of-elements:control-fire:1#effect"
   ],
   "holy-toikalokke-master-of-elements:gift-of-water:3": [
     "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau"

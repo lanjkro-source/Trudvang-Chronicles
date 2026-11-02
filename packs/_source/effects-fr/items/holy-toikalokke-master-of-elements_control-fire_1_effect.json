@@ -1,0 +1,45 @@
+{
+  "_id": "Vm06anOjPkQlRmSn",
+  "_key": "!items!Vm06anOjPkQlRmSn",
+  "name": "Contrôle du feu",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+    "description": "L’ihana développe un certain contrôle des flammes. À chaque tour de jeu, il peut déplacer 1 mètre cube de feu sur une distance de 2 mètres. L’elfe ne peut pas directement créer ou éteindre des flammes de cette façon (en augmentant ou en réduisant sa taille), mais il peut mettre le feu à d’autres objets en faisant passer les flammes à proximité, ou bien étouffer un feu en le déplaçant jusqu’à un endroit où il ne peut pas persister.",
+    "summary": "Contrôle du feu",
+    "source": {
+      "book": "Livre des règles",
+      "page": 297
+    }
+  },
+  "effects": [
+    {
+      "_id": "uUkJMOjPkQlRmSnT",
+      "_key": "!items.effects!Vm06anOjPkQlRmSn.uUkJMOjPkQlRmSnT",
+      "name": "Contrôle du feu",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana développe un certain contrôle des flammes. À chaque tour de jeu, il peut déplacer 1 mètre cube de feu sur une distance de 2 mètres. L’elfe ne peut pas directement créer ou éteindre des flammes de cette façon (en augmentant ou en réduisant sa taille), mais il peut mettre le feu à d’autres objets en faisant passer les flammes à proximité, ou bien étouffer un feu en le déplaçant jusqu’à un endroit où il ne peut pas persister.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:control-fire:1#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:control-fire:1",
+            "summary": "Contrôle du feu",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

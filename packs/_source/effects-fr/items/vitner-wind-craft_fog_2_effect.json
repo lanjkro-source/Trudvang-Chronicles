@@ -1,0 +1,45 @@
+{
+  "_id": "giuwcOfLgMhNiOjP",
+  "_key": "!items!giuwcOfLgMhNiOjP",
+  "name": "Brouillard",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-wind-craft:fog:2#effect",
+    "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
+    "summary": "Brouillard",
+    "source": {
+      "book": "Livre des règles",
+      "page": 170
+    }
+  },
+  "effects": [
+    {
+      "_id": "byChrUlRmSnToUpV",
+      "_key": "!items.effects!giuwcOfLgMhNiOjP.byChrUlRmSnToUpV",
+      "name": "Brouillard",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-wind-craft:fog:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-wind-craft:fog:2#effect",
+            "sourceId": "vitner-wind-craft:fog:2",
+            "summary": "Brouillard",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

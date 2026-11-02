@@ -1,0 +1,45 @@
+{
+  "_id": "J6YzxwXsYtZu0v1w",
+  "_key": "!items!J6YzxwXsYtZu0v1w",
+  "name": "Son illusoire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:phantom-sound:1#effect",
+    "description": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit.",
+    "summary": "Son illusoire",
+    "source": {
+      "book": "Livre des règles",
+      "page": 198
+    }
+  },
+  "effects": [
+    {
+      "_id": "UkXbYbHcIdJeKfLg",
+      "_key": "!items.effects!J6YzxwXsYtZu0v1w.UkXbYbHcIdJeKfLg",
+      "name": "Son illusoire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:phantom-sound:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:phantom-sound:1#effect",
+            "sourceId": "vitner-delusion-vitner:phantom-sound:1",
+            "summary": "Son illusoire",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "LfV83LfLgMhNiOjP",
+  "_key": "!items!LfV83LfLgMhNiOjP",
+  "name": "Animal Speech",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+    "description": "The Bruid is able to speak with ordinary animals for the duration of the ability. He can also understand anything that the animals are saying. However, this does not mean that the animals will immediately become comfortable or friendly toward the dimwalker, or even wish to answer his questions, but they will miraculously be able to comprehend his words. How much they will understand depends on how intelligent the animals are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the animals have no context or understanding of. By speaking with animals, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that animals often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning.",
+    "summary": "Animal Speech",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "iyPz30rXsYtZu0v1",
+      "_key": "!items.effects!LfV83LfLgMhNiOjP.iyPz30rXsYtZu0v1",
+      "name": "Animal Speech",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid is able to speak with ordinary animals for the duration of the ability. He can also understand anything that the animals are saying. However, this does not mean that the animals will immediately become comfortable or friendly toward the dimwalker, or even wish to answer his questions, but they will miraculously be able to comprehend his words. How much they will understand depends on how intelligent the animals are (which is up to the game master to decide), and there are many things that the dimwalker may speak of or ask that the animals have no context or understanding of. By speaking with animals, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that animals often act with manners that humans would consider childish, selfish, and sometimes quite greedy and cunning.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:animal-speech:1",
+            "summary": "Animal Speech",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

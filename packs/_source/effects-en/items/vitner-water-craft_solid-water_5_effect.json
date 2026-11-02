@@ -1,0 +1,45 @@
+{
+  "_id": "H8KdOKcIdJeKfLgM",
+  "_key": "!items!H8KdOKcIdJeKfLgM",
+  "name": "Solid Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:solid-water:5#effect",
+    "description": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet. The enchanted person can then walk on water as if it were solid ground and move up to 5 meters per round in this manner. The affected area has a diameter of 1 meter and can hold up to 70 kg (only a creature of normal size will fit). The affected area moves constantly so it is always located beneath the individual the spell was woven over, who can direct the area by simply turning the way they want to go and walking on.",
+    "summary": "Solid Water",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "CVNURXoUpVqWrXsY",
+      "_key": "!items.effects!H8KdOKcIdJeKfLgM.CVNURXoUpVqWrXsY",
+      "name": "Solid Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet. The enchanted person can then walk on water as if it were solid ground and move up to 5 meters per round in this manner. The affected area has a diameter of 1 meter and can hold up to 70 kg (only a creature of normal size will fit). The affected area moves constantly so it is always located beneath the individual the spell was woven over, who can direct the area by simply turning the way they want to go and walking on.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:solid-water:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:solid-water:5#effect",
+            "sourceId": "vitner-water-craft:solid-water:5",
+            "summary": "Solid Water",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

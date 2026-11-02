@@ -1,0 +1,45 @@
+{
+  "_id": "WnhKL7B7C8D9EaGb",
+  "_key": "!items!WnhKL7B7C8D9EaGb",
+  "name": "Rider's Melody",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
+    "summary": "Rider's Melody",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 183
+    }
+  },
+  "effects": [
+    {
+      "_id": "pDmz0jPkQlRmSnTo",
+      "_key": "!items.effects!WnhKL7B7C8D9EaGb.pDmz0jPkQlRmSnTo",
+      "name": "Rider's Melody",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
+            "summary": "Rider's Melody",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "PKnpHLeKfLgMhNiO",
+  "_key": "!items!PKnpHLeKfLgMhNiO",
+  "name": "Scanning",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-power-of-vision:scanning:1#effect",
+    "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine.",
+    "summary": "Scanning",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "WfGqWdHcIdJeKfLg",
+      "_key": "!items.effects!PKnpHLeKfLgMhNiO.WfGqWdHcIdJeKfLg",
+      "name": "Scanning",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-power-of-vision:scanning:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-power-of-vision:scanning:1#effect",
+            "sourceId": "vitner-power-of-vision:scanning:1",
+            "summary": "Scanning",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

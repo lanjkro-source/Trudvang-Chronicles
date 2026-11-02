@@ -1,0 +1,45 @@
+{
+  "_id": "LfV83LfLgMhNiOjP",
+  "_key": "!items!LfV83LfLgMhNiOjP",
+  "name": "Langue animale",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+    "description": "Le bruide développe la faculté de parler aux animaux ordinaires jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’ils disent. Cela dit, les animaux ne se montrent pas forcément tout de suite à l’aise ou amicaux envers l’arpenteur des brumes, ni même désireux de répondre à ses questions, mais ils comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les animaux. En parlant avec les animaux, le bruide peut également négocier avec eux, les intimider, les tromper ou les convaincre. Gardez à l’esprit que les animaux se comportent souvent d’une façon que les humains considèrent comme puérile, égoïste et parfois avide et sournoise.",
+    "summary": "Langue animale",
+    "source": {
+      "book": "Livre des règles",
+      "page": 234
+    }
+  },
+  "effects": [
+    {
+      "_id": "iyPz30rXsYtZu0v1",
+      "_key": "!items.effects!LfV83LfLgMhNiOjP.iyPz30rXsYtZu0v1",
+      "name": "Langue animale",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide développe la faculté de parler aux animaux ordinaires jusqu’à expiration de ce pouvoir. Il peut également comprendre tout ce qu’ils disent. Cela dit, les animaux ne se montrent pas forcément tout de suite à l’aise ou amicaux envers l’arpenteur des brumes, ni même désireux de répondre à ses questions, mais ils comprennent miraculeusement ses propos. Leur capacité à les interpréter correctement dépend de leur intelligence (que le maître de jeu pourra estimer) et il y a beaucoup de choses que l’arpenteur des brumes pourrait dire ou demander qui n’auront aucun sens pour les animaux. En parlant avec les animaux, le bruide peut également négocier avec eux, les intimider, les tromper ou les convaincre. Gardez à l’esprit que les animaux se comportent souvent d’une façon que les humains considèrent comme puérile, égoïste et parfois avide et sournoise.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:animal-speech:1#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:animal-speech:1",
+            "summary": "Langue animale",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "wtNnkkNiOjPkQlRm",
+  "_key": "!items!wtNnkkNiOjPkQlRm",
+  "name": "Landscape Illusion",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:landscape-illusion:8#effect",
+    "description": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape. The sphere has a radius of up to 300 meters around the enchanter and can depict things like a great hill, a forest, or even a city (the enchanter chooses the size of the illusion). It might also be an illusion of nothing at all, used to mask whatever landscape is really there. The enchanter cannot create an illusion of movement, so the illusion must depict something that remains static. In order to recognize from a distance that the landscape is an enormous illusion, the observer must succeed on a Skill roll for the Shadow Arts skill, modified according to the distance between the observer and the illusion. These<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.</td></tr></tbody></table>modifiers are outlined in the table below. The observer gets to make a new Skill roll for each new distance range they reach when approaching the illusion. LANDSCAPE ILLUSION MODIFIERS Distance Modifier &lt;50 Illusion is discovered 50-100 m +5 101-200 m +2 201-400 m ±0 401-600 m -2 601-1,000 m -5 &gt; 1,000 m -10 The illusion remains in the location where it was woven until the spell expires, even if the enchanter moves away. If an observer ventures into the illusion, it disappears completely from their field of vision, and they see the area as it really appears, though other observers who are outside the enchanted realm still see the illusion.",
+    "summary": "Landscape Illusion",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "lcOKLYpVqWrXsYtZ",
+      "_key": "!items.effects!wtNnkkNiOjPkQlRm.lcOKLYpVqWrXsYtZ",
+      "name": "Landscape Illusion",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape. The sphere has a radius of up to 300 meters around the enchanter and can depict things like a great hill, a forest, or even a city (the enchanter chooses the size of the illusion). It might also be an illusion of nothing at all, used to mask whatever landscape is really there. The enchanter cannot create an illusion of movement, so the illusion must depict something that remains static. In order to recognize from a distance that the landscape is an enormous illusion, the observer must succeed on a Skill roll for the Shadow Arts skill, modified according to the distance between the observer and the illusion. These<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.</td></tr></tbody></table>modifiers are outlined in the table below. The observer gets to make a new Skill roll for each new distance range they reach when approaching the illusion. LANDSCAPE ILLUSION MODIFIERS Distance Modifier &lt;50 Illusion is discovered 50-100 m +5 101-200 m +2 201-400 m ±0 401-600 m -2 601-1,000 m -5 &gt; 1,000 m -10 The illusion remains in the location where it was woven until the spell expires, even if the enchanter moves away. If an observer ventures into the illusion, it disappears completely from their field of vision, and they see the area as it really appears, though other observers who are outside the enchanted realm still see the illusion.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:landscape-illusion:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:landscape-illusion:8#effect",
+            "sourceId": "vitner-delusion-vitner:landscape-illusion:8",
+            "summary": "Landscape Illusion",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

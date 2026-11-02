@@ -1,0 +1,45 @@
+{
+  "_id": "QCjWRUpVqWrXsYtZ",
+  "_key": "!items!QCjWRUpVqWrXsYtZ",
+  "name": "Impuissance des démons",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+    "description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire. Pendant les 10 tours de jeu suivants, il obtient la faculté d’arracher une capacité à un démon simplement en le touchant à l’aide de ses mains luisantes (ce qui exige de réussir une attaque à mains nues). Si le prêtre parvient à voler l’un de ses pouvoirs au démon, ce dernier ne peut plus l’utiliser jusqu’à expiration de ce pouvoir. Un prêtre ne peut voler qu’une seule capacité à un démon. Si le prêtre dépense un point de raud quand il parvient à arracher une capacité à un démon, ce dernier la perd de façon définitive.",
+    "summary": "Impuissance des démons",
+    "source": {
+      "book": "Livre des règles",
+      "page": 258
+    }
+  },
+  "effects": [
+    {
+      "_id": "9CWgtQjPkQlRmSnT",
+      "_key": "!items.effects!QCjWRUpVqWrXsYtZ.9CWgtQjPkQlRmSnT",
+      "name": "Impuissance des démons",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire. Pendant les 10 tours de jeu suivants, il obtient la faculté d’arracher une capacité à un démon simplement en le touchant à l’aide de ses mains luisantes (ce qui exige de réussir une attaque à mains nues). Si le prêtre parvient à voler l’un de ses pouvoirs au démon, ce dernier ne peut plus l’utiliser jusqu’à expiration de ce pouvoir. Un prêtre ne peut voler qu’une seule capacité à un démon. Si le prêtre dépense un point de raud quand il parvient à arracher une capacité à un démon, ce dernier la perd de façon définitive.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+            "summary": "Impuissance des démons",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

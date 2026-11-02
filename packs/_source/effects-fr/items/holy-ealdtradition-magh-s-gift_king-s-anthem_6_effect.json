@@ -1,0 +1,45 @@
+{
+  "_id": "znLVosWrXsYtZu0v",
+  "_key": "!items!znLVosWrXsYtZu0v",
+  "name": "Hymne royal",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+    "summary": "Hymne royal",
+    "source": {
+      "book": "Livre des règles",
+      "page": 234
+    }
+  },
+  "effects": [
+    {
+      "_id": "GutoloRmSnToUpVq",
+      "_key": "!items.effects!znLVosWrXsYtZu0v.GutoloRmSnToUpVq",
+      "name": "Hymne royal",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
+            "sourceId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+            "summary": "Hymne royal",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

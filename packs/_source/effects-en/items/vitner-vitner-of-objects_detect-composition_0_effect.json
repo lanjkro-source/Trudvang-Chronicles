@@ -1,0 +1,45 @@
+{
+  "_id": "mZHgtWnToUpVqWrX",
+  "_key": "!items!mZHgtWnToUpVqWrX",
+  "name": "Detect Composition",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:detect-composition:0#effect",
+    "description": "The enchanter can identify all nonorganic materials, such as metals and gemstones. An enchanter who finds an object, weaves this spell, and touches the object will immediately know what substances it is composed of and the quantities of each substance. They might even discover how an object is constructed. Although the enchanter cannot see straight through the object, they might discover that inside the object is another object altogether composed of metal, that inside the object is a hollow cavity created to contain something else, and so on. The enchanter is unable to evaluate the object’s material unless they have an idea of how much it is worth. The spell does not allow the enchanter to discover magical characteristics of the object.",
+    "summary": "Detect Composition",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "97TL58z5A6B7C8D9",
+      "_key": "!items.effects!mZHgtWnToUpVqWrX.97TL58z5A6B7C8D9",
+      "name": "Detect Composition",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter can identify all nonorganic materials, such as metals and gemstones. An enchanter who finds an object, weaves this spell, and touches the object will immediately know what substances it is composed of and the quantities of each substance. They might even discover how an object is constructed. Although the enchanter cannot see straight through the object, they might discover that inside the object is another object altogether composed of metal, that inside the object is a hollow cavity created to contain something else, and so on. The enchanter is unable to evaluate the object’s material unless they have an idea of how much it is worth. The spell does not allow the enchanter to discover magical characteristics of the object.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:detect-composition:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:detect-composition:0#effect",
+            "sourceId": "vitner-vitner-of-objects:detect-composition:0",
+            "summary": "Detect Composition",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

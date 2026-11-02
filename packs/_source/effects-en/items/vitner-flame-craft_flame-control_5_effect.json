@@ -1,0 +1,45 @@
+{
+  "_id": "lRnc5D8D9EaGbHcI",
+  "_key": "!items!lRnc5D8D9EaGbHcI",
+  "name": "Flame Control",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:flame-control:5#effect",
+    "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+    "summary": "Flame Control",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "oRn3IQlRmSnToUpV",
+      "_key": "!items.effects!lRnc5D8D9EaGbHcI.oRn3IQlRmSnToUpV",
+      "name": "Flame Control",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:flame-control:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:flame-control:5#effect",
+            "sourceId": "vitner-flame-craft:flame-control:5",
+            "summary": "Flame Control",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

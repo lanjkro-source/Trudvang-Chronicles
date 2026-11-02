@@ -1,0 +1,45 @@
+{
+  "_id": "rBZnkMgMhNiOjPkQ",
+  "_key": "!items!rBZnkMgMhNiOjPkQ",
+  "name": "Behind Tree and Pine",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+    "description": "The Bruid alters their appearance to blend into the surrounding environment. They must remain completely still or the effect breaks. Anyone searching for the Bruid must succeed on a Shadow Arts Skill roll with a -3 SV penalty to detect them.",
+    "summary": "Behind Tree and Pine",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "epaUaZsYtZu0v1w2",
+      "_key": "!items.effects!rBZnkMgMhNiOjPkQ.epaUaZsYtZu0v1w2",
+      "name": "Behind Tree and Pine",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid alters their appearance to blend into the surrounding environment. They must remain completely still or the effect breaks. Anyone searching for the Bruid must succeed on a Shadow Arts Skill roll with a -3 SV penalty to detect them.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0#effect",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+            "summary": "Behind Tree and Pine",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

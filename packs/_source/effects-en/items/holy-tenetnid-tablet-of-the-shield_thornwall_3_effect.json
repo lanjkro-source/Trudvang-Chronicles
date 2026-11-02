@@ -1,0 +1,45 @@
+{
+  "_id": "jjehz4y4z5A6B7C8",
+  "_key": "!items!jjehz4y4z5A6B7C8",
+  "name": "Thornwall",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect",
+    "description": "The one praying invokes the force of the black oak. Within the range, thorny branches spring from the ground that fill a space of 1d10 + 10 m³, which the dimwalker may then shape to their own satisfaction. For example, if a priest has 20 m³ at their disposal, they can shape the branches to be 20 m long x 1 m high x 1 m wide, or 10 m long x 2 m high x 1 m wide, or other dimensions. It takes 1 action round for the branches to grow to fill a space of 5 m³, meaning that branches filling 20 m³ of space would take 4 rounds. Attempting to pass through these thorny branches without cutting them down deals 1d5 points of damage for every cubic meter passed through, and requires 2 action rounds of movement per meter. Each cubic meter has a number of thorny branches equivalent to 10 Body Points, should one wish to hack through in order to push through the wall without taking any damage.",
+    "summary": "Thornwall",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "On3TU9B7C8D9EaGb",
+      "_key": "!items.effects!jjehz4y4z5A6B7C8.On3TU9B7C8D9EaGb",
+      "name": "Thornwall",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The one praying invokes the force of the black oak. Within the range, thorny branches spring from the ground that fill a space of 1d10 + 10 m³, which the dimwalker may then shape to their own satisfaction. For example, if a priest has 20 m³ at their disposal, they can shape the branches to be 20 m long x 1 m high x 1 m wide, or 10 m long x 2 m high x 1 m wide, or other dimensions. It takes 1 action round for the branches to grow to fill a space of 5 m³, meaning that branches filling 20 m³ of space would take 4 rounds. Attempting to pass through these thorny branches without cutting them down deals 1d5 points of damage for every cubic meter passed through, and requires 2 action rounds of movement per meter. Each cubic meter has a number of thorny branches equivalent to 10 Body Points, should one wish to hack through in order to push through the wall without taking any damage.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:thornwall:3#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+            "summary": "Thornwall",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

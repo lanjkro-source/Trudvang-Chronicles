@@ -1,0 +1,45 @@
+{
+  "_id": "ylknL0sYtZu0v1w2",
+  "_key": "!items!ylknL0sYtZu0v1w2",
+  "name": "Chaleur",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:warmth:6#effect",
+    "description": "L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. <table><thead><tr><th colspan=\"2\">TEMPÉRATURE ET DÉGÂTS</th></tr><tr><th>Température</th><th>Dégâts</th></tr></thead><tbody><tr><td>50°C</td><td>1d6 + 1 PS par jour</td></tr><tr><td>60°C</td><td>1 PS par heure</td></tr><tr><td>70°C</td><td>1d6 + 1 PS par heure</td></tr><tr><td>80°C</td><td>1 PS par minute</td></tr><tr><td>90°C</td><td>1 PS par tour de jeu</td></tr><tr><td>100°C et plus</td><td>1d6 PS par tour de jeu</td></tr></tbody></table>",
+    "summary": "Chaleur",
+    "source": {
+      "book": "Livre des règles",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "R21bCTlRmSnToUpV",
+      "_key": "!items.effects!ylknL0sYtZu0v1w2.R21bCTlRmSnToUpV",
+      "name": "Chaleur",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. <table><thead><tr><th colspan=\"2\">TEMPÉRATURE ET DÉGÂTS</th></tr><tr><th>Température</th><th>Dégâts</th></tr></thead><tbody><tr><td>50°C</td><td>1d6 + 1 PS par jour</td></tr><tr><td>60°C</td><td>1 PS par heure</td></tr><tr><td>70°C</td><td>1d6 + 1 PS par heure</td></tr><tr><td>80°C</td><td>1 PS par minute</td></tr><tr><td>90°C</td><td>1 PS par tour de jeu</td></tr><tr><td>100°C et plus</td><td>1d6 PS par tour de jeu</td></tr></tbody></table>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:warmth:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:warmth:6#effect",
+            "sourceId": "vitner-flame-craft:warmth:6",
+            "summary": "Chaleur",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "s7nI0hJeKfLgMhNi",
+  "_key": "!items!s7nI0hJeKfLgMhNi",
+  "name": "Control Precipitation",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:control-precipitation:6#effect",
+    "description": "The spell can change the amount of precipitation that falls to the ground. The area that the enchanter can affect in this manner has a radius of 50 meters from the point where the enchanter wove the spell. The enchanter can increase or decrease the amount of precipitation one degree from the current amount, as outlined in the table below. In the spell’s basic version, the center of the enchanted area is a static object or location, but by adding a power level it is possible to enchant a movable object,<table><thead><tr><th colspan=\"1\">DEGREES</th></tr><tr><th>Degree Precipitation</th></tr></thead><tbody><tr><td>0 Clear blue sky</td></tr><tr><td>1 Cloudy. No precipitation</td></tr><tr><td>2 Light rain or very light</td></tr></tbody></table>which means that the affected area can then be moved. An enchanter cannot, without extra levels of power, create rain and snow from a clear blue sky. CONTROL PRECIPITATION DEGREES Degree Precipitation 0 Clear blue sky 1 Cloudy. No precipitation 2 Light rain or very light snowfall 3 Rain or light snowfall 4 Persistent rain or snowfall 5 Pouring rain or snowstorm",
+    "summary": "Control Precipitation",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "j1TqRNhNiOjPkQlR",
+      "_key": "!items.effects!s7nI0hJeKfLgMhNi.j1TqRNhNiOjPkQlR",
+      "name": "Control Precipitation",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell can change the amount of precipitation that falls to the ground. The area that the enchanter can affect in this manner has a radius of 50 meters from the point where the enchanter wove the spell. The enchanter can increase or decrease the amount of precipitation one degree from the current amount, as outlined in the table below. In the spell’s basic version, the center of the enchanted area is a static object or location, but by adding a power level it is possible to enchant a movable object,<table><thead><tr><th colspan=\"1\">DEGREES</th></tr><tr><th>Degree Precipitation</th></tr></thead><tbody><tr><td>0 Clear blue sky</td></tr><tr><td>1 Cloudy. No precipitation</td></tr><tr><td>2 Light rain or very light</td></tr></tbody></table>which means that the affected area can then be moved. An enchanter cannot, without extra levels of power, create rain and snow from a clear blue sky. CONTROL PRECIPITATION DEGREES Degree Precipitation 0 Clear blue sky 1 Cloudy. No precipitation 2 Light rain or very light snowfall 3 Rain or light snowfall 4 Persistent rain or snowfall 5 Pouring rain or snowstorm",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:control-precipitation:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:control-precipitation:6#effect",
+            "sourceId": "vitner-water-craft:control-precipitation:6",
+            "summary": "Control Precipitation",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
