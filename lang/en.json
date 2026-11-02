@@ -14664,6 +14664,15 @@
           "SourcePage": "231",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:track:6#pistage": {
+          "Name": "Lynx Tracking",
+          "Summary": "Track the chosen creature: +3.",
+          "Description": "The trail reveals an image of the creature; the bonus applies only when following it.",
+          "SourceName": "Track",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "10 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Animal Spirit — Bear",
           "Summary": "Increases Strength and Protection, and grants a claw attack without changing form.",
@@ -15164,6 +15173,8 @@
       "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
       "CraftSpecialty": "Exact name of the chosen Handicraft specialty",
       "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
+      "TrackedCreature": "Tracked creature",
+      "TrackingBonus": "Track the chosen creature: +{value}.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",

@@ -14664,6 +14664,15 @@
           "SourcePage": "287",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:track:6#pistage": {
+          "Name": "Pistage du lynx",
+          "Summary": "Pister la créature suivie : +3.",
+          "Description": "La piste révèle une image de la créature ; le bonus s’applique uniquement pour la suivre.",
+          "SourceName": "Pistage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "294",
+          "Duration": "10 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
           "Name": "Esprit de la bête — Ours",
           "Summary": "Augmente la Force et la Protection, et accorde une attaque de griffes sans changer de forme.",
@@ -15164,6 +15173,8 @@
       "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
       "CraftSpecialty": "Nom exact de la spécialité d’Artisanat choisie",
       "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
+      "TrackedCreature": "Créature suivie",
+      "TrackingBonus": "Pister la créature suivie : +{value}.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",

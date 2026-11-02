@@ -1,0 +1,45 @@
+{
+  "_id": "ik9ptYpVqWrXsYtZ",
+  "_key": "!items!ik9ptYpVqWrXsYtZ",
+  "name": "Pistage du lynx",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:track:6#pistage",
+    "description": "La piste révèle une image de la créature ; le bonus s’applique uniquement pour la suivre.",
+    "summary": "Pister la créature suivie : +3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 294
+    }
+  },
+  "effects": [
+    {
+      "_id": "DxC3EPgMhNiOjPkQ",
+      "_key": "!items.effects!ik9ptYpVqWrXsYtZ.DxC3EPgMhNiOjPkQ",
+      "name": "Pistage du lynx",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La piste révèle une image de la créature ; le bonus s’applique uniquement pour la suivre.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:track:6#pistage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:track:6#pistage",
+            "sourceId": "holy-toikalokke-lynx-power:track:6",
+            "summary": "Pister la créature suivie : +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,112);
+ assert.equal(Object.keys(sources).length,113);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -893,4 +893,13 @@ test("Dwarven Smith only applies to the chosen Handicraft specialty",async()=>{
  assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux souples")),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care",item("healing","Matériaux durs")),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
+});
+
+test("Track remembers the creature and scales its bonus without applying it to other skills",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="holy-toikalokke-lynx-power:track:6",effect={id:"e",name:"Pistage",flags:{[S]:{transformation:{key:`${id}#pistage`,sourceId:id,input:"Loup",ruleTestContext:{countsById:{[`${id}:2`]:2}}}}}};
+ const actor={effects:[effect]};
+ assert.deepEqual(conditionalSkillModifiers(actor,"wilderness"),[{label:"Pistage — Loup",value:5}]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"wilderness",null,"e"),[]);
 });

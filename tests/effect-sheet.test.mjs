@@ -1080,3 +1080,11 @@ test("Grip effect launches the owner's agility roll with its allocated climbing 
  const result=await TrudvangEffectSheet.onRollConditionalSituation.call(sheetFor(document),{preventDefault(){}},{dataset:{index:"0"}});
  assert.equal(result,"rolled");assert.deepEqual(calls,[["agility",{label:"Adhérence",bonus:7,bonusLabel:"Adhérence"}]]);
 });
+
+test("Track effect launches the tracking specialty with the frozen bonus once",async()=>{
+ const id="holy-toikalokke-lynx-power:track:6",calls=[],ability={name:"Pister"};
+ const actor={documentName:"Actor",isOwner:true,findKnowledgeItem:key=>key==="tracker"?ability:null,rollAbility:async(...args)=>{calls.push(args);return "rolled";}};
+ const document={id:"e",name:"Pistage",parent:actor,flags:{"trudvang-chronicles":{transformation:{key:`${id}#pistage`,sourceId:id,ruleTestContext:{countsById:{[`${id}:2`]:2}}}}}};
+ assert.equal(await TrudvangEffectSheet.onRollConditionalSituation.call(sheetFor(document),{preventDefault(){}},{dataset:{index:"0"}}),"rolled");
+ assert.deepEqual(calls,[[ability,{bonus:5,bonusLabel:"Pistage",excludeEffectId:"e"}]]);
+});

@@ -11,6 +11,7 @@ export function conditionalSituationBonuses(effect) {
  return (template.parameters??[]).filter(p=>p.target==="note").map(p=>({
   labelKey:p.labelKey,
   skill:p.skill ?? "",
+  ability:p.ability ?? "",
   skillChoice:p.skillChoice === true,
   skillOnly:p.skillOnly === true,
   restrictedSkill:p.restrictedSkill ?? "",
@@ -21,8 +22,8 @@ export function conditionalSituationBonuses(effect) {
 }
 
 /** Optional modifiers whose relevance must be decided by the player. */
-export function conditionalSkillModifiers(actor,skillKey="",ability=null) {
- return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).flatMap(effect =>
+export function conditionalSkillModifiers(actor,skillKey="",ability=null,excludeEffectId="") {
+ return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(effect=>!excludeEffectId||effect.id!==excludeEffectId).flatMap(effect =>
   conditionalSituationBonuses(effect).filter(row => {
    const input=String(effect.flags?.["trudvang-chronicles"]?.transformation?.input??"").trim();
    const entry=ability && actor.getCatalogEntry?.(ability.system?.catalogId);

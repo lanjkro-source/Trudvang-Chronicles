@@ -6726,6 +6726,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:track:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-lynx-power:track:6:0",

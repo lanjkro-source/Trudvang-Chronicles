@@ -1,0 +1,45 @@
+{
+  "_id": "ik9ptYpVqWrXsYtZ",
+  "_key": "!items!ik9ptYpVqWrXsYtZ",
+  "name": "Lynx Tracking",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:track:6#pistage",
+    "description": "The trail reveals an image of the creature; the bonus applies only when following it.",
+    "summary": "Track the chosen creature: +3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "DxC3EPgMhNiOjPkQ",
+      "_key": "!items.effects!ik9ptYpVqWrXsYtZ.DxC3EPgMhNiOjPkQ",
+      "name": "Lynx Tracking",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The trail reveals an image of the creature; the bonus applies only when following it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:track:6#pistage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:track:6#pistage",
+            "sourceId": "holy-toikalokke-lynx-power:track:6",
+            "summary": "Track the chosen creature: +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

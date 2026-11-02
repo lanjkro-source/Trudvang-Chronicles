@@ -12018,6 +12018,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourcePage` | 231 | 287 |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Duration` | permanente tant que les deux runes sont portées et alimentées en points de divinité | permanente tant que les deux runes sont portées et alimentées en points de divinité |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Name` | Lynx Tracking | Pistage du lynx |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Description` | The trail reveals an image of the creature; the bonus applies only when following it. | La piste révèle une image de la créature ; le bonus s’applique uniquement pour la suivre. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourceName` | Track | Pistage |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.SourcePage` | 239 | 294 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage.Duration` | 10 minutes | 10 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours`
 
 | Clé | English | Français |
@@ -12621,6 +12632,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
 | `TRUDVANG.Transformation.CraftSpecialty` | Exact name of the chosen Handicraft specialty | Nom exact de la spécialité d’Artisanat choisie |
 | `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
+| `TRUDVANG.Transformation.TrackedCreature` | Tracked creature | Créature suivie |
+| `TRUDVANG.Transformation.TrackingBonus` | Track the chosen creature: +{value}. | Pister la créature suivie : +{value}. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

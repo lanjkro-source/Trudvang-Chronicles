@@ -4331,6 +4331,43 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "parameters": []
   },
+  "holy-toikalokke-lynx-power:track:6#pistage": {
+    "id": "pistage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.TrackedCreature",
+    "sourceId": "holy-toikalokke-lynx-power:track:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-lynx-power:track:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:track:6:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "restrictedSkill": "wilderness",
+        "ability": "tracker",
+        "labelKey": "TRUDVANG.Transformation.TrackingBonus",
+        "optionId": "holy-toikalokke-lynx-power:track:6:2"
+      }
+    ]
+  },
   "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours": {
     "id": "esprit-de-la-bete-ours",
     "icon": "icons/svg/aura.svg",
@@ -6569,6 +6606,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-thuuldom-hammer-fists:hammer-fists:0": [
     "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier"
+  ],
+  "holy-toikalokke-lynx-power:track:6": [
+    "holy-toikalokke-lynx-power:track:6#pistage"
   ],
   "holy-toikalokke-animal-mind:animal-spirit:4": [
     "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",

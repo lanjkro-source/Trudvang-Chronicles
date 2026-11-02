@@ -6,6 +6,8 @@ import {isGradedEffect, isGradedState, effectDegree} from "../rules/effect-stack
 import {normalizeEffectDuration, normalizeEffectStage} from "../rules/effect-duration.mjs";
 import {EFFECT_RULE_KEYS,EFFECT_RULE_PREFIX,changesFromRules,hasProfileChanges,validProfileChange} from "../rules/effect-rule-changes.mjs";
 import {conditionalSituationBonuses} from "../rules/effect-conditional-tests.mjs";
+import {npcBookSkillRows} from "../rules/npc-summary.mjs";
+import {TRUDVANG} from "../config.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -98,7 +100,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         {async: true, secrets: this.document.isOwner}
       ), this.document);
       partContext.conditionalSituationButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
-        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly).map(({bonus,index})=>({index,label:bonus.skill?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
+        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly).map(({bonus,index})=>({index,label:bonus.skill||bonus.ability?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
       partContext.origin = this.document.origin || "";
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
@@ -321,6 +323,17 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     event.preventDefault();
     const actor=this.document.parent, bonus=conditionalSituationBonuses(this.document)[Number(target.dataset.index)];
     if(actor?.documentName!=="Actor" || !actor.isOwner || !bonus || bonus.skillOnly)return null;
+    if(bonus.ability){
+      const ability=actor.findKnowledgeItem?.(bonus.ability);
+      if(ability)return actor.rollAbility(ability,{bonus:bonus.value,bonusLabel:this.document.name,excludeEffectId:this.document.id});
+      if(actor.type==="npc" && actor.system?.skillTree?.length){
+        const row=npcBookSkillRows(actor.system.skillTree,{skills:TRUDVANG.skills,knowledgeTree:TRUDVANG.knowledgeTree,localize:key=>game.i18n.localize(key)}).find(row=>row.catalogId===bonus.ability);
+        if(row){const item={name:row.name,img:"icons/svg/book.svg",type:"ability",system:{kind:row.kind,catalogId:row.catalogId,parentSkill:row.skillKey,level:row.value,rollBonus:row.kind==="specialty"?2:1}};
+          return actor.rollAbility(item,{disciplineLevel:row.disciplineValue,skillValue:actor.getSkillValue(row.skillKey),bonus:bonus.value,bonusLabel:this.document.name,excludeEffectId:this.document.id});}
+      }
+      if(bonus.restrictedSkill)return actor.rollSkill(bonus.restrictedSkill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name,excludeEffectId:this.document.id});
+      return null;
+    }
     if(bonus.skill)return actor.rollSkill(bonus.skill,{label:this.document.name,bonus:bonus.value,bonusLabel:this.document.name});
     const {rollGenericSituation}=await import("../dice.mjs");
     return rollGenericSituation({actor,defaultLabel:this.document.name,bonusRows:[{label:this.document.name,value:bonus.value}]});
