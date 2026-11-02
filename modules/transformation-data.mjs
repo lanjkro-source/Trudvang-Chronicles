@@ -125,6 +125,36 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
+  "vitner-water-craft:breathe:2#respiration": {
+    "id": "respiration",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-water-craft:breathe:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:breathe:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-water-craft:breathe:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-water-craft:breathe:2:2"
+      }
+    ]
+  },
   "vitner-wind-craft:air-armor:4#air-armor": {
     "id": "air-armor",
     "icon": "icons/svg/shield.svg",
@@ -173,6 +203,54 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "outerProtection",
         "value": 1,
         "optionId": "vitner-wind-craft:air-armor:4:4"
+      }
+    ]
+  },
+  "vitner-perceiving:retrace-tracks:1#traces": {
+    "id": "traces",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-perceiving:retrace-tracks:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:retrace-tracks:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-perceiving:retrace-tracks:1:1"
+      }
+    ]
+  },
+  "vitner-perceiving:orientation:3#orientation": {
+    "id": "orientation",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-perceiving:orientation:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-perceiving:orientation:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-perceiving:orientation:3:1"
       }
     ]
   },
@@ -4854,6 +4932,39 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "parameters": []
   },
+  "holy-toikalokke-lynx-power:orientation:0#orientation": {
+    "id": "orientation",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-lynx-power:orientation:0",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:orientation:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 10800,
+        "optionId": "holy-toikalokke-lynx-power:orientation:0:2"
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 0,
+        "value": 1,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.AdditionalTerrainCount",
+        "optionId": "holy-toikalokke-lynx-power:orientation:0:0"
+      }
+    ]
+  },
   "holy-toikalokke-lynx-power:track:6#pistage": {
     "id": "pistage",
     "icon": "icons/svg/aura.svg",
@@ -7018,8 +7129,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds"
   ],
+  "vitner-water-craft:breathe:2": [
+    "vitner-water-craft:breathe:2#respiration"
+  ],
   "vitner-wind-craft:air-armor:4": [
     "vitner-wind-craft:air-armor:4#air-armor"
+  ],
+  "vitner-perceiving:retrace-tracks:1": [
+    "vitner-perceiving:retrace-tracks:1#traces"
+  ],
+  "vitner-perceiving:orientation:3": [
+    "vitner-perceiving:orientation:3#orientation"
   ],
   "vitner-power-of-thought:understanding-script:0": [
     "vitner-power-of-thought:understanding-script:0#ecrits"
@@ -7323,6 +7443,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-thuuldom-hammer-fists:hammer-fists:0": [
     "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier"
+  ],
+  "holy-toikalokke-lynx-power:orientation:0": [
+    "holy-toikalokke-lynx-power:orientation:0#orientation"
   ],
   "holy-toikalokke-lynx-power:track:6": [
     "holy-toikalokke-lynx-power:track:6#pistage"

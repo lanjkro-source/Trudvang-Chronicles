@@ -1,0 +1,45 @@
+{
+  "_id": "MVTIG5A6B7C8D9Ea",
+  "_key": "!items!MVTIG5A6B7C8D9Ea",
+  "name": "Retrace Tracks",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:retrace-tracks:1#traces",
+    "description": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+    "summary": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 112
+    }
+  },
+  "effects": [
+    {
+      "_id": "Tmf6kvYtZu0v1w2x",
+      "_key": "!items.effects!MVTIG5A6B7C8D9Ea.Tmf6kvYtZu0v1w2x",
+      "name": "Retrace Tracks",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:retrace-tracks:1#traces",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:retrace-tracks:1#traces",
+            "sourceId": "vitner-perceiving:retrace-tracks:1",
+            "summary": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

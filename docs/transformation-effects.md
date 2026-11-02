@@ -19,7 +19,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 178 variantes.
+les états, les règles et les liens des 182 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -313,3 +313,5 @@ lancement. Adhérence utilise cette méthode pour l'escalade : le bonus d'Agilit
 ne s'applique pas aux autres jets, et le déplacement particulier reste descriptif.
 Les tags éditables des PNJ proviennent des références bilingues du bestiaire ;
 ils servent à décrire les catégories et ne déclenchent pas encore de bonus.
+
+Respiration aquatique, Traces et les deux variantes d’Orientation disposent d’effets descriptifs avec leurs durées améliorées. Les terrains supplémentaires de l’ihana sont comptés ; le joueur note les types choisis. Les cibles supplémentaires de Respiration aquatique, Traces et Orientation sont limitées aux niveaux achetés.

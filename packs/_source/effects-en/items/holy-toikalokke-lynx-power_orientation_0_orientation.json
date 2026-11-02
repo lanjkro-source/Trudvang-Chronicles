@@ -1,0 +1,45 @@
+{
+  "_id": "8BLy2TmSnToUpVqW",
+  "_key": "!items!8BLy2TmSnToUpVqW",
+  "name": "Ihana Orientation",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:orientation:0#orientation",
+    "description": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+    "summary": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "5ZMNYKfLgMhNiOjP",
+      "_key": "!items.effects!8BLy2TmSnToUpVqW.5ZMNYKfLgMhNiOjP",
+      "name": "Ihana Orientation",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:orientation:0#orientation",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:orientation:0#orientation",
+            "sourceId": "holy-toikalokke-lynx-power:orientation:0",
+            "summary": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

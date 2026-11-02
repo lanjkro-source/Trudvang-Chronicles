@@ -1,0 +1,45 @@
+{
+  "_id": "PohLKTmSnToUpVqW",
+  "_key": "!items!PohLKTmSnToUpVqW",
+  "name": "Respiration aquatique",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:breathe:2#respiration",
+    "description": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+    "summary": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "yA6tKRmSnToUpVqW",
+      "_key": "!items.effects!PohLKTmSnToUpVqW.yA6tKRmSnToUpVqW",
+      "name": "Respiration aquatique",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:breathe:2#respiration",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:breathe:2#respiration",
+            "sourceId": "vitner-water-craft:breathe:2",
+            "summary": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

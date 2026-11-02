@@ -10868,6 +10868,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourcePage` | 123 | 162 |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.Name` | Breathe | Respiration aquatique |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.Description` | Gills allow breathing underwater as easily as in air. | Des branchies permettent de respirer sous l’eau comme à l’air libre. |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.SourceName` | Breathe | Respiration aquatique |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.SourcePage` | 135 | 164 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration.Duration` | 3 minutes | 3 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor`
 
 | Clé | English | Français |
@@ -10878,6 +10889,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.SourcePage` | 139 | 171 |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:air-armor:4#air-armor.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.Name` | Retrace Tracks | Traces |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.Description` | The recipient sees their own tracks; glowing points indicate passages that leave no footprints. | Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes. |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.SourceName` | Retrace Tracks | Traces |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.SourcePage` | 112 | 173 |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:retrace-tracks:1#traces.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.Name` | Orientation | Orientation |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.Description` | The recipient knows the cardinal directions and their height or depth. | Le bénéficiaire connaît les points cardinaux et sa hauteur ou sa profondeur. |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.SourceName` | Orientation | Orientation |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.SourcePage` | 112 | 174 |
+| `TRUDVANG.Content.Transformation.vitner-perceiving:orientation:3#orientation.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.vitner-power-of-thought:understanding-script:0#ecrits`
 
@@ -12187,6 +12220,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourcePage` | 231 | 287 |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Duration` | permanente tant que les deux runes sont portées et alimentées en points de divinité | permanente tant que les deux runes sont portées et alimentées en points de divinité |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.Name` | Ihana Orientation | Orientation de l’ihana |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.Description` | The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types. | Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.SourceName` | Orientation | Orientation |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.SourcePage` | 239 | 293 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage`
 
 | Clé | English | Français |
@@ -12897,6 +12941,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.PowerLevel` | Power level | Niveau du pouvoir |
 | `TRUDVANG.Transformation.WeaponRequired` | Choose a weapon for the additional actions. | Choisissez une arme pour les actions supplémentaires. |
 | `TRUDVANG.Transformation.OrdinaryActionsFirst` | Use all ordinary weapon actions before the additional actions. | Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires. |
+| `TRUDVANG.Transformation.AdditionalTerrainCount` | Additional terrain types: {value} | Terrains supplémentaires : {value} |
 
 ## `TRUDVANG.Transformation.Modes`
 

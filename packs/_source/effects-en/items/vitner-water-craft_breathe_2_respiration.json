@@ -1,0 +1,45 @@
+{
+  "_id": "PohLKTmSnToUpVqW",
+  "_key": "!items!PohLKTmSnToUpVqW",
+  "name": "Breathe",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:breathe:2#respiration",
+    "description": "Gills allow breathing underwater as easily as in air.",
+    "summary": "Gills allow breathing underwater as easily as in air.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "yA6tKRmSnToUpVqW",
+      "_key": "!items.effects!PohLKTmSnToUpVqW.yA6tKRmSnToUpVqW",
+      "name": "Breathe",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Gills allow breathing underwater as easily as in air.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:breathe:2#respiration",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:breathe:2#respiration",
+            "sourceId": "vitner-water-craft:breathe:2",
+            "summary": "Gills allow breathing underwater as easily as in air.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

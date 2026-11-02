@@ -1,0 +1,45 @@
+{
+  "_id": "8BLy2TmSnToUpVqW",
+  "_key": "!items!8BLy2TmSnToUpVqW",
+  "name": "Orientation de l’ihana",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:orientation:0#orientation",
+    "description": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+    "summary": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 293
+    }
+  },
+  "effects": [
+    {
+      "_id": "5ZMNYKfLgMhNiOjP",
+      "_key": "!items.effects!8BLy2TmSnToUpVqW.5ZMNYKfLgMhNiOjP",
+      "name": "Orientation de l’ihana",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:orientation:0#orientation",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:orientation:0#orientation",
+            "sourceId": "holy-toikalokke-lynx-power:orientation:0",
+            "summary": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

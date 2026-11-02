@@ -1,0 +1,45 @@
+{
+  "_id": "MVTIG5A6B7C8D9Ea",
+  "_key": "!items!MVTIG5A6B7C8D9Ea",
+  "name": "Traces",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:retrace-tracks:1#traces",
+    "description": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+    "summary": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 173
+    }
+  },
+  "effects": [
+    {
+      "_id": "Tmf6kvYtZu0v1w2x",
+      "_key": "!items.effects!MVTIG5A6B7C8D9Ea.Tmf6kvYtZu0v1w2x",
+      "name": "Traces",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:retrace-tracks:1#traces",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:retrace-tracks:1#traces",
+            "sourceId": "vitner-perceiving:retrace-tracks:1",
+            "summary": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

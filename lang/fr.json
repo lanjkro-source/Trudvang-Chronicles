@@ -13720,6 +13720,15 @@
           "SourcePage": "162",
           "Duration": "3 days"
         },
+        "vitner-water-craft:breathe:2#respiration": {
+          "Name": "Respiration aquatique",
+          "Summary": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+          "Description": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
+          "SourceName": "Respiration aquatique",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "164",
+          "Duration": "3 minutes"
+        },
         "vitner-wind-craft:air-armor:4#air-armor": {
           "Name": "Armure d’air",
           "Summary": "Entoure une créature d’air comprimé pour la protéger des attaques.",
@@ -13728,6 +13737,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "171",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-perceiving:retrace-tracks:1#traces": {
+          "Name": "Traces",
+          "Summary": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+          "Description": "Le bénéficiaire voit ses propres traces ; des points lumineux indiquent les passages sans empreintes.",
+          "SourceName": "Traces",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "173",
+          "Duration": "1 heure"
+        },
+        "vitner-perceiving:orientation:3#orientation": {
+          "Name": "Orientation",
+          "Summary": "Le bénéficiaire connaît les points cardinaux et sa hauteur ou sa profondeur.",
+          "Description": "Le bénéficiaire connaît les points cardinaux et sa hauteur ou sa profondeur.",
+          "SourceName": "Orientation",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "174",
+          "Duration": "1 heure"
         },
         "vitner-power-of-thought:understanding-script:0#ecrits": {
           "Name": "Compréhension des écrits",
@@ -14803,6 +14830,15 @@
           "SourcePage": "287",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:orientation:0#orientation": {
+          "Name": "Orientation de l’ihana",
+          "Summary": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+          "Description": "Le bénéficiaire connaît sa direction en forêt, même par mauvaise visibilité. Les terrains supplémentaires choisis sont à noter par les joueurs.",
+          "SourceName": "Orientation",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "293",
+          "Duration": "1 heure"
+        },
         "holy-toikalokke-lynx-power:track:6#pistage": {
           "Name": "Pistage du lynx",
           "Summary": "Pister la créature suivie : +3.",
@@ -15402,7 +15438,8 @@
       "FearImmunity": "Ignore les effets de la peur",
       "PowerLevel": "Niveau du pouvoir",
       "WeaponRequired": "Choisissez une arme pour les actions supplémentaires.",
-      "OrdinaryActionsFirst": "Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires."
+      "OrdinaryActionsFirst": "Utilisez toutes les actions d’arme ordinaires avant les actions supplémentaires.",
+      "AdditionalTerrainCount": "Terrains supplémentaires : {value}"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

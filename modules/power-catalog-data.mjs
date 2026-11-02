@@ -6716,6 +6716,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:orientation:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-lynx-power:orientation:0:0",
@@ -8991,6 +8995,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:orientation:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-perceiving:orientation:3:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-perceiving:orientation:3:0",
@@ -9019,6 +9032,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:retrace-tracks:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-perceiving:retrace-tracks:1:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-perceiving:retrace-tracks:1:0",
@@ -10669,6 +10691,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:breathe:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-water-craft:breathe:2:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-water-craft:breathe:2:0",

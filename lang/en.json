@@ -13720,6 +13720,15 @@
           "SourcePage": "123",
           "Duration": "3 days"
         },
+        "vitner-water-craft:breathe:2#respiration": {
+          "Name": "Breathe",
+          "Summary": "Gills allow breathing underwater as easily as in air.",
+          "Description": "Gills allow breathing underwater as easily as in air.",
+          "SourceName": "Breathe",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "3 minutes"
+        },
         "vitner-wind-craft:air-armor:4#air-armor": {
           "Name": "Air Armor",
           "Summary": "Wraps the target in protective currents of compressed air.",
@@ -13728,6 +13737,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "139",
           "Duration": "5 action rounds"
+        },
+        "vitner-perceiving:retrace-tracks:1#traces": {
+          "Name": "Retrace Tracks",
+          "Summary": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+          "Description": "The recipient sees their own tracks; glowing points indicate passages that leave no footprints.",
+          "SourceName": "Retrace Tracks",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "1 hour"
+        },
+        "vitner-perceiving:orientation:3#orientation": {
+          "Name": "Orientation",
+          "Summary": "The recipient knows the cardinal directions and their height or depth.",
+          "Description": "The recipient knows the cardinal directions and their height or depth.",
+          "SourceName": "Orientation",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "112",
+          "Duration": "1 hour"
         },
         "vitner-power-of-thought:understanding-script:0#ecrits": {
           "Name": "Understanding Script",
@@ -14803,6 +14830,15 @@
           "SourcePage": "231",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-toikalokke-lynx-power:orientation:0#orientation": {
+          "Name": "Ihana Orientation",
+          "Summary": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+          "Description": "The recipient knows their direction in forests, even in poor visibility. Players should record any additional chosen terrain types.",
+          "SourceName": "Orientation",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "1 hour"
+        },
         "holy-toikalokke-lynx-power:track:6#pistage": {
           "Name": "Lynx Tracking",
           "Summary": "Track the chosen creature: +3.",
@@ -15402,7 +15438,8 @@
       "FearImmunity": "Ignores fear effects",
       "PowerLevel": "Power level",
       "WeaponRequired": "Choose a weapon for the additional actions.",
-      "OrdinaryActionsFirst": "Use all ordinary weapon actions before the additional actions."
+      "OrdinaryActionsFirst": "Use all ordinary weapon actions before the additional actions.",
+      "AdditionalTerrainCount": "Additional terrain types: {value}"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

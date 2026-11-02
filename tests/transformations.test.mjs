@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,132);
+ assert.equal(Object.keys(sources).length,136);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1087,4 +1087,24 @@ test("illusion variants preserve their distinctions, duration and selected range
  assert.match(head,/paroles/);assert.match(body,/mouvements/);
  const trail=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:traceless:4#trace"].Description;
  assert.match(trail,/odeurs/);
+});
+
+test("water breathing and orientation effects retain their durations, target limits and terrain count", async()=>{
+ const {POWER_DETAILS_BY_ID}=await import("../modules/power-catalog-data.mjs");
+ const samples=[
+  ["vitner-water-craft:breathe:2#respiration",[60,600,3600],"vitner-water-craft:breathe:2:4"],
+  ["vitner-perceiving:retrace-tracks:1#traces",[3600,86400],"vitner-perceiving:retrace-tracks:1:3"],
+  ["vitner-perceiving:orientation:3#orientation",[3600,86400],"vitner-perceiving:orientation:3:3"]
+ ];
+ for(const [key,durations,additional] of samples){
+  const t=templates[key];assert.deepEqual(t.parameters.filter(p=>p.target==="duration").map(p=>p.value),durations);
+  assert.deepEqual(POWER_DETAILS_BY_ID[t.sourceId].targeting,{baseTargets:1,additionalTargets:[{optionId:additional,count:1}]});
+ }
+ const lynx=templates["holy-toikalokke-lynx-power:orientation:0#orientation"];
+ assert.deepEqual(lynx.parameters.filter(p=>p.target==="duration").map(p=>p.value),[3600,10800]);
+ assert.equal(lynx.parameters.find(p=>p.target==="note").optionId,"holy-toikalokke-lynx-power:orientation:0:0");
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:(key,values)=>`${key}:${values.value}`}};
+ foundry.applications.api={DialogV2:{wait:async()=>({duration:"3 minutes",boost0:1,boost1:1,boost2:0})}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,samples[0][0],{counts:[1,1,0]});assert.deepEqual(created.duration,{value:168,units:"rounds"});
 });

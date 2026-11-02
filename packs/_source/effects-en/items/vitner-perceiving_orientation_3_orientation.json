@@ -1,0 +1,45 @@
+{
+  "_id": "1sTzb9C8D9EaGbHc",
+  "_key": "!items!1sTzb9C8D9EaGbHc",
+  "name": "Orientation",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-perceiving:orientation:3#orientation",
+    "description": "The recipient knows the cardinal directions and their height or depth.",
+    "summary": "The recipient knows the cardinal directions and their height or depth.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 112
+    }
+  },
+  "effects": [
+    {
+      "_id": "ym3AQTmSnToUpVqW",
+      "_key": "!items.effects!1sTzb9C8D9EaGbHc.ym3AQTmSnToUpVqW",
+      "name": "Orientation",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient knows the cardinal directions and their height or depth.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-perceiving:orientation:3#orientation",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-perceiving:orientation:3#orientation",
+            "sourceId": "vitner-perceiving:orientation:3",
+            "summary": "The recipient knows the cardinal directions and their height or depth.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
