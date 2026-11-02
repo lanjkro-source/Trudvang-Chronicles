@@ -1,0 +1,45 @@
+{
+  "_id": "i1VSltWrXsYtZu0v",
+  "_key": "!items!i1VSltWrXsYtZu0v",
+  "name": "Odorat affaibli",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:sense-of-smell:3#affaibli",
+    "description": "Les tests où l’odorat est important subissent le malus indiqué ; la cible peut résister à la perte du sens.",
+    "summary": "Odorat : −3.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 193
+    }
+  },
+  "effects": [
+    {
+      "_id": "BqXnFkPkQlRmSnTo",
+      "_key": "!items.effects!i1VSltWrXsYtZu0v.BqXnFkPkQlRmSnTo",
+      "name": "Odorat affaibli",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les tests où l’odorat est important subissent le malus indiqué ; la cible peut résister à la perte du sens.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:sense-of-smell:3#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:sense-of-smell:3#affaibli",
+            "sourceId": "vitner-body-vitner:sense-of-smell:3",
+            "summary": "Odorat : −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

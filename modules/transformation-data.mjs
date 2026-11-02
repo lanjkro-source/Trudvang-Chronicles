@@ -303,6 +303,130 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-body-vitner:sense-of-smell:3#ameliore": {
+    "id": "ameliore",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Sense0\",\"range\":50,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "vitner-body-vitner:sense-of-smell:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:3"
+      },
+      {
+        "index": 5,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 10,
+        "templates": [
+          "ameliore"
+        ],
+        "optionId": "vitner-body-vitner:sense-of-smell:3:5"
+      },
+      {
+        "index": 6,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 100,
+        "templates": [
+          "ameliore"
+        ],
+        "optionId": "vitner-body-vitner:sense-of-smell:3:6"
+      },
+      {
+        "index": 7,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.SmellBonus",
+        "templates": [
+          "ameliore"
+        ],
+        "optionId": "vitner-body-vitner:sense-of-smell:3:7"
+      }
+    ]
+  },
+  "vitner-body-vitner:sense-of-smell:3#affaibli": {
+    "id": "affaibli",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-body-vitner:sense-of-smell:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:sense-of-smell:3:3"
+      },
+      {
+        "index": 7,
+        "target": "note",
+        "base": -3,
+        "value": -1,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.SmellPenalty",
+        "templates": [
+          "affaibli"
+        ],
+        "optionId": "vitner-body-vitner:sense-of-smell:3:7"
+      }
+    ]
+  },
   "vitner-body-vitner:leather-skin:5#leather-skin": {
     "id": "leather-skin",
     "icon": "icons/svg/shield.svg",
@@ -5873,6 +5997,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"
+  ],
+  "vitner-body-vitner:sense-of-smell:3": [
+    "vitner-body-vitner:sense-of-smell:3#ameliore",
+    "vitner-body-vitner:sense-of-smell:3#affaibli"
   ],
   "vitner-body-vitner:leather-skin:5": [
     "vitner-body-vitner:leather-skin:5#leather-skin"

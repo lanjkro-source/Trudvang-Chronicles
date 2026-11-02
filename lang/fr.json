@@ -13753,6 +13753,25 @@
           "SourcePage": "192",
           "Duration": "10 tours de jeu"
         },
+        "vitner-body-vitner:sense-of-smell:3#ameliore": {
+          "Name": "Odorat amélioré",
+          "Summary": "Odorat : +3.",
+          "Description": "Les tests où l’odorat est important bénéficient du bonus indiqué.",
+          "SourceName": "Sens de l’odorat",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "193",
+          "Duration": "1 minute",
+          "Sense0": "Odorat amélioré"
+        },
+        "vitner-body-vitner:sense-of-smell:3#affaibli": {
+          "Name": "Odorat affaibli",
+          "Summary": "Odorat : −3.",
+          "Description": "Les tests où l’odorat est important subissent le malus indiqué ; la cible peut résister à la perte du sens.",
+          "SourceName": "Sens de l’odorat",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "193",
+          "Duration": "1 minute"
+        },
         "vitner-body-vitner:leather-skin:5#leather-skin": {
           "Name": "Peau de cuir",
           "Summary": "Durcit la peau du bénéficiaire et augmente sa protection naturelle.",
@@ -15072,6 +15091,8 @@
       "AllocationTargets": "Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles.",
       "HealingDiseaseNote": "Bonus au test pour vaincre la maladie : +{value}.",
       "ClimbingNote": "Jet d’escalade : bonus de +{value} en Agilité.",
+      "SmellBonus": "Tests faisant appel à l’odorat : +{value}.",
+      "SmellPenalty": "Tests faisant appel à l’odorat : {value}. À −10 ou moins, l’odorat disparaît.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",

@@ -61,7 +61,7 @@ test("effect tooltips stay qualitative in both languages, including old numeric 
    const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
    globalThis.game={i18n:{localize}};
    for(const [key,text]of Object.entries(language.TRUDVANG.Content.Transformation)){
-    if(key!=="vitner-body-vitner:grip:0#adherence")assert.doesNotMatch(text.Summary,/\d|\b(?:deux|trois|quatre|cinq|six|sept|huit|neuf|dix|moitié|tiers|double|triple|two|three|four|five|seven|eight|nine|ten|half|third|twice)\b/iu,key);
+    if(key!=="vitner-body-vitner:grip:0#adherence" && !key.startsWith("vitner-body-vitner:sense-of-smell:3#"))assert.doesNotMatch(text.Summary,/\d|\b(?:deux|trois|quatre|cinq|six|sept|huit|neuf|dix|moitié|tiers|double|triple|two|three|four|five|seven|eight|nine|ten|half|third|twice)\b/iu,key);
     const effect={flags:{"trudvang-chronicles":{transformation:{key,summary:"Psychisme +4"}}}};
     assert.equal(effectTooltipSummary(effect),text.Summary);
    }

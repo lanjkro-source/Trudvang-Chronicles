@@ -1,0 +1,45 @@
+{
+  "_id": "i1VSltWrXsYtZu0v",
+  "_key": "!items!i1VSltWrXsYtZu0v",
+  "name": "Diminished smell",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:sense-of-smell:3#affaibli",
+    "description": "The listed penalty applies to tests where smell matters; the target can resist the loss of the sense.",
+    "summary": "Smell: −3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "BqXnFkPkQlRmSnTo",
+      "_key": "!items.effects!i1VSltWrXsYtZu0v.BqXnFkPkQlRmSnTo",
+      "name": "Diminished smell",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The listed penalty applies to tests where smell matters; the target can resist the loss of the sense.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:sense-of-smell:3#affaibli",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:sense-of-smell:3#affaibli",
+            "sourceId": "vitner-body-vitner:sense-of-smell:3",
+            "summary": "Smell: −3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

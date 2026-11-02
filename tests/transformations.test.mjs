@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,106);
+ assert.equal(Object.keys(sources).length,107);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -813,4 +813,30 @@ test("Grip exposes its climbing skill bonus from the frozen power levels",async(
  const {conditionalSituationBonuses}=await import("../modules/rules/effect-conditional-tests.mjs");
  const id="vitner-body-vitner:grip:0",effect={flags:{"trudvang-chronicles":{transformation:{key:`${id}#adherence`,sourceId:id,ruleTestContext:{countsById:{[`${id}:4`]:3}}}}}};
  assert.deepEqual(conditionalSituationBonuses(effect).map(({skill,value})=>({skill,value})),[{skill:"agility",value:8}]);
+});
+
+test("Sense of Smell has distinct bonuses and penalties with the allocated levels",async()=>{
+ const {conditionalSituationBonuses}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="vitner-body-vitner:sense-of-smell:3";
+ for(const [variant,expected] of [["ameliore",6],["affaibli",-6]]){
+  const key=`${id}#${variant}`,t=templates[key],effect={flags:{[S]:{transformation:{key,sourceId:id,ruleTestContext:{countsById:{[`${id}:7`]:3}}}}}};
+  assert.equal(conditionalSituationBonuses(effect)[0].value,expected);
+  if(variant==="ameliore")assert.equal(rulesFromChanges(t.changes).senses[0].range,50);
+ }
+});
+
+test("Sense of Smell applies the selected potency and range to the resulting effects",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],language)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ const id="vitner-body-vitner:sense-of-smell:3";
+ for(const [variant,expected] of [["ameliore",6],["affaibli",-6]]){
+  const counts=[];counts[5]=2;counts[7]=3;
+  await applyTransformation(actor,`${id}#${variant}`,{counts});
+  assert.match(created.flags[S].transformation.summary,new RegExp(String(expected)));
+  if(variant==="ameliore")assert.equal(rulesFromChanges(created.system.changes).senses[0].range,70);
+ }
 });

@@ -1,0 +1,53 @@
+{
+  "_id": "OOEWjeHcIdJeKfLg",
+  "_key": "!items!OOEWjeHcIdJeKfLg",
+  "name": "Enhanced smell",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:sense-of-smell:3#ameliore",
+    "description": "The listed bonus applies to tests where smell matters.",
+    "summary": "Smell: +3.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "v9MQB1v1w2x3y4z5",
+      "_key": "!items.effects!OOEWjeHcIdJeKfLg.v9MQB1v1w2x3y4z5",
+      "name": "Enhanced smell",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The listed bonus applies to tests where smell matters.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:sense-of-smell:3#ameliore",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Sense0\",\"range\":50,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:sense-of-smell:3#ameliore",
+            "sourceId": "vitner-body-vitner:sense-of-smell:3",
+            "summary": "Smell: +3.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

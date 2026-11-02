@@ -10909,6 +10909,29 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourcePage` | 96 | 192 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Duration` | 10 rounds | 10 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Name` | Enhanced smell | Odorat amélioré |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Description` | The listed bonus applies to tests where smell matters. | Les tests où l’odorat est important bénéficient du bonus indiqué. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.SourceName` | Sense of Smell | Sens de l’odorat |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.SourcePage` | 96 | 193 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Duration` | 1 minute | 1 minute |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#ameliore.Sense0` | Enhanced smell | Odorat amélioré |
+
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.Name` | Diminished smell | Odorat affaibli |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.Description` | The listed penalty applies to tests where smell matters; the target can resist the loss of the sense. | Les tests où l’odorat est important subissent le malus indiqué ; la cible peut résister à la perte du sens. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.SourceName` | Sense of Smell | Sens de l’odorat |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.SourcePage` | 96 | 193 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:sense-of-smell:3#affaibli.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:leather-skin:5#leather-skin`
 
 | Clé | English | Français |
@@ -12511,6 +12534,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.AllocationTargets` | Targets already affected: {used} / {max}. Distribute power levels among targets. | Cibles déjà affectées : {used} / {max}. Répartissez les niveaux de puissance entre les cibles. |
 | `TRUDVANG.Transformation.HealingDiseaseNote` | Bonus to the test to overcome the disease: +{value}. | Bonus au test pour vaincre la maladie : +{value}. |
 | `TRUDVANG.Transformation.ClimbingNote` | Climbing roll: +{value} Agility bonus. | Jet d’escalade : bonus de +{value} en Agilité. |
+| `TRUDVANG.Transformation.SmellBonus` | Tests involving smell: +{value}. | Tests faisant appel à l’odorat : +{value}. |
+| `TRUDVANG.Transformation.SmellPenalty` | Tests involving smell: {value}. At −10 or below, the sense of smell is lost. | Tests faisant appel à l’odorat : {value}. À −10 ou moins, l’odorat disparaît. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

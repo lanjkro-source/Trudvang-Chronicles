@@ -13753,6 +13753,25 @@
           "SourcePage": "96",
           "Duration": "10 rounds"
         },
+        "vitner-body-vitner:sense-of-smell:3#ameliore": {
+          "Name": "Enhanced smell",
+          "Summary": "Smell: +3.",
+          "Description": "The listed bonus applies to tests where smell matters.",
+          "SourceName": "Sense of Smell",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute",
+          "Sense0": "Enhanced smell"
+        },
+        "vitner-body-vitner:sense-of-smell:3#affaibli": {
+          "Name": "Diminished smell",
+          "Summary": "Smell: −3.",
+          "Description": "The listed penalty applies to tests where smell matters; the target can resist the loss of the sense.",
+          "SourceName": "Sense of Smell",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "1 minute"
+        },
         "vitner-body-vitner:leather-skin:5#leather-skin": {
           "Name": "Leather Skin",
           "Summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
@@ -15072,6 +15091,8 @@
       "AllocationTargets": "Targets already affected: {used} / {max}. Distribute power levels among targets.",
       "HealingDiseaseNote": "Bonus to the test to overcome the disease: +{value}.",
       "ClimbingNote": "Climbing roll: +{value} Agility bonus.",
+      "SmellBonus": "Tests involving smell: +{value}.",
+      "SmellPenalty": "Tests involving smell: {value}. At −10 or below, the sense of smell is lost.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",

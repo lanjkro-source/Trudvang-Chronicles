@@ -7650,6 +7650,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:sense-of-smell:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:sense-of-smell:3:8",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:sense-of-smell:3:0",

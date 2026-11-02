@@ -270,11 +270,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
- if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && p.skill){
+ if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
   summary=game.i18n.format(p.labelKey,{value});
  }
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&p.skill)),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean((template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
   const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
