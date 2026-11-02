@@ -1,0 +1,45 @@
+{
+  "_id": "RTK1oLfLgMhNiOjP",
+  "_key": "!items!RTK1oLfLgMhNiOjP",
+  "name": "Forgeron nain",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+    "description": "Accorde un bonus à une spécialité d’Artisanat choisie pour la durée du pouvoir.",
+    "summary": "Spécialité d’Artisanat choisie : +6.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 273
+    }
+  },
+  "effects": [
+    {
+      "_id": "03AbsYrXsYtZu0v1",
+      "_key": "!items.effects!RTK1oLfLgMhNiOjP.03AbsYrXsYtZu0v1",
+      "name": "Forgeron nain",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Accorde un bonus à une spécialité d’Artisanat choisie pour la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+            "sourceId": "holy-haminges-power-of-men:dwarven-smith:6",
+            "summary": "Spécialité d’Artisanat choisie : +6.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

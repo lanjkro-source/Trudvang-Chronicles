@@ -14518,6 +14518,15 @@
           "Duration": "1 minute",
           "Sense0": "Vision des nains"
         },
+        "holy-haminges-power-of-men:dwarven-smith:6#forge": {
+          "Name": "Forgeron nain",
+          "Summary": "Spécialité d’Artisanat choisie : +6.",
+          "Description": "Accorde un bonus à une spécialité d’Artisanat choisie pour la durée du pouvoir.",
+          "SourceName": "Forgeron nain",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "273",
+          "Duration": "2 heures"
+        },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Force du troll (Puissance des tursirs)",
           "Summary": "Porte la Force au niveau exceptionnel d’un troll.",
@@ -15153,6 +15162,8 @@
       "SightPenalty": "Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle.",
       "SpokenLanguage": "Langue choisie",
       "SpokenLanguageBonus": "Comprendre ou parler la langue choisie : +{value}.",
+      "CraftSpecialty": "Nom exact de la spécialité d’Artisanat choisie",
+      "CraftSpecialtyBonus": "Spécialité d’Artisanat choisie : +{value}.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
       "AllocationAvailable": "{count} disponible(s) pour cette cible",
       "Apply": "Appliquer",

@@ -14,12 +14,20 @@ export function conditionalSituationBonuses(effect) {
   skillChoice:p.skillChoice === true,
   skillOnly:p.skillOnly === true,
   restrictedSkill:p.restrictedSkill ?? "",
+  restrictedDiscipline:p.restrictedDiscipline ?? "",
+  requiresInput:p.requiresInput === true,
   value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)
  }));
 }
 
 /** Optional modifiers whose relevance must be decided by the player. */
-export function conditionalSkillModifiers(actor,skillKey="") {
+export function conditionalSkillModifiers(actor,skillKey="",ability=null) {
  return Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).flatMap(effect =>
-  conditionalSituationBonuses(effect).filter(row => row.skillChoice && (!row.restrictedSkill || row.restrictedSkill===skillKey)).map(row => ({label:[effect.name,effect.flags?.["trudvang-chronicles"]?.transformation?.input].filter(Boolean).join(" — "),value:row.value})));
+  conditionalSituationBonuses(effect).filter(row => {
+   const input=String(effect.flags?.["trudvang-chronicles"]?.transformation?.input??"").trim();
+   const entry=ability && actor.getCatalogEntry?.(ability.system?.catalogId);
+   return row.skillChoice && (!row.restrictedSkill || row.restrictedSkill===skillKey)
+    && (!row.restrictedDiscipline || (ability?.system?.kind==="specialty" && entry?.parentCatalogId===row.restrictedDiscipline))
+    && (!row.requiresInput || (input && input.localeCompare(String(ability?.name??"").trim(),undefined,{sensitivity:"base"})===0));
+  }).map(row => ({label:[effect.name,effect.flags?.["trudvang-chronicles"]?.transformation?.input].filter(Boolean).join(" — "),value:row.value})));
 }

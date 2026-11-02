@@ -2525,6 +2525,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:dwarven-smith:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:dwarven-smith:6:0",

@@ -3524,6 +3524,45 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-men:dwarven-smith:6#forge": {
+    "id": "forge",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.CraftSpecialty",
+    "sourceId": "holy-haminges-power-of-men:dwarven-smith:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-men:dwarven-smith:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-men:dwarven-smith:6:1"
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 6,
+        "value": 0,
+        "tooltip": true,
+        "skillChoice": true,
+        "skillOnly": true,
+        "restrictedSkill": "care",
+        "restrictedDiscipline": "handicraft",
+        "requiresInput": true,
+        "labelKey": "TRUDVANG.Transformation.CraftSpecialtyBonus",
+        "optionId": "holy-haminges-power-of-men:dwarven-smith:6:0"
+      }
+    ]
+  },
   "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
     "id": "force-du-troll",
     "icon": "icons/svg/aura.svg",
@@ -6482,6 +6521,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-men:sight-of-the-dwarves:0": [
     "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains"
+  ],
+  "holy-haminges-power-of-men:dwarven-smith:6": [
+    "holy-haminges-power-of-men:dwarven-smith:6#forge"
   ],
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"

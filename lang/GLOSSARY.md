@@ -11840,6 +11840,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0` | Accomplished | Vision des nains |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.Name` | Dwarven Smith | Forgeron nain |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.Description` | Grants a bonus to one chosen Handicraft specialty for the duration of the power. | Accorde un bonus à une spécialité d’Artisanat choisie pour la durée du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourceName` | Dwarven Smith | Forgeron nain |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourcePage` | 216 | 273 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.Duration` | 2 hours | 2 heures |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll`
 
 | Clé | English | Français |
@@ -12608,6 +12619,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SightPenalty` | Tests involving sight: {value}. At −10 or below, the target is blind. | Tests faisant appel à la vue : {value}. À −10 ou moins, la cible est aveugle. |
 | `TRUDVANG.Transformation.SpokenLanguage` | Chosen language | Langue choisie |
 | `TRUDVANG.Transformation.SpokenLanguageBonus` | Understand or speak the chosen language: +{value}. | Comprendre ou parler la langue choisie : +{value}. |
+| `TRUDVANG.Transformation.CraftSpecialty` | Exact name of the chosen Handicraft specialty | Nom exact de la spécialité d’Artisanat choisie |
+| `TRUDVANG.Transformation.CraftSpecialtyBonus` | Chosen Handicraft specialty: +{value}. | Spécialité d’Artisanat choisie : +{value}. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
 | `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |

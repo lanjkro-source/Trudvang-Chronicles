@@ -14518,6 +14518,15 @@
           "Duration": "1 minute",
           "Sense0": "Accomplished"
         },
+        "holy-haminges-power-of-men:dwarven-smith:6#forge": {
+          "Name": "Dwarven Smith",
+          "Summary": "Chosen Handicraft specialty: +6.",
+          "Description": "Grants a bonus to one chosen Handicraft specialty for the duration of the power.",
+          "SourceName": "Dwarven Smith",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": "2 hours"
+        },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
           "Name": "Troll Strength (Power of the Thurses)",
           "Summary": "Raises Strength to a troll’s exceptional level.",
@@ -15153,6 +15162,8 @@
       "SightPenalty": "Tests involving sight: {value}. At −10 or below, the target is blind.",
       "SpokenLanguage": "Chosen language",
       "SpokenLanguageBonus": "Understand or speak the chosen language: +{value}.",
+      "CraftSpecialty": "Exact name of the chosen Handicraft specialty",
+      "CraftSpecialtyBonus": "Chosen Handicraft specialty: +{value}.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
       "AllocationAvailable": "{count} available for this target",
       "Apply": "Apply",

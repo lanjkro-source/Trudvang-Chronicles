@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,111);
+ assert.equal(Object.keys(sources).length,112);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -882,4 +882,15 @@ test("language blessings keep their chosen language and only offer Knowledge bon
   assert.deepEqual(conditionalSkillModifiers({effects:[created]},"knowledge"),[{label:`${created.name} — Vrok`,value:base+2}]);
   assert.deepEqual(conditionalSkillModifiers({effects:[created]},"agility"),[]);
  }
+});
+
+test("Dwarven Smith only applies to the chosen Handicraft specialty",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="holy-haminges-power-of-men:dwarven-smith:6",effect={name:"Forgeron nain",flags:{[S]:{transformation:{key:`${id}#forge`,sourceId:id,input:"Matériaux durs",ruleTestContext:{countsById:{[`${id}:0`]:3}}}}}};
+ const actor={effects:[effect],getCatalogEntry:id=>({parentCatalogId:id==="hardMaterials"?"handicraft":"healing"})};
+ const item=(id,name)=>({name,system:{kind:"specialty",catalogId:id}});
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux durs")),[{label:"Forgeron nain — Matériaux durs",value:6}]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux souples")),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care",item("healing","Matériaux durs")),[]);
+ assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
 });

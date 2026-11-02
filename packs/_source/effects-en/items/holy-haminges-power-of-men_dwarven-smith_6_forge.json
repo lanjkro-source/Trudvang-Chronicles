@@ -1,0 +1,45 @@
+{
+  "_id": "RTK1oLfLgMhNiOjP",
+  "_key": "!items!RTK1oLfLgMhNiOjP",
+  "name": "Dwarven Smith",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+    "description": "Grants a bonus to one chosen Handicraft specialty for the duration of the power.",
+    "summary": "Chosen Handicraft specialty: +6.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "03AbsYrXsYtZu0v1",
+      "_key": "!items.effects!RTK1oLfLgMhNiOjP.03AbsYrXsYtZu0v1",
+      "name": "Dwarven Smith",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants a bonus to one chosen Handicraft specialty for the duration of the power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:dwarven-smith:6#forge",
+            "sourceId": "holy-haminges-power-of-men:dwarven-smith:6",
+            "summary": "Chosen Handicraft specialty: +6.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

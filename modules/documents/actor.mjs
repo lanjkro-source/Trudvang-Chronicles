@@ -990,7 +990,7 @@ export class TrudvangActor extends BaseActor {
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
     const mountTraining = context.mountTraining || (customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker";
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])], optionalModifiers:conditionalSkillModifiers(this,item.system.parentSkill),
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])], optionalModifiers:conditionalSkillModifiers(this,item.system.parentSkill,item),
       extraNumberFields: mountTraining ? [{name: "mount-training", label: game.i18n.localize("TRUDVANG.AnimalAction.MountTrainingBonus"), value: 0,
         hint: game.i18n.localize(`TRUDVANG.AnimalAction.${(customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker" ? "TrackHint" : "JumpHint"}`)}] : []});
     if (!options) return null;
