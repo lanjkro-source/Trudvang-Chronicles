@@ -2551,3 +2551,16 @@ test("a matching target grants the conditional attack bonus to a multi-target ro
  runtime.response={allocation:{free:4},feint:0,modifier:0};const result=await npc.rollWeaponAction(item,'attack');
  assert.deepEqual(result.attackTargets.map(row=>row.target),[6,6]);assert.match(runtime.dialogs[0].content,/Tueur de trolls/);
 });
+
+test("item sheet handles transformation drops once in capture phase", async () => {
+ const handlers=new Map(),item={type:"weapon",parent:{documentName:"Actor"},isOwner:true};
+ const sheet=new TrudvangItemSheet({document:item});sheet.isEditable=true;
+ sheet.element={querySelector:()=>null,querySelectorAll:()=>[],addEventListener:(name,handler,options)=>handlers.set(name,{handler,options})};
+ let calls=0,stopped=0;sheet._onDrop=async()=>{calls++;};
+ await sheet._onRender({},{});await sheet._onRender({},{});
+ const drop=handlers.get("drop");assert.equal(drop.options.capture,true);
+ drop.handler({dataTransfer:{getData:()=>JSON.stringify({type:"TrudvangTransformation"})},preventDefault(){},stopImmediatePropagation(){stopped++;}});
+ assert.equal(calls,1);assert.equal(stopped,1);
+ drop.handler({dataTransfer:{getData:()=>JSON.stringify({type:"Item"})},preventDefault(){throw Error("unrelated drop");}});
+ assert.equal(calls,1);
+});

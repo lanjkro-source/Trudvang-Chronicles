@@ -22,6 +22,7 @@ import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
+import {applyItemTransformation} from "./item-effect-application.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -350,7 +351,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const result=await executeConsequences({actor,operations:[{operation:template.instant.operation,formula:String(template.instant.base+bonus)}],source:effectName});
   await announceConsequences(actor,result,effectName);
   return result;
- }else effect=destinationItem?(await destinationItem.createEmbeddedDocuments("ActiveEffect",[data]))[0]:await actor.createTrudvangEffect(data);
+ }else effect=destinationItem?await applyItemTransformation(destinationItem,data):await actor.createTrudvangEffect(data);
  if(!effect)return null;
  if(!resolvedCopy&&template.onApply){
   const step=(template.parameters??[]).find(p=>p.target==="onApplyStep");

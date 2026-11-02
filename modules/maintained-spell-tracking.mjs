@@ -125,7 +125,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
     try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}
     return {status:"ok",instant:true};
    }
-   const effect=targetItem?(await targetItem.createEmbeddedDocuments("ActiveEffect",[data]))[0]:await target.createTrudvangEffect(data);
+   const effect=targetItem?await (await import("./item-effect-application.mjs")).applyItemTransformation(targetItem,data):await target.createTrudvangEffect(data);
    if(!effect)throw Error("Failed to create allocated effect");
    return {status:"ok",effectUuid:effect.uuid};
   }catch(error){

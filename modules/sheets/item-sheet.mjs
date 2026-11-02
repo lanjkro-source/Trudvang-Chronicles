@@ -171,9 +171,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       root.addEventListener("drop", event => {
         let data; try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { return; }
         if (data?.type !== "TrudvangTransformation") return;
-        event.preventDefault(); event.stopPropagation();
+        event.preventDefault(); event.stopImmediatePropagation();
         void this._onDrop(event).catch(error => ui.notifications.error(error.message));
-      });
+      }, {capture: true});
     }
     if (!this.isEditable || !this.item.isOwner) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
