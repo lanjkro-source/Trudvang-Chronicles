@@ -1477,6 +1477,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Equipment.UnsupportedOperation` | The modifier uses an unsupported operation. | La modification utilise une opération non prise en charge. |
 | `TRUDVANG.Calculation.Equipment.InvalidAmount` | The modifier does not contain a valid numeric value. | La modification ne contient pas de valeur numérique valide. |
 | `TRUDVANG.Calculation.Equipment.Constraint` | The value was adjusted to the characteristic's permitted range. | La valeur a été ajustée aux limites autorisées pour cette caractéristique. |
+| `TRUDVANG.Calculation.Equipment.ArmorBlessing` | Blessing: +{amount} protection | Bénédiction : +{amount} VP |
 
 ## `TRUDVANG.Religion`
 
@@ -13121,6 +13122,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourcePage` | 201 | 259 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.Duration` | 1 jour | 1 jour |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.Name` | Blessed Armor | Armure bénie |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.Description` | The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection. | La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.SourceName` | Blessed Armor | Armure bénie |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.SourcePage` | 199 | 259 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor.Duration` | 3 action rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon`
 
 | Clé | English | Français |
@@ -13131,6 +13143,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.SourcePage` | 199 | 259 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.Name` | Rowthguard Cuirass | Cuirasse des gardiens du Rortan |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.Description` | The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection. | La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.SourceName` | Rowthguard Cuirass | Cuirasse des gardiens du Rortan |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.SourcePage` | 199 | 260 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor.Duration` | 4 action rounds | 4 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect`
 
@@ -13164,6 +13187,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourcePage` | 199 | 261 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.Name` | Belo Seoth's White Armor | Armure blanche de Belo Seoth |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.Description` | The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection. | La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.SourceName` | Belo Seoth's White Armor | Armure blanche de Belo Seoth |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.SourcePage` | 199 | 261 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon`
 
@@ -14753,6 +14787,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SuggestedTask` | Suggested task | Tâche suggérée |
 | `TRUDVANG.Transformation.InfluenceResistance` | Mental influence: resistance SV {value} + Psyche | Influence mentale : résistance SV {value} + Psychisme |
 | `TRUDVANG.Transformation.LethalResistance` | Resistance before a lethal act: SV {value} + Psyche | Résistance avant un acte meurtrier : SV {value} + Psychisme |
+| `TRUDVANG.Transformation.ArmorTargetRequired` | Drop this effect on carried armor. | Déposez cet effet sur une armure portée. |
+| `TRUDVANG.Transformation.ArmorBlessingNormalOnly` | Protection: +{normal}; no protection against magic damage that ignores armor. | Protection : +{normal} VP ; aucune protection contre les dégâts magiques ignorant les armures. |
+| `TRUDVANG.Transformation.ArmorBlessingValues` | Protection: +{normal}; +{magic} against magic damage that ignores armor. | Protection : +{normal} VP ; +{magic} VP contre les dégâts magiques ignorant les armures. |
 
 ## `TRUDVANG.Transformation.Modes`
 

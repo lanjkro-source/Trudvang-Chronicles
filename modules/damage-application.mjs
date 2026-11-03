@@ -6,10 +6,11 @@ import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {consumablePolicy} from "./rules/consumable-effects.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
+import {resolveArmorProfile} from "./rules/equipment-resolver.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
-const protection = item => Math.ceil(Math.max(0, integrity(item)) / 10);
+const protection = item => item?.type === "armor" ? resolveArmorProfile({item}).protection.value : Math.ceil(Math.max(0, integrity(item)) / 10);
 
 // System clarification: the breaking hit can make integrity negative; later hits cannot lower it further.
 function damageIntegrity(item, loss) {

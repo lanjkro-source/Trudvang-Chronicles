@@ -1,0 +1,45 @@
+{
+  "_id": "rl890aFaGbHcIdJe",
+  "_key": "!items!rl890aFaGbHcIdJe",
+  "name": "Blessed Armor",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor",
+    "description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+    "summary": "Blesses existing armor and increases its protection.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "8O0tJD6B7C8D9EaG",
+      "_key": "!items.effects!rl890aFaGbHcIdJe.8O0tJD6B7C8D9EaG",
+      "name": "Blessed Armor",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0",
+            "summary": "Blesses existing armor and increases its protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

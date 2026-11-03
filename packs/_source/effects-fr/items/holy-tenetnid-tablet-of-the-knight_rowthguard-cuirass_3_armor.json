@@ -1,0 +1,45 @@
+{
+  "_id": "6fmDZ9EaGbHcIdJe",
+  "_key": "!items!6fmDZ9EaGbHcIdJe",
+  "name": "Cuirasse des gardiens du Rortan",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor",
+    "description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+    "summary": "Bénit une armure existante et augmente sa protection.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 260
+    }
+  },
+  "effects": [
+    {
+      "_id": "P796ecD8D9EaGbHc",
+      "_key": "!items.effects!6fmDZ9EaGbHcIdJe.P796ecD8D9EaGbHc",
+      "name": "Cuirasse des gardiens du Rortan",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3",
+            "summary": "Bénit une armure existante et augmente sa protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

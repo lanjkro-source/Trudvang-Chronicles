@@ -1275,7 +1275,8 @@
         "IgnoredCondition": "Les conditions de la modification ne sont pas remplies.",
         "UnsupportedOperation": "La modification utilise une opération non prise en charge.",
         "InvalidAmount": "La modification ne contient pas de valeur numérique valide.",
-        "Constraint": "La valeur a été ajustée aux limites autorisées pour cette caractéristique."
+        "Constraint": "La valeur a été ajustée aux limites autorisées pour cette caractéristique.",
+        "ArmorBlessing": "Bénédiction : +{amount} VP"
       },
       "SizeAttackModifier": "Différence de taille — {target} : {modifier} VC."
     },
@@ -15567,6 +15568,15 @@
           "SourcePage": "259",
           "Duration": "1 jour"
         },
+        "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor": {
+          "Name": "Armure bénie",
+          "Summary": "Bénit une armure existante et augmente sa protection.",
+          "Description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+          "SourceName": "Armure bénie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "259",
+          "Duration": "3 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
           "Name": "Lance bénie",
           "Summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
@@ -15575,6 +15585,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "259",
           "Duration": "3 tours de jeu"
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor": {
+          "Name": "Cuirasse des gardiens du Rortan",
+          "Summary": "Bénit une armure existante et augmente sa protection.",
+          "Description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+          "SourceName": "Cuirasse des gardiens du Rortan",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "260",
+          "Duration": "4 tours de jeu"
         },
         "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
           "Name": "Sainte autorité",
@@ -15602,6 +15621,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "261",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor": {
+          "Name": "Armure blanche de Belo Seoth",
+          "Summary": "Bénit une armure existante et augmente sa protection.",
+          "Description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+          "SourceName": "Armure blanche de Belo Seoth",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "261",
+          "Duration": "5 tours de jeu"
         },
         "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon": {
           "Name": "Hache de Belo Seoth",
@@ -16924,7 +16952,10 @@
       "OneSkillBonus": "Bonus à un test de compétence : +{value} VC",
       "SuggestedTask": "Tâche suggérée",
       "InfluenceResistance": "Influence mentale : résistance SV {value} + Psychisme",
-      "LethalResistance": "Résistance avant un acte meurtrier : SV {value} + Psychisme"
+      "LethalResistance": "Résistance avant un acte meurtrier : SV {value} + Psychisme",
+      "ArmorTargetRequired": "Déposez cet effet sur une armure portée.",
+      "ArmorBlessingNormalOnly": "Protection : +{normal} VP ; aucune protection contre les dégâts magiques ignorant les armures.",
+      "ArmorBlessingValues": "Protection : +{normal} VP ; +{magic} VP contre les dégâts magiques ignorant les armures."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

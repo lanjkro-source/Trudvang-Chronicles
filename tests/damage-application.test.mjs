@@ -17,6 +17,17 @@ test("normal damage reduces armor integrity and only the excess reaches Body Poi
   assert.deepEqual(result.armorDamage.map(entry => ({id: entry.item.id, loss: entry.integrityLoss, integrity: entry.integrity})), [{id: "mail", loss: 3, integrity: 47}]);
 });
 
+test("an improved armor blessing contributes to armor protection before integrity damage",()=>{
+ const mail=armor('mail',50),id='holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3';
+ mail.effects=[{name:'Cuirasse',flags:{'trudvang-chronicles':{transformation:{key:`${id}#armor`,resolved:true,ruleTestContext:{countsById:{[`${id}:2`]:2}}}}}}];
+ const blocked=calculateArmoredDamage({damage:10,totalProtection:10,armor:[mail]});
+ assert.equal(blocked.bodyDamage,0);assert.equal(blocked.armorDamage[0].integrityLoss,0);
+ const hit=calculateArmoredDamage({damage:12,totalProtection:10,armor:[mail]});
+ assert.equal(hit.bodyDamage,2);assert.equal(hit.armorDamage[0].integrityLoss,2);
+ mail.effects[0].disabled=true;
+ assert.equal(calculateArmoredDamage({damage:8,totalProtection:5,armor:[mail]}).bodyDamage,3);
+});
+
 test("natural protection absorbs the remainder after worn armor", () => {
   const result = calculateArmoredDamage({damage: 8, totalProtection: 6, armor: [armor("mail", 50)]});
   assert.equal(result.bodyDamage, 2);

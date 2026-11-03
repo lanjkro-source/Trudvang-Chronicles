@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,297);
+ assert.equal(Object.keys(sources).length,300);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -68,6 +68,22 @@ test("weapon blessings require an owned weapon and preserve their improved value
   assert.match(created.description,/Dégâts : \+3 ; \+4 contre les morts-vivants ; \+5 contre les démons/);
   assert.deepEqual(created.duration,{value:16,units:"rounds"});
  }finally{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;}
+});
+test("armor blessings require armor and record normal and magic protection separately",async()=>{
+ const old={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils,documents:foundry.documents};
+ try{
+  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+  const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
+  globalThis.game={user:{id:'gm'},time:{worldTime:10},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+  globalThis.ui={notifications:{warn:()=>{}}};foundry.utils={deepClone:structuredClone};foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:10})}}};
+  let created;const actor={uuid:'Actor.a',name:'A',items:[],canUserModify:()=>true};
+  const item={type:'armor',name:'Armure',parent:actor,effects:[],canUserModify:()=>true,createEmbeddedDocuments:async(_type,docs)=>(created=docs[0],[created])};
+  const key='holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor';
+  assert.equal(await applyTransformation(actor,key,{counts:[0,0,2],skipDialog:true}),null);
+  await applyTransformation(actor,key,{destinationItem:item,counts:[0,0,2],skipDialog:true});
+  assert.match(created.description,/Protection : \+5 VP ; \+3 VP contre les dégâts magiques/);
+  assert.deepEqual(created.duration,{value:4,units:'rounds'});
+ }finally{globalThis.game=old.game;globalThis.ui=old.ui;foundry.utils=old.utils;foundry.documents=old.documents;}
 });
 test("elemental protection and sensory effects retain their chosen duration and concealment penalties",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
@@ -658,7 +674,7 @@ test("effect improvements change their base fields, including inverse traits, at
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
- for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.weaponDamage&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
+ for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.weaponDamage&&!t.armorBlessing&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
   assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,19,key);
   assert.doesNotMatch(dialog.content,/name="boost\d+"[^>]*\bmax=/,key);
@@ -830,7 +846,7 @@ test("copying already resolved effects preserves improvements, duration and roll
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){
    const rules=rulesFromChanges(t.changes);
-   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter||t.weaponDamage)continue;
+   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter||t.weaponDamage||t.armorBlessing)continue;
    if(!t.parameters.length&&!rules.vitality)continue;
    const counts=[];for(const p of t.parameters){counts[p.index]=2;covered.add(p.target);}
    await applyTransformation(actor,key,{counts});const first=structuredClone(created),beforeRolls=rolls;

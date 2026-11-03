@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 282.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 285.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -284,13 +284,13 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette du bouclier | Résistance au vitner | pouvoir | `holy-tenetnid-tablet-of-the-shield:vitner-resistance:6` | 3 | 1 | 0 |
 | Tablette du bouclier | Bannissement | pouvoir | `holy-tenetnid-tablet-of-the-shield:banishment:7` | 2 | 0 | 0 |
 | Tablette du bouclier | Refuge arboricole | pouvoir | `holy-tenetnid-tablet-of-the-shield:tree-port:8` | 3 | 1 | 1 |
-| Tablette du chevalier | Armure bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-armor:0` | 4 | 0 | 0 |
+| Tablette du chevalier | Armure bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-armor:0` | 4 | 0 | 1 |
 | Tablette du chevalier | Lance bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-spear:1` | 4 | 0 | 1 |
-| Tablette du chevalier | Cuirasse des gardiens du Rortan | pouvoir | `holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3` | 4 | 0 | 0 |
+| Tablette du chevalier | Cuirasse des gardiens du Rortan | pouvoir | `holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3` | 4 | 0 | 1 |
 | Tablette du chevalier | Sainte autorité | pouvoir | `holy-tenetnid-tablet-of-the-knight:holy-authority:2` | 4 | 0 | 1 |
 | Tablette du chevalier | Chaîne de bataille des gardiens du Rortan | pouvoir | `holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5` | 4 | 0 | 1 |
 | Tablette du chevalier | Révélation majestueuse | pouvoir | `holy-tenetnid-tablet-of-the-knight:majestic-revelation:4` | 5 | 1 | 1 |
-| Tablette du chevalier | Armure blanche de Belo Seoth | pouvoir | `holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6` | 4 | 0 | 0 |
+| Tablette du chevalier | Armure blanche de Belo Seoth | pouvoir | `holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6` | 4 | 0 | 1 |
 | Tablette du chevalier | Hache de Belo Seoth | pouvoir | `holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7` | 4 | 0 | 1 |
 | Tablette du chevalier | Aura de Gave | pouvoir | `holy-tenetnid-tablet-of-the-knight:guise-of-gave:8` | 5 | 1 | 1 |
 | Tablette du soleil | Lueur de l’aube | pouvoir | `holy-tenetnid-tablet-of-the-sun:dawn-shine:0` | 3 | 0 | 1 |

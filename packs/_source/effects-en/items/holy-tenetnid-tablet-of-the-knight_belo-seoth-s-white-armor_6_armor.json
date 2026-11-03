@@ -1,0 +1,45 @@
+{
+  "_id": "POHCFVmSnToUpVqW",
+  "_key": "!items!POHCFVmSnToUpVqW",
+  "name": "Belo Seoth's White Armor",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+    "description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+    "summary": "Blesses existing armor and increases its protection.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ar1l6WpVqWrXsYtZ",
+      "_key": "!items.effects!POHCFVmSnToUpVqW.Ar1l6WpVqWrXsYtZ",
+      "name": "Belo Seoth's White Armor",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+            "summary": "Blesses existing armor and increases its protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

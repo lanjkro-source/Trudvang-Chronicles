@@ -1,0 +1,45 @@
+{
+  "_id": "POHCFVmSnToUpVqW",
+  "_key": "!items!POHCFVmSnToUpVqW",
+  "name": "Armure blanche de Belo Seoth",
+  "type": "effect",
+  "img": "icons/svg/shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+    "description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+    "summary": "Bénit une armure existante et augmente sa protection.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 261
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ar1l6WpVqWrXsYtZ",
+      "_key": "!items.effects!POHCFVmSnToUpVqW.Ar1l6WpVqWrXsYtZ",
+      "name": "Armure blanche de Belo Seoth",
+      "type": "effect",
+      "img": "icons/svg/shield.svg",
+      "description": "La bénédiction protège cette pièce d’armure et la fait luire faiblement. Si une arme magique ou un sort ignore les armures normales, appliquez manuellement la protection magique indiquée : le bouton ignorant l’armure ignore toutes les protections.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+            "summary": "Bénit une armure existante et augmente sa protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

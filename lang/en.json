@@ -1275,7 +1275,8 @@
         "IgnoredCondition": "The modifier's conditions are not met.",
         "UnsupportedOperation": "The modifier uses an unsupported operation.",
         "InvalidAmount": "The modifier does not contain a valid numeric value.",
-        "Constraint": "The value was adjusted to the characteristic's permitted range."
+        "Constraint": "The value was adjusted to the characteristic's permitted range.",
+        "ArmorBlessing": "Blessing: +{amount} protection"
       },
       "SizeAttackModifier": "Size difference — {target}: {modifier} SV."
     },
@@ -15567,6 +15568,15 @@
           "SourcePage": "201",
           "Duration": "1 jour"
         },
+        "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor": {
+          "Name": "Blessed Armor",
+          "Summary": "Blesses existing armor and increases its protection.",
+          "Description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+          "SourceName": "Blessed Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "3 action rounds"
+        },
         "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
           "Name": "Blessed Spear",
           "Summary": "Blessed weapon: damage bonus increased against undead and demons.",
@@ -15575,6 +15585,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "199",
           "Duration": "3 action rounds"
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor": {
+          "Name": "Rowthguard Cuirass",
+          "Summary": "Blesses existing armor and increases its protection.",
+          "Description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+          "SourceName": "Rowthguard Cuirass",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "4 action rounds"
         },
         "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
           "Name": "Holy Authority",
@@ -15602,6 +15621,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "199",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor": {
+          "Name": "Belo Seoth's White Armor",
+          "Summary": "Blesses existing armor and increases its protection.",
+          "Description": "The blessing protects this piece of armor and makes it shine faintly. If a magical weapon or spell ignores normal armor, apply the indicated magical protection manually: the ignore-armor button bypasses all protection.",
+          "SourceName": "Belo Seoth's White Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "5 action rounds"
         },
         "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon": {
           "Name": "Belo Seoth's Axe",
@@ -16924,7 +16952,10 @@
       "OneSkillBonus": "Bonus to one skill test: +{value} VC",
       "SuggestedTask": "Suggested task",
       "InfluenceResistance": "Mental influence: resistance SV {value} + Psyche",
-      "LethalResistance": "Resistance before a lethal act: SV {value} + Psyche"
+      "LethalResistance": "Resistance before a lethal act: SV {value} + Psyche",
+      "ArmorTargetRequired": "Drop this effect on carried armor.",
+      "ArmorBlessingNormalOnly": "Protection: +{normal}; no protection against magic damage that ignores armor.",
+      "ArmorBlessingValues": "Protection: +{normal}; +{magic} against magic damage that ignores armor."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

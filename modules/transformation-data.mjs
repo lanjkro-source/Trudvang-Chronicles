@@ -6729,6 +6729,39 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor": {
+    "id": "armor",
+    "icon": "icons/svg/shield.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "armorBlessing": {
+      "normal": 1,
+      "magic": null,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0:1"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
     "id": "weapon",
     "icon": "icons/svg/sword.svg",
@@ -6760,6 +6793,39 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 60,
         "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor": {
+    "id": "armor",
+    "icon": "icons/svg/shield.svg",
+    "duration": "4 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "armorBlessing": {
+      "normal": 3,
+      "magic": 1,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:1"
       }
     ]
   },
@@ -6858,6 +6924,39 @@ export const TRANSFORMATION_TEMPLATES = {
         "skillChoice": true,
         "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
         "optionId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor": {
+    "id": "armor",
+    "icon": "icons/svg/shield.svg",
+    "duration": "5 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "armorBlessing": {
+      "normal": 5,
+      "magic": 3,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:1"
       }
     ]
   },
@@ -12394,8 +12493,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": [
     "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole"
   ],
+  "holy-tenetnid-tablet-of-the-knight:blessed-armor:0": [
+    "holy-tenetnid-tablet-of-the-knight:blessed-armor:0#armor"
+  ],
   "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": [
     "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3": [
+    "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor"
   ],
   "holy-tenetnid-tablet-of-the-knight:holy-authority:2": [
     "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect"
@@ -12405,6 +12510,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": [
     "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6": [
+    "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6#armor"
   ],
   "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": [
     "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon"
