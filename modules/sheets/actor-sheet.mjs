@@ -29,6 +29,7 @@ import {effectContributions, effectContributionText} from "../rules/effect-contr
 import {effectStatus} from "../rules/effect-status.mjs";
 import {sensoryText} from "../rules/senses.mjs";
 import {bodyHealthUpdate} from "../rules/body-health.mjs";
+import {customTabletChild} from "../rules/custom-tablet.mjs";
 import {itemEffectRemainingSeconds} from "../rules/effect-duration.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -845,10 +846,25 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (equipmentOnly && entries.some(entry => !isNpcEquipment(entry))) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.EquipmentOnly"));
     }
+    if(entries.some(entry=>["spell","divineFeat"].includes(entry.type))){ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DropPowerOnTablet"));return [];}
     if (entries.length === 1 && entries[0].type === "tablet") {
       const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
       if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
-      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.UnknownTablet"));
+      const original=entries[0],id=catalogId||`custom:${original._id||foundry.utils.randomID()}`;
+      const definition={id,tabletType:original.system?.tabletType||"vitner",religion:original.system?.religion||""};
+      const compatibility=this.actor.getTabletCompatibility(definition);
+      if(!compatibility.ok)return ui.notifications.warn(compatibility.data?game.i18n.format(compatibility.reason,compatibility.data):game.i18n.localize(compatibility.reason));
+      const tablet=foundry.utils.deepClone(original);delete tablet._id;
+      tablet.system={...tablet.system,catalogId:id,level:1};
+      const children=(tablet.system.customPowers??[]).map(entry=>customTabletChild(entry,id,tablet.name));
+      const paid=this.actor.type==="character"&&!this.actor.system.experience?.creationMode;
+      const cost=paid?this.actor.getKnowledgeLevelCost(tablet,1):0,available=Number(this.actor.system.experience?.adventureAvailable||0);
+      if(paid&&available<cost)return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NotEnoughExperience",{cost}));
+      const created=await this.actor.createEmbeddedDocuments("Item",[tablet,...children]);
+      const learned=created?.find(item=>item.type==="tablet");if(!learned)return created;
+      if(paid){await this.actor.update({"system.experience.adventureAvailable":available-cost,"system.experience.adventureSpent":Number(this.actor.system.experience.adventureSpent||0)+cost});
+        await this.actor._queueAdvancement({kind:"item",itemId:learned.id,itemIds:created.map(item=>item.id),field:"level",from:0,to:1,cost,created:true});}
+      return created;
     }
     if (this.actor.type === "character" && this.actor.system.experience?.creationMode) {
       for (const entry of entries) {

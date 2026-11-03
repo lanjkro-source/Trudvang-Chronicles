@@ -828,6 +828,8 @@
 .trudvang-sheet.item-sheet .tablet-power-group.locked h3 { color: var(--trudvang-muted); }
 .trudvang-sheet.item-sheet .tablet-power-list { margin: 0; padding: 0; list-style: none; }
 .trudvang-sheet.item-sheet .tablet-power-list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 6px; align-items: start; padding: 4px 0; }
+.trudvang-sheet.item-sheet .tablet-power-list li:has([data-tablet-power-level]) { grid-template-columns: 24px minmax(0, 1fr) 54px 28px; align-items: center; }
+.trudvang-sheet.item-sheet .tablet-power-list [data-tablet-power-level] { width: 54px; }
 .trudvang-sheet.item-sheet .tablet-power-icon { display: grid; place-items: center; width: 24px; height: 24px; color: var(--trudvang-ink); font-size: 1rem; }
 .trudvang-sheet.item-sheet .tablet-power-group button { padding: 0; color: var(--trudvang-ink); text-align: left; font-weight: 700; }
 .trudvang-sheet.item-sheet .tablet-power-group button i { margin-left: 3px; color: var(--trudvang-accent); font-size: .65rem; }

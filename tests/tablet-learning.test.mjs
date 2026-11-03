@@ -32,6 +32,34 @@ globalThis.game = {i18n: {lang: "fr", has: key => Boolean(lookup(key)), localize
 globalThis.ui = {notifications: {warn: text => {warnings.push(text); return false; }}};
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActorSheet} = await import("../modules/sheets/actor-sheet.mjs");
+const {customTabletPower, customTabletChild} = await import("../modules/rules/custom-tablet.mjs");
+
+test("individual spells and powers cannot be dropped onto an actor", async () => {
+  const instance = actor();
+  const sheet = new TrudvangActorSheet(); sheet.actor = instance;
+  for (const type of ["spell", "divineFeat"]) {
+    assert.deepEqual(await sheet._handleDrop({type, name: "Power", system: {}}), []);
+    assert.equal(instance.items.length, 0);
+  }
+});
+
+test("a custom tablet carries independent powers with their chosen level to its actor", async () => {
+  const instance = actor();
+  const sheet = new TrudvangActorSheet(); sheet.actor = instance;
+  const source = {uuid: "Item.source", toObject: () => ({_id: "source", type: "spell", name: "Flamme", system: {level: 1, active: true, activeCost: 9, activeCastCosts: [9]}})};
+  const entry = customTabletPower(source, "power-1"); entry.level = 3;
+  const tablet = {_id: "tablet-1", type: "tablet", name: "Tablette personnelle", system: {tabletType: "vitner", level: 4, customPowers: [entry]}};
+  const created = await sheet._handleDrop(tablet);
+  assert.equal(created.length, 2);
+  assert.equal(created[0].system.level, 1);
+  assert.equal(created[1].system.level, 3);
+  assert.equal(created[1].system.tabletId, "custom:tablet-1");
+  assert.equal(created[1].system.active, false);
+  assert.deepEqual(created[1].system.activeCastCosts, []);
+  assert.equal(created[1].flags["trudvang-chronicles"].customTabletPower, "power-1");
+  assert.equal(entry.data.system.level, 1);
+  assert.equal(customTabletChild(entry, "other", "Other").system.tabletId, "other");
+});
 
 const holy = (catalogId, level = 1) => embeddedItem({type: "tablet", system: {tabletType: "holy", catalogId, level}});
 function actor({faith = 4, religion = "gerbanis", items = []} = {}) {

@@ -526,6 +526,7 @@ export class TabletData extends BaseItemData {
     return {
       ...super.defineSchema(),
       catalogId: string(),
+      customPowers: new fields.ArrayField(new fields.ObjectField({required:true,nullable:false,initial:{}}), {required:true,initial:[]}),
       level: integer(1, {min: 1, max: 5}),
       tabletType: string("vitner"),
       religion: string(),

@@ -16,6 +16,9 @@ import {spellActorForItem,spellAvailability} from "../rules/spell-availability.m
 import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowledge-procedures.mjs";
 import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
+import {customTabletPower,customTabletChild} from "../rules/custom-tablet.mjs";
+
+const isCustomTablet = item => item.type === "tablet" && !TABLET_BY_ID.has(item.system.catalogId || item.getFlag?.("trudvang-chronicles", "catalogId"));
 
 const magicSheets=new Set();
 const effectSheets=new Set();
@@ -75,6 +78,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
       "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
+      "tablet-power-remove": TrudvangItemSheet.#onTabletPowerRemove,
       "roll-rule-test": TrudvangItemSheet.#onRollRuleTest,
       "knowledge-procedure": function() { return performKnowledgeProcedure(this.item); },
       "trained-animal-action": function(event, target) { return performTrainedAnimalAction(this.item, target.dataset.trainingAction); }
@@ -161,14 +165,15 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       }) : [];
     const tabletId = this.item.system.catalogId || this.item.getFlag("trudvang-chronicles", "catalogId");
     const catalogTablet = this.item.type === "tablet" ? TABLET_BY_ID.get(tabletId) : null;
+    context.customTablet=this.item.type==="tablet"&&!catalogTablet;
     context.tabletPowerGroups = catalogTablet ? Array.from({length: context.isThuulRune ? 1 : 5}, (_, index) => ({
       level: index + 1,
       accessible: !context.isEmbeddedTablet || Number(this.item.system.level || 0) >= index + 1,
       powers: catalogTablet.powers.filter(power => power.level === index + 1).map(power => ({
         catalogId: power.id, name: powerName(power), summary: getPowerSummary(power), iconClass: powerIconClassForId(power.id)
       }))
-    })).filter(group => group.powers.length) : [];
-    context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.tabletPowerGroups.length > 0;
+    })).filter(group => group.powers.length) : context.customTablet ? Array.from({length:5},(_,index)=>({level:index+1,accessible:true,powers:Array.from(this.item.system.customPowers??[]).filter(entry=>Number(entry.level)===index+1).map(entry=>({customId:entry.id,name:entry.data?.name,summary:entry.data?.system?.summary,iconClass:powerIconClassForItem(entry.data),level:entry.level,levelOptions:[1,2,3,4,5].map(value=>({value,selected:value===Number(entry.level)}))}))})).filter(group=>group.powers.length) : [];
+    context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.customTablet || context.tabletPowerGroups.length > 0;
     context.enrichedDescription = knowledgeProcedureDescription(annotateRuleTestDescription(
       await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner}), this.item), this.item);
     return context;
@@ -184,14 +189,16 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     if (root?.addEventListener && this._transformationDropRoot !== root) {
       this._transformationDropRoot = root;
       root.addEventListener("dragover", event => {
-        if (EFFECT_ITEM_TYPES.has(this.item.type) && this.item.parent?.documentName === "Actor") event.preventDefault();
+        if ((this.item.type==="tablet"&&!TABLET_BY_ID.has(this.item.system.catalogId)&&event.target.closest?.('[data-tab="tablet-powers"]')) || (EFFECT_ITEM_TYPES.has(this.item.type) && this.item.parent?.documentName === "Actor")) event.preventDefault();
       });
       root.addEventListener("drop", event => {
         let data; try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { return; }
-        if (data?.type !== "TrudvangTransformation") return;
+        const customTabletDrop=isCustomTablet(this.item)&&data?.type==="Item"&&event.target.closest?.('[data-tab="tablet-powers"]');
+        if (data?.type !== "TrudvangTransformation"&&!customTabletDrop) return;
         event.preventDefault(); event.stopImmediatePropagation();
         void this._onDrop(event).catch(error => ui.notifications.error(error.message));
       }, {capture: true});
+      root.addEventListener("change",event=>{const control=event.target.closest?.("[data-tablet-power-level]");if(control){event.stopPropagation();void this.changeCustomPowerLevel(control.dataset.tabletPowerLevel,control.value);}},{capture:true});
     }
     if (!this.isEditable || !this.item.isOwner) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
@@ -234,6 +241,20 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _onDrop(event) {
     let data;try{data=JSON.parse(event.dataTransfer?.getData("text/plain")||"null");}catch{}
+    if(data?.type==="Item"&&isCustomTablet(this.item)&&event.target.closest?.('[data-tab="tablet-powers"]')){
+      if(!this.isEditable||!this.item.isOwner)return null;
+      const item=await foundry.documents.Item.implementation.fromDropData(data);
+      const expected=this.item.system.tabletType==="holy"?"divineFeat":"spell";
+      if(item?.type!==expected)return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerType"));
+      const entries=Array.from(this.item.system.customPowers??[],entry=>structuredClone(entry));
+      if(entries.some(entry=>entry.sourceUuid&&entry.sourceUuid===item.uuid))return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerDuplicate"));
+      const entry=customTabletPower(item,foundry.utils.randomID()),tabletId=this.item.system.catalogId||`custom:${this.item.id}`;
+      const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
+      const created=actor?await actor.createEmbeddedDocuments("Item",[customTabletChild(entry,tabletId,this.item.name)]):null;
+      if(actor&&!created?.length)return null;
+      try{return await this.item.update({"system.catalogId":tabletId,"system.customPowers":[...entries,entry]});}
+      catch(error){if(created?.length)await actor.deleteEmbeddedDocuments("Item",created.map(child=>child.id));throw error;}
+    }
     if(data?.type==="TrudvangTransformation"&&EFFECT_ITEM_TYPES.has(this.item.type)&&this.item.parent?.documentName==="Actor"){
       const {applyTransformation}=await import("../transformations.mjs");
       const {effectTargetsFor}=await import("../effect-targets.mjs");
@@ -340,12 +361,39 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onTabletPowerOpen(event, target) {
     event.preventDefault();
+    if(target.dataset.customId){
+      const entry=Array.from(this.item.system.customPowers??[]).find(row=>row.id===target.dataset.customId);
+      const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
+      const child=actor?.items.find(item=>item.flags?.["trudvang-chronicles"]?.customTabletPower===entry?.id&&item.system.tabletId===this.item.system.catalogId);
+      const power=child??(entry?.sourceUuid?await foundry.utils.fromUuid(entry.sourceUuid):null)??(entry?.data?foundry.documents.Item.implementation.fromSource(entry.data):null);
+      if(power)return power.sheet.render({force:true});
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
+    }
     const catalogId = target.dataset.catalogId;
     if (!catalogId) return;
     const power = await findTabletPower({tablet: this.item, catalogId,
       packs: game.packs, worldItems: game.items, language: game.i18n.lang});
     if (power) return power.sheet.render({force: true});
     return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
+  }
+
+  async changeCustomPowerLevel(id,value){
+    if(!isCustomTablet(this.item)||!this.isEditable||!this.item.isOwner||!Number.isInteger(Number(value))||Number(value)<1||Number(value)>5)return null;
+    const entries=Array.from(this.item.system.customPowers??[],entry=>structuredClone(entry)),entry=entries.find(row=>row.id===id);if(!entry)return null;
+    entry.level=Number(value);const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
+    const child=actor?.items.find(item=>item.flags?.["trudvang-chronicles"]?.customTabletPower===id&&item.system.tabletId===this.item.system.catalogId);
+    if(child)await child.update({"system.level":entry.level});
+    return this.item.update({"system.customPowers":entries});
+  }
+
+  static async #onTabletPowerRemove(event,target){
+    event.preventDefault();if(!isCustomTablet(this.item)||!this.isEditable||!this.item.isOwner)return null;
+    const id=target.dataset.customId,entries=Array.from(this.item.system.customPowers??[],entry=>structuredClone(entry));
+    if(!entries.some(entry=>entry.id===id))return null;
+    const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
+    const child=actor?.items.find(item=>item.flags?.["trudvang-chronicles"]?.customTabletPower===id&&item.system.tabletId===this.item.system.catalogId);
+    if(child)await child.delete();
+    return this.item.update({"system.customPowers":entries.filter(entry=>entry.id!==id)});
   }
 
   static async #onDeleteItem(event, target) {
