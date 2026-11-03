@@ -1,0 +1,45 @@
+{
+  "_id": "EmPnJnSnToUpVqWr",
+  "_key": "!items!EmPnJnSnToUpVqWr",
+  "name": "King’s Ale",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+    "description": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+    "summary": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "PwUQlE6B7C8D9EaG",
+      "_key": "!items.effects!EmPnJnSnToUpVqWr.PwUQlE6B7C8D9EaG",
+      "name": "King’s Ale",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7",
+            "summary": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

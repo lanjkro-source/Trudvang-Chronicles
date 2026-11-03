@@ -1,0 +1,45 @@
+{
+  "_id": "HgZUbRiOjPkQlRmS",
+  "_key": "!items!HgZUbRiOjPkQlRmS",
+  "name": "Accomplished",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:accomplished:1#effect",
+    "description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+    "summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "Q9KliH8D9EaGbHcI",
+      "_key": "!items.effects!HgZUbRiOjPkQlRmS.Q9KliH8D9EaGbHcI",
+      "name": "Accomplished",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:accomplished:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:accomplished:1#effect",
+            "sourceId": "holy-haminges-power-of-men:accomplished:1",
+            "summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

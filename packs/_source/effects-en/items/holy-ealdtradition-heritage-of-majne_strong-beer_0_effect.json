@@ -1,0 +1,45 @@
+{
+  "_id": "VknCdgIdJeKfLgMh",
+  "_key": "!items!VknCdgIdJeKfLgMh",
+  "name": "Strong Beer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect",
+    "description": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+    "summary": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 181
+    }
+  },
+  "effects": [
+    {
+      "_id": "ANzeIqUpVqWrXsYt",
+      "_key": "!items.effects!VknCdgIdJeKfLgMh.ANzeIqUpVqWrXsYt",
+      "name": "Strong Beer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:strong-beer:0",
+            "summary": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

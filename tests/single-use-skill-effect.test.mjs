@@ -22,3 +22,12 @@ test("cancelled or failed rolls retain the effect and concurrent use cannot roll
  const [a,b]=await Promise.all([withConditionalEffectConsumption(actor,rows,roll),withConditionalEffectConsumption(actor,rows,roll)]);
  assert.equal(count,1);assert.ok(a);assert.equal(b,null);assert.ok(warnings.length);
 });
+test("Accomplished and Mastery apply their selected improvement to one chosen skill roll",async()=>{
+ for(const [power,base] of [['accomplished:1',1],['mastery:3',3]]){
+  const source=`holy-haminges-power-of-men:${power}`,actor={effects:[]};
+  const effect={id:'once',name:power,flags:{[S]:{transformation:{key:`${source}#effect`,sourceId:source,ruleTestContext:{countsById:{[`${source}:2`]:2}}}}},async delete(){actor.effects=[];}};
+  actor.effects=[effect];const rows=conditionalSkillModifiers(actor,'knowledge');
+  assert.equal(rows.length,1);assert.equal(rows[0].value,base+2);assert.equal(rows[0].consumeEffectId,'once');
+  await withConditionalEffectConsumption(actor,rows,async()=>({success:true}));assert.equal(actor.effects.length,0);
+ }
+});

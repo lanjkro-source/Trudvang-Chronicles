@@ -1,0 +1,45 @@
+{
+  "_id": "Muf2CPjPkQlRmSnT",
+  "_key": "!items!Muf2CPjPkQlRmSnT",
+  "name": "Maître",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:mastery:3#effect",
+    "description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+    "summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 272
+    }
+  },
+  "effects": [
+    {
+      "_id": "5sWi23x3y4z5A6B7",
+      "_key": "!items.effects!Muf2CPjPkQlRmSnT.5sWi23x3y4z5A6B7",
+      "name": "Maître",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:mastery:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:mastery:3#effect",
+            "sourceId": "holy-haminges-power-of-men:mastery:3",
+            "summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

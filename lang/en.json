@@ -15124,6 +15124,15 @@
           "Capability0": "ravens",
           "Capability1": "undead"
         },
+        "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect": {
+          "Name": "Strong Beer",
+          "Summary": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "Description": "Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "SourceName": "Strong Beer",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 day"
+        },
         "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
           "Name": "Trollslayer",
           "Summary": "Bonuses apply only against the relevant creature category.",
@@ -15151,6 +15160,15 @@
           "SourcePage": "181",
           "Duration": "3 rounds"
         },
+        "holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect": {
+          "Name": "Hero’s Brew",
+          "Summary": "Participants who drank gain +2 protection and +2 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "Description": "Participants who drank gain +2 protection and +2 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "SourceName": "Hero's Brew",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 day"
+        },
         "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
           "Name": "King's Guard",
           "Summary": "King's Guard",
@@ -15159,6 +15177,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "181",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect": {
+          "Name": "King’s Ale",
+          "Summary": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "Description": "Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually.",
+          "SourceName": "King's Ale",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "181",
+          "Duration": "1 day"
         },
         "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
           "Name": "Dragonslayer",
@@ -15785,6 +15812,15 @@
           "SourcePage": "218",
           "Duration": "3 days"
         },
+        "holy-haminges-power-of-men:accomplished:1#effect": {
+          "Name": "Accomplished",
+          "Summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+          "Description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+          "SourceName": "Accomplished",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains": {
           "Name": "Sight of the Dwarves",
           "Summary": "Allows sight in darkness.",
@@ -15794,6 +15830,15 @@
           "SourcePage": "216",
           "Duration": "1 minute",
           "Sense0": "Accomplished"
+        },
+        "holy-haminges-power-of-men:mastery:3#effect": {
+          "Name": "Mastery",
+          "Summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+          "Description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+          "SourceName": "Mastery",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": "2 minutes"
         },
         "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
           "Name": "Weapon Prowess",
@@ -15812,6 +15857,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "216",
           "Duration": "2 hours"
+        },
+        "holy-haminges-power-of-men:legendary:7#effect": {
+          "Name": "Legendary",
+          "Summary": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+          "Description": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+          "SourceName": "Legendary",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": "3 minutes"
         },
         "holy-haminges-power-of-trolls:willpower:1#volonte": {
           "Name": "Troll Willpower",
@@ -16821,7 +16875,8 @@
       "WeaponTargetRequired": "Drop this effect on a carried weapon or shield.",
       "BlessedWeaponDamage": "Damage: +{normal}; +{undead} against undead; +{demon} against demons.",
       "ConcealStill": "Detection while stationary: {value} VC",
-      "ConcealMoving": "Detection while moving: {value} VC"
+      "ConcealMoving": "Detection while moving: {value} VC",
+      "OneSkillBonus": "Bonus to one skill test: +{value} VC"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

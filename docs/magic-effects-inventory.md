@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 271.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 277.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -212,13 +212,13 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Don de Thanja | Enfant de la forêt | pouvoir | `holy-ealdtradition-gift-of-thanja:forest-denizen:7` | 2 | 1 | 1 |
 | Don de Thanja | Langue des dragons | pouvoir | `holy-ealdtradition-gift-of-thanja:dragon-tongue:6` | 2 | 0 | 1 |
 | Don de Thanja | Aspect du corbeau | pouvoir | `holy-ealdtradition-gift-of-thanja:ravenshape:8` | 2 | 0 | 1 |
-| Héritage de Majne | Bière forte | pouvoir | `holy-ealdtradition-heritage-of-majne:strong-beer:0` | 1 | 0 | 0 |
+| Héritage de Majne | Bière forte | pouvoir | `holy-ealdtradition-heritage-of-majne:strong-beer:0` | 1 | 0 | 1 |
 | Héritage de Majne | Tueur de trolls | pouvoir | `holy-ealdtradition-heritage-of-majne:trollslayer:1` | 2 | 0 | 1 |
 | Héritage de Majne | Milice royale | pouvoir | `holy-ealdtradition-heritage-of-majne:king-s-militia:3` | 3 | 0 | 1 |
 | Héritage de Majne | Tueur de géants | pouvoir | `holy-ealdtradition-heritage-of-majne:giantslayer:2` | 2 | 0 | 1 |
-| Héritage de Majne | Bière du héros | pouvoir | `holy-ealdtradition-heritage-of-majne:hero-s-brew:4` | 1 | 0 | 0 |
+| Héritage de Majne | Bière du héros | pouvoir | `holy-ealdtradition-heritage-of-majne:hero-s-brew:4` | 1 | 0 | 1 |
 | Héritage de Majne | Garde royale | pouvoir | `holy-ealdtradition-heritage-of-majne:king-s-guard:5` | 3 | 0 | 1 |
-| Héritage de Majne | Bière royale | pouvoir | `holy-ealdtradition-heritage-of-majne:king-s-ale:7` | 1 | 0 | 0 |
+| Héritage de Majne | Bière royale | pouvoir | `holy-ealdtradition-heritage-of-majne:king-s-ale:7` | 1 | 0 | 1 |
 | Héritage de Majne | Tueur de dragons | pouvoir | `holy-ealdtradition-heritage-of-majne:dragonslayer:6` | 2 | 0 | 1 |
 | Héritage de Majne | Les neuf rois | pouvoir | `holy-ealdtradition-heritage-of-majne:the-nine-kings:8` | 3 | 0 | 1 |
 | Offrande de Halawen | Bouclier contre le vitner | pouvoir | `holy-ealdtradition-halawen-s-offering:vitner-shield:1` | 4 | 1 | 0 |
@@ -320,14 +320,14 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance de l'écaille | Clameur de la dévoreuse | pouvoir | `holy-haminges-power-of-the-scale:scream-of-the-devouress:6` | 2 | 0 | 0 |
 | Puissance de l'écaille | Cœur du lindwurm | pouvoir | `holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8` | 2 | 0 | 1 |
 | Puissance de l'écaille | Pétrification | pouvoir | `holy-haminges-power-of-the-scale:petrify:7` | 3 | 1 | 3 |
-| Puissance des hommes | Accompli | pouvoir | `holy-haminges-power-of-men:accomplished:1` | 3 | 0 | 0 |
+| Puissance des hommes | Accompli | pouvoir | `holy-haminges-power-of-men:accomplished:1` | 3 | 0 | 1 |
 | Puissance des hommes | Vision des nains | pouvoir | `holy-haminges-power-of-men:sight-of-the-dwarves:0` | 2 | 0 | 1 |
-| Puissance des hommes | Maître | pouvoir | `holy-haminges-power-of-men:mastery:3` | 3 | 0 | 0 |
+| Puissance des hommes | Maître | pouvoir | `holy-haminges-power-of-men:mastery:3` | 3 | 0 | 1 |
 | Puissance des hommes | Mixture curative | pouvoir | `holy-haminges-power-of-men:curative-draught:2` | 2 | 0 | 0 |
 | Puissance des hommes | Potion de guérison | pouvoir | `holy-haminges-power-of-men:remedial-potion:4` | 2 | 0 | 0 |
 | Puissance des hommes | Prouesse martiale | pouvoir | `holy-haminges-power-of-men:weapon-prowess:5` | 1 | 0 | 1 |
 | Puissance des hommes | Forgeron nain | pouvoir | `holy-haminges-power-of-men:dwarven-smith:6` | 2 | 0 | 1 |
-| Puissance des hommes | Légendaire | pouvoir | `holy-haminges-power-of-men:legendary:7` | 2 | 0 | 0 |
+| Puissance des hommes | Légendaire | pouvoir | `holy-haminges-power-of-men:legendary:7` | 2 | 0 | 1 |
 | Puissance des hommes | Élixir de vie de la dévoreuse | pouvoir | `holy-haminges-power-of-men:life-elixir-of-the-devouress:8` | 2 | 0 | 0 |
 | Puissance des trolls | Infection | pouvoir | `holy-haminges-power-of-trolls:disease-carrier:0` | 3 | 1 | 0 |
 | Puissance des trolls | Volonté | pouvoir | `holy-haminges-power-of-trolls:willpower:1` | 2 | 0 | 1 |

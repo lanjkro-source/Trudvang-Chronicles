@@ -1,0 +1,45 @@
+{
+  "_id": "IWDtt5x3y4z5A6B7",
+  "_key": "!items!IWDtt5x3y4z5A6B7",
+  "name": "Légendaire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:legendary:7#effect",
+    "description": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+    "summary": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 273
+    }
+  },
+  "effects": [
+    {
+      "_id": "vts2EE7C8D9EaGbH",
+      "_key": "!items.effects!IWDtt5x3y4z5A6B7.vts2EE7C8D9EaGbH",
+      "name": "Légendaire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:legendary:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:legendary:7#effect",
+            "sourceId": "holy-haminges-power-of-men:legendary:7",
+            "summary": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

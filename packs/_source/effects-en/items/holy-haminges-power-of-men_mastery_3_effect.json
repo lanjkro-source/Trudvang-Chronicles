@@ -1,0 +1,45 @@
+{
+  "_id": "Muf2CPjPkQlRmSnT",
+  "_key": "!items!Muf2CPjPkQlRmSnT",
+  "name": "Mastery",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:mastery:3#effect",
+    "description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+    "summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "5sWi23x3y4z5A6B7",
+      "_key": "!items.effects!Muf2CPjPkQlRmSnT.5sWi23x3y4z5A6B7",
+      "name": "Mastery",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:mastery:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:mastery:3#effect",
+            "sourceId": "holy-haminges-power-of-men:mastery:3",
+            "summary": "Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

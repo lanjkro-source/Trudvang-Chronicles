@@ -15124,6 +15124,15 @@
           "Capability0": "corbeaux",
           "Capability1": "morts-vivants"
         },
+        "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect": {
+          "Name": "Bière forte",
+          "Summary": "Les participants qui ont bu bénéficient de +1 VP et +1 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "Description": "Les participants qui ont bu bénéficient de +1 VP et +1 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "SourceName": "Bière forte",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "236",
+          "Duration": "1 jour"
+        },
         "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
           "Name": "Tueur de trolls",
           "Summary": "Les bonus ne s’appliquent que contre la catégorie concernée (troll).",
@@ -15151,6 +15160,15 @@
           "SourcePage": "237",
           "Duration": "3 tours de jeu"
         },
+        "holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect": {
+          "Name": "Bière du héros",
+          "Summary": "Les participants qui ont bu bénéficient de +2 VP et +2 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "Description": "Les participants qui ont bu bénéficient de +2 VP et +2 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "SourceName": "Bière du héros",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "237",
+          "Duration": "1 jour"
+        },
         "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
           "Name": "Garde royale",
           "Summary": "Garde royale",
@@ -15159,6 +15177,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "238",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect": {
+          "Name": "Bière royale",
+          "Summary": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "Description": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+          "SourceName": "Bière royale",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "238",
+          "Duration": "1 jour"
         },
         "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons": {
           "Name": "Tueur de dragons",
@@ -15785,6 +15812,15 @@
           "SourcePage": "272",
           "Duration": "3 days"
         },
+        "holy-haminges-power-of-men:accomplished:1#effect": {
+          "Name": "Accompli",
+          "Summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+          "Description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+          "SourceName": "Accompli",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "272",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains": {
           "Name": "Vision des nains",
           "Summary": "Permet de voir dans l’obscurité.",
@@ -15794,6 +15830,15 @@
           "SourcePage": "272",
           "Duration": "1 minute",
           "Sense0": "Vision des nains"
+        },
+        "holy-haminges-power-of-men:mastery:3#effect": {
+          "Name": "Maître",
+          "Summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+          "Description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+          "SourceName": "Maître",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "272",
+          "Duration": "2 minutes"
         },
         "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
           "Name": "Prouesse martiale",
@@ -15812,6 +15857,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "273",
           "Duration": "2 heures"
+        },
+        "holy-haminges-power-of-men:legendary:7#effect": {
+          "Name": "Légendaire",
+          "Summary": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+          "Description": "Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement.",
+          "SourceName": "Légendaire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "273",
+          "Duration": "3 minutes"
         },
         "holy-haminges-power-of-trolls:willpower:1#volonte": {
           "Name": "Volonté des trolls",
@@ -16821,7 +16875,8 @@
       "WeaponTargetRequired": "Déposez cet effet sur une arme ou un bouclier porté.",
       "BlessedWeaponDamage": "Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons.",
       "ConcealStill": "Repérage à l’arrêt : {value} VC",
-      "ConcealMoving": "Repérage en mouvement : {value} VC"
+      "ConcealMoving": "Repérage en mouvement : {value} VC",
+      "OneSkillBonus": "Bonus à un test de compétence : +{value} VC"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

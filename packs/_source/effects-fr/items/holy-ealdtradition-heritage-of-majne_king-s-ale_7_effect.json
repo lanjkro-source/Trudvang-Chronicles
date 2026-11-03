@@ -1,0 +1,45 @@
+{
+  "_id": "EmPnJnSnToUpVqWr",
+  "_key": "!items!EmPnJnSnToUpVqWr",
+  "name": "Bière royale",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+    "description": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+    "summary": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 238
+    }
+  },
+  "effects": [
+    {
+      "_id": "PwUQlE6B7C8D9EaG",
+      "_key": "!items.effects!EmPnJnSnToUpVqWr.PwUQlE6B7C8D9EaG",
+      "name": "Bière royale",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect",
+            "sourceId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7",
+            "summary": "Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

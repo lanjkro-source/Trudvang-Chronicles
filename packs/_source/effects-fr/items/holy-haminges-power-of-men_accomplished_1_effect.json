@@ -1,0 +1,45 @@
+{
+  "_id": "HgZUbRiOjPkQlRmS",
+  "_key": "!items!HgZUbRiOjPkQlRmS",
+  "name": "Accompli",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:accomplished:1#effect",
+    "description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+    "summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 272
+    }
+  },
+  "effects": [
+    {
+      "_id": "Q9KliH8D9EaGbHcI",
+      "_key": "!items.effects!HgZUbRiOjPkQlRmS.Q9KliH8D9EaGbHcI",
+      "name": "Accompli",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:accomplished:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:accomplished:1#effect",
+            "sourceId": "holy-haminges-power-of-men:accomplished:1",
+            "summary": "Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

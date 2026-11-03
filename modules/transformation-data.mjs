@@ -5137,6 +5137,24 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:strong-beer:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-heritage-of-majne:strong-beer:0:0"
+      }
+    ]
+  },
   "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls": {
     "id": "tueur-trolls",
     "icon": "icons/svg/aura.svg",
@@ -5200,6 +5218,24 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:hero-s-brew:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-heritage-of-majne:hero-s-brew:4:0"
+      }
+    ]
+  },
   "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -5224,6 +5260,24 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7:0"
       }
     ]
   },
@@ -7614,6 +7668,42 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": []
   },
+  "holy-haminges-power-of-men:accomplished:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-haminges-power-of-men:accomplished:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-men:accomplished:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-men:accomplished:1:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-men:accomplished:1:2",
+        "labelKey": "TRUDVANG.Transformation.OneSkillBonus",
+        "skillChoice": true,
+        "skillOnly": true,
+        "tooltip": true,
+        "consumeOnUse": true
+      }
+    ]
+  },
   "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains": {
     "id": "vision-des-nains",
     "duration": "1 minute",
@@ -7643,6 +7733,42 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-haminges-power-of-men:sight-of-the-dwarves:0:1"
+      }
+    ]
+  },
+  "holy-haminges-power-of-men:mastery:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-haminges-power-of-men:mastery:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-men:mastery:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-men:mastery:3:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-men:mastery:3:2",
+        "labelKey": "TRUDVANG.Transformation.OneSkillBonus",
+        "skillChoice": true,
+        "skillOnly": true,
+        "tooltip": true,
+        "consumeOnUse": true
       }
     ]
   },
@@ -7710,6 +7836,30 @@ export const TRANSFORMATION_TEMPLATES = {
         "labelKey": "TRUDVANG.Transformation.CraftSpecialtyBonus",
         "optionId": "holy-haminges-power-of-men:dwarven-smith:6:0",
         "automatic": true
+      }
+    ]
+  },
+  "holy-haminges-power-of-men:legendary:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-haminges-power-of-men:legendary:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-men:legendary:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-haminges-power-of-men:legendary:7:1"
       }
     ]
   },
@@ -11935,6 +12085,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": [
     "holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau"
   ],
+  "holy-ealdtradition-heritage-of-majne:strong-beer:0": [
+    "holy-ealdtradition-heritage-of-majne:strong-beer:0#effect"
+  ],
   "holy-ealdtradition-heritage-of-majne:trollslayer:1": [
     "holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls"
   ],
@@ -11944,8 +12097,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-heritage-of-majne:giantslayer:2": [
     "holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants"
   ],
+  "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": [
+    "holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect"
+  ],
   "holy-ealdtradition-heritage-of-majne:king-s-guard:5": [
     "holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect"
+  ],
+  "holy-ealdtradition-heritage-of-majne:king-s-ale:7": [
+    "holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect"
   ],
   "holy-ealdtradition-heritage-of-majne:dragonslayer:6": [
     "holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons"
@@ -12124,14 +12283,23 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-half",
     "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds"
   ],
+  "holy-haminges-power-of-men:accomplished:1": [
+    "holy-haminges-power-of-men:accomplished:1#effect"
+  ],
   "holy-haminges-power-of-men:sight-of-the-dwarves:0": [
     "holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains"
+  ],
+  "holy-haminges-power-of-men:mastery:3": [
+    "holy-haminges-power-of-men:mastery:3#effect"
   ],
   "holy-haminges-power-of-men:weapon-prowess:5": [
     "holy-haminges-power-of-men:weapon-prowess:5#prouesse"
   ],
   "holy-haminges-power-of-men:dwarven-smith:6": [
     "holy-haminges-power-of-men:dwarven-smith:6#forge"
+  ],
+  "holy-haminges-power-of-men:legendary:7": [
+    "holy-haminges-power-of-men:legendary:7#effect"
   ],
   "holy-haminges-power-of-trolls:willpower:1": [
     "holy-haminges-power-of-trolls:willpower:1#volonte"

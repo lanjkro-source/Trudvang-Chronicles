@@ -495,6 +495,24 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "drinkers",
+          "baseTargets": null,
+          "variants": [
+            "effect"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-ealdtradition-heritage-of-majne:hero-s-brew:4:0"
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-heritage-of-majne:hero-s-brew:4:0"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:hero-s-brew:4:0",
@@ -508,6 +526,24 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:king-s-ale:7": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "drinkers",
+          "baseTargets": null,
+          "variants": [
+            "effect"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-ealdtradition-heritage-of-majne:king-s-ale:7:0"
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-heritage-of-majne:king-s-ale:7:0"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:king-s-ale:7:0",
@@ -567,6 +603,24 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:strong-beer:0": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "drinkers",
+          "baseTargets": null,
+          "variants": [
+            "effect"
+          ],
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-ealdtradition-heritage-of-majne:strong-beer:0:0"
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-heritage-of-majne:strong-beer:0:0"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-heritage-of-majne:strong-beer:0:0",
@@ -2510,6 +2564,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:accomplished:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:accomplished:1:0",
@@ -2573,6 +2632,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:legendary:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:legendary:7:0",
@@ -2609,6 +2673,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:mastery:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:mastery:3:0",

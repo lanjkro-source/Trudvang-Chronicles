@@ -12580,6 +12580,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability0` | ravens | corbeaux |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-gift-of-thanja:ravenshape:8#aspect-du-corbeau.Capability1` | undead | morts-vivants |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.Name` | Strong Beer | Bière forte |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.Description` | Participants who drank gain +1 protection and +1 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually. | Les participants qui ont bu bénéficient de +1 VP et +1 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.SourceName` | Strong Beer | Bière forte |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.SourcePage` | 181 | 236 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:strong-beer:0#effect.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:trollslayer:1#tueur-trolls`
 
 | Clé | English | Français |
@@ -12613,6 +12624,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.SourcePage` | 181 | 237 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:giantslayer:2#tueur-geants.Duration` | 3 rounds | 3 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.Name` | Hero’s Brew | Bière du héros |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.Description` | Participants who drank gain +2 protection and +2 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually. | Les participants qui ont bu bénéficient de +2 VP et +2 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.SourceName` | Hero's Brew | Bière du héros |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.SourcePage` | 181 | 237 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:hero-s-brew:4#effect.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect`
 
 | Clé | English | Français |
@@ -12623,6 +12645,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.SourcePage` | 181 | 238 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-guard:5#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.Name` | King’s Ale | Bière royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.Description` | Participants who drank gain +3 protection and +3 to combat actions when acting together on the same adventure. If a companion leaves the group, all lose the benefit. Only one beer can apply at a time. Apply conditional bonuses manually. | Les participants qui ont bu bénéficient de +3 VP et +3 aux actions de combat lorsqu’ils agissent ensemble dans la même aventure. Si un compagnon quitte le groupe, tous perdent le bénéfice. Une seule bière peut agir à la fois. Bonus conditionnels à appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.SourceName` | King's Ale | Bière royale |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.SourcePage` | 181 | 238 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:king-s-ale:7#effect.Duration` | 1 day | 1 jour |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:dragonslayer:6#tueur-dragons`
 
@@ -13387,6 +13420,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.SourcePage` | 218 | 272 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.Name` | Accomplished | Accompli |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.Description` | Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect. | Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.SourceName` | Accomplished | Accompli |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.SourcePage` | 216 | 272 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:accomplished:1#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains`
 
 | Clé | English | Français |
@@ -13398,6 +13442,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.SourcePage` | 216 | 272 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:sight-of-the-dwarves:0#vision-des-nains.Sense0` | Accomplished | Vision des nains |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.Name` | Mastery | Maître |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.Description` | Grants the caster a bonus to one skill test before expiry; using the bonus consumes the effect. | Accorde au conjurateur un bonus à un seul test de compétence avant expiration ; l’effet est consommé lorsque ce bonus est utilisé. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.SourceName` | Mastery | Maître |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.SourcePage` | 216 | 272 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.Duration` | 2 minutes | 2 minutes |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse`
 
@@ -13420,6 +13475,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.SourcePage` | 216 | 273 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:dwarven-smith:6#forge.Duration` | 2 hours | 2 heures |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.Name` | Legendary | Légendaire |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.Description` | Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually. | Permet de réussir automatiquement un test de compétence volontaire, choisi avant expiration. Ne fonctionne pas sur un test de réaction ; réussite et suppression de l’effet à gérer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.SourceName` | Legendary | Légendaire |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.SourcePage` | 216 | 273 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.Duration` | 3 minutes | 3 minutes |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte`
 
@@ -14628,6 +14694,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.BlessedWeaponDamage` | Damage: +{normal}; +{undead} against undead; +{demon} against demons. | Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons. |
 | `TRUDVANG.Transformation.ConcealStill` | Detection while stationary: {value} VC | Repérage à l’arrêt : {value} VC |
 | `TRUDVANG.Transformation.ConcealMoving` | Detection while moving: {value} VC | Repérage en mouvement : {value} VC |
+| `TRUDVANG.Transformation.OneSkillBonus` | Bonus to one skill test: +{value} VC | Bonus à un test de compétence : +{value} VC |
 
 ## `TRUDVANG.Transformation.Modes`
 

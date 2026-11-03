@@ -1,0 +1,45 @@
+{
+  "_id": "IWDtt5x3y4z5A6B7",
+  "_key": "!items!IWDtt5x3y4z5A6B7",
+  "name": "Legendary",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:legendary:7#effect",
+    "description": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+    "summary": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "vts2EE7C8D9EaGbH",
+      "_key": "!items.effects!IWDtt5x3y4z5A6B7.vts2EE7C8D9EaGbH",
+      "name": "Legendary",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:legendary:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:legendary:7#effect",
+            "sourceId": "holy-haminges-power-of-men:legendary:7",
+            "summary": "Allows one voluntarily chosen skill test to succeed automatically before expiry. It cannot be used for a reactive test; resolve the success and remove the effect manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
