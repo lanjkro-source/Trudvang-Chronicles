@@ -15330,6 +15330,33 @@
           "SourcePage": "252",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
+          "Name": "Soins sacrés",
+          "Summary": "Restaure progressivement les points de santé d’une créature.",
+          "Description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 1 point de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+          "SourceName": "Soins sacrés",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "253",
+          "Duration": "3 minutes"
+        },
+        "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect": {
+          "Name": "Craie de Bete Wiemdas",
+          "Summary": "Soigne progressivement une créature grâce à la grâce divine.",
+          "Description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 3 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+          "SourceName": "Craie de Bete Wiemdas",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "253",
+          "Duration": "3 minutes"
+        },
+        "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect": {
+          "Name": "Souffle de Gave",
+          "Summary": "Restaure progressivement les points de santé d’une créature.",
+          "Description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée. Ce pouvoir soigne 6 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+          "SourceName": "Souffle de Gave",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "255",
+          "Duration": "3 minutes"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
           "Name": "Oreille de Siro Werte",
           "Summary": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
@@ -15566,6 +15593,15 @@
           "SourcePage": "270",
           "Duration": "2 tours de jeu"
         },
+        "holy-haminges-power-of-the-scale:regenerative-blood:3#effect": {
+          "Name": "Sang régénérant",
+          "Summary": "Régénère progressivement les blessures du conjurateur.",
+          "Description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par minute jusqu’à expiration du pouvoir.",
+          "SourceName": "Sang régénérant",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "271",
+          "Duration": "3 minutes"
+        },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Membre de pierre — Bras gauche",
           "Summary": "Pétrifie le bras gauche de la cible.",
@@ -15601,6 +15637,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "271",
           "Duration": "3 tours de jeu"
+        },
+        "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect": {
+          "Name": "Sang du lindwurm",
+          "Summary": "Accélère la régénération des blessures du conjurateur.",
+          "Description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par tour de jeu jusqu’à expiration du pouvoir.",
+          "SourceName": "Sang du lindwurm",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "271",
+          "Duration": "5 tours de jeu"
         },
         "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm": {
           "Name": "Cœur du lindwurm",

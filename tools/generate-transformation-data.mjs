@@ -39,6 +39,8 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);
+   if(JSON.stringify(t.periodic??null)!==JSON.stringify(translated.periodic??null))throw Error(`Unaligned periodic consequence for ${key}`);
+   if(t.periodic&&(!Number.isFinite(t.periodic.interval)||t.periodic.interval<=0||t.periodic.operation!=="heal"||!Number.isInteger(t.periodic.amount)||t.periodic.amount<=0))throw Error(`Invalid periodic consequence for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(JSON.stringify(t.aura??null)!==JSON.stringify(translated.aura??null))throw Error(`Unaligned aura for ${key}`);
    if(t.aura&&(!Number.isFinite(t.aura.radius)||t.aura.radius<0||!entry.powerLevels?.some(p=>p.optionId===t.aura.radiusOptionId)||typeof t.aura.light!=="boolean"||![undefined,"none"].includes(t.aura.recipientMode)))throw Error(`Invalid aura for ${key}`);

@@ -1,0 +1,45 @@
+{
+  "_id": "mk1WQQhNiOjPkQlR",
+  "_key": "!items!mk1WQQhNiOjPkQlR",
+  "name": "Soins sacrés",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 1 point de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+    "summary": "Restaure progressivement les points de santé d’une créature.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 253
+    }
+  },
+  "effects": [
+    {
+      "_id": "D1CuS9EaGbHcIdJe",
+      "_key": "!items.effects!mk1WQQhNiOjPkQlR.D1CuS9EaGbHcIdJe",
+      "name": "Soins sacrés",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 1 point de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+            "sourceId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+            "summary": "Restaure progressivement les points de santé d’une créature.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

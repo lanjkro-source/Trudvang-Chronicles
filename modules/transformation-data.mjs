@@ -5948,6 +5948,75 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
   },
+  "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 1
+    },
+    "sourceId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-grace:holy-mending:1:0"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 3
+    },
+    "sourceId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4:0"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 6
+    },
+    "sourceId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6:0"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
     "id": "oreille",
     "icon": "icons/svg/aura.svg",
@@ -6902,6 +6971,29 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-the-scale:regenerative-blood:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 1
+    },
+    "sourceId": "holy-haminges-power-of-the-scale:regenerative-blood:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:regenerative-blood:3:0"
+      }
+    ]
+  },
   "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
     "id": "membre-de-pierrebras-gauche",
     "icon": "icons/svg/aura.svg",
@@ -6995,6 +7087,29 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 5,
         "optionId": "holy-haminges-power-of-the-scale:limb-of-stone:5:0"
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "periodic": {
+      "interval": 5,
+      "operation": "heal",
+      "amount": 1
+    },
+    "sourceId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:0"
       }
     ]
   },
@@ -10959,6 +11074,15 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds"
   ],
+  "holy-tenetnid-tablet-of-grace:holy-mending:1": [
+    "holy-tenetnid-tablet-of-grace:holy-mending:1#effect"
+  ],
+  "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4": [
+    "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect"
+  ],
+  "holy-tenetnid-tablet-of-grace:breath-of-gave:6": [
+    "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect"
+  ],
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille"
   ],
@@ -11033,11 +11157,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-scale:shattered-mind:1": [
     "holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise"
   ],
+  "holy-haminges-power-of-the-scale:regenerative-blood:3": [
+    "holy-haminges-power-of-the-scale:regenerative-blood:3#effect"
+  ],
   "holy-haminges-power-of-the-scale:limb-of-stone:5": [
     "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche",
     "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
     "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-gauche",
     "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite"
+  ],
+  "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4": [
+    "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect"
   ],
   "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8": [
     "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm"

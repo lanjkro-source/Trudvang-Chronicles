@@ -16,7 +16,7 @@ import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
-import {normalizeEffectDuration, addDurationSeconds} from "./rules/effect-duration.mjs";
+import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds} from "./rules/effect-duration.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
@@ -28,6 +28,9 @@ const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
 const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[doc?.name]?.id;
+export function transformationStackId(key,casting,reference){
+ return (casting.kind==="spell"||casting.auraSource||reference.periodic)&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
+}
 /** Learned specialties of the recipient, including custom entries and NPC book rows. */
 export function specialtyChoices(actor,discipline){
  const entries=new Map();
@@ -112,7 +115,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   delete casting.messageId;
  }
  counts=casting.counts;
- const stackId=(casting.kind==="spell"||casting.auraSource)&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
+  const stackId=transformationStackId(key,casting,reference);
  // A related-effect link keeps its originating document for ownership, elapsed
  // duration and provenance. Its data belongs to a different effect, however.
  // Unidentified custom effects remain copyable; identified ones must match.
@@ -355,6 +358,12 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
+ if(template.periodic){
+  const seconds=effectDurationSeconds(duration);
+  if(seconds===null)throw Error("A periodic effect requires a finite duration");
+  const priorClock=resolvedCopy?supplied?.flags?.[SCOPE]?.consequenceClock:null;
+  data.flags[SCOPE].consequenceClock=priorClock?structuredClone(priorClock):{name:effectName,stage:0,stageStartedAt:Number(game.time.worldTime??0),ticks:[],stages:[{seconds,periodic:[{interval:template.periodic.interval,operations:[{operation:template.periodic.operation,formula:String(template.periodic.amount)}]}]}]};
+ }
  let effect;
  if(targeting){
   const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;

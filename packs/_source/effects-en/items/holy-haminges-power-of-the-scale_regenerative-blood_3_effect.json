@@ -1,0 +1,45 @@
+{
+  "_id": "TEK1v4v1w2x3y4z5",
+  "_key": "!items!TEK1v4v1w2x3y4z5",
+  "name": "Regenerative Blood",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:regenerative-blood:3#effect",
+    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+    "summary": "Gradually heals the recipient’s injuries.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "yyUKKRkQlRmSnToU",
+      "_key": "!items.effects!TEK1v4v1w2x3y4z5.yyUKKRkQlRmSnToU",
+      "name": "Regenerative Blood",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:regenerative-blood:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:regenerative-blood:3#effect",
+            "sourceId": "holy-haminges-power-of-the-scale:regenerative-blood:3",
+            "summary": "Gradually heals the recipient’s injuries.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

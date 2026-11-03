@@ -1,0 +1,45 @@
+{
+  "_id": "mk1WQQhNiOjPkQlR",
+  "_key": "!items!mk1WQQhNiOjPkQlR",
+  "name": "Holy Mending",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+    "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 1 Body Point per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+    "summary": "Gradually heals the recipient’s injuries.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 197
+    }
+  },
+  "effects": [
+    {
+      "_id": "D1CuS9EaGbHcIdJe",
+      "_key": "!items.effects!mk1WQQhNiOjPkQlR.D1CuS9EaGbHcIdJe",
+      "name": "Holy Mending",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 1 Body Point per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-grace:holy-mending:1#effect",
+            "sourceId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+            "summary": "Gradually heals the recipient’s injuries.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

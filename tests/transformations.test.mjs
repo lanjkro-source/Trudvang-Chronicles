@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,250);
+ assert.equal(Object.keys(sources).length,255);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1131,6 +1131,27 @@ test("movement, vision and concealment effects preserve individual duration and 
  let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  await applyTransformation(actor,immobilize,{counts:[1,1,0,0,0,0,0],skipDialog:true});
  assert.deepEqual(created.statuses,["restrain"]);assert.deepEqual(created.duration,{value:18,units:"rounds"});
+});
+
+test("healing invocations create independent clocks with the correct interval and improved duration",async()=>{
+ const cases=[
+  ["holy-haminges-power-of-the-scale:regenerative-blood:3",60,1,240],
+  ["holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",5,1,85],
+  ["holy-tenetnid-tablet-of-grace:holy-mending:1",60,1,240],
+  ["holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",60,3,240],
+  ["holy-tenetnid-tablet-of-grace:breath-of-gave:6",60,6,240]
+ ];
+ globalThis.game={user:{id:"gm"},time:{worldTime:100},i18n:{localize:key=>key,format:key=>key}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ for(const [id,interval,amount,seconds] of cases){
+  await applyTransformation(actor,`${id}#effect`,{counts:[1],skipDialog:true});
+  const clock=created.flags[S].consequenceClock;
+  assert.equal(clock.stageStartedAt,100,id);assert.equal(clock.stages[0].seconds,seconds,id);
+  assert.deepEqual(clock.stages[0].periodic,[{interval,operations:[{operation:"heal",formula:String(amount)}]}],id);
+ }
+ const id=cases[0][0],{transformationStackId}=await import("../modules/transformations.mjs");
+ const stackIds=["first","second"].map(castingId=>transformationStackId(`${id}#effect`,{kind:"divine",casterUuid:"Actor.caster",castingId},templates[`${id}#effect`]));
+ assert.notEqual(stackIds[0],stackIds[1],"separate invocations keep independent clocks");
 });
 
 test("divine weather, travel and summoning effects preserve their duration improvements",async()=>{

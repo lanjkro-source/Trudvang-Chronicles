@@ -29,7 +29,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 298 variantes.
+les états, les règles et les liens des 303 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -347,5 +347,12 @@ trois minutes supplémentaires pour façonner la terre ou la pierre n'allongent 
 la durée pendant laquelle la forme obtenue subsiste ; elles sont indiquées dans
 les améliorations. Les capacités de cibles supplémentaires sont prises en compte
 pour Immobilisation, Camouflage, Invisibilité et les deux visions.
+
+Sang régénérant, Sang du lindwurm, Soins sacrés, Craie de Bete Wiemdas et Souffle
+de Gave utilisent l'horloge des conséquences pour soigner à chaque intervalle,
+y compris au terme de la durée et lors d'un grand saut de temps. Le temps du monde
+doit avancer pour que les soins soient exécutés ; les blessures particulières et
+l'apparence de leurs cicatrices restent narratives. Les deux pouvoirs de sang
+ne peuvent être attribués qu'au conjurateur lors d'un nouveau lancement suivi.
 
 Vision lointaine apporte son bonus aux attaques à distance ; sa portée visuelle et la modification éventuelle de portée de l’arme restent à interpréter. Regard de l’âme et Œil d’Enken proposent leur bonus conditionnel et un jet d’Arts des ombres. Les trois pouvoirs d’autorité proposent leur bonus de persuasion pour les jets pertinents. Lumière rassurante et Radiance sacrée annulent les malus de peur sans empêcher l’acquisition de peur ; leurs auras appliquent et retirent automatiquement les effets selon la position et la disposition des occupants. La malédiction joar requiert une levée manuelle à la mort de la mopor.

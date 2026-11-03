@@ -15330,6 +15330,33 @@
           "SourcePage": "194",
           "Duration": "3 days"
         },
+        "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
+          "Name": "Holy Mending",
+          "Summary": "Gradually heals the recipient’s injuries.",
+          "Description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 1 Body Point per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+          "SourceName": "Holy Mending",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "197",
+          "Duration": "3 minutes"
+        },
+        "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect": {
+          "Name": "Chalk of Bete Wiemdas",
+          "Summary": "Gradually heals the recipient’s injuries.",
+          "Description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person for 3 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+          "SourceName": "Chalk of Bete Wiemdas",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "197",
+          "Duration": "3 minutes"
+        },
+        "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect": {
+          "Name": "Breath of Gave",
+          "Summary": "Gradually heals the recipient’s injuries.",
+          "Description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 6 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+          "SourceName": "Breath of Gave",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "197",
+          "Duration": "3 minutes"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
           "Name": "Sirowerd’s Ear",
           "Summary": "Understands the chosen spoken language, without speaking, reading or writing it.",
@@ -15566,6 +15593,15 @@
           "SourcePage": "218",
           "Duration": "2 rounds"
         },
+        "holy-haminges-power-of-the-scale:regenerative-blood:3#effect": {
+          "Name": "Regenerative Blood",
+          "Summary": "Gradually heals the recipient’s injuries.",
+          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+          "SourceName": "Regenerative Blood",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "218",
+          "Duration": "3 minutes"
+        },
         "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche": {
           "Name": "Limb of Stone — Left arm",
           "Summary": "Petrifies the target’s left arm.",
@@ -15601,6 +15637,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "218",
           "Duration": "3 tours de jeu"
+        },
+        "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect": {
+          "Name": "Blood of the Lindwurm",
+          "Summary": "Gradually heals the recipient’s injuries.",
+          "Description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+          "SourceName": "Blood of the Lindwurm",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "218",
+          "Duration": "5 action rounds"
         },
         "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm": {
           "Name": "Heart of the Lindwurm",

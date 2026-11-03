@@ -1,0 +1,45 @@
+{
+  "_id": "ZbgDf9C8D9EaGbHc",
+  "_key": "!items!ZbgDf9C8D9EaGbHc",
+  "name": "Sang du lindwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+    "description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par tour de jeu jusqu’à expiration du pouvoir.",
+    "summary": "Accélère la régénération des blessures du conjurateur.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 271
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ivs9iLcIdJeKfLgM",
+      "_key": "!items.effects!ZbgDf9C8D9EaGbHc.Ivs9iLcIdJeKfLgM",
+      "name": "Sang du lindwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par tour de jeu jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+            "sourceId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
+            "summary": "Accélère la régénération des blessures du conjurateur.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

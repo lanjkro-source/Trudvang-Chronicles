@@ -15,6 +15,7 @@ const {applyConsumableConsequences}=await import("../modules/consumable-effects.
 const {EXTRACT_EFFECTS,consumablePolicy}=await import("../modules/rules/consumable-effects.mjs");
 const {consumeInventoryItem}=await import("../modules/consumables.mjs");
 const {ruleTestsForDocument,annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
+const {TRANSFORMATION_TEMPLATES}=await import("../modules/transformation-data.mjs");
 function actor(){
  const a={id:"a",uuid:"Actor.a",name:"A",documentName:"Actor",type:"character",isOwner:true,effects:[],items:[],system:{resources:{body:{current:10,value:10,max:100},fear:{current:12,value:12,max:50},vitner:{current:0,value:0,max:20}},modifiers:{}},allApplicableEffects(){return this.effects;}};
  a._source={system:structuredClone(a.system)};
@@ -25,6 +26,12 @@ function actor(){
  return a;
 }
 const item=id=>({id,name:id,img:"",type:EXTRACT_EFFECTS[id]?"potion":"gear",system:{consequenceId:id,quantity:1,consumable:true}});
+test("Breath of Gave heals on each elapsed minute, including the last, and never replays",async()=>{
+ const a=actor(),p=TRANSFORMATION_TEMPLATES["holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect"].periodic;
+ const e=await createConsequenceEffect(a,{name:"Breath",stackId:"breath",stages:[{seconds:180,periodic:[{interval:p.interval,operations:[{operation:p.operation,formula:String(p.amount)}]}]}]});
+ await processConsequenceEffects([e],180,{announce:false});assert.equal(a.system.resources.body.current,28);assert.equal(e.deleted,true);
+ await processConsequenceEffects(a.effects,180,{announce:false});assert.equal(a.system.resources.body.current,28);
+});
 test("generic immediate consequences clamp healing and fear, permit negative health and use threshold-open formulas",async()=>{
  const a=actor();a.system.resources.body.current=-10;a.system.resources.body.value=-10;
  results=[5,30];formulas.length=0;

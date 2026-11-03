@@ -1,0 +1,45 @@
+{
+  "_id": "ZbgDf9C8D9EaGbHc",
+  "_key": "!items!ZbgDf9C8D9EaGbHc",
+  "name": "Blood of the Lindwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+    "summary": "Gradually heals the recipient’s injuries.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ivs9iLcIdJeKfLgM",
+      "_key": "!items.effects!ZbgDf9C8D9EaGbHc.Ivs9iLcIdJeKfLgM",
+      "name": "Blood of the Lindwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect",
+            "sourceId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
+            "summary": "Gradually heals the recipient’s injuries.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

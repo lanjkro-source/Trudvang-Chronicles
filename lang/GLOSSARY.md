@@ -12832,6 +12832,39 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourcePage` | 194 | 252 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.Name` | Holy Mending | Soins sacrés |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.Description` | The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 1 Body Point per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself. | Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 1 point de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.SourceName` | Holy Mending | Soins sacrés |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.SourcePage` | 197 | 253 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.Name` | Chalk of Bete Wiemdas | Craie de Bete Wiemdas |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.Description` | The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person for 3 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself. | Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 3 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.SourceName` | Chalk of Bete Wiemdas | Craie de Bete Wiemdas |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.SourcePage` | 197 | 253 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.Name` | Breath of Gave | Souffle de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.Description` | The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 6 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself. | Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée. Ce pouvoir soigne 6 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.SourceName` | Breath of Gave | Souffle de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.SourcePage` | 197 | 255 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.Duration` | 3 minutes | 3 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille`
 
 | Clé | English | Français |
@@ -13120,6 +13153,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.SourcePage` | 218 | 270 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:shattered-mind:1#esprit-brise.Duration` | 2 rounds | 2 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.Name` | Regenerative Blood | Sang régénérant |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.Description` | The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration. | Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par minute jusqu’à expiration du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.SourceName` | Regenerative Blood | Sang régénérant |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.SourcePage` | 218 | 271 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:regenerative-blood:3#effect.Duration` | 3 minutes | 3 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-gauche`
 
 | Clé | English | Français |
@@ -13163,6 +13207,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite.SourcePage` | 218 | 271 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrejambe-droite.Duration` | 3 tours de jeu | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.Name` | Blood of the Lindwurm | Sang du lindwurm |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.Description` | The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration. | Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par tour de jeu jusqu’à expiration du pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.SourceName` | Blood of the Lindwurm | Sang du lindwurm |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.SourcePage` | 218 | 271 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm`
 

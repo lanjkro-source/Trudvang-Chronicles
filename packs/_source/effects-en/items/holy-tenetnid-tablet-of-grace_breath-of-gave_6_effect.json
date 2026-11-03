@@ -1,0 +1,45 @@
+{
+  "_id": "2agPvhLgMhNiOjPk",
+  "_key": "!items!2agPvhLgMhNiOjPk",
+  "name": "Breath of Gave",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect",
+    "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 6 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+    "summary": "Gradually heals the recipient’s injuries.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 197
+    }
+  },
+  "effects": [
+    {
+      "_id": "punXTHcIdJeKfLgM",
+      "_key": "!items.effects!2agPvhLgMhNiOjPk.punXTHcIdJeKfLgM",
+      "name": "Breath of Gave",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 6 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect",
+            "sourceId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
+            "summary": "Gradually heals the recipient’s injuries.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
