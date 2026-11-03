@@ -2982,7 +2982,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
         "cost": 2,
-        "maxCount": 4
+        "maxCount": 3
       }
     ],
     "spellType": "lasting",

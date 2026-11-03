@@ -142,13 +142,15 @@ test("wolf claws begin at open roll 10 and progress from that baseline",async()=
  globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
  try{
   let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
-  const values=[['1d10',10],['1d10',9],['1d10',8],['1d10 + 1',8],['1d10 + 2',8]];
+  const values=[['1d10',10],['1d10',9],['1d10',8],['1d10 + 1',8]];
   for(let count=0;count<values.length;count++){
    await applyTransformation(actor,'holy-haminges-power-of-the-beast:wolf-claws:5#claws',{counts:[0,0,count],skipDialog:true});
    const attack=effectRules(created).attacks[0];
    assert.equal(attack.isUnarmed,true);assert.deepEqual([attack.damage,attack.openRoll],values[count]);
    assert.match(created.flags[S].transformation.summary,new RegExp(`JO ${values[count][1]}`));
   }
+  await applyTransformation(actor,'holy-haminges-power-of-the-beast:wolf-claws:5#claws',{counts:[0,0,4],skipDialog:true});
+  assert.equal(effectRules(created).attacks[0].damage,'1d10 + 1');
  }finally{globalThis.game=previous;}
 });
 

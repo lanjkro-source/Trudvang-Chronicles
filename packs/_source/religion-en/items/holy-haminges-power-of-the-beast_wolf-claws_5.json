@@ -37,8 +37,8 @@
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
         "cost": 2,
-        "maxCount": 4,
-        "effect": "Increase damage one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1 > 1d10 OR 8 + 2"
+        "maxCount": 3,
+        "effect": "Increase damage one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 212",

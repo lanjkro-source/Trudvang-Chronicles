@@ -4868,7 +4868,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
             "1": "Increase the duration by 1 minute",
-            "2": "Increase damage one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1 > 1d10 OR 8 + 2"
+            "2": "Increase damage one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
           }
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {

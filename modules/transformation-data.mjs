@@ -7497,10 +7497,6 @@ export const TRANSFORMATION_TEMPLATES = {
           {
             "damage": "1d10 + 1",
             "openRoll": 8
-          },
-          {
-            "damage": "1d10 + 2",
-            "openRoll": 8
           }
         ],
         "optionId": "holy-haminges-power-of-the-beast:wolf-claws:5:2"

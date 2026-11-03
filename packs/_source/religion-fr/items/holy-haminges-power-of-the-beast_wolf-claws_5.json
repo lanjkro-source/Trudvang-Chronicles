@@ -37,8 +37,8 @@
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
         "cost": 2,
-        "maxCount": 4,
-        "effect": "Augmente les dégâts d’un degré : 1d10 JO 10 > 1d10 JO 9 > 1d10 JO 8 > 1d10 JO 8 + 1 > 1d10 JO 8 + 2"
+        "maxCount": 3,
+        "effect": "Augmente les dégâts d’un degré : 1d10 JO 10 > 1d10 JO 9 > 1d10 JO 8 > 1d10 JO 8 + 1"
       }
     ],
     "source": "Livre des règles, p. 269",

@@ -4868,7 +4868,7 @@
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
             "1": "Augmente la durée du pouvoir de : 1 minute",
-            "2": "Augmente les dégâts d’un degré : 1d10 JO 10 > 1d10 JO 9 > 1d10 JO 8 > 1d10 JO 8 + 1 > 1d10 JO 8 + 2"
+            "2": "Augmente les dégâts d’un degré : 1d10 JO 10 > 1d10 JO 9 > 1d10 JO 8 > 1d10 JO 8 + 1"
           }
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
