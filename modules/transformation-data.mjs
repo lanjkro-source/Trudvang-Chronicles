@@ -6543,6 +6543,40 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "weaponDamage": {
+      "normal": 1,
+      "undead": 2,
+      "demon": 3,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:1"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -6575,6 +6609,40 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "4 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "weaponDamage": {
+      "normal": 3,
+      "undead": 5,
+      "demon": 7,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:1"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -6604,6 +6672,40 @@ export const TRANSFORMATION_TEMPLATES = {
         "skillChoice": true,
         "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
         "optionId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "5 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "weaponDamage": {
+      "normal": 5,
+      "undead": 8,
+      "demon": 11,
+      "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:2"
+    },
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:1"
       }
     ]
   },
@@ -11795,11 +11897,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": [
     "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole"
   ],
+  "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": [
+    "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon"
+  ],
   "holy-tenetnid-tablet-of-the-knight:holy-authority:2": [
     "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect"
   ],
+  "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5": [
+    "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon"
+  ],
   "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": [
     "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": [
+    "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon"
   ],
   "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": [
     "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect"

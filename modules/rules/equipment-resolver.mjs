@@ -1,4 +1,5 @@
 import { isThrowingWeapon, isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
+import {blessedWeaponEffects} from "./blessed-weapon.mjs";
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -358,6 +359,7 @@ export function resolveDamage({item, actor = null, context = {}, modifiers = []}
       key: "damageModifier",
       base: item?.system?.damageBonus,
       modifiers: [...improvisedThrowingDamageModifiers(item, context), ...strengthDamageModifiers(item, actor, context),
+        ...blessedWeaponEffects(item).map(({effect, normal}, index) => ({id:`weapon-blessing-${index}`, target:"damageModifier", operation:"add", phase:"effect", amount:normal, source:{kind:"effect", id:effect.id, name:effect.name}, explanationKey:"TRUDVANG.DamageRoll.ItemEffects"})),
         ...(actor?.system?.modifiers?.damage ? [{id: "actor-damage", target: "damageModifier", operation: "add", phase: "effect",
           amount: actor.system.modifiers.damage, source: {kind: "effect", id: "actor-damage"},
           explanationKey: "TRUDVANG.Calculation.Equipment.ActorDamageBonus", explanationData: {amount: actor.system.modifiers.damage}}] : []),

@@ -613,7 +613,7 @@ export async function rollDamage({actor, item, context = {}}) {
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
   const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
-  const conditionalDamage=creatureConditionalBonuses(actor).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
+  const conditionalDamage=creatureConditionalBonuses(actor,item).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,

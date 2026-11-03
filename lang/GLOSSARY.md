@@ -13041,6 +13041,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.SourcePage` | 201 | 259 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole.Duration` | 1 jour | 1 jour |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.Name` | Blessed Spear | Lance bénie |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.Description` | This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light. | Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.SourceName` | Blessed Spear | Lance bénie |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.SourcePage` | 199 | 259 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon.Duration` | 3 action rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect`
 
 | Clé | English | Français |
@@ -13052,6 +13063,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.SourcePage` | 199 | 260 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.Name` | Rowthguard's Battle Scourge | Chaîne de bataille des gardiens du Rortan |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.Description` | This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light. | Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.SourceName` | Rowthguard's Battle Scourge | Chaîne de bataille des gardiens du Rortan |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.SourcePage` | 199 | 261 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon.Duration` | 4 action rounds | 4 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect`
 
 | Clé | English | Français |
@@ -13062,6 +13084,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.SourcePage` | 199 | 261 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.Name` | Belo Seoth's Axe | Hache de Belo Seoth |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.Description` | This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light. | Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.SourceName` | Belo Seoth's Axe | Hache de Belo Seoth |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.SourcePage` | 199 | 261 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect`
 
@@ -14533,6 +14566,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.SingleUseUnavailable` | This bonus was already used or its effect has expired. | Ce bonus a déjà été utilisé ou son effet a expiré. |
 | `TRUDVANG.Transformation.TabletLevel` | Tablet level | Niveau de la tablette |
 | `TRUDVANG.Transformation.AnimalFriendRiding` | Horsemanship: +{value} | Maîtrise équestre : +{value} |
+| `TRUDVANG.Transformation.WeaponTargetRequired` | Drop this effect on a carried weapon or shield. | Déposez cet effet sur une arme ou un bouclier porté. |
+| `TRUDVANG.Transformation.BlessedWeaponDamage` | Damage: +{normal}; +{undead} against undead; +{demon} against demons. | Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons. |
 
 ## `TRUDVANG.Transformation.Modes`
 

@@ -1,0 +1,45 @@
+{
+  "_id": "Ot5cG5w2x3y4z5A6",
+  "_key": "!items!Ot5cG5w2x3y4z5A6",
+  "name": "Belo Seoth's Axe",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+    "description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+    "summary": "Blessed weapon: damage bonus increased against undead and demons.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "LFuoDJdJeKfLgMhN",
+      "_key": "!items.effects!Ot5cG5w2x3y4z5A6.LFuoDJdJeKfLgMhN",
+      "name": "Belo Seoth's Axe",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+            "summary": "Blessed weapon: damage bonus increased against undead and demons.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

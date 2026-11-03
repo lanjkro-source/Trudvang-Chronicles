@@ -24,13 +24,34 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    assert.ok(language.TRUDVANG.Content.Transformation[key].Description,key);
    for(const c of t.changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX)))assert.ok(Number.isFinite(Number(c.value)),key);
    if(t.priority!==undefined){
-    assert.ok([10,20,30,40,50].includes(t.priority),key);
+    assert.ok([10,20,30,40,50,60,70].includes(t.priority),key);
     for(const c of t.changes)assert.equal(c.priority,t.priority,key);
    }
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,278);
+ assert.equal(Object.keys(sources).length,281);
+});
+
+test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
+ const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils};
+ try{
+  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+  const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
+  globalThis.game={user:{id:"gm"},time:{worldTime:10},i18n:{lang:"fr",localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+  let warnings=0,created;
+  globalThis.ui={notifications:{warn:()=>warnings++}};
+  foundry.utils={deepClone:structuredClone};
+  const actor={uuid:"Actor.a",name:"A",items:[],canUserModify:()=>true};
+  const item={type:"weapon",name:"Épée",parent:actor,effects:[],canUserModify:()=>true,createEmbeddedDocuments:async(_type,docs)=>{created=docs[0];return [created];}};
+  const id="holy-tenetnid-tablet-of-the-knight:blessed-spear:1",key=`${id}#weapon`;
+  assert.equal(await applyTransformation(actor,key,{counts:[1,1,2,0],skipDialog:true}),null);
+  assert.equal(warnings,1);
+  await applyTransformation(actor,key,{destinationItem:item,counts:[1,1,2,0],skipDialog:true});
+  assert.equal(created.flags[S].transformation.ruleTestContext.countsById[`${id}:2`],2);
+  assert.match(created.description,/Dégâts : \+3 ; \+4 contre les morts-vivants ; \+5 contre les démons/);
+  assert.deepEqual(created.duration,{value:16,units:"rounds"});
+ }finally{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;}
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -585,7 +606,7 @@ test("effect improvements change their base fields, including inverse traits, at
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
- for(const [key,template]of Object.entries(templates).filter(([k,t])=>!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
+ for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.weaponDamage&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
   assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,19,key);
   assert.doesNotMatch(dialog.content,/name="boost\d+"[^>]*\bmax=/,key);
@@ -757,7 +778,7 @@ test("copying already resolved effects preserves improvements, duration and roll
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){
    const rules=rulesFromChanges(t.changes);
-   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter)continue;
+   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter||t.weaponDamage)continue;
    if(!t.parameters.length&&!rules.vitality)continue;
    const counts=[];for(const p of t.parameters){counts[p.index]=2;covered.add(p.target);}
    await applyTransformation(actor,key,{counts});const first=structuredClone(created),beforeRolls=rolls;

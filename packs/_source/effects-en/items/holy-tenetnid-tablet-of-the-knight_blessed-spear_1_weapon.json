@@ -1,0 +1,45 @@
+{
+  "_id": "vpGdFaGbHcIdJeKf",
+  "_key": "!items!vpGdFaGbHcIdJeKf",
+  "name": "Blessed Spear",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon",
+    "description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+    "summary": "Blessed weapon: damage bonus increased against undead and demons.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 199
+    }
+  },
+  "effects": [
+    {
+      "_id": "wfdvoqVqWrXsYtZu",
+      "_key": "!items.effects!vpGdFaGbHcIdJeKf.wfdvoqVqWrXsYtZu",
+      "name": "Blessed Spear",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+            "summary": "Blessed weapon: damage bonus increased against undead and demons.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

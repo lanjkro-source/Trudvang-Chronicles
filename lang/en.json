@@ -15501,6 +15501,15 @@
           "SourcePage": "201",
           "Duration": "1 jour"
         },
+        "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
+          "Name": "Blessed Spear",
+          "Summary": "Blessed weapon: damage bonus increased against undead and demons.",
+          "Description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+          "SourceName": "Blessed Spear",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "3 action rounds"
+        },
         "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
           "Name": "Holy Authority",
           "Summary": "Holy Authority",
@@ -15510,6 +15519,15 @@
           "SourcePage": "199",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon": {
+          "Name": "Rowthguard's Battle Scourge",
+          "Summary": "Blessed weapon: damage bonus increased against undead and demons.",
+          "Description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+          "SourceName": "Rowthguard's Battle Scourge",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "4 action rounds"
+        },
         "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect": {
           "Name": "Majestic Revelation",
           "Summary": "Majestic Revelation",
@@ -15518,6 +15536,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "199",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon": {
+          "Name": "Belo Seoth's Axe",
+          "Summary": "Blessed weapon: damage bonus increased against undead and demons.",
+          "Description": "This blessed weapon deals extra damage, increased against undead and demons. It emits a faint light.",
+          "SourceName": "Belo Seoth's Axe",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "199",
+          "Duration": "5 action rounds"
         },
         "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect": {
           "Name": "Guise of Gave",
@@ -16742,7 +16769,9 @@
       "CreationOnce": "Object creation: +{value} (once)",
       "SingleUseUnavailable": "This bonus was already used or its effect has expired.",
       "TabletLevel": "Tablet level",
-      "AnimalFriendRiding": "Horsemanship: +{value}"
+      "AnimalFriendRiding": "Horsemanship: +{value}",
+      "WeaponTargetRequired": "Drop this effect on a carried weapon or shield.",
+      "BlessedWeaponDamage": "Damage: +{normal}; +{undead} against undead; +{demon} against demons."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

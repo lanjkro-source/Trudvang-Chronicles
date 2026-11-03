@@ -15501,6 +15501,15 @@
           "SourcePage": "259",
           "Duration": "1 jour"
         },
+        "holy-tenetnid-tablet-of-the-knight:blessed-spear:1#weapon": {
+          "Name": "Lance bénie",
+          "Summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
+          "Description": "Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière.",
+          "SourceName": "Lance bénie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "259",
+          "Duration": "3 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-the-knight:holy-authority:2#effect": {
           "Name": "Sainte autorité",
           "Summary": "Sainte autorité",
@@ -15510,6 +15519,15 @@
           "SourcePage": "260",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5#weapon": {
+          "Name": "Chaîne de bataille des gardiens du Rortan",
+          "Summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
+          "Description": "Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière.",
+          "SourceName": "Chaîne de bataille des gardiens du Rortan",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "261",
+          "Duration": "4 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4#effect": {
           "Name": "Révélation majestueuse",
           "Summary": "Révélation majestueuse",
@@ -15518,6 +15536,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "261",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon": {
+          "Name": "Hache de Belo Seoth",
+          "Summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
+          "Description": "Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière.",
+          "SourceName": "Hache de Belo Seoth",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "261",
+          "Duration": "5 tours de jeu"
         },
         "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect": {
           "Name": "Aura de Gave",
@@ -16742,7 +16769,9 @@
       "CreationOnce": "Création d’objet : +{value} (une fois)",
       "SingleUseUnavailable": "Ce bonus a déjà été utilisé ou son effet a expiré.",
       "TabletLevel": "Niveau de la tablette",
-      "AnimalFriendRiding": "Maîtrise équestre : +{value}"
+      "AnimalFriendRiding": "Maîtrise équestre : +{value}",
+      "WeaponTargetRequired": "Déposez cet effet sur une arme ou un bouclier porté.",
+      "BlessedWeaponDamage": "Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

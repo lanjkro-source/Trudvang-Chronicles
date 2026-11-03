@@ -104,6 +104,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const delegated=!owned&&delegateTokenUuid&&message&&await canManageEffectTargets(message,game.user)&&effectTargetsFor(message,key).some(row=>row.tokenUuid===delegateTokenUuid&&row.actorUuid===actor?.uuid);
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
+ if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||reference.instant||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
  // A successor is a separate consequence, not another recipient of the
@@ -329,9 +330,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   });
   summary=game.i18n.format(config.labelKey,{value:parts.join(" + ")});
  }
+ if(!resolvedCopy&&template.weaponDamage){
+  const extra=Math.max(0,Math.trunc(Number(casting.countsById?.[template.weaponDamage.optionId]??casting.counts[2])||0));
+  summary=game.i18n.format("TRUDVANG.Transformation.BlessedWeaponDamage",{normal:template.weaponDamage.normal+extra,undead:template.weaponDamage.undead+extra,demon:template.weaponDamage.demon+extra});
+ }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy&&template.weaponDamage)description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){
   const options=template.displayPowerOptions.flatMap(index=>{

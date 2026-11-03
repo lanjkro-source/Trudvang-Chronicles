@@ -1,6 +1,6 @@
 import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from "./damage-application.mjs";
 import {renderTemplate} from "./helpers.mjs";
-import {matchingCreatureBonus} from "./rules/creature-conditional-bonus.mjs";
+import {conditionalDamageBonus} from "./rules/creature-conditional-bonus.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -96,7 +96,7 @@ async function applyOnGM(payload) {
     || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
   if(payload.channel!=="fear"){
     const rows=message.getFlag(SYSTEM_ID,"conditionalDamage")??[];
-    const bonus=rows.filter(row=>Array.isArray(row.tags)&&matchingCreatureBonus(row,actor)).reduce((sum,row)=>sum+Math.max(0,Number(row.damage)||0),0);
+    const bonus=conditionalDamageBonus(rows,actor);
     const before=Number(message.getFlag(SYSTEM_ID,"conditionalDamageBeforeRange"));
     amount=message.getFlag(SYSTEM_ID,"conditionalDamageLongRange")&&Number.isFinite(before)?Math.ceil((before+bonus)/2):amount+bonus;
   }

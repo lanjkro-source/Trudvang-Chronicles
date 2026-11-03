@@ -1,0 +1,45 @@
+{
+  "_id": "Ot5cG5w2x3y4z5A6",
+  "_key": "!items!Ot5cG5w2x3y4z5A6",
+  "name": "Hache de Belo Seoth",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+    "description": "Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière.",
+    "summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 261
+    }
+  },
+  "effects": [
+    {
+      "_id": "LFuoDJdJeKfLgMhN",
+      "_key": "!items.effects!Ot5cG5w2x3y4z5A6.LFuoDJdJeKfLgMhN",
+      "name": "Hache de Belo Seoth",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "Cette arme bénie inflige des dégâts supplémentaires ; son bonus augmente contre les morts-vivants et les démons. Elle émet une faible lumière.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7#weapon",
+            "sourceId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+            "summary": "Arme bénie : bonus aux dégâts, accru contre les morts-vivants et les démons.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -40,6 +40,8 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);
    if(JSON.stringify(t.periodic??null)!==JSON.stringify(translated.periodic??null))throw Error(`Unaligned periodic consequence for ${key}`);
+   if(JSON.stringify(t.weaponDamage??null)!==JSON.stringify(translated.weaponDamage??null))throw Error(`Unaligned weapon damage for ${key}`);
+   if(t.weaponDamage&&(![t.weaponDamage.normal,t.weaponDamage.undead,t.weaponDamage.demon].every(Number.isInteger)||t.weaponDamage.normal<0||t.weaponDamage.undead<t.weaponDamage.normal||t.weaponDamage.demon<t.weaponDamage.normal||!entry.powerLevels?.some(p=>p.optionId===t.weaponDamage.optionId)))throw Error(`Invalid weapon damage for ${key}`);
    if(t.periodic&&(!Number.isFinite(t.periodic.interval)||t.periodic.interval<=0||t.periodic.operation!=="heal"||!Number.isInteger(t.periodic.amount)||t.periodic.amount<=0))throw Error(`Invalid periodic consequence for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(JSON.stringify(t.aura??null)!==JSON.stringify(translated.aura??null))throw Error(`Unaligned aura for ${key}`);

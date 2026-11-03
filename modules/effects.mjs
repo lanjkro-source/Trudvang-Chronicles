@@ -242,6 +242,9 @@ export function registerEffectHooks() {
     if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);
   });
   Hooks.on("ready", expireAppliedEffects);
+  // Item-local, non-transferring enchantments are not necessarily registered
+  // by Foundry's actor effect registry. Check them when world time advances.
+  Hooks.on("updateWorldTime", time => expireAppliedEffects({time:Number(time), itemTransformationsOnly:true}));
 }
 
 /** Include unlinked tokens on inactive scenes, without duplicating linked actors. */
@@ -262,8 +265,9 @@ export function appliedWorldEffects() {
 }
 
 /** Complete pending expiry on world actors and unlinked tokens on every scene. */
-export async function expireAppliedEffects({time = null} = {}) {
+export async function expireAppliedEffects({time = null, itemTransformationsOnly = false} = {}) {
   for (const effect of appliedWorldEffects()) {
+    if (itemTransformationsOnly && !(effect.parent?.documentName === "Item" && effect.flags?.["trudvang-chronicles"]?.transformation?.resolved)) continue;
     const pending = expirationJobs.get(effect);
     if (pending) await pending;
     else {
