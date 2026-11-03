@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,303);
+ assert.equal(Object.keys(sources).length,305);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -152,6 +152,26 @@ test("wolf claws begin at open roll 10 and progress from that baseline",async()=
   await applyTransformation(actor,'holy-haminges-power-of-the-beast:wolf-claws:5#claws',{counts:[0,0,4],skipDialog:true});
   assert.equal(effectRules(created).attacks[0].damage,'1d10 + 1');
  }finally{globalThis.game=previous;}
+});
+test("both fever effects roll their action penalty once per recipient and retain the chosen improvements",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,old={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
+ let rolls=0;globalThis.Roll=class{constructor(formula){assert.equal(formula,'1d3');}async evaluate(){rolls++;this.total=2;return this;}async toMessage(){}};
+ globalThis.ChatMessage={getSpeaker:()=>({})};
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  for(const id of ['vitner-witchcraft:fever:2','holy-joaringfaith-curses-of-sonntag:fever:2']){
+   await applyTransformation(actor,`${id}#effect`,{counts:[0,1,0,2,2,3],skipDialog:true});
+   assert.deepEqual(created.duration,{value:2,units:'hours'});
+   assert.equal(created.system.changes.find(c=>c.key==='system.modifiers.rolls.allActions').value,'-4');
+   assert.match(created.description,/Toutes les actions : -4/);assert.match(created.description,/1d10.*8/);
+   assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+   const copy={documentName:'ActiveEffect',...structuredClone(created)},before=rolls;
+   await applyTransformation(actor,`${id}#effect`,{source:copy,skipDialog:true});assert.equal(rolls,before);
+  }
+  assert.equal(rolls,2);
+ }finally{globalThis.game=old.game;globalThis.Roll=old.Roll;globalThis.ChatMessage=old.ChatMessage;}
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -716,7 +736,7 @@ test("effect improvements change their base fields, including inverse traits, at
   const result=await apply(key,{["boost"+p.index]:2});
   assert.equal(result.system.changes.find(c=>c.key==="system.effective.traits."+p.trait).value,String(Math.sign(base.value)*4));
  }
- for(const [key,template]of Object.entries(templates).filter(([,t])=>t.parameters.some(p=>p.target==="modifier"))){
+ for(const [key,template]of Object.entries(templates).filter(([,t])=>!t.rolledModifier&&t.parameters.some(p=>p.target==="modifier"))){
   const p=template.parameters.find(p=>p.target==="modifier"),base=Number(template.changes.find(c=>c.key===p.key).value);
   assert.equal((await apply(key,{["boost"+p.index]:7})).system.changes.find(c=>c.key===p.key).value,String(base+7*p.value));
  }
@@ -825,7 +845,7 @@ test("all numeric non-duration improvements resolve from casting counts and comp
  let created;
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  foundry.applications.api.DialogV2.wait=async()=>({duration:"1 minute"});
- for(const [key,t]of Object.entries(templates))for(const p of t.parameters.filter(p=>["protection","temporaryHP","damage","modifier","traitValue"].includes(p.target))){
+ for(const [key,t]of Object.entries(templates))for(const p of t.parameters.filter(p=>!t.rolledModifier&&["protection","temporaryHP","damage","modifier","traitValue"].includes(p.target))){
   const counts=[];counts[p.index]=2;
   for(const source of [null,{documentName:"Item",type:"effect",effects:[{flags:{[S]:{transformation:{key}}},system:{changes:structuredClone(t.changes)}}]}]){
    await applyTransformation(actor,key,{source,counts});

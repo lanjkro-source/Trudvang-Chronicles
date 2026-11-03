@@ -14247,6 +14247,15 @@
           "SourcePage": "143",
           "Duration": "3 days"
         },
+        "vitner-witchcraft:fever:2#effect": {
+          "Name": "Fever (Vitner)",
+          "Summary": "Supernatural fever: penalty to all actions and risk of damage.",
+          "Description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+          "SourceName": "Fever",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "1 hour"
+        },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Curse Creature",
           "Summary": "Curse Creature",
@@ -16659,6 +16668,15 @@
           "SourcePage": "123",
           "Duration": "3 days"
         },
+        "holy-joaringfaith-curses-of-sonntag:fever:2#effect": {
+          "Name": "Fever (Curse)",
+          "Summary": "Supernatural fever: penalty to all actions and risk of damage.",
+          "Description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+          "SourceName": "Fever",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 hour"
+        },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Curse Creature — Curses of Sonntag",
           "Summary": "Curse Creature — Curses of Sonntag",
@@ -16987,7 +17005,8 @@
       "SocialIllness": "Social interactions: {value} VC",
       "IllnessResistance": "Daily resistance: SV {value} + Psyche",
       "IllnessExamination": "Medical examination of the victim: {value} VC",
-      "AttackDamageTooltip": "Claw damage: {damage} (OR {openRoll})."
+      "AttackDamageTooltip": "Claw damage: {damage} (OR {openRoll}).",
+      "FeverValues": "All actions: {value}; damage on failure: {damage}."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

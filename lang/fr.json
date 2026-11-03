@@ -14247,6 +14247,15 @@
           "SourcePage": "184",
           "Duration": "3 jours"
         },
+        "vitner-witchcraft:fever:2#effect": {
+          "Name": "Fièvre (vitner)",
+          "Summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
+          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+          "SourceName": "Fièvre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "185",
+          "Duration": "1 heure"
+        },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Malédiction de créature",
           "Summary": "Malédiction de créature",
@@ -16659,6 +16668,15 @@
           "SourcePage": "123",
           "Duration": "3 jours"
         },
+        "holy-joaringfaith-curses-of-sonntag:fever:2#effect": {
+          "Name": "Fièvre (malédiction)",
+          "Summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
+          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+          "SourceName": "Fièvre",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 heure"
+        },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Malédiction de créature — Malédictions de Sonntag",
           "Summary": "Malédiction de créature — Malédictions de Sonntag",
@@ -16987,7 +17005,8 @@
       "SocialIllness": "Interactions sociales : {value} VC",
       "IllnessResistance": "Résistance quotidienne : SV {value} + Psychisme",
       "IllnessExamination": "Examen médical de la victime : {value} VC",
-      "AttackDamageTooltip": "Dégâts des griffes : {damage} (JO {openRoll})."
+      "AttackDamageTooltip": "Dégâts des griffes : {damage} (JO {openRoll}).",
+      "FeverValues": "Toutes les actions : {value} ; dégâts en cas d’échec : {damage}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

@@ -228,6 +228,12 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const duration=template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
+ if(!resolvedCopy&&template.rolledModifier){
+  const rolled=await rollEffectValue(template.rolledModifier.formula,{actor,name:effectName});
+  const row=changes.find(change=>change.key===template.rolledModifier.key&&change.type==="add");
+  if(row)row.value=String(Number(row.value)-rolled);
+  else changes.push({key:template.rolledModifier.key,type:"add",value:String(-rolled),phase:"initial"});
+ }
  if(Number.isFinite(formMaximum))changes.push({key:"system.resources.body.max",type:"override",value:String(formMaximum),phase:"initial"});
  if(!resolvedCopy&&template.levelParameter)for(const id of template.levelParameter.knowledge??[])if(rules.knowledge?.[id]!==undefined)rules.knowledge[id]*=Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0);
  const addVitality=amount=>{for(const field of ["bodyMax","bodyValue"]){
@@ -345,10 +351,17 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const attack=rules.attacks[template.attackTooltip];
   summary=game.i18n.format("TRUDVANG.Transformation.AttackDamageTooltip",{damage:attack.damage,openRoll:attack.openRoll});
  }
+ if(!resolvedCopy&&template.rolledModifier){
+  const value=Number(changes.find(row=>row.key===template.rolledModifier.key&&row.type==="add")?.value)||0;
+  const step=Math.min(4,Math.max(0,Math.trunc(Number(casting.counts[template.rolledModifier.damageIndex])||0)));
+  const damage=step===4?"1d10 + 1":"1d10",openRoll=[0,10,9,8,8][step];
+  const formula=openRoll?`${damage} (${game.i18n.localize("TRUDVANG.Field.OpenRollShort")} ${openRoll})`:damage;
+  summary=game.i18n.format("TRUDVANG.Transformation.FeverValues",{value,damage:formula});
+ }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
- if(!resolvedCopy&&(template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
+ if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){
   const options=template.displayPowerOptions.flatMap(index=>{

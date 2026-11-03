@@ -1,0 +1,53 @@
+{
+  "_id": "eLiL5XrXsYtZu0v1",
+  "_key": "!items!eLiL5XrXsYtZu0v1",
+  "name": "Fièvre (vitner)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:fever:2#effect",
+    "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+    "summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 185
+    }
+  },
+  "effects": [
+    {
+      "_id": "HZHzgeHcIdJeKfLg",
+      "_key": "!items.effects!eLiL5XrXsYtZu0v1.HZHzgeHcIdJeKfLg",
+      "name": "Fièvre (vitner)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:fever:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "0",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:fever:2#effect",
+            "sourceId": "vitner-witchcraft:fever:2",
+            "summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

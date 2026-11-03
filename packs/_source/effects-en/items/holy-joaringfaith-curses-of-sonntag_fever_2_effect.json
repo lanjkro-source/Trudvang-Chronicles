@@ -1,0 +1,53 @@
+{
+  "_id": "UqendZrXsYtZu0v1",
+  "_key": "!items!UqendZrXsYtZu0v1",
+  "name": "Fever (Curse)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:fever:2#effect",
+    "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+    "summary": "Supernatural fever: penalty to all actions and risk of damage.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "pVZQZOgMhNiOjPkQ",
+      "_key": "!items.effects!UqendZrXsYtZu0v1.pVZQZOgMhNiOjPkQ",
+      "name": "Fever (Curse)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:fever:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "0",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:fever:2#effect",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:fever:2",
+            "summary": "Supernatural fever: penalty to all actions and risk of damage.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "eLiL5XrXsYtZu0v1",
+  "_key": "!items!eLiL5XrXsYtZu0v1",
+  "name": "Fever (Vitner)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:fever:2#effect",
+    "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+    "summary": "Supernatural fever: penalty to all actions and risk of damage.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 143
+    }
+  },
+  "effects": [
+    {
+      "_id": "HZHzgeHcIdJeKfLg",
+      "_key": "!items.effects!eLiL5XrXsYtZu0v1.HZHzgeHcIdJeKfLg",
+      "name": "Fever (Vitner)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:fever:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "0",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:fever:2#effect",
+            "sourceId": "vitner-witchcraft:fever:2",
+            "summary": "Supernatural fever: penalty to all actions and risk of damage.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

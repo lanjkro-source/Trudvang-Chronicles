@@ -4003,6 +4003,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:fever:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:fever:2:0",
@@ -11913,6 +11917,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:fever:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-witchcraft:fever:2:0",

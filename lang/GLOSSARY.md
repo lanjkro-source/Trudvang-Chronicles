@@ -11511,6 +11511,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.SourcePage` | 143 | 184 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.Duration` | 3 days | 3 jours |
 
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Name` | Fever (Vitner) | Fièvre (vitner) |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Description` | The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourceName` | Fever | Fièvre |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourcePage` | 143 | 185 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-creature:5#effect`
 
 | Clé | English | Français |
@@ -14451,6 +14462,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.Duration` | 3 days | 3 jours |
 
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Name` | Fever (Curse) | Fièvre (malédiction) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Description` | The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourceName` | Fever | Fièvre |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect`
 
 | Clé | English | Français |
@@ -14828,6 +14850,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.IllnessResistance` | Daily resistance: SV {value} + Psyche | Résistance quotidienne : SV {value} + Psychisme |
 | `TRUDVANG.Transformation.IllnessExamination` | Medical examination of the victim: {value} VC | Examen médical de la victime : {value} VC |
 | `TRUDVANG.Transformation.AttackDamageTooltip` | Claw damage: {damage} (OR {openRoll}). | Dégâts des griffes : {damage} (JO {openRoll}). |
+| `TRUDVANG.Transformation.FeverValues` | All actions: {value}; damage on failure: {damage}. | Toutes les actions : {value} ; dégâts en cas d’échec : {damage}. |
 
 ## `TRUDVANG.Transformation.Modes`
 

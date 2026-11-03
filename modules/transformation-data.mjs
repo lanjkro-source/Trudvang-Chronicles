@@ -1961,6 +1961,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-witchcraft:fever:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "0",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "rolledModifier": {
+      "formula": "1d3",
+      "key": "system.modifiers.rolls.allActions",
+      "damageIndex": 5
+    },
+    "displayPowerOptions": [
+      0,
+      5
+    ],
+    "sourceId": "vitner-witchcraft:fever:2",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-witchcraft:fever:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-witchcraft:fever:2:2"
+      },
+      {
+        "index": 4,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": -1,
+        "optionId": "vitner-witchcraft:fever:2:4"
+      }
+    ]
+  },
   "vitner-witchcraft:curse-creature:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -11270,6 +11318,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-curses-of-sonntag:fever:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "0",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "rolledModifier": {
+      "formula": "1d3",
+      "key": "system.modifiers.rolls.allActions",
+      "damageIndex": 5
+    },
+    "displayPowerOptions": [
+      0,
+      5
+    ],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:fever:2",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:2"
+      },
+      {
+        "index": 4,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": -1,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:4"
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -12245,6 +12341,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:phantom-plague:1": [
     "vitner-witchcraft:phantom-plague:1#effect"
   ],
+  "vitner-witchcraft:fever:2": [
+    "vitner-witchcraft:fever:2#effect"
+  ],
   "vitner-witchcraft:curse-creature:5": [
     "vitner-witchcraft:curse-creature:5#effect"
   ],
@@ -12962,6 +13061,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": [
     "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:fever:2": [
+    "holy-joaringfaith-curses-of-sonntag:fever:2#effect"
   ],
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
     "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"
