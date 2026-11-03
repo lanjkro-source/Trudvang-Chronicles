@@ -17,6 +17,19 @@ export function effectDurationSeconds(duration = {}) {
   const seconds = Number(duration.value) * scale;
   return Number.isFinite(seconds) && seconds >= 0 ? seconds : null;
 }
+/** Elapsed time for an applied item effect, whether advanced by the clock or combat. */
+export function itemEffectRemainingSeconds(effect, {time, combat} = {}) {
+  const duration=effect?._source?.duration ?? effect?.duration;
+  const total=effectDurationSeconds(duration);
+  if(total===null)return null;
+  const start=effect?._source?.start ?? effect?.start;
+  const appliedAt=effect?.flags?.["trudvang-chronicles"]?.transformation?.appliedAt;
+  const startTime=Number.isFinite(appliedAt)?appliedAt:start?.time;
+  const worldElapsed=Number.isFinite(time)&&Number.isFinite(startTime)?Math.max(0,time-startTime):0;
+  const combatElapsed=["rounds","turns"].includes(duration?.units)&&start?.combat&&start.combat===combat?.id
+    &&Number.isFinite(start.round)&&Number.isFinite(Number(combat.round))?Math.max(0,Number(combat.round)-start.round)*5:0;
+  return Math.max(0,total-Math.max(worldElapsed,combatElapsed));
+}
 /** Generated power-level duration improvements are measured in seconds.
  * Preserve the chosen unit while adding precisely the same real duration. */
 export function addDurationSeconds(duration, seconds) {

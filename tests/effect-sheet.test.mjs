@@ -186,6 +186,9 @@ test("TrudvangEffectSheet durationChanges stays finite for indefinite and finite
   const finiteCtx = await sheetFor(finite)._preparePartContext("durationChanges", {});
   assert.ok(Number.isFinite(finiteCtx.duration.value));
   assert.equal(finiteCtx.duration.value, 5);
+  const converted = await sheetFor({duration: {value: 15, units: "seconds"}, _source: {duration: {value: 3, units: "rounds"}}, system: {changes: [], stages: []}})._preparePartContext("durationChanges", {});
+  assert.equal(converted.duration.value, 3);
+  assert.equal(converted.duration.units, "rounds");
 
   const proto = Object.getPrototypeOf(TrudvangEffectSheet.prototype);
   const original = proto._onChangeForm;
@@ -914,6 +917,20 @@ test("cleanup deletes already-greyed actor and equipment instances even when the
   globalThis.game = {actors: [actor], scenes: [{tokens: [{actor}]}], users: {activeGM: {isSelf: true}}};
   await expireAppliedEffects();
   assert.deepEqual(deleted, ["direct", "equipment", "enchantment"]);
+});
+
+test("item enchantments expire by elapsed world time or combat rounds, including older instances without a start", async t => {
+  const previous = globalThis.game;t.after(()=>{globalThis.game=previous;});
+  const deleted=[];
+  const actor={documentName:"Actor",effects:[],items:[],allApplicableEffects:()=>[]};
+  const gear={documentName:"Item",type:"weapon",parent:actor,effects:[]};actor.items.push(gear);
+  const make=(id,start)=>({id,type:"effect",parent:gear,transfer:false,system:{stages:[]},_source:{duration:{value:3,units:"rounds"},start},duration:{expired:false},flags:{"trudvang-chronicles":{transformation:{resolved:true,appliedAt:100}}},async delete(){deleted.push(id);gear.effects.splice(gear.effects.indexOf(this),1);}});
+  const clock=make("clock",null),round=make("round",{time:100,combat:"fight",round:2});
+  gear.effects.push(clock,round);
+  globalThis.game={actors:[actor],scenes:[],users:{activeGM:{isSelf:true}},time:{worldTime:110}};
+  await expireAppliedEffects({time:110,combat:{id:"fight",round:4}});assert.deepEqual(deleted,[]);
+  await expireAppliedEffects({time:110,combat:{id:"fight",round:5}});assert.deepEqual(deleted,["round"]);
+  await expireAppliedEffects({time:115});assert.deepEqual(deleted,["round","clock"]);
 });
 
 test("managed consequence clocks keep native expiry from suppressing intermediate stages",async()=>{

@@ -7,7 +7,7 @@ import {editedConsequenceClock} from "./rules/consumable-effects.mjs";
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
-import {normalizeEffectDuration, normalizeEffectStage, effectDurationSeconds} from "./rules/effect-duration.mjs";
+import {normalizeEffectDuration, normalizeEffectStage, effectDurationSeconds, itemEffectRemainingSeconds} from "./rules/effect-duration.mjs";
 import {isGradedEffect, isGradedState, effectDegree, gradedEffectName, cumulativeChangeValue} from "./rules/effect-stacking.mjs";
 
 const fields = foundry.data.fields;
@@ -241,10 +241,12 @@ export function registerEffectHooks() {
   Hooks.on("updateActiveEffect", (effect, changed, options) => {
     if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);
   });
-  Hooks.on("ready", expireAppliedEffects);
+  Hooks.on("ready", () => expireAppliedEffects({time:Number(game.time?.worldTime), combat:game.combat}));
   // Item-local, non-transferring enchantments are not necessarily registered
   // by Foundry's actor effect registry. Check them when world time advances.
   Hooks.on("updateWorldTime", time => expireAppliedEffects({time:Number(time), itemTransformationsOnly:true}));
+  Hooks.on("combatTurnChange", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, itemTransformationsOnly:true}));
+  Hooks.on("updateCombat", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, itemTransformationsOnly:true}));
 }
 
 /** Include unlinked tokens on inactive scenes, without duplicating linked actors. */
@@ -265,7 +267,7 @@ export function appliedWorldEffects() {
 }
 
 /** Complete pending expiry on world actors and unlinked tokens on every scene. */
-export async function expireAppliedEffects({time = null, itemTransformationsOnly = false} = {}) {
+export async function expireAppliedEffects({time = null, combat = null, itemTransformationsOnly = false} = {}) {
   for (const effect of appliedWorldEffects()) {
     if (itemTransformationsOnly && !(effect.parent?.documentName === "Item" && effect.flags?.["trudvang-chronicles"]?.transformation?.resolved)) continue;
     const pending = expirationJobs.get(effect);
@@ -275,7 +277,9 @@ export async function expireAppliedEffects({time = null, itemTransformationsOnly
       const seconds = effectDurationSeconds(effect._source?.duration ?? effect.duration);
       // An explicit world-time jump also consumes round-based durations even
       // if the native combat registry has not advanced its round counter.
-      const elapsed = Number.isFinite(time) && Number.isFinite(start?.time) && seconds !== null && start.time + seconds <= time;
+      const isItemTransformation=effect.parent?.documentName === "Item" && effect.flags?.["trudvang-chronicles"]?.transformation?.resolved;
+      const elapsed = isItemTransformation ? itemEffectRemainingSeconds(effect,{time,combat})===0
+        : Number.isFinite(time) && Number.isFinite(start?.time) && seconds !== null && start.time + seconds <= time;
       if (effect.duration?.expired || elapsed) await finishExpiredEffect(effect);
     }
   }

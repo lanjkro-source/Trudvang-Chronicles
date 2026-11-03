@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
+import {effectDurationSeconds,itemEffectRemainingSeconds} from "../rules/effect-duration.mjs";
 import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipment-inspection.mjs";
 import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
@@ -89,16 +90,26 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.isType = type => this.item.type === type;
     context.config = TRUDVANG;
     context.advancementLocked = this.advancementLocked;
-    context.effects = context.supportsEffects ? this.item.effects.map(effect => ({
+    context.effects = context.supportsEffects ? this.item.effects.map(effect => {
+      const summary=effectTooltipSummary(effect);
+      const duration=effect._source?.duration ?? effect.duration;
+      const total=effectDurationSeconds(duration);
+      const remaining=itemEffectRemainingSeconds(effect,{time:Number(game.time?.worldTime),combat:game.combat});
+      const unitSeconds=total!==null && Number(duration?.value)>0 ? total/Number(duration.value) : null;
+      const durationLabel=effect.flags?.["trudvang-chronicles"]?.transformation?.resolved && unitSeconds
+        ? `${Math.ceil(remaining/unitSeconds)} ${game.i18n.localize(`EFFECT.DURATION.UNITS.${duration.units}`)}`
+        : effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent");
+      return ({
       id: effect.id,
       name: effect.name,
       img: effect.img,
       transfer: effect.transfer,
       canDelete: !isCarriedTransferredEffect(effect),
-      activationLabel: game.i18n.localize(effect.transfer ? `TRUDVANG.Effect.Activation.${effect.system?.activation === "inventory" ? "inventory" : "equipped"}` : "TRUDVANG.Effect.Applied"),
+      activationLabel: effect.transfer ? game.i18n.localize(`TRUDVANG.Effect.Activation.${effect.system?.activation === "inventory" ? "inventory" : "equipped"}`) : summary,
+      duration: durationLabel,
       disabled: effect.disabled,
-      summary: effectTooltipSummary(effect)
-    })) : [];
+      summary
+    });}) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
     context.powerIconClass = context.isMagicPower ? powerIconClassForItem(this.item) : null;

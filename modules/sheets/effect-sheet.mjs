@@ -128,19 +128,20 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       const dur = this.document.duration || {};
       // V14 prepares a null duration value as Infinity; read the unprepared
       // source value instead and fall back to 0 when non-finite so the number
-      // input never renders value="Infinity". Units/expiry stay prepared.
+      // input never renders value="Infinity". Prepared units may be converted
+      // to seconds by Foundry; pair the source value with its source units.
       const rawSourceValue = Number(this.document._source?.duration?.value ?? 0);
       partContext.duration = {
         value: Number.isFinite(rawSourceValue) ? rawSourceValue : 0,
-        units: dur.units ?? "rounds",
+        units: this.document._source?.duration?.units ?? dur.units ?? "rounds",
         expiry: dur.expiry ?? ""
       };
       partContext.durationUnits = DURATION_UNITS.reduce((choices, unit) => {
         choices[unit] = game.i18n.localize(`EFFECT.DURATION.UNITS.${unit}`);
         return choices;
       }, {});
-      partContext.showRoundHint = dur.units === "rounds";
-      partContext.showExpiry = ["rounds", "turns"].includes(dur.units);
+      partContext.showRoundHint = partContext.duration.units === "rounds";
+      partContext.showExpiry = ["rounds", "turns"].includes(partContext.duration.units);
       partContext.expiryChoices = {
         "": game.i18n.localize("TRUDVANG.Effect.ExpiryNone"),
         turnStart: game.i18n.localize("TRUDVANG.Effect.TurnStart"),

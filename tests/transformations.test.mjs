@@ -34,7 +34,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
- const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils};
+ const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils,documents:foundry.documents};
  try{
   const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
   const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
@@ -42,6 +42,7 @@ test("weapon blessings require an owned weapon and preserve their improved value
   let warnings=0,created;
   globalThis.ui={notifications:{warn:()=>warnings++}};
   foundry.utils={deepClone:structuredClone};
+  foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:10})}}};
   const actor={uuid:"Actor.a",name:"A",items:[],canUserModify:()=>true};
   const item={type:"weapon",name:"Épée",parent:actor,effects:[],canUserModify:()=>true,createEmbeddedDocuments:async(_type,docs)=>{created=docs[0];return [created];}};
   const id="holy-tenetnid-tablet-of-the-knight:blessed-spear:1",key=`${id}#weapon`;
@@ -51,7 +52,7 @@ test("weapon blessings require an owned weapon and preserve their improved value
   assert.equal(created.flags[S].transformation.ruleTestContext.countsById[`${id}:2`],2);
   assert.match(created.description,/Dégâts : \+3 ; \+4 contre les morts-vivants ; \+5 contre les démons/);
   assert.deepEqual(created.duration,{value:16,units:"rounds"});
- }finally{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;}
+ }finally{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;}
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{

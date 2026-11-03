@@ -8,6 +8,7 @@ const jobs = new WeakMap();
 export async function applyItemTransformation(item, data) {
   const run = async () => {
     const prepared = foundry.utils.deepClone(effectSource(data));
+    prepared.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
     const stackId = effectStackId(prepared);
     const matches = stackId ? Array.from(item.effects ?? []).filter(effect =>
       ["effect", "base"].includes(effect.type) && !effect.duration?.expired && effectStackId(effect) === stackId) : [];
@@ -15,7 +16,6 @@ export async function applyItemTransformation(item, data) {
     if (existing) {
       delete prepared._id;
       prepared.disabled ??= false;
-      prepared.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
       prepared.duration = {...(prepared.duration || existing._source.duration), expired: false};
       await existing.update(prepared);
       // Remove duplicates left by the earlier item-drop bug, keeping the
