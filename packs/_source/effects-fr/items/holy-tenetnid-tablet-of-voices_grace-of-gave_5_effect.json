@@ -1,0 +1,45 @@
+{
+  "_id": "YpbdXTmSnToUpVqW",
+  "_key": "!items!YpbdXTmSnToUpVqW",
+  "name": "Liens fraternels",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect",
+    "description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+    "summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 256
+    }
+  },
+  "effects": [
+    {
+      "_id": "3HOW5oUpVqWrXsYt",
+      "_key": "!items.effects!YpbdXTmSnToUpVqW.3HOW5oUpVqWrXsYt",
+      "name": "Liens fraternels",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect",
+            "sourceId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
+            "summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

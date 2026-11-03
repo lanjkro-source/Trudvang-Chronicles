@@ -6592,7 +6592,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increases the duration by 1 action round",
-            "1": "Increase the power's duration by 1 action round",
+            "1": "Increase the range by 5 metres (contact is no longer necessary)",
             "2": "Lowers Situation value to resist"
           }
         },
@@ -15468,6 +15468,15 @@
           "SourcePage": "206",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:blood-brothers:2#effect": {
+          "Name": "Blood Brothers",
+          "Summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "Description": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "SourceName": "Blood Brothers",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "3 action rounds"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
           "Name": "Sirowerd’s Tongue",
           "Summary": "Chosen language: +2 to Knowledge.",
@@ -15477,6 +15486,15 @@
           "SourcePage": "206",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
+          "Name": "Kindred Bonds",
+          "Summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "Description": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "SourceName": "Grace of Gave",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "4 action rounds"
+        },
         "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
           "Name": "Sanity of Gave",
           "Summary": "Chosen language: +3 to Knowledge.",
@@ -15485,6 +15503,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "206",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:divine-pact:8#effect": {
+          "Name": "Divine Pact",
+          "Summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "Description": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+          "SourceName": "Divine Pact",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "5 action rounds"
         },
         "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
           "Name": "Sheltering",
@@ -15881,6 +15908,24 @@
           "Summary": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
           "Description": "Simple illusions affecting sight only; other senses automatically reveal the deception.",
           "SourceName": "Illusion Tricks",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:persuade:5#effect": {
+          "Name": "Imposed Task",
+          "Summary": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+          "Description": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+          "SourceName": "Persuade",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
+          "Name": "Whispered Suggestion",
+          "Summary": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+          "Description": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+          "SourceName": "Taken by the Mountain",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"
@@ -16876,7 +16921,10 @@
       "BlessedWeaponDamage": "Damage: +{normal}; +{undead} against undead; +{demon} against demons.",
       "ConcealStill": "Detection while stationary: {value} VC",
       "ConcealMoving": "Detection while moving: {value} VC",
-      "OneSkillBonus": "Bonus to one skill test: +{value} VC"
+      "OneSkillBonus": "Bonus to one skill test: +{value} VC",
+      "SuggestedTask": "Suggested task",
+      "InfluenceResistance": "Mental influence: resistance SV {value} + Psyche",
+      "LethalResistance": "Resistance before a lethal act: SV {value} + Psyche"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

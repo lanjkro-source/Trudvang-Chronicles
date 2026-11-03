@@ -1,0 +1,45 @@
+{
+  "_id": "S2amSKdJeKfLgMhN",
+  "_key": "!items!S2amSKdJeKfLgMhN",
+  "name": "Tâche imposée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:persuade:5#effect",
+    "description": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+    "summary": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 275
+    }
+  },
+  "effects": [
+    {
+      "_id": "bOI6d9D9EaGbHcId",
+      "_key": "!items.effects!S2amSKdJeKfLgMhN.bOI6d9D9EaGbHcId",
+      "name": "Tâche imposée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:persuade:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:persuade:5#effect",
+            "sourceId": "holy-haminges-power-of-trolls:persuade:5",
+            "summary": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

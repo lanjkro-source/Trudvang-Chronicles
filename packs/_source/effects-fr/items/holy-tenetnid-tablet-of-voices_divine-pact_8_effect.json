@@ -1,0 +1,45 @@
+{
+  "_id": "3VvpCSkQlRmSnToU",
+  "_key": "!items!3VvpCSkQlRmSnToU",
+  "name": "Pacte divin",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+    "description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+    "summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 257
+    }
+  },
+  "effects": [
+    {
+      "_id": "mXI4cdIdJeKfLgMh",
+      "_key": "!items.effects!3VvpCSkQlRmSnToU.mXI4cdIdJeKfLgMh",
+      "name": "Pacte divin",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+            "sourceId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
+            "summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "3VvpCSkQlRmSnToU",
+  "_key": "!items!3VvpCSkQlRmSnToU",
+  "name": "Divine Pact",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+    "description": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+    "summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 206
+    }
+  },
+  "effects": [
+    {
+      "_id": "mXI4cdIdJeKfLgMh",
+      "_key": "!items.effects!3VvpCSkQlRmSnToU.mXI4cdIdJeKfLgMh",
+      "name": "Divine Pact",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:divine-pact:8#effect",
+            "sourceId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
+            "summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

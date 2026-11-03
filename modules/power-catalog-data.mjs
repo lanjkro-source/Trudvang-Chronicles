@@ -3763,6 +3763,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:persuade:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:0",
@@ -3791,6 +3795,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:0",
@@ -5812,6 +5820,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:blood-brothers:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:0",
@@ -5835,6 +5847,33 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:divine-pact:8": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "targets",
+          "baseTargets": 4,
+          "variants": [
+            "effect"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-tenetnid-tablet-of-voices:divine-pact:8:3",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:0",
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:2",
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:1"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:0",
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:2",
+            "holy-tenetnid-tablet-of-voices:divine-pact:8:1"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:divine-pact:8:0",
@@ -5891,6 +5930,33 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:grace-of-gave:5": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "targets",
+          "baseTargets": 2,
+          "variants": [
+            "effect"
+          ],
+          "additionalTargets": [
+            {
+              "optionId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:3",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:0",
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:2",
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:1"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:0",
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:2",
+            "holy-tenetnid-tablet-of-voices:grace-of-gave:5:1"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:0",

@@ -13000,6 +13000,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.SourcePage` | 206 | 255 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.Name` | Blood Brothers | Frères de sang |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.Description` | After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it. | La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.SourceName` | Blood Brothers | Frères de sang |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.SourcePage` | 206 | 255 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:blood-brothers:2#effect.Duration` | 3 action rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue`
 
 | Clé | English | Français |
@@ -13011,6 +13022,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.SourcePage` | 206 | 256 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.Name` | Kindred Bonds | Liens fraternels |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.Description` | After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it. | La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.SourceName` | Grace of Gave | Liens fraternels |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.SourcePage` | 206 | 256 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect.Duration` | 4 action rounds | 4 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue`
 
 | Clé | English | Français |
@@ -13021,6 +13043,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourcePage` | 206 | 257 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.Name` | Divine Pact | Pacte divin |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.Description` | After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it. | La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.SourceName` | Divine Pact | Pacte divin |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.SourcePage` | 206 | 257 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect`
 
@@ -13508,6 +13541,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourcePage` | 223 | 274 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.Name` | Imposed Task | Tâche imposée |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.Description` | After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity. | Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.SourceName` | Persuade | Persuasion |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.SourcePage` | 223 | 275 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.Name` | Whispered Suggestion | Suggestion murmurée |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.Description` | After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act. | Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.SourceName` | Taken by the Mountain | Charme de la montagne |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.SourcePage` | 223 | 275 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll`
 
@@ -14695,6 +14750,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ConcealStill` | Detection while stationary: {value} VC | Repérage à l’arrêt : {value} VC |
 | `TRUDVANG.Transformation.ConcealMoving` | Detection while moving: {value} VC | Repérage en mouvement : {value} VC |
 | `TRUDVANG.Transformation.OneSkillBonus` | Bonus to one skill test: +{value} VC | Bonus à un test de compétence : +{value} VC |
+| `TRUDVANG.Transformation.SuggestedTask` | Suggested task | Tâche suggérée |
+| `TRUDVANG.Transformation.InfluenceResistance` | Mental influence: resistance SV {value} + Psyche | Influence mentale : résistance SV {value} + Psychisme |
+| `TRUDVANG.Transformation.LethalResistance` | Resistance before a lethal act: SV {value} + Psyche | Résistance avant un acte meurtrier : SV {value} + Psychisme |
 
 ## `TRUDVANG.Transformation.Modes`
 

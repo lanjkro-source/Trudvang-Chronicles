@@ -6592,7 +6592,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
-            "1": "Augmente la durée du pouvoir de : 1 tour de jeu",
+            "1": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)",
             "2": "Réduit la valeur de situation pour résister à ce pouvoir de : -1"
           }
         },
@@ -15468,6 +15468,15 @@
           "SourcePage": "255",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:blood-brothers:2#effect": {
+          "Name": "Frères de sang",
+          "Summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "Description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "SourceName": "Frères de sang",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "255",
+          "Duration": "3 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
           "Name": "Langue de Siro Werte",
           "Summary": "Langue choisie : +2 en Connaissances.",
@@ -15477,6 +15486,15 @@
           "SourcePage": "256",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
+          "Name": "Liens fraternels",
+          "Summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "Description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "SourceName": "Liens fraternels",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "256",
+          "Duration": "4 tours de jeu"
+        },
         "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
           "Name": "Sagesse de Gave",
           "Summary": "Langue choisie : +3 en Connaissances.",
@@ -15485,6 +15503,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "257",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:divine-pact:8#effect": {
+          "Name": "Pacte divin",
+          "Summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "Description": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
+          "SourceName": "Pacte divin",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "257",
+          "Duration": "5 tours de jeu"
         },
         "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
           "Name": "Refuge",
@@ -15883,6 +15910,24 @@
           "SourceName": "Tours illusoires",
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:persuade:5#effect": {
+          "Name": "Tâche imposée",
+          "Summary": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+          "Description": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
+          "SourceName": "Persuasion",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "275",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
+          "Name": "Suggestion murmurée",
+          "Summary": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+          "Description": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+          "SourceName": "Charme de la montagne",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "275",
           "Duration": "1 minute"
         },
         "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll": {
@@ -16876,7 +16921,10 @@
       "BlessedWeaponDamage": "Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons.",
       "ConcealStill": "Repérage à l’arrêt : {value} VC",
       "ConcealMoving": "Repérage en mouvement : {value} VC",
-      "OneSkillBonus": "Bonus à un test de compétence : +{value} VC"
+      "OneSkillBonus": "Bonus à un test de compétence : +{value} VC",
+      "SuggestedTask": "Tâche suggérée",
+      "InfluenceResistance": "Influence mentale : résistance SV {value} + Psychisme",
+      "LethalResistance": "Résistance avant un acte meurtrier : SV {value} + Psychisme"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

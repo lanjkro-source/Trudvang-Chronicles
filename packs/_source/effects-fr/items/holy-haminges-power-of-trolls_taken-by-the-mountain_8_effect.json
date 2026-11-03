@@ -1,0 +1,45 @@
+{
+  "_id": "ZatviqVqWrXsYtZu",
+  "_key": "!items!ZatviqVqWrXsYtZu",
+  "name": "Suggestion murmurée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+    "description": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+    "summary": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 275
+    }
+  },
+  "effects": [
+    {
+      "_id": "U5hl8HcIdJeKfLgM",
+      "_key": "!items.effects!ZatviqVqWrXsYtZu.U5hl8HcIdJeKfLgM",
+      "name": "Suggestion murmurée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+            "sourceId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
+            "summary": "Après un test de situation raté, la cible accomplit la tâche suggérée sans initiative ni créativité. Si la tâche exige de tuer, un second test de situation a lieu juste avant l’acte irréversible.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

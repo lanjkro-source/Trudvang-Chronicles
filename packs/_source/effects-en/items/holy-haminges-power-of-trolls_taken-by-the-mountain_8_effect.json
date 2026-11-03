@@ -1,0 +1,45 @@
+{
+  "_id": "ZatviqVqWrXsYtZu",
+  "_key": "!items!ZatviqVqWrXsYtZu",
+  "name": "Whispered Suggestion",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+    "description": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+    "summary": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "U5hl8HcIdJeKfLgM",
+      "_key": "!items.effects!ZatviqVqWrXsYtZu.U5hl8HcIdJeKfLgM",
+      "name": "Whispered Suggestion",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect",
+            "sourceId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
+            "summary": "After a failed situation test, the target performs the suggested task without initiative or creativity. If the task requires killing, a second situation test is made just before the irreversible act.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

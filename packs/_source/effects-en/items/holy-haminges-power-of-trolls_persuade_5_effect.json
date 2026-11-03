@@ -1,0 +1,45 @@
+{
+  "_id": "S2amSKdJeKfLgMhN",
+  "_key": "!items!S2amSKdJeKfLgMhN",
+  "name": "Imposed Task",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:persuade:5#effect",
+    "description": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+    "summary": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "bOI6d9D9EaGbHcId",
+      "_key": "!items.effects!S2amSKdJeKfLgMhN.bOI6d9D9EaGbHcId",
+      "name": "Imposed Task",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:persuade:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:persuade:5#effect",
+            "sourceId": "holy-haminges-power-of-trolls:persuade:5",
+            "summary": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

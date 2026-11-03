@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,292);
+ assert.equal(Object.keys(sources).length,297);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -86,6 +86,23 @@ test("elemental protection and sensory effects retain their chosen duration and 
   await applyTransformation(actor,'holy-toikalokke-lynx-power:hearing:2#effect',{counts:[1,0,1,1],skipDialog:true});
   assert.deepEqual(created.duration,{value:132,units:'rounds'});
   assert.match(created.description,/50 mètres/);
+ }finally{globalThis.game=previous;}
+});
+test("mental influence records the task and both improved resistance tests",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
+ const previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  const id='holy-haminges-power-of-trolls:taken-by-the-mountain:8';
+  await applyTransformation(actor,`${id}#effect`,{counts:[1,0,0,2],preselectedAnswers:{duration:'1 minute',boost0:1,boost1:0,boost2:0,boost3:2,effectInput:'Partir'}});
+  assert.deepEqual(created.duration,{value:24,units:'rounds'});
+  assert.match(created.description,/Tâche suggérée : Partir/);
+  assert.match(created.description,/résistance SV 4 \+ Psychisme/);
+  assert.match(created.description,/SV 10 \+ Psychisme/);
+  const enriched=annotateRuleTestDescription(created.description,created);
+  assert.match(enriched,/data-test-index="0"/);assert.match(enriched,/data-test-index="1"/);
  }finally{globalThis.game=previous;}
 });
 

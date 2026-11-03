@@ -32,7 +32,7 @@
         "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the power's duration by 1 action round"
+        "effect": "Increase the range by 5 metres (contact is no longer necessary)"
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:2",

@@ -6372,6 +6372,37 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-voices:blood-brothers:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-voices:blood-brothers:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-voices:blood-brothers:2:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 10,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-voices:blood-brothers:2:2",
+        "labelKey": "TRUDVANG.Transformation.InfluenceResistance",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue": {
     "id": "langue",
     "icon": "icons/svg/aura.svg",
@@ -6409,6 +6440,37 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "4 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 10,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:2",
+        "labelKey": "TRUDVANG.Transformation.InfluenceResistance",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue": {
     "id": "langue",
     "icon": "icons/svg/aura.svg",
@@ -6443,6 +6505,37 @@ export const TRANSFORMATION_TEMPLATES = {
         "restrictedSkill": "knowledge",
         "labelKey": "TRUDVANG.Transformation.SpokenLanguageBonus",
         "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-voices:divine-pact:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-tenetnid-tablet-of-voices:divine-pact:8:0"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-voices:divine-pact:8:2",
+        "labelKey": "TRUDVANG.Transformation.InfluenceResistance",
+        "skillOnly": true,
+        "tooltip": true
       }
     ]
   },
@@ -7934,6 +8027,91 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "summaryPart",
         "value": 1,
         "optionId": "holy-haminges-power-of-trolls:illusion-tricks:2:2"
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:persuade:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "inputKey": "TRUDVANG.Transformation.SuggestedTask",
+    "sourceId": "holy-haminges-power-of-trolls:persuade:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-trolls:persuade:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-trolls:persuade:5:1"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 6,
+        "value": -1,
+        "optionId": "holy-haminges-power-of-trolls:persuade:5:3",
+        "labelKey": "TRUDVANG.Transformation.InfluenceResistance",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "inputKey": "TRUDVANG.Transformation.SuggestedTask",
+    "sourceId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:1"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 6,
+        "value": -1,
+        "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3",
+        "labelKey": "TRUDVANG.Transformation.InfluenceResistance",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 12,
+        "value": -1,
+        "optionId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3",
+        "labelKey": "TRUDVANG.Transformation.LethalResistance",
+        "skillOnly": true
       }
     ]
   },
@@ -12183,11 +12361,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille"
   ],
+  "holy-tenetnid-tablet-of-voices:blood-brothers:2": [
+    "holy-tenetnid-tablet-of-voices:blood-brothers:2#effect"
+  ],
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue"
   ],
+  "holy-tenetnid-tablet-of-voices:grace-of-gave:5": [
+    "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect"
+  ],
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": [
     "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue"
+  ],
+  "holy-tenetnid-tablet-of-voices:divine-pact:8": [
+    "holy-tenetnid-tablet-of-voices:divine-pact:8#effect"
   ],
   "holy-tenetnid-tablet-of-the-shield:sheltering:1": [
     "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect"
@@ -12306,6 +12493,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-trolls:illusion-tricks:2": [
     "holy-haminges-power-of-trolls:illusion-tricks:2#illusions"
+  ],
+  "holy-haminges-power-of-trolls:persuade:5": [
+    "holy-haminges-power-of-trolls:persuade:5#effect"
+  ],
+  "holy-haminges-power-of-trolls:taken-by-the-mountain:8": [
+    "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect"
   ],
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"
