@@ -1,0 +1,45 @@
+{
+  "_id": "Pu1FYnQlRmSnToUp",
+  "_key": "!items!Pu1FYnQlRmSnToUp",
+  "name": "Astral Voyage (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+    "description": "By leaving the material plane of existence, the mopor allows her spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The mopor’s spirit travels on the border between Trudvang and Dimhall where she can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the mopor’s spirit has left her physical body, the body goes into hibernation. The mopor can see and hear as normal while in spirit form. However, she is unable to interfere or communicate with her environment. The astral body is completely transparent, as it is purely composed of the mopor’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The mopor must be careful to return to their body before the power runs out. If the mopor fails to do so, her consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the mopor undergoes extreme shock, permanently loses 1d6 in her power's capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the power True Sight. Another mopor who discovers the astral body can banish it back to its physical body using the power Disperse Powers. The banished one then experiences the same effects as if the duration of the power ended.",
+    "summary": "Astral Voyage",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "m4ySdVmSnToUpVqW",
+      "_key": "!items.effects!Pu1FYnQlRmSnToUp.m4ySdVmSnToUpVqW",
+      "name": "Astral Voyage (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By leaving the material plane of existence, the mopor allows her spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The mopor’s spirit travels on the border between Trudvang and Dimhall where she can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the mopor’s spirit has left her physical body, the body goes into hibernation. The mopor can see and hear as normal while in spirit form. However, she is unable to interfere or communicate with her environment. The astral body is completely transparent, as it is purely composed of the mopor’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The mopor must be careful to return to their body before the power runs out. If the mopor fails to do so, her consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the mopor undergoes extreme shock, permanently loses 1d6 in her power's capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the power True Sight. Another mopor who discovers the astral body can banish it back to its physical body using the power Disperse Powers. The banished one then experiences the same effects as if the duration of the power ended.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+            "summary": "Astral Voyage",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

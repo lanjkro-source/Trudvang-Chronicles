@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,267);
+ assert.equal(Object.keys(sources).length,277);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1172,6 +1172,32 @@ test("elemental and illusion effects keep their duration and chosen non-duration
  let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  await applyTransformation(actor,"holy-toikalokke-master-of-elements:earth-wall:0#effect",{counts:[2,0,1],skipDialog:true});
  assert.deepEqual(created.duration,{value:2520,units:"rounds"});assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.holy-toikalokke-master-of-elements:earth-wall:0\.PowerLevels\.0/);
+});
+
+test("Joar powers retain their source rules with their own option identities and target budgets",async()=>{
+ const pairs={
+  "holy-joaringfaith-power-of-sille:sunray:1":"holy-gerbanis-warmth-of-sunvei:sunray:1",
+  "holy-joaringfaith-power-of-sille:summer-place:2":"holy-gerbanis-warmth-of-sunvei:summer-place:3",
+  "holy-joaringfaith-power-of-sille:time-of-the-hunt:6":"holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6",
+  "holy-joaringfaith-sight-of-lekaba:tracking:0":"vitner-power-of-vision:tracking:0",
+  "holy-joaringfaith-sight-of-lekaba:scanning:1":"vitner-power-of-vision:scanning:1",
+  "holy-joaringfaith-sight-of-lekaba:espionage:3":"vitner-power-of-vision:espionage:4",
+  "holy-joaringfaith-sight-of-lekaba:seeing:4":"vitner-power-of-vision:seeing:3",
+  "holy-joaringfaith-sight-of-lekaba:astral-voyage:6":"vitner-power-of-vision:astral-voyage:5",
+  "holy-joaringfaith-sight-of-lekaba:true-sight:7":"vitner-power-of-vision:true-sight:7",
+  "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0":"vitner-witchcraft:uprooted-tree:0"
+ };
+ const {POWER_DETAILS_BY_ID}=await import("../modules/power-catalog-data.mjs");
+ const {magicTargetCapacity}=await import("../modules/rules/magic-target-allocation.mjs");
+ for(const [id,baseId] of Object.entries(pairs)){
+  const target=templates[sources[id][0]],base=templates[sources[baseId][0]];
+  assert.deepEqual(target.parameters.map(p=>[p.index,p.target,p.value]),base.parameters.map(p=>[p.index,p.target,p.value]),id);
+  for(const parameter of target.parameters)assert.ok(parameter.optionId.startsWith(`${id}:`),id);
+ }
+ for(const [id,index] of [["holy-joaringfaith-sight-of-lekaba:seeing:4",3],["holy-joaringfaith-sight-of-lekaba:true-sight:7",7]]){
+  const target=POWER_DETAILS_BY_ID[id].targeting;
+  assert.equal(magicTargetCapacity(target,{[`${id}:${index}`]:2}),3,id);
+ }
 });
 
 test("divine weather, travel and summoning effects preserve their duration improvements",async()=>{

@@ -1,0 +1,45 @@
+{
+  "_id": "jPwpBKcIdJeKfLgM",
+  "_key": "!items!jPwpBKcIdJeKfLgM",
+  "name": "Pistage (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:tracking:0#effect",
+    "description": "Ce pouvoir permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la mopor peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de pouvoir lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. La mopor peut également suivre les traces d’une créature ayant bénéficié du pouvoir Sans trace. Pour pouvoir utiliser le pouvoir en vue de pister une créature, la mopor doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le invocation du pouvoir réussi : la mopor ne peut donc pas répéter le même pouvoir à moins de se procurer un autre échantillon de la créature visée.",
+    "summary": "Pistage",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "qiC0iOhNiOjPkQlR",
+      "_key": "!items.effects!jPwpBKcIdJeKfLgM.qiC0iOhNiOjPkQlR",
+      "name": "Pistage (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la mopor peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de pouvoir lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. La mopor peut également suivre les traces d’une créature ayant bénéficié du pouvoir Sans trace. Pour pouvoir utiliser le pouvoir en vue de pister une créature, la mopor doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le invocation du pouvoir réussi : la mopor ne peut donc pas répéter le même pouvoir à moins de se procurer un autre échantillon de la créature visée.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:tracking:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:tracking:0#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:tracking:0",
+            "summary": "Pistage",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

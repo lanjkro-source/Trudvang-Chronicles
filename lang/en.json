@@ -16276,6 +16276,24 @@
           "SourcePage": "123",
           "Duration": "1 day"
         },
+        "holy-joaringfaith-power-of-sille:sunray:1#effect": {
+          "Name": "Sunray (Joar)",
+          "Summary": "Sunray",
+          "Description": "Sille sees to the mopor’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the mopor and an area surrounding them with a radius determined by her Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the mopor moves away.",
+          "SourceName": "Sunray",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 hour"
+        },
+        "holy-joaringfaith-power-of-sille:summer-place:2#effect": {
+          "Name": "Summer Place (Joar)",
+          "Summary": "Summer Place",
+          "Description": "Sille sees to the mopor’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area ( determined by the mopor’s Skill Value in the Faith skill). This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. If the duration lasts until after dusk, a warm summer evening and night will continue within the blessed area until the power ends. As long as the ability persists, any hunting grounds in the vicinity of the mopor (SV x 100 meters) also become more prosperous (+3 for the Wilderness skill when hunting).",
+          "SourceName": "Summer Place",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 hours"
+        },
         "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
           "Name": "Healing Glow (Sille)",
           "Summary": "Immediately restores health and stops bleeding.",
@@ -16303,6 +16321,15 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect": {
+          "Name": "Time of the Hunt (Joar)",
+          "Summary": "Time of the Hunt",
+          "Description": "Sille sees to the mopor’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area. This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within range of this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. For the duration of the ability, any hunting grounds within 10 k ilometers of the mopor also become extremely prosperous (+6 on rolls for the Wilderness skill when hunting or fishing).",
+          "SourceName": "Time of the Hunt",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 day"
+        },
         "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
           "Name": "Breath of Sille (Sille)",
           "Summary": "Improves recovery while resting and helps overcome an affliction.",
@@ -16321,6 +16348,24 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-sight-of-lekaba:tracking:0#effect": {
+          "Name": "Tracking (Joar)",
+          "Summary": "Tracking",
+          "Description": "The power allows the mopor to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the mopor can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of power light will collect on the water or in the air to indicate the direction. The mopor can also follow tracks of a creature that has been enchanted with the Traceless power. In order to use the power to track a creature, the mopor must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the mopor successfully invokes the power, so the power cannot be repeated unless the mopor finds another item from the creature.",
+          "SourceName": "Tracking",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 hour"
+        },
+        "holy-joaringfaith-sight-of-lekaba:scanning:1#effect": {
+          "Name": "Scanning (Joar)",
+          "Summary": "Scanning",
+          "Description": "By touching an object and slipping into a trance, the mopor can explore its memories through the astral plane. The mopor receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the mopor spends under the power, she recalls a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the mopor sees or learns is always up to the game master to determine.",
+          "SourceName": "Scanning",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "9 action rounds"
+        },
         "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect": {
           "Name": "Far Sight — Sight of Lekaba",
           "Summary": "Far Sight — Sight of Lekaba",
@@ -16329,6 +16374,51 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "2 action rounds"
+        },
+        "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage": {
+          "Name": "Espionage (Joar)",
+          "Summary": "Espionage",
+          "Description": "The mopor can enchant an object in her possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the power, the mopor can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting her consciousness into the object. Once the mopor has put the power on the object, the distance between her and it no longer matters. Right before the power expires, the mopor can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the mopor’s own memories.",
+          "SourceName": "Espionage",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 hour"
+        },
+        "holy-joaringfaith-sight-of-lekaba:seeing:4#effect": {
+          "Name": "Seeing (Joar)",
+          "Summary": "Seeing",
+          "Description": "The power enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the power, the mopor’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or powers that impair vision. However, the mopor cannot detect things that she would not be able to see under normal c onditions. The Seeing power can also be used to cancel the effects of powers that impair vision (effective for the power’s duration), such as Vision/Blindness.",
+          "SourceName": "Seeing",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 hour"
+        },
+        "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage": {
+          "Name": "Astral Voyage (Joar)",
+          "Summary": "Astral Voyage",
+          "Description": "By leaving the material plane of existence, the mopor allows her spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The mopor’s spirit travels on the border between Trudvang and Dimhall where she can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the mopor’s spirit has left her physical body, the body goes into hibernation. The mopor can see and hear as normal while in spirit form. However, she is unable to interfere or communicate with her environment. The astral body is completely transparent, as it is purely composed of the mopor’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The mopor must be careful to return to their body before the power runs out. If the mopor fails to do so, her consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the mopor undergoes extreme shock, permanently loses 1d6 in her power's capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the power True Sight. Another mopor who discovers the astral body can banish it back to its physical body using the power Disperse Powers. The banished one then experiences the same effects as if the duration of the power ended.",
+          "SourceName": "Astral Voyage",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 minutes"
+        },
+        "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect": {
+          "Name": "True Sight (Joar)",
+          "Summary": "True Sight",
+          "Description": "This power allows a humanoid or creature’s eyes to be enchanted such that they recognize the power patterns of illusion that surround beings and objects. The target is immediately able to see through all illusions, camouflage, and magical images. The power also grants the target the ability to see any objects and beings who might be invisible (whether by their very nature or through an ability). Objects or creatures that are invisible or camouflaged through powers appear to the target as if they are not enchanted at all. The effective range of this true sight is 25 meters in the basic version. The mopor can also use the power to determine if an object or creature has been enchanted and had its power manipulated in other ways beyond that of illusions. To achieve this, a successful Situation roll is required with a Situation value based on the power woven over the object or creature (see the table below). The roll may be modified according to the game master’s wishes, and should always be rolled in secret by the GM, if the player is asked to roll, they will realize that there is something to be<table><thead><tr><th colspan=\"1\">TRUE SIGHT SITUATION VALUES</th></tr><tr><th>Power Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>found in the object. However, the mopor has no way of identifying what power the creature or object has been enchanted with without also using the power Read Powers. TRUE SIGHT SITUATION VALUES Power Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+          "SourceName": "True Sight",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 minute"
+        },
+        "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect": {
+          "Name": "Uprooted Tree (Joar)",
+          "Summary": "Uprooted Tree",
+          "Description": "The power causes a tree to uproot and collapse. The power is laid in the ground directly beneath a tree and there forms a small uproot. As soon as the power has been woven, the power begins to swell up like a bloated cow’s stomach. Soon the power expands so much that the tree above it is wrenched from the soil and tipped over. An observer can see that something is happening because the soil suddenly starts to shift and rise. In the fourth action round of the power, the uproot grows so large that it bursts out of the ground, and in the fifth action round it finally tips the tree over and then disappears. For a tree to be toppled in this manner, it cannot have a trunk with a circumference larger than 1.5 meters at ground level. If the trunk is larger, the power will not have enough strength to tip it over. The mopor, who must c oncentrate on the uprooting at all times, can choose which way the tree will fall. If she loses concentration or loses control over the uproot for any reason, it will still continue to swell until the tree falls, but the game master will determine the direction. Everyone who observes this occurrence and was unaware of the mopor’s actions must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply) to avoid receiving 1d10 Fear Points when the uproot breaks out of the ground. On a success, an observer receives no Fear Points. The uproot could just as easily be placed under a large rock, open ground, or even a house. The final results of such an action and how much of the object collapses or is tipped over is up to the game master to decide. The uproot in the power’s basic version can lift or tip approximately 100 kg.",
+          "SourceName": "Uprooted Tree",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 action rounds"
         },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Curse Creature — Curses of Sonntag",

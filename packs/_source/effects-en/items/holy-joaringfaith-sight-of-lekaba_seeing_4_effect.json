@@ -1,0 +1,45 @@
+{
+  "_id": "PDs5drWrXsYtZu0v",
+  "_key": "!items!PDs5drWrXsYtZu0v",
+  "name": "Seeing (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+    "description": "The power enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the power, the mopor’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or powers that impair vision. However, the mopor cannot detect things that she would not be able to see under normal c onditions. The Seeing power can also be used to cancel the effects of powers that impair vision (effective for the power’s duration), such as Vision/Blindness.",
+    "summary": "Seeing",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "CZKMtMdJeKfLgMhN",
+      "_key": "!items.effects!PDs5drWrXsYtZu0v.CZKMtMdJeKfLgMhN",
+      "name": "Seeing (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The power enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the power, the mopor’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or powers that impair vision. However, the mopor cannot detect things that she would not be able to see under normal c onditions. The Seeing power can also be used to cancel the effects of powers that impair vision (effective for the power’s duration), such as Vision/Blindness.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+            "summary": "Seeing",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

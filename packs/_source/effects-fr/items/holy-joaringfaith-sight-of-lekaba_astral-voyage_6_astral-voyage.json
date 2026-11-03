@@ -1,0 +1,45 @@
+{
+  "_id": "Pu1FYnQlRmSnToUp",
+  "_key": "!items!Pu1FYnQlRmSnToUp",
+  "name": "Voyage astral (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+    "description": "En quittant le plan matériel, la mopor permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de la mopor se déplace à la frontière entre Trudvang et Dimhall. Là, elle peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la mopor quitte son enveloppe charnelle, cette dernière entre en hibernation. La mopor entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de la mopor. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. La mopor doit prendre soin de se rapprocher de son corps avant l’expiration du corps. Si elle ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que la mopor subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de pouvoir, et qui la plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au pouvoir Vision véritable. Un autre mopor qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le pouvoir Dissipation des pouvoirs. Le personnage ainsi banni subit alors les mêmes effets que si le pouvoir avait expiré.",
+    "summary": "Voyage astral",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "m4ySdVmSnToUpVqW",
+      "_key": "!items.effects!Pu1FYnQlRmSnToUp.m4ySdVmSnToUpVqW",
+      "name": "Voyage astral (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En quittant le plan matériel, la mopor permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de la mopor se déplace à la frontière entre Trudvang et Dimhall. Là, elle peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la mopor quitte son enveloppe charnelle, cette dernière entre en hibernation. La mopor entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de la mopor. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. La mopor doit prendre soin de se rapprocher de son corps avant l’expiration du corps. Si elle ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que la mopor subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de pouvoir, et qui la plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au pouvoir Vision véritable. Un autre mopor qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le pouvoir Dissipation des pouvoirs. Le personnage ainsi banni subit alors les mêmes effets que si le pouvoir avait expiré.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+            "summary": "Voyage astral",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

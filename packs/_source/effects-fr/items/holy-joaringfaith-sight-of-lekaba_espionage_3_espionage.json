@@ -1,0 +1,45 @@
+{
+  "_id": "0UAyVlRmSnToUpVq",
+  "_key": "!items!0UAyVlRmSnToUpVq",
+  "name": "Espionnage (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+    "description": "La mopor peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du pouvoir, la mopor peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps d'invocation de 5 tours de jeu, le pouvoir devient soutenu tant que la mopor est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que la mopor a lancé ce pouvoir sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du pouvoir, la mopor peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le pouvoir était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de la mopor.",
+    "summary": "Espionnage",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "rbpPyhMhNiOjPkQl",
+      "_key": "!items.effects!0UAyVlRmSnToUpVq.rbpPyhMhNiOjPkQl",
+      "name": "Espionnage (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La mopor peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du pouvoir, la mopor peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps d'invocation de 5 tours de jeu, le pouvoir devient soutenu tant que la mopor est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que la mopor a lancé ce pouvoir sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du pouvoir, la mopor peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le pouvoir était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de la mopor.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+            "summary": "Espionnage",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

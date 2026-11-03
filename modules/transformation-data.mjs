@@ -9956,6 +9956,42 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-power-of-sille:sunray:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-power-of-sille:sunray:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-power-of-sille:sunray:1:0"
+      }
+    ]
+  },
+  "holy-joaringfaith-power-of-sille:summer-place:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-power-of-sille:summer-place:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-power-of-sille:summer-place:2:0"
+      }
+    ]
+  },
   "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
     "id": "lumiere-guerisseuse",
     "icon": "icons/svg/aura.svg",
@@ -10041,6 +10077,27 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:0"
+      }
+    ]
+  },
   "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
     "id": "souffle",
     "icon": "icons/svg/aura.svg",
@@ -10104,6 +10161,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-sight-of-lekaba:tracking:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:tracking:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:tracking:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 43200,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:tracking:0:1"
+      }
+    ]
+  },
+  "holy-joaringfaith-sight-of-lekaba:scanning:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "9 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 15,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:scanning:1:1"
+      }
+    ]
+  },
   "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -10148,6 +10253,149 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-joaringfaith-sight-of-lekaba:far-sight:2:7"
       }
     ]
+  },
+  "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage": {
+    "id": "espionage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:espionage:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:espionage:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:espionage:3:2"
+      }
+    ]
+  },
+  "holy-joaringfaith-sight-of-lekaba:seeing:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:seeing:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:seeing:4:2"
+      }
+    ]
+  },
+  "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage": {
+    "id": "astral-voyage",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:2"
+      }
+    ]
+  },
+  "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceId": "holy-joaringfaith-sight-of-lekaba:true-sight:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:true-sight:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:true-sight:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-sight-of-lekaba:true-sight:7:2"
+      }
+    ]
+  },
+  "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0",
+    "parameters": []
   },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
     "id": "effect",
@@ -11716,6 +11964,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-joaringfaith-power-of-sille:healing:0": [
     "holy-joaringfaith-power-of-sille:healing:0#guerison"
   ],
+  "holy-joaringfaith-power-of-sille:sunray:1": [
+    "holy-joaringfaith-power-of-sille:sunray:1#effect"
+  ],
+  "holy-joaringfaith-power-of-sille:summer-place:2": [
+    "holy-joaringfaith-power-of-sille:summer-place:2#effect"
+  ],
   "holy-joaringfaith-power-of-sille:healing-glow:3": [
     "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse"
   ],
@@ -11725,14 +11979,38 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-joaringfaith-power-of-sille:firon-power:5": [
     "holy-joaringfaith-power-of-sille:firon-power:5#pouvoir-de-firon"
   ],
+  "holy-joaringfaith-power-of-sille:time-of-the-hunt:6": [
+    "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect"
+  ],
   "holy-joaringfaith-power-of-sille:breath-of-sille:7": [
     "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle"
   ],
   "holy-joaringfaith-power-of-sille:healing-sun:8": [
     "holy-joaringfaith-power-of-sille:healing-sun:8#soleil-guerisseur"
   ],
+  "holy-joaringfaith-sight-of-lekaba:tracking:0": [
+    "holy-joaringfaith-sight-of-lekaba:tracking:0#effect"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:scanning:1": [
+    "holy-joaringfaith-sight-of-lekaba:scanning:1#effect"
+  ],
   "holy-joaringfaith-sight-of-lekaba:far-sight:2": [
     "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:espionage:3": [
+    "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:seeing:4": [
+    "holy-joaringfaith-sight-of-lekaba:seeing:4#effect"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:astral-voyage:6": [
+    "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage"
+  ],
+  "holy-joaringfaith-sight-of-lekaba:true-sight:7": [
+    "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": [
+    "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect"
   ],
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
     "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"

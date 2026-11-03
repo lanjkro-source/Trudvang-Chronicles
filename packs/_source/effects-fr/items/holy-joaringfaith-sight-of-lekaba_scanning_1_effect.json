@@ -1,0 +1,45 @@
+{
+  "_id": "YL4mBlQlRmSnToUp",
+  "_key": "!items!YL4mBlQlRmSnToUp",
+  "name": "Examen d’objet (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+    "description": "La mopor touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. La mopor perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais elle ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que la mopor passe concentrée sur ce pouvoir, elle peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que la mopor perçoit ou apprend précisément.",
+    "summary": "Examen d’objet",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "bs5K8VoUpVqWrXsY",
+      "_key": "!items.effects!YL4mBlQlRmSnToUp.bs5K8VoUpVqWrXsY",
+      "name": "Examen d’objet (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La mopor touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. La mopor perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais elle ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que la mopor passe concentrée sur ce pouvoir, elle peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que la mopor perçoit ou apprend précisément.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+            "summary": "Examen d’objet",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

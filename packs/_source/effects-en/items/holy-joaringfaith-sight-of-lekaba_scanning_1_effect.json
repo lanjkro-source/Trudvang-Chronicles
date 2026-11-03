@@ -1,0 +1,45 @@
+{
+  "_id": "YL4mBlQlRmSnToUp",
+  "_key": "!items!YL4mBlQlRmSnToUp",
+  "name": "Scanning (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+    "description": "By touching an object and slipping into a trance, the mopor can explore its memories through the astral plane. The mopor receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the mopor spends under the power, she recalls a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the mopor sees or learns is always up to the game master to determine.",
+    "summary": "Scanning",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "bs5K8VoUpVqWrXsY",
+      "_key": "!items.effects!YL4mBlQlRmSnToUp.bs5K8VoUpVqWrXsY",
+      "name": "Scanning (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By touching an object and slipping into a trance, the mopor can explore its memories through the astral plane. The mopor receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the mopor spends under the power, she recalls a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the mopor sees or learns is always up to the game master to determine.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:scanning:1#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+            "summary": "Scanning",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

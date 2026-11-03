@@ -1,0 +1,45 @@
+{
+  "_id": "fhbiyKfLgMhNiOjP",
+  "_key": "!items!fhbiyKfLgMhNiOjP",
+  "name": "Vision véritable (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect",
+    "description": "Ce pouvoir permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de pouvoir illusoire qui entourent les êtres et les objets. Le bénéficiaire du pouvoir est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce pouvoir lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de pouvoirs comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce pouvoir, la portée effective de la Vision véritable est de 25 mètres. La mopor peut également se servir de ce pouvoir pour déterminer si un objet ou une créature ont été enchantés et si leur pouvoir a été manipulé autrement que par des illusions. Pour ce faire, elle doit réussir un test de situation avec une valeur de situation qui dépend du pouvoir tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, la mopor n’a aucun moyen de deviner la véritable nature du pouvoir découvert sans recourir également au pouvoir Lecture des pouvoirs. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+    "summary": "Vision véritable",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "CbLyc3u0v1w2x3y4",
+      "_key": "!items.effects!fhbiyKfLgMhNiOjP.CbLyc3u0v1w2x3y4",
+      "name": "Vision véritable (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de pouvoir illusoire qui entourent les êtres et les objets. Le bénéficiaire du pouvoir est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce pouvoir lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de pouvoirs comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce pouvoir, la portée effective de la Vision véritable est de 25 mètres. La mopor peut également se servir de ce pouvoir pour déterminer si un objet ou une créature ont été enchantés et si leur pouvoir a été manipulé autrement que par des illusions. Pour ce faire, elle doit réussir un test de situation avec une valeur de situation qui dépend du pouvoir tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, la mopor n’a aucun moyen de deviner la véritable nature du pouvoir découvert sans recourir également au pouvoir Lecture des pouvoirs. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:true-sight:7",
+            "summary": "Vision véritable",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "PDs5drWrXsYtZu0v",
+  "_key": "!items!PDs5drWrXsYtZu0v",
+  "name": "Vision parfaite (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+    "description": "Ce pouvoir permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du pouvoir, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des pouvoirs gênant la vision. Ce pouvoir ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce pouvoir peut également servir à annuler les effets des pouvoirs qui gênent la vision (du moins pendant la durée du pouvoir) comme par exemple le pouvoir Vision/cécité.",
+    "summary": "Vision parfaite",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "CZKMtMdJeKfLgMhN",
+      "_key": "!items.effects!PDs5drWrXsYtZu0v.CZKMtMdJeKfLgMhN",
+      "name": "Vision parfaite (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du pouvoir, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des pouvoirs gênant la vision. Ce pouvoir ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce pouvoir peut également servir à annuler les effets des pouvoirs qui gênent la vision (du moins pendant la durée du pouvoir) comme par exemple le pouvoir Vision/cécité.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:seeing:4#effect",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+            "summary": "Vision parfaite",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -16276,6 +16276,24 @@
           "SourcePage": "123",
           "Duration": "1 jour"
         },
+        "holy-joaringfaith-power-of-sille:sunray:1#effect": {
+          "Name": "Rayons du soleil (Joar)",
+          "Summary": "Rayons du soleil",
+          "Description": "Sille répond au souhait de la mopor et fait briller les rayons du soleil sur lui. Pendant la durée du pouvoir, le soleil brille sur la mopor et dans une zone qui l’entoure dont le rayon dépend de sa valeur de compétence en Foi. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Cela dit, ce pouvoir ne fonctionne qu’à l’extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. La zone affectée est déterminée au moment où la mopor active ce pouvoir, et elle ne se déplace pas si ce dernier s’éloigne.",
+          "SourceName": "Rayons du soleil",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 heure"
+        },
+        "holy-joaringfaith-power-of-sille:summer-place:2#effect": {
+          "Name": "Cœur de l’été (Joar)",
+          "Summary": "Cœur de l’été",
+          "Description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée (qui dépend de la valeur de compétence en Foi de la mopor). Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Si la durée du pouvoir se prolonge après le crépuscule, une chaude soirée d’été se poursuit dans la zone bénie jusqu’à expiration du pouvoir. Tant que ce pouvoir perdure, les terrains de chasse situés à proximité de la mopor (VC × 100 mètres) deviennent également plus giboyeux (+3 en compétence Nature pour chasser).",
+          "SourceName": "Cœur de l’été",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 heures"
+        },
         "holy-joaringfaith-power-of-sille:healing-glow:3#lumiere-guerisseuse": {
           "Name": "Lumière guérisseuse (Sille)",
           "Summary": "Restaure immédiatement la santé et arrête les saignements.",
@@ -16303,6 +16321,15 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect": {
+          "Name": "Heure de la chasse (Joar)",
+          "Summary": "Heure de la chasse",
+          "Description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour de la mopor deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+          "SourceName": "Heure de la chasse",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 jour"
+        },
         "holy-joaringfaith-power-of-sille:breath-of-sille:7#souffle": {
           "Name": "Souffle de Sille (Sille)",
           "Summary": "Améliore la récupération au repos et aide à surmonter une affection.",
@@ -16321,6 +16348,24 @@
           "SourcePage": "123",
           "Duration": ""
         },
+        "holy-joaringfaith-sight-of-lekaba:tracking:0#effect": {
+          "Name": "Pistage (Joar)",
+          "Summary": "Pistage",
+          "Description": "Ce pouvoir permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la mopor peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de pouvoir lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. La mopor peut également suivre les traces d’une créature ayant bénéficié du pouvoir Sans trace. Pour pouvoir utiliser le pouvoir en vue de pister une créature, la mopor doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le invocation du pouvoir réussi : la mopor ne peut donc pas répéter le même pouvoir à moins de se procurer un autre échantillon de la créature visée.",
+          "SourceName": "Pistage",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 heure"
+        },
+        "holy-joaringfaith-sight-of-lekaba:scanning:1#effect": {
+          "Name": "Examen d’objet (Joar)",
+          "Summary": "Examen d’objet",
+          "Description": "La mopor touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. La mopor perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais elle ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que la mopor passe concentrée sur ce pouvoir, elle peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que la mopor perçoit ou apprend précisément.",
+          "SourceName": "Examen d’objet",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "9 tours de jeu"
+        },
         "holy-joaringfaith-sight-of-lekaba:far-sight:2#effect": {
           "Name": "Vision lointaine — Vue de Lekaba",
           "Summary": "Vision lointaine — Vue de Lekaba",
@@ -16329,6 +16374,51 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "2 tours de jeu"
+        },
+        "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage": {
+          "Name": "Espionnage (Joar)",
+          "Summary": "Espionnage",
+          "Description": "La mopor peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du pouvoir, la mopor peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps d'invocation de 5 tours de jeu, le pouvoir devient soutenu tant que la mopor est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que la mopor a lancé ce pouvoir sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du pouvoir, la mopor peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le pouvoir était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de la mopor.",
+          "SourceName": "Espionnage",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 heure"
+        },
+        "holy-joaringfaith-sight-of-lekaba:seeing:4#effect": {
+          "Name": "Vision parfaite (Joar)",
+          "Summary": "Vision parfaite",
+          "Description": "Ce pouvoir permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du pouvoir, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des pouvoirs gênant la vision. Ce pouvoir ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce pouvoir peut également servir à annuler les effets des pouvoirs qui gênent la vision (du moins pendant la durée du pouvoir) comme par exemple le pouvoir Vision/cécité.",
+          "SourceName": "Vision parfaite",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 heure"
+        },
+        "holy-joaringfaith-sight-of-lekaba:astral-voyage:6#astral-voyage": {
+          "Name": "Voyage astral (Joar)",
+          "Summary": "Voyage astral",
+          "Description": "En quittant le plan matériel, la mopor permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de la mopor se déplace à la frontière entre Trudvang et Dimhall. Là, elle peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la mopor quitte son enveloppe charnelle, cette dernière entre en hibernation. La mopor entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de la mopor. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. La mopor doit prendre soin de se rapprocher de son corps avant l’expiration du corps. Si elle ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que la mopor subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de pouvoir, et qui la plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au pouvoir Vision véritable. Un autre mopor qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le pouvoir Dissipation des pouvoirs. Le personnage ainsi banni subit alors les mêmes effets que si le pouvoir avait expiré.",
+          "SourceName": "Voyage astral",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 minutes"
+        },
+        "holy-joaringfaith-sight-of-lekaba:true-sight:7#effect": {
+          "Name": "Vision véritable (Joar)",
+          "Summary": "Vision véritable",
+          "Description": "Ce pouvoir permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de pouvoir illusoire qui entourent les êtres et les objets. Le bénéficiaire du pouvoir est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce pouvoir lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de pouvoirs comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce pouvoir, la portée effective de la Vision véritable est de 25 mètres. La mopor peut également se servir de ce pouvoir pour déterminer si un objet ou une créature ont été enchantés et si leur pouvoir a été manipulé autrement que par des illusions. Pour ce faire, elle doit réussir un test de situation avec une valeur de situation qui dépend du pouvoir tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, la mopor n’a aucun moyen de deviner la véritable nature du pouvoir découvert sans recourir également au pouvoir Lecture des pouvoirs. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SourceName": "Vision véritable",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "1 minute"
+        },
+        "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect": {
+          "Name": "Déracinement (Joar)",
+          "Summary": "Déracinement",
+          "Description": "Ce pouvoir déracine un arbre et provoque son effondrement. La mopor insuffle le pouvoir dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le pouvoir a été tissé, le pouvoir commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du pouvoir, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le pouvoir n’aura pas la force de le soulever. La mopor, qui doit se concentrer constamment sur ce pouvoir, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du pouvoir pour quelque raison que ce soit, le pouvoir continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de la mopor doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce pouvoir et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce pouvoir peut soulever ou renverser environ 100 kg.",
+          "SourceName": "Déracinement",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 tours de jeu"
         },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Malédiction de créature — Malédictions de Sonntag",

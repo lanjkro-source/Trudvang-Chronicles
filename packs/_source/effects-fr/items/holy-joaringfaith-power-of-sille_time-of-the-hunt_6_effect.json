@@ -1,0 +1,45 @@
+{
+  "_id": "QywLjhJeKfLgMhNi",
+  "_key": "!items!QywLjhJeKfLgMhNi",
+  "name": "Heure de la chasse (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect",
+    "description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour de la mopor deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+    "summary": "Heure de la chasse",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "9VVbD3y4z5A6B7C8",
+      "_key": "!items.effects!QywLjhJeKfLgMhNi.9VVbD3y4z5A6B7C8",
+      "name": "Heure de la chasse (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour de la mopor deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6#effect",
+            "sourceId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6",
+            "summary": "Heure de la chasse",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

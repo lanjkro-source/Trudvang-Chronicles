@@ -4534,6 +4534,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:seeing:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-joaringfaith-sight-of-lekaba:seeing:4:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:0",
@@ -4585,6 +4594,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:true-sight:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-joaringfaith-sight-of-lekaba:true-sight:7:7",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:0",

@@ -1,0 +1,45 @@
+{
+  "_id": "EKr3mrUpVqWrXsYt",
+  "_key": "!items!EKr3mrUpVqWrXsYt",
+  "name": "Sunray (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:sunray:1#effect",
+    "description": "Sille sees to the mopor’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the mopor and an area surrounding them with a radius determined by her Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the mopor moves away.",
+    "summary": "Sunray",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "zBRbYeGbHcIdJeKf",
+      "_key": "!items.effects!EKr3mrUpVqWrXsYt.zBRbYeGbHcIdJeKf",
+      "name": "Sunray (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Sille sees to the mopor’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the mopor and an area surrounding them with a radius determined by her Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the mopor moves away.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-power-of-sille:sunray:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-power-of-sille:sunray:1#effect",
+            "sourceId": "holy-joaringfaith-power-of-sille:sunray:1",
+            "summary": "Sunray",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

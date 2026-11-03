@@ -1,0 +1,45 @@
+{
+  "_id": "0UAyVlRmSnToUpVq",
+  "_key": "!items!0UAyVlRmSnToUpVq",
+  "name": "Espionage (Joar)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+    "description": "The mopor can enchant an object in her possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the power, the mopor can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting her consciousness into the object. Once the mopor has put the power on the object, the distance between her and it no longer matters. Right before the power expires, the mopor can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the mopor’s own memories.",
+    "summary": "Espionage",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "rbpPyhMhNiOjPkQl",
+      "_key": "!items.effects!0UAyVlRmSnToUpVq.rbpPyhMhNiOjPkQl",
+      "name": "Espionage (Joar)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The mopor can enchant an object in her possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the power, the mopor can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting her consciousness into the object. Once the mopor has put the power on the object, the distance between her and it no longer matters. Right before the power expires, the mopor can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the mopor’s own memories.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-sight-of-lekaba:espionage:3#espionage",
+            "sourceId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+            "summary": "Espionage",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
