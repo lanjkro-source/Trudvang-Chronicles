@@ -432,7 +432,7 @@ export function syncEffectGrants(effect,actor=effect.parent){
  if(!canSyncActor(actor))return Promise.resolve();
  const id=`${actor.uuid??actor.id??"actor"}:${effect.id}`;
  const run=async()=>{
-  if(actor.effects?.get&&!actor.effects.get(effect.id))return;
+  if(!effect.id || (actor.effects?.get&&!actor.effects.get(effect.id)))return;
   const r=effectRules(effect);
   const items=(r.attacks??[]).filter(row=>!row.isUnarmed).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
   if(r.extraWeaponAction?.weaponId){
@@ -567,7 +567,7 @@ export function registerTransformationHooks(){
   if(token)void (async()=>applyTransformation(token.actor,data.key,{source:data.sourceUuid?await foundry.utils.fromUuid(data.sourceUuid):null,counts:data.counts??[],context:data.context,delegateTokenUuid:token.document?.uuid??token.uuid}))().catch(e=>ui.notifications.error(e.message));
   return false;
  });
- Hooks.on("deleteActiveEffect",async effect=>{if(!canSyncActor(effect.parent))return;await cleanGrants(effect);await syncTransformationTokens(effect.parent);});
+ Hooks.on("deleteActiveEffect",async effect=>{if(effect.parent?.documentName!=="Actor"||!canSyncActor(effect.parent))return;await cleanGrants(effect);await syncTransformationTokens(effect.parent);});
  Hooks.on("createActiveEffect",async effect=>{if(canSyncActor(effect.parent)&&effect.parent?.documentName==="Actor"){
   await syncEffectGrants(effect);await syncTransformationTokens(effect.parent);
  }});

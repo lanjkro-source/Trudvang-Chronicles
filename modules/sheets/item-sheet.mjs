@@ -18,9 +18,21 @@ import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 
 const magicSheets=new Set();
+const effectSheets=new Set();
+export function itemEffectDurationLabel(effect,{time=Number(game.time?.worldTime),combat=game.combat}={}){
+  const duration=effect._source?.duration ?? effect.duration;
+  const total=effectDurationSeconds(duration);
+  const remaining=itemEffectRemainingSeconds(effect,{time,combat});
+  const unitSeconds=total!==null && Number(duration?.value)>0 ? total/Number(duration.value) : null;
+  return effect.flags?.["trudvang-chronicles"]?.transformation?.resolved && unitSeconds
+    ? `${Math.ceil(remaining/unitSeconds)} ${game.i18n.localize(`EFFECT.DURATION.UNITS.${duration.units}`)}`
+    : effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent");
+}
 export function registerMagicSheetAvailabilityHooks(){
   const refresh=()=>{for(const sheet of magicSheets)sheet.refreshMagicCastingButton();};
   for(const hook of ["controlToken","updateUser","updateActor","createItem","updateItem","deleteItem","createActiveEffect","updateActiveEffect","deleteActiveEffect"])Hooks.on(hook,refresh);
+  const refreshDurations=()=>{for(const sheet of effectSheets)sheet.refreshEffectDurations();};
+  for(const hook of ["updateWorldTime","combatTurnChange","updateCombat"])Hooks.on(hook,refreshDurations);
 }
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -92,13 +104,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.advancementLocked = this.advancementLocked;
     context.effects = context.supportsEffects ? this.item.effects.map(effect => {
       const summary=effectTooltipSummary(effect);
-      const duration=effect._source?.duration ?? effect.duration;
-      const total=effectDurationSeconds(duration);
-      const remaining=itemEffectRemainingSeconds(effect,{time:Number(game.time?.worldTime),combat:game.combat});
-      const unitSeconds=total!==null && Number(duration?.value)>0 ? total/Number(duration.value) : null;
-      const durationLabel=effect.flags?.["trudvang-chronicles"]?.transformation?.resolved && unitSeconds
-        ? `${Math.ceil(remaining/unitSeconds)} ${game.i18n.localize(`EFFECT.DURATION.UNITS.${duration.units}`)}`
-        : effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent");
+      const durationLabel=itemEffectDurationLabel(effect);
       return ({
       id: effect.id,
       name: effect.name,
@@ -173,6 +179,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     bindTitleSharing(this);
     bindSheetListMenus(this);
     if(["spell","divineFeat"].includes(this.item.type)){magicSheets.add(this);this.refreshMagicCastingButton();}
+    if(context.supportsEffects)effectSheets.add(this);
     const root = this.element;
     if (root?.addEventListener && this._transformationDropRoot !== root) {
       this._transformationDropRoot = root;
@@ -245,7 +252,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     button.title=availability.ok?game.i18n.localize("TRUDVANG.Action.Use"):game.i18n.format(availability.reason,availability.data);
   }
 
-  async close(options){magicSheets.delete(this);return super.close(options);}
+  refreshEffectDurations(){
+    for(const row of this.element?.querySelectorAll?.("[data-effect-id]")??[]){
+      const effect=Array.from(this.item.effects??[]).find(entry=>entry.id===row.dataset.effectId);
+      const label=row.querySelector(".effect-duration-value");
+      if(effect&&label)label.textContent=itemEffectDurationLabel(effect);
+    }
+  }
+  async close(options){magicSheets.delete(this);effectSheets.delete(this);return super.close(options);}
 
   _activateTabs(root) {
     const nav = root.querySelector(".item-sheet-tabs");
@@ -356,16 +370,19 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onEffectEdit(event, target) {
-    return this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId)?.sheet.render({force: true});
+    const id=target.closest("[data-effect-id]")?.dataset.effectId;
+    return id ? this.item.effects.get(id)?.sheet.render({force: true}) : null;
   }
 
   static async #onEffectToggle(event, target) {
-    const effect = this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId);
+    const id=target.closest("[data-effect-id]")?.dataset.effectId;
+    const effect = id ? this.item.effects.get(id) : null;
     return effect?.update({disabled: !effect.disabled});
   }
 
   static async #onEffectDelete(event, target) {
-    const effect = this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId);
+    const id=target.closest("[data-effect-id]")?.dataset.effectId;
+    const effect = id ? this.item.effects.get(id) : null;
     return effect && !isCarriedTransferredEffect(effect) ? effect.delete() : null;
   }
 

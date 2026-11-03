@@ -68,6 +68,19 @@ const {TrudvangActorSheet, TrudvangNpcSheet, TrudvangCharacterSheet} = await imp
 const {TrudvangItemSheet} = await import("../modules/sheets/item-sheet.mjs");
 const {registerMagicSheetAvailabilityHooks} = await import("../modules/sheets/item-sheet.mjs");
 
+test("an open equipment sheet refreshes an item effect's remaining duration when time advances",async t=>{
+ const previousHooks=globalThis.Hooks,previousTime=game.time;const hooks=new Map();
+ globalThis.Hooks={on:(name,fn)=>hooks.set(name,fn)};game.time={worldTime:100};
+ const effect={id:"effect",_source:{duration:{value:3,units:"rounds"},start:{time:100}},flags:{"trudvang-chronicles":{transformation:{resolved:true,appliedAt:100}}}};
+ const label={textContent:""},row={dataset:{effectId:"effect"},querySelector:()=>label};
+ const sheet=new TrudvangItemSheet({document:{type:"weapon",system:{},effects:[effect]}});
+ sheet.element={querySelectorAll:selector=>selector==="[data-effect-id]"?[row]:[],querySelector:()=>null};
+ t.after(async()=>{await sheet.close();globalThis.Hooks=previousHooks;game.time=previousTime;});
+ registerMagicSheetAvailabilityHooks();await sheet._onRender({supportsEffects:true},{});
+ game.time.worldTime=105;hooks.get("updateWorldTime")();assert.equal(label.textContent,"2 tours de jeu");
+ game.time.worldTime=110;hooks.get("updateWorldTime")();assert.equal(label.textContent,"1 tours de jeu");
+});
+
 test("magic sheet launch button follows token and actor changes and rechecks permission at click",async t=>{
  const oldCanvas=globalThis.canvas,oldHooks=globalThis.Hooks,oldUi=globalThis.ui;
  const hooks=new Map(),warnings=[];

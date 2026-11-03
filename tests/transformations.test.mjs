@@ -12,10 +12,25 @@ import {resolveWeaponActions} from "../modules/rules/equipment-resolver.mjs";
 import {buildEffectPackDocuments} from "../modules/effect-pack-data.mjs";
 globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>""}}};
 const {annotateRuleTestDescription}=await import("../modules/rule-tests.mjs");
-const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants,selectFormData}=await import("../modules/transformations.mjs");
+const {applyTransformation,resolveDuration,transformationLinks,syncTransformationTokens,syncEffectGrants,selectFormData,registerTransformationHooks}=await import("../modules/transformations.mjs");
 const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
+test("deleting an item effect does not treat its item as a token-bearing actor",async()=>{
+ const previous={Hooks:globalThis.Hooks,document:globalThis.document};const hooks=new Map();
+ try{
+  globalThis.Hooks={on:(name,fn)=>hooks.set(name,fn)};
+  globalThis.document={addEventListener:()=>{}};
+  registerTransformationHooks();
+  const item={documentName:"Item",isOwner:true,parent:{documentName:"Actor"}};
+  await hooks.get("deleteActiveEffect")({parent:item});
+ }finally{globalThis.Hooks=previous.Hooks;globalThis.document=previous.document;}
+});
+test("a queued grant refresh ignores an effect which no longer has an id",async()=>{
+ const previousGame=globalThis.game;globalThis.game={users:{activeGM:{isSelf:true}}};
+ const actor={isOwner:true,effects:{get:()=>{throw Error("must not look up an undefined id");}}};
+ try{await syncEffectGrants({parent:actor},actor);}finally{globalThis.game=previousGame;}
+});
 test("all generated effect offers have bilingual text, valid numeric changes and resolvable manual successors",()=>{
  for(const code of ["fr","en"]){
   const language=JSON.parse(fs.readFileSync(new URL(`../lang/${code}.json`,import.meta.url)));
