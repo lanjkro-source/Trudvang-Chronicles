@@ -2,6 +2,13 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { applyDamageToActor, applyDamageToDefenseItem, calculateArmoredDamage, defensiveItem } from "../modules/damage-application.mjs";
 
+test("damage that reaches an immobilized actor ends the effect; a fully blocked hit does not",async()=>{
+ let deleted=0;const effect={flags:{"trudvang-chronicles":{transformation:{key:"vitner-body-vitner:immobilize:6#effect"}}},async delete(){deleted++;}};
+ const actor={isOwner:true,items:[],effects:[effect],system:{protection:5,resources:{body:{value:20}}},async update(){}};
+ await applyDamageToActor({actor,damage:5,announce:false});assert.equal(deleted,0);
+ await applyDamageToActor({actor,damage:6,announce:false});assert.equal(deleted,1);
+});
+
 const armor = (id, integrity) => ({id, type: "armor", system: {equipped: true, breach: {value: integrity}}});
 
 test("normal damage reduces armor integrity and only the excess reaches Body Points", () => {

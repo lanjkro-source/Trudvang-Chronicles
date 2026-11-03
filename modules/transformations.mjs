@@ -350,7 +350,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(template.aura&&casting.auraSource){
   meta.auraChanges=changes.map(change=>({...change}));meta.auraStatuses=[...statuses];
   description+=`<p>${escapeHtml(game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius({flags:{[SCOPE]:{transformation:meta}}})}))}</p>`;
-  if(template.aura.light)description+=`<p>${escapeHtml(game.i18n.localize("TRUDVANG.Aura.LightRecipients"))}</p>`;
+  if(template.aura.light&&template.aura.recipientMode!=="none")description+=`<p>${escapeHtml(game.i18n.localize("TRUDVANG.Aura.LightRecipients"))}</p>`;
   changes.length=0;statuses.clear();
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,

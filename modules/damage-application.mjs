@@ -5,6 +5,7 @@ import {activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMAT
 import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {consumablePolicy} from "./rules/consumable-effects.mjs";
+import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -95,6 +96,10 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   if(result.temporaryDamage&&reserve.current===result.temporaryDamage)for(const effect of activeTransformations(actor))if(effectRules(effect).endAtEmptyHP)await effect.delete();
   const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? actor._source?.system?.resources?.body?.value);
   if (result.bodyDamage) await actor.update(bodyHealthUpdate(actor,body-result.bodyDamage));
+  if(result.bodyDamage+result.temporaryDamage>0){
+    const ending=activeTransformations(actor).filter(effect=>TRANSFORMATION_TEMPLATES[effect.flags?.[TRANSFORMATION_SCOPE]?.transformation?.key]?.breakOnDamage===true);
+    for(const effect of ending)await effect.delete();
+  }
   if (announce) await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});
   return result;
 }

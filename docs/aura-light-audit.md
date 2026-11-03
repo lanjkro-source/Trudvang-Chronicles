@@ -33,8 +33,9 @@ plafond quotidien par personne. Aura de puissance et Aura de Gave demandent des
 conditions de perception, des tests et une gestion des résistances, plutôt qu'une
 application inconditionnelle en entrant dans un cercle.
 
-Lueur de l'aube produit une lumière mobile de rayon connu ; son effet reste à créer.
-Les autres sources lumineuses non assimilables à une aura sont recensées dans
+Lueur de l'aube produit désormais une lumière mobile de rayon connu, sans appliquer
+de bonus ni de suppression de peur aux occupants. La réduction volontaire de sa
+portée pendant l'invocation reste à gérer manuellement. Les autres sources lumineuses non assimilables à une aura sont recensées dans
 `inventaire-effets-lumineux.md` et seront traitées séparément.
 
 ## Capacités du bestiaire à portée ou à zone

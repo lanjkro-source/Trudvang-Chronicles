@@ -51,6 +51,16 @@ test("a descriptive weather aura applies its own description to every occupant w
   await reconcileAuraToken(region,t,{leaving:true});assert.equal(a.effects.length,0);
  }finally{foundry.utils.fromUuid=previous;}
 });
+test("Dawn Shine illuminates its area without granting any occupant fear relief or bonuses",async()=>{
+ const id="holy-tenetnid-tablet-of-the-sun:dawn-shine:0";
+ const light={...source,system:{changes:[]},flags:{[S]:{transformation:{key:`${id}#effect`,sourceId:id,auraChanges:[],ruleTestContext:{countsById:{[`${id}:2`]:2}}}}}};
+ const previous=foundry.utils.fromUuid;foundry.utils.fromUuid=async()=>light;
+ try{
+  const a=actor("Actor.a"),t={id:"a",actor:a,disposition:1};const region={uuid:"Scene.s.Region.dawn",flags:{[S]:{aura:{sourceEffectUuid:light.uuid,casterUuid:"Actor.c"}}},tokens:new Set([t])};
+  assert.equal(auraRadius(light),3);await reconcileAuraToken(region,t);assert.equal(a.effects.length,0);
+  const update=auraLightUpdate({light:{bright:0,dim:0},flags:{}},[auraRadius(light)]);assert.equal(update["light.bright"],3);
+ }finally{foundry.utils.fromUuid=previous;}
+});
 test("the registered native region behavior handles entry, exit and deactivation",()=>{
  const hooks={};globalThis.Hooks={on:(name,fn)=>{hooks[name]=fn;}};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};
  foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();

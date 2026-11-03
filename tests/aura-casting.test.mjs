@@ -21,3 +21,11 @@ test("a successful light invocation applies one source effect to the selected ca
  assert.match(created[0].description,/TRUDVANG\.Aura\.Radius 4/);
  globalThis.testDie=20;await rollUnder({actor,item,kind:"divine",target:12,label:"Light",powerLevelCounts:[1,0,2,1]});assert.equal(created.length,1);
 });
+test("Dawn Shine creates only a light source with its purchased radius and duration",async()=>{
+ const id="holy-tenetnid-tablet-of-the-sun:dawn-shine:0",created=[];
+ const actor={uuid:"Actor.dawn",name:"Dawn",items:[],canUserModify:()=>true,getTraitValue:()=>0,async createTrudvangEffect(data){created.push(data);return null;}};
+ const token={uuid:"Scene.s.Token.dawn",actor};globalThis.canvas={tokens:{controlled:[{document:token}],placeables:[{document:token}]}};
+ globalThis.testDie=5;await rollUnder({actor,item:{type:"divineFeat",system:{catalogId:id}},kind:"divine",target:12,label:"Dawn",powerLevelCounts:[1,0,2]});
+ assert.equal(created.length,1);assert.deepEqual(created[0].duration,{value:24,units:"rounds"});assert.deepEqual(created[0].system.changes,[]);
+ assert.match(created[0].description,/TRUDVANG\.Aura\.Radius 3/);assert.doesNotMatch(created[0].description,/LightRecipients|EffectiveBonus/);
+});

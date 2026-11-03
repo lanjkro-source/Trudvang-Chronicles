@@ -53,6 +53,10 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const info=auraForRegion(region);if(!info)return;
  const actor=token.actor,source=await foundry.utils.fromUuid(info.sourceEffectUuid);
  const children=actorEffects(actor).filter(effect=>childFlags(effect)?.regionUuid===region.uuid);
+ if(getAura(source)?.recipientMode==="none"){
+  if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));
+  return;
+ }
  const others=Array.from(region.tokens??[]).filter(candidate=>candidate.id!==token.id&&sameActor(candidate,token));
  const inside=!force&&(!leaving||others.length>0);
  const self=actor.uuid===info.casterUuid;
@@ -127,7 +131,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  if(!Array.isArray(sourceMeta(effect)?.auraChanges)){
   const auraChanges=Array.from(effect.system?.changes??[],change=>({...change}));
   const auraStatuses=Array.from(effect.statuses??[]);
-  const details=[game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius(effect)}),...(getAura(effect)?.light?[game.i18n.localize("TRUDVANG.Aura.LightRecipients")]:[])];
+  const details=[game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius(effect)}),...(getAura(effect)?.light&&getAura(effect)?.recipientMode!=="none"?[game.i18n.localize("TRUDVANG.Aura.LightRecipients")]:[])];
   const description=String(effect.description??"")+details.map(detail=>`<p>${String(detail).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char])}</p>`).join("");
   await effect.update({[`flags.${S}.transformation.auraChanges`]:auraChanges,[`flags.${S}.transformation.auraStatuses`]:auraStatuses,"system.changes":[],statuses:[],description});
  }

@@ -15438,6 +15438,15 @@
           "SourcePage": "199",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect": {
+          "Name": "Dawn Shine",
+          "Summary": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+          "Description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. Within its range, the light counts as daylight for all intents and purposes.",
+          "SourceName": "Dawn Shine",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "203",
+          "Duration": "1 minute"
+        },
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Thermal Light",
           "Summary": "Thermal Light",

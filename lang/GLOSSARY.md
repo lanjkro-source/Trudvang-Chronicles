@@ -12964,6 +12964,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.SourcePage` | 199 | 261 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.Name` | Dawn Shine | Lueur de l’aube |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.Description` | The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. Within its range, the light counts as daylight for all intents and purposes. | Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.SourceName` | Dawn Shine | Lueur de l’aube |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.SourcePage` | 203 | 262 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect`
 
 | Clé | English | Français |

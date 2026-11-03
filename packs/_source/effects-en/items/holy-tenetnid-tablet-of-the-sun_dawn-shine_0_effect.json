@@ -1,0 +1,45 @@
+{
+  "_id": "0MCXDTnToUpVqWrX",
+  "_key": "!items!0MCXDTnToUpVqWrX",
+  "name": "Dawn Shine",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+    "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. Within its range, the light counts as daylight for all intents and purposes.",
+    "summary": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 203
+    }
+  },
+  "effects": [
+    {
+      "_id": "9nRVhUoUpVqWrXsY",
+      "_key": "!items.effects!0MCXDTnToUpVqWrX.9nRVhUoUpVqWrXsY",
+      "name": "Dawn Shine",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. Within its range, the light counts as daylight for all intents and purposes.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
+            "summary": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

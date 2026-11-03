@@ -2504,6 +2504,7 @@ export const TRANSFORMATION_TEMPLATES = {
       4,
       5
     ],
+    "breakOnDamage": true,
     "sourceId": "vitner-body-vitner:immobilize:6",
     "parameters": [
       {
@@ -6329,6 +6330,39 @@ export const TRANSFORMATION_TEMPLATES = {
         "skillChoice": true,
         "labelKey": "TRUDVANG.Transformation.PersuasionBonus",
         "optionId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:2",
+      "light": true,
+      "recipientMode": "none"
+    },
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:1"
       }
     ]
   },
@@ -10960,6 +10994,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": [
     "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8#effect"
+  ],
+  "holy-tenetnid-tablet-of-the-sun:dawn-shine:0": [
+    "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect"
   ],
   "holy-tenetnid-tablet-of-the-sun:thermal-light:3": [
     "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect",

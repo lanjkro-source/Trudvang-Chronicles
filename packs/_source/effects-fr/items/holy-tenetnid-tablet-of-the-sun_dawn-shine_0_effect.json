@@ -1,0 +1,45 @@
+{
+  "_id": "0MCXDTnToUpVqWrX",
+  "_key": "!items!0MCXDTnToUpVqWrX",
+  "name": "Lueur de l’aube",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+    "summary": "Crée autour du prêtre une lumière sacrée équivalente à la lumière du jour.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 262
+    }
+  },
+  "effects": [
+    {
+      "_id": "9nRVhUoUpVqWrXsY",
+      "_key": "!items.effects!0MCXDTnToUpVqWrX.9nRVhUoUpVqWrXsY",
+      "name": "Lueur de l’aube",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect",
+            "sourceId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
+            "summary": "Crée autour du prêtre une lumière sacrée équivalente à la lumière du jour.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
