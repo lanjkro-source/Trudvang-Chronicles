@@ -12335,6 +12335,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.SourcePage` | 162 | 226 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:eye-of-enken:8#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.Name` | Inspiration | Inspiration |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.Description` | With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +3 to the Skill Value, provided that the work begins within a day. | Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +3 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.SourceName` | Inspiration | Inspiration |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.SourcePage` | 168 | 226 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:inspiration:0#effect.Duration` | 1 day | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.Name` | Joy of Creating | Joie de la création |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.Description` | With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +5 to the Skill Value, provided that the work begins within a day. The whirlwind can also permanently fix any one object that is broken (which takes 1d10 action rounds). | Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +5 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. Le tourbillon peut aussi réparer de façon permanente un objet cassé (ce qui prend 1d10 tours de jeu). |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.SourceName` | Joy of Creating | Joie de la création |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.SourcePage` | 168 | 226 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect.Duration` | 1 day | 1 jour |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect`
 
 | Clé | English | Français |
@@ -14386,6 +14408,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.AdditionalTerrainCount` | Additional terrain types: {value} | Terrains supplémentaires : {value} |
 | `TRUDVANG.Transformation.HiddenDetectionBonus` | Finding doors and traps: +{value} Shadow Arts. | Recherche de portes et pièges : +{value} en Arts des ombres. |
 | `TRUDVANG.Transformation.PersuasionBonus` | Persuasion: +{value} bonus. | Persuasion : bonus de +{value}. |
+| `TRUDVANG.Transformation.CreationOnce` | Object creation: +{value} (once) | Création d’objet : +{value} (une fois) |
+| `TRUDVANG.Transformation.SingleUseUnavailable` | This bonus was already used or its effect has expired. | Ce bonus a déjà été utilisé ou son effet a expiré. |
 
 ## `TRUDVANG.Transformation.Modes`
 

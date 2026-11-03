@@ -1,5 +1,5 @@
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
-import {conditionalSkillModifiers} from "../rules/effect-conditional-tests.mjs";
+import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rules/effect-conditional-tests.mjs";
 import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
@@ -950,7 +950,7 @@ export class TrudvangActor extends BaseActor {
     const options = await modifierDialog({title: name, target: base, modifierRows, optionalModifiers:conditionalSkillModifiers(this,skillKey,null,excludeEffectId)});
     if (!options) return null;
     const extraRows=options.extraModifiers ?? [];
-    return rollUnder({actor: this, label: name, target:target+rollModifierTotal(extraRows), modifier: options.modifier, kind: "skill", flavor: [escapeHtml(this.skillValueLabel(skillKey)), rollModifierFlavor([...modifierRows,...extraRows])].filter(Boolean).join("<br>")});
+    return withConditionalEffectConsumption(this,extraRows,()=>rollUnder({actor: this, label: name, target:target+rollModifierTotal(extraRows), modifier: options.modifier, kind: "skill", flavor: [escapeHtml(this.skillValueLabel(skillKey)), rollModifierFlavor([...modifierRows,...extraRows])].filter(Boolean).join("<br>")}));
   }
 
   async rollTrait(traitKey) {
@@ -997,11 +997,11 @@ export class TrudvangActor extends BaseActor {
         hint: game.i18n.localize(`TRUDVANG.AnimalAction.${(customSpecialtyMetadata(item)?.sourceCatalogId || item.system.catalogId) === "tracker" ? "TrackHint" : "JumpHint"}`)}] : []});
     if (!options) return null;
     const trainingRows = options.extraModifiers ?? [];
-    return rollUnder({actor: this, label, target: target + rollModifierTotal(trainingRows), modifier: options.modifier, kind: "ability", item,
+    return withConditionalEffectConsumption(this,trainingRows,()=>rollUnder({actor: this, label, target: target + rollModifierTotal(trainingRows), modifier: options.modifier, kind: "ability", item,
       flavor: [escapeHtml(breakdown.skillLabel), rollModifierFlavor([...modifierRows, ...trainingRows])].filter(Boolean).join("<br>"), successConsequence: context.successConsequence || "",
       failureConsequence: context.failureConsequence || "",
       criticalSuccessConsequence: context.criticalSuccessConsequence || "",
-      criticalFailureConsequence: context.criticalFailureConsequence || ""});
+      criticalFailureConsequence: context.criticalFailureConsequence || ""}));
   }
 
   async rollInitiativeTrudvang({combatant = null} = {}) {

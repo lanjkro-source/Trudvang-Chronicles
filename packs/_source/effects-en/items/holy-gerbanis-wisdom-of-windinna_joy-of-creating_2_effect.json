@@ -1,0 +1,45 @@
+{
+  "_id": "PnlAO8D9EaGbHcId",
+  "_key": "!items!PnlAO8D9EaGbHcId",
+  "name": "Joy of Creating",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +5 to the Skill Value, provided that the work begins within a day. The whirlwind can also permanently fix any one object that is broken (which takes 1d10 action rounds).",
+    "summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "gEmRylPkQlRmSnTo",
+      "_key": "!items.effects!PnlAO8D9EaGbHcId.gEmRylPkQlRmSnTo",
+      "name": "Joy of Creating",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +5 to the Skill Value, provided that the work begins within a day. The whirlwind can also permanently fix any one object that is broken (which takes 1d10 action rounds).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect",
+            "sourceId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+            "summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

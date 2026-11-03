@@ -14921,6 +14921,24 @@
           "SourcePage": "162",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect": {
+          "Name": "Inspiration",
+          "Summary": "Windinna's blessing inspires the devotees of Stormi present during the ritual.",
+          "Description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +3 to the Skill Value, provided that the work begins within a day.",
+          "SourceName": "Inspiration",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "168",
+          "Duration": "1 day"
+        },
+        "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect": {
+          "Name": "Joy of Creating",
+          "Summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+          "Description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +5 to the Skill Value, provided that the work begins within a day. The whirlwind can also permanently fix any one object that is broken (which takes 1d10 action rounds).",
+          "SourceName": "Joy of Creating",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "168",
+          "Duration": "1 day"
+        },
         "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
           "Name": "Wave of Truth",
           "Summary": "Wave of Truth",
@@ -16621,7 +16639,9 @@
       "OrdinaryActionsFirst": "Use all ordinary weapon actions before the additional actions.",
       "AdditionalTerrainCount": "Additional terrain types: {value}",
       "HiddenDetectionBonus": "Finding doors and traps: +{value} Shadow Arts.",
-      "PersuasionBonus": "Persuasion: +{value} bonus."
+      "PersuasionBonus": "Persuasion: +{value} bonus.",
+      "CreationOnce": "Object creation: +{value} (once)",
+      "SingleUseUnavailable": "This bonus was already used or its effect has expired."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

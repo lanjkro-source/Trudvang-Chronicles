@@ -2076,6 +2076,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:inspiration:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-gerbanis-wisdom-of-windinna:inspiration:0:0",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:inspiration:0:0",
@@ -2094,6 +2103,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:0",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:0",

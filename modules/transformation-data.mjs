@@ -4526,6 +4526,60 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-wisdom-of-windinna:inspiration:0",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "note",
+        "base": 3,
+        "value": 0,
+        "optionId": "holy-gerbanis-wisdom-of-windinna:inspiration:0:1",
+        "labelKey": "TRUDVANG.Transformation.CreationOnce",
+        "skillChoice": true,
+        "skillOnly": true,
+        "tooltip": true,
+        "consumeOnUse": true
+      }
+    ]
+  },
+  "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1
+    ],
+    "sourceId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "note",
+        "base": 5,
+        "value": 0,
+        "optionId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:1",
+        "labelKey": "TRUDVANG.Transformation.CreationOnce",
+        "skillChoice": true,
+        "skillOnly": true,
+        "tooltip": true,
+        "consumeOnUse": true
+      }
+    ]
+  },
   "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -11272,6 +11326,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-gerbanis-power-of-enken:eye-of-enken:8": [
     "holy-gerbanis-power-of-enken:eye-of-enken:8#effect"
+  ],
+  "holy-gerbanis-wisdom-of-windinna:inspiration:0": [
+    "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect"
+  ],
+  "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": [
+    "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2#effect"
   ],
   "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": [
     "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4#effect"

@@ -1,0 +1,45 @@
+{
+  "_id": "1Qaaf7y4z5A6B7C8",
+  "_key": "!items!1Qaaf7y4z5A6B7C8",
+  "name": "Inspiration",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +3 to the Skill Value, provided that the work begins within a day.",
+    "summary": "Windinna's blessing inspires the devotees of Stormi present during the ritual.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "6me86JcIdJeKfLgM",
+      "_key": "!items.effects!1Qaaf7y4z5A6B7C8.6me86JcIdJeKfLgM",
+      "name": "Inspiration",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +3 to the Skill Value, provided that the work begins within a day.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wisdom-of-windinna:inspiration:0#effect",
+            "sourceId": "holy-gerbanis-wisdom-of-windinna:inspiration:0",
+            "summary": "Windinna's blessing inspires the devotees of Stormi present during the ritual.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
