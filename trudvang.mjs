@@ -3,7 +3,7 @@ import { TrudvangActor } from "./modules/documents/actor.mjs";
 import { TrudvangItem } from "./modules/documents/item.mjs";
 import { TrudvangCombat } from "./modules/documents/combat.mjs";
 import { TrudvangRollTable, registerExtractStageDirectoryIcon } from "./modules/documents/roll-table.mjs";
-import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
+import { TrudvangCharacterSheet, TrudvangNpcSheet, registerActorEffectDurationHooks } from "./modules/sheets/actor-sheet.mjs";
 import { TrudvangItemSheet,registerMagicSheetAvailabilityHooks } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
@@ -35,6 +35,7 @@ Hooks.once("init", () => {
   registerAuraSupport();
   registerEffectHooks();
   registerMagicSheetAvailabilityHooks();
+  registerActorEffectDurationHooks();
   registerTransformationHooks();
   registerMaintainedSpellTracking();
   registerActorStatusHooks();

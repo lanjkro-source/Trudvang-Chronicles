@@ -79,6 +79,18 @@ test("an open equipment sheet refreshes an item effect's remaining duration when
  registerMagicSheetAvailabilityHooks();await sheet._onRender({supportsEffects:true},{});
  game.time.worldTime=105;hooks.get("updateWorldTime")();assert.equal(label.textContent,"2 tours de jeu");
  game.time.worldTime=110;hooks.get("updateWorldTime")();assert.equal(label.textContent,"1 tours de jeu");
+ game.time.worldTime=100;effect._source.start={time:100,combat:'fight',round:2};
+ hooks.get('combatTurnChange')({id:'fight',round:3});assert.equal(label.textContent,'2 tours de jeu');
+ hooks.get('updateCombat')({id:'fight',round:4});assert.equal(label.textContent,'1 tours de jeu');
+});
+
+test("actor effect durations refresh on round changes even before world time advances",t=>{
+ const previousTime=game.time;game.time={worldTime:100};t.after(()=>{game.time=previousTime;});
+ const effect={uuid:'Actor.a.ActiveEffect.e',_source:{duration:{value:3,units:'rounds'},start:{time:100,combat:'fight',round:2}},flags:{'trudvang-chronicles':{transformation:{resolved:true,appliedAt:100}}}};
+ const label={textContent:''},row={dataset:{effectUuid:effect.uuid},querySelector:()=>label};
+ const sheet={actor:{allApplicableEffects:()=>[effect]},element:{querySelectorAll:()=>[row]}};
+ TrudvangActorSheet.prototype.refreshEffectDurations.call(sheet,{id:'fight',round:3});assert.equal(label.textContent,'2 tours de jeu');
+ TrudvangActorSheet.prototype.refreshEffectDurations.call(sheet,{id:'fight',round:4});assert.equal(label.textContent,'1 tours de jeu');
 });
 
 test("magic sheet launch button follows token and actor changes and rechecks permission at click",async t=>{

@@ -31,8 +31,8 @@ export function itemEffectDurationLabel(effect,{time=Number(game.time?.worldTime
 export function registerMagicSheetAvailabilityHooks(){
   const refresh=()=>{for(const sheet of magicSheets)sheet.refreshMagicCastingButton();};
   for(const hook of ["controlToken","updateUser","updateActor","createItem","updateItem","deleteItem","createActiveEffect","updateActiveEffect","deleteActiveEffect"])Hooks.on(hook,refresh);
-  const refreshDurations=()=>{for(const sheet of effectSheets)sheet.refreshEffectDurations();};
-  for(const hook of ["updateWorldTime","combatTurnChange","updateCombat"])Hooks.on(hook,refreshDurations);
+  Hooks.on("updateWorldTime",()=>{for(const sheet of effectSheets)sheet.refreshEffectDurations();});
+  for(const hook of ["combatTurnChange","updateCombat"])Hooks.on(hook,combat=>{for(const sheet of effectSheets)sheet.refreshEffectDurations(combat);});
 }
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -252,11 +252,11 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     button.title=availability.ok?game.i18n.localize("TRUDVANG.Action.Use"):game.i18n.format(availability.reason,availability.data);
   }
 
-  refreshEffectDurations(){
+  refreshEffectDurations(combat=game.combat){
     for(const row of this.element?.querySelectorAll?.("[data-effect-id]")??[]){
       const effect=Array.from(this.item.effects??[]).find(entry=>entry.id===row.dataset.effectId);
       const label=row.querySelector(".effect-duration-value");
-      if(effect&&label)label.textContent=itemEffectDurationLabel(effect);
+      if(effect&&label)label.textContent=itemEffectDurationLabel(effect,{combat});
     }
   }
   async close(options){magicSheets.delete(this);effectSheets.delete(this);return super.close(options);}

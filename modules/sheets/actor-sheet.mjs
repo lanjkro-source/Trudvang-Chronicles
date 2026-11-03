@@ -29,12 +29,28 @@ import {effectContributions, effectContributionText} from "../rules/effect-contr
 import {effectStatus} from "../rules/effect-status.mjs";
 import {sensoryText} from "../rules/senses.mjs";
 import {bodyHealthUpdate} from "../rules/body-health.mjs";
+import {itemEffectRemainingSeconds} from "../rules/effect-duration.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const normalized = value => String(value || "").trim().toLocaleLowerCase();
+const openEffectSheets = new Set();
+
+export function actorEffectDurationLabel(effect,{time=Number(game.time?.worldTime),combat=game.combat}={}) {
+  const duration=effect._source?.duration ?? effect.duration;
+  if(effect.flags?.["trudvang-chronicles"]?.transformation?.resolved && duration?.units==="rounds" && Number(duration.value)>0) {
+    const remaining=itemEffectRemainingSeconds(effect,{time,combat});
+    if(remaining!==null)return `${Math.ceil(remaining/5)} ${game.i18n.localize("EFFECT.DURATION.UNITS.rounds")}`;
+  }
+  return effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent");
+}
+
+export function registerActorEffectDurationHooks() {
+  Hooks.on("updateWorldTime",()=>{for(const sheet of openEffectSheets)sheet.refreshEffectDurations();});
+  for(const hook of ["combatTurnChange","updateCombat"])Hooks.on(hook,combat=>{for(const sheet of openEffectSheets)sheet.refreshEffectDurations(combat);});
+}
 
 function calculationModifiers(breakdown) {
   return (breakdown.modifierRows ?? []).map(row => ` · ${row.labelKey ? game.i18n.localize(row.labelKey) : row.label} ${signed(row.value)}${row.included ? ` (${game.i18n.localize("TRUDVANG.Dialog.IncludedModifier")})` : ""}`).join("");
@@ -286,7 +302,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       name: effect.name,
       img: effect.img,
       source: effect.sourceName,
-      duration: effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent"),
+      duration: actorEffectDurationLabel(effect),
       summary: effectTooltipSummary(effect),
       active: effect.active,
       disabled: effect.disabled,
@@ -509,6 +525,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   async _onRender(context, options) {
     await super._onRender(context, options);
+    openEffectSheets.add(this);
     bindSheetListMenus(this);
     const root = this.element;
     root.querySelectorAll('.profile-img[data-action="manage-portraits"]').forEach(image => {
@@ -534,6 +551,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     this._activateTabs(root);
     this._restoreViewState(root);
   }
+
+  refreshEffectDurations(combat=game.combat) {
+    const effects=Array.from(this.actor.allApplicableEffects?.() ?? this.actor.effects ?? []);
+    for(const row of this.element?.querySelectorAll?.(".effect-row[data-effect-uuid]") ?? []) {
+      const effect=effects.find(entry=>entry.uuid===row.dataset.effectUuid);
+      const value=row.querySelector(".effect-duration-value");
+      if(effect&&value)value.textContent=actorEffectDurationLabel(effect,{combat});
+    }
+  }
+
+  async close(options) {openEffectSheets.delete(this);return super.close(options);}
 
   _activateTabs(root) {
     const nav = root.querySelector(".sheet-tabs");
