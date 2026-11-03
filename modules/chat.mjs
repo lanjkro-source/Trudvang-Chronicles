@@ -115,6 +115,16 @@ function attachListeners(message, html) {
       if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true", targets});
     });
   });
+  html.querySelectorAll("[data-action='magic-damage']").forEach(button=>{
+    button.addEventListener("click",async event=>{
+      event.preventDefault();
+      const actor=await foundry.utils.fromUuid(button.dataset.actorUuid);
+      const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
+      if(!actor?.isOwner||!item)return;
+      const {rollMagicDamage}=await import("./magic-damage.mjs");
+      await rollMagicDamage({document:item,actor,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext});
+    });
+  });
   html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();

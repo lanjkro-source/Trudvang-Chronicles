@@ -15,6 +15,7 @@ globalThis.foundry = {applications: {api: {}, handlebars: {renderTemplate: async
   return templates.get(relative)(data);
 }}}};
 const {rollDamage, damageRollDialog} = await import("../modules/dice.mjs");
+const {magicDamageProfile,rollMagicDamage} = await import("../modules/magic-damage.mjs");
 
 const effect = (name, key, value, type = "add", extra = {}) => ({name, system: {changes: [{key, type, value}]}, ...extra});
 function actor(strength = 2, damage = 0, effects = []) {
@@ -46,6 +47,23 @@ function runtime(t, {response = {}, results = [4]} = {}) {
   };
   return {cards, rolls, dialogs, warnings};
 }
+
+test("magical damage uses the casting snapshot, the weapon dialog, and never the caster's strength",async t=>{
+ const {cards,dialogs,rolls}=runtime(t,{response:{},results:[4]});
+ const id='vitner-witchcraft:fever:2',source={name:'Fièvre',img:'icons/svg/aura.svg',flags:{'trudvang-chronicles':{transformation:{sourceId:id,ruleTestContext:{sourceId:id,countsById:{[`${id}:5`]:4}}}}}};
+ assert.deepEqual(magicDamageProfile(source),{formula:'1d10 + 1',openRoll:8});
+ const caster=actor(4);caster.isOwner=true;
+ assert.equal(await rollMagicDamage({document:source,actor:caster,targets:[{actor:caster,name:'Guerrier',document:{uuid:'Scene.s.Token.t'}}]}),5);
+ assert.match(dialogs[0].content,/value="8"/);assert.doesNotMatch(dialogs[0].content,/Force/);
+ assert.match(cards[0].content,/Guerrier/);assert.equal(rolls.length,1);
+ const context={sourceId:id,counts:[0,0,0,0,0,2]};assert.deepEqual(magicDamageProfile(source,context),{formula:'1d10',openRoll:9});
+});
+test("cancelling magical damage creates no roll or chat card",async t=>{
+ const {cards,rolls}=runtime(t,{response:false});
+ const source={name:'Fièvre',system:{catalogId:'vitner-witchcraft:fever:2'}},caster=actor();caster.isOwner=true;
+ assert.equal(await rollMagicDamage({document:source,actor:caster}),null);
+ assert.equal(cards.length,0);assert.equal(rolls.length,0);
+});
 
 test("the damage snapshot explains intrinsic, item, wearer and named actor effects once", () => {
   const item = weapon({damage: "2d10+3", damageBonus: 5, openRoll: 8});

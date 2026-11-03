@@ -90,6 +90,12 @@ for (const id of [...french.keys()].sort()) {
   }
   validatePowerOptionIdentities(id, f.powerLevels, e.powerLevels);
   validatePowerTargeting(f,e);
+  if(JSON.stringify(f.damageRoll??null)!==JSON.stringify(e.damageRoll??null))fail(`${id}: EN damage roll differs from FR`);
+  if(f.damageRoll){
+    const d=f.damageRoll;
+    if(!Array.isArray(d.steps)||!d.steps.length||d.steps.some(s=>!/^\d+d(?:3|4|5|6|10)(?:\s*\+\s*\d+)?$/i.test(s.formula)||!Number.isInteger(s.openRoll)||s.openRoll<0||s.openRoll>10)||
+      (d.optionId&&!f.powerLevels.some(p=>p.optionId===d.optionId)))fail(`${id}: invalid damage roll`);
+  }
   for (let index = 0; index < f.powerLevels.length; index++) {
     const a = f.powerLevels[index], b = e.powerLevels[index];
     if (!Number.isInteger(a.cost) || !same([b.cost, b.maxCount ?? null], [a.cost, a.maxCount ?? null])) {
@@ -103,6 +109,7 @@ for (const id of [...french.keys()].sort()) {
   optionCount += f.powerLevels.length;
   powerDetails[id] = {
     isRune: rune,
+    ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
     ...(f.targeting ? {targeting: f.targeting} : {}),
     powerLevels: f.powerLevels.map(level => ({id: level.optionId, cost: level.cost, maxCount: level.maxCount ?? null})),
     spellType: types.get(f.type)[1],

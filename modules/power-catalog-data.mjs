@@ -996,6 +996,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:battle-arrow:1": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1:0",
@@ -1009,6 +1017,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:0",
@@ -1127,6 +1143,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4:0",
@@ -4003,6 +4027,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:fever:2": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:5"
+    },
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4142,6 +4191,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:battle-arrow:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:battle-arrow:0:0",
@@ -4155,6 +4212,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:0",
@@ -4273,6 +4338,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:0",
@@ -7172,6 +7245,35 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:earthquake:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d6",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 1",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 2",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 3",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 4",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 5",
+          "openRoll": 0
+        }
+      ],
+      "optionId": "holy-toikalokke-master-of-elements:earthquake:7:3"
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:earthquake:7:0",
@@ -7200,6 +7302,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:elemental-arrow:6": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 7
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 7
+        }
+      ],
+      "optionId": "holy-toikalokke-master-of-elements:elemental-arrow:6:2"
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:elemental-arrow:6:0",
@@ -8718,6 +8845,23 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:darkness-of-dimhall:8": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-dimvitner:darkness-of-dimhall:8:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-dimvitner:darkness-of-dimhall:8:0",
@@ -8879,6 +9023,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:burning-hand:2": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-flame-craft:burning-hand:2:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:burning-hand:2:0",
@@ -8902,6 +9071,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:flame-burst:3": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-flame-craft:flame-burst:3:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:flame-burst:3:0",
@@ -8968,6 +9162,14 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:heat-water:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d6",
+          "openRoll": 0
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:heat-water:0:0",
@@ -9048,6 +9250,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:sea-of-fire:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-flame-craft:sea-of-fire:7:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:sea-of-fire:7:0",
@@ -10103,6 +10330,35 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:earthquake:2": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d6",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 1",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 2",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 3",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 4",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d6 + 5",
+          "openRoll": 0
+        }
+      ],
+      "optionId": "vitner-soil-craft:earthquake:2:3"
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:earthquake:2:0",
@@ -10206,6 +10462,27 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:rock-throw:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-soil-craft:rock-throw:0:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:rock-throw:0:0",
@@ -11692,6 +11969,27 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:wind-blast:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-wind-craft:wind-blast:7:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-wind-craft:wind-blast:7:0",
@@ -11917,6 +12215,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:fever:2": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-witchcraft:fever:2:5"
+    },
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []

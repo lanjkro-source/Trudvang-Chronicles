@@ -100,6 +100,14 @@ test("Hasten's compendium effect exposes its trait and skill table in the modifi
  assert.deepEqual(JSON.parse(typedContext.changes[0].value),[trait]);
  assert.doesNotMatch(typedContext.changes[0].value,/\[object Object\]/);
 });
+test("an applied fever effect exposes its damage button to its owner",async()=>{
+ const id='vitner-witchcraft:fever:2';
+ const effect={name:'Fièvre',isOwner:true,parent:{documentName:'Actor',isOwner:true},duration:{},system:{changes:[]},_source:{},statuses:[],flags:{'trudvang-chronicles':{transformation:{sourceId:id,ruleTestContext:{sourceId:id,countsById:{[`${id}:5`]:2}}}}}};
+ const context=await sheetFor(effect)._preparePartContext('details',{});
+ assert.equal(context.canRollMagicDamage,true);
+ effect.parent.isOwner=false;
+ assert.equal((await sheetFor(effect)._preparePartContext('details',{})).canRollMagicDamage,false);
+});
 
 test("effect edit permissions agree in the document, sheet and every tab", async t => {
   const originalUser = game.user;

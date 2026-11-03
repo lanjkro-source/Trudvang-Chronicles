@@ -37,5 +37,8 @@ for (const language of ["fr", "en"]) {
     const criticalFailure = render({success: false, critical: "failure", failureConsequence: "Normal failure", criticalFailureConsequence: "Critical failure"});
     assert.match(criticalFailure, /Normal failure/);
     assert.match(criticalFailure, /Critical failure/);
+    const magic=render({success:true,kind:'spell',magicDamage:true,actorUuid:'Actor.a',itemUuid:'Actor.a.Item.s'});
+    assert.match(magic,/data-action="magic-damage"/);
+    assert.match(magic,/data-actor-uuid="Actor.a"/);
   });
 }
