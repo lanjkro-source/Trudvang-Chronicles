@@ -199,7 +199,8 @@ export function finishExpiredEffect(effect, options = {}) {
     // whether this is an applied instance from its document ancestry instead.
     const parent = effect.parent;
     const applied = parent?.documentName === "Actor"
-      || (parent?.documentName === "Item" && parent.parent?.documentName === "Actor" && effect.transfer);
+      || (parent?.documentName === "Item" && parent.parent?.documentName === "Actor"
+        && (effect.transfer || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved));
     if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
       || !applied || parent?.type === "effect" || effect.inCompendium) return;
     if (effect.flags?.["trudvang-chronicles"]?.consequenceClock) {
@@ -253,7 +254,9 @@ export function appliedWorldEffects() {
     // the stored collections so previously greyed-out instances are removed.
     for (const effect of actor.effects ?? []) effects.add(effect);
     for (const effect of actor.allApplicableEffects?.() ?? []) effects.add(effect);
-    for (const item of actor.items ?? []) for (const effect of item.effects ?? []) if (effect.transfer) effects.add(effect);
+    for (const item of actor.items ?? []) for (const effect of item.effects ?? []) {
+      if (effect.transfer || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved) effects.add(effect);
+    }
   }
   return effects;
 }

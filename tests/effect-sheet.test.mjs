@@ -907,10 +907,13 @@ test("cleanup deletes already-greyed actor and equipment instances even when the
     duration: {expired: true}, disabled: true, isExpiryTrackable: false, async delete() {deleted.push(id);}});
   actor.effects.push(instance("direct", actor));
   gear.effects.push(instance("equipment", gear, true), instance("reference", gear));
+  const enchantment = instance("enchantment", gear);
+  enchantment.flags = {"trudvang-chronicles": {transformation: {resolved: true}}};
+  gear.effects.push(enchantment);
   actor.items.push(gear);
   globalThis.game = {actors: [actor], scenes: [{tokens: [{actor}]}], users: {activeGM: {isSelf: true}}};
   await expireAppliedEffects();
-  assert.deepEqual(deleted, ["direct", "equipment"]);
+  assert.deepEqual(deleted, ["direct", "equipment", "enchantment"]);
 });
 
 test("managed consequence clocks keep native expiry from suppressing intermediate stages",async()=>{
