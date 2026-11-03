@@ -13629,6 +13629,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.SourcePage` | 239 | 295 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:pathfinder:9#effect.Duration` | 3 hours | 3 heures |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.Name` | Animal Friend | Ami des animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.Description` | Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away. However, they are still just TABLETS Lynx Power | Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’attaqueront jamais volontairement le bénéficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement. Cela dit, ils peuvent très bien s’en prendre à ses compagnons. Ils peuvent également attaquer le bénéficiaire pour se défendre ou protéger leur maison ou leurs petits. De plus, les animaux de monte se plient à la volonté du bénéficiaire, ce qui confère à l’ihana un bonus de +1 par niveau dans cette tablette à la VC de tous ses tests de compétence dans la discipline Maîtrise équestre. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.SourceName` | Animal Friend | Ami des animaux |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.SourcePage` | 237 | 295 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-friend:0#effect.Duration` | 30 minutes | 30 minutes |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-animal-mind:animal-tracks:1#traces`
 
 | Clé | English | Français |
@@ -14520,6 +14531,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.PersuasionBonus` | Persuasion: +{value} bonus. | Persuasion : bonus de +{value}. |
 | `TRUDVANG.Transformation.CreationOnce` | Object creation: +{value} (once) | Création d’objet : +{value} (une fois) |
 | `TRUDVANG.Transformation.SingleUseUnavailable` | This bonus was already used or its effect has expired. | Ce bonus a déjà été utilisé ou son effet a expiré. |
+| `TRUDVANG.Transformation.TabletLevel` | Tablet level | Niveau de la tablette |
+| `TRUDVANG.Transformation.AnimalFriendRiding` | Horsemanship: +{value} | Maîtrise équestre : +{value} |
 
 ## `TRUDVANG.Transformation.Modes`
 

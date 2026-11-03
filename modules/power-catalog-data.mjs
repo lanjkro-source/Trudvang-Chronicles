@@ -6518,6 +6518,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-friend:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-animal-mind:animal-friend:0:0",

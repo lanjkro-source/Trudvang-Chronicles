@@ -8608,6 +8608,53 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-animal-mind:animal-friend:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "30 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "levelParameter": {
+      "labelKey": "TRUDVANG.Transformation.TabletLevel",
+      "default": 1,
+      "note": true
+    },
+    "sourceId": "holy-toikalokke-animal-mind:animal-friend:0",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-animal-mind:animal-friend:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 28800,
+        "optionId": "holy-toikalokke-animal-mind:animal-friend:0:2"
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 0,
+        "value": 0,
+        "perLevel": 1,
+        "tooltip": true,
+        "skillChoice": true,
+        "automatic": true,
+        "ability": "horsemanship",
+        "restrictedSkill": "agility",
+        "restrictedDiscipline": "horsemanship",
+        "labelKey": "TRUDVANG.Transformation.AnimalFriendRiding",
+        "optionId": "holy-toikalokke-animal-mind:animal-friend:0:0"
+      }
+    ]
+  },
   "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
     "id": "traces",
     "icon": "icons/svg/aura.svg",
@@ -11892,6 +11939,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-lynx-power:pathfinder:9": [
     "holy-toikalokke-lynx-power:pathfinder:9#effect"
+  ],
+  "holy-toikalokke-animal-mind:animal-friend:0": [
+    "holy-toikalokke-animal-mind:animal-friend:0#effect"
   ],
   "holy-toikalokke-animal-mind:animal-tracks:1": [
     "holy-toikalokke-animal-mind:animal-tracks:1#traces"

@@ -1,0 +1,45 @@
+{
+  "_id": "Q54jD9B7C8D9EaGb",
+  "_key": "!items!Q54jD9B7C8D9EaGb",
+  "name": "Ami des animaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+    "description": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’attaqueront jamais volontairement le bénéficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement. Cela dit, ils peuvent très bien s’en prendre à ses compagnons. Ils peuvent également attaquer le bénéficiaire pour se défendre ou protéger leur maison ou leurs petits. De plus, les animaux de monte se plient à la volonté du bénéficiaire, ce qui confère à l’ihana un bonus de +1 par niveau dans cette tablette à la VC de tous ses tests de compétence dans la discipline Maîtrise équestre.",
+    "summary": "Empêche les animaux de la forêt d’attaquer volontairement le bénéficiaire.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 295
+    }
+  },
+  "effects": [
+    {
+      "_id": "lQOqk6A6B7C8D9Ea",
+      "_key": "!items.effects!Q54jD9B7C8D9EaGb.lQOqk6A6B7C8D9Ea",
+      "name": "Ami des animaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’attaqueront jamais volontairement le bénéficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement. Cela dit, ils peuvent très bien s’en prendre à ses compagnons. Ils peuvent également attaquer le bénéficiaire pour se défendre ou protéger leur maison ou leurs petits. De plus, les animaux de monte se plient à la volonté du bénéficiaire, ce qui confère à l’ihana un bonus de +1 par niveau dans cette tablette à la VC de tous ses tests de compétence dans la discipline Maîtrise équestre.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+            "sourceId": "holy-toikalokke-animal-mind:animal-friend:0",
+            "summary": "Empêche les animaux de la forêt d’attaquer volontairement le bénéficiaire.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

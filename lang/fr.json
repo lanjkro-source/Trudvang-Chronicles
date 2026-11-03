@@ -15983,6 +15983,15 @@
           "SourcePage": "295",
           "Duration": "3 heures"
         },
+        "holy-toikalokke-animal-mind:animal-friend:0#effect": {
+          "Name": "Ami des animaux",
+          "Summary": "Empêche les animaux de la forêt d’attaquer volontairement le bénéficiaire.",
+          "Description": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’attaqueront jamais volontairement le bénéficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement. Cela dit, ils peuvent très bien s’en prendre à ses compagnons. Ils peuvent également attaquer le bénéficiaire pour se défendre ou protéger leur maison ou leurs petits. De plus, les animaux de monte se plient à la volonté du bénéficiaire, ce qui confère à l’ihana un bonus de +1 par niveau dans cette tablette à la VC de tous ses tests de compétence dans la discipline Maîtrise équestre.",
+          "SourceName": "Ami des animaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "295",
+          "Duration": "30 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Traces animales",
           "Summary": "Permet de laisser des traces animales permanentes ; l’odeur du bénéficiaire reste inchangée.",
@@ -16731,7 +16740,9 @@
       "HiddenDetectionBonus": "Recherche de portes et pièges : +{value} en Arts des ombres.",
       "PersuasionBonus": "Persuasion : bonus de +{value}.",
       "CreationOnce": "Création d’objet : +{value} (une fois)",
-      "SingleUseUnavailable": "Ce bonus a déjà été utilisé ou son effet a expiré."
+      "SingleUseUnavailable": "Ce bonus a déjà été utilisé ou son effet a expiré.",
+      "TabletLevel": "Niveau de la tablette",
+      "AnimalFriendRiding": "Maîtrise équestre : +{value}"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

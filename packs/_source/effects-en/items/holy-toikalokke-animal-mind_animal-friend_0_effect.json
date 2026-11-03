@@ -1,0 +1,45 @@
+{
+  "_id": "Q54jD9B7C8D9EaGb",
+  "_key": "!items!Q54jD9B7C8D9EaGb",
+  "name": "Animal Friend",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+    "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away. However, they are still just TABLETS Lynx Power",
+    "summary": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "lQOqk6A6B7C8D9Ea",
+      "_key": "!items.effects!Q54jD9B7C8D9EaGb.lQOqk6A6B7C8D9Ea",
+      "name": "Animal Friend",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away. However, they are still just TABLETS Lynx Power",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-friend:0#effect",
+            "sourceId": "holy-toikalokke-animal-mind:animal-friend:0",
+            "summary": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

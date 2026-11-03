@@ -316,7 +316,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
-  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
+  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)+Math.max(0,Number(answers.powerLevel??template.levelParameter?.default)||0)*Number(p.perLevel||0);
   summary=game.i18n.format(p.labelKey,{value});
  }
  if(!resolvedCopy&&template.senseTooltip&&rules.senses?.[template.senseTooltip.sense])summary=game.i18n.format(template.senseTooltip.labelKey,{value:rules.senses[template.senseTooltip.sense].range});
@@ -330,7 +330,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   summary=game.i18n.format(config.labelKey,{value:parts.join(" + ")});
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){
@@ -345,7 +345,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!resolvedCopy&&template.summaryParts)description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
-  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value);
+  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)+Math.max(0,Number(meta.powerLevel)||0)*Number(p.perLevel||0);
   description+=`<p>${escapeHtml(game.i18n.format(p.labelKey,{value}))}</p>`;
  }
  const statuses=new Set(template.statuses??[]);

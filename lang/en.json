@@ -15983,6 +15983,15 @@
           "SourcePage": "239",
           "Duration": "3 hours"
         },
+        "holy-toikalokke-animal-mind:animal-friend:0#effect": {
+          "Name": "Animal Friend",
+          "Summary": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+          "Description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away. However, they are still just TABLETS Lynx Power",
+          "SourceName": "Animal Friend",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "237",
+          "Duration": "30 minutes"
+        },
         "holy-toikalokke-animal-mind:animal-tracks:1#traces": {
           "Name": "Animal Tracks",
           "Summary": "Allows leaving permanent animal tracks; the beneficiary’s scent is unchanged.",
@@ -16731,7 +16740,9 @@
       "HiddenDetectionBonus": "Finding doors and traps: +{value} Shadow Arts.",
       "PersuasionBonus": "Persuasion: +{value} bonus.",
       "CreationOnce": "Object creation: +{value} (once)",
-      "SingleUseUnavailable": "This bonus was already used or its effect has expired."
+      "SingleUseUnavailable": "This bonus was already used or its effect has expired.",
+      "TabletLevel": "Tablet level",
+      "AnimalFriendRiding": "Horsemanship: +{value}"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

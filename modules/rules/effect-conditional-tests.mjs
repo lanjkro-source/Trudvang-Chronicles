@@ -19,7 +19,7 @@ export function conditionalSituationBonuses(effect) {
   restrictedSkill:p.restrictedSkill ?? "",
   restrictedDiscipline:p.restrictedDiscipline ?? "",
   requiresInput:p.requiresInput === true,
-  value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)
+  value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)+Math.max(0,Number(meta.powerLevel)||0)*Number(p.perLevel||0)
  }));
 }
 
@@ -31,7 +31,7 @@ export function conditionalSkillModifiers(actor,skillKey="",ability=null,exclude
    const input=String(meta?.input??"").trim();
    const entry=ability && actor.getCatalogEntry?.(ability.system?.catalogId);
    return row.skillChoice && row.automatic===automatic && (!row.restrictedSkill || row.restrictedSkill===skillKey)
-    && (!row.restrictedDiscipline || (ability?.system?.kind==="specialty" && entry?.parentCatalogId===row.restrictedDiscipline))
+    && (!row.restrictedDiscipline || (ability?.system?.kind==="discipline"&&ability?.system?.catalogId===row.restrictedDiscipline) || (ability?.system?.kind==="specialty" && entry?.parentCatalogId===row.restrictedDiscipline))
     // TEMPORARY WORLD MIGRATION — 0.151 effects recorded the specialty name only.
     && (!row.requiresInput || (meta?.inputId ? meta.inputId===ability?.system?.catalogId : input && input.localeCompare(String(ability?.name??"").trim(),undefined,{sensitivity:"base"})===0));
   }).map(row => ({label:[effect.name,effect.flags?.["trudvang-chronicles"]?.transformation?.input].filter(Boolean).join(" — "),value:row.value,...(row.consumeOnUse?{consumeEffectId:effect.id}:{})})));

@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,277);
+ assert.equal(Object.keys(sources).length,278);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -894,6 +894,20 @@ test("Dwarven Smith only applies to the chosen Handicraft specialty",async()=>{
  assert.deepEqual(conditionalSkillModifiers(actor,"care",item("hardMaterials","Matériaux souples"),"",{automatic:true}),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care",item("healing","Matériaux durs"),"",{automatic:true}),[]);
  assert.deepEqual(conditionalSkillModifiers(actor,"care"),[]);
+});
+
+test("Animal Friend captures tablet level and applies the riding bonus only within Horsemanship",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const id="holy-toikalokke-animal-mind:animal-friend:0",lang=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const localize=key=>key.split(".").reduce((o,k)=>o?.[k],lang)??key;
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize,format:(key,data)=>localize(key).replaceAll("{value}",String(data.value))}};
+ let created,dialog;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[{type:"tablet",system:{catalogId:"holy-toikalokke-animal-mind",level:3}}],getCatalogEntry:id=>({parentCatalogId:id==="riding"?"horsemanship":"bodyControl"}),createTrudvangEffect:async data=>{created=data;return null;}};
+ foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"30 minutes",powerLevel:3};};
+ await applyTransformation(actor,`${id}#effect`);
+ assert.match(dialog.content,/name="powerLevel"[^>]*value="3"/);assert.equal(created.flags[S].transformation.powerLevel,3);assert.match(created.description,/Maîtrise équestre : \+3/);
+ actor.effects=[created];
+ for(const [kind,catalogId] of [["discipline","horsemanship"],["specialty","riding"]])assert.equal(conditionalSkillModifiers(actor,"agility",{system:{kind,catalogId}},"",{automatic:true})[0].value,3);
+ assert.deepEqual(conditionalSkillModifiers(actor,"agility",{system:{kind:"specialty",catalogId:"swimming"}},"",{automatic:true}),[]);
 });
 
 test("Dwarven Smith offers learned specialties and remembers their stable identity",async()=>{

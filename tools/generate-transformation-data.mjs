@@ -63,7 +63,7 @@ for(const kind of ["powers","feats"]){
    const sourceRules=rulesFromChanges(t.changes),translatedRules=rulesFromChanges(translated.changes);
    for(const id of sourceRules.powerIds??[])if(!powerIds.has(id))throw Error(`Unknown granted power ${id} in ${key}`);
    if(t.levelParameter){
-    if(!Number.isFinite(t.levelParameter.default)||!t.levelParameter.knowledge?.every(id=>typeof sourceRules.knowledge?.[id]==="number"))throw Error(`Invalid level scaling in ${key}`);
+    if(!Number.isFinite(t.levelParameter.default)||!(t.levelParameter.knowledge?.every(id=>typeof sourceRules.knowledge?.[id]==="number")||(t.levelParameter.note===true&&(entry.effectParameters??[]).some(p=>p.target==="note"&&Number(p.perLevel)>0))))throw Error(`Invalid level scaling in ${key}`);
    }
    const parameters=effectParameters(entry,t);
    if(JSON.stringify(entry.effectParameters??[])!==JSON.stringify(englishEntry.effectParameters??[]))throw Error(`Unaligned effect parameters for ${id}`);

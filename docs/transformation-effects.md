@@ -29,7 +29,7 @@ l’entrée ou de cet effet ouvre la même application paramétrée que depuis u
 Les fichiers `game doc/fr/trudvang-effects-fr.json` et
 `game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
 contiennent l’identité stable, la provenance, les textes, la durée, les changements,
-les états, les règles et les liens des 325 variantes.
+les états, les règles et les liens des 326 variantes.
 
 Le sens de l’odorat propose ses variantes améliorée et affaiblie : leur bonus ou
 malus est calculé à partir des niveaux de puissance et disponible pour un jet de
@@ -374,5 +374,10 @@ véritable et Déracinement utilisent les mêmes paramètres que leurs équivale
 des tablettes d'origine, avec leurs propres textes, priorités et identifiants de
 niveaux de puissance. Stormlands p. 123 renvoie explicitement à ces tablettes.
 Les zones de soleil, la perception, les objets et le décor restent à gérer en jeu.
+
+Ami des animaux conserve le niveau de la tablette choisi à son application et
+ajoute automatiquement ce bonus aux tests de Maîtrise équestre, Équitation et
+Conduite d'attelage ; l'effet propose aussi un bouton pour la discipline. La
+réaction des animaux, avec ses exceptions, reste à interpréter par le MJ.
 
 Vision lointaine apporte son bonus aux attaques à distance ; sa portée visuelle et la modification éventuelle de portée de l’arme restent à interpréter. Regard de l’âme et Œil d’Enken proposent leur bonus conditionnel et un jet d’Arts des ombres. Les trois pouvoirs d’autorité proposent leur bonus de persuasion pour les jets pertinents. Lumière rassurante et Radiance sacrée annulent les malus de peur sans empêcher l’acquisition de peur ; leurs auras appliquent et retirent automatiquement les effets selon la position et la disposition des occupants. La malédiction joar requiert une levée manuelle à la mort de la mopor.
