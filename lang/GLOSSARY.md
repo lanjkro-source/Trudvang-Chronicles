@@ -609,7 +609,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tablet.Negation` | Negation | Négation |
 | `TRUDVANG.Tablet.ReadNegation` | Read the negation | Lire la négation |
 | `TRUDVANG.Tablet.Powers` | Spells and powers | Sorts et pouvoirs |
-| `TRUDVANG.Tablet.DropPowers` | Drop spells or powers here to add them to this tablet. | Glissez ici les sorts ou pouvoirs à ajouter à cette tablette. |
+| `TRUDVANG.Tablet.DropPowers` | Drop spells or powers here: they adopt the tablet's type. | Glissez ici les sortilèges ou pouvoirs à ajouter : ils prendront le type de la tablette. |
+| `TRUDVANG.Tablet.EmptyBeforeTypeChange` | Remove the spells or powers before changing the tablet type. | Retirez les sortilèges ou pouvoirs avant de changer le type de tablette. |
 | `TRUDVANG.Tablet.LevelGroup` | Level {level} | Niveau {level} |
 | `TRUDVANG.Tablet.Accessible` | available | accessible |
 | `TRUDVANG.Tablet.Locked` | not learned | non acquis |
@@ -1383,7 +1384,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.TabletPowerMissing` | This spell or power cannot be found in the compendiums. | Ce sort ou pouvoir est introuvable dans les compendiums. |
 | `TRUDVANG.Warning.UnknownTablet` | This item is not a tablet from the system catalogue. | Cet objet n'est pas une tablette du catalogue du système. |
 | `TRUDVANG.Warning.DropPowerOnTablet` | Add a tablet to the character rather than an individual spell or power. | Ajoutez une tablette au personnage plutôt qu’un sort ou pouvoir isolé. |
-| `TRUDVANG.Warning.TabletPowerType` | Drop a spell on a vitner tablet, or a power on a holy tablet. | Déposez un sort sur une tablette de vitner, ou un pouvoir sur une tablette sacrée. |
+| `TRUDVANG.Warning.TabletPowerType` | Drop a spell or power on this tablet. | Déposez un sortilège ou un pouvoir sur cette tablette. |
 | `TRUDVANG.Warning.TabletPowerDuplicate` | This spell or power is already in the tablet. | Ce sort ou pouvoir figure déjà dans la tablette. |
 | `TRUDVANG.Warning.TabletAlreadyKnown` | This tablet is already known. | Cette tablette est déjà connue. |
 | `TRUDVANG.Warning.HolyTabletLimit` | Holy Tablet / rune limit reached: {current} learned out of a maximum of {max}, equal to the Faith skill level. | Limite des tablettes sacrées / runes atteinte : {current} apprises pour un maximum de {max}, égal au niveau de Foi. |

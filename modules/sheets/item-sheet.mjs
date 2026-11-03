@@ -204,6 +204,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
     }
     if (this.levelManaged) root.querySelector("[name='system.level']")?.setAttribute("disabled", "disabled");
+    if(isCustomTablet(this.item)&&this.item.system.customPowers?.length){
+      const typeControl=root.querySelector("[name='system.tabletType']");
+      if(typeControl){typeControl.disabled=true;typeControl.title=game.i18n.localize("TRUDVANG.Tablet.EmptyBeforeTypeChange");}
+    }
     if (this.structuralLocked) {
       for (const name of ["system.kind", "system.parentSkill", "system.parentDiscipline", "system.costTrait", "system.level"]) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
@@ -244,11 +248,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     if(data?.type==="Item"&&isCustomTablet(this.item)&&event.target.closest?.('[data-tab="tablet-powers"]')){
       if(!this.isEditable||!this.item.isOwner)return null;
       const item=await foundry.documents.Item.implementation.fromDropData(data);
-      const expected=this.item.system.tabletType==="holy"?"divineFeat":"spell";
-      if(item?.type!==expected)return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerType"));
+      if(!["spell","divineFeat"].includes(item?.type))return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerType"));
       const entries=Array.from(this.item.system.customPowers??[],entry=>structuredClone(entry));
       if(entries.some(entry=>entry.sourceUuid&&entry.sourceUuid===item.uuid))return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerDuplicate"));
-      const entry=customTabletPower(item,foundry.utils.randomID()),tabletId=this.item.system.catalogId||`custom:${this.item.id}`;
+      const entry=customTabletPower(item,foundry.utils.randomID(),this.item.system.tabletType),tabletId=this.item.system.catalogId||`custom:${this.item.id}`;
       const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
       const created=actor?await actor.createEmbeddedDocuments("Item",[customTabletChild(entry,tabletId,this.item.name)]):null;
       if(actor&&!created?.length)return null;
@@ -365,7 +368,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       const entry=Array.from(this.item.system.customPowers??[]).find(row=>row.id===target.dataset.customId);
       const actor=this.item.parent?.documentName==="Actor"?this.item.parent:null;
       const child=actor?.items.find(item=>item.flags?.["trudvang-chronicles"]?.customTabletPower===entry?.id&&item.system.tabletId===this.item.system.catalogId);
-      const power=child??(entry?.sourceUuid?await foundry.utils.fromUuid(entry.sourceUuid):null)??(entry?.data?foundry.documents.Item.implementation.fromSource(entry.data):null);
+      const source=entry?.sourceUuid?await foundry.utils.fromUuid(entry.sourceUuid):null;
+      const power=child??(source?.type===entry?.data?.type?source:null)??(entry?.data?foundry.documents.Item.implementation.fromSource(entry.data):null);
       if(power)return power.sheet.render({force:true});
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
     }

@@ -43,6 +43,21 @@ test("individual spells and powers cannot be dropped onto an actor", async () =>
   }
 });
 
+test("custom tablet entries adopt the tablet's magic type without changing their source", () => {
+  for (const [sourceType, tabletType, expected] of [["spell", "holy", "divineFeat"], ["divineFeat", "vitner", "spell"]]) {
+    const original = {type: sourceType, name: "Magic", system: {level: 2, cost: 7, isRune: true, powerLevels: [{id: "range", cost: 3}]} };
+    const entry = customTabletPower({uuid: "Item.magic", toObject: () => structuredClone(original)}, "one", tabletType);
+    const learned = customTabletChild(entry, "custom:tablet", "Tablet");
+    assert.equal(entry.data.type, expected);
+    assert.equal(learned.type, expected);
+    assert.equal(learned.system.isRune, false);
+    assert.equal(learned.system.cost, 7);
+    assert.deepEqual(learned.system.powerLevels, original.system.powerLevels);
+    assert.equal(original.type, sourceType);
+    assert.equal(original.system.isRune, true);
+  }
+});
+
 test("a custom tablet carries independent powers with their chosen level to its actor", async () => {
   const instance = actor();
   const sheet = new TrudvangActorSheet(); sheet.actor = instance;
