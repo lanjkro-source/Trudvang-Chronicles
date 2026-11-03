@@ -1,0 +1,45 @@
+{
+  "_id": "DbO1LXsYtZu0v1w2",
+  "_key": "!items!DbO1LXsYtZu0v1w2",
+  "name": "Shape Earth (Toikalokke)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+    "description": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will. Once reshaped, the mud is immediately transformed into solid earth and maintains the new form for the duration of the ability.",
+    "summary": "Shape Earth",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "e7wrBZsYtZu0v1w2",
+      "_key": "!items.effects!DbO1LXsYtZu0v1w2.e7wrBZsYtZu0v1w2",
+      "name": "Shape Earth (Toikalokke)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will. Once reshaped, the mud is immediately transformed into solid earth and maintains the new form for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:shape-earth:5",
+            "summary": "Shape Earth",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

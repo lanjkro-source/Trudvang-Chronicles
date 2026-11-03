@@ -57,6 +57,11 @@ zones et conséquences ne sont pas automatisées par le mécanisme d'aura :
   selon le cas, d'une activation ou d'effets persistants. Ne pas les assimiler
   sans vérification à un simple bonus retiré à la sortie d'un cercle.
 
+Les effets descriptifs de **Silence**, **Marche sur l'eau**, **Mur de terre**,
+**Contrôle des vents** de Toikalokke et **Dompteur du feu** doivent aussi recevoir
+leur traitement de zone adapté : origine, mobilité, forme, obstacles, son ou
+surface selon le pouvoir. Leur simple effet sur une fiche ne crée aucune région.
+
 Les facteurs de peur des créatures disposent déjà de leur jet et de son application
 manuelle, mais ne créent pas une aura automatique générale.
 

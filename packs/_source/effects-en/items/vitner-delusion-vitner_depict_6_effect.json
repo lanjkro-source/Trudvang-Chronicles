@@ -1,0 +1,45 @@
+{
+  "_id": "4n7M4z1w2x3y4z5A",
+  "_key": "!items!4n7M4z1w2x3y4z5A",
+  "name": "Depict",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:depict:6#effect",
+    "description": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it. To create a perfect likeness, the enchanter must be in contact with the original during the evocation of the spell. An enchanter who is not in contact with the original can evoke a less-perfect likeness from their memory or even their imagination (which is necessary if the item doesn’t exist). These less-perfect images have a kind of fuzziness or faint distortion around them, making it easier for people to recognize them for what they are. The duplicated image cannot be larger than a normal-sized human in its basic version. The enchanter can create the image anywhere within the spell’s range. However, they must maintain a line of sight with the image all the times; if the whole image (not just a part of it) is removed or blocked from the enchanter’s field of vision, it dissolves. The enchanter also has full control over the image portrayed, down to subtle expressions and reactions. Thus, the enchanter cannot only cause an illusory creature to walk or run, but also have it use body language to express any number of emotions such as anger, rage, love, aggression, and more. The enchanter can cause the object to move or fly around at a speed of 6 meters per action round. If anything gets in its way (whether the image is perfect or not), the image will slide straight through the obstacle. So it is critical for the enchanter to carefully direct the creation to react appropriately to its surroundings. In order to resist the deception of a perfect image, an observer must make a successful Skill roll for the Shadow Arts skill with a negative SV modifier of -3. It is much easier to see through a less-perfect image (a copy of anything the enchanter was not in contact with upon creation). Anyone observing a lessperfect image can resist by succeeding on a simple (+5 SV) Skill roll for the Shadow Arts skill. An image woven through this spell cannot make a noise or emit a smell, which means that it is much easier to uncover the true nature of an illusion depicting something that normally makes loud sounds or has a strong odor. In such a situation, the Skill rolls for resisting the deception should be modified with a positive modifier between +1 and +10, depending on how obvious the ruse is. It is up to the game master to determine how big the modifier will be.",
+    "summary": "Depict",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "v7i0uVoUpVqWrXsY",
+      "_key": "!items.effects!4n7M4z1w2x3y4z5A.v7i0uVoUpVqWrXsY",
+      "name": "Depict",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it. To create a perfect likeness, the enchanter must be in contact with the original during the evocation of the spell. An enchanter who is not in contact with the original can evoke a less-perfect likeness from their memory or even their imagination (which is necessary if the item doesn’t exist). These less-perfect images have a kind of fuzziness or faint distortion around them, making it easier for people to recognize them for what they are. The duplicated image cannot be larger than a normal-sized human in its basic version. The enchanter can create the image anywhere within the spell’s range. However, they must maintain a line of sight with the image all the times; if the whole image (not just a part of it) is removed or blocked from the enchanter’s field of vision, it dissolves. The enchanter also has full control over the image portrayed, down to subtle expressions and reactions. Thus, the enchanter cannot only cause an illusory creature to walk or run, but also have it use body language to express any number of emotions such as anger, rage, love, aggression, and more. The enchanter can cause the object to move or fly around at a speed of 6 meters per action round. If anything gets in its way (whether the image is perfect or not), the image will slide straight through the obstacle. So it is critical for the enchanter to carefully direct the creation to react appropriately to its surroundings. In order to resist the deception of a perfect image, an observer must make a successful Skill roll for the Shadow Arts skill with a negative SV modifier of -3. It is much easier to see through a less-perfect image (a copy of anything the enchanter was not in contact with upon creation). Anyone observing a lessperfect image can resist by succeeding on a simple (+5 SV) Skill roll for the Shadow Arts skill. An image woven through this spell cannot make a noise or emit a smell, which means that it is much easier to uncover the true nature of an illusion depicting something that normally makes loud sounds or has a strong odor. In such a situation, the Skill rolls for resisting the deception should be modified with a positive modifier between +1 and +10, depending on how obvious the ruse is. It is up to the game master to determine how big the modifier will be.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:depict:6#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:depict:6#effect",
+            "sourceId": "vitner-delusion-vitner:depict:6",
+            "summary": "Depict",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

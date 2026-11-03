@@ -13721,6 +13721,15 @@
           "SourcePage": "154",
           "Duration": "5 tours de jeu"
         },
+        "vitner-dimvitner:animate-undead:0#effect": {
+          "Name": "Animation des morts-vivants",
+          "Summary": "Animation des morts-vivants",
+          "Description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes. La dépouille doit être raisonnablement complète et il ne doit lui manquer aucune partie importante (les petites parties comme les doigts, quelques côtes ou même les mains ne sont pas indispensables). L’enchanteur qui a créé ce mort-vivant contrôle tous ses faits et gestes. Il ne peut lui donner des ordres que si le mort-vivant se trouve à portée du sort. Si le mort-vivant est plus loin, ou s’il ne reçoit pas d’ordre, il continue d’exécuter la dernière consigne que l’enchanteur lui a donnée. Une fois qu’il a reçu un ordre, le mort-vivant s’y soumet jusqu’à ce qu’on lui en donne un autre. Le mort-vivant possède 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir entre les compétences, les disciplines et les spécialités. Le mort-vivant reçoit les traits de personnage exceptionnels suivants : -4 en Dextérité et -4 en Intelligence. En plus des compétences achetées à l’aide des points de compétence mentionnés plus haut, le mort-vivant reçoit également la faculté de percevoir les êtres vivants dans les alentours immédiats. S’il réussit un test de situation contre une valeur de situation de 8, le mort-vivant peut remarquer les êtres vivants situés à moins de 10 mètres de lui, et ce même s’ils sont invisibles ou camouflés (le mort-vivant ne peut pas se servir de ce pouvoir pour repérer des êtres qui utilisent de la grindblom ou qui évoluent dans le Domaine des Brumes). Il est impossible d’utiliser des compétences pour améliorer cette aptitude, qui n’est pas non plus affectée par les circonstances qui pourraient perturber les sens. L’enchanteur doit attendre que ce sort arrive à expiration pour pouvoir le lancer à nouveau.",
+          "SourceName": "Animation des morts-vivants",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "156",
+          "Duration": "3 jours"
+        },
         "vitner-dimvitner:speak-to-undead:3#effect": {
           "Name": "Conversation de l’au-delà",
           "Summary": "Conversation de l’au-delà",
@@ -13864,6 +13873,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "165",
           "Duration": "1 heure"
+        },
+        "vitner-water-craft:water-walk:7#effect": {
+          "Name": "Marche sur l’eau",
+          "Summary": "Marche sur l’eau",
+          "Description": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau. Si le bénéficiaire désire se déplacer à la surface de l’eau, le sort crée une surface rigide sous ses pieds composée de vitner comprimé (à la manière du sort Eau solide). La zone affectée fait 1 mètre de diamètre et peut supporter 100 kg (une seule créature de taille humaine pourra s’y tenir). Cette zone se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix, et peut se déplacer à une vitesse de 5 mètres par tour de jeu. Si la personne enchantée veut évoluer sous la surface de l’eau, le sort crée une sphère de vitner autour d’elle afin de lui permettre de continuer à respirer. Elle peut se déplacer ainsi en flottant à travers l’eau. Si le bénéficiaire désire plonger au fond ou remonter à la surface, il lui suffit d’y penser et la sphère se déplacera dans la direction désirée.",
+          "SourceName": "Marche sur l’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "165",
+          "Duration": "2 minutes"
         },
         "vitner-flame-craft:heat-water:0#effect": {
           "Name": "Ébullition",
@@ -14479,6 +14497,15 @@
           "SourcePage": "198",
           "Duration": "5 minutes"
         },
+        "vitner-delusion-vitner:depict:6#effect": {
+          "Name": "Image",
+          "Summary": "Image",
+          "Description": "En se concentrant sur un objet, une créature ou une personne, l’enchanteur peut en évoquer une réplique exacte. Pour que l’illusion soit parfaite, l’enchanteur doit être en contact physique avec l’original pendant l’évocation du sort. Dans le cas contraire, l’enchanteur peut évoquer une image imparfaite en se basant sur ses souvenirs ou même sur son imagination (ce qui est forcément le cas si l’objet n’existe pas). Ces images imparfaites dégagent une sorte d’aura floue ou distordue autour d’elles, ce qui permet aux observateurs de repérer plus facilement la supercherie. L’image dupliquée ne peut pas être plus grande qu’un humain de taille normale dans la version de base du sort. L’enchanteur peut créer l’image n’importe où dans la limite de la portée du sort. Cela dit, il doit maintenir à tout moment l’image en ligne de mire. Si l’image sort entièrement (et pas seulement en partie) du champ de vision de l’enchanteur, elle se dissipe. De plus, l’enchanteur contrôle complètement l’image dans ses moindres aspects, et notamment ses expressions et réactions. De fait, l’enchanteur peut non seulement faire marcher ou courir une créature illusoire, mais il peut également lui faire utiliser le langage corporel pour exprimer toutes sortes d’émotions telles que la colère, la fureur, l’amour ou encore l’agressivité. L’enchanteur peut faire bouger ou voler l’objet à une vitesse de 6 mètres par tour de jeu. Si un obstacle lui barre la route, l’image le traversera directement (qu’il s’agisse d’une image parfaite ou non). Il est donc essentiel pour l’enchanteur de diriger l’illusion avec précaution afin qu’elle réagisse de façon logique à son environnement. Pour résister à la supercherie, un observateur doit réussir un test de compétence d’Arts des ombres avec un malus de -3 à sa valeur de compétence. Il est bien plus facile de percer à jour une illusion imparfaite (le simulacre d’un sujet avec lequel l’enchanteur n’était pas en contact physique au moment de son évocation). Toute personne observant une image imparfaite peut y résister en réussissant un test de compétence d’Arts des Ombres simple (VC + 5). Une illusion tissée grâce à ce sort ne peut émettre aucun bruit ni aucune odeur, ce qui veut dire qu’il est bien plus facile de découvrir la véritable nature d’une illusion si elle est censée faire du bruit ou dégager une forte odeur. Dans un tel cas de figure, le test de compétence permettant de résister à la tromperie devrait recevoir un bonus de +1 à +10, selon que la ruse est plus ou moins évidente, à la discrétion du maître de jeu.",
+          "SourceName": "Image",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "199",
+          "Duration": "1 minute"
+        },
         "vitner-delusion-vitner:landscape-illusion:8#effect": {
           "Name": "Paysage illusoire",
           "Summary": "Paysage illusoire",
@@ -14487,6 +14514,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "199",
           "Duration": "2 heures"
+        },
+        "vitner-delusion-vitner:silence:9#effect": {
+          "Name": "Silence",
+          "Summary": "Silence",
+          "Description": "Ce sort génère une sphère d’énergie qui empêche de percevoir les sons provenant du site enchanté. Il peut se tisser autour d’un objet ou d’une personne et il a un rayon de 3 mètres. Si le point enchanté se déplace, la sphère l’accompagne. Tous les sons générés à l’intérieur du rayon du sort sont immédiatement absorbés par la sphère et sont donc inaudibles pour quiconque se trouve à l’extérieur de la zone enchantée. À l’intérieur cependant, tout s’entend normalement. De ce fait, le sort fonctionne bien pour quelqu’un souhaitant se déplacer de manière furtive, étant donné qu’aucun bruit ne peut émaner de la zone protectrice. L’enchanteur peut également diminuer la taille de la sphère. En diminuant son rayon de quelques centimètres seulement, l’enchanteur peut tisser le sort sur une personne ou une créature dont la voix et les bruits disparaîtront complètement, puisqu’il faut se trouver à l’intérieur de la sphère pour entendre ce que dit le bénéficiaire du sort. Ce sort n’affecte rien d’autre que les sons. Un observateur peut quand même voir à travers la sphère protectrice comme si elle n’existait pas, même s’il ne peut pas entendre les bruits qui en proviennent.",
+          "SourceName": "Silence",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "199",
+          "Duration": "10 tours de jeu"
         },
         "vitner-delusion-vitner:invisibility:11#effect": {
           "Name": "Invisibilité",
@@ -14541,6 +14577,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "202",
           "Duration": "4 minutes"
+        },
+        "vitner-vitner-of-objects:create-object:8#effect": {
+          "Name": "Création d’objet",
+          "Summary": "Création d’objet",
+          "Description": "Ce sort aussi rare que puissant crée des objets à partir de rien. C’est l’un des chants magiques les plus secrets des puissants misturalfer.<br> La version de base de ce sort permet seulement à l’enchanteur de conjurer de tout petits objets, extrêmement courants et sans aucune utilité réelle. Cependant, en ajoutant des niveaux de puissance, l’enchanteur peut améliorer l’objet en termes de taille, rareté et qualité, selon les indications de la table ci-dessous. <table><thead><tr><th colspan=\"4\">TAILLE, RARETÉ ET QUALITÉ</th></tr><tr><th>Taille</th><th>Rareté</th><th>Qualité</th><th>Coût</th></tr></thead><tbody><tr><td>Bâtiment (jusqu’à 10 tonnes, maison/tour)</td><td>Extrêmement rare (or)</td><td>Enchantée ou Divine</td><td>18</td></tr><tr><td>Immense (jusqu’à 1 tonne, navire/muret)</td><td>Très rare (fer de sang noir)</td><td>Légendaire</td><td>15</td></tr><tr><td>Énorme (jusqu’à 100 kg, trône/chariot)</td><td>Rare (argent)</td><td>Magistrale</td><td>12</td></tr><tr><td>Grand (jusqu’à 10 kg, banc)</td><td>Inhabituel (fer)</td><td>Bonne</td><td>9</td></tr><tr><td>Normal (jusqu’à 1 kg, longueur de bras)</td><td>Ordinaire (cuivre)</td><td>Normale</td><td>6</td></tr><tr><td>Petit (jusqu’à 100 g, joaillerie)</td><td>Très ordinaire (pierre/bois)</td><td>Médiocre</td><td>3</td></tr><tr><td>Très petit (jusqu’à 10 g, pièce de monnaie)</td><td>Extrêmement ordinaire (terre/herbe)</td><td>Mauvaise</td><td>0</td></tr></tbody></table> La conjuration de l’objet prend un nombre d’heures égal à la moitié de son coût en points de vitner. Ainsi, il faudrait dix heures pour conjurer un objet coûtant 20 points de vitner. Créer 1 kg d’or de qualité normale et ayant une durée d’une journée (Cf. la table Création d’objet : niveaux de puissance ci-dessous) coûterait 44 points de vitner (qualité Normale 6 + rareté Extrêmement rare 18 + taille Normal 6 + durée 1 journée 4 + coût du sort 10 = 44) et sa conjuration prendrait 22 heures.",
+          "SourceName": "Création d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "203",
+          "Duration": "1 heure"
         },
         "holy-gerbanis-warmth-of-sunvei:healing:0#guerison": {
           "Name": "Guérison (Solvei)",
@@ -16077,6 +16122,51 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "297",
           "Duration": "1 heure"
+        },
+        "holy-toikalokke-master-of-elements:earth-wall:0#effect": {
+          "Name": "Mur de terre",
+          "Summary": "Mur de terre",
+          "Description": "L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler.",
+          "SourceName": "Mur de terre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "297",
+          "Duration": "30 minutes"
+        },
+        "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
+          "Name": "Dompteur du feu",
+          "Summary": "Dompteur du feu",
+          "Description": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
+          "SourceName": "Dompteur du feu",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "298",
+          "Duration": "1 tour de jeu"
+        },
+        "holy-toikalokke-master-of-elements:shape-earth:5#effect": {
+          "Name": "Façonnage de la terre (Toikalokke)",
+          "Summary": "Façonnage de la terre",
+          "Description": "L’ihana peut transformer 1 mètre cube de terre en boue et lui donner la forme de son choix, après quoi la boue se change de nouveau en terre solide et conserve sa nouvelle forme jusqu’à expiration du pouvoir.",
+          "SourceName": "Façonnage de la terre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "298",
+          "Duration": "1 heure"
+        },
+        "holy-toikalokke-master-of-elements:spring-of-water:8#effect": {
+          "Name": "Source d’eau",
+          "Summary": "Source d’eau",
+          "Description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir). La source coule à un débit de 1m3 par tranche de 10 minutes, mais elle s’assèche dès que la durée du pouvoir expire ou que l’elfe choisit d’y mettre fin.",
+          "SourceName": "Source d’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "298",
+          "Duration": "1 heure"
+        },
+        "holy-toikalokke-master-of-elements:control-wind:9#effect": {
+          "Name": "Contrôle des vents (Toikalokke)",
+          "Summary": "Contrôle des vents",
+          "Description": "L’ihana contrôle la force du vent au sein d’une sphère de 10 mètres de rayon autour de lui. L’élu peut accroître ou réduire d’un degré la puissance du vent dans cette sphère. Dans la version de base de ce pouvoir, la zone affectée est statique, mais l’ajout d’un niveau de puissance permet de la déplacer. <table><thead><tr><th colspan=\"2\">DEGRÉS</th></tr><tr><th>Degré</th><th>Puissance du vent</th></tr></thead><tbody><tr><td>1</td><td>Calme</td></tr><tr><td>2</td><td>Brise</td></tr><tr><td>3</td><td>Venteux (-1)</td></tr><tr><td>4</td><td>Tempête (-2)</td></tr><tr><td>5</td><td>Ouragan (-4)</td></tr><tr><td>6</td><td>Ouragan des dieux (-6)</td></tr></tbody></table> Les conditions mentionnées dans cette table ne sont que des indications de la force du phénomène. C’est au maître de jeu de déterminer ce qui se produit en fonction de la situation. La table indique également des valeurs entre parenthèses, qui indiquent le malus normal à appliquer à la valeur de situation de toute action entreprise dans cette situation et qui repose sur le mouvement, la précision ou la concentration.",
+          "SourceName": "Contrôle des vents",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "299",
+          "Duration": "2 heures"
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
           "Name": "Sang brûlant (Fureur d’Ogon)",

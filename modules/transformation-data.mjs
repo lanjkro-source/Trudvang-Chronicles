@@ -119,6 +119,49 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-dimvitner:animate-undead:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 jours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      5,
+      6,
+      7,
+      8
+    ],
+    "sourceId": "vitner-dimvitner:animate-undead:0",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-dimvitner:animate-undead:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-dimvitner:animate-undead:0:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 2592000,
+        "optionId": "vitner-dimvitner:animate-undead:0:3"
+      },
+      {
+        "index": 4,
+        "target": "duration",
+        "value": 31536000,
+        "optionId": "vitner-dimvitner:animate-undead:0:4"
+      }
+    ]
+  },
   "vitner-dimvitner:speak-to-undead:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -627,6 +670,45 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 604800,
         "optionId": "vitner-water-craft:control-precipitation:6:3"
+      }
+    ]
+  },
+  "vitner-water-craft:water-walk:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "sourceId": "vitner-water-craft:water-walk:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:water-walk:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-water-craft:water-walk:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-water-craft:water-walk:7:2"
       }
     ]
   },
@@ -3030,6 +3112,36 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-delusion-vitner:depict:6#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-delusion-vitner:depict:6",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:depict:6:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-delusion-vitner:depict:6:2"
+      }
+    ]
+  },
   "vitner-delusion-vitner:landscape-illusion:8#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -3062,6 +3174,40 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 604800,
         "optionId": "vitner-delusion-vitner:landscape-illusion:8:5"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:silence:9#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-delusion-vitner:silence:9",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-delusion-vitner:silence:9:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-delusion-vitner:silence:9:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-delusion-vitner:silence:9:2"
       }
     ]
   },
@@ -3269,6 +3415,43 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "vitner-vitner-of-objects:enlarge-reduce-object:6:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:create-object:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "sourceId": "vitner-vitner-of-objects:create-object:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:create-object:8:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-of-objects:create-object:8:1"
       }
     ]
   },
@@ -9114,6 +9297,138 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-master-of-elements:earth-wall:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "30 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-toikalokke-master-of-elements:earth-wall:0",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 1800,
+        "optionId": "holy-toikalokke-master-of-elements:earth-wall:0:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 10800,
+        "optionId": "holy-toikalokke-master-of-elements:earth-wall:0:2"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 tour de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2,
+      3
+    ],
+    "sourceId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 15,
+        "optionId": "holy-toikalokke-master-of-elements:fire-tamer:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 50,
+        "optionId": "holy-toikalokke-master-of-elements:fire-tamer:4:1"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:shape-earth:5#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-toikalokke-master-of-elements:shape-earth:5",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:shape-earth:5:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 18000,
+        "optionId": "holy-toikalokke-master-of-elements:shape-earth:5:2"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:spring-of-water:8#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0
+    ],
+    "sourceId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:spring-of-water:8:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 14400,
+        "optionId": "holy-toikalokke-master-of-elements:spring-of-water:8:2"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:control-wind:9#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      1,
+      2,
+      3
+    ],
+    "sourceId": "holy-toikalokke-master-of-elements:control-wind:9",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:control-wind:9:0"
+      }
+    ]
+  },
   "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
     "id": "simmering-blood",
     "icon": "icons/svg/blood.svg",
@@ -10585,6 +10900,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-vitner-craft:wall-of-vitner:8": [
     "vitner-vitner-craft:wall-of-vitner:8#effect"
   ],
+  "vitner-dimvitner:animate-undead:0": [
+    "vitner-dimvitner:animate-undead:0#effect"
+  ],
   "vitner-dimvitner:speak-to-undead:3": [
     "vitner-dimvitner:speak-to-undead:3#effect"
   ],
@@ -10628,6 +10946,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-water-craft:control-precipitation:6": [
     "vitner-water-craft:control-precipitation:6#effect"
+  ],
+  "vitner-water-craft:water-walk:7": [
+    "vitner-water-craft:water-walk:7#effect"
   ],
   "vitner-flame-craft:heat-water:0": [
     "vitner-flame-craft:heat-water:0#effect"
@@ -10819,8 +11140,14 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-delusion-vitner:camouflage:7": [
     "vitner-delusion-vitner:camouflage:7#effect"
   ],
+  "vitner-delusion-vitner:depict:6": [
+    "vitner-delusion-vitner:depict:6#effect"
+  ],
   "vitner-delusion-vitner:landscape-illusion:8": [
     "vitner-delusion-vitner:landscape-illusion:8#effect"
+  ],
+  "vitner-delusion-vitner:silence:9": [
+    "vitner-delusion-vitner:silence:9#effect"
   ],
   "vitner-delusion-vitner:invisibility:11": [
     "vitner-delusion-vitner:invisibility:11#effect"
@@ -10839,6 +11166,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-vitner-of-objects:enlarge-reduce-object:6": [
     "vitner-vitner-of-objects:enlarge-reduce-object:6#effect"
+  ],
+  "vitner-vitner-of-objects:create-object:8": [
+    "vitner-vitner-of-objects:create-object:8#effect"
   ],
   "holy-gerbanis-warmth-of-sunvei:healing:0": [
     "holy-gerbanis-warmth-of-sunvei:healing:0#guerison"
@@ -11286,6 +11616,21 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-master-of-elements:gift-of-water:3": [
     "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau"
+  ],
+  "holy-toikalokke-master-of-elements:earth-wall:0": [
+    "holy-toikalokke-master-of-elements:earth-wall:0#effect"
+  ],
+  "holy-toikalokke-master-of-elements:fire-tamer:4": [
+    "holy-toikalokke-master-of-elements:fire-tamer:4#effect"
+  ],
+  "holy-toikalokke-master-of-elements:shape-earth:5": [
+    "holy-toikalokke-master-of-elements:shape-earth:5#effect"
+  ],
+  "holy-toikalokke-master-of-elements:spring-of-water:8": [
+    "holy-toikalokke-master-of-elements:spring-of-water:8#effect"
+  ],
+  "holy-toikalokke-master-of-elements:control-wind:9": [
+    "holy-toikalokke-master-of-elements:control-wind:9#effect"
   ],
   "holy-joaringfaith-fury-of-ogon:simmering-blood:1": [
     "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood"

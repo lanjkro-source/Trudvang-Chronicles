@@ -1,0 +1,45 @@
+{
+  "_id": "qRTOR2w2x3y4z5A6",
+  "_key": "!items!qRTOR2w2x3y4z5A6",
+  "name": "Animate Undead",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:animate-undead:0#effect",
+    "description": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains. The mage must have access to a reasonably complete skeleton that is not missing any significant parts; small things such as fingers, a few ribs, or even hands are not necessary. The mage who creates the undead controls all of its activities. Orders can be given only when the undead is within the range of the spell. If it is outside of that range, or not being directly commanded, it will carry out its most recent order. Once an order is given, the undead will continue to pursue that end until it is ordered to do something new. The undead has 1d10 (OR 10) +5 Body Points and 1d10 (OR 10) +20 skill points to distribute on eventual skills and disciplines (or specialties). The undead receives the following exceptional character traits: Dexterity -4 and Intelligence -4. Beyond the skills purchased with skill points mentioned above, the undead also gains the ability to sense living beings in its immediate surroundings. By succeeding on a Situation roll against a Situation value of 8, the undead can notice living creatures within 10 meters, regardless of whether they are invisible or hidden in some way (the undead cannot use this to discover living beings that are using gateblom clover or moving through Dimhall). This skill cannot be improved with skill levels and is not modified by troubling circumstances. The mage cannot conjure this spell multiple times during the same duration.",
+    "summary": "Animate Undead",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 105
+    }
+  },
+  "effects": [
+    {
+      "_id": "5Or2Jw1w2x3y4z5A",
+      "_key": "!items.effects!qRTOR2w2x3y4z5A6.5Or2Jw1w2x3y4z5A",
+      "name": "Animate Undead",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains. The mage must have access to a reasonably complete skeleton that is not missing any significant parts; small things such as fingers, a few ribs, or even hands are not necessary. The mage who creates the undead controls all of its activities. Orders can be given only when the undead is within the range of the spell. If it is outside of that range, or not being directly commanded, it will carry out its most recent order. Once an order is given, the undead will continue to pursue that end until it is ordered to do something new. The undead has 1d10 (OR 10) +5 Body Points and 1d10 (OR 10) +20 skill points to distribute on eventual skills and disciplines (or specialties). The undead receives the following exceptional character traits: Dexterity -4 and Intelligence -4. Beyond the skills purchased with skill points mentioned above, the undead also gains the ability to sense living beings in its immediate surroundings. By succeeding on a Situation roll against a Situation value of 8, the undead can notice living creatures within 10 meters, regardless of whether they are invisible or hidden in some way (the undead cannot use this to discover living beings that are using gateblom clover or moving through Dimhall). This skill cannot be improved with skill levels and is not modified by troubling circumstances. The mage cannot conjure this spell multiple times during the same duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:animate-undead:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:animate-undead:0#effect",
+            "sourceId": "vitner-dimvitner:animate-undead:0",
+            "summary": "Animate Undead",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

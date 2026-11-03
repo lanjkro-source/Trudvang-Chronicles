@@ -1,0 +1,45 @@
+{
+  "_id": "qRTOR2w2x3y4z5A6",
+  "_key": "!items!qRTOR2w2x3y4z5A6",
+  "name": "Animation des morts-vivants",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:animate-undead:0#effect",
+    "description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes. La dépouille doit être raisonnablement complète et il ne doit lui manquer aucune partie importante (les petites parties comme les doigts, quelques côtes ou même les mains ne sont pas indispensables). L’enchanteur qui a créé ce mort-vivant contrôle tous ses faits et gestes. Il ne peut lui donner des ordres que si le mort-vivant se trouve à portée du sort. Si le mort-vivant est plus loin, ou s’il ne reçoit pas d’ordre, il continue d’exécuter la dernière consigne que l’enchanteur lui a donnée. Une fois qu’il a reçu un ordre, le mort-vivant s’y soumet jusqu’à ce qu’on lui en donne un autre. Le mort-vivant possède 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir entre les compétences, les disciplines et les spécialités. Le mort-vivant reçoit les traits de personnage exceptionnels suivants : -4 en Dextérité et -4 en Intelligence. En plus des compétences achetées à l’aide des points de compétence mentionnés plus haut, le mort-vivant reçoit également la faculté de percevoir les êtres vivants dans les alentours immédiats. S’il réussit un test de situation contre une valeur de situation de 8, le mort-vivant peut remarquer les êtres vivants situés à moins de 10 mètres de lui, et ce même s’ils sont invisibles ou camouflés (le mort-vivant ne peut pas se servir de ce pouvoir pour repérer des êtres qui utilisent de la grindblom ou qui évoluent dans le Domaine des Brumes). Il est impossible d’utiliser des compétences pour améliorer cette aptitude, qui n’est pas non plus affectée par les circonstances qui pourraient perturber les sens. L’enchanteur doit attendre que ce sort arrive à expiration pour pouvoir le lancer à nouveau.",
+    "summary": "Animation des morts-vivants",
+    "source": {
+      "book": "Livre des règles",
+      "page": 156
+    }
+  },
+  "effects": [
+    {
+      "_id": "5Or2Jw1w2x3y4z5A",
+      "_key": "!items.effects!qRTOR2w2x3y4z5A6.5Or2Jw1w2x3y4z5A",
+      "name": "Animation des morts-vivants",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes. La dépouille doit être raisonnablement complète et il ne doit lui manquer aucune partie importante (les petites parties comme les doigts, quelques côtes ou même les mains ne sont pas indispensables). L’enchanteur qui a créé ce mort-vivant contrôle tous ses faits et gestes. Il ne peut lui donner des ordres que si le mort-vivant se trouve à portée du sort. Si le mort-vivant est plus loin, ou s’il ne reçoit pas d’ordre, il continue d’exécuter la dernière consigne que l’enchanteur lui a donnée. Une fois qu’il a reçu un ordre, le mort-vivant s’y soumet jusqu’à ce qu’on lui en donne un autre. Le mort-vivant possède 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir entre les compétences, les disciplines et les spécialités. Le mort-vivant reçoit les traits de personnage exceptionnels suivants : -4 en Dextérité et -4 en Intelligence. En plus des compétences achetées à l’aide des points de compétence mentionnés plus haut, le mort-vivant reçoit également la faculté de percevoir les êtres vivants dans les alentours immédiats. S’il réussit un test de situation contre une valeur de situation de 8, le mort-vivant peut remarquer les êtres vivants situés à moins de 10 mètres de lui, et ce même s’ils sont invisibles ou camouflés (le mort-vivant ne peut pas se servir de ce pouvoir pour repérer des êtres qui utilisent de la grindblom ou qui évoluent dans le Domaine des Brumes). Il est impossible d’utiliser des compétences pour améliorer cette aptitude, qui n’est pas non plus affectée par les circonstances qui pourraient perturber les sens. L’enchanteur doit attendre que ce sort arrive à expiration pour pouvoir le lancer à nouveau.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:animate-undead:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:animate-undead:0#effect",
+            "sourceId": "vitner-dimvitner:animate-undead:0",
+            "summary": "Animation des morts-vivants",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

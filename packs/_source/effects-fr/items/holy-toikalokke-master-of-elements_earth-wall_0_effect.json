@@ -1,0 +1,45 @@
+{
+  "_id": "F9fpQ9EaGbHcIdJe",
+  "_key": "!items!F9fpQ9EaGbHcIdJe",
+  "name": "Mur de terre",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+    "description": "L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler.",
+    "summary": "Mur de terre",
+    "source": {
+      "book": "Livre des règles",
+      "page": 297
+    }
+  },
+  "effects": [
+    {
+      "_id": "GRTuMNeKfLgMhNiO",
+      "_key": "!items.effects!F9fpQ9EaGbHcIdJe.GRTuMNeKfLgMhNiO",
+      "name": "Mur de terre",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:earth-wall:0",
+            "summary": "Mur de terre",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

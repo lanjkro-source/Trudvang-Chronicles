@@ -1,0 +1,45 @@
+{
+  "_id": "0lqdRiKfLgMhNiOj",
+  "_key": "!items!0lqdRiKfLgMhNiOj",
+  "name": "Dompteur du feu",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+    "description": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
+    "summary": "Dompteur du feu",
+    "source": {
+      "book": "Livre des règles",
+      "page": 298
+    }
+  },
+  "effects": [
+    {
+      "_id": "9OwzEeIdJeKfLgMh",
+      "_key": "!items.effects!0lqdRiKfLgMhNiOj.9OwzEeIdJeKfLgMh",
+      "name": "Dompteur du feu",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+            "summary": "Dompteur du feu",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

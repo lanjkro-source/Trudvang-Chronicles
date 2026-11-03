@@ -30,7 +30,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,255);
+ assert.equal(Object.keys(sources).length,265);
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{
@@ -1152,6 +1152,26 @@ test("healing invocations create independent clocks with the correct interval an
  const id=cases[0][0],{transformationStackId}=await import("../modules/transformations.mjs");
  const stackIds=["first","second"].map(castingId=>transformationStackId(`${id}#effect`,{kind:"divine",casterUuid:"Actor.caster",castingId},templates[`${id}#effect`]));
  assert.notEqual(stackIds[0],stackIds[1],"separate invocations keep independent clocks");
+});
+
+test("elemental and illusion effects keep their duration and chosen non-duration improvements",async()=>{
+ const cases={
+  "vitner-dimvitner:animate-undead:0":[86400,604800,2592000,31536000],
+  "vitner-water-craft:water-walk:7":[60,600,3600],
+  "vitner-delusion-vitner:depict:6":[60,600],
+  "vitner-delusion-vitner:silence:9":[5,60,3600],
+  "vitner-vitner-of-objects:create-object:8":[3600,86400],
+  "holy-toikalokke-master-of-elements:fire-tamer:4":[15,50],
+  "holy-toikalokke-master-of-elements:earth-wall:0":[1800,10800],
+  "holy-toikalokke-master-of-elements:spring-of-water:8":[3600,14400],
+  "holy-toikalokke-master-of-elements:shape-earth:5":[3600,18000],
+  "holy-toikalokke-master-of-elements:control-wind:9":[3600]
+ };
+ for(const [id,values] of Object.entries(cases))assert.deepEqual(templates[`${id}#effect`].parameters.filter(p=>p.target==="duration").map(p=>p.value),values,id);
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
+ let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,"holy-toikalokke-master-of-elements:earth-wall:0#effect",{counts:[2,0,1],skipDialog:true});
+ assert.deepEqual(created.duration,{value:2520,units:"rounds"});assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.holy-toikalokke-master-of-elements:earth-wall:0\.PowerLevels\.0/);
 });
 
 test("divine weather, travel and summoning effects preserve their duration improvements",async()=>{

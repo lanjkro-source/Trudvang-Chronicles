@@ -1,0 +1,45 @@
+{
+  "_id": "F9fpQ9EaGbHcIdJe",
+  "_key": "!items!F9fpQ9EaGbHcIdJe",
+  "name": "Earth Wall",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+    "description": "The Ihana causes a wall of earth to shoot up from the ground for protection. The total volume of the wall is 1 cubic meter, which is shaped however the elf desires. Once the duration expires (or the wall is destroyed), the earth wall sinks back down into the soil and disappears. Each cubic meter of earth can endure 30 points of damage before crumbling.",
+    "summary": "Earth Wall",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "GRTuMNeKfLgMhNiO",
+      "_key": "!items.effects!F9fpQ9EaGbHcIdJe.GRTuMNeKfLgMhNiO",
+      "name": "Earth Wall",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana causes a wall of earth to shoot up from the ground for protection. The total volume of the wall is 1 cubic meter, which is shaped however the elf desires. Once the duration expires (or the wall is destroyed), the earth wall sinks back down into the soil and disappears. Each cubic meter of earth can endure 30 points of damage before crumbling.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:earth-wall:0#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:earth-wall:0",
+            "summary": "Earth Wall",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

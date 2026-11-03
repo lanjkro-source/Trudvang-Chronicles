@@ -1,0 +1,45 @@
+{
+  "_id": "DbO1LXsYtZu0v1w2",
+  "_key": "!items!DbO1LXsYtZu0v1w2",
+  "name": "Façonnage de la terre (Toikalokke)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+    "description": "L’ihana peut transformer 1 mètre cube de terre en boue et lui donner la forme de son choix, après quoi la boue se change de nouveau en terre solide et conserve sa nouvelle forme jusqu’à expiration du pouvoir.",
+    "summary": "Façonnage de la terre",
+    "source": {
+      "book": "Livre des règles",
+      "page": 298
+    }
+  },
+  "effects": [
+    {
+      "_id": "e7wrBZsYtZu0v1w2",
+      "_key": "!items.effects!DbO1LXsYtZu0v1w2.e7wrBZsYtZu0v1w2",
+      "name": "Façonnage de la terre (Toikalokke)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana peut transformer 1 mètre cube de terre en boue et lui donner la forme de son choix, après quoi la boue se change de nouveau en terre solide et conserve sa nouvelle forme jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:shape-earth:5#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:shape-earth:5",
+            "summary": "Façonnage de la terre",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

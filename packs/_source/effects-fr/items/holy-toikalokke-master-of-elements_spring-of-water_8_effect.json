@@ -1,0 +1,45 @@
+{
+  "_id": "PZICm9C8D9EaGbHc",
+  "_key": "!items!PZICm9C8D9EaGbHc",
+  "name": "Source d’eau",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+    "description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir). La source coule à un débit de 1m3 par tranche de 10 minutes, mais elle s’assèche dès que la durée du pouvoir expire ou que l’elfe choisit d’y mettre fin.",
+    "summary": "Source d’eau",
+    "source": {
+      "book": "Livre des règles",
+      "page": 298
+    }
+  },
+  "effects": [
+    {
+      "_id": "ahvVcwYtZu0v1w2x",
+      "_key": "!items.effects!PZICm9C8D9EaGbHc.ahvVcwYtZu0v1w2x",
+      "name": "Source d’eau",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir). La source coule à un débit de 1m3 par tranche de 10 minutes, mais elle s’assèche dès que la durée du pouvoir expire ou que l’elfe choisit d’y mettre fin.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+            "summary": "Source d’eau",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

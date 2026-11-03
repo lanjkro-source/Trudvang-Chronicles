@@ -1,0 +1,45 @@
+{
+  "_id": "PZICm9C8D9EaGbHc",
+  "_key": "!items!PZICm9C8D9EaGbHc",
+  "name": "Spring of Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+    "description": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this). This spring flows at a rate of up to 1 m3 per 10 minutes, but it runs dry as soon as the duration expires or the elf chooses to end it.",
+    "summary": "Spring of Water",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "ahvVcwYtZu0v1w2x",
+      "_key": "!items.effects!PZICm9C8D9EaGbHc.ahvVcwYtZu0v1w2x",
+      "name": "Spring of Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this). This spring flows at a rate of up to 1 m3 per 10 minutes, but it runs dry as soon as the duration expires or the elf chooses to end it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:spring-of-water:8#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+            "summary": "Spring of Water",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

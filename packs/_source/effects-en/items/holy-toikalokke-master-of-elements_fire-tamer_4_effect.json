@@ -1,0 +1,45 @@
+{
+  "_id": "0lqdRiKfLgMhNiOj",
+  "_key": "!items!0lqdRiKfLgMhNiOj",
+  "name": "Fire Tamer",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+    "description": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range.",
+    "summary": "Fire Tamer",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "9OwzEeIdJeKfLgMh",
+      "_key": "!items.effects!0lqdRiKfLgMhNiOj.9OwzEeIdJeKfLgMh",
+      "name": "Fire Tamer",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:fire-tamer:4#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+            "summary": "Fire Tamer",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
