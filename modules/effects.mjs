@@ -14,6 +14,12 @@ const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
 
 export const EFFECT_ITEM_TYPES = new Set(["weapon", "armor", "shield", "gear", "potion"]);
+/** These item-local effects use the system clock, not Foundry's registry. */
+export function isManagedItemTransformation(effect) {
+  return !effect?.transfer && effect?.parent?.documentName === "Item"
+    && effect.parent.parent?.documentName === "Actor"
+    && Boolean(effect.flags?.["trudvang-chronicles"]?.transformation?.resolved);
+}
 
 const string = (initial = "") => new fields.StringField({required: true, nullable: false, initial});
 const integer = (initial = 0, options = {}) => new fields.NumberField({
@@ -67,6 +73,9 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
  * intentionally always suppressed. Potion templates are likewise always
  * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
+  get isExpiryTrackable() {
+    return isManagedItemTransformation(this) ? false : super.isExpiryTrackable;
+  }
   canUserModify(user, action, data = {}) {
     if (action === "update" && user && (user.isGM
       || (user.id && this.flags?.["trudvang-chronicles"]?.creatorId === user.id))) return true;
@@ -241,7 +250,11 @@ export function registerEffectHooks() {
   Hooks.on("updateActiveEffect", (effect, changed, options) => {
     if (changed.duration?.expired === true || changed["duration.expired"] === true) return finishExpiredEffect(effect, options);
   });
-  Hooks.on("ready", () => expireAppliedEffects({time:Number(game.time?.worldTime), combat:game.combat}));
+  Hooks.on("ready", () => {
+    const registry=foundry.documents.ActiveEffect.implementation.registry;
+    for(const effect of appliedWorldEffects())if(isManagedItemTransformation(effect))registry?.delete?.(effect);
+    return expireAppliedEffects({time:Number(game.time?.worldTime), combat:game.combat});
+  });
   // Item-local, non-transferring enchantments are not necessarily registered
   // by Foundry's actor effect registry. Check them when world time advances.
   Hooks.on("updateWorldTime", time => expireAppliedEffects({time:Number(time), itemTransformationsOnly:true}));

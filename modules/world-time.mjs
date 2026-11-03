@@ -1,4 +1,4 @@
-import {appliedWorldEffects, expireAppliedEffects} from "./effects.mjs";
+import {appliedWorldEffects, expireAppliedEffects, isManagedItemTransformation} from "./effects.mjs";
 import {processWorldConsequences} from "./consequences.mjs";
 import {escapeHtml} from "./helpers.mjs";
 
@@ -25,7 +25,10 @@ export function advanceWorldTime({value = 1, unit = "days"} = {}) {
   advancingTime = (async () => {
     const registry = foundry.documents.ActiveEffect.implementation.registry;
     // Register synthetic actors on inactive scenes too; library templates remain excluded.
-    for (const effect of appliedWorldEffects()) registry.add(effect);
+    for (const effect of appliedWorldEffects()) {
+      if (isManagedItemTransformation(effect)) registry.delete?.(effect);
+      else registry.add(effect);
+    }
     const time = await game.time.advance(seconds);
     await processWorldConsequences(time);
     await registry.refresh("updateWorldTime");

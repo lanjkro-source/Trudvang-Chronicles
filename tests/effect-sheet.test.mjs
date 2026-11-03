@@ -18,6 +18,7 @@ class StubActiveEffect {
   prepareBaseData() {}
   canUserModify(user) { return Boolean(user?.isGM || this.parent?.isOwner); }
   get isSuppressed() { return this._superSuppressed ?? false; }
+  get isExpiryTrackable() { return true; }
   async _preCreate() { return true; }
   async _preUpdate() { return true; }
 }
@@ -931,6 +932,30 @@ test("item enchantments expire by elapsed world time or combat rounds, including
   await expireAppliedEffects({time:110,combat:{id:"fight",round:4}});assert.deepEqual(deleted,[]);
   await expireAppliedEffects({time:110,combat:{id:"fight",round:5}});assert.deepEqual(deleted,["round"]);
   await expireAppliedEffects({time:115});assert.deepEqual(deleted,["round","clock"]);
+});
+
+test("item transformations use only the system expiry clock, avoiding registry updates after deletion", async t => {
+  mockTimeChat(t);
+  const previous={game:globalThis.game,registry:StubActiveEffect.implementation.registry};
+  t.after(()=>{globalThis.game=previous.game;StubActiveEffect.implementation.registry=previous.registry;});
+  const actor={documentName:"Actor",effects:[],items:[],allApplicableEffects:()=>[]};
+  const item={documentName:"Item",type:"weapon",parent:actor,effects:[]};actor.items.push(item);
+  const effect=new TrudvangActiveEffect();
+  Object.assign(effect,{id:"blessing",type:"effect",parent:item,transfer:false,system:{stages:[]},
+    _source:{duration:{value:3,units:"rounds"},start:{time:0}},duration:{expired:false},
+    flags:{"trudvang-chronicles":{transformation:{resolved:true,appliedAt:0}}},
+    async delete(){item.effects.splice(item.effects.indexOf(this),1);}});
+  item.effects.push(effect);
+  const registryEntries=new Set([effect]);let registryUpdates=0;
+  StubActiveEffect.implementation.registry={add:e=>registryEntries.add(e),delete:e=>registryEntries.delete(e),
+    async refresh(){for(const e of registryEntries){registryUpdates++;if(!item.effects.includes(e))throw Error("update of deleted effect");}}};
+  globalThis.game={user:{isGM:true},users:{activeGM:{isSelf:true}},actors:[actor],scenes:[],
+    time:{worldTime:0,async advance(seconds){this.worldTime+=seconds;await expireAppliedEffects({time:this.worldTime,itemTransformationsOnly:true});return this.worldTime;}},
+    i18n:{lang:"fr",localize:key=>key,format:key=>key}};
+  assert.equal(effect.isExpiryTrackable,false);
+  await advanceWorldTime({value:1,unit:"minutes"});
+  assert.equal(item.effects.length,0);assert.equal(registryUpdates,0);
+  effect.transfer=true;assert.equal(effect.isExpiryTrackable,true);
 });
 
 test("managed consequence clocks keep native expiry from suppressing intermediate stages",async()=>{
