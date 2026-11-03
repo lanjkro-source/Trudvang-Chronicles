@@ -1,0 +1,53 @@
+{
+  "_id": "qbZYHWoUpVqWrXsY",
+  "_key": "!items!qbZYHWoUpVqWrXsY",
+  "name": "Wolf Claws",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+    "description": "The hands grow claws usable in unarmed combat. Damage and the open-roll threshold reflect the chosen power levels.",
+    "summary": "Claws replace the damage of the unarmed attack.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "XVw4QdFaGbHcIdJe",
+      "_key": "!items.effects!qbZYHWoUpVqWrXsY.XVw4QdFaGbHcIdJe",
+      "name": "Wolf Claws",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The hands grow claws usable in unarmed combat. Damage and the open-roll threshold reflect the chosen power levels.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"isUnarmed\":true}]",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+            "sourceId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+            "summary": "Claws replace the damage of the unarmed attack.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

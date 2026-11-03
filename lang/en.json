@@ -4868,7 +4868,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
             "1": "Increase the duration by 1 minute",
-            "2": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+            "2": "Increase damage one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1 > 1d10 OR 8 + 2"
           }
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
@@ -14238,6 +14238,15 @@
           "SourcePage": "143",
           "Duration": "5 action rounds"
         },
+        "vitner-witchcraft:phantom-plague:1#effect": {
+          "Name": "Phantom Plague (Vitner)",
+          "Summary": "Illusory symptoms and a -5 penalty to social interaction.",
+          "Description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+          "SourceName": "Phantom Plague",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "3 days"
+        },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Curse Creature",
           "Summary": "Curse Creature",
@@ -15740,6 +15749,16 @@
           "SourcePage": "212",
           "Duration": "1 hour"
         },
+        "holy-haminges-power-of-the-beast:wolf-claws:5#claws": {
+          "Name": "Wolf Claws",
+          "Summary": "Claws replace the damage of the unarmed attack.",
+          "Description": "The hands grow claws usable in unarmed combat. Damage and the open-roll threshold reflect the chosen power levels.",
+          "SourceName": "Wolf Claws",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "212",
+          "Duration": "3 action rounds",
+          "Attack0": "Wolf Claws"
+        },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance of the Giant",
           "Summary": "Increases Constitution and maximum health points, and grants immunity to poison and disease.",
@@ -16631,6 +16650,15 @@
           "SourcePage": "123",
           "Duration": "5 action rounds"
         },
+        "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect": {
+          "Name": "Phantom Plague (Curse)",
+          "Summary": "Illusory symptoms and a -5 penalty to social interaction.",
+          "Description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+          "SourceName": "Phantom Plague",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 days"
+        },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Curse Creature — Curses of Sonntag",
           "Summary": "Curse Creature — Curses of Sonntag",
@@ -16955,7 +16983,11 @@
       "LethalResistance": "Resistance before a lethal act: SV {value} + Psyche",
       "ArmorTargetRequired": "Drop this effect on carried armor.",
       "ArmorBlessingNormalOnly": "Protection: +{normal}; no protection against magic damage that ignores armor.",
-      "ArmorBlessingValues": "Protection: +{normal}; +{magic} against magic damage that ignores armor."
+      "ArmorBlessingValues": "Protection: +{normal}; +{magic} against magic damage that ignores armor.",
+      "SocialIllness": "Social interactions: {value} VC",
+      "IllnessResistance": "Daily resistance: SV {value} + Psyche",
+      "IllnessExamination": "Medical examination of the victim: {value} VC",
+      "AttackDamageTooltip": "Claw damage: {damage} (OR {openRoll})."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

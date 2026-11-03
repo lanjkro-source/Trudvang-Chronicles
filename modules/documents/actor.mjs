@@ -1082,7 +1082,7 @@ export class TrudvangActor extends BaseActor {
     const attack=this.transformationProfile?.unarmedAttack;
     return {
       id: "humanoid-natural", uuid: "", type: "weapon",
-      name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
+      name: attack?.name || game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
       img: "icons/svg/combat.svg",
       system: {category: "natural", isUnarmed: true, equipped: true, hand: "weapon", damage: attack?.damage??"1d5", damageBonus: 0, openRoll: attack?.openRoll??0, strengthApplies: true, weaponActions: 4}
     };

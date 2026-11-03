@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 285.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 288.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -91,7 +91,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Pouvoir de la vision | Voyage astral | sortilège | `vitner-power-of-vision:astral-voyage:5` | 4 | 0 | 1 |
 | Pouvoir de la vision | Vision véritable | sortilège | `vitner-power-of-vision:true-sight:7` | 8 | 1 | 1 |
 | Sorcellerie | Déracinement | sortilège | `vitner-witchcraft:uprooted-tree:0` | 4 | 1 | 1 |
-| Sorcellerie | Mal imaginaire | sortilège | `vitner-witchcraft:phantom-plague:1` | 3 | 1 | 0 |
+| Sorcellerie | Mal imaginaire | sortilège | `vitner-witchcraft:phantom-plague:1` | 3 | 1 | 1 |
 | Sorcellerie | Fièvre | sortilège | `vitner-witchcraft:fever:2` | 6 | 1 | 0 |
 | Sorcellerie | Malédiction d’objet | sortilège | `vitner-witchcraft:curse-object:3` | 5 | 0 | 0 |
 | Sorcellerie | Amnésie | sortilège | `vitner-witchcraft:amnesia:4` | 3 | 2 | 0 |
@@ -307,7 +307,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Pouvoir de la bête | Défenses du mastomant | pouvoir | `holy-haminges-power-of-the-beast:mastomant-s-tusks:2` | 3 | 0 | 1 |
 | Pouvoir de la bête | Endurance du sanglier | pouvoir | `holy-haminges-power-of-the-beast:endurance-of-the-boar:3` | 2 | 0 | 1 |
 | Pouvoir de la bête | Fourrure du mastomant | pouvoir | `holy-haminges-power-of-the-beast:mastomant-s-fur:4` | 2 | 0 | 1 |
-| Pouvoir de la bête | Griffes du loup | pouvoir | `holy-haminges-power-of-the-beast:wolf-claws:5` | 3 | 0 | 0 |
+| Pouvoir de la bête | Griffes du loup | pouvoir | `holy-haminges-power-of-the-beast:wolf-claws:5` | 3 | 0 | 1 |
 | Pouvoir de la bête | Endurance du géant | pouvoir | `holy-haminges-power-of-the-beast:endurance-of-the-giant:6` | 2 | 0 | 1 |
 | Pouvoir de la bête | Maître des loups | pouvoir | `holy-haminges-power-of-the-beast:master-of-wolfkin:7` | 4 | 0 | 1 |
 | Pouvoir de la bête | Aspect du mastomant | pouvoir | `holy-haminges-power-of-the-beast:mastomantshape:8` | 4 | 0 | 1 |
@@ -429,7 +429,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vue de Lekaba | Voyage astral | pouvoir | `holy-joaringfaith-sight-of-lekaba:astral-voyage:6` | 4 | 0 | 1 |
 | Vue de Lekaba | Vision véritable | pouvoir | `holy-joaringfaith-sight-of-lekaba:true-sight:7` | 8 | 1 | 1 |
 | Malédictions de Sonntag | Déracinement | pouvoir | `holy-joaringfaith-curses-of-sonntag:uprooted-tree:0` | 4 | 1 | 1 |
-| Malédictions de Sonntag | Mal imaginaire | pouvoir | `holy-joaringfaith-curses-of-sonntag:phantom-plague:1` | 3 | 1 | 0 |
+| Malédictions de Sonntag | Mal imaginaire | pouvoir | `holy-joaringfaith-curses-of-sonntag:phantom-plague:1` | 3 | 1 | 1 |
 | Malédictions de Sonntag | Fièvre | pouvoir | `holy-joaringfaith-curses-of-sonntag:fever:2` | 6 | 1 | 0 |
 | Malédictions de Sonntag | Malédiction d’objet | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-object:3` | 5 | 0 | 0 |
 | Malédictions de Sonntag | Amnésie | pouvoir | `holy-joaringfaith-curses-of-sonntag:amnesia:4` | 3 | 2 | 0 |

@@ -11500,6 +11500,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.SourcePage` | 143 | 184 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:uprooted-tree:0#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.Name` | Phantom Plague (Vitner) | Mal imaginaire (vitner) |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.Description` | The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below. | La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.SourceName` | Phantom Plague | Mal imaginaire |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.SourcePage` | 143 | 184 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:phantom-plague:1#effect.Duration` | 3 days | 3 jours |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-creature:5#effect`
 
 | Clé | English | Français |
@@ -13332,6 +13343,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.SourcePage` | 212 | 269 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Name` | Wolf Claws | Griffes du loup |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Description` | The hands grow claws usable in unarmed combat. Damage and the open-roll threshold reflect the chosen power levels. | Les mains portent des griffes utilisables en combat à mains nues. Les dégâts et le jet ouvert tiennent compte des niveaux de puissance choisis. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.SourceName` | Wolf Claws | Griffes du loup |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.SourcePage` | 212 | 269 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Duration` | 3 action rounds | 3 tours de jeu |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Attack0` | Wolf Claws | Griffes du loup |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant`
 
 | Clé | English | Français |
@@ -14417,6 +14440,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.Name` | Phantom Plague (Curse) | Mal imaginaire (malédiction) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.Description` | The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below. | La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.SourceName` | Phantom Plague | Mal imaginaire |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect.Duration` | 3 days | 3 jours |
+
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect`
 
 | Clé | English | Français |
@@ -14790,6 +14824,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ArmorTargetRequired` | Drop this effect on carried armor. | Déposez cet effet sur une armure portée. |
 | `TRUDVANG.Transformation.ArmorBlessingNormalOnly` | Protection: +{normal}; no protection against magic damage that ignores armor. | Protection : +{normal} VP ; aucune protection contre les dégâts magiques ignorant les armures. |
 | `TRUDVANG.Transformation.ArmorBlessingValues` | Protection: +{normal}; +{magic} against magic damage that ignores armor. | Protection : +{normal} VP ; +{magic} VP contre les dégâts magiques ignorant les armures. |
+| `TRUDVANG.Transformation.SocialIllness` | Social interactions: {value} VC | Interactions sociales : {value} VC |
+| `TRUDVANG.Transformation.IllnessResistance` | Daily resistance: SV {value} + Psyche | Résistance quotidienne : SV {value} + Psychisme |
+| `TRUDVANG.Transformation.IllnessExamination` | Medical examination of the victim: {value} VC | Examen médical de la victime : {value} VC |
+| `TRUDVANG.Transformation.AttackDamageTooltip` | Claw damage: {damage} (OR {openRoll}). | Dégâts des griffes : {damage} (JO {openRoll}). |
 
 ## `TRUDVANG.Transformation.Modes`
 

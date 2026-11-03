@@ -1,0 +1,45 @@
+{
+  "_id": "ZaO8heGbHcIdJeKf",
+  "_key": "!items!ZaO8heGbHcIdJeKf",
+  "name": "Phantom Plague (Vitner)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:phantom-plague:1#effect",
+    "description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+    "summary": "Illusory symptoms and a -5 penalty to social interaction.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 143
+    }
+  },
+  "effects": [
+    {
+      "_id": "EDvcBrWrXsYtZu0v",
+      "_key": "!items.effects!ZaO8heGbHcIdJeKf.EDvcBrWrXsYtZu0v",
+      "name": "Phantom Plague (Vitner)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:phantom-plague:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:phantom-plague:1#effect",
+            "sourceId": "vitner-witchcraft:phantom-plague:1",
+            "summary": "Illusory symptoms and a -5 penalty to social interaction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

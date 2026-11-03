@@ -1,0 +1,53 @@
+{
+  "_id": "qbZYHWoUpVqWrXsY",
+  "_key": "!items!qbZYHWoUpVqWrXsY",
+  "name": "Griffes du loup",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+    "description": "Les mains portent des griffes utilisables en combat à mains nues. Les dégâts et le jet ouvert tiennent compte des niveaux de puissance choisis.",
+    "summary": "Les griffes remplacent les dégâts de l’attaque à mains nues.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "XVw4QdFaGbHcIdJe",
+      "_key": "!items.effects!qbZYHWoUpVqWrXsY.XVw4QdFaGbHcIdJe",
+      "name": "Griffes du loup",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les mains portent des griffes utilisables en combat à mains nues. Les dégâts et le jet ouvert tiennent compte des niveaux de puissance choisis.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.attacks",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"isUnarmed\":true}]",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:wolf-claws:5#claws",
+            "sourceId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+            "summary": "Les griffes remplacent les dégâts de l’attaque à mains nues.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

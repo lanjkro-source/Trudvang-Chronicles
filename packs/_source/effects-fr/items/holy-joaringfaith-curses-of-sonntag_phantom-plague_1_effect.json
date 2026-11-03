@@ -1,0 +1,45 @@
+{
+  "_id": "F2paLNiOjPkQlRmS",
+  "_key": "!items!F2paLNiOjPkQlRmS",
+  "name": "Mal imaginaire (malédiction)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+    "description": "La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous.",
+    "summary": "Symptômes illusoires et malus de -5 aux interactions sociales.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "UTiTeOfLgMhNiOjP",
+      "_key": "!items.effects!F2paLNiOjPkQlRmS.UTiTeOfLgMhNiOjP",
+      "name": "Mal imaginaire (malédiction)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
+            "summary": "Symptômes illusoires et malus de -5 aux interactions sociales.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

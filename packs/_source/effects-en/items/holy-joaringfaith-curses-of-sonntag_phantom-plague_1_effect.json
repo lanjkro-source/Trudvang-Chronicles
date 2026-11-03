@@ -1,0 +1,45 @@
+{
+  "_id": "F2paLNiOjPkQlRmS",
+  "_key": "!items!F2paLNiOjPkQlRmS",
+  "name": "Phantom Plague (Curse)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+    "description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+    "summary": "Illusory symptoms and a -5 penalty to social interaction.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "UTiTeOfLgMhNiOjP",
+      "_key": "!items.effects!F2paLNiOjPkQlRmS.UTiTeOfLgMhNiOjP",
+      "name": "Phantom Plague (Curse)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The victim displays symptoms of a feared illness without actual harm to health. A situation test to discover the illusion may be repeated each day. Tests involving social interaction suffer a -5 penalty. A healer can examine the victim; any penalty to that examination is shown below.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
+            "summary": "Illusory symptoms and a -5 penalty to social interaction.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

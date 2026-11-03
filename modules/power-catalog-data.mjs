@@ -2963,6 +2963,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:wolf-claws:5": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:0",
@@ -4036,6 +4041,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:0",
@@ -11942,6 +11951,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:phantom-plague:1": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "vitner-witchcraft:phantom-plague:1:0",

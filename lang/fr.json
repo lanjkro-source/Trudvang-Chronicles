@@ -4868,7 +4868,7 @@
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
             "1": "Augmente la durée du pouvoir de : 1 minute",
-            "2": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+            "2": "Augmente les dégâts d’un degré : 1d10 JO 10 > 1d10 JO 9 > 1d10 JO 8 > 1d10 JO 8 + 1 > 1d10 JO 8 + 2"
           }
         },
         "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
@@ -14238,6 +14238,15 @@
           "SourcePage": "184",
           "Duration": "5 tours de jeu"
         },
+        "vitner-witchcraft:phantom-plague:1#effect": {
+          "Name": "Mal imaginaire (vitner)",
+          "Summary": "Symptômes illusoires et malus de -5 aux interactions sociales.",
+          "Description": "La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous.",
+          "SourceName": "Mal imaginaire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "184",
+          "Duration": "3 jours"
+        },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Malédiction de créature",
           "Summary": "Malédiction de créature",
@@ -15740,6 +15749,16 @@
           "SourcePage": "269",
           "Duration": "1 heure"
         },
+        "holy-haminges-power-of-the-beast:wolf-claws:5#claws": {
+          "Name": "Griffes du loup",
+          "Summary": "Les griffes remplacent les dégâts de l’attaque à mains nues.",
+          "Description": "Les mains portent des griffes utilisables en combat à mains nues. Les dégâts et le jet ouvert tiennent compte des niveaux de puissance choisis.",
+          "SourceName": "Griffes du loup",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "269",
+          "Duration": "3 tours de jeu",
+          "Attack0": "Griffes du loup"
+        },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
           "Name": "Endurance du géant",
           "Summary": "Augmente la Constitution et le maximum de points de santé, et immunise aux poisons et aux maladies.",
@@ -16631,6 +16650,15 @@
           "SourcePage": "123",
           "Duration": "5 tours de jeu"
         },
+        "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect": {
+          "Name": "Mal imaginaire (malédiction)",
+          "Summary": "Symptômes illusoires et malus de -5 aux interactions sociales.",
+          "Description": "La victime présente les symptômes visibles d’une maladie redoutée sans que sa santé réelle soit affectée. Elle peut découvrir l’illusion par un test de situation, renouvelable chaque jour. Les tests impliquant des interactions sociales subissent un malus de -5. Un guérisseur peut examiner la victime ; le malus éventuel à son examen est indiqué ci-dessous.",
+          "SourceName": "Mal imaginaire",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "3 jours"
+        },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Malédiction de créature — Malédictions de Sonntag",
           "Summary": "Malédiction de créature — Malédictions de Sonntag",
@@ -16955,7 +16983,11 @@
       "LethalResistance": "Résistance avant un acte meurtrier : SV {value} + Psychisme",
       "ArmorTargetRequired": "Déposez cet effet sur une armure portée.",
       "ArmorBlessingNormalOnly": "Protection : +{normal} VP ; aucune protection contre les dégâts magiques ignorant les armures.",
-      "ArmorBlessingValues": "Protection : +{normal} VP ; +{magic} VP contre les dégâts magiques ignorant les armures."
+      "ArmorBlessingValues": "Protection : +{normal} VP ; +{magic} VP contre les dégâts magiques ignorant les armures.",
+      "SocialIllness": "Interactions sociales : {value} VC",
+      "IllnessResistance": "Résistance quotidienne : SV {value} + Psychisme",
+      "IllnessExamination": "Examen médical de la victime : {value} VC",
+      "AttackDamageTooltip": "Dégâts des griffes : {damage} (JO {openRoll})."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

@@ -65,6 +65,7 @@ for(const kind of ["powers","feats"]){
      source:{...(c==="fr"?entry:englishEntry).source,name:(c==="fr"?entry:englishEntry).name},
      ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:effectParameters(entry,t)});
    const sourceRules=rulesFromChanges(t.changes),translatedRules=rulesFromChanges(translated.changes);
+   if(t.attackTooltip!==translated.attackTooltip || (t.attackTooltip!==undefined&&(!Number.isInteger(t.attackTooltip)||!sourceRules.attacks?.[t.attackTooltip])))throw Error(`Invalid attack tooltip for ${key}`);
    for(const id of sourceRules.powerIds??[])if(!powerIds.has(id))throw Error(`Unknown granted power ${id} in ${key}`);
    if(t.levelParameter){
     if(!Number.isFinite(t.levelParameter.default)||!(t.levelParameter.knowledge?.every(id=>typeof sourceRules.knowledge?.[id]==="number")||(t.levelParameter.note===true&&(entry.effectParameters??[]).some(p=>p.target==="note"&&Number(p.perLevel)>0))))throw Error(`Invalid level scaling in ${key}`);

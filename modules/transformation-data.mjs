@@ -1915,6 +1915,52 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-witchcraft:uprooted-tree:0",
     "parameters": []
   },
+  "vitner-witchcraft:phantom-plague:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 jours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-witchcraft:phantom-plague:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": -5,
+        "value": 0,
+        "optionId": "vitner-witchcraft:phantom-plague:1:0",
+        "labelKey": "TRUDVANG.Transformation.SocialIllness",
+        "skillChoice": true,
+        "tooltip": true
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "vitner-witchcraft:phantom-plague:1:0",
+        "labelKey": "TRUDVANG.Transformation.IllnessResistance",
+        "skillOnly": true
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 0,
+        "value": -1,
+        "optionId": "vitner-witchcraft:phantom-plague:1:1",
+        "labelKey": "TRUDVANG.Transformation.IllnessExamination",
+        "skillOnly": true
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-witchcraft:phantom-plague:1:2"
+      }
+    ]
+  },
   "vitner-witchcraft:curse-creature:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -7400,6 +7446,67 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-the-beast:wolf-claws:5#claws": {
+    "id": "claws",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.attacks",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-haminges-power-of-the-beast:wolf-claws:5#claws.Attack0\",\"damage\":\"1d10\",\"openRoll\":10,\"isUnarmed\":true}]",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "attackTooltip": 0,
+    "sourceId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-haminges-power-of-the-beast:wolf-claws:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-beast:wolf-claws:5:1"
+      },
+      {
+        "index": 2,
+        "target": "attackStep",
+        "attack": 0,
+        "steps": [
+          {
+            "damage": "1d10",
+            "openRoll": 10
+          },
+          {
+            "damage": "1d10",
+            "openRoll": 9
+          },
+          {
+            "damage": "1d10",
+            "openRoll": 8
+          },
+          {
+            "damage": "1d10 + 1",
+            "openRoll": 8
+          },
+          {
+            "damage": "1d10 + 2",
+            "openRoll": 8
+          }
+        ],
+        "optionId": "holy-haminges-power-of-the-beast:wolf-claws:5:2"
+      }
+    ]
+  },
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant": {
     "id": "endurance-du-geant",
     "icon": "icons/svg/aura.svg",
@@ -11121,6 +11228,52 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0",
     "parameters": []
   },
+  "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 jours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": -5,
+        "value": 0,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:0",
+        "labelKey": "TRUDVANG.Transformation.SocialIllness",
+        "skillChoice": true,
+        "tooltip": true
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:0",
+        "labelKey": "TRUDVANG.Transformation.IllnessResistance",
+        "skillOnly": true
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 0,
+        "value": -1,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:1",
+        "labelKey": "TRUDVANG.Transformation.IllnessExamination",
+        "skillOnly": true
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:2"
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -12093,6 +12246,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:uprooted-tree:0": [
     "vitner-witchcraft:uprooted-tree:0#effect"
   ],
+  "vitner-witchcraft:phantom-plague:1": [
+    "vitner-witchcraft:phantom-plague:1#effect"
+  ],
   "vitner-witchcraft:curse-creature:5": [
     "vitner-witchcraft:curse-creature:5#effect"
   ],
@@ -12546,6 +12702,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-beast:mastomant-s-fur:4": [
     "holy-haminges-power-of-the-beast:mastomant-s-fur:4#effect"
   ],
+  "holy-haminges-power-of-the-beast:wolf-claws:5": [
+    "holy-haminges-power-of-the-beast:wolf-claws:5#claws"
+  ],
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": [
     "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant"
   ],
@@ -12804,6 +12963,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": [
     "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": [
+    "holy-joaringfaith-curses-of-sonntag:phantom-plague:1#effect"
   ],
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
     "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"

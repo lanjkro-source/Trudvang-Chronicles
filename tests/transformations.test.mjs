@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,300);
+ assert.equal(Object.keys(sources).length,303);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -119,6 +119,36 @@ test("mental influence records the task and both improved resistance tests",asyn
   assert.match(created.description,/SV 10 \+ Psychisme/);
   const enriched=annotateRuleTestDescription(created.description,created);
   assert.match(enriched,/data-test-index="0"/);assert.match(enriched,/data-test-index="1"/);
+ }finally{globalThis.game=previous;}
+});
+test("both phantom plague variants retain independent resistance and examination modifiers",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  for(const id of ['vitner-witchcraft:phantom-plague:1','holy-joaringfaith-curses-of-sonntag:phantom-plague:1']){
+   await applyTransformation(actor,`${id}#effect`,{counts:[2,3,1],skipDialog:true});
+   assert.deepEqual(created.duration,{value:4,units:'days'});
+   assert.match(created.description,/SV 6 \+ Psychisme/);
+   assert.match(created.description,/victime : -3 VC/);
+   assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+  }
+ }finally{globalThis.game=previous;}
+});
+test("wolf claws begin at open roll 10 and progress from that baseline",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  const values=[['1d10',10],['1d10',9],['1d10',8],['1d10 + 1',8],['1d10 + 2',8]];
+  for(let count=0;count<values.length;count++){
+   await applyTransformation(actor,'holy-haminges-power-of-the-beast:wolf-claws:5#claws',{counts:[0,0,count],skipDialog:true});
+   const attack=effectRules(created).attacks[0];
+   assert.equal(attack.isUnarmed,true);assert.deepEqual([attack.damage,attack.openRoll],values[count]);
+   assert.match(created.flags[S].transformation.summary,new RegExp(`JO ${values[count][1]}`));
+  }
  }finally{globalThis.game=previous;}
 });
 
