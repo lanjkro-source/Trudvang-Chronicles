@@ -2818,7 +2818,9 @@ export const BESTIARY_ENTRIES = [
         "portraits": [
           "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg"
         ],
-        "tags": [],
+        "tags": [
+          "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Tag0"
+        ],
         "traits": {
           "charisma": -2,
           "constitution": 2,
@@ -3741,7 +3743,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
           "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG-2.jpg"
         ],
-        "tags": [],
+        "tags": [
+          "TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Tag0"
+        ],
         "traits": {},
         "skills": {},
         "senses": [
@@ -5768,7 +5772,9 @@ export const BESTIARY_ENTRIES = [
           "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
           "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY-2.jpg"
         ],
-        "tags": [],
+        "tags": [
+          "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Tag0"
+        ],
         "traits": {
           "constitution": 1,
           "intelligence": -4,

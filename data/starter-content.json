@@ -273,20 +273,41 @@
         "catalogId": "trudvang-surprised",
         "summaryKey": "TRUDVANG.Content.Item.Surprised.Summary",
         "descriptionKey": "TRUDVANG.Content.Item.Surprised.Description",
-        "source": {"bookKey": "TRUDVANG.Content.Item.Surprised.Book", "page": 320}
+        "source": {
+          "bookKey": "TRUDVANG.Content.Item.Surprised.Book",
+          "page": 320
+        }
       },
-      "effects": [{
-        "nameKey": "TRUDVANG.Content.Item.Surprised.Name",
-        "descriptionKey": "TRUDVANG.Content.Item.Surprised.Description",
-        "img": "systems/trudvang-chronicles/assets/icons/statuses/surprised.svg",
-        "type": "effect",
-        "statuses": ["trudvang-surprised"],
-        "transfer": false,
-        "disabled": false,
-        "duration": {"value": null, "units": "seconds", "expiry": null, "expired": false},
-        "system": {"stackId": "trudvang-surprised", "stacking": "replace", "changes": [], "stages": []},
-        "flags": {"trudvang-chronicles": {"untilRoundEnd": true}}
-      }]
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.Surprised.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.Surprised.Description",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/surprised.svg",
+          "type": "effect",
+          "statuses": [
+            "trudvang-surprised"
+          ],
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-surprised",
+            "stacking": "replace",
+            "changes": [],
+            "stages": []
+          },
+          "flags": {
+            "trudvang-chronicles": {
+              "untilRoundEnd": true
+            }
+          }
+        }
+      ]
     },
     {
       "nameKey": "TRUDVANG.Content.Item.Glaaf.Name",
@@ -2375,7 +2396,11 @@
   "tables": [
     {
       "nameKey": "TRUDVANG.Content.Table.HeadRegeneration.Name",
-      "flags": {"trudvang-chronicles": {"starterId": "huvfurwurm-head-regeneration"}},
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "huvfurwurm-head-regeneration"
+        }
+      },
       "descriptionKey": "TRUDVANG.Content.Table.HeadRegeneration.Description",
       "img": "icons/svg/regen.svg",
       "folder": "gmTables",
@@ -2383,23 +2408,142 @@
       "displayRoll": true,
       "replacement": true,
       "results": [
-        {"type": "text", "range": [2, 4], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E2"},
-        {"type": "text", "range": [5, 5], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E5"},
-        {"type": "text", "range": [6, 6], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E6"},
-        {"type": "text", "range": [7, 7], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E7"},
-        {"type": "text", "range": [8, 8], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E8"},
-        {"type": "text", "range": [9, 9], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E9"},
-        {"type": "text", "range": [10, 10], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E10"},
-        {"type": "text", "range": [11, 11], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E11"},
-        {"type": "text", "range": [12, 12], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E12"},
-        {"type": "text", "range": [13, 13], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E13"},
-        {"type": "text", "range": [14, 14], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E14"},
-        {"type": "text", "range": [15, 15], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E15"},
-        {"type": "text", "range": [16, 16], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E16"},
-        {"type": "text", "range": [17, 17], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E17"},
-        {"type": "text", "range": [18, 18], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E18"},
-        {"type": "text", "range": [19, 19], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E19"},
-        {"type": "text", "range": [20, 20], "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E20"}
+        {
+          "type": "text",
+          "range": [
+            2,
+            4
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E2"
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E5"
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E6"
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E7"
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E8"
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E9"
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E10"
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E11"
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E12"
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E13"
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E14"
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E15"
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E16"
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E17"
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E18"
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E19"
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "textKey": "TRUDVANG.Content.Table.HeadRegeneration.E20"
+        }
       ]
     },
     {

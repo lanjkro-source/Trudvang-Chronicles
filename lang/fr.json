@@ -12306,6 +12306,7 @@
           "Weapon0Part0": "Morsure",
           "Weapon1Part0": "Griffure",
           "Name": "Beinbaiter",
+          "Tag0": "mort-vivant",
           "Sense0": "Vision normale",
           "Sense1": "Vision nocturne",
           "Description": "Le beinbaiter est une créature primitive née du cadavre d'un homme atteint de la peste noire. Sa gueule est armée pour mordre la chair et briser les os afin d'en sucer la moelle. Ses pattes sont munies de griffes acérées capables de lacérer ses victimes. Son corps en décomposition exhale une horrible puanteur impossible à dissiper. Cette puanteur imprègne durablement les vêtements et diffère de celle des trolls ou des latrines. Elle trahit sa présence bien avant qu'on ne le voie.",
@@ -12372,6 +12373,7 @@
         },
         "5ouPJD6B7C8D9EaG": {
           "Name": "Diser",
+          "Tag0": "mort-vivant",
           "Sense0": "Vision normale",
           "Sense1": "Perception de la vie",
           "Sense2": "Vision dans le noir",
@@ -12524,6 +12526,7 @@
           "Weapon1Part0": "Mains nues",
           "Weapon2": "Barda klót (chaîne de bataille)",
           "Name": "Sombre horreur",
+          "Tag0": "mort-vivant",
           "Sense0": "Vision normale",
           "Sense1": "Vision dans le noir",
           "Description": "La sombre horreur est une grande et horrible créature composée de vieux os, de racines, de branches et de terre trempés de sang répandu. Elle est formée de tout ce qui se trouvait dans la terre au moment du sacrifice, parfois de cadavres en décomposition et de souches sacrificielles. Son corps le plus courant est semblable à celui d'un humain ou d'un animal, avec une ou plusieurs têtes humaines ou animales. Elle porte sur elle des bouts de corps humains ou d'animaux qui lui servent de protection et d'armure. Sa forme est livrée au hasard : deux, trois, quatre, cinq ou six jambes, bras et têtes en nombre variable.",

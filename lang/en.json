@@ -12306,6 +12306,7 @@
           "Weapon0Part0": "Bite",
           "Weapon1Part0": "Claws",
           "Name": "Beinbaiter",
+          "Tag0": "undead",
           "Sense0": "Normal sight",
           "Sense1": "Low-Light Vision",
           "Description": "The beinbaiter is a primitive creature born from the corpse of a man who died of the black plague. Its jaws bite flesh and break bones to suck out their marrow. Its feet bear sharp claws capable of tearing its victims. Its decomposing body gives off a horrible stench that cannot be dispelled. This smell lingers in clothing and differs from the smell of trolls or latrines. It betrays the creature's presence long before it can be seen.",
@@ -12372,6 +12373,7 @@
         },
         "5ouPJD6B7C8D9EaG": {
           "Name": "Diser",
+          "Tag0": "undead",
           "Sense0": "Normal sight",
           "Sense1": "Sense Life",
           "Sense2": "Darkvision",
@@ -12524,6 +12526,7 @@
           "Weapon1Part0": "Unarmed",
           "Weapon2": "Barda klót (battle chain)",
           "Name": "Dark Dweller",
+          "Tag0": "undead",
           "Sense0": "Normal sight",
           "Sense1": "Darkvision",
           "Description": "The dark dweller is a large, horrible creature made of old bones, roots, branches, and earth soaked in spilled blood. It forms from whatever lay in the soil at the sacrifice, sometimes including decomposing corpses and sacrificial stumps. Its most common body resembles a human or animal with one or more human or animal heads. Pieces of human or animal bodies cover it as protection and armor. Chance determines its form: two, three, four, five, or six legs, and variable numbers of arms and heads.",

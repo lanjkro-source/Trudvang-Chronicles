@@ -9301,6 +9301,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon0Part0` | Bite | Morsure |
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon1Part0` | Claws | Griffure |
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Name` | Beinbaiter | Beinbaiter |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Sense1` | Low-Light Vision | Vision nocturne |
 | `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Description` | The beinbaiter is a primitive creature born from the corpse of a man who died of the black plague. Its jaws bite flesh and break bones to suck out their marrow. Its feet bear sharp claws capable of tearing its victims. Its decomposing body gives off a horrible stench that cannot be dispelled. This smell lingers in clothing and differs from the smell of trolls or latrines. It betrays the creature's presence long before it can be seen. | Le beinbaiter est une créature primitive née du cadavre d'un homme atteint de la peste noire. Sa gueule est armée pour mordre la chair et briser les os afin d'en sucer la moelle. Ses pattes sont munies de griffes acérées capables de lacérer ses victimes. Son corps en décomposition exhale une horrible puanteur impossible à dissiper. Cette puanteur imprègne durablement les vêtements et diffère de celle des trolls ou des latrines. Elle trahit sa présence bien avant qu'on ne le voie. |
@@ -9371,6 +9372,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Name` | Diser | Diser |
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense1` | Sense Life | Perception de la vie |
 | `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Sense2` | Darkvision | Vision dans le noir |
@@ -9535,6 +9537,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon1Part0` | Unarmed | Mains nues |
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon2` | Barda klót (battle chain) | Barda klót (chaîne de bataille) |
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Name` | Dark Dweller | Sombre horreur |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Tag0` | undead | mort-vivant |
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Sense0` | Normal sight | Vision normale |
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Sense1` | Darkvision | Vision dans le noir |
 | `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Description` | The dark dweller is a large, horrible creature made of old bones, roots, branches, and earth soaked in spilled blood. It forms from whatever lay in the soil at the sacrifice, sometimes including decomposing corpses and sacrificial stumps. Its most common body resembles a human or animal with one or more human or animal heads. Pieces of human or animal bodies cover it as protection and armor. Chance determines its form: two, three, four, five, or six legs, and variable numbers of arms and heads. | La sombre horreur est une grande et horrible créature composée de vieux os, de racines, de branches et de terre trempés de sang répandu. Elle est formée de tout ce qui se trouvait dans la terre au moment du sacrifice, parfois de cadavres en décomposition et de souches sacrificielles. Son corps le plus courant est semblable à celui d'un humain ou d'un animal, avec une ou plusieurs têtes humaines ou animales. Elle porte sur elle des bouts de corps humains ou d'animaux qui lui servent de protection et d'armure. Sa forme est livrée au hasard : deux, trois, quatre, cinq ou six jambes, bras et têtes en nombre variable. |
