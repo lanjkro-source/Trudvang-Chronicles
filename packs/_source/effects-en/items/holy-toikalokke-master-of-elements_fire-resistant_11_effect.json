@@ -1,0 +1,45 @@
+{
+  "_id": "GMq8QfIdJeKfLgMh",
+  "_key": "!items!GMq8QfIdJeKfLgMh",
+  "name": "Fire Resistance",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+    "description": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+    "summary": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZodDs6A6B7C8D9Ea",
+      "_key": "!items.effects!GMq8QfIdJeKfLgMh.ZodDs6A6B7C8D9Ea",
+      "name": "Fire Resistance",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:fire-resistant:11",
+            "summary": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

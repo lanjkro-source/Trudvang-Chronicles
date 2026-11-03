@@ -1,0 +1,45 @@
+{
+  "_id": "IzlK6z1w2x3y4z5A",
+  "_key": "!items!IzlK6z1w2x3y4z5A",
+  "name": "Skin of the Hrim Troll",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+    "description": "Protects the caster from non-magical cold. Apply manually.",
+    "summary": "Protects the caster from non-magical cold. Apply manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "Roc0pYpVqWrXsYtZ",
+      "_key": "!items.effects!IzlK6z1w2x3y4z5A.Roc0pYpVqWrXsYtZ",
+      "name": "Skin of the Hrim Troll",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Protects the caster from non-magical cold. Apply manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+            "sourceId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
+            "summary": "Protects the caster from non-magical cold. Apply manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

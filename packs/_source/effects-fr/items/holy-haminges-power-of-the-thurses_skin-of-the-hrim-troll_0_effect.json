@@ -1,0 +1,45 @@
+{
+  "_id": "IzlK6z1w2x3y4z5A",
+  "_key": "!items!IzlK6z1w2x3y4z5A",
+  "name": "Peau du hrimtroll",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+    "description": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+    "summary": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 276
+    }
+  },
+  "effects": [
+    {
+      "_id": "Roc0pYpVqWrXsYtZ",
+      "_key": "!items.effects!IzlK6z1w2x3y4z5A.Roc0pYpVqWrXsYtZ",
+      "name": "Peau du hrimtroll",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect",
+            "sourceId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
+            "summary": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

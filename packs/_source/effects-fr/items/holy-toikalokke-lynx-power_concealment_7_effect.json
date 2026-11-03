@@ -1,0 +1,45 @@
+{
+  "_id": "5ymOT4v1w2x3y4z5",
+  "_key": "!items!5ymOT4v1w2x3y4z5",
+  "name": "Camouflage de l’ihana",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:concealment:7#effect",
+    "description": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+    "summary": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 294
+    }
+  },
+  "effects": [
+    {
+      "_id": "cjkp4iNiOjPkQlRm",
+      "_key": "!items.effects!5ymOT4v1w2x3y4z5.cjkp4iNiOjPkQlRm",
+      "name": "Camouflage de l’ihana",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:concealment:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:concealment:7#effect",
+            "sourceId": "holy-toikalokke-lynx-power:concealment:7",
+            "summary": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

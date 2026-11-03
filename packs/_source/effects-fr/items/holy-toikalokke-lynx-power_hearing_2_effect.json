@@ -1,0 +1,45 @@
+{
+  "_id": "FCYo8Zu0v1w2x3y4",
+  "_key": "!items!FCYo8Zu0v1w2x3y4",
+  "name": "Ouïe fine",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:hearing:2#effect",
+    "description": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+    "summary": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 294
+    }
+  },
+  "effects": [
+    {
+      "_id": "8jqVgiJeKfLgMhNi",
+      "_key": "!items.effects!FCYo8Zu0v1w2x3y4.8jqVgiJeKfLgMhNi",
+      "name": "Ouïe fine",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:hearing:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:hearing:2#effect",
+            "sourceId": "holy-toikalokke-lynx-power:hearing:2",
+            "summary": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -11092,6 +11092,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.SourcePage` | 109 | 167 |
 | `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.Name` | Protection from Fire | Protection contre le feu |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.Description` | Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually. | Protège la créature et son équipement contre le feu ordinaire, mais pas contre les flammes magiques ou le feu des dragons. À appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.SourceName` | Protection from Fire | Protection contre le feu |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.SourcePage` | 109 | 168 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect.Duration` | 5 minutes | 5 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-flame-craft:warmth:6#effect`
 
 | Clé | English | Français |
@@ -13443,6 +13454,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.SourcePage` | 221 | 275 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.Name` | Skin of the Hrim Troll | Peau du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.Description` | Protects the caster from non-magical cold. Apply manually. | Protège le conjurateur contre le froid non magique. À appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.SourceName` | Skin of the Hrim Troll | Peau du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.SourcePage` | 221 | 276 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje`
 
 | Clé | English | Français |
@@ -13621,6 +13643,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.SourcePage` | 239 | 293 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.Name` | Keen Hearing | Ouïe fine |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.Description` | Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius. | Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.SourceName` | Hearing | Ouïe fine |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.SourcePage` | 239 | 294 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:track:6#pistage`
 
 | Clé | English | Français |
@@ -13642,6 +13675,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.SourcePage` | 239 | 294 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:aim:5#visee.Duration` | 2 action rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.Name` | Ihana Concealment | Camouflage de l’ihana |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.Description` | The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties. | Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.SourceName` | Concealment | Camouflage |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.SourcePage` | 239 | 294 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:concealment:7#effect.Duration` | 3 hours | 3 heures |
 
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:forest-path:8#effect`
 
@@ -13920,6 +13964,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-wind:9#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-wind:9#effect.SourcePage` | 241 | 299 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:control-wind:9#effect.Duration` | 2 hours | 2 heures |
+
+## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.Name` | Fire Resistance | Résistance au feu |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.Description` | The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually. | Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.SourceName` | Fire Resistant | Résistance au feu |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.SourcePage` | 241 | 299 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-resistant:11#effect.Duration` | 10 action rounds | 10 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood`
 
@@ -14571,6 +14626,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.AnimalFriendRiding` | Horsemanship: +{value} | Maîtrise équestre : +{value} |
 | `TRUDVANG.Transformation.WeaponTargetRequired` | Drop this effect on a carried weapon or shield. | Déposez cet effet sur une arme ou un bouclier porté. |
 | `TRUDVANG.Transformation.BlessedWeaponDamage` | Damage: +{normal}; +{undead} against undead; +{demon} against demons. | Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons. |
+| `TRUDVANG.Transformation.ConcealStill` | Detection while stationary: {value} VC | Repérage à l’arrêt : {value} VC |
+| `TRUDVANG.Transformation.ConcealMoving` | Detection while moving: {value} VC | Repérage en mouvement : {value} VC |
 
 ## `TRUDVANG.Transformation.Modes`
 

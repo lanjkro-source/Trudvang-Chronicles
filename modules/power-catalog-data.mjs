@@ -3427,6 +3427,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0:0",
@@ -6723,6 +6728,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:concealment:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-lynx-power:concealment:7:0",
@@ -6795,6 +6805,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:hearing:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-lynx-power:hearing:2:0",
@@ -7048,6 +7063,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:fire-resistant:11": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:fire-resistant:11:0",
@@ -8821,6 +8841,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:protection-from-fire:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-flame-craft:protection-from-fire:4:5",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:protection-from-fire:4:0",

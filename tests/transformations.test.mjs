@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,281);
+ assert.equal(Object.keys(sources).length,286);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -68,6 +68,25 @@ test("weapon blessings require an owned weapon and preserve their improved value
   assert.match(created.description,/Dégâts : \+3 ; \+4 contre les morts-vivants ; \+5 contre les démons/);
   assert.deepEqual(created.duration,{value:16,units:"rounds"});
  }finally{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;}
+});
+test("elemental protection and sensory effects retain their chosen duration and concealment penalties",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
+ const previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,'holy-toikalokke-lynx-power:concealment:7#effect',{counts:[1,2],skipDialog:true});
+  assert.deepEqual(created.duration,{value:4,units:'hours'});
+  assert.match(created.description,/Repérage à l’arrêt : -7 VC/);
+  assert.match(created.description,/Repérage en mouvement : -3 VC/);
+  await applyTransformation(actor,'vitner-flame-craft:protection-from-fire:4#effect',{counts:[1,1,0,0,0,0],skipDialog:true});
+  assert.deepEqual(created.duration,{value:192,units:'rounds'});
+  assert.match(created.description,/feu ordinaire/);
+  await applyTransformation(actor,'holy-toikalokke-lynx-power:hearing:2#effect',{counts:[1,0,1,1],skipDialog:true});
+  assert.deepEqual(created.duration,{value:132,units:'rounds'});
+  assert.match(created.description,/50 mètres/);
+ }finally{globalThis.game=previous;}
 });
 
 test("Air Armor improves its protective barrier and duration together",async()=>{

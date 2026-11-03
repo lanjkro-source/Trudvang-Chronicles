@@ -770,6 +770,45 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-flame-craft:protection-from-fire:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "5 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      4
+    ],
+    "sourceId": "vitner-flame-craft:protection-from-fire:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-flame-craft:protection-from-fire:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-flame-craft:protection-from-fire:4:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-flame-craft:protection-from-fire:4:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-flame-craft:protection-from-fire:4:3"
+      }
+    ]
+  },
   "vitner-flame-craft:warmth:6#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -7780,6 +7819,24 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0:0"
+      }
+    ]
+  },
   "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje": {
     "id": "force-du-stenhinje",
     "icon": "icons/svg/aura.svg",
@@ -8576,6 +8633,29 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-lynx-power:hearing:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      3
+    ],
+    "sourceId": "holy-toikalokke-lynx-power:hearing:2",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-lynx-power:hearing:2:2"
+      }
+    ]
+  },
   "holy-toikalokke-lynx-power:track:6#pistage": {
     "id": "pistage",
     "icon": "icons/svg/aura.svg",
@@ -8653,6 +8733,44 @@ export const TRANSFORMATION_TEMPLATES = {
         "skillOnly": true,
         "labelKey": "TRUDVANG.Transformation.AimBonus",
         "optionId": "holy-toikalokke-lynx-power:aim:5:1"
+      }
+    ]
+  },
+  "holy-toikalokke-lynx-power:concealment:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-lynx-power:concealment:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-lynx-power:concealment:7:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": -5,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.ConcealStill",
+        "tooltip": true,
+        "skillOnly": true,
+        "optionId": "holy-toikalokke-lynx-power:concealment:7:1"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": -1,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.ConcealMoving",
+        "tooltip": false,
+        "skillOnly": true,
+        "optionId": "holy-toikalokke-lynx-power:concealment:7:1"
       }
     ]
   },
@@ -9629,6 +9747,36 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-toikalokke-master-of-elements:control-wind:9:0"
+      }
+    ]
+  },
+  "holy-toikalokke-master-of-elements:fire-resistant:11#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "10 tours de jeu",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-toikalokke-master-of-elements:fire-resistant:11",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-toikalokke-master-of-elements:fire-resistant:11:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "holy-toikalokke-master-of-elements:fire-resistant:11:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-toikalokke-master-of-elements:fire-resistant:11:2"
       }
     ]
   },
@@ -11407,6 +11555,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-flame-craft:spark:1": [
     "vitner-flame-craft:spark:1#effect"
   ],
+  "vitner-flame-craft:protection-from-fire:4": [
+    "vitner-flame-craft:protection-from-fire:4#effect"
+  ],
   "vitner-flame-craft:warmth:6": [
     "vitner-flame-craft:warmth:6#effect"
   ],
@@ -11991,6 +12142,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-thurses:troll-strength:1": [
     "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll"
   ],
+  "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0": [
+    "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect"
+  ],
   "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3": [
     "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje"
   ],
@@ -12039,11 +12193,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-toikalokke-lynx-power:orientation:0": [
     "holy-toikalokke-lynx-power:orientation:0#orientation"
   ],
+  "holy-toikalokke-lynx-power:hearing:2": [
+    "holy-toikalokke-lynx-power:hearing:2#effect"
+  ],
   "holy-toikalokke-lynx-power:track:6": [
     "holy-toikalokke-lynx-power:track:6#pistage"
   ],
   "holy-toikalokke-lynx-power:aim:5": [
     "holy-toikalokke-lynx-power:aim:5#visee"
+  ],
+  "holy-toikalokke-lynx-power:concealment:7": [
+    "holy-toikalokke-lynx-power:concealment:7#effect"
   ],
   "holy-toikalokke-lynx-power:forest-path:8": [
     "holy-toikalokke-lynx-power:forest-path:8#effect"
@@ -12100,6 +12260,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-master-of-elements:control-wind:9": [
     "holy-toikalokke-master-of-elements:control-wind:9#effect"
+  ],
+  "holy-toikalokke-master-of-elements:fire-resistant:11": [
+    "holy-toikalokke-master-of-elements:fire-resistant:11#effect"
   ],
   "holy-joaringfaith-fury-of-ogon:simmering-blood:1": [
     "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood"

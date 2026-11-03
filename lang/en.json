@@ -13904,6 +13904,15 @@
           "SourcePage": "109",
           "Duration": "1 minute"
         },
+        "vitner-flame-craft:protection-from-fire:4#effect": {
+          "Name": "Protection from Fire",
+          "Summary": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+          "Description": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+          "SourceName": "Protection from Fire",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "5 minutes"
+        },
         "vitner-flame-craft:warmth:6#effect": {
           "Name": "Warmth",
           "Summary": "Warmth",
@@ -15831,6 +15840,15 @@
           "SourcePage": "221",
           "Duration": "1 minute"
         },
+        "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect": {
+          "Name": "Skin of the Hrim Troll",
+          "Summary": "Protects the caster from non-magical cold. Apply manually.",
+          "Description": "Protects the caster from non-magical cold. Apply manually.",
+          "SourceName": "Skin of the Hrim Troll",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "221",
+          "Duration": "1 hour"
+        },
         "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje": {
           "Name": "Strength of the Stone Hinji",
           "Summary": "Raises Strength to a stenhinje’s exceptional level.",
@@ -15977,6 +15995,15 @@
           "SourcePage": "239",
           "Duration": "1 hour"
         },
+        "holy-toikalokke-lynx-power:hearing:2#effect": {
+          "Name": "Keen Hearing",
+          "Summary": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+          "Description": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+          "SourceName": "Hearing",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "1 minute"
+        },
         "holy-toikalokke-lynx-power:track:6#pistage": {
           "Name": "Lynx Tracking",
           "Summary": "Track the chosen creature: +3.",
@@ -15994,6 +16021,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "239",
           "Duration": "2 action rounds"
+        },
+        "holy-toikalokke-lynx-power:concealment:7#effect": {
+          "Name": "Ihana Concealment",
+          "Summary": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+          "Description": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+          "SourceName": "Concealment",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "239",
+          "Duration": "3 hours"
         },
         "holy-toikalokke-lynx-power:forest-path:8#effect": {
           "Name": "Forest Path",
@@ -16224,6 +16260,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "241",
           "Duration": "2 hours"
+        },
+        "holy-toikalokke-master-of-elements:fire-resistant:11#effect": {
+          "Name": "Fire Resistance",
+          "Summary": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+          "Description": "The recipient ignores natural fire damage and takes half damage from magical flames and dragon fire. Equipment and clothing are not protected. Apply manually.",
+          "SourceName": "Fire Resistant",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "241",
+          "Duration": "10 action rounds"
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
           "Name": "Simmering Blood (Fury of Ogon)",
@@ -16774,7 +16819,9 @@
       "TabletLevel": "Tablet level",
       "AnimalFriendRiding": "Horsemanship: +{value}",
       "WeaponTargetRequired": "Drop this effect on a carried weapon or shield.",
-      "BlessedWeaponDamage": "Damage: +{normal}; +{undead} against undead; +{demon} against demons."
+      "BlessedWeaponDamage": "Damage: +{normal}; +{undead} against undead; +{demon} against demons.",
+      "ConcealStill": "Detection while stationary: {value} VC",
+      "ConcealMoving": "Detection while moving: {value} VC"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

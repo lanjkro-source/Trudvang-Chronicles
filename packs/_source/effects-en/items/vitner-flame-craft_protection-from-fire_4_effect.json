@@ -1,0 +1,45 @@
+{
+  "_id": "S0AtAfIdJeKfLgMh",
+  "_key": "!items!S0AtAfIdJeKfLgMh",
+  "name": "Protection from Fire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:protection-from-fire:4#effect",
+    "description": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+    "summary": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZgtwhNeKfLgMhNiO",
+      "_key": "!items.effects!S0AtAfIdJeKfLgMh.ZgtwhNeKfLgMhNiO",
+      "name": "Protection from Fire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:protection-from-fire:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:protection-from-fire:4#effect",
+            "sourceId": "vitner-flame-craft:protection-from-fire:4",
+            "summary": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

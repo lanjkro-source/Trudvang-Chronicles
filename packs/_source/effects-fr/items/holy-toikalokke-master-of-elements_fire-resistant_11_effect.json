@@ -1,0 +1,45 @@
+{
+  "_id": "GMq8QfIdJeKfLgMh",
+  "_key": "!items!GMq8QfIdJeKfLgMh",
+  "name": "Résistance au feu",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+    "description": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+    "summary": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 299
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZodDs6A6B7C8D9Ea",
+      "_key": "!items.effects!GMq8QfIdJeKfLgMh.ZodDs6A6B7C8D9Ea",
+      "name": "Résistance au feu",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:fire-resistant:11#effect",
+            "sourceId": "holy-toikalokke-master-of-elements:fire-resistant:11",
+            "summary": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

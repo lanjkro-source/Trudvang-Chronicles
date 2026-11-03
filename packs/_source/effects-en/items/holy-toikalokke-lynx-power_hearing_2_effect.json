@@ -1,0 +1,45 @@
+{
+  "_id": "FCYo8Zu0v1w2x3y4",
+  "_key": "!items!FCYo8Zu0v1w2x3y4",
+  "name": "Keen Hearing",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:hearing:2#effect",
+    "description": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+    "summary": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "8jqVgiJeKfLgMhNi",
+      "_key": "!items.effects!FCYo8Zu0v1w2x3y4.8jqVgiJeKfLgMhNi",
+      "name": "Keen Hearing",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:hearing:2#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:hearing:2#effect",
+            "sourceId": "holy-toikalokke-lynx-power:hearing:2",
+            "summary": "Allows the recipient to hear within 10 metres of a visible point up to 50 metres away. The selected power levels increase the range and radius.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

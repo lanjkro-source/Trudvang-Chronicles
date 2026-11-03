@@ -1,0 +1,45 @@
+{
+  "_id": "5ymOT4v1w2x3y4z5",
+  "_key": "!items!5ymOT4v1w2x3y4z5",
+  "name": "Ihana Concealment",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:concealment:7#effect",
+    "description": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+    "summary": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "cjkp4iNiOjPkQlRm",
+      "_key": "!items.effects!5ymOT4v1w2x3y4z5.cjkp4iNiOjPkQlRm",
+      "name": "Ihana Concealment",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:concealment:7#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:concealment:7#effect",
+            "sourceId": "holy-toikalokke-lynx-power:concealment:7",
+            "summary": "The recipient can blend into the surroundings, move, become visible and hide again while the power lasts. Shadow Arts tests to find them suffer the indicated penalties.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

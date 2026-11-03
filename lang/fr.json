@@ -13904,6 +13904,15 @@
           "SourcePage": "167",
           "Duration": "1 minute"
         },
+        "vitner-flame-craft:protection-from-fire:4#effect": {
+          "Name": "Protection contre le feu",
+          "Summary": "Protège la créature et son équipement contre le feu ordinaire, mais pas contre les flammes magiques ou le feu des dragons. À appliquer manuellement.",
+          "Description": "Protège la créature et son équipement contre le feu ordinaire, mais pas contre les flammes magiques ou le feu des dragons. À appliquer manuellement.",
+          "SourceName": "Protection contre le feu",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "168",
+          "Duration": "5 minutes"
+        },
         "vitner-flame-craft:warmth:6#effect": {
           "Name": "Chaleur",
           "Summary": "Chaleur",
@@ -15831,6 +15840,15 @@
           "SourcePage": "275",
           "Duration": "1 minute"
         },
+        "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0#effect": {
+          "Name": "Peau du hrimtroll",
+          "Summary": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+          "Description": "Protège le conjurateur contre le froid non magique. À appliquer manuellement.",
+          "SourceName": "Peau du hrimtroll",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "276",
+          "Duration": "1 heure"
+        },
         "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje": {
           "Name": "Force du stenhinje",
           "Summary": "Porte la Force au niveau exceptionnel d’un stenhinje.",
@@ -15977,6 +15995,15 @@
           "SourcePage": "293",
           "Duration": "1 heure"
         },
+        "holy-toikalokke-lynx-power:hearing:2#effect": {
+          "Name": "Ouïe fine",
+          "Summary": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+          "Description": "Permet d’entendre autour d’un point visible situé à 50 mètres, dans un rayon de 10 mètres autour de ce point. La portée et le rayon sont augmentés par les niveaux de puissance indiqués.",
+          "SourceName": "Ouïe fine",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "294",
+          "Duration": "1 minute"
+        },
         "holy-toikalokke-lynx-power:track:6#pistage": {
           "Name": "Pistage du lynx",
           "Summary": "Pister la créature suivie : +3.",
@@ -15994,6 +16021,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "294",
           "Duration": "2 tours de jeu"
+        },
+        "holy-toikalokke-lynx-power:concealment:7#effect": {
+          "Name": "Camouflage de l’ihana",
+          "Summary": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+          "Description": "Le bénéficiaire peut se fondre dans le décor, se déplacer, redevenir visible et se camoufler de nouveau pendant la durée du pouvoir. Les tests d’Arts des ombres pour le repérer subissent les malus indiqués.",
+          "SourceName": "Camouflage",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "294",
+          "Duration": "3 heures"
         },
         "holy-toikalokke-lynx-power:forest-path:8#effect": {
           "Name": "Sentier forestier",
@@ -16224,6 +16260,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "299",
           "Duration": "2 heures"
+        },
+        "holy-toikalokke-master-of-elements:fire-resistant:11#effect": {
+          "Name": "Résistance au feu",
+          "Summary": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+          "Description": "Le bénéficiaire ignore les dégâts du feu naturel et subit la moitié des dégâts des flammes magiques et du feu des dragons. Son équipement et ses vêtements ne sont pas protégés. À appliquer manuellement.",
+          "SourceName": "Résistance au feu",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "299",
+          "Duration": "10 tours de jeu"
         },
         "holy-joaringfaith-fury-of-ogon:simmering-blood:1#simmering-blood": {
           "Name": "Sang brûlant (Fureur d’Ogon)",
@@ -16774,7 +16819,9 @@
       "TabletLevel": "Niveau de la tablette",
       "AnimalFriendRiding": "Maîtrise équestre : +{value}",
       "WeaponTargetRequired": "Déposez cet effet sur une arme ou un bouclier porté.",
-      "BlessedWeaponDamage": "Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons."
+      "BlessedWeaponDamage": "Dégâts : +{normal} ; +{undead} contre les morts-vivants ; +{demon} contre les démons.",
+      "ConcealStill": "Repérage à l’arrêt : {value} VC",
+      "ConcealMoving": "Repérage en mouvement : {value} VC"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
