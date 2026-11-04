@@ -19,6 +19,13 @@
     "range": "personal",
     "weavingTime": "10 minutes",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "sustained",
     "isRune": false,
     "powerLevels": [

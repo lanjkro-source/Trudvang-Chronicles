@@ -19,6 +19,13 @@
     "range": "5 mètres",
     "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "sustained",
     "isRune": false,
     "powerLevels": [

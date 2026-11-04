@@ -45,12 +45,24 @@
         },
         "weight": 2,
         "value": 11,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "KagEscHcIdJeKfLg",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaHammri"
+        }
+      },
       "_key": "!actors.items!mH3DrVnToUpVqWrX.KagEscHcIdJeKfLg",
       "effects": []
     },
@@ -73,6 +85,13 @@
         },
         "weight": 4,
         "value": 24,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "combatSpecialty": "twoHandedWeapons",
@@ -80,6 +99,11 @@
         "hand": "weapon"
       },
       "_id": "19x9BiNiOjPkQlRm",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TwoHandedAxe"
+        }
+      },
       "_key": "!actors.items!mH3DrVnToUpVqWrX.19x9BiNiOjPkQlRm",
       "effects": []
     },

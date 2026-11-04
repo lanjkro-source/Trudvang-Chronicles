@@ -19,6 +19,13 @@
     "range": "special",
     "weavingTime": "",
     "dailyActivation": "3",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": true,
     "powerLevels": [

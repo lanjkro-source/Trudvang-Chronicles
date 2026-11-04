@@ -19,6 +19,13 @@
     "range": "10 mètres",
     "weavingTime": "immédiat",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [

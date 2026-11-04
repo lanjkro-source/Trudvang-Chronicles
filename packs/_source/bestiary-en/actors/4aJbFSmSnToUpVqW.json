@@ -76,12 +76,24 @@
           "short": 30,
           "long": 80
         },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "cdJ1z1tZu0v1w2x3",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.HuntingBow"
+        }
+      },
       "_key": "!actors.items!4aJbFSmSnToUpVqW.cdJ1z1tZu0v1w2x3",
       "effects": []
     },
@@ -105,12 +117,24 @@
         },
         "weight": 0.6,
         "value": 2,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "tLB7jIaGbHcIdJeK",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.LillSpjot"
+        }
+      },
       "_key": "!actors.items!4aJbFSmSnToUpVqW.tLB7jIaGbHcIdJeK",
       "effects": []
     },
@@ -131,6 +155,13 @@
         "initiativeModifier": -1,
         "weight": 2,
         "value": 1,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damage": "1d5",
         "openRoll": 0,
         "damageBonus": 0,
@@ -139,6 +170,11 @@
         "hand": "weapon"
       },
       "_id": "IUYK4tWrXsYtZu0v",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.SmallShield"
+        }
+      },
       "_key": "!actors.items!4aJbFSmSnToUpVqW.IUYK4tWrXsYtZu0v",
       "effects": []
     },

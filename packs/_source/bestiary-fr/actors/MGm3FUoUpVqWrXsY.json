@@ -22,6 +22,13 @@
         },
         "weight": 4,
         "value": 28,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 2,
         "quantity": 1,
         "combatSpecialty": "twoHandedWeapons",
@@ -29,6 +36,11 @@
         "hand": "weapon"
       },
       "_id": "oYwStcHcIdJeKfLg",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TwoHandedSword"
+        }
+      },
       "_key": "!actors.items!MGm3FUoUpVqWrXsY.oYwStcHcIdJeKfLg",
       "effects": []
     }

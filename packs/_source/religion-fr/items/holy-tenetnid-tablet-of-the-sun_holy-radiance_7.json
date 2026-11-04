@@ -19,6 +19,13 @@
     "range": "rayon de 3 mètres",
     "weavingTime": "3 tours de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

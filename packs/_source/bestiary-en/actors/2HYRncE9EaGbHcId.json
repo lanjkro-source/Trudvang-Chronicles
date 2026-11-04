@@ -45,12 +45,24 @@
         },
         "weight": 1,
         "value": 0.5,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "RK3l0C7C8D9EaGbH",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.Stafur"
+        }
+      },
       "_key": "!actors.items!2HYRncE9EaGbHcId.RK3l0C7C8D9EaGbH",
       "effects": []
     },
@@ -159,6 +171,13 @@
         "range": "contact",
         "weavingTime": "15 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -229,6 +248,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -299,6 +325,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -375,6 +408,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -445,6 +485,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -515,6 +562,13 @@
         "range": "3 meters",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -567,6 +621,13 @@
         "range": "5 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -613,6 +674,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -683,6 +751,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -788,6 +863,13 @@
         "range": "10 meters",
         "weavingTime": "3 hours",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -876,6 +958,13 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -940,6 +1029,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -992,6 +1088,13 @@
         "range": "contact",
         "weavingTime": "1 hour",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -1038,6 +1141,13 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -1090,6 +1200,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -1142,6 +1259,13 @@
         "range": "10 meters",
         "weavingTime": "10 hours",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "permanent",
         "isRune": false,
         "powerLevels": [
@@ -1188,6 +1312,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -1252,6 +1383,13 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "magicalOrGrindsilver"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -1333,6 +1471,14 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "bludgeoning",
+          "protection": "normal",
+          "material": "stone"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -1385,6 +1531,13 @@
         "range": "5 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -1443,6 +1596,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -1501,6 +1661,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -1565,6 +1732,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -1635,6 +1809,13 @@
         "range": "personal",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -1699,6 +1880,13 @@
         "range": "5 meters",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -1757,6 +1945,13 @@
         "range": "personal",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -1821,6 +2016,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -1920,6 +2122,13 @@
         "range": "100 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -1984,6 +2193,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "permanent",
         "isRune": false,
         "powerLevels": [
@@ -2048,6 +2264,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2112,6 +2335,13 @@
         "range": "5 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2176,6 +2406,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2234,6 +2471,13 @@
         "range": "contact",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2310,6 +2554,13 @@
         "range": "contact",
         "weavingTime": "1 hour",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2380,6 +2631,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2474,6 +2732,13 @@
         "range": "100 meters",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2585,6 +2850,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "Metal armor offers no protection. Other armor protects for a number of rounds equal to its PV: the GM must track this duration and adjust applicable protection.",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2649,6 +2921,13 @@
         "range": "personal",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2713,6 +2992,13 @@
         "range": "personal",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "fire",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2765,6 +3051,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "magical"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -2823,6 +3116,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2893,6 +3193,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -2963,6 +3270,13 @@
         "range": "3 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -3039,6 +3353,13 @@
         "range": "20 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "magical"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -3126,6 +3447,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3184,6 +3512,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -3230,6 +3565,13 @@
         "range": "100 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -3288,6 +3630,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3346,6 +3695,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3410,6 +3766,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -3504,6 +3867,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3574,6 +3944,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -3626,6 +4003,13 @@
         "range": "personal",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -3696,6 +4080,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -3813,6 +4204,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3877,6 +4275,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -3935,6 +4340,13 @@
         "range": "5 kilometers",
         "weavingTime": "5 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4005,6 +4417,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4063,6 +4482,13 @@
         "range": "5 kilometers",
         "weavingTime": "5 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4127,6 +4553,13 @@
         "range": "5 kilometers",
         "weavingTime": "5 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4197,6 +4630,13 @@
         "range": "10 meters",
         "weavingTime": "6 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -4255,6 +4695,13 @@
         "range": "1 kilometer",
         "weavingTime": "7 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -4342,6 +4789,13 @@
         "range": "personal",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4388,6 +4842,13 @@
         "range": "personal",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4440,6 +4901,13 @@
         "range": "5 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4504,6 +4972,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -4562,6 +5037,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4638,6 +5120,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4702,6 +5191,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4760,6 +5256,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4824,6 +5327,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -4882,6 +5392,13 @@
         "range": "personal",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -4940,6 +5457,13 @@
         "range": "100 meters",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -5010,6 +5534,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -5103,6 +5634,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5155,6 +5693,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -5201,6 +5746,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5283,6 +5835,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5341,6 +5900,13 @@
         "range": "contact",
         "weavingTime": "1 action round/5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5393,6 +5959,13 @@
         "range": "personal",
         "weavingTime": "10 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -5451,6 +6024,13 @@
         "range": "contact",
         "weavingTime": "1 hour",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -5497,6 +6077,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5608,6 +6195,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -5666,6 +6260,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5718,6 +6319,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5788,6 +6396,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5852,6 +6467,13 @@
         "range": "contact",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "permanent",
         "isRune": false,
         "powerLevels": [
@@ -5904,6 +6526,13 @@
         "range": "10 kilometers",
         "weavingTime": "3 hours",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -5968,6 +6597,13 @@
         "range": "100 meters",
         "weavingTime": "4 hours",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "permanent",
         "isRune": false,
         "powerLevels": [
@@ -6038,6 +6674,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6137,6 +6780,13 @@
         "range": "100 meters",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6189,6 +6839,13 @@
         "range": "50 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -6235,6 +6892,13 @@
         "range": "1 kilometer",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -6293,6 +6957,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -6357,6 +7028,13 @@
         "range": "10 meters",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -6427,6 +7105,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6497,6 +7182,13 @@
         "range": "100 meters",
         "weavingTime": "4 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -6567,6 +7259,13 @@
         "range": "special",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6637,6 +7336,13 @@
         "range": "100 meters",
         "weavingTime": "4 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6724,6 +7430,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6788,6 +7501,13 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -6840,6 +7560,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -6916,6 +7643,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7004,6 +7738,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7080,6 +7821,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7138,6 +7886,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7214,6 +7969,13 @@
         "range": "contact",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7272,6 +8034,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7348,6 +8117,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7424,6 +8200,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7488,6 +8271,13 @@
         "range": "contact",
         "weavingTime": "10 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7617,6 +8407,13 @@
         "range": "personal",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -7669,6 +8466,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -7721,6 +8525,13 @@
         "range": "5 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -7773,6 +8584,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7831,6 +8649,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7895,6 +8720,13 @@
         "range": "10 meters",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -7953,6 +8785,13 @@
         "range": "10 meters",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -8023,6 +8862,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8087,6 +8933,13 @@
         "range": "personal",
         "weavingTime": "10 minutes",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8157,6 +9010,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8221,6 +9081,13 @@
         "range": "personal",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -8291,6 +9158,13 @@
         "range": "contact",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8384,6 +9258,13 @@
         "range": "contact",
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "sustained",
         "isRune": false,
         "powerLevels": [
@@ -8442,6 +9323,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8512,6 +9400,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8576,6 +9471,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8640,6 +9542,13 @@
         "range": "10 meters",
         "weavingTime": "1 minute",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8716,6 +9625,13 @@
         "range": "contact",
         "weavingTime": "1 action round",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "instant",
         "isRune": false,
         "powerLevels": [
@@ -8762,6 +9678,13 @@
         "range": "contact",
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8838,6 +9761,13 @@
         "range": "contact",
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [
@@ -8920,6 +9850,13 @@
         "range": "10 meters",
         "weavingTime": "1 hour per 2 Vitner Points",
         "dailyActivation": "",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
+        "damageQualificationNote": "",
         "spellType": "lasting",
         "isRune": false,
         "powerLevels": [

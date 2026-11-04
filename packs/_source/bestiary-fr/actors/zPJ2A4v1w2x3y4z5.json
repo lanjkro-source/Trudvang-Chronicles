@@ -21,12 +21,24 @@
         },
         "weight": 2.5,
         "value": 18,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "3gKcYB3y4z5A6B7C",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaSwerd"
+        }
+      },
       "_key": "!actors.items!zPJ2A4v1w2x3y4z5.3gKcYB3y4z5A6B7C",
       "effects": []
     },
@@ -47,6 +59,13 @@
         "initiativeModifier": -3,
         "weight": 6,
         "value": 3,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damage": "1d10",
         "openRoll": 0,
         "damageBonus": 0,
@@ -55,6 +74,11 @@
         "hand": "weapon"
       },
       "_id": "iq7PInPkQlRmSnTo",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.LargeShield"
+        }
+      },
       "_key": "!actors.items!zPJ2A4v1w2x3y4z5.iq7PInPkQlRmSnTo",
       "effects": []
     },

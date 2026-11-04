@@ -1,5 +1,7 @@
+import {effectRules} from "./transformation-profile.mjs";
 import {resolveDamage, parseSimpleDamageFormula} from "./equipment-resolver.mjs";
 import {isThrowingWeapon, weaponType} from "./combat-pool-resolver.mjs";
+import {damageQualification} from "./damage-qualifications.mjs";
 
 const finite = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 export const signedDamage = value => finite(value) > 0 ? `+${finite(value)}` : `${finite(value)}`;
@@ -60,7 +62,9 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
     transformationBonus += row.value;
     rows.push({label: row.effect, value: signedDamage(row.value), amount: row.value, source: row.effect});
   }
-  return {resolution, rows, weaponHit: usage!=="magic", magicalWeapon: Boolean(context.magicalWeapon), ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
+  const qualificationEffects = Array.from(item?.effects ?? []).filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false && !effect.duration?.expired).reduce((current,effect) => ({...current,...effectRules(effect).damageQualification}),{});
+  const qualification = damageQualification({item, context:{...context,qualification:{...qualificationEffects,...context.qualification}}, usage});
+  return {resolution, rows, qualificationNote:context.qualificationNote ?? item?.system?.damageQualificationNote ?? "", qualification, weaponHit: usage!=="magic", magicalWeapon: qualification.nature === "magical", ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
     parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base + transformationBonus,
     situational: finite(context.damageModifier), minimumTotal: resolution.minimumTotal};
 }
@@ -77,6 +81,7 @@ export function damageRollChoice(profile, options = {}) {
     || (profile.parsed && (!Number.isInteger(dice) || dice < (profile.allowZeroDice?0:1) || dice > 100 || faces < 1)) || (!profile.parsed && !formula)) return null;
   if(profile.editableFaces && (![3,4,5,6,10].includes(faces) || !Number.isInteger(modifier) || (dice>0 && openRoll!==0 && (openRoll<2 || openRoll>faces))))return null;
   if(profile.allowZeroDice && dice===0 && profile.fixedModifier+modifier===0)return null;
-  return {dice, faces, formula, openRoll, modifier, magicalWeapon:Boolean(profile.weaponHit&&Boolean(options.magicalWeapon??profile.magicalWeapon)), longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
+  const qualification = damageQualification({context: {qualification: {...profile.qualification, ...(options.magicalWeapon !== undefined && options.qualification?.nature === undefined ? {nature:options.magicalWeapon ? "magical" : "normal"} : {}), ...options.qualification}, magicalWeapon: options.magicalWeapon ?? profile.magicalWeapon}, usage: profile.usage});
+  return {dice, faces, formula, openRoll, modifier, qualification, magicalWeapon:qualification.nature === "magical", longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
     fixedModifier: profile.fixedModifier + modifier};
 }

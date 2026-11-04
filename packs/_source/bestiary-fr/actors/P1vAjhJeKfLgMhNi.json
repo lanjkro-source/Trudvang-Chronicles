@@ -45,12 +45,24 @@
         },
         "weight": 3.5,
         "value": 20,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "RtGzHkMhNiOjPkQl",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BreidSpjot"
+        }
+      },
       "_key": "!actors.items!P1vAjhJeKfLgMhNi.RtGzHkMhNiOjPkQl",
       "effects": []
     },

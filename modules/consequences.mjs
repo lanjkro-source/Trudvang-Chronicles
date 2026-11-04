@@ -24,7 +24,7 @@ export async function executeConsequences({actor,operations=[],source=""}={}){
    const before=current(actor,"fear");amount=Math.min(Math.max(0,before),value);
    if(amount)await actor.update({"system.resources.fear.value":number(actor._source?.system.resources.fear.value??actor.system.resources.fear.value)-amount});
   }else if(op.operation==="damage"){
-   const result=await applyDamageToActor({actor,damage:value,ignoreArmor:op.ignoreArmor===true,damageType:op.damageType??"",announce:false});amount=number(result?.bodyDamage)+number(result?.temporaryDamage);
+   const result=await applyDamageToActor({actor,damage:value,ignoreArmor:op.ignoreArmor===true,damageType:op.damageType??"",qualification:op.qualification,announce:false});amount=number(result?.bodyDamage)+number(result?.temporaryDamage);
   }else if(op.operation==="resourceGain"){
    if(!["vitner","divinity","raud"].includes(op.resource))throw new Error("Unsupported consequence resource");
    const before=current(actor,op.resource),after=Math.min(number(actor.system.resources[op.resource].max),before+value);amount=Math.max(0,after-before);

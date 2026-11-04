@@ -1,8 +1,10 @@
 // V13+ namespaced renderTemplate under foundry.applications.handlebars; the global alias was
 // removed in V15. Shared shim so every chat-card renderer uses the same reference.
+import {damageIcons} from "./damage-icons.mjs";
 export const renderTemplate = foundry.applications?.handlebars?.renderTemplate ?? globalThis.renderTemplate;
 
 export function registerHandlebarsHelpers() {
+  Handlebars.registerHelper("damageIcons", value => new Handlebars.SafeString(damageIcons(value)));
   Handlebars.registerHelper("eq", (a, b) => a === b);
   Handlebars.registerHelper("includes", (array, value) => array?.includes?.(value));
   Handlebars.registerHelper("signed", value => {

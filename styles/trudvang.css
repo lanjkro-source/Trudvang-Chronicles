@@ -1191,3 +1191,21 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
   opacity: .55;
   cursor: default;
 }
+
+/* Damage qualifiers always use glyphs; accessible names double as tooltips. */
+.damage-qualifiers { display: inline-flex; align-items: center; gap: .5em; }
+.damage-qualifier { display: inline-block; text-align: center; min-width: 1.15em; color: inherit; }
+.damage-qualification-fields { display: grid; gap: 8px; margin: 12px 0; }
+.damage-qualification-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.damage-qualification-options { display: flex; flex-wrap: wrap; gap: 5px; }
+.damage-qualification-option { position: relative; cursor: pointer; }
+.damage-qualification-option > input[type="radio"] { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; inset: 0; cursor: inherit; }
+.damage-qualification-option > .damage-qualifier { padding: 5px; border: 1px solid currentColor; border-radius: 3px; opacity: .65; pointer-events: none; }
+.damage-qualification-option:has(input:checked) > .damage-qualifier { opacity: 1; box-shadow: inset 0 0 0 2px currentColor; }
+.damage-qualification-option:has(input:focus-visible) > .damage-qualifier { outline: 2px solid currentColor; outline-offset: 2px; }
+.damage-qualification-option:has(input:disabled) { opacity: .5; cursor: default; }
+.trudvang.damage-roll-dialog .damage-qualification-fields { color: var(--trudvang-on-header); }
+.item-damage-qualifications { grid-column: 1 / -1; }
+
+.trudvang-sheet.item-sheet .item-fields .damage-qualification-row { flex-direction: row; align-items: center; }
+.damage-qualification-option { flex: none; }

@@ -1,3 +1,5 @@
+import {damageQualificationFields} from "../damage-icons.mjs";
+import {damageQualification} from "../rules/damage-qualifications.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
 import {effectDurationSeconds,itemEffectRemainingSeconds} from "../rules/effect-duration.mjs";
@@ -95,6 +97,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.item = this.item;
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
+    context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
+    context.damageQualificationNote = this.item.system.damageQualificationNote;
+    context.damageQualificationFields = ["weapon", "shield", "spell", "divineFeat"].includes(this.item.type) ? damageQualificationFields(damageQualification({item:this.item,usage:["spell","divineFeat"].includes(this.item.type)?"magic":""}), {item:true,material:["weapon","shield"].includes(this.item.type)}) : "";
     context.itemType = this.item.type;
     context.supportsEffects = this.item.type === "effect" || EFFECT_ITEM_TYPES.has(this.item.type);
     context.weaponType = weaponType(this.item);

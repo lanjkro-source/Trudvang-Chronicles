@@ -19,6 +19,13 @@
     "range": "contact",
     "weavingTime": "2 tours de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "Les armures métalliques ne protègent pas. Les autres protègent pendant un nombre de tours égal à leur VP : le MJ doit gérer cette durée et ajuster les protections applicables.",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

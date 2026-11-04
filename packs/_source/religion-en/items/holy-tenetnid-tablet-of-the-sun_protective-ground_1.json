@@ -19,6 +19,13 @@
     "range": "radius of 2 meters",
     "weavingTime": "special",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

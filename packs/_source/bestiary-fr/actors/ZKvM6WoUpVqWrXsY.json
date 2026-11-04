@@ -69,12 +69,24 @@
         },
         "weight": 2,
         "value": 12,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "KjZF4aC7C8D9EaGb",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaKlot"
+        }
+      },
       "_key": "!actors.items!ZKvM6WoUpVqWrXsY.KjZF4aC7C8D9EaGb",
       "effects": []
     },

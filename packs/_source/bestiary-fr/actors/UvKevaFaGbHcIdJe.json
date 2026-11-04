@@ -47,12 +47,24 @@
         },
         "weight": 1.2,
         "value": 6,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "bXoedy1w2x3y4z5A",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.SplitAxi"
+        }
+      },
       "_key": "!actors.items!UvKevaFaGbHcIdJe.bXoedy1w2x3y4z5A",
       "effects": []
     },

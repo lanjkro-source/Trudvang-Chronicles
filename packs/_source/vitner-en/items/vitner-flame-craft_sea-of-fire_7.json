@@ -19,6 +19,13 @@
     "range": "20 meters",
     "weavingTime": "2 action rounds",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "magical"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [

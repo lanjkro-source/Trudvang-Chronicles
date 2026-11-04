@@ -22,6 +22,13 @@
         },
         "weight": 1.8,
         "value": 15,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "combatSpecialty": "oneHandedHeavyWeapons",
@@ -29,6 +36,11 @@
         "hand": "weapon"
       },
       "_id": "f1pqWpSnToUpVqWr",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.Broadsword"
+        }
+      },
       "_key": "!actors.items!p7e142v1w2x3y4z5.f1pqWpSnToUpVqWr",
       "effects": []
     },
@@ -49,6 +61,13 @@
         "initiativeModifier": -1,
         "weight": 2,
         "value": 1,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damage": "1d10",
         "openRoll": 0,
         "damageBonus": 0,
@@ -57,6 +76,11 @@
         "hand": "weapon"
       },
       "_id": "uaN3GbE9EaGbHcId",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.SmallShield"
+        }
+      },
       "_key": "!actors.items!p7e142v1w2x3y4z5.uaN3GbE9EaGbHcId",
       "effects": []
     },

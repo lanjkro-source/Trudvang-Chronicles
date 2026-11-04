@@ -19,6 +19,13 @@
     "range": "radius of 1 kilometer",
     "weavingTime": "1 day",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

@@ -8,6 +8,8 @@ import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {consumablePolicy} from "./rules/consumable-effects.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {resolveArmorProfile} from "./rules/equipment-resolver.mjs";
+import {damageQualification, qualifyDamage} from "./rules/damage-qualifications.mjs";
+import {blessedArmorEffects} from "./rules/blessed-armor.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -54,37 +56,60 @@ export function prepareDamageTargets(targets) {
  * remaining protection (natural armor and effects). Each armor item loses the
  * excess that passes through its current VP; the remainder reaches Body Points.
  */
-export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0} = {}) {
+export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0, protectionFor = protection} = {}) {
   const outer=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
   let remaining = Math.max(0, Math.trunc(number(damage)) - outer);
-  const armorProtection = armor.reduce((total, item) => total + protection(item), 0);
+  const armorProtection = armor.reduce((total, item) => total + protectionFor(item), 0);
   const armorDamage = armor.map(item => {
-    const excess = Math.max(0, remaining - protection(item));
+    const excess = Math.max(0, remaining - protectionFor(item));
     remaining = excess;
-    return {item, ...damageIntegrity(item, excess)};
+    return {item, protection: protectionFor(item), ...damageIntegrity(item, excess)};
   });
   const otherProtection = Math.max(0, Math.trunc(number(totalProtection)) - armorProtection - outer);
   return {bodyDamage: Math.max(0, remaining - otherProtection), armorDamage};
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification} = {}) {
   if (!actor?.isOwner) return null;
-  const amount = Math.max(0, Math.ceil(Math.trunc(number(damage)) * (consumablePolicy(actor).damageFactors[damageType] ?? 1)));
-  const armor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
-  const protectionRows=ignoreArmor?[]:conditionalProtectionRows(actor,{usage,magicalWeapon});
+  const qualified = damageQualification({context: {magicalWeapon, qualification: {type: damageType, ...qualification}}, usage});
+  ignoreArmor ||= qualified.protection === "none";
+  const applicableEffects = Array.from(actor.allApplicableEffects?.() ?? actor.effects ?? []).filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false && !effect.duration?.expired);
+  const rules = [...(actor.system?.damageDefenses ?? []), ...applicableEffects.flatMap(effect =>
+    (effectRules(effect).damageDefenses ?? effect.flags?.["trudvang-chronicles"]?.damageDefenses ?? []).map(rule => ({...rule, source: effect.name})))];
+  const resistance = qualifyDamage(Math.trunc(number(damage)), qualified, rules.filter(rule => rule.stage === "beforeArmor"));
+  const policyType = qualified.type === "other" && damageType ? damageType : qualified.type;
+  const amount = Math.max(0, Math.ceil(resistance.amount * (consumablePolicy(actor).damageFactors[policyType] ?? 1)));
+  const eligibleBase = item => qualified.protection === "normal" || item.system?.magicalProtection === true || (qualified.protection === "magicalOrGrindsilver" && item.system?.material === "grindsilver");
+  const protectionFor = item => {
+    const blessings = blessedArmorEffects(item);
+    const normalBlessing = blessings.reduce((sum,row) => sum + row.normal,0);
+    const applicableBlessing = blessings.reduce((sum,row) => sum + (qualified.nature === "magical" || qualified.protection !== "normal" ? row.magic ?? 0 : row.normal),0);
+    return Math.max(0,(eligibleBase(item) ? protection(item)-normalBlessing : 0)+applicableBlessing);
+  };
+  const wornArmor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
+  const armor = wornArmor.filter(item => eligibleBase(item) || protectionFor(item)>0);
+  const protectionRows=ignoreArmor?[]:conditionalProtectionRows(actor,{usage,magicalWeapon,qualification:qualified});
   const conditionalProtection=protectionRows.reduce((sum,row)=>sum+row.amount,0);
+  const specialProtection = qualified.protection !== "normal";
+  const eligibleOtherProtection = specialProtection ? applicableEffects.reduce((total,effect) => total + Math.max(0,number(effectRules(effect).magicalProtection ?? effect.flags?.["trudvang-chronicles"]?.magicalProtection)),0) : 0;
+  const totalProtection = specialProtection ? armor.reduce((sum,item) => sum + protectionFor(item),0) + conditionalProtection + eligibleOtherProtection
+    : number(actor.system?.protection)+conditionalProtection+wornArmor.reduce((sum,item)=>sum+protectionFor(item)-protection(item),0);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}
-    : calculateArmoredDamage({damage: amount, totalProtection: number(actor.system?.protection)+conditionalProtection, armor,
-      outerProtection:conditionalProtection+activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0)});
+    : calculateArmoredDamage({damage: amount, totalProtection, armor, protectionFor,
+      outerProtection:conditionalProtection+(specialProtection ? 0 : activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0))});
   result.conditionalProtection=conditionalProtection;
+  result.qualification=qualified;
+  result.resistances=resistance.applied;
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, "system.breach.value": entry.integrity}));
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
-  result.bodyDamage = Math.ceil(result.bodyDamage * (actor.transformationProfile?.damageTakenFactor ?? 1));
-  for (const effect of activeTransformations(actor)) {
+  const bodyResistance = qualifyDamage(result.bodyDamage, qualified, rules.filter(rule => rule.stage !== "beforeArmor"));
+  result.resistances.push(...bodyResistance.applied);
+  result.bodyDamage = Math.ceil(bodyResistance.amount * (actor.transformationProfile?.damageTakenFactor ?? 1));
+  for (const effect of ignoreArmor ? [] : activeTransformations(actor)) {
     const meta = effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
     const integrity = remainingStoneIntegrity(effect);
     const loss = Math.min(integrity, result.bodyDamage);

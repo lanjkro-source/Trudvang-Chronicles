@@ -22,6 +22,7 @@ const number = (initial = 0, options = {}) => new fields.NumberField({
 });
 const boolean = (initial = false) => new fields.BooleanField({required: true, nullable: false, initial});
 const schema = definition => new fields.SchemaField(definition);
+const damageQualificationSchema = () => schema({nature: string("normal"), delivery: string("other"), type: string("other"), protection: string("normal"), material: string()});
 // Legacy worlds may hold weapon ranges as strings (the sheet wrote raw text before
 // type="number" inputs). Foundry runs field clean() during DataModel construction,
 // so coercing here heals those documents at load time — otherwise they fail
@@ -226,6 +227,7 @@ function actorCommonSchema() {
     damage: schema({taken: number(0), penalty: integer(0), level: string("light")}),
     fearPenalty: integer(0),
     fearFactorModifier: integer(0),
+    damageDefenses: new fields.ArrayField(schema({source: string(), nature: string(), delivery: string(), type: string(), material: string(), stage: string("afterArmor"), factor: number(1, {min: 0}), disabled: boolean(false)}), {required: true, initial: []}),
     protection: integer(0),
     persistenceInWild: integer(10),
     buildCost: integer(0)
@@ -380,6 +382,8 @@ function equipmentSchema() {
 
 function magicSchema() {
   return {
+    damageQualification: damageQualificationSchema(),
+    damageQualificationNote: string(),
     level: integer(1, {min: 1, max: 5}),
     cost: integer(2, {min: 0}),
     modifier: integer(-2),
@@ -422,6 +426,8 @@ export class WeaponData extends BaseItemData {
       ...super.defineSchema(),
       ...equipmentSchema(),
       category: string("oneHandedLight"),
+      material: string(),
+      damageQualification: damageQualificationSchema(),
       combatSpecialty: string(),
       isThrowingWeapon: boolean(false),
       designedForThrowing: boolean(false),
@@ -448,6 +454,8 @@ export class WeaponData extends BaseItemData {
 export class ArmorData extends BaseItemData {
   static defineSchema() {
     return {
+      material: string(),
+      magicalProtection: boolean(false),
       ...super.defineSchema(),
       ...equipmentSchema(),
       heft: integer(0, {min: 0}),
@@ -469,6 +477,8 @@ export class ShieldData extends BaseItemData {
     return {
       ...super.defineSchema(),
       ...equipmentSchema(),
+      material: string(),
+      damageQualification: damageQualificationSchema(),
       damage: string("1d10"),
       openRoll: integer(0, {min: 0, max: 10}),
       weaponActions: integer(2, {min: 0}),

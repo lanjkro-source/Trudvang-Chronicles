@@ -19,6 +19,13 @@
     "range": "20 mètres",
     "weavingTime": "2 tours de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "magical"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [

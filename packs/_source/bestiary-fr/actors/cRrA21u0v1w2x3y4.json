@@ -47,12 +47,24 @@
         },
         "weight": 1,
         "value": 3,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "mpgkLKeKfLgMhNiO",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.StaafSpjot"
+        }
+      },
       "_key": "!actors.items!cRrA21u0v1w2x3y4.mpgkLKeKfLgMhNiO",
       "effects": []
     },
@@ -74,12 +86,24 @@
         },
         "weight": 3,
         "value": 10,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "DX8pvrVqWrXsYtZu",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TveiFaldir"
+        }
+      },
       "_key": "!actors.items!cRrA21u0v1w2x3y4.DX8pvrVqWrXsYtZu",
       "effects": []
     },

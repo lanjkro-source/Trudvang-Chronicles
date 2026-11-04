@@ -45,12 +45,24 @@
         },
         "weight": 3,
         "value": 14,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "F0NaAI9EaGbHcIdJ",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.StjornMakir"
+        }
+      },
       "_key": "!actors.items!QY69m6y4z5A6B7C8.F0NaAI9EaGbHcIdJ",
       "effects": []
     },

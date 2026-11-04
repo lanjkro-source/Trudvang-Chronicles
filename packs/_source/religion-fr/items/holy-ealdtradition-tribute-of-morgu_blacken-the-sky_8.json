@@ -19,6 +19,13 @@
     "range": "50 mètres",
     "weavingTime": "2 tours de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "piercing",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [

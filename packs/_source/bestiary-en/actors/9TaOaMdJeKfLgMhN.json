@@ -45,12 +45,24 @@
         },
         "weight": 1,
         "value": 1,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "DB7i6QjPkQlRmSnT",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.NagliKlubb"
+        }
+      },
       "_key": "!actors.items!9TaOaMdJeKfLgMhN.DB7i6QjPkQlRmSnT",
       "effects": []
     },

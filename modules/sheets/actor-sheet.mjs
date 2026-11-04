@@ -1,3 +1,6 @@
+import {damageIcons} from "../damage-icons.mjs";
+import {damageQualification} from "../rules/damage-qualifications.mjs";
+import {isThrowingWeapon,weaponType} from "../rules/combat-pool-resolver.mjs";
 import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
 import {isCustomSpecialty} from "../rules/custom-specialties.mjs";
@@ -325,6 +328,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       item._hoverTitle = this._getItemHoverTitle(item);
       item._consumable = isConsumable(item);
       item._damageText = this._getItemDamageText(item);
+      item._damageQualification = ["weapon","shield"].includes(item.type) ? damageQualification({item,usage:isThrowingWeapon(item)||["crossbow","bowsSlings"].includes(weaponType(item))?"ranged":"melee"}) : null;
+      item._damageQualificationHTML = damageIcons(item._damageQualification);
       item._compactDetail = this._getItemCompactDetail(item);
       item._inspection = prepareEquipmentInspection(item, this.actor);
       item._shortTitle = item._inspection?.shortTitle || item._compactDetail;

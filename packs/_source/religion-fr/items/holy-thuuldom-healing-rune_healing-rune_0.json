@@ -19,6 +19,13 @@
     "range": "contact",
     "weavingTime": "",
     "dailyActivation": "2",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "sustained",
     "isRune": true,
     "powerLevels": [

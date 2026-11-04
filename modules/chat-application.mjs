@@ -116,10 +116,13 @@ async function applyOnGM(payload) {
   if (!appliedRow) {
     const result = payload.channel === "fear" ? await actor.applyFearFactor(amount, {announce: false})
       : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount})
-        : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, announce: false});
+        : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, announce: false});
     if (!result) return {status: "unavailable"};
     appliedRow = {actorUuid: actor.uuid, tokenUuid: "", name: actor.name, channel: payload.channel,
       itemUuid: item?.uuid ?? "", itemName: item?.name ?? "",
+      calculation: payload.channel === "body" ? [game.i18n.format("TRUDVANG.Damage.Application",{before:amount,after:result.bodyDamage,temporary:result.temporaryDamage??0}),
+        ...(result.armorDamage??[]).map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.item.name??"",protection:row.protection})),
+        ...(result.resistances??[]).map(row=>`${row.source} ×${row.factor}`)].join(" · ") : "",
       amount: Number(result.applied ?? result.integrityLoss ?? result.bodyDamage), ignoreArmor: payload.ignoreArmor === true};
     pending.push(appliedRow); unrecorded.set(message.id, pending);
     const token = payload.tokenUuid ? await foundry.utils.fromUuid(payload.tokenUuid) : actor.token;

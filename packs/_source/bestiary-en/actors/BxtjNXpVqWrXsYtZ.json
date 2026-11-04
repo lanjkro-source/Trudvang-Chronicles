@@ -45,12 +45,24 @@
         },
         "weight": 3,
         "value": 0.4,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "WpQT1ZtZu0v1w2x3",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+        }
+      },
       "_key": "!actors.items!BxtjNXpVqWrXsYtZ.WpQT1ZtZu0v1w2x3",
       "effects": []
     },

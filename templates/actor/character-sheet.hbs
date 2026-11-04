@@ -191,7 +191,7 @@
             <img src="{{item.img}}"><span class="icon-placeholder"></span><span class="icon-placeholder"></span><input class="qty-input" type="number" min="0" max="99"
               value="{{item.system.quantity}}" data-item-field="quantity" data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span
               class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit"
-              data-tooltip="{{item._shortTitle}}">{{item.name}}{{#if item._inspectionModified}} <span class="inspection-badge">Δ</span>{{/if}}</button><span class="item-detail">{{item._compactDetail}}</span><button
+              data-tooltip="{{item._shortTitle}}">{{item.name}}{{#if item._inspectionModified}} <span class="inspection-badge">Δ</span>{{/if}}</button><span class="item-detail">{{item._compactDetail}} {{{item._damageQualificationHTML}}}</span><button
               type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-ready" data-tooltip="{{#if item.system.equipped}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i
                 class="fas fa-hand-fist"></i></button><button type="button" data-action="inspect-item" data-tooltip="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button><button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i
                 class="fas fa-trash"></i></button></li>{{/each}}</ol>
@@ -209,7 +209,7 @@
               class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity"
               data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button"
               class="item-name" data-action="item-edit" data-tooltip="{{item._shortTitle}}">{{item.name}}{{#if item._inspectionModified}} <span class="inspection-badge">Δ</span>{{/if}}</button>
-              <span class="item-detail">{{item._compactDetail}}</span>{{#if (eq item.type "shield")}}<button
+              <span class="item-detail">{{item._compactDetail}} {{{item._damageQualificationHTML}}}</span>{{#if (eq item.type "shield")}}<button
               type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-ready" data-tooltip="{{#if item.system.equipped}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i
                 class="fas fa-hand-fist"></i></button>{{else}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" data-tooltip="{{localize 'TRUDVANG.Action.Equip'}}"><i class="fas fa-tshirt"></i></button>{{/if}}<button type="button"
               data-action="inspect-item" data-tooltip="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button><button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>

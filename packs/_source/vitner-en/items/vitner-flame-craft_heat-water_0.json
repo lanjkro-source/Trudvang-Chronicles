@@ -19,6 +19,13 @@
     "range": "contact",
     "weavingTime": "2 action rounds",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "Metal armor offers no protection. Other armor protects for a number of rounds equal to its PV: the GM must track this duration and adjust applicable protection.",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

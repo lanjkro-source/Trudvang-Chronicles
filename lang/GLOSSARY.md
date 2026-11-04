@@ -900,6 +900,66 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.critical` | Critically Injured | Mortellement blessé |
 | `TRUDVANG.Damage.dying` | Dying | Mourant |
 | `TRUDVANG.Damage.dead` | Dead | Mort |
+| `TRUDVANG.Damage.Application` | Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary} | Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary} |
+| `TRUDVANG.Damage.ArmorApplied` | {name}: PV {protection} | {name} : VP {protection} |
+
+## `TRUDVANG.Damage.Field`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Field.nature` | Nature | Nature |
+| `TRUDVANG.Damage.Field.delivery` | Delivery | Mode d’attaque |
+| `TRUDVANG.Damage.Field.type` | Damage type | Type de dégâts |
+| `TRUDVANG.Damage.Field.material` | Material | Matériau |
+| `TRUDVANG.Damage.Field.protection` | Applicable protection | Protection applicable |
+
+## `TRUDVANG.Damage.Nature`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Nature.normal` | Normal damage | Dégâts normaux |
+| `TRUDVANG.Damage.Nature.magical` | Magical damage | Dégâts magiques |
+
+## `TRUDVANG.Damage.Delivery`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Delivery.melee` | Melee | Mêlée |
+| `TRUDVANG.Damage.Delivery.ranged` | Ranged | Distance |
+| `TRUDVANG.Damage.Delivery.other` | Other origin | Autre origine |
+
+## `TRUDVANG.Damage.Type`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Type.slashing` | Slashing | Tranchant |
+| `TRUDVANG.Damage.Type.piercing` | Piercing | Perforant |
+| `TRUDVANG.Damage.Type.bludgeoning` | Bludgeoning | Contondant |
+| `TRUDVANG.Damage.Type.fire` | Fire | Feu |
+| `TRUDVANG.Damage.Type.cold` | Cold | Froid |
+| `TRUDVANG.Damage.Type.lightning` | Lightning | Foudre |
+| `TRUDVANG.Damage.Type.acid` | Acid | Acide |
+| `TRUDVANG.Damage.Type.poison` | Poison | Poison |
+| `TRUDVANG.Damage.Type.other` | Other / unspecified damage | Autres dégâts / type non précisé |
+
+## `TRUDVANG.Damage.Material`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Material.wood` | Wood | Bois |
+| `TRUDVANG.Damage.Material.steel` | Steel | Acier |
+| `TRUDVANG.Damage.Material.stone` | Stone | Pierre |
+| `TRUDVANG.Damage.Material.unknown` | Unspecified | Non précisé |
+| `TRUDVANG.Damage.Material.grindsilver` | Grindsilver | Grindsilver |
+
+## `TRUDVANG.Damage.Protection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Damage.Protection.normal` | Normal protection | Protections normales |
+| `TRUDVANG.Damage.Protection.none` | Ignore all protection | Ignore toutes les protections |
+| `TRUDVANG.Damage.Protection.magical` | Magical armor only | Armures magiques uniquement |
+| `TRUDVANG.Damage.Protection.magicalOrGrindsilver` | Magical or grindsilver armor | Armures magiques ou en grindsilver |
 
 ## `TRUDVANG.Npc`
 
@@ -1679,6 +1739,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.ignoreFearPenalty` | Ignore fear penalties | Ignore les malus de peur |
 | `TRUDVANG.Effect.Profile.ignoreFearGain` | Prevents fear gain | Empêche de gagner des points de peur |
 | `TRUDVANG.Effect.Profile.ignoreFearThrough` | Ignore fear consequences through level | Ignore les conséquences des niveaux de peur jusqu’à |
+| `TRUDVANG.Effect.Profile.damageDefenses` | Typed damage resistances and vulnerabilities | Résistances et vulnérabilités par type de dégâts |
+| `TRUDVANG.Effect.Profile.damageQualification` | Item damage qualifiers | Qualifications des dégâts de l’objet |
+| `TRUDVANG.Effect.Profile.magicalProtection` | PV effective against damage requiring magical armor | VP protégeant aussi contre les dégâts réservés aux armures magiques |
 
 ## `TRUDVANG.Effect.Activation`
 

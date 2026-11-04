@@ -19,6 +19,13 @@
     "range": "5 mètres/niveau",
     "weavingTime": "5 tours de jeu",
     "dailyActivation": "2",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": true,
     "powerLevels": [

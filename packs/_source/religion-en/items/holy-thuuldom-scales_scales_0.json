@@ -19,6 +19,13 @@
     "range": "personal",
     "weavingTime": "2 action rounds",
     "dailyActivation": "2",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": true,
     "powerLevels": [

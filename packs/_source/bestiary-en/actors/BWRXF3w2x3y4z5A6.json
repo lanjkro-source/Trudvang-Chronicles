@@ -21,12 +21,24 @@
         },
         "weight": 1,
         "value": 0.5,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "uIbKTA2x3y4z5A6B",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.Stafur"
+        }
+      },
       "_key": "!actors.items!BWRXF3w2x3y4z5A6.uIbKTA2x3y4z5A6B",
       "effects": []
     },

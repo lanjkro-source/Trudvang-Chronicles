@@ -45,12 +45,24 @@
         },
         "weight": 1.3,
         "value": 11,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "TH76L1tZu0v1w2x3",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.KrumSwerd"
+        }
+      },
       "_key": "!actors.items!XXAWJ4x3y4z5A6B7.TH76L1tZu0v1w2x3",
       "effects": []
     },
@@ -72,12 +84,24 @@
         },
         "weight": 2,
         "value": 12,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "C9e11kNiOjPkQlRm",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaKlot"
+        }
+      },
       "_key": "!actors.items!XXAWJ4x3y4z5A6B7.C9e11kNiOjPkQlRm",
       "effects": []
     },
@@ -99,12 +123,24 @@
         },
         "weight": 3,
         "value": 0.4,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "n0Rnhz1w2x3y4z5A",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+        }
+      },
       "_key": "!actors.items!XXAWJ4x3y4z5A6B7.n0Rnhz1w2x3y4z5A",
       "effects": []
     },
@@ -125,6 +161,13 @@
         "initiativeModifier": -1,
         "weight": 2,
         "value": 1,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damage": "1d10",
         "openRoll": 0,
         "damageBonus": 0,
@@ -133,6 +176,11 @@
         "hand": "weapon"
       },
       "_id": "aHpCV7z5A6B7C8D9",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.SmallShield"
+        }
+      },
       "_key": "!actors.items!XXAWJ4x3y4z5A6B7.aHpCV7z5A6B7C8D9",
       "effects": []
     },

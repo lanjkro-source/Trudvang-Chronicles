@@ -1,6 +1,7 @@
 /** Editable, per-effect profile changes. Native scalar bonuses keep their usual
  * system.effective/system.modifiers paths; structured profiles use JSON values. */
 import {creatureTokenDimensions} from "./creature-token-size.mjs";
+import {DAMAGE_NATURES,DAMAGE_TYPES,DAMAGE_DELIVERIES,DAMAGE_PROTECTIONS} from "./damage-qualifications.mjs";
 export const EFFECT_RULE_PREFIX = "system.transformation.";
 export const roundEffectValue = value => Math.round((value + Number.EPSILON) * 100) / 100;
 export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegrity", "naturalArmor",
@@ -8,16 +9,21 @@ export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegr
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "ignoreFearPenalty", "ignoreFearGain", "ignoreFearThrough", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection"];
-const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds"]);
-const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge"]);
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection"];
+const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds","damageDefenses"]);
+const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge","damageQualification"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
-const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough"]);
+const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough","magicalProtection"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){
  if(!row.key?.startsWith(EFFECT_RULE_PREFIX))return true;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length),value=parse(row.value);
  if(!EFFECT_RULE_KEYS.includes(key))return false;
+ if(key==="damageDefenses")return Array.isArray(value)&&value.every(rule=>rule&&typeof rule==="object"&&Number.isFinite(rule.factor)&&rule.factor>=0
+  &&(!rule.nature||DAMAGE_NATURES.includes(rule.nature))&&(!rule.type||DAMAGE_TYPES.includes(rule.type))&&(!rule.delivery||DAMAGE_DELIVERIES.includes(rule.delivery))
+  &&(!rule.stage||["beforeArmor","afterArmor"].includes(rule.stage))&&(!rule.material||typeof rule.material==="string"));
+ if(key==="damageQualification")return value&&typeof value==="object"&&!Array.isArray(value)&&Object.entries(value).every(([k,v])=>
+  ({nature:DAMAGE_NATURES,type:DAMAGE_TYPES,delivery:DAMAGE_DELIVERIES,protection:DAMAGE_PROTECTIONS})[k]?.includes(v)||k==="material"&&typeof v==="string");
  if(key==="powerIds")return Array.isArray(value)&&value.every(id=>typeof id==="string");
  if(key==="senses")return Array.isArray(value)&&value.every(s=>typeof s==="string"||s&&typeof s.label==="string"&&["normal","night","dark","other"].includes(s.type)&&(s.range===null||Number.isFinite(s.range)&&s.range>=0)&&typeof s.enabled==="boolean");
  if(arrays.has(key))return Array.isArray(value)&&(!["traits","movement","attacks"].includes(key)||value.every(r=>r&&typeof r==="object"&&!Array.isArray(r)));

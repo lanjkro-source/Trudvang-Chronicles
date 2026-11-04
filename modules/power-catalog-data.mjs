@@ -1085,7 +1085,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -1106,7 +1112,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -1232,7 +1244,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -4420,7 +4438,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:5"
+      "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:5",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "other",
+        "protection": "normal"
+      }
     },
     "targeting": {
       "baseTargets": 1,
@@ -4567,7 +4591,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -4588,7 +4618,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -4714,7 +4750,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d10",
           "openRoll": 8
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "piercing",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -7664,7 +7706,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 0
         }
       ],
-      "optionId": "holy-toikalokke-master-of-elements:earthquake:7:3"
+      "optionId": "holy-toikalokke-master-of-elements:earthquake:7:3",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "bludgeoning",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -7717,7 +7765,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 7
         }
       ],
-      "optionId": "holy-toikalokke-master-of-elements:elemental-arrow:6:2"
+      "optionId": "holy-toikalokke-master-of-elements:elemental-arrow:6:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "ranged",
+        "type": "fire",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -9252,7 +9306,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-dimvitner:darkness-of-dimhall:8:2"
+      "optionId": "vitner-dimvitner:darkness-of-dimhall:8:2",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "other",
+        "type": "other",
+        "protection": "magicalOrGrindsilver"
+      }
     },
     "powerLevels": [
       {
@@ -9438,7 +9498,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-flame-craft:burning-hand:2:2"
+      "optionId": "vitner-flame-craft:burning-hand:2:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "melee",
+        "type": "fire",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -9486,7 +9552,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-flame-craft:flame-burst:3:2"
+      "optionId": "vitner-flame-craft:flame-burst:3:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "fire",
+        "protection": "magical"
+      }
     },
     "powerLevels": [
       {
@@ -9560,7 +9632,13 @@ export const POWER_DETAILS_BY_ID = {
           "formula": "1d6",
           "openRoll": 0
         }
-      ]
+      ],
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "fire",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -9665,7 +9743,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-flame-craft:sea-of-fire:7:2"
+      "optionId": "vitner-flame-craft:sea-of-fire:7:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "fire",
+        "protection": "magical"
+      }
     },
     "powerLevels": [
       {
@@ -10786,7 +10870,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 0
         }
       ],
-      "optionId": "vitner-soil-craft:earthquake:2:3"
+      "optionId": "vitner-soil-craft:earthquake:2:3",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "bludgeoning",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -10910,7 +11000,14 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-soil-craft:rock-throw:0:2"
+      "optionId": "vitner-soil-craft:rock-throw:0:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "ranged",
+        "type": "bludgeoning",
+        "protection": "normal",
+        "material": "stone"
+      }
     },
     "powerLevels": [
       {
@@ -12417,7 +12514,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-wind-craft:wind-blast:7:2"
+      "optionId": "vitner-wind-craft:wind-blast:7:2",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "ranged",
+        "type": "bludgeoning",
+        "protection": "normal"
+      }
     },
     "powerLevels": [
       {
@@ -12667,7 +12770,13 @@ export const POWER_DETAILS_BY_ID = {
           "openRoll": 8
         }
       ],
-      "optionId": "vitner-witchcraft:fever:2:5"
+      "optionId": "vitner-witchcraft:fever:2:5",
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "other",
+        "protection": "normal"
+      }
     },
     "targeting": {
       "baseTargets": 1,

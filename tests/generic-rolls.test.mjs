@@ -67,9 +67,9 @@ test('magic fear prefills the confirmation and cancellation posts neither dice n
 });
 
 test('generic weapon damage preserves its delivery and magical nature for application',async()=>{
- values={title:'Magic arrow',dice:'1',faces:'10',threshold:'0',bonus:'0',delivery:'ranged','magical-weapon':true};dice=[8];
+ values={title:'Magic arrow',dice:'1',faces:'10',threshold:'0',bonus:'0',delivery:'ranged','damage-nature':'magical'};dice=[8];
  await rollGenericDamage();
- assert.deepEqual(messages.at(-1).flags['trudvang-chronicles'].damageContext,{usage:'ranged',magicalWeapon:true});
+ assert.deepEqual(messages.at(-1).flags['trudvang-chronicles'].damageContext,{usage:'ranged',magicalWeapon:true,qualification:{nature:'magical',delivery:'ranged',type:'other',material:'',protection:'normal'}});
 });
 
 test('fixed generic damage uses the shared window and posts its amount without evaluating dice',async()=>{

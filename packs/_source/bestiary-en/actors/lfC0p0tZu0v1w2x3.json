@@ -45,12 +45,24 @@
         },
         "weight": 3.5,
         "value": 14,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
         "hand": "weapon"
       },
       "_id": "f5bvQ2u0v1w2x3y4",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaMakir"
+        }
+      },
       "_key": "!actors.items!lfC0p0tZu0v1w2x3.f5bvQ2u0v1w2x3y4",
       "effects": []
     },
@@ -72,12 +84,24 @@
         },
         "weight": 3,
         "value": 0.4,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "Y5TZGWoUpVqWrXsY",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+        }
+      },
       "_key": "!actors.items!lfC0p0tZu0v1w2x3.Y5TZGWoUpVqWrXsY",
       "effects": []
     },

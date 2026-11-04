@@ -114,6 +114,7 @@ const entries = sources.fr.map((creature, index) => {
       const data = stripItem(base);
       items.push({...data, _id: deterministicId(`${id}:weapon:${weaponIndex}`),
         ...itemName(`Weapon${weaponIndex}`, weapon.name, localize("en", base.nameKey)),
+        flags: {...data.flags, "trudvang-chronicles": {...data.flags?.["trudvang-chronicles"], starterId: base.nameKey.replace(/\.Name$/, "")}},
         system: {...data.system, ...parseDamage(weapon.damage), initiativeModifier: Number(weapon.initiative || 0), quantity: 1,
           combatSpecialty: base.type === "weapon" ? weaponType(base) : undefined, equipped: false, hand: "weapon"}});
     }

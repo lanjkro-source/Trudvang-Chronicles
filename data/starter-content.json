@@ -328,7 +328,14 @@
           "max": 70
         },
         "weight": 1,
-        "value": 9
+        "value": 9,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -350,7 +357,14 @@
           "max": 60
         },
         "weight": 0.5,
-        "value": 3
+        "value": 3,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -371,7 +385,14 @@
           "max": 40
         },
         "weight": 0.5,
-        "value": 0.2
+        "value": 0.2,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -392,7 +413,14 @@
           "max": 70
         },
         "weight": 1.3,
-        "value": 11
+        "value": 11,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -415,7 +443,14 @@
           "max": 30
         },
         "weight": 0.6,
-        "value": 2
+        "value": 2,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -436,7 +471,14 @@
           "max": 50
         },
         "weight": 1,
-        "value": 1
+        "value": 1,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -459,7 +501,14 @@
           "max": 50
         },
         "weight": 0.3,
-        "value": 2
+        "value": 2,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -482,7 +531,14 @@
           "max": 60
         },
         "weight": 1.2,
-        "value": 6
+        "value": 6,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -503,7 +559,14 @@
           "max": 40
         },
         "weight": 1,
-        "value": 0.5
+        "value": 0.5,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -524,7 +587,14 @@
           "max": 70
         },
         "weight": 1.5,
-        "value": 7
+        "value": 7,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -545,7 +615,14 @@
           "max": 70
         },
         "weight": 2,
-        "value": 11
+        "value": 11,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -566,7 +643,14 @@
           "max": 70
         },
         "weight": 2,
-        "value": 12
+        "value": 12,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -587,7 +671,14 @@
           "max": 100
         },
         "weight": 3.5,
-        "value": 14
+        "value": 14,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -608,7 +699,14 @@
           "max": 90
         },
         "weight": 2.5,
-        "value": 18
+        "value": 18,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -629,7 +727,14 @@
           "max": 80
         },
         "weight": 3,
-        "value": 14
+        "value": 14,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -651,7 +756,14 @@
           "max": 70
         },
         "weight": 2,
-        "value": 11
+        "value": 11,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -673,7 +785,14 @@
           "max": 80
         },
         "weight": 3,
-        "value": 13
+        "value": 13,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -695,7 +814,14 @@
           "max": 80
         },
         "weight": 1.8,
-        "value": 15
+        "value": 15,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -716,7 +842,14 @@
           "max": 80
         },
         "weight": 2,
-        "value": 30
+        "value": 30,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -737,7 +870,14 @@
           "max": 70
         },
         "weight": 1.5,
-        "value": 10
+        "value": 10,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -760,7 +900,14 @@
           "max": 90
         },
         "weight": 0.8,
-        "value": 330
+        "value": 330,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -783,7 +930,14 @@
           "max": 40
         },
         "weight": 1,
-        "value": 3
+        "value": 3,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -804,7 +958,14 @@
           "max": 60
         },
         "weight": 1.2,
-        "value": 12
+        "value": 12,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -825,7 +986,14 @@
           "max": 90
         },
         "weight": 3,
-        "value": 14
+        "value": 14,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -846,7 +1014,14 @@
           "max": 70
         },
         "weight": 3.5,
-        "value": 20
+        "value": 20,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -868,7 +1043,14 @@
           "max": 50
         },
         "weight": 2,
-        "value": 4
+        "value": 4,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -889,7 +1071,14 @@
           "max": 70
         },
         "weight": 3,
-        "value": 10
+        "value": 10,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -910,7 +1099,14 @@
           "max": 80
         },
         "weight": 4,
-        "value": 18
+        "value": 18,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -931,7 +1127,14 @@
           "max": 100
         },
         "weight": 5,
-        "value": 22
+        "value": 22,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -952,7 +1155,14 @@
           "max": 60
         },
         "weight": 3,
-        "value": 0.4
+        "value": 0.4,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -974,7 +1184,14 @@
           "max": 90
         },
         "weight": 4,
-        "value": 24
+        "value": 24,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -996,7 +1213,14 @@
           "max": 100
         },
         "weight": 4,
-        "value": 28
+        "value": 28,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1024,6 +1248,13 @@
         "range": {
           "short": 80,
           "long": 160
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1052,6 +1283,13 @@
         "range": {
           "short": 30,
           "long": 80
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1075,7 +1313,14 @@
           "max": 30
         },
         "weight": 0.6,
-        "value": 2
+        "value": 2,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1099,7 +1344,14 @@
           "max": 50
         },
         "weight": 0.3,
-        "value": 2
+        "value": 2,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1127,6 +1379,13 @@
         "range": {
           "short": 50,
           "long": 110
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1150,7 +1409,14 @@
           "max": 90
         },
         "weight": 0.8,
-        "value": 330
+        "value": 330,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1176,6 +1442,13 @@
         "range": {
           "short": 15,
           "long": 35
+        },
+        "material": "stone",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "bludgeoning",
+          "protection": "normal"
         }
       }
     },
@@ -1199,7 +1472,14 @@
           "max": 60
         },
         "weight": 1.2,
-        "value": 6
+        "value": 6,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1222,7 +1502,14 @@
           "max": 40
         },
         "weight": 1,
-        "value": 3
+        "value": 3,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1248,6 +1535,13 @@
         "range": {
           "short": 25,
           "long": 50
+        },
+        "material": "stone",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "bludgeoning",
+          "protection": "normal"
         }
       }
     },
@@ -1274,6 +1568,13 @@
         "range": {
           "short": 100,
           "long": 200
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1300,6 +1601,13 @@
         "range": {
           "short": 70,
           "long": 150
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1326,6 +1634,13 @@
         "range": {
           "short": 50,
           "long": 100
+        },
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "piercing",
+          "protection": "normal"
         }
       }
     },
@@ -1527,7 +1842,14 @@
         "initiativeModifier": -3,
         "passiveProtection": 6,
         "weight": 6,
-        "value": 4
+        "value": 4,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1546,7 +1868,14 @@
         "initiativeModifier": -3,
         "passiveProtection": 6,
         "weight": 6,
-        "value": 5
+        "value": 5,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1566,7 +1895,14 @@
         "weaponActions": 1,
         "initiativeModifier": -3,
         "weight": 6,
-        "value": 3
+        "value": 3,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1585,7 +1921,14 @@
         "initiativeModifier": -2,
         "passiveProtection": 4,
         "weight": 4,
-        "value": 3
+        "value": 3,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1604,7 +1947,14 @@
         "initiativeModifier": -2,
         "passiveProtection": 4,
         "weight": 4,
-        "value": 4
+        "value": 4,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1624,7 +1974,14 @@
         "weaponActions": 2,
         "initiativeModifier": -2,
         "weight": 4,
-        "value": 2
+        "value": 2,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1643,7 +2000,14 @@
         "initiativeModifier": -1,
         "passiveProtection": 2,
         "weight": 2,
-        "value": 2
+        "value": 2,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1662,7 +2026,14 @@
         "initiativeModifier": -1,
         "passiveProtection": 2,
         "weight": 2,
-        "value": 3
+        "value": 3,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {
@@ -1682,7 +2053,14 @@
         "weaponActions": 3,
         "initiativeModifier": -1,
         "weight": 2,
-        "value": 1
+        "value": 1,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        }
       }
     },
     {

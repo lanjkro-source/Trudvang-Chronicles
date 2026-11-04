@@ -46,6 +46,13 @@
         },
         "weight": 1,
         "value": 9,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "combatSpecialty": "oneHandedLightWeapons",
@@ -53,6 +60,11 @@
         "hand": "weapon"
       },
       "_id": "fD4ZfaE9EaGbHcId",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.Glaaf"
+        }
+      },
       "_key": "!actors.items!WXp0rgJeKfLgMhNi.fD4ZfaE9EaGbHcId",
       "effects": []
     },
@@ -74,12 +86,24 @@
         },
         "weight": 2.5,
         "value": 18,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
         "hand": "weapon"
       },
       "_id": "0tHmvoSnToUpVqWr",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.BardaSwerd"
+        }
+      },
       "_key": "!actors.items!WXp0rgJeKfLgMhNi.0tHmvoSnToUpVqWr",
       "effects": []
     },
@@ -102,6 +126,13 @@
         },
         "weight": 4,
         "value": 28,
+        "material": "steel",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "damageBonus": 0,
         "quantity": 1,
         "combatSpecialty": "twoHandedWeapons",
@@ -109,6 +140,11 @@
         "hand": "weapon"
       },
       "_id": "LkkJKC6B7C8D9EaG",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.TwoHandedSword"
+        }
+      },
       "_key": "!actors.items!WXp0rgJeKfLgMhNi.LkkJKC6B7C8D9EaG",
       "effects": []
     },
@@ -129,6 +165,13 @@
         "initiativeModifier": -1,
         "weight": 2,
         "value": 1,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "damage": "1d10",
         "openRoll": 0,
         "damageBonus": 0,
@@ -137,6 +180,11 @@
         "hand": "weapon"
       },
       "_id": "wbX5ZQkQlRmSnToU",
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "TRUDVANG.Content.Item.SmallShield"
+        }
+      },
       "_key": "!actors.items!WXp0rgJeKfLgMhNi.wbX5ZQkQlRmSnToU",
       "effects": []
     },

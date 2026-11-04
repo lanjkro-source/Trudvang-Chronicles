@@ -19,6 +19,13 @@
     "range": "5 mètres",
     "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "magicalOrGrindsilver"
+    },
+    "damageQualificationNote": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [

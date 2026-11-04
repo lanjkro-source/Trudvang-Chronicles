@@ -19,6 +19,13 @@
     "range": "1 cubic meter/level",
     "weavingTime": "3 minutes/level",
     "dailyActivation": "1",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": true,
     "powerLevels": [

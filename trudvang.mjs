@@ -27,10 +27,13 @@ import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
 import {registerTransformationHooks} from "./modules/transformations.mjs";
 import {registerMaintainedSpellTracking} from "./modules/maintained-spell-tracking.mjs";
 import {registerAuraSupport} from "./modules/aura.mjs";
+import {registerDamageEnrichers} from "./modules/damage-icons.mjs";
+import {migrateDamageQualifications} from "./modules/damage-qualification-migration.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
+  registerDamageEnrichers();
   configureEffects();
   registerAuraSupport();
   registerEffectHooks();
@@ -250,6 +253,8 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", async () => {
+  try { await migrateDamageQualifications(); }
+  catch (error) { console.error("Trudvang Chronicles | Damage qualifier migration failed", error); }
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
   registerChatListeners();
   registerPortraitSocket();

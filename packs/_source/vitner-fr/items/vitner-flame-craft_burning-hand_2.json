@@ -19,6 +19,13 @@
     "range": "personnelle",
     "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "fire",
+      "protection": "normal"
+    },
+    "damageQualificationNote": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [

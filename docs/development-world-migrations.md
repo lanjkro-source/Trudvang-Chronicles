@@ -4,6 +4,8 @@ Ce document inventorie tout le code qui existe uniquement pour remettre à nivea
 
 ## Règle de maintenance
 
+`modules/damage-qualification-migration.mjs` : au `ready` du MJ actif, renseigne une seule fois les matériaux et qualifications des anciennes copies de catalogue identifiables (objets mondiaux, acteurs et tokens non liés). Le marqueur `damageQualificationVersion` préserve les choix ultérieurs. Ne modifie pas les objets personnalisés non identifiables. À supprimer avec son appel dans `trudvang.mjs` lorsque les anciens mondes de développement auront été effacés.
+
 Toute nouvelle migration de monde doit :
 
 1. porter le commentaire `TEMPORARY WORLD MIGRATION` près du code concerné ;

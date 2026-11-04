@@ -641,12 +641,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.2,
             "value": 6,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "wMP5vvYtZu0v1w2x"
+          "_id": "wMP5vvYtZu0v1w2x",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SplitAxi"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Armor0",
@@ -1104,12 +1116,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3.5,
             "value": 14,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "3PFDQRjPkQlRmSnT"
+          "_id": "3PFDQRjPkQlRmSnT",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaMakir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon1",
@@ -1128,6 +1152,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -3,
             "weight": 6,
             "value": 3,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 10,
             "damageBonus": 0,
@@ -1135,7 +1166,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "iZ2gBD5A6B7C8D9E"
+          "_id": "iZ2gBD5A6B7C8D9E",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.LargeShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon2",
@@ -1155,12 +1191,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 0.4,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "zxVmlkMhNiOjPkQl"
+          "_id": "zxVmlkMhNiOjPkQl",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+            }
+          }
         },
         {
           "_id": "KFs4J6x3y4z5A6B7",
@@ -3092,12 +3140,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2,
             "value": 30,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "5Jw8hbGbHcIdJeKf"
+          "_id": "5Jw8hbGbHcIdJeKf",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.DropiAxi"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon4",
@@ -3117,12 +3177,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 10,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "MlJa99EaGbHcIdJe"
+          "_id": "MlJa99EaGbHcIdJe",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiFaldir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
@@ -3141,6 +3213,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 4,
             "value": 2,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -3148,7 +3227,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "xDLWNNiOjPkQlRmS"
+          "_id": "xDLWNNiOjPkQlRmS",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.MediumShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Armor0",
@@ -3892,12 +3976,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.3,
             "value": 11,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "TH76L1tZu0v1w2x3"
+          "_id": "TH76L1tZu0v1w2x3",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.KrumSwerd"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
@@ -3917,12 +4013,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2,
             "value": 12,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "C9e11kNiOjPkQlRm"
+          "_id": "C9e11kNiOjPkQlRm",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaKlot"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon3",
@@ -3942,12 +4050,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 0.4,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "n0Rnhz1w2x3y4z5A"
+          "_id": "n0Rnhz1w2x3y4z5A",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
@@ -3966,6 +4086,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 2,
             "value": 1,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -3973,7 +4100,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "aHpCV7z5A6B7C8D9"
+          "_id": "aHpCV7z5A6B7C8D9",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Armor0",
@@ -4776,12 +4908,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.2,
             "value": 12,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "45fRzKeKfLgMhNiO"
+          "_id": "45fRzKeKfLgMhNiO",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.StakkSwerd"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2",
@@ -4800,6 +4944,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 4,
             "value": 2,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -4807,7 +4958,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "lE8WjrVqWrXsYtZu"
+          "_id": "lE8WjrVqWrXsYtZu",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.MediumShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Armor0",
@@ -5253,13 +5409,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 9,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "fD4ZfaE9EaGbHcId"
+          "_id": "fD4ZfaE9EaGbHcId",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Glaaf"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon2",
@@ -5279,12 +5447,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2.5,
             "value": 18,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "0tHmvoSnToUpVqWr"
+          "_id": "0tHmvoSnToUpVqWr",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaSwerd"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon3",
@@ -5305,13 +5485,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 4,
             "value": 28,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "LkkJKC6B7C8D9EaG"
+          "_id": "LkkJKC6B7C8D9EaG",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TwoHandedSword"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4",
@@ -5330,6 +5522,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 2,
             "value": 1,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -5337,7 +5536,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "wbX5ZQkQlRmSnToU"
+          "_id": "wbX5ZQkQlRmSnToU",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Armor0",
@@ -5744,12 +5948,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2,
             "value": 12,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "KjZF4aC7C8D9EaGb"
+          "_id": "KjZF4aC7C8D9EaGb",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaKlot"
+            }
+          }
         }
       ],
       "effects": [],
@@ -5974,13 +6190,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 0.3,
             "value": 2,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "K7oe0NiOjPkQlRmS"
+          "_id": "K7oe0NiOjPkQlRmS",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Seax"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Armor0",
@@ -7724,12 +7952,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 1,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "DB7i6QjPkQlRmSnT"
+          "_id": "DB7i6QjPkQlRmSnT",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.NagliKlubb"
+            }
+          }
         }
       ],
       "effects": [],
@@ -8430,12 +8670,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 14,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "F0NaAI9EaGbHcIdJ"
+          "_id": "F0NaAI9EaGbHcIdJ",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.StjornMakir"
+            }
+          }
         }
       ],
       "effects": [],
@@ -8784,12 +9036,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 0.5,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "uIbKTA2x3y4z5A6B"
+          "_id": "uIbKTA2x3y4z5A6B",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Stafur"
+            }
+          }
         }
       ],
       "effects": [],
@@ -10527,12 +10791,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 0.4,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "XGJs0x2x3y4z5A6B"
+          "_id": "XGJs0x2x3y4z5A6B",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+            }
+          }
         }
       ],
       "effects": [],
@@ -10733,12 +11009,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3.5,
             "value": 20,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "RtGzHkMhNiOjPkQl"
+          "_id": "RtGzHkMhNiOjPkQl",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BreidSpjot"
+            }
+          }
         }
       ],
       "effects": [],
@@ -11242,12 +11530,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 0.4,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "WpQT1ZtZu0v1w2x3"
+          "_id": "WpQT1ZtZu0v1w2x3",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+            }
+          }
         }
       ],
       "effects": [],
@@ -11449,12 +11749,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 0.5,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "RK3l0C7C8D9EaGbH"
+          "_id": "RK3l0C7C8D9EaGbH",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Stafur"
+            }
+          }
         }
       ],
       "effects": [],
@@ -11907,12 +12219,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.2,
             "value": 6,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "bXoedy1w2x3y4z5A"
+          "_id": "bXoedy1w2x3y4z5A",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SplitAxi"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Armor0",
@@ -12309,12 +12633,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.3,
             "value": 11,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "rUYrqNfLgMhNiOjP"
+          "_id": "rUYrqNfLgMhNiOjP",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.KrumSwerd"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
@@ -12334,12 +12670,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3.5,
             "value": 14,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "aVGWgH9EaGbHcIdJ"
+          "_id": "aVGWgH9EaGbHcIdJ",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaMakir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon3",
@@ -12359,12 +12707,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 10,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "VLjjwVnToUpVqWrX"
+          "_id": "VLjjwVnToUpVqWrX",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiFaldir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4",
@@ -12382,6 +12742,13 @@ export const BESTIARY_ENTRIES = [
             "passiveProtection": 2,
             "weight": 2,
             "value": 2,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -12389,7 +12756,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "EdrdMeHcIdJeKfLg"
+          "_id": "EdrdMeHcIdJeKfLg",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallFurShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Armor0",
@@ -12892,12 +13264,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 3,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "mpgkLKeKfLgMhNiO"
+          "_id": "mpgkLKeKfLgMhNiO",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.StaafSpjot"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2",
@@ -12917,12 +13301,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 10,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "DX8pvrVqWrXsYtZu"
+          "_id": "DX8pvrVqWrXsYtZu",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiFaldir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Armor0",
@@ -13375,12 +13771,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2,
             "value": 11,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "KagEscHcIdJeKfLg"
+          "_id": "KagEscHcIdJeKfLg",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaHammri"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon2",
@@ -13401,13 +13809,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 4,
             "value": 24,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "19x9BiNiOjPkQlRm"
+          "_id": "19x9BiNiOjPkQlRm",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TwoHandedAxe"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Armor0",
@@ -13873,12 +14293,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 3,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "Qbb4BPkQlRmSnToU"
+          "_id": "Qbb4BPkQlRmSnToU",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.StaafSpjot"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon2",
@@ -13898,12 +14330,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 10,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "7atzLVqWrXsYtZu0"
+          "_id": "7atzLVqWrXsYtZu0",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiFaldir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon3",
@@ -13921,6 +14365,13 @@ export const BESTIARY_ENTRIES = [
             "passiveProtection": 4,
             "weight": 4,
             "value": 4,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -13928,7 +14379,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "mkQcwHcIdJeKfLgM"
+          "_id": "mkQcwHcIdJeKfLgM",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.MediumMetalShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Armor0",
@@ -14469,12 +14925,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3.5,
             "value": 14,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "f5bvQ2u0v1w2x3y4"
+          "_id": "f5bvQ2u0v1w2x3y4",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaMakir"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon2",
@@ -14494,12 +14962,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 3,
             "value": 0.4,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "Y5TZGWoUpVqWrXsY"
+          "_id": "Y5TZGWoUpVqWrXsY",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TveiKlubb"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Armor0",
@@ -14924,12 +15404,24 @@ export const BESTIARY_ENTRIES = [
               "short": 30,
               "long": 80
             },
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "ranged",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
             "hand": "weapon"
           },
-          "_id": "cdJ1z1tZu0v1w2x3"
+          "_id": "cdJ1z1tZu0v1w2x3",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.HuntingBow"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon2",
@@ -14951,12 +15443,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 0.6,
             "value": 2,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "tLB7jIaGbHcIdJeK"
+          "_id": "tLB7jIaGbHcIdJeK",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.LillSpjot"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon3",
@@ -14975,6 +15479,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 2,
             "value": 1,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d5",
             "openRoll": 0,
             "damageBonus": 0,
@@ -14982,7 +15493,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "IUYK4tWrXsYtZu0v"
+          "_id": "IUYK4tWrXsYtZu0v",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Armor0",
@@ -18270,13 +18786,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1,
             "value": 9,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "1foUHMgMhNiOjPkQ"
+          "_id": "1foUHMgMhNiOjPkQ",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Glaaf"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon1",
@@ -18295,6 +18823,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 2,
             "value": 1,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -18302,7 +18837,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "gpLxsy2x3y4z5A6B"
+          "_id": "gpLxsy2x3y4z5A6B",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Armor0",
@@ -18442,13 +18982,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 1.8,
             "value": 15,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedHeavyWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "f1pqWpSnToUpVqWr"
+          "_id": "f1pqWpSnToUpVqWr",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.Broadsword"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon1",
@@ -18467,6 +19019,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 2,
             "value": 1,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -18474,7 +19033,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "uaN3GbE9EaGbHcId"
+          "_id": "uaN3GbE9EaGbHcId",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.SmallShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Armor0",
@@ -18616,13 +19180,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 4,
             "value": 28,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 2,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "oYwStcHcIdJeKfLg"
+          "_id": "oYwStcHcIdJeKfLg",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TwoHandedSword"
+            }
+          }
         }
       ],
       "effects": [],
@@ -18734,13 +19310,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 4,
             "value": 28,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "ZfJTF9C8D9EaGbHc"
+          "_id": "ZfJTF9C8D9EaGbHc",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.TwoHandedSword"
+            }
+          }
         }
       ],
       "effects": [],
@@ -18860,13 +19448,25 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2,
             "value": 11,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedHeavyWeapons",
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "sEbJnD8D9EaGbHcI"
+          "_id": "sEbJnD8D9EaGbHcI",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BattleAxe"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon1",
@@ -18885,6 +19485,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 4,
             "value": 2,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -18892,7 +19499,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "dvO5CRmSnToUpVqW"
+          "_id": "dvO5CRmSnToUpVqW",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.MediumShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Armor0",
@@ -19033,12 +19645,24 @@ export const BESTIARY_ENTRIES = [
             },
             "weight": 2.5,
             "value": 18,
+            "material": "steel",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "3gKcYB3y4z5A6B7C"
+          "_id": "3gKcYB3y4z5A6B7C",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.BardaSwerd"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon1",
@@ -19057,6 +19681,13 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -3,
             "weight": 6,
             "value": 3,
+            "material": "wood",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -19064,7 +19695,12 @@ export const BESTIARY_ENTRIES = [
             "equipped": true,
             "hand": "weapon"
           },
-          "_id": "iq7PInPkQlRmSnTo"
+          "_id": "iq7PInPkQlRmSnTo",
+          "flags": {
+            "trudvang-chronicles": {
+              "starterId": "TRUDVANG.Content.Item.LargeShield"
+            }
+          }
         },
         {
           "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Armor0",

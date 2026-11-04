@@ -10,6 +10,7 @@ import {readFileSync, writeFileSync} from "node:fs";
 import {resolve} from "node:path";
 import {englishPowerField} from "./power-source-fields.mjs";
 import {validatePowerOptionIdentities,validatePowerTargeting} from "./power-option-identity.mjs";
+import {DAMAGE_NATURES,DAMAGE_TYPES,DAMAGE_DELIVERIES,DAMAGE_PROTECTIONS} from "../modules/rules/damage-qualifications.mjs";
 
 const root = process.cwd();
 const check = process.argv.includes("--check");
@@ -93,6 +94,8 @@ for (const id of [...french.keys()].sort()) {
   if(JSON.stringify(f.damageRoll??null)!==JSON.stringify(e.damageRoll??null))fail(`${id}: EN damage roll differs from FR`);
   if(f.damageRoll){
     const d=f.damageRoll;
+    const q=d.qualification;
+    if(!q || !DAMAGE_NATURES.includes(q.nature) || !DAMAGE_TYPES.includes(q.type) || !DAMAGE_DELIVERIES.includes(q.delivery) || !DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
     if(!Array.isArray(d.steps)||!d.steps.length||d.steps.some(s=>!/^\d+d(?:3|4|5|6|10)(?:\s*\+\s*\d+)?$/i.test(s.formula)||!Number.isInteger(s.openRoll)||s.openRoll<0||s.openRoll>10)||
       (d.optionId&&!f.powerLevels.some(p=>p.optionId===d.optionId)))fail(`${id}: invalid damage roll`);
   }
@@ -139,6 +142,7 @@ for (const id of [...french.keys()].sort()) {
       Summary: source.summary,
       Description: source.description,
       SwedishName: source.swedishName ?? "",
+      DamageQualificationNote: source.damageQualificationNote ?? "",
       Duration: source.duration ?? "",
       Range: source.range ?? "",
       CastingTime: source.castingTime ?? "",
