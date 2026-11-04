@@ -1,0 +1,60 @@
+{
+  "_id": "5weWi6y4z5A6B7C8",
+  "_key": "!items!5weWi6y4z5A6B7C8",
+  "name": "Troll Wit",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+    "description": "The recipient gains no fear and ignores the consequences of the first and second fear levels, including fear accumulated before the invocation. Higher fear levels still apply.",
+    "summary": "Prevents fear gain and protects against the first fear levels.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "ONrZG2x3y4z5A6B7",
+      "_key": "!items.effects!5weWi6y4z5A6B7C8.ONrZG2x3y4z5A6B7",
+      "name": "Troll Wit",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The recipient gains no fear and ignores the consequences of the first and second fear levels, including fear accumulated before the invocation. Higher fear levels still apply.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.ignoreFearGain",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.ignoreFearThrough",
+            "type": "override",
+            "value": "2",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+            "sourceId": "holy-haminges-power-of-trolls:troll-wit:7",
+            "summary": "Prevents fear gain and protects against the first fear levels.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

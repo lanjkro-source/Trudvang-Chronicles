@@ -29,7 +29,8 @@ export function transformationProfile(actor) {
   profile.movements.push(...r.movement??[]);profile.senses.push(...r.senses??[]);profile.capabilities.push(...r.capabilities??[]);
   if(r.damage)profile.damage.push({effect:effect.name,...r.damage});
   for(const attack of r.attacks??[])if(attack.isUnarmed)profile.unarmedAttack=attack;
-  for(const key of ["suspendEquipment","preserveHP","ignoreFear","ignoreFearPenalty","ignoreWounds","noParry","noDodge","endAtEmptyHP"])profile[key] ||= Boolean(r[key]);
+  for(const key of ["suspendEquipment","preserveHP","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","noParry","noDodge","endAtEmptyHP"])profile[key] ||= Boolean(r[key]);
+  if(r.ignoreFearThrough!==undefined)profile.ignoreFearThrough=Math.max(profile.ignoreFearThrough??0,Number(r.ignoreFearThrough)||0);
   if(r.size!==undefined)profile.size=r.size;
   if(r.vision)profile.vision=r.vision;
   if(r.naturalArmor!==undefined)profile.naturalArmor=r.naturalArmor;

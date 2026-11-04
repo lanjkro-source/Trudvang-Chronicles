@@ -8357,6 +8357,45 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-trolls:troll-wit:7#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.ignoreFearGain",
+        "type": "override",
+        "value": "true",
+        "phase": "initial",
+        "priority": 40
+      },
+      {
+        "key": "system.transformation.ignoreFearThrough",
+        "type": "override",
+        "value": "2",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "sourceId": "holy-haminges-power-of-trolls:troll-wit:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-trolls:troll-wit:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-trolls:troll-wit:7:1"
+      }
+    ]
+  },
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -12914,6 +12953,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-trolls:persuade:5": [
     "holy-haminges-power-of-trolls:persuade:5#effect"
+  ],
+  "holy-haminges-power-of-trolls:troll-wit:7": [
+    "holy-haminges-power-of-trolls:troll-wit:7#effect"
   ],
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8": [
     "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect"

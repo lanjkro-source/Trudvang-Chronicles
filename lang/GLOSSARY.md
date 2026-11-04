@@ -1669,6 +1669,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.powerIds` | Granted spells and powers (catalogue IDs, JSON list) | Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON) |
 | `TRUDVANG.Effect.Profile.sensesReplace` | Replace senses with the form’s senses | Remplacer les sens par ceux de la forme |
 | `TRUDVANG.Effect.Profile.ignoreFearPenalty` | Ignore fear penalties | Ignore les malus de peur |
+| `TRUDVANG.Effect.Profile.ignoreFearGain` | Prevents fear gain | Empêche de gagner des points de peur |
+| `TRUDVANG.Effect.Profile.ignoreFearThrough` | Ignore fear consequences through level | Ignore les conséquences des niveaux de peur jusqu’à |
 
 ## `TRUDVANG.Effect.Activation`
 
@@ -13647,6 +13649,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.SourcePage` | 223 | 275 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.Name` | Troll Wit | Hardiesse des trolls |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.Description` | The recipient gains no fear and ignores the consequences of the first and second fear levels, including fear accumulated before the invocation. Higher fear levels still apply. | Le bénéficiaire ne gagne aucun point de peur et ignore les conséquences des premier et deuxième niveaux de peur, y compris pour la peur accumulée avant l’invocation. Les conséquences des niveaux supérieurs restent applicables. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.SourceName` | Troll Wit | Hardiesse des trolls |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.SourcePage` | 223 | 275 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect`
 

@@ -1432,7 +1432,9 @@
         "weightBonus": "Augmentation du poids",
         "powerIds": "Sortilèges et pouvoirs accordés (identifiants du catalogue, liste JSON)",
         "sensesReplace": "Remplacer les sens par ceux de la forme",
-        "ignoreFearPenalty": "Ignore les malus de peur"
+        "ignoreFearPenalty": "Ignore les malus de peur",
+        "ignoreFearGain": "Empêche de gagner des points de peur",
+        "ignoreFearThrough": "Ignore les conséquences des niveaux de peur jusqu’à"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
       "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
@@ -15996,6 +15998,15 @@
           "Summary": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
           "Description": "Après un test de situation raté, la cible exécute la tâche indiquée. Elle refuse toute tâche dangereuse pour elle ou nuisible à un être cher, et toute tâche exigeant initiative ou créativité.",
           "SourceName": "Persuasion",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "275",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:troll-wit:7#effect": {
+          "Name": "Hardiesse des trolls",
+          "Summary": "Empêche de gagner de la peur et protège contre les premiers niveaux de peur.",
+          "Description": "Le bénéficiaire ne gagne aucun point de peur et ignore les conséquences des premier et deuxième niveaux de peur, y compris pour la peur accumulée avant l’invocation. Les conséquences des niveaux supérieurs restent applicables.",
+          "SourceName": "Hardiesse des trolls",
           "SourceBook": "Livre des règles",
           "SourcePage": "275",
           "Duration": "1 minute"

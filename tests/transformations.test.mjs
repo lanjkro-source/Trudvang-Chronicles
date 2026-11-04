@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,308);
+ assert.equal(Object.keys(sources).length,309);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1462,4 +1462,16 @@ test("form water tracks shaping time and both duration improvements",async()=>{
   assert.deepEqual(created.duration,{value:240,units:'rounds'});
   assert.match(created.description,/trois minutes/);
  }finally{globalThis.game=previous;}
+});
+
+test("Troll Wit prevents fear gain without suppressing higher existing fear penalties",async()=>{
+ const {resolveFearStatus,effectiveFearPenalty}=await import('../modules/rules/fear-resolver.mjs');
+ const t=templates['holy-haminges-power-of-trolls:troll-wit:7#effect'];
+ const rules=rulesFromChanges(t.changes);
+ assert.equal(rules.ignoreFearGain,true);assert.equal(rules.ignoreFearThrough,2);
+ for(const [fear,expected] of [[5,0],[20,0],[21,-3],[35,-5],[45,-7]]){
+  assert.equal(effectiveFearPenalty(resolveFearStatus({fear}),fear,rules),expected);
+ }
+ assert.equal(effectiveFearPenalty(resolveFearStatus({fear:45,insane:true}),45,rules),-7);
+ assert.equal(effectiveFearPenalty(resolveFearStatus({fear:20}),20,{}),-1);
 });

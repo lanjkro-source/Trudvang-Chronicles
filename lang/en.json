@@ -1432,7 +1432,9 @@
         "weightBonus": "Weight increase",
         "powerIds": "Granted spells and powers (catalogue IDs, JSON list)",
         "sensesReplace": "Replace senses with the form’s senses",
-        "ignoreFearPenalty": "Ignore fear penalties"
+        "ignoreFearPenalty": "Ignore fear penalties",
+        "ignoreFearGain": "Prevents fear gain",
+        "ignoreFearThrough": "Ignore fear consequences through level"
       },
       "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
       "InvalidProfileChange": "Invalid value for {path}. See the profile change examples.",
@@ -15996,6 +15998,15 @@
           "Summary": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
           "Description": "After a failed situation test, the target carries out the specified task. It refuses tasks harmful to itself or a loved one, or requiring initiative or creativity.",
           "SourceName": "Persuade",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:troll-wit:7#effect": {
+          "Name": "Troll Wit",
+          "Summary": "Prevents fear gain and protects against the first fear levels.",
+          "Description": "The recipient gains no fear and ignores the consequences of the first and second fear levels, including fear accumulated before the invocation. Higher fear levels still apply.",
+          "SourceName": "Troll Wit",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"

@@ -10,6 +10,12 @@ export function resolveFearStatus({fear = 0, insane = false} = {}) {
   return {level: "five", penalty: -7, insane: false};
 }
 
+export function effectiveFearPenalty(status, fear, profile = {}) {
+  if (profile.ignoreFear || profile.ignoreFearPenalty) return 0;
+  if (!status.insane && Number(fear || 0) <= 10 * Number(profile.ignoreFearThrough || 0)) return 0;
+  return status.penalty;
+}
+
 /** Persist madness when fear exceeds 50, and clear it only once fear reaches 40 or less. */
 export function resolveInsanityState({fear = 0, insane = false} = {}) {
   const value = Math.max(0, Number(fear || 0));

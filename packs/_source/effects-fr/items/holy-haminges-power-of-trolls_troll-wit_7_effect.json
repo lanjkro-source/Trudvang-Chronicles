@@ -1,0 +1,60 @@
+{
+  "_id": "5weWi6y4z5A6B7C8",
+  "_key": "!items!5weWi6y4z5A6B7C8",
+  "name": "Hardiesse des trolls",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+    "description": "Le bénéficiaire ne gagne aucun point de peur et ignore les conséquences des premier et deuxième niveaux de peur, y compris pour la peur accumulée avant l’invocation. Les conséquences des niveaux supérieurs restent applicables.",
+    "summary": "Empêche de gagner de la peur et protège contre les premiers niveaux de peur.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 275
+    }
+  },
+  "effects": [
+    {
+      "_id": "ONrZG2x3y4z5A6B7",
+      "_key": "!items.effects!5weWi6y4z5A6B7C8.ONrZG2x3y4z5A6B7",
+      "name": "Hardiesse des trolls",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire ne gagne aucun point de peur et ignore les conséquences des premier et deuxième niveaux de peur, y compris pour la peur accumulée avant l’invocation. Les conséquences des niveaux supérieurs restent applicables.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.ignoreFearGain",
+            "type": "override",
+            "value": "true",
+            "phase": "initial",
+            "priority": 40
+          },
+          {
+            "key": "system.transformation.ignoreFearThrough",
+            "type": "override",
+            "value": "2",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:troll-wit:7#effect",
+            "sourceId": "holy-haminges-power-of-trolls:troll-wit:7",
+            "summary": "Empêche de gagner de la peur et protège contre les premiers niveaux de peur.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

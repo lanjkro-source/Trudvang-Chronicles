@@ -17,7 +17,7 @@ import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, extraWeaponActionReady, isExtraWeaponAction, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isDesignedForThrowing, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
-import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
+import { parseFearFactor, resolveFearStatus, resolveInsanityState, effectiveFearPenalty } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
 import {spellAvailability} from "../rules/spell-availability.mjs";
@@ -238,8 +238,7 @@ export class TrudvangActor extends BaseActor {
     const fear = Number(system.resources.fear.current || 0);
     const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});
     system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
-    system.fearPenalty = fearStatus.penalty;
-    if (this.transformationProfile.ignoreFear || this.transformationProfile.ignoreFearPenalty) system.fearPenalty = 0;
+    system.fearPenalty = effectiveFearPenalty(fearStatus, fear, this.transformationProfile);
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);
@@ -1682,7 +1681,7 @@ export class TrudvangActor extends BaseActor {
 
   /** Add a rolled fear factor to this character after its personal mitigation. */
   async applyFearFactor(factor, {announce = true} = {}) {
-    if (this.transformationProfile?.ignoreFear) return {rolled: Number(factor) || 0, modifier: 0, applied: 0};
+    if (this.transformationProfile?.ignoreFear || this.transformationProfile?.ignoreFearGain) return {rolled: Number(factor) || 0, modifier: 0, applied: 0};
     if (this.type !== "character" || !this.isOwner) return null;
     const rolled = Math.max(0, Math.trunc(Number(factor) || 0));
     const modifier = Number(this.system.fearFactorModifier || 0);
