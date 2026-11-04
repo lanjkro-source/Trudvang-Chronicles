@@ -941,7 +941,9 @@
       "Delivery": "Nature des dégâts",
       "DeliveryOther": "Autres dégâts",
       "DeliveryMelee": "Arme de mêlée",
-      "DeliveryRanged": "Arme à distance ou de lancer"
+      "DeliveryRanged": "Arme à distance ou de lancer",
+      "Origin": "Origine",
+      "FixedHint": "Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul."
     },
     "Dialog": {
       "MountedCombat": "Combat monté",

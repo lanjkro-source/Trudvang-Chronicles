@@ -1095,6 +1095,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.DamageRoll.DeliveryOther` | Other damage | Autres dégâts |
 | `TRUDVANG.DamageRoll.DeliveryMelee` | Melee weapon | Arme de mêlée |
 | `TRUDVANG.DamageRoll.DeliveryRanged` | Ranged or throwing weapon | Arme à distance ou de lancer |
+| `TRUDVANG.DamageRoll.Origin` | Origin | Origine |
+| `TRUDVANG.DamageRoll.FixedHint` | For fixed damage, use 0 dice and a nonzero modifier. | Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul. |
 
 ## `TRUDVANG.Dialog`
 

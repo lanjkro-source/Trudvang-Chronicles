@@ -529,16 +529,21 @@ function damageBreakdownRows(profile) {
 /** All weapon-damage entry points confirm the same immutable calculation before rolling. */
 export async function damageRollDialog({item, profile}) {
   const DialogClass = foundry.applications.api.DialogV2;
-  const readChoice = root => damageRollChoice(profile, {
+  const readChoice = root => {
+   const choice=damageRollChoice(profile, {
     dice: root.querySelector("[name=damage-dice]")?.value,
+    faces: root.querySelector("[name=damage-faces]")?.value,
     formula: root.querySelector("[name=damage-formula]")?.value,
     openRoll: root.querySelector("[name=damage-open-roll]")?.value,
     modifier: root.querySelector("[name=damage-modifier]")?.value,
     magicalWeapon: Boolean(root.querySelector("[name=damage-magical-weapon]")?.checked),
     longRange: Boolean(root.querySelector("[name=damage-long-range]")?.checked)
-  });
+   });
+   if(choice&&profile.generic){choice.title=root.querySelector("[name=damage-title]")?.value?.trim()||item.name;choice.damageUsage=root.querySelector("[name=damage-origin]")?.value??"";if(!["","melee","ranged"].includes(choice.damageUsage))return null;}
+   return choice;
+  };
   const content = await renderTemplate("systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs", {
-    ...profile, rows: damageBreakdownRows(profile)
+    ...profile, minimumDice:profile.allowZeroDice?0:1, dieTypes:[3,4,5,6,10].map(value=>({value,selected:value===profile.parsed?.faces})), rows: damageBreakdownRows(profile)
   });
   class DamageRollDialog extends DialogClass {
     async _onRender(context, options) {
@@ -548,14 +553,16 @@ export async function damageRollDialog({item, profile}) {
         const choice = readChoice(root);
         const output = root.querySelector("[data-damage-preview]");
         if (!output) return;
+        const rollButton=root.querySelector('[data-action="roll"]');if(rollButton)rollButton.disabled=!choice;
         if (!choice) { output.textContent = "—"; return; }
-        const dice = profile.parsed ? `${choice.dice}d${profile.parsed.faces}` : `(${choice.formula})`;
+        if(profile.allowZeroDice&&choice.dice===0){output.textContent=String(choice.fixedModifier);return;}
+        const dice = profile.parsed ? `${choice.dice}d${choice.faces}` : `(${choice.formula})`;
         const openRoll = profile.parsed && choice.openRoll
           ? ` ${game.i18n.format("TRUDVANG.DamageRoll.OpenRollPreview", {threshold: choice.openRoll})}` : "";
         const fixed = choice.fixedModifier ? ` ${signedDamage(choice.fixedModifier)}` : "";
         output.textContent = `${dice}${openRoll}${fixed}${choice.longRange ? ` · ${game.i18n.localize("TRUDVANG.DamageRoll.HalfDamage")}` : ""}`;
       };
-      root.querySelectorAll("input").forEach(input => input.addEventListener("input", refresh));
+      root.querySelectorAll("input, select").forEach(input => {input.addEventListener("input", refresh);input.addEventListener("change", refresh);});
       refresh();
     }
   }

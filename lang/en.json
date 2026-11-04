@@ -941,7 +941,9 @@
       "Delivery": "Damage delivery",
       "DeliveryOther": "Other damage",
       "DeliveryMelee": "Melee weapon",
-      "DeliveryRanged": "Ranged or throwing weapon"
+      "DeliveryRanged": "Ranged or throwing weapon",
+      "Origin": "Origin",
+      "FixedHint": "For fixed damage, use 0 dice and a nonzero modifier."
     },
     "Dialog": {
       "MountedCombat": "Mounted combat",

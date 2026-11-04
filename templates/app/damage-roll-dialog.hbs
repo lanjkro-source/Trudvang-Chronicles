@@ -1,6 +1,7 @@
 <div class="trudvang roll-dialog damage-roll-dialog">
+  {{#if generic}}<div class="damage-roll-generic-header"><label>{{localize "TRUDVANG.Dialog.SituationLabel"}}<input name="damage-title" value="{{title}}"></label><label>{{localize "TRUDVANG.DamageRoll.Origin"}}<select name="damage-origin"><option value="">{{localize "TRUDVANG.DamageRoll.DeliveryOther"}}</option><option value="melee">{{localize "TRUDVANG.DamageRoll.DeliveryMelee"}}</option><option value="ranged">{{localize "TRUDVANG.DamageRoll.DeliveryRanged"}}</option></select></label></div>{{/if}}
   <div class="damage-roll-fields">
-    {{#if parsed}}<label>{{localize "TRUDVANG.DamageRoll.DiceCount"}}<span><input type="number" name="damage-dice" value="{{parsed.dice}}" min="1" max="100" step="1" required><b>d{{parsed.faces}}</b></span></label>
+    {{#if parsed}}<label>{{localize "TRUDVANG.DamageRoll.DiceCount"}}<span><input type="number" name="damage-dice" value="{{parsed.dice}}" min="{{minimumDice}}" max="100" step="1" required>{{#if editableFaces}}<select name="damage-faces" aria-label="{{localize 'TRUDVANG.Macro.DieType'}}">{{#each dieTypes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>d{{value}}</option>{{/each}}</select>{{else}}<b>d{{parsed.faces}}</b>{{/if}}</span></label>
     {{else}}<label>{{localize "TRUDVANG.DamageRoll.Formula"}}<input type="text" name="damage-formula" value="{{formula}}" required></label>{{/if}}
     {{#if parsed}}<label>{{localize "TRUDVANG.Field.OpenRoll"}}<input type="number" name="damage-open-roll" value="{{openRoll}}" min="0" max="10" step="1" required></label>{{/if}}
   </div>
@@ -11,4 +12,5 @@
   {{#if weaponHit}}<label class="checkbox"><input type="checkbox" name="damage-magical-weapon" {{#if magicalWeapon}}checked{{/if}}> {{localize "TRUDVANG.DamageRoll.MagicalWeapon"}}</label>{{/if}}
   <div class="damage-roll-preview"><span>{{localize "TRUDVANG.DamageRoll.Calculation"}}</span><strong data-damage-preview></strong></div>
   <p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.Order"}}</p>
+  {{#if allowZeroDice}}<p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.FixedHint"}}</p>{{/if}}
 </div>

@@ -1,20 +1,22 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
 
-let values, cancelled = false, messages = [], renders = [], dice = [];
+let values, cancelled = false, messages = [], renders = [], dice = [], dialogs = [], evaluated = [];
 globalThis.document = {createElement: () => ({set textContent(v) {this.innerHTML = String(v);}})};
 globalThis.foundry = {applications: {api: {DialogV2: class {
   static async wait(config) {
+    dialogs.push(config);
     if (cancelled) return config.buttons[1].callback();
-    return config.buttons[0].callback(null, {form: {querySelector: selector => ({value: values[selector.match(/"(.*?)"/)[1]],checked:values[selector.match(/"(.*?)"/)[1]]===true})}}, null);
+    const aliases={'damage-dice':'dice','damage-faces':'faces','damage-open-roll':'threshold','damage-modifier':'bonus','damage-title':'title','damage-origin':'delivery','damage-magical-weapon':'magical-weapon'};
+    return config.buttons[0].callback(null, {form: {querySelector: selector => {const name=selector.match(/name=["']?([^\]"']+)/)?.[1],key=aliases[name]??name;return {value:values[key],checked:values[key]===true};}}}, null);
   }
 }}, handlebars: {renderTemplate: async (path, data) => {renders.push({path, data}); return "card";}}},
 documents: {Actor: class {}, ActiveEffect: class {}}, data: {fields: {}, ActiveEffectTypeDataModel: class {}}};
-globalThis.game = {user: {name: "Player", targets: []}, i18n: {localize: key => key}};
+globalThis.game = {user: {name: "Player", targets: []}, i18n: {localize: key => key,format:key=>key}};
 globalThis.ui = {notifications: {warn() {}}};
 globalThis.Roll = class {
   constructor(formula) {this.formula = formula;}
-  async evaluate() {this.total = dice.shift(); return this;}
+  async evaluate() {evaluated.push(this.formula);this.total = dice.shift(); return this;}
 };
 globalThis.ChatMessage = {getSpeaker: () => ({}), create: async data => messages.push(data)};
 const {rollGenericDamage, rollGenericFear} = await import("../modules/generic-rolls.mjs");
@@ -68,4 +70,27 @@ test('generic weapon damage preserves its delivery and magical nature for applic
  values={title:'Magic arrow',dice:'1',faces:'10',threshold:'0',bonus:'0',delivery:'ranged','magical-weapon':true};dice=[8];
  await rollGenericDamage();
  assert.deepEqual(messages.at(-1).flags['trudvang-chronicles'].damageContext,{usage:'ranged',magicalWeapon:true});
+});
+
+test('fixed generic damage uses the shared window and posts its amount without evaluating dice',async()=>{
+ values={title:'Chute fixe',dice:'0',faces:'5',threshold:'9',bonus:'17',delivery:'', 'magical-weapon':false};
+ const before=evaluated.length;
+ const result=await rollGenericDamage();
+ assert.equal(result.total,17);assert.equal(evaluated.length,before);assert.deepEqual(messages.at(-1).rolls,[]);
+ assert.equal(renders.at(-1).data.detail,'17');assert.equal(renders.at(-1).data.itemName,'Chute fixe');
+ assert.ok(dialogs.at(-1).classes.includes('damage-roll-window'));
+ assert.ok(renders.some(row=>row.path.endsWith('app/damage-roll-dialog.hbs')&&row.data.generic&&row.data.editableFaces&&row.data.minimumDice===0));
+});
+test('zero dice without a modifier, negative counts and cancellation cannot post damage',async()=>{
+ const before=messages.length,rollsBefore=evaluated.length;
+ values={title:'Invalid',dice:'0',faces:'10',threshold:'0',bonus:'0',delivery:''};
+ assert.equal(await rollGenericDamage(),null);
+ values.dice='-1';values.bonus='4';assert.equal(await rollGenericDamage(),null);
+ values.dice='0';cancelled=true;assert.equal(await rollGenericDamage(),null);cancelled=false;
+ assert.equal(messages.length,before);assert.equal(evaluated.length,rollsBefore);
+});
+test('every selectable damage die uses its actual face count',async()=>{
+ for(const faces of [3,4,5,6,10]){values={title:'Damage',dice:'1',faces:String(faces),threshold:'0',bonus:'0',delivery:''};dice=[2];
+  await rollGenericDamage();assert.equal(evaluated.at(-1),'1d'+faces);
+ }
 });

@@ -244,3 +244,17 @@ test("native general and scoped damage effects add once and explain their source
  const natural=prepareDamageRoll({item:weapon({category:"natural"}),actor:wearer});
  assert.equal(natural.usage,"natural");assert.equal(natural.fixedModifier,6);
 });
+
+test('generic damage shares the weapon layout with its header first and an editable die',async t=>{
+ const {dialogs}=runtime(t,{response:null});
+ const profile={generic:true,title:'Chute',allowZeroDice:true,editableFaces:true,parsed:{dice:0,faces:5},formula:'0d5',openRoll:0,fixedModifier:0,situational:12,rows:[],weaponHit:true};
+ await damageRollDialog({item:{name:'Chute'},profile});
+ const html=dialogs.at(-1).content;
+ assert.ok(html.indexOf('name="damage-title"')<html.indexOf('name="damage-origin"'));
+ assert.ok(html.indexOf('name="damage-origin"')<html.indexOf('name="damage-dice"'));
+ assert.match(html,/name="damage-dice"[^>]*min="0"/);assert.match(html,/name="damage-faces"/);
+ assert.ok(dialogs.at(-1).classes.includes('damage-roll-window'));
+ assert.equal(damageRollChoice(profile,{dice:0,modifier:0}),null);
+ assert.equal(damageRollChoice(profile,{dice:0,modifier:12}).fixedModifier,12);
+ assert.equal(damageRollChoice(profile,{dice:1,faces:3,openRoll:9,modifier:0}),null);
+});

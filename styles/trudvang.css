@@ -1120,3 +1120,7 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 
 .trudvang-sheet .combat-action-list .item.has-passive-protection { grid-template-columns: 30px minmax(125px,.65fr) minmax(120px,1fr) repeat(5,27px); }
 .trudvang-sheet.npc-sheet .npc-combat-actions .item.has-passive-protection { grid-template-columns: 26px minmax(90px,1fr) minmax(0,1fr) repeat(5,25px); }
+.trudvang.damage-roll-dialog select { min-width: 0; color: var(--trudvang-on-header); background: var(--trudvang-header); border: 1px solid var(--trudvang-gold); }
+.trudvang.damage-roll-dialog .damage-roll-fields select { width: 5.5em; flex: none; }
+.trudvang.damage-roll-dialog .damage-roll-generic-header { display: grid; gap: 12px; margin-bottom: 12px; }
+.trudvang.damage-roll-dialog .damage-roll-generic-header label { display: grid; gap: 5px; }

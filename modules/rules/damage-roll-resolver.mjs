@@ -69,11 +69,14 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
 export function damageRollChoice(profile, options = {}) {
   if (!options || typeof options !== "object" || Array.isArray(options)) return null;
   const dice = Number(options.dice ?? profile.parsed?.dice);
-  const openRoll = Number(options.openRoll ?? profile.openRoll);
+  const faces = Number(profile.editableFaces ? options.faces ?? profile.parsed?.faces : profile.parsed?.faces);
+  const openRoll = profile.allowZeroDice && dice === 0 ? 0 : Number(options.openRoll ?? profile.openRoll);
   const modifier = Number(options.modifier ?? profile.situational);
   const formula = String(options.formula ?? profile.formula).trim();
   if (!Number.isInteger(openRoll) || openRoll < 0 || openRoll > 10 || !Number.isFinite(modifier)
-    || (profile.parsed && (!Number.isInteger(dice) || dice < 1 || dice > 100 || profile.parsed.faces < 1)) || (!profile.parsed && !formula)) return null;
-  return {dice, formula, openRoll, modifier, magicalWeapon:Boolean(profile.weaponHit&&Boolean(options.magicalWeapon??profile.magicalWeapon)), longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
+    || (profile.parsed && (!Number.isInteger(dice) || dice < (profile.allowZeroDice?0:1) || dice > 100 || faces < 1)) || (!profile.parsed && !formula)) return null;
+  if(profile.editableFaces && (![3,4,5,6,10].includes(faces) || !Number.isInteger(modifier) || (dice>0 && openRoll!==0 && (openRoll<2 || openRoll>faces))))return null;
+  if(profile.allowZeroDice && dice===0 && profile.fixedModifier+modifier===0)return null;
+  return {dice, faces, formula, openRoll, modifier, magicalWeapon:Boolean(profile.weaponHit&&Boolean(options.magicalWeapon??profile.magicalWeapon)), longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
     fixedModifier: profile.fixedModifier + modifier};
 }
