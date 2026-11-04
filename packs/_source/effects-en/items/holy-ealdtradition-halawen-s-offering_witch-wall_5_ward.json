@@ -1,0 +1,45 @@
+{
+  "_id": "RgkJGSjPkQlRmSnT",
+  "_key": "!items!RgkJGSjPkQlRmSnT",
+  "name": "Witch Wall",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+    "description": "<p>The Bruid lets their ancestors watch over them and one ally, and both receive a divine protection against vitner. Anytime the dimwalker or their ally is attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche<ul><li>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.</li></ul>modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If both characters are hit with a spell, both must succeed individually to avoid the effect. If the spell affects a whole area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. WITCH WALL SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4</p>",
+    "summary": "Allows individual resistance against incoming spells.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "qYxMu1sYtZu0v1w2",
+      "_key": "!items.effects!RgkJGSjPkQlRmSnT.qYxMu1sYtZu0v1w2",
+      "name": "Witch Wall",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The Bruid lets their ancestors watch over them and one ally, and both receive a divine protection against vitner. Anytime the dimwalker or their ally is attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche<ul><li>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.</li></ul>modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If both characters are hit with a spell, both must succeed individually to avoid the effect. If the spell affects a whole area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. WITCH WALL SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
+            "summary": "Allows individual resistance against incoming spells.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

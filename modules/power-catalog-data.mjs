@@ -315,6 +315,35 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "protected",
+          "variants": [
+            "ward"
+          ],
+          "baseTargets": 4,
+          "additionalTargets": [
+            {
+              "optionId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:4",
+              "count": 1
+            }
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:0",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:2",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3"
+          ],
+          "allocatableOptions": [
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:0",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:2",
+            "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:0",
@@ -366,6 +395,31 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "protected",
+          "variants": [
+            "ward"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "sharedOptions": [
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:0",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:1",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:2",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:3"
+          ],
+          "casterOnly": true,
+          "allocatableOptions": [
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:0",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:1",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:2",
+            "holy-ealdtradition-halawen-s-offering:vitner-shield:1:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:0",
@@ -416,6 +470,35 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "protected",
+          "variants": [
+            "ward"
+          ],
+          "baseTargets": 2,
+          "additionalTargets": [
+            {
+              "optionId": "holy-ealdtradition-halawen-s-offering:witch-wall:5:4",
+              "count": 1
+            }
+          ],
+          "sharedOptions": [
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:0",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:1",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:2",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:3"
+          ],
+          "allocatableOptions": [
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:0",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:1",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:2",
+            "holy-ealdtradition-halawen-s-offering:witch-wall:5:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:0",

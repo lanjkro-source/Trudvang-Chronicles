@@ -1,0 +1,45 @@
+{
+  "_id": "hSnXtKdJeKfLgMhN",
+  "_key": "!items!hSnXtKdJeKfLgMhN",
+  "name": "Mistur Barrier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward",
+    "description": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner. Anytime the dimwalker or their allies are attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If several characters are hit with a spell, each of them must succeed individually to avoid the effect. If the spell affects a whole<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.</td></tr></tbody></table>area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. MISTUR BARRIER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+    "summary": "Allows individual resistance against incoming spells.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "S2SK3iOjPkQlRmSn",
+      "_key": "!items.effects!hSnXtKdJeKfLgMhN.S2SK3iOjPkQlRmSn",
+      "name": "Mistur Barrier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner. Anytime the dimwalker or their allies are attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If several characters are hit with a spell, each of them must succeed individually to avoid the effect. If the spell affects a whole<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.</td></tr></tbody></table>area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. MISTUR BARRIER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7",
+            "summary": "Allows individual resistance against incoming spells.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

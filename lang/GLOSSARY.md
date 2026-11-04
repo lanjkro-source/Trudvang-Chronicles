@@ -12753,6 +12753,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.SourcePage` | 181 | 238 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.Name` | Vitner Shield | Bouclier contre le vitner |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.Description` | The Bruid lets their ancestors watch over them and receives a divine protection against vitner. Any time the dimwalker is attacked by a spell, regardless of the power, they must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. VITNER SHIELD’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 | Le bruide demande à ses ancêtres de veiller sur lui et reçoit une protection divine contre le vitner. Chaque fois que l’arpenteur des brumes est la cible d’un sort, quelle que soit sa nature, il doit effectuer un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-après (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. <table><thead><tr><th colspan="2">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.SourceName` | Vitner Shield | Bouclier contre le vitner |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.SourcePage` | 178 | 239 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward.Duration` | 4 action rounds | 4 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal`
 
 | Clé | English | Français |
@@ -12775,6 +12786,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.SourcePage` | 178 | 239 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.Name` | Witch Wall | Mur contre la sorcellerie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.Description` | <p>The Bruid lets their ancestors watch over them and one ally, and both receive a divine protection against vitner. Anytime the dimwalker or their ally is attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche<ul><li>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.</li></ul>modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If both characters are hit with a spell, both must succeed individually to avoid the effect. If the spell affects a whole area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. WITCH WALL SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4</p> | Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il effectue un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si les deux bénéficiaires sont touchés en même temps par le même sort, tous deux doivent tenter d’y échapper individuellement. Si le sort affecte toute une zone plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan="2">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.SourceName` | Witch Wall | Mur contre la sorcellerie |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.SourcePage` | 178 | 239 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward.Duration` | 6 action rounds | 6 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#principal`
 
 | Clé | English | Français |
@@ -12796,6 +12818,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.SourcePage` | 178 | 240 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:fearless:6#allie.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.Name` | Mistur Barrier | Barrière des brumes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.Description` | The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner. Anytime the dimwalker or their allies are attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If several characters are hit with a spell, each of them must succeed individually to avoid the effect. If the spell affects a whole<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.</td></tr></tbody></table>area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. MISTUR BARRIER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4 | Le bruide demande à ses ancêtres de veiller sur lui et sur trois de ses alliés, et tous reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il doit effectuer un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si plusieurs bénéficiaires sont touchés en même temps par le même sort, tous doivent tenter individuellement d’y échapper. Si le sort affecte toute une zone, plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan="2">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table> |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.SourceName` | Mistur Barrier | Barrière des brumes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.SourcePage` | 178 | 240 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood`
 

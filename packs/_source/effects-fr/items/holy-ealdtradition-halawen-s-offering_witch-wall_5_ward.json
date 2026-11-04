@@ -1,0 +1,45 @@
+{
+  "_id": "RgkJGSjPkQlRmSnT",
+  "_key": "!items!RgkJGSjPkQlRmSnT",
+  "name": "Mur contre la sorcellerie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+    "description": "Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il effectue un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si les deux bénéficiaires sont touchés en même temps par le même sort, tous deux doivent tenter d’y échapper individuellement. Si le sort affecte toute une zone plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+    "summary": "Permet de résister individuellement aux sortilèges reçus.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "qYxMu1sYtZu0v1w2",
+      "_key": "!items.effects!RgkJGSjPkQlRmSnT.qYxMu1sYtZu0v1w2",
+      "name": "Mur contre la sorcellerie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il effectue un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si les deux bénéficiaires sont touchés en même temps par le même sort, tous deux doivent tenter d’y échapper individuellement. Si le sort affecte toute une zone plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
+            "summary": "Permet de résister individuellement aux sortilèges reçus.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

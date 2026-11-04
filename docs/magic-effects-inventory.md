@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 300.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 303.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -221,14 +221,14 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Héritage de Majne | Bière royale | pouvoir | `holy-ealdtradition-heritage-of-majne:king-s-ale:7` | 1 | 0 | 1 |
 | Héritage de Majne | Tueur de dragons | pouvoir | `holy-ealdtradition-heritage-of-majne:dragonslayer:6` | 2 | 0 | 1 |
 | Héritage de Majne | Les neuf rois | pouvoir | `holy-ealdtradition-heritage-of-majne:the-nine-kings:8` | 3 | 0 | 1 |
-| Offrande de Halawen | Bouclier contre le vitner | pouvoir | `holy-ealdtradition-halawen-s-offering:vitner-shield:1` | 4 | 1 | 0 |
+| Offrande de Halawen | Bouclier contre le vitner | pouvoir | `holy-ealdtradition-halawen-s-offering:vitner-shield:1` | 4 | 1 | 1 |
 | Offrande de Halawen | Volonté des ancêtres | pouvoir | `holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0` | 2 | 0 | 1 |
 | Offrande de Halawen | Courage des ancêtres | pouvoir | `holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3` | 2 | 0 | 1 |
 | Offrande de Halawen | Fléau de Blotfang | pouvoir | `holy-ealdtradition-halawen-s-offering:bloodfangsbane:2` | 2 | 0 | 0 |
 | Offrande de Halawen | Bolgomek | pouvoir | `holy-ealdtradition-halawen-s-offering:bolgemek:4` | 2 | 0 | 0 |
-| Offrande de Halawen | Mur contre la sorcellerie | pouvoir | `holy-ealdtradition-halawen-s-offering:witch-wall:5` | 5 | 1 | 0 |
+| Offrande de Halawen | Mur contre la sorcellerie | pouvoir | `holy-ealdtradition-halawen-s-offering:witch-wall:5` | 5 | 1 | 1 |
 | Offrande de Halawen | Sans peur | pouvoir | `holy-ealdtradition-halawen-s-offering:fearless:6` | 5 | 0 | 2 |
-| Offrande de Halawen | Barrière des brumes | pouvoir | `holy-ealdtradition-halawen-s-offering:mistur-barrier:7` | 5 | 1 | 0 |
+| Offrande de Halawen | Barrière des brumes | pouvoir | `holy-ealdtradition-halawen-s-offering:mistur-barrier:7` | 5 | 1 | 1 |
 | Offrande de Halawen | Roggdrasil | pouvoir | `holy-ealdtradition-halawen-s-offering:roggdrasil:8` | 2 | 0 | 0 |
 | Tribut de Morgu | Flèche de bataille | pouvoir | `holy-ealdtradition-tribute-of-morgu:battle-arrow:1` | 1 | 0 | 0 |
 | Tribut de Morgu | Sang brûlant | pouvoir | `holy-ealdtradition-tribute-of-morgu:simmering-blood:0` | 2 | 0 | 1 |

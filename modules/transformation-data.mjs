@@ -5519,6 +5519,36 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward": {
+    "id": "ward",
+    "icon": "icons/svg/aura.svg",
+    "duration": "4 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:2"
+      }
+    ]
+  },
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
     "id": "principal",
     "icon": "icons/svg/aura.svg",
@@ -5580,6 +5610,33 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
+    "id": "ward",
+    "icon": "icons/svg/aura.svg",
+    "duration": "6 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-halawen-s-offering:witch-wall:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:witch-wall:5:1"
       }
     ]
   },
@@ -5654,6 +5711,33 @@ export const TRANSFORMATION_TEMPLATES = {
           "allie"
         ],
         "optionId": "holy-ealdtradition-halawen-s-offering:fearless:6:4"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward": {
+    "id": "ward",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      2
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1"
       }
     ]
   },
@@ -12937,15 +13021,24 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-heritage-of-majne:the-nine-kings:8": [
     "holy-ealdtradition-heritage-of-majne:the-nine-kings:8#effect"
   ],
+  "holy-ealdtradition-halawen-s-offering:vitner-shield:1": [
+    "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward"
+  ],
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": [
     "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal"
   ],
   "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": [
     "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal"
   ],
+  "holy-ealdtradition-halawen-s-offering:witch-wall:5": [
+    "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward"
+  ],
   "holy-ealdtradition-halawen-s-offering:fearless:6": [
     "holy-ealdtradition-halawen-s-offering:fearless:6#principal",
     "holy-ealdtradition-halawen-s-offering:fearless:6#allie"
+  ],
+  "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": [
+    "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward"
   ],
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": [
     "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood"

@@ -15267,6 +15267,15 @@
           "SourcePage": "181",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward": {
+          "Name": "Vitner Shield",
+          "Summary": "Allows individual resistance against incoming spells.",
+          "Description": "The Bruid lets their ancestors watch over them and receives a divine protection against vitner. Any time the dimwalker is attacked by a spell, regardless of the power, they must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. VITNER SHIELD’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+          "SourceName": "Vitner Shield",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "4 action rounds"
+        },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Willpower of the Ancestors",
           "Summary": "Grants an exceptional Psyche trait.",
@@ -15285,6 +15294,15 @@
           "SourcePage": "178",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
+          "Name": "Witch Wall",
+          "Summary": "Allows individual resistance against incoming spells.",
+          "Description": "<p>The Bruid lets their ancestors watch over them and one ally, and both receive a divine protection against vitner. Anytime the dimwalker or their ally is attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche<ul><li>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.</li></ul>modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If both characters are hit with a spell, both must succeed individually to avoid the effect. If the spell affects a whole area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. WITCH WALL SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4</p>",
+          "SourceName": "Witch Wall",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "6 action rounds"
+        },
         "holy-ealdtradition-halawen-s-offering:fearless:6#principal": {
           "Name": "Fearless (Halawen)",
           "Summary": "Grants an exceptional Psyche trait.",
@@ -15299,6 +15317,15 @@
           "Summary": "Grants an exceptional Psyche trait.",
           "Description": "Psyche is replaced with the exceptional trait +4; the corresponding power level can raise it to +6.",
           "SourceName": "Fearless",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward": {
+          "Name": "Mistur Barrier",
+          "Summary": "Allows individual resistance against incoming spells.",
+          "Description": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner. Anytime the dimwalker or their allies are attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If several characters are hit with a spell, each of them must succeed individually to avoid the effect. If the spell affects a whole<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.</td></tr></tbody></table>area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. MISTUR BARRIER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+          "SourceName": "Mistur Barrier",
           "SourceBook": "Player's Handbook",
           "SourcePage": "178",
           "Duration": "1 minute"

@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,315);
+ assert.equal(Object.keys(sources).length,318);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1519,4 +1519,33 @@ test('messenger effects freeze instructions and special-duration improvements fo
   assert.equal(created.flags[S].transformation.input,'Prévenir la garde');assert.ok(!created.duration?.value);
   assert.match(created.description,/3 ×/);assert.match(created.description,/2 PS/);
  }finally{globalThis.game=previous;}
+});
+
+test('Halawen wards retain their spell-level table and shared resistance improvements',async()=>{
+ const {magicResistanceRows}=await import('../modules/rules/magic-resistance.mjs');
+ const {validateMagicAllocations,magicTargetCapacity}=await import('../modules/rules/magic-target-allocation.mjs');
+ const {POWER_DETAILS_BY_ID}=await import('../modules/power-catalog-data.mjs');
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{for(const [suffix,base,first,seconds] of [['vitner-shield:1',1,10,90],['witch-wall:5',2,12,100],['mistur-barrier:7',4,12,3670]]){
+  const id='holy-ealdtradition-halawen-s-offering:'+suffix;let created;
+  const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,id+'#ward',{counts:[2,1,0,3,1],skipDialog:true});
+  const scale={rounds:5,seconds:1,minutes:60,hours:3600,days:86400};
+  assert.equal(created.duration.value*scale[created.duration.units],seconds);
+  assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+  const test=RULE_TESTS_BY_CATALOG_ID[id][0];
+  assert.equal(test.sv.by[0].value,first);assert.equal(test.sv.by[4].value,first-8);
+  assert.equal(magicResistanceRows(test,{context:created.flags[S].transformation.ruleTestContext,actor}).reduce((sum,row)=>sum+row.value,0),3);
+  const targeting=POWER_DETAILS_BY_ID[id].targeting,group=targeting.groups[0];
+  assert.equal(magicTargetCapacity(targeting,{},group.id),base);
+  const selected={[id+':3']:3,...(base>1?{[id+':4']:1}:{})};
+  assert.equal(magicTargetCapacity(targeting,selected,group.id),base+(base>1?1:0));
+  const countsById=Object.fromEntries(group.sharedOptions.map(option=>[option,selected[option]??0]));
+  const allocations=[{effectKey:id+'#ward',targetUuid:'Actor.caster',countsById}];
+  if(base>1)allocations.push({effectKey:id+'#ward',targetUuid:'Actor.ally',countsById});
+  const fullSelected=Object.fromEntries([...group.sharedOptions,...group.additionalTargets.map(row=>row.optionId)].map(option=>[option,selected[option]??0]));
+  assert.equal(validateMagicAllocations({targeting,selected:fullSelected,allocations,casterUuid:'Actor.caster'}).ok,true);
+ }}finally{globalThis.game=previous;}
 });

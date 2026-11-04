@@ -50,3 +50,19 @@ Les 6 variantes ci-dessous reprennent la moitié du temps écoulé lorsque leur 
 Oreilles de cheval (Livre des règles p. 244 ; Player’s Handbook p. 185) expose sa portée effective dans les sens et le test d’écoute avec les améliorations de SV. Ce sens auditif n’est pas une aura qui applique des effets aux personnes entendues.
 
 Messager et Création de messager conservent les consignes et les améliorations de chaque lancement. Messager calcule les limites de mots, de distance et de créatures recevant le chant. La propagation du message, la représentation de l’animal créé (2 PS), ses déplacements et la livraison restent gérés par le MJ. La durée spéciale n’est pas remplacée par un délai arbitraire ; les améliorations de durée de Création de messager sont rappelées textuellement. Les effets sont retirés manuellement à la fin de leur mission. Le chant au lancement n’est pas une aura persistante ; ni ces messagers ni Oreilles de cheval ne produisent de lumière.
+
+## Protections de Halawen — 4 novembre 2026
+
+Bouclier contre le vitner, Mur contre la sorcellerie et Barrière des brumes
+(Livre des règles p. 239–241 ; Player’s Handbook, Halawen’s Offering) disposent
+d’effets temporaires avec le tableau de SV selon le niveau du sort reçu. Le
+bouton de test utilise le Psychisme du bénéficiaire et les améliorations du
+lancement d’origine. Les bénéficiaires supplémentaires et le partage des
+améliorations sont contrôlés au lancement ; chaque bénéficiaire résiste
+individuellement. Le MJ tient compte du résultat pour annuler le sort reçu :
+aucune interception automatique d’un autre lancement n’est effectuée.
+
+La portée limite les bénéficiaires lors de l’invocation. Le texte ne prévoit pas
+de suppression à la sortie d’une zone ; ces protections ne créent donc pas
+d’aura mobile, de région ni de lumière. Le Mur et la Barrière portent sur les
+personnes protégées, y compris lorsqu’un sort adverse vise une zone.

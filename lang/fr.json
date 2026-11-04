@@ -15267,6 +15267,15 @@
           "SourcePage": "238",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward": {
+          "Name": "Bouclier contre le vitner",
+          "Summary": "Permet de résister individuellement aux sortilèges reçus.",
+          "Description": "Le bruide demande à ses ancêtres de veiller sur lui et reçoit une protection divine contre le vitner. Chaque fois que l’arpenteur des brumes est la cible d’un sort, quelle que soit sa nature, il doit effectuer un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-après (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table>",
+          "SourceName": "Bouclier contre le vitner",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "239",
+          "Duration": "4 tours de jeu"
+        },
         "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0#principal": {
           "Name": "Volonté des ancêtres",
           "Summary": "Accorde un trait exceptionnel de Psychisme.",
@@ -15285,6 +15294,15 @@
           "SourcePage": "239",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
+          "Name": "Mur contre la sorcellerie",
+          "Summary": "Permet de résister individuellement aux sortilèges reçus.",
+          "Description": "Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il effectue un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si les deux bénéficiaires sont touchés en même temps par le même sort, tous deux doivent tenter d’y échapper individuellement. Si le sort affecte toute une zone plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SourceName": "Mur contre la sorcellerie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "239",
+          "Duration": "6 tours de jeu"
+        },
         "holy-ealdtradition-halawen-s-offering:fearless:6#principal": {
           "Name": "Sans peur (Halawen)",
           "Summary": "Accorde un trait exceptionnel de Psychisme.",
@@ -15299,6 +15317,15 @@
           "Summary": "Accorde un trait exceptionnel de Psychisme.",
           "Description": "Le Psychisme est remplacé par le trait exceptionnel +4 ; le niveau de puissance approprié peut le porter à +6.",
           "SourceName": "Sans peur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "240",
+          "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward": {
+          "Name": "Barrière des brumes",
+          "Summary": "Permet de résister individuellement aux sortilèges reçus.",
+          "Description": "Le bruide demande à ses ancêtres de veiller sur lui et sur trois de ses alliés, et tous reçoivent une protection divine contre le vitner. Chaque fois que l’un des bénéficiaires est la cible d’un sort, quelle que soit sa nature, il doit effectuer un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-dessous (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. Si plusieurs bénéficiaires sont touchés en même temps par le même sort, tous doivent tenter individuellement d’y échapper. Si le sort affecte toute une zone, plutôt que de viser des cibles distinctes, il touchera tous ceux qui ratent leur test de situation ou ne sont pas protégés par ce pouvoir. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SourceName": "Barrière des brumes",
           "SourceBook": "Livre des règles",
           "SourcePage": "240",
           "Duration": "1 minute"

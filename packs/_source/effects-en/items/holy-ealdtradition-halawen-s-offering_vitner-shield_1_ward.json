@@ -1,0 +1,45 @@
+{
+  "_id": "3t4XePjPkQlRmSnT",
+  "_key": "!items!3t4XePjPkQlRmSnT",
+  "name": "Vitner Shield",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward",
+    "description": "The Bruid lets their ancestors watch over them and receives a divine protection against vitner. Any time the dimwalker is attacked by a spell, regardless of the power, they must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. VITNER SHIELD’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+    "summary": "Allows individual resistance against incoming spells.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "e4dxDE8D9EaGbHcI",
+      "_key": "!items.effects!3t4XePjPkQlRmSnT.e4dxDE8D9EaGbHcI",
+      "name": "Vitner Shield",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Bruid lets their ancestors watch over them and receives a divine protection against vitner. Any time the dimwalker is attacked by a spell, regardless of the power, they must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. VITNER SHIELD’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:vitner-shield:1#ward",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+            "summary": "Allows individual resistance against incoming spells.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
