@@ -1209,3 +1209,5 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 
 .trudvang-sheet.item-sheet .item-fields .damage-qualification-row { flex-direction: row; align-items: center; }
 .damage-qualification-option { flex: none; }
+
+.damage-qualifier .damage-vector { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; }

@@ -105,6 +105,8 @@ test("qualifier glyphs have localized accessible tooltips and do not show raw ty
   globalThis.game={i18n:{localize:key=>key.split(".").reduce((node,part)=>node?.[part],fr)??key}};
   try{
     const html=damageIcons({nature:"magical",delivery:"ranged",type:"fire",material:"steel",protection:"normal"});
+    const normal=damageIcons({nature:"normal",type:"slashing",delivery:"melee",material:"",protection:"normal"});
+    assert.doesNotMatch(normal,/Dégâts normaux|fa-circle|fa-scissors/);assert.match(normal,/<svg/);
     assert.match(html,/title="Feu"/);assert.match(html,/aria-label="Dégâts magiques"/);assert.doesNotMatch(html,/>Feu</);
     const fields=damageQualificationFields({nature:"normal",delivery:"melee",type:"slashing",protection:"normal",material:"wood"});
     assert.equal((fields.match(/type="radio"/g)??[]).length,DAMAGE_NATURES.length+DAMAGE_DELIVERIES.length+DAMAGE_TYPES.length+DAMAGE_PROTECTIONS.length);

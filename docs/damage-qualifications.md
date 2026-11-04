@@ -93,11 +93,11 @@ Choix initiaux modifiables : acier pour les lames, têtes, pointes de flèches e
 
 ## Icônes communes
 
-| Qualification | FontAwesome |
+| Qualification | Icône |
 |---|---|
-| Normal / magique | `fa-circle` / `fa-wand-magic-sparkles` |
+| Normal / magique | Aucune icône / `fa-wand-magic-sparkles` |
 | Mêlée / distance / autre | `fa-hand-fist` / `fa-bullseye` / `fa-ellipsis` |
-| Tranchant / perforant / contondant | `fa-scissors` / `fa-location-arrow` / `fa-hammer` |
+| Tranchant / perforant / contondant | Épée vectorielle / pointe de lance avec hampe vectorielle / `fa-hammer` |
 | Feu / froid / foudre | `fa-fire` / `fa-snowflake` / `fa-bolt` |
 | Acide / poison | `fa-vial` / `fa-skull-crossbones` |
 | Bois / acier / pierre | `fa-tree` / `fa-link` / `fa-mountain` |

@@ -5,11 +5,17 @@ export const WEAPON_MATERIALS = {
   wood: "fa-tree", steel: "fa-link", stone: "fa-mountain"
 };
 export const DAMAGE_ICONS = {
-  normal: "fa-circle", magical: "fa-wand-magic-sparkles",
+  magical: "fa-wand-magic-sparkles",
   melee: "fa-hand-fist", ranged: "fa-bullseye", other: "fa-ellipsis",
-  slashing: "fa-scissors", piercing: "fa-location-arrow", bludgeoning: "fa-hammer",
+  slashing: "sword", piercing: "spearhead", bludgeoning: "fa-hammer",
   fire: "fa-fire", cold: "fa-snowflake", lightning: "fa-bolt",
   acid: "fa-vial", poison: "fa-skull-crossbones"
+};
+// Small native vectors avoid depending on optional FontAwesome weapon glyphs.
+// Both show the weapon's working end; the spearhead retains a visible shaft.
+export const DAMAGE_VECTOR_PATHS = {
+  sword: "M12 1 15 4 14 14H10L9 4Z M6 14H18V17H6Z M10.5 17H13.5V21H10.5Z M10 21H14V23H10Z",
+  spearhead: "M12 1C11 3 7 6 7 9L10.5 12H13.5L17 9C17 6 13 3 12 1Z M10 11H14V14H10Z M10.8 14H13.2V23H10.8Z"
 };
 export const DAMAGE_TYPES = ["slashing", "piercing", "bludgeoning", "fire", "cold", "lightning", "acid", "poison", "other"];
 export const DAMAGE_NATURES = ["normal", "magical"];
