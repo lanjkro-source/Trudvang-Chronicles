@@ -23,7 +23,7 @@ import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
-import {nidBlessingBonus} from "./rules/nid-blessings.mjs";
+import {blessingDialog} from "./blessing-dialog.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -65,14 +65,8 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null}) {
-  const blessing=nidBlessingBonus(actor);
-  if(blessing){
-    const t=key=>game.i18n.localize("TRUDVANG.Blessing."+key);
-    const selected=await foundry.applications.api.DialogV2.wait({window:{title:label},content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(blessing.label)+(blessing.goal?' — '+escapeHtml(blessing.goal):'')+'</p><p>'+escapeHtml(t('Question'))+'</p><p>'+escapeHtml(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : '+(Number(target)+Number(modifier||0))+' → '+(Number(target)+Number(modifier||0)+blessing.value)+'</p></div>',buttons:[{action:'with',label:t('Use')+' (+'+blessing.value+')',callback:()=>true},{action:'without',label:t('Skip'),default:true,callback:()=>false}],rejectClose:false,modal:false});
-    const current=nidBlessingBonus(actor);
-    if(selected&&current?.effectId===blessing.effectId){modifier=Number(modifier||0)+current.value;flavor+='<br>'+rollModifierFlavor([{label:current.label,value:current.value}]);}
-  }
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null}) {
+  if(blessing)flavor+='<br>'+rollModifierFlavor([blessing]);
   const finalTarget = Number(target) + Number(modifier || 0);
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();
@@ -250,11 +244,11 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
       ...(actor.traitEffectRows?.(row.key) ?? []),
       ...effectContributions(actor, `system.modifiers.rolls.traits.${row.key}`)
     ])].map(row => ({...row, included: true}));
-  const options = await playerTraitSituationDialog({title, traitLabel, traitValue, traitValues: traitEffectValues,
+  const options = await playerTraitSituationDialog({actor, title, traitLabel, traitValue, traitValues: traitEffectValues,
     traitMethod: test.traitMethod || "first", effect, effectRows, ...situation, modifierRows});
   if (!options) return null;
   const target = (options.situationValue ?? situation.base) + (options.traitModifier ?? traitValue) + effect + Number(options.configuredModifier || 0) + Number(options.repeatedModifier || 0) + rollModifierTotal(modifierRows);
-  return rollUnder({actor, label: title, target, modifier: options.modifier, kind: "situation",
+  return rollUnder({actor, blessing:options.blessing, label: title, target, modifier: options.modifier, kind: "situation",
     flavor: rollModifierFlavor([...effectRows, ...modifierRows]), successConsequence: test.success || "", failureConsequence: test.failure || "",
     criticalSuccessConsequence: test.criticalSuccess || "", criticalFailureConsequence: test.criticalFailure || ""});
 }
@@ -441,7 +435,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
       refresh();
     }
   }
-  return MagicRollDialog.wait({
+  return blessingDialog(MagicRollDialog,castingActor,'magic').wait({
     window: {title},
     content,
     buttons: [
@@ -463,7 +457,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   });
 }
 
-export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, effectRows = [], spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0, modifierRows = []}) {
+export async function concentrationDialog({actor = null, title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, effectRows = [], spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const tracks = {
     spell: {discipline: "TRUDVANG.Knowledge.vitnerFocus", specialty: "TRUDVANG.Knowledge.safeWeaving", disciplineLevel: Number(spellDisciplineLevel) || 0, specialtyLevel: Number(spellSpecialtyLevel) || 0},
@@ -504,7 +498,7 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
       refresh();
     }
   }
-  return ConcentrationDialog.wait({
+  return blessingDialog(ConcentrationDialog,actor,'concentration').wait({
     window: {title},
     content,
     buttons: [
@@ -650,7 +644,7 @@ export async function rollDamage({actor, item, context = {}}) {
  * reserved for roll modifiers supplied by active effects. Keeping the two
  * visible makes the source of the final value clear to the player.
  */
-export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0, effectRows = [], modifierRows = []}) {
+export async function traitRollDialog({actor = null, title, traitLabel, traitValue = 0, effect = 0, effectRows = [], modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -695,7 +689,7 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
       refresh();
     }
   }
-  return TraitRollDialog.wait({
+  return blessingDialog(TraitRollDialog,actor,'trait').wait({
     window: {title},
     content,
     buttons: [
@@ -714,7 +708,7 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
   });
 }
 
-export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = [], extraNumberFields = [], optionalModifiers = []}) {
+export async function modifierDialog({actor = null, title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = [], extraNumberFields = [], optionalModifiers = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   // target is always the intrinsic VC. Every fixed modifier is a separate row.
   const finalTarget = Number(target) + rollModifierTotal(modifierRows);
@@ -744,7 +738,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
       refresh();
     }
   }
-  return SkillRollDialog.wait({
+  return blessingDialog(SkillRollDialog,actor,'modifier').wait({
     window: {title},
     content,
     buttons: [
@@ -790,7 +784,7 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = [], mountedCombat = null}) {
+export async function combatPointDialog({actor = null, title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = [], mountedCombat = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
@@ -970,7 +964,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   });
   buttons.push({action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false});
 
-  return CombatPointDialog.wait({
+  return blessingDialog(CombatPointDialog,showModifier?actor:null,'modifier').wait({
     window: {title},
     content,
     buttons,
@@ -979,7 +973,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   });
 }
 
-export async function fixedAttackDialog({title, baseVC = 0, targets = [], targetTraitLabel = "", modifierRows = []} = {}) {
+export async function fixedAttackDialog({actor = null, title, baseVC = 0, targets = [], targetTraitLabel = "", modifierRows = []} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const base = Number.isFinite(Number(baseVC)) ? Math.trunc(Number(baseVC)) : 0;
   const fixedModifier = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), 0);
@@ -1018,7 +1012,7 @@ export async function fixedAttackDialog({title, baseVC = 0, targets = [], target
       refresh();
     }
   }
-  return FixedAttackDialog.wait({
+  return blessingDialog(FixedAttackDialog,actor,'modifier').wait({
     window: {title}, content,
     buttons: [
       {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true,
@@ -1033,7 +1027,7 @@ export async function fixedAttackDialog({title, baseVC = 0, targets = [], target
  * Ask for a Situation Value (SV) without requiring any actor: the dialog used by
  * the generic situation-roll macro and by `game.trudvang.rollGenericSituation()`.
  */
-export async function genericSituationDialog({defaultTarget = 10, modifierRows = [], defaultLabel = ""} = {}) {
+export async function genericSituationDialog({actor = null, defaultTarget = 10, modifierRows = [], defaultLabel = ""} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
     <div class="trudvang roll-dialog">
@@ -1057,7 +1051,7 @@ export async function genericSituationDialog({defaultTarget = 10, modifierRows =
       refresh();
     }
   }
-  return SituationRollDialog.wait({
+  return blessingDialog(SituationRollDialog,actor,'modifier').wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")},
     content,
     buttons: [
@@ -1101,10 +1095,11 @@ export async function rollGenericSituation({target, label, modifier, actor: requ
   let situationTarget = target;
   let situationLabel = label;
   let situationModifier = modifier;
+  let blessing=null;
   if (situationTarget === undefined && situationLabel === undefined && situationModifier === undefined) {
-    const answered = await genericSituationDialog({modifierRows, defaultLabel});
+    const answered = await genericSituationDialog({actor, modifierRows, defaultLabel});
     if (!answered) return null;
-    ({target: situationTarget, label: situationLabel, modifier: situationModifier} = answered);
+    ({target: situationTarget, label: situationLabel, modifier: situationModifier, blessing} = answered);
   }
   const finalTarget = Number(situationTarget ?? 10) + Number(situationModifier || 0) + rollModifierTotal(modifierRows);
   const resolvedLabel = String(situationLabel || game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
@@ -1127,7 +1122,7 @@ export async function rollGenericSituation({target, label, modifier, actor: requ
     margin,
     critical,
     kind: "situation",
-    flavor: rollModifierFlavor(modifierRows),
+    flavor: rollModifierFlavor([...modifierRows,...(blessing?[blessing]:[])]),
     itemUuid: "",
     naturalDamage: false,
     actorUuid,
@@ -1236,7 +1231,7 @@ export async function requestTraitSituationRoll({traitKey, situationValue, title
  * Player dialog for configured resistance tests. Known values are prefilled while
  * conditional and repeated modifiers remain explicit choices in the same roll window.
  */
-export async function playerTraitSituationDialog({title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, effectRows = [], base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = [], extraNumberFields = []}) {
+export async function playerTraitSituationDialog({actor = null, title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, effectRows = [], base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = [], extraNumberFields = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -1324,7 +1319,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       refresh();
     }
   }
-  return PlayerTraitDialog.wait({
+  return blessingDialog(PlayerTraitDialog,actor,'modifier').wait({
     window: {title},
     content,
     buttons: [

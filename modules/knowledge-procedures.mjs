@@ -1,3 +1,4 @@
+import {blessingDialog} from "./blessing-dialog.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {rollUnder, rollModifierFlavor} from "./dice.mjs";
 import {testActorForUser} from "./rule-tests.mjs";
@@ -92,7 +93,7 @@ export async function performKnowledgeProcedure(document) {
       refresh();
     }
   }
-  const choice = await ProcedureDialog.wait({window: {title: `${actor.name} — ${t(kind)}`}, position: {width: 560},
+  const choice = await blessingDialog(ProcedureDialog,actor).wait({window: {title: `${actor.name} — ${t(kind)}`}, position: {width: 560},
     content: `<div class="trudvang roll-dialog knowledge-procedure-dialog">${fields(kind, document)}${referenceTable(kind)}<aside class="rule-test-notes"><p>${e(t(`${kind}Notes`))}</p></aside><p data-procedure-breakdown></p>${number("modifier", 0, -999, 999)}<p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-procedure-target></strong></p><p data-procedure-warning>${e(t("Invalid"))}</p></div>`,
     buttons: [{action: "roll", label: game.i18n.localize("TRUDVANG.Action.Roll"), icon: "fas fa-dice-d20", default: true,
       callback: (event, button, dialog) => {const v = read(button.form ?? dialog.element); return prepare(actor, kind, v).valid ? v : false;}},
@@ -100,7 +101,7 @@ export async function performKnowledgeProcedure(document) {
   if (!choice) return null;
   const p = prepare(actor, kind, choice);
   if (!p.valid) return null;
-  return rollUnder({actor, label: t(kind), target: p.target, kind: "skill", item: p.item,
+  return rollUnder({blessing:choice.blessing, actor, label: t(kind), target: p.target, kind: "skill", item: p.item,
     flavor: `${breakdownHTML(p)}<br>${e(t("modifier"))}: ${choice.modifier}<br>${e(t(`${kind}Notes`))}`,
     resolveProcedure: async outcome => {
       const result = procedureOutcome(kind, choice, p.values, outcome);

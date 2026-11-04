@@ -1,3 +1,4 @@
+import {blessingDialog} from "./blessing-dialog.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {rollUnder} from "./dice.mjs";
 import {testActorForUser} from "./rule-tests.mjs";
@@ -27,7 +28,7 @@ export async function performTrainedAnimalAction(document, action) {
       root.addEventListener("input", refresh); root.addEventListener("change", refresh); refresh();
     }
   }
-  const choice = await AnimalActionDialog.wait({window: {title: label}, classes: ["dialog", "trudvang"],
+  const choice = await blessingDialog(AnimalActionDialog,actor).wait({window: {title: label}, classes: ["dialog", "trudvang"],
     content: `<div class="roll-dialog"><div class="form-group"><label>${e(t("Degree"))}</label><select name="degree">${[1, 2, 3, 4, 5].map(degree => `<option value="${degree}">${e(game.i18n.localize(`TRUDVANG.Procedure.Stage${degree}`))} — ${trainedAnimalValue(action, degree)}</option>`).join("")}</select></div><p>${e(t("AnimalValue"))} : <strong data-animal-base>${trainedAnimalValue(action, 1)}</strong></p><p class="hint">${e(t("AnimalRollHint"))}</p><div class="form-group"><label>${e(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div><p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))} : <strong data-animal-final>${trainedAnimalValue(action, 1)}</strong></p></div>`,
     buttons: [{action: "roll", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
       const root = button.form ?? dialog.element;
@@ -35,6 +36,6 @@ export async function performTrainedAnimalAction(document, action) {
       return trainedAnimalValue(action, degree) !== null && Number.isFinite(modifier) ? {degree, modifier} : false;
     }}, {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}], rejectClose: false, modal: false});
   if (!choice || trainedAnimalValue(action, choice.degree) === null || !Number.isFinite(choice.modifier)) return null;
-  return rollUnder({actor, label, kind: "skill", item: document, target: trainedAnimalValue(action, choice.degree), modifier: choice.modifier,
+  return rollUnder({blessing:choice.blessing, actor, label, kind: "skill", item: document, target: trainedAnimalValue(action, choice.degree), modifier: choice.modifier,
     flavor: e(game.i18n.format("TRUDVANG.AnimalAction.TrainingValue", {degree: game.i18n.localize(`TRUDVANG.Procedure.Stage${choice.degree}`), target: trainedAnimalValue(action, choice.degree)}))});
 }

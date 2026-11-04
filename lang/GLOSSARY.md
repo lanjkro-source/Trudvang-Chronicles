@@ -15237,7 +15237,5 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Blessing.Goal` | Blessed goal | Objectif béni |
 | `TRUDVANG.Blessing.NoSelf` | The caster cannot receive this blessing. | Le lanceur ne peut pas recevoir cette bénédiction. |
 | `TRUDVANG.Blessing.AlreadyBlessed` | This actor already has a Tenet of Nid blessing. | Ce personnage possède déjà une bénédiction de la Doctrine de Nid. |
-| `TRUDVANG.Blessing.Question` | Does this action pursue the blessed goal? | Cette action contribue-t-elle à l’objectif béni ? |
-| `TRUDVANG.Blessing.Use` | Apply blessing | Appliquer la bénédiction |
-| `TRUDVANG.Blessing.Skip` | Without blessing | Sans la bénédiction |
 | `TRUDVANG.Blessing.ActorOnly` | This blessing applies to an actor, not an item. | Cette bénédiction s’applique à un personnage, pas à un objet. |
+| `TRUDVANG.Blessing.Contributes` | contributes to {goal} | contribue à {goal} |

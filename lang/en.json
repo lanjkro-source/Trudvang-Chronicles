@@ -17297,10 +17297,8 @@
       "Goal": "Blessed goal",
       "NoSelf": "The caster cannot receive this blessing.",
       "AlreadyBlessed": "This actor already has a Tenet of Nid blessing.",
-      "Question": "Does this action pursue the blessed goal?",
-      "Use": "Apply blessing",
-      "Skip": "Without blessing",
-      "ActorOnly": "This blessing applies to an actor, not an item."
+      "ActorOnly": "This blessing applies to an actor, not an item.",
+      "Contributes": "contributes to {goal}"
     }
   }
 }

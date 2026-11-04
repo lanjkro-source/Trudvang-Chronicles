@@ -17297,10 +17297,8 @@
       "Goal": "Objectif béni",
       "NoSelf": "Le lanceur ne peut pas recevoir cette bénédiction.",
       "AlreadyBlessed": "Ce personnage possède déjà une bénédiction de la Doctrine de Nid.",
-      "Question": "Cette action contribue-t-elle à l’objectif béni ?",
-      "Use": "Appliquer la bénédiction",
-      "Skip": "Sans la bénédiction",
-      "ActorOnly": "Cette bénédiction s’applique à un personnage, pas à un objet."
+      "ActorOnly": "Cette bénédiction s’applique à un personnage, pas à un objet.",
+      "Contributes": "contribue à {goal}"
     }
   }
 }
