@@ -27,7 +27,11 @@ test('cancellation, expiry and dialogs without a blessing never receive a bonus'
 test('the checkbox starts unchecked and refreshes the visible final target without changing manual fields',async()=>{
  const events={},output={textContent:'12',hidden:false,nextElementSibling:null,after(node){this.nextElementSibling=node;}};
  let label;
- const fakeRoot={querySelector:selector=>selector==='[data-nid-blessing]'?null:selector==='.roll-dialog'?{prepend(node){label=node;}}:output,querySelectorAll:()=>[output],addEventListener:(type,fn)=>{events[type]=fn;}};
+ const existing={name:'existing choice'};
+ const append=function(node){label=node;if(node.parentNode)node.parentNode.children=node.parentNode.children.filter(child=>child!==node);this.children.push(node);node.parentNode=this;};
+ const section={children:[existing],hidden:false,closest(){return this.hidden?this:null;},append};
+ const alternate={children:[],hidden:true,closest(){return this.hidden?this:null;},append};
+ const fakeRoot={querySelector:selector=>selector==='[data-nid-blessing]'?null:output,querySelectorAll:selector=>selector==='[data-conditional-modifiers]'?[section,alternate]:[output],addEventListener:(type,fn)=>{events[type]=fn;}};
  const box={checked:false};
  globalThis.document={createElement:type=>type==='label'?{querySelector:()=>box,set innerHTML(v){this.html=v;}}:{attrs:{},setAttribute(k,v){this.attrs[k]=v;},hasAttribute(k){return k in this.attrs;}}};
  // escapeHtml uses a detached element's textContent/innerHTML pair.
@@ -35,8 +39,10 @@ test('the checkbox starts unchecked and refreshes the visible final target witho
  globalThis.document.createElement=type=>{const n=create(type);let text='';Object.defineProperty(n,'textContent',{get:()=>text,set:v=>{text=String(v);}});if(type==='div')Object.defineProperty(n,'innerHTML',{get:()=>text});return n;};
  class RenderBase{_onRender(){}}
  const Dialog=blessingDialog(RenderBase,actor);const instance=new Dialog();instance.element=fakeRoot;instance._onRender({},{});
+ assert.equal(section.children[0],existing);assert.equal(section.children[1],label);
  assert.ok(!/checked/.test(label.html));assert.equal(box.checked,false);assert.equal(output.hidden,false);
  box.checked=true;events.change();await Promise.resolve();assert.equal(output.hidden,true);assert.equal(output.nextElementSibling.textContent,'17');
+ section.hidden=true;alternate.hidden=false;events.change();await Promise.resolve();assert.equal(label.parentNode,alternate);assert.equal(box.checked,true);assert.equal(section.children[0],existing);
  output.textContent='14';events.input();await Promise.resolve();assert.equal(output.nextElementSibling.textContent,'19');
  box.checked=false;events.change();await Promise.resolve();assert.equal(output.hidden,false);assert.equal(output.textContent,'14');
 });

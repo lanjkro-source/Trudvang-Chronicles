@@ -1,3 +1,4 @@
+import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
 import { TRUDVANG } from "./config.mjs";
 import { resolveEquipment } from "./rules/equipment-resolver.mjs";
@@ -369,7 +370,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize(strenuousLabel))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     <p>${escapeHtml(resourceLabel)} : <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>
     ${sacrifice ? `<label class="magic-sacrifice-option" data-sacrifice-option hidden><input type="checkbox" name="sacrifice"><span data-sacrifice-text></span></label>` : ""}
-    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+    ${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
   </div>`;
   // Local subclass so the live breakdown refresh (FinalTarget / FinalVitnerCost) survives the
@@ -476,6 +477,7 @@ export async function concentrationDialog({actor = null, title, defaultType = "s
       ${modifierRows.map(row => `<dt>${escapeHtml(modifierLabel(row))}</dt><dd>${signed(row.value)}</dd>`).join("")}
     </dl>
     ${modifierList(effectRows.map(row => ({...row, included: true})))}
+    ${conditionalModifierSection()}
     <p>${localize("TRUDVANG.Dialog.ConcentrationTotal")}: <strong data-concentration-total></strong></p>
   </div>`;
   class ConcentrationDialog extends DialogClass {
@@ -660,6 +662,7 @@ export async function traitRollDialog({actor = null, title, traitLabel, traitVal
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
     </div>
     ${modifierList(effectRows.map(row => ({...row, included: true})))}
+    ${conditionalModifierSection()}
     <section data-roll-mode="situation">
       <div class="form-group"><label>${localize("TRUDVANG.Dialog.SituationValue")}</label><input name="situationValue" type="number" value="10"></div>
       ${modifierList(modifierRows)}
@@ -718,7 +721,7 @@ export async function modifierDialog({actor = null, title, target, showCost = fa
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target)}))}</p>
       ${modifierList(modifierRows)}
       ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
-      ${optionalModifiers.map((row,index)=>`<label class="checkbox"><input type="checkbox" data-optional-modifier="${index}"> ${escapeHtml(row.label)} (${signedModifier(row.value)})</label>`).join("")}
+      ${conditionalModifierSection(optionalModifiers.map((row,index)=>`<label class="checkbox"><input type="checkbox" data-optional-modifier="${index}"> ${escapeHtml(row.label)} (${signedModifier(row.value)})</label>`).join(""))}
       ${extraNumberFields.map(field => `<div class="form-group"><label>${escapeHtml(field.label)}</label><input name="${escapeHtml(field.name)}" type="number" value="${Number(field.value) || 0}">${field.hint ? `<p class="hint">${escapeHtml(field.hint)}</p>` : ""}</div>`).join("")}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
@@ -833,7 +836,7 @@ export async function combatPointDialog({actor = null, title, pools, defaultAllo
       ${rangedTargetOptions}
       ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
       ${mountedCombat ? `<ul class="combat-modifier-breakdown" data-mounted-breakdown><li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MountBonus"))}</span><b data-mounted-bonus></b></li></ul>` : ""}
-      ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
+      ${showModifier ? `${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
       ${showModifier || combatPointBonus || breakdown || modeBreakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span>${varyingSizes ? `<span>${sizeTargets.map(target => `<span>${escapeHtml(target.name)} : <strong data-combat-target-final data-size-modifier="${target.modifier}" data-defense-modifier="${Number(target.defenseModifier || 0)}"></strong></span>`).join("<br>")}</span>` : `<strong data-combat-final-target></strong>`}</p>` : ""}
     </section>`;
   };
@@ -992,7 +995,7 @@ export async function fixedAttackDialog({actor = null, title, baseVC = 0, target
     <p class="fixed-attack-base-target">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackBaseTarget"))}: <strong>${base}</strong></p>
     ${targetRows}
     ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
-    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+    ${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
   </div>`;
   class FixedAttackDialog extends DialogClass {
     _onRender(context, options) {
@@ -1034,7 +1037,7 @@ export async function genericSituationDialog({actor = null, defaultTarget = 10, 
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(defaultLabel || game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationSV"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
       ${modifierList(modifierRows)}
-      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationModifier"))}</label><input name="modifier" type="number" value="0"></div>
+      ${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationModifier"))}</label><input name="modifier" type="number" value="0"></div>
       <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TotalSituationValue"))}: <strong data-final-target>${Number(defaultTarget) + rollModifierTotal(modifierRows)}</strong></p>
     </div>`;
   class SituationRollDialog extends DialogClass {
@@ -1284,7 +1287,7 @@ export async function playerTraitSituationDialog({actor = null, title, traitLabe
     ${modifierList(modifierRows)}
     ${extraNumberFields.map(field => `<div class="form-group"><label>${escapeHtml(field.label)}</label><input name="${field.name}" type="number" value="${Number(field.value) || 0}"></div>`).join("")}
     ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
-    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
+    ${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${situationBase + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
   </div>`;
   class PlayerTraitDialog extends DialogClass {

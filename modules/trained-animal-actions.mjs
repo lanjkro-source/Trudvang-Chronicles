@@ -1,3 +1,4 @@
+import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import {blessingDialog} from "./blessing-dialog.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {rollUnder} from "./dice.mjs";
@@ -29,7 +30,7 @@ export async function performTrainedAnimalAction(document, action) {
     }
   }
   const choice = await blessingDialog(AnimalActionDialog,actor).wait({window: {title: label}, classes: ["dialog", "trudvang"],
-    content: `<div class="roll-dialog"><div class="form-group"><label>${e(t("Degree"))}</label><select name="degree">${[1, 2, 3, 4, 5].map(degree => `<option value="${degree}">${e(game.i18n.localize(`TRUDVANG.Procedure.Stage${degree}`))} — ${trainedAnimalValue(action, degree)}</option>`).join("")}</select></div><p>${e(t("AnimalValue"))} : <strong data-animal-base>${trainedAnimalValue(action, 1)}</strong></p><p class="hint">${e(t("AnimalRollHint"))}</p><div class="form-group"><label>${e(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div><p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))} : <strong data-animal-final>${trainedAnimalValue(action, 1)}</strong></p></div>`,
+    content: `<div class="roll-dialog"><div class="form-group"><label>${e(t("Degree"))}</label><select name="degree">${[1, 2, 3, 4, 5].map(degree => `<option value="${degree}">${e(game.i18n.localize(`TRUDVANG.Procedure.Stage${degree}`))} — ${trainedAnimalValue(action, degree)}</option>`).join("")}</select></div><p>${e(t("AnimalValue"))} : <strong data-animal-base>${trainedAnimalValue(action, 1)}</strong></p><p class="hint">${e(t("AnimalRollHint"))}</p>${conditionalModifierSection()}<div class="form-group"><label>${e(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div><p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))} : <strong data-animal-final>${trainedAnimalValue(action, 1)}</strong></p></div>`,
     buttons: [{action: "roll", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
       const root = button.form ?? dialog.element;
       const degree = Number(root.querySelector('[name="degree"]').value), modifier = Number(root.querySelector('[name="modifier"]').value || 0);

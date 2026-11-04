@@ -1,3 +1,4 @@
+import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import {blessingDialog} from "./blessing-dialog.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {rollUnder, rollModifierFlavor} from "./dice.mjs";
@@ -94,7 +95,7 @@ export async function performKnowledgeProcedure(document) {
     }
   }
   const choice = await blessingDialog(ProcedureDialog,actor).wait({window: {title: `${actor.name} — ${t(kind)}`}, position: {width: 560},
-    content: `<div class="trudvang roll-dialog knowledge-procedure-dialog">${fields(kind, document)}${referenceTable(kind)}<aside class="rule-test-notes"><p>${e(t(`${kind}Notes`))}</p></aside><p data-procedure-breakdown></p>${number("modifier", 0, -999, 999)}<p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-procedure-target></strong></p><p data-procedure-warning>${e(t("Invalid"))}</p></div>`,
+    content: `<div class="trudvang roll-dialog knowledge-procedure-dialog">${fields(kind, document)}${referenceTable(kind)}<aside class="rule-test-notes"><p>${e(t(`${kind}Notes`))}</p></aside><p data-procedure-breakdown></p>${conditionalModifierSection()}${number("modifier", 0, -999, 999)}<p>${e(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-procedure-target></strong></p><p data-procedure-warning>${e(t("Invalid"))}</p></div>`,
     buttons: [{action: "roll", label: game.i18n.localize("TRUDVANG.Action.Roll"), icon: "fas fa-dice-d20", default: true,
       callback: (event, button, dialog) => {const v = read(button.form ?? dialog.element); return prepare(actor, kind, v).valid ? v : false;}},
     {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}], rejectClose: false});

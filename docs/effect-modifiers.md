@@ -31,3 +31,18 @@ Les nouvelles définitions d’effets additionnent leurs contributions au maximu
 Les bonus généraux de dégâts utilisent `system.modifiers.damage`. Les bonus limités à une catégorie utilisent `system.modifiers.damageByUsage.melee`, `throwing`, `ranged` ou `natural`. Ils sont additifs, traités dans le même résolveur que les autres bonus et expliqués par leur source. Les anciennes données `system.transformation.damage` et `temporaryHP` restent lisibles pour préserver les effets personnalisés déjà enregistrés ; les nouvelles références ne les produisent plus. Les profils structurés restent nécessaires pour les formes, sens et attaques accordées.
 
 Les jets de vitalité sont publiés par `Roll.toMessage` : le résultat employé par l’effet est le jet du message, et Dice So Nice peut utiliser son intégration normale au chat sans seconde animation ajoutée par le système.
+
+## Emplacement des bonus conditionnels
+
+Tous les choix de bonus d’effet présents et futurs doivent utiliser
+`conditionalModifierSection()` (`modules/conditional-modifier-ui.mjs`). Dans les
+fenêtres de savoir, cette section conserve l’emplacement historique des cases
+optionnelles : après les modificateurs fixes et les notes, avant les champs
+complémentaires et le modificateur situationnel. Les autres fenêtres placent le
+même groupe avant le modificateur situationnel, ou avant le total lorsqu’il n’y a
+pas de champ situationnel. Les choix ajoutés dynamiquement, dont les bénédictions
+de Nid, rejoignent cette section, sans déplacer les choix déjà présents.
+
+Dans une fenêtre de combat à plusieurs modes, une section existe dans chaque
+mode ; le contrôle de bénédiction rejoint le groupe du mode visible en conservant
+sa sélection. Les changements de placement ne modifient aucun calcul.

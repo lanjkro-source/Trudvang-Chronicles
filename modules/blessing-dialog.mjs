@@ -1,3 +1,4 @@
+import {activeConditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import {nidBlessingBonus} from './rules/nid-blessings.mjs';
 import {escapeHtml} from './helpers.mjs';
 /** Add the conditional choice to the existing dialog, without another prompt. */
@@ -22,8 +23,8 @@ export function blessingDialog(Base,actor,mode='modifier'){
    super._onRender(context,options);const root=this.element;if(!root?.querySelector||root.querySelector('[data-nid-blessing]'))return;
    const label=document.createElement('label');label.className='checkbox';label.innerHTML='<input type="checkbox" data-nid-blessing> '+escapeHtml(game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label}))+' (+'+blessing.value+')';
    const outputSelector='[data-final-target], [data-combat-final-target], [data-combat-target-final], [data-concentration-total], [data-fixed-attack-final], [data-fixed-attack-no-target-final], [data-open-modifier], [data-procedure-target], [data-animal-final]';
-   (root.querySelector('.roll-dialog')??root).prepend(label);
-   const refresh=()=>{const enabled=label.querySelector('input').checked;for(const output of root.querySelectorAll(outputSelector)){
+   const section=activeConditionalModifierSection(root);if(!section)return;section.append(label);
+   const refresh=()=>{const activeSection=activeConditionalModifierSection(root);if(activeSection&&label.parentNode!==activeSection)activeSection.append(label);const enabled=label.querySelector('input').checked;for(const output of root.querySelectorAll(outputSelector)){
     let extra=output.nextElementSibling;if(!extra?.hasAttribute('data-nid-final')){extra=document.createElement('strong');extra.setAttribute('data-nid-final','');output.after(extra);}
     output.hidden=enabled;extra.hidden=!enabled;extra.textContent=String(Number(output.textContent)+blessing.value);
    }};
