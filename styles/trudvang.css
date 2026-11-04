@@ -1124,3 +1124,70 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang.damage-roll-dialog .damage-roll-fields select { width: 5.5em; flex: none; }
 .trudvang.damage-roll-dialog .damage-roll-generic-header { display: grid; gap: 12px; margin-bottom: 12px; }
 .trudvang.damage-roll-dialog .damage-roll-generic-header label { display: grid; gap: 5px; }
+
+/* One theme colour defines both the empty outline and the checked fill.
+ * Keep the square independent of Foundry's font-based checkbox glyphs. */
+:is(.trudvang, .trudvang-sheet) {
+  --checkbox-checked-color: var(--trudvang-on-header-muted);
+  --checkbox-checkmark-color: var(--trudvang-header);
+}
+:is(.trudvang-sheet, .trudvang.effect-sheet) {
+  --checkbox-checked-color: var(--trudvang-accent);
+  --checkbox-checkmark-color: var(--trudvang-paper-light);
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  flex: 0 0 16px;
+  width: 16px;
+  min-width: 16px;
+  max-width: 16px;
+  height: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  padding: 0;
+  border: 2px solid var(--checkbox-checked-color);
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]::before,
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]::after {
+  content: none;
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]:is(:checked, :indeterminate) {
+  background: var(--checkbox-checked-color);
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 4px;
+  height: 8px;
+  margin: auto;
+  border: solid var(--checkbox-checkmark-color);
+  border-width: 0 2px 2px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]:indeterminate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 8px;
+  height: 2px;
+  margin: auto;
+  background: var(--checkbox-checkmark-color);
+  border: 0;
+  transform: none;
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--checkbox-checked-color);
+  outline-offset: 3px;
+}
+:is(.trudvang, .trudvang-sheet) input[type="checkbox"]:disabled {
+  opacity: .55;
+  cursor: default;
+}
