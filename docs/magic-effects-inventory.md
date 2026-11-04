@@ -4,14 +4,14 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 303.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 311.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
 | Art du vitner | Bourse de vitner | sortilège | `vitner-vitner-craft:vitner-pouch:1` | 6 | 1 | 1 |
 | Art du vitner | Canalisation | sortilège | `vitner-vitner-craft:channeling:0` | 6 | 0 | 0 |
 | Art du vitner | Enchantement d’objet | sortilège | `vitner-vitner-craft:enchant-object:2` | 7 | 0 | 0 |
-| Art du vitner | Antimagie | sortilège | `vitner-vitner-craft:anti-magic:3` | 6 | 1 | 0 |
+| Art du vitner | Antimagie | sortilège | `vitner-vitner-craft:anti-magic:3` | 6 | 1 | 1 |
 | Art du vitner | Enchantement de créature | sortilège | `vitner-vitner-craft:enchant-being:4` | 6 | 0 | 1 |
 | Art du vitner | Dissipation du vitner | sortilège | `vitner-vitner-craft:dispel-vitner:6` | 2 | 1 | 0 |
 | Art du vitner | Sceau | sortilège | `vitner-vitner-craft:seal:5` | 3 | 0 | 0 |
@@ -96,7 +96,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Sorcellerie | Malédiction d’objet | sortilège | `vitner-witchcraft:curse-object:3` | 5 | 0 | 0 |
 | Sorcellerie | Amnésie | sortilège | `vitner-witchcraft:amnesia:4` | 3 | 2 | 1 |
 | Sorcellerie | Malédiction de créature | sortilège | `vitner-witchcraft:curse-creature:5` | 5 | 0 | 1 |
-| Sorcellerie | Mauvaise récolte | sortilège | `vitner-witchcraft:bad-harvest:6` | 6 | 0 | 0 |
+| Sorcellerie | Mauvaise récolte | sortilège | `vitner-witchcraft:bad-harvest:6` | 6 | 0 | 1 |
 | Sorcellerie | Malédiction de l’arbre | sortilège | `vitner-witchcraft:tree-curse:7` | 6 | 1 | 2 |
 | Vitner animal | Messager | sortilège | `vitner-animal-vitner:messenger:0` | 3 | 0 | 1 |
 | Vitner animal | Parler aux animaux | sortilège | `vitner-animal-vitner:speak-to-animals:1` | 2 | 0 | 1 |
@@ -117,7 +117,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner corporel | Peau de cuir | sortilège | `vitner-body-vitner:leather-skin:5` | 4 | 0 | 1 |
 | Vitner corporel | Hâte | sortilège | `vitner-body-vitner:hasten:9` | 7 | 1 | 2 |
 | Vitner corporel | Vigueur | sortilège | `vitner-body-vitner:strengthen:8` | 7 | 1 | 2 |
-| Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 0 |
+| Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 1 |
 | Vitner corporel | Transformation | sortilège | `vitner-body-vitner:change-creature:11` | 11 | 1 | 1 |
 | Vitner illusoire | Amplification des sons | sortilège | `vitner-delusion-vitner:increase-sounds:3` | 4 | 0 | 2 |
 | Vitner illusoire | Grondement | sortilège | `vitner-delusion-vitner:roar:0` | 3 | 0 | 0 |
@@ -281,7 +281,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette du bouclier | Protection contre les éléments | pouvoir | `holy-tenetnid-tablet-of-the-shield:storm-protection:2` | 2 | 0 | 1 |
 | Tablette du bouclier | Impuissance des démons | pouvoir | `holy-tenetnid-tablet-of-the-shield:demonic-impotence:5` | 2 | 0 | 1 |
 | Tablette du bouclier | Peau d’écorce | pouvoir | `holy-tenetnid-tablet-of-the-shield:bark-skin:4` | 3 | 0 | 1 |
-| Tablette du bouclier | Résistance au vitner | pouvoir | `holy-tenetnid-tablet-of-the-shield:vitner-resistance:6` | 3 | 1 | 0 |
+| Tablette du bouclier | Résistance au vitner | pouvoir | `holy-tenetnid-tablet-of-the-shield:vitner-resistance:6` | 3 | 1 | 1 |
 | Tablette du bouclier | Bannissement | pouvoir | `holy-tenetnid-tablet-of-the-shield:banishment:7` | 2 | 0 | 0 |
 | Tablette du bouclier | Refuge arboricole | pouvoir | `holy-tenetnid-tablet-of-the-shield:tree-port:8` | 3 | 1 | 1 |
 | Tablette du chevalier | Armure bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-armor:0` | 4 | 0 | 1 |
@@ -294,12 +294,12 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette du chevalier | Hache de Belo Seoth | pouvoir | `holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7` | 4 | 0 | 1 |
 | Tablette du chevalier | Aura de Gave | pouvoir | `holy-tenetnid-tablet-of-the-knight:guise-of-gave:8` | 5 | 1 | 1 |
 | Tablette du soleil | Lueur de l’aube | pouvoir | `holy-tenetnid-tablet-of-the-sun:dawn-shine:0` | 3 | 0 | 1 |
-| Tablette du soleil | Sol protecteur | pouvoir | `holy-tenetnid-tablet-of-the-sun:protective-ground:1` | 4 | 0 | 0 |
+| Tablette du soleil | Sol protecteur | pouvoir | `holy-tenetnid-tablet-of-the-sun:protective-ground:1` | 4 | 0 | 1 |
 | Tablette du soleil | Augure | pouvoir | `holy-tenetnid-tablet-of-the-sun:augury:2` | 1 | 0 | 0 |
 | Tablette du soleil | Lumière rassurante | pouvoir | `holy-tenetnid-tablet-of-the-sun:thermal-light:3` | 4 | 0 | 2 |
-| Tablette du soleil | Foyer béni | pouvoir | `holy-tenetnid-tablet-of-the-sun:blessed-home:5` | 4 | 0 | 0 |
+| Tablette du soleil | Foyer béni | pouvoir | `holy-tenetnid-tablet-of-the-sun:blessed-home:5` | 4 | 0 | 1 |
 | Tablette du soleil | Présage | pouvoir | `holy-tenetnid-tablet-of-the-sun:omen:4` | 1 | 0 | 0 |
-| Tablette du soleil | Bosquet sacré | pouvoir | `holy-tenetnid-tablet-of-the-sun:sacred-grove:6` | 4 | 0 | 0 |
+| Tablette du soleil | Bosquet sacré | pouvoir | `holy-tenetnid-tablet-of-the-sun:sacred-grove:6` | 4 | 0 | 1 |
 | Tablette du soleil | Radiance sacrée | pouvoir | `holy-tenetnid-tablet-of-the-sun:holy-radiance:7` | 3 | 0 | 2 |
 | Tablette du soleil | Oracle | pouvoir | `holy-tenetnid-tablet-of-the-sun:portent:8` | 1 | 0 | 0 |
 | Pouvoir de la bête | Instinct du prédateur | pouvoir | `holy-haminges-power-of-the-beast:mind-of-the-predator:1` | 3 | 0 | 1 |
@@ -434,5 +434,5 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Malédictions de Sonntag | Malédiction d’objet | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-object:3` | 5 | 0 | 0 |
 | Malédictions de Sonntag | Amnésie | pouvoir | `holy-joaringfaith-curses-of-sonntag:amnesia:4` | 3 | 2 | 1 |
 | Malédictions de Sonntag | Malédiction de créature | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-creature:5` | 5 | 0 | 1 |
-| Malédictions de Sonntag | Mauvaise récolte | pouvoir | `holy-joaringfaith-curses-of-sonntag:bad-harvest:6` | 6 | 0 | 0 |
+| Malédictions de Sonntag | Mauvaise récolte | pouvoir | `holy-joaringfaith-curses-of-sonntag:bad-harvest:6` | 6 | 0 | 1 |
 | Malédictions de Sonntag | Malédiction de l’arbre | pouvoir | `holy-joaringfaith-curses-of-sonntag:tree-curse:7` | 6 | 1 | 2 |

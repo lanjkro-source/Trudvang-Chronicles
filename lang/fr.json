@@ -13714,6 +13714,15 @@
           "SourcePage": "152",
           "Duration": "1 heure"
         },
+        "vitner-vitner-craft:anti-magic:3#effect": {
+          "Name": "Antimagie",
+          "Summary": "Protège une créature ou un objet contre les sorts en les neutralisant avant qu’ils ne l’atteignent.",
+          "Description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant. Cette pellicule protège la cible contre toutes les formes de magie. Pour empêcher un sort de pénétrer cette protection, l’enchanteur initial (celui qui maintient le sort Antimagie) doit réussir un test de situation avec une valeur de situation qui dépend du niveau du sort de l’agresseur, comme indiqué par la table ci-dessous. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Si le sort adverse profite de niveaux de puissance supplémentaires qui réduisent les chances de sa cible de réussir un test de situation, l’enchanteur qui tente de contrer ce sort subit le même malus. Si l’enchanteur réussit son test, le vitner est neutralisé et le sort est interrompu et n’a aucun effet.",
+          "SourceName": "Antimagie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "153",
+          "Duration": "2 tours de jeu"
+        },
         "vitner-vitner-craft:enchant-being:4#effect": {
           "Name": "Enchantement de créature",
           "Summary": "Enchantement de créature",
@@ -14290,6 +14299,15 @@
           "SourcePage": "185",
           "Duration": "10 jours"
         },
+        "vitner-witchcraft:bad-harvest:6#site": {
+          "Name": "Mauvaise récolte (vitner)",
+          "Summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+          "Description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du sort. Les plantes touchées par ce sort ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Mauvaise récolte",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "187",
+          "Duration": ""
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Sorcellerie)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -14507,6 +14525,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "195",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-body-vitner:imprison:10#effect": {
+          "Name": "Emprisonnement",
+          "Summary": "Enferme une victime dans une prison d’énergie qui la blesse lorsqu’elle tente de s’échapper.",
+          "Description": "Ce sort est une extension du sort Immobilisation, ce qui signifie que l’enchanteur doit d’abord réussir à immobiliser la victime par le biais de ce sort avant de pouvoir tisser Emprisonnement. Une fois qu’il est parvenu à lancer le premier sort, il peut emprisonner la victime par simple contact. L’enchanteur peut modifier à volonté la taille de la prison, sa hauteur et son rayon devant être compris entre 2 et 5 mètres. Les murs et le plafond de la prison sont invisibles, mais le prisonnier les perçoit comme légèrement translucides. En réalité, cette prison n’existe que dans le corps et l’esprit du prisonnier. Chaque fois que la victime de ce sort pense toucher les parois de la prison, une décharge électrique se répand dans son système nerveux et lui inflige 1d5 points de dégâts. Ceux qui ne sont pas sous le coup du sort peuvent traverser la barrière d’énergie sans subir le moindre dégât. Une personne sous le coup de ce sort dispose de quatre moyens différents pour se libérer. La première façon est la moins violente. Elle consiste à convaincre l’enchanteur de libérer le prisonnier, ou d’attendre que le sort arrive à expiration. La deuxième façon nécessite qu’un autre enchanteur annule l’effet magique par le biais du sort Dissipation du vitner. La troisième façon consiste à forcer le passage à travers la barrière d’énergie en chargeant. Pour ce faire, la victime doit réussir un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Pyschisme). En cas d’échec, le prisonnier subit 1d10 points de dégâts et ne parvient pas à franchir la barrière. Dans le cas contraire, il ne subit que les dégâts provoqués par la décharge électrique. C’est une manœuvre particulièrement éprouvante que le prisonnier ne peut tenter que deux fois par jour. La quatrième façon de se libérer est aussi la plus violente : elle demande à ce que d’autres personnes non affectées par le sort tirent la victime à travers les murs de sa prison mentale. Il faut quatre adultes de force normale pour tirer la victime de ce sort à travers le mur de vitner, et elle subit 1d10 points de dégâts pendant la manœuvre.",
+          "SourceName": "Emprisonnement",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "196",
+          "Duration": "2 jours"
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Transformation",
@@ -15684,6 +15711,15 @@
           "SourcePage": "258",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site": {
+          "Name": "Résistance au vitner",
+          "Summary": "Protège une cible contre un sort de vitner et peut le dissiper.",
+          "Description": "Le prêtre génère une aura sacrée qui offre la même protection que le pouvoir Protection contre les éléments, mais qui protège également contre les attaques magiques, qu’elles soient physiques ou mentales. L’aura fonctionne comme une barrière autour de la zone désignée par le prêtre, et pour pouvoir la pénétrer à l’aide de la magie, le tisseur doit réussir un test de situation avec une valeur de situation de 10. Si le sort est en mesure de pénétrer l’aura de Résistance au vitner, il fonctionne normalement et l’aura sacrée se dissipe.<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Résistance au vitner",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "258",
+          "Duration": "1 heure"
+        },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Refuge arboricole",
           "Summary": "Transforme en arbre, augmente la Protection, réduit les dégâts reçus et permet de récupérer des PS et de résister aux malédictions.",
@@ -15783,6 +15819,15 @@
           "SourcePage": "262",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site": {
+          "Name": "Sol protecteur",
+          "Summary": "Crée une zone de lumière solaire qui bloque le vitner et les pouvoirs adverses.",
+          "Description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée de ce pouvoir indique le rayon de la zone protégée qui doit bénéficier de la lumière du soleil. Pour créer ce site, le prêtre doit entailler son front (1 point de dégât) et recueillir du sang de cette blessure avant de le répandre le long du périmètre du site tout en entonnant un chant. Il faut 3 tours par mètre de rayon pour entonner cette prière. Par exemple, si ce pouvoir affecte un rayon de 8 mètres, l’invocation de ce don prendra 24 tours (ou 2 minutes). Quiconque tente d’activer un pouvoir relevant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire créé par ce pouvoir subit un malus de -1 à sa valeur de compétence. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +2).<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Sol protecteur",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "262",
+          "Duration": "1 heure"
+        },
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Lumière rassurante",
           "Summary": "Lumière rassurante",
@@ -15800,6 +15845,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "262",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-sun:blessed-home:5#site": {
+          "Name": "Foyer béni",
+          "Summary": "Bénit un foyer et protège ses occupants contre les pouvoirs et influences hostiles.",
+          "Description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée du pouvoir détermine le rayon de la zone protégée que la lumière du soleil recouvre. Pour créer ce site, le prêtre doit s’entailler le front (1 point de dégât) puis recueillir le sang de la blessure et le laisser couler le long du périmètre du site tout en chantant. Il faut 3 tours par mètre de rayon pour terminer cette prière. Par exemple, si le pouvoir affecte une zone de 8 mètres de rayon, l’invocation de ce pouvoir prendra 24 tours (soit 2 minutes). Quiconque tente d’activer un pouvoir dépendant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire subit un malus de -3 à la valeur de compétence nécessaire pour réussir. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +6).<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Foyer béni",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "263",
+          "Duration": "1 heure"
+        },
+        "holy-tenetnid-tablet-of-the-sun:sacred-grove:6#site": {
+          "Name": "Bosquet sacré",
+          "Summary": "Consacre un bosquet pour protéger ceux qui s’y trouvent contre la magie hostile.",
+          "Description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée du pouvoir détermine le rayon de la zone protégée que la lumière du soleil recouvre. Pour créer ce site, le prêtre doit s’entailler le front (1 point de dégât) puis recueillir le sang de la blessure et le laisser couler le long du périmètre du site tout en chantant. Il faut 3 tours par mètre de rayon pour terminer cette prière. Par exemple, si le pouvoir affecte une zone de 8 mètres de rayon, l’invocation de ce pouvoir prendra 24 tours (soit 2 minutes). Quiconque tente d’activer un pouvoir dépendant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire subit un malus de -5 à la valeur de compétence nécessaire pour réussir. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +10).<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Bosquet sacré",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "263",
+          "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
           "Name": "Radiance sacrée",
@@ -16811,6 +16874,15 @@
           "SourcePage": "123",
           "Duration": "10 jours"
         },
+        "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site": {
+          "Name": "Mauvaise récolte (malédiction)",
+          "Summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+          "Description": "Ce pouvoir fait apparaître une brume de pouvoir sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du pouvoir. Les plantes touchées par ce pouvoir ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+          "SourceName": "Mauvaise récolte",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Malédiction de l’arbre (Malédictions de Sonntag)",
           "Summary": "Transforme la cible en arbre, l’immobilise et augmente sa Protection.",
@@ -17137,7 +17209,12 @@
       "MessengerInstructions": "Message, destination et consignes",
       "MessengerCreatures": "Créatures recevant le chant : {value}",
       "MessengerWords": "Longueur maximale du message : {value} mots",
-      "MessengerKilometers": "Distance maximale de propagation : {value} km"
+      "MessengerKilometers": "Distance maximale de propagation : {value} km",
+      "ZoneRadius": "Rayon de la zone : {value} m",
+      "CastingRange": "Portée du lancement : {value} m",
+      "BarrenMonths": "Stérilité du sol : {value} mois",
+      "ForeignMagicPenalty": "Sortilèges et pouvoirs étrangers à Nid dans le site : {value} VC",
+      "SanctuaryResistance": "Résistance à la contrainte ou manipulation correspondante : +{value} SV"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

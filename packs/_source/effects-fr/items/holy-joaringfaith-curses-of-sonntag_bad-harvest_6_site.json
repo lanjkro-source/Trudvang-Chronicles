@@ -1,0 +1,45 @@
+{
+  "_id": "NEml1RjPkQlRmSnT",
+  "_key": "!items!NEml1RjPkQlRmSnT",
+  "name": "Mauvaise récolte (malédiction)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+    "description": "Ce pouvoir fait apparaître une brume de pouvoir sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du pouvoir. Les plantes touchées par ce pouvoir ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+    "summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "8iEepdGbHcIdJeKf",
+      "_key": "!items.effects!NEml1RjPkQlRmSnT.8iEepdGbHcIdJeKf",
+      "name": "Mauvaise récolte (malédiction)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce pouvoir fait apparaître une brume de pouvoir sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du pouvoir. Les plantes touchées par ce pouvoir ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+            "summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

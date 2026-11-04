@@ -35,6 +35,40 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-vitner-craft:anti-magic:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      5
+    ],
+    "sourceId": "vitner-vitner-craft:anti-magic:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-craft:anti-magic:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-craft:anti-magic:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-craft:anti-magic:3:2"
+      }
+    ]
+  },
   "vitner-vitner-craft:enchant-being:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -2099,6 +2133,67 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-witchcraft:bad-harvest:6#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-witchcraft:bad-harvest:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 20,
+        "value": 20,
+        "optionId": "vitner-witchcraft:bad-harvest:6:0",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true,
+        "extraTerms": [
+          {
+            "index": 1,
+            "value": 100,
+            "optionId": "vitner-witchcraft:bad-harvest:6:1"
+          },
+          {
+            "index": 2,
+            "value": 500,
+            "optionId": "vitner-witchcraft:bad-harvest:6:2"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "optionId": "vitner-witchcraft:bad-harvest:6:3",
+        "labelKey": "TRUDVANG.Transformation.CastingRange",
+        "skillOnly": true,
+        "tooltip": true,
+        "extraTerms": [
+          {
+            "index": 4,
+            "value": 1000,
+            "optionId": "vitner-witchcraft:bad-harvest:6:4"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": 12,
+        "value": 6,
+        "optionId": "vitner-witchcraft:bad-harvest:6:5",
+        "labelKey": "TRUDVANG.Transformation.BarrenMonths",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -3101,6 +3196,35 @@ export const TRANSFORMATION_TEMPLATES = {
         "trait": "strength",
         "value": 1,
         "optionId": "vitner-body-vitner:strengthen:8:5"
+      }
+    ]
+  },
+  "vitner-body-vitner:imprison:10#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 jours",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1,
+      4
+    ],
+    "sourceId": "vitner-body-vitner:imprison:10",
+    "parameters": [
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-body-vitner:imprison:10:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 604800,
+        "optionId": "vitner-body-vitner:imprison:10:3"
       }
     ]
   },
@@ -7094,6 +7218,34 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 5,
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:1",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
     "id": "refuge-arboricole",
     "icon": "icons/svg/aura.svg",
@@ -7472,6 +7624,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:1",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": -1,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:2",
+        "labelKey": "TRUDVANG.Transformation.ForeignMagicPenalty",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 2,
+        "value": 2,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:3",
+        "labelKey": "TRUDVANG.Transformation.SanctuaryResistance",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -7561,6 +7761,102 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:1"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:blessed-home:5#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 4,
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:1",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": -3,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:2",
+        "labelKey": "TRUDVANG.Transformation.ForeignMagicPenalty",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 6,
+        "value": 2,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:3",
+        "labelKey": "TRUDVANG.Transformation.SanctuaryResistance",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-the-sun:sacred-grove:6#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 8,
+        "value": 2,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:1",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": -5,
+        "value": -1,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:2",
+        "labelKey": "TRUDVANG.Transformation.ForeignMagicPenalty",
+        "skillOnly": true,
+        "tooltip": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 10,
+        "value": 2,
+        "optionId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:3",
+        "labelKey": "TRUDVANG.Transformation.SanctuaryResistance",
+        "skillOnly": true,
+        "tooltip": true
       }
     ]
   },
@@ -11786,6 +12082,67 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site": {
+    "id": "site",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 20,
+        "value": 20,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:0",
+        "labelKey": "TRUDVANG.Transformation.ZoneRadius",
+        "skillOnly": true,
+        "tooltip": true,
+        "extraTerms": [
+          {
+            "index": 1,
+            "value": 100,
+            "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:1"
+          },
+          {
+            "index": 2,
+            "value": 500,
+            "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:2"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:3",
+        "labelKey": "TRUDVANG.Transformation.CastingRange",
+        "skillOnly": true,
+        "tooltip": true,
+        "extraTerms": [
+          {
+            "index": 4,
+            "value": 1000,
+            "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:4"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "target": "note",
+        "base": 12,
+        "value": 6,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:5",
+        "labelKey": "TRUDVANG.Transformation.BarrenMonths",
+        "skillOnly": true,
+        "tooltip": true
+      }
+    ]
+  },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
     "id": "malediction-de-l-arbre",
     "icon": "icons/svg/aura.svg",
@@ -12534,6 +12891,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-vitner-craft:vitner-pouch:1": [
     "vitner-vitner-craft:vitner-pouch:1#effect"
   ],
+  "vitner-vitner-craft:anti-magic:3": [
+    "vitner-vitner-craft:anti-magic:3#effect"
+  ],
   "vitner-vitner-craft:enchant-being:4": [
     "vitner-vitner-craft:enchant-being:4#effect"
   ],
@@ -12722,6 +13082,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:curse-creature:5": [
     "vitner-witchcraft:curse-creature:5#effect"
   ],
+  "vitner-witchcraft:bad-harvest:6": [
+    "vitner-witchcraft:bad-harvest:6#site"
+  ],
   "vitner-witchcraft:tree-curse:7": [
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
@@ -12781,6 +13144,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-body-vitner:strengthen:8": [
     "vitner-body-vitner:strengthen:8#vigueur",
     "vitner-body-vitner:strengthen:8#vigueur-inverse"
+  ],
+  "vitner-body-vitner:imprison:10": [
+    "vitner-body-vitner:imprison:10#effect"
   ],
   "vitner-body-vitner:change-creature:11": [
     "vitner-body-vitner:change-creature:11#transformation"
@@ -13143,6 +13509,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": [
     "holy-tenetnid-tablet-of-the-shield:bark-skin:4#peau-d-ecorce"
   ],
+  "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6": [
+    "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site"
+  ],
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": [
     "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole"
   ],
@@ -13176,9 +13545,18 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-the-sun:dawn-shine:0": [
     "holy-tenetnid-tablet-of-the-sun:dawn-shine:0#effect"
   ],
+  "holy-tenetnid-tablet-of-the-sun:protective-ground:1": [
+    "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site"
+  ],
   "holy-tenetnid-tablet-of-the-sun:thermal-light:3": [
     "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect",
     "holy-tenetnid-tablet-of-the-sun:thermal-light:3#fear-only"
+  ],
+  "holy-tenetnid-tablet-of-the-sun:blessed-home:5": [
+    "holy-tenetnid-tablet-of-the-sun:blessed-home:5#site"
+  ],
+  "holy-tenetnid-tablet-of-the-sun:sacred-grove:6": [
+    "holy-tenetnid-tablet-of-the-sun:sacred-grove:6#site"
   ],
   "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": [
     "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect",
@@ -13475,6 +13853,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
     "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:bad-harvest:6": [
+    "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site"
   ],
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": [
     "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre",

@@ -1,0 +1,45 @@
+{
+  "_id": "5F7mMJeKfLgMhNiO",
+  "_key": "!items!5F7mMJeKfLgMhNiO",
+  "name": "Antimagie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:anti-magic:3#effect",
+    "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant. Cette pellicule protège la cible contre toutes les formes de magie. Pour empêcher un sort de pénétrer cette protection, l’enchanteur initial (celui qui maintient le sort Antimagie) doit réussir un test de situation avec une valeur de situation qui dépend du niveau du sort de l’agresseur, comme indiqué par la table ci-dessous. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Si le sort adverse profite de niveaux de puissance supplémentaires qui réduisent les chances de sa cible de réussir un test de situation, l’enchanteur qui tente de contrer ce sort subit le même malus. Si l’enchanteur réussit son test, le vitner est neutralisé et le sort est interrompu et n’a aucun effet.",
+    "summary": "Protège une créature ou un objet contre les sorts en les neutralisant avant qu’ils ne l’atteignent.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 153
+    }
+  },
+  "effects": [
+    {
+      "_id": "6DMlvQjPkQlRmSnT",
+      "_key": "!items.effects!5F7mMJeKfLgMhNiO.6DMlvQjPkQlRmSnT",
+      "name": "Antimagie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant. Cette pellicule protège la cible contre toutes les formes de magie. Pour empêcher un sort de pénétrer cette protection, l’enchanteur initial (celui qui maintient le sort Antimagie) doit réussir un test de situation avec une valeur de situation qui dépend du niveau du sort de l’agresseur, comme indiqué par la table ci-dessous. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Si le sort adverse profite de niveaux de puissance supplémentaires qui réduisent les chances de sa cible de réussir un test de situation, l’enchanteur qui tente de contrer ce sort subit le même malus. Si l’enchanteur réussit son test, le vitner est neutralisé et le sort est interrompu et n’a aucun effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:anti-magic:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:anti-magic:3#effect",
+            "sourceId": "vitner-vitner-craft:anti-magic:3",
+            "summary": "Protège une créature ou un objet contre les sorts en les neutralisant avant qu’ils ne l’atteignent.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

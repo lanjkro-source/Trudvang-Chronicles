@@ -79,6 +79,7 @@ for(const kind of ["powers","feats"]){
     if(!parameterTargets.has(p.target)||!entry.powerLevels?.[p.index])throw Error(`Invalid parameter ${p.target} in ${key}`);
     if(p.target==="instant"&&(!t.instant||!Number.isInteger(p.value)||p.value<0))throw Error(`Invalid instant improvement for ${key}`);
     if(p.target==="onApplyStep"&&!t.onApply)throw Error(`Application improvement without consequence for ${key}`);
+    if(p.extraTerms&&(!Array.isArray(p.extraTerms)||p.target!=="note"||p.extraTerms.some(term=>!Number.isInteger(term.index)||!Number.isFinite(term.value)||entry.powerLevels?.[term.index]?.optionId!==term.optionId)))throw Error(`Invalid additional note terms for ${key}`);
     if(p.target==="note"&&(!Number.isFinite(p.base)||!Number.isFinite(p.value)||!/^TRUDVANG\.Transformation\.[A-Za-z]+$/.test(p.labelKey)||!["fr","en"].every(c=>p.labelKey.split(".").reduce((value,key)=>value?.[key],lang[c]))))throw Error(`Invalid note improvement for ${key}`);
     const native=path=>t.changes.some(c=>c.key===path||c.key.startsWith(path+"."));
     if(p.target==="temporaryHP"&&!native("system.resources.body.temporaryMax")&&sourceRules.temporaryHP===undefined)throw Error(`Temporary HP parameter without matching base in ${key}`);

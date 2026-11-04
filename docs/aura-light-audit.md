@@ -70,3 +70,9 @@ Cri de guerre et Tonnerre victorieux distinguent alliés et ennemis à portée l
 Œil d’Enken (p. 226) et Regard de l’âme (p. 225) sont des capacités de perception, pas des auras appliquant un effet aux personnages détectés. La distinction entre détection de tokens et révélation du décor à travers les murs reste à traiter avec le MJ.
 
 **Façonnage de l’eau** (Livre des règles p. 164 ; Player’s Handbook p. 136) : la masse d’eau façonnée reste une zone fixe à représenter manuellement ; les trois minutes de façonnage et les cinq minutes de maintien constituent huit minutes au total, prolongées par les améliorations de durée. Ce n’est pas une aura mobile.
+
+## Sites et protections à automatiser avec les régions
+
+Les rappels chiffrés de Sol protecteur, Foyer béni, Bosquet sacré, Résistance au vitner et des deux Mauvaises récoltes conservent les paramètres du lancement, mais ne créent pas encore de région fixe. Restent à traiter : dessin et position de la zone, conditions de lumière du soleil, entrée/sortie des occupants, modificateurs limités à la magie et aux résistances concernées, stérilité du terrain et dissipation d'une barrière pénétrée. Ils ne doivent pas devenir des auras mobiles suivant le porteur du rappel. La lumière du soleil est un prérequis, pas une lumière émise par ces effets.
+
+Antimagie protège une cible sans aura de voisinage ; son test doit être effectué par le lanceur initial (à sélectionner pour lancer le test), en tenant compte du malus du sort adverse. Son changement éventuel de soutenu à persistant est rappelé parmi les améliorations. Emprisonnement est une prison mentale propre à la victime et non une barrière commune aux passants ; le MJ vérifie Immobilisation préalable, les contacts avec les parois, les dégâts et la limite de deux tentatives de sortie par jour. Ces interactions ne sont pas automatisées par les effets de rappel.

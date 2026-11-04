@@ -1,0 +1,45 @@
+{
+  "_id": "QVjCtbD8D9EaGbHc",
+  "_key": "!items!QVjCtbD8D9EaGbHc",
+  "name": "Sol protecteur",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site",
+    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée de ce pouvoir indique le rayon de la zone protégée qui doit bénéficier de la lumière du soleil. Pour créer ce site, le prêtre doit entailler son front (1 point de dégât) et recueillir du sang de cette blessure avant de le répandre le long du périmètre du site tout en entonnant un chant. Il faut 3 tours par mètre de rayon pour entonner cette prière. Par exemple, si ce pouvoir affecte un rayon de 8 mètres, l’invocation de ce don prendra 24 tours (ou 2 minutes). Quiconque tente d’activer un pouvoir relevant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire créé par ce pouvoir subit un malus de -1 à sa valeur de compétence. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +2).<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+    "summary": "Crée une zone de lumière solaire qui bloque le vitner et les pouvoirs adverses.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 262
+    }
+  },
+  "effects": [
+    {
+      "_id": "5YZZrfHcIdJeKfLg",
+      "_key": "!items.effects!QVjCtbD8D9EaGbHc.5YZZrfHcIdJeKfLg",
+      "name": "Sol protecteur",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée de ce pouvoir indique le rayon de la zone protégée qui doit bénéficier de la lumière du soleil. Pour créer ce site, le prêtre doit entailler son front (1 point de dégât) et recueillir du sang de cette blessure avant de le répandre le long du périmètre du site tout en entonnant un chant. Il faut 3 tours par mètre de rayon pour entonner cette prière. Par exemple, si ce pouvoir affecte un rayon de 8 mètres, l’invocation de ce don prendra 24 tours (ou 2 minutes). Quiconque tente d’activer un pouvoir relevant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire créé par ce pouvoir subit un malus de -1 à sa valeur de compétence. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +2).<p>Rappel du site : le MJ représente la zone fixe et gère les entrées, sorties, conditions et conséquences. Cet effet ne crée pas de région automatique et ne modifie pas globalement les jets de son porteur. Les valeurs effectives sont détaillées ci-dessous.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site",
+            "sourceId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+            "summary": "Crée une zone de lumière solaire qui bloque le vitner et les pouvoirs adverses.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

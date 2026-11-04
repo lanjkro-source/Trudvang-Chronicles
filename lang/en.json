@@ -13714,6 +13714,15 @@
           "SourcePage": "129",
           "Duration": "1 hour"
         },
+        "vitner-vitner-craft:anti-magic:3#effect": {
+          "Name": "Anti Magic",
+          "Summary": "The spell creates a film of protective vitner around the target.",
+          "Description": "The spell creates a film of protective vitner around the target. This film protects the target against all forms of magic and can be woven over beings or objects. Any magic directed toward the target must penetrate the film in order to be able to affect it. To prevent a spell from penetrating the film, the initial enchanter (the one maintaining the Anti Magic spell) needs<table><thead><tr><th colspan=\"1\">ANTI MAGIC’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>to succeed on a Situation roll with a Situation value based on the attacking enchanter’s spell level, as shown in the table below. ANTI MAGIC’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 If the incoming spell has extra levels of power that lower the target’s chance to succeed on a Situation roll, the enchanter attempting to stop the spell also receives the same negative modifier. If the enchanter succeeds on the roll, the vitner is neutralized and the prevented spell has no effect.",
+          "SourceName": "Anti Magic",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "129",
+          "Duration": "2 action rounds"
+        },
         "vitner-vitner-craft:enchant-being:4#effect": {
           "Name": "Enchant Being",
           "Summary": "Enchant Being",
@@ -14290,6 +14299,15 @@
           "SourcePage": "143",
           "Duration": "10 days"
         },
+        "vitner-witchcraft:bad-harvest:6#site": {
+          "Name": "Bad Harvest (vitner)",
+          "Summary": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation.",
+          "Description": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the spell’s basic version. Plants that have been harmed by this spell cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Bad Harvest",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": ""
+        },
         "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Witchcraft)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -14507,6 +14525,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "96",
           "Duration": "5 tours de jeu"
+        },
+        "vitner-body-vitner:imprison:10#effect": {
+          "Name": "Imprison",
+          "Summary": "The spell is an extension of the spell Immobilize, which means that the enchanter must first successfully immobilize the victim through that spell before attempting to weave this one.",
+          "Description": "The spell is an extension of the spell Immobilize, which means that the enchanter must first successfully immobilize the victim through that spell before attempting to weave this one. Once the enchanter has succeeded with the first spell, they can imprison the victim by touch. The enchanter can alter the size of the prison area at will, but it must remain within a minimum height and radius of 2 meters, and a maximum of 5 meters. The prison walls and ceiling are invisible, but they appear slightly translucent to the prisoner. In reality, the prison exists only in the target’s mind and body. Anytime the victim of the spell believes that they touch the prison’s walls or ceiling, an electric charge is triggered through their nervous system, inflicting 1d5 points of damage. For those who are not imprisoned by the spell, it is possible to go in and out through the energy wall without suffering any damage. Once a person is captured by the spell, there are four ways to break free. The first and least violent way is to convince the enchanter to release the imprisoned, or wait for the duration of the spell to expire. The second way is for the spell to be lifted by another enchanter using the spell Dispel Vitner. The third way is for the prisoner to attempt to barrel straight through the interfering energy with a sprinting charge. To achieve this, the victim must succeed on a Situation roll with a Situation value of 4 (Strength modifiers apply). If the roll fails, the prisoner takes 1d10 points of damage; if it succeeds, only damage inflicted by the electrical charge is sustained. This is very distressing to perform and the prisoner can muster only two attempts each day. The fourth and most violent way to break free is to have others who are not under the enchantment pull the victim through the prison walls of their mind. It takes a total of four adults with normal strength to pull the imprisoned character through the wall of vitner, and the prisoner suffers 1d10 points of damage in the process.",
+          "SourceName": "Imprison",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "96",
+          "Duration": "2 days"
         },
         "vitner-body-vitner:change-creature:11#transformation": {
           "Name": "Change Creature",
@@ -15684,6 +15711,15 @@
           "SourcePage": "201",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site": {
+          "Name": "Vitner Resistance",
+          "Summary": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+          "Description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability, but also protects against magical attacks, both physical and mental. The aura acts as a barrier around the designated area and in order to penetrate it with magic, the weaver must make a successful Situation roll with a Situation value of 10. If the spell is able to penetrate the Vitner Resistance aura, the spell works as usual and the sacred aura disappears.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Vitner Resistance",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "201",
+          "Duration": "1 hour"
+        },
         "holy-tenetnid-tablet-of-the-shield:tree-port:8#refuge-arboricole": {
           "Name": "Tree Port",
           "Summary": "Turns the target into a tree, increases Protection, reduces incoming damage and allows health recovery and resistance to curses.",
@@ -15783,6 +15819,15 @@
           "SourcePage": "203",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-the-sun:protective-ground:1#site": {
+          "Name": "Protective Ground",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats.",
+          "Description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage) and collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the designated sanctuary suffers -1 to the Skill Value needed to succeed. In addition, everyone located within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +2).<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Protective Ground",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "203",
+          "Duration": "1 hour"
+        },
         "holy-tenetnid-tablet-of-the-sun:thermal-light:3#effect": {
           "Name": "Thermal Light",
           "Summary": "Thermal Light",
@@ -15800,6 +15845,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "203",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-the-sun:blessed-home:5#site": {
+          "Name": "Blessed Home",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats.",
+          "Description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage), and then collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the d esignated sanctuary suffers -3 to the Skill Value needed to succeed. In addition, everyone within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +6).<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Blessed Home",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "203",
+          "Duration": "1 hour"
+        },
+        "holy-tenetnid-tablet-of-the-sun:sacred-grove:6#site": {
+          "Name": "Sacred Grove",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats.",
+          "Description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage) and then collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the designated sanctuary suffers -5 to the Skill Value needed to succeed. In addition, everyone located within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +10).<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Sacred Grove",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "203",
+          "Duration": "1 day"
         },
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7#effect": {
           "Name": "Holy Radiance",
@@ -16811,6 +16874,15 @@
           "SourcePage": "123",
           "Duration": "10 days"
         },
+        "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site": {
+          "Name": "Bad Harvest (curse)",
+          "Summary": "Blights the vegetation of an area and spoils a harvest.",
+          "Description": "The power places a mist of power over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the power’s basic version. Plants that have been harmed by this power cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+          "SourceName": "Bad Harvest",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
+        },
         "holy-joaringfaith-curses-of-sonntag:tree-curse:7#malediction-de-l-arbre": {
           "Name": "Tree Curse (Curses of Sonntag)",
           "Summary": "Turns the target into a tree, immobilizes it and increases its Protection.",
@@ -17137,7 +17209,12 @@
       "MessengerInstructions": "Message, destination and instructions",
       "MessengerCreatures": "Creatures receiving the song: {value}",
       "MessengerWords": "Maximum message length: {value} words",
-      "MessengerKilometers": "Maximum transmission distance: {value} km"
+      "MessengerKilometers": "Maximum transmission distance: {value} km",
+      "ZoneRadius": "Area radius: {value} m",
+      "CastingRange": "Casting range: {value} m",
+      "BarrenMonths": "Soil infertility: {value} months",
+      "ForeignMagicPenalty": "Spells and powers foreign to Nid within the site: {value} SV",
+      "SanctuaryResistance": "Resistance to the corresponding restraint or manipulation: +{value} SV"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

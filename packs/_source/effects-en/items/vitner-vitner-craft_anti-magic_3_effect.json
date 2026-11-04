@@ -1,0 +1,45 @@
+{
+  "_id": "5F7mMJeKfLgMhNiO",
+  "_key": "!items!5F7mMJeKfLgMhNiO",
+  "name": "Anti Magic",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:anti-magic:3#effect",
+    "description": "The spell creates a film of protective vitner around the target. This film protects the target against all forms of magic and can be woven over beings or objects. Any magic directed toward the target must penetrate the film in order to be able to affect it. To prevent a spell from penetrating the film, the initial enchanter (the one maintaining the Anti Magic spell) needs<table><thead><tr><th colspan=\"1\">ANTI MAGIC’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>to succeed on a Situation roll with a Situation value based on the attacking enchanter’s spell level, as shown in the table below. ANTI MAGIC’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 If the incoming spell has extra levels of power that lower the target’s chance to succeed on a Situation roll, the enchanter attempting to stop the spell also receives the same negative modifier. If the enchanter succeeds on the roll, the vitner is neutralized and the prevented spell has no effect.",
+    "summary": "The spell creates a film of protective vitner around the target.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 129
+    }
+  },
+  "effects": [
+    {
+      "_id": "6DMlvQjPkQlRmSnT",
+      "_key": "!items.effects!5F7mMJeKfLgMhNiO.6DMlvQjPkQlRmSnT",
+      "name": "Anti Magic",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spell creates a film of protective vitner around the target. This film protects the target against all forms of magic and can be woven over beings or objects. Any magic directed toward the target must penetrate the film in order to be able to affect it. To prevent a spell from penetrating the film, the initial enchanter (the one maintaining the Anti Magic spell) needs<table><thead><tr><th colspan=\"1\">ANTI MAGIC’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>to succeed on a Situation roll with a Situation value based on the attacking enchanter’s spell level, as shown in the table below. ANTI MAGIC’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 If the incoming spell has extra levels of power that lower the target’s chance to succeed on a Situation roll, the enchanter attempting to stop the spell also receives the same negative modifier. If the enchanter succeeds on the roll, the vitner is neutralized and the prevented spell has no effect.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:anti-magic:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:anti-magic:3#effect",
+            "sourceId": "vitner-vitner-craft:anti-magic:3",
+            "summary": "The spell creates a film of protective vitner around the target.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

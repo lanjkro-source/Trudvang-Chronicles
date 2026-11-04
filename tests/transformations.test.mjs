@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,318);
+ assert.equal(Object.keys(sources).length,326);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1547,5 +1547,38 @@ test('Halawen wards retain their spell-level table and shared resistance improve
   if(base>1)allocations.push({effectKey:id+'#ward',targetUuid:'Actor.ally',countsById});
   const fullSelected=Object.fromEntries([...group.sharedOptions,...group.additionalTargets.map(row=>row.optionId)].map(option=>[option,selected[option]??0]));
   assert.equal(validateMagicAllocations({targeting,selected:fullSelected,allocations,casterUuid:'Actor.caster'}).ok,true);
+ }}finally{globalThis.game=previous;}
+});
+
+test('site effects compute combined improvements without granting unconditional actor bonuses',async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  for(const prefix of ['vitner-witchcraft','holy-joaringfaith-curses-of-sonntag']){
+   await applyTransformation(actor,prefix+':bad-harvest:6#site',{counts:[2,3,1,2,1,2],skipDialog:true});
+   assert.match(created.description,/860 m/);assert.match(created.description,/1300 m/);assert.match(created.description,/24 mois/);assert.ok(!created.duration?.value);
+  }
+  for(const [suffix,radius,penalty,resistance] of [['protective-ground:1',4,-2,6],['blessed-home:5',6,-4,10],['sacred-grove:6',12,-6,14]]){
+   await applyTransformation(actor,'holy-tenetnid-tablet-of-the-sun:'+suffix+'#site',{counts:[1,2,1,2],skipDialog:true});
+   assert.ok(created.description.includes('zone : '+radius+' m'));
+   assert.ok(created.description.includes('site : '+penalty+' VC'));
+   assert.ok(created.description.includes(': +'+resistance+' SV'));
+   assert.deepEqual(created.system.changes,[],'a site marker must not penalize every roll of its holder');
+  }
+ }finally{globalThis.game=previous;}
+});
+
+test('anti-magic, imprisonment and vitner resistance expose tests with their frozen improvements',async()=>{
+ const {magicResistanceRows}=await import('../modules/rules/magic-resistance.mjs');
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{for(const [id,variant,counts,bonus] of [['vitner-vitner-craft:anti-magic:3','effect',[2,1,0,0,3,0],3],['vitner-body-vitner:imprison:10','effect',[2,0,1,1,2],-2],['holy-tenetnid-tablet-of-the-shield:vitner-resistance:6','site',[1,3,2],-2]]){
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,id+'#'+variant,{counts,skipDialog:true});
+  assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+  assert.equal(magicResistanceRows(RULE_TESTS_BY_CATALOG_ID[id][0],{context:created.flags[S].transformation.ruleTestContext,actor}).reduce((sum,row)=>sum+row.value,0),bonus);
+  assert.ok(created.duration.value>0);
  }}finally{globalThis.game=previous;}
 });

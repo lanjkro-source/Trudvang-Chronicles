@@ -1,0 +1,45 @@
+{
+  "_id": "bjGiNPjPkQlRmSnT",
+  "_key": "!items!bjGiNPjPkQlRmSnT",
+  "name": "Vitner Resistance",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site",
+    "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability, but also protects against magical attacks, both physical and mental. The aura acts as a barrier around the designated area and in order to penetrate it with magic, the weaver must make a successful Situation roll with a Situation value of 10. If the spell is able to penetrate the Vitner Resistance aura, the spell works as usual and the sacred aura disappears.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+    "summary": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 201
+    }
+  },
+  "effects": [
+    {
+      "_id": "GJmyQZu0v1w2x3y4",
+      "_key": "!items.effects!bjGiNPjPkQlRmSnT.GJmyQZu0v1w2x3y4",
+      "name": "Vitner Resistance",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability, but also protects against magical attacks, both physical and mental. The aura acts as a barrier around the designated area and in order to penetrate it with magic, the weaver must make a successful Situation roll with a Situation value of 10. If the spell is able to penetrate the Vitner Resistance aura, the spell works as usual and the sacred aura disappears.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6#site",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+            "summary": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

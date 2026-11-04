@@ -1,3 +1,4 @@
+import {resolveEffectNote} from './effect-note.mjs';
 import {TRANSFORMATION_TEMPLATES} from "../transformation-data.mjs";
 
 /** Resolve a conditional bonus from the effect's frozen casting, never from
@@ -19,7 +20,7 @@ export function conditionalSituationBonuses(effect) {
   restrictedSkill:p.restrictedSkill ?? "",
   restrictedDiscipline:p.restrictedDiscipline ?? "",
   requiresInput:p.requiresInput === true,
-  value:Number(p.base)+Math.max(0,Number(context.countsById?.[p.optionId]??context.counts?.[p.index])||0)*Number(p.value)+Math.max(0,Number(meta.powerLevel)||0)*Number(p.perLevel||0)
+  value:resolveEffectNote(p,context,meta.powerLevel)
  }));
 }
 

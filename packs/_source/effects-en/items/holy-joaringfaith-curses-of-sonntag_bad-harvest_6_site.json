@@ -1,0 +1,45 @@
+{
+  "_id": "NEml1RjPkQlRmSnT",
+  "_key": "!items!NEml1RjPkQlRmSnT",
+  "name": "Bad Harvest (curse)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+    "description": "The power places a mist of power over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the power’s basic version. Plants that have been harmed by this power cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+    "summary": "Blights the vegetation of an area and spoils a harvest.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "8iEepdGbHcIdJeKf",
+      "_key": "!items.effects!NEml1RjPkQlRmSnT.8iEepdGbHcIdJeKf",
+      "name": "Bad Harvest (curse)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The power places a mist of power over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the power’s basic version. Plants that have been harmed by this power cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.<p>Site reminder: the GM represents the fixed area and handles entry, exit, conditions and consequences. This effect creates no automatic region and does not modify all of its holder’s rolls. Effective values are listed below.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6#site",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+            "summary": "Blights the vegetation of an area and spoils a harvest.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

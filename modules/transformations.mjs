@@ -1,3 +1,4 @@
+import {resolveEffectNote} from './rules/effect-note.mjs';
 import {NID_BLESSINGS,nidBlessingRestriction} from "./rules/nid-blessings.mjs";
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
@@ -195,7 +196,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   }
   fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
- const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).map(p=>p.index),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
@@ -330,7 +331,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
-  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)+Math.max(0,Number(answers.powerLevel??template.levelParameter?.default)||0)*Number(p.perLevel||0);
+  const value=resolveEffectNote(p,casting,answers.powerLevel??template.levelParameter?.default);
   summary=game.i18n.format(p.labelKey,{value});
  }
  if(!resolvedCopy&&template.senseTooltip&&rules.senses?.[template.senseTooltip.sense])summary=game.i18n.format(template.senseTooltip.labelKey,{value:rules.senses[template.senseTooltip.sense].range});
@@ -381,11 +382,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!resolvedCopy&&template.summaryParts)description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())description+=`<p>${escapeHtml(game.i18n.localize(template.inputKey))} : ${escapeHtml(String(answers.effectInput).trim())}</p>`;
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note"){
-  const value=Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)+Math.max(0,Number(meta.powerLevel)||0)*Number(p.perLevel||0);
+  const value=resolveEffectNote(p,casting,meta.powerLevel);
   description+=`<p>${escapeHtml(game.i18n.format(p.labelKey,{value}))}</p>`;
  }
  const statuses=new Set(template.statuses??[]);
- if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && p.statusAtOrBelow && Number(p.base)+Math.max(0,Number(casting.counts[p.index])||0)*Number(p.value)<=Number(p.statusAtOrBelow.threshold))statuses.add(p.statusAtOrBelow.status);
+ if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && p.statusAtOrBelow && resolveEffectNote(p,casting,meta.powerLevel)<=Number(p.statusAtOrBelow.threshold))statuses.add(p.statusAtOrBelow.status);
  if(template.aura&&casting.auraSource){
   meta.auraChanges=changes.map(change=>({...change}));meta.auraStatuses=[...statuses];
   description+=`<p>${escapeHtml(game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius({flags:{[SCOPE]:{transformation:meta}}})}))}</p>`;
