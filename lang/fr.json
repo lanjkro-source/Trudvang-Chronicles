@@ -14308,6 +14308,15 @@
           "SourcePage": "187",
           "Duration": "3 days"
         },
+        "vitner-animal-vitner:messenger:0#message": {
+          "Name": "Messager",
+          "Summary": "Envoie un animal porter un message vers une destination choisie.",
+          "Description": "Les animaux entendent le chant et transmettent le message aux créatures qu’ils croisent, sans changer leur comportement ni leur trajet. Les personnes intelligentes peuvent refuser de le retransmettre. Le MJ fixe le délai de livraison ; il n’existe aucune expiration horaire automatique. Les limites du message et de sa propagation sont indiquées ci-dessous.",
+          "SourceName": "Messager",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "188",
+          "Duration": ""
+        },
         "vitner-animal-vitner:speak-to-animals:1#lien": {
           "Name": "Lien avec un animal",
           "Summary": "Lien spirituel avec un animal choisi ; seules des questions et réponses simples sont possibles et les renseignements peuvent être imprécis.",
@@ -14344,6 +14353,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "190",
           "Duration": "3 minutes"
+        },
+        "vitner-animal-vitner:create-messenger:7#messenger": {
+          "Name": "Création de messager",
+          "Summary": "Crée un messager vivant chargé de délivrer un message.",
+          "Description": "Un animal messager possède 2 PS et les caractéristiques habituelles de son espèce. Il voyage sans repos ni nourriture, parle la langue choisie et porte un message oral sans limite de mots vers un lieu déjà visité par le lanceur. Sa limite de parcours de base est de 10 km, après quoi il se dissout. Ce rappel conserve les instructions et les améliorations ; le MJ crée ou représente l’animal et gère son voyage. La durée de base étant spéciale, les améliorations de durée restent indiquées sans imposer une expiration horaire arbitraire.",
+          "SourceName": "Création de messager",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "191",
+          "Duration": ""
         },
         "vitner-animal-vitner:possess-animals:6#effect": {
           "Name": "Possession animale",
@@ -15365,6 +15383,16 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "244",
           "Duration": ""
+        },
+        "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing": {
+          "Name": "Oreilles de cheval",
+          "Summary": "Donne au bruide des oreilles de cheval et une meilleure perception des sons.",
+          "Description": "Les oreilles de cheval permettent d’entendre les bruits et conversations à la portée indiquée. Pour isoler un son précis, faire un test de situation de base 10 : +5 en pleine nature, +0 dans un village, -5 dans une ville agitée ; le MJ adapte le modificateur au bruit ambiant.",
+          "SourceName": "Oreilles de cheval",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "244",
+          "Duration": "1 minute",
+          "Sense0": "Ouïe des oreilles de cheval"
         },
         "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou": {
           "Name": "Ouïe du hibou",
@@ -17077,7 +17105,12 @@
       "IllnessExamination": "Examen médical de la victime : {value} VC",
       "AttackDamageTooltip": "Dégâts des griffes : {damage} (JO {openRoll}).",
       "FeverValues": "Toutes les actions : {value} ; dégâts en cas d’échec : {damage}.",
-      "NidBlessingBonus": "Actions liées à l’objectif béni : +{value} VC"
+      "NidBlessingBonus": "Actions liées à l’objectif béni : +{value} VC",
+      "HorseHearingRange": "Portée de l’ouïe : {value} m",
+      "MessengerInstructions": "Message, destination et consignes",
+      "MessengerCreatures": "Créatures recevant le chant : {value}",
+      "MessengerWords": "Longueur maximale du message : {value} mots",
+      "MessengerKilometers": "Distance maximale de propagation : {value} km"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

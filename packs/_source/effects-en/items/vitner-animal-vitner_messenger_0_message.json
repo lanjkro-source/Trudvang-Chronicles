@@ -1,0 +1,45 @@
+{
+  "_id": "nEb2N9EaGbHcIdJe",
+  "_key": "!items!nEb2N9EaGbHcIdJe",
+  "name": "Messenger",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:messenger:0#message",
+    "description": "Animals hear the song and pass the message to creatures they encounter without changing their behavior or route. Intelligent recipients may refuse to pass it on. The GM determines delivery time; there is no automatic timed expiry. Message and transmission limits are listed below.",
+    "summary": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "AstJO0u0v1w2x3y4",
+      "_key": "!items.effects!nEb2N9EaGbHcIdJe.AstJO0u0v1w2x3y4",
+      "name": "Messenger",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Animals hear the song and pass the message to creatures they encounter without changing their behavior or route. Intelligent recipients may refuse to pass it on. The GM determines delivery time; there is no automatic timed expiry. Message and transmission limits are listed below.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:messenger:0#message",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:messenger:0#message",
+            "sourceId": "vitner-animal-vitner:messenger:0",
+            "summary": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

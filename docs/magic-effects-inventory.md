@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 297.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 300.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -98,13 +98,13 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Sorcellerie | Malédiction de créature | sortilège | `vitner-witchcraft:curse-creature:5` | 5 | 0 | 1 |
 | Sorcellerie | Mauvaise récolte | sortilège | `vitner-witchcraft:bad-harvest:6` | 6 | 0 | 0 |
 | Sorcellerie | Malédiction de l’arbre | sortilège | `vitner-witchcraft:tree-curse:7` | 6 | 1 | 2 |
-| Vitner animal | Messager | sortilège | `vitner-animal-vitner:messenger:0` | 3 | 0 | 0 |
+| Vitner animal | Messager | sortilège | `vitner-animal-vitner:messenger:0` | 3 | 0 | 1 |
 | Vitner animal | Parler aux animaux | sortilège | `vitner-animal-vitner:speak-to-animals:1` | 2 | 0 | 1 |
 | Vitner animal | Appel des animaux | sortilège | `vitner-animal-vitner:call-on-animals:2` | 4 | 0 | 1 |
 | Vitner animal | Conjuration de corbeaux | sortilège | `vitner-animal-vitner:conjure-ravens:3` | 5 | 1 | 0 |
 | Vitner animal | Contrôle des animaux | sortilège | `vitner-animal-vitner:control-animals:4` | 6 | 0 | 1 |
 | Vitner animal | Esprit du loup | sortilège | `vitner-animal-vitner:mind-of-the-wolf:5` | 6 | 0 | 1 |
-| Vitner animal | Création de messager | sortilège | `vitner-animal-vitner:create-messenger:7` | 6 | 0 | 0 |
+| Vitner animal | Création de messager | sortilège | `vitner-animal-vitner:create-messenger:7` | 6 | 0 | 1 |
 | Vitner animal | Possession animale | sortilège | `vitner-animal-vitner:possess-animals:6` | 6 | 0 | 1 |
 | Vitner animal | Messager magique | sortilège | `vitner-animal-vitner:send-message:8` | 4 | 0 | 1 |
 | Vitner corporel | Adhérence | sortilège | `vitner-body-vitner:grip:0` | 5 | 0 | 1 |
@@ -239,7 +239,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tribut de Morgu | Embrasement du sang | pouvoir | `holy-ealdtradition-tribute-of-morgu:bloodfire:6` | 2 | 0 | 1 |
 | Tribut de Morgu | Cieux obscurcis | pouvoir | `holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8` | 2 | 0 | 0 |
 | Tribut de Morgu | Riastarthae | pouvoir | `holy-ealdtradition-tribute-of-morgu:riastarthae:7` | 1 | 0 | 2 |
-| Utilité de Nema | Oreilles de cheval | pouvoir | `holy-ealdtradition-nema-s-usefulness:horse-ears:0` | 3 | 1 | 0 |
+| Utilité de Nema | Oreilles de cheval | pouvoir | `holy-ealdtradition-nema-s-usefulness:horse-ears:0` | 3 | 1 | 1 |
 | Utilité de Nema | Souffle libérateur | pouvoir | `holy-ealdtradition-nema-s-usefulness:gust-of-release:1` | 2 | 1 | 0 |
 | Utilité de Nema | Ouïe du hibou | pouvoir | `holy-ealdtradition-nema-s-usefulness:owl-hearing:3` | 3 | 1 | 1 |
 | Utilité de Nema | Piste des brumes | pouvoir | `holy-ealdtradition-nema-s-usefulness:gloomy-trail:2` | 2 | 0 | 1 |

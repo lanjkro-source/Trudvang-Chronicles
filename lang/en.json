@@ -14308,6 +14308,15 @@
           "SourcePage": "143",
           "Duration": "3 days"
         },
+        "vitner-animal-vitner:messenger:0#message": {
+          "Name": "Messenger",
+          "Summary": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+          "Description": "Animals hear the song and pass the message to creatures they encounter without changing their behavior or route. Intelligent recipients may refuse to pass it on. The GM determines delivery time; there is no automatic timed expiry. Message and transmission limits are listed below.",
+          "SourceName": "Messenger",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": ""
+        },
         "vitner-animal-vitner:speak-to-animals:1#lien": {
           "Name": "Link to an Animal",
           "Summary": "A spiritual link with one chosen animal; only simple questions and answers are possible and information may be unreliable.",
@@ -14344,6 +14353,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "92",
           "Duration": "3 minutes"
+        },
+        "vitner-animal-vitner:create-messenger:7#messenger": {
+          "Name": "Create Messenger",
+          "Summary": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination.",
+          "Description": "The messenger animal has 2 BP and the normal characteristics of its species. It travels without rest or food, speaks the chosen language and carries a spoken message of unlimited length to a location previously visited by the caster. Its base travel limit is 10 km, after which it dissolves. This reminder preserves the instructions and improvements; the GM creates or represents the animal and manages its journey. Since the base duration is special, duration improvements are listed without assigning an arbitrary timed expiry.",
+          "SourceName": "Create Messenger",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "92",
+          "Duration": ""
         },
         "vitner-animal-vitner:possess-animals:6#effect": {
           "Name": "Possess Animals",
@@ -15365,6 +15383,16 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "187",
           "Duration": ""
+        },
+        "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing": {
+          "Name": "Horse Ears",
+          "Summary": "The Bruid hears all noises and conversations within range.",
+          "Description": "Horse ears allow hearing sounds and conversations within the listed range. Isolating a particular sound requires a base 10 situation test: +5 in the wilderness, +0 in a village, -5 in a busy city; the GM adjusts for ambient noise.",
+          "SourceName": "Horse Ears",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "185",
+          "Duration": "1 minute",
+          "Sense0": "Horse-ear hearing"
         },
         "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou": {
           "Name": "Owl Hearing",
@@ -17077,7 +17105,12 @@
       "IllnessExamination": "Medical examination of the victim: {value} VC",
       "AttackDamageTooltip": "Claw damage: {damage} (OR {openRoll}).",
       "FeverValues": "All actions: {value}; damage on failure: {damage}.",
-      "NidBlessingBonus": "Actions pursuing the blessed goal: +{value} SV"
+      "NidBlessingBonus": "Actions pursuing the blessed goal: +{value} SV",
+      "HorseHearingRange": "Hearing range: {value} m",
+      "MessengerInstructions": "Message, destination and instructions",
+      "MessengerCreatures": "Creatures receiving the song: {value}",
+      "MessengerWords": "Maximum message length: {value} words",
+      "MessengerKilometers": "Maximum transmission distance: {value} km"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

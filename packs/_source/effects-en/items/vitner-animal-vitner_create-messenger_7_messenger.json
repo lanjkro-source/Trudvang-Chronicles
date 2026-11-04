@@ -1,0 +1,45 @@
+{
+  "_id": "RPLC3hMhNiOjPkQl",
+  "_key": "!items!RPLC3hMhNiOjPkQl",
+  "name": "Create Messenger",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:create-messenger:7#messenger",
+    "description": "The messenger animal has 2 BP and the normal characteristics of its species. It travels without rest or food, speaks the chosen language and carries a spoken message of unlimited length to a location previously visited by the caster. Its base travel limit is 10 km, after which it dissolves. This reminder preserves the instructions and improvements; the GM creates or represents the animal and manages its journey. Since the base duration is special, duration improvements are listed without assigning an arbitrary timed expiry.",
+    "summary": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "61lCppToUpVqWrXs",
+      "_key": "!items.effects!RPLC3hMhNiOjPkQl.61lCppToUpVqWrXs",
+      "name": "Create Messenger",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The messenger animal has 2 BP and the normal characteristics of its species. It travels without rest or food, speaks the chosen language and carries a spoken message of unlimited length to a location previously visited by the caster. Its base travel limit is 10 km, after which it dissolves. This reminder preserves the instructions and improvements; the GM creates or represents the animal and manages its journey. Since the base duration is special, duration improvements are listed without assigning an arbitrary timed expiry.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:create-messenger:7#messenger",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:create-messenger:7#messenger",
+            "sourceId": "vitner-animal-vitner:create-messenger:7",
+            "summary": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

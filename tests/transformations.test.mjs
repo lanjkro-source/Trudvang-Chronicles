@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,312);
+ assert.equal(Object.keys(sources).length,315);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1491,4 +1491,32 @@ test('Nid blessings retain independent bonuses, durations and target capacities'
   assert.equal(magicTargetCapacity(POWER_DETAILS_BY_ID[id].targeting,{}),base);
   assert.ok(created.duration.value>0);assert.match(created.description,/objectif/);
  }}finally{globalThis.game=previous;}
+});
+
+test('horse ears keep their improved range, duration and listening action',async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,'holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing',{counts:[2,4,3],skipDialog:true});
+  assert.equal(effectRules(created).senses[0].range,60);
+  assert.deepEqual(created.duration,{value:36,units:'rounds'});
+  assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+  assert.equal(created.flags[S].transformation.ruleTestContext.counts[2],3);
+  assert.match(created.flags[S].transformation.summary,/60/);
+ }finally{globalThis.game=previous;}
+});
+
+test('messenger effects freeze instructions and special-duration improvements for each casting',async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,'vitner-animal-vitner:messenger:0#message',{counts:[2,4,3],preselectedAnswers:{duration:'',effectInput:'Retour au village'}});
+  assert.match(created.description,/chant : 3/);assert.match(created.description,/7 mots/);assert.match(created.description,/40 km/);
+  assert.equal(created.flags[S].transformation.input,'Retour au village');assert.ok(!created.duration?.value);
+  await applyTransformation(actor,'vitner-animal-vitner:create-messenger:7#messenger',{counts:[1,2,0,0,0,3],preselectedAnswers:{duration:'',effectInput:'Prévenir la garde'}});
+  assert.equal(created.flags[S].transformation.input,'Prévenir la garde');assert.ok(!created.duration?.value);
+  assert.match(created.description,/3 ×/);assert.match(created.description,/2 PS/);
+ }finally{globalThis.game=previous;}
 });

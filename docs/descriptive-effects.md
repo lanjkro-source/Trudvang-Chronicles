@@ -44,3 +44,9 @@ Les 6 variantes ci-dessous reprennent la moitié du temps écoulé lorsque leur 
 - La perception des êtres invisibles ou intangibles est décrite dans les sens ; aucun mode de détection supplémentaire ne lui est attribué.
 - Les paliers de netteté de la vision sont décrits ; Foundry reçoit la portée maximale, sans simulation de la dégradation progressive des détails.
 - La progression vers la pétrification, le déclenchement de la maladie des wargs et l’application des séquelles restent manuels, conformément aux choix du MJ.
+
+## Perception et messagers — 4 novembre 2026
+
+Oreilles de cheval (Livre des règles p. 244 ; Player’s Handbook p. 185) expose sa portée effective dans les sens et le test d’écoute avec les améliorations de SV. Ce sens auditif n’est pas une aura qui applique des effets aux personnes entendues.
+
+Messager et Création de messager conservent les consignes et les améliorations de chaque lancement. Messager calcule les limites de mots, de distance et de créatures recevant le chant. La propagation du message, la représentation de l’animal créé (2 PS), ses déplacements et la livraison restent gérés par le MJ. La durée spéciale n’est pas remplacée par un délai arbitraire ; les améliorations de durée de Création de messager sont rappelées textuellement. Les effets sont retirés manuellement à la fin de leur mission. Le chant au lancement n’est pas une aura persistante ; ni ces messagers ni Oreilles de cheval ne produisent de lumière.

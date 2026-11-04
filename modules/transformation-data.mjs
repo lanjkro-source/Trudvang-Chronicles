@@ -2187,6 +2187,46 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
   },
+  "vitner-animal-vitner:messenger:0#message": {
+    "id": "message",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.MessengerInstructions",
+    "sourceId": "vitner-animal-vitner:messenger:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "vitner-animal-vitner:messenger:0:0",
+        "labelKey": "TRUDVANG.Transformation.MessengerCreatures",
+        "skillOnly": true
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "vitner-animal-vitner:messenger:0:1",
+        "labelKey": "TRUDVANG.Transformation.MessengerWords",
+        "skillOnly": true
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 10,
+        "value": 10,
+        "optionId": "vitner-animal-vitner:messenger:0:2",
+        "labelKey": "TRUDVANG.Transformation.MessengerKilometers",
+        "skillOnly": true
+      }
+    ]
+  },
   "vitner-animal-vitner:speak-to-animals:1#lien": {
     "id": "lien",
     "icon": "icons/svg/aura.svg",
@@ -2322,6 +2362,26 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "vitner-animal-vitner:mind-of-the-wolf:5:2"
       }
     ]
+  },
+  "vitner-animal-vitner:create-messenger:7#messenger": {
+    "id": "messenger",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Transformation.MessengerInstructions",
+    "displayPowerOptions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceId": "vitner-animal-vitner:create-messenger:7",
+    "parameters": []
   },
   "vitner-animal-vitner:possess-animals:6#effect": {
     "id": "effect",
@@ -6036,6 +6096,43 @@ export const TRANSFORMATION_TEMPLATES = {
     "priority": 50,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
     "parameters": []
+  },
+  "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing": {
+    "id": "hearing",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.senses",
+        "type": "override",
+        "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Sense0\",\"range\":20,\"enabled\":true}]",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "senseTooltip": {
+      "sense": 0,
+      "labelKey": "TRUDVANG.Transformation.HorseHearingRange"
+    },
+    "sourceId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0:0"
+      },
+      {
+        "index": 1,
+        "target": "senseRange",
+        "sense": 0,
+        "value": 10,
+        "optionId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0:1"
+      }
+    ]
   },
   "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou": {
     "id": "ouie-du-hibou",
@@ -12545,6 +12642,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-witchcraft:tree-curse:7#malediction-de-l-arbre",
     "vitner-witchcraft:tree-curse:7#tree-recovery"
   ],
+  "vitner-animal-vitner:messenger:0": [
+    "vitner-animal-vitner:messenger:0#message"
+  ],
   "vitner-animal-vitner:speak-to-animals:1": [
     "vitner-animal-vitner:speak-to-animals:1#lien"
   ],
@@ -12556,6 +12656,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-animal-vitner:mind-of-the-wolf:5": [
     "vitner-animal-vitner:mind-of-the-wolf:5#effect"
+  ],
+  "vitner-animal-vitner:create-messenger:7": [
+    "vitner-animal-vitner:create-messenger:7#messenger"
   ],
   "vitner-animal-vitner:possess-animals:6": [
     "vitner-animal-vitner:possess-animals:6#effect"
@@ -12864,6 +12967,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-tribute-of-morgu:riastarthae:7": [
     "holy-ealdtradition-tribute-of-morgu:riastarthae:7#riastarthae",
     "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion"
+  ],
+  "holy-ealdtradition-nema-s-usefulness:horse-ears:0": [
+    "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing"
   ],
   "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": [
     "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou"

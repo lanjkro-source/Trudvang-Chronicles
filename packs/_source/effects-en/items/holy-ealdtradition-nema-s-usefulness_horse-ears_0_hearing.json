@@ -1,0 +1,53 @@
+{
+  "_id": "jQSiOdJeKfLgMhNi",
+  "_key": "!items!jQSiOdJeKfLgMhNi",
+  "name": "Horse Ears",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+    "description": "Horse ears allow hearing sounds and conversations within the listed range. Isolating a particular sound requires a base 10 situation test: +5 in the wilderness, +0 in a village, -5 in a busy city; the GM adjusts for ambient noise.",
+    "summary": "The Bruid hears all noises and conversations within range.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 185
+    }
+  },
+  "effects": [
+    {
+      "_id": "wVN5L6y4z5A6B7C8",
+      "_key": "!items.effects!jQSiOdJeKfLgMhNi.wVN5L6y4z5A6B7C8",
+      "name": "Horse Ears",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Horse ears allow hearing sounds and conversations within the listed range. Isolating a particular sound requires a base 10 situation test: +5 in the wilderness, +0 in a village, -5 in a busy city; the GM adjusts for ambient noise.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Sense0\",\"range\":20,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+            "sourceId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0",
+            "summary": "The Bruid hears all noises and conversations within range.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

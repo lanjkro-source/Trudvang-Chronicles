@@ -1,0 +1,53 @@
+{
+  "_id": "jQSiOdJeKfLgMhNi",
+  "_key": "!items!jQSiOdJeKfLgMhNi",
+  "name": "Oreilles de cheval",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+    "description": "Les oreilles de cheval permettent d’entendre les bruits et conversations à la portée indiquée. Pour isoler un son précis, faire un test de situation de base 10 : +5 en pleine nature, +0 dans un village, -5 dans une ville agitée ; le MJ adapte le modificateur au bruit ambiant.",
+    "summary": "Donne au bruide des oreilles de cheval et une meilleure perception des sons.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 244
+    }
+  },
+  "effects": [
+    {
+      "_id": "wVN5L6y4z5A6B7C8",
+      "_key": "!items.effects!jQSiOdJeKfLgMhNi.wVN5L6y4z5A6B7C8",
+      "name": "Oreilles de cheval",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les oreilles de cheval permettent d’entendre les bruits et conversations à la portée indiquée. Pour isoler un son précis, faire un test de situation de base 10 : +5 en pleine nature, +0 dans un village, -5 dans une ville agitée ; le MJ adapte le modificateur au bruit ambiant.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.senses",
+            "type": "override",
+            "value": "[{\"type\":\"other\",\"label\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Sense0\",\"range\":20,\"enabled\":true}]",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing",
+            "sourceId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0",
+            "summary": "Donne au bruide des oreilles de cheval et une meilleure perception des sons.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

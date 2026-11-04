@@ -1,0 +1,45 @@
+{
+  "_id": "RPLC3hMhNiOjPkQl",
+  "_key": "!items!RPLC3hMhNiOjPkQl",
+  "name": "Création de messager",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:create-messenger:7#messenger",
+    "description": "Un animal messager possède 2 PS et les caractéristiques habituelles de son espèce. Il voyage sans repos ni nourriture, parle la langue choisie et porte un message oral sans limite de mots vers un lieu déjà visité par le lanceur. Sa limite de parcours de base est de 10 km, après quoi il se dissout. Ce rappel conserve les instructions et les améliorations ; le MJ crée ou représente l’animal et gère son voyage. La durée de base étant spéciale, les améliorations de durée restent indiquées sans imposer une expiration horaire arbitraire.",
+    "summary": "Crée un messager vivant chargé de délivrer un message.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 191
+    }
+  },
+  "effects": [
+    {
+      "_id": "61lCppToUpVqWrXs",
+      "_key": "!items.effects!RPLC3hMhNiOjPkQl.61lCppToUpVqWrXs",
+      "name": "Création de messager",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Un animal messager possède 2 PS et les caractéristiques habituelles de son espèce. Il voyage sans repos ni nourriture, parle la langue choisie et porte un message oral sans limite de mots vers un lieu déjà visité par le lanceur. Sa limite de parcours de base est de 10 km, après quoi il se dissout. Ce rappel conserve les instructions et les améliorations ; le MJ crée ou représente l’animal et gère son voyage. La durée de base étant spéciale, les améliorations de durée restent indiquées sans imposer une expiration horaire arbitraire.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:create-messenger:7#messenger",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:create-messenger:7#messenger",
+            "sourceId": "vitner-animal-vitner:create-messenger:7",
+            "summary": "Crée un messager vivant chargé de délivrer un message.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

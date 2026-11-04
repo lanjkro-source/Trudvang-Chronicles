@@ -11584,6 +11584,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.SourcePage` | 143 | 187 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:tree-curse:7#tree-recovery.Duration` | 3 days | 3 days |
 
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.Name` | Messenger | Messager |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.Description` | Animals hear the song and pass the message to creatures they encounter without changing their behavior or route. Intelligent recipients may refuse to pass it on. The GM determines delivery time; there is no automatic timed expiry. Message and transmission limits are listed below. | Les animaux entendent le chant et transmettent le message aux créatures qu’ils croisent, sans changer leur comportement ni leur trajet. Les personnes intelligentes peuvent refuser de le retransmettre. Le MJ fixe le délai de livraison ; il n’existe aucune expiration horaire automatique. Les limites du message et de sa propagation sont indiquées ci-dessous. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.SourceName` | Messenger | Messager |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.SourcePage` | 92 | 188 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:messenger:0#message.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.vitner-animal-vitner:speak-to-animals:1#lien`
 
 | Clé | English | Français |
@@ -11628,6 +11639,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.SourcePage` | 92 | 190 |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:mind-of-the-wolf:5#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.Name` | Create Messenger | Création de messager |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.Description` | The messenger animal has 2 BP and the normal characteristics of its species. It travels without rest or food, speaks the chosen language and carries a spoken message of unlimited length to a location previously visited by the caster. Its base travel limit is 10 km, after which it dissolves. This reminder preserves the instructions and improvements; the GM creates or represents the animal and manages its journey. Since the base duration is special, duration improvements are listed without assigning an arbitrary timed expiry. | Un animal messager possède 2 PS et les caractéristiques habituelles de son espèce. Il voyage sans repos ni nourriture, parle la langue choisie et porte un message oral sans limite de mots vers un lieu déjà visité par le lanceur. Sa limite de parcours de base est de 10 km, après quoi il se dissout. Ce rappel conserve les instructions et les améliorations ; le MJ crée ou représente l’animal et gère son voyage. La durée de base étant spéciale, les améliorations de durée restent indiquées sans imposer une expiration horaire arbitraire. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.SourceName` | Create Messenger | Création de messager |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.SourcePage` | 92 | 191 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:create-messenger:7#messenger.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.vitner-animal-vitner:possess-animals:6#effect`
 
@@ -12873,6 +12895,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.SourcePage` | 187 | 244 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion.Duration` |  |  |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Name` | Horse Ears | Oreilles de cheval |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Description` | Horse ears allow hearing sounds and conversations within the listed range. Isolating a particular sound requires a base 10 situation test: +5 in the wilderness, +0 in a village, -5 in a busy city; the GM adjusts for ambient noise. | Les oreilles de cheval permettent d’entendre les bruits et conversations à la portée indiquée. Pour isoler un son précis, faire un test de situation de base 10 : +5 en pleine nature, +0 dans un village, -5 dans une ville agitée ; le MJ adapte le modificateur au bruit ambiant. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.SourceName` | Horse Ears | Oreilles de cheval |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.SourcePage` | 185 | 244 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Duration` | 1 minute | 1 minute |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:horse-ears:0#hearing.Sense0` | Horse-ear hearing | Ouïe des oreilles de cheval |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou`
 
@@ -14936,6 +14970,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.AttackDamageTooltip` | Claw damage: {damage} (OR {openRoll}). | Dégâts des griffes : {damage} (JO {openRoll}). |
 | `TRUDVANG.Transformation.FeverValues` | All actions: {value}; damage on failure: {damage}. | Toutes les actions : {value} ; dégâts en cas d’échec : {damage}. |
 | `TRUDVANG.Transformation.NidBlessingBonus` | Actions pursuing the blessed goal: +{value} SV | Actions liées à l’objectif béni : +{value} VC |
+| `TRUDVANG.Transformation.HorseHearingRange` | Hearing range: {value} m | Portée de l’ouïe : {value} m |
+| `TRUDVANG.Transformation.MessengerInstructions` | Message, destination and instructions | Message, destination et consignes |
+| `TRUDVANG.Transformation.MessengerCreatures` | Creatures receiving the song: {value} | Créatures recevant le chant : {value} |
+| `TRUDVANG.Transformation.MessengerWords` | Maximum message length: {value} words | Longueur maximale du message : {value} mots |
+| `TRUDVANG.Transformation.MessengerKilometers` | Maximum transmission distance: {value} km | Distance maximale de propagation : {value} km |
 
 ## `TRUDVANG.Transformation.Modes`
 
