@@ -2413,6 +2413,43 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:dark-visage:5": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:2",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 7,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 6,
+          "modifier": 0
+        }
+      ],
+      "requiresResistance": false,
+      "baseTargetOptionId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:1"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:0",
@@ -2559,6 +2596,30 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:1",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": false
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:0",
@@ -2653,6 +2714,42 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:1",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 0,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": false
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:0",
@@ -3333,6 +3430,48 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:dreadful-screech:0": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-haminges-power-of-the-scale:dreadful-screech:0:1",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 5,
+          "threshold": 0,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 0,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": false
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:dreadful-screech:0:0",
@@ -3451,6 +3590,36 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:scream-of-the-devouress:6": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:1",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": false
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:0",
@@ -3496,6 +3665,42 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:terrifying-howl:2": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "holy-haminges-power-of-the-scale:terrifying-howl:2:1",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 0,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": false
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:terrifying-howl:2:0",
@@ -9905,6 +10110,43 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:fear:3": {
     "isRune": false,
+    "fearRoll": {
+      "optionId": "vitner-power-of-thought:fear:3:3",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 0,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 10,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 1
+        }
+      ],
+      "requiresResistance": true,
+      "baseTargetOptionId": "vitner-power-of-thought:fear:3:0"
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:fear:3:0",

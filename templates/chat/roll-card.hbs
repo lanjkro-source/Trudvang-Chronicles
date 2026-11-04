@@ -15,4 +15,6 @@
   {{#if fatalEffect}}<button type="button" data-action="roll-fatal-effect" data-actor-uuid="{{actorUuid}}" data-fatal-kind="{{fatalEffect.kind}}" data-fatal-threshold="{{fatalEffect.threshold}}" data-fatal-modifier="{{fatalEffect.modifier}}"><i class="fas fa-dice-d10"></i> {{#if (eq fatalEffect.kind "faith")}}{{localize "TRUDVANG.Action.RollFatalFailure"}}{{else}}{{localize "TRUDVANG.Action.RollFatalMagic"}}{{/if}}</button>{{/if}}
   {{#if ruleTests.length}}<ul class="rule-action-tests">{{#each ruleTests as |test|}}<li><button type="button" data-action="roll-rule-test" data-test-index="{{test.index}}" title="{{test.title}}"><i class="fas fa-dice-d20" aria-hidden="true"></i> {{test.action}}</button></li>{{/each}}</ul>{{/if}}
   {{#if transformationLinks}}<div class="trudvang-transformation-links">{{{transformationLinks}}}</div>{{/if}}
+{{#if magicFear}}<button type="button" data-action="magic-fear" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}"><i class="fas fa-face-frown"></i> {{localize "TRUDVANG.Action.RollFear"}}</button>{{/if}}
+{{#if magicFearBase}}<button type="button" data-action="magic-fear" data-base-only="true" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}"><i class="fas fa-face-frown"></i> {{localize "TRUDVANG.MagicFear.BaseRecipients"}}</button>{{/if}}
 </article>

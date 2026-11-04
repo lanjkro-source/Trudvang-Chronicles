@@ -66,3 +66,26 @@ La portée limite les bénéficiaires lors de l’invocation. Le texte ne prévo
 de suppression à la sortie d’une zone ; ces protections ne créent donc pas
 d’aura mobile, de région ni de lumière. Le Mur et la Barrière portent sur les
 personnes protégées, y compris lorsqu’un sort adverse vise une zone.
+
+## Jets de peur magiques — 4 novembre 2026
+
+Les sources FR/EN définissent désormais `fearRoll` pour Peur, Langue du loup,
+Figure sinistre, Grondement de Tyrd, Cri effrayant, Hurlement terrifiant et
+Clameur de la dévoreuse. Il s’agit de conséquences instantanées ; elles n’ajoutent
+pas d’ActiveEffect persistant. Le suivi d’inventaire distingue ces jets des modèles
+d’effets et des jets de dégâts.
+
+La carte d’un lancement réussi propose une confirmation du jet de peur, calculé
+à partir des améliorations enregistrées par ce lancement, y compris après
+l’allocation du vitner critique. Les dés, le JO et le modificateur restent ajustables.
+Les dés explosent sur chaque résultat supérieur ou égal au seuil. Le message
+conserve les vrais Roll pour Dice So Nice et réutilise la carte de peur applicable
+aux acteurs contrôlés par le cliqueur, avec leur réduction personnelle.
+
+Peur et Figure sinistre proposent aussi le jet de base pour les cibles
+supplémentaires lorsque cette amélioration a été achetée. Le MJ vérifie les
+bénéficiaires admissibles, la portée, les conditions d’audition et les limites de
+nombre. Pour Peur, la résistance préalable reste à effectuer ; son rappel est
+affiché dans la confirmation et dans le détail de la carte de peur. La fuite des
+animaux de Figure sinistre et du Grondement de Tyrd reste narrative. Ces cris
+instantanés ne créent pas d’aura persistante ni de source lumineuse.

@@ -96,6 +96,13 @@ for (const id of [...french.keys()].sort()) {
     if(!Array.isArray(d.steps)||!d.steps.length||d.steps.some(s=>!/^\d+d(?:3|4|5|6|10)(?:\s*\+\s*\d+)?$/i.test(s.formula)||!Number.isInteger(s.openRoll)||s.openRoll<0||s.openRoll>10)||
       (d.optionId&&!f.powerLevels.some(p=>p.optionId===d.optionId)))fail(`${id}: invalid damage roll`);
   }
+  if(JSON.stringify(f.fearRoll??null)!==JSON.stringify(e.fearRoll??null))fail(`${id}: EN fear roll differs from FR`);
+  if(f.fearRoll){
+    const d=f.fearRoll;
+    if(!Array.isArray(d.steps)||!d.steps.length||!f.powerLevels.some(p=>p.optionId===d.optionId)||(d.baseTargetOptionId&&!f.powerLevels.some(p=>p.optionId===d.baseTargetOptionId))||
+      d.steps.some(s=>!Number.isInteger(s.dice)||s.dice<1||![3,4,5,6,10].includes(s.faces)||!Number.isInteger(s.threshold)||(s.threshold!==0&&(s.threshold<2||s.threshold>s.faces))||!Number.isInteger(s.modifier))||
+      (d.requiresResistance!==undefined&&typeof d.requiresResistance!=='boolean'))fail(`${id}: invalid fear roll`);
+  }
   for (let index = 0; index < f.powerLevels.length; index++) {
     const a = f.powerLevels[index], b = e.powerLevels[index];
     if (!Number.isInteger(a.cost) || !same([b.cost, b.maxCount ?? null], [a.cost, a.maxCount ?? null])) {
@@ -110,6 +117,7 @@ for (const id of [...french.keys()].sort()) {
   powerDetails[id] = {
     isRune: rune,
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
+    ...(f.fearRoll ? {fearRoll:f.fearRoll} : {}),
     ...(f.targeting ? {targeting: f.targeting} : {}),
     powerLevels: f.powerLevels.map(level => ({id: level.optionId, cost: level.cost, maxCount: level.maxCount ?? null})),
     spellType: types.get(f.type)[1],

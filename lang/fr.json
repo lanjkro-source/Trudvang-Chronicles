@@ -246,7 +246,8 @@
       "ApplyEffects": "Appliquer les effets aux cibles sélectionnées",
       "ShowInChat": "Afficher dans le chat",
       "ShareInChat": "Partager dans le chat",
-      "Duplicate": "Dupliquer"
+      "Duplicate": "Dupliquer",
+      "RollFear": "Jet de peur"
     },
     "Field": {
       "Name": "Nom",
@@ -17436,6 +17437,11 @@
       "AlreadyBlessed": "Ce personnage possède déjà une bénédiction de la Doctrine de Nid.",
       "ActorOnly": "Cette bénédiction s’applique à un personnage, pas à un objet.",
       "Contributes": "contribue à {goal}"
+    },
+    "MagicFear": {
+      "ResistanceFirst": "Appliquer uniquement aux victimes ayant raté le test de résistance préalable.",
+      "EligibleRecipients": "Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir.",
+      "BaseRecipients": "Peur de base — cibles supplémentaires"
     }
   }
 }

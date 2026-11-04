@@ -246,7 +246,8 @@
       "ApplyEffects": "Apply effects to selected targets",
       "ShowInChat": "Show in chat",
       "ShareInChat": "Share in chat",
-      "Duplicate": "Duplicate"
+      "Duplicate": "Duplicate",
+      "RollFear": "Roll fear"
     },
     "Field": {
       "Name": "Name",
@@ -17436,6 +17437,11 @@
       "AlreadyBlessed": "This actor already has a Tenet of Nid blessing.",
       "ActorOnly": "This blessing applies to an actor, not an item.",
       "Contributes": "contributes to {goal}"
+    },
+    "MagicFear": {
+      "ResistanceFirst": "Apply only to victims who failed the required resistance test.",
+      "EligibleRecipients": "Apply only to creatures affected according to range, hearing and the power’s restrictions.",
+      "BaseRecipients": "Base fear — additional recipients"
     }
   }
 }

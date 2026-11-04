@@ -283,6 +283,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ShowInChat` | Show in chat | Afficher dans le chat |
 | `TRUDVANG.Action.ShareInChat` | Share in chat | Partager dans le chat |
 | `TRUDVANG.Action.Duplicate` | Duplicate | Dupliquer |
+| `TRUDVANG.Action.RollFear` | Roll fear | Jet de peur |
 
 ## `TRUDVANG.Field`
 
@@ -15404,3 +15405,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Blessing.AlreadyBlessed` | This actor already has a Tenet of Nid blessing. | Ce personnage possède déjà une bénédiction de la Doctrine de Nid. |
 | `TRUDVANG.Blessing.ActorOnly` | This blessing applies to an actor, not an item. | Cette bénédiction s’applique à un personnage, pas à un objet. |
 | `TRUDVANG.Blessing.Contributes` | contributes to {goal} | contribue à {goal} |
+
+## `TRUDVANG.MagicFear`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.MagicFear.ResistanceFirst` | Apply only to victims who failed the required resistance test. | Appliquer uniquement aux victimes ayant raté le test de résistance préalable. |
+| `TRUDVANG.MagicFear.EligibleRecipients` | Apply only to creatures affected according to range, hearing and the power’s restrictions. | Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir. |
+| `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |

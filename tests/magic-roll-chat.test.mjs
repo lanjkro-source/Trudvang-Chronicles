@@ -55,3 +55,15 @@ test('rolls do not reopen a blessing dialog and retain the selected explanation'
  await rollUnder({actor:blessed,label:'skip',target:10});assert.equal(rendered.at(-1).context.target,10);
  }finally{globalThis.game=oldGame;}
 });
+
+test('fear powers show their action only after success and expose base recipients separately',async()=>{
+ const old=globalThis.game;
+ globalThis.game={user:{targets:[]},i18n:{lang:'fr',localize:key=>key,format:key=>key}};
+ const id='holy-gerbanis-wrath-of-tyrd:dark-visage:5',item={uuid:'Item.fear',type:'divineFeat',system:{catalogId:id}};
+ try{
+  nextDie=10;await rollUnder({actor,label:'Fear',target:15,kind:'divine',item,powerLevelCounts:[0,1,4]});
+  assert.equal(rendered.at(-1).context.magicFear,true);assert.equal(rendered.at(-1).context.magicFearBase,true);
+  nextDie=20;await rollUnder({actor,label:'Fear',target:15,kind:'divine',item});
+  assert.equal(rendered.at(-1).context.magicFear,false);assert.equal(rendered.at(-1).context.magicFearBase,false);
+ }finally{globalThis.game=old;}
+});

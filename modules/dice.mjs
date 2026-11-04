@@ -24,6 +24,7 @@ import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
+import {magicFearHasBaseTargets} from "./magic-fear.mjs";
 import {blessingDialog} from "./blessing-dialog.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -113,6 +114,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     ruleTests: !pendingPerfect&&success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
+    magicFearBase: Boolean(!pendingPerfect && success && item && magicFearHasBaseTargets(item,ruleTestContext)),
+    magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
     magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll),
     actorUuid: actor.uuid,
     usage,
@@ -150,6 +153,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.transformationLinks=transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=ruleTestActionViews(item);
     card.magicDamage=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll);
+    card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
+    card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
     await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext});
   }

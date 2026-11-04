@@ -48,3 +48,18 @@ test("cancel and invalid explosive thresholds never roll or post", async () => {
   assert.equal(await rollGenericFear(), null);
   assert.equal(messages.length, before);
 });
+
+test('magic fear prefills the confirmation and cancellation posts neither dice nor message',async()=>{
+ const {rollMagicFear}=await import('../modules/magic-fear.mjs');
+ const id='holy-gerbanis-wrath-of-tyrd:dark-visage:5',document={name:'Figure sinistre',system:{catalogId:id}};
+ const oldWait=foundry.applications.api.DialogV2.wait;let content;
+ foundry.applications.api.DialogV2.wait=async config=>{content=config.content;return false;};
+ const before=messages.length;
+ try{
+  await rollMagicFear({document,actor:{isOwner:true},context:{sourceId:id,countsById:{[id+':2']:4}}});
+  assert.match(content,/name="threshold"[^>]*value="6"/);assert.match(content,/Figure sinistre/);
+  await rollMagicFear({document,actor:{isOwner:true},context:{sourceId:id,countsById:{[id+':2']:4}},baseOnly:true});
+  assert.match(content,/name="threshold"[^>]*value="10"/);
+  assert.equal(messages.length,before);
+ }finally{foundry.applications.api.DialogV2.wait=oldWait;}
+});
