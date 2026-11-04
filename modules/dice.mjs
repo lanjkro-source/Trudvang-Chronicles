@@ -1,4 +1,4 @@
-import {damageQualificationFields, damageIcons} from "./damage-icons.mjs";
+import {damageQualificationFields, damageIcons, damageOriginFields} from "./damage-icons.mjs";
 import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
 import { TRUDVANG } from "./config.mjs";
@@ -540,11 +540,11 @@ export async function damageRollDialog({item, profile}) {
     qualification: Object.fromEntries(["nature", "delivery", "type", "protection", "material"].map(key => [key, root.querySelector(`[name=damage-${key}]:checked`)?.value ?? root.querySelector(`[name=damage-${key}]`)?.value ?? profile.qualification?.[key]])),
     longRange: Boolean(root.querySelector("[name=damage-long-range]")?.checked)
    });
-   if(choice&&profile.generic){choice.qualification.delivery=root.querySelector("[name=damage-origin]")?.value||"other";choice.title=root.querySelector("[name=damage-title]")?.value?.trim()||item.name;choice.damageUsage=root.querySelector("[name=damage-origin]")?.value??"";if(!["","melee","ranged"].includes(choice.damageUsage))return null;}
+   if(choice&&profile.generic){choice.qualification.delivery=root.querySelector("[name=damage-origin]:checked")?.value||"other";choice.title=root.querySelector("[name=damage-title]")?.value?.trim()||item.name;choice.damageUsage=root.querySelector("[name=damage-origin]:checked")?.value??"";if(!["","melee","ranged"].includes(choice.damageUsage))return null;}
    return choice;
   };
   const content = await renderTemplate("systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs", {
-    ...profile, qualificationFields: damageQualificationFields(profile.qualification ?? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}, {delivery:!profile.generic}), minimumDice:profile.allowZeroDice?0:1, dieTypes:[3,4,5,6,10].map(value=>({value,selected:value===profile.parsed?.faces})), rows: damageBreakdownRows(profile)
+    ...profile, originFields:damageOriginFields(), qualificationFields: damageQualificationFields(profile.qualification ?? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}, {delivery:!profile.generic}), minimumDice:profile.allowZeroDice?0:1, dieTypes:[3,4,5,6,10].map(value=>({value,selected:value===profile.parsed?.faces})), rows: damageBreakdownRows(profile)
   });
   class DamageRollDialog extends DialogClass {
     async _onRender(context, options) {

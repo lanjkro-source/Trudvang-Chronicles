@@ -2,6 +2,10 @@ import {DAMAGE_ICONS, WEAPON_MATERIALS, DAMAGE_TYPES, DAMAGE_NATURES, DAMAGE_DEL
 
 const escape = value => String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 export const damageLabel = (group, value) => game.i18n.localize(`TRUDVANG.Damage.${group}.${value}`);
+export function damageOriginFields() {
+  return `<span class="damage-qualification-options">${DAMAGE_DELIVERIES.map(value =>
+    `<label class="damage-qualification-option" title="${escape(damageLabel("Delivery",value))}"><input type="radio" name="damage-origin" value="${value === "other" ? "" : value}" ${value === "other" ? "checked" : ""} aria-label="${escape(damageLabel("Delivery",value))}">${damageIcon(value,"Delivery")}</label>`).join("")}</span>`;
+}
 export function damageIcon(value, group = "Type") {
   const icon = group === "Material" ? (globalThis.CONFIG?.TRUDVANG?.weaponMaterials ?? WEAPON_MATERIALS)[value]
     : group === "Protection" ? ({normal: "fa-shield-halved", none: "fa-ban", magical: "fa-shield", magicalOrGrindsilver: "fa-gem"})[value] : DAMAGE_ICONS[value];
