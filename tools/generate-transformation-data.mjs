@@ -40,6 +40,8 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);
    if(JSON.stringify(t.periodic??null)!==JSON.stringify(translated.periodic??null))throw Error(`Unaligned periodic consequence for ${key}`);
+   if(JSON.stringify(t.conditionalProtection??null)!==JSON.stringify(translated.conditionalProtection??null))throw Error(`Unaligned conditional protection for ${key}`);
+   if(t.conditionalProtection){const c=t.conditionalProtection;if(![c.melee,c.ranged].every(n=>Number.isInteger(n)&&n>=0)||![c.magicMelee,c.magicRanged].every(n=>n===null||Number.isInteger(n)&&n>=0)||!entry.powerLevels?.some(p=>p.optionId===c.optionId))throw Error(`Invalid conditional protection for ${key}`);}
    if(JSON.stringify(t.weaponDamage??null)!==JSON.stringify(translated.weaponDamage??null))throw Error(`Unaligned weapon damage for ${key}`);
    if(t.weaponDamage&&(![t.weaponDamage.normal,t.weaponDamage.undead,t.weaponDamage.demon].every(Number.isInteger)||t.weaponDamage.normal<0||t.weaponDamage.undead<t.weaponDamage.normal||t.weaponDamage.demon<t.weaponDamage.normal||!entry.powerLevels?.some(p=>p.optionId===t.weaponDamage.optionId)))throw Error(`Invalid weapon damage for ${key}`);
    if(JSON.stringify(t.armorBlessing??null)!==JSON.stringify(translated.armorBlessing??null))throw Error(`Unaligned armor blessing for ${key}`);

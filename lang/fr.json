@@ -936,7 +936,12 @@
       "InvalidSelection": "Vérifiez le nombre de dés, le seuil de jet ouvert et le modificateur de dégâts.",
       "DiceAdjusted": "Nombre de dés modifié pour ce jet : {before} → {after}.",
       "OpenRollAdjusted": "Seuil de jet ouvert modifié pour ce jet : {before} → {after}.",
-      "FormulaAdjusted": "Formule modifiée pour ce jet : {before} → {after}."
+      "FormulaAdjusted": "Formule modifiée pour ce jet : {before} → {after}.",
+      "MagicalWeapon": "Arme magique",
+      "Delivery": "Nature des dégâts",
+      "DeliveryOther": "Autres dégâts",
+      "DeliveryMelee": "Arme de mêlée",
+      "DeliveryRanged": "Arme à distance ou de lancer"
     },
     "Dialog": {
       "MountedCombat": "Combat monté",
@@ -14978,6 +14983,15 @@
           "Duration": "1 minute",
           "Sense0": "Vision nocturne"
         },
+        "holy-gerbanis-power-of-enken:wind-shield:3#protection": {
+          "Name": "Bouclier de vent",
+          "Summary": "Protection de vent contre les coups d’arme.",
+          "Description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+          "SourceName": "Bouclier de vent",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "224",
+          "Duration": "1 tour de jeu"
+        },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Témérité",
           "Summary": "Augmente le Psychisme.",
@@ -14987,6 +15001,24 @@
           "SourcePage": "224",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-power-of-enken:storm-armor:5#protection": {
+          "Name": "Armure de la tempête",
+          "Summary": "Protection de vent contre les coups d’arme.",
+          "Description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+          "SourceName": "Armure de la tempête",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "224",
+          "Duration": "2 tours de jeu"
+        },
+        "holy-gerbanis-power-of-enken:storm-armor:5#base": {
+          "Name": "Armure de la tempête (supplémentaire)",
+          "Summary": "Protection de vent contre les coups d’arme.",
+          "Description": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance.",
+          "SourceName": "Armure de la tempête",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "224",
+          "Duration": "2 tours de jeu"
+        },
         "holy-gerbanis-power-of-enken:soul-sight:4#effect": {
           "Name": "Regard de l’âme",
           "Summary": "Regard de l’âme",
@@ -14995,6 +15027,24 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "225",
           "Duration": "1 minute"
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7#protection": {
+          "Name": "Armure de l’ouragan",
+          "Summary": "Protection de vent contre les coups d’arme.",
+          "Description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+          "SourceName": "Armure de l’ouragan",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "225",
+          "Duration": "3 tours de jeu"
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7#base": {
+          "Name": "Armure de l’ouragan (supplémentaire)",
+          "Summary": "Protection de vent contre les coups d’arme.",
+          "Description": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 4 contre les armes de corps à corps et de 6 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 3 pour les armes de corps à corps et à 5 pour les armes à distance.",
+          "SourceName": "Armure de l’ouragan",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "225",
+          "Duration": "3 tours de jeu"
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Cœur d’Enken",
@@ -17215,7 +17265,12 @@
       "CastingRange": "Portée du lancement : {value} m",
       "BarrenMonths": "Stérilité du sol : {value} mois",
       "ForeignMagicPenalty": "Sortilèges et pouvoirs étrangers à Nid dans le site : {value} VC",
-      "SanctuaryResistance": "Résistance à la contrainte ou manipulation correspondante : +{value} SV"
+      "SanctuaryResistance": "Résistance à la contrainte ou manipulation correspondante : +{value} SV",
+      "WindMelee": "Protection contre les armes de mêlée : {value} VP",
+      "WindRanged": "Protection contre les armes à distance : {value} VP",
+      "WindMagicMelee": "Protection contre les armes magiques de mêlée : {value} VP",
+      "WindMagicRanged": "Protection contre les armes magiques à distance : {value} VP",
+      "ActorTargetRequired": "Cet effet doit être appliqué à un personnage."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

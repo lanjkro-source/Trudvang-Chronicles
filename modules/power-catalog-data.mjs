@@ -1588,6 +1588,38 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:hurricane-armor:7": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "main",
+          "variants": [
+            "protection"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-power-of-enken:hurricane-armor:7:0",
+            "holy-gerbanis-power-of-enken:hurricane-armor:7:1",
+            "holy-gerbanis-power-of-enken:hurricane-armor:7:3",
+            "holy-gerbanis-power-of-enken:hurricane-armor:7:4"
+          ]
+        },
+        {
+          "id": "additional",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:2",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:0",
@@ -1677,6 +1709,38 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:storm-armor:5": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "main",
+          "variants": [
+            "protection"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-power-of-enken:storm-armor:5:0",
+            "holy-gerbanis-power-of-enken:storm-armor:5:1",
+            "holy-gerbanis-power-of-enken:storm-armor:5:2",
+            "holy-gerbanis-power-of-enken:storm-armor:5:3"
+          ]
+        },
+        {
+          "id": "additional",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:4",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:storm-armor:5:0",
@@ -1732,6 +1796,24 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:wind-shield:3": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "main",
+          "variants": [
+            "protection"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-power-of-enken:wind-shield:3:0",
+            "holy-gerbanis-power-of-enken:wind-shield:3:1",
+            "holy-gerbanis-power-of-enken:wind-shield:3:2",
+            "holy-gerbanis-power-of-enken:wind-shield:3:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:wind-shield:3:0",

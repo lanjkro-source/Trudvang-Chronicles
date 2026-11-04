@@ -60,7 +60,7 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
     transformationBonus += row.value;
     rows.push({label: row.effect, value: signedDamage(row.value), amount: row.value, source: row.effect});
   }
-  return {resolution, rows, ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
+  return {resolution, rows, weaponHit: usage!=="magic", magicalWeapon: Boolean(context.magicalWeapon), ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
     parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base + transformationBonus,
     situational: finite(context.damageModifier), minimumTotal: resolution.minimumTotal};
 }
@@ -74,6 +74,6 @@ export function damageRollChoice(profile, options = {}) {
   const formula = String(options.formula ?? profile.formula).trim();
   if (!Number.isInteger(openRoll) || openRoll < 0 || openRoll > 10 || !Number.isFinite(modifier)
     || (profile.parsed && (!Number.isInteger(dice) || dice < 1 || dice > 100 || profile.parsed.faces < 1)) || (!profile.parsed && !formula)) return null;
-  return {dice, formula, openRoll, modifier, longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
+  return {dice, formula, openRoll, modifier, magicalWeapon:Boolean(profile.weaponHit&&Boolean(options.magicalWeapon??profile.magicalWeapon)), longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
     fixedModifier: profile.fixedModifier + modifier};
 }

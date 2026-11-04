@@ -1,0 +1,45 @@
+{
+  "_id": "cexS2aGbHcIdJeKf",
+  "_key": "!items!cexS2aGbHcIdJeKf",
+  "name": "Hurricane Armor (additional recipient)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+    "description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character. The armor provides a Protection Value of 4 against melee weapons and a Protection Value of 6 against ranged weapons. Against magical weapons, the Protection Value is 3 against melee weapons and 5 against ranged weapons.",
+    "summary": "Wind protection against weapon hits.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZtwYMbHcIdJeKfLg",
+      "_key": "!items.effects!cexS2aGbHcIdJeKf.ZtwYMbHcIdJeKfLg",
+      "name": "Hurricane Armor (additional recipient)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character. The armor provides a Protection Value of 4 against melee weapons and a Protection Value of 6 against ranged weapons. Against magical weapons, the Protection Value is 3 against melee weapons and 5 against ranged weapons.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+            "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+            "summary": "Wind protection against weapon hits.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

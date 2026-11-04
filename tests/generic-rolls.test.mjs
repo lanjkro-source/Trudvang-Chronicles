@@ -6,7 +6,7 @@ globalThis.document = {createElement: () => ({set textContent(v) {this.innerHTML
 globalThis.foundry = {applications: {api: {DialogV2: class {
   static async wait(config) {
     if (cancelled) return config.buttons[1].callback();
-    return config.buttons[0].callback(null, {form: {querySelector: selector => ({value: values[selector.match(/"(.*?)"/)[1]]})}}, null);
+    return config.buttons[0].callback(null, {form: {querySelector: selector => ({value: values[selector.match(/"(.*?)"/)[1]],checked:values[selector.match(/"(.*?)"/)[1]]===true})}}, null);
   }
 }}, handlebars: {renderTemplate: async (path, data) => {renders.push({path, data}); return "card";}}},
 documents: {Actor: class {}, ActiveEffect: class {}}, data: {fields: {}, ActiveEffectTypeDataModel: class {}}};
@@ -62,4 +62,10 @@ test('magic fear prefills the confirmation and cancellation posts neither dice n
   assert.match(content,/name="threshold"[^>]*value="10"/);
   assert.equal(messages.length,before);
  }finally{foundry.applications.api.DialogV2.wait=oldWait;}
+});
+
+test('generic weapon damage preserves its delivery and magical nature for application',async()=>{
+ values={title:'Magic arrow',dice:'1',faces:'10',threshold:'0',bonus:'0',delivery:'ranged','magical-weapon':true};dice=[8];
+ await rollGenericDamage();
+ assert.deepEqual(messages.at(-1).flags['trudvang-chronicles'].damageContext,{usage:'ranged',magicalWeapon:true});
 });

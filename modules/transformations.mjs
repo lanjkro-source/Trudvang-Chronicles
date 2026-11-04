@@ -107,6 +107,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
+ if(reference.conditionalProtection&&destinationItem){ui.notifications.warn(local("ActorTargetRequired"));return null;}
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||reference.instant||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);

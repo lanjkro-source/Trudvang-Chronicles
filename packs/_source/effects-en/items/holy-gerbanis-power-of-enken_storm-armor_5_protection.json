@@ -1,0 +1,45 @@
+{
+  "_id": "OnsLEhMhNiOjPkQl",
+  "_key": "!items!OnsLEhMhNiOjPkQl",
+  "name": "Storm Armor",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5#protection",
+    "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+    "summary": "Wind protection against weapon hits.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "Xlwek5x3y4z5A6B7",
+      "_key": "!items.effects!OnsLEhMhNiOjPkQl.Xlwek5x3y4z5A6B7",
+      "name": "Storm Armor",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:storm-armor:5#protection",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:storm-armor:5#protection",
+            "sourceId": "holy-gerbanis-power-of-enken:storm-armor:5",
+            "summary": "Wind protection against weapon hits.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

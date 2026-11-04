@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 311 ; avec jet de dégâts magique : 18 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 314 ; avec jet de dégâts magique : 18 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -178,11 +178,11 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Influence de Jorn | Snarfari | pouvoir | `holy-gerbanis-influence-of-jorn:snarfari:8` | 1 | 0 | 1 | — | — |
 | Pouvoir d'Enken | Force d’âme | pouvoir | `holy-gerbanis-power-of-enken:willpower:1` | 2 | 0 | 1 | — | — |
 | Pouvoir d'Enken | Vision nocturne | pouvoir | `holy-gerbanis-power-of-enken:night-vision:0` | 3 | 0 | 1 | — | — |
-| Pouvoir d'Enken | Bouclier de vent | pouvoir | `holy-gerbanis-power-of-enken:wind-shield:3` | 4 | 0 | 0 | — | — |
+| Pouvoir d'Enken | Bouclier de vent | pouvoir | `holy-gerbanis-power-of-enken:wind-shield:3` | 4 | 0 | 1 | — | — |
 | Pouvoir d'Enken | Témérité | pouvoir | `holy-gerbanis-power-of-enken:bold:2` | 2 | 0 | 1 | — | — |
-| Pouvoir d'Enken | Armure de la tempête | pouvoir | `holy-gerbanis-power-of-enken:storm-armor:5` | 5 | 0 | 0 | — | — |
+| Pouvoir d'Enken | Armure de la tempête | pouvoir | `holy-gerbanis-power-of-enken:storm-armor:5` | 5 | 0 | 2 | — | — |
 | Pouvoir d'Enken | Regard de l’âme | pouvoir | `holy-gerbanis-power-of-enken:soul-sight:4` | 3 | 0 | 1 | — | — |
-| Pouvoir d'Enken | Armure de l’ouragan | pouvoir | `holy-gerbanis-power-of-enken:hurricane-armor:7` | 5 | 0 | 0 | — | — |
+| Pouvoir d'Enken | Armure de l’ouragan | pouvoir | `holy-gerbanis-power-of-enken:hurricane-armor:7` | 5 | 0 | 2 | — | — |
 | Pouvoir d'Enken | Cœur d’Enken | pouvoir | `holy-gerbanis-power-of-enken:heart-of-enken:6` | 5 | 0 | 2 | — | — |
 | Pouvoir d'Enken | Œil d’Enken | pouvoir | `holy-gerbanis-power-of-enken:eye-of-enken:8` | 3 | 0 | 1 | — | — |
 | Sagesse de Windinna | Inspiration | pouvoir | `holy-gerbanis-wisdom-of-windinna:inspiration:0` | 2 | 0 | 1 | — | — |

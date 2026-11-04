@@ -1,0 +1,45 @@
+{
+  "_id": "GxwJvaE9EaGbHcId",
+  "_key": "!items!GxwJvaE9EaGbHcId",
+  "name": "Hurricane Armor",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+    "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+    "summary": "Wind protection against weapon hits.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "hw6txbE9EaGbHcId",
+      "_key": "!items.effects!GxwJvaE9EaGbHcId.hw6txbE9EaGbHcId",
+      "name": "Hurricane Armor",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+            "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+            "summary": "Wind protection against weapon hits.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

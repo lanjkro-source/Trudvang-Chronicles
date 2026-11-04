@@ -534,6 +534,7 @@ export async function damageRollDialog({item, profile}) {
     formula: root.querySelector("[name=damage-formula]")?.value,
     openRoll: root.querySelector("[name=damage-open-roll]")?.value,
     modifier: root.querySelector("[name=damage-modifier]")?.value,
+    magicalWeapon: Boolean(root.querySelector("[name=damage-magical-weapon]")?.checked),
     longRange: Boolean(root.querySelector("[name=damage-long-range]")?.checked)
   });
   const content = await renderTemplate("systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs", {
@@ -618,6 +619,7 @@ export async function rollDamage({actor, item, context = {}}) {
   if (total !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
   }
+  if(choice.magicalWeapon)modifierDetails.push(game.i18n.localize("TRUDVANG.DamageRoll.MagicalWeapon"));
   const beforeRange=total;
   if (choice.longRange) {
     const beforeLongRange = total;
@@ -640,7 +642,7 @@ export async function rollDamage({actor, item, context = {}}) {
     modifierDetails,
     targetsHTML
   });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets,conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets,damageContext:{usage:profile.usage,magicalWeapon:choice.magicalWeapon},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return total;
 }
 

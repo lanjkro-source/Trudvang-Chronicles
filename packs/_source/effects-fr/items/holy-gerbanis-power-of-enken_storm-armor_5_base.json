@@ -1,0 +1,45 @@
+{
+  "_id": "O00xbhJeKfLgMhNi",
+  "_key": "!items!O00xbhJeKfLgMhNi",
+  "name": "Armure de la tempête (supplémentaire)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+    "description": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance.",
+    "summary": "Protection de vent contre les coups d’arme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 224
+    }
+  },
+  "effects": [
+    {
+      "_id": "Lz22py3y4z5A6B7C",
+      "_key": "!items.effects!O00xbhJeKfLgMhNi.Lz22py3y4z5A6B7C",
+      "name": "Armure de la tempête (supplémentaire)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+            "sourceId": "holy-gerbanis-power-of-enken:storm-armor:5",
+            "summary": "Protection de vent contre les coups d’arme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

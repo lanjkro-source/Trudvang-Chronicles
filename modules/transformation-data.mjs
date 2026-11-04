@@ -4710,6 +4710,95 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-power-of-enken:wind-shield:3#protection": {
+    "id": "protection",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 tour de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalProtection": {
+      "melee": 1,
+      "ranged": 3,
+      "magicMelee": null,
+      "magicRanged": null,
+      "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:3"
+    },
+    "sourceId": "holy-gerbanis-power-of-enken:wind-shield:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:0",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:1",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "labelKey": "TRUDVANG.Transformation.WindMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "labelKey": "TRUDVANG.Transformation.WindRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 0,
+        "value": 0,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "labelKey": "TRUDVANG.Transformation.WindMagicMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 0,
+        "value": 0,
+        "optionId": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "labelKey": "TRUDVANG.Transformation.WindMagicRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      }
+    ]
+  },
   "holy-gerbanis-power-of-enken:bold:2#temerite": {
     "id": "temerite",
     "icon": "icons/svg/aura.svg",
@@ -4741,6 +4830,114 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-gerbanis-power-of-enken:bold:2:1"
       }
     ]
+  },
+  "holy-gerbanis-power-of-enken:storm-armor:5#protection": {
+    "id": "protection",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalProtection": {
+      "melee": 2,
+      "ranged": 4,
+      "magicMelee": 1,
+      "magicRanged": 3,
+      "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3"
+    },
+    "sourceId": "holy-gerbanis-power-of-enken:storm-armor:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:0",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:1",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "labelKey": "TRUDVANG.Transformation.WindMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 4,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "labelKey": "TRUDVANG.Transformation.WindRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "labelKey": "TRUDVANG.Transformation.WindMagicMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "labelKey": "TRUDVANG.Transformation.WindMagicRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-power-of-enken:storm-armor:5#base": {
+    "id": "base",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalProtection": {
+      "melee": 2,
+      "ranged": 4,
+      "magicMelee": 1,
+      "magicRanged": 3,
+      "optionId": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+      "baseOnly": true
+    },
+    "sourceId": "holy-gerbanis-power-of-enken:storm-armor:5",
+    "parameters": []
   },
   "holy-gerbanis-power-of-enken:soul-sight:4#effect": {
     "id": "effect",
@@ -4774,6 +4971,114 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-gerbanis-power-of-enken:soul-sight:4:2"
       }
     ]
+  },
+  "holy-gerbanis-power-of-enken:hurricane-armor:7#protection": {
+    "id": "protection",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalProtection": {
+      "melee": 4,
+      "ranged": 6,
+      "magicMelee": 3,
+      "magicRanged": 5,
+      "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4"
+    },
+    "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:0",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:1",
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 4,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+        "labelKey": "TRUDVANG.Transformation.WindMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 6,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+        "labelKey": "TRUDVANG.Transformation.WindRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+        "labelKey": "TRUDVANG.Transformation.WindMagicMelee",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 5,
+        "value": 1,
+        "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+        "labelKey": "TRUDVANG.Transformation.WindMagicRanged",
+        "tooltip": true,
+        "skillOnly": true,
+        "templates": [
+          "protection"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-power-of-enken:hurricane-armor:7#base": {
+    "id": "base",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalProtection": {
+      "melee": 4,
+      "ranged": 6,
+      "magicMelee": 3,
+      "magicRanged": 5,
+      "optionId": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+      "baseOnly": true
+    },
+    "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+    "parameters": []
   },
   "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
     "id": "c-ur-d-enken",
@@ -13287,11 +13592,22 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-power-of-enken:night-vision:0": [
     "holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne"
   ],
+  "holy-gerbanis-power-of-enken:wind-shield:3": [
+    "holy-gerbanis-power-of-enken:wind-shield:3#protection"
+  ],
   "holy-gerbanis-power-of-enken:bold:2": [
     "holy-gerbanis-power-of-enken:bold:2#temerite"
   ],
+  "holy-gerbanis-power-of-enken:storm-armor:5": [
+    "holy-gerbanis-power-of-enken:storm-armor:5#protection",
+    "holy-gerbanis-power-of-enken:storm-armor:5#base"
+  ],
   "holy-gerbanis-power-of-enken:soul-sight:4": [
     "holy-gerbanis-power-of-enken:soul-sight:4#effect"
+  ],
+  "holy-gerbanis-power-of-enken:hurricane-armor:7": [
+    "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+    "holy-gerbanis-power-of-enken:hurricane-armor:7#base"
   ],
   "holy-gerbanis-power-of-enken:heart-of-enken:6": [
     "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",

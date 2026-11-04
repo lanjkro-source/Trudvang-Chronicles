@@ -1,3 +1,4 @@
+import {conditionalProtectionRows} from "./rules/conditional-protection.mjs";
 import {temporaryHealthState,temporaryHealthUpdate} from "./rules/transformation-profile.mjs";
 import { weaponUsesTwoHands } from "./rules/combat-pool-resolver.mjs";
 import {postActorEvent} from "./actor-event-chat.mjs";
@@ -67,14 +68,17 @@ export function calculateArmoredDamage({damage, totalProtection, armor = [], out
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = ""} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false} = {}) {
   if (!actor?.isOwner) return null;
   const amount = Math.max(0, Math.ceil(Math.trunc(number(damage)) * (consumablePolicy(actor).damageFactors[damageType] ?? 1)));
   const armor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
+  const protectionRows=ignoreArmor?[]:conditionalProtectionRows(actor,{usage,magicalWeapon});
+  const conditionalProtection=protectionRows.reduce((sum,row)=>sum+row.amount,0);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}
-    : calculateArmoredDamage({damage: amount, totalProtection: actor.system?.protection, armor,
-      outerProtection:activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0)});
+    : calculateArmoredDamage({damage: amount, totalProtection: number(actor.system?.protection)+conditionalProtection, armor,
+      outerProtection:conditionalProtection+activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0)});
+  result.conditionalProtection=conditionalProtection;
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, "system.breach.value": entry.integrity}));

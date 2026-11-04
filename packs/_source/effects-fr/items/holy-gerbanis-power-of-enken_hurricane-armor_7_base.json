@@ -1,0 +1,45 @@
+{
+  "_id": "cexS2aGbHcIdJeKf",
+  "_key": "!items!cexS2aGbHcIdJeKf",
+  "name": "Armure de l’ouragan (supplémentaire)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+    "description": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 4 contre les armes de corps à corps et de 6 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 3 pour les armes de corps à corps et à 5 pour les armes à distance.",
+    "summary": "Protection de vent contre les coups d’arme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 225
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZtwYMbHcIdJeKfLg",
+      "_key": "!items.effects!cexS2aGbHcIdJeKf.ZtwYMbHcIdJeKfLg",
+      "name": "Armure de l’ouragan (supplémentaire)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 4 contre les armes de corps à corps et de 6 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 3 pour les armes de corps à corps et à 5 pour les armes à distance.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:hurricane-armor:7#base",
+            "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+            "summary": "Protection de vent contre les coups d’arme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

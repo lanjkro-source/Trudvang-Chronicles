@@ -1,0 +1,45 @@
+{
+  "_id": "O00xbhJeKfLgMhNi",
+  "_key": "!items!O00xbhJeKfLgMhNi",
+  "name": "Storm Armor (additional recipient)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+    "description": "The Stormkelt summons an armor of storm flurries around himself or a chosen character. The armor provides a Protection Value of 2 against melee weapons and a Protection Value of 4 against ranged weapons. Against magical weapons, the Protection Value is 1 against melee weapons and 3 against ranged weapons.",
+    "summary": "Wind protection against weapon hits.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "Lz22py3y4z5A6B7C",
+      "_key": "!items.effects!O00xbhJeKfLgMhNi.Lz22py3y4z5A6B7C",
+      "name": "Storm Armor (additional recipient)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt summons an armor of storm flurries around himself or a chosen character. The armor provides a Protection Value of 2 against melee weapons and a Protection Value of 4 against ranged weapons. Against magical weapons, the Protection Value is 1 against melee weapons and 3 against ranged weapons.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:storm-armor:5#base",
+            "sourceId": "holy-gerbanis-power-of-enken:storm-armor:5",
+            "summary": "Wind protection against weapon hits.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

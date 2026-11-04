@@ -1,0 +1,45 @@
+{
+  "_id": "huWxYHcIdJeKfLgM",
+  "_key": "!items!huWxYHcIdJeKfLgM",
+  "name": "Bouclier de vent",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+    "description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+    "summary": "Protection de vent contre les coups d’arme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 224
+    }
+  },
+  "effects": [
+    {
+      "_id": "SaD31OjPkQlRmSnT",
+      "_key": "!items.effects!huWxYHcIdJeKfLgM.SaD31OjPkQlRmSnT",
+      "name": "Bouclier de vent",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+            "sourceId": "holy-gerbanis-power-of-enken:wind-shield:3",
+            "summary": "Protection de vent contre les coups d’arme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

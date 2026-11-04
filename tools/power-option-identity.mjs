@@ -24,7 +24,7 @@ export function validatePowerTargeting(entry, english) {
  const groups=target.groups??[target],seen=new Set(),groupIds=new Set(),variants=new Set();
  if(!Array.isArray(groups)||!groups.length)throw new Error(`${entry.catalogId}: invalid target groups`);
  for(const group of groups){
-  if((group.baseTargets!==null&&(!Number.isInteger(group.baseTargets)||group.baseTargets<1))||(!target.groups&&group.baseTargets===null)||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
+  if((group.baseTargets!==null&&(!Number.isInteger(group.baseTargets)||group.baseTargets<(target.groups?0:1)))||(!target.groups&&group.baseTargets===null)||!Array.isArray(group.additionalTargets))throw new Error(`${entry.catalogId}: invalid target definition`);
    if(group.maxOtherThanCaster!==undefined&&(!target.groups||!Number.isInteger(group.maxOtherThanCaster)||group.maxOtherThanCaster<0))throw new Error(`${entry.catalogId}: invalid non-caster target limit`);
    if(group.requiresOtherTargetGroup!==undefined&&(!target.groups||typeof group.requiresOtherTargetGroup!=="string"||group.requiresOtherTargetGroup===group.id||!groups.some(row=>row.id===group.requiresOtherTargetGroup)))throw new Error(`${entry.catalogId}: invalid required target group`);
    if(group.casterOnly!==undefined&&typeof group.casterOnly!=="boolean")throw new Error(`${entry.catalogId}: invalid caster restriction`);

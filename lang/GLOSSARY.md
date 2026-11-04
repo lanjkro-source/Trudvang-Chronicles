@@ -1090,6 +1090,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.DamageRoll.DiceAdjusted` | Number of dice adjusted for this roll: {before} → {after}. | Nombre de dés modifié pour ce jet : {before} → {after}. |
 | `TRUDVANG.DamageRoll.OpenRollAdjusted` | Open-roll threshold adjusted for this roll: {before} → {after}. | Seuil de jet ouvert modifié pour ce jet : {before} → {after}. |
 | `TRUDVANG.DamageRoll.FormulaAdjusted` | Formula adjusted for this roll: {before} → {after}. | Formule modifiée pour ce jet : {before} → {after}. |
+| `TRUDVANG.DamageRoll.MagicalWeapon` | Magical weapon | Arme magique |
+| `TRUDVANG.DamageRoll.Delivery` | Damage delivery | Nature des dégâts |
+| `TRUDVANG.DamageRoll.DeliveryOther` | Other damage | Autres dégâts |
+| `TRUDVANG.DamageRoll.DeliveryMelee` | Melee weapon | Arme de mêlée |
+| `TRUDVANG.DamageRoll.DeliveryRanged` | Ranged or throwing weapon | Arme à distance ou de lancer |
 
 ## `TRUDVANG.Dialog`
 
@@ -12402,6 +12407,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne.Duration` | 1 minute | 1 minute |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:night-vision:0#vision-nocturne.Sense0` | Willpower | Vision nocturne |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.Name` | Wind Shield | Bouclier de vent |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.Description` | This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection. | Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.SourceName` | Wind Shield | Bouclier de vent |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.SourcePage` | 162 | 224 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:wind-shield:3#protection.Duration` | 1 action round | 1 tour de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:bold:2#temerite`
 
 | Clé | English | Français |
@@ -12413,6 +12429,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:bold:2#temerite.SourcePage` | 162 | 224 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:bold:2#temerite.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.Name` | Storm Armor | Armure de la tempête |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.Description` | This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection. | Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.SourceName` | Storm Armor | Armure de la tempête |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.SourcePage` | 162 | 224 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#protection.Duration` | 2 action rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.Name` | Storm Armor (additional recipient) | Armure de la tempête (supplémentaire) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.Description` | The Stormkelt summons an armor of storm flurries around himself or a chosen character. The armor provides a Protection Value of 2 against melee weapons and a Protection Value of 4 against ranged weapons. Against magical weapons, the Protection Value is 1 against melee weapons and 3 against ranged weapons. | Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.SourceName` | Storm Armor | Armure de la tempête |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.SourcePage` | 162 | 224 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:storm-armor:5#base.Duration` | 2 action rounds | 2 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect`
 
 | Clé | English | Français |
@@ -12423,6 +12461,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.SourcePage` | 162 | 225 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:soul-sight:4#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.Name` | Hurricane Armor | Armure de l’ouragan |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.Description` | This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection. | Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.SourceName` | Hurricane Armor | Armure de l’ouragan |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.SourcePage` | 162 | 225 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#protection.Duration` | 3 action rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.Name` | Hurricane Armor (additional recipient) | Armure de l’ouragan (supplémentaire) |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.Description` | The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character. The armor provides a Protection Value of 4 against melee weapons and a Protection Value of 6 against ranged weapons. Against magical weapons, the Protection Value is 3 against melee weapons and 5 against ranged weapons. | Le stormikjalt invoque une armure faite de bourrasques de vent tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 4 contre les armes de corps à corps et de 6 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 3 pour les armes de corps à corps et à 5 pour les armes à distance. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.SourceName` | Hurricane Armor | Armure de l’ouragan |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.SourcePage` | 162 | 225 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:hurricane-armor:7#base.Duration` | 3 action rounds | 3 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken`
 
@@ -15102,6 +15162,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.BarrenMonths` | Soil infertility: {value} months | Stérilité du sol : {value} mois |
 | `TRUDVANG.Transformation.ForeignMagicPenalty` | Spells and powers foreign to Nid within the site: {value} SV | Sortilèges et pouvoirs étrangers à Nid dans le site : {value} VC |
 | `TRUDVANG.Transformation.SanctuaryResistance` | Resistance to the corresponding restraint or manipulation: +{value} SV | Résistance à la contrainte ou manipulation correspondante : +{value} SV |
+| `TRUDVANG.Transformation.WindMelee` | Protection against melee weapons: {value} PV | Protection contre les armes de mêlée : {value} VP |
+| `TRUDVANG.Transformation.WindRanged` | Protection against ranged weapons: {value} PV | Protection contre les armes à distance : {value} VP |
+| `TRUDVANG.Transformation.WindMagicMelee` | Protection against magical melee weapons: {value} PV | Protection contre les armes magiques de mêlée : {value} VP |
+| `TRUDVANG.Transformation.WindMagicRanged` | Protection against magical ranged weapons: {value} PV | Protection contre les armes magiques à distance : {value} VP |
+| `TRUDVANG.Transformation.ActorTargetRequired` | This effect must be applied to an actor. | Cet effet doit être appliqué à un personnage. |
 
 ## `TRUDVANG.Transformation.Modes`
 

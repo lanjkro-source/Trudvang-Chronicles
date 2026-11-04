@@ -1,0 +1,45 @@
+{
+  "_id": "huWxYHcIdJeKfLgM",
+  "_key": "!items!huWxYHcIdJeKfLgM",
+  "name": "Wind Shield",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+    "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+    "summary": "Wind protection against weapon hits.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "SaD31OjPkQlRmSnT",
+      "_key": "!items.effects!huWxYHcIdJeKfLgM.SaD31OjPkQlRmSnT",
+      "name": "Wind Shield",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:wind-shield:3#protection",
+            "sourceId": "holy-gerbanis-power-of-enken:wind-shield:3",
+            "summary": "Wind protection against weapon hits.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

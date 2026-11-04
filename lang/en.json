@@ -936,7 +936,12 @@
       "InvalidSelection": "Check the number of dice, open-roll threshold and damage modifier.",
       "DiceAdjusted": "Number of dice adjusted for this roll: {before} → {after}.",
       "OpenRollAdjusted": "Open-roll threshold adjusted for this roll: {before} → {after}.",
-      "FormulaAdjusted": "Formula adjusted for this roll: {before} → {after}."
+      "FormulaAdjusted": "Formula adjusted for this roll: {before} → {after}.",
+      "MagicalWeapon": "Magical weapon",
+      "Delivery": "Damage delivery",
+      "DeliveryOther": "Other damage",
+      "DeliveryMelee": "Melee weapon",
+      "DeliveryRanged": "Ranged or throwing weapon"
     },
     "Dialog": {
       "MountedCombat": "Mounted combat",
@@ -14978,6 +14983,15 @@
           "Duration": "1 minute",
           "Sense0": "Willpower"
         },
+        "holy-gerbanis-power-of-enken:wind-shield:3#protection": {
+          "Name": "Wind Shield",
+          "Summary": "Wind protection against weapon hits.",
+          "Description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+          "SourceName": "Wind Shield",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "1 action round"
+        },
         "holy-gerbanis-power-of-enken:bold:2#temerite": {
           "Name": "Bold",
           "Summary": "Increases Psyche.",
@@ -14987,6 +15001,24 @@
           "SourcePage": "162",
           "Duration": "1 minute"
         },
+        "holy-gerbanis-power-of-enken:storm-armor:5#protection": {
+          "Name": "Storm Armor",
+          "Summary": "Wind protection against weapon hits.",
+          "Description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+          "SourceName": "Storm Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "2 action rounds"
+        },
+        "holy-gerbanis-power-of-enken:storm-armor:5#base": {
+          "Name": "Storm Armor (additional recipient)",
+          "Summary": "Wind protection against weapon hits.",
+          "Description": "The Stormkelt summons an armor of storm flurries around himself or a chosen character. The armor provides a Protection Value of 2 against melee weapons and a Protection Value of 4 against ranged weapons. Against magical weapons, the Protection Value is 1 against melee weapons and 3 against ranged weapons.",
+          "SourceName": "Storm Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "2 action rounds"
+        },
         "holy-gerbanis-power-of-enken:soul-sight:4#effect": {
           "Name": "Soul Sight",
           "Summary": "Soul Sight",
@@ -14995,6 +15027,24 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "162",
           "Duration": "1 minute"
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7#protection": {
+          "Name": "Hurricane Armor",
+          "Summary": "Wind protection against weapon hits.",
+          "Description": "This protection absorbs weapon hits before worn armor. Effective values are listed below. In damage confirmation, specify whether the weapon is magical. Spell damage and applications ignoring armor do not use this protection.",
+          "SourceName": "Hurricane Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "3 action rounds"
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7#base": {
+          "Name": "Hurricane Armor (additional recipient)",
+          "Summary": "Wind protection against weapon hits.",
+          "Description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character. The armor provides a Protection Value of 4 against melee weapons and a Protection Value of 6 against ranged weapons. Against magical weapons, the Protection Value is 3 against melee weapons and 5 against ranged weapons.",
+          "SourceName": "Hurricane Armor",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "162",
+          "Duration": "3 action rounds"
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken": {
           "Name": "Heart of Enken",
@@ -17215,7 +17265,12 @@
       "CastingRange": "Casting range: {value} m",
       "BarrenMonths": "Soil infertility: {value} months",
       "ForeignMagicPenalty": "Spells and powers foreign to Nid within the site: {value} SV",
-      "SanctuaryResistance": "Resistance to the corresponding restraint or manipulation: +{value} SV"
+      "SanctuaryResistance": "Resistance to the corresponding restraint or manipulation: +{value} SV",
+      "WindMelee": "Protection against melee weapons: {value} PV",
+      "WindRanged": "Protection against ranged weapons: {value} PV",
+      "WindMagicMelee": "Protection against magical melee weapons: {value} PV",
+      "WindMagicRanged": "Protection against magical ranged weapons: {value} PV",
+      "ActorTargetRequired": "This effect must be applied to an actor."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

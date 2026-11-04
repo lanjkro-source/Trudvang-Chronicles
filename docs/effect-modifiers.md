@@ -46,3 +46,24 @@ de Nid, rejoignent cette section, sans déplacer les choix déjà présents.
 Dans une fenêtre de combat à plusieurs modes, une section existe dans chaque
 mode ; le contrôle de bénédiction rejoint le groupe du mode visible en conservant
 sa sélection. Les changements de placement ne modifient aucun calcul.
+
+## Protections de vent d’Enken
+
+Bouclier de vent, Armure de la tempête et Armure de l’ouragan (Livre des règles
+p. 224–225 ; Player’s Handbook, Power of Enken) distinguent les armes de mêlée,
+les projectiles et les armes magiques. Les améliorations du lancement sont
+conservées dans l’effet. Le jet de dégâts transmet la nature du coup et la case
+« Arme magique » à son application ; ces protections sont soustraites avant
+l’armure portée et préservent donc sa VI. Le bouton sans armure ignore aussi
+ces protections. Un dégât de sortilège ou non classé n’est pas considéré comme
+un coup d’arme. Les anciennes cartes de dégâts sans cette information n’utilisent
+pas ces protections conditionnelles.
+
+Les bénéficiaires supplémentaires des Armures reçoivent une variante de base,
+sans amélioration de protection ni de durée. Leur groupe démarre à zéro cible
+et n’est disponible qu’après achat de l’option correspondante. La protection
+du Bouclier de vent contre une arme magique reste nulle même améliorée.
+Ces vents n’accordent leur protection qu’au bénéficiaire ; ils ne distribuent
+aucun effet de voisinage et ne produisent pas de lumière. Les effets d’une même
+source se renouvellent ; les protections de sources distinctes suivent le cumul
+additif des protections du système.

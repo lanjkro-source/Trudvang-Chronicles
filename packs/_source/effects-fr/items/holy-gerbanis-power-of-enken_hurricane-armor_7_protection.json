@@ -1,0 +1,45 @@
+{
+  "_id": "GxwJvaE9EaGbHcId",
+  "_key": "!items!GxwJvaE9EaGbHcId",
+  "name": "Armure de l’ouragan",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+    "description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+    "summary": "Protection de vent contre les coups d’arme.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 225
+    }
+  },
+  "effects": [
+    {
+      "_id": "hw6txbE9EaGbHcId",
+      "_key": "!items.effects!GxwJvaE9EaGbHcId.hw6txbE9EaGbHcId",
+      "name": "Armure de l’ouragan",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Cette protection absorbe les coups d’arme avant les armures portées. Les valeurs effectives sont indiquées ci-dessous. Dans la confirmation des dégâts, préciser si l’arme est magique. Les dégâts de sortilège et l’application sans armure n’utilisent pas cette protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:hurricane-armor:7#protection",
+            "sourceId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+            "summary": "Protection de vent contre les coups d’arme.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

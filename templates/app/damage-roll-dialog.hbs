@@ -8,6 +8,7 @@
   {{#if rows}}<ul class="damage-roll-breakdown">{{#each rows}}<li><span>{{label}}{{#if source}}<small>{{source}}</small>{{/if}}</span><b>{{value}}</b></li>{{/each}}</ul>{{/if}}
   <div class="form-group"><label>{{localize "TRUDVANG.DamageRoll.Situational"}}</label><input type="number" name="damage-modifier" value="{{situational}}" step="1" required></div>
   {{#if ranged}}<label class="checkbox damage-long-range"><input type="checkbox" name="damage-long-range" {{#if longRange}}checked{{/if}}> {{localize "TRUDVANG.DamageRoll.LongRange"}}</label>{{/if}}
+  {{#if weaponHit}}<label class="checkbox"><input type="checkbox" name="damage-magical-weapon" {{#if magicalWeapon}}checked{{/if}}> {{localize "TRUDVANG.DamageRoll.MagicalWeapon"}}</label>{{/if}}
   <div class="damage-roll-preview"><span>{{localize "TRUDVANG.DamageRoll.Calculation"}}</span><strong data-damage-preview></strong></div>
   <p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.Order"}}</p>
 </div>
