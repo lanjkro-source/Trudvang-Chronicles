@@ -1210,4 +1210,11 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang-sheet.item-sheet .item-fields .damage-qualification-row { flex-direction: row; align-items: center; }
 .damage-qualification-option { flex: none; }
 
-.damage-qualifier .damage-vector { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; }
+.damage-qualifier .damage-vector { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; background-color: currentColor; mask-repeat: no-repeat; mask-position: center; mask-size: contain; }
+.damage-vector-sword { mask-image: url("../assets/icons/damage-sword.svg"); }
+.damage-vector-spearhead { mask-image: url("../assets/icons/damage-spearhead.svg"); }
+.damage-qualification-settings { grid-column: 1 / -1; margin: 8px 0; }
+.damage-qualification-settings > summary { cursor: pointer; padding: 5px 0; font-weight: bold; }
+.damage-qualification-settings > summary [data-damage-qualification-summary] { display: inline-block; margin-left: .6em; }
+
+.trudvang.damage-roll-dialog .damage-qualification-note { color: var(--trudvang-on-header-muted); font-size: .85em; }

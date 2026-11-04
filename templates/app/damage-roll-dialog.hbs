@@ -1,5 +1,5 @@
 <div class="trudvang roll-dialog damage-roll-dialog">
-  {{#if generic}}<div class="damage-roll-generic-header"><label>{{localize "TRUDVANG.Dialog.SituationLabel"}}<input name="damage-title" value="{{title}}"></label><div class="damage-qualification-row"><span>{{localize "TRUDVANG.DamageRoll.Origin"}}</span>{{{originFields}}}</div></div>{{/if}}
+  {{#if generic}}<div class="damage-roll-generic-header"><label>{{localize "TRUDVANG.Dialog.SituationLabel"}}<input name="damage-title" value="{{title}}"></label></div>{{/if}}
   <div class="damage-roll-fields">
     {{#if parsed}}<label>{{localize "TRUDVANG.DamageRoll.DiceCount"}}<span><input type="number" name="damage-dice" value="{{parsed.dice}}" min="{{minimumDice}}" max="100" step="1" required>{{#if editableFaces}}<select name="damage-faces" aria-label="{{localize 'TRUDVANG.Macro.DieType'}}">{{#each dieTypes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>d{{value}}</option>{{/each}}</select>{{else}}<b>d{{parsed.faces}}</b>{{/if}}</span></label>
     {{else}}<label>{{localize "TRUDVANG.DamageRoll.Formula"}}<input type="text" name="damage-formula" value="{{formula}}" required></label>{{/if}}
@@ -10,7 +10,6 @@
   <div class="form-group"><label>{{localize "TRUDVANG.DamageRoll.Situational"}}</label><input type="number" name="damage-modifier" value="{{situational}}" step="1" required></div>
   {{#if ranged}}<label class="checkbox damage-long-range"><input type="checkbox" name="damage-long-range" {{#if longRange}}checked{{/if}}> {{localize "TRUDVANG.DamageRoll.LongRange"}}</label>{{/if}}
   {{{qualificationFields}}}
-  {{#if qualificationNote}}<p class="damage-roll-hint">{{qualificationNote}}</p>{{/if}}
   <div class="damage-roll-preview"><span>{{localize "TRUDVANG.DamageRoll.Calculation"}}</span><strong data-damage-preview></strong></div>
   <p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.Order"}}</p>
   {{#if allowZeroDice}}<p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.FixedHint"}}</p>{{/if}}

@@ -902,6 +902,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.dead` | Dead | Mort |
 | `TRUDVANG.Damage.Application` | Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary} | Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary} |
 | `TRUDVANG.Damage.ArmorApplied` | {name}: PV {protection} | {name} : VP {protection} |
+| `TRUDVANG.Damage.Qualifications` | Qualifiers | Qualifications |
 
 ## `TRUDVANG.Damage.Field`
 
@@ -951,6 +952,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Material.stone` | Stone | Pierre |
 | `TRUDVANG.Damage.Material.unknown` | Unspecified | Non précisé |
 | `TRUDVANG.Damage.Material.grindsilver` | Grindsilver | Grindsilver |
+| `TRUDVANG.Damage.Material.bronze` | Bronze | Bronze |
 
 ## `TRUDVANG.Damage.Protection`
 

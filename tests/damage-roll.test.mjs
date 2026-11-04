@@ -251,7 +251,8 @@ test('generic damage shares the weapon layout with its header first and an edita
  await damageRollDialog({item:{name:'Chute'},profile});
  const html=dialogs.at(-1).content;
  assert.ok(html.indexOf('name="damage-title"')<html.indexOf('name="damage-origin"'));
- assert.ok(html.indexOf('name="damage-origin"')<html.indexOf('name="damage-dice"'));
+ assert.ok(html.indexOf('name="damage-dice"')<html.indexOf('name="damage-origin"'));
+ assert.match(html,/<details class="damage-qualification-settings"><summary>/);
  assert.match(html,/name="damage-dice"[^>]*min="0"/);assert.match(html,/name="damage-faces"/);
  assert.ok(dialogs.at(-1).classes.includes('damage-roll-window'));
  assert.equal(damageRollChoice(profile,{dice:0,modifier:0}),null);

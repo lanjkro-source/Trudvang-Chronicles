@@ -98,8 +98,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
     context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
+    context.damageQualificationsOpen = this.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;
     context.damageQualificationNote = this.item.system.damageQualificationNote;
-    context.damageQualificationFields = ["weapon", "shield", "spell", "divineFeat"].includes(this.item.type) ? damageQualificationFields(damageQualification({item:this.item,usage:["spell","divineFeat"].includes(this.item.type)?"magic":""}), {item:true,material:["weapon","shield"].includes(this.item.type)}) : "";
+    context.damageQualificationFields = ["weapon", "shield", "spell", "divineFeat"].includes(this.item.type) ? damageQualificationFields(damageQualification({item:this.item,usage:["spell","divineFeat"].includes(this.item.type)?"magic":""}), {item:true,material:["weapon","shield"].includes(this.item.type),open:context.damageQualificationsOpen,note:context.damageQualificationNote}) : "";
     context.itemType = this.item.type;
     context.supportsEffects = this.item.type === "effect" || EFFECT_ITEM_TYPES.has(this.item.type);
     context.weaponType = weaponType(this.item);

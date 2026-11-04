@@ -1,4 +1,4 @@
-import {DAMAGE_ICONS, DAMAGE_VECTOR_PATHS, WEAPON_MATERIALS, DAMAGE_TYPES, DAMAGE_NATURES, DAMAGE_DELIVERIES, DAMAGE_PROTECTIONS} from "./rules/damage-qualifications.mjs";
+import {DAMAGE_ICONS, DAMAGE_VECTOR_CLASSES, WEAPON_MATERIALS, DAMAGE_TYPES, DAMAGE_NATURES, DAMAGE_DELIVERIES, DAMAGE_PROTECTIONS} from "./rules/damage-qualifications.mjs";
 
 const escape = value => String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 export const damageLabel = (group, value) => game.i18n.localize(`TRUDVANG.Damage.${group}.${value}`);
@@ -11,8 +11,8 @@ export function damageIcon(value, group = "Type") {
     : group === "Protection" ? ({normal: "fa-shield-halved", none: "fa-ban", magical: "fa-shield", magicalOrGrindsilver: "fa-gem"})[value] : DAMAGE_ICONS[value];
   if (!icon) return "";
   const label = damageLabel(group, value);
-  const glyph = DAMAGE_VECTOR_PATHS[icon]
-    ? `<svg class="damage-vector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" transform="rotate(35 12 12)" d="${DAMAGE_VECTOR_PATHS[icon]}"/></svg>`
+  const glyph = DAMAGE_VECTOR_CLASSES[icon]
+    ? `<span class="damage-vector ${DAMAGE_VECTOR_CLASSES[icon]}" aria-hidden="true"></span>`
     : `<i class="fas ${escape(icon)}" aria-hidden="true"></i>`;
   return `<span class="damage-qualifier" title="${escape(label)}" aria-label="${escape(label)}" role="img">${glyph}</span>`;
 }
@@ -22,13 +22,13 @@ export function damageIcons(qualification) {
     .map(([key, group]) => damageIcon(qualification[key], group)).join("")}${qualification.protection !== "normal" ? damageIcon(qualification.protection, "Protection") : ""}</span>`;
 }
 
-export function damageQualificationFields(qualification, {item = false, material = true, delivery = true} = {}) {
+export function damageQualificationFields(qualification, {item = false, material = true, delivery = true, origin = false, open = false, note = ""} = {}) {
   const groups = [["nature", "Nature", DAMAGE_NATURES], ["delivery", "Delivery", DAMAGE_DELIVERIES], ["type", "Type", DAMAGE_TYPES], ["protection", "Protection", DAMAGE_PROTECTIONS]];
-  const rows = groups.filter(([key]) => delivery || key !== "delivery").map(([key, group, values]) => `<div class="damage-qualification-row"><span>${escape(damageLabel("Field", key))}</span><span class="damage-qualification-options">${values.map(value =>
-    `<label class="damage-qualification-option" title="${escape(damageLabel(group, value))}"><input type="radio" name="${item ? `system.damageQualification.${key}` : `damage-${key}`}" value="${value}" ${qualification[key] === value ? "checked" : ""} aria-label="${escape(damageLabel(group, value))}">${damageIcon(value, group) || '<span class="damage-qualifier" aria-hidden="true">&nbsp;</span>'}</label>`).join("")}</span></div>`).join("");
+  const rows = groups.filter(([key]) => delivery || key !== "delivery").map(([key, group, values]) => `<div class="damage-qualification-row"><span>${escape(damageLabel("Field", key))}</span>${origin && key === "delivery" ? damageOriginFields() : `<span class="damage-qualification-options">${values.map(value =>
+    `<label class="damage-qualification-option" title="${escape(damageLabel(group, value))}"><input type="radio" name="${item ? `system.damageQualification.${key}` : `damage-${key}`}" value="${value}" ${qualification[key] === value ? "checked" : ""} aria-label="${escape(damageLabel(group, value))}">${damageIcon(value, group) || '<span class="damage-qualifier" aria-hidden="true">&nbsp;</span>'}</label>`).join("")}</span>`}</div>`).join("");
   const materials = globalThis.CONFIG?.TRUDVANG?.weaponMaterials ?? WEAPON_MATERIALS;
   const known = Object.hasOwn(materials, qualification.material);
-  return `<div class="damage-qualification-fields">${rows}${material ? `<label class="damage-qualification-row"><span>${escape(damageLabel("Field", "material"))}</span><select name="${item ? "system.material" : "damage-material"}"><option value="">${escape(damageLabel("Material", "unknown"))}</option>${Object.keys(materials).map(value => `<option value="${escape(value)}" ${value === qualification.material ? "selected" : ""}>${escape(damageLabel("Material", value))}</option>`).join("")}${!known && qualification.material ? `<option value="${escape(qualification.material)}" selected>${escape(qualification.material)}</option>` : ""}</select></label>` : ""}</div>`;
+  return `<details class="damage-qualification-settings"${open ? " open" : ""}><summary>${escape(game.i18n.localize("TRUDVANG.Damage.Qualifications"))}<span data-damage-qualification-summary>${damageIcons(qualification)}</span></summary><div class="damage-qualification-fields">${rows}${material ? `<label class="damage-qualification-row"><span>${escape(damageLabel("Field", "material"))}</span><select name="${item ? "system.material" : "damage-material"}"><option value="">${escape(damageLabel("Material", "unknown"))}</option>${Object.keys(materials).map(value => `<option value="${escape(value)}" ${value === qualification.material ? "selected" : ""}>${escape(damageLabel("Material", value))}</option>`).join("")}${!known && qualification.material ? `<option value="${escape(qualification.material)}" selected>${escape(qualification.material)}</option>` : ""}</select></label>` : ""}${note ? `<p class="damage-qualification-note">${escape(note)}</p>` : ""}</div></details>`;
 }
 
 /** Inline notation works in every enriched description, including third-party ones.

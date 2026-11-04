@@ -809,7 +809,8 @@
         "steel": "Steel",
         "stone": "Stone",
         "unknown": "Unspecified",
-        "grindsilver": "Grindsilver"
+        "grindsilver": "Grindsilver",
+        "bronze": "Bronze"
       },
       "Protection": {
         "normal": "Normal protection",
@@ -818,7 +819,8 @@
         "magicalOrGrindsilver": "Magical or grindsilver armor"
       },
       "Application": "Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary}",
-      "ArmorApplied": "{name}: PV {protection}"
+      "ArmorApplied": "{name}: PV {protection}",
+      "Qualifications": "Qualifiers"
     },
     "Npc": {
       "Tags": "Tags",

@@ -809,7 +809,8 @@
         "steel": "Acier",
         "stone": "Pierre",
         "unknown": "Non précisé",
-        "grindsilver": "Grindsilver"
+        "grindsilver": "Grindsilver",
+        "bronze": "Bronze"
       },
       "Protection": {
         "normal": "Protections normales",
@@ -818,7 +819,8 @@
         "magicalOrGrindsilver": "Armures magiques ou en grindsilver"
       },
       "Application": "Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary}",
-      "ArmorApplied": "{name} : VP {protection}"
+      "ArmorApplied": "{name} : VP {protection}",
+      "Qualifications": "Qualifications"
     },
     "Npc": {
       "Tags": "Tags",

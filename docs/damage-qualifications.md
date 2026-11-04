@@ -26,7 +26,7 @@ La méthode expose les résistances appliquées dans son résultat. La liste d�
 - VP spécialement efficace contre les dégâts réservés aux armures magiques : `system.transformation.magicalProtection`, valeur numérique. Ne pas déclarer une seconde fois la même défense dans les anciennes métadonnées de flags et dans les changements éditables.
 - Les valeurs `protection` sont `normal`, `magical`, `magicalOrGrindsilver` et `none`.
 - Les types existants sont représentés par des glyphes avec tooltip dans les sélecteurs et cartes. `@Damage[fire]` permet de placer le même glyphe dans toute description enrichie. Les formulations usuelles françaises/anglaises sont également enrichies sans réécrire les données.
-- Les listes sont dans `modules/rules/damage-qualifications.mjs`. Les matériaux peuvent aussi être étendus via `CONFIG.TRUDVANG.weaponMaterials` ; ajouter leurs libellés dans les deux fichiers de langue.
+- Les listes sont dans `modules/rules/damage-qualifications.mjs`. Le bronze est disponible en plus du bois, de l’acier et de la pierre. Les matériaux peuvent aussi être étendus via `CONFIG.TRUDVANG.weaponMaterials` ; ajouter leurs libellés dans les deux fichiers de langue.
 
 Ce socle ne convertit pas implicitement toutes les capacités du bestiaire en résistances automatisées, et ne crée pas un second jet de feu sur une arme : ces définitions doivent être renseignées explicitement lors de la suite des effets. Un jet représente actuellement une composante de dégâts ; les composantes supplémentaires utilisent des jets distincts.
 
@@ -91,6 +91,8 @@ Choix initiaux modifiables : acier pour les lames, têtes, pointes de flèches e
 | Petit bouclier renforcé de métal | Acier | Contondant |
 | Petit bouclier en bois | Bois | Contondant |
 
+Les sélecteurs sont dans une section « Qualifications » repliée par défaut ; elle reste ouverte pendant les modifications d’une fiche. Les pictogrammes d’épée et de pointe de lance sont des masques CSS chargés depuis `assets/icons/`, pour fonctionner aussi dans le contenu filtré des dialogues.
+
 ## Icônes communes
 
 | Qualification | Icône |
@@ -100,7 +102,7 @@ Choix initiaux modifiables : acier pour les lames, têtes, pointes de flèches e
 | Tranchant / perforant / contondant | Épée vectorielle / pointe de lance avec hampe vectorielle / `fa-hammer` |
 | Feu / froid / foudre | `fa-fire` / `fa-snowflake` / `fa-bolt` |
 | Acide / poison | `fa-vial` / `fa-skull-crossbones` |
-| Bois / acier / pierre | `fa-tree` / `fa-link` / `fa-mountain` |
+| Bois / acier / bronze / pierre | `fa-tree` / `fa-link` / `fa-ring` / `fa-mountain` |
 | Protection normale / magique / magique ou grindsilver / aucune | `fa-shield-halved` / `fa-shield` / `fa-gem` / `fa-ban` |
 
 Les couleurs viennent du texte du thème ; aucune couleur supplémentaire n’est introduite.
