@@ -1,0 +1,45 @@
+{
+  "_id": "d22NjLdJeKfLgMhN",
+  "_key": "!items!d22NjLdJeKfLgMhN",
+  "name": "Faveurs de Gave",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing",
+    "description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+    "summary": "Favorise les actions liées à un objectif béni.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 257
+    }
+  },
+  "effects": [
+    {
+      "_id": "aMcu7mOjPkQlRmSn",
+      "_key": "!items.effects!d22NjLdJeKfLgMhN.aMcu7mOjPkQlRmSn",
+      "name": "Faveurs de Gave",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing",
+            "sourceId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7",
+            "summary": "Favorise les actions liées à un objectif béni.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 294.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 297.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -266,14 +266,14 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette de la grâce | Main de Gave | pouvoir | `holy-tenetnid-tablet-of-grace:hand-of-gave:7` | 1 | 1 | 0 |
 | Tablette de la grâce | Souffle de Gave | pouvoir | `holy-tenetnid-tablet-of-grace:breath-of-gave:6` | 1 | 0 | 1 |
 | Tablette de la grâce | Vent d’immortalité | pouvoir | `holy-tenetnid-tablet-of-grace:wind-of-immortality:8` | 4 | 0 | 0 |
-| Tablette des voix | Considération sacrée | pouvoir | `holy-tenetnid-tablet-of-voices:holy-consideration:0` | 3 | 0 | 0 |
+| Tablette des voix | Considération sacrée | pouvoir | `holy-tenetnid-tablet-of-voices:holy-consideration:0` | 3 | 0 | 1 |
 | Tablette des voix | Oreille de Siro Werte | pouvoir | `holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1` | 2 | 0 | 1 |
 | Tablette des voix | Frères de sang | pouvoir | `holy-tenetnid-tablet-of-voices:blood-brothers:2` | 3 | 1 | 1 |
 | Tablette des voix | Langue de Siro Werte | pouvoir | `holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3` | 3 | 0 | 1 |
-| Tablette des voix | Grâce de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:kindred-s-bond:4` | 5 | 0 | 0 |
+| Tablette des voix | Grâce de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:kindred-s-bond:4` | 5 | 0 | 1 |
 | Tablette des voix | Liens fraternels | pouvoir | `holy-tenetnid-tablet-of-voices:grace-of-gave:5` | 4 | 1 | 1 |
 | Tablette des voix | Sagesse de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:sanity-of-gave:6` | 3 | 0 | 1 |
-| Tablette des voix | Faveurs de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:favorites-of-gave:7` | 4 | 0 | 0 |
+| Tablette des voix | Faveurs de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:favorites-of-gave:7` | 4 | 0 | 1 |
 | Tablette des voix | Pacte divin | pouvoir | `holy-tenetnid-tablet-of-voices:divine-pact:8` | 4 | 1 | 1 |
 | Tablette du bouclier | Entraves de la terre consacrée | pouvoir | `holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0` | 3 | 0 | 0 |
 | Tablette du bouclier | Refuge | pouvoir | `holy-tenetnid-tablet-of-the-shield:sheltering:1` | 2 | 0 | 1 |

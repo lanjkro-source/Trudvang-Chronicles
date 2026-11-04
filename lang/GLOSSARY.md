@@ -13041,6 +13041,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.SourcePage` | 197 | 255 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect.Duration` | 3 minutes | 3 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.Name` | Holy Consideration | Considération sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.Description` | The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal. | Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.SourceName` | Holy Consideration | Considération sacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.SourcePage` | 206 | 255 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille`
 
 | Clé | English | Français |
@@ -13074,6 +13085,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.SourcePage` | 206 | 256 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.Name` | Kindred's Bond | Grâce de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.Description` | The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal. | Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.SourceName` | Kindred's Bond | Grâce de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.SourcePage` | 206 | 256 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect`
 
 | Clé | English | Français |
@@ -13095,6 +13117,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.SourcePage` | 206 | 257 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.Name` | Favorites of Gave | Faveurs de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.Description` | The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal. | Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.SourceName` | Favorites of Gave | Faveurs de Gave |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.SourcePage` | 206 | 257 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing.Duration` | 1 day | 1 jour |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect`
 
@@ -14902,6 +14935,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.IllnessExamination` | Medical examination of the victim: {value} VC | Examen médical de la victime : {value} VC |
 | `TRUDVANG.Transformation.AttackDamageTooltip` | Claw damage: {damage} (OR {openRoll}). | Dégâts des griffes : {damage} (JO {openRoll}). |
 | `TRUDVANG.Transformation.FeverValues` | All actions: {value}; damage on failure: {damage}. | Toutes les actions : {value} ; dégâts en cas d’échec : {damage}. |
+| `TRUDVANG.Transformation.NidBlessingBonus` | Actions pursuing the blessed goal: +{value} SV | Actions liées à l’objectif béni : +{value} VC |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -15195,3 +15229,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Aura.AllyName` | Aura: {name} (ally) | Aura : {name} (allié) |
 | `TRUDVANG.Aura.Radius` | Effective radius: {value} m. | Rayon effectif : {value} m. |
 | `TRUDVANG.Aura.LightRecipients` | All occupants ignore fear penalties; the caster and allies also gain the indicated bonus. | Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué. |
+
+## `TRUDVANG.Blessing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Blessing.Goal` | Blessed goal | Objectif béni |
+| `TRUDVANG.Blessing.NoSelf` | The caster cannot receive this blessing. | Le lanceur ne peut pas recevoir cette bénédiction. |
+| `TRUDVANG.Blessing.AlreadyBlessed` | This actor already has a Tenet of Nid blessing. | Ce personnage possède déjà une bénédiction de la Doctrine de Nid. |
+| `TRUDVANG.Blessing.Question` | Does this action pursue the blessed goal? | Cette action contribue-t-elle à l’objectif béni ? |
+| `TRUDVANG.Blessing.Use` | Apply blessing | Appliquer la bénédiction |
+| `TRUDVANG.Blessing.Skip` | Without blessing | Sans la bénédiction |
+| `TRUDVANG.Blessing.ActorOnly` | This blessing applies to an actor, not an item. | Cette bénédiction s’applique à un personnage, pas à un objet. |

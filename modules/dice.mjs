@@ -23,6 +23,8 @@ import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
+import {nidBlessingBonus} from "./rules/nid-blessings.mjs";
+
 const SYSTEM_ID = "trudvang-chronicles";
 
 const modifierLabel = row => `${row.labelKey ? game.i18n.localize(row.labelKey) : row.label}${row.included ? ` (${game.i18n.localize("TRUDVANG.Dialog.IncludedModifier")})` : ""}`;
@@ -64,6 +66,13 @@ export async function openD10(options = {}) {
 }
 
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null}) {
+  const blessing=nidBlessingBonus(actor);
+  if(blessing){
+    const t=key=>game.i18n.localize("TRUDVANG.Blessing."+key);
+    const selected=await foundry.applications.api.DialogV2.wait({window:{title:label},content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(blessing.label)+(blessing.goal?' — '+escapeHtml(blessing.goal):'')+'</p><p>'+escapeHtml(t('Question'))+'</p><p>'+escapeHtml(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : '+(Number(target)+Number(modifier||0))+' → '+(Number(target)+Number(modifier||0)+blessing.value)+'</p></div>',buttons:[{action:'with',label:t('Use')+' (+'+blessing.value+')',callback:()=>true},{action:'without',label:t('Skip'),default:true,callback:()=>false}],rejectClose:false,modal:false});
+    const current=nidBlessingBonus(actor);
+    if(selected&&current?.effectId===blessing.effectId){modifier=Number(modifier||0)+current.value;flavor+='<br>'+rollModifierFlavor([{label:current.label,value:current.value}]);}
+  }
   const finalTarget = Number(target) + Number(modifier || 0);
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();

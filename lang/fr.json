@@ -15503,6 +15503,15 @@
           "SourcePage": "255",
           "Duration": "3 minutes"
         },
+        "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing": {
+          "Name": "Considération sacrée",
+          "Summary": "Favorise les actions liées à un objectif béni.",
+          "Description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+          "SourceName": "Considération sacrée",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "255",
+          "Duration": "1 heure"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
           "Name": "Oreille de Siro Werte",
           "Summary": "Comprend la langue entendue choisie, sans pouvoir la parler, la lire ni l’écrire.",
@@ -15530,6 +15539,15 @@
           "SourcePage": "256",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing": {
+          "Name": "Grâce de Gave",
+          "Summary": "Favorise les actions liées à un objectif béni.",
+          "Description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+          "SourceName": "Grâce de Gave",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "256",
+          "Duration": "1 heure"
+        },
         "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
           "Name": "Liens fraternels",
           "Summary": "La cible devient amicale envers le prêtre et partage ses amis et ses ennemis après un test de situation raté. Les animaux, bêtes, démons, morts-vivants et créatures d’intelligence inférieure ne sont pas affectés. Si le prêtre ou un allié attaque la cible, retirez cet effet. La neutralisation magique ou la rupture de concentration met également fin à l’effet.",
@@ -15547,6 +15565,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "257",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing": {
+          "Name": "Faveurs de Gave",
+          "Summary": "Favorise les actions liées à un objectif béni.",
+          "Description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+          "SourceName": "Faveurs de Gave",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "257",
+          "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-voices:divine-pact:8#effect": {
           "Name": "Pacte divin",
@@ -17049,7 +17076,8 @@
       "IllnessResistance": "Résistance quotidienne : SV {value} + Psychisme",
       "IllnessExamination": "Examen médical de la victime : {value} VC",
       "AttackDamageTooltip": "Dégâts des griffes : {damage} (JO {openRoll}).",
-      "FeverValues": "Toutes les actions : {value} ; dégâts en cas d’échec : {damage}."
+      "FeverValues": "Toutes les actions : {value} ; dégâts en cas d’échec : {damage}.",
+      "NidBlessingBonus": "Actions liées à l’objectif béni : +{value} VC"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -17264,6 +17292,15 @@
       "AllyName": "Aura : {name} (allié)",
       "Radius": "Rayon effectif : {value} m.",
       "LightRecipients": "Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué."
+    },
+    "Blessing": {
+      "Goal": "Objectif béni",
+      "NoSelf": "Le lanceur ne peut pas recevoir cette bénédiction.",
+      "AlreadyBlessed": "Ce personnage possède déjà une bénédiction de la Doctrine de Nid.",
+      "Question": "Cette action contribue-t-elle à l’objectif béni ?",
+      "Use": "Appliquer la bénédiction",
+      "Skip": "Sans la bénédiction",
+      "ActorOnly": "Cette bénédiction s’applique à un personnage, pas à un objet."
     }
   }
 }

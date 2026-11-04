@@ -15503,6 +15503,15 @@
           "SourcePage": "197",
           "Duration": "3 minutes"
         },
+        "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing": {
+          "Name": "Holy Consideration",
+          "Summary": "Favors actions pursuing a blessed goal.",
+          "Description": "The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal.",
+          "SourceName": "Holy Consideration",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 hour"
+        },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
           "Name": "Sirowerd’s Ear",
           "Summary": "Understands the chosen spoken language, without speaking, reading or writing it.",
@@ -15530,6 +15539,15 @@
           "SourcePage": "206",
           "Duration": "1 minute"
         },
+        "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing": {
+          "Name": "Kindred's Bond",
+          "Summary": "Favors actions pursuing a blessed goal.",
+          "Description": "The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal.",
+          "SourceName": "Kindred's Bond",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 hour"
+        },
         "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
           "Name": "Kindred Bonds",
           "Summary": "After a failed situation test, the target becomes friendly to the priest and shares the priest’s friends and enemies. Animals, beasts, demons, undead and unintelligent creatures are unaffected. Remove the effect if the priest or an ally attacks the target. Magical neutralisation or breaking concentration also ends it.",
@@ -15547,6 +15565,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "206",
           "Duration": "1 minute"
+        },
+        "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing": {
+          "Name": "Favorites of Gave",
+          "Summary": "Favors actions pursuing a blessed goal.",
+          "Description": "The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal.",
+          "SourceName": "Favorites of Gave",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "206",
+          "Duration": "1 day"
         },
         "holy-tenetnid-tablet-of-voices:divine-pact:8#effect": {
           "Name": "Divine Pact",
@@ -17049,7 +17076,8 @@
       "IllnessResistance": "Daily resistance: SV {value} + Psyche",
       "IllnessExamination": "Medical examination of the victim: {value} VC",
       "AttackDamageTooltip": "Claw damage: {damage} (OR {openRoll}).",
-      "FeverValues": "All actions: {value}; damage on failure: {damage}."
+      "FeverValues": "All actions: {value}; damage on failure: {damage}.",
+      "NidBlessingBonus": "Actions pursuing the blessed goal: +{value} SV"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -17264,6 +17292,15 @@
       "AllyName": "Aura: {name} (ally)",
       "Radius": "Effective radius: {value} m.",
       "LightRecipients": "All occupants ignore fear penalties; the caster and allies also gain the indicated bonus."
+    },
+    "Blessing": {
+      "Goal": "Blessed goal",
+      "NoSelf": "The caster cannot receive this blessing.",
+      "AlreadyBlessed": "This actor already has a Tenet of Nid blessing.",
+      "Question": "Does this action pursue the blessed goal?",
+      "Use": "Apply blessing",
+      "Skip": "Without blessing",
+      "ActorOnly": "This blessing applies to an actor, not an item."
     }
   }
 }

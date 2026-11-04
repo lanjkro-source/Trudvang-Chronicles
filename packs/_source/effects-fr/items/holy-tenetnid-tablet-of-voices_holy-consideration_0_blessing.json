@@ -1,0 +1,45 @@
+{
+  "_id": "WfbtZYsYtZu0v1w2",
+  "_key": "!items!WfbtZYsYtZu0v1w2",
+  "name": "Considération sacrée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing",
+    "description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+    "summary": "Favorise les actions liées à un objectif béni.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 255
+    }
+  },
+  "effects": [
+    {
+      "_id": "vhg277C8D9EaGbHc",
+      "_key": "!items.effects!WfbtZYsYtZu0v1w2.vhg277C8D9EaGbHc",
+      "name": "Considération sacrée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bénéficiaire consentant doit être fidèle de la Doctrine de Nid. Le bonus indiqué peut être choisi avant chaque test lié à l’objectif béni ou à ses conséquences. Le lanceur ne peut pas se bénir lui-même. Une seule bénédiction parmi Considération sacrée, Grâce de Gave et Faveurs de Gave peut être présente. Le MJ valide la foi, le consentement et le lien de l’action avec l’objectif.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing",
+            "sourceId": "holy-tenetnid-tablet-of-voices:holy-consideration:0",
+            "summary": "Favorise les actions liées à un objectif béni.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

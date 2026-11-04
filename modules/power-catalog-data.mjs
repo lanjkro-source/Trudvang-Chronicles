@@ -6000,6 +6000,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 4,
+      "additionalTargets": [
+        {
+          "optionId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:3",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:0",
@@ -6083,6 +6092,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:holy-consideration:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:0",
@@ -6106,6 +6119,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 2,
+      "additionalTargets": [
+        {
+          "optionId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4:4",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4:0",

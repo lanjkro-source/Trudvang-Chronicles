@@ -1,4 +1,5 @@
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
+import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
 import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rules/effect-conditional-tests.mjs";
 import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
@@ -2053,6 +2054,8 @@ export class TrudvangActor extends BaseActor {
     if (!this.canUserModify(game.user, "update")) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.EffectPermission"));
     }
+    const restriction=nidBlessingRestriction(this,data);
+    if(restriction){ui.notifications.warn(game.i18n.localize(restriction));return null;}
     const prepared = foundry.utils.deepClone(effectSource(data));
     prepared.type = "effect";
     prepared.system ??= {};

@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,309);
+ assert.equal(Object.keys(sources).length,312);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1474,4 +1474,21 @@ test("Troll Wit prevents fear gain without suppressing higher existing fear pena
  }
  assert.equal(effectiveFearPenalty(resolveFearStatus({fear:45,insane:true}),45,rules),-7);
  assert.equal(effectiveFearPenalty(resolveFearStatus({fear:20}),20,{}),-1);
+});
+
+test('Nid blessings retain independent bonuses, durations and target capacities',async()=>{
+ const {nidBlessingBonus}=await import('../modules/rules/nid-blessings.mjs');
+ const {magicTargetCapacity}=await import('../modules/rules/magic-target-allocation.mjs');
+ const {POWER_DETAILS_BY_ID}=await import('../modules/power-catalog-data.mjs');
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{for(const [suffix,counts,bonus,base] of [['holy-consideration:0',[1,0,2],3,1],['kindred-s-bond:4',[1,0,0,2,1],5,2],['favorites-of-gave:7',[1,0,0,1],5,4]]){
+  const id='holy-tenetnid-tablet-of-voices:'+suffix;let created;
+  const actor={uuid:'Actor.target',canUserModify:()=>true,items:[],effects:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,id+'#blessing',{counts,skipDialog:true});
+  assert.equal(nidBlessingBonus({effects:[{id:'applied',...created}]}).value,bonus);
+  assert.equal(magicTargetCapacity(POWER_DETAILS_BY_ID[id].targeting,{}),base);
+  assert.ok(created.duration.value>0);assert.match(created.description,/objectif/);
+ }}finally{globalThis.game=previous;}
 });

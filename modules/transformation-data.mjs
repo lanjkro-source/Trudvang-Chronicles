@@ -6480,6 +6480,41 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing": {
+    "id": "blessing",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Blessing.Goal",
+    "sourceId": "holy-tenetnid-tablet-of-voices:holy-consideration:0",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-voices:holy-consideration:0:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-voices:holy-consideration:0:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-voices:holy-consideration:0:2",
+        "labelKey": "TRUDVANG.Transformation.NidBlessingBonus",
+        "tooltip": true,
+        "skillOnly": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille": {
     "id": "oreille",
     "icon": "icons/svg/aura.svg",
@@ -6573,6 +6608,41 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing": {
+    "id": "blessing",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Blessing.Goal",
+    "sourceId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4:1"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "optionId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4:3",
+        "labelKey": "TRUDVANG.Transformation.NidBlessingBonus",
+        "tooltip": true,
+        "skillOnly": true
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -6638,6 +6708,35 @@ export const TRANSFORMATION_TEMPLATES = {
         "restrictedSkill": "knowledge",
         "labelKey": "TRUDVANG.Transformation.SpokenLanguageBonus",
         "optionId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing": {
+    "id": "blessing",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 jour",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Blessing.Goal",
+    "sourceId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:0"
+      },
+      {
+        "index": 0,
+        "target": "note",
+        "base": 5,
+        "value": 0,
+        "optionId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:0",
+        "labelKey": "TRUDVANG.Transformation.NidBlessingBonus",
+        "tooltip": true,
+        "skillOnly": true
       }
     ]
   },
@@ -12803,6 +12902,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-grace:breath-of-gave:6": [
     "holy-tenetnid-tablet-of-grace:breath-of-gave:6#effect"
   ],
+  "holy-tenetnid-tablet-of-voices:holy-consideration:0": [
+    "holy-tenetnid-tablet-of-voices:holy-consideration:0#blessing"
+  ],
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1#oreille"
   ],
@@ -12812,11 +12914,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": [
     "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3#langue"
   ],
+  "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": [
+    "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing"
+  ],
   "holy-tenetnid-tablet-of-voices:grace-of-gave:5": [
     "holy-tenetnid-tablet-of-voices:grace-of-gave:5#effect"
   ],
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": [
     "holy-tenetnid-tablet-of-voices:sanity-of-gave:6#langue"
+  ],
+  "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": [
+    "holy-tenetnid-tablet-of-voices:favorites-of-gave:7#blessing"
   ],
   "holy-tenetnid-tablet-of-voices:divine-pact:8": [
     "holy-tenetnid-tablet-of-voices:divine-pact:8#effect"

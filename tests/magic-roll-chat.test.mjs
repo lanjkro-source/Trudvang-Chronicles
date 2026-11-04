@@ -39,3 +39,19 @@ test("a divine 1 is an ordinary automatic success and carries no fatal action", 
   assert.equal(outcome.critical, "");
   assert.equal(rendered.at(-1).context.fatalEffect, null);
 });
+
+test('Nid blessings offer their chosen bonus on skill, combat, magic and situation tests',async()=>{
+ const oldGame=globalThis.game;globalThis.game={i18n:{localize:key=>key}};
+ globalThis.foundry.applications.api={DialogV2:{wait:async()=>true}};
+ globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v);}})};
+ const id='holy-tenetnid-tablet-of-voices:kindred-s-bond:4';
+ const blessed={...actor,effects:[{id:'blessing',name:'Grace',flags:{'trudvang-chronicles':{transformation:{sourceId:id,input:'Goal',ruleTestContext:{countsById:{[id+':3']:2}}}}}}]};
+ try{for(const kind of ['skill','attack','parry','spell','divine','situation']){
+  await rollUnder({actor:blessed,label:kind,target:10,kind});
+  assert.equal(rendered.at(-1).context.target,15,kind);
+  assert.match(JSON.stringify(rendered.at(-1).context),/Grace/);
+ }
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>false;
+ await rollUnder({actor:blessed,label:'skip',target:10});assert.equal(rendered.at(-1).context.target,10);
+ }finally{globalThis.game=oldGame;}
+});

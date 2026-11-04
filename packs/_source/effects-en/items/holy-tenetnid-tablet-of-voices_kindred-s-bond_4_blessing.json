@@ -1,0 +1,45 @@
+{
+  "_id": "M77nfPhNiOjPkQlR",
+  "_key": "!items!M77nfPhNiOjPkQlR",
+  "name": "Kindred's Bond",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing",
+    "description": "The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal.",
+    "summary": "Favors actions pursuing a blessed goal.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 206
+    }
+  },
+  "effects": [
+    {
+      "_id": "1x3oORkQlRmSnToU",
+      "_key": "!items.effects!M77nfPhNiOjPkQlR.1x3oORkQlRmSnToU",
+      "name": "Kindred's Bond",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The consenting recipient must follow the Tenet of Nid. The listed bonus can be chosen before each test related to the blessed goal or its consequences. The caster cannot bless themself. Only one of Holy Consideration, Kindred’s Bond and Favorites of Gave may be present. The GM validates faith, consent and the action’s connection to the goal.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4#blessing",
+            "sourceId": "holy-tenetnid-tablet-of-voices:kindred-s-bond:4",
+            "summary": "Favors actions pursuing a blessed goal.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

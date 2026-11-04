@@ -1,3 +1,4 @@
+import {NID_BLESSINGS,nidBlessingRestriction} from "./rules/nid-blessings.mjs";
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
@@ -108,6 +109,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||reference.instant||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
+ if(NID_BLESSINGS[reference.sourceId]){
+  if(destinationItem){ui.notifications.warn(game.i18n.localize("TRUDVANG.Blessing.ActorOnly"));return null;}
+  const reason=nidBlessingRestriction(actor,{flags:{[SCOPE]:{transformation:{sourceId:reference.sourceId,ruleTestContext:casting}}}});
+  if(reason){ui.notifications.warn(game.i18n.localize(reason));return null;}
+ }
  // A successor is a separate consequence, not another recipient of the
  // original casting. Keep its provenance and explanatory counts without
  // keeping the original target reservation or maintained-spell lifetime.
