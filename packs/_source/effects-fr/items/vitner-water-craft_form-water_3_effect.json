@@ -1,0 +1,45 @@
+{
+  "_id": "MCbGT8A6B7C8D9Ea",
+  "_key": "!items!MCbGT8A6B7C8D9Ea",
+  "name": "Façonnage de l’eau",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:form-water:3#effect",
+    "description": "L’eau prend la forme souhaitée en trois minutes et la conserve cinq minutes supplémentaires, puis retrouve sa forme et sa place d’origine. Le volume initial équivaut à une halle de Storme. Le MJ représente la zone et applique les volumes supplémentaires indiqués.",
+    "summary": "Modèle une masse d’eau temporairement.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZSqb5WoUpVqWrXsY",
+      "_key": "!items.effects!MCbGT8A6B7C8D9Ea.ZSqb5WoUpVqWrXsY",
+      "name": "Façonnage de l’eau",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’eau prend la forme souhaitée en trois minutes et la conserve cinq minutes supplémentaires, puis retrouve sa forme et sa place d’origine. Le volume initial équivaut à une halle de Storme. Le MJ représente la zone et applique les volumes supplémentaires indiqués.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:form-water:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:form-water:3#effect",
+            "sourceId": "vitner-water-craft:form-water:3",
+            "summary": "Modèle une masse d’eau temporairement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

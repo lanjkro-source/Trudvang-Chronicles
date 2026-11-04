@@ -11021,6 +11021,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.SourcePage` | 135 | 163 |
 | `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.Name` | Form Water | Façonnage de l’eau |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.Description` | The water takes three minutes to assume the chosen shape and holds it for five more minutes, then returns to its original shape and position. The initial volume is one Storme hall. The GM represents the area and applies the listed additional volumes. | L’eau prend la forme souhaitée en trois minutes et la conserve cinq minutes supplémentaires, puis retrouve sa forme et sa place d’origine. Le volume initial équivaut à une halle de Storme. Le MJ représente la zone et applique les volumes supplémentaires indiqués. |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.SourceName` | Form Water | Façonnage de l’eau |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.SourcePage` | 135 | 164 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:form-water:3#effect.Duration` | 8 minutes | 8 minutes |
+
 ## `TRUDVANG.Content.Transformation.vitner-water-craft:breathe:2#respiration`
 
 | Clé | English | Français |
@@ -11526,6 +11537,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourcePage` | 143 | 185 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.Name` | Amnesia (vitner) | Amnésie (vitner) |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.Description` | After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return. | Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.SourceName` | Amnesia | Amnésie |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.SourcePage` | 143 | 185 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-creature:5#effect`
 
@@ -14477,6 +14499,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Duration` | 1 hour | 1 heure |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.Name` | Amnesia (curse) | Amnésie (malédiction) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.Description` | After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return. | Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.SourceName` | Amnesia | Amnésie |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect`
 

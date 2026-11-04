@@ -45,7 +45,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,305);
+ assert.equal(Object.keys(sources).length,308);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1434,4 +1434,32 @@ test("ally and non-ally variants describe only their own applied effect",()=>{
    assert.match(rows[`${id}#enemy`].Description,/−/);assert.doesNotMatch(rows[`${id}#enemy`].Description,/\+/);
   }
  }
+});
+
+test("amnesia offers both separate tests and keeps the effect until recovery",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  for(const id of ['vitner-witchcraft:amnesia:4','holy-joaringfaith-curses-of-sonntag:amnesia:4']){
+   await applyTransformation(actor,`${id}#effect`,{counts:[0,0,2],skipDialog:true});
+   const enriched=annotateRuleTestDescription(created.description,created);
+   assert.match(enriched,/data-test-index="0"/);assert.match(enriched,/data-test-index="1"/);
+   assert.match(created.description,/\+2/);
+   assert.ok(!created.duration?.value);
+  }
+ }finally{globalThis.game=previous;}
+});
+
+test("form water tracks shaping time and both duration improvements",async()=>{
+ const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
+ const lookup=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key,previous=globalThis.game;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+ try{
+  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+  await applyTransformation(actor,'vitner-water-craft:form-water:3#effect',{counts:[0,2,1,1,0],skipDialog:true});
+  assert.deepEqual(created.duration,{value:240,units:'rounds'});
+  assert.match(created.description,/trois minutes/);
+ }finally{globalThis.game=previous;}
 });

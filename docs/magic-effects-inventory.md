@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 290.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 293.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants |
 |---|---|---|---|---:|---:|---:|
@@ -37,7 +37,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Maîtrise de la terre | Pétrification/Annuler une pétrification | sortilège | `vitner-soil-craft:petrify-remove-petrification:8` | 6 | 2 | 3 |
 | Maîtrise de l'eau | Purification de l’eau | sortilège | `vitner-water-craft:purify-water:1` | 5 | 0 | 0 |
 | Maîtrise de l'eau | Sourcier | sortilège | `vitner-water-craft:find-water:0` | 5 | 1 | 1 |
-| Maîtrise de l'eau | Façonnage de l’eau | sortilège | `vitner-water-craft:form-water:3` | 5 | 0 | 0 |
+| Maîtrise de l'eau | Façonnage de l’eau | sortilège | `vitner-water-craft:form-water:3` | 5 | 0 | 1 |
 | Maîtrise de l'eau | Respiration aquatique | sortilège | `vitner-water-craft:breathe:2` | 5 | 0 | 1 |
 | Maîtrise de l'eau | Création d’eau | sortilège | `vitner-water-craft:create-water:4` | 4 | 0 | 1 |
 | Maîtrise de l'eau | Eau solide | sortilège | `vitner-water-craft:solid-water:5` | 7 | 0 | 1 |
@@ -94,7 +94,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Sorcellerie | Mal imaginaire | sortilège | `vitner-witchcraft:phantom-plague:1` | 3 | 1 | 1 |
 | Sorcellerie | Fièvre | sortilège | `vitner-witchcraft:fever:2` | 6 | 1 | 1 |
 | Sorcellerie | Malédiction d’objet | sortilège | `vitner-witchcraft:curse-object:3` | 5 | 0 | 0 |
-| Sorcellerie | Amnésie | sortilège | `vitner-witchcraft:amnesia:4` | 3 | 2 | 0 |
+| Sorcellerie | Amnésie | sortilège | `vitner-witchcraft:amnesia:4` | 3 | 2 | 1 |
 | Sorcellerie | Malédiction de créature | sortilège | `vitner-witchcraft:curse-creature:5` | 5 | 0 | 1 |
 | Sorcellerie | Mauvaise récolte | sortilège | `vitner-witchcraft:bad-harvest:6` | 6 | 0 | 0 |
 | Sorcellerie | Malédiction de l’arbre | sortilège | `vitner-witchcraft:tree-curse:7` | 6 | 1 | 2 |
@@ -432,7 +432,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Malédictions de Sonntag | Mal imaginaire | pouvoir | `holy-joaringfaith-curses-of-sonntag:phantom-plague:1` | 3 | 1 | 1 |
 | Malédictions de Sonntag | Fièvre | pouvoir | `holy-joaringfaith-curses-of-sonntag:fever:2` | 6 | 1 | 1 |
 | Malédictions de Sonntag | Malédiction d’objet | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-object:3` | 5 | 0 | 0 |
-| Malédictions de Sonntag | Amnésie | pouvoir | `holy-joaringfaith-curses-of-sonntag:amnesia:4` | 3 | 2 | 0 |
+| Malédictions de Sonntag | Amnésie | pouvoir | `holy-joaringfaith-curses-of-sonntag:amnesia:4` | 3 | 2 | 1 |
 | Malédictions de Sonntag | Malédiction de créature | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-creature:5` | 5 | 0 | 1 |
 | Malédictions de Sonntag | Mauvaise récolte | pouvoir | `holy-joaringfaith-curses-of-sonntag:bad-harvest:6` | 6 | 0 | 0 |
 | Malédictions de Sonntag | Malédiction de l’arbre | pouvoir | `holy-joaringfaith-curses-of-sonntag:tree-curse:7` | 6 | 1 | 2 |

@@ -68,3 +68,5 @@ manuelle, mais ne créent pas une aura automatique générale.
 Cri de guerre et Tonnerre victorieux distinguent alliés et ennemis à portée lors de l’application ; leur texte ne dit pas que l’effet s’interrompt dès qu’une cible quitte une aura. Ne pas leur appliquer automatiquement une région mobile sans vérifier cette règle.
 
 Œil d’Enken (p. 226) et Regard de l’âme (p. 225) sont des capacités de perception, pas des auras appliquant un effet aux personnages détectés. La distinction entre détection de tokens et révélation du décor à travers les murs reste à traiter avec le MJ.
+
+**Façonnage de l’eau** (Livre des règles p. 164 ; Player’s Handbook p. 136) : la masse d’eau façonnée reste une zone fixe à représenter manuellement ; les trois minutes de façonnage et les cinq minutes de maintien constituent huit minutes au total, prolongées par les améliorations de durée. Ce n’est pas une aura mobile.

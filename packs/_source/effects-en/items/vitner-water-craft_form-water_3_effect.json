@@ -1,0 +1,45 @@
+{
+  "_id": "MCbGT8A6B7C8D9Ea",
+  "_key": "!items!MCbGT8A6B7C8D9Ea",
+  "name": "Form Water",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:form-water:3#effect",
+    "description": "The water takes three minutes to assume the chosen shape and holds it for five more minutes, then returns to its original shape and position. The initial volume is one Storme hall. The GM represents the area and applies the listed additional volumes.",
+    "summary": "Temporarily shapes a body of water.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZSqb5WoUpVqWrXsY",
+      "_key": "!items.effects!MCbGT8A6B7C8D9Ea.ZSqb5WoUpVqWrXsY",
+      "name": "Form Water",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The water takes three minutes to assume the chosen shape and holds it for five more minutes, then returns to its original shape and position. The initial volume is one Storme hall. The GM represents the area and applies the listed additional volumes.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:form-water:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:form-water:3#effect",
+            "sourceId": "vitner-water-craft:form-water:3",
+            "summary": "Temporarily shapes a body of water.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "4wR8fPgMhNiOjPkQ",
+  "_key": "!items!4wR8fPgMhNiOjPkQ",
+  "name": "Amnesia (curse)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect",
+    "description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+    "summary": "Lost memories and gradual recovery.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "rUOxqWnToUpVqWrX",
+      "_key": "!items.effects!4wR8fPgMhNiOjPkQ.rUOxqWnToUpVqWrX",
+      "name": "Amnesia (curse)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
+            "summary": "Lost memories and gradual recovery.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

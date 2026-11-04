@@ -1,0 +1,45 @@
+{
+  "_id": "gcbqmRiOjPkQlRmS",
+  "_key": "!items!gcbqmRiOjPkQlRmS",
+  "name": "Amnésie (vitner)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:amnesia:4#effect",
+    "description": "Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés.",
+    "summary": "Perte des souvenirs et récupération progressive.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 185
+    }
+  },
+  "effects": [
+    {
+      "_id": "5AyjJHbHcIdJeKfL",
+      "_key": "!items.effects!gcbqmRiOjPkQlRmS.5AyjJHbHcIdJeKfL",
+      "name": "Amnésie (vitner)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:amnesia:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:amnesia:4#effect",
+            "sourceId": "vitner-witchcraft:amnesia:4",
+            "summary": "Perte des souvenirs et récupération progressive.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

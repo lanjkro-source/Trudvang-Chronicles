@@ -13847,6 +13847,15 @@
           "SourcePage": "163",
           "Duration": "10 minutes"
         },
+        "vitner-water-craft:form-water:3#effect": {
+          "Name": "Façonnage de l’eau",
+          "Summary": "Modèle une masse d’eau temporairement.",
+          "Description": "L’eau prend la forme souhaitée en trois minutes et la conserve cinq minutes supplémentaires, puis retrouve sa forme et sa place d’origine. Le volume initial équivaut à une halle de Storme. Le MJ représente la zone et applique les volumes supplémentaires indiqués.",
+          "SourceName": "Façonnage de l’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "164",
+          "Duration": "8 minutes"
+        },
         "vitner-water-craft:breathe:2#respiration": {
           "Name": "Respiration aquatique",
           "Summary": "Des branchies permettent de respirer sous l’eau comme à l’air libre.",
@@ -14260,6 +14269,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "185",
           "Duration": "1 heure"
+        },
+        "vitner-witchcraft:amnesia:4#effect": {
+          "Name": "Amnésie (vitner)",
+          "Summary": "Perte des souvenirs et récupération progressive.",
+          "Description": "Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés.",
+          "SourceName": "Amnésie",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "185",
+          "Duration": ""
         },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Malédiction de créature",
@@ -16681,6 +16699,15 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "1 heure"
+        },
+        "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
+          "Name": "Amnésie (malédiction)",
+          "Summary": "Perte des souvenirs et récupération progressive.",
+          "Description": "Après un échec au test de situation initial, la victime oublie son identité et son passé. Chaque jour, elle peut faire un test de situation pour retrouver un souvenir important ; chaque réussite ajoute +2 aux tests quotidiens suivants, même après un échec. Lorsque la valeur de situation atteint 20, une réussite rend tous les souvenirs. Le MJ détermine les compétences utilisées instinctivement et retire l’effet lorsque les souvenirs sont retrouvés.",
+          "SourceName": "Amnésie",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Malédiction de créature — Malédictions de Sonntag",

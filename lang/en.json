@@ -13847,6 +13847,15 @@
           "SourcePage": "135",
           "Duration": "10 minutes"
         },
+        "vitner-water-craft:form-water:3#effect": {
+          "Name": "Form Water",
+          "Summary": "Temporarily shapes a body of water.",
+          "Description": "The water takes three minutes to assume the chosen shape and holds it for five more minutes, then returns to its original shape and position. The initial volume is one Storme hall. The GM represents the area and applies the listed additional volumes.",
+          "SourceName": "Form Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "135",
+          "Duration": "8 minutes"
+        },
         "vitner-water-craft:breathe:2#respiration": {
           "Name": "Breathe",
           "Summary": "Gills allow breathing underwater as easily as in air.",
@@ -14260,6 +14269,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "143",
           "Duration": "1 hour"
+        },
+        "vitner-witchcraft:amnesia:4#effect": {
+          "Name": "Amnesia (vitner)",
+          "Summary": "Lost memories and gradual recovery.",
+          "Description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+          "SourceName": "Amnesia",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": ""
         },
         "vitner-witchcraft:curse-creature:5#effect": {
           "Name": "Curse Creature",
@@ -16681,6 +16699,15 @@
           "SourceBook": "Stormlands",
           "SourcePage": "123",
           "Duration": "1 hour"
+        },
+        "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
+          "Name": "Amnesia (curse)",
+          "Summary": "Lost memories and gradual recovery.",
+          "Description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+          "SourceName": "Amnesia",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": ""
         },
         "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
           "Name": "Curse Creature — Curses of Sonntag",

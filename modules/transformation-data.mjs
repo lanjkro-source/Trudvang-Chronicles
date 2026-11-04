@@ -539,6 +539,34 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-water-craft:form-water:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "8 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-water-craft:form-water:3",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-water-craft:form-water:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-water-craft:form-water:3:2"
+      }
+    ]
+  },
   "vitner-water-craft:breathe:2#respiration": {
     "id": "respiration",
     "icon": "icons/svg/aura.svg",
@@ -2008,6 +2036,17 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "vitner-witchcraft:fever:2:4"
       }
     ]
+  },
+  "vitner-witchcraft:amnesia:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-witchcraft:amnesia:4",
+    "parameters": []
   },
   "vitner-witchcraft:curse-creature:5#effect": {
     "id": "effect",
@@ -11366,6 +11405,17 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
+    "parameters": []
+  },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -12206,6 +12256,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-water-craft:find-water:0": [
     "vitner-water-craft:find-water:0#find-water"
   ],
+  "vitner-water-craft:form-water:3": [
+    "vitner-water-craft:form-water:3#effect"
+  ],
   "vitner-water-craft:breathe:2": [
     "vitner-water-craft:breathe:2#respiration"
   ],
@@ -12343,6 +12396,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-witchcraft:fever:2": [
     "vitner-witchcraft:fever:2#effect"
+  ],
+  "vitner-witchcraft:amnesia:4": [
+    "vitner-witchcraft:amnesia:4#effect"
   ],
   "vitner-witchcraft:curse-creature:5": [
     "vitner-witchcraft:curse-creature:5#effect"
@@ -13064,6 +13120,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-curses-of-sonntag:fever:2": [
     "holy-joaringfaith-curses-of-sonntag:fever:2#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:amnesia:4": [
+    "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect"
   ],
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": [
     "holy-joaringfaith-curses-of-sonntag:curse-creature:5#effect"

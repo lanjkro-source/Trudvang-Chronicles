@@ -1,0 +1,45 @@
+{
+  "_id": "gcbqmRiOjPkQlRmS",
+  "_key": "!items!gcbqmRiOjPkQlRmS",
+  "name": "Amnesia (vitner)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:amnesia:4#effect",
+    "description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+    "summary": "Lost memories and gradual recovery.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 143
+    }
+  },
+  "effects": [
+    {
+      "_id": "5AyjJHbHcIdJeKfL",
+      "_key": "!items.effects!gcbqmRiOjPkQlRmS.5AyjJHbHcIdJeKfL",
+      "name": "Amnesia (vitner)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "After failing the initial situation test, the victim forgets their identity and past. Each day they can make a situation test to recover one important memory; each success adds +2 to later daily tests, even after a failure. When the situation value reaches 20, a success restores all memories. The GM decides which skills can be used instinctively and removes the effect when the memories return.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:amnesia:4#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:amnesia:4#effect",
+            "sourceId": "vitner-witchcraft:amnesia:4",
+            "summary": "Lost memories and gradual recovery.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
