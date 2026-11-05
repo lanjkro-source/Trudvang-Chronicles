@@ -3,6 +3,7 @@ import {registerPersistentDamageHooks} from './persistent-damage.mjs';
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
 import {effectChangesSource} from "./rules/effect-source.mjs";
 import {processWorldConsequences, registerConsequenceHooks} from "./consequences.mjs";
+import {announceEffectExpiration} from "./effect-expiration-notice.mjs";
 import {editedConsequenceClock} from "./rules/consumable-effects.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
@@ -227,7 +228,7 @@ export function finishExpiredEffect(effect, options = {}) {
     // Starting each stage at "now" would lose all excess time in a large jump.
     while (true) {
       const next = stages[nextIndex];
-      if (!next) {await effect.delete(); return;}
+      if (!next) {await effect.delete({trudvangExpired: true}); return;}
       const duration = normalizeEffectDuration({value: Number(next.durationValue || 0), units: next.durationUnit || "rounds", expiry: null, expired: false});
       const start = implementation.getEffectStart();
       await effect.update({"system.stage": nextIndex, "system.changes": effectChangesSource(next.changes), duration,
@@ -246,6 +247,7 @@ export function finishExpiredEffect(effect, options = {}) {
 }
 
 export function registerEffectHooks() {
+  Hooks.on("deleteActiveEffect", announceEffectExpiration);
   registerPersistentDamageHooks({effects:appliedWorldEffects,expireEffects:expireAppliedEffects});
   registerConsequenceHooks(appliedWorldEffects);
   registerCombatEffectHooks();

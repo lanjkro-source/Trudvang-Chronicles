@@ -134,6 +134,8 @@ Les dégâts sans résistance ni choix sont appliqués automatiquement aux PS, a
 
 ## Conséquences automatiques des résistances de Nid — 5 novembre 2026
 
+Le réglage de monde « Annoncer l’expiration des effets », désactivé par défaut, permet d’afficher « <effet> se termine. » dans le chat sous le nom du porteur. L’annonce est produite uniquement par le MJ actif, après suppression pour fin de durée : acteur, objet porté, dernier palier d’un effet récurrent ou fin de round de Surpris/Monté. Les suppressions manuelles, remplacements, sorties d’aura et transitions intermédiaires restent silencieux.
+
 Puissance du sang, Visions du chêne et Souvenir du martyr créent une carte de dégâts lors de l’application des blessures. Leur résistance porte sur les suites psychologiques : les PS restent dus quelle que soit son issue. La résistance reste accessible après application manuelle des dégâts, sans seconde perte de PS. Les références d’effets n’appliquent pas un malus psychologique avant ce test.
 
 Puissance du sang : réussite, aucun malus ; échec, −1 aux tests de compétence et de situation pendant 1d6 heures. Visions du chêne : réussite, aucun malus ; échec, −3 jusqu’à la fin de la journée. Souvenir du martyr : réussite, −3 pendant 1d6 heures ; échec, −3 jusqu’à la fin de la journée et un effet d’inconscience séparé pendant 1d6 minutes. Ce dernier expire indépendamment, même si sa durée dépasse le minuit qui met fin à la douleur. Les minutes sont converties en rounds de cinq secondes. Sources : Livre des règles p. 250–253 ; Player’s Handbook p. 194–196.

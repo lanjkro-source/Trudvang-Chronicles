@@ -82,7 +82,7 @@ export async function processConsequenceEffects(effects,now,{announce=true}={}){
    await effect.update({[`flags.${SCOPE}.consequenceClock`]:clock},{trudvangStageTransition:true});
   }else{
    clock.stage++;clock.stageStartedAt=event.at;clock.ticks=[];const stage=clock.stages[clock.stage];
-   if(!stage){active.delete(effect);await effect.delete();continue;}
+   if(!stage){active.delete(effect);await effect.delete({trudvangExpired:true});continue;}
    const result=await executeConsequences({actor,operations:effect.disabled?[]:stage.onEnter??[],source:effect.name});previous.rows.push(...result.rows);previous.rolls.push(...result.rolls);
    const start=foundry.documents.ActiveEffect.implementation.getEffectStart();
    await effect.update({name:stage.label?`${clock.name} — ${stage.label}`:clock.name,"system.stage":clock.stage,"system.changes":stage.changes??[],description:stage.description??effect.description,statuses:stage.statuses??[],

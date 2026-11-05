@@ -59,7 +59,7 @@ async function expireRoundEffectsNow(combat, {ended = false} = {}) {
       return expiry?.combatId === combat.id
         && (ended || !combat.started || Number(combat.round) > Number(expiry.round));
     }).map(effect => effect.id);
-    if (ids.length) await actor.deleteEmbeddedDocuments("ActiveEffect", ids);
+    if (ids.length) await actor.deleteEmbeddedDocuments("ActiveEffect", ids, {trudvangExpired: true});
   }
 }
 export function registerCombatEffectHooks() {

@@ -141,6 +141,8 @@
       "CreatureAbility": "Feuille de capacité"
     },
     "Settings": {
+      "AnnounceEffectExpirationName": "Annoncer l’expiration des effets",
+      "AnnounceEffectExpirationHint": "Affiche dans le chat un message compact « <effet> se termine. » à la fin de sa durée, y compris sur les objets portés. Les suppressions manuelles et les changements de palier restent silencieux. Réglage commun à tout le monde.",
       "PortraitForceAllName": "Partage des portraits : affichage en grand par défaut",
       "PortraitForceAllHint": "Pré-coche « Forcer l'affichage en grand chez tous les joueurs » lors du partage d'un portrait. Préférence personnelle ; la case reste modifiable à chaque partage par le MJ.",
       "StarterContentName": "Version du contenu de démarrage",
@@ -1398,7 +1400,8 @@
       "InvalidTraitsRepaired": "Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s).",
       "KnowledgeSynced": "{count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour.",
       "EffectsApplied": "{count} effet(s) appliqué(s).",
-      "EffectStageAdvanced": "{effect} passe au palier {stage}."
+      "EffectStageAdvanced": "{effect} passe au palier {stage}.",
+      "EffectExpired": "{effect} se termine."
     },
     "New": {
       "Item": "Nouveau {type}",

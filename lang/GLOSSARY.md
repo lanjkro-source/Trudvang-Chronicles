@@ -168,6 +168,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Settings.AnnounceEffectExpirationName` | Announce effect expiration | Annoncer l’expiration des effets |
+| `TRUDVANG.Settings.AnnounceEffectExpirationHint` | Posts a compact “<effect> ends.” chat message when its lifetime ends, including on carried items. Manual deletions and stage transitions remain silent. Applies to the whole world. | Affiche dans le chat un message compact « <effet> se termine. » à la fin de sa durée, y compris sur les objets portés. Les suppressions manuelles et les changements de palier restent silencieux. Réglage commun à tout le monde. |
 | `TRUDVANG.Settings.PortraitForceAllName` | Portrait sharing: large display by default | Partage des portraits : affichage en grand par défaut |
 | `TRUDVANG.Settings.PortraitForceAllHint` | Preselects “Force large display for all players” when sharing a portrait. Personal preference; the GM can still change the checkbox for each share. | Pré-coche « Forcer l'affichage en grand chez tous les joueurs » lors du partage d'un portrait. Préférence personnelle ; la case reste modifiable à chaque partage par le MJ. |
 | `TRUDVANG.Settings.StarterContentName` | Starter content version | Version du contenu de démarrage |
@@ -1631,6 +1633,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.KnowledgeSynced` | {count} knowledge item(s) imported from the Skills compendiums were refreshed. | {count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour. |
 | `TRUDVANG.Notification.EffectsApplied` | Applied {count} effect(s). | {count} effet(s) appliqué(s). |
 | `TRUDVANG.Notification.EffectStageAdvanced` | {effect} advanced to stage {stage}. | {effect} passe au palier {stage}. |
+| `TRUDVANG.Notification.EffectExpired` | {effect} ends. | {effect} se termine. |
 
 ## `TRUDVANG.New`
 

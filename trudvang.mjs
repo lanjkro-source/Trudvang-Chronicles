@@ -146,6 +146,14 @@ Hooks.once("init", () => {
     type: Number,
     default: 0
   });
+  game.settings.register("trudvang-chronicles", "announceEffectExpiration", {
+    name: "TRUDVANG.Settings.AnnounceEffectExpirationName",
+    hint: "TRUDVANG.Settings.AnnounceEffectExpirationHint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
   game.settings.register("trudvang-chronicles", "portraitForceAllDefault", {
     name: "TRUDVANG.Settings.PortraitForceAllName",
     hint: "TRUDVANG.Settings.PortraitForceAllHint",

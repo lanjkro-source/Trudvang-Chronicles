@@ -17,8 +17,8 @@ test("round-bound surprise expires after the whole initiative cycle, including u
   const combat = {id: "c", round: 3, started: true, combatants: []};
   const effect = {id: "s", statuses: [SURPRISED_STATUS], flags: {"trudvang-chronicles": {combatRoundExpiry: {combatId: "c", round: 3}}}};
   const removed = [];
-  const actor = {effects: [effect], async deleteEmbeddedDocuments(type, ids) {
-    assert.equal(type, "ActiveEffect"); removed.push(...ids);
+  const actor = {effects: [effect], async deleteEmbeddedDocuments(type, ids, options) {
+    assert.equal(type, "ActiveEffect"); assert.deepEqual(options,{trudvangExpired:true}); removed.push(...ids);
   }};
   globalThis.game = {user: {}, users: {activeGM: {isSelf: true}}, actors: [], scenes: [{tokens: [{actor}]}]};
   await expireRoundEffects(combat); assert.deepEqual(removed, []);

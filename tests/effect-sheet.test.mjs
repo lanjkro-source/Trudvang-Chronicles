@@ -1062,13 +1062,16 @@ test("ordinary manually authored stages preserve overflow and the elapsed chat w
   const stages=[{label:"A",durationValue:1,durationUnit:"hours",changes:[]},{label:"B",durationValue:1,durationUnit:"hours",changes:[]},{label:"C",durationValue:1,durationUnit:"hours",changes:[]}];
   const effect={type:"effect",name:"Manual",parent:actor,system:{stage:0,stages},start:{time:0},duration:{value:1,units:"hours",expired:false},_source:{start:{time:0},duration:{value:1,units:"hours",expired:false}}};
   effect.update=async data=>{await Promise.resolve();for(const[k,v]of Object.entries(data)){set(effect,k,v);set(effect._source,k,v);}};
-  effect.delete=async()=>{await Promise.resolve();actor.effects.splice(actor.effects.indexOf(effect),1);};actor.effects.push(effect);
+  const expirations=[];
+  effect.delete=async options=>{expirations.push(options);await Promise.resolve();actor.effects.splice(actor.effects.indexOf(effect),1);};actor.effects.push(effect);
   const {finishExpiredEffect}=await import("../modules/effects.mjs");
   StubActiveEffect.implementation.registry.refresh=async()=>{
     if(effect.start.time+effect.duration.value*3600<=game.time.worldTime){effect.duration.expired=true;finishExpiredEffect(effect);}
   };
   await advanceWorldTime({value:90,unit:"minutes"});assert.equal(effect.system.stage,1);assert.equal(effect.start.time,3600);assert.equal(actor.effects.length,1);
+  assert.equal(expirations.length,0);
   await advanceWorldTime({value:90,unit:"minutes"});assert.equal(actor.effects.length,0);assert.equal(runtime.messages.filter(m=>m.content.includes("time-elapsed")).length,2);
+  assert.deepEqual(expirations,[{trudvangExpired:true}]);
   assert.match(runtime.messages.at(-1).content,/90 minutes plus tard/);
 });
 

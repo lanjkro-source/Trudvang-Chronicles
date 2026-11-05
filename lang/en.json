@@ -141,6 +141,8 @@
       "CreatureAbility": "Creature Feat Sheet"
     },
     "Settings": {
+      "AnnounceEffectExpirationName": "Announce effect expiration",
+      "AnnounceEffectExpirationHint": "Posts a compact “<effect> ends.” chat message when its lifetime ends, including on carried items. Manual deletions and stage transitions remain silent. Applies to the whole world.",
       "PortraitForceAllName": "Portrait sharing: large display by default",
       "PortraitForceAllHint": "Preselects “Force large display for all players” when sharing a portrait. Personal preference; the GM can still change the checkbox for each share.",
       "StarterContentName": "Starter content version",
@@ -1398,7 +1400,8 @@
       "InvalidTraitsRepaired": "Reset invalid -4 defaults to 0 on {count} character(s).",
       "KnowledgeSynced": "{count} knowledge item(s) imported from the Skills compendiums were refreshed.",
       "EffectsApplied": "Applied {count} effect(s).",
-      "EffectStageAdvanced": "{effect} advanced to stage {stage}."
+      "EffectStageAdvanced": "{effect} advanced to stage {stage}.",
+      "EffectExpired": "{effect} ends."
     },
     "New": {
       "Item": "New {type}",
