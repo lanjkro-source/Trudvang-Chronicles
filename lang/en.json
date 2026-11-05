@@ -141,6 +141,8 @@
       "CreatureAbility": "Creature Feat Sheet"
     },
     "Settings": {
+      "AnnounceEffectStagesName": "Announce effect stage changes",
+      "AnnounceEffectStagesHint": "Posts a compact chat message for each automatic effect stage transition, including when advancing time. Independent of expiration announcements. World setting.",
       "AnnounceEffectExpirationName": "Announce effect expiration",
       "AnnounceEffectExpirationHint": "Posts a compact “<effect> ends.” chat message when its lifetime ends, including on carried items. Manual deletions and stage transitions remain silent. Applies to the whole world.",
       "PortraitForceAllName": "Portrait sharing: large display by default",

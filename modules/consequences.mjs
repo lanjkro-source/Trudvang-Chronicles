@@ -2,6 +2,7 @@ import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {applyDamageToActor} from "./damage-application.mjs";
 import {nextConsequenceEvent} from "./rules/consumable-effects.mjs";
 import {escapeHtml} from "./helpers.mjs";
+import {announceEffectStage} from "./effect-expiration-notice.mjs";
 const SCOPE="trudvang-chronicles";
 const number=v=>Number.isFinite(Number(v))?Number(v):0;
 const current=(actor,key)=>number(actor.system.resources[key].current??actor.system.resources[key].value);
@@ -88,6 +89,7 @@ export async function processConsequenceEffects(effects,now,{announce=true}={}){
    await effect.update({name:stage.label?`${clock.name} — ${stage.label}`:clock.name,"system.stage":clock.stage,"system.changes":stage.changes??[],description:stage.description??effect.description,statuses:stage.statuses??[],
     duration:duration(stage.seconds),start:{...start,time:event.at},disabled:Boolean(effect.disabled),
     [`flags.${SCOPE}.consequenceClock`]:clock,[`flags.${SCOPE}.consumablePolicy`]:foundry.data.operators.ForcedReplacement.create(stage.policy??{}),[`flags.${SCOPE}.consequenceTests`]:stage.tests??[]},{trudvangStageTransition:true});
+   await announceEffectStage(effect,{name:clock.name,stage:stage.label||String(clock.stage+1)});
   }
  }
  if(announce)for(const [actor,result]of results)await announceConsequences(actor,result);

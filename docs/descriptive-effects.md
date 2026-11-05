@@ -134,6 +134,8 @@ Les dégâts sans résistance ni choix sont appliqués automatiquement aux PS, a
 
 ## Conséquences automatiques des résistances de Nid — 5 novembre 2026
 
+Le réglage de monde indépendant « Annoncer les changements de palier des effets », désactivé par défaut, publie un message compact après chaque transition automatique réussie, pour les effets manuels comme pour les extraits à horloge. Les paliers traversés lors d’une grande avance du temps sont annoncés dans l’ordre ; les ticks récurrents et les simples éditions ne produisent pas d’annonce. Le message utilise le nom de base de l’extrait et le libellé du nouveau palier, sous le nom de son porteur. Il remplace l’ancienne notification temporaire des effets manuels.
+
 Le réglage de monde « Annoncer l’expiration des effets », désactivé par défaut, permet d’afficher « <effet> se termine. » dans le chat sous le nom du porteur. L’annonce est produite uniquement par le MJ actif, après suppression pour fin de durée : acteur, objet porté, dernier palier d’un effet récurrent ou fin de round de Surpris/Monté. Les suppressions manuelles, remplacements, sorties d’aura et transitions intermédiaires restent silencieux.
 
 Puissance du sang, Visions du chêne et Souvenir du martyr créent une carte de dégâts lors de l’application des blessures. Leur résistance porte sur les suites psychologiques : les PS restent dus quelle que soit son issue. La résistance reste accessible après application manuelle des dégâts, sans seconde perte de PS. Les références d’effets n’appliquent pas un malus psychologique avant ce test.

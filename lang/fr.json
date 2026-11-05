@@ -141,6 +141,8 @@
       "CreatureAbility": "Feuille de capacité"
     },
     "Settings": {
+      "AnnounceEffectStagesName": "Annoncer les changements de palier des effets",
+      "AnnounceEffectStagesHint": "Affiche un message compact dans le chat à chaque changement automatique de palier d’un effet, y compris lors d’une avance du temps. Indépendant de l’annonce des expirations. Réglage de monde.",
       "AnnounceEffectExpirationName": "Annoncer l’expiration des effets",
       "AnnounceEffectExpirationHint": "Affiche dans le chat un message compact « <effet> se termine. » à la fin de sa durée, y compris sur les objets portés. Les suppressions manuelles et les changements de palier restent silencieux. Réglage commun à tout le monde.",
       "PortraitForceAllName": "Partage des portraits : affichage en grand par défaut",

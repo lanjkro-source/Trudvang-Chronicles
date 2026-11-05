@@ -168,6 +168,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Settings.AnnounceEffectStagesName` | Announce effect stage changes | Annoncer les changements de palier des effets |
+| `TRUDVANG.Settings.AnnounceEffectStagesHint` | Posts a compact chat message for each automatic effect stage transition, including when advancing time. Independent of expiration announcements. World setting. | Affiche un message compact dans le chat à chaque changement automatique de palier d’un effet, y compris lors d’une avance du temps. Indépendant de l’annonce des expirations. Réglage de monde. |
 | `TRUDVANG.Settings.AnnounceEffectExpirationName` | Announce effect expiration | Annoncer l’expiration des effets |
 | `TRUDVANG.Settings.AnnounceEffectExpirationHint` | Posts a compact “<effect> ends.” chat message when its lifetime ends, including on carried items. Manual deletions and stage transitions remain silent. Applies to the whole world. | Affiche dans le chat un message compact « <effet> se termine. » à la fin de sa durée, y compris sur les objets portés. Les suppressions manuelles et les changements de palier restent silencieux. Réglage commun à tout le monde. |
 | `TRUDVANG.Settings.PortraitForceAllName` | Portrait sharing: large display by default | Partage des portraits : affichage en grand par défaut |

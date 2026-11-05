@@ -3,7 +3,7 @@ import {registerPersistentDamageHooks} from './persistent-damage.mjs';
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
 import {effectChangesSource} from "./rules/effect-source.mjs";
 import {processWorldConsequences, registerConsequenceHooks} from "./consequences.mjs";
-import {announceEffectExpiration} from "./effect-expiration-notice.mjs";
+import {announceEffectExpiration, announceEffectStage} from "./effect-expiration-notice.mjs";
 import {editedConsequenceClock} from "./rules/consumable-effects.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
@@ -234,11 +234,11 @@ export function finishExpiredEffect(effect, options = {}) {
       await effect.update({"system.stage": nextIndex, "system.changes": effectChangesSource(next.changes), duration,
         disabled: false, start: stageStart === null ? start : {...start, time: stageStart}
       }, {trudvangStageTransition: true});
+      await announceEffectStage(effect, {stage: next.label || String(nextIndex + 1)});
       const nextSeconds = effectDurationSeconds(duration);
       if (stageStart !== null && nextSeconds !== null && Number.isFinite(now) && stageStart + nextSeconds <= now) {
         stageStart += nextSeconds; nextIndex++; continue;
       }
-      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.EffectStageAdvanced", {effect: effect.name, stage: next.label || String(nextIndex + 1)}));
       return;
     }
   })().finally(() => expirationJobs.delete(effect));

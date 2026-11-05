@@ -154,6 +154,14 @@ Hooks.once("init", () => {
     type: Boolean,
     default: false
   });
+  game.settings.register("trudvang-chronicles", "announceEffectStages", {
+    name: "TRUDVANG.Settings.AnnounceEffectStagesName",
+    hint: "TRUDVANG.Settings.AnnounceEffectStagesHint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
   game.settings.register("trudvang-chronicles", "portraitForceAllDefault", {
     name: "TRUDVANG.Settings.PortraitForceAllName",
     hint: "TRUDVANG.Settings.PortraitForceAllHint",
