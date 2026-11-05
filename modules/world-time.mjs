@@ -1,4 +1,4 @@
-import {appliedWorldEffects, expireAppliedEffects, isManagedItemTransformation} from "./effects.mjs";
+import {appliedWorldEffects, expireAppliedEffects, isManagedEffectClock} from "./effects.mjs";
 import {processWorldConsequences} from "./consequences.mjs";
 import {escapeHtml} from "./helpers.mjs";
 
@@ -24,9 +24,12 @@ export function advanceWorldTime({value = 1, unit = "days"} = {}) {
   }
   advancingTime = (async () => {
     const registry = foundry.documents.ActiveEffect.implementation.registry;
+    // Synthetic actors can be rebuilt while the registry still holds their old
+    // effect objects. Remove those too, not only the current collection entries.
+    for (const effect of registry.values?.() ?? []) if (isManagedEffectClock(effect)) registry.delete(effect);
     // Register synthetic actors on inactive scenes too; library templates remain excluded.
     for (const effect of appliedWorldEffects()) {
-      if (isManagedItemTransformation(effect)) registry.delete?.(effect);
+      if (isManagedEffectClock(effect)) registry.delete?.(effect);
       else registry.add(effect);
     }
     const time = await game.time.advance(seconds);

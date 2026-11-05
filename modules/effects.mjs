@@ -23,6 +23,16 @@ export function isManagedItemTransformation(effect) {
     && Boolean(effect.flags?.["trudvang-chronicles"]?.transformation?.resolved);
 }
 
+/** Automatic applied effects have one authoritative clock. Native expiry writes
+ * can otherwise race their stage updates/deletion, especially on ActorDelta. */
+export function isManagedEffectClock(effect) {
+  if (effect?.inCompendium || !["base", "effect"].includes(effect?.type)) return false;
+  if (isManagedItemTransformation(effect)) return true;
+  return effect.parent?.documentName === "Actor" && effect.parent.type !== "effect"
+    && Boolean(effect.flags?.["trudvang-chronicles"]?.consequenceClock
+      || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved);
+}
+
 const string = (initial = "") => new fields.StringField({required: true, nullable: false, initial});
 const integer = (initial = 0, options = {}) => new fields.NumberField({
   required: true,
@@ -76,7 +86,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
  * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
   get isExpiryTrackable() {
-    return isManagedItemTransformation(this) ? false : super.isExpiryTrackable;
+    return isManagedEffectClock(this) ? false : super.isExpiryTrackable;
   }
   canUserModify(user, action, data = {}) {
     if (action === "update" && user && (user.isGM
@@ -256,14 +266,14 @@ export function registerEffectHooks() {
   });
   Hooks.on("ready", () => {
     const registry=foundry.documents.ActiveEffect.implementation.registry;
-    for(const effect of appliedWorldEffects())if(isManagedItemTransformation(effect))registry?.delete?.(effect);
+    for(const effect of appliedWorldEffects())if(isManagedEffectClock(effect))registry?.delete?.(effect);
     return expireAppliedEffects({time:Number(game.time?.worldTime), combat:game.combat});
   });
-  // Item-local, non-transferring enchantments are not necessarily registered
-  // by Foundry's actor effect registry. Check them when world time advances.
-  Hooks.on("updateWorldTime", time => expireAppliedEffects({time:Number(time), itemTransformationsOnly:true}));
-  Hooks.on("combatTurnChange", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, itemTransformationsOnly:true}));
-  Hooks.on("updateCombat", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, itemTransformationsOnly:true}));
+  // Automatic actor effects and item enchantments deliberately bypass native
+  // expiry writes. Their shared clock covers world time and combat rounds.
+  Hooks.on("updateWorldTime", time => expireAppliedEffects({time:Number(time), managedClocksOnly:true}));
+  Hooks.on("combatTurnChange", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, managedClocksOnly:true}));
+  Hooks.on("updateCombat", combat => expireAppliedEffects({time:Number(game.time?.worldTime), combat, managedClocksOnly:true}));
 }
 
 /** Include unlinked tokens on inactive scenes, without duplicating linked actors. */
@@ -284,8 +294,9 @@ export function appliedWorldEffects() {
 }
 
 /** Complete pending expiry on world actors and unlinked tokens on every scene. */
-export async function expireAppliedEffects({time = null, combat = null, itemTransformationsOnly = false} = {}) {
+export async function expireAppliedEffects({time = null, combat = null, itemTransformationsOnly = false, managedClocksOnly = false} = {}) {
   for (const effect of appliedWorldEffects()) {
+    if (managedClocksOnly && !isManagedEffectClock(effect)) continue;
     if (itemTransformationsOnly && !(effect.parent?.documentName === "Item" && effect.flags?.["trudvang-chronicles"]?.transformation?.resolved)) continue;
     const pending = expirationJobs.get(effect);
     if (pending) await pending;

@@ -970,6 +970,36 @@ test("managed consequence clocks keep native expiry from suppressing intermediat
  const e=new TrudvangActiveEffect();e.flags={"trudvang-chronicles":{consequenceClock:{name:"X",stage:0,stageStartedAt:0,ticks:[],stages:[{seconds:10,changes:[]}]}}};e.system={changes:[],stages:[]};e._source={name:"X",duration:{value:2,units:"rounds"}};
  const data={duration:{expired:true}};await e._preUpdate(data,{},{});assert.equal(data.duration.expired,false);
 });
+
+test("five-hour jumps expire Martyr consequences on an independent token without native writes to deleted IDs", async t => {
+  const messages=mockTimeChat(t);
+  const previous={game:globalThis.game,registry:StubActiveEffect.implementation.registry};
+  t.after(()=>{globalThis.game=previous.game;StubActiveEffect.implementation.registry=previous.registry;});
+  const actor={documentName:"Actor",type:"npc",isToken:true,uuid:"Scene.s.Token.t.Actor.a",effects:[],items:[]};
+  const make=(id,hours)=>{
+    const effect=new TrudvangActiveEffect();
+    Object.assign(effect,{id,type:"effect",name:id,parent:actor,system:{stages:[]},
+      _source:{duration:{value:hours,units:"hours"},start:{time:0}},duration:{value:hours,units:"hours",expired:false},
+      flags:{"trudvang-chronicles":{transformation:{resolved:true,resistanceConsequence:true,appliedAt:0}}},
+      async delete(options){assert.deepEqual(options,{trudvangExpired:true});assert.ok(actor.effects.includes(this));actor.effects.splice(actor.effects.indexOf(this),1);}});
+    actor.effects.push(effect);return effect;
+  };
+  const pain=make("martyr-pain",4),unconscious=make("martyr-unconscious",0.1),long=make("martyr-long",6);
+  const stale=Object.assign(new TrudvangActiveEffect(),{id:"old-token-copy",type:"effect",parent:actor,flags:pain.flags});
+  const registered=new Set([pain,unconscious,long,stale]);let nativeWrites=0;
+  StubActiveEffect.implementation.registry={values:()=>registered.values(),delete:e=>registered.delete(e),add(e){if(e.isExpiryTrackable)registered.add(e);},
+    async refresh(){for(const e of registered){nativeWrites++;if(!actor.effects.includes(e))throw Error("undefined id does not exist in EmbeddedCollectionDelta");}}};
+  globalThis.game={user:{isGM:true},users:{activeGM:{isSelf:true}},actors:[],scenes:[{tokens:[{actor}]}],
+    time:{worldTime:0,async advance(seconds){this.worldTime+=seconds;await expireAppliedEffects({time:this.worldTime,managedClocksOnly:true});await StubActiveEffect.implementation.registry.refresh();return this.worldTime;}},
+    i18n:{lang:"fr",localize:key=>key,format:key=>key}};
+  assert.equal(pain.isExpiryTrackable,false);assert.equal(unconscious.isExpiryTrackable,false);
+  await advanceWorldTime({value:5,unit:"hours"});
+  assert.deepEqual(actor.effects,[long]);assert.equal(nativeWrites,0);assert.equal(registered.size,0);assert.equal(messages.length,1);
+  const clock=new TrudvangActiveEffect();Object.assign(clock,{type:"effect",parent:actor,flags:{"trudvang-chronicles":{consequenceClock:{}}}});
+  assert.equal(clock.isExpiryTrackable,false);
+  const manual=new TrudvangActiveEffect();Object.assign(manual,{type:"effect",parent:actor,flags:{}});
+  assert.equal(manual.isExpiryTrackable,true,"ordinary effects retain native event-based expiry");
+});
 test("Tornrot suppresses fatigue without deleting its accumulated degree",()=>{
  const fatigue=new TrudvangActiveEffect();fatigue.system={stackId:"trudvang-fatigued",degree:3};fatigue.parent={documentName:"Actor",effects:[{disabled:false,flags:{"trudvang-chronicles":{consumablePolicy:{ignoreFatigue:true}}}}]};
  assert.equal(fatigue.isSuppressed,true);assert.equal(fatigue.system.degree,3);
