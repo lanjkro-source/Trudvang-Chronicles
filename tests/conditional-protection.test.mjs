@@ -5,6 +5,25 @@ import {applyDamageToActor} from '../modules/damage-application.mjs';
 import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {validateMagicAllocations} from '../modules/rules/magic-target-allocation.mjs';
 const scope='trudvang-chronicles';
+test('armor inspection exposes purchased conditional VP without adding them to fixed armor',async t=>{
+ const previous=globalThis.game;
+ const previousFoundry=globalThis.foundry;
+ globalThis.foundry??={applications:{}};
+ globalThis.game={i18n:{localize:key=>key}};
+ t.after(()=>{globalThis.game=previous;globalThis.foundry=previousFoundry;});
+ const {prepareActorStatInspection}=await import('../modules/equipment-inspection.mjs');
+ const barrier=effect('storm-armor:5');
+ const actor={items:[],effects:[barrier],system:{protection:5,details:{naturalArmor:5}}};
+ const detail=prepareActorStatInspection(actor,'protection');
+ assert.equal(detail.total,'5+');
+ assert.deepEqual(detail.conditional.map(row=>row.value),['+4','+6','+3','+5']);
+ assert.ok(detail.conditional.every(row=>row.label===barrier.name&&row.conditional));
+ assert.match(detail.conditional[3].source,/magical.*ranged/);
+ barrier.disabled=true;
+ const inactive=prepareActorStatInspection(actor,'protection');
+ assert.equal(inactive.total,5);
+ assert.deepEqual(inactive.conditional,[]);
+});
 function effect(suffix,boost=2,base=false){const sourceId='holy-gerbanis-power-of-enken:'+suffix,index=suffix==='hurricane-armor:7'?4:3;return {name:suffix,flags:{[scope]:{transformation:{key:sourceId+'#'+(base?'base':'protection'),sourceId,resolved:true,ruleTestContext:{countsById:{[sourceId+':'+index]:boost}}}}}};}
 test('wind protections distinguish melee, ranged, magical weapons and base recipients',()=>{
  for(const [suffix,values] of [['wind-shield:3',[3,5,0,0]],['storm-armor:5',[4,6,3,5]],['hurricane-armor:7',[6,8,5,7]]]){

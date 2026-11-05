@@ -3,6 +3,7 @@ import { resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { resolveCombatPools } from "./rules/combat-pool-resolver.mjs";
 import {effectContributions} from "./rules/effect-contributions.mjs";
 import {npcMovementRows} from "./rules/npc-summary.mjs";
+import {conditionalProtectionProfiles} from "./rules/conditional-protection.mjs";
 
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
@@ -220,7 +221,17 @@ export function prepareActorStatInspection(actor, key, config = {}) {
       if (passive && number(passive.effectiveDisplay)) conditional.push(row(item.name, passive.effectiveDisplay, {source: localized("TRUDVANG.Field.PassiveProtection"), conditional: true}));
     }
     permanent.push(...applicableEffectRows(actor, "system.modifiers.protection", actor.system.modifiers?.protection));
+    const profiles = conditionalProtectionProfiles(actor);
+    for (const profile of profiles) {
+      for (const [field, nature, delivery] of [["melee","normal","melee"],["ranged","normal","ranged"],["magicMelee","magical","melee"],["magicRanged","magical","ranged"]]) {
+        conditional.push(row(profile.effect, profile[field] ?? 0, {
+          source: `${localized(`TRUDVANG.Damage.Nature.${nature}`)} · ${localized(`TRUDVANG.Damage.Delivery.${delivery}`)}`,
+          conditional: true
+        }));
+      }
+    }
     total = number(actor.system.protection);
+    if (profiles.some(profile => [profile.melee, profile.ranged, profile.magicMelee, profile.magicRanged].some(value => value > 0))) total = `${total}+`;
   } else if (key === "persistence") {
     title = localized("TRUDVANG.Resource.PersistenceInWild");
     permanent.push(

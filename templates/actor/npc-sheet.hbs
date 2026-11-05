@@ -21,7 +21,7 @@
       <section class="panel npc-health-panel" aria-label="{{localize 'TRUDVANG.Section.Status'}}">
         <div class="status-vitals">
           <div class="status-protection">
-            <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" title="{{effectHints.protection}}" data-stat="protection">{{armorStatus.protection}} VP <i class="fas fa-circle-info"></i></button>{{#if armorStatus.naturalProtection}}<small>{{localize "TRUDVANG.Npc.NaturalProtection" value=armorStatus.naturalProtection}}</small>{{/if}}</span>
+            <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" title="{{effectHints.protection}}" data-stat="protection">{{armorStatus.protection}}{{#if armorStatus.hasConditionalProtection}}+{{/if}} VP <i class="fas fa-circle-info"></i></button>{{#if armorStatus.naturalProtection}}<small>{{localize "TRUDVANG.Npc.NaturalProtection" value=armorStatus.naturalProtection}}</small>{{/if}}</span>
             <span title="{{localize 'TRUDVANG.Npc.IntegrityHint'}}"><strong>{{localize "TRUDVANG.Resource.Integrity"}} :</strong> {{#if armorStatus.hasIntegrity}}{{armorStatus.integrityCurrent}} / {{armorStatus.integrityMax}} VI{{else}}—{{/if}}</span>
           </div>
           <div class="status-vital health-vital">

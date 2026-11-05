@@ -64,7 +64,7 @@
           <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
           <div class="status-vitals">
             <section class="status-protection">
-              <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" title="{{effectHints.protection}}" data-stat="protection">{{armorStatus.protection}} VP <i class="fas fa-circle-info"></i></button></span>
+              <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" title="{{effectHints.protection}}" data-stat="protection">{{armorStatus.protection}}{{#if armorStatus.hasConditionalProtection}}+{{/if}} VP <i class="fas fa-circle-info"></i></button></span>
               <span><strong>{{localize "TRUDVANG.Resource.Integrity"}} :</strong> {{armorStatus.integrityCurrent}} / {{armorStatus.integrityMax}} VI</span>
             </section>
             <section class="status-vital health-vital">

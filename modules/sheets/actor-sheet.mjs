@@ -1,4 +1,5 @@
 import {damageIcons} from "../damage-icons.mjs";
+import {conditionalProtectionProfiles} from "../rules/conditional-protection.mjs";
 import {damageQualification} from "../rules/damage-qualifications.mjs";
 import {isThrowingWeapon,weaponType} from "../rules/combat-pool-resolver.mjs";
 import {setTemporaryHealth} from "../rules/transformation-profile.mjs";
@@ -204,6 +205,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const equippedArmor = this.actor.items.filter(item => item.type === "armor" && item.system.equipped);
     context.armorStatus = {
       protection: Number(this.actor.system.protection || 0),
+      hasConditionalProtection: conditionalProtectionProfiles(this.actor).some(profile => [profile.melee, profile.ranged, profile.magicMelee, profile.magicRanged].some(value => value > 0)),
       naturalProtection: Number(this.actor.system.details?.naturalArmor || 0),
       hasIntegrity: equippedArmor.length > 0,
       integrityCurrent: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.value || 0), 0),
