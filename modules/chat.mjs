@@ -122,7 +122,7 @@ function attachListeners(message, html) {
       const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
       if(!actor?.isOwner||!item)return;
       const {rollMagicDamage}=await import("./magic-damage.mjs");
-      await rollMagicDamage({document:item,actor,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext});
+      await rollMagicDamage({document:item,actor,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext,baseOnly:button.dataset.baseOnly==="true"});
     });
   });
   html.querySelectorAll("[data-action='magic-fear']").forEach(button=>{

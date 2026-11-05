@@ -817,7 +817,8 @@
         "normal": "Normal protection",
         "none": "Ignore all protection",
         "magical": "Magical armor only",
-        "magicalOrGrindsilver": "Magical or grindsilver armor"
+        "magicalOrGrindsilver": "Magical or grindsilver armor",
+        "grindsilver": "Grindsilver armor only"
       },
       "Application": "Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary}",
       "ArmorApplied": "{name}: PV {protection}",
@@ -14238,6 +14239,24 @@
           "SourcePage": "105",
           "Duration": "3 days"
         },
+        "vitner-dimvitner:hand-of-death:1#effect": {
+          "Name": "Hand of Death",
+          "Summary": "Drains life force; the victim may resist each round.",
+          "Description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration.",
+          "SourceName": "Hand of Death",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "105",
+          "Duration": "1 round"
+        },
+        "vitner-dimvitner:hand-of-death:1#base": {
+          "Name": "Hand of Death — additional target",
+          "Summary": "Drains life force; the victim may resist each round.",
+          "Description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements.",
+          "SourceName": "Hand of Death",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "105",
+          "Duration": "1 round"
+        },
         "vitner-dimvitner:speak-to-undead:3#effect": {
           "Name": "Speak to Undead",
           "Summary": "Speak to Undead",
@@ -15356,6 +15375,24 @@
           "SourcePage": "171",
           "Duration": "2 action rounds"
         },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect": {
+          "Name": "Burns — Pyre Mark",
+          "Summary": "Burns hinder combat actions.",
+          "Description": "Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor.",
+          "SourceName": "Pyre Mark",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "2 rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base": {
+          "Name": "Burns — Pyre Mark — additional target",
+          "Summary": "Burns hinder combat actions.",
+          "Description": "Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor.",
+          "SourceName": "Pyre Mark",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "2 rounds"
+        },
         "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
           "Name": "War Cry — ally",
           "Summary": "Improves combat actions.",
@@ -16045,6 +16082,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
           "Duration": "3 rounds"
+        },
+        "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
+          "Name": "Psychological pain — Visions of the Oak",
+          "Summary": "Pain hinders tests after failed resistance.",
+          "Description": "Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result.",
+          "SourceName": "Visions of the Oak",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "194",
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
@@ -17761,7 +17807,12 @@
       "WindRanged": "Protection against ranged weapons: {value} PV",
       "WindMagicMelee": "Protection against magical melee weapons: {value} PV",
       "WindMagicRanged": "Protection against magical ranged weapons: {value} PV",
-      "ActorTargetRequired": "This effect must be applied to an actor."
+      "ActorTargetRequired": "This effect must be applied to an actor.",
+      "DeathHandResistance": "Constitution resistance",
+      "DamageSteps": "Additional damage steps",
+      "BurnCount": "Burns per victim",
+      "BleedingWounds": "Wounds per victim",
+      "PainResistance": "Psyche resistance"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -17988,6 +18039,9 @@
       "ResistanceFirst": "Apply only to victims who failed the required resistance test.",
       "EligibleRecipients": "Apply only to creatures affected according to range, hearing and the power’s restrictions.",
       "BaseRecipients": "Base fear — additional recipients"
+    },
+    "MagicDamage": {
+      "BaseRecipients": "Base damage — additional targets"
     }
   }
 }

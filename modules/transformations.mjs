@@ -19,7 +19,7 @@ import {naturalWeaponQualification} from "./rules/damage-qualifications.mjs";
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
-import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds} from "./rules/effect-duration.mjs";
+import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds, durationUntilDayEnd} from "./rules/effect-duration.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
@@ -188,6 +188,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   Object.assign(casting,withCastingCounts(casting,counts));
  }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
+ if(durationText==="endOfDay"){
+  const remaining=durationUntilDayEnd(game.time.worldTime);
+  durationText=`${remaining.value} ${remaining.units}`;
+ }
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];

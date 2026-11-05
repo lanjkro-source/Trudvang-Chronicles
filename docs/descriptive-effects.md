@@ -107,3 +107,13 @@ Puissance du sang propose désormais l’effet « Douleur psychologique », à a
 Les trois projectiles de Nid (Éclair sacré, Explosion sacrée, Purification divine) et les trois attaques de Jorn sont limités aux tags mort-vivant/undead ; Bannissement est limité aux tags démon/demon. La restriction est enregistrée dans chaque nouvelle carte de dégâts et revérifiée côté MJ lors de l’application, y compris avec le bouton ignorant l’armure et celui visant l’arme défensive. Elle est indépendante de la nature et du type des dégâts. Les anciennes cartes sans cette métadonnée doivent être relancées ; aucune identification n’est déduite de leur titre traduit. Les profils des PJ sans tag ne sont donc pas affectés par ces attaques.
 
 Les « auras de givre » désignent les pouvoirs de Haminges Souffle du hrimtroll et Corps de glace du hrimtroll (Livre des règles p. 276–277) ; cette correction n’ajoute pas d’aura ni de type de dégâts « sacré ».
+
+## Dimvitner, brûlures et fin de journée — 5 novembre 2026
+
+Main funeste et Vrille de Dimhall disposent de leurs jets de dégâts améliorés et d’un bouton de dégâts de base pour les victimes supplémentaires, disponible lorsque l’amélioration correspondante a été achetée. Le lancement conserve les comptes d’amélioration, y compris après allocation du vitner critique. Main funeste ne permet que les armures en grindsilver ; les autres protections magiques et naturelles n’y contribuent pas. Son effet temporaire porte le rappel de résistance de Constitution, son contexte amélioré et son lien au maintien ; une variante de base conserve un tour de durée, sans amélioration de résistance ou de dégâts. Les résistances et dégâts par tour restent déclenchés par les joueurs.
+
+Marque du brasier lance les dégâts de toutes les brûlures d’une victime, ou le profil de base pour une victime supplémentaire. Deux effets correspondants imposent −1 aux actions de combat pendant le tour actuel et le suivant ; les dégâts ne sont pas appliqués par le dépôt de l’effet.
+
+Visions du chêne propose le malus de douleur de −3 aux tests de compétence et de situation après une résistance ratée. Il expire au prochain minuit du temps du monde (journées de 24 heures, conformément au calcul de la macro de passage du temps), et non après un jour entier depuis son application. Les améliorations des blessures et de la résistance sont communes aux bénéficiaires ; le nombre de bénéficiaires reste limité aux cibles achetées. Les suites de Souvenir du martyr restent à implémenter séparément, notamment l’inconscience et ses durées distinctes.
+
+Références : Livre des règles p. 156–157, 220, 251 ; Player’s Handbook p. 107–108, Pyre Mark et Visions of the Oak. Ces effets n’émettent pas de lumière et ne constituent pas des auras.

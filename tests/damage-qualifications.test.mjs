@@ -59,6 +59,14 @@ test("selective armor bypass ignores ordinary and natural protection but preserv
   const ignored=await applyDamageToActor({actor,damage:12,ignoreArmor:true,qualification:{protection:"magicalOrGrindsilver"},announce:false});
   assert.equal(ignored.bodyDamage,12);assert.deepEqual(ignored.armorDamage,[]);
 });
+test('Hand of Death allows only grindsilver armor, excluding other magical and natural protections',async()=>{
+ const actor=target([armor('magic',true),armor('silver',false,'grindsilver')]);
+ actor.system.protection+=10;
+ actor.effects=[{name:'Magic barrier',system:{changes:[{key:'system.transformation.magicalProtection',type:'override',value:'10'}]}}];
+ const result=await applyDamageToActor({actor,damage:12,qualification:{nature:'magical',protection:'grindsilver'},announce:false});
+ assert.equal(result.bodyDamage,9);assert.deepEqual(result.armorDamage.map(row=>row.item.id),['silver']);
+ assert.equal(result.conditionalProtection,0);
+});
 
 test("armor blessings use their magic bonus separately from the armor's own eligibility",async()=>{
   const coat=armor("coat");

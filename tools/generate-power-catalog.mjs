@@ -99,6 +99,7 @@ for (const id of [...french.keys()].sort()) {
     }
   if(f.damageRoll){
     const d=f.damageRoll;
+    if(d.baseTargetOptionId&&!f.powerLevels.some(p=>p.optionId===d.baseTargetOptionId))fail(`${id}: invalid base damage target option`);
     if(d.targetTags&&(!Array.isArray(d.targetTags)||!d.targetTags.length||d.targetTags.some(tag=>typeof tag!=="string"||!tag.trim())||typeof d.targetLabelKey!=="string"))fail(`${id}: invalid damage target restriction`);
     if(d.scaling&&(!f.powerLevels.some(p=>p.optionId===d.scaling.optionId)||!['dice','modifier'].some(k=>Number(d.scaling[k])>0)||['dice','modifier'].some(k=>d.scaling[k]!==undefined&&(!Number.isInteger(d.scaling[k])||d.scaling[k]<0))))fail(`${id}: invalid damage scaling`);
     const q=d.qualification;

@@ -1,0 +1,53 @@
+{
+  "_id": "MwaW3z1w2x3y4z5A",
+  "_key": "!items!MwaW3z1w2x3y4z5A",
+  "name": "Burns — Pyre Mark",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect",
+    "description": "Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor.",
+    "summary": "Burns hinder combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "hHYrhdGbHcIdJeKf",
+      "_key": "!items.effects!MwaW3z1w2x3y4z5A.hHYrhdGbHcIdJeKf",
+      "name": "Burns — Pyre Mark",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+            "summary": "Burns hinder combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

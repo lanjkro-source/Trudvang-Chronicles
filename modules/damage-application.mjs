@@ -80,8 +80,9 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   const resistance = qualifyDamage(Math.trunc(number(damage)), qualified, rules.filter(rule => rule.stage === "beforeArmor"));
   const policyType = qualified.type === "other" && damageType ? damageType : qualified.type;
   const amount = Math.max(0, Math.ceil(resistance.amount * (consumablePolicy(actor).damageFactors[policyType] ?? 1)));
-  const eligibleBase = item => qualified.protection === "normal" || item.system?.magicalProtection === true || (qualified.protection === "magicalOrGrindsilver" && item.system?.material === "grindsilver");
+  const eligibleBase = item => qualified.protection === "normal" || (qualified.protection !== "grindsilver" && item.system?.magicalProtection === true) || (["magicalOrGrindsilver","grindsilver"].includes(qualified.protection) && item.system?.material === "grindsilver");
   const protectionFor = item => {
+    if(qualified.protection === "grindsilver")return eligibleBase(item)?protection(item):0;
     const blessings = blessedArmorEffects(item);
     const normalBlessing = blessings.reduce((sum,row) => sum + row.normal,0);
     const applicableBlessing = blessings.reduce((sum,row) => sum + (qualified.nature === "magical" || qualified.protection !== "normal" ? row.magic ?? 0 : row.normal),0);
@@ -89,10 +90,10 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   };
   const wornArmor = Array.from(actor.equippedItems ?? actor.items ?? []).filter(item => item.type === "armor" && item.system?.equipped);
   const armor = wornArmor.filter(item => eligibleBase(item) || protectionFor(item)>0);
-  const protectionRows=ignoreArmor?[]:conditionalProtectionRows(actor,{usage,magicalWeapon,qualification:qualified});
+  const protectionRows=ignoreArmor||qualified.protection==="grindsilver"?[]:conditionalProtectionRows(actor,{usage,magicalWeapon,qualification:qualified});
   const conditionalProtection=protectionRows.reduce((sum,row)=>sum+row.amount,0);
   const specialProtection = qualified.protection !== "normal";
-  const eligibleOtherProtection = specialProtection ? applicableEffects.reduce((total,effect) => total + Math.max(0,number(effectRules(effect).magicalProtection ?? effect.flags?.["trudvang-chronicles"]?.magicalProtection)),0) : 0;
+  const eligibleOtherProtection = qualified.protection==="grindsilver" ? 0 : specialProtection ? applicableEffects.reduce((total,effect) => total + Math.max(0,number(effectRules(effect).magicalProtection ?? effect.flags?.["trudvang-chronicles"]?.magicalProtection)),0) : 0;
   const totalProtection = specialProtection ? armor.reduce((sum,item) => sum + protectionFor(item),0) + conditionalProtection + eligibleOtherProtection
     : number(actor.system?.protection)+conditionalProtection+wornArmor.reduce((sum,item)=>sum+protectionFor(item)-protection(item),0);
   const result = ignoreArmor

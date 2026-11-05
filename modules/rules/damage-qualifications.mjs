@@ -43,7 +43,7 @@ export const DAMAGE_VECTOR_CLASSES = {
 export const DAMAGE_TYPES = ["slashing", "piercing", "bludgeoning", "fire", "cold", "lightning", "acid", "poison", "other"];
 export const DAMAGE_NATURES = ["normal", "magical"];
 export const DAMAGE_DELIVERIES = ["melee", "ranged", "other"];
-export const DAMAGE_PROTECTIONS = ["normal", "magical", "magicalOrGrindsilver", "none"];
+export const DAMAGE_PROTECTIONS = ["normal", "magical", "magicalOrGrindsilver", "grindsilver", "none"];
 
 /** Stable catalog identities, never guessed from localized names at roll time. */
 export const WEAPON_QUALIFICATIONS = {

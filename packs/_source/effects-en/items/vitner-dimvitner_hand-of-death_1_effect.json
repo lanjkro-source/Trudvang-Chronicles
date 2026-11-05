@@ -1,0 +1,45 @@
+{
+  "_id": "e2HfP2v1w2x3y4z5",
+  "_key": "!items!e2HfP2v1w2x3y4z5",
+  "name": "Hand of Death",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:hand-of-death:1#effect",
+    "description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration.",
+    "summary": "Drains life force; the victim may resist each round.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 105
+    }
+  },
+  "effects": [
+    {
+      "_id": "RwUmvoToUpVqWrXs",
+      "_key": "!items.effects!e2HfP2v1w2x3y4z5.RwUmvoToUpVqWrXs",
+      "name": "Hand of Death",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:hand-of-death:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:hand-of-death:1#effect",
+            "sourceId": "vitner-dimvitner:hand-of-death:1",
+            "summary": "Drains life force; the victim may resist each round.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

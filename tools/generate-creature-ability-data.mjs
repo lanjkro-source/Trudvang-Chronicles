@@ -8,7 +8,7 @@ const sources = Object.fromEntries(["fr", "en"].map(code => [code,
 if (sources.fr.length !== sources.en.length) throw new Error("The bilingual ability sources must be aligned.");
 const references = {};
 const entries = [];
-const damageFields = {nature:["normal","magical"],delivery:["melee","ranged","other"],type:["slashing","piercing","bludgeoning","fire","cold","lightning","acid","poison","other"],protection:["normal","magical","magicalOrGrindsilver","none"]};
+const damageFields = {nature:["normal","magical"],delivery:["melee","ranged","other"],type:["slashing","piercing","bludgeoning","fire","cold","lightning","acid","poison","other"],protection:["normal","magical","magicalOrGrindsilver","grindsilver","none"]};
 const languages = Object.fromEntries(["fr", "en"].map(code => [code, JSON.parse(readFileSync(`lang/${code}.json`, "utf8"))]));
 for (const language of Object.values(languages)) language.TRUDVANG.Content.CreatureAbility = {};
 for (const [index, source] of sources.fr.entries()) {

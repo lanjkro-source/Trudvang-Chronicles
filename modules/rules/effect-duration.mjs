@@ -1,4 +1,9 @@
 // Trudvang action rounds last five seconds (FR Rules p. 75).
+/** World-time days use the same 24-hour clock as advanceDuration(). */
+export function durationUntilDayEnd(time=0){
+  const seconds=((Number(time)||0)%86400+86400)%86400;
+  return {value:(86400-seconds)/3600,units:"hours"};
+}
 export function normalizeEffectDuration(duration = {}) {
   if (duration.value == null || !Number.isFinite(Number(duration.value))) return {...duration};
   const value = Number(duration.value);

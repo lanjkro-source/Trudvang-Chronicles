@@ -8,7 +8,7 @@ export function damageOriginFields() {
 }
 export function damageIcon(value, group = "Type") {
   const icon = group === "Material" ? (globalThis.CONFIG?.TRUDVANG?.weaponMaterials ?? WEAPON_MATERIALS)[value]
-    : group === "Protection" ? ({normal: "fa-shield-halved", none: "fa-ban", magical: "fa-shield", magicalOrGrindsilver: "fa-gem"})[value] : DAMAGE_ICONS[value];
+    : group === "Protection" ? ({normal: "fa-shield-halved", none: "fa-ban", magical: "fa-shield", magicalOrGrindsilver: "fa-gem", grindsilver: "fa-gem"})[value] : DAMAGE_ICONS[value];
   if (!icon) return "";
   const label = damageLabel(group, value);
   const glyph = DAMAGE_VECTOR_CLASSES[icon]

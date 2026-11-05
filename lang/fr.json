@@ -817,7 +817,8 @@
         "normal": "Protections normales",
         "none": "Ignore toutes les protections",
         "magical": "Armures magiques uniquement",
-        "magicalOrGrindsilver": "Armures magiques ou en grindsilver"
+        "magicalOrGrindsilver": "Armures magiques ou en grindsilver",
+        "grindsilver": "Armures en grindsilver uniquement"
       },
       "Application": "Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary}",
       "ArmorApplied": "{name} : VP {protection}",
@@ -14238,6 +14239,24 @@
           "SourcePage": "156",
           "Duration": "3 jours"
         },
+        "vitner-dimvitner:hand-of-death:1#effect": {
+          "Name": "Main funeste",
+          "Summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
+          "Description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée.",
+          "SourceName": "Main funeste",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "156",
+          "Duration": "1 tour de jeu"
+        },
+        "vitner-dimvitner:hand-of-death:1#base": {
+          "Name": "Main funeste — cible supplémentaire",
+          "Summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
+          "Description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée.",
+          "SourceName": "Main funeste",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "156",
+          "Duration": "1 tour de jeu"
+        },
         "vitner-dimvitner:speak-to-undead:3#effect": {
           "Name": "Conversation de l’au-delà",
           "Summary": "Conversation de l’au-delà",
@@ -15356,6 +15375,24 @@
           "SourcePage": "220",
           "Duration": "2 tours de jeu"
         },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect": {
+          "Name": "Brûlures — Marque du brasier",
+          "Summary": "Les brûlures gênent les actions de combat.",
+          "Description": "Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure.",
+          "SourceName": "Marque du brasier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "220",
+          "Duration": "2 tours de jeu"
+        },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base": {
+          "Name": "Brûlures — Marque du brasier — cible supplémentaire",
+          "Summary": "Les brûlures gênent les actions de combat.",
+          "Description": "Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure.",
+          "SourceName": "Marque du brasier",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "220",
+          "Duration": "2 tours de jeu"
+        },
         "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
           "Name": "Cri de guerre — allié",
           "Summary": "Améliore les actions de combat.",
@@ -16045,6 +16082,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "251",
           "Duration": "3 tours de jeu"
+        },
+        "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
+          "Name": "Douleur psychologique — Visions du chêne",
+          "Summary": "La douleur gêne les tests après un échec à la résistance.",
+          "Description": "À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance.",
+          "SourceName": "Visions du chêne",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "251",
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-anger:statue:5#statue": {
           "Name": "Statue",
@@ -17761,7 +17807,12 @@
       "WindRanged": "Protection contre les armes à distance : {value} VP",
       "WindMagicMelee": "Protection contre les armes magiques de mêlée : {value} VP",
       "WindMagicRanged": "Protection contre les armes magiques à distance : {value} VP",
-      "ActorTargetRequired": "Cet effet doit être appliqué à un personnage."
+      "ActorTargetRequired": "Cet effet doit être appliqué à un personnage.",
+      "DeathHandResistance": "Résistance de Constitution",
+      "DamageSteps": "Degrés supplémentaires de dégâts",
+      "BurnCount": "Brûlures par victime",
+      "BleedingWounds": "Blessures par victime",
+      "PainResistance": "Résistance de Psychisme"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -17988,6 +18039,9 @@
       "ResistanceFirst": "Appliquer uniquement aux victimes ayant raté le test de résistance préalable.",
       "EligibleRecipients": "Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir.",
       "BaseRecipients": "Peur de base — cibles supplémentaires"
+    },
+    "MagicDamage": {
+      "BaseRecipients": "Dégâts de base — cibles supplémentaires"
     }
   }
 }

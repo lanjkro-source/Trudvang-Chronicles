@@ -1698,7 +1698,7 @@
           "nature": "magical",
           "delivery": "ranged",
           "type": "other",
-          "protection": "magicalOrGrindsilver"
+          "protection": "grindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "sustained",

@@ -2789,11 +2789,61 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "2d3",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
+        "dice": 1,
+        "modifier": 0
+      },
+      "baseTargetOptionId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:2",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "fire",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "fire",
       "protection": "none"
+    },
+    "targeting": {
+      "groups": [
+        {
+          "id": "effect",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
+            "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:1"
+          ]
+        },
+        {
+          "id": "base",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:2",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
     },
     "powerLevels": [
       {
@@ -5836,6 +5886,31 @@ export const POWER_DETAILS_BY_ID = {
       "delivery": "ranged",
       "type": "other",
       "protection": "none"
+    },
+    "targeting": {
+      "groups": [
+        {
+          "id": "pain",
+          "variants": [
+            "pain"
+          ],
+          "baseTargets": 2,
+          "additionalTargets": [
+            {
+              "optionId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:1",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
+            "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:3"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
+            "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:3"
+          ]
+        }
+      ]
     },
     "powerLevels": [
       {
@@ -9871,11 +9946,75 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:hand-of-death:1": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-dimvitner:hand-of-death:1:4",
+      "baseTargetOptionId": "vitner-dimvitner:hand-of-death:1:3",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "grindsilver"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "magicalOrGrindsilver"
+      "protection": "grindsilver"
+    },
+    "targeting": {
+      "groups": [
+        {
+          "id": "effect",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "vitner-dimvitner:hand-of-death:1:0",
+            "vitner-dimvitner:hand-of-death:1:1",
+            "vitner-dimvitner:hand-of-death:1:2",
+            "vitner-dimvitner:hand-of-death:1:4"
+          ]
+        },
+        {
+          "id": "base",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "vitner-dimvitner:hand-of-death:1:3",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
     },
     "powerLevels": [
       {
@@ -9946,6 +10085,34 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:tendril-of-dimhall:4": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-dimvitner:tendril-of-dimhall:4:2",
+      "baseTargetOptionId": "vitner-dimvitner:tendril-of-dimhall:4:1",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "magicalOrGrindsilver"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",

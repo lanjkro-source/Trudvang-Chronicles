@@ -1,0 +1,45 @@
+{
+  "_id": "e2HfP2v1w2x3y4z5",
+  "_key": "!items!e2HfP2v1w2x3y4z5",
+  "name": "Main funeste",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-dimvitner:hand-of-death:1#effect",
+    "description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée.",
+    "summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 156
+    }
+  },
+  "effects": [
+    {
+      "_id": "RwUmvoToUpVqWrXs",
+      "_key": "!items.effects!e2HfP2v1w2x3y4z5.RwUmvoToUpVqWrXs",
+      "name": "Main funeste",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-dimvitner:hand-of-death:1#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-dimvitner:hand-of-death:1#effect",
+            "sourceId": "vitner-dimvitner:hand-of-death:1",
+            "summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

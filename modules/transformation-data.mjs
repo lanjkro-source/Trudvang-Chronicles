@@ -196,6 +196,62 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-dimvitner:hand-of-death:1#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 tour de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-dimvitner:hand-of-death:1",
+    "parameters": [
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-dimvitner:hand-of-death:1:1",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 6,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.DeathHandResistance",
+        "skillOnly": true,
+        "optionId": "vitner-dimvitner:hand-of-death:1:2",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 0,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.DamageSteps",
+        "skillOnly": true,
+        "optionId": "vitner-dimvitner:hand-of-death:1:4",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "vitner-dimvitner:hand-of-death:1#base": {
+    "id": "base",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 tour de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "sourceId": "vitner-dimvitner:hand-of-death:1",
+    "parameters": []
+  },
   "vitner-dimvitner:speak-to-undead:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -4352,6 +4408,57 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.BurnCount",
+        "skillOnly": true,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base": {
+    "id": "base",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+    "parameters": []
+  },
   "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally": {
     "id": "ally",
     "icon": "icons/svg/sword.svg",
@@ -6839,6 +6946,50 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.combatActions",
         "value": -1,
         "optionId": "holy-tenetnid-tablet-of-anger:stone-senses:2:2"
+      }
+    ]
+  },
+  "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
+    "id": "pain",
+    "icon": "icons/svg/aura.svg",
+    "duration": "endOfDay",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "-3",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.BleedingWounds",
+        "skillOnly": true,
+        "optionId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
+        "templates": [
+          "pain"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.PainResistance",
+        "skillOnly": true,
+        "optionId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:3",
+        "templates": [
+          "pain"
+        ]
       }
     ]
   },
@@ -13227,6 +13378,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-dimvitner:animate-undead:0": [
     "vitner-dimvitner:animate-undead:0#effect"
   ],
+  "vitner-dimvitner:hand-of-death:1": [
+    "vitner-dimvitner:hand-of-death:1#effect",
+    "vitner-dimvitner:hand-of-death:1#base"
+  ],
   "vitner-dimvitner:speak-to-undead:3": [
     "vitner-dimvitner:speak-to-undead:3#effect"
   ],
@@ -13579,6 +13734,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-wrath-of-tyrd:battle-cry:1": [
     "holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally"
   ],
+  "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": [
+    "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect",
+    "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base"
+  ],
   "holy-gerbanis-wrath-of-tyrd:war-cry:4": [
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally",
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy"
@@ -13785,6 +13944,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-tenetnid-tablet-of-anger:stone-senses:2": [
     "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies"
+  ],
+  "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": [
+    "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain"
   ],
   "holy-tenetnid-tablet-of-anger:statue:5": [
     "holy-tenetnid-tablet-of-anger:statue:5#statue",

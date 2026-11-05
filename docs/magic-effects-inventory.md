@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 315 ; avec jet de dégâts magique : 33 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 318 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -18,11 +18,11 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Art du vitner | Mur de vitner | sortilège | `vitner-vitner-craft:wall-of-vitner:8` | 7 | 1 | 1 | — | — |
 | Art du vitner | Piste du vitner | sortilège | `vitner-vitner-craft:trace-vitner:7` | 6 | 1 | 0 | — | — |
 | Dimvitner | Animation des morts-vivants | sortilège | `vitner-dimvitner:animate-undead:0` | 9 | 1 | 1 | — | — |
-| Dimvitner | Main funeste | sortilège | `vitner-dimvitner:hand-of-death:1` | 5 | 1 | 0 | — | — |
+| Dimvitner | Main funeste | sortilège | `vitner-dimvitner:hand-of-death:1` | 5 | 1 | 2 | oui | — |
 | Dimvitner | Conversation de l’au-delà | sortilège | `vitner-dimvitner:speak-to-undead:3` | 2 | 2 | 1 | — | — |
 | Dimvitner | Renvoi des morts-vivants | sortilège | `vitner-dimvitner:dismiss-undead:2` | 3 | 1 | 0 | — | — |
 | Dimvitner | Vol de vitner | sortilège | `vitner-dimvitner:vitner-theft:5` | 3 | 1 | 1 | — | — |
-| Dimvitner | Vrille de Dimhall | sortilège | `vitner-dimvitner:tendril-of-dimhall:4` | 3 | 0 | 0 | — | — |
+| Dimvitner | Vrille de Dimhall | sortilège | `vitner-dimvitner:tendril-of-dimhall:4` | 3 | 0 | 0 | oui | — |
 | Dimvitner | Contrôle des morts-vivants | sortilège | `vitner-dimvitner:control-undead:7` | 5 | 1 | 1 | — | — |
 | Dimvitner | Invocation d’un revenant | sortilège | `vitner-dimvitner:summon-wight:6` | 2 | 0 | 0 | — | — |
 | Dimvitner | Ténèbres de Dimhall | sortilège | `vitner-dimvitner:darkness-of-dimhall:8` | 3 | 0 | 0 | oui | — |
@@ -161,7 +161,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Fureur de Tyrd | Cri de bataille | pouvoir | `holy-gerbanis-wrath-of-tyrd:battle-cry:1` | 4 | 0 | 1 | — | — |
 | Fureur de Tyrd | Tisonnier | pouvoir | `holy-gerbanis-wrath-of-tyrd:fire-iron:0` | 2 | 0 | 0 | oui | — |
 | Fureur de Tyrd | Langue du loup | pouvoir | `holy-gerbanis-wrath-of-tyrd:wolf-tongue:2` | 2 | 0 | 0 | — | oui |
-| Fureur de Tyrd | Marque du brasier | pouvoir | `holy-gerbanis-wrath-of-tyrd:pyre-mark:3` | 3 | 0 | 0 | — | — |
+| Fureur de Tyrd | Marque du brasier | pouvoir | `holy-gerbanis-wrath-of-tyrd:pyre-mark:3` | 3 | 0 | 2 | oui | — |
 | Fureur de Tyrd | Cri de guerre | pouvoir | `holy-gerbanis-wrath-of-tyrd:war-cry:4` | 6 | 0 | 2 | — | — |
 | Fureur de Tyrd | Figure sinistre | pouvoir | `holy-gerbanis-wrath-of-tyrd:dark-visage:5` | 3 | 0 | 0 | — | oui |
 | Fureur de Tyrd | Tempête de feu | pouvoir | `holy-gerbanis-wrath-of-tyrd:firestorm:6` | 2 | 0 | 0 | oui | — |
@@ -251,7 +251,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette de la colère | Éclair sacré | pouvoir | `holy-tenetnid-tablet-of-anger:holy-bolt:1` | 2 | 0 | 0 | oui | — |
 | Tablette de la colère | Puissance du sang | pouvoir | `holy-tenetnid-tablet-of-anger:power-of-blood:0` | 3 | 1 | 1 | oui | — |
 | Tablette de la colère | Sens pétrifiés | pouvoir | `holy-tenetnid-tablet-of-anger:stone-senses:2` | 3 | 0 | 1 | — | — |
-| Tablette de la colère | Visions du chêne | pouvoir | `holy-tenetnid-tablet-of-anger:visions-of-the-oak:3` | 4 | 1 | 0 | oui | — |
+| Tablette de la colère | Visions du chêne | pouvoir | `holy-tenetnid-tablet-of-anger:visions-of-the-oak:3` | 4 | 1 | 1 | oui | — |
 | Tablette de la colère | Explosion sacrée | pouvoir | `holy-tenetnid-tablet-of-anger:sacred-burst:4` | 3 | 0 | 0 | oui | — |
 | Tablette de la colère | Statue | pouvoir | `holy-tenetnid-tablet-of-anger:statue:5` | 3 | 1 | 3 | — | — |
 | Tablette de la colère | Purification divine | pouvoir | `holy-tenetnid-tablet-of-anger:divine-purge:6` | 3 | 0 | 0 | oui | — |

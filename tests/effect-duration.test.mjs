@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {normalizeEffectDuration, normalizeEffectStage, addDurationSeconds} from "../modules/rules/effect-duration.mjs";
+import {normalizeEffectDuration, normalizeEffectStage, addDurationSeconds,durationUntilDayEnd} from "../modules/rules/effect-duration.mjs";
+test('end-of-day durations stop at the next midnight rather than a full day after application',()=>{
+ for(const [time,hours] of [[0,24],[18*3600,6],[3*86400+23*3600,1],[-3600,1]])assert.deepEqual(durationUntilDayEnd(time),{value:hours,units:'hours'});
+});
 test("short durations use exact five-second rounds; long durations keep their named units", () => {
   for (const [value, units, expected, normalized] of [[1,"minutes",12,"rounds"],[10,"seconds",2,"rounds"],
     [1,"seconds",0.2,"rounds"],[2,"weeks",14,"days"],[3,"centuries",300,"years"],

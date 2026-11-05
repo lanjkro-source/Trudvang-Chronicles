@@ -15,7 +15,7 @@ globalThis.foundry = {applications: {api: {}, handlebars: {renderTemplate: async
   return templates.get(relative)(data);
 }}}};
 const {rollDamage, damageRollDialog} = await import("../modules/dice.mjs");
-const {magicDamageProfile,rollMagicDamage} = await import("../modules/magic-damage.mjs");
+const {magicDamageProfile,rollMagicDamage,magicDamageHasBaseTargets} = await import("../modules/magic-damage.mjs");
 
 const effect = (name, key, value, type = "add", extra = {}) => ({name, system: {changes: [{key, type, value}]}, ...extra});
 function actor(strength = 2, damage = 0, effects = []) {
@@ -88,6 +88,16 @@ test("Nid projectiles freeze the undead restriction on their damage card and exp
  assert.deepEqual(cards[0].flags['trudvang-chronicles'].damageContext.targetTags,['mort-vivant','undead']);
  assert.match(dialogs[0].content,/Morts-vivants uniquement/);
  assert.match(cards[0].content,/Morts-vivants uniquement/);
+});
+test('additional damage targets receive the unmodified base profile from the original casting',()=>{
+ for(const [id,damageIndex,targetIndex,formula,openRoll] of [['vitner-dimvitner:hand-of-death:1',4,3,'1d10',0],['vitner-dimvitner:tendril-of-dimhall:4',2,1,'1d10',10],['holy-gerbanis-wrath-of-tyrd:pyre-mark:3',0,2,'2d3',0]]){
+  const document={system:{catalogId:id}},context={sourceId:id,countsById:{[`${id}:${damageIndex}`]:3,[`${id}:${targetIndex}`]:2}};
+  assert.equal(magicDamageHasBaseTargets(document,context),true);
+  const base=magicDamageProfile(document,context,{baseOnly:true});
+  assert.equal(base.formula,formula);assert.equal(base.openRoll,openRoll);
+  assert.notDeepEqual(magicDamageProfile(document,context),base);
+  assert.equal(magicDamageHasBaseTargets(document,{sourceId:id,counts:[]}),false);
+ }
 });
 
 test("the damage snapshot explains intrinsic, item, wearer and named actor effects once", () => {

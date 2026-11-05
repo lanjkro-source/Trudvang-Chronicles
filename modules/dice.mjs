@@ -1,3 +1,4 @@
+import {magicDamageHasBaseTargets} from "./magic-damage.mjs";
 import {damageQualificationFields, damageIcons} from "./damage-icons.mjs";
 import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
@@ -115,6 +116,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     ruleTests: !pendingPerfect&&success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
+    magicDamageBase: Boolean(!pendingPerfect && success && item && magicDamageHasBaseTargets(item,ruleTestContext)),
     magicFearBase: Boolean(!pendingPerfect && success && item && magicFearHasBaseTargets(item,ruleTestContext)),
     magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
     magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll),
@@ -153,6 +155,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
     card.transformationLinks=transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=ruleTestActionViews(item);
+    card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext);
     card.magicDamage=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll);
     card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);

@@ -1,0 +1,53 @@
+{
+  "_id": "2KjPtuZu0v1w2x3y",
+  "_key": "!items!2KjPtuZu0v1w2x3y",
+  "name": "Brûlures — Marque du brasier — cible supplémentaire",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base",
+    "description": "Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure.",
+    "summary": "Les brûlures gênent les actions de combat.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 220
+    }
+  },
+  "effects": [
+    {
+      "_id": "vm4dHMhNiOjPkQlR",
+      "_key": "!items.effects!2KjPtuZu0v1w2x3y.vm4dHMhNiOjPkQlR",
+      "name": "Brûlures — Marque du brasier — cible supplémentaire",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+            "summary": "Les brûlures gênent les actions de combat.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

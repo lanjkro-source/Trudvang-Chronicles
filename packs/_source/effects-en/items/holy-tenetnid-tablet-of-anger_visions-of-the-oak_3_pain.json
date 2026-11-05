@@ -1,0 +1,53 @@
+{
+  "_id": "anFlVVmSnToUpVqW",
+  "_key": "!items!anFlVVmSnToUpVqW",
+  "name": "Psychological pain — Visions of the Oak",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
+    "description": "Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result.",
+    "summary": "Pain hinders tests after failed resistance.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "L9xJpoPkQlRmSnTo",
+      "_key": "!items.effects!anFlVVmSnToUpVqW.L9xJpoPkQlRmSnTo",
+      "name": "Psychological pain — Visions of the Oak",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-3",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
+            "sourceId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
+            "summary": "Pain hinders tests after failed resistance.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

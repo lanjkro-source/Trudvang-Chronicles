@@ -967,6 +967,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Protection.none` | Ignore all protection | Ignore toutes les protections |
 | `TRUDVANG.Damage.Protection.magical` | Magical armor only | Armures magiques uniquement |
 | `TRUDVANG.Damage.Protection.magicalOrGrindsilver` | Magical or grindsilver armor | Armures magiques ou en grindsilver |
+| `TRUDVANG.Damage.Protection.grindsilver` | Grindsilver armor only | Armures en grindsilver uniquement |
 
 ## `TRUDVANG.Npc`
 
@@ -10980,6 +10981,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:animate-undead:0#effect.SourcePage` | 105 | 156 |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:animate-undead:0#effect.Duration` | 3 days | 3 jours |
 
+## `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Name` | Hand of Death | Main funeste |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Description` | Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. | À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourceName` | Hand of Death | Main funeste |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourcePage` | 105 | 156 |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Duration` | 1 round | 1 tour de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Name` | Hand of Death — additional target | Main funeste — cible supplémentaire |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Description` | Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements. | À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée. |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourceName` | Hand of Death | Main funeste |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourcePage` | 105 | 156 |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Duration` | 1 round | 1 tour de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-dimvitner:speak-to-undead:3#effect`
 
 | Clé | English | Français |
@@ -12346,6 +12369,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.SourcePage` | 171 | 220 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:battle-cry:1#ally.Duration` | 2 action rounds | 2 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.Name` | Burns — Pyre Mark | Brûlures — Marque du brasier |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.Description` | Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor. | Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.SourceName` | Pyre Mark | Marque du brasier |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.SourcePage` | 171 | 220 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#effect.Duration` | 2 rounds | 2 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.Name` | Burns — Pyre Mark — additional target | Brûlures — Marque du brasier — cible supplémentaire |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.Description` | Burns impose −1 to combat actions during the current and following round. Damage is rolled and applied separately, ignoring armor. | Les brûlures imposent −1 à la VC des actions de combat pendant le tour de jeu en cours et le suivant. Les dégâts se lancent et s’appliquent séparément ; ils ignorent l’armure. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.SourceName` | Pyre Mark | Marque du brasier |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.SourcePage` | 171 | 220 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:pyre-mark:3#base.Duration` | 2 rounds | 2 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#ally`
 
 | Clé | English | Français |
@@ -13185,6 +13230,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.SourcePage` | 194 | 251 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies.Duration` | 3 rounds | 3 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Name` | Psychological pain — Visions of the Oak | Douleur psychologique — Visions du chêne |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Description` | Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result. | À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourceName` | Visions of the Oak | Visions du chêne |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourcePage` | 194 | 251 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Duration` | endOfDay | endOfDay |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:statue:5#statue`
 
@@ -15250,6 +15306,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.WindMagicMelee` | Protection against magical melee weapons: {value} PV | Protection contre les armes magiques de mêlée : {value} VP |
 | `TRUDVANG.Transformation.WindMagicRanged` | Protection against magical ranged weapons: {value} PV | Protection contre les armes magiques à distance : {value} VP |
 | `TRUDVANG.Transformation.ActorTargetRequired` | This effect must be applied to an actor. | Cet effet doit être appliqué à un personnage. |
+| `TRUDVANG.Transformation.DeathHandResistance` | Constitution resistance | Résistance de Constitution |
+| `TRUDVANG.Transformation.DamageSteps` | Additional damage steps | Degrés supplémentaires de dégâts |
+| `TRUDVANG.Transformation.BurnCount` | Burns per victim | Brûlures par victime |
+| `TRUDVANG.Transformation.BleedingWounds` | Wounds per victim | Blessures par victime |
+| `TRUDVANG.Transformation.PainResistance` | Psyche resistance | Résistance de Psychisme |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -15561,3 +15622,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.ResistanceFirst` | Apply only to victims who failed the required resistance test. | Appliquer uniquement aux victimes ayant raté le test de résistance préalable. |
 | `TRUDVANG.MagicFear.EligibleRecipients` | Apply only to creatures affected according to range, hearing and the power’s restrictions. | Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir. |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
+
+## `TRUDVANG.MagicDamage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.MagicDamage.BaseRecipients` | Base damage — additional targets | Dégâts de base — cibles supplémentaires |
