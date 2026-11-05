@@ -20,6 +20,16 @@ import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds, durationUntilDayEnd} from "./rules/effect-duration.mjs";
+
+/** TEMPORARY WORLD MIGRATION: copies of pre-outcome Nid pain effects must keep
+ * their existing penalty, rather than replaying the original physical wounds. */
+function legacyResistanceConsequence(effect){
+ if(effect?.flags?.['trudvang-chronicles']?.persistentDamage)return false;
+ const key=effect?.flags?.['trudvang-chronicles']?.transformation?.key;
+ const expected={'holy-tenetnid-tablet-of-anger:power-of-blood:0#pain':-1,'holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain':-3}[key];
+ const rows=Array.from(effect?.system?.changes??[]);
+ return expected!==undefined&&rows.length===1&&rows[0].key==='system.modifiers.rolls.allActions'&&(rows[0].type==='add'||Number(rows[0].mode)===2)&&Number(rows[0].value)===expected;
+}
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
@@ -373,7 +383,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   summary=game.i18n.format("TRUDVANG.Transformation.FeverValues",{value,damage:formula});
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  let description=supplied?.description??text(key,"Description");
  if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}

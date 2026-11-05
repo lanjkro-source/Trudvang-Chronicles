@@ -15411,6 +15411,15 @@
           "SourcePage": "221",
           "Duration": "3 tours de jeu"
         },
+        "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
+          "Name": "Brûlures — Tempête de feu",
+          "Summary": "Les brûlures gênent les actions de combat.",
+          "Description": "Les dégâts des brûlures sont infligés une seule fois à l’application, sans protection d’armure. Les brûlures imposent −2 à la VC de toutes les actions de combat pendant le tour de jeu en cours et le suivant. Elles ne réinfligent pas leurs dégâts aux rounds suivants.",
+          "SourceName": "Tempête de feu",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "221",
+          "Duration": "2 tours de jeu"
+        },
         "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally": {
           "Name": "Tonnerre victorieux — allié",
           "Summary": "Améliore les actions de combat.",
@@ -16066,13 +16075,13 @@
           "Duration": "1 jour"
         },
         "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
-          "Name": "Douleur psychologique — Puissance du sang",
-          "Summary": "La douleur psychologique pénalise les tests de compétence et de situation après un échec à la résistance.",
-          "Description": "À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie.",
+          "Name": "Blessures — Puissance du sang",
+          "Summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
+          "Description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
           "SourceName": "Puissance du sang",
           "SourceBook": "Livre des règles",
           "SourcePage": "250",
-          "Duration": "1d6 heures"
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Sens pétrifiés",
@@ -16084,9 +16093,9 @@
           "Duration": "3 tours de jeu"
         },
         "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
-          "Name": "Douleur psychologique — Visions du chêne",
-          "Summary": "La douleur gêne les tests après un échec à la résistance.",
-          "Description": "À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance.",
+          "Name": "Blessures — Visions du chêne",
+          "Summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
+          "Description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
           "SourceName": "Visions du chêne",
           "SourceBook": "Livre des règles",
           "SourcePage": "251",
@@ -16145,6 +16154,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "252",
           "Duration": "3 days"
+        },
+        "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain": {
+          "Name": "Blessures — Souvenir du martyr",
+          "Summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
+          "Description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
+          "SourceName": "Souvenir du martyr",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "252",
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
           "Name": "Soins sacrés",
@@ -17828,9 +17846,9 @@
       "ActorTargetRequired": "Cet effet doit être appliqué à un personnage.",
       "DeathHandResistance": "Résistance de Constitution",
       "DamageSteps": "Degrés supplémentaires de dégâts",
-      "BurnCount": "Brûlures par victime",
-      "BleedingWounds": "Blessures par victime",
-      "PainResistance": "Résistance de Psychisme",
+      "BurnCount": "Brûlures par victime : {value}",
+      "BleedingWounds": "Blessures par victime : {value}",
+      "PainResistance": "Résistance de Psychisme (base) : {value}",
       "FeverResistance": "Résistance de Constitution",
       "FrostResistance": "Résistance à la fuite",
       "FrostRadius": "Rayon effectif : {value} m",
@@ -18076,6 +18094,24 @@
       "FrostRecipient": "Vous subissez {damage} dégâts de froid à l’entrée puis à chaque round passé dans la zone. Les vêtements d’hiver réduisent ces dégâts à {winter} ; la fourrure de mastomant les annule. Les armures ne protègent pas. Le test de Psychisme concerne la fuite, sans réduire les dégâts.",
       "Stay": "Résistance réussie : reste dans le froid.",
       "Flee": "Résistance échouée : doit fuir le froid."
+    },
+    "DamageOutcome": {
+      "ResistPsychological": "Résister aux conséquences psychologiques",
+      "BloodPain": "Douleur psychologique — Puissance du sang",
+      "BloodDescription": "La douleur impose −1 à tous les tests de compétence et de situation pendant la durée indiquée. Les dégâts physiques sont indépendants de cette douleur.",
+      "BloodSuccess": "Résistance réussie : aucune douleur persistante ; les dégâts restent dus.",
+      "BloodFailure": "Résistance échouée : −1 aux tests pendant 1d6 heures.",
+      "OakPain": "Douleur psychologique — Visions du chêne",
+      "OakDescription": "La douleur impose −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants de cette douleur.",
+      "OakSuccess": "Résistance réussie : aucune douleur persistante ; les dégâts restent dus.",
+      "OakFailure": "Résistance échouée : −3 aux tests jusqu’à la fin de la journée.",
+      "MartyrPain": "Douleur psychologique — Souvenir du martyr",
+      "MartyrSuccessDescription": "La douleur impose −3 à tous les tests de compétence et de situation pendant la durée indiquée, déterminée par 1d6 heures lors de la résistance.",
+      "MartyrFailureDescription": "La douleur impose −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. L’inconscience est suivie par un effet séparé, avec sa propre durée.",
+      "MartyrSuccess": "Résistance réussie : −3 aux tests pendant 1d6 heures.",
+      "MartyrFailure": "Résistance échouée : −3 aux tests jusqu’à la fin de la journée et inconscience pendant 1d6 minutes.",
+      "MartyrUnconscious": "Inconscience — Souvenir du martyr",
+      "MartyrUnconsciousDescription": "La victime est inconsciente pendant la durée indiquée, déterminée par 1d6 minutes. Cet état expire indépendamment de la douleur psychologique."
     }
   }
 }

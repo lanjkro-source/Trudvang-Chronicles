@@ -43,7 +43,15 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.persistentDamage??null)!==JSON.stringify(translated.persistentDamage??null))throw Error(`Unaligned persistent damage for ${key}`);
    if(t.persistentDamage){const d=t.persistentDamage;
     if(typeof d.onApply!=='boolean'||typeof d.onRound!=='boolean'||(!d.onApply&&!d.onRound))throw Error(`Invalid damage trigger for ${key}`);
-    if(d.resistance&&(!Number.isInteger(d.resistance.testIndex)||d.resistance.testIndex<0||!['damage','continuation','presence'].includes(d.resistance.scope)||!Number.isFinite(d.resistance.successFactor)||d.resistance.successFactor<0||d.resistance.successFactor>1||(d.resistance.failureFactor!==undefined&&(!Number.isFinite(d.resistance.failureFactor)||d.resistance.failureFactor<0||d.resistance.failureFactor>1))||(d.resistance.events??[]).some(event=>!['apply','round'].includes(event))))throw Error(`Invalid damage resistance for ${key}`);
+    if(d.resistance&&(!Number.isInteger(d.resistance.testIndex)||d.resistance.testIndex<0||!['damage','continuation','presence','consequence'].includes(d.resistance.scope)||!Number.isFinite(d.resistance.successFactor)||d.resistance.successFactor<0||d.resistance.successFactor>1||(d.resistance.failureFactor!==undefined&&(!Number.isFinite(d.resistance.failureFactor)||d.resistance.failureFactor<0||d.resistance.failureFactor>1))||(d.resistance.events??[]).some(event=>!['apply','round'].includes(event))))throw Error(`Invalid damage resistance for ${key}`);
+    if(d.resistance?.outcomes){
+     if(d.resistance.scope!=='consequence')throw Error(`Damage outcomes require a consequence resistance: ${key}`);
+     for(const outcome of Object.values(d.resistance.outcomes))for(const part of [outcome,...(outcome.extras??[])]){
+      if(!part.labelKey&&!part.nameKey)throw Error(`Missing damage outcome label: ${key}`);
+      if(!part.remove&&(!part.duration||!part.nameKey||!part.descriptionKey||!Array.isArray(part.changes)||part.changes.some(change=>!validProfileChange(change))))throw Error(`Invalid damage outcome: ${key}`);
+      for(const label of [part.labelKey,part.nameKey,part.descriptionKey].filter(Boolean))if(!['fr','en'].every(code=>label.split('.').reduce((value,key)=>value?.[key],lang[code])))throw Error(`Untranslated damage outcome: ${label}`);
+     }
+    }
     if(d.alternatives&&(!Array.isArray(d.alternatives)||d.alternatives.some(row=>!row.id||!row.labelKey||!Number.isFinite(row.factor)||row.factor<0||row.factor>1)))throw Error(`Invalid conditional damage for ${key}`);
     if(d.alternatives&&new Set(d.alternatives.map(row=>row.id)).size!==d.alternatives.length)throw Error(`Duplicate damage alternative for ${key}`);
    }

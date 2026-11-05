@@ -1,0 +1,45 @@
+{
+  "_id": "asyqnRiOjPkQlRmS",
+  "_key": "!items!asyqnRiOjPkQlRmS",
+  "name": "Blessures — Souvenir du martyr",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+    "description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
+    "summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 252
+    }
+  },
+  "effects": [
+    {
+      "_id": "fjeNPbHcIdJeKfLg",
+      "_key": "!items.effects!asyqnRiOjPkQlRmS.fjeNPbHcIdJeKfLg",
+      "name": "Blessures — Souvenir du martyr",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+            "sourceId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
+            "summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

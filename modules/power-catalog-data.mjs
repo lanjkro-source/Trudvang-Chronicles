@@ -2763,13 +2763,32 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "fire",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "fire",
       "protection": "none"
+    },
+    "targeting": {
+      "groups": [
+        {
+          "id": "burns",
+          "variants": [
+            "burns"
+          ],
+          "baseTargets": null,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-gerbanis-wrath-of-tyrd:firestorm:6:0"
+          ],
+          "sharedOptions": [
+            "holy-gerbanis-wrath-of-tyrd:firestorm:6:0"
+          ]
+        }
+      ]
     },
     "powerLevels": [
       {
@@ -2807,7 +2826,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "fire",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",
@@ -5638,13 +5658,39 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
       "protection": "none"
+    },
+    "targeting": {
+      "groups": [
+        {
+          "id": "pain",
+          "variants": [
+            "pain"
+          ],
+          "baseTargets": 5,
+          "additionalTargets": [
+            {
+              "optionId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:1",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
+            "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:3"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
+            "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:3"
+          ]
+        }
+      ]
     },
     "powerLevels": [
       {
@@ -5691,7 +5737,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",
@@ -5700,11 +5747,25 @@ export const POWER_DETAILS_BY_ID = {
       "protection": "none"
     },
     "targeting": {
-      "baseTargets": 1,
-      "additionalTargets": [
+      "groups": [
         {
-          "optionId": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
-          "count": 1
+          "id": "pain",
+          "variants": [
+            "pain"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [
+            {
+              "optionId": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-anger:power-of-blood:0:0"
+          ],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-anger:power-of-blood:0:0"
+          ]
         }
       ]
     },
@@ -5882,7 +5943,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",

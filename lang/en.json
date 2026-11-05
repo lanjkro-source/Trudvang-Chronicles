@@ -15411,6 +15411,15 @@
           "SourcePage": "171",
           "Duration": "3 action rounds"
         },
+        "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
+          "Name": "Burns — Firestorm",
+          "Summary": "Burns hinder combat actions.",
+          "Description": "Burn damage is inflicted once on application, ignoring armor. Burns impose −2 to all combat actions during the current and following round. They do not deal damage again in later rounds.",
+          "SourceName": "Firestorm",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "2 rounds"
+        },
         "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally": {
           "Name": "Thunder of Victory — ally",
           "Summary": "Improves combat actions.",
@@ -16066,13 +16075,13 @@
           "Duration": "1 day"
         },
         "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
-          "Name": "Psychological pain — Power of Blood",
-          "Summary": "Psychological pain penalizes Skill rolls and Situation rolls after failed resistance.",
-          "Description": "Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance.",
+          "Name": "Wounds — Power of Blood",
+          "Summary": "Wounds cause damage and may leave psychological consequences.",
+          "Description": "A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result.",
           "SourceName": "Power of Blood",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
-          "Duration": "1d6 hours"
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Stone Senses",
@@ -16084,9 +16093,9 @@
           "Duration": "3 rounds"
         },
         "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
-          "Name": "Psychological pain — Visions of the Oak",
-          "Summary": "Pain hinders tests after failed resistance.",
-          "Description": "Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result.",
+          "Name": "Wounds — Visions of the Oak",
+          "Summary": "Wounds cause damage and may leave psychological consequences.",
+          "Description": "A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result.",
           "SourceName": "Visions of the Oak",
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
@@ -16145,6 +16154,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "194",
           "Duration": "3 days"
+        },
+        "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain": {
+          "Name": "Wounds — Memory of a Martyr",
+          "Summary": "Wounds cause damage and may leave psychological consequences.",
+          "Description": "A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result.",
+          "SourceName": "Memory of a Martyr",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "194",
+          "Duration": "endOfDay"
         },
         "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
           "Name": "Holy Mending",
@@ -17828,9 +17846,9 @@
       "ActorTargetRequired": "This effect must be applied to an actor.",
       "DeathHandResistance": "Constitution resistance",
       "DamageSteps": "Additional damage steps",
-      "BurnCount": "Burns per victim",
-      "BleedingWounds": "Wounds per victim",
-      "PainResistance": "Psyche resistance",
+      "BurnCount": "Burns per victim: {value}",
+      "BleedingWounds": "Wounds per victim: {value}",
+      "PainResistance": "Psyche resistance (base): {value}",
       "FeverResistance": "Constitution resistance",
       "FrostResistance": "Resistance to fleeing",
       "FrostRadius": "Effective radius: {value} m",
@@ -18076,6 +18094,24 @@
       "FrostRecipient": "You suffer {damage} cold damage on entry and each round inside the area. Winter clothes reduce this to {winter}; mastomant fur prevents it. Armor offers no protection. The Psyche roll determines fleeing and does not reduce damage.",
       "Stay": "Resistance succeeded: remains in the cold.",
       "Flee": "Resistance failed: must flee the cold."
+    },
+    "DamageOutcome": {
+      "ResistPsychological": "Resist psychological consequences",
+      "BloodPain": "Psychological pain — Power of Blood",
+      "BloodDescription": "Pain imposes −1 to all Skill and Situation rolls for the indicated duration. Physical damage is independent of this pain.",
+      "BloodSuccess": "Resistance succeeded: no lasting pain; physical damage is still suffered.",
+      "BloodFailure": "Resistance failed: −1 to tests for 1d6 hours.",
+      "OakPain": "Psychological pain — Visions of the Oak",
+      "OakDescription": "Pain imposes −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of this pain.",
+      "OakSuccess": "Resistance succeeded: no lasting pain; physical damage is still suffered.",
+      "OakFailure": "Resistance failed: −3 to tests until the end of the day.",
+      "MartyrPain": "Psychological pain — Memory of a Martyr",
+      "MartyrSuccessDescription": "Pain imposes −3 to all Skill and Situation rolls for the indicated duration, determined by 1d6 hours when resistance was resolved.",
+      "MartyrFailureDescription": "Pain imposes −3 to all Skill and Situation rolls until the end of the day. Unconsciousness is tracked by a separate effect with its own duration.",
+      "MartyrSuccess": "Resistance succeeded: −3 to tests for 1d6 hours.",
+      "MartyrFailure": "Resistance failed: −3 to tests until the end of the day and unconsciousness for 1d6 minutes.",
+      "MartyrUnconscious": "Unconsciousness — Memory of a Martyr",
+      "MartyrUnconsciousDescription": "The victim is unconscious for the indicated duration, determined by 1d6 minutes. This condition expires independently of psychological pain."
     }
   }
 }

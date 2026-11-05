@@ -1,14 +1,14 @@
 {
   "_id": "anFlVVmSnToUpVqW",
   "_key": "!items!anFlVVmSnToUpVqW",
-  "name": "Douleur psychologique — Visions du chêne",
+  "name": "Blessures — Visions du chêne",
   "type": "effect",
-  "img": "icons/svg/aura.svg",
+  "img": "icons/svg/downgrade.svg",
   "folder": null,
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
-    "description": "À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance.",
-    "summary": "La douleur gêne les tests après un échec à la résistance.",
+    "description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
+    "summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
     "source": {
       "book": "Livre des règles",
       "page": 251
@@ -18,23 +18,15 @@
     {
       "_id": "L9xJpoPkQlRmSnTo",
       "_key": "!items.effects!anFlVVmSnToUpVqW.L9xJpoPkQlRmSnTo",
-      "name": "Douleur psychologique — Visions du chêne",
+      "name": "Blessures — Visions du chêne",
       "type": "effect",
-      "img": "icons/svg/aura.svg",
-      "description": "À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance.",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat.",
       "transfer": false,
       "system": {
         "stackId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
         "stacking": "replace",
-        "changes": [
-          {
-            "key": "system.modifiers.rolls.allActions",
-            "type": "add",
-            "value": "-3",
-            "phase": "initial",
-            "priority": 20
-          }
-        ]
+        "changes": []
       },
       "statuses": [],
       "flags": {
@@ -42,7 +34,7 @@
           "transformation": {
             "key": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain",
             "sourceId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
-            "summary": "La douleur gêne les tests après un échec à la résistance.",
+            "summary": "Des blessures infligent des dégâts et peuvent laisser des conséquences psychologiques.",
             "editableChanges": true,
             "related": []
           }

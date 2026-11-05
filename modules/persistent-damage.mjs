@@ -9,6 +9,7 @@ const S='trudvang-chronicles',queues=new Map();
 let provider=()=>[],expire=async()=>{};
 const writer=()=>Boolean(game.users?.activeGM?.isSelf);
 export function persistentDamageDefinition(effect){
+ if(effect.flags?.[S]?.transformation?.resistanceConsequence)return null;
  const template=TRANSFORMATION_TEMPLATES[effect.flags?.[S]?.transformation?.key];
  const definition=effect.flags?.[S]?.persistentDamage??template?.persistentDamage;
  if(!definition||effect.parent?.documentName!=='Actor'||effect.parent.type==='effect'||effect.disabled||effect.isSuppressed||effect.duration?.expired)return null;
@@ -59,7 +60,7 @@ export function triggerPersistentDamage(effect,{kind='apply',combat=game.combat,
    }
    const {rollDamage}=await import('./dice.mjs');
    const token=actor.token??actor.getActiveTokens?.(false,true)?.[0];
-   const result=await rollDamage({actor,item:{name:effect.name,img:effect.img,system:{category:'magic',damage:profile.formula,openRoll:profile.openRoll,damageBonus:0,strengthApplies:false,damageQualification:profile.qualification}},context:{usage:'magic',ignoreActorDamage:true,automatic:true,returnMessage:true,qualification:profile.qualification,
+   const result=await rollDamage({actor,item:{name:effect.name,img:effect.img,system:{category:'magic',damage:profile.formula,openRoll:profile.openRoll,damageBonus:0,strengthApplies:false,damageQualification:profile.qualification}},context:{usage:'magic',ignoreActorDamage:true,automatic:true,returnMessage:true,qualification:profile.qualification,effectSnapshot:{img:effect.img,meta:structuredClone(effect.flags?.[S]?.transformation??{})},
     targets:[{actor,document:token?.document??token,name:token?.name??actor.name}],boundActorUuid:actor.uuid,sourceEffectUuid:effect.uuid,persistentDamageEvent:key,targetTags:definition.targetTags??POWER_DETAILS_BY_ID[casting.sourceId]?.damageRoll?.targetTags??[],damageExplanations:definition.formula?[]:magicDamageExplanations(effect,profile),damageResistance,alternatives:definition.alternatives??[]}});
    message=result?.message;
   }

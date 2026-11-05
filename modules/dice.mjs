@@ -654,11 +654,11 @@ export async function rollDamage({actor, item, context = {}}) {
     openRoll: parsed ? choice.openRoll : 0,
     modifierDetails,
     qualificationHTML: damageIcons(choice.qualification),
-    damageResistance:context.damageResistance ? {actorUuid:context.boundActorUuid,label:game.i18n.localize(context.damageResistance.scope==='presence'?'TRUDVANG.PersistentDamage.ResistPresence':'TRUDVANG.PersistentDamage.Resist')} : null,
+    damageResistance:context.damageResistance ? {actorUuid:context.boundActorUuid,label:game.i18n.localize(context.damageResistance.scope==='presence'?'TRUDVANG.PersistentDamage.ResistPresence':context.damageResistance.scope==='consequence'?'TRUDVANG.DamageOutcome.ResistPsychological':'TRUDVANG.PersistentDamage.Resist')} : null,
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
   });
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,damageContext:{boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,damageContext:{boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return context.returnMessage?{total,message}:total;
 }
 

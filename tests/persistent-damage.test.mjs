@@ -20,13 +20,15 @@ function runtime(t,{key='vitner-dimvitner:hand-of-death:1#effect',counts={},cust
  const cards=[],rolls=[],gm={id:'gm',isGM:true,isSelf:true,active:true},users=new Map([[gm.id,gm]]);users.activeGM=gm;
  const messages=new Map(),combat={id:crypto.randomUUID(),started:true,round:1,combatants:[]};
  globalThis.game={user:gm,users,messages,combat,time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format}};
- globalThis.Roll=class{constructor(formula){this.formula=formula;rolls.push(this);}async evaluate(){this.total=results.shift();assert.notEqual(this.total,undefined,'unexpected die');return this;}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;rolls.push(this);}async evaluate(){this.total=results.shift();assert.notEqual(this.total,undefined,'unexpected die');return this;}async toMessage(data){return ChatMessage.create({...data,content:'Duration',rolls:[this]});}};
  function updateObject(target,changes){for(const [path,value]of Object.entries(changes)){const parts=path.split('.');let row=target;for(const part of parts.slice(0,-1))row=row[part]??={};row[parts.at(-1)]=structuredClone(value);}}
  globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),author:gm,getFlag:(_s,key)=>message.flags?.[S]?.[key],update:async changes=>updateObject(message,changes)};messages.set(message.id,message);cards.push(message);return message;}};
  const actor={uuid:'Actor.'+crypto.randomUUID(),name:'Victime',documentName:'Actor',type:'npc',isOwner:true,items:[],effects:[],system:{protection:0,modifiers:{damage:20},resources:{body:{value:40,current:40,max:40}}},testUserPermission:()=>true,allApplicableEffects:()=>actor.effects,update:async changes=>{if(changes['system.resources.body.value']!==undefined){actor.system.resources.body.value=changes['system.resources.body.value'];actor.system.resources.body.current=changes['system.resources.body.value'];}}};
  documents.set(actor.uuid,actor);combat.combatants=[{actor},{actor}];
- const effect={id:crypto.randomUUID(),uuid:'Actor.effect.'+crypto.randomUUID(),documentName:'ActiveEffect',type:'effect',name:'Effet',parent:actor,system:{changes:[]},duration:{value:3,units:'rounds'},flags:{[S]:{...(custom?{persistentDamage:custom}:{}),transformation:{key,sourceId:key.split('#')[0],resolved:true,ruleTestContext:{sourceId:key.split('#')[0],countsById:counts}}}},update:async changes=>updateObject(effect,changes),delete:async()=>{actor.effects.splice(actor.effects.indexOf(effect),1);}};
- actor.effects.push(effect);actor.effects.get=id=>actor.effects.find(row=>row.id===id);documents.set(effect.uuid,effect);
+ function installEffect(data){const effect={...data,id:crypto.randomUUID(),uuid:'Actor.effect.'+crypto.randomUUID(),documentName:'ActiveEffect',parent:actor,update:async changes=>updateObject(effect,changes),delete:async()=>{const index=actor.effects.indexOf(effect);if(index>=0)actor.effects.splice(index,1);documents.delete(effect.uuid);}};actor.effects.push(effect);documents.set(effect.uuid,effect);return effect;}
+ actor.createTrudvangEffect=async data=>installEffect(data);
+ const effect=installEffect({type:'effect',name:'Effet',system:{changes:[]},duration:{value:3,units:'rounds'},flags:{[S]:{...(custom?{persistentDamage:custom}:{}),transformation:{key,sourceId:key.split('#')[0],resolved:true,ruleTestContext:{sourceId:key.split('#')[0],countsById:counts}}}}});
+ actor.effects.get=id=>actor.effects.find(row=>row.id===id);
  return {effect,actor,combat,cards,rolls,messages};
 }
 test('Main funeste rolls once on application, waits for resistance and keeps its frozen JO without the victim’s outgoing bonuses',async t=>{
@@ -101,4 +103,65 @@ test('frost damage belongs to aura recipients, offers rounded clothing alternati
  r.effect.flags[S].auraRecipient.sourceEffectUuid='Actor.missing.ActiveEffect.missing';
  r.combat.round=3;await triggerPersistentDamage(r.effect,{kind:'round'});
  assert.equal(r.cards.length,2);assert.equal(r.actor.effects.length,0);
+});
+for(const [suffix,success,results,penalty,hours,unconscious] of [
+ ['power-of-blood:0',true,[3],null,null,false],
+ ['power-of-blood:0',false,[20,4],-1,4,false],
+ ['visions-of-the-oak:3',false,[20],-3,6,false],
+ ['memory-of-a-martyr:7',true,[3,4],-3,4,false],
+ ['memory-of-a-martyr:7',false,[20,4],-3,6,true]
+])test(`Nid ${suffix} ${success?'successful':'failed'} resistance preserves physical damage and applies its own consequences`,async t=>{
+ const previous=foundry.applications.api.DialogV2;t.after(()=>{foundry.applications.api.DialogV2=previous;});
+ foundry.applications.api.DialogV2=class{_onRender(){}static async wait(){return {situationValue:8,traitModifier:0,configuredModifier:0,repeatedModifier:0,modifier:0};}};
+ const id='holy-tenetnid-tablet-of-anger:'+suffix,r=runtime(t,{key:id+'#pain',results});
+ game.time.worldTime=18*3600;
+ Object.assign(r.actor,{canPerformAction:()=>true,getTraitValue:()=>0,getRollModifier:()=>0});
+ await triggerPersistentDamage(r.effect);assert.equal(r.actor.system.resources.body.current,40);
+ await requestDamageResistance({message:r.cards[0],actor:r.actor});
+ const damage=suffix.startsWith('power')?1:suffix.startsWith('visions')?4:6;
+ assert.equal(r.actor.system.resources.body.current,40-damage,'psychological resistance never cancels physical damage');
+ if(penalty===null){assert.equal(r.actor.effects.length,0);return;}
+ assert.equal(r.actor.effects.length,unconscious?2:1);
+ const pain=r.actor.effects.find(e=>e.system.changes.some(change=>change.key==='system.modifiers.rolls.allActions'));
+ assert.equal(pain.system.changes[0].value,String(penalty));assert.equal(pain.duration.value,hours);assert.equal(pain.duration.units,'hours');
+ assert.equal(pain.flags[S].transformation.resistanceConsequence,true);assert.equal(persistentDamageDefinition(pain),null);
+ assert.equal(pain.flags[S].transformation.appliedAt,18*3600);
+ if(unconscious){const extra=r.actor.effects.find(e=>e.statuses.includes('unconscious'));assert.equal(extra.duration.value,48);assert.equal(extra.duration.units,'rounds');await pain.delete();assert.ok(r.actor.effects.includes(extra));}
+ const before=r.rolls.length,count=r.actor.effects.length;
+ if(!unconscious){const {applyDamageOutcome}=await import('../modules/damage-outcomes.mjs');await applyDamageOutcome({message:r.cards[0],actor:r.actor,success,proofId:r.cards[0].getFlag(S,'damageOutcomePlan').proofId});assert.equal(r.rolls.length,before);assert.equal(r.actor.effects.length,count);}
+});
+test('burn damage is immediate and never repeated while the combat penalty remains',async t=>{
+ const r=runtime(t,{key:'holy-gerbanis-wrath-of-tyrd:firestorm:6#burns',results:[2,3]});
+ await triggerPersistentDamage(r.effect);assert.equal(r.actor.system.resources.body.current,33);
+ r.combat.round=2;await triggerPersistentDamage(r.effect,{kind:'round'});assert.equal(r.cards.length,1);
+});
+test('Nid resistance remains available after physical damage has already been applied',async t=>{
+ const previous=foundry.applications.api.DialogV2;t.after(()=>{foundry.applications.api.DialogV2=previous;});
+ foundry.applications.api.DialogV2=class{_onRender(){}static async wait(){return {situationValue:12,traitModifier:0,configuredModifier:0,repeatedModifier:0,modifier:0};}};
+ const r=runtime(t,{key:'holy-tenetnid-tablet-of-anger:power-of-blood:0#pain',results:[20,2]});Object.assign(r.actor,{canPerformAction:()=>true,getTraitValue:()=>0,getRollModifier:()=>0});
+ await triggerPersistentDamage(r.effect);await requestChatApplication({message:r.cards[0],actor:r.actor,channel:'body'});
+ assert.equal(r.actor.system.resources.body.current,39);
+ await requestDamageResistance({message:r.cards[0],actor:r.actor});
+ assert.equal(r.actor.system.resources.body.current,39);assert.equal(r.actor.effects[0].system.changes[0].value,'-1');
+});
+test('a failed source-card update resumes the same proof and durations without duplicate effects or damage',async t=>{
+ const previous=foundry.applications.api.DialogV2;t.after(()=>{foundry.applications.api.DialogV2=previous;});let dialogs=0;
+ foundry.applications.api.DialogV2=class{_onRender(){}static async wait(){dialogs++;return {situationValue:8,traitModifier:0,configuredModifier:0,repeatedModifier:0,modifier:0};}};
+ const r=runtime(t,{key:'holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain',results:[20,4]});Object.assign(r.actor,{canPerformAction:()=>true,getTraitValue:()=>0,getRollModifier:()=>0});
+ await triggerPersistentDamage(r.effect);const card=r.cards[0],update=card.update;let fail=true;
+ card.update=async changes=>{if(fail&&Object.keys(changes).some(key=>key.endsWith('.damageResistanceResults'))){fail=false;throw Error('network failure');}return update(changes);};
+ await assert.rejects(requestDamageResistance({message:card,actor:r.actor}),/network failure/);
+ assert.equal(r.actor.effects.length,2);assert.equal(r.actor.system.resources.body.current,40);
+ const rolls=r.rolls.length;await requestDamageResistance({message:card,actor:r.actor});
+ assert.equal(dialogs,1);assert.equal(r.rolls.length,rolls);assert.equal(r.actor.effects.length,2);assert.equal(r.actor.system.resources.body.current,34);
+});
+test('martyr pain ending at midnight never shortens the independently rolled unconsciousness',async t=>{
+ const previous=foundry.applications.api.DialogV2;t.after(()=>{foundry.applications.api.DialogV2=previous;});
+ foundry.applications.api.DialogV2=class{_onRender(){}static async wait(){return {situationValue:8,traitModifier:0,configuredModifier:0,repeatedModifier:0,modifier:0};}};
+ const r=runtime(t,{key:'holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain',results:[20,4]});game.time.worldTime=86340;
+ Object.assign(r.actor,{canPerformAction:()=>true,getTraitValue:()=>0,getRollModifier:()=>0});
+ await triggerPersistentDamage(r.effect);await requestDamageResistance({message:r.cards[0],actor:r.actor});
+ const pain=r.actor.effects.find(e=>e.system.changes.length),unconscious=r.actor.effects.find(e=>e.statuses.includes('unconscious'));
+ assert.equal(itemEffectRemainingSeconds(pain,{time:86401}),0);
+ assert.equal(itemEffectRemainingSeconds(unconscious,{time:86401}),179);
 });

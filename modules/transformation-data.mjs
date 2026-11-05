@@ -4471,6 +4471,10 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       }
     ],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false
+    },
     "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
     "parameters": [
       {
@@ -4503,6 +4507,10 @@ export const TRANSFORMATION_TEMPLATES = {
         "priority": 20
       }
     ],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false
+    },
     "sourceId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
     "parameters": []
   },
@@ -4574,6 +4582,42 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-gerbanis-wrath-of-tyrd:war-cry:4:5",
         "templates": [
           "enemy"
+        ]
+      }
+    ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
+    "id": "burns",
+    "icon": "icons/svg/downgrade.svg",
+    "duration": "2 tours de jeu",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false
+    },
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 2,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.BurnCount",
+        "skillOnly": true,
+        "optionId": "holy-gerbanis-wrath-of-tyrd:firestorm:6:0",
+        "templates": [
+          "burns"
         ]
       }
     ]
@@ -6933,21 +6977,61 @@ export const TRANSFORMATION_TEMPLATES = {
   "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
     "id": "pain",
     "icon": "icons/svg/downgrade.svg",
-    "duration": "1d6 heures",
+    "duration": "endOfDay",
     "priority": 10,
     "statuses": [],
     "related": [],
-    "changes": [
-      {
-        "key": "system.modifiers.rolls.allActions",
-        "type": "add",
-        "value": "-1",
-        "phase": "initial",
-        "priority": 10
+    "changes": [],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false,
+      "resistance": {
+        "scope": "consequence",
+        "testIndex": 0,
+        "successFactor": 1,
+        "failureFactor": 1,
+        "events": [
+          "apply"
+        ],
+        "outcomes": {
+          "success": {
+            "labelKey": "TRUDVANG.DamageOutcome.BloodSuccess",
+            "remove": true
+          },
+          "failure": {
+            "labelKey": "TRUDVANG.DamageOutcome.BloodFailure",
+            "nameKey": "TRUDVANG.DamageOutcome.BloodPain",
+            "descriptionKey": "TRUDVANG.DamageOutcome.BloodDescription",
+            "duration": "1d6 hours",
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-1",
+                "phase": "initial",
+                "priority": 10
+              }
+            ],
+            "statuses": []
+          }
+        }
       }
-    ],
+    },
     "sourceId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
-    "parameters": []
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.BleedingWounds",
+        "skillOnly": true,
+        "optionId": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
+        "templates": [
+          "pain"
+        ]
+      }
+    ]
   },
   "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
     "id": "sens-petrifies",
@@ -6998,20 +7082,47 @@ export const TRANSFORMATION_TEMPLATES = {
   },
   "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain": {
     "id": "pain",
-    "icon": "icons/svg/aura.svg",
+    "icon": "icons/svg/downgrade.svg",
     "duration": "endOfDay",
     "priority": 20,
     "statuses": [],
     "related": [],
-    "changes": [
-      {
-        "key": "system.modifiers.rolls.allActions",
-        "type": "add",
-        "value": "-3",
-        "phase": "initial",
-        "priority": 20
+    "changes": [],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false,
+      "resistance": {
+        "scope": "consequence",
+        "testIndex": 0,
+        "successFactor": 1,
+        "failureFactor": 1,
+        "events": [
+          "apply"
+        ],
+        "outcomes": {
+          "success": {
+            "labelKey": "TRUDVANG.DamageOutcome.OakSuccess",
+            "remove": true
+          },
+          "failure": {
+            "labelKey": "TRUDVANG.DamageOutcome.OakFailure",
+            "nameKey": "TRUDVANG.DamageOutcome.OakPain",
+            "descriptionKey": "TRUDVANG.DamageOutcome.OakDescription",
+            "duration": "endOfDay",
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-3",
+                "phase": "initial",
+                "priority": 20
+              }
+            ],
+            "statuses": []
+          }
+        }
       }
-    ],
+    },
     "sourceId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
     "parameters": [
       {
@@ -7237,6 +7348,100 @@ export const TRANSFORMATION_TEMPLATES = {
     "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
+  },
+  "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain": {
+    "id": "pain",
+    "icon": "icons/svg/downgrade.svg",
+    "duration": "endOfDay",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false,
+      "resistance": {
+        "scope": "consequence",
+        "testIndex": 0,
+        "successFactor": 1,
+        "failureFactor": 1,
+        "events": [
+          "apply"
+        ],
+        "outcomes": {
+          "success": {
+            "labelKey": "TRUDVANG.DamageOutcome.MartyrSuccess",
+            "nameKey": "TRUDVANG.DamageOutcome.MartyrPain",
+            "descriptionKey": "TRUDVANG.DamageOutcome.MartyrSuccessDescription",
+            "duration": "1d6 hours",
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-3",
+                "phase": "initial",
+                "priority": 50
+              }
+            ],
+            "statuses": []
+          },
+          "failure": {
+            "labelKey": "TRUDVANG.DamageOutcome.MartyrFailure",
+            "nameKey": "TRUDVANG.DamageOutcome.MartyrPain",
+            "descriptionKey": "TRUDVANG.DamageOutcome.MartyrFailureDescription",
+            "duration": "endOfDay",
+            "changes": [
+              {
+                "key": "system.modifiers.rolls.allActions",
+                "type": "add",
+                "value": "-3",
+                "phase": "initial",
+                "priority": 50
+              }
+            ],
+            "statuses": [],
+            "extras": [
+              {
+                "nameKey": "TRUDVANG.DamageOutcome.MartyrUnconscious",
+                "descriptionKey": "TRUDVANG.DamageOutcome.MartyrUnconsciousDescription",
+                "duration": "1d6 minutes",
+                "changes": [],
+                "statuses": [
+                  "unconscious"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sourceId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "note",
+        "base": 3,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.BleedingWounds",
+        "skillOnly": true,
+        "optionId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
+        "templates": [
+          "pain"
+        ]
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.PainResistance",
+        "skillOnly": true,
+        "optionId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:3",
+        "templates": [
+          "pain"
+        ]
+      }
+    ]
   },
   "holy-tenetnid-tablet-of-grace:holy-mending:1#effect": {
     "id": "effect",
@@ -13970,6 +14175,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally",
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy"
   ],
+  "holy-gerbanis-wrath-of-tyrd:firestorm:6": [
+    "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns"
+  ],
   "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": [
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy"
@@ -14185,6 +14393,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-tenetnid-tablet-of-anger:stone-monument:8#monument-en-pierre",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-half",
     "holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds"
+  ],
+  "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": [
+    "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain"
   ],
   "holy-tenetnid-tablet-of-grace:holy-mending:1": [
     "holy-tenetnid-tablet-of-grace:holy-mending:1#effect"

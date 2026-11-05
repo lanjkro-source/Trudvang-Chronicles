@@ -1,0 +1,53 @@
+{
+  "_id": "TGknXSjPkQlRmSnT",
+  "_key": "!items!TGknXSjPkQlRmSnT",
+  "name": "Brûlures — Tempête de feu",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+    "description": "Les dégâts des brûlures sont infligés une seule fois à l’application, sans protection d’armure. Les brûlures imposent −2 à la VC de toutes les actions de combat pendant le tour de jeu en cours et le suivant. Elles ne réinfligent pas leurs dégâts aux rounds suivants.",
+    "summary": "Les brûlures gênent les actions de combat.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "2VBBejLgMhNiOjPk",
+      "_key": "!items.effects!TGknXSjPkQlRmSnT.2VBBejLgMhNiOjPk",
+      "name": "Brûlures — Tempête de feu",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Les dégâts des brûlures sont infligés une seule fois à l’application, sans protection d’armure. Les brûlures imposent −2 à la VC de toutes les actions de combat pendant le tour de jeu en cours et le suivant. Elles ne réinfligent pas leurs dégâts aux rounds suivants.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
+            "summary": "Les brûlures gênent les actions de combat.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

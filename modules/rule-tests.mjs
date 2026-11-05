@@ -12,6 +12,7 @@ function flag(document, key) {
 }
 
 export function ruleTestsForDocument(document) {
+  if(document?.flags?.[SYSTEM_ID]?.transformation?.resistanceConsequence)return [];
   const configured = document?.flags?.[SYSTEM_ID]?.consequenceTests;
   if (Array.isArray(configured)) return configured.map(test => ({...test, action: test.actionKey ? game.i18n.localize(test.actionKey) : test.action}));
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId

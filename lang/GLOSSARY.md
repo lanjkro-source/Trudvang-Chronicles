@@ -12413,6 +12413,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.SourcePage` | 171 | 221 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.Duration` | 3 action rounds | 3 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.Name` | Burns — Firestorm | Brûlures — Tempête de feu |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.Description` | Burn damage is inflicted once on application, ignoring armor. Burns impose −2 to all combat actions during the current and following round. They do not deal damage again in later rounds. | Les dégâts des brûlures sont infligés une seule fois à l’application, sans protection d’armure. Les brûlures imposent −2 à la VC de toutes les actions de combat pendant le tour de jeu en cours et le suivant. Elles ne réinfligent pas leurs dégâts aux rounds suivants. |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.SourceName` | Firestorm | Tempête de feu |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns.Duration` | 2 rounds | 2 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally`
 
 | Clé | English | Français |
@@ -13213,12 +13224,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Name` | Psychological pain — Power of Blood | Douleur psychologique — Puissance du sang |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Description` | Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance. | À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Name` | Wounds — Power of Blood | Blessures — Puissance du sang |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Description` | A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result. | Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourceName` | Power of Blood | Puissance du sang |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourcePage` | 194 | 250 |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Duration` | 1d6 hours | 1d6 heures |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Duration` | endOfDay | endOfDay |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies`
 
@@ -13235,8 +13246,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Name` | Psychological pain — Visions of the Oak | Douleur psychologique — Visions du chêne |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Description` | Apply after a failed Psyche Situation roll (base value 8). The victim suffers −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of the resistance result. | À appliquer après un échec au test de situation de Psychisme (valeur de base 8). La victime subit −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants du résultat de la résistance. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Name` | Wounds — Visions of the Oak | Blessures — Visions du chêne |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.Description` | A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result. | Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourceName` | Visions of the Oak | Visions du chêne |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain.SourcePage` | 194 | 251 |
@@ -13307,6 +13318,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.SourcePage` | 194 | 252 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-monument:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.Name` | Wounds — Memory of a Martyr | Blessures — Souvenir du martyr |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.Description` | A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result. | Une carte de dégâts est créée à l’application. La résistance sur cette carte concerne uniquement les conséquences psychologiques : les dégâts physiques restent dus même si elle réussit. Les effets et leurs durées sont déterminés automatiquement par le résultat. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.SourceName` | Memory of a Martyr | Souvenir du martyr |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.SourcePage` | 194 | 252 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain.Duration` | endOfDay | endOfDay |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-grace:holy-mending:1#effect`
 
@@ -15330,9 +15352,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ActorTargetRequired` | This effect must be applied to an actor. | Cet effet doit être appliqué à un personnage. |
 | `TRUDVANG.Transformation.DeathHandResistance` | Constitution resistance | Résistance de Constitution |
 | `TRUDVANG.Transformation.DamageSteps` | Additional damage steps | Degrés supplémentaires de dégâts |
-| `TRUDVANG.Transformation.BurnCount` | Burns per victim | Brûlures par victime |
-| `TRUDVANG.Transformation.BleedingWounds` | Wounds per victim | Blessures par victime |
-| `TRUDVANG.Transformation.PainResistance` | Psyche resistance | Résistance de Psychisme |
+| `TRUDVANG.Transformation.BurnCount` | Burns per victim: {value} | Brûlures par victime : {value} |
+| `TRUDVANG.Transformation.BleedingWounds` | Wounds per victim: {value} | Blessures par victime : {value} |
+| `TRUDVANG.Transformation.PainResistance` | Psyche resistance (base): {value} | Résistance de Psychisme (base) : {value} |
 | `TRUDVANG.Transformation.FeverResistance` | Constitution resistance | Résistance de Constitution |
 | `TRUDVANG.Transformation.FrostResistance` | Resistance to fleeing | Résistance à la fuite |
 | `TRUDVANG.Transformation.FrostRadius` | Effective radius: {value} m | Rayon effectif : {value} m |
@@ -15669,3 +15691,24 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.PersistentDamage.FrostRecipient` | You suffer {damage} cold damage on entry and each round inside the area. Winter clothes reduce this to {winter}; mastomant fur prevents it. Armor offers no protection. The Psyche roll determines fleeing and does not reduce damage. | Vous subissez {damage} dégâts de froid à l’entrée puis à chaque round passé dans la zone. Les vêtements d’hiver réduisent ces dégâts à {winter} ; la fourrure de mastomant les annule. Les armures ne protègent pas. Le test de Psychisme concerne la fuite, sans réduire les dégâts. |
 | `TRUDVANG.PersistentDamage.Stay` | Resistance succeeded: remains in the cold. | Résistance réussie : reste dans le froid. |
 | `TRUDVANG.PersistentDamage.Flee` | Resistance failed: must flee the cold. | Résistance échouée : doit fuir le froid. |
+
+## `TRUDVANG.DamageOutcome`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.DamageOutcome.ResistPsychological` | Resist psychological consequences | Résister aux conséquences psychologiques |
+| `TRUDVANG.DamageOutcome.BloodPain` | Psychological pain — Power of Blood | Douleur psychologique — Puissance du sang |
+| `TRUDVANG.DamageOutcome.BloodDescription` | Pain imposes −1 to all Skill and Situation rolls for the indicated duration. Physical damage is independent of this pain. | La douleur impose −1 à tous les tests de compétence et de situation pendant la durée indiquée. Les dégâts physiques sont indépendants de cette douleur. |
+| `TRUDVANG.DamageOutcome.BloodSuccess` | Resistance succeeded: no lasting pain; physical damage is still suffered. | Résistance réussie : aucune douleur persistante ; les dégâts restent dus. |
+| `TRUDVANG.DamageOutcome.BloodFailure` | Resistance failed: −1 to tests for 1d6 hours. | Résistance échouée : −1 aux tests pendant 1d6 heures. |
+| `TRUDVANG.DamageOutcome.OakPain` | Psychological pain — Visions of the Oak | Douleur psychologique — Visions du chêne |
+| `TRUDVANG.DamageOutcome.OakDescription` | Pain imposes −3 to all Skill and Situation rolls until the end of the day. Physical damage is independent of this pain. | La douleur impose −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. Les dégâts physiques sont indépendants de cette douleur. |
+| `TRUDVANG.DamageOutcome.OakSuccess` | Resistance succeeded: no lasting pain; physical damage is still suffered. | Résistance réussie : aucune douleur persistante ; les dégâts restent dus. |
+| `TRUDVANG.DamageOutcome.OakFailure` | Resistance failed: −3 to tests until the end of the day. | Résistance échouée : −3 aux tests jusqu’à la fin de la journée. |
+| `TRUDVANG.DamageOutcome.MartyrPain` | Psychological pain — Memory of a Martyr | Douleur psychologique — Souvenir du martyr |
+| `TRUDVANG.DamageOutcome.MartyrSuccessDescription` | Pain imposes −3 to all Skill and Situation rolls for the indicated duration, determined by 1d6 hours when resistance was resolved. | La douleur impose −3 à tous les tests de compétence et de situation pendant la durée indiquée, déterminée par 1d6 heures lors de la résistance. |
+| `TRUDVANG.DamageOutcome.MartyrFailureDescription` | Pain imposes −3 to all Skill and Situation rolls until the end of the day. Unconsciousness is tracked by a separate effect with its own duration. | La douleur impose −3 à tous les tests de compétence et de situation jusqu’à la fin de la journée. L’inconscience est suivie par un effet séparé, avec sa propre durée. |
+| `TRUDVANG.DamageOutcome.MartyrSuccess` | Resistance succeeded: −3 to tests for 1d6 hours. | Résistance réussie : −3 aux tests pendant 1d6 heures. |
+| `TRUDVANG.DamageOutcome.MartyrFailure` | Resistance failed: −3 to tests until the end of the day and unconsciousness for 1d6 minutes. | Résistance échouée : −3 aux tests jusqu’à la fin de la journée et inconscience pendant 1d6 minutes. |
+| `TRUDVANG.DamageOutcome.MartyrUnconscious` | Unconsciousness — Memory of a Martyr | Inconscience — Souvenir du martyr |
+| `TRUDVANG.DamageOutcome.MartyrUnconsciousDescription` | The victim is unconscious for the indicated duration, determined by 1d6 minutes. This condition expires independently of psychological pain. | La victime est inconsciente pendant la durée indiquée, déterminée par 1d6 minutes. Cet état expire indépendamment de la douleur psychologique. |

@@ -1,0 +1,45 @@
+{
+  "_id": "asyqnRiOjPkQlRmS",
+  "_key": "!items!asyqnRiOjPkQlRmS",
+  "name": "Wounds — Memory of a Martyr",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+    "description": "A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result.",
+    "summary": "Wounds cause damage and may leave psychological consequences.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "fjeNPbHcIdJeKfLg",
+      "_key": "!items.effects!asyqnRiOjPkQlRmS.fjeNPbHcIdJeKfLg",
+      "name": "Wounds — Memory of a Martyr",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "A damage card is created on application. Its resistance roll concerns only psychological consequences: physical damage is still suffered on success. Effects and their durations are determined automatically by the result.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7#pain",
+            "sourceId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
+            "summary": "Wounds cause damage and may leave psychological consequences.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

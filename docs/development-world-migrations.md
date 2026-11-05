@@ -145,3 +145,5 @@ Les replis sur `context.counts[p.index]` dans `modules/rules/magic-resistance.mj
 La version 3 corrige aussi les copies non personnalisées des trois attaques de Jorn (armures magiques encore applicables) et des blessures de Nid (aucune protection, naturelle comprise). Les autres profils sont conservés.
 
 La version 4 remplace uniquement l’ancien profil exact de Main funeste par la protection exclusive des armures en grindsilver ; elle ne modifie pas les profils personnalisés.
+
+`legacyResistanceConsequence()` dans `modules/transformations.mjs` porte le commentaire `TEMPORARY WORLD MIGRATION` : les copies résolues des anciens effets Douleur de Puissance du sang et Visions du chêne (ancien malus exact, sans métadonnée d’issue de résistance) sont marquées comme conséquences, afin de ne pas rejouer les dégâts physiques lors du dépôt. Aucun champ ni effet personnalisé différent n’est réécrit. Retirer ce repli et son appel lors de la suppression des anciens mondes de développement ; le marqueur normal `resistanceConsequence` reste nécessaire.

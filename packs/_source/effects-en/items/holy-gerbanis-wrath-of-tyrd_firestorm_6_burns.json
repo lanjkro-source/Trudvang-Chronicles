@@ -1,0 +1,53 @@
+{
+  "_id": "TGknXSjPkQlRmSnT",
+  "_key": "!items!TGknXSjPkQlRmSnT",
+  "name": "Burns — Firestorm",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+    "description": "Burn damage is inflicted once on application, ignoring armor. Burns impose −2 to all combat actions during the current and following round. They do not deal damage again in later rounds.",
+    "summary": "Burns hinder combat actions.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "2VBBejLgMhNiOjPk",
+      "_key": "!items.effects!TGknXSjPkQlRmSnT.2VBBejLgMhNiOjPk",
+      "name": "Burns — Firestorm",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Burn damage is inflicted once on application, ignoring armor. Burns impose −2 to all combat actions during the current and following round. They do not deal damage again in later rounds.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
+            "summary": "Burns hinder combat actions.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

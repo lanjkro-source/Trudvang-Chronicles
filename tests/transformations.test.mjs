@@ -16,7 +16,7 @@ const {applyTransformation,resolveDuration,transformationLinks,syncTransformatio
 const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
-test('Power of Blood offers a separate pain effect with minus one to tests and a rolled hourly duration',async t=>{
+test('Power of Blood waits for psychological resistance before imposing its pain penalty',async t=>{
  const previous={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
  t.after(()=>Object.assign(globalThis,previous));
  const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
@@ -29,9 +29,17 @@ test('Power of Blood offers a separate pain effect with minus one to tests and a
  const id='holy-tenetnid-tablet-of-anger:power-of-blood:0';
  assert.match(transformationLinks({system:{catalogId:id}}),/pain/);
  await applyTransformation(actor,id+'#pain',{skipDialog:true});
- assert.equal(rolls,1);assert.deepEqual(created.duration,{value:4,units:'hours'});
- assert.deepEqual(created.system.changes.map(change=>[change.key,change.value]),[['system.modifiers.rolls.allActions','-1']]);
- assert.match(created.description,/uniquement si la cible échoue/);
+ assert.equal(rolls,0);assert.deepEqual(created.system.changes,[]);
+ assert.match(created.description,/conséquences psychologiques/);
+ const pending=structuredClone(created);
+ for(const marked of [false,true]){
+  const copied={documentName:'ActiveEffect',...structuredClone(pending),duration:{value:4,units:'hours'}};
+  copied.system.changes=[{key:'system.modifiers.rolls.allActions',type:'add',value:'-1',phase:'initial',priority:10}];
+  if(marked)copied.flags[S].transformation.resistanceConsequence=true;
+  await applyTransformation(actor,id+'#pain',{source:copied,skipDialog:true});
+  assert.equal(created.flags[S].transformation.resistanceConsequence,true);
+  assert.equal(created.system.changes[0].value,'-1');assert.equal(rolls,0);
+ }
 });
 test('Visions of the Oak expires at midnight and keeps the exact all-test penalty',async t=>{
  const previous=globalThis.game;t.after(()=>{globalThis.game=previous;});
@@ -41,7 +49,7 @@ test('Visions of the Oak expires at midnight and keeps the exact all-test penalt
  let created;const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
  await applyTransformation(actor,'holy-tenetnid-tablet-of-anger:visions-of-the-oak:3#pain',{skipDialog:true});
  assert.deepEqual(created.duration,{value:6,units:'hours'});
- assert.equal(created.system.changes.find(change=>change.key==='system.modifiers.rolls.allActions').value,'-3');
+ assert.deepEqual(created.system.changes,[]);
 });
 test("deleting an item effect does not treat its item as a token-bearing actor",async()=>{
  const previous={Hooks:globalThis.Hooks,document:globalThis.document};const hooks=new Map();
@@ -72,7 +80,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,335);
+ assert.equal(Object.keys(sources).length,337);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
