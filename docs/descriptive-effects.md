@@ -89,3 +89,13 @@ nombre. Pour Peur, la résistance préalable reste à effectuer ; son rappel est
 affiché dans la confirmation et dans le détail de la carte de peur. La fuite des
 animaux de Figure sinistre et du Grondement de Tyrd reste narrative. Ces cris
 instantanés ne créent pas d’aura persistante ni de source lumineuse.
+
+## Dégâts divins et blessures — 5 novembre 2026
+
+Quinze sources supplémentaires définissent leur jet de dégâts dans les JSON FR/EN : Tisonnier, Tempête de feu, Souffle de mort, Souffle de Mogunda, Volonté de Bodvilur, Éclair sacré, Explosion sacrée, Purification divine, Puissance du sang, Visions du chêne, Souvenir du martyr, Bannissement, Emprisonnement, Souffle du hrimtroll et Corps de glace du hrimtroll. Sources : Livre des règles p. 220–223, 250–253, 259, 276–277 et Emprisonnement ; Player’s Handbook, Fire Iron/Firestorm, Influence of Jorn, Tablet of Anger, Banishment, Power of the Thurses et Imprison.
+
+Les améliorations du lancement déterminent les paliers JO, le nombre de brûlures ou les dégâts additionnels, y compris les options sans plafond. Le détail du calcul affiche le profil initial et le profil amélioré. Les dégâts fixes utilisent zéro dé sans animation artificielle. Les projectiles de Gave sont lancés **par projectile**, pas multipliés par le nombre de cibles. Les brûlures et plaies sont cumulées **par victime**. Les trois attaques de Jorn permettent les armures magiques ; les plaies de Nid et Bannissement ignorent toute protection.
+
+Les jets des deux auras de givre représentent les dégâts **d’un tour**, déclenchés manuellement ; leurs auras existantes sont conservées, sans nouvelle aura ni lumière. Les vêtements adaptés et le choix des bénéficiaires admissibles (morts-vivants/démons), la portée et le nombre de projectiles restent sous contrôle du MJ. Emprisonnement propose les dégâts du contact avec la paroi ; les dégâts distincts de traversée forcée restent à déclencher séparément. Les malus et tests déjà présents ne sont pas remplacés.
+
+Main funeste et Vrille de Dimhall restent à compléter pour proposer distinctement les dégâts des cibles supplémentaires qui subissent la version de base, ainsi que la protection propre au grindsilver pour Main funeste.

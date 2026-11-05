@@ -1306,11 +1306,46 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:death-gust:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d5",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "holy-gerbanis-influence-of-jorn:death-gust:0:1",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "magical"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "none"
+      "protection": "magical"
     },
     "powerLevels": [
       {
@@ -1389,11 +1424,42 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:1",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "magical"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "none"
+      "protection": "magical"
     },
     "powerLevels": [
       {
@@ -1474,11 +1540,42 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:1",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "magical"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "none"
+      "protection": "magical"
     },
     "powerLevels": [
       {
@@ -2591,6 +2688,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:fire-iron:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 1",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-gerbanis-wrath-of-tyrd:fire-iron:0:0",
+        "dice": 0,
+        "modifier": 1
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "fire",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -2615,6 +2731,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:firestorm:6": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "2d3 + 2",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-gerbanis-wrath-of-tyrd:firestorm:6:0",
+        "dice": 1,
+        "modifier": 1
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "fire",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -3855,6 +3990,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 1",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:4",
+        "dice": 0,
+        "modifier": 1
+      },
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "cold",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "normal",
       "delivery": "other",
@@ -4029,6 +4183,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 1",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:3",
+        "dice": 0,
+        "modifier": 1
+      },
+      "qualification": {
+        "nature": "normal",
+        "delivery": "other",
+        "type": "cold",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "normal",
       "delivery": "other",
@@ -5279,6 +5452,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:divine-purge:6": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10 + 6",
+          "openRoll": 8
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:divine-purge:6:1",
+        "dice": 0,
+        "modifier": 3
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "lightning",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -5308,6 +5500,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:holy-bolt:1:1",
+        "dice": 0,
+        "modifier": 3
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "lightning",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -5332,11 +5543,30 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 6",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
+        "dice": 0,
+        "modifier": 2
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "normal"
+      "protection": "none"
     },
     "powerLevels": [
       {
@@ -5366,11 +5596,30 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 1",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
+        "dice": 0,
+        "modifier": 1
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "normal"
+      "protection": "none"
     },
     "powerLevels": [
       {
@@ -5395,6 +5644,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10 + 3",
+          "openRoll": 8
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:sacred-burst:4:1",
+        "dice": 0,
+        "modifier": 3
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "lightning",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -5505,11 +5773,30 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "0d10 + 4",
+          "openRoll": 0
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
+        "dice": 0,
+        "modifier": 2
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "normal"
+      "protection": "none"
     },
     "powerLevels": [
       {
@@ -6001,6 +6288,25 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:banishment:7": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10 + 5",
+          "openRoll": 8
+        }
+      ],
+      "scaling": {
+        "optionId": "holy-tenetnid-tablet-of-the-shield:banishment:7:1",
+        "dice": 0,
+        "modifier": 5
+      },
+      "qualification": {
+        "nature": "magical",
+        "delivery": "ranged",
+        "type": "other",
+        "protection": "none"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "ranged",
@@ -8653,6 +8959,41 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:imprison:10": {
     "isRune": false,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d5",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 7
+        }
+      ],
+      "optionId": "vitner-body-vitner:imprison:10:4",
+      "qualification": {
+        "nature": "magical",
+        "delivery": "other",
+        "type": "lightning",
+        "protection": "normal"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "other",

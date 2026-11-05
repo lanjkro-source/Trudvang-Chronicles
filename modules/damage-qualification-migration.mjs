@@ -3,6 +3,12 @@ import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {CREATURE_ABILITY_ENTRIES} from "./creature-ability-data.mjs";
 
 const legacyPowerProfiles = {
+  "holy-gerbanis-influence-of-jorn:death-gust:0": {"nature":"magical","delivery":"ranged","type":"other","protection":"none"},
+  "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {"nature":"magical","delivery":"ranged","type":"other","protection":"none"},
+  "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {"nature":"magical","delivery":"ranged","type":"other","protection":"none"},
+  "holy-tenetnid-tablet-of-anger:power-of-blood:0": {"nature":"magical","delivery":"ranged","type":"other","protection":"normal"},
+  "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {"nature":"magical","delivery":"ranged","type":"other","protection":"normal"},
+  "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {"nature":"magical","delivery":"ranged","type":"other","protection":"normal"},
   "vitner-dimvitner:darkness-of-dimhall:8": {nature:"magical",delivery:"other",type:"other",protection:"magicalOrGrindsilver"},
   "vitner-soil-craft:earthquake:2": {nature:"normal",delivery:"other",type:"bludgeoning",protection:"normal"},
   "vitner-flame-craft:flame-burst:3": {nature:"normal",delivery:"other",type:"fire",protection:"magical"},
@@ -14,7 +20,7 @@ const sameQualification = (left = {}, right = {}) => ["nature", "delivery", "typ
   .every(key => String(left[key] ?? "") === String(right[key] ?? ""));
 
 /** TEMPORARY WORLD MIGRATION: pre-qualification development worlds have neither
- * natural-weapon materials nor the catalog's reviewed damage metadata. Version 2
+ * natural-weapon materials nor the catalog's reviewed damage metadata. Version 3
  * updates only profiles that still match the exact pre-review defaults. It never
  * overwrites a qualification that differs from those defaults. */
 export async function migrateDamageQualifications() {
@@ -26,7 +32,7 @@ export async function migrateDamageQualifications() {
   const items = [...(game.items ?? []), ...Array.from(actors.values()).flatMap(actor => Array.from(actor.items ?? []))];
   const abilityById = new Map(CREATURE_ABILITY_ENTRIES.map(entry => [entry.id, entry]));
   for (const item of items) {
-    if (!item.isOwner || Number(item.getFlag("trudvang-chronicles", "damageQualificationVersion") ?? 0) >= 2) continue;
+    if (!item.isOwner || Number(item.getFlag("trudvang-chronicles", "damageQualificationVersion") ?? 0) >= 3) continue;
     const flags = item.flags?.["trudvang-chronicles"] ?? {};
     const powerId = item.system?.catalogId || flags.catalogId;
     const power = POWER_DETAILS_BY_ID[powerId];
@@ -39,7 +45,7 @@ export async function migrateDamageQualifications() {
     const stored = sourceSystem.damageQualification ?? (natural
       ? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}
       : item.system?.damageQualification ?? {});
-    const update = {"flags.trudvang-chronicles.damageQualificationVersion": 2};
+    const update = {"flags.trudvang-chronicles.damageQualificationVersion": 3};
     if (natural) {
       const oldNaturalDefault = {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""};
       if (sameQualification(stored, oldNaturalDefault)) {

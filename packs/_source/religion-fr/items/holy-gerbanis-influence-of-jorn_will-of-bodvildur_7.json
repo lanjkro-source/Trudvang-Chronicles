@@ -23,7 +23,7 @@
       "nature": "magical",
       "delivery": "ranged",
       "type": "other",
-      "protection": "none"
+      "protection": "magical"
     },
     "damageQualificationNote": "",
     "spellType": "instant",

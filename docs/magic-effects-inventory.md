@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 314 ; avec jet de dégâts magique : 18 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 314 ; avec jet de dégâts magique : 33 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -117,7 +117,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner corporel | Peau de cuir | sortilège | `vitner-body-vitner:leather-skin:5` | 4 | 0 | 1 | — | — |
 | Vitner corporel | Hâte | sortilège | `vitner-body-vitner:hasten:9` | 7 | 1 | 2 | — | — |
 | Vitner corporel | Vigueur | sortilège | `vitner-body-vitner:strengthen:8` | 7 | 1 | 2 | — | — |
-| Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 1 | — | — |
+| Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 1 | oui | — |
 | Vitner corporel | Transformation | sortilège | `vitner-body-vitner:change-creature:11` | 11 | 1 | 1 | — | — |
 | Vitner illusoire | Amplification des sons | sortilège | `vitner-delusion-vitner:increase-sounds:3` | 4 | 0 | 2 | — | — |
 | Vitner illusoire | Grondement | sortilège | `vitner-delusion-vitner:roar:0` | 3 | 0 | 0 | — | — |
@@ -159,22 +159,22 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Force de Storme | Voix de Storme | pouvoir | `holy-gerbanis-strength-of-stormi:voice-of-stormi:7` | 4 | 1 | 1 | — | — |
 | Force de Storme | Einharjar | pouvoir | `holy-gerbanis-strength-of-stormi:einharjar:8` | 3 | 0 | 1 | — | — |
 | Fureur de Tyrd | Cri de bataille | pouvoir | `holy-gerbanis-wrath-of-tyrd:battle-cry:1` | 4 | 0 | 1 | — | — |
-| Fureur de Tyrd | Tisonnier | pouvoir | `holy-gerbanis-wrath-of-tyrd:fire-iron:0` | 2 | 0 | 0 | — | — |
+| Fureur de Tyrd | Tisonnier | pouvoir | `holy-gerbanis-wrath-of-tyrd:fire-iron:0` | 2 | 0 | 0 | oui | — |
 | Fureur de Tyrd | Langue du loup | pouvoir | `holy-gerbanis-wrath-of-tyrd:wolf-tongue:2` | 2 | 0 | 0 | — | oui |
 | Fureur de Tyrd | Marque du brasier | pouvoir | `holy-gerbanis-wrath-of-tyrd:pyre-mark:3` | 3 | 0 | 0 | — | — |
 | Fureur de Tyrd | Cri de guerre | pouvoir | `holy-gerbanis-wrath-of-tyrd:war-cry:4` | 6 | 0 | 2 | — | — |
 | Fureur de Tyrd | Figure sinistre | pouvoir | `holy-gerbanis-wrath-of-tyrd:dark-visage:5` | 3 | 0 | 0 | — | oui |
-| Fureur de Tyrd | Tempête de feu | pouvoir | `holy-gerbanis-wrath-of-tyrd:firestorm:6` | 2 | 0 | 0 | — | — |
+| Fureur de Tyrd | Tempête de feu | pouvoir | `holy-gerbanis-wrath-of-tyrd:firestorm:6` | 2 | 0 | 0 | oui | — |
 | Fureur de Tyrd | Tonnerre victorieux | pouvoir | `holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7` | 4 | 0 | 2 | — | — |
 | Fureur de Tyrd | Grondement de Tyrd | pouvoir | `holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8` | 2 | 0 | 0 | — | oui |
 | Influence de Jorn | Mur du crépuscule | pouvoir | `holy-gerbanis-influence-of-jorn:wall-of-dusk:1` | 4 | 0 | 1 | — | — |
-| Influence de Jorn | Souffle de mort | pouvoir | `holy-gerbanis-influence-of-jorn:death-gust:0` | 2 | 0 | 0 | — | — |
+| Influence de Jorn | Souffle de mort | pouvoir | `holy-gerbanis-influence-of-jorn:death-gust:0` | 2 | 0 | 0 | oui | — |
 | Influence de Jorn | Falfax | pouvoir | `holy-gerbanis-influence-of-jorn:falfax:2` | 1 | 0 | 1 | — | — |
 | Influence de Jorn | Rideau de la nuit | pouvoir | `holy-gerbanis-influence-of-jorn:night-curtain:3` | 5 | 0 | 1 | — | — |
 | Influence de Jorn | Manteau de Jorn | pouvoir | `holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4` | 5 | 0 | 1 | — | — |
-| Influence de Jorn | Souffle de Mogunda | pouvoir | `holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5` | 2 | 0 | 0 | — | — |
+| Influence de Jorn | Souffle de Mogunda | pouvoir | `holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5` | 2 | 0 | 0 | oui | — |
 | Influence de Jorn | Svartasi | pouvoir | `holy-gerbanis-influence-of-jorn:asiblack:6` | 1 | 0 | 1 | — | — |
-| Influence de Jorn | Volonté de Bodvilur | pouvoir | `holy-gerbanis-influence-of-jorn:will-of-bodvildur:7` | 2 | 0 | 0 | — | — |
+| Influence de Jorn | Volonté de Bodvilur | pouvoir | `holy-gerbanis-influence-of-jorn:will-of-bodvildur:7` | 2 | 0 | 0 | oui | — |
 | Influence de Jorn | Snarfari | pouvoir | `holy-gerbanis-influence-of-jorn:snarfari:8` | 1 | 0 | 1 | — | — |
 | Pouvoir d'Enken | Force d’âme | pouvoir | `holy-gerbanis-power-of-enken:willpower:1` | 2 | 0 | 1 | — | — |
 | Pouvoir d'Enken | Vision nocturne | pouvoir | `holy-gerbanis-power-of-enken:night-vision:0` | 3 | 0 | 1 | — | — |
@@ -248,15 +248,15 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Utilité de Nema | Sens du griffon | pouvoir | `holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7` | 3 | 1 | 1 | — | — |
 | Utilité de Nema | Vent libérateur | pouvoir | `holy-ealdtradition-nema-s-usefulness:liberating-wind:6` | 2 | 2 | 0 | — | — |
 | Utilité de Nema | Voyage de Mongfind | pouvoir | `holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8` | 2 | 0 | 1 | — | — |
-| Tablette de la colère | Éclair sacré | pouvoir | `holy-tenetnid-tablet-of-anger:holy-bolt:1` | 2 | 0 | 0 | — | — |
-| Tablette de la colère | Puissance du sang | pouvoir | `holy-tenetnid-tablet-of-anger:power-of-blood:0` | 3 | 1 | 0 | — | — |
+| Tablette de la colère | Éclair sacré | pouvoir | `holy-tenetnid-tablet-of-anger:holy-bolt:1` | 2 | 0 | 0 | oui | — |
+| Tablette de la colère | Puissance du sang | pouvoir | `holy-tenetnid-tablet-of-anger:power-of-blood:0` | 3 | 1 | 0 | oui | — |
 | Tablette de la colère | Sens pétrifiés | pouvoir | `holy-tenetnid-tablet-of-anger:stone-senses:2` | 3 | 0 | 1 | — | — |
-| Tablette de la colère | Visions du chêne | pouvoir | `holy-tenetnid-tablet-of-anger:visions-of-the-oak:3` | 4 | 1 | 0 | — | — |
-| Tablette de la colère | Explosion sacrée | pouvoir | `holy-tenetnid-tablet-of-anger:sacred-burst:4` | 3 | 0 | 0 | — | — |
+| Tablette de la colère | Visions du chêne | pouvoir | `holy-tenetnid-tablet-of-anger:visions-of-the-oak:3` | 4 | 1 | 0 | oui | — |
+| Tablette de la colère | Explosion sacrée | pouvoir | `holy-tenetnid-tablet-of-anger:sacred-burst:4` | 3 | 0 | 0 | oui | — |
 | Tablette de la colère | Statue | pouvoir | `holy-tenetnid-tablet-of-anger:statue:5` | 3 | 1 | 3 | — | — |
-| Tablette de la colère | Purification divine | pouvoir | `holy-tenetnid-tablet-of-anger:divine-purge:6` | 3 | 0 | 0 | — | — |
+| Tablette de la colère | Purification divine | pouvoir | `holy-tenetnid-tablet-of-anger:divine-purge:6` | 3 | 0 | 0 | oui | — |
 | Tablette de la colère | Monument en pierre | pouvoir | `holy-tenetnid-tablet-of-anger:stone-monument:8` | 3 | 1 | 3 | — | — |
-| Tablette de la colère | Souvenir du martyr | pouvoir | `holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7` | 4 | 1 | 0 | — | — |
+| Tablette de la colère | Souvenir du martyr | pouvoir | `holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7` | 4 | 1 | 0 | oui | — |
 | Tablette de la grâce | Main de la miséricorde | pouvoir | `holy-tenetnid-tablet-of-grace:hand-of-mercy:0` | 1 | 1 | 0 | — | — |
 | Tablette de la grâce | Soins sacrés | pouvoir | `holy-tenetnid-tablet-of-grace:holy-mending:1` | 1 | 0 | 1 | — | — |
 | Tablette de la grâce | Esprit de la vie | pouvoir | `holy-tenetnid-tablet-of-grace:life-spirit:3` | 3 | 0 | 0 | — | — |
@@ -282,7 +282,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette du bouclier | Impuissance des démons | pouvoir | `holy-tenetnid-tablet-of-the-shield:demonic-impotence:5` | 2 | 0 | 1 | — | — |
 | Tablette du bouclier | Peau d’écorce | pouvoir | `holy-tenetnid-tablet-of-the-shield:bark-skin:4` | 3 | 0 | 1 | — | — |
 | Tablette du bouclier | Résistance au vitner | pouvoir | `holy-tenetnid-tablet-of-the-shield:vitner-resistance:6` | 3 | 1 | 1 | — | — |
-| Tablette du bouclier | Bannissement | pouvoir | `holy-tenetnid-tablet-of-the-shield:banishment:7` | 2 | 0 | 0 | — | — |
+| Tablette du bouclier | Bannissement | pouvoir | `holy-tenetnid-tablet-of-the-shield:banishment:7` | 2 | 0 | 0 | oui | — |
 | Tablette du bouclier | Refuge arboricole | pouvoir | `holy-tenetnid-tablet-of-the-shield:tree-port:8` | 3 | 1 | 1 | — | — |
 | Tablette du chevalier | Armure bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-armor:0` | 4 | 0 | 1 | — | — |
 | Tablette du chevalier | Lance bénie | pouvoir | `holy-tenetnid-tablet-of-the-knight:blessed-spear:1` | 4 | 0 | 1 | — | — |
@@ -343,10 +343,10 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des tursirs | Force du stenhinje | pouvoir | `holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3` | 2 | 0 | 1 | — | — |
 | Puissance des tursirs | Fureur de l’ogre des montagnes | pouvoir | `holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2` | 3 | 0 | 1 | — | — |
 | Puissance des tursirs | Folie de l’ogre des montagnes | pouvoir | `holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4` | 4 | 0 | 1 | — | — |
-| Puissance des tursirs | Souffle du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5` | 5 | 1 | 0 | — | — |
+| Puissance des tursirs | Souffle du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5` | 5 | 1 | 0 | oui | — |
 | Puissance des tursirs | Force du tursir | pouvoir | `holy-haminges-power-of-the-thurses:thurse-strength:7` | 2 | 0 | 1 | — | — |
 | Puissance des tursirs | Rage du destructeur | pouvoir | `holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6` | 4 | 0 | 1 | — | — |
-| Puissance des tursirs | Corps de glace du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8` | 4 | 1 | 0 | — | — |
+| Puissance des tursirs | Corps de glace du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8` | 4 | 1 | 0 | oui | — |
 | Puissance du dragon | Constriction | pouvoir | `holy-haminges-power-of-the-dragon:constriction:0` | 2 | 0 | 0 | — | — |
 | Puissance du dragon | Ravage du huvfurwurm | pouvoir | `holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1` | 1 | 0 | 1 | — | — |
 | Puissance du dragon | Fils des flammes | pouvoir | `holy-haminges-power-of-the-dragon:flame-hardened:2` | 2 | 0 | 1 | — | — |

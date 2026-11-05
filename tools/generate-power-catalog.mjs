@@ -99,6 +99,7 @@ for (const id of [...french.keys()].sort()) {
     }
   if(f.damageRoll){
     const d=f.damageRoll;
+    if(d.scaling&&(!f.powerLevels.some(p=>p.optionId===d.scaling.optionId)||!['dice','modifier'].some(k=>Number(d.scaling[k])>0)||['dice','modifier'].some(k=>d.scaling[k]!==undefined&&(!Number.isInteger(d.scaling[k])||d.scaling[k]<0))))fail(`${id}: invalid damage scaling`);
     const q=d.qualification;
     if(!q || !DAMAGE_NATURES.includes(q.nature) || !DAMAGE_TYPES.includes(q.type) || !DAMAGE_DELIVERIES.includes(q.delivery) || !DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
     if(!Array.isArray(d.steps)||!d.steps.length||d.steps.some(s=>!/^\d+d(?:3|4|5|6|10)(?:\s*\+\s*\d+)?$/i.test(s.formula)||!Number.isInteger(s.openRoll)||s.openRoll<0||s.openRoll>10)||

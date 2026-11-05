@@ -64,7 +64,8 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
   }
   const qualificationEffects = Array.from(item?.effects ?? []).filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false && !effect.duration?.expired).reduce((current,effect) => ({...current,...effectRules(effect).damageQualification}),{});
   const qualification = damageQualification({item, context:{...context,qualification:{...qualificationEffects,...context.qualification}}, usage});
-  return {resolution, rows, qualificationNote:context.qualificationNote ?? item?.system?.damageQualificationNote ?? "", qualification, weaponHit: usage!=="magic", magicalWeapon: qualification.nature === "magical", ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
+  rows.push(...(context.damageExplanations??[]));
+  return {resolution, rows, allowZeroDice:usage==="magic"&&resolution.parsed?.dice===0, qualificationNote:context.qualificationNote ?? item?.system?.damageQualificationNote ?? "", qualification, weaponHit: usage!=="magic", magicalWeapon: qualification.nature === "magical", ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
     parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base + transformationBonus,
     situational: finite(context.damageModifier), minimumTotal: resolution.minimumTotal};
 }

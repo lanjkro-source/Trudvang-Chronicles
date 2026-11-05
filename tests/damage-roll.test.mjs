@@ -65,6 +65,24 @@ test("cancelling magical damage creates no roll or chat card",async t=>{
  assert.equal(cards.length,0);assert.equal(rolls.length,0);
 });
 
+test("divine damage preserves burn counts, fixed wounds, unlimited bonuses and open-roll steps",()=>{
+ const profile=(id,index,levels)=>magicDamageProfile({system:{catalogId:id}},{sourceId:id,countsById:{[`${id}:${index}`]:levels}});
+ assert.equal(profile('holy-gerbanis-wrath-of-tyrd:firestorm:6',0,2).formula,'4d3 + 4');
+ assert.equal(profile('holy-tenetnid-tablet-of-anger:visions-of-the-oak:3',0,3).formula,'0d10 + 10');
+ assert.equal(profile('holy-tenetnid-tablet-of-anger:sacred-burst:4',1,100).formula,'1d10 + 303');
+ const gust=profile('holy-gerbanis-influence-of-jorn:death-gust:0',1,4);
+ assert.equal(gust.openRoll,8);assert.equal(gust.qualification.protection,'magical');
+ assert.equal(profile('vitner-body-vitner:imprison:10',4,5).openRoll,7);
+});
+
+test("fixed magical wounds confirm and publish their total without rolling a die or adding strength",async t=>{
+ const {cards,rolls,dialogs}=runtime(t,{response:{},results:[]});
+ const id='holy-tenetnid-tablet-of-anger:power-of-blood:0';
+ const total=await rollMagicDamage({document:{name:'Puissance du sang',system:{catalogId:id}},actor:{...actor(12),isOwner:true},context:{sourceId:id,countsById:{[`${id}:0`]:2}}});
+ assert.equal(total,3);assert.equal(rolls.length,0);assert.equal(cards.length,1);
+ assert.match(dialogs[0].content,/min="0"/);
+});
+
 test("the damage snapshot explains intrinsic, item, wearer and named actor effects once", () => {
   const item = weapon({damage: "2d10+3", damageBonus: 5, openRoll: 8});
   item._source = {system: {...item.system, damage: "1d10+1", damageBonus: 2, openRoll: 9}};
