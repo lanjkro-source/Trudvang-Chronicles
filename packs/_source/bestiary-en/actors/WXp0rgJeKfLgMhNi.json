@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -221,6 +228,12 @@
         "catalogId": "T8HavqRmSnToUpVq",
         "summary": "The sálhele can control animals.",
         "description": "<p>Since a sálhele has a difficult time walking, it is not uncommon for them to control animals to use as mounts. These can be anything from horses to big hounds or swine. The sálhele rides the animal until it collapses from exhaustion, at which point the skeleton will leave the beast behind to find a new riding companion.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 66
@@ -239,6 +252,12 @@
         "catalogId": "jqzjOTlRmSnToUpV",
         "summary": "Detects all living creatures within 100 m, regardless of concealment.",
         "description": "<p>Sálheles can sense living creatures within 100 meters. This means that they can find living creatures no matter how well the targets have hidden themselves.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 67
@@ -257,6 +276,12 @@
         "catalogId": "Wz4aZJeKfLgMhNiO",
         "summary": "The sálhele ignores lost limbs; immune to piercing weapons, half cutting damage, normal crushing damage.",
         "description": "<p>Since a sálhele is an undead creature, it takes no notice of damage. A skeleton that loses an arm or a leg keeps on fighting with the same ferocity. The only vital body part that the skeleton cannot lose is the head. If the skull is chopped off, the skeleton will fall into a bone pile and its spirit will depart for Misthal.</p><p>Since a skeleton consists mainly of empty space between bones, it takes different damage depending on the type of weapon used in the attack. Skeletons take no damage from arrows, piercing weapons (daggers), or thrust weapons (spears), and they take half damage from cutting weapons (swords). Crushing weapons (clubs and maces) deal normal damage.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 67
@@ -275,6 +300,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
         "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 39
@@ -293,6 +324,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20

@@ -92,6 +92,11 @@ for (const id of [...french.keys()].sort()) {
   validatePowerOptionIdentities(id, f.powerLevels, e.powerLevels);
   validatePowerTargeting(f,e);
   if(JSON.stringify(f.damageRoll??null)!==JSON.stringify(e.damageRoll??null))fail(`${id}: EN damage roll differs from FR`);
+    if(JSON.stringify(f.damageQualification??null)!==JSON.stringify(e.damageQualification??null))fail(`${id}: EN damage qualification differs from FR`);
+    if(f.damageQualification){
+      const q=f.damageQualification;
+      if(!DAMAGE_NATURES.includes(q.nature)||!DAMAGE_TYPES.includes(q.type)||!DAMAGE_DELIVERIES.includes(q.delivery)||!DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
+    }
   if(f.damageRoll){
     const d=f.damageRoll;
     const q=d.qualification;
@@ -120,6 +125,7 @@ for (const id of [...french.keys()].sort()) {
   powerDetails[id] = {
     isRune: rune,
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
+    ...(f.damageQualification ? {damageQualification:f.damageQualification} : {}),
     ...(f.fearRoll ? {fearRoll:f.fearRoll} : {}),
     ...(f.targeting ? {targeting: f.targeting} : {}),
     powerLevels: f.powerLevels.map(level => ({id: level.optionId, cost: level.cost, maxCount: level.maxCount ?? null})),

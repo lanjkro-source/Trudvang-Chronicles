@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "AAWA3VqWrXsYtZu0",
         "summary": "The grendel’s gaze makes even experienced warriors flee.",
         "description": "<p>A grendel is truly a horrible foe to face. Even the most experienced warriors flee at the sight of it, mainly due to its terrifying stare. When a victim meets the grendel’s gaze, the victim must make a situation roll with a situation value of 8 (Psyche modifiers apply). A successful roll means that the victim is unscathed by the ordeal. A failed roll means that the victim gains 1d10 (OR 9-10) Fear Points and a negative modifier of -4 on everything they do while in the presence of the grendel. This last modifier is in addition to normal modifiers from the Fear Level reached. The situation roll must be made the first time a specific Grendel is seen and whenever the GM thinks to be the case.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 77
@@ -78,6 +98,12 @@
         "catalogId": "UZodjJdJeKfLgMhN",
         "summary": "High natural protection and immunity to vitner spells and divine powers.",
         "description": "<p>The blood of the grendel seems to be full of dark vitner. Its mud-colored skin is also infused with dark vitner, which provides it with good protection (already counted in its very good natural armor).</p><p>The dark vitner blood also has the effect of making the grendel immune to both vitner spells and divine powers.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 77
@@ -96,6 +122,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20

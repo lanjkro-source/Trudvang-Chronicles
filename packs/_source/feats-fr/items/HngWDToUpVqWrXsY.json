@@ -7,6 +7,12 @@
     "catalogId": "HngWDToUpVqWrXsY",
     "summary": "Une fois par jour, le revenant inflige 2d10 (JO 9-10) peur à quiconque entend son hurlement.",
     "description": "<p>Une fois par jour, un revenant des tumulus peut pousser un effroyable hurlement qui terrorise quiconque l’entend. La victime accumule 2d10 (JO 9-10) points de peur.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 59

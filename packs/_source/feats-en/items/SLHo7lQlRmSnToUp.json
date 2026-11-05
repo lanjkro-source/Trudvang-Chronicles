@@ -7,6 +7,12 @@
     "catalogId": "SLHo7lQlRmSnToUp",
     "summary": "Gray skin conceals the goblin in caves: -4 to detect it while still, -8 while moving stealthily.",
     "description": "<p>The gray skin of the goblins gives them the ability to adapt to their background. Those that stand still against a cave wall are incredibly hard to detect (-4 on all skill rolls to discover the goblin), and goblins that are moving but trying to be sneaky are still very hard to spot (-8). Goblins that move through a cave without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 152

@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -58,6 +72,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -82,6 +103,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -250,6 +278,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
         "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 39
@@ -268,6 +302,12 @@
         "catalogId": "jrI2efIdJeKfLgMh",
         "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
         "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26
@@ -286,6 +326,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20
@@ -304,6 +350,12 @@
         "catalogId": "EVhUocGbHcIdJeKf",
         "summary": "The demon has wings that allow it to fly.",
         "description": "<p>The demon has wings that allow it to fly. Movement is decided by the GM.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 49
@@ -322,6 +374,12 @@
         "catalogId": "9MMfvcE9EaGbHcId",
         "summary": "Fire aura: damage each round according to distance, from 1d10 (OR 7-10) within 1 m to 1d10 at 5-10 m.",
         "description": "<p>The demon is on fire. Depending on how close someone stands to the demon, they obtain different amounts of damage points each action round according to the chart.</p><table><thead><tr><th>Distance</th><th>Damage per round</th></tr></thead><tbody><tr><td>Less than 1 m</td><td>1d10 (OR 7-10)</td></tr><tr><td>1-2 m</td><td>1d10 (OR 8-10)</td></tr><tr><td>2-3 m</td><td>1d10 (OR 9-10)</td></tr><tr><td>3-5 m</td><td>1d10 (OR 10)</td></tr><tr><td>5-10 m</td><td>1d10</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -340,6 +398,12 @@
         "catalogId": "MXNXW2x3y4z5A6B7",
         "summary": "The demon explodes upon death, dealing 1d10 (OR 7-10) damage within a 10-meter radius.",
         "description": "<p>When the demon dies the body explodes. Everyone within a radius of 10 meters obtain 1d10 (OR 7-10) damage points.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -358,6 +422,12 @@
         "catalogId": "1ItoEXoUpVqWrXsY",
         "summary": "The demon can launch its 2d20 spikes without CP: SV 12, range 14 m, 1d10 (OR 9-10) damage each.",
         "description": "<p>The body is covered in spikes which the demon can thrust at its victim without spending Combat Points. In total the body has 2d20 spikes that can be thrown with a SV 12 roll. They have range 14 meters and inflict 1d10 (OR 9-10). The demon usually does not throw more than 1 spike per round, unless the GM decides otherwise.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -376,6 +446,12 @@
         "catalogId": "EowN18C8D9EaGbHc",
         "summary": "The demon has additional body parts, such as extra attacking arms, granting bonus Combat Points.",
         "description": "<p>The demon has one or several body parts apart from their original ones. This can mean that the demons has extra Combat Points for attacks with these arms.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -394,6 +470,12 @@
         "catalogId": "pjrisUmSnToUpVqW",
         "summary": "The demon is immune to poisons, spells or prayers, and may be immune to ordinary weapons so that only magical weapons can harm it.",
         "description": "<p>The demon is immune to poison, spells or prayers. It can also be immune to normal weapons and can only be damaged by magical weapons.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -412,6 +494,12 @@
         "catalogId": "MxUgKE5A6B7C8D9E",
         "summary": "SV 14 within 30 m, 1d3 times/day, resist at situation value 6 (Psyche), duration 1d10 (OR 7-10) days, statue PV 20 / BV 200.",
         "description": "<p>The demon can petrify a victim that stands within 30 meters of the demon (SV 14) without spending Combat Points. The ability can be used 1d3 times per day and the duration of the petrification is 1d10 (OR 7-10) days. The armor of the victim and their clothes are also petrified; however, no magical object is affected.</p><p>The victim can try to resist the petrification by succeeding with a situational roll with a situation value of 6 (the trait Psyche modifies the roll). If the roll fails the victim is turned into stone. The stone that the victim is petrified into is very hard and close to unbreakable. In practice this means that the petrified person gains a protection value of 20 and a Break Value of 200. When the Break Value is lowered to 0 the person starts to take damage like normal and if the petrified person takes as much damage as double its Body Points this stone statue will be broken and the victim will die.</p><p>A creature that is petrified is in a constant state of sleep and cannot comprehend time that passes or what happens around him or her. The victim cannot affect anything that happens in its surroundings. When the duration has run out the victim returns to its original form. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja).</p><p>A petrified creature is not stuck in the ground in any way, but it can be moved by someone strong enough to do so. The petrified creature weighs around ten times the victim’s original weight.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -430,6 +518,12 @@
         "catalogId": "X4skapToUpVqWrXs",
         "summary": "Strong iron scales give the demon natural Protection Value 5-15, at the GM’s discretion.",
         "description": "<p>The body of the demon is covered in powerful iron scales which give the demon a very high armor value, between armor value 5 and 15 in natural protection, according to GM’s judgement.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -448,6 +542,12 @@
         "catalogId": "YoZXmLgMhNiOjPkQ",
         "summary": "The demon automatically regenerates 1d10 (OR 10) BP per round without spending CP.",
         "description": "<p>The demon regenerates 1d10 (OR 10) Body Points per action round. This ability is automatic and does not need any activation or Combat Point expense.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -466,6 +566,12 @@
         "catalogId": "7Aa9AMfLgMhNiOjP",
         "summary": "The demon has twice as many BP because its tolerance of pain is higher than other demons’.",
         "description": "<p>The demon’s tolerance of pain is higher than that of normal demons, therefore this demon has double Body Points.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -484,6 +590,12 @@
         "catalogId": "0kcBOcE9EaGbHcId",
         "summary": "Wounding the demon in close combat risks a splash (1-3 on 1d10, avoidable with Agility), dealing 1d6 damage and reducing exposed weapon and armor BV by 1d6.",
         "description": "<p>The demon’s blood functions like acid. People who, in close combat, create a wound on the demon can have the acid blood spew onto them (roll a luck roll with 1d10 where 1-3 means that the person gets acid blood on them). The person can avoid this by succeeding with a skill roll for the skill Agility, preferably with the Evade specialty. Should the roll fail the character takes 1d6 damage points (armor protects). The acid blood lessens the BV on the weapon that caused the damage by 1d6, the same goes for armor that is exposed to the acid blood.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "acid",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 46
@@ -502,6 +614,12 @@
         "catalogId": "FKo6KYqWrXsYtZu0",
         "summary": "Fire, acid, ice or lava: 1d3 attacks/day without CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide, 3d10 (OR 8-10) damage.",
         "description": "<p>The demon can breathe fire, acid, ice or even stone lava against its enemies. The demon can perform 1d3 breath attacks per day, after which it must wait until the next day before it can perform the attacks again. This breath weapon does not cost Combat Points. The range for the breath weapons is 1d10 (OR 9-10) +20 meters and forms a giant cone that in its largest reach has a diameter of 6 meters. All creatures within the range obtain 3d10 (OR 8-10) in damage.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -520,6 +638,12 @@
         "catalogId": "NbSmJfIdJeKfLgMh",
         "summary": "The demon can transfer damage suffered in combat to another creature within sight.",
         "description": "<p>The demon has the ability to choose if someone else is damaged instead of it when it is damaged in battle. The victim must be within sight of the demon. Sometimes an evil burn will show on the person that is chosen to receive the damage.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -538,6 +662,12 @@
         "catalogId": "NNBuQnQlRmSnToUp",
         "summary": "The demon can transform into a creature of its choice.",
         "description": "<p>The demon can transform into a creature of its choice.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 48
@@ -556,6 +686,12 @@
         "catalogId": "QqkRW8C8D9EaGbHc",
         "summary": "The demon is always first to attack during an action round.",
         "description": "<p>The demon moves very fast. The demon always attacks first during an action round.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 49
@@ -616,8 +752,8 @@
         "weavingTime": "3 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -711,10 +847,10 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "sustained",
@@ -782,8 +918,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -841,8 +977,8 @@
         "weavingTime": "1 hour",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -894,10 +1030,10 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "instant",
@@ -953,8 +1089,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1012,8 +1148,8 @@
         "weavingTime": "10 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1065,8 +1201,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1137,7 +1273,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "magical",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "magicalOrGrindsilver"
         },
@@ -1295,8 +1431,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1426,7 +1562,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -1490,8 +1626,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1567,8 +1703,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1644,8 +1780,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1728,7 +1864,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -1821,8 +1957,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1880,8 +2016,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1933,8 +2069,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2022,8 +2158,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2087,8 +2223,8 @@
         "weavingTime": "1 action round/5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2146,8 +2282,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2211,8 +2347,8 @@
         "weavingTime": "1 hour",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2264,8 +2400,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2382,8 +2518,8 @@
         "weavingTime": "15 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2459,8 +2595,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2536,8 +2672,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2619,8 +2755,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2696,8 +2832,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2773,8 +2909,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2832,8 +2968,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2885,8 +3021,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2962,8 +3098,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3074,8 +3210,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3139,8 +3275,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3199,7 +3335,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3275,8 +3411,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3346,8 +3482,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3405,8 +3541,8 @@
         "weavingTime": "3 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3476,8 +3612,8 @@
         "weavingTime": "4 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3553,8 +3689,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },

@@ -7,6 +7,12 @@
     "catalogId": "A0zCfjKfLgMhNiOj",
     "summary": "The vidrjotun reshapes trees and forests at will.",
     "description": "<p>The vidrjotuns have gained the ability to reshape trees to their liking. They can reshape anything from great living forests to individual trunks.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 141

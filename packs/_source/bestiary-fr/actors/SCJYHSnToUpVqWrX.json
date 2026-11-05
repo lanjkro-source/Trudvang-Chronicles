@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -139,6 +146,12 @@
         "catalogId": "HngWDToUpVqWrXsY",
         "summary": "Une fois par jour, le revenant inflige 2d10 (JO 9-10) peur à quiconque entend son hurlement.",
         "description": "<p>Une fois par jour, un revenant des tumulus peut pousser un effroyable hurlement qui terrorise quiconque l’entend. La victime accumule 2d10 (JO 9-10) points de peur.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 59
@@ -157,6 +170,12 @@
         "catalogId": "D0KHL7y4z5A6B7C8",
         "summary": "Brouillard de 100 à 10 000 m de rayon ; VS 10 (Psychisme) pour ne pas se diriger en somnolant vers le revenant.",
         "description": "<p>Le revenant des tumulus maîtrise un pouvoir spécial qui lui permet de créer de grandes nappes de brouillard. Ce brouillard épais persiste dans tous les endroits visités par le revenant car ce pouvoir de nature passive peut parfois se déclencher sans même que le revenant en ait conscience. Le brouillard est épais, froid et parfois humide, et quiconque se trouve à l’intérieur doit immédiatement effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique). Si le test est raté, la victime tombe dans une sorte de sommeil éveillé et a à peine conscience de ce qu’elle fait. Elle se rendra ensuite inexorablement vers le centre de la zone où se trouve le plus souvent le site funéraire du revenant des tumulus. Une victime qui subit des dégâts sortira immédiatement de sa somnolence créée par le brouillard. Le brouillard peut couvrir une zone d’un rayon de 100 à 10 000 mètres, en fonction de la puissance du revenant des tumulus et de l’appréciation du MJ. Le revenant des tumulus peut dissiper le brouillard dès qu’il le souhaite, auquel cas il disparaît complètement en quelques minutes.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 59
@@ -175,6 +194,12 @@
         "catalogId": "KD0m2dHcIdJeKfLg",
         "summary": "Le revenant utilise le morkvitner ; tablettes, compétence et réserve sont déterminées par le MJ (+10 dans le profil proposé).",
         "description": "<p>Un revenant des tumulus a accès au morkvitner et sait manipuler son pouvoir. Le nombre de Tablettes de vitner, la compétence Modelage du vitner et la Réserve de vitner sont différents pour chaque revenant. Ces caractéristiques sont toutes laissées à l’appréciation du MJ.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 59
@@ -194,6 +219,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
         "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 40
@@ -212,6 +243,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
         "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 16
@@ -343,8 +380,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -474,7 +511,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -538,8 +575,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -615,8 +652,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -692,8 +729,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -776,7 +813,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -869,8 +906,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -928,8 +965,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -981,8 +1018,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1070,8 +1107,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1135,8 +1172,8 @@
         "weavingTime": "1 tour de jeu/5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1194,8 +1231,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1259,8 +1296,8 @@
         "weavingTime": "1 heure",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1312,8 +1349,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1430,8 +1467,8 @@
         "weavingTime": "15 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1507,8 +1544,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1584,8 +1621,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1667,8 +1704,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1744,8 +1781,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1821,8 +1858,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1880,8 +1917,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1933,8 +1970,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2010,8 +2047,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2122,8 +2159,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2187,8 +2224,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2247,7 +2284,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2323,8 +2360,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2394,8 +2431,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2453,8 +2490,8 @@
         "weavingTime": "3 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2524,8 +2561,8 @@
         "weavingTime": "4 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2601,8 +2638,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },

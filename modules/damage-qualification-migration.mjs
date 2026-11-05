@@ -1,9 +1,22 @@
-import {WEAPON_QUALIFICATIONS} from "./rules/damage-qualifications.mjs";
+import {naturalWeaponQualification, WEAPON_QUALIFICATIONS} from "./rules/damage-qualifications.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {CREATURE_ABILITY_ENTRIES} from "./creature-ability-data.mjs";
+
+const legacyPowerProfiles = {
+  "vitner-dimvitner:darkness-of-dimhall:8": {nature:"magical",delivery:"other",type:"other",protection:"magicalOrGrindsilver"},
+  "vitner-soil-craft:earthquake:2": {nature:"normal",delivery:"other",type:"bludgeoning",protection:"normal"},
+  "vitner-flame-craft:flame-burst:3": {nature:"normal",delivery:"other",type:"fire",protection:"magical"},
+  "vitner-flame-craft:sea-of-fire:7": {nature:"normal",delivery:"other",type:"fire",protection:"magical"},
+  "holy-toikalokke-master-of-elements:earthquake:7": {nature:"normal",delivery:"other",type:"bludgeoning",protection:"normal"}
+};
+
+const sameQualification = (left = {}, right = {}) => ["nature", "delivery", "type", "protection", "material"]
+  .every(key => String(left[key] ?? "") === String(right[key] ?? ""));
 
 /** TEMPORARY WORLD MIGRATION: pre-qualification development worlds have neither
- * weapon materials nor the catalog's explicit damage metadata. Seed once, only
- * on identifiable catalog copies; never overwrite a later manual choice. */
+ * natural-weapon materials nor the catalog's reviewed damage metadata. Version 2
+ * updates only profiles that still match the exact pre-review defaults. It never
+ * overwrites a qualification that differs from those defaults. */
 export async function migrateDamageQualifications() {
   if (!game.user.isGM || game.users?.activeGM?.id && game.users.activeGM.id !== game.user.id) return;
   const actors = new Map(Array.from(game.actors ?? [], actor => [actor.uuid, actor]));
@@ -11,27 +24,52 @@ export async function migrateDamageQualifications() {
     if (token.actor) actors.set(token.actor.uuid, token.actor);
   }
   const items = [...(game.items ?? []), ...Array.from(actors.values()).flatMap(actor => Array.from(actor.items ?? []))];
+  const abilityById = new Map(CREATURE_ABILITY_ENTRIES.map(entry => [entry.id, entry]));
   for (const item of items) {
-    if (!item.isOwner || item.getFlag("trudvang-chronicles", "damageQualificationVersion")) continue;
+    if (!item.isOwner || Number(item.getFlag("trudvang-chronicles", "damageQualificationVersion") ?? 0) >= 2) continue;
     const flags = item.flags?.["trudvang-chronicles"] ?? {};
     const powerId = item.system?.catalogId || flags.catalogId;
-    const power = POWER_DETAILS_BY_ID[powerId]?.damageRoll?.qualification;
+    const power = POWER_DETAILS_BY_ID[powerId];
     const key = String(flags.starterId ?? "").split(".").at(-1);
     const weapon = ["weapon", "shield"].includes(item.type) ? WEAPON_QUALIFICATIONS[key] : null;
-    if (!power && !weapon) continue;
-    const stored = item.system?.damageQualification ?? {};
-    const update = {"flags.trudvang-chronicles.damageQualificationVersion": 1};
-    if (weapon) {
-      if (!item.system.material) update["system.material"] = weapon[0];
+    const natural = item.type === "weapon" && item.system?.category === "natural" ? naturalWeaponQualification(item.name) : null;
+    const ability = item.type === "creatureAbility" ? abilityById.get(item.system?.catalogId) : null;
+    if (!power && !weapon && !natural && !ability) continue;
+    const sourceSystem = item._source?.system ?? {};
+    const stored = sourceSystem.damageQualification ?? (natural
+      ? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}
+      : item.system?.damageQualification ?? {});
+    const update = {"flags.trudvang-chronicles.damageQualificationVersion": 2};
+    if (natural) {
+      const oldNaturalDefault = {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""};
+      if (sameQualification(stored, oldNaturalDefault)) {
+        if (!sourceSystem.material) update["system.material"] = natural.material || "";
+        update["system.damageQualification"] = natural.damageQualification;
+      }
+    } else if (weapon) {
+      // Keep v1's equipment backfill, but only fill blanks/defaults; never replace a
+      // field that a GM has already changed.
+      if (!sourceSystem.material) update["system.material"] = weapon[0];
       if (!stored.type || stored.type === "other") update["system.damageQualification.type"] = weapon[1];
       if (!stored.delivery || stored.delivery === "other") update["system.damageQualification.delivery"] = ["ranged","bowsSlings","crossbow"].includes(item.system.category) || item.system.isThrowingWeapon ? "ranged" : "melee";
-    } else {
-      // A non-default profile already represents a deliberate user choice.
-      if ((!stored.type || stored.type === "other") && (!stored.protection || stored.protection === "normal") && stored.nature !== "magical") {
-        update["system.damageQualification"] = power;
+    } else if (power) {
+      const target = power.damageQualification ?? power.damageRoll?.qualification;
+      if (target) {
+        const legacy = legacyPowerProfiles[powerId] ?? power.damageRoll?.qualification ?? {nature:"magical",delivery:/^(personal|personnelle|contact|touch)/i.test(item.system?.range ?? "") ? "melee" : "ranged",type:"other",protection:"normal"};
+        const legacyWithMaterial = {nature:legacy.nature,delivery:legacy.delivery,type:legacy.type,protection:legacy.protection,material:legacy.material ?? ""};
+        const targetWithMaterial = {nature:target.nature,delivery:target.delivery,type:target.type,protection:target.protection,material:target.material ?? ""};
+        if ((!sourceSystem.damageQualification || sameQualification(stored, legacyWithMaterial))
+          && !sameQualification(legacyWithMaterial, targetWithMaterial)) {
+          update["system.damageQualification"] = target;
+        }
       }
       const note = game.i18n.localize(`TRUDVANG.Content.Power.${powerId}.DamageQualificationNote`);
       if (note && !note.startsWith("TRUDVANG.") && !item.system.damageQualificationNote) update["system.damageQualificationNote"] = note;
+    } else if (ability) {
+      const target = ability.damageQualification;
+      const oldDefault = {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""};
+      const sourceQualification = sourceSystem.damageQualification;
+      if (target && !sameQualification(target, oldDefault) && (!sourceQualification || sameQualification(sourceQualification, oldDefault))) update["system.damageQualification"] = target;
     }
     await item.update(update);
   }

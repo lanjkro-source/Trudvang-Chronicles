@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -179,6 +186,12 @@
         "catalogId": "VNxdD4z5A6B7C8D9",
         "summary": "Le kungstroll égare ses victimes par de faux conseils.",
         "description": "<p>Un kungstroll peut se cacher dans les fourrés et derrière les rochers pour suivre une créature en lui susurrant de charmantes paroles sur la beauté de la forêt ou de la montagne qu’elle traverse. Le troll tentera souvent d’attirer cette malheureuse créature dans un piège ou dans son antre où elle sera tuée ou asservie. La victime doit réussir un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) afin d’ignorer les paroles. Un échec signifie que la victime suit les suggestions susurrées sans même en être consciente. Un test réussi indique qu’elle résiste au pouvoir de Guide trompeur. La victime doit effectuer un nouveau test de situation à chaque fois que le troll souhaite l’inciter à suivre un autre chemin ou à prendre une autre direction.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 160
@@ -197,6 +210,12 @@
         "catalogId": "LRZYxKfLgMhNiOjP",
         "summary": "Le kungstroll tisse des illusions pour tromper ses victimes.",
         "description": "<p>Tous les kungstrolls peuvent créer des illusions très simples pour duper ou tromper autrui. Ces illusions peuvent par exemple être utilisées pour faire croire qu’une assiette déborde de vers ou de grenouilles alors qu’elle est en réalité simplement remplie de nourriture.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 160
@@ -215,6 +234,12 @@
         "catalogId": "IHRUNaGbHcIdJeKf",
         "summary": "Résister aux paroles du kungstroll demande VS 12 (Psychisme).",
         "description": "<p>Au lieu de capturer ses proies par la force, le kungstroll aime faire appel au vitner ou à son pouvoir de persuasion. Les victimes qui entendent ce que leur dit le troll roi doivent chacune réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de résister à son pouvoir de persuasion.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 160
@@ -275,8 +300,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -334,8 +359,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -393,8 +418,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -452,8 +477,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -517,8 +542,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -588,8 +613,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -653,8 +678,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -730,8 +755,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -801,8 +826,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -878,8 +903,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -949,9 +974,9 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
-          "type": "other",
+          "nature": "magical",
+          "delivery": "melee",
+          "type": "piercing",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -1026,8 +1051,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1126,8 +1151,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1179,8 +1204,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1238,8 +1263,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1309,8 +1334,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1374,8 +1399,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1457,8 +1482,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1528,8 +1553,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1593,8 +1618,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1664,8 +1689,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1729,8 +1754,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1794,8 +1819,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1871,8 +1896,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1971,8 +1996,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2036,8 +2061,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2096,7 +2121,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2172,8 +2197,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2243,8 +2268,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2302,8 +2327,8 @@
         "weavingTime": "3 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2373,8 +2398,8 @@
         "weavingTime": "4 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2450,8 +2475,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },

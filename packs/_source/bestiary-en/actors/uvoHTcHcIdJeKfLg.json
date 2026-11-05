@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "a0A7iPhNiOjPkQlR",
         "summary": "The yggwurm controls winds and storms.",
         "description": "<p>The dragon can call forth a sudden storm that whirls and blows away everything that weighs less than 75 kg within a radius of 50 meters from the dragon. It is also this storm, if not as concentrated, that the dragon uses to lift its wings on the very rare occasions when it needs to strike out with its wings to gain speed. To withstand the directed storm, a creature that is exposed to it must make a situation roll (modified by the average of Strength and Dexterity) based on weight, according to the table below. The table also shows how far they are flung on a failed roll. If the victim is blown straight into a wall, he takes the same damage as if he had fallen that distance.</p><p>If the blown-away creature is still within the radius of the storm, it can get up but must make a new situation roll to be able to move within the area without being blown away again. The victims that are not blown away can act normally within the affected area but have a negative modifier on all actions according to the table below.</p><table><thead><tr><th>Victim's weight</th><th>Situation value</th><th>Thrown</th><th>Action modifier</th></tr></thead><tbody><tr><td>3 times the affected weight</td><td>18</td><td>No distance</td><td>None</td></tr><tr><td>2 times the affected weight</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1.5 times the affected weight</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Affected weight (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Half the affected weight</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>One third of the affected weight</td><td>No roll</td><td>2d10 m</td><td>-10</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 127
@@ -78,6 +98,12 @@
         "catalogId": "f8tUzXrXsYtZu0v1",
         "summary": "The yggwurm can craft a stone filled with knowledge.",
         "description": "<p>Since the dragon does not have the skill to write, it uses magic to carve its knowledge into rocks. These stones are inlaid with insights, knowledge, and powers of all kinds. They are a way for one yggwurm to measure the enlightenment of another, and the dragons proudly show these stones to each other. The ultimate goal of a yggwurm’s relentless hunt for knowledge is to fill a mountain with the most mighty insight: the stone of knowledge concerning everything.</p><p>When a yggwurm has bound together two or more sets of knowledge, it might throw the smaller stones away down the mountainside because the combined knowledge will be bound together in a greater stone. Explorers who find such a stone of knowledge can unlock its power by activating its key. This can be done only with the Read Vitner spell. When the spell is woven on a stone of knowledge there is no requirement for making a SV roll for learning the power (as per normal Read Vitner rules) but the spell has only the effect of activating the stone. After the normal weaving time of the Read Vitner spell has passed (1 hour) the stone is activated but it will disappear in 6 rounds. The knowledge will be given to the first creature to touch the stone before it disappears. If no one takes the stone in 6 rounds, it will disappear without transferring the knowledge.</p><p>The person who is holding the stone when it is activated receives its teachings. If multiple people hold the stone, the recipient is selected at random. But know this: it can be dangerous to receive the contents of a stone, since it can contain powers that no living person can handle. The effects of the knowledge are totally up to the GM.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 127
@@ -96,6 +122,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20
@@ -156,8 +188,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -215,8 +247,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -274,8 +306,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -333,8 +365,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -398,8 +430,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -469,8 +501,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -534,8 +566,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -611,8 +643,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -682,8 +714,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -759,8 +791,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -830,9 +862,9 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
-          "type": "other",
+          "nature": "magical",
+          "delivery": "melee",
+          "type": "piercing",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -907,8 +939,8 @@
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1007,8 +1039,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1066,8 +1098,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1119,8 +1151,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1208,8 +1240,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1273,8 +1305,8 @@
         "weavingTime": "1 action round/5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1332,8 +1364,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1397,8 +1429,8 @@
         "weavingTime": "1 hour",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1450,8 +1482,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1568,8 +1600,8 @@
         "weavingTime": "3 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1663,10 +1695,10 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "sustained",
@@ -1734,8 +1766,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1793,8 +1825,8 @@
         "weavingTime": "1 hour",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1846,10 +1878,10 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "instant",
@@ -1905,8 +1937,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1964,8 +1996,8 @@
         "weavingTime": "10 hours",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2017,8 +2049,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2089,7 +2121,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "magical",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "magicalOrGrindsilver"
         },
@@ -2176,8 +2208,8 @@
         "weavingTime": "15 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2253,8 +2285,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2330,8 +2362,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2413,8 +2445,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2490,8 +2522,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2567,8 +2599,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2626,8 +2658,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2679,8 +2711,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2756,8 +2788,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2868,8 +2900,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2933,8 +2965,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2986,8 +3018,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3051,8 +3083,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3116,8 +3148,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3187,8 +3219,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3288,8 +3320,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3426,7 +3458,7 @@
         "damageQualification": {
           "nature": "normal",
           "delivery": "other",
-          "type": "other",
+          "type": "bludgeoning",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -3501,8 +3533,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },

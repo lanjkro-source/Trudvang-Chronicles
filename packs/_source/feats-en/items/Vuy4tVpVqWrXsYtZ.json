@@ -7,6 +7,12 @@
     "catalogId": "Vuy4tVpVqWrXsYtZ",
     "summary": "Moves on walls at half its movement and on ceilings at one third.",
     "description": "<p>Goblins have the ability to move along the walls and ceiling of a cave. A goblin moves at half their movement rate on walls and a third on ceilings.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 152

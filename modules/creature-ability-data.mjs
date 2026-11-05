@@ -1052,7 +1052,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 44,
       "en": 53
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "none"
+    }
   },
   {
     "id": "EVhUocGbHcIdJeKf",
@@ -1108,7 +1114,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 88,
       "en": 90
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "melee",
+      "type": "other",
+      "protection": "none"
+    }
   },
   {
     "id": "eEOmsjNiOjPkQlRm",
@@ -1116,7 +1128,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 117,
       "en": 117
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "bludgeoning",
+      "protection": "normal"
+    }
   },
   {
     "id": "SLHo7lQlRmSnToUp",
@@ -1188,7 +1206,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 24,
       "en": 28
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "piercing",
+      "protection": "normal"
+    }
   },
   {
     "id": "EdVMy2u0v1w2x3y4",
@@ -1245,7 +1269,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 118,
       "en": 118
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "bludgeoning",
+      "protection": "normal"
+    }
   },
   {
     "id": "nWYlTTnToUpVqWrX",
@@ -1253,7 +1283,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 29,
       "en": 17
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "bludgeoning",
+      "protection": "normal"
+    }
   },
   {
     "id": "xqhnZRmSnToUpVqW",
@@ -1285,7 +1321,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 39,
       "en": 48
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "n85BQGaGbHcIdJeK",
@@ -1293,7 +1335,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 86,
       "en": 88
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "flAdvMhNiOjPkQlR",
@@ -1309,7 +1357,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 156,
       "en": 159
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "none"
+    }
   },
   {
     "id": "VJdXu9D9EaGbHcId",
@@ -1317,7 +1371,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 132,
       "en": 134
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "normal"
+    }
   },
   {
     "id": "txzkedE9EaGbHcId",
@@ -1325,7 +1385,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 114,
       "en": 114
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "normal"
+    }
   },
   {
     "id": "MXNXW2x3y4z5A6B7",
@@ -1333,7 +1399,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 40,
       "en": 48
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    }
   },
   {
     "id": "1ItoEXoUpVqWrXsY",
@@ -1349,7 +1421,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 134,
       "en": 134
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "piercing",
+      "protection": "normal"
+    }
   },
   {
     "id": "f8tUzXrXsYtZu0v1",
@@ -1405,7 +1483,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 130,
       "en": 130
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "bludgeoning",
+      "protection": "normal"
+    }
   },
   {
     "id": "iTN16SlRmSnToUpV",
@@ -1413,7 +1497,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 135,
       "en": 135
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "bludgeoning",
+      "protection": "normal"
+    }
   },
   {
     "id": "IChFs8B7C8D9EaGb",
@@ -1469,7 +1559,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 45,
       "en": 53
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "normal"
+    }
   },
   {
     "id": "VNxdD4z5A6B7C8D9",
@@ -1605,7 +1701,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 86,
       "en": 88
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "GzpMMB3y4z5A6B7C",
@@ -1854,7 +1956,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 99,
       "en": 86
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "piercing",
+      "protection": "normal"
+    }
   },
   {
     "id": "41hqc1sYtZu0v1w2",
@@ -1958,7 +2066,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 40,
       "en": 46
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "acid",
+      "protection": "normal"
+    }
   },
   {
     "id": "10klNtVqWrXsYtZu",
@@ -1966,7 +2080,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 140,
       "en": 140
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "UZodjJdJeKfLgMhN",
@@ -1982,7 +2102,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 117,
       "en": 117
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "Orm9QLfLgMhNiOjP",
@@ -2006,7 +2132,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 40,
       "en": 48
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    }
   },
   {
     "id": "go5al8z5A6B7C8D9",
@@ -2014,7 +2146,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 124,
       "en": 124
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "ay6BwhLgMhNiOjPk",
@@ -2022,7 +2160,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 114,
       "en": 114
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "cold",
+      "protection": "normal"
+    }
   },
   {
     "id": "pjghN3w2x3y4z5A6",
@@ -2030,7 +2174,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 117,
       "en": 117
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "Z7dB9gIdJeKfLgMh",
@@ -2038,7 +2188,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 84,
       "en": 74
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "poison",
+      "protection": "normal"
+    }
   },
   {
     "id": "gwfvoJdJeKfLgMhN",
@@ -2046,7 +2202,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 26,
       "en": 23
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "piercing",
+      "protection": "normal"
+    }
   },
   {
     "id": "x25bl6A6B7C8D9Ea",
@@ -2062,7 +2224,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 124,
       "en": 124
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
+    }
   },
   {
     "id": "T3YqIZu0v1w2x3y4",
@@ -2134,7 +2302,13 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 151,
       "en": 154
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "poison",
+      "protection": "normal"
+    }
   },
   {
     "id": "Xouc0rUpVqWrXsYt",

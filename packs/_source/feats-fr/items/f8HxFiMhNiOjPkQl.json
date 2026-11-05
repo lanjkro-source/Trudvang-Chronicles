@@ -7,6 +7,12 @@
     "catalogId": "f8HxFiMhNiOjPkQl",
     "summary": "Le diser peut manipuler les flux de vitner.",
     "description": "<p>Nombre de sorts maîtrisés par le diser ont des points communs avec divers sorts de vitner. C’est au maître de jeu de décider si un diser possède un ou plusieurs pouvoirs dont les caractéristiques et les fonctions sont comparables à celles d’un sort.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 46

@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
         "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 39
@@ -78,6 +98,12 @@
         "catalogId": "HeVWKE5A6B7C8D9E",
         "summary": "When standing: situation value 12, -2 per lyktgubbe; in deep water, Swimming -2 per lyktgubbe.",
         "description": "<p>A victim that has been exposed to a lyktgubbe must succeed in getting onto land so that he won’t be drowned. If the victim can touch the bottom of the lake or water source with his feet, he must succeed on a situation roll with a situation value of 12 (Strength or Dexterity modifiers apply). For each lyktgubbe that tries to drag the victim down to drown, the situation value is decreased by -2. If the water is so deep that the victim must swim to stay afloat, an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -2 for each lyktgubbe that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 60
@@ -96,6 +122,12 @@
         "catalogId": "OymWMpSnToUpVqWr",
         "summary": "Glowing fog charms travelers: situation value 8 (Psyche), then a d20 determines how they wander.",
         "description": "<p>The greatest ability of the lyktgubbe is its power to send the fog in its large eyes against unknowing travelers across a distance of several hundred meters. The fog will glow with a paralyzing and enchanting force that impairs the victim’s powers of perception. The enchantment often makes the victim lose all sense of time and space and feel forced to keep on walking. The victims often wake up in a state of not knowing where they are or how they got there.</p><p>A person that sees the self-illuminating fog must succeed on a situation roll with a situation value of 8 (Psyche modifiers apply) to overcome the enchantment. If the roll fails, the character is lost as noted on the chart below.</p><p>Enchanted victims can be freed in two ways: through a priest’s prayer or through vitner. Of course, there are other ways to make a victim stop walking, but they won’t break the enchantment.</p><p>A victim who walks into the bog or marsh will awaken from the enchantment when the lyktgubbe is at a distance of 15 meters (the game master will decide which terms apply for the area). The lyktgubbe moves at a speed of 5 meters per action round below the water so it can attack unnoticed. Only a skill roll with the Shadow Arts skill with a negative modifier of -5 will allow the victim to detect the lyktgubbe. Once it has reached its victim, the lyktgubbe will try to wrestle the victim below the surface to drown it, according to the described rules above. If there are several lyktgubbes, they will help each other to submerge the victim.</p><table><thead><tr><th>1d20</th><th>Result</th></tr></thead><tbody><tr><td>1-5</td><td>Wanders for 1d6 hours in a randomly determined direction.</td></tr><tr><td>6-10</td><td>Wanders for 2d6 hours in a randomly determined direction.</td></tr><tr><td>11-20</td><td>Moves straight toward the bog where the lyktgubbe waits.</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 60

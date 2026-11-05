@@ -7,6 +7,12 @@
     "catalogId": "Da0VLPjPkQlRmSnT",
     "summary": "Les écailles prennent feu après 1d6+2 tours d’exposition directe au soleil.",
     "description": "<p>Un braskelwurm qui reste dans un endroit où ses écailles sont directement exposées à la lumière du soleil prend feu en peu de temps (1d6+2 tours de jeu). Les écailles, dans un premier temps, commencent à fumer légèrement pour finalement prendre feu. Le braskelwurm peut survivre plus longtemps dans des endroits où ses écailles ne sont pas directement exposées aux rayons du soleil. Il est très rare que les braskelwurms décident de sortir de leur antre obscur pendant la journée, mais on peut parfois en apercevoir un lorsqu’arrive le crépuscule.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 106

@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "a0A7iPhNiOjPkQlR",
         "summary": "L'yggwurm maîtrise les vents et les tempêtes.",
         "description": "<p>Le dragon peut lever une tempête soudaine qui tourbillonne et emporte tout ce qui pèse moins de 75 kilogrammes dans un rayon de 50 mètres autour du dragon. C’est également cette tempête, bien que dans une version moins intense, que le dragon utilise pour soutenir ses ailes lors des très rares moments où il doit battre des ailes pour gagner en vitesse. Pour résister à la tempête, une créature exposée à sa violence doit effectuer un test de situation (modifié par la moyenne des modificateurs de Force et de Dextérité) en se basant sur son poids, comme indiqué dans la table ci-contre. Celle-ci indique également la distance sur laquelle les créatures sont emportées en cas d’échec au test. Si une victime est projetée contre un mur, elle subit les mêmes dégâts que si elle chutait d’une hauteur équivalente.</p><p>Si une créature projetée à terre se trouve toujours à l’intérieur du rayon d’action de la tempête, elle peut se relever mais doit effectuer un nouveau test de situation pour réussir à se déplacer à l’intérieur de la zone sans être de nouveau emportée. Les victimes qui ne sont pas emportées peuvent agir normalement à l’intérieur de la zone affectée mais elles appliquent un modificateur négatif sur toutes leurs actions, comme indiqué dans la table.</p><table><thead><tr><th>Poids de la victime</th><th>VS</th><th>Emportée sur</th><th>Modificateur sur les actions</th></tr></thead><tbody><tr><td>3 fois le poids affecté</td><td>18</td><td>Aucune distance</td><td>Aucun</td></tr><tr><td>2 fois le poids affecté</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1,5 fois le poids affecté</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Poids affecté (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Moitié du poids affecté</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>Un tiers du poids affecté</td><td>Aucun test</td><td>2d10 m</td><td>-10</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 127
@@ -78,6 +98,12 @@
         "catalogId": "f8tUzXrXsYtZu0v1",
         "summary": "L'yggwurm peut façonner une pierre chargée de savoir.",
         "description": "<p>Étant donné que l’yggwurm ne sait pas écrire, il utilise la magie pour graver ses connaissances sur des pierres. Ces pierres contiennent des idées, des connaissances et des pouvoirs de toutes sortes. Elles sont un moyen pour les yggwurms d’évaluer le savoir de leurs congénères, et les dragons les exhibent avec fierté. L’objectif ultime de la quête perpétuelle de savoir menée par un yggwurm consiste à remplir une montagne avec la plus importante des connaissances : la pierre contenant tous les savoirs.</p><p>Quand un yggwurm relie deux types de connaissances ou plus, il peut jeter sur le versant des montagnes les petites pierres sur lesquelles chacun était gravé, une fois le savoir combiné gravé sur une unique pierre plus grosse. Les explorateurs qui ramassent une pierre de ce genre peuvent apprendre le savoir qu’elle contient en l’activant grâce au sort de Lecture du vitner. Quand ce sort est tissé sur une pierre de savoir, aucun test de VC n’est nécessaire (comme l’exigent normalement les règles normales de Lecture du vitner) pour apprendre le pouvoir qu’elle contient, mais le sort permet seulement d’activer la pierre. Une fois le temps normal de tissage du sort de Lecture du vitner écoulé (une heure), la pierre est activée mais disparaît au bout de 6 tours de jeu. Si personne ne s’empare de la pierre avant les 6 tours, celle-ci disparaît sans transmettre le savoir qu’elle contient.</p><p>La personne qui tient en main la pierre lorsque celle-ci est activée bénéficie de ses enseignements. Si plusieurs personnes touchent la pierre, le bénéficiaire est déterminé au hasard. Mais sachez ceci : apprendre le contenu d’une pierre peut s’avérer dangereux car elle peut contenir des pouvoirs qu’aucune personne vivante n’est capable de maîtriser. Les effets du savoir sont laissés à l’entière appréciation du MJ.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 127
@@ -96,6 +122,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
         "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 16
@@ -156,8 +188,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -215,8 +247,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -274,8 +306,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -333,8 +365,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -398,8 +430,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -469,8 +501,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -534,8 +566,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -611,8 +643,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -682,8 +714,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -759,8 +791,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -830,9 +862,9 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
-          "type": "other",
+          "nature": "magical",
+          "delivery": "melee",
+          "type": "piercing",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -907,8 +939,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1007,8 +1039,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1066,8 +1098,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1119,8 +1151,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1208,8 +1240,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1273,8 +1305,8 @@
         "weavingTime": "1 tour de jeu/5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1332,8 +1364,8 @@
         "weavingTime": "10 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1397,8 +1429,8 @@
         "weavingTime": "1 heure",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1450,8 +1482,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1568,8 +1600,8 @@
         "weavingTime": "3 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1663,10 +1695,10 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "sustained",
@@ -1734,8 +1766,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1793,8 +1825,8 @@
         "weavingTime": "1 heure",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1846,10 +1878,10 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
-          "protection": "normal"
+          "protection": "magicalOrGrindsilver"
         },
         "damageQualificationNote": "",
         "spellType": "instant",
@@ -1905,8 +1937,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1964,8 +1996,8 @@
         "weavingTime": "10 heures",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2017,8 +2049,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2089,7 +2121,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "magical",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "other",
           "protection": "magicalOrGrindsilver"
         },
@@ -2176,8 +2208,8 @@
         "weavingTime": "15 minutes",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2253,8 +2285,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2330,8 +2362,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2413,8 +2445,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2490,8 +2522,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2567,8 +2599,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2626,8 +2658,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2679,8 +2711,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2756,8 +2788,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2868,8 +2900,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2933,8 +2965,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -2986,8 +3018,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -3051,8 +3083,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3116,8 +3148,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3187,8 +3219,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3288,8 +3320,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -3426,7 +3458,7 @@
         "damageQualification": {
           "nature": "normal",
           "delivery": "other",
-          "type": "other",
+          "type": "bludgeoning",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -3501,8 +3533,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },

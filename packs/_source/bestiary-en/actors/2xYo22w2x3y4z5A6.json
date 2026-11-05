@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "8h85YWrXsYtZu0v1",
         "summary": "Situation value 10 (Psyche) to resist the lure; ends after at least 3 damage or when drowning starts.",
         "description": "<p>The most prominent ability of the kelpie is that it can lure unknowing travelers from a range of several hundred meters. Even if the stench that is released is horrible, it carries an enchanting power that can twist the comprehension of those who smell it. The enchantment makes the person lose all concept of time and space and forces them to keep on walking. Victims that later wake up from this state don’t know where they are or how they got there.</p><p>A person who can smell the luring stench from the kelpie must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order to overcome the enchantment. A failed roll means the victim keeps moving toward the kelpie.</p><p>The spell is broken if the victim suffers at least 3 points of damage or is about to drown. Once the kelpie is close, it will try to drag the victim underneath the water to drown.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 84
@@ -78,6 +98,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20

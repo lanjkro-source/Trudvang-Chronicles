@@ -7,6 +7,12 @@
     "catalogId": "UgB46VpVqWrXsYtZ",
     "summary": "Le feu et le froid n'ont aucune prise sur la créature.",
     "description": "<p>Un stenhinje est complètement immunisé au feu et au froid.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 97

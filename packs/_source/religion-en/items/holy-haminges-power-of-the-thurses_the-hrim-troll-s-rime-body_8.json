@@ -22,8 +22,8 @@
     "damageQualification": {
       "nature": "normal",
       "delivery": "other",
-      "type": "other",
-      "protection": "normal"
+      "type": "cold",
+      "protection": "none"
     },
     "damageQualificationNote": "",
     "spellType": "lasting",

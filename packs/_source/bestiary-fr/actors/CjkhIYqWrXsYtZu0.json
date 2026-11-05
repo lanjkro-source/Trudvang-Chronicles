@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -58,6 +72,12 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "fire",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -84,6 +104,12 @@
         "catalogId": "MLPIuC5A6B7C8D9E",
         "summary": "Une transformation par an, de durée illimitée, qui fait perdre les attributs physiques du dragon.",
         "description": "<p>Au fil des années, le logewurm a développé un pouvoir basé sur le sort Transformation qui lui permet de se transformer en n’importe quelle créature de son choix. Il utilise ce pouvoir pour s’infiltrer et approcher des personnes importantes. La durée de la transformation est illimitée et le dragon peut retrouver sa forme d’origine dès qu’il le souhaite. Cependant, le dragon ne peut utiliser ce pouvoir qu’une seule fois par an. Étant donné qu’il ne conserve aucun attribut physique de sa forme de dragon, en adoptant une autre forme, il devient vulnérable. Aussi, il n’utilise ce pouvoir que lorsque la situation l’exige.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 124
@@ -102,6 +128,12 @@
         "catalogId": "go5al8z5A6B7C8D9",
         "summary": "Le logewurm peut attaquer avec son souffle jusqu'à trois fois par jour (test VC 12, sans points de combat ; portée 1d10 (JO 9-10) +20 mètres en cône de 6 mètres).",
         "description": "<p>Comme les autres dragons, les logewurms peuvent attaquer avec leur souffle (sans dépenser le moindre point de combat mais en effectuant un test de VC 12). On l’appelle le Souffle de feu. Le logewurm peut effectuer cette attaque de souffle jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du logewurm indique 3d10 (JO 7-10) points de dégâts pour le souffle de feu.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "ranged",
+          "type": "fire",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 124
@@ -120,6 +152,12 @@
         "catalogId": "NrD7FaGbHcIdJeKf",
         "summary": "Le corps du logewurm chauffe jusqu'à devenir mortel pour qui s'en approche.",
         "description": "<p>Sans dépenser le moindre PC, le logewurm peut changer la façon dont son sang circule dans son corps pour le surchauffer. Il peut faire ceci au prix d’une utilisation quotidienne de son attaque de souffle. La surchauffe met 3 tours de jeu pour s’activer (pendant lesquels le dragon peut agir normalement) et elle dure 3 tours par la suite (pendant lesquels le dragon ne peut accomplir aucune autre action). Toutes les créatures situées à 10 mètres ou moins du dragon subissent 2d10 (JO 9-10) points de dégâts par tour de jeu. Celles situées entre 11 et 20 mètres du dragon subissent 2d10 points de dégâts.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 124
@@ -138,6 +176,12 @@
         "catalogId": "qkzJr2tZu0v1w2x3",
         "summary": "Vision dans le noir total normale jusqu’à 100 m, puis décroissante jusqu’à 300 m.",
         "description": "<p>Le dragon voit jusqu’à 100 mètres dans le noir le plus total comme en plein jour. Au-delà de cette distance, sa visibilité diminue et il ne voit plus rien au-delà de 300 mètres.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 114
@@ -156,6 +200,12 @@
         "catalogId": "XJLfjcHcIdJeKfLg",
         "summary": "Perçoit la chaleur et sa distance jusqu’à 300 m ; peut désactiver cette vision et n’est pas étourdi par une chaleur soudaine.",
         "description": "<p>La créature perçoit les sources de chaleur jusqu’à 300 mètres. Cette perception lui permet d’évaluer leur importance et la distance qui l’en sépare. Le dragon peut réprimer sa vision thermique si nécessaire et ne peut pas être étourdi par l’apparition brutale d’une source de chaleur.</p><p>Ce pouvoir fonctionne de la même façon chez le hrimwurm, le jarnwurm et le logewurm ; il est distinct de leur vision dans le noir.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 114

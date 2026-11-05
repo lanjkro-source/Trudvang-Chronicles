@@ -7,6 +7,12 @@
     "catalogId": "NNBuQnQlRmSnToUp",
     "summary": "Le démon peut se transformer en une créature de son choix.",
     "description": "<p>Le démon peut se transformer en une créature de son choix.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40

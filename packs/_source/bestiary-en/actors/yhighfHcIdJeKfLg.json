@@ -12,6 +12,12 @@
         "catalogId": "MaYXAbD8D9EaGbHc",
         "summary": "Guides or misleads travelers; resisting requires situation value 8 (Psyche), -1 per five additional fairies.",
         "description": "<p>A fairy can use her song to guide people who are lost in the forest, leading them to an exit or closer to a path. The ability can also be used to lead enemies astray. Enemies that hear the song must make a situation roll with a situation value of 8 (Psyche modifiers apply) or they will be led astray. The more fairies that sing the song, the harder it is to resist the effects. applying a -1 modifier to the SV roll per 5 fairies singing in addition to the first one.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 73
@@ -30,6 +36,12 @@
         "catalogId": "P9RgBRkQlRmSnToU",
         "summary": "Each fairy dancing above a wounded creature heals 1d3 damage.",
         "description": "<p>A fairy that performs this dance above a wounded person heals the person of 1d3 points of damage. The more fairies dancing, the greater the healing.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 73
@@ -48,6 +60,12 @@
         "catalogId": "gCMi4MhNiOjPkQlR",
         "summary": "Ten fairies dancing in a circle restore the energy of a meal or the benefits of eight hours of sleep.",
         "description": "<p>If a creature suffers from dehydration, hunger, or physical or psychic exhaustion, a group of ten fairies can dance in a ring around the one in need and provide both strength and power. A creature that is hungry or thirsty gains new energy, which represents one meal of food. A creature that is exhausted is refreshed as if having slept for one full night, and gains the normal effects of eight hours of sleep.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 72
@@ -66,6 +84,12 @@
         "catalogId": "F1bQ4eGbHcIdJeKf",
         "summary": "One dose gives +1d3+1 to all skill values for 1d5 hours; seven doses grant a wish judged moral by the GM.",
         "description": "<p>Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 73
@@ -84,6 +108,12 @@
         "catalogId": "jrI2efIdJeKfLgMh",
         "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
         "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26

@@ -7,6 +7,12 @@
     "catalogId": "zcDFK9A6B7C8D9Ea",
     "summary": "Normal sight in total darkness up to 10 m, fading until approximately 60 m.",
     "description": "<p>The creature can see for 10 meters in complete darkness as if it were daylight. This sight diminishes at longer distances and disappears completely about 60 meters away.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 22

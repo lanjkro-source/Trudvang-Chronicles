@@ -128,6 +128,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -152,6 +159,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -202,6 +216,12 @@
         "catalogId": "zLdTbC6B7C8D9EaG",
         "summary": "Troll bull charge: 2d10 (OR 9-10) damage, movement and attack CP; Agility -5 to avoid being knocked down.",
         "description": "<p>Troll bulls will begin their attacks with a charge. They lower their heads and charge straight into victims to deal damage and knock them off balance. Due to the bull’s weight, high speed, and sharp horns, the charge will deal 2d10 (OR 9-10) points of damage. A charge is resolved spending CP for movement plus CP for an attack with natural weapons (Horn).</p><p>Anyone hit by the attack must succeed on a skill roll for the Agility skill modified by -5 to avoid falling over. A victim who falls over from the charge must make a situation roll with a situation value of 10 (Dexterity modifiers apply) to avoid dropping whatever items they are holding.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 28
@@ -220,6 +240,12 @@
         "catalogId": "lHbj4E6B7C8D9EaG",
         "summary": "Eating the heart removes 1d10 (OR 10) Fear Points, but may compel a charge to defend friends: resist at situation value 10 (Psyche).",
         "description": "<p>If someone eats from the heart of a troll bull, they are filled with courage and inner strength. They instantly lose 1d10 (OR 10) of gained Fear Points and they feel more alive and protective of their friends. If an enemy threatens one of those friends, there is a risk that the devourer will instantly charge that enemy and attack. The devourer must make a situation roll with a situation value of 10 (Psyche modifiers apply) to avoid being compelled to charge the enemy.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 28

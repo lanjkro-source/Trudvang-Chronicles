@@ -20,10 +20,10 @@
     "weavingTime": "1 action round",
     "dailyActivation": "",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
+      "nature": "magical",
+      "delivery": "ranged",
       "type": "other",
-      "protection": "normal"
+      "protection": "magicalOrGrindsilver"
     },
     "damageQualificationNote": "",
     "spellType": "instant",

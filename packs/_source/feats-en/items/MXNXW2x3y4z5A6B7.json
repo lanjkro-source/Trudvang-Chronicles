@@ -7,6 +7,12 @@
     "catalogId": "MXNXW2x3y4z5A6B7",
     "summary": "The demon explodes upon death, dealing 1d10 (OR 7-10) damage within a 10-meter radius.",
     "description": "<p>When the demon dies the body explodes. Everyone within a radius of 10 meters obtain 1d10 (OR 7-10) damage points.</p>",
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48

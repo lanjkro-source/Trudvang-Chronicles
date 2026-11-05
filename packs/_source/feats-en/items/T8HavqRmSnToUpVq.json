@@ -7,6 +7,12 @@
     "catalogId": "T8HavqRmSnToUpVq",
     "summary": "The sálhele can control animals.",
     "description": "<p>Since a sálhele has a difficult time walking, it is not uncommon for them to control animals to use as mounts. These can be anything from horses to big hounds or swine. The sálhele rides the animal until it collapses from exhaustion, at which point the skeleton will leave the beast behind to find a new riding companion.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 66

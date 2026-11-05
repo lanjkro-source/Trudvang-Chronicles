@@ -12,6 +12,7 @@ import {TRUDVANG} from "../modules/config.mjs";
 import {npcBookSkillRows} from "../modules/rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../modules/rules/creature-token-size.mjs";
 import {weaponType, weaponUsesSeparateHands} from "../modules/rules/combat-pool-resolver.mjs";
+import {naturalWeaponQualification} from "../modules/rules/damage-qualifications.mjs";
 
 const check = process.argv.includes("--check");
 const load = path => JSON.parse(readFileSync(path, "utf8"));
@@ -93,14 +94,16 @@ const entries = sources.fr.map((creature, index) => {
     if (natural) {
       for (const [componentIndex, name] of components.entries()) {
         const normalized = normalize(name);
+          const naturalQualification = naturalWeaponQualification(name);
+          if (!naturalQualification) throw new Error(`Missing damage qualification for natural attack ${creature.name}: ${name}`);
         const reserve = creature.combatReserves.find(pool => normalize(pool.name) === normalized
           || (naturalNames[normalize(pool.name)] === naturalNames[normalized]))
           ?? creature.combatReserves.find(pool => normalize(pool.name) === "armesnaturelles");
         const shared = reserve && normalize(reserve.name) === "armesnaturelles";
         const isUnarmed = normalized === "mainsnues";
         items.push({_id: deterministicId(`${id}:weapon:${weaponIndex}:${componentIndex}`),
-          ...itemName(`Weapon${weaponIndex}Part${componentIndex}`, name, naturalNames[normalized]),
-          type: "weapon", img: "icons/svg/combat.svg", system: {category: "natural", combatSpecialty: "natural", isUnarmed,
+            ...itemName(`Weapon${weaponIndex}Part${componentIndex}`, name, naturalNames[normalized]),
+            type: "weapon", img: "icons/svg/combat.svg", system: {category: "natural", ...(naturalQualification.material ? {material:naturalQualification.material} : {}), damageQualification:naturalQualification.damageQualification, combatSpecialty: "natural", isUnarmed,
             equipped: true, quantity: 1, strengthApplies: true, ...parseDamage(weapon.damage), initiativeModifier: Number(weapon.initiative || 0),
             naturalCombatPool: shared && !isUnarmed ? "natural" : normalize(naturalNames[normalized]),
             naturalCombatPoints: shared && isUnarmed ? 0 : Number(reserve?.reserve ?? 0), naturalCombatPointsSpent: 0, weaponActionsSpent: 0}});

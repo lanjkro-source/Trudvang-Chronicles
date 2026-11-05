@@ -7,6 +7,12 @@
     "catalogId": "NquAmWpVqWrXsYtZ",
     "summary": "À la lumière du soleil, -5 à tous les tests.",
     "description": "<p>Les gobelins exposés à la lumière du soleil subissent un modificateur de -5 à leurs tests.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 150

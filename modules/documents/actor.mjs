@@ -4,6 +4,7 @@ import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rul
 import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
+import {naturalWeaponQualification} from "../rules/damage-qualifications.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, perfectSuccessDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
@@ -1080,11 +1081,12 @@ export class TrudvangActor extends BaseActor {
 
   get humanoidNaturalWeapon() {
     const attack=this.transformationProfile?.unarmedAttack;
+    const naturalProfile=naturalWeaponQualification(attack?.name || "Unarmed") ?? naturalWeaponQualification("Unarmed");
     return {
       id: "humanoid-natural", uuid: "", type: "weapon",
       name: attack?.name || game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
       img: "icons/svg/combat.svg",
-      system: {category: "natural", isUnarmed: true, equipped: true, hand: "weapon", damage: attack?.damage??"1d5", damageBonus: 0, openRoll: attack?.openRoll??0, strengthApplies: true, weaponActions: 4}
+      system: {category: "natural", material:naturalProfile.material || "natural", damageQualification:naturalProfile.damageQualification, isUnarmed: true, equipped: true, hand: "weapon", damage: attack?.damage??"1d5", damageBonus: 0, openRoll: attack?.openRoll??0, strengthApplies: true, weaponActions: 4}
     };
   }
 

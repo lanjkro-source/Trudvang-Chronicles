@@ -20,8 +20,8 @@
     "weavingTime": "1 action round",
     "dailyActivation": "1",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
+      "nature": "magical",
+      "delivery": "melee",
       "type": "other",
       "protection": "normal"
     },

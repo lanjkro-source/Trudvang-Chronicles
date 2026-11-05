@@ -7,6 +7,12 @@
     "catalogId": "NquAmWpVqWrXsYtZ",
     "summary": "In sunlight, the goblin suffers -5 to all rolls.",
     "description": "<p>Goblins that are exposed to sunlight have a modifier of -5 to all SV-rolls.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 153

@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -211,6 +225,12 @@
         "catalogId": "Bb10OqVqWrXsYtZu",
         "summary": "Blue mud conceals the forest troll in moonlit woods: -4 to detect it, -8 while moving stealthily.",
         "description": "<p>When the blue mud is struck by the rays of the moon, it seems green and its color becomes one with the night colors of the forest. This trait has led to trolls painting themselves with this mud, also known as pig’s mud, which means that they are camouflaged when they are out in the forest during nighttime. The trolls become very hard to detect (-4 on all skill rolls to discover the forest trolls), and trolls that are sneaking become even harder to see (-8). The forest trolls that move through the woods without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 149
@@ -229,6 +249,12 @@
         "catalogId": "1Kx1hlMhNiOjPkQl",
         "summary": "Feels no fear and never makes fear rolls.",
         "description": "<p>Just like forest trolls, a galtir does not have the ability to feel fear. Once they engage in combat, they remain there until they die or strike down their foe.</p><p>Forest trolls likewise feel no fear and never need to make fear rolls.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 14
@@ -247,6 +273,12 @@
         "catalogId": "jrI2efIdJeKfLgMh",
         "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
         "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26

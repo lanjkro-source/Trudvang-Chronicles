@@ -22,7 +22,7 @@
     "damageQualification": {
       "nature": "normal",
       "delivery": "other",
-      "type": "other",
+      "type": "bludgeoning",
       "protection": "normal"
     },
     "damageQualificationNote": "",

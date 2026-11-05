@@ -7,6 +7,12 @@
     "catalogId": "UgB46VpVqWrXsYtZ",
     "summary": "Fire and cold cannot harm the creature.",
     "description": "<p>A stonehinje is completely immune to fire and cold.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 99

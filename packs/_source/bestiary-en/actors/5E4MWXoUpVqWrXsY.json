@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -100,6 +107,12 @@
         "catalogId": "D3rbkjKfLgMhNiOj",
         "summary": "The byse judges a bodily offering and grants luck or misfortune; effects and duration are decided by the GM.",
         "description": "<p>A person that sacrifices something from their body, for example, giving a large amount of blood, cutting off a finger, or shaving their hair or beard, and puts it in a bowl for a byse might be rewarded with great luck. If the byse thinks that the gift was too small or unworthy, the person will instead become terribly unlucky. How long the enchantment lasts is up to the byse. The game master decides the effects of being lucky or unlucky.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 70
@@ -118,6 +131,12 @@
         "catalogId": "NZdeU9D9EaGbHcId",
         "summary": "The byse can channel vitner.",
         "description": "<p>A byse can use vitner and has learned levels of spells belonging to some of the Vitner Tablets (such as Flame Craft, Vitner of Objects, and Soil Craft). It will use these spells to help or destroy, depending on its current mood.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 70
@@ -249,8 +268,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -380,7 +399,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -444,8 +463,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -521,8 +540,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -598,8 +617,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -682,7 +701,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -835,8 +854,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -901,7 +920,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "bludgeoning",
           "protection": "normal"
         },
@@ -965,8 +984,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1037,8 +1056,8 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
-          "type": "other",
+          "delivery": "ranged",
+          "type": "bludgeoning",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -1113,8 +1132,8 @@
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1184,8 +1203,8 @@
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1249,8 +1268,8 @@
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1320,8 +1339,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1426,8 +1445,8 @@
         "weavingTime": "2 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1491,8 +1510,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1568,8 +1587,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1639,8 +1658,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1710,8 +1729,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1793,8 +1812,8 @@
         "weavingTime": "1 action round",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1846,8 +1865,8 @@
         "weavingTime": "3 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1929,8 +1948,8 @@
         "weavingTime": "5 action rounds",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2018,8 +2037,8 @@
         "weavingTime": "1 hour per 2 Vitner Points",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },

@@ -2,8 +2,33 @@
  * Material means the striking surface/projectile, not the grip or bow stock.
  * Extend these lists here (or CONFIG.TRUDVANG.weaponMaterials) as needed. */
 export const WEAPON_MATERIALS = {
-  wood: "fa-tree", steel: "fa-link", bronze: "fa-ring", stone: "fa-mountain"
+  natural: "fa-leaf", wood: "fa-tree", steel: "fa-link", bronze: "fa-ring", stone: "fa-mountain"
 };
+const naturalWeaponProfiles = {
+  bite: {type: "piercing"}, morsure: {type: "piercing"},
+  tusks: {type: "piercing"}, defense: {type: "piercing"}, defenses: {type: "piercing"}, defense: {type: "piercing"},
+  horns: {type: "piercing"}, cornes: {type: "piercing"},
+  claws: {type: "slashing"}, griffes: {type: "slashing"}, griffure: {type: "slashing"},
+  griffesduloup: {type: "slashing"},
+  defensesdumastomant: {type: "piercing"},
+  impalingleg: {type: "piercing"}, patteempaleuse: {type: "piercing"},
+  beak: {type: "piercing"}, bec: {type: "piercing"},
+  hooves: {type: "bludgeoning"}, sabots: {type: "bludgeoning"}, kick: {type: "bludgeoning"}, ruade: {type: "bludgeoning"},
+  sweep: {type: "bludgeoning"}, balayage: {type: "bludgeoning"},
+  unarmed: {type: "bludgeoning"}, mainsnues: {type: "bludgeoning"},
+  icebreath: {type: "cold", delivery: "ranged", material: "", protection: "normal"}, souffledeglace: {type: "cold", delivery: "ranged", material: "", protection: "normal"},
+  magmabreath: {type: "fire", delivery: "ranged", material: "", protection: "normal"}, soufflemagmatique: {type: "fire", delivery: "ranged", material: "", protection: "normal"}, souffledemagma: {type: "fire", delivery: "ranged", material: "", protection: "normal"},
+  firebreath: {type: "fire", delivery: "ranged", material: "", protection: "normal"}, souffledefeu: {type: "fire", delivery: "ranged", material: "", protection: "normal"}
+};
+const normalizeNaturalWeaponName = value => String(value ?? "").normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+export function naturalWeaponQualification(name) {
+  const profile = naturalWeaponProfiles[normalizeNaturalWeaponName(name)];
+  if (!profile) return null;
+  const breath = profile.delivery === "ranged";
+  return {material: breath ? "" : "natural", damageQualification: {
+    nature: "normal", delivery: profile.delivery ?? "melee", type: profile.type, protection: profile.protection ?? "normal", ...(profile.material ? {material: profile.material} : {})
+  }};
+}
 export const DAMAGE_ICONS = {
   magical: "fa-wand-magic-sparkles",
   melee: "fa-hand-fist", ranged: "fa-bullseye", other: "fa-ellipsis",
@@ -45,17 +70,20 @@ for (const size of ["Small", "Medium", "Large"]) {
 }
 
 export function damageQualification({item, context = {}, usage = ""} = {}) {
+  const natural = item?.system?.category === "natural" ? naturalWeaponQualification(item.name) : null;
   const stored = item?.system?.damageQualification ?? {};
   const override = context.qualification ?? {};
   const delivery = ["throwing", "ranged"].includes(usage) ? "ranged"
     : ["melee", "natural", "unarmed"].includes(usage) ? "melee" : "other";
-  const merged = {...stored, ...override};
+  const merged = {...natural?.damageQualification, ...stored, ...override};
+  if (natural && stored.type === "other" && override.type === undefined) merged.type = natural.damageQualification.type;
+  if (natural && stored.delivery === "other" && override.delivery === undefined) merged.delivery = natural.damageQualification.delivery;
   return {
     nature: DAMAGE_NATURES.includes(override.nature) ? override.nature : context.magicalWeapon ? "magical" : DAMAGE_NATURES.includes(stored.nature) ? stored.nature : "normal",
     delivery: DAMAGE_DELIVERIES.includes(override.delivery) ? override.delivery
       : ["", "magic"].includes(usage) && DAMAGE_DELIVERIES.includes(stored.delivery) ? stored.delivery : delivery,
     type: DAMAGE_TYPES.includes(merged.type) ? merged.type : "other",
-    material: String(override.material ?? item?.system?.material ?? stored.material ?? ""),
+    material: String(override.material ?? (item?.system?.material || stored.material || natural?.material || "")),
     protection: DAMAGE_PROTECTIONS.includes(merged.protection) ? merged.protection : "normal"
   };
 }

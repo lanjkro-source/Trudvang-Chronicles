@@ -20,10 +20,10 @@
     "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
-      "type": "other",
-      "protection": "normal"
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "none"
     },
     "damageQualificationNote": "",
     "spellType": "instant",

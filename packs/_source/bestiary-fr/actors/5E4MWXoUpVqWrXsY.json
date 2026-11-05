@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -100,6 +107,12 @@
         "catalogId": "D3rbkjKfLgMhNiOj",
         "summary": "Le byse juge une offrande corporelle et accorde chance ou malchance ; effets et durée décidés par le MJ.",
         "description": "<p>Certaines personnes espèrent avoir de la chance en sacrifiant une partie de leur corps (en donnant, par exemple, une grande quantité de leur sang, en se tranchant un doigt ou en se rasant la barbe ou les cheveux) et en la déposant dans un bol à l’intention d’un byse. Si celui-ci estime que l’offrande est trop petite ou indigne, les personnes concernées sont affublées à la place d’une terrible malchance. C’est le byse qui décide de la durée de l’enchantement. Le maître de jeu détermine les effets de la chance ou de la malchance.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 70
@@ -118,6 +131,12 @@
         "catalogId": "NZdeU9D9EaGbHcId",
         "summary": "Le byse sait canaliser le vitner.",
         "description": "<p>Un byse peut utiliser le vitner et a appris des niveaux de sorts de certaines Tablettes de vitner (tels que Maîtrise des flammes, Vitner des objets et Maîtrise de la terre). Il utilise ces sorts pour aider ou détruire, en fonction de son humeur du moment.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Bestiaire de Jorge",
           "page": 70
@@ -249,8 +268,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -380,7 +399,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -444,8 +463,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -521,8 +540,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -598,8 +617,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -682,7 +701,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "fire",
           "protection": "magical"
         },
@@ -835,8 +854,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -901,7 +920,7 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
+          "delivery": "ranged",
           "type": "bludgeoning",
           "protection": "normal"
         },
@@ -965,8 +984,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1037,8 +1056,8 @@
         "dailyActivation": "",
         "damageQualification": {
           "nature": "normal",
-          "delivery": "other",
-          "type": "other",
+          "delivery": "ranged",
+          "type": "bludgeoning",
           "protection": "normal"
         },
         "damageQualificationNote": "",
@@ -1113,8 +1132,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1184,8 +1203,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1249,8 +1268,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1320,8 +1339,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1426,8 +1445,8 @@
         "weavingTime": "2 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1491,8 +1510,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1568,8 +1587,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1639,8 +1658,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1710,8 +1729,8 @@
         "weavingTime": "1 minute",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },
@@ -1793,8 +1812,8 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1846,8 +1865,8 @@
         "weavingTime": "3 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -1929,8 +1948,8 @@
         "weavingTime": "5 tours de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "melee",
           "type": "other",
           "protection": "normal"
         },
@@ -2018,8 +2037,8 @@
         "weavingTime": "1 heure par tranche de 2 points de vitner",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
-          "delivery": "other",
+          "nature": "magical",
+          "delivery": "ranged",
           "type": "other",
           "protection": "normal"
         },

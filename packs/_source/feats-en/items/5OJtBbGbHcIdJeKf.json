@@ -7,6 +7,12 @@
     "catalogId": "5OJtBbGbHcIdJeKf",
     "summary": "The yggdras understands animals and can communicate with them.",
     "description": "<p>Throughout the years, the yggdras have learned to speak with animals. This has led to the animals in the forest protecting the yggdras from evil intruders.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 103

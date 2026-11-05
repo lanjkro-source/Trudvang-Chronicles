@@ -2,6 +2,8 @@ import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing} from "../chat-sharing.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
+import {damageQualificationFields} from "../damage-icons.mjs";
+import {damageQualification} from "../rules/damage-qualifications.mjs";
 
 const {DocumentSheetV2, HandlebarsApplicationMixin} = foundry.applications.api;
 const TextEditorImpl = foundry.applications.ux.TextEditor.implementation;
@@ -11,10 +13,12 @@ const {ItemSheetV2} = foundry.applications.sheets;
 async function capacityContext(sheet) {
   const ability = creatureAbilityDetails(sheet.document, {language: game.i18n.lang, localize: key => game.i18n.localize(key)});
   const item = sheet.document.type === "creatureAbility";
+  const damageQualificationsOpen = sheet.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;
   return {ability, descriptionField: item ? "system.description" : "description",
     summaryField: item ? "system.summary" : "flags.trudvang-chronicles.capacitySummary",
     sourceBookField: item ? "system.source.book" : "flags.trudvang-chronicles.capacitySource.book",
     sourcePageField: item ? "system.source.page" : "flags.trudvang-chronicles.capacitySource.page",
+    damageQualificationFields: item ? damageQualificationFields(damageQualification({item: sheet.document}), {item: true, material: false, open: damageQualificationsOpen, note: sheet.document.system.damageQualificationNote}) : "",
     enrichedDescription: annotateRuleTestDescription(
       await TextEditorImpl.enrichHTML(ability.description, {async: true, secrets: sheet.document.isOwner}), sheet.document)};
 }
@@ -91,7 +95,7 @@ export class TrudvangCreatureAbilityItemSheet extends HandlebarsApplicationMixin
   static async #onSubmit(event, form, formData) {
     if (!this.isEditable) return;
     const updates = {};
-    for (const key of ["name", "system.summary", "system.description", "system.source.book", "system.source.page"]) {
+    for (const key of ["name", "system.summary", "system.description", "system.source.book", "system.source.page", "system.damageQualification.nature", "system.damageQualification.delivery", "system.damageQualification.type", "system.damageQualification.protection", "system.damageQualificationNote"]) {
       if (!Object.hasOwn(formData.object, key)) continue;
       const value = formData.object[key];
       updates[key] = key.endsWith(".page") ? Number(value || 0) : value;

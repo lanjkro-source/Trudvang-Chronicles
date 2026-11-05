@@ -7,6 +7,12 @@
     "catalogId": "P9RgBRkQlRmSnToU",
     "summary": "Each fairy dancing above a wounded creature heals 1d3 damage.",
     "description": "<p>A fairy that performs this dance above a wounded person heals the person of 1d3 points of damage. The more fairies dancing, the greater the healing.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 73

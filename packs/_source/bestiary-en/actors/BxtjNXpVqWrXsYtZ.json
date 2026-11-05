@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -75,6 +82,12 @@
         "catalogId": "BlV2voQlRmSnToUp",
         "summary": "After a successful unarmed attack, grips without further CP; crush damage depends on size, or a throw deals 1d10 (OR 10) per 3 m fallen.",
         "description": "<p>After a successful unarmed attack, a giant can attempt to grip a victim of Size 1/2 to 3 without spending additional CP. Make a skill roll whose SV depends on the victim's size. The victim can avoid the grip with Agility, preferably the Evade specialty.</p><p>Each round the giant can crush or throw the victim. Crushing damage depends on the victim's size. A throw deals 1d10 (OR 10) damage for every 3 meters fallen; use the actual fall height. A firdtursir is usually 20-22 m tall, giving 6d10-7d10 (OR 10); a hrimtursir 14-15 m, giving 4d10-5d10 (OR 10); a muspeljotun 25-27 m, giving 8d10-9d10 (OR 10). A vidrjotun is also 25-27 m tall, but its lower body is often half buried: the GM determines the actual height and falling damage.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 130
@@ -93,6 +106,12 @@
         "catalogId": "A0zCfjKfLgMhNiOj",
         "summary": "The vidrjotun reshapes trees and forests at will.",
         "description": "<p>The vidrjotuns have gained the ability to reshape trees to their liking. They can reshape anything from great living forests to individual trunks.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 141
@@ -111,6 +130,12 @@
         "catalogId": "Orm9QLfLgMhNiOjP",
         "summary": "Fresh sap: 1d10 (OR 6-10) BP; hardened: 1d10 (OR 8-10) BP; carried amber: +1 BP/day healing.",
         "description": "<p>The vidrjotuns are very close to Trudvang and filled with the life force of the land. Instead of having blood in their veins like many other creatures in the world, the vidrjotuns have sap like that which is found in trees. The sap is full of life and can be used to heal all living things.</p><p>When a vidrjotun is hurt and its sap touches the ground, beautiful flowers and fresh grass sprout. The sap can replenish dead plants and make the most blighted place become fruitful and covered in rich plant life once more. The sap can even cleanse dark magic from things it touches. A wounded creature that drinks a mouthful of the sap will instantly heal 1d10 (OR 6-10) points of damage.</p><p>When the sap hardens, it becomes a chewy, sticky rubbery substance that has healing attributes. A piece of hardened sap the size of an acorn will restore 1d10 (OR 8-10) Body Points to anyone who eats it. After the sap has been allowed to harden for several hundred years, it becomes amber, which also has healing powers. Anyone who carries a piece of this amber increases their natural healing by +1 point of damage per day.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 142
@@ -129,6 +154,12 @@
         "catalogId": "FNLRphJeKfLgMhNi",
         "summary": "A weapon wounding the vidrjotun sticks on 1-4 on a d10; extraction at situation value 12 (Strength), -1 each subsequent round.",
         "description": "<p>The sap that runs through the body of the giant instead of blood is very sticky. When a vidrjotun is wounded by a weapon that causes the sap to run out, there is a chance that the weapon might be caught in the sap.</p><p>A luck roll is made each time a weapon deals damage to the giant. The result of 1-4 on 1d10 means that the weapon is caught in the sap so severely that to remove it, the character must make a situation roll with a situation value of 12 (Strength modifiers apply). On a failure, the weapon is stuck and a new situation roll can be attempted the following round. For each action round that passes, the situation value is reduced by -1.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 143

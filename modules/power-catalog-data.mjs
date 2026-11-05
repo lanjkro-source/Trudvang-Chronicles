@@ -1306,6 +1306,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:death-gust:0": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:death-gust:0:0",
@@ -1383,6 +1389,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:0",
@@ -1462,6 +1474,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:0",
@@ -2573,6 +2591,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:fire-iron:0": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:fire-iron:0:0",
@@ -2591,6 +2615,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:firestorm:6": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:firestorm:6:0",
@@ -2609,6 +2639,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
@@ -3819,6 +3855,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:0",
@@ -3987,6 +4029,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "cold",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:0",
@@ -5231,6 +5279,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:divine-purge:6": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "lightning",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:divine-purge:6:0",
@@ -5254,6 +5308,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "lightning",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:0",
@@ -5272,6 +5332,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
@@ -5300,6 +5366,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
@@ -5323,6 +5395,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "lightning",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:sacred-burst:4:0",
@@ -5427,6 +5505,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
@@ -5917,6 +6001,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:banishment:7": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "none"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:banishment:7:0",
@@ -6039,6 +6129,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:thornwall:3": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "piercing",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:0",
@@ -7709,10 +7805,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "holy-toikalokke-master-of-elements:earthquake:7:3",
       "qualification": {
         "nature": "normal",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "bludgeoning",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "bludgeoning",
+      "protection": "normal"
     },
     "powerLevels": [
       {
@@ -7772,6 +7874,12 @@ export const POWER_DETAILS_BY_ID = {
         "type": "fire",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "normal"
     },
     "powerLevels": [
       {
@@ -8545,6 +8653,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:imprison:10": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "lightning",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:imprison:10:0",
@@ -9023,6 +9137,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:lindwurm-illusion:10": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "melee",
+      "type": "piercing",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:0",
@@ -9309,10 +9429,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "vitner-dimvitner:darkness-of-dimhall:8:2",
       "qualification": {
         "nature": "magical",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "other",
         "protection": "magicalOrGrindsilver"
       }
+    },
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "magicalOrGrindsilver"
     },
     "powerLevels": [
       {
@@ -9360,6 +9486,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:hand-of-death:1": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "magicalOrGrindsilver"
+    },
     "powerLevels": [
       {
         "id": "vitner-dimvitner:hand-of-death:1:0",
@@ -9429,6 +9561,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:tendril-of-dimhall:4": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "magicalOrGrindsilver"
+    },
     "powerLevels": [
       {
         "id": "vitner-dimvitner:tendril-of-dimhall:4:0",
@@ -9506,6 +9644,12 @@ export const POWER_DETAILS_BY_ID = {
         "protection": "normal"
       }
     },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "melee",
+      "type": "fire",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "vitner-flame-craft:burning-hand:2:0",
@@ -9555,10 +9699,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "vitner-flame-craft:flame-burst:3:2",
       "qualification": {
         "nature": "normal",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "fire",
         "protection": "magical"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "magical"
     },
     "powerLevels": [
       {
@@ -9639,6 +9789,12 @@ export const POWER_DETAILS_BY_ID = {
         "type": "fire",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "fire",
+      "protection": "normal"
     },
     "powerLevels": [
       {
@@ -9746,10 +9902,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "vitner-flame-craft:sea-of-fire:7:2",
       "qualification": {
         "nature": "normal",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "fire",
         "protection": "magical"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "fire",
+      "protection": "magical"
     },
     "powerLevels": [
       {
@@ -10873,10 +11035,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "vitner-soil-craft:earthquake:2:3",
       "qualification": {
         "nature": "normal",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "bludgeoning",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "bludgeoning",
+      "protection": "normal"
     },
     "powerLevels": [
       {
@@ -11009,6 +11177,13 @@ export const POWER_DETAILS_BY_ID = {
         "material": "stone"
       }
     },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "bludgeoning",
+      "protection": "normal",
+      "material": "stone"
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:rock-throw:0:0",
@@ -11088,6 +11263,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:soil-blast:4": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "bludgeoning",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:soil-blast:4:0",
@@ -12457,6 +12638,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:storm:8": {
     "isRune": false,
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "other",
+      "type": "bludgeoning",
+      "protection": "normal"
+    },
     "powerLevels": [
       {
         "id": "vitner-wind-craft:storm:8:0",
@@ -12521,6 +12708,12 @@ export const POWER_DETAILS_BY_ID = {
         "type": "bludgeoning",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "bludgeoning",
+      "protection": "normal"
     },
     "powerLevels": [
       {
@@ -12773,10 +12966,16 @@ export const POWER_DETAILS_BY_ID = {
       "optionId": "vitner-witchcraft:fever:2:5",
       "qualification": {
         "nature": "normal",
-        "delivery": "other",
+        "delivery": "ranged",
         "type": "other",
         "protection": "normal"
       }
+    },
+    "damageQualification": {
+      "nature": "normal",
+      "delivery": "ranged",
+      "type": "other",
+      "protection": "normal"
     },
     "targeting": {
       "baseTargets": 1,

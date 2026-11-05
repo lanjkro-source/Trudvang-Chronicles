@@ -7,6 +7,12 @@
     "catalogId": "fbai7XrXsYtZu0v1",
     "summary": "Normal daylight range in clear conditions, even in darkness; up to 100 m in fog, smoke or magical patterns.",
     "description": "<p>Under clear weather conditions (including natural darkness), a diser sees as far as a human can see in daylight. During other conditions such as thick fog, smoke, or magical patterns, a diser can see up to 100 meters ahead.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 54

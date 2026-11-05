@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -217,6 +224,12 @@
         "catalogId": "flAdvMhNiOjPkQlR",
         "summary": "Transformation over 3 defenseless rounds; movement 30 m/round, healing 10 BP/day in smoke form.",
         "description": "<p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 58
@@ -235,6 +248,12 @@
         "catalogId": "pjY95vXsYtZu0v1w",
         "summary": "Transforms into an animal at will; 3 defenseless rounds and a cost of 30 days and nights of its stay.",
         "description": "<p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 58
@@ -253,6 +272,12 @@
         "catalogId": "KldIdUlRmSnToUpV",
         "summary": "Drinking blood extends the draugr’s stay: 30 days for human blood, 60 for elven blood.",
         "description": "<p>A draugr that has drunk enough blood from humans can extend its stay in the world of the living by one lunar month (30 days and nights). Elven blood extends the stay by two lunar months, and troll blood extends it only by a week or two. Animal blood generates even less time, only a day or just hours, depending on the strength of the animal. The draugr can eat until it is full (10 Body Points) several times per day.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 58
@@ -271,6 +296,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
         "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 39
@@ -289,6 +320,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20

@@ -7,6 +7,12 @@
     "catalogId": "YZuZVRjPkQlRmSnT",
     "summary": "Lorsqu'il déclenche un combat, le warg saute sur sa proie et l'attaque de sa morsure et de ses griffes, gagnant une attaque de Griffes supplémentaire sans dépenser de points de combat supplémentaires pendant ce tour.",
     "description": "<p>Lorsqu’un warg déclenche un combat, il saute sur sa proie et l’attaque en même temps avec sa morsure et ses griffes. L’attaque de saut implique que la bête bénéficie d’une attaque supplémentaire avec ses pattes et griffes arrière pendant ce tour de jeu (Griffes VC 10) sans dépenser de PC supplémentaire. Ceci vaut seulement pour le tour pendant lequel a lieu l’Attaque de saut.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 30

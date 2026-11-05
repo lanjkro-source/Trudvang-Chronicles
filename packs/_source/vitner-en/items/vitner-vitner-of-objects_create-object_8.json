@@ -20,8 +20,8 @@
     "weavingTime": "1 hour per 2 Vitner Points",
     "dailyActivation": "",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
+      "nature": "magical",
+      "delivery": "ranged",
       "type": "other",
       "protection": "normal"
     },

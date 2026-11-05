@@ -7,6 +7,12 @@
     "catalogId": "X4skapToUpVqWrXs",
     "summary": "Le corps du démon est recouvert de solides écailles de fer qui lui procurent une valeur de protection naturelle comprise entre 5 et 15, à l'appréciation du MJ.",
     "description": "<p>Le corps du démon est recouvert de solides écailles de fer qui lui procurent une très haute valeur d’armure. Sa valeur de protection naturelle est comprise entre 5 et 15, à l’appréciation du MJ.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40

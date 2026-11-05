@@ -160,7 +160,7 @@ export function powerItemData(power, tablet, resolvers = {}) {
       range: localize(`TRUDVANG.Content.Power.${power.id}.Range`),
       weavingTime: localize(`TRUDVANG.Content.Power.${power.id}.CastingTime`),
       dailyActivation: localize(`TRUDVANG.Content.Power.${power.id}.DailyActivation`),
-      damageQualification: details?.damageRoll?.qualification ?? {nature:"normal",delivery:"other",type:"other",protection:"normal"},
+      damageQualification: details?.damageQualification ?? details?.damageRoll?.qualification ?? {nature:"magical",delivery:/^(personal|personnelle|contact|touch)/i.test(localize(`TRUDVANG.Content.Power.${power.id}.Range`)) ? "melee" : "ranged",type:"other",protection:"normal"},
       damageQualificationNote: localize(`TRUDVANG.Content.Power.${power.id}.DamageQualificationNote`),
       spellType: details?.spellType ?? "instant",
       isRune: details?.isRune ?? false,

@@ -7,6 +7,12 @@
     "catalogId": "KD0m2dHcIdJeKfLg",
     "summary": "The barrow wight uses dark vitner; tablets, skill and capacity are set by the GM (+10 in the example profile).",
     "description": "<p>A barrow wight has access to dark vitner and the power to wield it. The number of Vitner Tablets, the skill at weaving the vitner and the Vitner Capacity will differ from wight to wight. These stats are totally up to the GM’s judgement.</p><p>The example barrow wight profile has a Vitner Capacity bonus of +10.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 39

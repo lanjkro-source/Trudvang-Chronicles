@@ -7,6 +7,12 @@
     "catalogId": "YoZXmLgMhNiOjPkQ",
     "summary": "The demon automatically regenerates 1d10 (OR 10) BP per round without spending CP.",
     "description": "<p>The demon regenerates 1d10 (OR 10) Body Points per action round. This ability is automatic and does not need any activation or Combat Point expense.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48

@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "n85BQGaGbHcIdJeK",
         "summary": "Burning sphere 10 m in diameter, resist at situation value 8 (Psyche); damage increases with exposure.",
         "description": "<p>Since the logi is made of fire, it is perhaps not so strange that its body is surrounded by extreme heat. A constant heat pulsates out in a sphere around the logi. The sphere is 10 meters in diameter. Everyone that stands within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) to avoid fleeing from the sphere. The heat in the sphere deals the following damage per action round to anyone within it:</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "other",
+          "type": "fire",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 88
@@ -78,6 +98,12 @@
         "catalogId": "nNCiHQlRmSnToUpV",
         "summary": "A successful attack coats the victim in burning oil: 1d6 damage/round for 1d3 rounds; only nonconductive armor protects.",
         "description": "<p>The logi is a manifestation of fire itself. To simply be in its presence carries a risk of burning damage. To fight a logi is no easy task, and anyone who takes on such a challenge without proper protection will soon regret the decision. When the logi successfuly attacks someone in close quarters, it will leave burning oil on its victim. The oil will extinguish itself after 1d3 action rounds. During these action rounds, the victim will suffer 1d6 points of damage from the burning heat (only armor that does not conduct heat offers any protection). Afterward, it is possible for the victim’s clothes to catch fire; the game master will decide how likely this is.</p>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "fire",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 88
@@ -96,6 +122,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20

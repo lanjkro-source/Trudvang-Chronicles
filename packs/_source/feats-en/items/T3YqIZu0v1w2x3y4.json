@@ -7,6 +7,12 @@
     "catalogId": "T3YqIZu0v1w2x3y4",
     "summary": "The diser moves objects by thought alone.",
     "description": "<p>The diser can lift an object and move it through the air. The size and weight of the object is up to the game master to decide. A creature that is exposed to the lift can resist it by making a situation roll with a situation value that is up to the game master, taking into consideration the weight of the victim and the strength of the diser.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 53

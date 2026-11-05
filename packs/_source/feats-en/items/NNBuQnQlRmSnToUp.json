@@ -7,6 +7,12 @@
     "catalogId": "NNBuQnQlRmSnToUp",
     "summary": "The demon can transform into a creature of its choice.",
     "description": "<p>The demon can transform into a creature of its choice.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48

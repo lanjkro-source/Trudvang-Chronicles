@@ -21,8 +21,8 @@
     "dailyActivation": "",
     "damageQualification": {
       "nature": "normal",
-      "delivery": "other",
-      "type": "other",
+      "delivery": "ranged",
+      "type": "bludgeoning",
       "protection": "normal"
     },
     "damageQualificationNote": "",

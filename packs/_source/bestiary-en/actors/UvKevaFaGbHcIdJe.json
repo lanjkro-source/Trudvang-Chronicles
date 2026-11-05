@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -101,6 +108,12 @@
         "catalogId": "SLHo7lQlRmSnToUp",
         "summary": "Gray skin conceals the goblin in caves: -4 to detect it while still, -8 while moving stealthily.",
         "description": "<p>The gray skin of the goblins gives them the ability to adapt to their background. Those that stand still against a cave wall are incredibly hard to detect (-4 on all skill rolls to discover the goblin), and goblins that are moving but trying to be sneaky are still very hard to spot (-8). Goblins that move through a cave without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 152
@@ -119,6 +132,12 @@
         "catalogId": "Vuy4tVpVqWrXsYtZ",
         "summary": "Moves on walls at half its movement and on ceilings at one third.",
         "description": "<p>Goblins have the ability to move along the walls and ceiling of a cave. A goblin moves at half their movement rate on walls and a third on ceilings.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 152
@@ -137,6 +156,12 @@
         "catalogId": "x25bl6A6B7C8D9Ea",
         "summary": "Faced with an unexplained phenomenon, the goblin must succeed at situation value 8 or flee.",
         "description": "<p>The goblins are very superstitious and afraid of the unknown, especially vitner and other trollcraft. When a goblin bears witness to something that in their eyes has no natural explanation (game master’s discretion), they must make a situation roll with a situation value of 8, and on a failed roll they will flee.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 153
@@ -155,6 +180,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20
@@ -173,6 +204,12 @@
         "catalogId": "NquAmWpVqWrXsYtZ",
         "summary": "In sunlight, the goblin suffers -5 to all rolls.",
         "description": "<p>Goblins that are exposed to sunlight have a modifier of -5 to all SV-rolls.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 153

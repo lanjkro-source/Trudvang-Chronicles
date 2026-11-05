@@ -7,6 +7,12 @@
     "catalogId": "NZdeU9D9EaGbHcId",
     "summary": "The byse can channel vitner.",
     "description": "<p>A byse can use vitner and has learned levels of spells belonging to some of the Vitner Tablets (such as Flame Craft, Vitner of Objects, and Soil Craft). It will use these spells to help or destroy, depending on its current mood.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 70

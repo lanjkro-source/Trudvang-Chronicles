@@ -20,8 +20,8 @@
     "weavingTime": "15 minutes",
     "dailyActivation": "",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
+      "nature": "magical",
+      "delivery": "melee",
       "type": "other",
       "protection": "normal"
     },

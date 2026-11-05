@@ -7,6 +7,12 @@
     "catalogId": "MKMhM5z5A6B7C8D9",
     "summary": "The fjol troll can transform at will into almost anything.",
     "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 148

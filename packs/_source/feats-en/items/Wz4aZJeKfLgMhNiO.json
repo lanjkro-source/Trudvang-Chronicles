@@ -7,6 +7,12 @@
     "catalogId": "Wz4aZJeKfLgMhNiO",
     "summary": "The sálhele ignores lost limbs; immune to piercing weapons, half cutting damage, normal crushing damage.",
     "description": "<p>Since a sálhele is an undead creature, it takes no notice of damage. A skeleton that loses an arm or a leg keeps on fighting with the same ferocity. The only vital body part that the skeleton cannot lose is the head. If the skull is chopped off, the skeleton will fall into a bone pile and its spirit will depart for Misthal.</p><p>Since a skeleton consists mainly of empty space between bones, it takes different damage depending on the type of weapon used in the attack. Skeletons take no damage from arrows, piercing weapons (daggers), or thrust weapons (spears), and they take half damage from cutting weapons (swords). Crushing weapons (clubs and maces) deal normal damage.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 67

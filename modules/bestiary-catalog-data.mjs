@@ -20,6 +20,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -42,6 +49,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -206,6 +220,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -228,6 +249,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -392,6 +420,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -414,6 +449,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -584,6 +626,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -606,6 +655,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -914,6 +970,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -936,6 +999,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -1217,6 +1287,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -1239,6 +1316,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -1654,6 +1738,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -1676,6 +1767,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -1845,6 +1943,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2002,6 +2107,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2024,6 +2136,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2201,6 +2320,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2223,6 +2349,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2399,6 +2532,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2421,6 +2561,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2604,6 +2751,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2626,6 +2780,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2809,6 +2970,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -2831,6 +2999,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -3041,6 +3216,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -3063,6 +3245,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -3085,6 +3274,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -3107,6 +3303,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -3943,6 +4146,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -4500,6 +4710,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -4522,6 +4739,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -4682,6 +4906,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -4704,6 +4935,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -4875,6 +5113,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -5375,6 +5620,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -5893,6 +6145,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -5915,6 +6174,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -6155,6 +6421,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -6753,6 +7026,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -6775,6 +7055,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -6939,6 +7226,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -6961,6 +7255,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7125,6 +7426,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -7276,6 +7584,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7298,6 +7613,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7551,6 +7873,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7573,6 +7902,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7731,6 +8067,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7753,6 +8096,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -7919,6 +8269,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -8305,6 +8662,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -8327,6 +8691,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -8637,6 +9008,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -8866,6 +9244,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -9198,6 +9583,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9383,6 +9775,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9550,6 +9949,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9670,6 +10076,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9692,6 +10105,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9714,6 +10134,12 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "ranged",
+              "type": "cold",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9892,6 +10318,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9914,6 +10347,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -9936,6 +10376,12 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "ranged",
+              "type": "fire",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10114,6 +10560,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10282,6 +10735,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10304,6 +10764,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10326,6 +10793,12 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "ranged",
+              "type": "fire",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10511,6 +10984,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10533,6 +11013,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -10758,6 +11245,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -10976,6 +11470,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -11182,6 +11683,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -11342,6 +11850,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -11497,6 +12012,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -11716,6 +12238,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -12184,6 +12713,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -12600,6 +13136,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -13229,6 +13772,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -13738,6 +14288,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -14258,6 +14815,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -14892,6 +15456,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": true,
             "equipped": true,
@@ -15342,6 +15913,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -15364,6 +15942,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -15926,6 +16511,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16074,6 +16666,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16214,6 +16813,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16360,6 +16966,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16382,6 +16995,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16534,6 +17154,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16676,6 +17303,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16816,6 +17450,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -16958,6 +17599,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17100,6 +17748,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17248,6 +17903,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17270,6 +17932,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17424,6 +18093,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17572,6 +18248,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17594,6 +18277,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17740,6 +18430,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "bludgeoning",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -17880,6 +18577,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18020,6 +18724,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18042,6 +18753,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "slashing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18194,6 +18912,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18342,6 +19067,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18488,6 +19220,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -18628,6 +19367,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,
@@ -20346,6 +21092,13 @@ export const BESTIARY_ENTRIES = [
           "img": "icons/svg/combat.svg",
           "system": {
             "category": "natural",
+            "material": "natural",
+            "damageQualification": {
+              "nature": "normal",
+              "delivery": "melee",
+              "type": "piercing",
+              "protection": "normal"
+            },
             "combatSpecialty": "natural",
             "isUnarmed": false,
             "equipped": true,

@@ -953,6 +953,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Material.unknown` | Unspecified | Non précisé |
 | `TRUDVANG.Damage.Material.grindsilver` | Grindsilver | Grindsilver |
 | `TRUDVANG.Damage.Material.bronze` | Bronze | Bronze |
+| `TRUDVANG.Damage.Material.natural` | Natural | Naturel |
 
 ## `TRUDVANG.Damage.Protection`
 

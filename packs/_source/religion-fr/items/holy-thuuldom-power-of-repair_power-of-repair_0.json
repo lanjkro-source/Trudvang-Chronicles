@@ -20,8 +20,8 @@
     "weavingTime": "",
     "dailyActivation": "1/niveau",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
+      "nature": "magical",
+      "delivery": "ranged",
       "type": "other",
       "protection": "normal"
     },

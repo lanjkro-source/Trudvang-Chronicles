@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -36,6 +43,12 @@
         "catalogId": "xqhnZRmSnToUpVqW",
         "summary": "The logrjotun controls water and currents.",
         "description": "<p>A logrjotun can control the water it moves through. It does not do this through the use of vitner but rather by movement. The giant can, for example, create horrid waves that it can send toward a threat. It can create huge maelstroms that suck boats down into the depths or water currents that make boats stray along a different path no matter how the wind blows.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 136
@@ -54,6 +67,12 @@
         "catalogId": "iTN16SlRmSnToUpV",
         "summary": "Grips without further CP after an unarmed attack; crush damage depends on size, or a throw deals 1d10 (OR 10) to 1d10 (OR 4-10).",
         "description": "<p>When the giant succeeds in an unarmed attack roll he can try to grab hold of a victim, without spending further Combat Points, but making a SV roll. The creature must be between 1/2t and 3t in size and the value of the SV depends on the size of the victim, according to the table below.</p><p>A victim of the grip can try to avoid the attack with the Agility skill, preferably with the Evade specialty. Each round, the giant can choose to crush or throw the victim. A crush causes the victim to take between 1d10 and 1d10 (OR 9–10) points of damage per action round (the damage depends on the size of the victim), while a fall can deal anything from 1d10 (OR 10) to 1d10 (OR 4–10) points of damage, depending on the severity of the fall.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 135
@@ -72,6 +91,12 @@
         "catalogId": "jrI2efIdJeKfLgMh",
         "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
         "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26
@@ -90,6 +115,12 @@
         "catalogId": "LTLHNqSnToUpVqWr",
         "summary": "At night, situation value 8 (Psyche) to avoid steering a ship toward the light of the giant’s eyes.",
         "description": "<p>The great eyes of the logrjotun radiate with light like a full moon during the night. This is not something that can be seen during the day, but when night falls, a seafarer may see the eyes of a logrjotun like small round moons at a distance.</p><p>Even if it is not the intention of the giant, their eye light can be treacherously attractive. Seafarers must make a situation roll with a situation value of 8 (Psyche modifiers apply) to not unintentionally steer their ship toward the light.</p><p>Even if the logrjotun is a peaceful creature, it can be annoyed by ships that stray too close or steer into them.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 135

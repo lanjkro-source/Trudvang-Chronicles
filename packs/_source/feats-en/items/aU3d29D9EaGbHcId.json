@@ -7,6 +7,12 @@
     "catalogId": "aU3d29D9EaGbHcId",
     "summary": "The skjuld has various supernatural abilities.",
     "description": "<p>It is not unusual for a skjuld to have learned spells or elven abilities.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 96

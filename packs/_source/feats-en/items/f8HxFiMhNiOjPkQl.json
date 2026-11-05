@@ -7,6 +7,12 @@
     "catalogId": "f8HxFiMhNiOjPkQl",
     "summary": "The diser can manipulate flows of vitner.",
     "description": "<p>Many spells that a diser possesses bear similarities to different vitner spells. It is up to the game master to decide if a diser has one or more abilities whose traits and functions can be compared to a spell.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 54

@@ -30,6 +30,7 @@ export function creatureAbilityItemData(entry, {code, localize, strict = false})
   };
   return {_id: entry.id, name: text("Name"), type: "creatureAbility", img: "icons/svg/aura.svg",
     system: {catalogId: entry.id, summary: text("Summary"), description: text("Description"),
+      damageQualification: entry.damageQualification ?? {nature:"magical",delivery:"other",type:"other",protection:"normal"},
       source: {book: text("SourceBook"), page: entry.pages[code]}, ignoreWoundPenalties: entry.ignoreWoundPenalties,
       ...(entry.unlimitedVitner ? {unlimitedVitner: true} : {}),
       ...(entry.vitnerCapacityBonus ? {vitnerCapacityBonus: entry.vitnerCapacityBonus} : {})},

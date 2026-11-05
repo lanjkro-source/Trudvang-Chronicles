@@ -7,6 +7,12 @@
     "catalogId": "QqkRW8C8D9EaGbHc",
     "summary": "The demon is always first to attack during an action round.",
     "description": "<p>The demon moves very fast. The demon always attacks first during an action round.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 49

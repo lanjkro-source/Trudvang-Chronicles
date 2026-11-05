@@ -810,7 +810,8 @@
         "stone": "Pierre",
         "unknown": "Non précisé",
         "grindsilver": "Grindsilver",
-        "bronze": "Bronze"
+        "bronze": "Bronze",
+        "natural": "Naturel"
       },
       "Protection": {
         "normal": "Protections normales",

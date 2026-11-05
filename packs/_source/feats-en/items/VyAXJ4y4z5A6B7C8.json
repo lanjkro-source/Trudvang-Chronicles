@@ -7,6 +7,12 @@
     "catalogId": "VyAXJ4y4z5A6B7C8",
     "summary": "The hrimtursir takes double damage from fire.",
     "description": "<p>Hrimtursirs take double damage from any sort of fire.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 132

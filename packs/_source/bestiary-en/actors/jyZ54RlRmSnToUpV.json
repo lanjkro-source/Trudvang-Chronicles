@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "slashing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "GbEsz3v1w2x3y4z5",
         "summary": "The thorn beast’s foul smell spreads fear nearby.",
         "description": "<p>The inner organs of a thorn beast are in a constant process of rot due to the unpleasant effects of the thornroot. This means that the great winged lizard carries a horrid and pungent stench of dead flesh and decay. A human being with a normal sense of smell can detect the stench at a distance of 50 meters. Anyone who approaches the beast closer than 5 meters gains 1d10 (OR 9-10) Fear Points due to the stench. This does not apply to tamers and expert riders which usually get used to the stench due to the long time spent with the beast.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26
@@ -78,6 +98,12 @@
         "catalogId": "jrI2efIdJeKfLgMh",
         "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
         "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 26
@@ -96,6 +122,12 @@
         "catalogId": "XNbb4nRmSnToUpVq",
         "summary": "Dive at SV 8: bite 2d10 (OR 7-10) +6 and claws 2d10 (OR 8-10) +6; usable every 6 rounds.",
         "description": "<p>For a thorn beast to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power and speed of the thorn beast is used, which increases the damage of the bite attack to 2d10 (OR 7-10) +6 and the claw attack to 2d10 (OR 8-10) + 6. The thorn beast can perform one attack from above every 6 action rounds, since it must circle around for at least 5 rounds.</p><p>One who wishes to attack a thorn beast performing a flyby attack has a modifier of -3 on all attacks. However, it is easier to see where the thorn beast will attack, which means the victim has a modifier of +2 when parrying the attacks of a thorn beast.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 25

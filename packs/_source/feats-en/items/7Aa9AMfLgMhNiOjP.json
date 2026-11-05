@@ -7,6 +7,12 @@
     "catalogId": "7Aa9AMfLgMhNiOjP",
     "summary": "The demon has twice as many BP because its tolerance of pain is higher than other demons’.",
     "description": "<p>The demon’s tolerance of pain is higher than that of normal demons, therefore this demon has double Body Points.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48

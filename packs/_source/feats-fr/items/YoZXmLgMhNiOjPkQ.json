@@ -7,6 +7,12 @@
     "catalogId": "YoZXmLgMhNiOjPkQ",
     "summary": "Le démon régénère 1d10 (JO 10) points de santé par tour de jeu, automatiquement et sans dépenser de points de combat.",
     "description": "<p>Le démon régénère 1d10 (JO 10) points de santé par tour de jeu. Ce pouvoir est automatique ; il ne nécessite aucune activation ni aucune dépense de points de combat.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Bestiaire de Jorge",
       "page": 40

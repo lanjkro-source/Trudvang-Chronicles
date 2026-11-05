@@ -20,9 +20,9 @@
     "weavingTime": "2 tours de jeu",
     "dailyActivation": "",
     "damageQualification": {
-      "nature": "normal",
-      "delivery": "other",
-      "type": "other",
+      "nature": "magical",
+      "delivery": "melee",
+      "type": "piercing",
       "protection": "normal"
     },
     "damageQualificationNote": "",

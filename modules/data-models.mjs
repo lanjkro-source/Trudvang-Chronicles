@@ -2,6 +2,7 @@ import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
 import {npcCurrentTrait, npcBookSkillRows} from "./rules/npc-summary.mjs";
 import {TRUDVANG} from "./config.mjs";
 import {EFFECT_RULE_KEYS} from "./rules/effect-rule-changes.mjs";
+import {naturalWeaponQualification} from "./rules/damage-qualifications.mjs";
 
 const fields = foundry.data.fields;
 
@@ -382,7 +383,7 @@ function equipmentSchema() {
 
 function magicSchema() {
   return {
-    damageQualification: damageQualificationSchema(),
+    damageQualification: schema({nature:string("magical"),delivery:string("ranged"),type:string("other"),protection:string("normal"),material:string()}),
     damageQualificationNote: string(),
     level: integer(1, {min: 1, max: 5}),
     cost: integer(2, {min: 0}),
@@ -448,6 +449,16 @@ export class WeaponData extends BaseItemData {
       rangeSelection: string("short"),
       range: schema({short: coercedInteger(0), long: coercedInteger(0)})
     };
+  }
+
+  prepareDerivedData() {
+    if (this.category !== "natural") return;
+    const profile = naturalWeaponQualification(this.parent?.name);
+    if (!this.material) this.material = profile?.material ?? "natural";
+    if (profile && this.damageQualification?.type === "other") {
+      this.damageQualification.delivery = profile.damageQualification.delivery;
+      this.damageQualification.type = profile.damageQualification.type;
+    }
   }
 }
 
@@ -529,6 +540,10 @@ export class SpellData extends BaseItemData {
       tablet: string()
     };
   }
+
+  prepareDerivedData() {
+    prepareDefaultMagicQualification(this);
+  }
 }
 
 export class TabletData extends BaseItemData {
@@ -557,6 +572,23 @@ export class DivineFeatData extends BaseItemData {
   static defineSchema() {
     return {...super.defineSchema(), ...magicSchema(), catalogId: string(), tabletId: string(), tablet: string()};
   }
+
+  prepareDerivedData() {
+    prepareDefaultMagicQualification(this);
+  }
+}
+
+function prepareDefaultMagicQualification(model) {
+  const source = model.parent?._source?.system ?? {};
+  if (source.damageQualification || model.catalogId) return;
+  const range = String(model.range ?? "");
+  model.damageQualification = {
+    ...model.damageQualification,
+    nature: "magical",
+    delivery: /^(personal|personnelle|self|contact|touch|au toucher)/i.test(range) ? "melee" : "ranged",
+    type: "other",
+    protection: "normal"
+  };
 }
 
 export class AbilityData extends BaseItemData {
@@ -582,7 +614,7 @@ export class AbilityData extends BaseItemData {
 export const ACTOR_DATA_MODELS = {character: CharacterData, npc: NpcData};
 export class CreatureAbilityData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
-    return {catalogId: string(), description: html(), summary: string(),
+    return {catalogId: string(), description: html(), summary: string(), damageQualification: schema({nature:string("magical"),delivery:string("other"),type:string("other"),protection:string("normal"),material:string()}), damageQualificationNote: string(),
       source: schema({book: string(), page: integer(0, {min: 0})}), ignoreWoundPenalties: boolean(false),
       vitnerCapacityBonus: integer(0), unlimitedVitner: boolean(false)};
   }

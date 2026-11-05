@@ -15,6 +15,7 @@ import {ruleTestCastingContext,withCastingCounts,currentCastingCounts,ruleTestSo
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
+import {naturalWeaponQualification} from "./rules/damage-qualifications.mjs";
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
@@ -83,7 +84,8 @@ async function askFields(title,fields,preview=()=>"",intro=""){
  return DialogClass.wait({window:{title},content,buttons:[{action:"apply",label:local("Apply"),default:true,callback:(event,button)=>({action:"apply",...Object.fromEntries(new FormData(button.form))})},{action:"cancel",label:local("Cancel"),callback:()=>false}],close:()=>false});
 }
 function naturalWeapon(row,effectId){
- return {name:row.name,type:"weapon",img:"icons/svg/sword.svg",system:{category:"natural",combatSpecialty:"natural",equipped:true,strengthApplies:true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId}}};
+ const profile=naturalWeaponQualification(row.name);
+ return {name:row.name,type:"weapon",img:"icons/svg/sword.svg",system:{category:"natural",material:profile?.material||"natural",damageQualification:row.damageQualification??profile?.damageQualification??{nature:"normal",delivery:"melee",type:"other",protection:"normal"},combatSpecialty:"natural",equipped:true,strengthApplies:true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId}}};
 }
 export function selectFormData(form,policy){
  const s=form.actor.system;

@@ -7,6 +7,12 @@
     "catalogId": "X4skapToUpVqWrXs",
     "summary": "Strong iron scales give the demon natural Protection Value 5-15, at the GM’s discretion.",
     "description": "<p>The body of the demon is covered in powerful iron scales which give the demon a very high armor value, between armor value 5 and 15 in natural protection, according to GM’s judgement.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 48

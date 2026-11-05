@@ -7,6 +7,12 @@
     "catalogId": "HtsoWMgMhNiOjPkQ",
     "summary": "Senses intelligent creatures and hostile intentions within 200 m.",
     "description": "<p>An yggdras can feel the presence of intelligent creatures within 200 meters and know whether such a creature is hostile or not.</p>",
+    "damageQualification": {
+      "nature": "magical",
+      "delivery": "other",
+      "type": "other",
+      "protection": "normal"
+    },
     "source": {
       "book": "Jorgi's Bestiary",
       "page": 103

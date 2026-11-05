@@ -8,11 +8,14 @@ const sources = Object.fromEntries(["fr", "en"].map(code => [code,
 if (sources.fr.length !== sources.en.length) throw new Error("The bilingual ability sources must be aligned.");
 const references = {};
 const entries = [];
+const damageFields = {nature:["normal","magical"],delivery:["melee","ranged","other"],type:["slashing","piercing","bludgeoning","fire","cold","lightning","acid","poison","other"],protection:["normal","magical","magicalOrGrindsilver","none"]};
 const languages = Object.fromEntries(["fr", "en"].map(code => [code, JSON.parse(readFileSync(`lang/${code}.json`, "utf8"))]));
 for (const language of Object.values(languages)) language.TRUDVANG.Content.CreatureAbility = {};
 for (const [index, source] of sources.fr.entries()) {
   const name = source.name;
   const id = deterministicId(`creature-ability:${sources.fr[index].name}`);
+  if(JSON.stringify(source.damageQualification??null)!==JSON.stringify(sources.en[index].damageQualification??null))throw new Error(`Bilingual damage qualifications differ for capacity ${name}.`);
+  if(source.damageQualification&&Object.entries(damageFields).some(([key,allowed])=>!allowed.includes(source.damageQualification[key])))throw new Error(`Invalid damage qualification for capacity ${name}.`);
   const pages = {};
   for (const code of ["fr", "en"]) {
     const entry = sources[code][index];
@@ -22,6 +25,7 @@ for (const [index, source] of sources.fr.entries()) {
   }
   references[name] = {id, pages};
   entries.push({id, pages, ignoreWoundPenalties: source.ignoreWoundPenalties === true,
+    ...(source.damageQualification ? {damageQualification: source.damageQualification} : {}),
     ...(source.unlimitedVitner ? {unlimitedVitner: true} : {}),
     ...(source.vitnerCapacityBonus ? {vitnerCapacityBonus: source.vitnerCapacityBonus} : {})});
 }

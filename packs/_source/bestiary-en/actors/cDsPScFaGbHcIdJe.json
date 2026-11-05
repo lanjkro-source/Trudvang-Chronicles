@@ -10,6 +10,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "piercing",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": false,
         "equipped": true,
@@ -34,6 +41,13 @@
       "img": "icons/svg/combat.svg",
       "system": {
         "category": "natural",
+        "material": "natural",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
         "combatSpecialty": "natural",
         "isUnarmed": true,
         "equipped": true,
@@ -60,6 +74,12 @@
         "catalogId": "Z8nwIJdJeKfLgMhN",
         "summary": "Mimics a victim’s voice: situation value 12 (Psyche) to move away, -1 per additional myling.",
         "description": "<p>A myling is very skilled in mimicking other creatures as a stalling tactic until other mylings can arrive. The myling will often say the sentence “Give me thy name.”</p><p>Anyone who hears the myling mimic his voice must make a situation roll with a situation value of 12 (Psyche modifiers apply) in order to move away from the strange creature.</p><p>For each myling that joins in mimicking, the situation value is modified by -1.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 63
@@ -78,6 +98,12 @@
         "catalogId": "dihK2uYtZu0v1w2x",
         "summary": "The true name allows the soul to be bound and stolen: lose one Psyche level; only the victim can recover it by killing the myling without help.",
         "description": "<p>A myling that receives the true name of a person can bind the soul of the victim to itself to gain more power. It does this by sacrificing to its goddess. This sacrificial ritual takes time and the place can lie far off, which requires the myling to be swift before the victim can realize what is about to happen.</p><p>When a victim gives his true name, he must make a situation roll with a situation value of 6 (Intelligence modifiers apply) to understand that something is afoot. If the roll is successful, the victim will feel uneasy and realize that he must stop the creature at once. A myling that succeeds in binding another’s soul to it gains high status among its kin. A victim who has lost his soul to a myling will feel empty, without goals or purpose, for the rest of his life. The victim loses one level of the Psyche trait. The only way to regain the lost soul is to single-handedly slay the myling that stole it. If the myling dies by someone else’s hand, the soul is lost forever.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 63
@@ -96,6 +122,12 @@
         "catalogId": "5H4W4NhNiOjPkQlR",
         "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
         "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 39
@@ -114,6 +146,12 @@
         "catalogId": "G4RBaoRmSnToUpVq",
         "summary": "When standing: situation value 14, -1 per myling; in deep water, Swimming -1 per myling.",
         "description": "<p>When a myling hears people nearby, it might pretend to be a child that is about to drown. (It usually does this only if other mylings are nearby.) The myling will mimic a human child, splash in the water, and ask the travelers for their names. If they do not get true names or if someone jumps in the water to help the apparent child, the mylings then attack if they are the greater force in numbers.</p><p>A victim that is exposed to the mylings must succeed in getting to land so that he won’t risk being drowned. If the victim can touch the bottom of the water source with their feet, he must make a situation roll with a situation value of 14 (Strength and Dexterity modifiers apply). For each myling that tries to pull down the victim, the situation value is modified by -1. If the water is so deep that the victim must swim to stay above the surface an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -1 for each myling that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 63
@@ -132,6 +170,12 @@
         "catalogId": "yCooPeIdJeKfLgMh",
         "summary": "Sees without any light as in daylight; this ability sets no particular range.",
         "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "damageQualification": {
+          "nature": "magical",
+          "delivery": "other",
+          "type": "other",
+          "protection": "normal"
+        },
         "source": {
           "book": "Jorgi's Bestiary",
           "page": 20
