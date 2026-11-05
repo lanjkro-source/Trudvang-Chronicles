@@ -93,6 +93,29 @@ test("damage rows grow on the original roll card, with the actual loss after eac
   assert.match(message.content, /<h3>Sword<\/h3>/, "the original roll, buttons and details are preserved");
   assert.equal(updates.length, 2);
 });
+test('damage resistance reserves one roll, rejects foreign proofs, and a success cancels only this card’s damage',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t),actor=makeActor('Resistant');addDamageTarget(actor);
+ flags.damageContext={boundActorUuid:actor.uuid,resistance:{scope:'damage',successFactor:0}};
+ const request={...payload(actor),type:'chatDamageResistance',action:'begin'};
+ const [first,second]=await Promise.all([applyChatApplication(request),applyChatApplication(request)]);
+ assert.equal(first.status,'reserved');assert.equal(second.status,'resistancePending');
+ assert.equal((await applyChatApplication(payload(actor))).status,'resistancePending');
+ game.messages.set('proof',{id:'proof',author:player,flags:{'trudvang-chronicles':{damageResistanceFor:{messageId:'wrong',actorUuid:actor.uuid},rollOutcome:{success:true}}}});
+ const finish={...request,action:'finish',token:first.token,proofId:'proof'};
+ assert.equal((await applyChatApplication(finish)).status,'unavailable');
+ game.messages.get('proof').flags['trudvang-chronicles'].damageResistanceFor.messageId=message.id;
+ assert.equal((await applyChatApplication(finish)).status,'resolved');
+ assert.deepEqual(await applyChatApplication(payload(actor)),{status:'applied',amount:0});
+ assert.equal(actor.system.resources.body.value,20);
+});
+test('clothing variants use the source card’s factors, round upward, and share the normal damage application lock',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t),actor=makeActor('Winter');addDamageTarget(actor);
+ flags.damageContext={boundActorUuid:actor.uuid,alternatives:[{id:'winter',factor:.5},{id:'mastomant',factor:0}]};
+ assert.equal((await applyChatApplication(payload(actor,{variant:'invented',factor:0}))).status,'unavailable');
+ assert.deepEqual(await applyChatApplication(payload(actor,{variant:'winter',factor:0})),{status:'applied',amount:4});
+ assert.equal((await applyChatApplication(payload(actor,{variant:'mastomant'}))).status,'alreadyApplied');
+ assert.equal(actor.system.resources.body.value,16);
+});
 
 test("simultaneous fear applications preserve all rows and apply each shared actor only once", async t => {
   const {message, flags, makeActor, payload} = runtime(t, "fear");

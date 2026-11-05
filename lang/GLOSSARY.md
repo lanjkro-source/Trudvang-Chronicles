@@ -10986,7 +10986,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Name` | Hand of Death | Main funeste |
-| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Description` | Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. | À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.Description` | The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card. | Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte. |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourceName` | Hand of Death | Main funeste |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#effect.SourcePage` | 105 | 156 |
@@ -10997,7 +10997,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Name` | Hand of Death — additional target | Main funeste — cible supplémentaire |
-| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Description` | Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements. | À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée. |
+| `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.Description` | The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card. This target keeps the base version, without damage, duration or resistance upgrades. | Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte. Cette cible conserve la version de base, sans amélioration de dégâts, de durée ou de résistance. |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourceName` | Hand of Death | Main funeste |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-dimvitner:hand-of-death:1#base.SourcePage` | 105 | 156 |
@@ -11646,7 +11646,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Name` | Fever (Vitner) | Fièvre (vitner) |
-| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Description` | The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Description` | Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round. |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourceName` | Fever | Fièvre |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourcePage` | 143 | 185 |
@@ -14104,6 +14104,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes.SourcePage` | 221 | 276 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes.Duration` | 5 tours de jeu | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.Name` | Breath of the Hrim Troll | Souffle du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.Description` | The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection. | Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.SourceName` | Breath of the Hrim Troll | Souffle du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.SourcePage` | 221 | 276 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost.Duration` | 1 minute | 1 minute |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir`
 
 | Clé | English | Français |
@@ -14125,6 +14136,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur.SourcePage` | 221 | 277 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur.Duration` | 7 tours de jeu | 7 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.Name` | The Hrim Troll's Rime Body | Corps de glace du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.Description` | The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection. | Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.SourceName` | The Hrim Troll's Rime Body | Corps de glace du hrimtroll |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.SourcePage` | 221 | 277 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost.Duration` | 1 hour | 1 heure |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm`
 
@@ -14884,7 +14906,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Name` | Fever (Curse) | Fièvre (malédiction) |
-| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Description` | The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Description` | Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round. | La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round. |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourceName` | Fever | Fièvre |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourceBook` | Stormlands | Stormlands |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourcePage` | 123 | 123 |
@@ -15311,6 +15333,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.BurnCount` | Burns per victim | Brûlures par victime |
 | `TRUDVANG.Transformation.BleedingWounds` | Wounds per victim | Blessures par victime |
 | `TRUDVANG.Transformation.PainResistance` | Psyche resistance | Résistance de Psychisme |
+| `TRUDVANG.Transformation.FeverResistance` | Constitution resistance | Résistance de Constitution |
+| `TRUDVANG.Transformation.FrostResistance` | Resistance to fleeing | Résistance à la fuite |
+| `TRUDVANG.Transformation.FrostRadius` | Effective radius: {value} m | Rayon effectif : {value} m |
+| `TRUDVANG.Transformation.FrostDamage` | Cold damage per round: {value} | Dégâts de froid par tour : {value} |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -15628,3 +15654,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.MagicDamage.BaseRecipients` | Base damage — additional targets | Dégâts de base — cibles supplémentaires |
+
+## `TRUDVANG.PersistentDamage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.PersistentDamage.Resist` | Resist damage | Résister aux dégâts |
+| `TRUDVANG.PersistentDamage.ResistPresence` | Resist fleeing from the cold | Résister à la fuite provoquée par le froid |
+| `TRUDVANG.PersistentDamage.Resisted` | Resistance succeeded | Résistance réussie |
+| `TRUDVANG.PersistentDamage.NotResisted` | Resistance failed | Résistance échouée |
+| `TRUDVANG.PersistentDamage.Pending` | A resistance roll is already in progress or this roll can no longer be resolved. | Une résistance est déjà en cours ou ce jet ne peut plus être résolu. |
+| `TRUDVANG.PersistentDamage.WinterClothes` | winter clothes | vêtements d’hiver |
+| `TRUDVANG.PersistentDamage.MastomantFur` | mastomant fur | fourrure de mastomant |
+| `TRUDVANG.PersistentDamage.FrostRecipient` | You suffer {damage} cold damage on entry and each round inside the area. Winter clothes reduce this to {winter}; mastomant fur prevents it. Armor offers no protection. The Psyche roll determines fleeing and does not reduce damage. | Vous subissez {damage} dégâts de froid à l’entrée puis à chaque round passé dans la zone. Les vêtements d’hiver réduisent ces dégâts à {winter} ; la fourrure de mastomant les annule. Les armures ne protègent pas. Le test de Psychisme concerne la fuite, sans réduire les dégâts. |
+| `TRUDVANG.PersistentDamage.Stay` | Resistance succeeded: remains in the cold. | Résistance réussie : reste dans le froid. |
+| `TRUDVANG.PersistentDamage.Flee` | Resistance failed: must flee the cold. | Résistance échouée : doit fuir le froid. |

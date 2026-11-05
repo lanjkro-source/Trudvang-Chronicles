@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-witchcraft:fever:2#effect",
-    "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+    "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round.",
     "summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Fièvre (vitner)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+      "description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round.",
       "transfer": false,
       "system": {
         "stackId": "vitner-witchcraft:fever:2#effect",

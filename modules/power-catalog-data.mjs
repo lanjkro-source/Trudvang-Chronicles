@@ -4072,7 +4072,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "other",
         "type": "cold",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "normal",
@@ -4265,7 +4266,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "other",
         "type": "cold",
         "protection": "none"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "normal",
@@ -4730,7 +4732,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "other",
         "type": "other",
         "protection": "normal"
-      }
+      },
+      "automatic": true
     },
     "targeting": {
       "baseTargets": 1,
@@ -9976,7 +9979,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "grindsilver"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "magical",
@@ -13521,7 +13525,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "normal"
-      }
+      },
+      "automatic": true
     },
     "damageQualification": {
       "nature": "normal",

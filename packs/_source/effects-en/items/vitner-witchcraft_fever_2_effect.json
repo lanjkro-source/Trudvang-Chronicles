@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-witchcraft:fever:2#effect",
-    "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+    "description": "Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round.",
     "summary": "Supernatural fever: penalty to all actions and risk of damage.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Fever (Vitner)",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+      "description": "Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round.",
       "transfer": false,
       "system": {
         "stackId": "vitner-witchcraft:fever:2#effect",

@@ -1,4 +1,4 @@
-import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
+import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
 import {consumeInventoryItem} from "./consumables.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
@@ -115,6 +115,7 @@ function attachListeners(message, html) {
       if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true", targets});
     });
   });
+  html.querySelectorAll("[data-action='resist-damage']").forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();if(button.disabled)return;button.disabled=true;try{const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);const result=await requestDamageResistance({message,actor});if(!['applied','alreadyApplied','resolved','alreadyRolled'].includes(result.status)){button.disabled=false;if(result.status!=='cancelled')ui.notifications.warn(game.i18n.localize('TRUDVANG.PersistentDamage.Pending'));}}catch(error){button.disabled=false;throw error;}}));
   html.querySelectorAll("[data-action='magic-damage']").forEach(button=>{
     button.addEventListener("click",async event=>{
       event.preventDefault();
@@ -286,7 +287,7 @@ function attachListeners(message, html) {
       button.disabled = true;
       try {
         const token = button.dataset.targetTokenUuid ? await foundry.utils.fromUuid(button.dataset.targetTokenUuid) : null;
-        const result = await requestChatApplication({message, actor, token, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true"});
+        const result = await requestChatApplication({message, actor, token, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true",variant:button.dataset.damageVariant??""});
         if (!["applied", "alreadyApplied"].includes(result.status)) {
           button.disabled = false;
           ui.notifications.warn(game.i18n.localize(result.status === "ineligibleTarget" ? "TRUDVANG.Damage.IneligibleTarget" : "TRUDVANG.ChatApplication.Unavailable"));

@@ -1,5 +1,6 @@
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
+import {magicDamageProfile} from './magic-damage.mjs';
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
 const jobs=new Map();
@@ -60,18 +61,23 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const others=Array.from(region.tokens??[]).filter(candidate=>candidate.id!==token.id&&sameActor(candidate,token));
  const inside=!force&&(!leaving||others.length>0);
  const self=actor.uuid===info.casterUuid;
- const eligible=inside&&active(source);
+ const eligible=inside&&active(source)&&!(self&&getAura(source)?.excludeSource);
  if(!eligible){if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));return;}
  const allies=self||(!leaving&&friendly(token))||others.some(friendly);
  const aura=getAura(source),fearLight=aura?.light===true;
  const changes=Array.from(sourceMeta(source)?.auraChanges??source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
  const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
  let description=game.i18n.localize(`TRUDVANG.Content.Transformation.${descriptionKey}.Description`);
+ if(aura.recipientDescriptionKey){
+  const profile=magicDamageProfile(source);
+  const damage=Number(profile?.formula?.match(/^0d\d+\s*\+\s*(\d+)$/)?.[1]??0);
+  description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2)});
+ }
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
  const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
  const data={name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,statuses:sourceMeta(source)?.auraStatuses??[],
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
-  flags:{[S]:{auraRecipient:{regionUuid:region.uuid}}}};
+  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false}}:{})}}};
  const existing=children[0];
  if(existing){await existing.update(data);if(children.length>1)await actor.deleteEmbeddedDocuments("ActiveEffect",children.slice(1).map(effect=>effect.id));}
  else await actor.createEmbeddedDocuments("ActiveEffect",[data]);
@@ -81,6 +87,9 @@ export function reconcileAuraToken(region,token,options={}){
  const previous=recipientJobs.get(key)??Promise.resolve();
  const job=previous.catch(()=>{}).then(()=>reconcileAuraTokenNow(region,token,options)).finally(()=>{if(recipientJobs.get(key)===job)recipientJobs.delete(key);});
  recipientJobs.set(key,job);return job;
+}
+export async function settleAuraJobs(){
+ while(jobs.size||recipientJobs.size)await Promise.all([...jobs.values(),...recipientJobs.values()]);
 }
 
 /** Light state is restored only where it still equals the value we set. */

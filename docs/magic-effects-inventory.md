@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 318 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 320 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -343,10 +343,10 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des tursirs | Force du stenhinje | pouvoir | `holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3` | 2 | 0 | 1 | — | — |
 | Puissance des tursirs | Fureur de l’ogre des montagnes | pouvoir | `holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2` | 3 | 0 | 1 | — | — |
 | Puissance des tursirs | Folie de l’ogre des montagnes | pouvoir | `holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4` | 4 | 0 | 1 | — | — |
-| Puissance des tursirs | Souffle du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5` | 5 | 1 | 0 | oui | — |
+| Puissance des tursirs | Souffle du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5` | 5 | 1 | 1 | oui | — |
 | Puissance des tursirs | Force du tursir | pouvoir | `holy-haminges-power-of-the-thurses:thurse-strength:7` | 2 | 0 | 1 | — | — |
 | Puissance des tursirs | Rage du destructeur | pouvoir | `holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6` | 4 | 0 | 1 | — | — |
-| Puissance des tursirs | Corps de glace du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8` | 4 | 1 | 0 | oui | — |
+| Puissance des tursirs | Corps de glace du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8` | 4 | 1 | 1 | oui | — |
 | Puissance du dragon | Constriction | pouvoir | `holy-haminges-power-of-the-dragon:constriction:0` | 2 | 0 | 0 | — | — |
 | Puissance du dragon | Ravage du huvfurwurm | pouvoir | `holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1` | 1 | 0 | 1 | — | — |
 | Puissance du dragon | Fils des flammes | pouvoir | `holy-haminges-power-of-the-dragon:flame-hardened:2` | 2 | 0 | 1 | — | — |

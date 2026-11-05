@@ -1,0 +1,45 @@
+{
+  "_id": "iYOIuB2x3y4z5A6B",
+  "_key": "!items!iYOIuB2x3y4z5A6B",
+  "name": "Corps de glace du hrimtroll",
+  "type": "effect",
+  "img": "icons/svg/frozen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+    "description": "Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas.",
+    "summary": "Une aura de givre blesse les personnes proches et peut les faire fuir.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 277
+    }
+  },
+  "effects": [
+    {
+      "_id": "rT4ZE9C8D9EaGbHc",
+      "_key": "!items.effects!iYOIuB2x3y4z5A6B.rT4ZE9C8D9EaGbHc",
+      "name": "Corps de glace du hrimtroll",
+      "type": "effect",
+      "img": "icons/svg/frozen.svg",
+      "description": "Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+            "sourceId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8",
+            "summary": "Une aura de givre blesse les personnes proches et peut les faire fuir.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -14242,7 +14242,7 @@
         "vitner-dimvitner:hand-of-death:1#effect": {
           "Name": "Hand of Death",
           "Summary": "Drains life force; the victim may resist each round.",
-          "Description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration.",
+          "Description": "The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card.",
           "SourceName": "Hand of Death",
           "SourceBook": "Player's Handbook",
           "SourcePage": "105",
@@ -14251,7 +14251,7 @@
         "vitner-dimvitner:hand-of-death:1#base": {
           "Name": "Hand of Death — additional target",
           "Summary": "Drains life force; the victim may resist each round.",
-          "Description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements.",
+          "Description": "The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card. This target keeps the base version, without damage, duration or resistance upgrades.",
           "SourceName": "Hand of Death",
           "SourceBook": "Player's Handbook",
           "SourcePage": "105",
@@ -14782,7 +14782,7 @@
         "vitner-witchcraft:fever:2#effect": {
           "Name": "Fever (Vitner)",
           "Summary": "Supernatural fever: penalty to all actions and risk of damage.",
-          "Description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+          "Description": "Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round.",
           "SourceName": "Fever",
           "SourceBook": "Player's Handbook",
           "SourcePage": "143",
@@ -16798,6 +16798,15 @@
           "SourcePage": "221",
           "Duration": "5 tours de jeu"
         },
+        "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost": {
+          "Name": "Breath of the Hrim Troll",
+          "Summary": "A rime frost aura harms nearby creatures and may drive them away.",
+          "Description": "The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection.",
+          "SourceName": "Breath of the Hrim Troll",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "221",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir": {
           "Name": "Thurse Strength",
           "Summary": "Raises Strength to a tursir’s exceptional level.",
@@ -16815,6 +16824,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "221",
           "Duration": "7 tours de jeu"
+        },
+        "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost": {
+          "Name": "The Hrim Troll's Rime Body",
+          "Summary": "A rime frost aura harms nearby creatures and may drive them away.",
+          "Description": "The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection.",
+          "SourceName": "The Hrim Troll's Rime Body",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "221",
+          "Duration": "1 hour"
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Rampage of the Huvfurwurm",
@@ -17438,7 +17456,7 @@
         "holy-joaringfaith-curses-of-sonntag:fever:2#effect": {
           "Name": "Fever (Curse)",
           "Summary": "Supernatural fever: penalty to all actions and risk of damage.",
-          "Description": "The fever imposes the indicated penalty on all actions until expiry. The victim makes a Constitution situation test; on failure, roll and apply the indicated damage manually.",
+          "Description": "Fever imposes the indicated penalty to all actions until expiry. Only on application, a damage card offers Constitution resistance: success avoids the damage without removing fever or its penalty. This test does not repeat each round.",
           "SourceName": "Fever",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -17812,7 +17830,11 @@
       "DamageSteps": "Additional damage steps",
       "BurnCount": "Burns per victim",
       "BleedingWounds": "Wounds per victim",
-      "PainResistance": "Psyche resistance"
+      "PainResistance": "Psyche resistance",
+      "FeverResistance": "Constitution resistance",
+      "FrostResistance": "Resistance to fleeing",
+      "FrostRadius": "Effective radius: {value} m",
+      "FrostDamage": "Cold damage per round: {value}"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18042,6 +18064,18 @@
     },
     "MagicDamage": {
       "BaseRecipients": "Base damage — additional targets"
+    },
+    "PersistentDamage": {
+      "Resist": "Resist damage",
+      "ResistPresence": "Resist fleeing from the cold",
+      "Resisted": "Resistance succeeded",
+      "NotResisted": "Resistance failed",
+      "Pending": "A resistance roll is already in progress or this roll can no longer be resolved.",
+      "WinterClothes": "winter clothes",
+      "MastomantFur": "mastomant fur",
+      "FrostRecipient": "You suffer {damage} cold damage on entry and each round inside the area. Winter clothes reduce this to {winter}; mastomant fur prevents it. Armor offers no protection. The Psyche roll determines fleeing and does not reduce damage.",
+      "Stay": "Resistance succeeded: remains in the cold.",
+      "Flee": "Resistance failed: must flee the cold."
     }
   }
 }

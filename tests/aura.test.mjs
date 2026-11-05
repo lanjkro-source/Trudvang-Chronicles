@@ -13,6 +13,21 @@ test("caster selection is unambiguous and the purchased radius is preserved",()=
  const a=actor("Actor.c"),b=actor("Actor.b"),t={uuid:"Token.c",actor:a},u={uuid:"Token.u",actor:a};
  assert.equal(auraCasterToken(a,[{document:t}],[u]),t);assert.equal(auraCasterToken(a,[],[t,u]),null);assert.equal(auraCasterToken(a,[],[{actor:b}]),null);assert.equal(auraRadius(source),5);
 });
+test('a frost aura excludes its source, creates damage-bearing recipients with frozen levels, and removes them on exit',async t=>{
+ const previous={fromUuid:foundry.utils.fromUuid,format:game.i18n.format};
+ t.after(()=>{foundry.utils.fromUuid=previous.fromUuid;game.i18n.format=previous.format;});
+ const coldId='holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5';
+ const cold={...source,flags:{[S]:{transformation:{key:coldId+'#frost',sourceId:coldId,resolved:true,ruleTestContext:{sourceId:coldId,casterUuid:'Actor.c',countsById:{[`${coldId}:4`]:2}}}}}};
+ foundry.utils.fromUuid=async()=>cold;
+ game.i18n.format=(key,data)=>`${key}: ${JSON.stringify(data)}`;
+ const caster=actor('Actor.c'),victim=actor('Actor.v'),a={id:'c',actor:caster},b={id:'v',actor:victim};
+ const region={uuid:'Scene.s.Region.cold',flags:{[S]:{aura:{sourceEffectUuid:cold.uuid,casterUuid:caster.uuid}}},tokens:new Set([a,b])};
+ await reconcileAuraToken(region,a);assert.equal(caster.effects.length,0);
+ await reconcileAuraToken(region,b);assert.equal(victim.effects.length,1);
+ const child=victim.effects[0];assert.equal(child.flags[S].transformation.ruleTestContext.countsById[`${coldId}:4`],2);
+ assert.match(child.description,/"damage":3/);assert.match(child.description,/"winter":2/);
+ await reconcileAuraToken(region,b,{leaving:true});assert.equal(victim.effects.length,0);
+});
 test("aura colour is a neutral grey derived from the current palette",()=>{
  const previous=globalThis.getComputedStyle;globalThis.getComputedStyle=()=>({getPropertyValue:key=>key==="--trudvang-muted"?"#733b2d":"#f4ecd9"});
  try{assert.match(auraColor(),/^#([0-9a-f]{2})\1\1$/);assert.notEqual(auraColor(),"#733b2d");}finally{globalThis.getComputedStyle=previous;}

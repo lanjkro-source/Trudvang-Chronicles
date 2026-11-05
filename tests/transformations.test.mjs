@@ -72,7 +72,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,333);
+ assert.equal(Object.keys(sources).length,335);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -193,7 +193,7 @@ test("both fever effects roll their action penalty once per recipient and retain
    assert.deepEqual(created.duration,{value:2,units:'hours'});
    assert.equal(created.system.changes.find(c=>c.key==='system.modifiers.rolls.allActions').value,'-4');
    assert.match(created.description,/Toutes les actions : -4/);assert.match(created.description,/1d10.*8/);
-   assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="0"/);
+   assert.match(created.description,/À l’application seulement/);
    const copy={documentName:'ActiveEffect',...structuredClone(created)},before=rolls;
    await applyTransformation(actor,`${id}#effect`,{source:copy,skipDialog:true});assert.equal(rolls,before);
   }

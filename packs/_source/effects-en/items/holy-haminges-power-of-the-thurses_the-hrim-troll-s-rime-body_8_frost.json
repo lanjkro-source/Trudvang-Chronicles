@@ -1,0 +1,45 @@
+{
+  "_id": "iYOIuB2x3y4z5A6B",
+  "_key": "!items!iYOIuB2x3y4z5A6B",
+  "name": "The Hrim Troll's Rime Body",
+  "type": "effect",
+  "img": "icons/svg/frozen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+    "description": "The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection.",
+    "summary": "A rime frost aura harms nearby creatures and may drive them away.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "rT4ZE9C8D9EaGbHc",
+      "_key": "!items.effects!iYOIuB2x3y4z5A6B.rT4ZE9C8D9EaGbHc",
+      "name": "The Hrim Troll's Rime Body",
+      "type": "effect",
+      "img": "icons/svg/frozen.svg",
+      "description": "The bearer carries a wall-blocked frost aura with no emitted light. Other actors entering its area receive a separate aura effect. It rolls damage on entry and each new round while they remain inside and the source lasts. The Psyche roll offered on entry only determines fleeing; success does not reduce damage. Winter clothes halve damage, rounded up; mastomant fur prevents it. Armor offers no protection.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost",
+            "sourceId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8",
+            "summary": "A rime frost aura harms nearby creatures and may drive them away.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

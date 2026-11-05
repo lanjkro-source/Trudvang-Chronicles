@@ -1,5 +1,6 @@
 import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from "./damage-application.mjs";
-import {renderTemplate} from "./helpers.mjs";
+import {renderTemplate,escapeHtml} from "./helpers.mjs";
+import {magicResistanceRows,localizeResistanceRows} from './rules/magic-resistance.mjs';
 import {conditionalDamageBonus,damageCanAffect} from "./rules/creature-conditional-bonus.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -7,6 +8,7 @@ const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
 const queues = new Map();
 const unrecorded = new Map();
 const replies = new Map();
+const resistanceLocks=new Map();
 let registered = false;
 const authorId = message => message?.author?.id ?? message?._source?.author;
 const rowsFor = message => message.getFlag(SYSTEM_ID, "applications") ?? [];
@@ -42,6 +44,7 @@ async function addDamageTargetsOnGM(payload) {
   const message = game.messages.get(payload.messageId), user = game.users.get(payload.userId);
   if (!game.user.isGM || !message || !user?.active || !canReadMessage(message, user)) return {status: "unavailable"};
   const total = sourceAmount(message, "body");
+  if(message.getFlag(SYSTEM_ID,'damageContext')?.boundActorUuid)return {status:'unavailable'};
   if (total === null || !damageTargetsSection.test(message.content)) return {status: "unavailable"};
   const targets = [...(message.getFlag(SYSTEM_ID, "damageTargets") ?? [])];
   const seen = new Set(targets.map(target => target.actorUuid));
@@ -95,11 +98,25 @@ async function applyOnGM(payload) {
   if (!actor?.isOwner || !["character", "npc"].includes(actor.type)
     || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
   if(payload.channel!=="fear"){
+    let applicationFactor=1;
+    const context=message.getFlag(SYSTEM_ID,'damageContext')??{};
+    if(context.boundActorUuid&&context.boundActorUuid!==actor.uuid)return {status:'ineligibleTarget'};
+    if(context.boundActorUuid&&payload.channel==='defense')return {status:'ineligibleTarget'};
+    const lock=resistanceLocks.get(`${message.id}:${actor.uuid}`);
+    if(lock&&lock.until>Date.now())return {status:'resistancePending'};
+    const resolution=message.getFlag(SYSTEM_ID,'damageResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
+    if(context.resistance&&resolution)applicationFactor*=resolution.success?context.resistance.successFactor:context.resistance.failureFactor??1;
+    if(payload.variant){
+      const variant=context.alternatives?.find(row=>row.id===payload.variant);
+      if(!variant)return {status:'unavailable'};
+      applicationFactor*=variant.factor;
+    }
     if(!damageCanAffect(actor,message.getFlag(SYSTEM_ID,"damageContext")?.targetTags))return {status:"ineligibleTarget"};
     const rows=message.getFlag(SYSTEM_ID,"conditionalDamage")??[];
     const bonus=conditionalDamageBonus(rows,actor);
     const before=Number(message.getFlag(SYSTEM_ID,"conditionalDamageBeforeRange"));
     amount=message.getFlag(SYSTEM_ID,"conditionalDamageLongRange")&&Number.isFinite(before)?Math.ceil((before+bonus)/2):amount+bonus;
+    amount=Math.ceil(amount*applicationFactor);
   }
   let item = null;
   if (payload.channel === "body" && !String(message.content).includes(`data-target-actor-uuid="${actor.uuid}"`)) return {status: "unavailable"};
@@ -147,13 +164,41 @@ async function applyOnGM(payload) {
   return {status: "applied", amount: appliedRow.amount};
 }
 
+async function damageResistanceOnGM(payload){
+ const message=game.messages.get(payload.messageId),user=game.users.get(payload.userId);
+ if(!game.user.isGM||!message||!user?.active||!canReadMessage(message,user))return {status:'unavailable'};
+ const context=message.getFlag(SYSTEM_ID,'damageContext'),actor=await foundry.utils.fromUuid(payload.actorUuid);
+ if(!context?.resistance||context.boundActorUuid!==actor?.uuid||!actor?.testUserPermission(user,'OWNER')||(context.resistance.scope!=='presence'&&hasChatApplication(message,actor.uuid,'body')))return {status:'unavailable'};
+ const existing=message.getFlag(SYSTEM_ID,'damageResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
+ if(existing)return {status:'alreadyRolled'};
+ const key=`${message.id}:${actor.uuid}`,lock=resistanceLocks.get(key);
+ if(payload.action==='begin'){
+  if(lock&&lock.until>Date.now())return {status:'resistancePending'};
+  const token=crypto.randomUUID();resistanceLocks.set(key,{token,userId:user.id,until:Date.now()+300000});return {status:'reserved',token};
+ }
+ if(!lock||lock.userId!==user.id||lock.token!==payload.token)return {status:'unavailable'};
+ if(payload.action==='cancel'){resistanceLocks.delete(key);return {status:'cancelled'};}
+ const proof=game.messages.get(payload.proofId),flags=proof?.flags?.[SYSTEM_ID];
+ if(authorId(proof)!==user.id||flags?.damageResistanceFor?.messageId!==message.id||flags.damageResistanceFor.actorUuid!==actor.uuid||typeof flags.rollOutcome?.success!=='boolean')return {status:'unavailable'};
+ const results=[...(message.getFlag(SYSTEM_ID,'damageResistanceResults')??[]),{actorUuid:actor.uuid,success:flags.rollOutcome.success,proofId:proof.id}];
+ const label=game.i18n.localize(context.resistance.scope==='presence'
+  ? flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Stay':'TRUDVANG.PersistentDamage.Flee'
+  : flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Resisted':'TRUDVANG.PersistentDamage.NotResisted');
+ await message.update({content:String(message.content).replace(/(<span\b[^>]*data-damage-resistance-result[^>]*>)[\s\S]*?<\/span>/,(_,open)=>`${open}${escapeHtml(label)}</span>`).replace(/(<button\b[^>]*data-action="resist-damage"[^>]*)(>)/,'$1 disabled$2'),[`flags.${SYSTEM_ID}.damageResistanceResults`]:results});
+ resistanceLocks.delete(key);
+ if(context.resistance.scope==='continuation'&&((flags.rollOutcome.success&&context.resistance.successEndsEffect)||(!flags.rollOutcome.success&&context.resistance.failureEndsEffect))){
+  const effect=await foundry.utils.fromUuid(context.sourceEffectUuid);if(effect?.parent?.uuid===actor.uuid)await effect.delete();
+ }
+ return {status:'resolved'};
+}
+
 /** One writer per source card serializes simultaneous clients: no lost rows and
  * no second application when the same actor's owners click at the same time.
  */
 export async function applyChatApplication(payload) {
   const previous = queues.get(payload.messageId) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
-    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : applyOnGM(payload));
+    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : payload.type==='chatDamageResistance'?damageResistanceOnGM(payload):applyOnGM(payload));
   queues.set(payload.messageId, next);
   try { return await next; }
   finally { if (queues.get(payload.messageId) === next) queues.delete(payload.messageId); }
@@ -169,7 +214,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -178,14 +223,31 @@ export function registerChatApplicationSocket() {
   });
 }
 
-export async function requestChatApplication({message, actor, token, channel, itemUuid = "", ignoreArmor = false}) {
+export async function requestChatApplication({message, actor, token, channel, itemUuid = "", ignoreArmor = false,variant=""}) {
   if (!actor?.isOwner) return {status: "unavailable"};
   if(channel!=="fear"&&!damageCanAffect(actor,message.getFlag(SYSTEM_ID,"damageContext")?.targetTags))return {status:"ineligibleTarget"};
   if (hasChatApplication(message, actor.uuid, channel, itemUuid)) return {status: "alreadyApplied"};
   const payload = {type: "chatApplication", requestId: crypto.randomUUID(), messageId: message.id,
     userId: game.user.id, actorUuid: actor.uuid, tokenUuid: token?.document?.uuid ?? token?.uuid ?? actor.token?.uuid ?? "",
-    channel, itemUuid, ignoreArmor};
+    channel, itemUuid, ignoreArmor,variant};
   return requestChatUpdate(message, payload);
+}
+
+export async function requestDamageResistance({message,actor}){
+ if(!actor?.isOwner)return {status:'unavailable'};
+ const context=message.getFlag(SYSTEM_ID,'damageContext');
+ const payload={type:'chatDamageResistance',messageId:message.id,userId:game.user.id,actorUuid:actor.uuid};
+ const begin=await requestChatUpdate(message,{...payload,action:'begin'});
+ if(begin.status!=='reserved')return begin;
+ try{
+  const {rollConfiguredTraitSituation}=await import('./dice.mjs');
+  const resistance=context.resistance;
+  const result=await rollConfiguredTraitSituation({actor,reactive:resistance.scope!=='presence',test:resistance.test,sourceName:resistance.sourceName,castingModifierRows:localizeResistanceRows(magicResistanceRows(resistance.test,{context:resistance.casting,actor})),damageResistanceFor:{messageId:message.id,actorUuid:actor.uuid}});
+  if(!result)return {status:'cancelled'};
+  const response=await requestChatUpdate(message,{...payload,action:'finish',token:begin.token,proofId:result.messageId});
+  if(response.status==='resolved'&&!context.alternatives?.length)return requestChatApplication({message,actor,channel:'body'});
+  return response;
+ }finally{await requestChatUpdate(message,{...payload,action:'cancel',token:begin.token});}
 }
 
 export async function requestDamageTargets({message, tokens}) {

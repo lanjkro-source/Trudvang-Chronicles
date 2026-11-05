@@ -23,6 +23,7 @@ function effectSources(document, keys) {
 
 /** One immutable snapshot shared by the confirmation dialog and the final card. */
 export function prepareDamageRoll({item, actor = null, context = {}}) {
+  if(context.ignoreActorDamage)actor=null;
   const usage = context.usage || (item.system?.category === "natural" ? "natural" : isThrowingWeapon(item) ? "throwing"
     : ["crossbow", "bowsSlings"].includes(weaponType(item)) ? "ranged" : "melee");
   const ranged = ["throwing", "ranged"].includes(usage) || Boolean(context.longRange);

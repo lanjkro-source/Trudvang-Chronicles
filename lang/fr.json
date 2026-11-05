@@ -14242,7 +14242,7 @@
         "vitner-dimvitner:hand-of-death:1#effect": {
           "Name": "Main funeste",
           "Summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
-          "Description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée.",
+          "Description": "Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte.",
           "SourceName": "Main funeste",
           "SourceBook": "Livre des règles",
           "SourcePage": "156",
@@ -14251,7 +14251,7 @@
         "vitner-dimvitner:hand-of-death:1#base": {
           "Name": "Main funeste — cible supplémentaire",
           "Summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
-          "Description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée.",
+          "Description": "Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte. Cette cible conserve la version de base, sans amélioration de dégâts, de durée ou de résistance.",
           "SourceName": "Main funeste",
           "SourceBook": "Livre des règles",
           "SourcePage": "156",
@@ -14782,7 +14782,7 @@
         "vitner-witchcraft:fever:2#effect": {
           "Name": "Fièvre (vitner)",
           "Summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
-          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round.",
           "SourceName": "Fièvre",
           "SourceBook": "Livre des règles",
           "SourcePage": "185",
@@ -16798,6 +16798,15 @@
           "SourcePage": "276",
           "Duration": "5 tours de jeu"
         },
+        "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost": {
+          "Name": "Souffle du hrimtroll",
+          "Summary": "Une aura de givre blesse les personnes proches et peut les faire fuir.",
+          "Description": "Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas.",
+          "SourceName": "Souffle du hrimtroll",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "276",
+          "Duration": "1 minute"
+        },
         "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir": {
           "Name": "Force du tursir",
           "Summary": "Porte la Force au niveau exceptionnel d’un tursir.",
@@ -16815,6 +16824,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "277",
           "Duration": "7 tours de jeu"
+        },
+        "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost": {
+          "Name": "Corps de glace du hrimtroll",
+          "Summary": "Une aura de givre blesse les personnes proches et peut les faire fuir.",
+          "Description": "Le bénéficiaire porte une aura de froid, bloquée par les murs, sans lumière émise. Les autres acteurs qui entrent dans la zone reçoivent un effet d’aura distinct. Cet effet inflige les dégâts à l’entrée puis à chaque nouveau round tant que la présence dans la zone et la durée du pouvoir persistent. Le test de Psychisme proposé à l’entrée concerne uniquement la fuite ; le réussir ne réduit pas les dégâts. Des vêtements d’hiver réduisent les dégâts de moitié, arrondis au supérieur, et une fourrure de mastomant les annule. Les armures ne protègent pas.",
+          "SourceName": "Corps de glace du hrimtroll",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "277",
+          "Duration": "1 heure"
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm": {
           "Name": "Ravage du huvfurwurm",
@@ -17438,7 +17456,7 @@
         "holy-joaringfaith-curses-of-sonntag:fever:2#effect": {
           "Name": "Fièvre (malédiction)",
           "Summary": "Fièvre surnaturelle : pénalité à toutes les actions et risque de dégâts.",
-          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. La victime effectue un test de situation de Constitution ; en cas d’échec, elle subit les dégâts indiqués, à lancer et appliquer manuellement.",
+          "Description": "La fièvre impose le malus indiqué à toutes les actions jusqu’à expiration. À l’application seulement, une carte propose la résistance de Constitution aux dégâts : une réussite évite ces dégâts sans enlever la fièvre ni son malus. Ce test ne se répète pas à chaque round.",
           "SourceName": "Fièvre",
           "SourceBook": "Stormlands",
           "SourcePage": "123",
@@ -17812,7 +17830,11 @@
       "DamageSteps": "Degrés supplémentaires de dégâts",
       "BurnCount": "Brûlures par victime",
       "BleedingWounds": "Blessures par victime",
-      "PainResistance": "Résistance de Psychisme"
+      "PainResistance": "Résistance de Psychisme",
+      "FeverResistance": "Résistance de Constitution",
+      "FrostResistance": "Résistance à la fuite",
+      "FrostRadius": "Rayon effectif : {value} m",
+      "FrostDamage": "Dégâts de froid par tour : {value}"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18042,6 +18064,18 @@
     },
     "MagicDamage": {
       "BaseRecipients": "Dégâts de base — cibles supplémentaires"
+    },
+    "PersistentDamage": {
+      "Resist": "Résister aux dégâts",
+      "ResistPresence": "Résister à la fuite provoquée par le froid",
+      "Resisted": "Résistance réussie",
+      "NotResisted": "Résistance échouée",
+      "Pending": "Une résistance est déjà en cours ou ce jet ne peut plus être résolu.",
+      "WinterClothes": "vêtements d’hiver",
+      "MastomantFur": "fourrure de mastomant",
+      "FrostRecipient": "Vous subissez {damage} dégâts de froid à l’entrée puis à chaque round passé dans la zone. Les vêtements d’hiver réduisent ces dégâts à {winter} ; la fourrure de mastomant les annule. Les armures ne protègent pas. Le test de Psychisme concerne la fuite, sans réduire les dégâts.",
+      "Stay": "Résistance réussie : reste dans le froid.",
+      "Flee": "Résistance échouée : doit fuir le froid."
     }
   }
 }

@@ -1,4 +1,5 @@
 import {nextNpcCombatCycle} from "./rules/npc-combat-cycle.mjs";
+import {processPersistentDamageRound} from './persistent-damage.mjs';
 
 const resourceUpdates = new WeakMap();
 
@@ -105,6 +106,7 @@ export function registerCombatHooks() {
     const roundStarted = isCombatRoundStart(previous, current);
     await resetCombatInitiatives(combat, previous, current);
     if (roundStarted) {
+      await processPersistentDamageRound(combat,previous,current);
       await decrementSurvivalRounds(combat);
       return;
     }

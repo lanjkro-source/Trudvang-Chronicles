@@ -40,6 +40,13 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);
    if(JSON.stringify(t.periodic??null)!==JSON.stringify(translated.periodic??null))throw Error(`Unaligned periodic consequence for ${key}`);
+   if(JSON.stringify(t.persistentDamage??null)!==JSON.stringify(translated.persistentDamage??null))throw Error(`Unaligned persistent damage for ${key}`);
+   if(t.persistentDamage){const d=t.persistentDamage;
+    if(typeof d.onApply!=='boolean'||typeof d.onRound!=='boolean'||(!d.onApply&&!d.onRound))throw Error(`Invalid damage trigger for ${key}`);
+    if(d.resistance&&(!Number.isInteger(d.resistance.testIndex)||d.resistance.testIndex<0||!['damage','continuation','presence'].includes(d.resistance.scope)||!Number.isFinite(d.resistance.successFactor)||d.resistance.successFactor<0||d.resistance.successFactor>1||(d.resistance.failureFactor!==undefined&&(!Number.isFinite(d.resistance.failureFactor)||d.resistance.failureFactor<0||d.resistance.failureFactor>1))||(d.resistance.events??[]).some(event=>!['apply','round'].includes(event))))throw Error(`Invalid damage resistance for ${key}`);
+    if(d.alternatives&&(!Array.isArray(d.alternatives)||d.alternatives.some(row=>!row.id||!row.labelKey||!Number.isFinite(row.factor)||row.factor<0||row.factor>1)))throw Error(`Invalid conditional damage for ${key}`);
+    if(d.alternatives&&new Set(d.alternatives.map(row=>row.id)).size!==d.alternatives.length)throw Error(`Duplicate damage alternative for ${key}`);
+   }
    if(JSON.stringify(t.conditionalProtection??null)!==JSON.stringify(translated.conditionalProtection??null))throw Error(`Unaligned conditional protection for ${key}`);
    if(t.conditionalProtection){const c=t.conditionalProtection;if(![c.melee,c.ranged].every(n=>Number.isInteger(n)&&n>=0)||![c.magicMelee,c.magicRanged].every(n=>n===null||Number.isInteger(n)&&n>=0)||!entry.powerLevels?.some(p=>p.optionId===c.optionId))throw Error(`Invalid conditional protection for ${key}`);}
    if(JSON.stringify(t.weaponDamage??null)!==JSON.stringify(translated.weaponDamage??null))throw Error(`Unaligned weapon damage for ${key}`);

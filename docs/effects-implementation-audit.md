@@ -118,3 +118,7 @@ au tour suivant, les variantes alliées et les améliorations numériques.
 Les effets déjà copiés dans un monde sont préservés pour respecter les éditions
 du MJ. Pour tester une nouvelle référence ou remplacer l’ancien Ravage, retirer
 l’ancien effet et appliquer celui du compendium régénéré.
+
+## Contrôle de chaque nouvelle source à dégâts persistants
+
+Vérifier dans les règles le premier événement, la fréquence réelle, les conditions de contact/préservation/fin de zone, puis le rôle exact de chaque résistance (empêcher l’application, arrêter la continuation, éviter les dégâts ou imposer la fuite). Configurer les événements explicitement et ne pas transformer toute durée persistante en dégâts par round. Pour une aura, séparer porteur et destinataires, gérer les murs et la sortie, et vérifier l’expiration avant le tick. Définir les variantes chiffrées de réduction et leurs arrondis, la protection applicable et le comportement des cibles secondaires. Tester un seul MJ écrivain, les jetons non liés, les doublons de hooks, les clics concurrents, l’annulation d’une résistance et la réouverture d’une carte. Référence de mise en œuvre : modules/persistent-damage.mjs et tests/persistent-damage.test.mjs.

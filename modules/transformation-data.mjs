@@ -204,6 +204,19 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": true,
+      "resistance": {
+        "scope": "damage",
+        "testIndex": 0,
+        "successFactor": 0,
+        "events": [
+          "apply",
+          "round"
+        ]
+      }
+    },
     "sourceId": "vitner-dimvitner:hand-of-death:1",
     "parameters": [
       {
@@ -249,6 +262,19 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": true,
+      "resistance": {
+        "scope": "damage",
+        "testIndex": 0,
+        "successFactor": 0,
+        "events": [
+          "apply",
+          "round"
+        ]
+      }
+    },
     "sourceId": "vitner-dimvitner:hand-of-death:1",
     "parameters": []
   },
@@ -2104,6 +2130,18 @@ export const TRANSFORMATION_TEMPLATES = {
       0,
       5
     ],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false,
+      "resistance": {
+        "scope": "damage",
+        "testIndex": 0,
+        "successFactor": 0,
+        "events": [
+          "apply"
+        ]
+      }
+    },
     "sourceId": "vitner-witchcraft:fever:2",
     "parameters": [
       {
@@ -2124,6 +2162,15 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.allActions",
         "value": -1,
         "optionId": "vitner-witchcraft:fever:2:4"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "vitner-witchcraft:fever:2:3",
+        "labelKey": "TRUDVANG.Transformation.FeverResistance",
+        "skillOnly": true
       }
     ]
   },
@@ -9750,6 +9797,89 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost": {
+    "id": "frost",
+    "icon": "icons/svg/frozen.svg",
+    "duration": "1 minute",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:3",
+      "light": false,
+      "excludeSource": true,
+      "recipientDescriptionKey": "TRUDVANG.PersistentDamage.FrostRecipient"
+    },
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": true,
+      "resistance": {
+        "scope": "presence",
+        "testIndex": 0,
+        "successFactor": 1,
+        "failureFactor": 1,
+        "events": [
+          "apply"
+        ]
+      },
+      "alternatives": [
+        {
+          "id": "winter",
+          "labelKey": "TRUDVANG.PersistentDamage.WinterClothes",
+          "factor": 0.5
+        },
+        {
+          "id": "mastomant",
+          "labelKey": "TRUDVANG.PersistentDamage.MastomantFur",
+          "factor": 0
+        }
+      ]
+    },
+    "sourceId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:1"
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 10,
+        "value": -1,
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:2",
+        "labelKey": "TRUDVANG.Transformation.FrostResistance",
+        "skillOnly": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:3",
+        "labelKey": "TRUDVANG.Transformation.FrostRadius",
+        "tooltip": true
+      },
+      {
+        "index": 4,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:4",
+        "labelKey": "TRUDVANG.Transformation.FrostDamage",
+        "tooltip": true
+      }
+    ]
+  },
   "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir": {
     "id": "force-du-tursir",
     "icon": "icons/svg/aura.svg",
@@ -9880,6 +10010,83 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "value": 1,
         "optionId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:3"
+      }
+    ]
+  },
+  "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost": {
+    "id": "frost",
+    "icon": "icons/svg/frozen.svg",
+    "duration": "1 heure",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:2",
+      "light": false,
+      "excludeSource": true,
+      "recipientDescriptionKey": "TRUDVANG.PersistentDamage.FrostRecipient"
+    },
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": true,
+      "resistance": {
+        "scope": "presence",
+        "testIndex": 0,
+        "successFactor": 1,
+        "failureFactor": 1,
+        "events": [
+          "apply"
+        ]
+      },
+      "alternatives": [
+        {
+          "id": "winter",
+          "labelKey": "TRUDVANG.PersistentDamage.WinterClothes",
+          "factor": 0.5
+        },
+        {
+          "id": "mastomant",
+          "labelKey": "TRUDVANG.PersistentDamage.MastomantFur",
+          "factor": 0
+        }
+      ]
+    },
+    "sourceId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:0"
+      },
+      {
+        "index": 1,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:1",
+        "labelKey": "TRUDVANG.Transformation.FrostResistance",
+        "skillOnly": true
+      },
+      {
+        "index": 2,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:2",
+        "labelKey": "TRUDVANG.Transformation.FrostRadius",
+        "tooltip": true
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 1,
+        "value": 1,
+        "optionId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:3",
+        "labelKey": "TRUDVANG.Transformation.FrostDamage",
+        "tooltip": true
       }
     ]
   },
@@ -12472,6 +12679,18 @@ export const TRANSFORMATION_TEMPLATES = {
       0,
       5
     ],
+    "persistentDamage": {
+      "onApply": true,
+      "onRound": false,
+      "resistance": {
+        "scope": "damage",
+        "testIndex": 0,
+        "successFactor": 0,
+        "events": [
+          "apply"
+        ]
+      }
+    },
     "sourceId": "holy-joaringfaith-curses-of-sonntag:fever:2",
     "parameters": [
       {
@@ -12492,6 +12711,15 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.allActions",
         "value": -1,
         "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:4"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": 8,
+        "value": -1,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:fever:2:3",
+        "labelKey": "TRUDVANG.Transformation.FeverResistance",
+        "skillOnly": true
       }
     ]
   },
@@ -14160,11 +14388,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4": [
     "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes"
   ],
+  "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": [
+    "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5#frost"
+  ],
   "holy-haminges-power-of-the-thurses:thurse-strength:7": [
     "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir"
   ],
   "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": [
     "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur"
+  ],
+  "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": [
+    "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8#frost"
   ],
   "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": [
     "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1#ravage-du-huvfurwurm"

@@ -1,4 +1,5 @@
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
+import {registerPersistentDamageHooks} from './persistent-damage.mjs';
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
 import {effectChangesSource} from "./rules/effect-source.mjs";
 import {processWorldConsequences, registerConsequenceHooks} from "./consequences.mjs";
@@ -245,6 +246,7 @@ export function finishExpiredEffect(effect, options = {}) {
 }
 
 export function registerEffectHooks() {
+  registerPersistentDamageHooks({effects:appliedWorldEffects,expireEffects:expireAppliedEffects});
   registerConsequenceHooks(appliedWorldEffects);
   registerCombatEffectHooks();
   Hooks.on("updateActiveEffect", (effect, changed, options) => {
@@ -291,7 +293,7 @@ export async function expireAppliedEffects({time = null, combat = null, itemTran
       // An explicit world-time jump also consumes round-based durations even
       // if the native combat registry has not advanced its round counter.
       const isItemTransformation=effect.parent?.documentName === "Item" && effect.flags?.["trudvang-chronicles"]?.transformation?.resolved;
-      const elapsed = isItemTransformation ? itemEffectRemainingSeconds(effect,{time,combat})===0
+      const elapsed = isItemTransformation || combat ? itemEffectRemainingSeconds(effect,{time,combat})===0
         : Number.isFinite(time) && Number.isFinite(start?.time) && seconds !== null && start.time + seconds <= time;
       if (effect.duration?.expired || elapsed) await finishExpiredEffect(effect);
     }

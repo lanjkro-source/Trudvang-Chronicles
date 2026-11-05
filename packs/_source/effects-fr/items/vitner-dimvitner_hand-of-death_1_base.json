@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-dimvitner:hand-of-death:1#base",
-    "description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée.",
+    "description": "Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte. Cette cible conserve la version de base, sans amélioration de dégâts, de durée ou de résistance.",
     "summary": "Siphonne la force vitale ; la victime peut résister à chaque tour.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Main funeste — cible supplémentaire",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "À chaque tour, la victime résiste par un test de situation de Constitution (valeur de base 6). Une réussite évite tous les dégâts de ce tour. En cas d’échec, utiliser le bouton de dégâts. Seules les armures en grindsilver protègent contre ces dégâts. Le sort est maintenu ; les effets de chaque cible suivent leur propre durée. Cette cible subit uniquement la version de base du sort, sans les améliorations de dégâts, de résistance ou de durée.",
+      "description": "Le lien funeste inflige ses dégâts à l’application puis à chaque nouveau round tant que cet effet subsiste après expiration des durées. La victime peut résister par un test de situation de Constitution (valeur de base 6, modifiée par le lancement) sur chaque carte : une réussite évite les dégâts de ce tour sans dissiper le sort. Seules les armures en grindsilver protègent. Les PS sont déduits après résolution du choix sur la carte. Cette cible conserve la version de base, sans amélioration de dégâts, de durée ou de résistance.",
       "transfer": false,
       "system": {
         "stackId": "vitner-dimvitner:hand-of-death:1#base",

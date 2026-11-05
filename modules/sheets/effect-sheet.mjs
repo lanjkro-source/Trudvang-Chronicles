@@ -1,3 +1,4 @@
+import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
@@ -103,7 +104,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       ), this.document);
       partContext.conditionalSituationButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
         ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly).map(({bonus,index})=>({index,label:bonus.skill||bonus.ability?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
-      partContext.canRollMagicDamage=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner && Boolean(magicDamageProfile(this.document));
+      partContext.canRollMagicDamage=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner && Boolean(magicDamageProfile(this.document)) && !POWER_DETAILS_BY_ID[this.document.flags?.["trudvang-chronicles"]?.transformation?.sourceId]?.damageRoll?.automatic;
       partContext.origin = this.document.origin || "";
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {

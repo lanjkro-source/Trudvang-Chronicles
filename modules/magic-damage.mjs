@@ -28,6 +28,17 @@ export function magicDamageHasBaseTargets(document,context){
   return Number(casting.countsById?.[optionId]??casting.counts?.[index]??0)>0;
 }
 
+export function magicDamageExplanations(document,damage){
+  const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.damageRoll;
+  if(!definition||!damage)return [];
+  const base=definition.steps[0];
+  const openRollLabel=game.i18n.localize("TRUDVANG.Field.OpenRollShort");
+  const rows=base.formula!==damage.formula||base.openRoll!==damage.openRoll
+    ? [{labelKey:"TRUDVANG.Power.Levels",value:base.formula===damage.formula?`${openRollLabel} ${base.openRoll} → ${openRollLabel} ${damage.openRoll}`:`${base.formula} → ${damage.formula}`,source:base.formula!==damage.formula&&base.openRoll!==damage.openRoll?`${openRollLabel} : ${base.openRoll} → ${damage.openRoll}`:""}]:[];
+  if(definition.targetTags?.length)rows.push({labelKey:"TRUDVANG.Damage.TargetRestriction",value:game.i18n.localize(definition.targetLabelKey)});
+  return rows;
+}
+
 /** Use the same confirmation and target application card as weapon damage. */
 export async function rollMagicDamage({document,actor,context,targets,baseOnly=false}={}) {
   if(!actor?.isOwner)return null;
@@ -35,10 +46,7 @@ export async function rollMagicDamage({document,actor,context,targets,baseOnly=f
   const damage=magicDamageProfile(document,context,{baseOnly});if(!damage)return null;
   const item={name:baseOnly?`${document.name} — ${game.i18n.localize("TRUDVANG.MagicDamage.BaseRecipients")}`:document.name,img:document.img,system:{category:"magic",damage:damage.formula,openRoll:damage.openRoll,damageBonus:0,strengthApplies:false,damageQualification:document.system?.damageQualification ?? damage.qualification}};
   const {rollDamage}=await import("./dice.mjs");
-  const base=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll.steps[0];
   const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll;
-  const damageExplanations=base.formula!==damage.formula||base.openRoll!==damage.openRoll
-    ? [{labelKey:"TRUDVANG.Power.Levels",value:`${base.formula} → ${damage.formula}`,source:base.openRoll!==damage.openRoll?`${game.i18n.localize("TRUDVANG.DamageRoll.OpenRoll")} : ${base.openRoll} → ${damage.openRoll}`:""}]:[];
-  if(definition.targetTags?.length)damageExplanations.push({labelKey:"TRUDVANG.Damage.TargetRestriction",value:game.i18n.localize(definition.targetLabelKey)});
+  const damageExplanations=magicDamageExplanations(document,damage);
   return rollDamage({actor,item,context:{usage:"magic",targets,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
 }

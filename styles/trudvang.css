@@ -1218,3 +1218,9 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .damage-qualification-settings > summary [data-damage-qualification-summary] { display: inline-block; margin-left: .6em; }
 
 .trudvang.damage-roll-dialog .damage-qualification-note { color: var(--trudvang-on-header-muted); font-size: .85em; }
+
+/* Alternative amounts are choices on the original damage card. */
+.trudvang.damage .damage-alternatives { display: flex; flex-wrap: wrap; gap: .25rem .65rem; justify-content: center; margin: .25rem 0; }
+.trudvang.damage .damage-alternatives button { flex: 0 1 auto; width: auto; min-height: 0; height: auto; padding: .1rem .2rem; border: 0; background: transparent; color: var(--trudvang-accent); font: inherit; line-height: 1.3; }
+.trudvang.damage [data-damage-resistance] { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.trudvang.damage [data-damage-resistance-result] { color: var(--trudvang-ink); font-size: .9em; }

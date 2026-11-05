@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "vitner-dimvitner:hand-of-death:1#base",
-    "description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements.",
+    "description": "The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card. This target keeps the base version, without damage, duration or resistance upgrades.",
     "summary": "Drains life force; the victim may resist each round.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Hand of Death — additional target",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Each round, the victim makes a Constitution Situation roll (base value 6). Success prevents all damage for that round. On failure, use the damage button. Only grindsilver armor protects against this damage. This is a maintained spell; each target effect keeps its own duration. This target receives only the base spell, without damage, resistance or duration improvements.",
+      "description": "The death bond rolls damage on application and at each new round while this effect survives duration expiry. The victim may make a Constitution Situation roll (base value 6, adjusted by this casting) on each damage card: success avoids that round’s damage without ending the spell. Only grindsilver armor protects. Body Points are deducted after resolving the card. This target keeps the base version, without damage, duration or resistance upgrades.",
       "transfer": false,
       "system": {
         "stackId": "vitner-dimvitner:hand-of-death:1#base",
