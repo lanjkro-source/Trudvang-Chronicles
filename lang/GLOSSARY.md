@@ -903,6 +903,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Application` | Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary} | Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary} |
 | `TRUDVANG.Damage.ArmorApplied` | {name}: PV {protection} | {name} : VP {protection} |
 | `TRUDVANG.Damage.Qualifications` | Qualifiers | Qualifications |
+| `TRUDVANG.Damage.TargetRestriction` | Affected targets | Cibles affectées |
+| `TRUDVANG.Damage.UndeadOnly` | Undead only | Morts-vivants uniquement |
+| `TRUDVANG.Damage.DemonsOnly` | Demons only | Démons uniquement |
+| `TRUDVANG.Damage.IneligibleTarget` | This damage roll cannot affect this target (incompatible tags). | Ce jet de dégâts ne peut pas affecter cette cible (tags incompatibles). |
 
 ## `TRUDVANG.Damage.Field`
 
@@ -13159,6 +13163,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.SourcePage` | 185 | 246 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect.Duration` | 1 day | 1 jour |
+
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Name` | Psychological pain — Power of Blood | Douleur psychologique — Puissance du sang |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Description` | Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance. | À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourceName` | Power of Blood | Puissance du sang |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.SourcePage` | 194 | 250 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:power-of-blood:0#pain.Duration` | 1d6 hours | 1d6 heures |
 
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies`
 

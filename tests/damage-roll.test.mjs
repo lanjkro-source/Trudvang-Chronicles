@@ -82,6 +82,13 @@ test("fixed magical wounds confirm and publish their total without rolling a die
  assert.equal(total,3);assert.equal(rolls.length,0);assert.equal(cards.length,1);
  assert.match(dialogs[0].content,/min="0"/);
 });
+test("Nid projectiles freeze the undead restriction on their damage card and explain it before rolling",async t=>{
+ const {cards,dialogs}=runtime(t,{response:{},results:[4]});
+ await rollMagicDamage({document:{name:'Éclair sacré',system:{catalogId:'holy-tenetnid-tablet-of-anger:holy-bolt:1'}},actor:{...actor(),isOwner:true}});
+ assert.deepEqual(cards[0].flags['trudvang-chronicles'].damageContext.targetTags,['mort-vivant','undead']);
+ assert.match(dialogs[0].content,/Morts-vivants uniquement/);
+ assert.match(cards[0].content,/Morts-vivants uniquement/);
+});
 
 test("the damage snapshot explains intrinsic, item, wearer and named actor effects once", () => {
   const item = weapon({damage: "2d10+3", damageBonus: 5, openRoll: 8});

@@ -289,7 +289,7 @@ function attachListeners(message, html) {
         const result = await requestChatApplication({message, actor, token, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true"});
         if (!["applied", "alreadyApplied"].includes(result.status)) {
           button.disabled = false;
-          ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+          ui.notifications.warn(game.i18n.localize(result.status === "ineligibleTarget" ? "TRUDVANG.Damage.IneligibleTarget" : "TRUDVANG.ChatApplication.Unavailable"));
         }
       } catch (error) { button.disabled = false; throw error; }
     });
@@ -321,7 +321,7 @@ function attachListeners(message, html) {
         const result = await requestChatApplication({message, actor: item?.parent, channel: "defense", itemUuid: item?.uuid});
         if (!["applied", "alreadyApplied"].includes(result.status)) {
           button.disabled = false;
-          ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+          ui.notifications.warn(game.i18n.localize(result.status === "ineligibleTarget" ? "TRUDVANG.Damage.IneligibleTarget" : "TRUDVANG.ChatApplication.Unavailable"));
         }
       } catch (error) { button.disabled = false; throw error; }
     });

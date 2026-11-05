@@ -65,6 +65,18 @@ function runtime(t, kind = "damage") {
   return {message, flags, updates, makeActor, makeToken, addDamageTarget, payload};
 }
 
+test("restricted damage checks the actual target tags on the GM even with armor bypass or forged payload tags",async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);
+ flags.damageContext={targetTags:['mort-vivant','undead']};
+ const living=makeActor('Living'),undead=makeActor('Undead');undead.system.tags=['Mort-vivant'];
+ addDamageTarget(living);addDamageTarget(undead);
+ assert.deepEqual(await applyChatApplication(payload(living,{ignoreArmor:true,targetTags:[]})),{status:'ineligibleTarget'});
+ assert.equal(living.system.resources.body.value,20);assert.equal(flags.applications,undefined);
+ assert.deepEqual(await applyChatApplication(payload(living,{channel:'defense'})),{status:'ineligibleTarget'});
+ assert.deepEqual(await applyChatApplication(payload(undead)),{status:'applied',amount:8});
+ assert.equal(undead.system.resources.body.value,12);
+});
+
 test("damage rows grow on the original roll card, with the actual loss after each target's protection", async t => {
   const {message, flags, updates, makeActor, addDamageTarget, payload} = runtime(t);
   const first = makeActor("First", 5), second = makeActor("Second", 2);

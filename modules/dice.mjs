@@ -653,7 +653,7 @@ export async function rollDamage({actor, item, context = {}}) {
     qualificationHTML: damageIcons(choice.qualification),
     targetsHTML
   });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets,damageContext:{usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets,damageContext:{targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return total;
 }
 

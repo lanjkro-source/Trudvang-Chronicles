@@ -24,6 +24,10 @@ export function matchingCreatureBonus(bonus,actor){
  const tags=new Set((actor?.system?.tags??[]).map(tag=>String(tag).trim().toLocaleLowerCase()));
  return bonus.tags.some(tag=>tags.has(tag));
 }
+/** Target eligibility is independent of damage nature, element and armor bypass. */
+export function damageCanAffect(actor,tags=[]){
+ return Array.isArray(tags)&&(!tags.length||matchingCreatureBonus({tags},actor));
+}
 /** Mutually exclusive categories of a single effect use the highest bonus. */
 export function conditionalDamageBonus(rows,actor){
  const groups=new Map();let total=0;

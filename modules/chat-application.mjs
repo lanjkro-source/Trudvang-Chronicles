@@ -1,6 +1,6 @@
 import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from "./damage-application.mjs";
 import {renderTemplate} from "./helpers.mjs";
-import {conditionalDamageBonus} from "./rules/creature-conditional-bonus.mjs";
+import {conditionalDamageBonus,damageCanAffect} from "./rules/creature-conditional-bonus.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -95,6 +95,7 @@ async function applyOnGM(payload) {
   if (!actor?.isOwner || !["character", "npc"].includes(actor.type)
     || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
   if(payload.channel!=="fear"){
+    if(!damageCanAffect(actor,message.getFlag(SYSTEM_ID,"damageContext")?.targetTags))return {status:"ineligibleTarget"};
     const rows=message.getFlag(SYSTEM_ID,"conditionalDamage")??[];
     const bonus=conditionalDamageBonus(rows,actor);
     const before=Number(message.getFlag(SYSTEM_ID,"conditionalDamageBeforeRange"));
@@ -179,6 +180,7 @@ export function registerChatApplicationSocket() {
 
 export async function requestChatApplication({message, actor, token, channel, itemUuid = "", ignoreArmor = false}) {
   if (!actor?.isOwner) return {status: "unavailable"};
+  if(channel!=="fear"&&!damageCanAffect(actor,message.getFlag(SYSTEM_ID,"damageContext")?.targetTags))return {status:"ineligibleTarget"};
   if (hasChatApplication(message, actor.uuid, channel, itemUuid)) return {status: "alreadyApplied"};
   const payload = {type: "chatApplication", requestId: crypto.randomUUID(), messageId: message.id,
     userId: game.user.id, actorUuid: actor.uuid, tokenUuid: token?.document?.uuid ?? token?.uuid ?? actor.token?.uuid ?? "",

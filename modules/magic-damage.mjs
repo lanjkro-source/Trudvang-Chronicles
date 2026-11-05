@@ -28,7 +28,9 @@ export async function rollMagicDamage({document,actor,context,targets}={}) {
   const item={name:document.name,img:document.img,system:{category:"magic",damage:damage.formula,openRoll:damage.openRoll,damageBonus:0,strengthApplies:false,damageQualification:document.system?.damageQualification ?? damage.qualification}};
   const {rollDamage}=await import("./dice.mjs");
   const base=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll.steps[0];
+  const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll;
   const damageExplanations=base.formula!==damage.formula||base.openRoll!==damage.openRoll
     ? [{labelKey:"TRUDVANG.Power.Levels",value:`${base.formula} → ${damage.formula}`,source:base.openRoll!==damage.openRoll?`${game.i18n.localize("TRUDVANG.DamageRoll.OpenRoll")} : ${base.openRoll} → ${damage.openRoll}`:""}]:[];
-  return rollDamage({actor,item,context:{usage:"magic",targets,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
+  if(definition.targetTags?.length)damageExplanations.push({labelKey:"TRUDVANG.Damage.TargetRestriction",value:game.i18n.localize(definition.targetLabelKey)});
+  return rollDamage({actor,item,context:{usage:"magic",targets,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
 }

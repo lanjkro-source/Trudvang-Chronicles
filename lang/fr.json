@@ -821,7 +821,11 @@
       },
       "Application": "Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary}",
       "ArmorApplied": "{name} : VP {protection}",
-      "Qualifications": "Qualifications"
+      "Qualifications": "Qualifications",
+      "TargetRestriction": "Cibles affectées",
+      "UndeadOnly": "Morts-vivants uniquement",
+      "DemonsOnly": "Démons uniquement",
+      "IneligibleTarget": "Ce jet de dégâts ne peut pas affecter cette cible (tags incompatibles)."
     },
     "Npc": {
       "Tags": "Tags",
@@ -16023,6 +16027,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "246",
           "Duration": "1 jour"
+        },
+        "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
+          "Name": "Douleur psychologique — Puissance du sang",
+          "Summary": "La douleur psychologique pénalise les tests de compétence et de situation après un échec à la résistance.",
+          "Description": "À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie.",
+          "SourceName": "Puissance du sang",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "250",
+          "Duration": "1d6 heures"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Sens pétrifiés",

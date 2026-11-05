@@ -1,0 +1,53 @@
+{
+  "_id": "m32N5sWrXsYtZu0v",
+  "_key": "!items!m32N5sWrXsYtZu0v",
+  "name": "Psychological pain — Power of Blood",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+    "description": "Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance.",
+    "summary": "Psychological pain penalizes Skill rolls and Situation rolls after failed resistance.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ljk6K8A6B7C8D9Ea",
+      "_key": "!items.effects!m32N5sWrXsYtZu0v.Ljk6K8A6B7C8D9Ea",
+      "name": "Psychological pain — Power of Blood",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+            "sourceId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
+            "summary": "Psychological pain penalizes Skill rolls and Situation rolls after failed resistance.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

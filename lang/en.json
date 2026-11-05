@@ -821,7 +821,11 @@
       },
       "Application": "Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary}",
       "ArmorApplied": "{name}: PV {protection}",
-      "Qualifications": "Qualifiers"
+      "Qualifications": "Qualifiers",
+      "TargetRestriction": "Affected targets",
+      "UndeadOnly": "Undead only",
+      "DemonsOnly": "Demons only",
+      "IneligibleTarget": "This damage roll cannot affect this target (incompatible tags)."
     },
     "Npc": {
       "Tags": "Tags",
@@ -16023,6 +16027,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "185",
           "Duration": "1 day"
+        },
+        "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
+          "Name": "Psychological pain — Power of Blood",
+          "Summary": "Psychological pain penalizes Skill rolls and Situation rolls after failed resistance.",
+          "Description": "Apply only after the target fails Power of Blood’s Psyche Situation roll. Psychological pain imposes −1 to all Skill rolls and Situation rolls for 1d6 hours. Physical damage is a separate consequence and is not prevented by successful resistance.",
+          "SourceName": "Power of Blood",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "194",
+          "Duration": "1d6 hours"
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
           "Name": "Stone Senses",

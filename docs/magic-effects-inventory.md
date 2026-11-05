@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 314 ; avec jet de dégâts magique : 33 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 315 ; avec jet de dégâts magique : 33 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -249,7 +249,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Utilité de Nema | Vent libérateur | pouvoir | `holy-ealdtradition-nema-s-usefulness:liberating-wind:6` | 2 | 2 | 0 | — | — |
 | Utilité de Nema | Voyage de Mongfind | pouvoir | `holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8` | 2 | 0 | 1 | — | — |
 | Tablette de la colère | Éclair sacré | pouvoir | `holy-tenetnid-tablet-of-anger:holy-bolt:1` | 2 | 0 | 0 | oui | — |
-| Tablette de la colère | Puissance du sang | pouvoir | `holy-tenetnid-tablet-of-anger:power-of-blood:0` | 3 | 1 | 0 | oui | — |
+| Tablette de la colère | Puissance du sang | pouvoir | `holy-tenetnid-tablet-of-anger:power-of-blood:0` | 3 | 1 | 1 | oui | — |
 | Tablette de la colère | Sens pétrifiés | pouvoir | `holy-tenetnid-tablet-of-anger:stone-senses:2` | 3 | 0 | 1 | — | — |
 | Tablette de la colère | Visions du chêne | pouvoir | `holy-tenetnid-tablet-of-anger:visions-of-the-oak:3` | 4 | 1 | 0 | oui | — |
 | Tablette de la colère | Explosion sacrée | pouvoir | `holy-tenetnid-tablet-of-anger:sacred-burst:4` | 3 | 0 | 0 | oui | — |

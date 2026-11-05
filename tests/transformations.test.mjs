@@ -16,6 +16,23 @@ const {applyTransformation,resolveDuration,transformationLinks,syncTransformatio
 const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
+test('Power of Blood offers a separate pain effect with minus one to tests and a rolled hourly duration',async t=>{
+ const previous={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
+ t.after(()=>Object.assign(globalThis,previous));
+ const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url)));
+ const lookup=key=>key.split('.').reduce((value,part)=>value?.[part],language)??key;
+ globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((text,[key,value])=>text.replaceAll(`{${key}}`,String(value)),lookup(key))}};
+ let rolls=0,created;
+ globalThis.ChatMessage={getSpeaker:()=>({})};
+ globalThis.Roll=class{constructor(formula){assert.equal(formula.trim(),'1d6');}async evaluate(){this.total=4;rolls++;return this;}async toMessage(){}};
+ const actor={canUserModify:()=>true,items:[],createTrudvangEffect:async data=>(created=data,null)};
+ const id='holy-tenetnid-tablet-of-anger:power-of-blood:0';
+ assert.match(transformationLinks({system:{catalogId:id}}),/pain/);
+ await applyTransformation(actor,id+'#pain',{skipDialog:true});
+ assert.equal(rolls,1);assert.deepEqual(created.duration,{value:4,units:'hours'});
+ assert.deepEqual(created.system.changes.map(change=>[change.key,change.value]),[['system.modifiers.rolls.allActions','-1']]);
+ assert.match(created.description,/uniquement si la cible échoue/);
+});
 test("deleting an item effect does not treat its item as a token-bearing actor",async()=>{
  const previous={Hooks:globalThis.Hooks,document:globalThis.document};const hooks=new Map();
  try{
@@ -45,7 +62,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,329);
+ assert.equal(Object.keys(sources).length,330);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{

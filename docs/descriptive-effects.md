@@ -99,3 +99,11 @@ Les améliorations du lancement déterminent les paliers JO, le nombre de brûlu
 Les jets des deux auras de givre représentent les dégâts **d’un tour**, déclenchés manuellement ; leurs auras existantes sont conservées, sans nouvelle aura ni lumière. Les vêtements adaptés et le choix des bénéficiaires admissibles (morts-vivants/démons), la portée et le nombre de projectiles restent sous contrôle du MJ. Emprisonnement propose les dégâts du contact avec la paroi ; les dégâts distincts de traversée forcée restent à déclencher séparément. Les malus et tests déjà présents ne sont pas remplacés.
 
 Main funeste et Vrille de Dimhall restent à compléter pour proposer distinctement les dégâts des cibles supplémentaires qui subissent la version de base, ainsi que la protection propre au grindsilver pour Main funeste.
+
+## Douleur de Nid et restrictions des dégâts — 5 novembre 2026
+
+Puissance du sang propose désormais l’effet « Douleur psychologique », à appliquer après un échec au test de résistance : −1 aux tests de compétence et de situation, pendant 1d6 heures tirées à l’application. Les dégâts restent indépendants du test. Le nombre de bénéficiaires de l’effet suit la cible initiale et les ennemis supplémentaires achetés. Références : Livre des règles p. 250–251 ; Player’s Handbook p. 194.
+
+Les trois projectiles de Nid (Éclair sacré, Explosion sacrée, Purification divine) et les trois attaques de Jorn sont limités aux tags mort-vivant/undead ; Bannissement est limité aux tags démon/demon. La restriction est enregistrée dans chaque nouvelle carte de dégâts et revérifiée côté MJ lors de l’application, y compris avec le bouton ignorant l’armure et celui visant l’arme défensive. Elle est indépendante de la nature et du type des dégâts. Les anciennes cartes sans cette métadonnée doivent être relancées ; aucune identification n’est déduite de leur titre traduit. Les profils des PJ sans tag ne sont donc pas affectés par ces attaques.
+
+Les « auras de givre » désignent les pouvoirs de Haminges Souffle du hrimtroll et Corps de glace du hrimtroll (Livre des règles p. 276–277) ; cette correction n’ajoute pas d’aura ni de type de dégâts « sacré ».

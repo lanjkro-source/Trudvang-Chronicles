@@ -1339,7 +1339,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "magical"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -1453,7 +1458,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "magical"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -1569,7 +1579,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "magical"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -5469,7 +5484,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "lightning",
         "protection": "none"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -5517,7 +5537,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "lightning",
         "protection": "none"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -5621,6 +5646,15 @@ export const POWER_DETAILS_BY_ID = {
       "type": "other",
       "protection": "none"
     },
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
@@ -5661,7 +5695,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "lightning",
         "protection": "none"
-      }
+      },
+      "targetTags": [
+        "mort-vivant",
+        "undead"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.UndeadOnly"
     },
     "damageQualification": {
       "nature": "magical",
@@ -6305,7 +6344,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "other",
         "protection": "none"
-      }
+      },
+      "targetTags": [
+        "démon",
+        "demon"
+      ],
+      "targetLabelKey": "TRUDVANG.Damage.DemonsOnly"
     },
     "damageQualification": {
       "nature": "magical",

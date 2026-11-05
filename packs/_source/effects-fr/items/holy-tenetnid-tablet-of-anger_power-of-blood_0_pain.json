@@ -1,0 +1,53 @@
+{
+  "_id": "m32N5sWrXsYtZu0v",
+  "_key": "!items!m32N5sWrXsYtZu0v",
+  "name": "Douleur psychologique — Puissance du sang",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+    "description": "À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie.",
+    "summary": "La douleur psychologique pénalise les tests de compétence et de situation après un échec à la résistance.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 250
+    }
+  },
+  "effects": [
+    {
+      "_id": "Ljk6K8A6B7C8D9Ea",
+      "_key": "!items.effects!m32N5sWrXsYtZu0v.Ljk6K8A6B7C8D9Ea",
+      "name": "Douleur psychologique — Puissance du sang",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "À appliquer uniquement si la cible échoue au test de situation de Psychisme de Puissance du sang. La douleur psychologique impose −1 à tous les tests de compétence et de situation pendant 1d6 heures. Les dégâts physiques sont une conséquence séparée : ils ne sont pas annulés par une résistance réussie.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain",
+            "sourceId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
+            "summary": "La douleur psychologique pénalise les tests de compétence et de situation après un échec à la résistance.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

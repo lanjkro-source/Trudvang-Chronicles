@@ -6776,6 +6776,25 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain": {
+    "id": "pain",
+    "icon": "icons/svg/downgrade.svg",
+    "duration": "1d6 heures",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "-1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "sourceId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
+    "parameters": []
+  },
   "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies": {
     "id": "sens-petrifies",
     "icon": "icons/svg/aura.svg",
@@ -13760,6 +13779,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": [
     "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8#effect"
+  ],
+  "holy-tenetnid-tablet-of-anger:power-of-blood:0": [
+    "holy-tenetnid-tablet-of-anger:power-of-blood:0#pain"
   ],
   "holy-tenetnid-tablet-of-anger:stone-senses:2": [
     "holy-tenetnid-tablet-of-anger:stone-senses:2#sens-petrifies"
