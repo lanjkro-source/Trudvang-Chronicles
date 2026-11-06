@@ -1,0 +1,53 @@
+{
+  "_id": "I8I104v1w2x3y4z5",
+  "_key": "!items!I8I104v1w2x3y4z5",
+  "name": "Mark of Brokk",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+    "description": "The Thuul recovers 1 additional HP after a night’s rest if the runic item remains against the skin during sleep. Keep this effect only while that condition and the linked Divinity Points are satisfied. It improves natural recovery; it does not heal immediately.",
+    "summary": "Strengthens a sacred object and enhances the rune it bears.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "3PV0VSnToUpVqWrX",
+      "_key": "!items.effects!I8I104v1w2x3y4z5.3PV0VSnToUpVqWrX",
+      "name": "Mark of Brokk",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The Thuul recovers 1 additional HP after a night’s rest if the runic item remains against the skin during sleep. Keep this effect only while that condition and the linked Divinity Points are satisfied. It improves natural recovery; it does not heal immediately.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+            "sourceId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0",
+            "summary": "Strengthens a sacred object and enhances the rune it bears.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

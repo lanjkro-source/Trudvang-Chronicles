@@ -81,13 +81,18 @@ export function annotateTransformationDescription(description,document){
  const links=transformationLinks(document);
  return links?`${description}<div class="trudvang-transformation-links">${links}</div>`:description;
 }
-async function askFields(title,fields,preview=()=>"",intro=""){
+async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
-   const refresh=()=>{const values=Object.fromEntries(fields.map(f=>[f.name,root.querySelector(`[name="${f.name}"]`)?.value??f.value]));const output=root.querySelector("[data-resistance-preview]");if(output)output.innerHTML=preview(values);};
+   let autoDuration=fields.find(f=>f.name==="duration")?.value??"";
+   const refresh=event=>{if(runeDurations.length&&(!event||event.target?.name==="runeLevel")){
+     const input=root.querySelector('[name="duration"]'),level=Number(root.querySelector('[name="runeLevel"]')?.value);
+     if(input&&input.value===autoDuration){autoDuration=runeDurations[level-1]??autoDuration;input.value=autoDuration;}
+    }
+    const values=Object.fromEntries(fields.map(f=>[f.name,root.querySelector(`[name="${f.name}"]`)?.value??f.value]));const output=root.querySelector("[data-resistance-preview]");if(output)output.innerHTML=preview(values);};
    root.addEventListener("input",refresh);refresh();
   }
  };
@@ -145,7 +150,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const supplied=source?.documentName==="ActiveEffect"&&(!sourceKey||sourceKey===key)?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
  const stored=supplied?effectSource(supplied):null;
- const template=stored?{...reference,changes:stored.system.changes,statuses:Array.from(stored.statuses??[]),icon:stored.img??reference.icon}:reference;
+ const template=stored?{...reference,changes:stored.system.changes,statuses:Array.from(stored.statuses??[]),icon:stored.img??reference.icon}:structuredClone(reference);
  // TEMPORARY WORLD MIGRATION — pre-0.97 references kept dynamic rules in flags.
  // Convert only that historical format on the new copy. Never refill rows that
  // the GM deliberately cleared in the current editable format.
@@ -165,11 +170,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // effect. Keep the same validation/error as the effect editor.
  for(const row of template.changes)if(!validProfileChange(row))throw new Error(game.i18n.format("TRUDVANG.Effect.InvalidProfileChange",{path:row.key}));
  const effectName=supplied?.name||text(key,"Name");
- const rules=rulesFromChanges(template.changes);
+ let rules=rulesFromChanges(template.changes);
  if(rules.senses)rules.senses=rules.senses.map(s=>typeof s==="string"?game.i18n.localize(s):({...s,label:game.i18n.localize(s.label??s.labelKey??"")}));
  if(rules.capabilities)rules.capabilities=rules.capabilities.map(s=>game.i18n.localize(s));
  if(rules.attacks)rules.attacks=rules.attacks.map(a=>({...a,name:game.i18n.localize(a.name)}));
  const resolvedCopy=Boolean(metadata(supplied)?.resolved||metadata(supplied)?.appliedAt!==undefined);
+ if(template.requiresWeapon&&destinationItem?.type!=="weapon"){
+  ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.RuneWeaponRequired"));return null;
+ }
  const targeting=!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set();
  if(targeting){
@@ -216,7 +224,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
- if(rules.unarmedDamage)fields.push({name:"runeLevel",label:local("RuneLevel"),value:Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)});
+ if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>({value:String(i+1),label:String(i+1)}))});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
   const tablet=Array.from(caster.items??[]).find(i=>i.type==="tablet"&&i.system.catalogId===template.sourceId.split(":")[0]);
@@ -224,10 +232,23 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
- const preview=values=>magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
+ const preview=values=>{
+  const tier=!resolvedCopy&&template.runeTiers?.[Number(values.runeLevel)-1];
+  return (tier?`<p>${escapeHtml(game.i18n.localize(tier.summaryKey))}</p>`:"")+magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
+ };
  const answers=preselectedAnswers??(skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
-  await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro));
+  await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro,resolvedCopy?[]:template.runeTiers?.map(t=>t.duration)));
  if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ let runeLevel=metadata(supplied)?.runeLevel;
+ if(!resolvedCopy&&template.runeTiers){
+  runeLevel=Number(answers.runeLevel);
+  if(!Number.isInteger(runeLevel)||runeLevel<1||runeLevel>5)throw Error(local("InvalidRuneLevel"));
+  const tier=template.runeTiers[runeLevel-1];
+  template.changes=structuredClone(tier.changes);template.statuses=tier.statuses??[];
+  rules=rulesFromChanges(template.changes);
+  if(answers.duration===durationText||!answers.duration)answers.duration=tier.duration;
+  if(Number.isFinite(tier.climbingBonus))rules.movement=[{mode:"climb",method:"replace",value:Math.max(0,Number(actor.system?.movement?.current??0)/2+tier.climbingBonus)}];
+ }
  if(inputOptions.length){
   const selected=inputOptions.find(option=>option.value===answers.effectInput);
   if(!selected)return null;
@@ -347,6 +368,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
   const value=resolveEffectNote(p,casting,answers.powerLevel??template.levelParameter?.default);
   summary=game.i18n.format(p.labelKey,{value});
@@ -384,7 +406,13 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(template.runeTiers){
+  meta.runeLevel=runeLevel;meta.summaryResolved=true;
+  const bases=resolvedCopy?metadata(supplied)?.ruleTestBases:template.runeTiers[runeLevel-1].ruleTestBases;
+  if(bases)meta.ruleTestBases=structuredClone(bases);
+ }
  let description=supplied?.description??text(key,"Description");
+ if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
  if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){

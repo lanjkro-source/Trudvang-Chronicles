@@ -1,0 +1,53 @@
+{
+  "_id": "k6LhinSnToUpVqWr",
+  "_key": "!items!k6LhinSnToUpVqWr",
+  "name": "Croc de Yukk",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+    "description": "À appliquer uniquement à l’arme tranchante en métal portant la rune. Arme : +1 dégâts. Les probabilités de jet ouvert augmentent : JO 10 devient JO 9–10 pour un rang supplémentaire. La rune reste active tant que les points de divinité requis lui sont liés.",
+    "summary": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 286
+    }
+  },
+  "effects": [
+    {
+      "_id": "fCz8K2u0v1w2x3y4",
+      "_key": "!items.effects!k6LhinSnToUpVqWr.fCz8K2u0v1w2x3y4",
+      "name": "Croc de Yukk",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "À appliquer uniquement à l’arme tranchante en métal portant la rune. Arme : +1 dégâts. Les probabilités de jet ouvert augmentent : JO 10 devient JO 9–10 pour un rang supplémentaire. La rune reste active tant que les points de divinité requis lui sont liés.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+            "sourceId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+            "summary": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

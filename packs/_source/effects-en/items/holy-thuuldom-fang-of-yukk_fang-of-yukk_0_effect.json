@@ -1,0 +1,53 @@
+{
+  "_id": "k6LhinSnToUpVqWr",
+  "_key": "!items!k6LhinSnToUpVqWr",
+  "name": "Fang of Yukk",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+    "description": "Apply only to the metal edged weapon bearing the rune. Weapon: +1 damage. Open rolls become more likely: JO 10 becomes JO 9–10 for one additional rank. The rune remains active while its required Divinity Points are linked to it.",
+    "summary": "Empowers a cutting weapon to deal more damage and trigger open rolls more often.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 230
+    }
+  },
+  "effects": [
+    {
+      "_id": "fCz8K2u0v1w2x3y4",
+      "_key": "!items.effects!k6LhinSnToUpVqWr.fCz8K2u0v1w2x3y4",
+      "name": "Fang of Yukk",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Apply only to the metal edged weapon bearing the rune. Weapon: +1 damage. Open rolls become more likely: JO 10 becomes JO 9–10 for one additional rank. The rune remains active while its required Divinity Points are linked to it.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect",
+            "sourceId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+            "summary": "Empowers a cutting weapon to deal more damage and trigger open rolls more often.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

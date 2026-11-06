@@ -1,0 +1,53 @@
+{
+  "_id": "I8I104v1w2x3y4z5",
+  "_key": "!items!I8I104v1w2x3y4z5",
+  "name": "Marque de Brokk",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+    "description": "Le thuul récupère 1 PS supplémentaires après une nuit de repos, à condition de garder l’objet runique contre sa peau pendant son sommeil. Appliquer cet effet seulement tant que cette condition et les points de divinité liés sont satisfaits. Il améliore la récupération naturelle ; il ne soigne pas immédiatement.",
+    "summary": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 287
+    }
+  },
+  "effects": [
+    {
+      "_id": "3PV0VSnToUpVqWrX",
+      "_key": "!items.effects!I8I104v1w2x3y4z5.3PV0VSnToUpVqWrX",
+      "name": "Marque de Brokk",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le thuul récupère 1 PS supplémentaires après une nuit de repos, à condition de garder l’objet runique contre sa peau pendant son sommeil. Appliquer cet effet seulement tant que cette condition et les points de divinité liés sont satisfaits. Il améliore la récupération naturelle ; il ne soigne pas immédiatement.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect",
+            "sourceId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0",
+            "summary": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

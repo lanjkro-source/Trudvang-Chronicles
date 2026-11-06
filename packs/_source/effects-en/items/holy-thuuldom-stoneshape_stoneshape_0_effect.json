@@ -1,0 +1,45 @@
+{
+  "_id": "gypUgYpVqWrXsYtZ",
+  "_key": "!items!gypUgYpVqWrXsYtZ",
+  "name": "Stoneshape",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+    "description": "The bearer and equipment blend into stone. Shadow Arts rolls to locate the bearer suffer −3. Halve the penalty while the bearer moves; also halve it outside mountain and stone terrain. These conditions are assessed on the observer’s roll, not as an unconditional bonus to the bearer.",
+    "summary": "Conceals the Thuul and its gear within stone or mountain.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "LK2TKPiOjPkQlRmS",
+      "_key": "!items.effects!gypUgYpVqWrXsYtZ.LK2TKPiOjPkQlRmS",
+      "name": "Stoneshape",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The bearer and equipment blend into stone. Shadow Arts rolls to locate the bearer suffer −3. Halve the penalty while the bearer moves; also halve it outside mountain and stone terrain. These conditions are assessed on the observer’s roll, not as an unconditional bonus to the bearer.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+            "sourceId": "holy-thuuldom-stoneshape:stoneshape:0",
+            "summary": "Conceals the Thuul and its gear within stone or mountain.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

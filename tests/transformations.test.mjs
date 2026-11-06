@@ -16,6 +16,57 @@ const {applyTransformation,resolveDuration,transformationLinks,syncTransformatio
 const {applyDamageToActor}=await import("../modules/damage-application.mjs");
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");},innerHTML:""})};
 const effect=(rules,extra={})=>({id:"form",name:"Form",flags:{[S]:{transformation:{rules,temporaryHP:10}}},...extra});
+
+test('ten Thuuldom runes freeze all five tiers in FR/EN, including duration, local weapon bonuses and independent route tests',async t=>{
+ const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils,documents:foundry.documents};
+ t.after(()=>{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;});
+ const ids=['stoneshape','gills-of-the-blackfish','heat-of-the-depths','fang-of-yukk','scales','stoneling','mark-of-brokk','cave-spider-s-grip','labyrinth-blood','stone-to-clay'];
+ foundry.utils={deepClone:structuredClone};foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:100})}}};
+ let created,warnings=0;
+ globalThis.ui={notifications:{warn:()=>warnings++}};
+ const actor={uuid:'Actor.r',name:'Thuul',items:[],system:{movement:{current:12}},canUserModify:()=>true,createTrudvangEffect:async data=>(created=data,null)};
+ const weapon={type:'weapon',name:'Sword',parent:actor,effects:[],canUserModify:()=>true,createEmbeddedDocuments:async(_,docs)=>(created=docs[0],[])};
+ for(const lang of ['fr','en']){
+  const language=JSON.parse(fs.readFileSync(new URL(`../lang/${lang}.json`,import.meta.url))),lookup=key=>key.split('.').reduce((v,k)=>v?.[k],language)??key;
+  globalThis.game={user:{id:'gm'},time:{worldTime:100},i18n:{lang,localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),lookup(key))}};
+  for(const id of ids)for(let level=1;level<=5;level++){
+   const key=`holy-thuuldom-${id}:${id}:0#effect`,baseline=JSON.stringify(templates[key]);
+   const answers={runeLevel:level,duration:templates[key].duration};
+   await applyTransformation(actor,key,{preselectedAnswers:answers,...(id==='fang-of-yukk'?{destinationItem:weapon}:{})});
+   const meta=created.flags[S].transformation,rules=rulesFromChanges(created.system.changes);
+   assert.equal(meta.runeLevel,level);assert.equal(meta.summaryResolved,true);assert.doesNotMatch(meta.summary,/undefined|TRUDVANG\./);
+   assert.doesNotMatch(created.description,/undefined|TRUDVANG\./);assert.equal(JSON.stringify(templates[key]),baseline,'application never mutates source tiers');
+   if(['stoneshape','gills-of-the-blackfish'].includes(id))assert.deepEqual(created.duration,{value:36*level,units:'rounds'});
+   if(id==='heat-of-the-depths')assert.deepEqual(created.duration,{value:3*level,units:'hours'});
+   if(id==='scales'){
+    assert.deepEqual(created.duration,{value:3*level,units:'rounds'});assert.equal(rules.magicalProtection,level);
+    assert.equal(created.system.changes.find(c=>c.key==='system.modifiers.protection').value,String(level));
+   }
+   if(id==='mark-of-brokk')assert.equal(created.system.changes[0].value,String(level));
+   if(id==='fang-of-yukk'){
+    assert.equal(created.system.changes[0].key,'system.damageBonus');assert.equal(created.system.changes[0].value,String([1,2,2,3,3][level-1]));
+    assert.equal(created.system.changes.find(c=>c.key==='system.openRoll')?.value,String([0,0,1,1,2][level-1])==='0'?undefined:String([0,0,1,1,2][level-1]));
+   }
+   if(id==='cave-spider-s-grip'){
+    assert.deepEqual(created.duration,{value:24*level,units:'rounds'});assert.deepEqual(rules.movement,[{mode:'climb',method:'replace',value:6+level}]);
+   }
+   if(id==='stoneling')assert.equal(created.system.changes.length,0,'spirit senses never become the Thuul’s vision');
+   if(id==='labyrinth-blood'){
+    const {ruleTestsForDocument}=await import('../modules/rule-tests.mjs');
+    assert.deepEqual(ruleTestsForDocument(created).map(row=>row.sv),[9+level,4+level]);
+   }
+   if(id==='stone-to-clay')assert.deepEqual(created.duration,{value:[1,3,6,9,12][level-1],units:'hours'});
+  }
+ }
+ assert.equal(await applyTransformation(actor,'holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect',{skipDialog:true}),null);assert.equal(warnings,1);
+ for(const level of [0,6,2.5])await assert.rejects(applyTransformation(actor,'holy-thuuldom-scales:scales:0#effect',{preselectedAnswers:{runeLevel:level}}));
+ const key='holy-thuuldom-scales:scales:0#effect';
+ await applyTransformation(actor,key,{preselectedAnswers:{runeLevel:3,duration:'1 hour'}});
+ const copy={documentName:'ActiveEffect',...structuredClone(created)},copySummary=created.flags[S].transformation.summary;
+ await applyTransformation(actor,key,{source:copy,counts:[0,0,0,0,1],skipDialog:true});
+ assert.deepEqual(created.duration,{value:1,units:'hours'});assert.equal(created.flags[S].transformation.runeLevel,3);assert.equal(created.flags[S].transformation.summary,copySummary);
+ assert.equal(created.system.changes.find(c=>c.key==='system.modifiers.protection').value,'3','copy never scales a resolved rune twice');
+});
 test('Power of Blood waits for psychological resistance before imposing its pain penalty',async t=>{
  const previous={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
  t.after(()=>Object.assign(globalThis,previous));
@@ -80,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,337);
+ assert.equal(Object.keys(sources).length,347);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{

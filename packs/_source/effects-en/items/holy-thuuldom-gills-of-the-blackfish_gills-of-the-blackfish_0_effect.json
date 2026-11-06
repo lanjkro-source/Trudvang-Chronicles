@@ -1,0 +1,45 @@
+{
+  "_id": "eLrRyeIdJeKfLgMh",
+  "_key": "!items!eLrRyeIdJeKfLgMh",
+  "name": "Gills of the Blackfish",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+    "description": "The holder of the runic item breathes underwater for 3 minutes. Swimming ability is unchanged. Only the Thuul can activate the rune, but another person may benefit.",
+    "summary": "Lets the bearer of the runic object breathe underwater.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "7CnCsoToUpVqWrXs",
+      "_key": "!items.effects!eLrRyeIdJeKfLgMh.7CnCsoToUpVqWrXs",
+      "name": "Gills of the Blackfish",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The holder of the runic item breathes underwater for 3 minutes. Swimming ability is unchanged. Only the Thuul can activate the rune, but another person may benefit.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+            "sourceId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0",
+            "summary": "Lets the bearer of the runic object breathe underwater.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

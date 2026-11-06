@@ -1,0 +1,45 @@
+{
+  "_id": "Au4jdnQlRmSnToUp",
+  "_key": "!items!Au4jdnQlRmSnToUp",
+  "name": "Chaleur des profondeurs",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+    "description": "L’objet posé au sol canalise la chaleur de la montagne sur 1 m² pendant 3 heures. Le thuul choisit la température dans une amplitude de ±10 degrés. Cette zone fixe doit être placée et suivie par le MJ : elle ne se déplace pas avec le porteur et ne génère pas de lumière.",
+    "summary": "Réchauffe ou refroidit durablement le sol autour d’un objet runique.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 285
+    }
+  },
+  "effects": [
+    {
+      "_id": "NgeTDSlRmSnToUpV",
+      "_key": "!items.effects!Au4jdnQlRmSnToUp.NgeTDSlRmSnToUpV",
+      "name": "Chaleur des profondeurs",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "L’objet posé au sol canalise la chaleur de la montagne sur 1 m² pendant 3 heures. Le thuul choisit la température dans une amplitude de ±10 degrés. Cette zone fixe doit être placée et suivie par le MJ : elle ne se déplace pas avec le porteur et ne génère pas de lumière.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+            "sourceId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
+            "summary": "Réchauffe ou refroidit durablement le sol autour d’un objet runique.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

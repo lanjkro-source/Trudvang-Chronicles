@@ -1,0 +1,45 @@
+{
+  "_id": "eLrRyeIdJeKfLgMh",
+  "_key": "!items!eLrRyeIdJeKfLgMh",
+  "name": "Branchies du brochet",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+    "description": "Le détenteur de l’objet runique respire sous l’eau pendant 3 minutes. La rune ne lui accorde aucun bonus de nage. Seul le thuul peut activer la rune, mais son bénéficiaire peut être une autre personne.",
+    "summary": "Permet au porteur de l’objet runique de respirer sous l’eau.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 285
+    }
+  },
+  "effects": [
+    {
+      "_id": "7CnCsoToUpVqWrXs",
+      "_key": "!items.effects!eLrRyeIdJeKfLgMh.7CnCsoToUpVqWrXs",
+      "name": "Branchies du brochet",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le détenteur de l’objet runique respire sous l’eau pendant 3 minutes. La rune ne lui accorde aucun bonus de nage. Seul le thuul peut activer la rune, mais son bénéficiaire peut être une autre personne.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect",
+            "sourceId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0",
+            "summary": "Permet au porteur de l’objet runique de respirer sous l’eau.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

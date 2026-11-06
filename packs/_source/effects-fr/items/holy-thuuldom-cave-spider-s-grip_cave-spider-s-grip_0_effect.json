@@ -1,0 +1,45 @@
+{
+  "_id": "WFGOeI9EaGbHcIdJ",
+  "_key": "!items!WFGOeI9EaGbHcIdJ",
+  "name": "Prise de l’araignée des cavernes",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+    "description": "Le bénéficiaire escalade les parois verticales. Sa vitesse d’escalade est calculée à partir de son mouvement au moment de l’application : mouvement/2 + 1 m. Il doit utiliser mains et pieds pour sa pleine vitesse et conserve sa capacité de charge habituelle. À l’expiration en hauteur, il chute ; le MJ gère cette chute. Son déplacement terrestre ordinaire n’est pas réduit.",
+    "summary": "Permet d’escalader murs et plafonds comme une araignée.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 287
+    }
+  },
+  "effects": [
+    {
+      "_id": "pnAwoVnToUpVqWrX",
+      "_key": "!items.effects!WFGOeI9EaGbHcIdJ.pnAwoVnToUpVqWrX",
+      "name": "Prise de l’araignée des cavernes",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le bénéficiaire escalade les parois verticales. Sa vitesse d’escalade est calculée à partir de son mouvement au moment de l’application : mouvement/2 + 1 m. Il doit utiliser mains et pieds pour sa pleine vitesse et conserve sa capacité de charge habituelle. À l’expiration en hauteur, il chute ; le MJ gère cette chute. Son déplacement terrestre ordinaire n’est pas réduit.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+            "sourceId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+            "summary": "Permet d’escalader murs et plafonds comme une araignée.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

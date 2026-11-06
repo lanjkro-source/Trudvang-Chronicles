@@ -1,5 +1,19 @@
 # Effets descriptifs et conséquences encore manuelles
 
+## Dix runes du Thuuldom — 6 novembre 2026
+
+Aspect de la pierre, Branchies du brochet, Chaleur des profondeurs, Croc de Yukk, Écailles, Enfant de la pierre, Marque de Brokk, Prise de l’araignée des cavernes, Sang du labyrinthe et Transformation de pierre en argile disposent de cinq profils explicites, issus des sources JSON FR puis alignés en EN. Références : Livre des règles, pages imprimées 285–288 (pages PDF 287–290) ; Player’s Handbook, Thuuldom’s Holy Tablets, pages 230–233. Les tableaux français de Choc de l’enclume, Croc de Yukk, Main de Borjorn et Transformation de pierre en argile ont été contrôlés visuellement ; les autres runes instantanées ou à conséquence sur une prochaine action restent dans les lots suivants.
+
+À l’application d’un effet neuf, un sélecteur borné à 1–5 fixe le niveau. La durée automatique et le résumé suivent ce choix ; une durée modifiée manuellement reste prioritaire. Une copie d’effet déjà résolu garde son niveau, ses caractéristiques modifiées, sa durée et ses explications sans appliquer une seconde fois les améliorations. Les tableaux de rune sont des valeurs absolues : les lignes ne s’additionnent pas comme des améliorations ordinaires. Les textes restent dans les sources et fichiers de langue, le catalogue technique ne contient que mécanique et clés de traduction.
+
+- Croc de Yukk doit être déposé sur une arme : dégâts +1/+2/+2/+3/+3, seuil de JO abaissé de 0/0/1/1/2. Les changements sont locaux à cette arme. Le MJ vérifie qu’elle est tranchante et métallique, et que les points de divinité nécessaires sont liés.
+- Écailles ajoute le niveau aux VP sans VI, et la même protection contre les attaques nécessitant une protection magique. Ignorer toutes les armures ignore également cette protection. Marque de Brokk ajoute le niveau à la récupération naturelle, sans soin immédiat ; le MJ garde l’effet seulement si l’objet reste contre la peau pendant le sommeil.
+- La Prise calcule un mode de déplacement d’escalade à mouvement/2 + niveau au moment de l’application ; elle ne réduit pas le mouvement terrestre. La marche au plafond commence au niveau 4. La chute à l’expiration reste à arbitrer.
+- Les deux tests de Sang du labyrinthe utilisent les SV gelées 9 + niveau et 4 + niveau. Branchies ne modifie pas la nage ; les sens, charge et mouvement d’Enfant de la pierre concernent uniquement l’esprit, sans être accordés au thuul et sans création automatique de token.
+- Aspect de la pierre indique les malus de repérage et leurs réductions conditionnelles : ils ne deviennent pas un bonus universel du porteur. Chaleur des profondeurs et Transformation de pierre en argile restent des zones fixes suivies par le MJ, sans aura mobile ni production de lumière. Le compte à rebours de la nouvelle forme de la pierre commence après le modelage, pas à son début.
+
+La gravure des runes, l’affectation des points de divinité aux objets, leurs réserves et leurs quotas d’activations restent des fonctionnalités distinctes ; ces effets ne prétendent pas en assurer la gestion.
+
 Inventaire du catalogue de 115 variantes, établi depuis les JSON français le 23 octobre 2026. Les liens de tests et de succession peuvent fonctionner même si l’effet n’apporte pas de modification chiffrée.
 
 ## Effets descriptifs (14 variantes)

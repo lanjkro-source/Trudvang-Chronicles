@@ -1,0 +1,45 @@
+{
+  "_id": "Au4jdnQlRmSnToUp",
+  "_key": "!items!Au4jdnQlRmSnToUp",
+  "name": "Heat of the Depths",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+    "description": "The item placed on the ground channels mountain heat over 1 m² for 3 hours. The Thuul chooses the temperature within ±10 degrees. The GM places and tracks this fixed area; it does not follow the bearer or emit light.",
+    "summary": "Can warm or cool the ground around a runic object for an extended time.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "NgeTDSlRmSnToUpV",
+      "_key": "!items.effects!Au4jdnQlRmSnToUp.NgeTDSlRmSnToUpV",
+      "name": "Heat of the Depths",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The item placed on the ground channels mountain heat over 1 m² for 3 hours. The Thuul chooses the temperature within ±10 degrees. The GM places and tracks this fixed area; it does not follow the bearer or emit light.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect",
+            "sourceId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
+            "summary": "Can warm or cool the ground around a runic object for an extended time.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

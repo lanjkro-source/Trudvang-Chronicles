@@ -77,6 +77,17 @@ for(const kind of ["powers","feats"]){
    if(t.onApply&&(!["fearReduction"].includes(t.onApply.operation)||!Array.isArray(t.onApply.formulas)||!t.onApply.formulas.length||!t.onApply.formulas.every(formula=>/^\d+d\d+(?:x>=\d+)?(?:\s*\+\s*\d+)?$/i.test(formula))))throw Error(`Invalid application consequence for ${key}`);
    if(t.instant&&(!["heal"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
    if(!t.summary?.trim()||!translated.summary?.trim())throw Error(`Missing effect summary ${key}`);
+   if(t.runeTiers){
+    if(Boolean(t.requiresWeapon)!==Boolean(translated.requiresWeapon))throw Error(`Unaligned rune target ${key}`);
+    if(!entry.isRune||t.runeTiers.length!==5||translated.runeTiers?.length!==5)throw Error(`Invalid rune tiers ${key}`);
+    for(const [level,row]of t.runeTiers.entries()){
+     const other=translated.runeTiers[level];
+     const mechanics=({summary,description,...data})=>data;
+     if(typeof row.duration!=="string"||!row.summary?.trim()||!row.description?.trim()||!other.summary?.trim()||!other.description?.trim()||!Array.isArray(row.changes)||row.changes.some(c=>!validProfileChange(c)||c.priority!==t.priority)
+       ||(row.climbingBonus!==undefined&&(!Number.isFinite(row.climbingBonus)||row.climbingBonus<0))||(row.ruleTestBases!==undefined&&(!Array.isArray(row.ruleTestBases)||row.ruleTestBases.some(n=>!Number.isFinite(n))))
+       ||JSON.stringify(mechanics(row))!==JSON.stringify(mechanics(other)))throw Error(`Unaligned rune tier ${key}:${level+1}`);
+    }
+   }
    if([...t.changes,...translated.changes].some(c=>!validProfileChange(c)))throw Error(`Invalid profile change ${key}`);
    if(translated.priority!==t.priority||(t.priority!==undefined&&(translated.changes??[]).some(c=>c.priority!==t.priority)))throw Error(`Unaligned EN effect priority ${key}`);
    if(JSON.stringify(t.statuses??[])!==JSON.stringify(translated.statuses??[])||JSON.stringify(t.related??[])!==JSON.stringify(translated.related??[]))throw Error(`Unaligned EN effect states or successors ${key}`);
@@ -112,8 +123,10 @@ for(const kind of ["powers","feats"]){
      SourceName:(c==="fr"?entry:englishEntry).name,SourceBook:(c==="fr"?entry:englishEntry).source.book,SourcePage:String((c==="fr"?entry:englishEntry).source.page),Duration:(c==="fr"?t:translated).duration,
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).attacks??[]).map((a,i)=>[`Attack${i}`,a.name])),
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).senses??[]).map((s,i)=>[`Sense${i}`,typeof s==="string"?s:s.label])),
-     ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).capabilities??[]).map((s,i)=>[`Capability${i}`,s]))};
+     ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).capabilities??[]).map((s,i)=>[`Capability${i}`,s])),
+     ...Object.fromEntries(((c==="fr"?t:translated).runeTiers??[]).flatMap((row,i)=>[[`RuneSummary${i+1}`,row.summary],[`RuneDescription${i+1}`,row.description]]))};
    const {name,summary,description,...data}=t;
+   if(t.runeTiers)data.runeTiers=t.runeTiers.map(({summary,description,...row},i)=>({...row,summaryKey:`TRUDVANG.Content.Transformation.${key}.RuneSummary${i+1}`,descriptionKey:`TRUDVANG.Content.Transformation.${key}.RuneDescription${i+1}`}));
    const rules=structuredClone(sourceRules);
    data.changes=[...data.changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX)),...changesFromRules({
      ...rules,

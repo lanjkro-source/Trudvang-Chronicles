@@ -1,0 +1,45 @@
+{
+  "_id": "uVBeVqToUpVqWrXs",
+  "_key": "!items!uVBeVqToUpVqWrXs",
+  "name": "Transformation de pierre en argile",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+    "description": "Le thuul ramollit au plus 1 m³ de pierre et les modèle pendant au moins 3 minutes. La pierre retrouve ensuite sa dureté et conserve sa nouvelle forme 1 heure(s), avant de reprendre sa forme d’origine. Appliquer ce suivi quand le modelage est terminé : son compte à rebours commence à ce moment. Le MJ suit les modifications du terrain ; ce n’est pas une aura.",
+    "summary": "Ramollit temporairement la pierre pour la modeler comme de l’argile.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 288
+    }
+  },
+  "effects": [
+    {
+      "_id": "NfrTU1u0v1w2x3y4",
+      "_key": "!items.effects!uVBeVqToUpVqWrXs.NfrTU1u0v1w2x3y4",
+      "name": "Transformation de pierre en argile",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le thuul ramollit au plus 1 m³ de pierre et les modèle pendant au moins 3 minutes. La pierre retrouve ensuite sa dureté et conserve sa nouvelle forme 1 heure(s), avant de reprendre sa forme d’origine. Appliquer ce suivi quand le modelage est terminé : son compte à rebours commence à ce moment. Le MJ suit les modifications du terrain ; ce n’est pas une aura.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+            "sourceId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+            "summary": "Ramollit temporairement la pierre pour la modeler comme de l’argile.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

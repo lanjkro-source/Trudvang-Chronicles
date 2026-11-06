@@ -1,0 +1,45 @@
+{
+  "_id": "adOBuUlRmSnToUpV",
+  "_key": "!items!adOBuUlRmSnToUpV",
+  "name": "Labyrinth Blood",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+    "description": "For 1 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 10. If transported unconscious, use SV 5. Failure prevents recalling the journey’s details. The rolls remain available from this effect.",
+    "summary": "Gives the Thuul a supernatural memory of the way and helps them find their path again.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "XXJc6jMhNiOjPkQl",
+      "_key": "!items.effects!adOBuUlRmSnToUpV.XXJc6jMhNiOjPkQl",
+      "name": "Labyrinth Blood",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "For 1 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 10. If transported unconscious, use SV 5. Failure prevents recalling the journey’s details. The rolls remain available from this effect.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+            "sourceId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0",
+            "summary": "Gives the Thuul a supernatural memory of the way and helps them find their path again.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

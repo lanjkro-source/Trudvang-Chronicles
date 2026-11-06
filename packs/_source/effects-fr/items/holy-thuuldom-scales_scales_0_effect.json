@@ -1,0 +1,60 @@
+{
+  "_id": "gNzMGPjPkQlRmSnT",
+  "_key": "!items!gNzMGPjPkQlRmSnT",
+  "name": "Écailles",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-scales:scales:0#effect",
+    "description": "Des écailles protectrices recouvrent le bénéficiaire : +1 VP pendant 3 tours de jeu. Cette protection naturelle protège également contre les armes magiques et le vitner. Elle s’ajoute à la protection du bénéficiaire sans donner d’intégrité à l’armure naturelle.",
+    "summary": "Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 286
+    }
+  },
+  "effects": [
+    {
+      "_id": "VoXqwUoUpVqWrXsY",
+      "_key": "!items.effects!gNzMGPjPkQlRmSnT.VoXqwUoUpVqWrXsY",
+      "name": "Écailles",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Des écailles protectrices recouvrent le bénéficiaire : +1 VP pendant 3 tours de jeu. Cette protection naturelle protège également contre les armes magiques et le vitner. Elle s’ajoute à la protection du bénéficiaire sans donner d’intégrité à l’armure naturelle.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-scales:scales:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-scales:scales:0#effect",
+            "sourceId": "holy-thuuldom-scales:scales:0",
+            "summary": "Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

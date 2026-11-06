@@ -1,0 +1,45 @@
+{
+  "_id": "adOBuUlRmSnToUpV",
+  "_key": "!items!adOBuUlRmSnToUpV",
+  "name": "Sang du labyrinthe",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+    "description": "Le thuul se souvient avec précision des distances et directions parcourues pendant 1 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 10. S’il a été transporté inconscient, la SV est 5. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet.",
+    "summary": "Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 288
+    }
+  },
+  "effects": [
+    {
+      "_id": "XXJc6jMhNiOjPkQl",
+      "_key": "!items.effects!adOBuUlRmSnToUpV.XXJc6jMhNiOjPkQl",
+      "name": "Sang du labyrinthe",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le thuul se souvient avec précision des distances et directions parcourues pendant 1 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 10. S’il a été transporté inconscient, la SV est 5. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect",
+            "sourceId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0",
+            "summary": "Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -18,7 +18,8 @@ export function ruleTestsForDocument(document) {
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
-  const tests=id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : [];
+  const bases=document?.flags?.[SYSTEM_ID]?.transformation?.ruleTestBases;
+  const tests=(id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : []).map((test,index)=>Number.isFinite(bases?.[index])?{...test,sv:bases[index]}:test);
   if(!game.i18n?.lang || game.i18n.lang==="fr")return tests;
   return tests.map((test,index)=>{
     const {action,anchor,success,failure,criticalSuccess,criticalFailure,condition,repeat,note,traitRule,...mechanics}=test;

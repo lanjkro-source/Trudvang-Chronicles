@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 322 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 332 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -356,22 +356,22 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance du dragon | Tête du huvfurwurm | pouvoir | `holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6` | 3 | 0 | 1 | — | — |
 | Puissance du dragon | Âme du dragon | pouvoir | `holy-haminges-power-of-the-dragon:dragon-soul:7` | 3 | 0 | 1 | — | — |
 | Puissance du dragon | Aspect du serpent géant | pouvoir | `holy-haminges-power-of-the-dragon:giant-snakeshape:8` | 5 | 0 | 1 | — | — |
-| Aspect de la pierre | Aspect de la pierre | rune | `holy-thuuldom-stoneshape:stoneshape:0` | 5 | 1 | 0 | — | — |
-| Branchies du brochet | Branchies du brochet | rune | `holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0` | 0 | 0 | 0 | — | — |
-| Chaleur des profondeurs | Chaleur des profondeurs | rune | `holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0` | 5 | 0 | 0 | — | — |
+| Aspect de la pierre | Aspect de la pierre | rune | `holy-thuuldom-stoneshape:stoneshape:0` | 5 | 1 | 1 | — | — |
+| Branchies du brochet | Branchies du brochet | rune | `holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0` | 0 | 0 | 1 | — | — |
+| Chaleur des profondeurs | Chaleur des profondeurs | rune | `holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0` | 5 | 0 | 1 | — | — |
 | Choc de l'enclume | Choc de l'enclume | rune | `holy-thuuldom-anvil-shock:anvil-shock:0` | 5 | 0 | 0 | — | — |
-| Croc de Yukk | Croc de Yukk | rune | `holy-thuuldom-fang-of-yukk:fang-of-yukk:0` | 5 | 0 | 0 | — | — |
-| Écailles | Écailles | rune | `holy-thuuldom-scales:scales:0` | 5 | 0 | 0 | — | — |
-| Enfant de la pierre | Enfant de la pierre | rune | `holy-thuuldom-stoneling:stoneling:0` | 5 | 0 | 0 | — | — |
+| Croc de Yukk | Croc de Yukk | rune | `holy-thuuldom-fang-of-yukk:fang-of-yukk:0` | 5 | 0 | 1 | — | — |
+| Écailles | Écailles | rune | `holy-thuuldom-scales:scales:0` | 5 | 0 | 1 | — | — |
+| Enfant de la pierre | Enfant de la pierre | rune | `holy-thuuldom-stoneling:stoneling:0` | 5 | 0 | 1 | — | — |
 | Main de Borjorn | Main de Borjorn | rune | `holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0` | 5 | 0 | 0 | — | — |
-| Marque de Brokk | Marque de Brokk | rune | `holy-thuuldom-mark-of-brokk:mark-of-brokk:0` | 5 | 0 | 0 | — | — |
+| Marque de Brokk | Marque de Brokk | rune | `holy-thuuldom-mark-of-brokk:mark-of-brokk:0` | 5 | 0 | 1 | — | — |
 | Poings d'acier | Poings d’acier | rune | `holy-thuuldom-hammer-fists:hammer-fists:0` | 5 | 0 | 1 | — | — |
 | Pouvoir de réparation | Pouvoir de réparation | rune | `holy-thuuldom-power-of-repair:power-of-repair:0` | 5 | 0 | 0 | — | — |
-| Prise de l'araignée des cavernes | Prise de l’araignée des cavernes | rune | `holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0` | 5 | 0 | 0 | — | — |
+| Prise de l'araignée des cavernes | Prise de l’araignée des cavernes | rune | `holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0` | 5 | 0 | 1 | — | — |
 | Rune de guérison | Rune de guérison | rune | `holy-thuuldom-healing-rune:healing-rune:0` | 5 | 0 | 0 | — | — |
-| Sang du labyrinthe | Sang du labyrinthe | rune | `holy-thuuldom-labyrinth-blood:labyrinth-blood:0` | 5 | 2 | 0 | — | — |
+| Sang du labyrinthe | Sang du labyrinthe | rune | `holy-thuuldom-labyrinth-blood:labyrinth-blood:0` | 5 | 2 | 1 | — | — |
 | Source d’eau | Source d’eau | rune | `holy-thuuldom-well-of-water:well-of-water:0` | 5 | 0 | 0 | — | — |
-| Transformation de pierre en argile | Transformation de pierre en argile | rune | `holy-thuuldom-stone-to-clay:stone-to-clay:0` | 5 | 0 | 0 | — | — |
+| Transformation de pierre en argile | Transformation de pierre en argile | rune | `holy-thuuldom-stone-to-clay:stone-to-clay:0` | 5 | 0 | 1 | — | — |
 | Tremblement de terre | Tremblement de terre | rune | `holy-thuuldom-earthquake:earthquake:0` | 5 | 1 | 0 | — | — |
 | Agilité du lynx | Chemin forestier | pouvoir | `holy-toikalokke-lynx-power:tree-walk:1` | 3 | 0 | 1 | — | — |
 | Agilité du lynx | Orientation | pouvoir | `holy-toikalokke-lynx-power:orientation:0` | 3 | 0 | 1 | — | — |

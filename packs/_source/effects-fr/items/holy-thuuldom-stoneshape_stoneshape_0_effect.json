@@ -1,0 +1,45 @@
+{
+  "_id": "gypUgYpVqWrXsYtZ",
+  "_key": "!items!gypUgYpVqWrXsYtZ",
+  "name": "Aspect de la pierre",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+    "description": "Le porteur et son équipement se camouflent dans la pierre. Les tests d’Arts des Ombres pour le localiser subissent −3. Ce malus est réduit de moitié si le porteur se déplace ; il est également réduit de moitié en dehors de la montagne et de la pierre. Ces conditions se jugent au test de l’observateur ; aucun bonus universel n’est donné au porteur.",
+    "summary": "Camoufle le thuul et son équipement dans la pierre ou la montagne.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 285
+    }
+  },
+  "effects": [
+    {
+      "_id": "LK2TKPiOjPkQlRmS",
+      "_key": "!items.effects!gypUgYpVqWrXsYtZ.LK2TKPiOjPkQlRmS",
+      "name": "Aspect de la pierre",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Le porteur et son équipement se camouflent dans la pierre. Les tests d’Arts des Ombres pour le localiser subissent −3. Ce malus est réduit de moitié si le porteur se déplace ; il est également réduit de moitié en dehors de la montagne et de la pierre. Ces conditions se jugent au test de l’observateur ; aucun bonus universel n’est donné au porteur.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stoneshape:stoneshape:0#effect",
+            "sourceId": "holy-thuuldom-stoneshape:stoneshape:0",
+            "summary": "Camoufle le thuul et son équipement dans la pierre ou la montagne.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

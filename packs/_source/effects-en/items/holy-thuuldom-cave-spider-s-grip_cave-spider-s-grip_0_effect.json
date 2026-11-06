@@ -1,0 +1,45 @@
+{
+  "_id": "WFGOeI9EaGbHcIdJ",
+  "_key": "!items!WFGOeI9EaGbHcIdJ",
+  "name": "Cave Spider's Grip",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+    "description": "The beneficiary climbs vertical walls. Climbing speed is calculated from movement at application: movement/2 + 1 m. Both hands and feet are required for full speed; normal carrying capacity is retained. Expiration while aloft causes a fall, handled by the GM. Ordinary ground movement is unchanged.",
+    "summary": "Lets the Thuul climb walls and ceilings like a spider.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 229
+    }
+  },
+  "effects": [
+    {
+      "_id": "pnAwoVnToUpVqWrX",
+      "_key": "!items.effects!WFGOeI9EaGbHcIdJ.pnAwoVnToUpVqWrX",
+      "name": "Cave Spider's Grip",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The beneficiary climbs vertical walls. Climbing speed is calculated from movement at application: movement/2 + 1 m. Both hands and feet are required for full speed; normal carrying capacity is retained. Expiration while aloft causes a fall, handled by the GM. Ordinary ground movement is unchanged.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect",
+            "sourceId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+            "summary": "Lets the Thuul climb walls and ceilings like a spider.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

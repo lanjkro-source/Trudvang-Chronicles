@@ -1,0 +1,45 @@
+{
+  "_id": "CPvYk0u0v1w2x3y4",
+  "_key": "!items!CPvYk0u0v1w2x3y4",
+  "name": "Enfant de la pierre",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stoneling:stoneling:0#effect",
+    "description": "Un esprit mineur est lié à une pierre pendant 1 heure(s). Esprit : vision dans le noir 5 m, puis vision nocturne 5 m ; charge 0.5 kg ; 1 m/tour. Ces capacités appartiennent à l’esprit, pas au thuul. Le MJ gère son déplacement, les objets qu’il rapporte et les consignes précises de surveillance ; il signale ses découvertes par un bruit de pierres qui s’entrechoquent.",
+    "summary": "Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 286
+    }
+  },
+  "effects": [
+    {
+      "_id": "ppiTuYrXsYtZu0v1",
+      "_key": "!items.effects!CPvYk0u0v1w2x3y4.ppiTuYrXsYtZu0v1",
+      "name": "Enfant de la pierre",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Un esprit mineur est lié à une pierre pendant 1 heure(s). Esprit : vision dans le noir 5 m, puis vision nocturne 5 m ; charge 0.5 kg ; 1 m/tour. Ces capacités appartiennent à l’esprit, pas au thuul. Le MJ gère son déplacement, les objets qu’il rapporte et les consignes précises de surveillance ; il signale ses découvertes par un bruit de pierres qui s’entrechoquent.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stoneling:stoneling:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stoneling:stoneling:0#effect",
+            "sourceId": "holy-thuuldom-stoneling:stoneling:0",
+            "summary": "Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

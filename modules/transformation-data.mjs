@@ -10673,6 +10673,550 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-thuuldom-stoneshape:stoneshape:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "3 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "3 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "6 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "9 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "12 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "15 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneshape:stoneshape:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-stoneshape:stoneshape:0",
+    "parameters": []
+  },
+  "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "3 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "3 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "6 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "9 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "12 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "15 minutes",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0",
+    "parameters": []
+  },
+  "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "3 hours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "3 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "6 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "9 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "12 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "15 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
+    "parameters": []
+  },
+  "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.damageBonus",
+        "type": "add",
+        "value": "1",
+        "priority": 10,
+        "phase": "initial"
+      }
+    ],
+    "runeTiers": [
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.openRoll",
+            "type": "subtract",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "3",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.openRoll",
+            "type": "subtract",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.damageBonus",
+            "type": "add",
+            "value": "3",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.openRoll",
+            "type": "subtract",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect.RuneDescription5"
+      }
+    ],
+    "requiresWeapon": true,
+    "sourceId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+    "parameters": []
+  },
+  "holy-thuuldom-scales:scales:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "3 rounds",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.protection",
+        "type": "add",
+        "value": "1",
+        "priority": 10,
+        "phase": "initial"
+      },
+      {
+        "key": "system.transformation.magicalProtection",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 10
+      }
+    ],
+    "runeTiers": [
+      {
+        "duration": "3 rounds",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "6 rounds",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "9 rounds",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "3",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "3",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "12 rounds",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "4",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "4",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "15 rounds",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "5",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "5",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-scales:scales:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-scales:scales:0",
+    "parameters": []
+  },
+  "holy-thuuldom-stoneling:stoneling:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "1 hours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "1 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "2 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "3 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "4 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "5 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-stoneling:stoneling:0",
+    "parameters": []
+  },
+  "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.recovery",
+        "type": "add",
+        "value": "1",
+        "priority": 10,
+        "phase": "initial"
+      }
+    ],
+    "runeTiers": [
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "2",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "3",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "4",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "",
+        "changes": [
+          {
+            "key": "system.modifiers.recovery",
+            "type": "add",
+            "value": "5",
+            "priority": 10,
+            "phase": "initial"
+          }
+        ],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-mark-of-brokk:mark-of-brokk:0",
+    "parameters": []
+  },
   "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier": {
     "id": "poings-d-acier",
     "icon": "icons/svg/aura.svg",
@@ -10690,6 +11234,175 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "priority": 10,
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+    "parameters": []
+  },
+  "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "2 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "2 minutes",
+        "changes": [],
+        "statuses": [],
+        "climbingBonus": 1,
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "4 minutes",
+        "changes": [],
+        "statuses": [],
+        "climbingBonus": 2,
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "6 minutes",
+        "changes": [],
+        "statuses": [],
+        "climbingBonus": 3,
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "8 minutes",
+        "changes": [],
+        "statuses": [],
+        "climbingBonus": 4,
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "10 minutes",
+        "changes": [],
+        "statuses": [],
+        "climbingBonus": 5,
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+    "parameters": []
+  },
+  "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "1 hours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "1 hours",
+        "changes": [],
+        "statuses": [],
+        "ruleTestBases": [
+          10,
+          5
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "2 hours",
+        "changes": [],
+        "statuses": [],
+        "ruleTestBases": [
+          11,
+          6
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "3 hours",
+        "changes": [],
+        "statuses": [],
+        "ruleTestBases": [
+          12,
+          7
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "4 hours",
+        "changes": [],
+        "statuses": [],
+        "ruleTestBases": [
+          13,
+          8
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "5 hours",
+        "changes": [],
+        "statuses": [],
+        "ruleTestBases": [
+          14,
+          9
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0",
+    "parameters": []
+  },
+  "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "1 hours",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "runeTiers": [
+      {
+        "duration": "1 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneDescription1"
+      },
+      {
+        "duration": "3 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneDescription2"
+      },
+      {
+        "duration": "6 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneDescription3"
+      },
+      {
+        "duration": "9 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneDescription4"
+      },
+      {
+        "duration": "12 hours",
+        "changes": [],
+        "statuses": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
     "parameters": []
   },
   "holy-toikalokke-lynx-power:tree-walk:1#effect": {
@@ -14635,8 +15348,38 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-the-dragon:giant-snakeshape:8": [
     "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant"
   ],
+  "holy-thuuldom-stoneshape:stoneshape:0": [
+    "holy-thuuldom-stoneshape:stoneshape:0#effect"
+  ],
+  "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": [
+    "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0#effect"
+  ],
+  "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": [
+    "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect"
+  ],
+  "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": [
+    "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect"
+  ],
+  "holy-thuuldom-scales:scales:0": [
+    "holy-thuuldom-scales:scales:0#effect"
+  ],
+  "holy-thuuldom-stoneling:stoneling:0": [
+    "holy-thuuldom-stoneling:stoneling:0#effect"
+  ],
+  "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": [
+    "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect"
+  ],
   "holy-thuuldom-hammer-fists:hammer-fists:0": [
     "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier"
+  ],
+  "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": [
+    "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect"
+  ],
+  "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": [
+    "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect"
+  ],
+  "holy-thuuldom-stone-to-clay:stone-to-clay:0": [
+    "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect"
   ],
   "holy-toikalokke-lynx-power:tree-walk:1": [
     "holy-toikalokke-lynx-power:tree-walk:1#effect"

@@ -1,0 +1,45 @@
+{
+  "_id": "uVBeVqToUpVqWrXs",
+  "_key": "!items!uVBeVqToUpVqWrXs",
+  "name": "Stone to Clay",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+    "description": "The Thuul softens up to 1 m³ of stone and shapes it for at least 3 minutes. It then hardens and retains its new shape for 1 hour(s) before returning to its original form. Apply this tracker after shaping is complete; its countdown starts then. The GM tracks terrain changes; this is not an aura.",
+    "summary": "Temporarily softens stone so it can be shaped like clay.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "NfrTU1u0v1w2x3y4",
+      "_key": "!items.effects!uVBeVqToUpVqWrXs.NfrTU1u0v1w2x3y4",
+      "name": "Stone to Clay",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "The Thuul softens up to 1 m³ of stone and shapes it for at least 3 minutes. It then hardens and retains its new shape for 1 hour(s) before returning to its original form. Apply this tracker after shaping is complete; its countdown starts then. The GM tracks terrain changes; this is not an aura.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect",
+            "sourceId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+            "summary": "Temporarily softens stone so it can be shaped like clay.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

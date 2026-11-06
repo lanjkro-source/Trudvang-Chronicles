@@ -110,6 +110,8 @@ restent séparés et s’appliquent manuellement.
 
 ## Vérification et exemplaires existants
 
+Les effets à niveaux absolus de rune utilisent `runeTiers` dans les sources : vérifier les cinq rangs, les traductions, les durées automatiques et manuelles, l’absence d’addition entre lignes, les cibles acteur/objet et les copies déjà résolues. Les tests de situation dont la SV dépend du rang doivent conserver leur valeur gelée avec l’effet, sans redemander un multiplicateur de niveau. Les conditions narratives (milieu, peau, mouvement de l’observateur) ne donnent pas de bonus universel. Les zones fixes et les capacités d’un esprit invoqué ne deviennent ni une aura mobile, ni des sens ajoutés au lanceur.
+
 `npm run check` exécute les tests sans utiliser l’installation Foundry. Les
 contrôles couvrent notamment les réserves du huvfurwurm, le blocage des actions,
 les caractéristiques d’arme, les deux dépenses partageant 10 PC, la remise à zéro

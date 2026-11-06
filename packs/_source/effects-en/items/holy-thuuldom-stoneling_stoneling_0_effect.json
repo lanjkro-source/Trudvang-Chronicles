@@ -1,0 +1,45 @@
+{
+  "_id": "CPvYk0u0v1w2x3y4",
+  "_key": "!items!CPvYk0u0v1w2x3y4",
+  "name": "Stoneling",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-stoneling:stoneling:0#effect",
+    "description": "A minor spirit is bound to a stone for 1 hour(s). Spirit: darkvision 5 m, then low-light vision 5 m; load 0.5 kg; 1 m/round. These abilities belong to the spirit, not the Thuul. The GM handles its movement, fetched objects and precise watch instructions; it signals discoveries with the sound of clattering stones.",
+    "summary": "Animates a stone with a mountain spirit, creating a small servant.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "ppiTuYrXsYtZu0v1",
+      "_key": "!items.effects!CPvYk0u0v1w2x3y4.ppiTuYrXsYtZu0v1",
+      "name": "Stoneling",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "A minor spirit is bound to a stone for 1 hour(s). Spirit: darkvision 5 m, then low-light vision 5 m; load 0.5 kg; 1 m/round. These abilities belong to the spirit, not the Thuul. The GM handles its movement, fetched objects and precise watch instructions; it signals discoveries with the sound of clattering stones.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-stoneling:stoneling:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-stoneling:stoneling:0#effect",
+            "sourceId": "holy-thuuldom-stoneling:stoneling:0",
+            "summary": "Animates a stone with a mountain spirit, creating a small servant.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

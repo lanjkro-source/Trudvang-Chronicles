@@ -1,0 +1,60 @@
+{
+  "_id": "gNzMGPjPkQlRmSnT",
+  "_key": "!items!gNzMGPjPkQlRmSnT",
+  "name": "Scales",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-scales:scales:0#effect",
+    "description": "Protective scales cover the beneficiary: +1 Protection Value for 3 action rounds. This natural protection works against magical weapons and Vitner as well. It adds protection without granting Integrity to natural armor.",
+    "summary": "Grows scales that grant the beneficiary lasting protection.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "VoXqwUoUpVqWrXsY",
+      "_key": "!items.effects!gNzMGPjPkQlRmSnT.VoXqwUoUpVqWrXsY",
+      "name": "Scales",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "Protective scales cover the beneficiary: +1 Protection Value for 3 action rounds. This natural protection works against magical weapons and Vitner as well. It adds protection without granting Integrity to natural armor.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-scales:scales:0#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "1",
+            "priority": 10,
+            "phase": "initial"
+          },
+          {
+            "key": "system.transformation.magicalProtection",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 10
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-scales:scales:0#effect",
+            "sourceId": "holy-thuuldom-scales:scales:0",
+            "summary": "Grows scales that grant the beneficiary lasting protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
