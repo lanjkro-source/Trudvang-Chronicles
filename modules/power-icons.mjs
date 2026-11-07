@@ -1,5 +1,6 @@
 import {POWER_CATALOG_BY_TABLET, POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {deterministicId} from "./skill-pack-data.mjs";
+import {POWER_FAMILY_ICON_BY_ID} from "./tablet-power-families.mjs";
 
 const normalize = value => String(value ?? "").normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 
@@ -66,6 +67,10 @@ function iconForPower({id = "", name = "", type = "", isRune = false} = {}) {
 const POWER_BY_ID = new Map(Object.values(POWER_CATALOG_BY_TABLET).flat().map(power => [power.id, power]));
 
 export function powerIconClassForId(id) {
+  // Catalog powers use the reviewed family icon. The keyword rules below stay in
+  // place for custom powers created directly in a world.
+  const familyIcon = POWER_FAMILY_ICON_BY_ID.get(id);
+  if (familyIcon) return familyIcon;
   const power = POWER_BY_ID.get(id);
   if (!power) return null;
   return iconForPower({...power, isRune: Boolean(POWER_DETAILS_BY_ID[id]?.isRune)});
