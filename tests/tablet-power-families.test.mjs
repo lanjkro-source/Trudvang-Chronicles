@@ -41,3 +41,25 @@ test("every catalog power resolves to its family icon in sheets and compendiums"
     assert.equal(powerIconClassForId(id), familyIcon, `${id} uses its family icon`);
   }
 });
+
+test("Solvei and Sille split daily-recovery healing from instant healing", () => {
+  const expected = {
+    "holy-gerbanis-warmth-of-sunvei": {
+      "fa-hand-holding-medical": ["healing:0", "healing-warmth:5", "breath-of-sunvei:7"],
+      "fa-sun": ["sunray:1", "summer-place:3", "time-of-the-hunt:6"],
+      "fa-heart-pulse": ["healing-glow:2", "firon-power:4", "healing-sun:8"]
+    },
+    "holy-joaringfaith-power-of-sille": {
+      "fa-hand-holding-medical": ["healing:0", "healing-warmth:4", "breath-of-sille:7"],
+      "fa-sun": ["sunray:1", "summer-place:2", "time-of-the-hunt:6"],
+      "fa-heart-pulse": ["healing-glow:3", "firon-power:5", "healing-sun:8"]
+    }
+  };
+  for (const [tabletId, families] of Object.entries(expected)) {
+    for (const [icon, suffixes] of Object.entries(families)) {
+      for (const suffix of suffixes) {
+        assert.equal(familyIconClassForId(`${tabletId}:${suffix}`), icon, `${tabletId}:${suffix} uses ${icon}`);
+      }
+    }
+  }
+});

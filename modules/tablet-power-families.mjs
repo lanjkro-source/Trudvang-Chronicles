@@ -521,13 +521,13 @@ export const TABLET_POWER_FAMILIES = {
     }
   ],
   "holy-gerbanis-warmth-of-sunvei": [
-    // Soins
+    // Soins de récupération journalière
     {
-      icon: "fa-heart-pulse",
+      icon: "fa-hand-holding-medical",
       powers: [
         "holy-gerbanis-warmth-of-sunvei:healing:0",
-        "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
-        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5"
+        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7"
       ]
     },
     // Lumière et chaleur
@@ -539,12 +539,12 @@ export const TABLET_POWER_FAMILIES = {
         "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6"
       ]
     },
-    // Purification
+    // Soins instantanés
     {
-      icon: "fa-hand-holding-medical",
+      icon: "fa-heart-pulse",
       powers: [
+        "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
         "holy-gerbanis-warmth-of-sunvei:firon-power:4",
-        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
         "holy-gerbanis-warmth-of-sunvei:healing-sun:8"
       ]
     }
@@ -1396,13 +1396,13 @@ export const TABLET_POWER_FAMILIES = {
     }
   ],
   "holy-joaringfaith-power-of-sille": [
-    // Soins
+    // Soins de récupération journalière
     {
-      icon: "fa-heart-pulse",
+      icon: "fa-hand-holding-medical",
       powers: [
         "holy-joaringfaith-power-of-sille:healing:0",
-        "holy-joaringfaith-power-of-sille:healing-glow:3",
-        "holy-joaringfaith-power-of-sille:healing-warmth:4"
+        "holy-joaringfaith-power-of-sille:healing-warmth:4",
+        "holy-joaringfaith-power-of-sille:breath-of-sille:7"
       ]
     },
     // Lumière et chaleur
@@ -1414,12 +1414,12 @@ export const TABLET_POWER_FAMILIES = {
         "holy-joaringfaith-power-of-sille:time-of-the-hunt:6"
       ]
     },
-    // Purification
+    // Soins instantanés
     {
-      icon: "fa-hand-holding-medical",
+      icon: "fa-heart-pulse",
       powers: [
+        "holy-joaringfaith-power-of-sille:healing-glow:3",
         "holy-joaringfaith-power-of-sille:firon-power:5",
-        "holy-joaringfaith-power-of-sille:breath-of-sille:7",
         "holy-joaringfaith-power-of-sille:healing-sun:8"
       ]
     }

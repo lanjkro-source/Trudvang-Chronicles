@@ -37,8 +37,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // TEMPORARY WORLD MIGRATION — version 65 installs the amber's inventory effect
 // on previously imported world items and character/token inventory copies.
 // TEMPORARY WORLD MIGRATION — version 66 installs the static tablet-list journal
-// under the new Magic folder in previously populated worlds.
-const CONTENT_VERSION = 66;
+// under the new Magic folder in previously populated worlds; version 67 regenerates it
+// with the corrected Solvei/Sille healing family icons.
+const CONTENT_VERSION = 67;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
