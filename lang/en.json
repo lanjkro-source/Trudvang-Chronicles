@@ -1578,7 +1578,8 @@
         "GMMacros": "Game Master",
         "MagicObjects": "Magic Objects",
         "Materials": "Materials",
-        "Consumables": "Consumables"
+        "Consumables": "Consumables",
+        "JournalMagic": "Magic"
       },
       "Scene": {
         "WorldMap": "World Map",
@@ -11697,6 +11698,23 @@
         "joaringFaith": {
           "Name": "Joaring Faith",
           "Content": "<article class=\"trudvang-religion-journal\"><h2>The Mopor</h2><p>The Mopor is the woman who holds the secrets of ancient knowledge in the Joaring villages of Dain. She is the one who performs religious rituals, calls the power of the gods, and educates the Joarings by using the Mopor Rods with their mysteriously carved signs.</p><h2>The Visions</h2><p>She is occasionally taken by visions and trances through which the Gods speak to her (according to GM judgement). These visions can be facilitated by complicated rituals, but they can also happen spontaneously, especially when the Mopor must choose her Manpi or apprentice.</p><h2>Differences from a Normal Dimwalker</h2><p>Treat the Mopor as a normal dimwalker with the following differences:</p><ul><li>They need the specific &#8220;Mopor&#8221; specialty of the Invoke discipline.</li><li>To become a Mopor the woman must have appeared in a vision to an older Mopor.</li><li>The Mopor can raise the number of her divinity points by performing a 2-hours long ritual at the stone altar of a Joaring Village. This basic form involves food gifting and gives only 1 DP. Bloodgifting can also be performed on the altar, following the same mechanics for Bloodgifting in Gerbanis, including the risk of Gloomgifting. Unused DP disappear at a rate of 1 per day.</li></ul></article>"
+        },
+        "tabletList": {
+          "Name": "List of Tablets",
+          "Intro": "Tablets are grouped by religion. Each name opens the corresponding compendium sheet; expand a tablet’s powers to browse them. The icon before a power shows its family.",
+          "Contents": "Contents",
+          "Sacred": "Sacred Tablets",
+          "Vitner": "Vitner Tablets",
+          "Elf": "Elven Tablets",
+          "Rune": "Dwarven Runes",
+          "Tablet": "tablet",
+          "Tablets": "tablets",
+          "Power": "power",
+          "Powers": "powers",
+          "PowersHeading": "Powers",
+          "Page": "p.",
+          "Level": "L",
+          "BackToContents": "Back to contents"
         }
       },
       "CreatureAbility": {

@@ -1578,7 +1578,8 @@
         "GMMacros": "Maître de jeu",
         "MagicObjects": "Objets magiques",
         "Materials": "Matériaux",
-        "Consumables": "Consommables"
+        "Consumables": "Consommables",
+        "JournalMagic": "Magie"
       },
       "Scene": {
         "WorldMap": "Carte du monde",
@@ -11697,6 +11698,23 @@
         "joaringFaith": {
           "Name": "Foi Joaring",
           "Content": "<article class=\"trudvang-religion-journal\"><h2>La mopor</h2><p>La mopor est la femme qui détient les secrets du savoir ancien dans les villages joaring de Dain. C’est elle qui accomplit les rites religieux, appelle la puissance des dieux, et instruit les Joaring en se servant des bâtons de mopor et de leurs signes mystérieusement gravés.</p><h2>Les visions</h2><p>Elle est parfois saisie par des visions et des transes au travers desquelles les dieux lui parlent (selon l’appréciation du MJ). Ces visions peuvent être facilitées par des rites complexes, mais elles peuvent aussi survenir spontanément, en particulier lorsque la mopor doit choisir sa Manpi ou son apprentie.</p><h2>Différences avec un arpenteur des brumes normal</h2><p>Traitez la mopor comme un arpenteur des brumes normal avec les différences suivantes :</p><ul><li>Elle a besoin de la spécialité « Mopor » de la discipline Invocation.</li><li>Pour devenir mopor, la femme doit être apparue dans une vision à une mopor plus ancienne.</li><li>La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring. Cette forme de base implique une offrande de nourriture et ne rapporte que 1 PD. Une offrande de sang peut également être accomplie sur l’autel, en suivant les mêmes règles que l’offrande de sang de Gerbanis, y compris le risque de sacrilège. Les PD inutilisés disparaissent au rythme de 1 par jour.</li></ul></article>"
+        },
+        "tabletList": {
+          "Name": "Liste des tablettes",
+          "Intro": "Les tablettes sont regroupées par religion. Chaque nom ouvre la fiche correspondante dans les compendiums ; dépliez les pouvoirs d’une tablette pour les parcourir. L’icône placée devant un pouvoir indique sa famille.",
+          "Contents": "Sommaire",
+          "Sacred": "Tablettes sacrées",
+          "Vitner": "Tablettes de vitner",
+          "Elf": "Tablettes elfes",
+          "Rune": "Runes naines",
+          "Tablet": "tablette",
+          "Tablets": "tablettes",
+          "Power": "pouvoir",
+          "Powers": "pouvoirs",
+          "PowersHeading": "Pouvoirs",
+          "Page": "p.",
+          "Level": "N",
+          "BackToContents": "Retour au sommaire"
         }
       },
       "CreatureAbility": {

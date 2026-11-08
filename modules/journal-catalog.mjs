@@ -1,3 +1,5 @@
+import {tabletListJournalHtml} from "./tablet-journal-content.mjs";
+
 const SYSTEM_ID = "trudvang-chronicles";
 
 // Parent folders are declared before their children: upsertJournals() walks this
@@ -9,6 +11,7 @@ export const JOURNAL_FOLDERS = {
   races: {nameKey: "TRUDVANG.Content.Folder.Races", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
   archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
   religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
+  magic: {nameKey: "TRUDVANG.Content.Folder.JournalMagic", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
   rules: {nameKey: "TRUDVANG.Content.Folder.Rules", type: "JournalEntry", colorRole: "muted"}
 };
 
@@ -39,6 +42,10 @@ const journals = [
   {id: "thuuldom", folder: "religions", key: "thuuldom"},
   {id: "toikalokke", folder: "religions", key: "toikalokke"},
   {id: "joaringFaith", folder: "religions", key: "joaringFaith"},
+  {id: "tabletList", folder: "magic", key: "tabletList", content: () => tabletListJournalHtml({
+    localize: l,
+    language: globalThis.game?.i18n?.lang ?? "en"
+  })},
   {id: "creatureSize", folder: "rules", key: "creatureSize"},
   {id: "training", folder: "rules", key: "training"},
   {id: "hunting", folder: "rules", key: "hunting"},
@@ -56,9 +63,13 @@ function raceTable(id) {
 }
 
 export function journalDocuments(folders) {
-  return journals.map(({id, folder, key, image}) => ({
-    id, name: l(`TRUDVANG.Content.Journal.${key}.Name`), folder: folders[folder]?.id,
-    flags: {[SYSTEM_ID]: {starterId: `journal-${id}`}},
-    pages: [{name: l(`TRUDVANG.Content.Journal.${key}.Name`), type: "text", text: {format: 1, content: image ? `<article class="trudvang-starter-journal"><figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${content(key)}${raceStats[key] ? raceTable(key) : ""}</article>` : content(key)}}]
-  }));
+  return journals.map(({id, folder, key, image, content: buildContent}) => {
+    const name = l(`TRUDVANG.Content.Journal.${key}.Name`);
+    const pageContent = buildContent ? buildContent() : content(key);
+    return {
+      id, name, folder: folders[folder]?.id,
+      flags: {[SYSTEM_ID]: {starterId: `journal-${id}`}},
+      pages: [{name, type: "text", text: {format: 1, content: image ? `<article class="trudvang-starter-journal"><figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${pageContent}${raceStats[key] ? raceTable(key) : ""}</article>` : pageContent}}]
+    };
+  });
 }

@@ -1847,6 +1847,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.MagicObjects` | Magic Objects | Objets magiques |
 | `TRUDVANG.Content.Folder.Materials` | Materials | Matériaux |
 | `TRUDVANG.Content.Folder.Consumables` | Consumables | Consommables |
+| `TRUDVANG.Content.Folder.JournalMagic` | Magic | Magie |
 
 ## `TRUDVANG.Content.Scene`
 
@@ -7961,6 +7962,26 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Journal.joaringFaith.Name` | Joaring Faith | Foi Joaring |
 | `TRUDVANG.Content.Journal.joaringFaith.Content` | <article class="trudvang-religion-journal"><h2>The Mopor</h2><p>The Mopor is the woman who holds the secrets of ancient knowledge in the Joaring villages of Dain. She is the one who performs religious rituals, calls the power of the gods, and educates the Joarings by using the Mopor Rods with their mysteriously carved signs.</p><h2>The Visions</h2><p>She is occasionally taken by visions and trances through which the Gods speak to her (according to GM judgement). These visions can be facilitated by complicated rituals, but they can also happen spontaneously, especially when the Mopor must choose her Manpi or apprentice.</p><h2>Differences from a Normal Dimwalker</h2><p>Treat the Mopor as a normal dimwalker with the following differences:</p><ul><li>They need the specific &#8220;Mopor&#8221; specialty of the Invoke discipline.</li><li>To become a Mopor the woman must have appeared in a vision to an older Mopor.</li><li>The Mopor can raise the number of her divinity points by performing a 2-hours long ritual at the stone altar of a Joaring Village. This basic form involves food gifting and gives only 1 DP. Bloodgifting can also be performed on the altar, following the same mechanics for Bloodgifting in Gerbanis, including the risk of Gloomgifting. Unused DP disappear at a rate of 1 per day.</li></ul></article> | <article class="trudvang-religion-journal"><h2>La mopor</h2><p>La mopor est la femme qui détient les secrets du savoir ancien dans les villages joaring de Dain. C’est elle qui accomplit les rites religieux, appelle la puissance des dieux, et instruit les Joaring en se servant des bâtons de mopor et de leurs signes mystérieusement gravés.</p><h2>Les visions</h2><p>Elle est parfois saisie par des visions et des transes au travers desquelles les dieux lui parlent (selon l’appréciation du MJ). Ces visions peuvent être facilitées par des rites complexes, mais elles peuvent aussi survenir spontanément, en particulier lorsque la mopor doit choisir sa Manpi ou son apprentie.</p><h2>Différences avec un arpenteur des brumes normal</h2><p>Traitez la mopor comme un arpenteur des brumes normal avec les différences suivantes :</p><ul><li>Elle a besoin de la spécialité « Mopor » de la discipline Invocation.</li><li>Pour devenir mopor, la femme doit être apparue dans une vision à une mopor plus ancienne.</li><li>La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring. Cette forme de base implique une offrande de nourriture et ne rapporte que 1 PD. Une offrande de sang peut également être accomplie sur l’autel, en suivant les mêmes règles que l’offrande de sang de Gerbanis, y compris le risque de sacrilège. Les PD inutilisés disparaissent au rythme de 1 par jour.</li></ul></article> |
+
+## `TRUDVANG.Content.Journal.tabletList`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Journal.tabletList.Name` | List of Tablets | Liste des tablettes |
+| `TRUDVANG.Content.Journal.tabletList.Intro` | Tablets are grouped by religion. Each name opens the corresponding compendium sheet; expand a tablet’s powers to browse them. The icon before a power shows its family. | Les tablettes sont regroupées par religion. Chaque nom ouvre la fiche correspondante dans les compendiums ; dépliez les pouvoirs d’une tablette pour les parcourir. L’icône placée devant un pouvoir indique sa famille. |
+| `TRUDVANG.Content.Journal.tabletList.Contents` | Contents | Sommaire |
+| `TRUDVANG.Content.Journal.tabletList.Sacred` | Sacred Tablets | Tablettes sacrées |
+| `TRUDVANG.Content.Journal.tabletList.Vitner` | Vitner Tablets | Tablettes de vitner |
+| `TRUDVANG.Content.Journal.tabletList.Elf` | Elven Tablets | Tablettes elfes |
+| `TRUDVANG.Content.Journal.tabletList.Rune` | Dwarven Runes | Runes naines |
+| `TRUDVANG.Content.Journal.tabletList.Tablet` | tablet | tablette |
+| `TRUDVANG.Content.Journal.tabletList.Tablets` | tablets | tablettes |
+| `TRUDVANG.Content.Journal.tabletList.Power` | power | pouvoir |
+| `TRUDVANG.Content.Journal.tabletList.Powers` | powers | pouvoirs |
+| `TRUDVANG.Content.Journal.tabletList.PowersHeading` | Powers | Pouvoirs |
+| `TRUDVANG.Content.Journal.tabletList.Page` | p. | p. |
+| `TRUDVANG.Content.Journal.tabletList.Level` | L | N |
+| `TRUDVANG.Content.Journal.tabletList.BackToContents` | Back to contents | Retour au sommaire |
 
 ## `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI`
 
