@@ -3956,6 +3956,46 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-vitner-of-objects:rust:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/degen.svg",
+    "duration": "5 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "itemQuality": {
+      "steps": -1,
+      "stepsIndex": 4,
+      "excludeMagical": true
+    },
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-vitner-of-objects:rust:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-of-objects:rust:3:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:rust:3:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:rust:3:2"
+      }
+    ]
+  },
   "vitner-vitner-of-objects:alarm-object:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -15237,6 +15277,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-vitner-of-objects:bind:2": [
     "vitner-vitner-of-objects:bind:2#effect"
+  ],
+  "vitner-vitner-of-objects:rust:3": [
+    "vitner-vitner-of-objects:rust:3#effect"
   ],
   "vitner-vitner-of-objects:alarm-object:4": [
     "vitner-vitner-of-objects:alarm-object:4#effect"

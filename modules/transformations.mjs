@@ -20,6 +20,7 @@ import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds, durationUntilDayEnd} from "./rules/effect-duration.mjs";
+import {itemQualityChanges,isMagicalItem} from './rules/item-quality.mjs';
 
 /** TEMPORARY WORLD MIGRATION: copies of pre-outcome Nid pain effects must keep
  * their existing penalty, rather than replaying the original physical wounds. */
@@ -42,6 +43,9 @@ const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
 const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[doc?.name]?.id;
 export function transformationStackId(key,casting,reference){
+ // An item's quality is one property: a renewed degradation replaces the
+ // previous one, rather than applying the same quality adjustment twice.
+ if(reference.itemQuality)return key;
  return (casting.kind==="spell"||casting.auraSource||reference.periodic)&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
 }
 /** Learned specialties of the recipient, including custom entries and NPC book rows. */
@@ -124,6 +128,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  if(reference.itemOnly&&!['weapon','shield','armor','gear','potion'].includes(destinationItem?.type)){ui.notifications.warn(local("ItemTargetRequired"));return null;}
+ if(reference.itemQuality?.excludeMagical&&isMagicalItem(destinationItem)){ui.notifications.warn(local('MagicalItemUnaffected'));return null;}
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
  if(reference.conditionalProtection&&destinationItem){ui.notifications.warn(local("ActorTargetRequired"));return null;}
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
@@ -277,6 +282,15 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const duration=template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  let itemValues;
+ let qualityValues;
+ if(!resolvedCopy&&template.itemQuality){
+  const definition=template.itemQuality,extra=Math.max(0,Number(answers[`boost${definition.stepsIndex}`]??counts[definition.stepsIndex])||0);
+  const originalQuality=destinationItem._source?.system?.quality??destinationItem.system.quality??2;
+  const delta=itemQualityChanges(destinationItem,originalQuality,Number(originalQuality)+definition.steps*(1+extra));
+  if(delta.from.id===delta.to.id){ui.notifications.warn(local('QualityUnchanged'));return null;}
+  changes.push(...delta.changes);
+  qualityValues={item:destinationItem.name,from:game.i18n.localize(`TRUDVANG.Quality.${delta.from.key}`),to:game.i18n.localize(`TRUDVANG.Quality.${delta.to.key}`)};
+ }
  if(!resolvedCopy&&template.itemEnchantment){
   const p=template.itemEnchantment,extra=p.statsIndex===undefined?0:Math.max(0,Number(answers[`boost${p.statsIndex}`]??counts[p.statsIndex])||0);
   const use=Number(p.use??0)+(p.useIndex===undefined?0:Math.max(0,Number(answers[`boost${p.useIndex}`]??counts[p.useIndex])||0));
@@ -387,6 +401,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
+ if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
   const value=resolveEffectNote(p,casting,answers.powerLevel??template.levelParameter?.default);
@@ -432,6 +447,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  let description=supplied?.description??text(key,"Description");
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
+ if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
  if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}

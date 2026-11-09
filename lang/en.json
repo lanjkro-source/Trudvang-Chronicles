@@ -9645,7 +9645,7 @@
         },
         "vitner-vitner-of-objects:rust:3": {
           "Name": "Rust",
-          "Summary": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on.",
+          "Summary": "Lowers the quality and corresponding characteristics of a non-magical object.",
           "Description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
           "SwedishName": "Röste efnating",
           "DamageQualificationNote": "",
@@ -15223,6 +15223,15 @@
           "SourcePage": "132",
           "Duration": "3 minutes"
         },
+        "vitner-vitner-of-objects:rust:3#effect": {
+          "Name": "Rust",
+          "Summary": "Lowers the object’s quality and the corresponding characteristics. Magical objects are unaffected.",
+          "Description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
+          "SourceName": "Rust",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 action rounds"
+        },
         "vitner-vitner-of-objects:alarm-object:4#effect": {
           "Name": "Alarm Object",
           "Summary": "Alarm Object",
@@ -18159,7 +18168,10 @@
       "UseEnchantedItem": "Uses {item} — {effect}",
       "ItemMagicValues": "{item}: SV/Situation {use} when used; damage {damage}; PV {protection}; Integrity {integrity}.",
       "ItemAlterationChoice": "Chosen appearance or physical property",
-      "CombinedAlterationRequired": "Purchase the improvement allowing appearance and characteristics to change together."
+      "CombinedAlterationRequired": "Purchase the improvement allowing appearance and characteristics to change together.",
+      "MagicalItemUnaffected": "This item is magical: Rust cannot affect it.",
+      "QualityUnchanged": "This object’s quality cannot be lowered any further.",
+      "ItemQualityValues": "{item}: quality {from} → {to}."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18419,6 +18431,16 @@
       "MartyrFailure": "Resistance failed: −3 to tests until the end of the day and unconsciousness for 1d6 minutes.",
       "MartyrUnconscious": "Unconsciousness — Memory of a Martyr",
       "MartyrUnconsciousDescription": "The victim is unconscious for the indicated duration, determined by 1d6 minutes. This condition expires independently of psychological pain."
+    },
+    "Quality": {
+      "Label": "Quality",
+      "Magical": "Magical item",
+      "Worthless": "Worthless",
+      "Poor": "Poor",
+      "Normal": "Normal",
+      "Good": "Good",
+      "Masterful": "Masterful",
+      "Legendary": "Legendary"
     }
   }
 }

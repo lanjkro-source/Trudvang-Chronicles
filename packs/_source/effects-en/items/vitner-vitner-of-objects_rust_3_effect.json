@@ -1,0 +1,45 @@
+{
+  "_id": "xZo1XrWrXsYtZu0v",
+  "_key": "!items!xZo1XrWrXsYtZu0v",
+  "name": "Rust",
+  "type": "effect",
+  "img": "icons/svg/degen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:rust:3#effect",
+    "description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
+    "summary": "Lowers the object’s quality and the corresponding characteristics. Magical objects are unaffected.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "WWhMqdGbHcIdJeKf",
+      "_key": "!items.effects!xZo1XrWrXsYtZu0v.WWhMqdGbHcIdJeKf",
+      "name": "Rust",
+      "type": "effect",
+      "img": "icons/svg/degen.svg",
+      "description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:rust:3#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:rust:3#effect",
+            "sourceId": "vitner-vitner-of-objects:rust:3",
+            "summary": "Lowers the object’s quality and the corresponding characteristics. Magical objects are unaffected.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

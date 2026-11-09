@@ -26,7 +26,7 @@ Sur une arme sans autre effet : appliquer Enchantement d’objet, puis attaquer 
 
 Le décompte des modèles d’effet ne prouve pas la couverture complète. Les attaques instantanées déjà proposées dans les cartes ne doivent pas recevoir artificiellement un effet permanent. Restent à traiter/vérifier, dans cet ordre pratique :
 
-1. Qualité et Rouille, objets et armes invoqués, objets préparés comme potions et sceaux.
+1. Objets et armes invoqués, objets préparés comme potions et sceaux.
 2. Effets à résistance renouvelable, maladies, peur et protections conditionnelles manquantes ; conséquences exactes de réussite et d’échec.
 3. Zones fixes et contacts (eau bouillante, flammes, parois), gestion d’entrée/sortie et événements de dégâts ; ne pas les remplacer par des auras mobiles.
 4. Dissipation, libérations et soins particuliers, retours à la vie, autres procédures instantanées ; distinguer automatisation et décisions du MJ.
@@ -34,6 +34,16 @@ Le décompte des modèles d’effet ne prouve pas la couverture complète. Les a
 6. Conséquences des tables d’échecs magiques, également comprises dans le chantier des effets.
 
 Les runes viennent après cette liste.
+
+## Qualité et Rouille
+
+La qualité intrinsèque des objets est désormais renseignable : Mauvaise, Médiocre, Normale, Bonne, Magistrale, Légendaire. Les caractéristiques sauvegardées décrivent cette qualité intrinsèque ; un changement de qualité sur la fiche applique seulement la différence de la table. La qualité Normale par défaut ne modifie aucun objet existant et ne déclenche aucune migration.
+
+Rouille se dépose sur un objet et diminue sa qualité d’un degré, plus un par amélioration dédiée, avec une borne à Mauvaise. Les changements concernent les PC des armes et boucliers, VP/VI, prix, encombrement et poids des armures ; ils ne modifient pas les dégâts. Les outils proposent leur modificateur de qualité lorsqu’ils sont utilisés ; seuls les outils de qualité Magistrale ou Légendaire peuvent cumuler leurs bonus, plafonnés ensemble à +6, indépendamment des bonus magiques. Le champ « Objet magique », les dégâts/protections magiques et Enchantement d’objet rendent la cible inéligible à Rouille. Les améliorations de durée sont figées à l’application ; renouveler Rouille remplace sa baisse de qualité, sans la cumuler une seconde fois. La qualité effective est visible dans Détail et Modificateurs ; la sélection de qualité reste verrouillée tant que cet effet la remplace. L’usure réelle subie pendant Rouille persiste à son expiration.
+
+Références : Livre des règles, p.106 (table contrôlée dans le PDF physique p.108), p.108 et p.120–121 ; Rouille p.201–202. Player’s Handbook, Rust ; Game Master’s Guide, Quality et Weapon Quality. La description mentionne une permanence mais aucune amélioration tarifée ne la définit : aucun choix gratuit de permanence n’est ajouté au lancement.
+
+Vérification représentative : prendre une arme non magique de qualité Normale ; appliquer Rouille, constater Médiocre, −1 PC et −10 VI (actuelle et maximale), sans changement de dégâts ; laisser expirer, puis refaire sur une armure et vérifier l’encombrement et le poids. Les tests automatisés couvrent aussi les objets magiques, les niveaux de puissance, le renouvellement, l’absence de cumul, la borne basse et la conservation de l’usure.
 
 ## Réserves temporaires et repos
 

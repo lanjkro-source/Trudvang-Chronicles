@@ -10,7 +10,7 @@ let models;
 const applications=[];
 class CoreItem{
  constructor(source,parent){this._source=structuredClone(source);this.type=source.type;this.name=source.name;this.id='i';this.uuid='Actor.a.Item.i';this.documentName='Item';this.parent=parent;this.isOwner=true;this.effects=[];this.prepareData();}
- prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),id:row._id??'e'+i,uuid:this.uuid+'.ActiveEffect.'+(row._id??'e'+i),parent:this,active:false}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
+ prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),_source:row,id:row._id??'e'+i,uuid:this.uuid+'.ActiveEffect.'+(row._id??'e'+i),parent:this,active:false,update:async data=>{this._source.effects[i]={...row,...structuredClone(data)};this.prepareData();return this.effects[i];}}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
  prepareEmbeddedDocuments(){}
  prepareDerivedData(){}
  getFlag(){return null;}canUserModify(){return true;}
@@ -22,7 +22,7 @@ class CoreEffect{
   assert.equal(options.modifyTarget,true);assert.equal(change.effect.parent,item);
   applications.push(change.key);
   const before=get(item,change.key),value=Number(change.value);
-  const next=change.type==='add'?Number(before??0)+value:change.type==='subtract'?Number(before??0)-value:change.type==='multiply'?Number(before)*value:change.type==='override'?(Number.isFinite(value)?value:change.value):before;
+  const next=change.type==='add'?Number(before??0)+value:change.type==='subtract'?Number(before??0)-value:change.type==='multiply'?Number(before)*value:change.type==='upgrade'?Math.max(Number(before),value):change.type==='override'?(Number.isFinite(value)?value:change.value):before;
   set(item,change.key,next);return {[change.key]:next};
  }
 }
@@ -119,6 +119,49 @@ test('independent temporary integrity grants keep their own spending when anothe
  item._source.effects.shift();item.prepareData();assert.equal(item.system.breach.value,58,'only the unspent eight points of the second grant remain');
  await applyDamageToDefenseItem({item,damage:item.system.protection+9});assert.equal(item.system.breach.value,49);assert.equal(item._source.system.breach.value,49);
  item._source.effects=[];item.prepareData();assert.equal(item.system.breach.value,49);
+});
+
+test('Rust lowers quality, CP and integrity without changing damage; expiry preserves actual wear',async()=>{
+ const data=source();Object.assign(data.system,{quality:2,value:100});const item=new TrudvangItem(data,actor);actor.items=[item];
+ await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,counts:[2,1],skipDialog:true});
+ assert.equal(item.system.quality,1);assert.equal(item.system.combatPointBonus,0);assert.equal(item.system.damageBonus,0);assert.equal(item.system.value,50);assert.deepEqual(item.system.breach,{value:40,max:70});
+ assert.deepEqual(item.effects[0].duration,{value:19,units:'rounds'});assert.match(item.effects[0].flags['trudvang-chronicles'].transformation.summary,/Normale → Médiocre/);
+ const sheet=new TrudvangItemSheet({document:item}),context=await sheet._prepareContext({});
+ assert.equal(context.system.protection,4);assert.equal(context.qualityLocked,true);assert.equal(context.equipmentInspection.stats.find(row=>row.key==='quality').comparison,'Normale → Médiocre');
+ await applyDamageToDefenseItem({item,damage:9});assert.equal(item.system.breach.value,35);assert.equal(item._source.system.breach.value,45);
+ item._source.effects=[];item.prepareData();assert.equal(item.system.breach.value,45);assert.equal(item.system.quality,2);assert.equal(item.system.combatPointBonus,1);assert.equal(item.system.value,100);
+});
+
+test('Rust improvements stop at the lowest quality, adjust armor weight and encumbrance, and reject magical items',async()=>{
+ const data=source();data.type='armor';Object.assign(data.system,{quality:2,heft:3,weight:20,value:100});const armor=new TrudvangItem(data,actor);actor.items=[armor];
+ await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:armor,counts:[0,0,0,0,9],skipDialog:true});
+ assert.equal(armor.system.quality,0);assert.equal(armor.system.heft,5);assert.equal(armor.system.weight,30);assert.equal(armor.system.value,20);assert.deepEqual(armor.system.breach,{value:30,max:60});
+ for(let i=0;i<3;i++){armor.prepareData();assert.equal(armor.system.heft,5);assert.equal(armor.system.weight,30);}
+ armor._source.effects=[];armor.prepareData();assert.equal(armor.system.heft,3);assert.equal(armor.system.weight,20);
+ for(const fields of [{magical:true},{magicalProtection:true},{damageQualification:{nature:'magical'}}]){
+  const magical=source();Object.assign(magical.system,fields);const item=new TrudvangItem(magical,actor);actor.items=[item];
+  assert.equal(await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,skipDialog:true}),null);assert.equal(item.effects.length,0);
+ }
+ const item=new TrudvangItem(source(),actor);actor.items=[item];await applyTransformation(actor,'vitner-vitner-craft:enchant-object:2#effect',{destinationItem:item,skipDialog:true});
+ assert.equal(await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,skipDialog:true}),null);assert.equal(item.effects.length,1);
+});
+
+test('intrinsic quality edits update stored characteristics once, and unmodified sheet submissions do not repeat the change',async()=>{
+ const data=source();Object.assign(data.system,{quality:2,value:100});const item=new TrudvangItem(data,actor),sheet=new TrudvangItemSheet({document:item});actor.items=[item];
+ await sheet._prepareContext({});await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet,{},null,{object:{'system.quality':4,'system.breach.value':50,'system.breach.max':80,'system.combatPointBonus':1,'system.value':100}});
+ assert.equal(item.system.quality,4);assert.equal(item.system.combatPointBonus,3);assert.deepEqual(item.system.breach,{value:60,max:90});assert.equal(item.system.value,300);
+ await sheet._prepareContext({});await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet,{},null,{object:{'system.quality':4,'system.breach.value':60,'system.breach.max':90,'system.combatPointBonus':3,'system.value':300}});
+ assert.equal(item.system.value,300);assert.equal(item.system.combatPointBonus,3);
+});
+
+test('renewing Rust replaces its quality adjustment without applying the degradation twice',async()=>{
+ const data=source();Object.assign(data.system,{quality:2,value:100});const item=new TrudvangItem(data,actor);actor.items=[item];
+ for(let i=0;i<3;i++){
+  await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,skipDialog:true});
+  assert.equal(item.effects.length,1);assert.equal(item.system.quality,1);assert.equal(item.system.breach.value,40);assert.equal(item.system.value,50);
+ }
+ await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,counts:[0,0,0,0,1],skipDialog:true});
+ assert.equal(item.effects.length,1);assert.equal(item.system.quality,0);assert.equal(item.system.breach.value,30);assert.equal(item.system.value,20);
 });
 
 test('known weapon use joins the ordinary modifier list without an icon or checkbox and updates the visible final VC',async t=>{

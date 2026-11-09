@@ -12644,6 +12644,17 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:rust:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "vitner-vitner-of-objects:rust:3:0",
+        "vitner-vitner-of-objects:rust:3:1",
+        "vitner-vitner-of-objects:rust:3:2",
+        "vitner-vitner-of-objects:rust:3:3",
+        "vitner-vitner-of-objects:rust:3:4"
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:rust:3:0",

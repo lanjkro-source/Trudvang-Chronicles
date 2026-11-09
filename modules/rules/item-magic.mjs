@@ -1,4 +1,5 @@
 import {rulesFromChanges} from './effect-rule-changes.mjs';
+import {itemQuality} from './item-quality.mjs';
 
 const active=effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired;
 export function itemMagicEffects(item){return Array.from(item?.effects??[]).filter(active);}
@@ -6,7 +7,7 @@ export function preparedItemProtection(item){
  const hasLocalValue=itemMagicEffects(item).some(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(change=>change.key==='system.protection'));
  return hasLocalValue&&Number.isFinite(Number(item?.system?.protection))?Math.max(0,Number(item.system.protection)):Math.ceil(Math.max(0,Number(item?.system?.breach?.value)||0)/10);
 }
-const localPath=/^system\.(?:damage|damageBonus|openRoll|combatPointBonus|weaponActions|initiativeModifier|movementModifier|passiveProtection|protection|weight|value|heft|material|breach\.(?:value|max)|range\.(?:short|long)|damageQualification\.[a-z]+)$/;
+const localPath=/^system\.(?:quality|damage|damageBonus|openRoll|combatPointBonus|weaponActions|initiativeModifier|movementModifier|passiveProtection|protection|weight|value|heft|material|breach\.(?:value|max)|range\.(?:short|long)|damageQualification\.[a-z]+)$/;
 const priorities={multiply:10,add:20,subtract:20,downgrade:30,upgrade:40,override:50};
 const preparations=new WeakMap();
 const integritySpentPath='flags.trudvang-chronicles.integritySpent';
@@ -67,10 +68,13 @@ export function intrinsicItemSheetUpdate(update,state=[]){
  return update;
 }
 export function itemUseBonuses(actor){
- return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>itemMagicEffects(item).flatMap(effect=>{
+ return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
+ const quality=itemQuality(item.system?.quality),qualityEffect=itemMagicEffects(item).find(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(row=>row.key==='system.quality'));
+ const qualityRows=['gear','potion'].includes(item.type)&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize('TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id}]:[];
+ return [...qualityRows,...itemMagicEffects(item).flatMap(effect=>{
   const value=Number(rulesFromChanges(effect.system?.changes).objectUse)||0;
   return value?[{id:effect.uuid??`${item.id}:${effect.id}`,item,effect,value}]:[];
- }));
+ })];});
 }
 export function itemProtectionModifiers(item){
  return itemMagicEffects(item).flatMap(effect=>{

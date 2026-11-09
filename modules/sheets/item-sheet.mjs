@@ -20,6 +20,7 @@ import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 import {customTabletPower,customTabletChild} from "../rules/custom-tablet.mjs";
 import {itemEffectEditState,intrinsicItemSheetUpdate,itemProtectionModifiers} from "../rules/item-magic.mjs";
+import {ITEM_QUALITIES,itemQuality,intrinsicQualityUpdate} from "../rules/item-quality.mjs";
 
 const isCustomTablet = item => item.type === "tablet" && !TABLET_BY_ID.has(item.system.catalogId || item.getFlag?.("trudvang-chronicles", "catalogId"));
 
@@ -104,6 +105,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     if(['weapon','shield','armor','gear','potion'].includes(this.item.type)){
       context.system=this.item.system.toObject?.(false)??{...this.item.system};
       context.system.protection=Math.max(0,Number(this.item.system.protection||0)+itemProtectionModifiers(this.item).reduce((sum,row)=>sum+row.amount,0));
+      context.qualityOptions=ITEM_QUALITIES.map(row=>({...row,label:game.i18n.localize(`TRUDVANG.Quality.${row.key}`),selected:row.id===itemQuality(context.system.quality).id}));
+      context.qualityLocked=this._itemEffectEditState.some(row=>row.key==='system.quality');
     }
     context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
     context.damageQualificationsOpen = this.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;
@@ -322,7 +325,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onSubmit(event, form, formData) {
     if (!this.isEditable || !this.item.isOwner) return;
-    const updateData = intrinsicItemSheetUpdate(foundry.utils.expandObject(formData.object),this._itemEffectEditState);
+    const updateData = intrinsicQualityUpdate(this.item,intrinsicItemSheetUpdate(foundry.utils.expandObject(formData.object),this._itemEffectEditState));
     const editedLevels = updateData.system?.powerLevels;
     if (editedLevels && !Array.isArray(editedLevels)) {
       updateData.system.powerLevels = Array.from(this.item.system.powerLevels ?? [], (level, index) => {

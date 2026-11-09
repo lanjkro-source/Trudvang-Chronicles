@@ -9645,7 +9645,7 @@
         },
         "vitner-vitner-of-objects:rust:3": {
           "Name": "Rouille",
-          "Summary": "Corrode rapidement un objet métallique et réduit sa solidité.",
+          "Summary": "Dégrade la qualité d’un objet non magique et ses caractéristiques correspondantes.",
           "Description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc. Du point de vue technique, l’effet de ce sort est de réduire d’un degré la qualité de l’objet visé (par exemple de normal à médiocre) jusqu’à expiration du sort. (Cf. la table Qualité au chapitre Équipement, page 121 pour de plus amples informations sur les niveaux de qualité). Ce sort n’a aucun effet sur les objets magiques. Il est possible de rendre l’effet permanent en ajoutant un niveau de puissance. Même dans ce cas, le sort Dissipation du vitner peut tout de même annuler le sort Rouille.",
           "SwedishName": "Röste efnating",
           "DamageQualificationNote": "",
@@ -15223,6 +15223,15 @@
           "SourcePage": "201",
           "Duration": "3 minutes"
         },
+        "vitner-vitner-of-objects:rust:3#effect": {
+          "Name": "Rouille",
+          "Summary": "Dégrade la qualité de l’objet et ses caractéristiques correspondantes. Sans effet sur les objets magiques.",
+          "Description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc. Du point de vue technique, l’effet de ce sort est de réduire d’un degré la qualité de l’objet visé (par exemple de normal à médiocre) jusqu’à expiration du sort. (Cf. la table Qualité au chapitre Équipement, page 121 pour de plus amples informations sur les niveaux de qualité). Ce sort n’a aucun effet sur les objets magiques. Il est possible de rendre l’effet permanent en ajoutant un niveau de puissance. Même dans ce cas, le sort Dissipation du vitner peut tout de même annuler le sort Rouille.",
+          "SourceName": "Rouille",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "201",
+          "Duration": "5 tours de jeu"
+        },
         "vitner-vitner-of-objects:alarm-object:4#effect": {
           "Name": "Objet d’alarme",
           "Summary": "Objet d’alarme",
@@ -18159,7 +18168,10 @@
       "UseEnchantedItem": "Utilise {item} — {effect}",
       "ItemMagicValues": "{item} : VC/SV {use} en l’utilisant ; dégâts {damage} ; VP {protection} ; VI {integrity}.",
       "ItemAlterationChoice": "Apparence ou propriété physique choisie",
-      "CombinedAlterationRequired": "L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée."
+      "CombinedAlterationRequired": "L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée.",
+      "MagicalItemUnaffected": "Cet objet est magique : Rouille ne peut pas l’affecter.",
+      "QualityUnchanged": "La qualité de cet objet ne peut pas être réduite davantage.",
+      "ItemQualityValues": "{item} : qualité {from} → {to}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18419,6 +18431,16 @@
       "MartyrFailure": "Résistance échouée : −3 aux tests jusqu’à la fin de la journée et inconscience pendant 1d6 minutes.",
       "MartyrUnconscious": "Inconscience — Souvenir du martyr",
       "MartyrUnconsciousDescription": "La victime est inconsciente pendant la durée indiquée, déterminée par 1d6 minutes. Cet état expire indépendamment de la douleur psychologique."
+    },
+    "Quality": {
+      "Label": "Qualité",
+      "Magical": "Objet magique",
+      "Worthless": "Mauvaise",
+      "Poor": "Médiocre",
+      "Normal": "Normale",
+      "Good": "Bonne",
+      "Masterful": "Magistrale",
+      "Legendary": "Légendaire"
     }
   }
 }

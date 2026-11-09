@@ -9490,7 +9490,7 @@
         "tabletId": "vitner-vitner-of-objects",
         "tablet": "Vitner of Objects",
         "description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
-        "summary": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on.",
+        "summary": "Lowers the quality and corresponding characteristics of a non-magical object.",
         "swedishName": "Röste efnating",
         "duration": "5 action rounds",
         "range": "contact",

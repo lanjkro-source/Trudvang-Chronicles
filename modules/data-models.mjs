@@ -364,6 +364,8 @@ export class NpcData extends foundry.abstract.TypeDataModel {
 
 function itemBaseSchema() {
   return {
+    quality: integer(2, {min: 0, max: 5}),
+    magical: boolean(false),
     description: html(),
     source: string(),
     quantity: integer(1, {min: 0}),

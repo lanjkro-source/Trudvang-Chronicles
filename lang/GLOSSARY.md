@@ -12180,6 +12180,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.SourcePage` | 132 | 201 |
 | `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:bind:2#effect.Duration` | 3 minutes | 3 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.Name` | Rust | Rouille |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.Description` | The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell. | L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc. Du point de vue technique, l’effet de ce sort est de réduire d’un degré la qualité de l’objet visé (par exemple de normal à médiocre) jusqu’à expiration du sort. (Cf. la table Qualité au chapitre Équipement, page 121 pour de plus amples informations sur les niveaux de qualité). Ce sort n’a aucun effet sur les objets magiques. Il est possible de rendre l’effet permanent en ajoutant un niveau de puissance. Même dans ce cas, le sort Dissipation du vitner peut tout de même annuler le sort Rouille. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.SourceName` | Rust | Rouille |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.SourcePage` | 132 | 201 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:rust:3#effect.Duration` | 5 action rounds | 5 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alarm-object:4#effect`
 
 | Clé | English | Français |
@@ -15706,6 +15717,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ItemMagicValues` | {item}: SV/Situation {use} when used; damage {damage}; PV {protection}; Integrity {integrity}. | {item} : VC/SV {use} en l’utilisant ; dégâts {damage} ; VP {protection} ; VI {integrity}. |
 | `TRUDVANG.Transformation.ItemAlterationChoice` | Chosen appearance or physical property | Apparence ou propriété physique choisie |
 | `TRUDVANG.Transformation.CombinedAlterationRequired` | Purchase the improvement allowing appearance and characteristics to change together. | L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée. |
+| `TRUDVANG.Transformation.MagicalItemUnaffected` | This item is magical: Rust cannot affect it. | Cet objet est magique : Rouille ne peut pas l’affecter. |
+| `TRUDVANG.Transformation.QualityUnchanged` | This object’s quality cannot be lowered any further. | La qualité de cet objet ne peut pas être réduite davantage. |
+| `TRUDVANG.Transformation.ItemQualityValues` | {item}: quality {from} → {to}. | {item} : qualité {from} → {to}. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16060,3 +16074,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.DamageOutcome.MartyrFailure` | Resistance failed: −3 to tests until the end of the day and unconsciousness for 1d6 minutes. | Résistance échouée : −3 aux tests jusqu’à la fin de la journée et inconscience pendant 1d6 minutes. |
 | `TRUDVANG.DamageOutcome.MartyrUnconscious` | Unconsciousness — Memory of a Martyr | Inconscience — Souvenir du martyr |
 | `TRUDVANG.DamageOutcome.MartyrUnconsciousDescription` | The victim is unconscious for the indicated duration, determined by 1d6 minutes. This condition expires independently of psychological pain. | La victime est inconsciente pendant la durée indiquée, déterminée par 1d6 minutes. Cet état expire indépendamment de la douleur psychologique. |
+
+## `TRUDVANG.Quality`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Quality.Label` | Quality | Qualité |
+| `TRUDVANG.Quality.Magical` | Magical item | Objet magique |
+| `TRUDVANG.Quality.Worthless` | Worthless | Mauvaise |
+| `TRUDVANG.Quality.Poor` | Poor | Médiocre |
+| `TRUDVANG.Quality.Normal` | Normal | Normale |
+| `TRUDVANG.Quality.Good` | Good | Bonne |
+| `TRUDVANG.Quality.Masterful` | Masterful | Magistrale |
+| `TRUDVANG.Quality.Legendary` | Legendary | Légendaire |
