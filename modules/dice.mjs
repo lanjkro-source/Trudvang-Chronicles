@@ -33,7 +33,7 @@ const SYSTEM_ID = "trudvang-chronicles";
 
 const modifierLabel = row => `${row.labelKey ? game.i18n.localize(row.labelKey) : row.label}${row.included ? ` (${game.i18n.localize("TRUDVANG.Dialog.IncludedModifier")})` : ""}`;
 const signedModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value || 0)}`;
-const modifierList = rows => rows.length ? `<ul class="roll-state-modifiers">${rows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("")}</ul>` : "";
+const modifierList = (rows,attributes='') => rows.length||attributes ? `<ul class="roll-state-modifiers" ${attributes}>${rows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("")}</ul>` : "";
 
 export function rollModifierFlavor(rows) {
   return rows.map(row => `${escapeHtml(modifierLabel(row))}: ${signedModifier(row.value)}`).join("<br>");
@@ -368,7 +368,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MagicMethod"))}</label><select name="method">${options}</select></div>
     <p class="magic-breakdown">${escapeHtml(methods[0]?.breakdown || "")}</p>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PowerModifier"))} : <strong>${escapeHtml(formatModifier(spellModifier))}</strong></p>
-    ${modifierList(modifierRows)}
+    ${modifierList(modifierRows,'data-applied-item-modifiers')}
     ${activeSpellCount ? `<p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.ActiveSpellsPenalty", {count: activeSpellCount, penalty: activeSpellPenalty}))}</p>` : ""}
     ${persistent ? `<p class="magic-affinity-note">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PersistentSpellNotice"))}</p>` : ""}
     <p>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}</p>

@@ -1,5 +1,9 @@
 # Migrations temporaires des mondes de développement
 
+## Équipement rituel — version de contenu 69
+
+Le palier `CONTENT_VERSION = 69` de `modules/content-importer.mjs` relance l’import standard dans les anciens mondes pour y installer Blodstör, Vitner stafur et la statuette votive. Aucun ajustement des caractéristiques des exemplaires existants n’est nécessaire. Retirer ce palier historique/commentaire lors du nettoyage des migrations ; les trois entrées du catalogue et le fonctionnement normal de l’import restent nécessaires.
+
 ## Matériaux des armures — version de contenu 68
 
 `syncStarterArmorMaterials()` et son appel dans `modules/content-importer.mjs`, déclenchés par `CONTENT_VERSION = 68`, renseignent uniquement les matériaux absents des armures de démarrage reconnues : objets du monde, inventaires des PJ/PNJ et tokens non liés. Le rapprochement utilise l’identifiant de démarrage, la provenance ou les noms traduits ; les matériaux déjà choisis et les autres caractéristiques sont conservés. Retirer ce rattrapage et son appel après mise à jour ou suppression des mondes de développement. Les matériaux dans les sources et le schéma des objets sont pérennes.

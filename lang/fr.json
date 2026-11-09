@@ -1633,7 +1633,8 @@
         "Bestiary118": "Bestiaire de Jorge, p. 118",
         "Bestiary127": "Bestiaire de Jorge, p. 127",
         "Bestiary130": "Bestiaire de Jorge, p. 130",
-        "Bestiary142": "Bestiaire de Jorge, p. 142"
+        "Bestiary142": "Bestiaire de Jorge, p. 142",
+        "RitualEquipment": "Livre des règles, p. 106 : équipement rituel"
       },
       "ExtractType": {
         "Alteration": "Altération",
@@ -2484,6 +2485,18 @@
           "Name": "Assoiffé",
           "Summary": "−1 à toutes les actions par degré.",
           "Description": "<p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p>"
+        },
+        "Blodstor": {
+          "Name": "Blodstör",
+          "Description": "Piquet sacrificiel consacré de Gerbanis. Les arpenteurs des brumes peuvent l’emporter comme bâton de marche et l’utiliser comme objet votif lors des invocations. Son bonus dépend de sa qualité."
+        },
+        "VitnerStafur": {
+          "Name": "Vitner stafur",
+          "Description": "Bâton léger servant de focus aux tisseurs de vitner. Sa qualité détermine le bonus accordé au tissage des sortilèges lorsqu’il est équipé."
+        },
+        "VotiveStatuette": {
+          "Name": "Statuette votive",
+          "Description": "Petite statuette servant d’objet votif pour les invocations divines. Son bonus dépend de sa qualité."
         }
       },
       "Table": {
@@ -18449,8 +18462,7 @@
         "none": "Non",
         "votive": "Votif",
         "vitner": "Tissage de vitner"
-      },
-      "RitualHint": "Sélectionnez les objets utilisés. Seules les qualités Magistrale et Légendaire permettent de cumuler les bonus de qualité, jusqu’à +6 au total."
+      }
     }
   }
 }

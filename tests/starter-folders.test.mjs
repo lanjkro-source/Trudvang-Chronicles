@@ -7,6 +7,18 @@ import {PALETTES} from "../modules/palette.mjs";
 
 const starter = JSON.parse(fs.readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
 
+test('ritual staves preserve the Stafur profile at five silver coins and the votive statuette belongs to Equipment',()=>{
+ const original=starter.items.find(item=>item.nameKey.endsWith('.Stafur.Name'));
+ for(const [id,specialUse] of [['Blodstor','votive'],['VitnerStafur','vitner']]){
+  const item=starter.items.find(item=>item.nameKey===`TRUDVANG.Content.Item.${id}.Name`);
+  assert.ok(item);assert.equal(item.type,'weapon');assert.equal(item.folder,'weapons');assert.equal(item.system.value,5);assert.equal(item.system.specialUse,specialUse);
+  assert.equal(item.system.category,'oneHandedLight');
+  for(const field of ['combatSpecialty','damage','openRoll','weaponActions','initiativeModifier','breach','weight','material','damageQualification'])assert.deepEqual(item.system[field],original.system[field],`${id}: ${field}`);
+ }
+ const statuette=starter.items.find(item=>item.nameKey.endsWith('.VotiveStatuette.Name'));
+ assert.equal(statuette.type,'gear');assert.equal(statuette.folder,'equipment');assert.equal(statuette.system.specialUse,'votive');
+});
+
 test('catalogue and bestiary armor carry a material consistent with their construction',async()=>{
  const expected={FurLeather:'leather',HardenedLeather:'leather',MetalReinforcedLeather:'leather',ThickFabric:'cloth'};
  const armors=starter.items.filter(item=>item.type==='armor');assert.equal(armors.length,10);

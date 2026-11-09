@@ -2779,6 +2779,79 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Bestiary130"
       }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Blodstor.Name",
+      "type": "weapon",
+      "img": "icons/weapons/polearms/spear-simple-engraved.webp",
+      "folder": "weapons",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Rulebook111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 3,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "weight": 1,
+        "value": 5,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
+        "quality": 2,
+        "specialUse": "votive"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.VitnerStafur.Name",
+      "type": "weapon",
+      "img": "icons/weapons/polearms/spear-simple-engraved.webp",
+      "folder": "weapons",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Rulebook111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 3,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "weight": 1,
+        "value": 5,
+        "material": "wood",
+        "damageQualification": {
+          "nature": "normal",
+          "delivery": "melee",
+          "type": "bludgeoning",
+          "protection": "normal"
+        },
+        "quality": 2,
+        "specialUse": "vitner"
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.VotiveStatuette.Name",
+      "type": "gear",
+      "img": "icons/svg/item-bag.svg",
+      "folder": "equipment",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.RitualEquipment",
+        "quality": 2,
+        "specialUse": "votive",
+        "weight": 0.2,
+        "value": 1
+      }
     }
   ],
   "tables": [

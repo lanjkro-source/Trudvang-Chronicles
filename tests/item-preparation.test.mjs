@@ -191,3 +191,17 @@ test('known weapon use joins the ordinary modifier list without an icon or check
  assert.equal(output.hidden,true);assert.equal(output.nextElementSibling.textContent,'14');
  output.textContent='15';events.input();await Promise.resolve();assert.equal(output.nextElementSibling.textContent,'17');
 });
+
+test('automatic ritual quality appears as an ordinary modifier row with no checkbox, icon or special hint',async t=>{
+ const old=document;t.after(()=>{globalThis.document=old;});
+ globalThis.document={createElement:type=>['label','li'].includes(type)?{tagName:type,html:'',set innerHTML(value){this.html=value;},querySelector:()=>null}:type==='div'?old.createElement(type):{attrs:{},setAttribute(k,v){this.attrs[k]=v;},hasAttribute(k){return k in this.attrs;}}};
+ const data=source();Object.assign(data.system,{quality:4,specialUse:'vitner',equipped:true});const item=new TrudvangItem(data,actor);actor.items=[item];
+ const existing={html:'state modifier'},section={children:[],closest:()=>null,append(node){this.children.push(node);node.parentNode=this;}},list={...section,className:'roll-state-modifiers',children:[existing]};
+ const output={textContent:'12',nextElementSibling:null,after(node){this.nextElementSibling=node;}};
+ const root={querySelector:()=>null,querySelectorAll:selector=>selector==='[data-conditional-modifiers]'?[section]:selector==='[data-applied-item-modifiers]'?[list]:[output],addEventListener:()=>{}};
+ class Base{_onRender(){}}
+ const Dialog=blessingDialog(Base,actor,'magic',{castingType:'vitner'}),dialog=new Dialog();dialog.element=root;dialog._onRender({},{});
+ assert.deepEqual(section.children,[]);assert.equal(list.children.length,2);assert.equal(list.children[0],existing);assert.equal(list.children[1].tagName,'li');
+ assert.match(list.children[1].html,/>Épée - Tissage de vitner<\/span><b>\+2<\/b>/);assert.doesNotMatch(list.children[1].html,/<input|<i\b|checkbox/);
+ assert.equal(output.nextElementSibling.textContent,'14');
+});

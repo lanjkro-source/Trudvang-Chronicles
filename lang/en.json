@@ -1633,7 +1633,8 @@
         "Bestiary118": "Jörgi’s Bestiary, p. 120",
         "Bestiary127": "Jörgi’s Bestiary, p. 127",
         "Bestiary130": "Jörgi’s Bestiary, p. 130",
-        "Bestiary142": "Jörgi’s Bestiary, p. 142"
+        "Bestiary142": "Jörgi’s Bestiary, p. 142",
+        "RitualEquipment": "Game Master’s Guide, Quality: ritual equipment"
       },
       "ExtractType": {
         "Alteration": "Alteration",
@@ -2484,6 +2485,18 @@
           "Name": "Thirsty",
           "Summary": "−1 to all actions per degree.",
           "Description": "<p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p>"
+        },
+        "Blodstor": {
+          "Name": "Blodstör",
+          "Description": "A consecrated Gerbanis sacrificial stake. Dimwalkers may carry it as a walking staff and use it as a votive during divine invocations. Its bonus depends on its quality."
+        },
+        "VitnerStafur": {
+          "Name": "Vitner stafur",
+          "Description": "A light staff used as a focus by vitner weavers. Its quality determines the spell-weaving bonus it provides while equipped."
+        },
+        "VotiveStatuette": {
+          "Name": "Votive statuette",
+          "Description": "A small statuette used as a votive for divine invocations. Its bonus depends on its quality."
         }
       },
       "Table": {
@@ -18449,8 +18462,7 @@
         "none": "None",
         "votive": "Votive",
         "vitner": "Vitner weaving"
-      },
-      "RitualHint": "Select the items being used. Only Masterful and Legendary quality bonuses can stack, up to +6 in total."
+      }
     }
   }
 }

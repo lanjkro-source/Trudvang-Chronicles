@@ -6,12 +6,11 @@ import {itemUseModifierTotal} from './rules/item-quality.mjs';
 function conditionalChoices(actor,{item,castingType}={}){
  const blessing=nidBlessingBonus(actor);
  return [...(blessing?[{id:`nid:${blessing.effectId}`,selector:'[data-nid-blessing]',attribute:'data-nid-blessing',value:blessing.value,label:game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label})}]:[]),
-  ...itemUseBonuses(actor,{castingType}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:Boolean(item),value:row.value,qualityLevel:row.qualityLevel,label:item?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
+  ...itemUseBonuses(actor,{castingType}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:Boolean(item)||row.automatic,value:row.value,qualityLevel:row.qualityLevel,label:item||row.automatic?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
 }
 /** Add the conditional choice to the existing dialog, without another prompt. */
 export function blessingDialog(Base,actor,mode='modifier',context={}){
  const choices=conditionalChoices(actor,context);if(!choices.length)return Base;
- const ritual=Boolean(context.castingType);
  return class extends Base{
   static wait(config){
    const buttons=config.buttons.map(button=>!button.callback||button.action==='cancel'?button:{...button,callback:async(event,control,dialog)=>{
@@ -37,7 +36,6 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
    });
    const outputSelector='[data-final-target], [data-combat-final-target], [data-combat-target-final], [data-concentration-total], [data-fixed-attack-final], [data-fixed-attack-no-target-final], [data-open-modifier], [data-procedure-target], [data-animal-final]';
    const section=activeConditionalModifierSection(root);if(!section)return;
-   if(ritual&&choices.some(row=>row.qualityLevel!==undefined)){const hint=document.createElement('p');hint.className='hint';hint.textContent=game.i18n.localize('TRUDVANG.Quality.RitualHint');section.append(hint);}
    const destination=row=>row.fixed?(Array.from(root.querySelectorAll('[data-applied-item-modifiers]')).find(list=>!list.closest('[hidden]'))??section):activeConditionalModifierSection(root);
    const refresh=()=>{for(const [index,label] of labels.entries()){const target=destination(choices[index]);if(target&&label.parentNode!==target)target.append(label);}const selected=labels.map((label,index)=>({row:choices[index],checked:choices[index].fixed||label.querySelector('input')?.checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=itemUseModifierTotal(selected.map(entry=>entry.row));for(const output of root.querySelectorAll(outputSelector)){
     let extra=output.nextElementSibling;if(!extra?.hasAttribute('data-nid-final')){extra=document.createElement('strong');extra.setAttribute('data-nid-final','');output.after(extra);}

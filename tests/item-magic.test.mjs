@@ -112,17 +112,20 @@ test('ordinary defensive hits update intrinsic integrity when no effect grants t
  assert.equal(item.system.breach.value,19);
 });
 
-test('ritual equipment offers its quality only for the matching magic and caps the actual dialog bonus at six',async()=>{
- const equipment=(id,type,specialUse,quality=5)=>({id,uuid:`Item.${id}`,name:id,type,system:{quantity:1,specialUse,quality},effects:[]});
- const actor={items:[equipment('Staff','weapon','vitner',4),equipment('Focus','gear','vitner'),equipment('Orb','gear','vitner'),equipment('Votive','gear','votive',4),equipment('Sword','weapon','votive'),equipment('Tool','gear','none'),equipment('Potion','potion','votive')]};
+test('ritual equipment automatically applies its quality for the matching magic, requires equipped weapons and armor, and caps the bonus at six',async()=>{
+ const equipment=(id,type,specialUse,quality=5,equipped=true)=>({id,uuid:`Item.${id}`,name:id,type,system:{quantity:1,specialUse,quality,equipped},effects:[]});
+ const actor={items:[equipment('Staff','weapon','vitner',4),equipment('Focus','gear','vitner'),equipment('Orb','gear','vitner'),equipment('Votive','gear','votive',4),equipment('Sword','weapon','votive'),equipment('Tool','gear','none'),equipment('Potion','potion','votive'),equipment('StowedStaff','weapon','vitner',5,false),equipment('StowedArmor','armor','votive',5,false),equipment('RitualArmor','armor','votive',3)]};
  assert.deepEqual(itemUseBonuses(actor,{castingType:'vitner'}).map(row=>row.item.name),['Staff','Focus','Orb']);
- assert.deepEqual(itemUseBonuses(actor,{castingType:'divine'}).map(row=>row.item.name),['Votive','Sword']);
+ assert.deepEqual(itemUseBonuses(actor,{castingType:'divine'}).map(row=>row.item.name),['Votive','Sword','RitualArmor']);
  assert.deepEqual(itemUseBonuses(actor).map(row=>row.item.name),['Tool']);
- class Base{static wait(config){return config.buttons[0].callback({},null,{element:{querySelector:()=>({checked:true})}});}}
+ class Base{static wait(config){return config.buttons[0].callback({},null,{element:{querySelector:()=>null}});}}
  for(const [castingType,bonus] of [['vitner',6],['divine',5]]){
   const Dialog=blessingDialog(Base,actor,'magic',{castingType});
   const result=await Dialog.wait({buttons:[{action:'roll',callback:()=>({target:10})}]});
   assert.equal(result.target,10+bonus);assert.equal(result.blessing.value,bonus);
  }
  actor.items[0].system.quantity=0;assert.equal(itemUseBonuses(actor,{castingType:'vitner'}).length,2);
+ const Dialog=blessingDialog(Base,actor,'magic',{castingType:'divine'});
+ actor.items.find(item=>item.name==='Sword').system.equipped=false;
+ assert.equal((await Dialog.wait({buttons:[{action:'roll',callback:()=>({target:10})}]})).target,12);
 });

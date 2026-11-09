@@ -50,6 +50,7 @@ export const WEAPON_QUALIFICATIONS = {
   Glaaf: ["steel", "slashing"], HringSeax: ["steel", "slashing"], Klubb: ["wood", "bludgeoning"],
   KrumSwerd: ["steel", "slashing"], LillSpjot: ["steel", "piercing"], NagliKlubb: ["steel", "piercing"],
   Seax: ["steel", "piercing"], SplitAxi: ["steel", "slashing"], Stafur: ["wood", "bludgeoning"],
+  Blodstor: ["wood", "bludgeoning"], VitnerStafur: ["wood", "bludgeoning"],
   BardaFaldir: ["steel", "bludgeoning"], BardaHammri: ["steel", "bludgeoning"], BardaKlot: ["steel", "bludgeoning"],
   BardaMakir: ["steel", "bludgeoning"], BardaSwerd: ["steel", "slashing"], BastjurKedja: ["steel", "bludgeoning"],
   BattleAxe: ["steel", "slashing"], BeardedAxe: ["steel", "slashing"], Broadsword: ["steel", "slashing"],

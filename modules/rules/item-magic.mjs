@@ -73,10 +73,11 @@ export function intrinsicItemSheetUpdate(update,state=[]){
 }
 export function itemUseBonuses(actor,{castingType}={}){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
+ if(castingType&&['weapon','armor','shield'].includes(item.type)&&!item.system?.equipped)return [];
  const quality=itemQuality(item.system?.quality),qualityEffect=itemMagicEffects(item).find(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(row=>row.key==='system.quality'));
  const special=item.system?.specialUse??'none';
- const eligible=castingType?['weapon','gear'].includes(item.type)&&special===(castingType==='divine'?'votive':'vitner'):['gear','potion'].includes(item.type)&&special==='none';
- const qualityRows=eligible&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id}]:[];
+ const eligible=castingType?['weapon','gear','armor','shield'].includes(item.type)&&special===(castingType==='divine'?'votive':'vitner'):['gear','potion'].includes(item.type)&&special==='none';
+ const qualityRows=eligible&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id,automatic:Boolean(castingType)}]:[];
  return [...qualityRows,...itemMagicEffects(item).flatMap(effect=>{
   const value=Number(rulesFromChanges(effect.system?.changes).objectUse)||0;
   return value?[{id:effect.uuid??`${item.id}:${effect.id}`,item,effect,value}]:[];

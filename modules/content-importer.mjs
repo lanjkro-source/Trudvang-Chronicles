@@ -41,7 +41,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // with the corrected Solvei/Sille healing family icons.
 // TEMPORARY WORLD MIGRATION — version 68 fills missing materials on recognized
 // starter armor copies, preserving explicit materials and all individual stats.
-const CONTENT_VERSION = 68;
+// TEMPORARY WORLD MIGRATION — version 69 installs the Blodstör, Vitner Stafur
+// and votive statuette in previously populated development worlds.
+const CONTENT_VERSION = 69;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

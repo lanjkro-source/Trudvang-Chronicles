@@ -1908,6 +1908,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Source.Bestiary127` | Jörgi’s Bestiary, p. 127 | Bestiaire de Jorge, p. 127 |
 | `TRUDVANG.Content.Source.Bestiary130` | Jörgi’s Bestiary, p. 130 | Bestiaire de Jorge, p. 130 |
 | `TRUDVANG.Content.Source.Bestiary142` | Jörgi’s Bestiary, p. 142 | Bestiaire de Jorge, p. 142 |
+| `TRUDVANG.Content.Source.RitualEquipment` | Game Master’s Guide, Quality: ritual equipment | Livre des règles, p. 106 : équipement rituel |
 
 ## `TRUDVANG.Content.ExtractType`
 
@@ -3314,6 +3315,27 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Item.Thirsty.Name` | Thirsty | Assoiffé |
 | `TRUDVANG.Content.Item.Thirsty.Description` | <p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p> | <p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p> |
+
+## `TRUDVANG.Content.Item.Blodstor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Blodstor.Name` | Blodstör | Blodstör |
+| `TRUDVANG.Content.Item.Blodstor.Description` | A consecrated Gerbanis sacrificial stake. Dimwalkers may carry it as a walking staff and use it as a votive during divine invocations. Its bonus depends on its quality. | Piquet sacrificiel consacré de Gerbanis. Les arpenteurs des brumes peuvent l’emporter comme bâton de marche et l’utiliser comme objet votif lors des invocations. Son bonus dépend de sa qualité. |
+
+## `TRUDVANG.Content.Item.VitnerStafur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.VitnerStafur.Name` | Vitner stafur | Vitner stafur |
+| `TRUDVANG.Content.Item.VitnerStafur.Description` | A light staff used as a focus by vitner weavers. Its quality determines the spell-weaving bonus it provides while equipped. | Bâton léger servant de focus aux tisseurs de vitner. Sa qualité détermine le bonus accordé au tissage des sortilèges lorsqu’il est équipé. |
+
+## `TRUDVANG.Content.Item.VotiveStatuette`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.VotiveStatuette.Name` | Votive statuette | Statuette votive |
+| `TRUDVANG.Content.Item.VotiveStatuette.Description` | A small statuette used as a votive for divine invocations. Its bonus depends on its quality. | Petite statuette servant d’objet votif pour les invocations divines. Son bonus dépend de sa qualité. |
 
 ## `TRUDVANG.Content.Table.HeadRegeneration`
 
@@ -16091,7 +16113,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Quality.Masterful` | Masterful | Magistrale |
 | `TRUDVANG.Quality.Legendary` | Legendary | Légendaire |
 | `TRUDVANG.Quality.SpecialLabel` | Special | Spécial |
-| `TRUDVANG.Quality.RitualHint` | Select the items being used. Only Masterful and Legendary quality bonuses can stack, up to +6 in total. | Sélectionnez les objets utilisés. Seules les qualités Magistrale et Légendaire permettent de cumuler les bonus de qualité, jusqu’à +6 au total. |
 
 ## `TRUDVANG.Quality.Special`
 
