@@ -95,19 +95,19 @@ test('local armor penalties appear in resolution and protection never goes below
  assert.equal(itemProtectionModifiers(f.item)[0].amount,-2);
  f.item.type='weapon';assert.equal(resolveEquipment({item:f.item}).characteristics.protection.value,3);
  f.item.system.breach.value=0;assert.equal(resolveEquipment({item:f.item}).characteristics.protection.value,0);
- f.item.system.breach.value=80;f.item._source={system:{breach:{value:50,max:80}}};
- assert.equal(intrinsicIntegrityValue(f.item,68),38);
+ f.item.system.breach.value=50;f.item._source={system:{breach:{value:50,max:80}}};
+ assert.equal(intrinsicIntegrityValue(f.item,38),38);
  const e=f.item.effects[0];e.system.changes=changesFromRules({objectUse:3});
  assert.equal(itemUseBonuses(f.actor)[0].value,3);f.item.system.quantity=0;assert.deepEqual(itemUseBonuses(f.actor),[]);
 });
 
-test('repeated real defensive hits never absorb a temporary integrity bonus into the intrinsic weapon',async()=>{
- const item={isOwner:true,type:'weapon',_source:{system:{breach:{value:50,max:80}}},system:{breach:{value:80,max:110}},effects:[],
-  async update(data){this._source.system.breach.value=data['system.breach.value'];this.system.breach.value=this._source.system.breach.value+30;}};
+test('ordinary defensive hits update intrinsic integrity when no effect grants temporary integrity',async()=>{
+ const item={isOwner:true,type:'weapon',_source:{system:{breach:{value:50,max:80}}},system:{breach:{value:50,max:80}},effects:[],
+  async update(data){this._source.system.breach.value=data['system.breach.value'];this.system.breach.value=this._source.system.breach.value;}};
  await applyDamageToDefenseItem({item,damage:20});
- assert.equal(item.system.breach.value,68);assert.equal(item._source.system.breach.value,38);
+ assert.equal(item.system.breach.value,35);assert.equal(item._source.system.breach.value,35);
  await applyDamageToDefenseItem({item,damage:20});
- assert.equal(item.system.breach.value,55);assert.equal(item._source.system.breach.value,25);
+ assert.equal(item.system.breach.value,19);assert.equal(item._source.system.breach.value,19);
  item.system.breach.value=item._source.system.breach.value;
- assert.equal(item.system.breach.value,25,'ending the enchantment reveals the damaged intrinsic balance, never an inflated balance');
+ assert.equal(item.system.breach.value,19);
 });

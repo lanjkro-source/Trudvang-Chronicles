@@ -10,12 +10,12 @@ let models;
 const applications=[];
 class CoreItem{
  constructor(source,parent){this._source=structuredClone(source);this.type=source.type;this.name=source.name;this.id='i';this.uuid='Actor.a.Item.i';this.documentName='Item';this.parent=parent;this.isOwner=true;this.effects=[];this.prepareData();}
- prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),id:'e'+i,uuid:this.uuid+'.ActiveEffect.e'+i,parent:this,active:false}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
+ prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),id:row._id??'e'+i,uuid:this.uuid+'.ActiveEffect.'+(row._id??'e'+i),parent:this,active:false}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
  prepareEmbeddedDocuments(){}
  prepareDerivedData(){}
  getFlag(){return null;}canUserModify(){return true;}
  async createEmbeddedDocuments(_,rows){this._source.effects??=[];this._source.effects.push(...structuredClone(rows));this.prepareData();return this.effects.slice(-rows.length);}
- async update(data){const merge=(target,changes)=>{for(const [key,value] of Object.entries(changes))if(value&&typeof value==='object'&&!Array.isArray(value))merge(target[key]??={},value);else target[key]=value;};merge(this._source,data);this.prepareData();}
+ async update(data){const merge=(target,changes)=>{for(const [key,value] of Object.entries(changes))if(key.includes('.'))set(target,key,value);else if(value&&typeof value==='object'&&!Array.isArray(value))merge(target[key]??={},value);else target[key]=value;};merge(this._source,data);this.prepareData();}
 }
 class CoreEffect{
  static applyChange(item,change,options){
@@ -41,6 +41,7 @@ const {applyTransformation}=await import('../modules/transformations.mjs');
 const {prepareDamageRoll}=await import('../modules/rules/damage-roll-resolver.mjs');
 const {prepareEquipmentInspection}=await import('../modules/equipment-inspection.mjs');
 const {blessingDialog}=await import('../modules/blessing-dialog.mjs');
+const {applyDamageToDefenseItem}=await import('../modules/damage-application.mjs');
 const actor={documentName:'Actor',type:'character',uuid:'Actor.a',name:'A',system:{effective:{traits:{}},traits:{},details:{},modifiers:{}},items:[],effects:[],isOwner:true,canUserModify:()=>true,getActiveTokens:()=>[]};
 const source=()=>({type:'weapon',name:'Épée',system:{description:'',source:'',category:'oneHandedLight',quantity:1,breach:{value:50,max:80},damage:'1d10',damageBonus:0,openRoll:10,weaponActions:3,combatPointBonus:1,hand:'weapon',strengthApplies:false,weight:1},effects:[]});
 
@@ -79,7 +80,7 @@ test('item-local preparation honors phase, priority and all scalar fields withou
  item._source.effects[0].duration={expired:true};item.prepareData();assert.equal(item.system.damageBonus,1);assert.equal(item.system.protection,5);
 });
 
-test('submitting current item fields preserves unchanged bonuses and translates integrity loss to the intrinsic value',async()=>{
+test('submitting current item fields preserves bonuses and spends temporary integrity before intrinsic integrity',async()=>{
  const item=new TrudvangItem(source(),actor);actor.items=[item];
  await applyTransformation(actor,'vitner-vitner-craft:enchant-object:2#effect',{destinationItem:item,skipDialog:true});
  const sheet=new TrudvangItemSheet({document:item});
@@ -89,11 +90,35 @@ test('submitting current item fields preserves unchanged bonuses and translates 
  assert.equal(item.system.breach.value,60);assert.equal(item._source.system.breach.value,50);assert.equal(item._source.system.damageBonus,0);
  await sheet._prepareContext({});
  await submit({'system.breach.value':55,'system.breach.max':95,'system.damageBonus':3});
- assert.deepEqual(item.system.breach,{value:55,max:95});assert.deepEqual(item._source.system.breach,{value:45,max:85});assert.equal(item.system.damageBonus,3);assert.equal(item._source.system.damageBonus,2);
+ assert.deepEqual(item.system.breach,{value:55,max:95});assert.deepEqual(item._source.system.breach,{value:50,max:85});assert.equal(item.system.damageBonus,3);assert.equal(item._source.system.damageBonus,2);
  await sheet._prepareContext({});await submit({'system.breach.value':55,'system.breach.max':95,'system.damageBonus':3});
- assert.deepEqual(item._source.system.breach,{value:45,max:85});assert.equal(item.system.damageBonus,3);
+ assert.deepEqual(item._source.system.breach,{value:50,max:85});assert.equal(item.system.damageBonus,3);
  item._source.effects=[];item.prepareData();
- assert.deepEqual(item.system.breach,{value:45,max:85});assert.equal(item.system.damageBonus,2);
+ assert.deepEqual(item.system.breach,{value:50,max:85});assert.equal(item.system.damageBonus,2);
+});
+
+test('temporary integrity absorbs defensive hits first, persists through reload and expires without restoring spent integrity',async()=>{
+ for(const losses of [[5],[12],[5,7]]){
+  let item=new TrudvangItem(source(),actor);actor.items=[item];
+  await applyTransformation(actor,'vitner-vitner-craft:enchant-object:2#effect',{destinationItem:item,skipDialog:true});
+  let lost=0;
+  for(const loss of losses){
+   await applyDamageToDefenseItem({item,damage:item.system.protection+loss});lost+=loss;
+   assert.equal(item.system.breach.value,60-lost);assert.equal(item._source.system.breach.value,50-Math.max(0,lost-10));
+   item=new TrudvangItem(item._source,actor);actor.items=[item];
+   assert.equal(item.system.breach.value,60-lost,'reloading never replenishes the temporary pool');
+  }
+  item._source.effects=[];item.prepareData();assert.equal(item.system.breach.value,50-Math.max(0,lost-10));
+ }
+});
+
+test('independent temporary integrity grants keep their own spending when another effect expires',async()=>{
+ const data=source();data.effects=['first','second'].map(_id=>({_id,name:_id,transfer:false,system:{changes:[{key:'system.breach.value',type:'add',value:'10',phase:'initial'},{key:'system.breach.max',type:'add',value:'10',phase:'initial'}]}}));
+ const item=new TrudvangItem(data,actor);assert.equal(item.system.breach.value,70);
+ await applyDamageToDefenseItem({item,damage:item.system.protection+12});assert.equal(item.system.breach.value,58);assert.equal(item._source.system.breach.value,50);
+ item._source.effects.shift();item.prepareData();assert.equal(item.system.breach.value,58,'only the unspent eight points of the second grant remain');
+ await applyDamageToDefenseItem({item,damage:item.system.protection+9});assert.equal(item.system.breach.value,49);assert.equal(item._source.system.breach.value,49);
+ item._source.effects=[];item.prepareData();assert.equal(item.system.breach.value,49);
 });
 
 test('known weapon use joins the ordinary modifier list without an icon or checkbox and updates the visible final VC',async t=>{

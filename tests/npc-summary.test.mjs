@@ -2552,8 +2552,8 @@ test("night rest posts a compact recovery message and keeps fear recovery separa
  Object.defineProperty(instance,"selectedReligion",{value:{id:"gerbanis"},configurable:true});
  await instance.restForNight();
  assert.equal(runtime.messages.length,2);assert.match(runtime.messages[0].content,/Eira/);assert.match(runtime.messages[0].content,/\+1 PS/);
- assert.match(runtime.messages[0].content,/2 → 8\/8/);assert.match(runtime.messages[0].content,/3 → 9\/9/);assert.match(runtime.messages[0].content,/−4/);
- assert.match(runtime.messages[1].content,/fear-recovery/);assert.equal(instance.system.resources.divinity.temporary,0);
+ assert.match(runtime.messages[0].content,/2 → 8\/8/);assert.match(runtime.messages[0].content,/3 → 9\/9/);assert.match(runtime.messages[0].content,/−1/);
+ assert.match(runtime.messages[1].content,/fear-recovery/);assert.equal(instance.system.resources.divinity.temporary,3);
 });
 
 test("night rest shows Thuuldom's unchanged divinity and posts nothing for non-owners",async t=>{
@@ -2565,6 +2565,25 @@ test("night rest shows Thuuldom's unchanged divinity and posts nothing for non-o
  Object.defineProperty(instance,"selectedReligion",{value:{id:"thuuldom"},configurable:true});
  await instance.restForNight();assert.equal(runtime.messages.length,1);assert.match(runtime.messages[0].content,/2 → 2\/7/);assert.match(runtime.messages[0].content,/non renouvelée/);
  instance.isOwner=false;await instance.restForNight();assert.equal(runtime.messages.length,1);
+});
+
+test("each night removes one temporary divinity point except for the Eald Tradition, never below zero",async t=>{
+ const runtime=mockActionRuntime(t);
+ for(const religion of ['gerbanis','tenetNid','haminges','thuuldom','toikalokke','ealdTradition']){
+  const instance=actor();instance.isOwner=true;instance.name=religion;instance.calmFear=async()=>null;
+  instance.system.healthRecovery={amount:1,days:1};instance.system.resources.body.current=10;instance.system.resources.body.max=10;
+  Object.assign(instance.system.resources.vitner,{value:0,max:4});Object.assign(instance.system.resources.divinity,{value:2,max:7,temporary:4});
+  instance._source.system.rest={healthRecoveryNights:0};
+  instance.update=async data=>{for(const [key,value] of Object.entries(data)){set(instance,key,value);set(instance._source,key,value);}};
+  Object.defineProperty(instance,'selectedReligion',{value:{id:religion},configurable:true});
+  for(let night=1;night<=5;night++){
+   await instance.restForNight();
+   assert.equal(instance.system.resources.divinity.temporary,religion==='ealdTradition'?4:Math.max(0,4-night),`${religion}, night ${night}`);
+   assert.equal(instance.system.resources.divinity.value,religion==='thuuldom'?2:7);
+   if(religion==='ealdTradition'||night===5)assert.doesNotMatch(runtime.messages.at(-1).content,/points de divinité temporaires/);
+   else assert.match(runtime.messages.at(-1).content,/−1 points de divinité temporaires/);
+  }
+ }
 });
 
 test("a matching target grants the conditional attack bonus to a multi-target roll",async t=>{

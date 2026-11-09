@@ -1766,12 +1766,13 @@ export class TrudvangActor extends BaseActor {
     const vitnerMax = Number(this.system.resources.vitner.max || 0);
     const divinityMax = Number(this.system.resources.divinity.max || 0);
     const isThuuldom = this.selectedReligion?.id === "thuuldom";
+    const temporaryDivinityLost = this.selectedReligion?.id === "ealdTradition" ? 0 : Math.min(1, Math.max(0, divinityTemporary));
     const healthRecovered = Math.min((canRecoverHealth ? Number(recovery.amount || 0) : 0) + Number(recovery.bonusDaily || 0), Math.max(0, bodyMax - bodyBefore));
     const updates = {
       "system.rest.healthRecoveryNights": canRecoverHealth ? 0 : recoveryNights,
       ...bodyHealthUpdate(this,Math.min(bodyMax,bodyBefore+healthRecovered)),
       "system.resources.vitner.value": vitnerMax,
-      "system.resources.divinity.temporary": 0
+      "system.resources.divinity.temporary": divinityTemporary - temporaryDivinityLost
     };
     if (bodyBefore <= 0 && bodyBefore + healthRecovered > 0) updates["system.survivalRounds"] = -1;
     if (!isThuuldom) updates["system.resources.divinity.value"] = divinityMax;
@@ -1780,7 +1781,7 @@ export class TrudvangActor extends BaseActor {
       actor: this.name, health: healthRecovered, vitnerBefore, vitnerAfter: vitnerMax, vitnerMax,
       divinityBefore, divinityAfter: isThuuldom ? divinityBefore : divinityMax, divinityMax,
       divinityNote: isThuuldom ? game.i18n.localize("TRUDVANG.Notification.RestUnchanged") : "",
-      temporary: divinityTemporary ? game.i18n.format("TRUDVANG.Notification.RestTemporary", {amount: divinityTemporary}) : ""
+      temporary: temporaryDivinityLost ? game.i18n.format("TRUDVANG.Notification.RestTemporary", {amount: temporaryDivinityLost}) : ""
     });
     await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}),
       content: `<p class="trudvang fear-recovery"><i class="fas fa-moon"></i> ${escapeHtml(restMessage)}</p>`});

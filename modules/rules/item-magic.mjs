@@ -9,6 +9,8 @@ export function preparedItemProtection(item){
 const localPath=/^system\.(?:damage|damageBonus|openRoll|combatPointBonus|weaponActions|initiativeModifier|movementModifier|passiveProtection|protection|weight|value|heft|material|breach\.(?:value|max)|range\.(?:short|long)|damageQualification\.[a-z]+)$/;
 const priorities={multiply:10,add:20,subtract:20,downgrade:30,upgrade:40,override:50};
 const preparations=new WeakMap();
+const integritySpentPath='flags.trudvang-chronicles.integritySpent';
+const integritySignature=effect=>JSON.stringify([effect.origin??'',effect._source?.duration?.start??effect.duration?.start??null,effect.flags?.['trudvang-chronicles']?.transformation?.castingId??'',Array.from(effect.system?.changes??[])]);
 const at=(object,path)=>path.split('.').reduce((value,key)=>value?.[key],object);
 const assign=(object,path,value)=>{const keys=path.split('.'),last=keys.pop();keys.reduce((target,key)=>target[key]??={},object)[last]=value;};
 /** Item-local effects do not participate in Actor#applyActiveEffects. Apply
@@ -32,19 +34,25 @@ export function prepareItemLocalEffects(item,phase){
  for(const change of rows){
   const before=at(item,change.key);
   foundry.documents.ActiveEffect.implementation.applyChange(item,change,{modifyTarget:true});
-  records.push({system:item.system,key:change.key,type:change.type,operand:Number(change.value),source:at(item._source,change.key),before,after:at(item,change.key)});
+  const integrityGrant=change.key==='system.breach.value'?Math.max(0,Number(at(item,change.key))-Number(before)):0;
+  const effectId=change.effect.id,signature=integritySignature(change.effect),stored=at(item._source,integritySpentPath)?.[effectId];
+  const alreadySpent=records.filter(row=>row.effectId===effectId).reduce((sum,row)=>sum+(row.integritySpent||0),0);
+  const integritySpent=integrityGrant&&stored?.signature===signature?Math.min(integrityGrant,Math.max(0,Number(stored.spent||0)-alreadySpent)):0;
+  if(integritySpent)assign(item,change.key,Number(at(item,change.key))-integritySpent);
+  records.push({system:item.system,key:change.key,type:change.type,operand:Number(change.value),source:at(item._source,change.key),before,after:at(item,change.key),effectId,signature,integrityGrant,integritySpent});
  }
 }
 /** Snapshot the values displayed by a sheet, so saving the full form does not
  * persist temporary bonuses, including fields the user did not change. */
 export function itemEffectEditState(item){
  const rows=preparations.get(item)??[];
- return [...new Set(rows.map(row=>row.key))].map(key=>({key,source:at(item._source,key),displayed:at(item,key),changes:rows.filter(row=>row.key===key).map(row=>({...row}))}));
+ return [...new Set(rows.map(row=>row.key))].map(key=>({key,source:at(item._source,key),displayed:at(item,key),changes:rows.filter(row=>row.key===key).map(row=>({...row})),...(key==='system.breach.value'?{integrity:itemIntegrityState(item)}:{})}));
 }
 export function intrinsicItemSheetUpdate(update,state=[]){
- for(const {key,source,displayed,changes} of state){
+ for(const {key,source,displayed,changes,integrity} of state){
   const submitted=at(update,key);if(submitted===undefined)continue;
   if(String(submitted)===String(displayed)){assign(update,key,source);continue;}
+  if(integrity){for(const [path,value] of Object.entries(integrityUpdate(integrity,submitted)))assign(update,path,value);continue;}
   let value=Number(submitted);
   if(Number.isFinite(value)&&typeof displayed==='number'&&typeof source==='number'){
    for(const row of [...changes].reverse()){
@@ -70,10 +78,28 @@ export function itemProtectionModifiers(item){
   return amount?[{id:`item-magic:${effect.id}`,target:'protection',operation:'add',phase:'effect',amount,source:{kind:'effect',id:effect.id,name:effect.name},explanationKey:'TRUDVANG.DamageRoll.ItemEffects'}]:[];
  });
 }
-/** Persist the intrinsic balance, without folding a prepared integrity bonus back
- * into the source on every hit. The effect remains the only owner of its bonus. */
+function itemIntegrityState(item){
+ const grants=new Map();
+ for(const row of preparations.get(item)??[])if(row.integrityGrant){
+  const grant=grants.get(row.effectId)??{id:row.effectId,signature:row.signature,maximum:0,spent:0};
+  grant.maximum+=row.integrityGrant;grant.spent+=row.integritySpent;grants.set(row.effectId,grant);
+ }
+ return {current:Number(item.system?.breach?.value)||0,source:Number(item._source?.system?.breach?.value??item.system?.breach?.value)||0,grants:[...grants.values()]};
+}
+function integrityUpdate(state,value){
+ const requested=Number(value);if(!Number.isFinite(requested))return {};
+ let loss=Math.max(0,state.current-requested);
+ const spent={};
+ for(const grant of state.grants){
+  const used=Math.min(loss,Math.max(0,grant.maximum-grant.spent));loss-=used;
+  spent[grant.id]={signature:grant.signature,spent:grant.spent+used};
+ }
+ return {'system.breach.value':state.source-loss+Math.max(0,requested-state.current),
+  ...(state.grants.length?{[integritySpentPath]:spent}:{})};
+}
+/** Temporary integrity absorbs losses first; persist its expenditure separately
+ * from the intrinsic balance so preparation and effect expiry cannot refill it. */
+export function itemIntegrityUpdate(item,effectiveValue){return integrityUpdate(itemIntegrityState(item),effectiveValue);}
 export function intrinsicIntegrityValue(item,effectiveValue){
- const prepared=Number(item?.system?.breach?.value)||0;
- const original=item?._source?.system?.breach?.value;
- return Number(effectiveValue)-(original==null?0:prepared-Number(original));
+ return itemIntegrityUpdate(item,effectiveValue)['system.breach.value'];
 }
