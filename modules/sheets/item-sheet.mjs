@@ -19,6 +19,7 @@ import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowl
 import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 import {customTabletPower,customTabletChild} from "../rules/custom-tablet.mjs";
+import {itemEffectEditState,intrinsicItemSheetUpdate,itemProtectionModifiers} from "../rules/item-magic.mjs";
 
 const isCustomTablet = item => item.type === "tablet" && !TABLET_BY_ID.has(item.system.catalogId || item.getFlag?.("trudvang-chronicles", "catalogId"));
 
@@ -97,11 +98,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.item = this.item;
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
-    // Detail fields edit intrinsic data. Prepared effect bonuses are shown in
-    // Modifiers and must never be written back by an ordinary sheet submission.
-    if(['weapon','shield','armor','gear'].includes(this.item.type)&&this.item._source?.system){
-      context.system=foundry.utils.deepClone(this.item._source.system);
-      if(context.system.breach)context.system.protection=Math.ceil(Math.max(0,Number(context.system.breach.value)||0)/10);
+    // Show the object's current values, without including bonuses to its bearer.
+    // Translate the edited values back to intrinsic data only when submitting.
+    this._itemEffectEditState=itemEffectEditState(this.item);
+    if(['weapon','shield','armor','gear','potion'].includes(this.item.type)){
+      context.system=this.item.system.toObject?.(false)??{...this.item.system};
+      context.system.protection=Math.max(0,Number(this.item.system.protection||0)+itemProtectionModifiers(this.item).reduce((sum,row)=>sum+row.amount,0));
     }
     context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
     context.damageQualificationsOpen = this.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;
@@ -320,7 +322,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onSubmit(event, form, formData) {
     if (!this.isEditable || !this.item.isOwner) return;
-    const updateData = foundry.utils.expandObject(formData.object);
+    const updateData = intrinsicItemSheetUpdate(foundry.utils.expandObject(formData.object),this._itemEffectEditState);
     const editedLevels = updateData.system?.powerLevels;
     if (editedLevels && !Array.isArray(editedLevels)) {
       updateData.system.powerLevels = Array.from(this.item.system.powerLevels ?? [], (level, index) => {

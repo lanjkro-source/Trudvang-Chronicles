@@ -5,7 +5,7 @@ import {itemUseBonuses} from './rules/item-magic.mjs';
 function conditionalChoices(actor,{item}={}){
  const blessing=nidBlessingBonus(actor);
  return [...(blessing?[{id:`nid:${blessing.effectId}`,selector:'[data-nid-blessing]',attribute:'data-nid-blessing',value:blessing.value,label:game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label})}]:[]),
-  ...itemUseBonuses(actor).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:Boolean(item),value:row.value,label:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
+  ...itemUseBonuses(actor).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:Boolean(item),value:row.value,label:item?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
 }
 /** Add the conditional choice to the existing dialog, without another prompt. */
 export function blessingDialog(Base,actor,mode='modifier',context={}){
@@ -29,13 +29,14 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
   _onRender(context,options){
    super._onRender(context,options);const root=this.element;if(!root?.querySelector||choices.some(row=>root.querySelector(row.selector)))return;
    const labels=choices.map(row=>{
-    const label=document.createElement('label');label.className=row.fixed?'conditional-modifier-applied':'checkbox';
-    label.innerHTML=`${row.fixed?`<i class="fas fa-circle-check" ${row.attribute} aria-hidden="true"></i>`:`<input type="checkbox" ${row.attribute}>`} ${escapeHtml(row.label)} (${row.value>0?'+':''}${row.value})`;
+    const label=document.createElement(row.fixed?'li':'label');if(!row.fixed)label.className='checkbox';
+    label.innerHTML=row.fixed?`<span ${row.attribute}>${escapeHtml(row.label)}</span><b>${row.value>0?'+':''}${row.value}</b>`:`<input type="checkbox" ${row.attribute}> ${escapeHtml(row.label)} (${row.value>0?'+':''}${row.value})`;
     return label;
    });
    const outputSelector='[data-final-target], [data-combat-final-target], [data-combat-target-final], [data-concentration-total], [data-fixed-attack-final], [data-fixed-attack-no-target-final], [data-open-modifier], [data-procedure-target], [data-animal-final]';
-   const section=activeConditionalModifierSection(root);if(!section)return;for(const label of labels)section.append(label);
-   const refresh=()=>{const activeSection=activeConditionalModifierSection(root);for(const label of labels)if(activeSection&&label.parentNode!==activeSection)activeSection.append(label);const selected=labels.map((label,index)=>({row:choices[index],checked:choices[index].fixed||label.querySelector('input')?.checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=selected.reduce((sum,entry)=>sum+entry.row.value,0);for(const output of root.querySelectorAll(outputSelector)){
+   const section=activeConditionalModifierSection(root);if(!section)return;
+   const destination=row=>row.fixed?(Array.from(root.querySelectorAll('[data-applied-item-modifiers]')).find(list=>!list.closest('[hidden]'))??section):activeConditionalModifierSection(root);
+   const refresh=()=>{for(const [index,label] of labels.entries()){const target=destination(choices[index]);if(target&&label.parentNode!==target)target.append(label);}const selected=labels.map((label,index)=>({row:choices[index],checked:choices[index].fixed||label.querySelector('input')?.checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=selected.reduce((sum,entry)=>sum+entry.row.value,0);for(const output of root.querySelectorAll(outputSelector)){
     let extra=output.nextElementSibling;if(!extra?.hasAttribute('data-nid-final')){extra=document.createElement('strong');extra.setAttribute('data-nid-final','');output.after(extra);}
     output.hidden=enabled;extra.hidden=!enabled;extra.textContent=String(Number(output.textContent)+value);
    }};

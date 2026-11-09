@@ -32,8 +32,31 @@ export function prepareItemLocalEffects(item,phase){
  for(const change of rows){
   const before=at(item,change.key);
   foundry.documents.ActiveEffect.implementation.applyChange(item,change,{modifyTarget:true});
-  records.push({system:item.system,key:change.key,source:at(item._source,change.key),before,after:at(item,change.key)});
+  records.push({system:item.system,key:change.key,type:change.type,operand:Number(change.value),source:at(item._source,change.key),before,after:at(item,change.key)});
  }
+}
+/** Snapshot the values displayed by a sheet, so saving the full form does not
+ * persist temporary bonuses, including fields the user did not change. */
+export function itemEffectEditState(item){
+ const rows=preparations.get(item)??[];
+ return [...new Set(rows.map(row=>row.key))].map(key=>({key,source:at(item._source,key),displayed:at(item,key),changes:rows.filter(row=>row.key===key).map(row=>({...row}))}));
+}
+export function intrinsicItemSheetUpdate(update,state=[]){
+ for(const {key,source,displayed,changes} of state){
+  const submitted=at(update,key);if(submitted===undefined)continue;
+  if(String(submitted)===String(displayed)){assign(update,key,source);continue;}
+  let value=Number(submitted);
+  if(Number.isFinite(value)&&typeof displayed==='number'&&typeof source==='number'){
+   for(const row of [...changes].reverse()){
+    if(row.type==='add')value-=row.operand;
+    else if(row.type==='subtract')value+=row.operand;
+    else if(row.type==='multiply'&&row.operand)value/=row.operand;
+    else value-=Number(row.after)-Number(row.before);
+   }
+   assign(update,key,value);
+  }
+ }
+ return update;
 }
 export function itemUseBonuses(actor){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>itemMagicEffects(item).flatMap(effect=>{
