@@ -374,6 +374,9 @@
       "DivinityCost": "Coût en points de divinité"
     },
     "Inspection": {
+      "ItemEffectsActive": "Caractéristiques modifiées — voir Modificateurs.",
+      "IntegrityCurrent": "VI actuelle",
+      "IntegrityMaximum": "VI maximale",
       "Object": "Objet",
       "ForWearer": "Pour {wearer}",
       "EffectiveValues": "Valeurs effectives",

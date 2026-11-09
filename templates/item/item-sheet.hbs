@@ -5,6 +5,7 @@
       <input class="actor-name" name="name" value="{{item.name}}">
       {{#if system.swedishName}}<p class="tablet-swedish-name" lang="sv">{{system.swedishName}}</p>{{/if}}
       <p class="item-type">{{#if (or isThuulRune isRunePower)}}{{localize "TRUDVANG.Tablet.ThuulRune"}}{{else if (eq item.type "tablet")}}{{localize (concat "TRUDVANG.Tablet." system.tabletType)}}{{else}}{{localize (concat "TYPES.Item." item.type)}}{{/if}}{{#if tabletReligion}} · {{tabletReligion}}{{/if}}</p>
+      {{#if equipmentInspection.modified}}<p class="item-modifier-indicator"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> {{localize "TRUDVANG.Inspection.ItemEffectsActive"}}</p>{{/if}}
     </div>
     <button type="button" data-action="roll" class="initiative-button" {{#if (and isMagicPower (not canLaunchMagic))}}disabled{{/if}} title="{{magicLaunchHint}}"><i class="fas fa-dice-d20"></i><span>{{localize "TRUDVANG.Action.Use"}}</span></button>
 

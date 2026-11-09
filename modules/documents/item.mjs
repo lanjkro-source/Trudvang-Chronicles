@@ -4,10 +4,23 @@ import {annotateRuleTestDescription} from "../rule-tests.mjs";
 import {SURPRISED_ITEM, applySurprised} from "../combat-effects.mjs";
 import {GRADED_EFFECT_IDS} from "../rules/effect-stacking.mjs";
 import {applyGradedEffect} from "../graded-effects.mjs";
+import {prepareItemLocalEffects} from '../rules/item-magic.mjs';
 
 const BaseItem = foundry.documents.Item;
 
 export class TrudvangItem extends BaseItem {
+  prepareEmbeddedDocuments() {
+    super.prepareEmbeddedDocuments();
+    // The system model derives VP after embedded preparation, before the
+    // document's prepareDerivedData hook. VI bonuses must already exist then.
+    prepareItemLocalEffects(this,'initial');
+  }
+
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    prepareItemLocalEffects(this,'final');
+  }
+
   async roll() {
     if (this.type === "effect") {
       const {applyTransformation} = await import("../transformations.mjs");

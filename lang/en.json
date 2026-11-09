@@ -374,6 +374,9 @@
       "DivinityCost": "Divinity Point Cost"
     },
     "Inspection": {
+      "ItemEffectsActive": "Modified characteristics — see Modifiers.",
+      "IntegrityCurrent": "Current Integrity",
+      "IntegrityMaximum": "Maximum Integrity",
       "Object": "Item",
       "ForWearer": "For {wearer}",
       "EffectiveValues": "Effective values",

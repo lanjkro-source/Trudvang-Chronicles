@@ -1,7 +1,7 @@
 import { isThrowingWeapon, isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 import {blessedWeaponEffects} from "./blessed-weapon.mjs";
 import {blessedArmorEffects} from "./blessed-armor.mjs";
-import {itemProtectionModifiers} from './item-magic.mjs';
+import {itemProtectionModifiers,preparedItemProtection} from './item-magic.mjs';
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -50,7 +50,7 @@ function specialtyItem(actor, catalogId) {
 }
 
 function itemProtection(item) {
-  return Math.ceil(Math.max(0, finiteNumber(item?.system?.breach?.value, 0)) / 10);
+  return preparedItemProtection(item);
 }
 
 function sourceSnapshot(source = {}) {

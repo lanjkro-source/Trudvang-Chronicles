@@ -452,6 +452,7 @@ export class WeaponData extends BaseItemData {
   }
 
   prepareDerivedData() {
+    super.prepareDerivedData();
     if (this.category !== "natural") return;
     const profile = naturalWeaponQualification(this.parent?.name);
     if (!this.material) this.material = profile?.material ?? "natural";

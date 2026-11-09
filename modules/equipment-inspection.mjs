@@ -4,6 +4,8 @@ import { resolveCombatPools } from "./rules/combat-pool-resolver.mjs";
 import {effectContributions} from "./rules/effect-contributions.mjs";
 import {npcMovementRows} from "./rules/npc-summary.mjs";
 import {conditionalProtectionProfiles} from "./rules/conditional-protection.mjs";
+import {itemMagicEffects} from './rules/item-magic.mjs';
+import {rulesFromChanges} from './rules/effect-rule-changes.mjs';
 
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
@@ -38,6 +40,7 @@ function effectChangeDisplay(change) {
   const value = number(change.value);
   const type = change.type ?? change.mode;
   if (type === "add" || Number(type) === 2) return signed(value);
+  if (type === "subtract") return signed(-value);
   if (type === "multiply" || Number(type) === 1) return `× ${value}`;
   return `= ${change.value}`;
 }
@@ -49,6 +52,7 @@ function changeTone(value) {
 
 function effectChangeTone(change) {
   const type = change.type ?? change.mode;
+  if(type==='subtract')return changeTone(-number(change.value));
   return (type === "add" || Number(type) === 2) ? changeTone(change.value) : "neutral";
 }
 
@@ -109,9 +113,25 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
   if (!item || !["weapon", "armor", "shield", "gear"].includes(item.type)) return null;
   const hand = item.system?.hand === "offHand" ? "offHand" : item.type === "shield" ? "shield" : "weapon";
   const resolution = resolveEquipment({item, actor, context: {hand}});
+  const original=item._source?.system;
+  const intrinsic=original?resolveEquipment({item:{type:item.type,system:original,flags:item.flags},context:{hand}}):null;
+  const paths={weight:['weight'],weaponActions:['weaponActions'],damage:['damage','damageBonus','openRoll'],combatPointBonus:['combatPointBonus'],initiativeModifier:['initiativeModifier'],protection:['breach.value','protection'],passiveProtection:['passiveProtection'],heft:['heft'],movementModifier:['movementModifier'],throwingRange:['range.short','range.long']};
+  const localEffects=itemMagicEffects(item).filter(effect=>!effect.transfer);
+  const localLabels={'breach.value':'TRUDVANG.Inspection.IntegrityCurrent','breach.max':'TRUDVANG.Inspection.IntegrityMaximum',damage:'TRUDVANG.Field.Damage',damageBonus:'TRUDVANG.Field.Damage',openRoll:'TRUDVANG.Field.OpenRoll'};
+  const localSteps=keys=>localEffects.flatMap(effect=>Array.from(effect.system?.changes??[]).filter(change=>keys.includes(change.key.replace(/^system\./,''))).map(change=>{
+    const path=change.key.replace(/^system\./,''),labelKey=localLabels[path]??STAT_LABELS[Object.entries(paths).find(([,fields])=>fields.includes(path))?.[0]];
+    const numeric=(change.type==='subtract'?-1:1)*number(change.value);
+    return {label:effect.name,value:`${labelKey?localized(labelKey)+' : ':''}${effectChangeDisplay(change)}`,tone:path==='openRoll'?changeTone(-numeric):effectChangeTone(change),explanation:localized('TRUDVANG.DamageRoll.ItemEffects')};
+  }));
   const stats = Object.entries(resolution.characteristics).map(([key, value]) => {
     const display = statDisplays(key, value);
-    const steps = statSteps(key, value);
+    const base=intrinsic?.characteristics[key];
+    if(base){
+      display.base=statDisplays(key,base).base;display.modified=display.base!==display.effective;
+      if(display.modified&&key==='damage')display.tone=changeTone(number(value.modifier.value)-number(base.modifier.base)+number(base.openRoll.base)-number(value.openRoll.value));
+      else if(display.modified&&key!=='throwingRange')display.tone=changeTone(number(value.value)-number(base.base));
+    }
+    const steps = [...localSteps(paths[key]??[]),...statSteps(key, value)];
     return {
       key,
       label: localized(STAT_LABELS[key] || key),
@@ -123,6 +143,11 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
       steps
     };
   });
+  if(item.system?.breach){
+    const before=original?.breach??item.system.breach,current=item.system.breach;
+    const baseDisplay=`${number(before.value)}/${number(before.max)}`,effectiveDisplay=`${number(current.value)}/${number(current.max)}`;
+    stats.push({key:'integrity',label:localized('TRUDVANG.Field.VpIntegrityLabel'),baseDisplay,effectiveDisplay,comparison:baseDisplay===effectiveDisplay?effectiveDisplay:`${baseDisplay} → ${effectiveDisplay}`,modified:baseDisplay!==effectiveDisplay,tone:changeTone(number(current.value)-number(before.value)),steps:localSteps(['breach.value','breach.max'])});
+  }
   const impacts = Object.entries(resolution.wearerImpacts).filter(([, impact]) => impact).map(([key, impact]) => {
     const mode = impact.conditional ? "conditional" : impact.applies ? "permanent" : "inactive";
     return {
@@ -143,6 +168,10 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
     tone: changes.map(effectChangeTone).find(tone => tone !== "neutral") || "neutral",
     modeLabel: localized(`TRUDVANG.Inspection.Mode.${effect.isSuppressed ? "inactive" : "permanent"}`)
   }; });
+  for(const effect of localEffects){
+    const value=number(rulesFromChanges(effect.system?.changes).objectUse);
+    if(value)impacts.push({key:'objectUse',label:localized('TRUDVANG.Transformation.UseEnchantedItem',{item:item.name,effect:effect.name}),value:signed(value),mode:'conditional',tone:changeTone(value),modeLabel:localized('TRUDVANG.Inspection.Mode.conditional')});
+  }
   return {
     itemId: item.id,
     itemName: item.name,
@@ -150,7 +179,7 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
     stats,
     impacts,
     effects,
-    modified: stats.some(stat => stat.modified),
+    modified: stats.some(stat => stat.modified)||localEffects.length>0,
     shortTitle: stats.filter(stat => ["weaponActions", "combatPointBonus", "damage", "heft", "protection", "weight"].includes(stat.key))
       .slice(0, 3).map(stat => `${stat.label}: ${stat.effectiveDisplay}`).join(" · ")
   };

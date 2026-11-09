@@ -10,11 +10,11 @@ import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {resolveArmorProfile} from "./rules/equipment-resolver.mjs";
 import {damageQualification, qualifyDamage} from "./rules/damage-qualifications.mjs";
 import {blessedArmorEffects} from "./rules/blessed-armor.mjs";
-import {intrinsicIntegrityValue,itemProtectionModifiers} from './rules/item-magic.mjs';
+import {intrinsicIntegrityValue,itemProtectionModifiers,preparedItemProtection} from './rules/item-magic.mjs';
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
-const protection = item => item?.type === "armor" ? resolveArmorProfile({item}).protection.value : Math.max(0,Math.ceil(Math.max(0, integrity(item)) / 10)+itemProtectionModifiers(item).reduce((sum,row)=>sum+row.amount,0));
+const protection = item => item?.type === "armor" ? resolveArmorProfile({item}).protection.value : Math.max(0,preparedItemProtection(item)+itemProtectionModifiers(item).reduce((sum,row)=>sum+row.amount,0));
 
 // System clarification: the breaking hit can make integrity negative; later hits cannot lower it further.
 function damageIntegrity(item, loss) {

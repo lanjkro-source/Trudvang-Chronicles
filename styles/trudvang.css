@@ -1266,3 +1266,6 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang.damage .damage-alternatives button { flex: 0 1 auto; width: auto; min-height: 0; height: auto; padding: .1rem .2rem; border: 0; background: transparent; color: var(--trudvang-accent); font: inherit; line-height: 1.3; }
 .trudvang.damage [data-damage-resistance] { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
 .trudvang.damage [data-damage-resistance-result] { color: var(--trudvang-ink); font-size: .9em; }
+
+.trudvang .conditional-modifier-applied { display: flex; align-items: center; gap: .35rem; color: var(--trudvang-on-header); font-weight: 600; }
+.trudvang-sheet .item-modifier-indicator { margin: 3px 4px; color: var(--trudvang-on-header); font-size: .8rem; }

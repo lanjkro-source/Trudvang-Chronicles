@@ -422,6 +422,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Inspection.ItemEffectsActive` | Modified characteristics — see Modifiers. | Caractéristiques modifiées — voir Modificateurs. |
+| `TRUDVANG.Inspection.IntegrityCurrent` | Current Integrity | VI actuelle |
+| `TRUDVANG.Inspection.IntegrityMaximum` | Maximum Integrity | VI maximale |
 | `TRUDVANG.Inspection.Object` | Item | Objet |
 | `TRUDVANG.Inspection.ForWearer` | For {wearer} | Pour {wearer} |
 | `TRUDVANG.Inspection.EffectiveValues` | Effective values | Valeurs effectives |

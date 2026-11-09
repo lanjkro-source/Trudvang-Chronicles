@@ -97,6 +97,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.item = this.item;
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
+    // Detail fields edit intrinsic data. Prepared effect bonuses are shown in
+    // Modifiers and must never be written back by an ordinary sheet submission.
+    if(['weapon','shield','armor','gear'].includes(this.item.type)&&this.item._source?.system){
+      context.system=foundry.utils.deepClone(this.item._source.system);
+      if(context.system.breach)context.system.protection=Math.ceil(Math.max(0,Number(context.system.breach.value)||0)/10);
+    }
     context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
     context.damageQualificationsOpen = this.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;
     context.damageQualificationNote = this.item.system.damageQualificationNote;

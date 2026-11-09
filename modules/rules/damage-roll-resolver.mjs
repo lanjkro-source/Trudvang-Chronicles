@@ -11,7 +11,7 @@ export const signedDamage = value => finite(value) > 0 ? `+${finite(value)}` : `
  */
 function effectSources(document, keys) {
   const effects = document?.allApplicableEffects?.() ?? document?.effects ?? [];
-  return Array.from(effects).filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false)
+  return Array.from(effects).filter(effect => !effect.disabled && !effect.isSuppressed && !effect.duration?.expired && (effect.active !== false||(document?.documentName==='Item'&&!effect.transfer)))
     .flatMap(effect => Array.from(effect.system?.changes ?? []).filter(change => keys.includes(change.key)).map(change => {
       const type = change.type ?? change.mode;
       const value = type === "add" || type === 2 ? signedDamage(change.value)

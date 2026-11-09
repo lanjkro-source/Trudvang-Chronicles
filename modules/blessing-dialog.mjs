@@ -28,10 +28,14 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
   }
   _onRender(context,options){
    super._onRender(context,options);const root=this.element;if(!root?.querySelector||choices.some(row=>root.querySelector(row.selector)))return;
-   const labels=choices.map(row=>{const label=document.createElement('label');label.className='checkbox';label.innerHTML=`<input type="checkbox" ${row.attribute}${row.fixed?' checked disabled':''}> ${escapeHtml(row.label)} (${row.value>0?'+':''}${row.value})`;return label;});
+   const labels=choices.map(row=>{
+    const label=document.createElement('label');label.className=row.fixed?'conditional-modifier-applied':'checkbox';
+    label.innerHTML=`${row.fixed?`<i class="fas fa-circle-check" ${row.attribute} aria-hidden="true"></i>`:`<input type="checkbox" ${row.attribute}>`} ${escapeHtml(row.label)} (${row.value>0?'+':''}${row.value})`;
+    return label;
+   });
    const outputSelector='[data-final-target], [data-combat-final-target], [data-combat-target-final], [data-concentration-total], [data-fixed-attack-final], [data-fixed-attack-no-target-final], [data-open-modifier], [data-procedure-target], [data-animal-final]';
    const section=activeConditionalModifierSection(root);if(!section)return;for(const label of labels)section.append(label);
-   const refresh=()=>{const activeSection=activeConditionalModifierSection(root);for(const label of labels)if(activeSection&&label.parentNode!==activeSection)activeSection.append(label);const selected=labels.map((label,index)=>({row:choices[index],checked:label.querySelector('input').checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=selected.reduce((sum,entry)=>sum+entry.row.value,0);for(const output of root.querySelectorAll(outputSelector)){
+   const refresh=()=>{const activeSection=activeConditionalModifierSection(root);for(const label of labels)if(activeSection&&label.parentNode!==activeSection)activeSection.append(label);const selected=labels.map((label,index)=>({row:choices[index],checked:choices[index].fixed||label.querySelector('input')?.checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=selected.reduce((sum,entry)=>sum+entry.row.value,0);for(const output of root.querySelectorAll(outputSelector)){
     let extra=output.nextElementSibling;if(!extra?.hasAttribute('data-nid-final')){extra=document.createElement('strong');extra.setAttribute('data-nid-final','');output.after(extra);}
     output.hidden=enabled;extra.hidden=!enabled;extra.textContent=String(Number(output.textContent)+value);
    }};
