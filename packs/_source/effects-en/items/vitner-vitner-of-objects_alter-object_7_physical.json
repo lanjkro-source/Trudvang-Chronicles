@@ -1,0 +1,45 @@
+{
+  "_id": "P7VM20u0v1w2x3y4",
+  "_key": "!items!P7VM20u0v1w2x3y4",
+  "name": "Alter Object — other property",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#physical",
+    "description": "Changes the chosen physical property (softening, stiffening, etc.) without automatic PV or Integrity bonuses. The item returns to its original characteristics on expiration.",
+    "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "ALqhwgLgMhNiOjPk",
+      "_key": "!items.effects!P7VM20u0v1w2x3y4.ALqhwgLgMhNiOjPk",
+      "name": "Alter Object — other property",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Changes the chosen physical property (softening, stiffening, etc.) without automatic PV or Integrity bonuses. The item returns to its original characteristics on expiration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#physical",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#physical",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

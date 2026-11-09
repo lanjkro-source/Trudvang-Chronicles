@@ -1,0 +1,45 @@
+{
+  "_id": "P7VM20u0v1w2x3y4",
+  "_key": "!items!P7VM20u0v1w2x3y4",
+  "name": "Altération d’objet — autre propriété",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#physical",
+    "description": "Modifie la propriété physique choisie (ramollir, rigidifier, etc.), sans bonus automatique de VP ou de VI. L’objet reprend ses caractéristiques à l’expiration.",
+    "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 203
+    }
+  },
+  "effects": [
+    {
+      "_id": "ALqhwgLgMhNiOjPk",
+      "_key": "!items.effects!P7VM20u0v1w2x3y4.ALqhwgLgMhNiOjPk",
+      "name": "Altération d’objet — autre propriété",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Modifie la propriété physique choisie (ramollir, rigidifier, etc.), sans bonus automatique de VP ou de VI. L’objet reprend ses caractéristiques à l’expiration.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#physical",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#physical",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

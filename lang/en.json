@@ -1500,7 +1500,9 @@
         "ignoreFearThrough": "Ignore fear consequences through level",
         "damageDefenses": "Typed damage resistances and vulnerabilities",
         "damageQualification": "Item damage qualifiers",
-        "magicalProtection": "PV effective against damage requiring magical armor"
+        "magicalProtection": "PV effective against damage requiring magical armor",
+        "objectUse": "SV/Situation modifier when this item is used",
+        "itemProtection": "Protection Value modifier local to this item"
       },
       "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
       "InvalidProfileChange": "Invalid value for {path}. See the profile change examples.",
@@ -9439,7 +9441,7 @@
             "3": "Increase the duration by 1 day",
             "4": "Increase the range by 5 meters (contact is no longer necessary)",
             "5": "Increases the SV modifier by +1 when using the object",
-            "6": "Increase the weapon's damage by +1 and its Integrity Value by +10"
+            "6": "Increase weapon damage by +1, weapon/armor Protection Value by +1 and Integrity by +10"
           }
         },
         "vitner-vitner-craft:seal:5": {
@@ -14226,6 +14228,15 @@
           "SourcePage": "129",
           "Duration": "1 hour"
         },
+        "vitner-vitner-craft:enchant-object:2#effect": {
+          "Name": "Enchant Object",
+          "Summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+          "Description": "The enchanted item grants +2 to Skill and Situation rolls when used. A weapon gains +1 damage, a weapon or armor +1 PV, and the item +10 Integrity. These bonuses belong to this item, not to every action of its bearer.",
+          "SourceName": "Enchant Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "129",
+          "Duration": "6 rounds"
+        },
         "vitner-vitner-craft:anti-magic:3#effect": {
           "Name": "Anti Magic",
           "Summary": "The spell creates a film of protective vitner around the target.",
@@ -14811,6 +14822,24 @@
           "SourcePage": "143",
           "Duration": "1 hour"
         },
+        "vitner-witchcraft:curse-object:3#effect": {
+          "Name": "Curse Object",
+          "Summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
+          "Description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+          "SourceName": "Curse Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "5 rounds"
+        },
+        "vitner-witchcraft:curse-object:3#base": {
+          "Name": "Curse Object (additional target)",
+          "Summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
+          "Description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+          "SourceName": "Curse Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "143",
+          "Duration": "5 rounds"
+        },
         "vitner-witchcraft:amnesia:4#effect": {
           "Name": "Amnesia (vitner)",
           "Summary": "Lost memories and gradual recovery.",
@@ -15208,6 +15237,42 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "132",
           "Duration": "4 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#appearance": {
+          "Name": "Alter Object — appearance",
+          "Summary": "The spell affects any object with a size equal to or smaller than a large box.",
+          "Description": "The item takes the chosen appearance until the spell ends, then returns to its original appearance. This variant changes neither damage, PV nor Integrity. Record the chosen form; the GM handles its representation.",
+          "SourceName": "Alter Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#properties": {
+          "Name": "Alter Object — reinforcement",
+          "Summary": "The spell affects any object with a size equal to or smaller than a large box.",
+          "Description": "The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged.",
+          "SourceName": "Alter Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#physical": {
+          "Name": "Alter Object — other property",
+          "Summary": "The spell affects any object with a size equal to or smaller than a large box.",
+          "Description": "Changes the chosen physical property (softening, stiffening, etc.) without automatic PV or Integrity bonuses. The item returns to its original characteristics on expiration.",
+          "SourceName": "Alter Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#combined": {
+          "Name": "Alter Object — appearance and reinforcement",
+          "Summary": "The spell affects any object with a size equal to or smaller than a large box.",
+          "Description": "The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged.",
+          "SourceName": "Alter Object",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "132",
+          "Duration": "5 minutes"
         },
         "vitner-vitner-of-objects:create-object:8#effect": {
           "Name": "Create Object",
@@ -17693,6 +17758,24 @@
           "SourcePage": "123",
           "Duration": "1 hour"
         },
+        "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect": {
+          "Name": "Curse Object (Sonntag)",
+          "Summary": "Curses an object to greatly reduce its effectiveness or render it faulty.",
+          "Description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+          "SourceName": "Curse Object",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 rounds"
+        },
+        "holy-joaringfaith-curses-of-sonntag:curse-object:3#base": {
+          "Name": "Curse Object (additional target) (Sonntag)",
+          "Summary": "Curses an object to greatly reduce its effectiveness or render it faulty.",
+          "Description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+          "SourceName": "Curse Object",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 rounds"
+        },
         "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
           "Name": "Amnesia (curse)",
           "Summary": "Lost memories and gradual recovery.",
@@ -18068,7 +18151,12 @@
       "FeverResistance": "Constitution resistance",
       "FrostResistance": "Resistance to fleeing",
       "FrostRadius": "Effective radius: {value} m",
-      "FrostDamage": "Cold damage per round: {value}"
+      "FrostDamage": "Cold damage per round: {value}",
+      "ItemTargetRequired": "Drop this effect on the relevant item in its inventory or sheet.",
+      "UseEnchantedItem": "Uses {item} — {effect}",
+      "ItemMagicValues": "{item}: SV/Situation {use} when used; damage {damage}; PV {protection}; Integrity {integrity}.",
+      "ItemAlterationChoice": "Chosen appearance or physical property",
+      "CombinedAlterationRequired": "Purchase the improvement allowing appearance and characteristics to change together."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

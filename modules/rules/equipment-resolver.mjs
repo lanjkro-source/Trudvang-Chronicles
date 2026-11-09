@@ -1,6 +1,7 @@
 import { isThrowingWeapon, isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 import {blessedWeaponEffects} from "./blessed-weapon.mjs";
 import {blessedArmorEffects} from "./blessed-armor.mjs";
+import {itemProtectionModifiers} from './item-magic.mjs';
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -427,7 +428,7 @@ export function resolveArmorProfile({item, actor = null, modifiers = []} = {}) {
     initiativeModifier: resolveNumericEquipmentStat({key: "initiativeModifier", base: baseInitiative, modifiers: initiativeModifiers, integer: true}),
     movementModifier: resolveNumericEquipmentStat({key: "movementModifier", base: baseMovement, modifiers: movementModifiers, integer: true}),
     combatActionModifier: resolveNumericEquipmentStat({key: "combatActionModifier", base: 0, modifiers: overload > 0 ? [{id: "armor-overload-actions", target: "combatActionModifier", operation: "subtract", amount: overload * 2, phase: "wearer", source: {kind: "specialty", id: "armorBearer", uuid: armorBearer?.uuid || "", name: armorBearer?.name || "", level: armorBearerLevel}, explanationKey: "TRUDVANG.Calculation.Equipment.ArmorOverload", explanationData: {heft: heft.value, level: armorBearerLevel, amount: -(overload * 2)}, rule: {book: "coreRules", printedPage: 119, englishBook: "gameMastersGuide", englishPrintedPage: 79}}] : [], maximum: 0, integer: true}),
-    protection: resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers: [...blessedArmorEffects(item).map(({effect,normal},index)=>({id:`armor-blessing-${index}`,target:"protection",operation:"add",phase:"effect",amount:normal,source:{kind:"effect",id:effect.id,name:effect.name},explanationKey:"TRUDVANG.Calculation.Equipment.ArmorBlessing",explanationData:{amount:normal}})),...modifiers], minimum: 0, integer: true})
+    protection: resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers: [...itemProtectionModifiers(item),...blessedArmorEffects(item).map(({effect,normal},index)=>({id:`armor-blessing-${index}`,target:"protection",operation:"add",phase:"effect",amount:normal,source:{kind:"effect",id:effect.id,name:effect.name},explanationKey:"TRUDVANG.Calculation.Equipment.ArmorBlessing",explanationData:{amount:normal}})),...modifiers], minimum: 0, integer: true})
   };
 }
 
@@ -445,7 +446,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
     characteristics.combatActionModifier = resolveCombatActionModifier({item, actor, context, modifiers});
     characteristics.combatPointBonus = resolveNumericEquipmentStat({key: "combatPointBonus", base: item?.system?.combatPointBonus, modifiers, integer: true});
     characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
-    characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
+    characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers:[...itemProtectionModifiers(item),...modifiers], minimum: 0, integer: true});
     if (item.system?.isThrowingWeapon) characteristics.throwingRange = resolveWeaponRange({item, actor, modifiers});
     if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});
   }

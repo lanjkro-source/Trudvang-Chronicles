@@ -9,11 +9,11 @@ export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegr
   "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "ignoreFearPenalty", "ignoreFearGain", "ignoreFearThrough", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection"];
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection","objectUse","itemProtection"];
 const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds","damageDefenses"]);
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge","damageQualification"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
-const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough","magicalProtection"]);
+const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough","magicalProtection","objectUse","itemProtection"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){
  if(!row.key?.startsWith(EFFECT_RULE_PREFIX))return true;

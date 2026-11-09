@@ -4,13 +4,13 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 332 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 336 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
 | Art du vitner | Bourse de vitner | sortilège | `vitner-vitner-craft:vitner-pouch:1` | 6 | 1 | 1 | — | — |
 | Art du vitner | Canalisation | sortilège | `vitner-vitner-craft:channeling:0` | 6 | 0 | 0 | — | — |
-| Art du vitner | Enchantement d’objet | sortilège | `vitner-vitner-craft:enchant-object:2` | 7 | 0 | 0 | — | — |
+| Art du vitner | Enchantement d’objet | sortilège | `vitner-vitner-craft:enchant-object:2` | 7 | 0 | 1 | — | — |
 | Art du vitner | Antimagie | sortilège | `vitner-vitner-craft:anti-magic:3` | 6 | 1 | 1 | — | — |
 | Art du vitner | Enchantement de créature | sortilège | `vitner-vitner-craft:enchant-being:4` | 6 | 0 | 1 | — | — |
 | Art du vitner | Dissipation du vitner | sortilège | `vitner-vitner-craft:dispel-vitner:6` | 2 | 1 | 0 | — | — |
@@ -93,7 +93,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Sorcellerie | Déracinement | sortilège | `vitner-witchcraft:uprooted-tree:0` | 4 | 1 | 1 | — | — |
 | Sorcellerie | Mal imaginaire | sortilège | `vitner-witchcraft:phantom-plague:1` | 3 | 1 | 1 | — | — |
 | Sorcellerie | Fièvre | sortilège | `vitner-witchcraft:fever:2` | 6 | 1 | 1 | oui | — |
-| Sorcellerie | Malédiction d’objet | sortilège | `vitner-witchcraft:curse-object:3` | 5 | 0 | 0 | — | — |
+| Sorcellerie | Malédiction d’objet | sortilège | `vitner-witchcraft:curse-object:3` | 5 | 0 | 2 | — | — |
 | Sorcellerie | Amnésie | sortilège | `vitner-witchcraft:amnesia:4` | 3 | 2 | 1 | — | — |
 | Sorcellerie | Malédiction de créature | sortilège | `vitner-witchcraft:curse-creature:5` | 5 | 0 | 1 | — | — |
 | Sorcellerie | Mauvaise récolte | sortilège | `vitner-witchcraft:bad-harvest:6` | 6 | 0 | 1 | — | — |
@@ -138,7 +138,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner des objets | Objet d’alarme | sortilège | `vitner-vitner-of-objects:alarm-object:4` | 7 | 1 | 1 | — | — |
 | Vitner des objets | Verrouillage/ déverrouillage | sortilège | `vitner-vitner-of-objects:unlock-lock:5` | 2 | 1 | 0 | — | — |
 | Vitner des objets | Agrandissement/ rapetissement d’objet | sortilège | `vitner-vitner-of-objects:enlarge-reduce-object:6` | 7 | 0 | 1 | — | — |
-| Vitner des objets | Altération d’objet | sortilège | `vitner-vitner-of-objects:alter-object:7` | 8 | 0 | 0 | — | — |
+| Vitner des objets | Altération d’objet | sortilège | `vitner-vitner-of-objects:alter-object:7` | 8 | 0 | 4 | — | — |
 | Vitner des objets | Création d’objet | sortilège | `vitner-vitner-of-objects:create-object:8` | 13 | 0 | 1 | — | — |
 | Chaleur de Solvei | Guérison | pouvoir | `holy-gerbanis-warmth-of-sunvei:healing:0` | 2 | 0 | 1 | — | — |
 | Chaleur de Solvei | Rayons du soleil | pouvoir | `holy-gerbanis-warmth-of-sunvei:sunray:1` | 1 | 0 | 1 | — | — |
@@ -431,7 +431,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Malédictions de Sonntag | Déracinement | pouvoir | `holy-joaringfaith-curses-of-sonntag:uprooted-tree:0` | 4 | 1 | 1 | — | — |
 | Malédictions de Sonntag | Mal imaginaire | pouvoir | `holy-joaringfaith-curses-of-sonntag:phantom-plague:1` | 3 | 1 | 1 | — | — |
 | Malédictions de Sonntag | Fièvre | pouvoir | `holy-joaringfaith-curses-of-sonntag:fever:2` | 6 | 1 | 1 | oui | — |
-| Malédictions de Sonntag | Malédiction d’objet | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-object:3` | 5 | 0 | 0 | — | — |
+| Malédictions de Sonntag | Malédiction d’objet | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-object:3` | 5 | 0 | 2 | — | — |
 | Malédictions de Sonntag | Amnésie | pouvoir | `holy-joaringfaith-curses-of-sonntag:amnesia:4` | 3 | 2 | 1 | — | — |
 | Malédictions de Sonntag | Malédiction de créature | pouvoir | `holy-joaringfaith-curses-of-sonntag:curse-creature:5` | 5 | 0 | 1 | — | — |
 | Malédictions de Sonntag | Mauvaise récolte | pouvoir | `holy-joaringfaith-curses-of-sonntag:bad-harvest:6` | 6 | 0 | 1 | — | — |

@@ -10,10 +10,11 @@ import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {resolveArmorProfile} from "./rules/equipment-resolver.mjs";
 import {damageQualification, qualifyDamage} from "./rules/damage-qualifications.mjs";
 import {blessedArmorEffects} from "./rules/blessed-armor.mjs";
+import {intrinsicIntegrityValue,itemProtectionModifiers} from './rules/item-magic.mjs';
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
-const protection = item => item?.type === "armor" ? resolveArmorProfile({item}).protection.value : Math.ceil(Math.max(0, integrity(item)) / 10);
+const protection = item => item?.type === "armor" ? resolveArmorProfile({item}).protection.value : Math.max(0,Math.ceil(Math.max(0, integrity(item)) / 10)+itemProtectionModifiers(item).reduce((sum,row)=>sum+row.amount,0));
 
 // System clarification: the breaking hit can make integrity negative; later hits cannot lower it further.
 function damageIntegrity(item, loss) {
@@ -105,7 +106,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   result.resistances=resistance.applied;
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
-    .map(entry => ({_id: entry.item.id, "system.breach.value": entry.integrity}));
+    .map(entry => ({_id: entry.item.id, "system.breach.value": intrinsicIntegrityValue(entry.item,entry.integrity)}));
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   const bodyResistance = qualifyDamage(result.bodyDamage, qualified, rules.filter(rule => rule.stage !== "beforeArmor"));
   result.resistances.push(...bodyResistance.applied);
@@ -140,6 +141,6 @@ export async function applyDamageToDefenseItem({item, damage} = {}) {
   if (!item?.isOwner) return null;
   const amount = Math.max(0, Math.trunc(number(damage)));
   const result = damageIntegrity(item, Math.max(0, amount - protection(item)));
-  if (result.integrityLoss) await item.update({"system.breach.value": result.integrity});
+  if (result.integrityLoss) await item.update({"system.breach.value": intrinsicIntegrityValue(item,result.integrity)});
   return result;
 }

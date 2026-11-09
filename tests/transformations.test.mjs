@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,347);
+ assert.equal(Object.keys(sources).length,351);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -812,7 +812,7 @@ test("effect improvements change their base fields, including inverse traits, at
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
- for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.weaponDamage&&!t.armorBlessing&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
+ for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.itemOnly&&!t.weaponDamage&&!t.armorBlessing&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
   assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,19,key);
   assert.doesNotMatch(dialog.content,/name="boost\d+"[^>]*\bmax=/,key);
@@ -984,7 +984,7 @@ test("copying already resolved effects preserves improvements, duration and roll
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){
    const rules=rulesFromChanges(t.changes);
-   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter||t.weaponDamage||t.armorBlessing)continue;
+   if(rules.chooseBestiary||rules.formName||rules.extraWeaponAction||rules.unarmedDamage||t.levelParameter||t.weaponDamage||t.armorBlessing||t.itemOnly)continue;
    if(!t.parameters.length&&!rules.vitality)continue;
    const counts=[];for(const p of t.parameters){counts[p.index]=2;covered.add(p.target);}
    await applyTransformation(actor,key,{counts});const first=structuredClone(created),beforeRolls=rolls;

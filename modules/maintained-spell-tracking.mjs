@@ -104,11 +104,12 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const template=TRANSFORMATION_TEMPLATES[effectKey];
   const instant=template?.sourceId===sourceId?template.instant:null;
-  const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===targetUuid);
+  const allocationTarget=itemUuid||targetUuid;
+  const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
   if(existing&&(instant||template?.onApply))return {status:"already-applied"};
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
-  const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==targetUuid).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
-  allocations.push({targetUuid,effectKey,countsById});
+  const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
+  allocations.push({targetUuid:allocationTarget,effectKey,countsById});
   const validation=validateMagicAllocations({targeting,selected,allocations,casterUuid});
   if(!validation.ok)return {status:validation.reason};
   const prior=structuredClone(record.targetAllocations??[]);

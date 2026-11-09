@@ -123,6 +123,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const delegated=!owned&&delegateTokenUuid&&message&&await canManageEffectTargets(message,game.user)&&effectTargetsFor(message,key).some(row=>row.tokenUuid===delegateTokenUuid&&row.actorUuid===actor?.uuid);
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
+ if(reference.itemOnly&&!['weapon','shield','armor','gear','potion'].includes(destinationItem?.type)){ui.notifications.warn(local("ItemTargetRequired"));return null;}
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
  if(reference.conditionalProtection&&destinationItem){ui.notifications.warn(local("ActorTargetRequired"));return null;}
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
@@ -190,8 +191,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    allocationRecord=Array.from(caster?.system?.activeSpellCastings??[]).find(row=>row.id===casting.castingId);
   }
   if(!allocationRecord)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
-  const others=Array.from(allocationRecord.targetAllocations??[]).filter(row=>row.targetUuid!==actor.uuid);
-  const own=Array.from(allocationRecord.targetAllocations??[]).find(row=>row.targetUuid===actor.uuid);
+  const allocationTarget=destinationItem?.uuid??actor.uuid;
+  const others=Array.from(allocationRecord.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget);
+  const own=Array.from(allocationRecord.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
   const chosen=Object.fromEntries(Array.from(allocationRecord.powerLevelSnapshot??[],row=>[row.id,Number(row.count)||0]));
   const already=Object.fromEntries(Array.from(own?.counts??[],row=>[row.optionId,Number(row.count)||0]));
   const options=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels??[];
@@ -221,7 +223,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   }
   fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
- const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>({value:String(i+1),label:String(i+1)}))});
@@ -239,6 +241,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const answers=preselectedAnswers??(skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
   await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro,resolvedCopy?[]:template.runeTiers?.map(t=>t.duration)));
  if(!answers||typeof answers!=="object"||(answers.action&&answers.action!=="apply"))return null;
+ if(Number.isInteger(template.requiredPowerOption)&&Number(answers[`boost${template.requiredPowerOption}`]??counts[template.requiredPowerOption]??0)<=0){ui.notifications.warn(local('CombinedAlterationRequired'));return null;}
  let runeLevel=metadata(supplied)?.runeLevel;
  if(!resolvedCopy&&template.runeTiers){
   runeLevel=Number(answers.runeLevel);
@@ -273,6 +276,21 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const duration=template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
+ let itemValues;
+ if(!resolvedCopy&&template.itemEnchantment){
+  const p=template.itemEnchantment,extra=p.statsIndex===undefined?0:Math.max(0,Number(answers[`boost${p.statsIndex}`]??counts[p.statsIndex])||0);
+  const use=Number(p.use??0)+(p.useIndex===undefined?0:Math.max(0,Number(answers[`boost${p.useIndex}`]??counts[p.useIndex])||0));
+  const damage=['weapon','shield'].includes(destinationItem.type)?Number(p.damage??0)*(1+extra):0;
+  const protection=(p.protectionTypes??[]).includes(destinationItem.type)?Number(p.protection??0)*(1+extra):0;
+  const integrity=destinationItem.system?.breach?Number(p.integrity??0)*(1+extra):0;
+  if(use)rules.objectUse=use;else delete rules.objectUse;
+  if(damage)changes.push({key:'system.damageBonus',type:'add',value:String(damage),phase:'initial',priority:template.priority});
+  if(integrity)for(const field of ['value','max'])changes.push({key:`system.breach.${field}`,type:'add',value:String(integrity),phase:'initial',priority:template.priority});
+  const current=Number(destinationItem.system?.breach?.value)||0;
+  const fromIntegrity=Math.ceil(Math.max(0,current+integrity)/10)-Math.ceil(Math.max(0,current)/10);
+  if(protection-fromIntegrity)rules.itemProtection=protection-fromIntegrity;else delete rules.itemProtection;
+  itemValues={item:destinationItem.name,use,damage,protection,integrity};
+ }
  if(!resolvedCopy&&template.rolledModifier){
   const rolled=await rollEffectValue(template.rolledModifier.formula,{actor,name:effectName});
   const row=changes.find(change=>change.key===template.rolledModifier.key&&change.type==="add");
@@ -368,6 +386,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
  if(!resolvedCopy)for(const p of template.parameters??[])if(p.target==="note" && (p.skill||p.tooltip)){
   const value=resolveEffectNote(p,casting,answers.powerLevel??template.levelParameter?.default);
@@ -412,6 +431,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
  let description=supplied?.description??text(key,"Description");
+ if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
  if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}

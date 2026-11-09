@@ -400,7 +400,7 @@
             "id": "vitner-vitner-craft:enchant-object:2:6",
             "cost": 3,
             "maxCount": null,
-            "effect": "Augmente les dégâts de l’arme de : +1, et la valeur d’intégrité de : +10"
+            "effect": "Augmente les dégâts de l’arme de : +1, la valeur de protection de l’arme/armure de : +1 et la valeur d’intégrité de : +10"
           }
         ],
         "source": "Livre des règles, p. 153",

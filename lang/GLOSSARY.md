@@ -1755,6 +1755,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.damageDefenses` | Typed damage resistances and vulnerabilities | Résistances et vulnérabilités par type de dégâts |
 | `TRUDVANG.Effect.Profile.damageQualification` | Item damage qualifiers | Qualifications des dégâts de l’objet |
 | `TRUDVANG.Effect.Profile.magicalProtection` | PV effective against damage requiring magical armor | VP protégeant aussi contre les dégâts réservés aux armures magiques |
+| `TRUDVANG.Effect.Profile.objectUse` | SV/Situation modifier when this item is used | Modificateur de VC/SV lorsque l’objet est utilisé |
+| `TRUDVANG.Effect.Profile.itemProtection` | Protection Value modifier local to this item | Modificateur de VP propre à cet objet |
 
 ## `TRUDVANG.Effect.Activation`
 
@@ -10963,6 +10965,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.SourcePage` | 129 | 152 |
 | `TRUDVANG.Content.Transformation.vitner-vitner-craft:vitner-pouch:1#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.Name` | Enchant Object | Enchantement d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.Description` | The enchanted item grants +2 to Skill and Situation rolls when used. A weapon gains +1 damage, a weapon or armor +1 PV, and the item +10 Integrity. These bonuses belong to this item, not to every action of its bearer. | L’objet enchanté donne +2 aux tests de compétence et de situation lorsqu’il est utilisé. L’arme gagne +1 dégât, l’arme ou armure +1 VP, et l’objet +10 VI. Les bonus sont liés à cet objet, pas à toutes les actions de son porteur. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.SourceName` | Enchant Object | Enchantement d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.SourcePage` | 129 | 153 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-craft:enchant-object:2#effect.Duration` | 6 rounds | 6 rounds |
+
 ## `TRUDVANG.Content.Transformation.vitner-vitner-craft:anti-magic:3#effect`
 
 | Clé | English | Français |
@@ -11678,6 +11691,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.SourcePage` | 143 | 185 |
 | `TRUDVANG.Content.Transformation.vitner-witchcraft:fever:2#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.Name` | Curse Object | Malédiction d’objet |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.Description` | Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty. | Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.SourceName` | Curse Object | Malédiction d’objet |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.SourcePage` | 143 | 185 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#effect.Duration` | 5 rounds | 5 rounds |
+
+## `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.Name` | Curse Object (additional target) | Malédiction d’objet (cible supplémentaire) |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.Description` | Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty. | Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus. |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.SourceName` | Curse Object | Malédiction d’objet |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.SourcePage` | 143 | 185 |
+| `TRUDVANG.Content.Transformation.vitner-witchcraft:curse-object:3#base.Duration` | 5 rounds | 5 rounds |
+
 ## `TRUDVANG.Content.Transformation.vitner-witchcraft:amnesia:4#effect`
 
 | Clé | English | Français |
@@ -12163,6 +12198,50 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.SourcePage` | 132 | 202 |
 | `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:enlarge-reduce-object:6#effect.Duration` | 4 minutes | 4 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.Name` | Alter Object — appearance | Altération d’objet — apparence |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.Description` | The item takes the chosen appearance until the spell ends, then returns to its original appearance. This variant changes neither damage, PV nor Integrity. Record the chosen form; the GM handles its representation. | L’objet prend l’apparence choisie jusqu’à la fin du sort, puis reprend son aspect d’origine. Cette variante ne change ni les dégâts, ni la VP, ni la VI. Indiquez la forme choisie ; le MJ en gère la représentation. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.SourceName` | Alter Object | Altération d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.SourcePage` | 132 | 203 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#appearance.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.Name` | Alter Object — reinforcement | Altération d’objet — renforcement |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.Description` | The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged. | L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.SourceName` | Alter Object | Altération d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.SourcePage` | 132 | 203 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#properties.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.Name` | Alter Object — other property | Altération d’objet — autre propriété |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.Description` | Changes the chosen physical property (softening, stiffening, etc.) without automatic PV or Integrity bonuses. The item returns to its original characteristics on expiration. | Modifie la propriété physique choisie (ramollir, rigidifier, etc.), sans bonus automatique de VP ou de VI. L’objet reprend ses caractéristiques à l’expiration. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.SourceName` | Alter Object | Altération d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.SourcePage` | 132 | 203 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#physical.Duration` | 5 minutes | 5 minutes |
+
+## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.Name` | Alter Object — appearance and reinforcement | Altération d’objet — apparence et renforcement |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.Description` | The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged. | L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts. |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.SourceName` | Alter Object | Altération d’objet |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.SourcePage` | 132 | 203 |
+| `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:alter-object:7#combined.Duration` | 5 minutes | 5 minutes |
 
 ## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:create-object:8#effect`
 
@@ -15170,6 +15249,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.SourcePage` | 123 | 123 |
 | `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:fever:2#effect.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.Name` | Curse Object (Sonntag) | Malédiction d’objet (Sonntag) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.Description` | Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty. | Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.SourceName` | Curse Object | Malédiction d’objet |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#effect.Duration` | 5 rounds | 5 rounds |
+
+## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.Name` | Curse Object (additional target) (Sonntag) | Malédiction d’objet (cible supplémentaire) (Sonntag) |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.Description` | Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty. | Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus. |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.SourceName` | Curse Object | Malédiction d’objet |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.SourceBook` | Stormlands | Stormlands |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.SourcePage` | 123 | 123 |
+| `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:curse-object:3#base.Duration` | 5 rounds | 5 rounds |
+
 ## `TRUDVANG.Content.Transformation.holy-joaringfaith-curses-of-sonntag:amnesia:4#effect`
 
 | Clé | English | Français |
@@ -15597,6 +15698,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.FrostResistance` | Resistance to fleeing | Résistance à la fuite |
 | `TRUDVANG.Transformation.FrostRadius` | Effective radius: {value} m | Rayon effectif : {value} m |
 | `TRUDVANG.Transformation.FrostDamage` | Cold damage per round: {value} | Dégâts de froid par tour : {value} |
+| `TRUDVANG.Transformation.ItemTargetRequired` | Drop this effect on the relevant item in its inventory or sheet. | Glissez cet effet sur l’objet concerné dans son inventaire ou sa fiche. |
+| `TRUDVANG.Transformation.UseEnchantedItem` | Uses {item} — {effect} | Utilise {item} — {effect} |
+| `TRUDVANG.Transformation.ItemMagicValues` | {item}: SV/Situation {use} when used; damage {damage}; PV {protection}; Integrity {integrity}. | {item} : VC/SV {use} en l’utilisant ; dégâts {damage} ; VP {protection} ; VI {integrity}. |
+| `TRUDVANG.Transformation.ItemAlterationChoice` | Chosen appearance or physical property | Apparence ou propriété physique choisie |
+| `TRUDVANG.Transformation.CombinedAlterationRequired` | Purchase the improvement allowing appearance and characteristics to change together. | L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée. |
 
 ## `TRUDVANG.Transformation.Modes`
 

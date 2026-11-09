@@ -1500,7 +1500,9 @@
         "ignoreFearThrough": "Ignore les conséquences des niveaux de peur jusqu’à",
         "damageDefenses": "Résistances et vulnérabilités par type de dégâts",
         "damageQualification": "Qualifications des dégâts de l’objet",
-        "magicalProtection": "VP protégeant aussi contre les dégâts réservés aux armures magiques"
+        "magicalProtection": "VP protégeant aussi contre les dégâts réservés aux armures magiques",
+        "objectUse": "Modificateur de VC/SV lorsque l’objet est utilisé",
+        "itemProtection": "Modificateur de VP propre à cet objet"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
       "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
@@ -9439,7 +9441,7 @@
             "3": "Augmente la durée du sort de : 1 journée",
             "4": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)",
             "5": "Augmente le modificateur de VC associé à l’objet enchanté de : +1",
-            "6": "Augmente les dégâts de l’arme de : +1, et la valeur d’intégrité de : +10"
+            "6": "Augmente les dégâts de l’arme de : +1, la valeur de protection de l’arme/armure de : +1 et la valeur d’intégrité de : +10"
           }
         },
         "vitner-vitner-craft:seal:5": {
@@ -14226,6 +14228,15 @@
           "SourcePage": "152",
           "Duration": "1 heure"
         },
+        "vitner-vitner-craft:enchant-object:2#effect": {
+          "Name": "Enchantement d’objet",
+          "Summary": "Imprègne un objet d’énergie bénéfique pour améliorer les actions de son porteur, ses dégâts ou sa protection.",
+          "Description": "L’objet enchanté donne +2 aux tests de compétence et de situation lorsqu’il est utilisé. L’arme gagne +1 dégât, l’arme ou armure +1 VP, et l’objet +10 VI. Les bonus sont liés à cet objet, pas à toutes les actions de son porteur.",
+          "SourceName": "Enchantement d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "153",
+          "Duration": "6 rounds"
+        },
         "vitner-vitner-craft:anti-magic:3#effect": {
           "Name": "Antimagie",
           "Summary": "Protège une créature ou un objet contre les sorts en les neutralisant avant qu’ils ne l’atteignent.",
@@ -14811,6 +14822,24 @@
           "SourcePage": "185",
           "Duration": "1 heure"
         },
+        "vitner-witchcraft:curse-object:3#effect": {
+          "Name": "Malédiction d’objet",
+          "Summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+          "Description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+          "SourceName": "Malédiction d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "185",
+          "Duration": "5 rounds"
+        },
+        "vitner-witchcraft:curse-object:3#base": {
+          "Name": "Malédiction d’objet (cible supplémentaire)",
+          "Summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+          "Description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+          "SourceName": "Malédiction d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "185",
+          "Duration": "5 rounds"
+        },
         "vitner-witchcraft:amnesia:4#effect": {
           "Name": "Amnésie (vitner)",
           "Summary": "Perte des souvenirs et récupération progressive.",
@@ -15208,6 +15237,42 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "202",
           "Duration": "4 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#appearance": {
+          "Name": "Altération d’objet — apparence",
+          "Summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+          "Description": "L’objet prend l’apparence choisie jusqu’à la fin du sort, puis reprend son aspect d’origine. Cette variante ne change ni les dégâts, ni la VP, ni la VI. Indiquez la forme choisie ; le MJ en gère la représentation.",
+          "SourceName": "Altération d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "203",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#properties": {
+          "Name": "Altération d’objet — renforcement",
+          "Summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+          "Description": "L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts.",
+          "SourceName": "Altération d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "203",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#physical": {
+          "Name": "Altération d’objet — autre propriété",
+          "Summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+          "Description": "Modifie la propriété physique choisie (ramollir, rigidifier, etc.), sans bonus automatique de VP ou de VI. L’objet reprend ses caractéristiques à l’expiration.",
+          "SourceName": "Altération d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "203",
+          "Duration": "5 minutes"
+        },
+        "vitner-vitner-of-objects:alter-object:7#combined": {
+          "Name": "Altération d’objet — apparence et renforcement",
+          "Summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+          "Description": "L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts.",
+          "SourceName": "Altération d’objet",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "203",
+          "Duration": "5 minutes"
         },
         "vitner-vitner-of-objects:create-object:8#effect": {
           "Name": "Création d’objet",
@@ -17693,6 +17758,24 @@
           "SourcePage": "123",
           "Duration": "1 heure"
         },
+        "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect": {
+          "Name": "Malédiction d’objet (Sonntag)",
+          "Summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+          "Description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+          "SourceName": "Malédiction d’objet",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 rounds"
+        },
+        "holy-joaringfaith-curses-of-sonntag:curse-object:3#base": {
+          "Name": "Malédiction d’objet (cible supplémentaire) (Sonntag)",
+          "Summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+          "Description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+          "SourceName": "Malédiction d’objet",
+          "SourceBook": "Stormlands",
+          "SourcePage": "123",
+          "Duration": "5 rounds"
+        },
         "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
           "Name": "Amnésie (malédiction)",
           "Summary": "Perte des souvenirs et récupération progressive.",
@@ -18068,7 +18151,12 @@
       "FeverResistance": "Résistance de Constitution",
       "FrostResistance": "Résistance à la fuite",
       "FrostRadius": "Rayon effectif : {value} m",
-      "FrostDamage": "Dégâts de froid par tour : {value}"
+      "FrostDamage": "Dégâts de froid par tour : {value}",
+      "ItemTargetRequired": "Glissez cet effet sur l’objet concerné dans son inventaire ou sa fiche.",
+      "UseEnchantedItem": "Utilise {item} — {effect}",
+      "ItemMagicValues": "{item} : VC/SV {use} en l’utilisant ; dégâts {damage} ; VP {protection} ; VI {integrity}.",
+      "ItemAlterationChoice": "Apparence ou propriété physique choisie",
+      "CombinedAlterationRequired": "L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

@@ -1,0 +1,53 @@
+{
+  "_id": "DJzJwdHcIdJeKfLg",
+  "_key": "!items!DJzJwdHcIdJeKfLg",
+  "name": "Enchant Object",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:enchant-object:2#effect",
+    "description": "The enchanted item grants +2 to Skill and Situation rolls when used. A weapon gains +1 damage, a weapon or armor +1 PV, and the item +10 Integrity. These bonuses belong to this item, not to every action of its bearer.",
+    "summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 129
+    }
+  },
+  "effects": [
+    {
+      "_id": "eCm5q3w2x3y4z5A6",
+      "_key": "!items.effects!DJzJwdHcIdJeKfLg.eCm5q3w2x3y4z5A6",
+      "name": "Enchant Object",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "The enchanted item grants +2 to Skill and Situation rolls when used. A weapon gains +1 damage, a weapon or armor +1 PV, and the item +10 Integrity. These bonuses belong to this item, not to every action of its bearer.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:enchant-object:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:enchant-object:2#effect",
+            "sourceId": "vitner-vitner-craft:enchant-object:2",
+            "summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "Cbv6uSlRmSnToUpV",
+  "_key": "!items!Cbv6uSlRmSnToUpV",
+  "name": "Alter Object — appearance",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#appearance",
+    "description": "The item takes the chosen appearance until the spell ends, then returns to its original appearance. This variant changes neither damage, PV nor Integrity. Record the chosen form; the GM handles its representation.",
+    "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "vLjcRUnToUpVqWrX",
+      "_key": "!items.effects!Cbv6uSlRmSnToUpV.vLjcRUnToUpVqWrX",
+      "name": "Alter Object — appearance",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "The item takes the chosen appearance until the spell ends, then returns to its original appearance. This variant changes neither damage, PV nor Integrity. Record the chosen form; the GM handles its representation.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#appearance",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#appearance",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

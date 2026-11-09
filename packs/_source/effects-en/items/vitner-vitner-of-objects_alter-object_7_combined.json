@@ -1,0 +1,45 @@
+{
+  "_id": "XW1s5XsYtZu0v1w2",
+  "_key": "!items!XW1s5XsYtZu0v1w2",
+  "name": "Alter Object — appearance and reinforcement",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#combined",
+    "description": "The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged.",
+    "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 132
+    }
+  },
+  "effects": [
+    {
+      "_id": "oIfUVQhNiOjPkQlR",
+      "_key": "!items.effects!XW1s5XsYtZu0v1w2.oIfUVQhNiOjPkQlR",
+      "name": "Alter Object — appearance and reinforcement",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "The item is reinforced: +1 PV and +10 Integrity, with purchased improvements. Other physical properties, such as softening, remain described and adjudicated by the GM. Damage is unchanged.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#combined",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#combined",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

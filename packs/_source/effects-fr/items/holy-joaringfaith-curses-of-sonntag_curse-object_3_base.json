@@ -1,0 +1,53 @@
+{
+  "_id": "TZ3P7pSnToUpVqWr",
+  "_key": "!items!TZ3P7pSnToUpVqWr",
+  "name": "Malédiction d’objet (cible supplémentaire) (Sonntag)",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:curse-object:3#base",
+    "description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+    "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "K09j4aFaGbHcIdJe",
+      "_key": "!items.effects!TZ3P7pSnToUpVqWr.K09j4aFaGbHcIdJe",
+      "name": "Malédiction d’objet (cible supplémentaire) (Sonntag)",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:curse-object:3#base",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:curse-object:3#base",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+            "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

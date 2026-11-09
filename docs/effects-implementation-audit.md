@@ -110,6 +110,8 @@ restent séparés et s’appliquent manuellement.
 
 ## Vérification et exemplaires existants
 
+Depuis le 9 novembre, les runes sont reportées après les autres effets. Le suivi prioritaire et la vérification transversale des objets se trouvent dans [non-rune-effects-progress.md](non-rune-effects-progress.md). Pour les effets d’objet, vérifier la distinction entre plusieurs objets d’un même acteur, les budgets des variantes supplémentaires, les bonus locaux dans les jets et l’absence de conversion de VI temporaire en VI intrinsèque après un coup.
+
 Les effets à niveaux absolus de rune utilisent `runeTiers` dans les sources : vérifier les cinq rangs, les traductions, les durées automatiques et manuelles, l’absence d’addition entre lignes, les cibles acteur/objet et les copies déjà résolues. Les tests de situation dont la SV dépend du rang doivent conserver leur valeur gelée avec l’effet, sans redemander un multiplicateur de niveau. Les conditions narratives (milieu, peau, mouvement de l’observateur) ne donnent pas de bonus universel. Les zones fixes et les capacités d’un esprit invoqué ne deviennent ni une aura mobile, ni des sens ajoutés au lanceur.
 
 `npm run check` exécute les tests sans utiliser l’installation Foundry. Les

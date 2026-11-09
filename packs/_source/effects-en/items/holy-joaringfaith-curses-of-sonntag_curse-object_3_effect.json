@@ -1,0 +1,53 @@
+{
+  "_id": "3GMsbJaGbHcIdJeK",
+  "_key": "!items!3GMsbJaGbHcIdJeK",
+  "name": "Curse Object (Sonntag)",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect",
+    "description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+    "summary": "Curses an object to greatly reduce its effectiveness or render it faulty.",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "K3KTM1u0v1w2x3y4",
+      "_key": "!items.effects!3GMsbJaGbHcIdJeK.K3KTM1u0v1w2x3y4",
+      "name": "Curse Object (Sonntag)",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+            "summary": "Curses an object to greatly reduce its effectiveness or render it faulty.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

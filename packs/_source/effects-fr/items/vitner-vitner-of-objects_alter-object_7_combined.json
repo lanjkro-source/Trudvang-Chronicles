@@ -1,0 +1,45 @@
+{
+  "_id": "XW1s5XsYtZu0v1w2",
+  "_key": "!items!XW1s5XsYtZu0v1w2",
+  "name": "Altération d’objet — apparence et renforcement",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#combined",
+    "description": "L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts.",
+    "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 203
+    }
+  },
+  "effects": [
+    {
+      "_id": "oIfUVQhNiOjPkQlR",
+      "_key": "!items.effects!XW1s5XsYtZu0v1w2.oIfUVQhNiOjPkQlR",
+      "name": "Altération d’objet — apparence et renforcement",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "L’objet est renforcé : +1 VP et +10 VI, avec les améliorations achetées. Les autres propriétés physiques, comme un ramollissement, restent décrites et arbitrées par le MJ. Le sort ne modifie pas les dégâts.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#combined",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#combined",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

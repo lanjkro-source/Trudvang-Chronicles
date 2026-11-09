@@ -4690,6 +4690,38 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:curse-object:3": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "effect",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-joaringfaith-curses-of-sonntag:curse-object:3:0",
+            "holy-joaringfaith-curses-of-sonntag:curse-object:3:1",
+            "holy-joaringfaith-curses-of-sonntag:curse-object:3:2",
+            "holy-joaringfaith-curses-of-sonntag:curse-object:3:3"
+          ]
+        },
+        {
+          "id": "base",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "holy-joaringfaith-curses-of-sonntag:curse-object:3:4",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:0",
@@ -12132,6 +12164,19 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:enchant-object:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "vitner-vitner-craft:enchant-object:2:0",
+        "vitner-vitner-craft:enchant-object:2:1",
+        "vitner-vitner-craft:enchant-object:2:2",
+        "vitner-vitner-craft:enchant-object:2:3",
+        "vitner-vitner-craft:enchant-object:2:4",
+        "vitner-vitner-craft:enchant-object:2:5",
+        "vitner-vitner-craft:enchant-object:2:6"
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:enchant-object:2:0",
@@ -12360,6 +12405,20 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:alter-object:7": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "vitner-vitner-of-objects:alter-object:7:0",
+        "vitner-vitner-of-objects:alter-object:7:1",
+        "vitner-vitner-of-objects:alter-object:7:2",
+        "vitner-vitner-of-objects:alter-object:7:3",
+        "vitner-vitner-of-objects:alter-object:7:4",
+        "vitner-vitner-of-objects:alter-object:7:5",
+        "vitner-vitner-of-objects:alter-object:7:6",
+        "vitner-vitner-of-objects:alter-object:7:7"
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:alter-object:7:0",
@@ -13525,6 +13584,38 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:curse-object:3": {
     "isRune": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "effect",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "vitner-witchcraft:curse-object:3:0",
+            "vitner-witchcraft:curse-object:3:1",
+            "vitner-witchcraft:curse-object:3:2",
+            "vitner-witchcraft:curse-object:3:3"
+          ]
+        },
+        {
+          "id": "base",
+          "variants": [
+            "base"
+          ],
+          "baseTargets": 0,
+          "additionalTargets": [
+            {
+              "optionId": "vitner-witchcraft:curse-object:3:4",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": []
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-witchcraft:curse-object:3:0",

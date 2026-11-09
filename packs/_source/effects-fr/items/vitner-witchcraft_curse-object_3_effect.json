@@ -1,0 +1,53 @@
+{
+  "_id": "hLFdHJdJeKfLgMhN",
+  "_key": "!items!hLFdHJdJeKfLgMhN",
+  "name": "Malédiction d’objet",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:curse-object:3#effect",
+    "description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+    "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 185
+    }
+  },
+  "effects": [
+    {
+      "_id": "S1VY8UnToUpVqWrX",
+      "_key": "!items.effects!hLFdHJdJeKfLgMhN.S1VY8UnToUpVqWrX",
+      "name": "Malédiction d’objet",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Utiliser cet objet impose −2 aux tests de compétence et de situation qui reposent sur lui. Une arme inflige 1 dégât de moins ; une armure perd 1 VP. Les autres objets et les actions sans rapport ne subissent aucun malus.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:curse-object:3#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:curse-object:3#effect",
+            "sourceId": "vitner-witchcraft:curse-object:3",
+            "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

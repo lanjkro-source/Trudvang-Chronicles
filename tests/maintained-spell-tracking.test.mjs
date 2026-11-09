@@ -2,6 +2,24 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {reconcileMaintainedSpell, endMaintainedSpellOnGM, registerMaintainedSpellTracking,applyAllocatedEffectOnGM} from "../modules/maintained-spell-tracking.mjs";
 
+test('different items carried by the same actor reserve distinct curse targets and retain the shared capacity',async()=>{
+ const old={game:globalThis.game,foundry:globalThis.foundry};
+ try{
+  const id='vitner-witchcraft:curse-object:3',user={id:'owner'},spell={id:'spell',type:'spell',system:{spellType:'lasting',catalogId:id}};
+  const caster={uuid:'Actor.caster',items:[spell],canUserModify:()=>true,system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:'cast',itemId:'spell',powerLevelSnapshot:[{id:id+':4',count:1}]}]},async update(data){this.system.activeSpellCastings=data['system.activeSpellCastings'];}};
+  const bearer={uuid:'Actor.bearer',canUserModify:()=>true},docs=new Map([[caster.uuid,caster],[bearer.uuid,bearer]]);
+  const objects=Array.from({length:3},(_,i)=>({uuid:bearer.uuid+'.Item.'+i,parent:bearer,effects:[],canUserModify:()=>true,async createEmbeddedDocuments(_,rows){return [{uuid:this.uuid+'.ActiveEffect.e',...rows[0]}];}}));
+  for(const object of objects)docs.set(object.uuid,object);
+  globalThis.game={user:{id:'gm'},users:{activeGM:{isSelf:true},get:()=>user}};
+  globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid),deepClone:structuredClone},documents:{ActiveEffect:{implementation:{getEffectStart:()=>({time:0})}}}};
+  const apply=(item,key)=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:'cast',targetUuid:bearer.uuid,itemUuid:item.uuid,countsById:{},data:{system:{changes:[]},flags:{'trudvang-chronicles':{transformation:{key:id+'#'+key,ruleTestContext:{casterUuid:caster.uuid,castingId:'cast',sourceId:id}}}}},userId:user.id});
+  assert.equal((await apply(objects[0],'effect')).status,'ok');
+  assert.equal((await apply(objects[1],'base')).status,'ok');
+  assert.equal((await apply(objects[2],'base')).status,'exceeds-targets');
+  assert.deepEqual(caster.system.activeSpellCastings[0].targetAllocations.map(row=>row.targetUuid),objects.slice(0,2).map(row=>row.uuid));
+ }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
+});
+
 test("the GM records independent effect UUIDs and retains the fact that effects existed", async () => {
  const old = globalThis.game;
  try {

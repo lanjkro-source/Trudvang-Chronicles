@@ -1,0 +1,53 @@
+{
+  "_id": "DJzJwdHcIdJeKfLg",
+  "_key": "!items!DJzJwdHcIdJeKfLg",
+  "name": "Enchantement d’objet",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-craft:enchant-object:2#effect",
+    "description": "L’objet enchanté donne +2 aux tests de compétence et de situation lorsqu’il est utilisé. L’arme gagne +1 dégât, l’arme ou armure +1 VP, et l’objet +10 VI. Les bonus sont liés à cet objet, pas à toutes les actions de son porteur.",
+    "summary": "Imprègne un objet d’énergie bénéfique pour améliorer les actions de son porteur, ses dégâts ou sa protection.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 153
+    }
+  },
+  "effects": [
+    {
+      "_id": "eCm5q3w2x3y4z5A6",
+      "_key": "!items.effects!DJzJwdHcIdJeKfLg.eCm5q3w2x3y4z5A6",
+      "name": "Enchantement d’objet",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "L’objet enchanté donne +2 aux tests de compétence et de situation lorsqu’il est utilisé. L’arme gagne +1 dégât, l’arme ou armure +1 VP, et l’objet +10 VI. Les bonus sont liés à cet objet, pas à toutes les actions de son porteur.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-craft:enchant-object:2#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-craft:enchant-object:2#effect",
+            "sourceId": "vitner-vitner-craft:enchant-object:2",
+            "summary": "Imprègne un objet d’énergie bénéfique pour améliorer les actions de son porteur, ses dégâts ou sa protection.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

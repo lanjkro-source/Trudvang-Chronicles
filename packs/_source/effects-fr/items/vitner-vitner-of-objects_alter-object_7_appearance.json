@@ -1,0 +1,45 @@
+{
+  "_id": "Cbv6uSlRmSnToUpV",
+  "_key": "!items!Cbv6uSlRmSnToUpV",
+  "name": "Altération d’objet — apparence",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7#appearance",
+    "description": "L’objet prend l’apparence choisie jusqu’à la fin du sort, puis reprend son aspect d’origine. Cette variante ne change ni les dégâts, ni la VP, ni la VI. Indiquez la forme choisie ; le MJ en gère la représentation.",
+    "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 203
+    }
+  },
+  "effects": [
+    {
+      "_id": "vLjcRUnToUpVqWrX",
+      "_key": "!items.effects!Cbv6uSlRmSnToUpV.vLjcRUnToUpVqWrX",
+      "name": "Altération d’objet — apparence",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "L’objet prend l’apparence choisie jusqu’à la fin du sort, puis reprend son aspect d’origine. Cette variante ne change ni les dégâts, ni la VP, ni la VI. Indiquez la forme choisie ; le MJ en gère la représentation.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-vitner-of-objects:alter-object:7#appearance",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-vitner-of-objects:alter-object:7#appearance",
+            "sourceId": "vitner-vitner-of-objects:alter-object:7",
+            "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

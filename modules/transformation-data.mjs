@@ -35,6 +35,67 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-vitner-craft:enchant-object:2#effect": {
+    "id": "effect",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "6 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.objectUse",
+        "type": "override",
+        "value": "2",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": 2,
+      "damage": 1,
+      "protection": 1,
+      "integrity": 10,
+      "useIndex": 5,
+      "statsIndex": 6,
+      "protectionTypes": [
+        "weapon",
+        "shield",
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [
+      4
+    ],
+    "sourceId": "vitner-vitner-craft:enchant-object:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-vitner-craft:enchant-object:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-craft:enchant-object:2:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-craft:enchant-object:2:2"
+      },
+      {
+        "index": 3,
+        "target": "duration",
+        "value": 86400,
+        "optionId": "vitner-vitner-craft:enchant-object:2:3"
+      }
+    ]
+  },
   "vitner-vitner-craft:anti-magic:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -2174,6 +2235,96 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-witchcraft:curse-object:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.objectUse",
+        "type": "override",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": -2,
+      "damage": -1,
+      "protection": -1,
+      "integrity": 0,
+      "protectionTypes": [
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "vitner-witchcraft:curse-object:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-witchcraft:curse-object:3:0",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-witchcraft:curse-object:3:1",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-witchcraft:curse-object:3:2",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "vitner-witchcraft:curse-object:3#base": {
+    "id": "base",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.objectUse",
+        "type": "override",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": -2,
+      "damage": -1,
+      "protection": -1,
+      "integrity": 0,
+      "protectionTypes": [
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [],
+    "sourceId": "vitner-witchcraft:curse-object:3",
+    "parameters": []
+  },
   "vitner-witchcraft:amnesia:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -3874,6 +4025,183 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "vitner-vitner-of-objects:enlarge-reduce-object:6:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:alter-object:7#appearance": {
+    "id": "appearance",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "inputKey": "TRUDVANG.Transformation.ItemAlterationChoice",
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "sourceId": "vitner-vitner-of-objects:alter-object:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:alter-object:7#properties": {
+    "id": "properties",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": 0,
+      "damage": 0,
+      "protection": 1,
+      "integrity": 10,
+      "statsIndex": 6,
+      "protectionTypes": [
+        "weapon",
+        "shield",
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "inputKey": "TRUDVANG.Transformation.ItemAlterationChoice",
+    "sourceId": "vitner-vitner-of-objects:alter-object:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:alter-object:7#physical": {
+    "id": "physical",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "inputKey": "TRUDVANG.Transformation.ItemAlterationChoice",
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "sourceId": "vitner-vitner-of-objects:alter-object:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:2"
+      }
+    ]
+  },
+  "vitner-vitner-of-objects:alter-object:7#combined": {
+    "id": "combined",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 minutes",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": 0,
+      "damage": 0,
+      "protection": 1,
+      "integrity": 10,
+      "statsIndex": 6,
+      "protectionTypes": [
+        "weapon",
+        "shield",
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "inputKey": "TRUDVANG.Transformation.ItemAlterationChoice",
+    "requiredPowerOption": 7,
+    "sourceId": "vitner-vitner-of-objects:alter-object:7",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:1"
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "vitner-vitner-of-objects:alter-object:7:2"
       }
     ]
   },
@@ -13641,6 +13969,96 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect": {
+    "id": "effect",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.objectUse",
+        "type": "override",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": -2,
+      "damage": -1,
+      "protection": -1,
+      "integrity": 0,
+      "protectionTypes": [
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [
+      3
+    ],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-object:3:0",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-object:3:1",
+        "templates": [
+          "effect"
+        ]
+      },
+      {
+        "index": 2,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-joaringfaith-curses-of-sonntag:curse-object:3:2",
+        "templates": [
+          "effect"
+        ]
+      }
+    ]
+  },
+  "holy-joaringfaith-curses-of-sonntag:curse-object:3#base": {
+    "id": "base",
+    "icon": "icons/svg/item-bag.svg",
+    "duration": "5 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.objectUse",
+        "type": "override",
+        "value": "-2",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "itemOnly": true,
+    "itemEnchantment": {
+      "use": -2,
+      "damage": -1,
+      "protection": -1,
+      "integrity": 0,
+      "protectionTypes": [
+        "armor"
+      ]
+    },
+    "displayPowerOptions": [],
+    "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+    "parameters": []
+  },
   "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -14512,6 +14930,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-vitner-craft:vitner-pouch:1": [
     "vitner-vitner-craft:vitner-pouch:1#effect"
   ],
+  "vitner-vitner-craft:enchant-object:2": [
+    "vitner-vitner-craft:enchant-object:2#effect"
+  ],
   "vitner-vitner-craft:anti-magic:3": [
     "vitner-vitner-craft:anti-magic:3#effect"
   ],
@@ -14701,6 +15122,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-witchcraft:fever:2": [
     "vitner-witchcraft:fever:2#effect"
   ],
+  "vitner-witchcraft:curse-object:3": [
+    "vitner-witchcraft:curse-object:3#effect",
+    "vitner-witchcraft:curse-object:3#base"
+  ],
   "vitner-witchcraft:amnesia:4": [
     "vitner-witchcraft:amnesia:4#effect"
   ],
@@ -14818,6 +15243,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-vitner-of-objects:enlarge-reduce-object:6": [
     "vitner-vitner-of-objects:enlarge-reduce-object:6#effect"
+  ],
+  "vitner-vitner-of-objects:alter-object:7": [
+    "vitner-vitner-of-objects:alter-object:7#appearance",
+    "vitner-vitner-of-objects:alter-object:7#properties",
+    "vitner-vitner-of-objects:alter-object:7#physical",
+    "vitner-vitner-of-objects:alter-object:7#combined"
   ],
   "vitner-vitner-of-objects:create-object:8": [
     "vitner-vitner-of-objects:create-object:8#effect"
@@ -15535,6 +15966,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-joaringfaith-curses-of-sonntag:fever:2": [
     "holy-joaringfaith-curses-of-sonntag:fever:2#effect"
+  ],
+  "holy-joaringfaith-curses-of-sonntag:curse-object:3": [
+    "holy-joaringfaith-curses-of-sonntag:curse-object:3#effect",
+    "holy-joaringfaith-curses-of-sonntag:curse-object:3#base"
   ],
   "holy-joaringfaith-curses-of-sonntag:amnesia:4": [
     "holy-joaringfaith-curses-of-sonntag:amnesia:4#effect"

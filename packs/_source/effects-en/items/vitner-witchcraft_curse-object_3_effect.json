@@ -1,0 +1,53 @@
+{
+  "_id": "hLFdHJdJeKfLgMhN",
+  "_key": "!items!hLFdHJdJeKfLgMhN",
+  "name": "Curse Object",
+  "type": "effect",
+  "img": "icons/svg/item-bag.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:curse-object:3#effect",
+    "description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+    "summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 143
+    }
+  },
+  "effects": [
+    {
+      "_id": "S1VY8UnToUpVqWrX",
+      "_key": "!items.effects!hLFdHJdJeKfLgMhN.S1VY8UnToUpVqWrX",
+      "name": "Curse Object",
+      "type": "effect",
+      "img": "icons/svg/item-bag.svg",
+      "description": "Using this item imposes −2 to Skill and Situation rolls relying on it. A weapon deals 1 less damage; armor loses 1 PV. Unrelated items and actions receive no penalty.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:curse-object:3#effect",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.objectUse",
+            "type": "override",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:curse-object:3#effect",
+            "sourceId": "vitner-witchcraft:curse-object:3",
+            "summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
