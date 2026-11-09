@@ -8,6 +8,7 @@ export const ITEM_QUALITIES=[
  {id:5,key:'Legendary',modifier:3,heft:-3,protection:2,price:5,weight:.7}
 ];
 export const itemQuality=value=>ITEM_QUALITIES[Math.min(5,Math.max(0,Math.trunc(Number(value??2))||0))];
+export const equipmentDecimal=value=>Math.round((Number(value||0)+Number.EPSILON)*10)/10;
 /** Only masterful/legendary tools stack; their combined quality bonus is +6
  * at most (p.106). Penalties and unrelated magical modifiers remain separate. */
 export function itemUseModifierTotal(rows){

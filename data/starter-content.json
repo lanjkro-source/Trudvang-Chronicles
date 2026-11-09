@@ -1658,7 +1658,8 @@
         },
         "heft": 9,
         "weight": 29,
-        "value": 130
+        "value": 130,
+        "material": "steel"
       }
     },
     {
@@ -1678,7 +1679,8 @@
         "movementModifier": -2,
         "initiativeModifier": -2,
         "weight": 21,
-        "value": 70
+        "value": 70,
+        "material": "steel"
       }
     },
     {
@@ -1695,7 +1697,8 @@
         },
         "heft": 8,
         "weight": 28,
-        "value": 100
+        "value": 100,
+        "material": "steel"
       }
     },
     {
@@ -1715,7 +1718,8 @@
         "movementModifier": -1,
         "initiativeModifier": -1,
         "weight": 7.5,
-        "value": 8.6
+        "value": 8.6,
+        "material": "leather"
       }
     },
     {
@@ -1735,7 +1739,8 @@
         "movementModifier": -1,
         "initiativeModifier": -1,
         "weight": 10.5,
-        "value": 15
+        "value": 15,
+        "material": "leather"
       }
     },
     {
@@ -1752,7 +1757,8 @@
         },
         "heft": 4,
         "weight": 13,
-        "value": 30
+        "value": 30,
+        "material": "leather"
       }
     },
     {
@@ -1772,7 +1778,8 @@
         "movementModifier": -4,
         "initiativeModifier": -5,
         "weight": 32,
-        "value": 160
+        "value": 160,
+        "material": "steel"
       }
     },
     {
@@ -1789,7 +1796,8 @@
         },
         "heft": 7,
         "weight": 23,
-        "value": 115
+        "value": 115,
+        "material": "steel"
       }
     },
     {
@@ -1806,7 +1814,8 @@
         },
         "heft": 6,
         "weight": 27,
-        "value": 90
+        "value": 90,
+        "material": "steel"
       }
     },
     {
@@ -1823,7 +1832,8 @@
         },
         "heft": 1,
         "weight": 4,
-        "value": 5
+        "value": 5,
+        "material": "cloth"
       }
     },
     {

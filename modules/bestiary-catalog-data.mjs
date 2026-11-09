@@ -733,6 +733,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -1355,6 +1356,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -3454,6 +3456,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 21,
             "value": 70,
+            "material": "steel",
             "quantity": 1,
             "equipped": true
           },
@@ -4334,6 +4337,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 21,
             "value": 70,
+            "material": "steel",
             "quantity": 1,
             "equipped": true
           },
@@ -5227,6 +5231,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 21,
             "value": 70,
+            "material": "steel",
             "quantity": 1,
             "equipped": true
           },
@@ -5812,6 +5817,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 10.5,
             "value": 15,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -6497,6 +6503,7 @@ export const BESTIARY_ENTRIES = [
             "heft": 1,
             "weight": 4,
             "value": 5,
+            "material": "cloth",
             "initiativeModifier": 0,
             "quantity": 1,
             "equipped": true
@@ -12791,6 +12798,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -13320,6 +13328,7 @@ export const BESTIARY_ENTRIES = [
             "heft": 4,
             "weight": 13,
             "value": 30,
+            "material": "leather",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -13884,6 +13893,7 @@ export const BESTIARY_ENTRIES = [
             "heft": 4,
             "weight": 13,
             "value": 30,
+            "material": "leather",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -14403,6 +14413,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -14967,6 +14978,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -15566,6 +15578,7 @@ export const BESTIARY_ENTRIES = [
             "heft": 4,
             "weight": 13,
             "value": 30,
+            "material": "leather",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -16102,6 +16115,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -19607,6 +19621,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -19803,6 +19818,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -20269,6 +20285,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -20465,6 +20482,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -20586,6 +20604,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -1,
             "weight": 7.5,
             "value": 8.6,
+            "material": "leather",
             "quantity": 1,
             "equipped": true
           },
@@ -20704,6 +20723,7 @@ export const BESTIARY_ENTRIES = [
             "initiativeModifier": -2,
             "weight": 21,
             "value": 70,
+            "material": "steel",
             "quantity": 1,
             "equipped": true
           },

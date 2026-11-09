@@ -445,7 +445,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
       refresh();
     }
   }
-  return blessingDialog(MagicRollDialog,castingActor,'magic').wait({
+  return blessingDialog(MagicRollDialog,castingActor,'magic',{castingType:ruleDocument?.type==='divineFeat'?'divine':'vitner'}).wait({
     window: {title},
     content,
     buttons: [

@@ -89,7 +89,7 @@
     </div>
     {{#if (eq system.kind "feat")}}<div class="item-field-row"><label class="checkbox wide" title="{{localize 'TRUDVANG.Npc.DurableHint'}}"><input name="system.ignoreWoundPenalties" type="checkbox" {{checked system.ignoreWoundPenalties}}> {{localize "TRUDVANG.Npc.DurableMechanic"}}</label></div>{{/if}}
     {{/if}}
-    {{#if qualityOptions}}<div class="item-field-row"><label>{{localize "TRUDVANG.Quality.Label"}}<select name="system.quality" {{#if qualityLocked}}disabled{{/if}}>{{#each qualityOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label><label class="checkbox"><input name="system.magical" type="checkbox" {{checked system.magical}}> {{localize "TRUDVANG.Quality.Magical"}}</label><span></span></div>{{/if}}
+    {{#if qualityOptions}}<div class="item-field-row"><label>{{localize "TRUDVANG.Quality.Label"}}<select name="system.quality" {{#if qualityLocked}}disabled{{/if}}>{{#each qualityOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label><label class="checkbox"><input name="system.magical" type="checkbox" {{checked system.magical}}> {{localize "TRUDVANG.Quality.Magical"}}</label>{{#if specialUseOptions}}<label>{{localize "TRUDVANG.Quality.SpecialLabel"}}<select name="system.specialUse">{{#each specialUseOptions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>{{else}}<span></span>{{/if}}</div>{{/if}}
   </section>
   {{#if (or (eq item.type "tablet") isMagicPower)}}
     <div class="tablet-summary-text" title="{{system.summary}}"><textarea name="system.summary" rows="2" aria-label="{{localize 'TRUDVANG.Field.Summary'}}">{{system.summary}}</textarea></div>

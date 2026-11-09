@@ -818,7 +818,10 @@
         "unknown": "Unspecified",
         "grindsilver": "Grindsilver",
         "bronze": "Bronze",
-        "natural": "Natural"
+        "natural": "Natural",
+        "leather": "Leather",
+        "cloth": "Cloth",
+        "bone": "Bone"
       },
       "Protection": {
         "normal": "Normal protection",
@@ -18440,7 +18443,14 @@
       "Normal": "Normal",
       "Good": "Good",
       "Masterful": "Masterful",
-      "Legendary": "Legendary"
+      "Legendary": "Legendary",
+      "SpecialLabel": "Special",
+      "Special": {
+        "none": "None",
+        "votive": "Votive",
+        "vitner": "Vitner weaving"
+      },
+      "RitualHint": "Select the items being used. Only Masterful and Legendary quality bonuses can stack, up to +6 in total."
     }
   }
 }

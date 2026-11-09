@@ -39,7 +39,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // TEMPORARY WORLD MIGRATION — version 66 installs the static tablet-list journal
 // under the new Magic folder in previously populated worlds; version 67 regenerates it
 // with the corrected Solvei/Sille healing family icons.
-const CONTENT_VERSION = 67;
+// TEMPORARY WORLD MIGRATION — version 68 fills missing materials on recognized
+// starter armor copies, preserving explicit materials and all individual stats.
+const CONTENT_VERSION = 68;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -430,6 +432,23 @@ export async function syncStarterInventoryEffects(source, translationsByKey) {
       || (template.system?.stackId && effect.system?.stackId === template.system.stackId)));
     if (missing.length) await item.createEmbeddedDocuments("ActiveEffect", missing);
   }
+}
+
+// TEMPORARY WORLD MIGRATION — remove once pre-material development worlds
+// have been updated. New catalogue and bestiary items already carry material.
+export async function syncStarterArmorMaterials(source,translationsByKey){
+ const entries=source.items.filter(entry=>entry.type==='armor'&&entry.system?.material);
+ const byKey=new Map(entries.map(entry=>[starterKey(entry.nameKey),entry]));
+ const byName=new Map(entries.flatMap(entry=>[...(translationsByKey.get(entry.nameKey)??[])].map(name=>[name,entry])));
+ const byUuid=new Map(Array.from(game.items??[]).filter(item=>byKey.has(flagOf(item))).map(item=>[item.uuid,byKey.get(flagOf(item))]));
+ const actors=new Set(Array.from(game.actors??[]));
+ for(const scene of game.scenes??[])for(const token of scene.tokens??[])if(token.actor)actors.add(token.actor);
+ const items=new Set([...Array.from(game.items??[]),...[...actors].flatMap(actor=>Array.from(actor.items??[]))]);
+ for(const item of items){
+  if(item.type!=='armor'||item.system?.material)continue;
+  const entry=byKey.get(flagOf(item))??byUuid.get(item.getFlag?.('core','sourceId')||item._stats?.compendiumSource)??byName.get(item.name);
+  if(entry)await item.update({'system.material':entry.system.material});
+ }
 }
 
 async function rebuildTables(source, folders, translationsByKey) {
@@ -1274,6 +1293,7 @@ export async function importStarterContent({force = false} = {}) {
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
     await syncActorExtracts(source, translationsByKey);
     await syncStarterConsumables(source, translationsByKey);
+    await syncStarterArmorMaterials(source, translationsByKey);
     await syncStarterInventoryEffects(source, translationsByKey);
 
     // TEMPORARY WORLD MIGRATION — documented in docs/development-world-migrations.md.

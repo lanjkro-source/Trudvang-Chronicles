@@ -212,6 +212,7 @@
         "initiativeModifier": -1,
         "weight": 10.5,
         "value": 15,
+        "material": "leather",
         "quantity": 1,
         "equipped": true
       },

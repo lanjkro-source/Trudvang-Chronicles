@@ -262,6 +262,7 @@
         "initiativeModifier": -2,
         "weight": 21,
         "value": 70,
+        "material": "steel",
         "quantity": 1,
         "equipped": true
       },

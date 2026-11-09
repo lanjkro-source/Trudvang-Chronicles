@@ -6,6 +6,29 @@ import {JOURNAL_FOLDERS} from "../modules/journal-catalog.mjs";
 import {PALETTES} from "../modules/palette.mjs";
 
 const starter = JSON.parse(fs.readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
+
+test('catalogue and bestiary armor carry a material consistent with their construction',async()=>{
+ const expected={FurLeather:'leather',HardenedLeather:'leather',MetalReinforcedLeather:'leather',ThickFabric:'cloth'};
+ const armors=starter.items.filter(item=>item.type==='armor');assert.equal(armors.length,10);
+ for(const armor of armors)assert.equal(armor.system.material,expected[armor.nameKey.split('.')[3]]??'steel',armor.nameKey);
+ const {BESTIARY_ENTRIES}=await import('../modules/bestiary-catalog-data.mjs');
+ const generated=BESTIARY_ENTRIES.flatMap(entry=>entry.actor.items??[]).filter(item=>item.type==='armor');assert.ok(generated.length>0);
+ assert.ok(generated.every(item=>['leather','cloth','steel'].includes(item.system.material)));
+});
+
+test('armor material backfill updates recognized world, actor and token copies once, preserving explicit choices',async t=>{
+ const {syncStarterArmorMaterials}=await import('../modules/content-importer.mjs'),previous=globalThis.game;t.after(()=>{globalThis.game=previous;});
+ const plate=starter.items.find(item=>item.nameKey.endsWith('PlateArmor.Name')),leather=starter.items.find(item=>item.nameKey.endsWith('FurLeather.Name')),updates=[];
+ const make=(name,entry,material='',source)=>({name,type:'armor',uuid:`Item.${name}`,system:{material,weight:13,breach:{value:17,max:50}},getFlag:(scope)=>scope==='trudvang-chronicles'?entry?.nameKey.replace(/\.Name$/,''):source,
+  async update(data){assert.deepEqual(Object.keys(data),['system.material']);this.system.material=data['system.material'];updates.push(this.name);}});
+ const world=make('World',plate),owned=make('Renamed',leather),token=make('Token',undefined,'',world.uuid),custom=make('Custom'),explicit=make('Custom material',plate,'bone'),named=make('Old leather name');
+ const actor={items:[owned,custom,explicit]},tokenActor={items:[token,named]};
+ globalThis.game={items:[world],actors:[actor],scenes:[{tokens:[{actor},{actor:tokenActor}]}]};
+ const translations=new Map([[leather.nameKey,new Set(['Old leather name'])]]);
+ await syncStarterArmorMaterials(starter,translations);assert.deepEqual(updates,['World','Renamed','Token','Old leather name']);
+ assert.equal(explicit.system.material,'bone');assert.equal(custom.system.material,'');assert.equal(owned.system.weight,13);assert.deepEqual(owned.system.breach,{value:17,max:50});
+ updates.length=0;await syncStarterArmorMaterials(starter,translations);assert.equal(updates.length,0);
+});
 const locales = Object.fromEntries(["fr", "en"].map(lang =>
   [lang, JSON.parse(fs.readFileSync(new URL(`../lang/${lang}.json`, import.meta.url), "utf8"))]));
 

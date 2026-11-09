@@ -2,7 +2,7 @@
  * Material means the striking surface/projectile, not the grip or bow stock.
  * Extend these lists here (or CONFIG.TRUDVANG.weaponMaterials) as needed. */
 export const WEAPON_MATERIALS = {
-  natural: "fa-leaf", wood: "fa-tree", steel: "fa-link", bronze: "fa-ring", stone: "fa-mountain"
+  natural: "fa-leaf", wood: "fa-tree", steel: "fa-link", bronze: "fa-ring", stone: "fa-mountain", leather: "fa-shield-halved", cloth: "fa-shirt", bone: "fa-bone"
 };
 const naturalWeaponProfiles = {
   bite: {type: "piercing"}, morsure: {type: "piercing"},

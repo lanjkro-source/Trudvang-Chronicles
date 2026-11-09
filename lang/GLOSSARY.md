@@ -965,6 +965,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Material.grindsilver` | Grindsilver | Grindsilver |
 | `TRUDVANG.Damage.Material.bronze` | Bronze | Bronze |
 | `TRUDVANG.Damage.Material.natural` | Natural | Naturel |
+| `TRUDVANG.Damage.Material.leather` | Leather | Cuir |
+| `TRUDVANG.Damage.Material.cloth` | Cloth | Tissu |
+| `TRUDVANG.Damage.Material.bone` | Bone | Os |
 
 ## `TRUDVANG.Damage.Protection`
 
@@ -16087,3 +16090,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Quality.Good` | Good | Bonne |
 | `TRUDVANG.Quality.Masterful` | Masterful | Magistrale |
 | `TRUDVANG.Quality.Legendary` | Legendary | Légendaire |
+| `TRUDVANG.Quality.SpecialLabel` | Special | Spécial |
+| `TRUDVANG.Quality.RitualHint` | Select the items being used. Only Masterful and Legendary quality bonuses can stack, up to +6 in total. | Sélectionnez les objets utilisés. Seules les qualités Magistrale et Légendaire permettent de cumuler les bonus de qualité, jusqu’à +6 au total. |
+
+## `TRUDVANG.Quality.Special`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Quality.Special.none` | None | Non |
+| `TRUDVANG.Quality.Special.votive` | Votive | Votif |
+| `TRUDVANG.Quality.Special.vitner` | Vitner weaving | Tissage de vitner |

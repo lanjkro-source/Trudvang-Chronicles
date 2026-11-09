@@ -366,6 +366,7 @@ function itemBaseSchema() {
   return {
     quality: integer(2, {min: 0, max: 5}),
     magical: boolean(false),
+    specialUse: string("none"),
     description: html(),
     source: string(),
     quantity: integer(1, {min: 0}),

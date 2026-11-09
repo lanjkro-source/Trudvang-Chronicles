@@ -1,5 +1,5 @@
 import {rulesFromChanges} from './effect-rule-changes.mjs';
-import {itemQuality} from './item-quality.mjs';
+import {itemQuality,equipmentDecimal} from './item-quality.mjs';
 
 const active=effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired;
 export function itemMagicEffects(item){return Array.from(item?.effects??[]).filter(active);}
@@ -42,6 +42,10 @@ export function prepareItemLocalEffects(item,phase){
   if(integritySpent)assign(item,change.key,Number(at(item,change.key))-integritySpent);
   records.push({system:item.system,key:change.key,type:change.type,operand:Number(change.value),source:at(item._source,change.key),before,after:at(item,change.key),effectId,signature,integrityGrant,integritySpent});
  }
+ if(phase==='final')for(const key of ['system.weight','system.value']){
+  const before=at(item,key),after=equipmentDecimal(before);
+  if(typeof before==='number'&&before!==after){assign(item,key,after);records.push({system:item.system,key,type:'round',source:at(item._source,key),before,after});}
+ }
 }
 /** Snapshot the values displayed by a sheet, so saving the full form does not
  * persist temporary bonuses, including fields the user did not change. */
@@ -67,10 +71,12 @@ export function intrinsicItemSheetUpdate(update,state=[]){
  }
  return update;
 }
-export function itemUseBonuses(actor){
+export function itemUseBonuses(actor,{castingType}={}){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
  const quality=itemQuality(item.system?.quality),qualityEffect=itemMagicEffects(item).find(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(row=>row.key==='system.quality'));
- const qualityRows=['gear','potion'].includes(item.type)&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize('TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id}]:[];
+ const special=item.system?.specialUse??'none';
+ const eligible=castingType?['weapon','gear'].includes(item.type)&&special===(castingType==='divine'?'votive':'vitner'):['gear','potion'].includes(item.type)&&special==='none';
+ const qualityRows=eligible&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id}]:[];
  return [...qualityRows,...itemMagicEffects(item).flatMap(effect=>{
   const value=Number(rulesFromChanges(effect.system?.changes).objectUse)||0;
   return value?[{id:effect.uuid??`${item.id}:${effect.id}`,item,effect,value}]:[];

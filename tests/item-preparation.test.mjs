@@ -164,6 +164,19 @@ test('renewing Rust replaces its quality adjustment without applying the degrada
  assert.equal(item.effects.length,1);assert.equal(item.system.quality,0);assert.equal(item.system.breach.value,30);assert.equal(item.system.value,20);
 });
 
+test('weight and price round to one decimal after multipliers without accumulating rounding or saving effects into source',async()=>{
+ const data=source();data.type='armor';Object.assign(data.system,{quality:4,heft:3,weight:10.5,value:100});const item=new TrudvangItem(data,actor);actor.items=[item];
+ await applyTransformation(actor,'vitner-vitner-of-objects:rust:3#effect',{destinationItem:item,counts:[0,0,0,0,2],skipDialog:true});
+ assert.equal(item.system.weight,16.4);assert.equal(item.system.value,16.7);
+ for(let i=0;i<3;i++){item.prepareEmbeddedDocuments();item.system.prepareDerivedData();item.prepareDerivedData();assert.equal(item.system.weight,16.4);assert.equal(item.system.value,16.7);}
+ const sheet=new TrudvangItemSheet({document:item});await sheet._prepareContext({});
+ await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet,{},null,{object:{'system.weight':16.4,'system.value':16.7}});
+ assert.equal(item._source.system.weight,10.5);assert.equal(item._source.system.value,100);
+ item._source.effects=[];item.prepareData();assert.equal(item.system.weight,10.5);assert.equal(item.system.value,100);
+ const raw=source();Object.assign(raw.system,{weight:1.234567,value:123.45678});const plain=new TrudvangItem(raw,actor);
+ assert.equal(plain.system.weight,1.2);assert.equal(plain.system.value,123.5);assert.equal(plain._source.system.weight,1.234567);
+});
+
 test('known weapon use joins the ordinary modifier list without an icon or checkbox and updates the visible final VC',async t=>{
  const old=document;t.after(()=>{globalThis.document=old;});
  globalThis.document={createElement:type=>['label','li'].includes(type)?{tagName:type,html:'',set innerHTML(value){this.html=value;},querySelector:()=>null}:type==='div'?old.createElement(type):{attrs:{},setAttribute(k,v){this.attrs[k]=v;},hasAttribute(k){return k in this.attrs;}}};

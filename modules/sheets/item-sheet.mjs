@@ -107,6 +107,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       context.system.protection=Math.max(0,Number(this.item.system.protection||0)+itemProtectionModifiers(this.item).reduce((sum,row)=>sum+row.amount,0));
       context.qualityOptions=ITEM_QUALITIES.map(row=>({...row,label:game.i18n.localize(`TRUDVANG.Quality.${row.key}`),selected:row.id===itemQuality(context.system.quality).id}));
       context.qualityLocked=this._itemEffectEditState.some(row=>row.key==='system.quality');
+      if(['weapon','gear'].includes(this.item.type))context.specialUseOptions=['none','votive','vitner'].map(value=>({value,label:game.i18n.localize(`TRUDVANG.Quality.Special.${value}`),selected:value===(this.item.system.specialUse||'none')}));
     }
     context.armorMaterialOptions = [...new Set([...Object.keys(TRUDVANG.weaponMaterials), "grindsilver", this.item.system.material || ""])].map(value => ({value,label:value ? game.i18n.localize(`TRUDVANG.Damage.Material.${value}`) : game.i18n.localize("TRUDVANG.Damage.Material.unknown"),selected:value===this.item.system.material}));
     context.damageQualificationsOpen = this.element?.querySelector?.("details.damage-qualification-settings")?.open ?? false;

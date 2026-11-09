@@ -1,5 +1,9 @@
 # Migrations temporaires des mondes de développement
 
+## Matériaux des armures — version de contenu 68
+
+`syncStarterArmorMaterials()` et son appel dans `modules/content-importer.mjs`, déclenchés par `CONTENT_VERSION = 68`, renseignent uniquement les matériaux absents des armures de démarrage reconnues : objets du monde, inventaires des PJ/PNJ et tokens non liés. Le rapprochement utilise l’identifiant de démarrage, la provenance ou les noms traduits ; les matériaux déjà choisis et les autres caractéristiques sont conservés. Retirer ce rattrapage et son appel après mise à jour ou suppression des mondes de développement. Les matériaux dans les sources et le schéma des objets sont pérennes.
+
 Ce document inventorie tout le code qui existe uniquement pour remettre à niveau un monde créé par une version antérieure du système. Il ne décrit pas les règles de jeu ni la compatibilité Foundry V14/V16 : ces deux catégories resteront nécessaires après la première release.
 
 ## Règle de maintenance

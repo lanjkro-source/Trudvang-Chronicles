@@ -90,6 +90,7 @@
         "heft": 1,
         "weight": 4,
         "value": 5,
+        "material": "cloth",
         "initiativeModifier": 0,
         "quantity": 1,
         "equipped": true

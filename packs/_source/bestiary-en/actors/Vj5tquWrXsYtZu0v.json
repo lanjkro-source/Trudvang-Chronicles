@@ -123,6 +123,7 @@
         "initiativeModifier": -1,
         "weight": 7.5,
         "value": 8.6,
+        "material": "leather",
         "quantity": 1,
         "equipped": true
       },

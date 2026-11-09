@@ -818,7 +818,10 @@
         "unknown": "Non précisé",
         "grindsilver": "Grindsilver",
         "bronze": "Bronze",
-        "natural": "Naturel"
+        "natural": "Naturel",
+        "leather": "Cuir",
+        "cloth": "Tissu",
+        "bone": "Os"
       },
       "Protection": {
         "normal": "Protections normales",
@@ -18440,7 +18443,14 @@
       "Normal": "Normale",
       "Good": "Bonne",
       "Masterful": "Magistrale",
-      "Legendary": "Légendaire"
+      "Legendary": "Légendaire",
+      "SpecialLabel": "Spécial",
+      "Special": {
+        "none": "Non",
+        "votive": "Votif",
+        "vitner": "Tissage de vitner"
+      },
+      "RitualHint": "Sélectionnez les objets utilisés. Seules les qualités Magistrale et Légendaire permettent de cumuler les bonus de qualité, jusqu’à +6 au total."
     }
   }
 }

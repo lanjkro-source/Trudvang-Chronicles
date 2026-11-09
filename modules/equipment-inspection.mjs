@@ -6,7 +6,7 @@ import {npcMovementRows} from "./rules/npc-summary.mjs";
 import {conditionalProtectionProfiles} from "./rules/conditional-protection.mjs";
 import {itemMagicEffects} from './rules/item-magic.mjs';
 import {rulesFromChanges} from './rules/effect-rule-changes.mjs';
-import {itemQuality} from './rules/item-quality.mjs';
+import {itemQuality,equipmentDecimal} from './rules/item-quality.mjs';
 
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
@@ -83,7 +83,7 @@ function statDisplays(key, value) {
     return {base: damageDisplay(base), effective: damageDisplay(value), modified: value.modifier.modified || value.openRoll.modified, tone: changeTone(delta)};
   }
   const useSigned = ["combatActionModifier", "initiativeModifier", "movementModifier"].includes(key);
-  const display = current => useSigned ? signed(current) : `${current}`;
+  const display = current => useSigned ? signed(current) : `${['weight','value'].includes(key)?equipmentDecimal(current):current}`;
   return {base: display(value.base), effective: display(value.value), modified: Boolean(value.modified), tone: changeTone(number(value.value) - number(value.base))};
 }
 
@@ -104,7 +104,7 @@ function statSteps(key, value) {
   const sources = key === "damage" ? [value.openRoll, value.modifier] : [value];
   return sources.flatMap(source => (source?.steps || []).map(step => ({
     label: step.source?.name || localized(`TRUDVANG.Inspection.Source.${step.source?.kind || "rule"}`),
-    value: `${step.before} → ${step.after} (${signed(step.delta)})`,
+    value: `${key==='weight'?equipmentDecimal(step.before):step.before} → ${key==='weight'?equipmentDecimal(step.after):step.after} (${signed(key==='weight'?equipmentDecimal(step.delta):step.delta)})`,
     tone: changeTone(key === "damage" && source === value.openRoll ? -step.delta : step.delta),
     explanation: localized(step.explanationKey, step.explanationData)
   })));
@@ -152,7 +152,7 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
   const baseQuality=itemQuality(original?.quality),currentQuality=itemQuality(item.system?.quality);
   const baseQualityLabel=localized(`TRUDVANG.Quality.${baseQuality.key}`),currentQualityLabel=localized(`TRUDVANG.Quality.${currentQuality.key}`);
   stats.push({key:'quality',label:localized('TRUDVANG.Quality.Label'),baseDisplay:baseQualityLabel,effectiveDisplay:currentQualityLabel,comparison:baseQuality.id===currentQuality.id?currentQualityLabel:`${baseQualityLabel} → ${currentQualityLabel}`,modified:baseQuality.id!==currentQuality.id,tone:changeTone(currentQuality.id-baseQuality.id),steps:localSteps(['quality'])});
-  if(number(original?.value)!==number(item.system?.value))stats.push({key:'value',label:localized('TRUDVANG.Field.Value'),baseDisplay:String(number(original?.value)),effectiveDisplay:String(number(item.system.value)),comparison:`${number(original?.value)} → ${number(item.system.value)}`,modified:true,tone:changeTone(number(item.system.value)-number(original?.value)),steps:localSteps(['value'])});
+  if(equipmentDecimal(original?.value)!==equipmentDecimal(item.system?.value))stats.push({key:'value',label:localized('TRUDVANG.Field.Value'),baseDisplay:String(equipmentDecimal(original?.value)),effectiveDisplay:String(equipmentDecimal(item.system.value)),comparison:`${equipmentDecimal(original?.value)} → ${equipmentDecimal(item.system.value)}`,modified:true,tone:changeTone(number(item.system.value)-number(original?.value)),steps:localSteps(['value'])});
   const impacts = Object.entries(resolution.wearerImpacts).filter(([, impact]) => impact).map(([key, impact]) => {
     const mode = impact.conditional ? "conditional" : impact.applies ? "permanent" : "inactive";
     return {
