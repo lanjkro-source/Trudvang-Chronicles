@@ -87,3 +87,45 @@ test('a normal player request crosses the socket to the elected GM and returns t
  }};
  assert.equal((await requestInventoryTransfer(source,b)).status,'ok');assert.equal(a.items.length,0);assert.equal(b.items.length,1);
 });
+
+test('dropping inventory on a token transfers to its actor without opening a recipient sheet',async t=>{
+ const r=runtime(t),sourceActor=r.actor('a','a'),recipient=r.actor('b','b'),source=r.item(sourceActor,{system:{quantity:2}});
+ const {dropInventoryOnToken}=await import('../modules/inventory-canvas-drop.mjs');
+ foundry.utils.fromUuidSync=uuid=>r.docs.get(uuid);game.user=game.users.get('a');
+ const canvas={tokens:{placeables:[{actor:recipient,visible:true,bounds:{contains:(x,y)=>x>=100&&x<200&&y>=100&&y<200}}]}};
+ assert.equal(dropInventoryOnToken(canvas,{type:'Item',uuid:source.uuid,x:150,y:150}),false);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(sourceActor.items.length,0);assert.equal(recipient.items.length,1);assert.equal(recipient.items[0].system.quantity,2);
+});
+
+test('canvas drops preserve source ownership checks and the GM can transfer another actor’s item',async t=>{
+ const r=runtime(t),sourceActor=r.actor('a','a'),recipient=r.actor('b','b'),source=r.item(sourceActor);
+ const {dropInventoryOnToken}=await import('../modules/inventory-canvas-drop.mjs');
+ foundry.utils.fromUuidSync=uuid=>r.docs.get(uuid);
+ const canvas={tokens:{placeables:[{actor:recipient,bounds:{x:0,y:0,right:100,bottom:100}}]}},data={type:'Item',uuid:source.uuid,x:50,y:50};
+ game.user=game.users.get('b');assert.equal(dropInventoryOnToken(canvas,data),false);await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(sourceActor.items.length,1);assert.equal(recipient.items.length,0);
+ game.user=game.users.get('gm');dropInventoryOnToken(canvas,data);await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(sourceActor.items.length,0);assert.equal(recipient.items.length,1);
+});
+
+test('canvas transfer ignores empty ground, invisible tokens, compendiums and non-inventory drops',async t=>{
+ const r=runtime(t),a=r.actor('a','a'),b=r.actor('b','b'),source=r.item(a);
+ const {dropInventoryOnToken}=await import('../modules/inventory-canvas-drop.mjs');foundry.utils.fromUuidSync=uuid=>r.docs.get(uuid);
+ const canvas={tokens:{placeables:[{actor:b,visible:false,bounds:{contains:()=>true}}]}},data={type:'Item',uuid:source.uuid,x:1,y:1};
+ assert.equal(dropInventoryOnToken(canvas,data),undefined);
+ canvas.tokens.placeables=[];assert.equal(dropInventoryOnToken(canvas,data),undefined);
+ assert.equal(dropInventoryOnToken(canvas,{...data,uuid:'Compendium.pack.Item.i'}),undefined);
+ assert.equal(dropInventoryOnToken(canvas,{...data,type:'TrudvangTransformation'}),undefined);
+ assert.equal(dropInventoryOnToken(canvas,{...data,type:'Actor'}),undefined);
+ assert.equal(a.items.length,1);assert.equal(b.items.length,0);
+});
+
+test('an unlinked token receives the object on its synthetic actor rather than its world prototype',async t=>{
+ const r=runtime(t),a=r.actor('a','a'),prototype=r.actor('prototype','b'),synthetic=r.actor('synthetic','b'),source=r.item(a);
+ synthetic.uuid='Scene.scene.Token.local.Actor.prototype';r.docs.set(synthetic.uuid,synthetic);
+ const {dropInventoryOnToken}=await import('../modules/inventory-canvas-drop.mjs');foundry.utils.fromUuidSync=uuid=>r.docs.get(uuid);
+ assert.equal(dropInventoryOnToken({tokens:{placeables:[{actor:synthetic,bounds:{contains:()=>true}}]}},{type:'Item',uuid:source.uuid,x:1,y:1}),false);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(prototype.items.length,0);assert.equal(synthetic.items.length,1);assert.equal(a.items.length,0);
+});

@@ -30,6 +30,7 @@ import {registerAuraSupport} from "./modules/aura.mjs";
 import {registerDamageEnrichers} from "./modules/damage-icons.mjs";
 import {migrateDamageQualifications} from "./modules/damage-qualification-migration.mjs";
 import {registerSharedConsumptionSocket} from './modules/shared-consumption.mjs';
+import {registerInventoryCanvasDrop} from './modules/inventory-canvas-drop.mjs';
 import {registerInventoryTransferSocket,recoverInventoryTransfers} from './modules/inventory-transfer.mjs';
 
 Hooks.once("init", () => {
@@ -42,6 +43,7 @@ Hooks.once("init", () => {
   registerMagicSheetAvailabilityHooks();
   registerActorEffectDurationHooks();
   registerTransformationHooks();
+  registerInventoryCanvasDrop();
   registerMaintainedSpellTracking();
   registerActorStatusHooks();
   registerCombatHooks();

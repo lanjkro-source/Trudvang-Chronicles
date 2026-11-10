@@ -75,3 +75,5 @@ Le repos nocturne retire un seul point de divinité temporaire par clic, sans de
 - Seul le propriétaire de l’acteur détenteur ou un MJ peut utiliser ce bouton. Il désigne les tokens ciblés (ou, sans cible, les tokens contrôlés) ; une dose est consommée par acteur distinct. Il n’y a aucun repli implicite sur le lanceur.
 - Le détenteur fournit la dose ; le destinataire reçoit les soins, le jet d’extrait et les véritables conséquences. Le MJ connecté réalise les écritures sur un destinataire que le joueur ne contrôle pas. Les demandes portant sur une même pile sont sérialisées.
 - L’icône et le nom d’un objet d’inventaire sont explicitement glissables. Le dépôt sur une fiche est traité une seule fois, même après ses réaffichages. Le transfert existant conserve ses contrôles de permission et sa récupération en cas d’interruption.
+
+- Le dépôt direct sur un token visible transfère un objet à son acteur, lié ou synthétique, sans ouvrir sa fiche. Ce parcours utilise le service de transfert des fiches ; les dépôts sur le sol et les imports de compendium restent inchangés.
