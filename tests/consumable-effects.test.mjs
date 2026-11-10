@@ -110,3 +110,38 @@ test('giving an extract uses the recipient trait and creates its stages only on 
  assert.equal(recipient.effects.length,1);assert.equal(recipient.effects[0].system.stages.length,2);
  assert.deepEqual(formulas,['1d20']);
 });
+
+test('Infection and Contagion keep incubation and fever independent of the aura and expire after their rolled duration',async()=>{
+ const {withDiseaseResistance}=await import('../modules/disease-resistance.mjs');
+ for(const [tail,penalty] of [['disease-carrier:0',-2],['contagious:4',-4]]){
+  game.time.worldTime=0;const a=actor(),id='holy-haminges-power-of-trolls:'+tail;
+  const exposure={name:'Aura',img:'aura',flags:{'trudvang-chronicles':{transformation:{key:id+'#exposure',sourceId:id}}}};
+  results=[2,3];let attempts=0;
+  await withDiseaseResistance(exposure,0,a,async()=>{attempts++;return {success:false};});
+  assert.equal(a.effects.length,1);const disease=a.effects[0];
+  assert.equal(disease.flags['trudvang-chronicles'].auraRecipient,undefined);assert.equal(disease.flags['trudvang-chronicles'].diseaseOutcome.sourceId,id);
+  assert.deepEqual(disease.system.changes,[]);assert.equal(disease.duration.units,'rounds');assert.equal(disease.duration.value,24);
+  globalThis.ui={notifications:{info(){},warn(){}}};
+  disease.duration.expired=true; // The stage clock, not a stale native expiry, controls the disease.
+  await withDiseaseResistance(exposure,0,a,async()=>{attempts++;return {success:false};});assert.equal(attempts,1);
+  disease.duration.expired=false;
+  game.time.worldTime=119;await processConsequenceEffects(a.effects,119,{announce:false});assert.deepEqual(disease.system.changes,[]);
+  game.time.worldTime=120;await processConsequenceEffects(a.effects,120,{announce:false});assert.equal(disease.system.changes[0].value,String(penalty));assert.equal(disease.duration.value,3);assert.equal(disease.duration.units,'days');
+  game.time.worldTime=120+3*86400;await processConsequenceEffects(a.effects,game.time.worldTime,{announce:false});assert.equal(a.effects.length,0);
+ }
+});
+test('successful disease resistance grants one day of immunity without rolling incubation or illness',async()=>{
+ const {withDiseaseResistance}=await import('../modules/disease-resistance.mjs');game.time.worldTime=0;const a=actor(),id='holy-haminges-power-of-trolls:disease-carrier:0';
+ const exposure={flags:{'trudvang-chronicles':{transformation:{key:id+'#exposure',sourceId:id}}}};
+ formulas.length=0;await withDiseaseResistance(exposure,0,a,async()=>({success:true}));assert.deepEqual(formulas,[]);assert.equal(a.effects.length,1);assert.equal(a.effects[0].flags['trudvang-chronicles'].diseaseOutcome.kind,'immunity');assert.equal(a.effects[0].duration.value,1);
+ let rolled=false;await withDiseaseResistance(exposure,0,a,async()=>{rolled=true;return {success:false};});assert.equal(rolled,false);
+ game.time.worldTime=86400;await processConsequenceEffects(a.effects,86400,{announce:false});assert.equal(a.effects.length,0);
+ await withDiseaseResistance(exposure,0,a,async()=>{rolled=true;return {success:true};});assert.equal(rolled,true);
+});
+test('cancelled and concurrent exposure rolls do not create or duplicate disease consequences',async()=>{
+ const {withDiseaseResistance}=await import('../modules/disease-resistance.mjs');game.time.worldTime=0;const a=actor(),id='holy-haminges-power-of-trolls:contagious:4';
+ const exposure={flags:{'trudvang-chronicles':{transformation:{key:id+'#exposure',sourceId:id}}}};
+ await withDiseaseResistance(exposure,0,a,async()=>null);assert.equal(a.effects.length,0);
+ let finish,attempts=0;const first=withDiseaseResistance(exposure,0,a,()=>{attempts++;return new Promise(resolve=>{finish=resolve;});});
+ await withDiseaseResistance(exposure,0,a,async()=>{attempts++;return {success:true};});assert.equal(attempts,1);finish({success:true});await first;assert.equal(a.effects.length,1);
+});

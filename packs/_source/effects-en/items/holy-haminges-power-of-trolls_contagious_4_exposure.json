@@ -1,0 +1,45 @@
+{
+  "_id": "Emwbaz1w2x3y4z5A",
+  "_key": "!items!Emwbaz1w2x3y4z5A",
+  "name": "Contagious",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:contagious:4#exposure",
+    "description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+    "summary": "Spreads an infectious stench; exposed people must resist the disease.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "zjHf6VpVqWrXsYtZ",
+      "_key": "!items.effects!Emwbaz1w2x3y4z5A.zjHf6VpVqWrXsYtZ",
+      "name": "Contagious",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:contagious:4#exposure",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:contagious:4#exposure",
+            "sourceId": "holy-haminges-power-of-trolls:contagious:4",
+            "summary": "Spreads an infectious stench; exposed people must resist the disease.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

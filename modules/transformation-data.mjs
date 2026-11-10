@@ -10087,6 +10087,36 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
     "parameters": []
   },
+  "holy-haminges-power-of-trolls:disease-carrier:0#exposure": {
+    "id": "exposure",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 heure",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "disease": {
+      "testIndex": 0,
+      "penalty": -2,
+      "incubation": "1d6",
+      "duration": "1d6"
+    },
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-haminges-power-of-trolls:disease-carrier:0:1",
+      "light": false,
+      "recipientDescriptionKey": "TRUDVANG.Disease.Exposure"
+    },
+    "sourceId": "holy-haminges-power-of-trolls:disease-carrier:0",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "holy-haminges-power-of-trolls:disease-carrier:0:0",
+        "target": "duration",
+        "value": 3600
+      }
+    ]
+  },
   "holy-haminges-power-of-trolls:willpower:1#volonte": {
     "id": "volonte",
     "icon": "icons/svg/aura.svg",
@@ -10158,6 +10188,36 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "summaryPart",
         "value": 1,
         "optionId": "holy-haminges-power-of-trolls:illusion-tricks:2:2"
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:contagious:4#exposure": {
+    "id": "exposure",
+    "icon": "icons/svg/aura.svg",
+    "duration": "2 heures",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "disease": {
+      "testIndex": 0,
+      "penalty": -4,
+      "incubation": "1d6",
+      "duration": "1d6"
+    },
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-haminges-power-of-trolls:contagious:4:2",
+      "light": false,
+      "recipientDescriptionKey": "TRUDVANG.Disease.Exposure"
+    },
+    "sourceId": "holy-haminges-power-of-trolls:contagious:4",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "holy-haminges-power-of-trolls:contagious:4:0",
+        "target": "duration",
+        "value": 3600
       }
     ]
   },
@@ -15939,11 +15999,17 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": [
     "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew"
   ],
+  "holy-haminges-power-of-trolls:disease-carrier:0": [
+    "holy-haminges-power-of-trolls:disease-carrier:0#exposure"
+  ],
   "holy-haminges-power-of-trolls:willpower:1": [
     "holy-haminges-power-of-trolls:willpower:1#volonte"
   ],
   "holy-haminges-power-of-trolls:illusion-tricks:2": [
     "holy-haminges-power-of-trolls:illusion-tricks:2#illusions"
+  ],
+  "holy-haminges-power-of-trolls:contagious:4": [
+    "holy-haminges-power-of-trolls:contagious:4#exposure"
   ],
   "holy-haminges-power-of-trolls:persuade:5": [
     "holy-haminges-power-of-trolls:persuade:5#effect"

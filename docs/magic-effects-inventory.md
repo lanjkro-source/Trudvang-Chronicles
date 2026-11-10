@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 341 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 343 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -329,11 +329,11 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des hommes | Forgeron nain | pouvoir | `holy-haminges-power-of-men:dwarven-smith:6` | 2 | 0 | 1 | — | — |
 | Puissance des hommes | Légendaire | pouvoir | `holy-haminges-power-of-men:legendary:7` | 2 | 0 | 1 | — | — |
 | Puissance des hommes | Élixir de vie de la dévoreuse | pouvoir | `holy-haminges-power-of-men:life-elixir-of-the-devouress:8` | 2 | 0 | 1 | — | — |
-| Puissance des trolls | Infection | pouvoir | `holy-haminges-power-of-trolls:disease-carrier:0` | 3 | 1 | 0 | — | — |
+| Puissance des trolls | Infection | pouvoir | `holy-haminges-power-of-trolls:disease-carrier:0` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Volonté | pouvoir | `holy-haminges-power-of-trolls:willpower:1` | 2 | 0 | 1 | — | — |
 | Puissance des trolls | Sans peur | pouvoir | `holy-haminges-power-of-trolls:fearless:3` | 3 | 0 | 0 | — | — |
 | Puissance des trolls | Tours illusoires | pouvoir | `holy-haminges-power-of-trolls:illusion-tricks:2` | 3 | 0 | 1 | — | — |
-| Puissance des trolls | Contagion | pouvoir | `holy-haminges-power-of-trolls:contagious:4` | 3 | 1 | 0 | — | — |
+| Puissance des trolls | Contagion | pouvoir | `holy-haminges-power-of-trolls:contagious:4` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Persuasion | pouvoir | `holy-haminges-power-of-trolls:persuade:5` | 4 | 1 | 1 | — | — |
 | Puissance des trolls | Hardiesse des trolls | pouvoir | `holy-haminges-power-of-trolls:troll-wit:7` | 2 | 0 | 1 | — | — |
 | Puissance des trolls | Seigneur des mouches | pouvoir | `holy-haminges-power-of-trolls:lord-of-the-flies:6` | 3 | 1 | 0 | — | — |

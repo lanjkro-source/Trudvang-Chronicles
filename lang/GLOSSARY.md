@@ -14204,6 +14204,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.SourcePage` | 216 | 273 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.Duration` |  |  |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Name` | Disease Carrier | Infection |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Description` | This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area. | Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourceName` | Disease Carrier | Infection |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourcePage` | 223 | 274 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Duration` | 1 hour | 1 heure |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte`
 
 | Clé | English | Français |
@@ -14225,6 +14236,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.SourcePage` | 223 | 274 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Name` | Contagious | Contagion |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Description` | This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area. | Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourceName` | Contagious | Contagion |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourcePage` | 223 | 274 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Duration` | 2 hours | 2 heures |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:persuade:5#effect`
 
@@ -16189,3 +16211,19 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.InventoryTransfer.noGM` | An online GM is required to give an item to an actor you do not own. | Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas. |
 | `TRUDVANG.InventoryTransfer.failed` | The transfer failed; the original item was retained. | Le transfert a échoué ; l’objet d’origine est conservé. |
 | `TRUDVANG.InventoryTransfer.pending` | The transfer is pending completion. The GM can recover it when the world next loads. | Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde. |
+
+## `TRUDVANG.Disease`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Disease.Exposure` | Infectious stench: Constitution resistance (base SV {sv}). Failure causes 1d6 minutes of incubation, then 1d6 days of fever: {penalty} to all actions. Success grants one day of immunity to this ability. Leaving the aura does not cure an infection. | Odeur infectieuse : résistance de Constitution (VC de base {sv}). En cas d’échec, incubation de 1d6 minutes puis fièvre pendant 1d6 jours : {penalty} à toutes les actions. Une réussite immunise contre ce pouvoir pendant un jour. Quitter l’aura ne guérit pas une infection contractée. |
+| `TRUDVANG.Disease.Incubation` | Incubation | Incubation |
+| `TRUDVANG.Disease.Fever` | Fever | Fièvre |
+| `TRUDVANG.Disease.Immunity` | Immunity | Immunité |
+| `TRUDVANG.Disease.Pending` | A resistance roll against this disease is already in progress. | Un jet contre cette maladie est déjà en cours. |
+| `TRUDVANG.Disease.Already` | This exposure has already been resolved: its disease or immunity is still active. | Cette exposition a déjà été résolue : la maladie ou son immunité est encore active. |
+| `TRUDVANG.Disease.IncubationDescription` | The disease develops after incubation; there is no penalty yet. | La maladie se déclarera après l’incubation ; aucun malus pour le moment. |
+| `TRUDVANG.Disease.FeverDescription` | Fever imposes {penalty} to all actions until it ends. | La fièvre inflige {penalty} à toutes les actions jusqu’à sa guérison. |
+| `TRUDVANG.Disease.ImmuneDescription` | Immune to this ability for one day. | Immunisé contre ce pouvoir pendant un jour. |
+| `TRUDVANG.Disease.InfectedNotice` | {actor}: {minutes} min incubation, then {days} day(s) of disease ({penalty} to all actions). | {actor} : incubation de {minutes} min, puis maladie pendant {days} jour(s) ({penalty} à toutes les actions). |
+| `TRUDVANG.Disease.ImmuneNotice` | {actor} resists {source} and is immune to it for one day. | {actor} résiste à {source} et y est immunisé pendant un jour. |

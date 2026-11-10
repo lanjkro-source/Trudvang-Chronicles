@@ -108,3 +108,19 @@ test('informative tooltip notes never become a second situation modifier; genuin
  assert.deepEqual(conditionalSituationBonuses(make(raven,raven+'#ravens')),[]);
  assert.equal(conditionalSituationBonuses(make(smell,smell+'#ameliore')).length,1);
 });
+
+test('a disease resistance button rolls for its actual holder even when another token is selected',async()=>{
+ const a=clonableActor(),effect=a.effects[0],sourceId='holy-haminges-power-of-trolls:disease-carrier:0';
+ effect.system.changes=[];a.effects=[effect];a.system.modifiers.rolls.allActions=0;
+ effect.parent=a;effect.name='Exposition';effect.description='';effect.flags={[S]:{transformation:{key:sourceId+'#exposure',sourceId,ruleTestContext:{sourceId,kind:'divine',counts:[0,0,0]}}}};
+ effect.toObject=()=>({_id:effect.id,name:effect.name,system:structuredClone(effect.system),flags:structuredClone(effect.flags)});
+ let created;
+ a.createTrudvangEffect=async data=>{created=data;const doc={...data,parent:a};a.effects.push(doc);return doc;};
+ const previousCanvas=globalThis.canvas;globalThis.canvas={tokens:{controlled:[{actor:{type:'character',isOwner:true,name:'Wrong actor'}}]}};
+ const previousRoll=globalThis.Roll;globalThis.Roll=class{async evaluate(){this.total=1;return this;}};
+ try{
+  const sheet=new TrudvangEffectSheet({document:effect});
+  const result=await TrudvangEffectSheet.onRollRuleTest.call(sheet,{preventDefault(){}},{dataset:{testIndex:'0'}});
+  assert.equal(result.success,true);assert.equal(created.flags[S].diseaseOutcome.kind,'immunity');assert.equal(a.effects.length,2);
+ }finally{globalThis.canvas=previousCanvas;globalThis.Roll=previousRoll;}
+});

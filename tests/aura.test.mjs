@@ -113,3 +113,16 @@ test("an older active source transfers its changes to a separate caster recipien
  assert.equal(a.effects.length,2);assert.deepEqual(a.effects[1].system.changes.map(change=>change.key),["system.modifiers.rolls.allActions","system.transformation.ignoreFearPenalty"]);
  assert.match(marker.description,/TRUDVANG\.Aura\.Radius/);
 });
+
+test('infectious auras carry their own resistance and exact improved SV, while leaving only removes exposure',async t=>{
+ const previous={fromUuid:foundry.utils.fromUuid,format:game.i18n.format};t.after(()=>{foundry.utils.fromUuid=previous.fromUuid;game.i18n.format=previous.format;});
+ for(const [tail,rangeIndex,resistIndex,base,penalty]of [['disease-carrier:0',1,2,8,-2],['contagious:4',2,1,6,-4]]){
+  const id='holy-haminges-power-of-trolls:'+tail;
+  const disease={...source,system:{changes:[]},flags:{[S]:{transformation:{key:id+'#exposure',sourceId:id,ruleTestContext:{sourceId:id,countsById:{[`${id}:${rangeIndex}`]:2,[`${id}:${resistIndex}`]:2}}}}}};
+  foundry.utils.fromUuid=async()=>disease;game.i18n.format=(key,data)=>`${key}: ${JSON.stringify(data)}`;
+  const victim=actor('Actor.v'),token={id:'v',actor:victim},region={uuid:'Scene.s.Region.infection',flags:{[S]:{aura:{sourceEffectUuid:disease.uuid,casterUuid:'Actor.c'}}},tokens:new Set([token])};
+  assert.equal(auraRadius(disease),3);await reconcileAuraToken(region,token);
+  const exposure=victim.effects[0];assert.equal(exposure.flags[S].transformation.sourceId,id);assert.match(exposure.description,new RegExp(`"sv":${base-2}`));assert.match(exposure.description,new RegExp(`"penalty":${penalty}`));
+  victim.effects.push({id:'disease',flags:{[S]:{diseaseOutcome:{sourceId:id}}}});await reconcileAuraToken(region,token,{leaving:true});assert.equal(victim.effects.length,1);assert.equal(victim.effects[0].id,'disease');
+ }
+});

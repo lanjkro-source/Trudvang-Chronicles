@@ -16878,6 +16878,15 @@
           "SourcePage": "216",
           "Duration": ""
         },
+        "holy-haminges-power-of-trolls:disease-carrier:0#exposure": {
+          "Name": "Disease Carrier",
+          "Summary": "Spreads an infectious stench; exposed people must resist the disease.",
+          "Description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+          "SourceName": "Disease Carrier",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 hour"
+        },
         "holy-haminges-power-of-trolls:willpower:1#volonte": {
           "Name": "Troll Willpower",
           "Summary": "Fear points received: −4.",
@@ -16895,6 +16904,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:contagious:4#exposure": {
+          "Name": "Contagious",
+          "Summary": "Spreads an infectious stench; exposed people must resist the disease.",
+          "Description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+          "SourceName": "Contagious",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "2 hours"
         },
         "holy-haminges-power-of-trolls:persuade:5#effect": {
           "Name": "Imposed Task",
@@ -18517,6 +18535,19 @@
       "noGM": "An online GM is required to give an item to an actor you do not own.",
       "failed": "The transfer failed; the original item was retained.",
       "pending": "The transfer is pending completion. The GM can recover it when the world next loads."
+    },
+    "Disease": {
+      "Exposure": "Infectious stench: Constitution resistance (base SV {sv}). Failure causes 1d6 minutes of incubation, then 1d6 days of fever: {penalty} to all actions. Success grants one day of immunity to this ability. Leaving the aura does not cure an infection.",
+      "Incubation": "Incubation",
+      "Fever": "Fever",
+      "Immunity": "Immunity",
+      "Pending": "A resistance roll against this disease is already in progress.",
+      "Already": "This exposure has already been resolved: its disease or immunity is still active.",
+      "IncubationDescription": "The disease develops after incubation; there is no penalty yet.",
+      "FeverDescription": "Fever imposes {penalty} to all actions until it ends.",
+      "ImmuneDescription": "Immune to this ability for one day.",
+      "InfectedNotice": "{actor}: {minutes} min incubation, then {days} day(s) of disease ({penalty} to all actions).",
+      "ImmuneNotice": "{actor} resists {source} and is immune to it for one day."
     }
   }
 }

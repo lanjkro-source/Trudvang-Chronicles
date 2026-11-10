@@ -1,0 +1,45 @@
+{
+  "_id": "PDGiMbHcIdJeKfLg",
+  "_key": "!items!PDGiMbHcIdJeKfLg",
+  "name": "Infection",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0#exposure",
+    "description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+    "summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 274
+    }
+  },
+  "effects": [
+    {
+      "_id": "qPvVHlQlRmSnToUp",
+      "_key": "!items.effects!PDGiMbHcIdJeKfLg.qPvVHlQlRmSnToUp",
+      "name": "Infection",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:disease-carrier:0#exposure",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:disease-carrier:0#exposure",
+            "sourceId": "holy-haminges-power-of-trolls:disease-carrier:0",
+            "summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
+import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicDamageProfile} from './magic-damage.mjs';
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
@@ -71,13 +72,17 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  if(aura.recipientDescriptionKey){
   const profile=magicDamageProfile(source);
   const damage=Number(profile?.formula?.match(/^0d\d+\s*\+\s*(\d+)$/)?.[1]??0);
-  description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2)});
+  const spec=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease;
+  const test=spec?RULE_TESTS_BY_CATALOG_ID[sourceMeta(source)?.sourceId]?.[spec.testIndex]:null;
+  const context=sourceMeta(source)?.ruleTestContext??{};
+  const sv=Number(test?.sv??0)+(test?.powerLevelModifiers??[]).reduce((sum,p)=>sum+Number(p.value)*Number(context.countsById?.[p.optionId]??context.counts?.[p.index]??0),0);
+  description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2),sv,penalty:spec?.penalty});
  }
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
  const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
  const data={name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,statuses:sourceMeta(source)?.auraStatuses??[],
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
-  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false}}:{})}}};
+  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage||TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
  const existing=children[0];
  if(existing){await existing.update(data);if(children.length>1)await actor.deleteEmbeddedDocuments("ActiveEffect",children.slice(1).map(effect=>effect.id));}
  else await actor.createEmbeddedDocuments("ActiveEffect",[data]);

@@ -16878,6 +16878,15 @@
           "SourcePage": "273",
           "Duration": ""
         },
+        "holy-haminges-power-of-trolls:disease-carrier:0#exposure": {
+          "Name": "Infection",
+          "Summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
+          "Description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+          "SourceName": "Infection",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "274",
+          "Duration": "1 heure"
+        },
         "holy-haminges-power-of-trolls:willpower:1#volonte": {
           "Name": "Volonté des trolls",
           "Summary": "Points de peur reçus : −4.",
@@ -16895,6 +16904,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:contagious:4#exposure": {
+          "Name": "Contagion",
+          "Summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
+          "Description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+          "SourceName": "Contagion",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "274",
+          "Duration": "2 heures"
         },
         "holy-haminges-power-of-trolls:persuade:5#effect": {
           "Name": "Tâche imposée",
@@ -18517,6 +18535,19 @@
       "noGM": "Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas.",
       "failed": "Le transfert a échoué ; l’objet d’origine est conservé.",
       "pending": "Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde."
+    },
+    "Disease": {
+      "Exposure": "Odeur infectieuse : résistance de Constitution (VC de base {sv}). En cas d’échec, incubation de 1d6 minutes puis fièvre pendant 1d6 jours : {penalty} à toutes les actions. Une réussite immunise contre ce pouvoir pendant un jour. Quitter l’aura ne guérit pas une infection contractée.",
+      "Incubation": "Incubation",
+      "Fever": "Fièvre",
+      "Immunity": "Immunité",
+      "Pending": "Un jet contre cette maladie est déjà en cours.",
+      "Already": "Cette exposition a déjà été résolue : la maladie ou son immunité est encore active.",
+      "IncubationDescription": "La maladie se déclarera après l’incubation ; aucun malus pour le moment.",
+      "FeverDescription": "La fièvre inflige {penalty} à toutes les actions jusqu’à sa guérison.",
+      "ImmuneDescription": "Immunisé contre ce pouvoir pendant un jour.",
+      "InfectedNotice": "{actor} : incubation de {minutes} min, puis maladie pendant {days} jour(s) ({penalty} à toutes les actions).",
+      "ImmuneNotice": "{actor} résiste à {source} et y est immunisé pendant un jour."
     }
   }
 }

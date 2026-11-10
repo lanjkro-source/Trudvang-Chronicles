@@ -4396,6 +4396,16 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:contagious:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-trolls:contagious:4:0",
+        "holy-haminges-power-of-trolls:contagious:4:1",
+        "holy-haminges-power-of-trolls:contagious:4:2"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:contagious:4:0",
@@ -4419,6 +4429,16 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:disease-carrier:0": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-trolls:disease-carrier:0:0",
+        "holy-haminges-power-of-trolls:disease-carrier:0:1",
+        "holy-haminges-power-of-trolls:disease-carrier:0:2"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:disease-carrier:0:0",

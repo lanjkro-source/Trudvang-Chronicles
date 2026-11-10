@@ -53,12 +53,12 @@ export async function announceConsequences(actor,{rows=[],rolls=[]},source=""){
 }
 const duration=seconds=>seconds>=86400&&seconds%86400===0?{value:seconds/86400,units:"days",expired:false}:seconds>=3600?{value:seconds/3600,units:"hours",expired:false}:{value:seconds/5,units:"rounds",expired:false};
 const clockFlag=effect=>effect.flags?.[SCOPE]?.consequenceClock;
-export async function createConsequenceEffect(actor,{name,img,description="",stackId,stages,tests=[]}){
+export async function createConsequenceEffect(actor,{name,img,description="",stackId,stages,tests=[],flags={}}){
  const first=stages[0],now=Number(game.time?.worldTime??0);
  const clock={name,stage:0,stageStartedAt:now,ticks:[],stages};
  const data={name:first.label?`${name} — ${first.label}`:name,img,type:"effect",description,transfer:false,
   duration:duration(first.seconds),system:{stackId,stacking:"refresh",stage:0,changes:first.changes??[],stages:stages.map(s=>({label:s.label??name,durationValue:duration(s.seconds).value,durationUnit:duration(s.seconds).units,changes:s.changes??[]}))},
-  flags:{[SCOPE]:{consequenceClock:clock,consumablePolicy:first.policy??{},consequenceTests:first.tests??tests}},statuses:first.statuses??[]};
+  flags:{...flags,[SCOPE]:{...flags[SCOPE],consequenceClock:clock,consumablePolicy:first.policy??{},consequenceTests:first.tests??tests}},statuses:first.statuses??[]};
  const effect=await actor.createTrudvangEffect(data);
  return effect;
 }
