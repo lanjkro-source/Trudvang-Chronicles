@@ -3,6 +3,7 @@
 export const POWER_DETAILS_BY_ID = {
   "holy-ealdtradition-gift-of-thanja:animal-speech:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:animal-speech:1:0",
@@ -21,6 +22,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -45,6 +47,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -69,6 +72,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:bestial-tongue:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3:0",
@@ -87,6 +91,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:dragon-tongue:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:0",
@@ -105,6 +110,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:forest-denizen:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -129,6 +135,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:ravenshape:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -153,6 +160,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:salmonshape:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -177,6 +185,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-gift-of-thanja:stagshape:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -201,6 +210,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -225,6 +235,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -247,6 +258,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:bolgemek:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -271,6 +283,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:fearless:6": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "allie"
     ],
@@ -351,6 +364,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": {
     "isRune": false,
+    "level": 5,
     "casterFirstEffects": [
       "ward"
     ],
@@ -416,6 +430,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:roggdrasil:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -440,6 +455,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "groups": [
@@ -494,6 +510,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -516,6 +533,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
     "isRune": false,
+    "level": 3,
     "casterFirstEffects": [
       "ward"
     ],
@@ -581,6 +599,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:dragonslayer:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -605,6 +624,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:giantslayer:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -629,6 +649,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "groups": [
         {
@@ -660,6 +681,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:king-s-ale:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "groups": [
         {
@@ -691,6 +713,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:king-s-guard:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -720,6 +743,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:king-s-militia:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -749,6 +773,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:strong-beer:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "groups": [
         {
@@ -780,6 +805,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:the-nine-kings:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -809,6 +835,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-heritage-of-majne:trollslayer:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -833,6 +860,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:elf-summer:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:0",
@@ -856,6 +884,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:harvest-year:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-magh-s-gift:harvest-year:8:0",
@@ -869,6 +898,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:hero-s-song:4": {
     "isRune": false,
+    "level": 3,
     "casterFirstEffects": [
       "effect"
     ],
@@ -890,6 +920,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:journey-wind:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-magh-s-gift:journey-wind:0:0",
@@ -908,6 +939,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:king-s-anthem:6": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "effect"
     ],
@@ -929,6 +961,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:magh-s-chain:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [],
     "spellType": "permanent",
     "page": 183,
@@ -936,6 +969,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:magh-s-hawser:7": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [],
     "spellType": "permanent",
     "page": 183,
@@ -943,6 +977,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:magh-s-tether:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [],
     "spellType": "permanent",
     "page": 183,
@@ -950,6 +985,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-magh-s-gift:rider-s-melody:1": {
     "isRune": false,
+    "level": 1,
     "casterFirstEffects": [
       "effect"
     ],
@@ -971,6 +1007,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:0",
@@ -989,6 +1026,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2": {
     "isRune": false,
+    "level": 2,
     "casterFirstEffects": [
       "effect"
     ],
@@ -1010,6 +1048,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1039,6 +1078,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:gust-of-release:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:0",
@@ -1057,6 +1097,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:horse-ears:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:horse-ears:0:0",
@@ -1080,6 +1121,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:liberating-wind:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:0",
@@ -1098,6 +1140,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5": {
     "isRune": false,
+    "level": 3,
     "casterFirstEffects": [
       "effect"
     ],
@@ -1119,6 +1162,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": {
     "isRune": false,
+    "level": 5,
     "casterFirstEffects": [
       "effect"
     ],
@@ -1140,6 +1184,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1169,6 +1214,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:battle-arrow:1": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -1196,6 +1242,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -1228,6 +1275,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1252,6 +1300,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:boiling-blood:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1276,6 +1325,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:madness:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1295,6 +1345,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:rage:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1314,6 +1365,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:riastarthae:7": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1333,6 +1385,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -1365,6 +1418,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1389,6 +1443,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:asiblack:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1408,6 +1463,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:death-gust:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -1472,6 +1528,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:falfax:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1491,6 +1548,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:night-curtain:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:0",
@@ -1524,6 +1582,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:snarfari:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -1543,6 +1602,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -1603,6 +1663,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0",
@@ -1636,6 +1697,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0",
@@ -1664,6 +1726,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {
     "isRune": false,
+    "level": 4,
     "damageRoll": {
       "steps": [
         {
@@ -1724,6 +1787,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:bold:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -1746,6 +1810,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:eye-of-enken:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -1773,6 +1838,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:heart-of-enken:6": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "c-ur-d-enken-allies"
     ],
@@ -1853,6 +1919,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:hurricane-armor:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "groups": [
         {
@@ -1918,6 +1985,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:night-vision:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": false,
     "targeting": {
       "baseTargets": 1,
@@ -1948,6 +2016,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:soul-sight:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -1975,6 +2044,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:storm-armor:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "groups": [
         {
@@ -2040,6 +2110,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:willpower:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2062,6 +2133,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-power-of-enken:wind-shield:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "groups": [
         {
@@ -2108,6 +2180,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:einharjar:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -2137,6 +2210,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:havar:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -2161,6 +2235,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:hinji-strength:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2183,6 +2258,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:jarl-s-call:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2210,6 +2286,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:jotun-strength:6": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "force-du-jotun-allies"
     ],
@@ -2289,6 +2366,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:shield-disir:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -2318,6 +2396,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:troll-strength:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2340,6 +2419,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2367,6 +2447,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 3,
       "additionalTargets": [
@@ -2404,6 +2485,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2431,6 +2513,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:firon-power:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2448,6 +2531,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2465,6 +2549,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing-sun:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2482,6 +2567,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing-warmth:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2509,6 +2595,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:healing:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -2531,6 +2618,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:summer-place:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:summer-place:3:0",
@@ -2544,6 +2632,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:sunray:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:0",
@@ -2557,6 +2646,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6:0",
@@ -2575,6 +2665,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:0",
@@ -2593,6 +2684,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8:0",
@@ -2606,6 +2698,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:inspiration:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -2633,6 +2726,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -2660,6 +2754,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:sixth-sense:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1:0",
@@ -2673,6 +2768,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -2697,6 +2793,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:swine-rush:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -2716,6 +2813,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:vitner-protection:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5:0",
@@ -2739,6 +2837,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4:0",
@@ -2752,6 +2851,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:battle-cry:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -2789,6 +2889,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:dark-visage:5": {
     "isRune": false,
+    "level": 3,
     "fearRoll": {
       "optionId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:2",
       "steps": [
@@ -2849,6 +2950,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:fire-iron:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -2892,6 +2994,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:firestorm:6": {
     "isRune": false,
+    "level": 4,
     "damageRoll": {
       "steps": [
         {
@@ -2954,6 +3057,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -3034,6 +3138,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "ally"
     ],
@@ -3101,6 +3206,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": {
     "isRune": false,
+    "level": 5,
     "fearRoll": {
       "optionId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:1",
       "steps": [
@@ -3143,6 +3249,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:war-cry:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "groups": [
         {
@@ -3219,6 +3326,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2": {
     "isRune": false,
+    "level": 2,
     "fearRoll": {
       "optionId": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:1",
       "steps": [
@@ -3273,6 +3381,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:accomplished:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3302,6 +3411,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:curative-draught:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "casterOnly": true,
@@ -3329,6 +3439,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:dwarven-smith:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3353,6 +3464,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:legendary:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3377,6 +3489,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "casterOnly": true,
@@ -3404,6 +3517,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:mastery:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3433,6 +3547,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:remedial-potion:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "casterOnly": true,
@@ -3460,6 +3575,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:sight-of-the-dwarves:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3484,6 +3600,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:weapon-prowess:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3503,6 +3620,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3527,6 +3645,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3551,6 +3670,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:master-of-wolfkin:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3585,6 +3705,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mastomant-s-fur:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3609,6 +3730,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mastomant-s-tusks:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3638,6 +3760,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mastomantshape:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3672,6 +3795,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3701,6 +3825,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:resilience:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3725,6 +3850,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-beast:wolf-claws:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3754,6 +3880,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3773,6 +3900,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:constriction:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3797,6 +3925,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:dragon-skin:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3826,6 +3955,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:dragon-soul:7": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3855,6 +3985,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:flame-hardened:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3879,6 +4010,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:giant-snakeshape:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3918,6 +4050,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3947,6 +4080,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:paralyzing-gaze:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3:0",
@@ -3965,6 +4099,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -3984,6 +4119,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4003,6 +4139,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:dreadful-screech:0": {
     "isRune": false,
+    "level": 1,
     "fearRoll": {
       "optionId": "holy-haminges-power-of-the-scale:dreadful-screech:0:1",
       "steps": [
@@ -4063,6 +4200,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4087,6 +4225,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:limb-of-stone:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4119,6 +4258,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:petrify:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4146,6 +4286,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:regenerative-blood:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4165,6 +4306,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:scream-of-the-devouress:6": {
     "isRune": false,
+    "level": 4,
     "fearRoll": {
       "optionId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:1",
       "steps": [
@@ -4213,6 +4355,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:shattered-mind:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4240,6 +4383,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-scale:terrifying-howl:2": {
     "isRune": false,
+    "level": 2,
     "fearRoll": {
       "optionId": "holy-haminges-power-of-the-scale:terrifying-howl:2:1",
       "steps": [
@@ -4294,6 +4438,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -4353,6 +4498,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4382,6 +4528,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4416,6 +4563,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4435,6 +4583,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4459,6 +4608,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4493,6 +4643,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -4547,6 +4698,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:thurse-strength:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4571,6 +4723,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-the-thurses:troll-strength:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4595,6 +4748,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:contagious:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4629,6 +4783,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:disease-carrier:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4663,6 +4818,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:fearless:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4692,6 +4848,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:illusion-tricks:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4719,6 +4876,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:lord-of-the-flies:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4753,6 +4911,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:persuade:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4785,6 +4944,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4817,6 +4977,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:troll-wit:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4841,6 +5002,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:willpower:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -4865,6 +5027,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:amnesia:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:0",
@@ -4888,6 +5051,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:bad-harvest:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:0",
@@ -4926,6 +5090,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:curse-creature:5": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -4963,6 +5128,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:curse-object:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "groups": [
         {
@@ -5028,6 +5194,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:fever:2": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -5102,6 +5269,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5129,6 +5297,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:tree-curse:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5171,6 +5340,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0:0",
@@ -5199,6 +5369,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:battle-arrow:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -5226,6 +5397,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -5258,6 +5430,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:bloodfire:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5282,6 +5455,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:boiling-blood:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5306,6 +5480,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:madness:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5325,6 +5500,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:rage:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5344,6 +5520,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:riastarthae:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5363,6 +5540,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -5395,6 +5573,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-fury-of-ogon:simmering-blood:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5419,6 +5598,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:breath-of-sille:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5446,6 +5626,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:firon-power:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5463,6 +5644,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing-glow:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5480,6 +5662,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing-sun:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5497,6 +5680,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing-warmth:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5524,6 +5708,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:healing:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -5546,6 +5731,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:summer-place:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:summer-place:2:0",
@@ -5559,6 +5745,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:sunray:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:sunray:1:0",
@@ -5572,6 +5759,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-power-of-sille:time-of-the-hunt:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:0",
@@ -5590,6 +5778,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:astral-voyage:6": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -5624,6 +5813,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:espionage:3": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:0",
@@ -5647,6 +5837,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:far-sight:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -5704,6 +5895,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:read-powers:5": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:0",
@@ -5722,6 +5914,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:scanning:1": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:scanning:1:0",
@@ -5740,6 +5933,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:seeing:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -5777,6 +5971,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:tracking:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:0",
@@ -5800,6 +5995,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-joaringfaith-sight-of-lekaba:true-sight:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -5857,6 +6053,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:divine-purge:6": {
     "isRune": false,
+    "level": 4,
     "damageRoll": {
       "steps": [
         {
@@ -5910,6 +6107,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -5958,6 +6156,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -6037,6 +6236,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -6109,6 +6309,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -6162,6 +6363,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:statue:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6189,6 +6391,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:stone-monument:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6216,6 +6419,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:stone-senses:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6243,6 +6447,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -6322,6 +6527,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:breath-of-gave:6": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6339,6 +6545,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6356,6 +6563,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0",
@@ -6369,6 +6577,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:hand-of-mercy:0:0",
@@ -6382,6 +6591,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:holy-mending:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6399,6 +6609,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:life-spirit:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:0",
@@ -6422,6 +6633,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:recall:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:recall:5:0",
@@ -6445,6 +6657,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2:0",
@@ -6458,6 +6671,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-grace:wind-of-immortality:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8:0",
@@ -6486,6 +6700,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6518,6 +6733,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6550,6 +6766,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:blessed-armor:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6582,6 +6799,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6614,6 +6832,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6651,6 +6870,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:holy-authority:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6683,6 +6903,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6720,6 +6941,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6752,6 +6974,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6784,6 +7007,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:banishment:7": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -6832,6 +7056,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:bark-skin:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -6859,6 +7084,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -6883,6 +7109,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:sheltering:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:sheltering:1:0",
@@ -6901,6 +7128,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
@@ -6924,6 +7152,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:storm-protection:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:storm-protection:2:0",
@@ -6942,6 +7171,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:thornwall:3": {
     "isRune": false,
+    "level": 2,
     "damageQualification": {
       "nature": "normal",
       "delivery": "other",
@@ -6991,6 +7221,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:tree-port:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -7020,6 +7251,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:0",
@@ -7043,6 +7275,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:augury:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:augury:2:0",
@@ -7056,6 +7289,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:blessed-home:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:0",
@@ -7084,6 +7318,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:dawn-shine:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:0",
@@ -7107,6 +7342,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:0",
@@ -7130,6 +7366,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:omen:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:omen:4:0",
@@ -7143,6 +7380,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:portent:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:portent:8:0",
@@ -7156,6 +7394,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:protective-ground:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:0",
@@ -7184,6 +7423,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:sacred-grove:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:0",
@@ -7212,6 +7452,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-the-sun:thermal-light:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:0",
@@ -7240,6 +7481,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:blood-brothers:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -7267,6 +7509,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:divine-pact:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "groups": [
         {
@@ -7322,6 +7565,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 4,
       "additionalTargets": [
@@ -7359,6 +7603,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:grace-of-gave:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "groups": [
         {
@@ -7414,6 +7659,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:holy-consideration:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -7441,6 +7687,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 2,
       "additionalTargets": [
@@ -7483,6 +7730,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": {
     "isRune": false,
+    "level": 4,
     "casterFirstEffects": [
       "langue"
     ],
@@ -7531,6 +7779,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -7555,6 +7804,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -7584,6 +7834,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-anvil-shock:anvil-shock:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:0",
@@ -7617,6 +7868,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -7651,6 +7903,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -7685,6 +7938,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-earthquake:earthquake:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:0",
@@ -7718,6 +7972,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:0",
@@ -7751,6 +8006,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [],
     "spellType": "lasting",
@@ -7759,6 +8015,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-hammer-fists:hammer-fists:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -7793,6 +8050,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-healing-rune:healing-rune:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:0",
@@ -7826,6 +8084,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:0",
@@ -7859,6 +8118,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:0",
@@ -7892,6 +8152,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -7926,6 +8187,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-power-of-repair:power-of-repair:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:0",
@@ -7959,6 +8221,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-scales:scales:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -7993,6 +8256,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stone-to-clay:stone-to-clay:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:0",
@@ -8026,6 +8290,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stoneling:stoneling:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-stoneling:stoneling:0:0",
@@ -8059,6 +8324,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stoneshape:stoneshape:0": {
     "isRune": true,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -8093,6 +8359,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-well-of-water:well-of-water:0": {
     "isRune": true,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-thuuldom-well-of-water:well-of-water:0:0",
@@ -8126,6 +8393,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-friend:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -8153,6 +8421,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-master:5": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8177,6 +8446,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-shape:6": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8201,6 +8471,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-spirit:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8225,6 +8496,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:animal-tracks:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8254,6 +8526,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:invisible-to-animals:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8278,6 +8551,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-animal-mind:talk-to-animals:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -8305,6 +8579,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:aim:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8329,6 +8604,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:concealment:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8353,6 +8629,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:feline-leap:3": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8377,6 +8654,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:feline-reflexes:4": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8396,6 +8674,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:forest-path:8": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8425,6 +8704,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:hearing:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8459,6 +8739,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:orientation:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8488,6 +8769,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:pathfinder:9": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8517,6 +8799,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:track:6": {
     "isRune": false,
+    "level": 3,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8546,6 +8829,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-lynx-power:tree-walk:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8575,6 +8859,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:control-fire:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:control-fire:1:0",
@@ -8598,6 +8883,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:control-wind:9": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:control-wind:9:0",
@@ -8626,6 +8912,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:earth-wall:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:0",
@@ -8649,6 +8936,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:earthquake:7": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -8718,6 +9006,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:elemental-arrow:6": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -8778,6 +9067,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:fire-resistant:11": {
     "isRune": false,
+    "level": 5,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8812,6 +9102,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:fire-tamer:4": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:fire-tamer:4:0",
@@ -8840,6 +9131,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:gift-of-water:3": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8859,6 +9151,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:hot-and-cold:10": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -8893,6 +9186,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:purify-water:2": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:purify-water:2:0",
@@ -8911,6 +9205,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:shape-earth:5": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:shape-earth:5:0",
@@ -8934,6 +9229,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:spring-of-water:8": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:spring-of-water:8:0",
@@ -8957,6 +9253,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:call-on-animals:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:call-on-animals:2:0",
@@ -8985,6 +9282,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:conjure-ravens:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9032,6 +9330,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:control-animals:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:control-animals:4:0",
@@ -9070,6 +9369,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:create-messenger:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:create-messenger:7:0",
@@ -9108,6 +9408,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:messenger:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:messenger:0:0",
@@ -9131,6 +9432,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:mind-of-the-wolf:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:mind-of-the-wolf:5:0",
@@ -9169,6 +9471,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:possess-animals:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:possess-animals:6:0",
@@ -9207,6 +9510,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:send-message:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:send-message:8:0",
@@ -9235,6 +9539,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:speak-to-animals:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9257,6 +9562,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:appearance-change:7": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9289,6 +9595,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:change-creature:11": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9356,6 +9663,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:grip:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9393,6 +9701,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:hasten:9": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9445,6 +9754,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:hearing-deafness:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9497,6 +9807,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:immobilize:6": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9549,6 +9860,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:imprison:10": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -9623,6 +9935,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:leather-skin:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9655,6 +9968,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:sense-of-smell:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9717,6 +10031,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:strengthen:8": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9769,6 +10084,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:tipping:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-body-vitner:tipping:1:0",
@@ -9792,6 +10108,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-body-vitner:vision-blindness:4": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9844,6 +10161,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:camouflage:7": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -9886,6 +10204,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:depict:6": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:depict:6:0",
@@ -9924,6 +10243,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:ghost-voice:5": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9956,6 +10276,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:increase-sounds:3": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -9988,6 +10309,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:invisibility:11": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -10030,6 +10352,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:landscape-illusion:8": {
     "isRune": false,
+    "level": 4,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -10069,6 +10392,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:lindwurm-illusion:10": {
     "isRune": false,
+    "level": 5,
     "selfOnly": false,
     "damageQualification": {
       "nature": "magical",
@@ -10114,6 +10438,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:phantom-sound:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:phantom-sound:1:0",
@@ -10137,6 +10462,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:roar:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -10161,6 +10487,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:shriek:2": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:shriek:2:0",
@@ -10184,6 +10511,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:silence:9": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:silence:9:0",
@@ -10217,6 +10545,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-delusion-vitner:traceless:4": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -10259,6 +10588,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:animate-undead:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:animate-undead:0:0",
@@ -10312,6 +10642,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:control-undead:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:control-undead:7:0",
@@ -10345,6 +10676,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:darkness-of-dimhall:8": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -10397,6 +10729,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:dismiss-undead:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:dismiss-undead:2:0",
@@ -10420,6 +10753,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:hand-of-death:1": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -10524,6 +10858,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:speak-to-undead:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:speak-to-undead:3:0",
@@ -10542,6 +10877,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:summon-wight:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:summon-wight:6:0",
@@ -10560,6 +10896,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:tendril-of-dimhall:4": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -10617,6 +10954,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-dimvitner:vitner-theft:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:vitner-theft:5:0",
@@ -10640,6 +10978,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:burning-hand:2": {
     "isRune": false,
+    "level": 2,
     "selfOnly": true,
     "damageRoll": {
       "steps": [
@@ -10706,6 +11045,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:flame-burst:3": {
     "isRune": false,
+    "level": 3,
     "damageRoll": {
       "steps": [
         {
@@ -10771,6 +11111,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:flame-control:5": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-flame-craft:flame-control:5:0",
@@ -10809,6 +11150,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:heat-water:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -10862,6 +11204,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:protection-from-fire:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -10909,6 +11252,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:sea-of-fire:7": {
     "isRune": false,
+    "level": 5,
     "damageRoll": {
       "steps": [
         {
@@ -10974,6 +11318,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:spark:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": false,
     "powerLevels": [
       {
@@ -11008,6 +11353,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-flame-craft:warmth:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-flame-craft:warmth:6:0",
@@ -11051,6 +11397,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:detect-being:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-perceiving:detect-being:4:0",
@@ -11084,6 +11431,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:detect-object:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-perceiving:detect-object:2:0",
@@ -11122,6 +11470,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:detect-undead:5": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-perceiving:detect-undead:5:0",
@@ -11160,6 +11509,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:find-home:0": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11202,6 +11552,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:map:7": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-perceiving:map:7:0",
@@ -11230,6 +11581,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:orientation:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11267,6 +11619,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:retrace-tracks:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11304,6 +11657,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-perceiving:surrounding:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-perceiving:surrounding:6:0",
@@ -11332,6 +11686,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:aura-of-power:9": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -11366,6 +11721,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:courage:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11408,6 +11764,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:creature-control:8": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:creature-control:8:0",
@@ -11436,6 +11793,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:ecstasy:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11478,6 +11836,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:fear:3": {
     "isRune": false,
+    "level": 2,
     "fearRoll": {
       "optionId": "vitner-power-of-thought:fear:3:3",
       "steps": [
@@ -11543,6 +11902,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:imagining:6": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -11575,6 +11935,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:memory:7": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -11612,6 +11973,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:mind-reading:11": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:mind-reading:11:0",
@@ -11645,6 +12007,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:possess-creature:10": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-power-of-thought:possess-creature:10:0",
@@ -11683,6 +12046,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:telepathy:4": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11735,6 +12099,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:understanding-script:0": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -11759,6 +12124,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-thought:understanding-speech:1": {
     "isRune": false,
+    "level": 1,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -11788,6 +12154,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:astral-voyage:5": {
     "isRune": false,
+    "level": 4,
     "selfOnly": true,
     "targeting": {
       "baseTargets": 1,
@@ -11822,6 +12189,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:espionage:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:espionage:4:0",
@@ -11845,6 +12213,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:far-sight:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11902,6 +12271,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:read-vitner:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:read-vitner:6:0",
@@ -11920,6 +12290,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:scanning:1": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:scanning:1:0",
@@ -11938,6 +12309,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:seeing:3": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -11975,6 +12347,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:tracking:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:tracking:0:0",
@@ -11998,6 +12371,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-power-of-vision:true-sight:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -12055,6 +12429,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:earthquake:2": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -12124,6 +12499,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:petrify-remove-petrification:8": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -12166,6 +12542,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:quagmire:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-soil-craft:quagmire:3:0",
@@ -12199,6 +12576,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:rock-throw:0": {
     "isRune": false,
+    "level": 1,
     "damageRoll": {
       "steps": [
         {
@@ -12257,6 +12635,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:shape-soil:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-soil-craft:shape-soil:1:0",
@@ -12285,6 +12664,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:shape-stone:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-soil-craft:shape-stone:6:0",
@@ -12313,6 +12693,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:soil-blast:4": {
     "isRune": false,
+    "level": 3,
     "damageQualification": {
       "nature": "normal",
       "delivery": "ranged",
@@ -12357,6 +12738,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:soil-walk:5": {
     "isRune": false,
+    "level": 3,
     "selfOnly": false,
     "casterFirstEffects": [
       "soil-walk"
@@ -12394,6 +12776,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-soil-craft:stone-walk:7": {
     "isRune": false,
+    "level": 4,
     "selfOnly": false,
     "casterFirstEffects": [
       "stone-walk"
@@ -12431,6 +12814,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:anti-magic:3": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:anti-magic:3:0",
@@ -12469,6 +12853,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:channeling:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:channeling:0:0",
@@ -12507,6 +12892,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:dispel-vitner:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:dispel-vitner:6:0",
@@ -12525,6 +12911,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:enchant-being:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -12572,6 +12959,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:enchant-object:2": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [],
@@ -12628,6 +13016,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:seal:5": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:seal:5:0",
@@ -12651,6 +13040,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:trace-vitner:7": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:trace-vitner:7:0",
@@ -12689,6 +13079,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:vitner-pouch:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:0",
@@ -12727,6 +13118,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-craft:wall-of-vitner:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:0",
@@ -12770,6 +13162,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:alarm-object:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:0",
@@ -12813,6 +13206,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:alter-object:7": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [],
@@ -12875,6 +13269,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:bind:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:bind:2:0",
@@ -12908,6 +13303,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:create-object:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:create-object:8:0",
@@ -12981,6 +13377,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:detect-composition:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:detect-composition:0:0",
@@ -13009,6 +13406,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:enlarge-reduce-object:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:0",
@@ -13052,6 +13450,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:rust:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [],
@@ -13096,6 +13495,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:unlock-lock:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:unlock-lock:5:0",
@@ -13114,6 +13514,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-vitner-of-objects:waterproof:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-vitner-of-objects:waterproof:1:0",
@@ -13152,6 +13553,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:breathe:2": {
     "isRune": false,
+    "level": 2,
     "casterFirstEffects": [
       "respiration"
     ],
@@ -13197,6 +13599,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:control-precipitation:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-water-craft:control-precipitation:6:0",
@@ -13235,6 +13638,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:create-water:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-water-craft:create-water:4:0",
@@ -13263,6 +13667,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:find-water:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-water-craft:find-water:0:0",
@@ -13296,6 +13701,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:form-water:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-water-craft:form-water:3:0",
@@ -13329,6 +13735,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:purify-water:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-water-craft:purify-water:1:0",
@@ -13362,6 +13769,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:solid-water:5": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-water-craft:solid-water:5:0",
@@ -13405,6 +13813,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:water-walk:7": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-water-craft:water-walk:7:0",
@@ -13463,6 +13872,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-water-craft:wave-master:8": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-water-craft:wave-master:8:0",
@@ -13511,6 +13921,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:air-armor:4": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": [
@@ -13553,6 +13964,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:air-shield:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:air-shield:6:0",
@@ -13591,6 +14003,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:control-wind:3": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:control-wind:3:0",
@@ -13619,6 +14032,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:fog:2": {
     "isRune": false,
+    "level": 2,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:fog:2:0",
@@ -13647,6 +14061,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:lift:5": {
     "isRune": false,
+    "level": 3,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -13709,6 +14124,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:purify-air:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:purify-air:0:0",
@@ -13737,6 +14153,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:storm:8": {
     "isRune": false,
+    "level": 5,
     "selfOnly": false,
     "damageQualification": {
       "nature": "normal",
@@ -13782,6 +14199,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:wind-blast:7": {
     "isRune": false,
+    "level": 4,
     "damageRoll": {
       "steps": [
         {
@@ -13838,6 +14256,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:wind-catcher:9": {
     "isRune": false,
+    "level": 5,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:wind-catcher:9:0",
@@ -13891,6 +14310,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-wind-craft:wind-gust:1": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-wind-craft:wind-gust:1:0",
@@ -13909,6 +14329,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:amnesia:4": {
     "isRune": false,
+    "level": 3,
     "powerLevels": [
       {
         "id": "vitner-witchcraft:amnesia:4:0",
@@ -13932,6 +14353,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:bad-harvest:6": {
     "isRune": false,
+    "level": 4,
     "powerLevels": [
       {
         "id": "vitner-witchcraft:bad-harvest:6:0",
@@ -13970,6 +14392,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:curse-creature:5": {
     "isRune": false,
+    "level": 4,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -14007,6 +14430,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:curse-object:3": {
     "isRune": false,
+    "level": 2,
     "targeting": {
       "groups": [
         {
@@ -14072,6 +14496,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:fever:2": {
     "isRune": false,
+    "level": 2,
     "damageRoll": {
       "steps": [
         {
@@ -14152,6 +14577,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:phantom-plague:1": {
     "isRune": false,
+    "level": 1,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -14179,6 +14605,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:tree-curse:7": {
     "isRune": false,
+    "level": 5,
     "targeting": {
       "baseTargets": 1,
       "additionalTargets": []
@@ -14221,6 +14648,7 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-witchcraft:uprooted-tree:0": {
     "isRune": false,
+    "level": 1,
     "powerLevels": [
       {
         "id": "vitner-witchcraft:uprooted-tree:0:0",

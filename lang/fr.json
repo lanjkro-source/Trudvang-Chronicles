@@ -18606,6 +18606,17 @@
       "SoresDescription": "Il reste {remaining} bubons. Chaque jour, 1d6 éclatent et infligent 2 dégâts chacun sans protection, sans dépasser le nombre restant. La maladie se termine quand le dernier bubon éclate.",
       "ResistanceResult": "D20 : {result} / VC : {target}",
       "ResistanceLate": "Jet effectué après la fin de l’incubation."
+    },
+    "Dispel": {
+      "Effect": "Effet à dissiper ou à lever",
+      "Level": "Sort visé de niveau {level} — VC de base : {value}",
+      "SameVitner": "Même type de vitner",
+      "UnknownVitner": "Si le type de vitner de l’un des lancements n’est pas enregistré, confirmez ce bonus avec le MJ.",
+      "NoEffect": "Aucun effet de vitner éligible parmi les cibles et leurs objets.",
+      "Changed": "L’effet a changé depuis sa sélection : recommencez la procédure.",
+      "Unavailable": "La suppression de l’effet nécessite son propriétaire ou un MJ connecté.",
+      "Removed": "{effect} est dissipé.",
+      "Gone": "L’effet visé a déjà pris fin."
     }
   }
 }

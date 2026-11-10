@@ -16293,3 +16293,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Disease.SoresDescription` | {remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts. | Il reste {remaining} bubons. Chaque jour, 1d6 éclatent et infligent 2 dégâts chacun sans protection, sans dépasser le nombre restant. La maladie se termine quand le dernier bubon éclate. |
 | `TRUDVANG.Disease.ResistanceResult` | D20: {result} / SV: {target} | D20 : {result} / VC : {target} |
 | `TRUDVANG.Disease.ResistanceLate` | Rolled after incubation ended. | Jet effectué après la fin de l’incubation. |
+
+## `TRUDVANG.Dispel`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Dispel.Effect` | Effect to dispel or release | Effet à dissiper ou à lever |
+| `TRUDVANG.Dispel.Level` | Target spell level {level} — base SV: {value} | Sort visé de niveau {level} — VC de base : {value} |
+| `TRUDVANG.Dispel.SameVitner` | Same vitner type | Même type de vitner |
+| `TRUDVANG.Dispel.UnknownVitner` | If either casting’s vitner type is unrecorded, confirm this bonus with the GM. | Si le type de vitner de l’un des lancements n’est pas enregistré, confirmez ce bonus avec le MJ. |
+| `TRUDVANG.Dispel.NoEffect` | No eligible vitner effect was found on the targets or their equipment. | Aucun effet de vitner éligible parmi les cibles et leurs objets. |
+| `TRUDVANG.Dispel.Changed` | The effect changed after selection: restart the procedure. | L’effet a changé depuis sa sélection : recommencez la procédure. |
+| `TRUDVANG.Dispel.Unavailable` | Removing the effect requires its owner or a connected GM. | La suppression de l’effet nécessite son propriétaire ou un MJ connecté. |
+| `TRUDVANG.Dispel.Removed` | {effect} is dispelled. | {effect} est dissipé. |
+| `TRUDVANG.Dispel.Gone` | The targeted effect has already ended. | L’effet visé a déjà pris fin. |

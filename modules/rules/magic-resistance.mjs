@@ -33,11 +33,11 @@ export function ruleTestCastingContext(document,{caster,counts,context}={}){
  }
  const isEffect=document?.documentName==="ActiveEffect"||document?.type==="effect";
  if(!isEffect)caster??=document?.actor??(document?.parent?.documentName==="Actor"?document.parent:null);
- const kind=sourceId.startsWith("vitner-")?"spell":sourceId.startsWith("holy-")?"divine":"";
+ const kind=!isEffect&&document?.type==='spell'?'spell':!isEffect&&document?.type==='divineFeat'?'divine':sourceId.startsWith("vitner-")?"spell":sourceId.startsWith("holy-")?"divine":"";
  const specialty=kind==="spell"?"potency":kind==="divine"?"potent":"";
  const selected=Array.from(counts??[],n=>Math.max(0,Number(n)||0));
  return {sourceId,kind,counts:selected,countsById:countsByOption(sourceId,selected),casterUuid:caster?.uuid??"",casterName:caster?.name??"",
-  specialty,specialtyLevel:specialty?knowledgeRank(caster,specialty):0};
+  sourceLevel:Number(document?.system?.level??POWER_DETAILS_BY_ID[sourceId]?.level)||0,vitnerType:kind==='spell'?(caster?.selectedVitnerType?.id??''):'',specialty,specialtyLevel:specialty?knowledgeRank(caster,specialty):0};
 }
 /** Only explicitly identified resistance tests receive offensive/defensive ranks.
  * Listening, concentration, healing and the caster's own situation tests do not. */

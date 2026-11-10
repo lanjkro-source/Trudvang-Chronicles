@@ -1,3 +1,4 @@
+import {registerDispelSocket} from './dispel.mjs';
 import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
 import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
 import {isConsumable} from "./consumables.mjs";
@@ -28,6 +29,7 @@ export function registerChatListeners() {
   Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
+  registerDispelSocket();
   registerDiseaseResistanceSocket();
   registerChatApplicationSocket();
   registerEffectTargetSocket();

@@ -18606,6 +18606,17 @@
       "SoresDescription": "{remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts.",
       "ResistanceResult": "D20: {result} / SV: {target}",
       "ResistanceLate": "Rolled after incubation ended."
+    },
+    "Dispel": {
+      "Effect": "Effect to dispel or release",
+      "Level": "Target spell level {level} — base SV: {value}",
+      "SameVitner": "Same vitner type",
+      "UnknownVitner": "If either casting’s vitner type is unrecorded, confirm this bonus with the GM.",
+      "NoEffect": "No eligible vitner effect was found on the targets or their equipment.",
+      "Changed": "The effect changed after selection: restart the procedure.",
+      "Unavailable": "Removing the effect requires its owner or a connected GM.",
+      "Removed": "{effect} is dispelled.",
+      "Gone": "The targeted effect has already ended."
     }
   }
 }

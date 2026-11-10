@@ -105,6 +105,18 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "vitner-vitner-craft:dispel-vitner:6:0"
         }
       ],
+      "casterTest": true,
+      "dispel": {
+        "mode": "vitner",
+        "values": {
+          "1": 10,
+          "2": 8,
+          "3": 6,
+          "4": 4,
+          "5": 2
+        },
+        "sameVitnerBonus": 2
+      },
       "kind": "resist",
       "index": 0
     }
@@ -2206,6 +2218,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:1"
         }
       ],
+      "casterTest": true,
       "kind": "resist",
       "index": 0
     }
@@ -2250,13 +2263,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   ],
   "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4": [
     {
-      "action": "libérer une personne du Souffle libérateur",
+      "action": "libérer un objet relevant du Souffle libérateur",
       "sv": 14,
       "trait": [
         "aucun",
         "aucun"
       ],
-      "success": "annule l’effet qui retient la personne.",
+      "success": "libère l’objet malgré l’opposition.",
       "traitMethod": "first",
       "anchor": "14 si l’objet à libérer est sous l’effet du Souffle libérateur",
       "magicResistance": false,
@@ -2267,6 +2280,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
+      "casterTest": true,
       "kind": "resist",
       "index": 0
     },
@@ -2288,6 +2302,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
+      "casterTest": true,
       "kind": "resist",
       "index": 1
     },
@@ -2310,6 +2325,15 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1"
         }
       ],
+      "casterTest": true,
+      "dispel": {
+        "mode": "control",
+        "values": {
+          "1": 6,
+          "2": 6,
+          "3": 6
+        }
+      },
       "kind": "resist",
       "index": 2
     }
@@ -2370,6 +2394,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1"
         }
       ],
+      "casterTest": true,
       "kind": "resist",
       "index": 0
     },
@@ -2401,6 +2426,17 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1"
         }
       ],
+      "casterTest": true,
+      "dispel": {
+        "mode": "control",
+        "values": {
+          "1": 14,
+          "2": 14,
+          "3": 14,
+          "4": 6,
+          "5": 6
+        }
+      },
       "kind": "resist",
       "index": 1
     }

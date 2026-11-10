@@ -231,6 +231,11 @@ export async function performRuleTest({document, index, actor = testActorForUser
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests || document?.flags?.[SYSTEM_ID]?.transformation?.roundResistance) && document.parent?.documentName === "Actor") actor = document.parent;
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests) && !actor?.isOwner) return null;
   const test = ruleTestsForDocument(document)[Number(index)];
+  if(test?.casterTest){
+   const uuid=context?.casterUuid??document?.actor?.uuid;
+   if(uuid)actor=await foundry.utils.fromUuid(uuid);
+   if(!actor?.isOwner){ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.Permission'));return null;}
+  }
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
     return null;
@@ -238,6 +243,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
+    if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting});}
     const result=await withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage);
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;

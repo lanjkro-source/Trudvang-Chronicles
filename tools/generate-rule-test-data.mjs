@@ -27,6 +27,8 @@ for (const entry of powers) {
   for(const row of entry.ruleTestModifiers??[]){
     if(!entry.resist?.[row.test]||configured.has(row.test)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
     configured.add(row.test);
+    if(row.casterTest!==undefined&&typeof row.casterTest!=='boolean')throw Error('Invalid acting caster for '+entry.catalogId);
+    if(row.dispel&&(!row.casterTest||!['vitner','control'].includes(row.dispel.mode)||!row.dispel.values||Object.entries(row.dispel.values).some(([level,value])=>![1,2,3,4,5].includes(Number(level))||!Number.isFinite(value))||row.dispel.sameVitnerBonus!==undefined&&row.dispel.sameVitnerBonus!==2))throw Error('Invalid dispel procedure for '+entry.catalogId);
     for(const p of row.powerLevelModifiers??[]){resolvePowerOptionReference(entry,p);if(!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);}
   }
   const tests = testsFor(entry);

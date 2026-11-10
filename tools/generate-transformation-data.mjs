@@ -36,6 +36,7 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=englishEntry?.effectTemplates?.find(v=>v.id===t.id);
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if(t.dispelCategory!==translated.dispelCategory||t.dispelPermanent!==translated.dispelPermanent||t.dispelCategory!==undefined&&!['control'].includes(t.dispelCategory)||t.dispelPermanent!==undefined&&typeof t.dispelPermanent!=='boolean')throw Error(`Invalid dispel policy for ${key}`);
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);

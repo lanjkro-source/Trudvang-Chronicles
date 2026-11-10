@@ -131,6 +131,7 @@ for (const id of [...french.keys()].sort()) {
   optionCount += f.powerLevels.length;
   powerDetails[id] = {
     isRune: rune,
+    level:f.level,
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),

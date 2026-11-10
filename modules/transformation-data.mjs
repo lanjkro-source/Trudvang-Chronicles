@@ -392,6 +392,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       3
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-dimvitner:control-undead:7",
     "parameters": [
       {
@@ -1805,6 +1806,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       0
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-power-of-thought:creature-control:8",
     "parameters": [
       {
@@ -1862,6 +1864,7 @@ export const TRANSFORMATION_TEMPLATES = {
       0,
       1
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-power-of-thought:possess-creature:10",
     "parameters": [
       {
@@ -2702,6 +2705,7 @@ export const TRANSFORMATION_TEMPLATES = {
       4,
       5
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-animal-vitner:control-animals:4",
     "parameters": [
       {
@@ -2793,6 +2797,7 @@ export const TRANSFORMATION_TEMPLATES = {
       4,
       5
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-animal-vitner:possess-animals:6",
     "parameters": [
       {
@@ -3216,6 +3221,7 @@ export const TRANSFORMATION_TEMPLATES = {
       5
     ],
     "breakOnDamage": true,
+    "dispelCategory": "control",
     "sourceId": "vitner-body-vitner:immobilize:6",
     "parameters": [
       {
@@ -3514,6 +3520,7 @@ export const TRANSFORMATION_TEMPLATES = {
       1,
       4
     ],
+    "dispelCategory": "control",
     "sourceId": "vitner-body-vitner:imprison:10",
     "parameters": [
       {
@@ -4022,6 +4029,7 @@ export const TRANSFORMATION_TEMPLATES = {
       3,
       4
     ],
+    "dispelPermanent": true,
     "sourceId": "vitner-vitner-of-objects:rust:3",
     "parameters": [
       {
