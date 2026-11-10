@@ -35,6 +35,7 @@ import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
+import {instantConsequenceOperation} from './conjured-consumables.mjs';
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
 import {auraBonusDescription,auraRadius} from "./aura.mjs";
@@ -487,12 +488,14 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const levels=POWER_DETAILS_BY_ID[template.sourceId].powerLevels;
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.messageId??"",targetUuid:actor.uuid,itemUuid:destinationItem?.uuid??"",countsById:allocation,data});
+  if(result.status==='consumable-capacity'){ui.notifications.warn(game.i18n.localize('TRUDVANG.ConjuredConsumable.CapacityReached'));return null;}
   if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="requires-other-target"?"TRUDVANG.Warning.MagicRequiresOtherTarget":result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   if(result.instant)return result;
   effect=await foundry.utils.fromUuid(result.effectUuid);
  }else if(template.instant){
-  const bonus=(template.parameters??[]).filter(p=>p.target==="instant").reduce((sum,p)=>sum+Number(p.value)*(casting.counts[p.index]??0),0);
-  const result=await executeConsequences({actor,operations:[{operation:template.instant.operation,formula:String(template.instant.base+bonus)}],source:effectName});
+  let result;
+  try{result=await executeConsequences({actor,operations:[instantConsequenceOperation(template,casting.counts,casting)],source:effectName});}
+  catch(error){if(error.code==='consumable-capacity'){ui.notifications.warn(game.i18n.localize('TRUDVANG.ConjuredConsumable.CapacityReached'));return null;}throw error;}
   await announceConsequences(actor,result,effectName);
   return result;
  }else effect=destinationItem?await applyItemTransformation(destinationItem,data):await actor.createTrudvangEffect(data);
@@ -654,6 +657,12 @@ export function registerTransformationHooks(){
    const message=request.context?.messageId?game.messages?.get(request.context.messageId):null;
    if(message&&!await canManageEffectTargets(message,game.user)){ui.notifications.warn(local("Permission"));return;}
    if(!message&&!game.user.isGM&&!source?.actor?.canUserModify?.(game.user,"update")){ui.notifications.warn(local("Permission"));return;}
+   if(TRANSFORMATION_TEMPLATES[request.key]?.instant?.operation==='createConsumable'){
+    const creator=request.context?.casterUuid?await foundry.utils.fromUuid(request.context.casterUuid):source?.actor;
+    if(!creator){ui.notifications.warn(local('NoTargets'));return;}
+    await applyTransformation(creator,request.key,{source,counts:request.counts,context:request.context,targetName:creator.name});
+    return;
+   }
    const rows=message?effectTargetsFor(message,request.key):Array.from(game.user.targets??[],token=>({tokenUuid:token.document?.uuid??token.uuid,actorUuid:token.actor?.uuid}));
    const tokens=[];
    for(const row of rows){const token=await foundry.utils.fromUuid(row.tokenUuid);if(token?.actor?.uuid===row.actorUuid)tokens.push(token);}

@@ -16815,6 +16815,15 @@
           "SourcePage": "216",
           "Duration": "2 minutes"
         },
+        "holy-haminges-power-of-men:remedial-potion:4#brew": {
+          "Name": "Prepare a remedial potion",
+          "Summary": "Prepares a curative potion to be drunk before it expires.",
+          "Description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d10 + 1 Body Points if ingested within the duration. The spirit conjurer can have a maximum of two brews at one time.",
+          "SourceName": "Remedial Potion",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "216",
+          "Duration": ""
+        },
         "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
           "Name": "Weapon Prowess",
           "Summary": "Grants 5 free Combat Points.",
@@ -18388,7 +18397,8 @@
         "damage": "{source}: −{amount} BP.",
         "fearReduction": "{source}: −{amount} Fear Points.",
         "resourceGain": "{source}: +{amount} {resource}.",
-        "risk": "{source}: {rolled} on 1d20 — {outcome}."
+        "risk": "{source}: {rolled} on 1d20 — {outcome}.",
+        "createConsumable": "{source} was created in the inventory."
       }
     },
     "Aura": {
@@ -18463,6 +18473,12 @@
         "votive": "Votive",
         "vitner": "Vitner weaving"
       }
+    },
+    "ConjuredConsumable": {
+      "HealingDescription": "Drinking this potion before it expires restores 1d10 + 1 Body Points, up to the maximum. After expiry or dispelling, the liquid has no healing power.",
+      "Inert": "The preparation has lost its power: no healing is applied.",
+      "CapacityReached": "The conjurer’s inventory already contains the maximum number of active potions.",
+      "PreparedDetails": "Initial duration: {duration} {unit}. Possession limit used for this preparation: {maximum}."
     }
   }
 }

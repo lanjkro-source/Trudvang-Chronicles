@@ -3,6 +3,7 @@ import {applyDamageToActor} from "./damage-application.mjs";
 import {nextConsequenceEvent} from "./rules/consumable-effects.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {announceEffectStage} from "./effect-expiration-notice.mjs";
+import {createConjuredConsumable} from './conjured-consumables.mjs';
 const SCOPE="trudvang-chronicles";
 const number=v=>Number.isFinite(Number(v))?Number(v):0;
 const current=(actor,key)=>number(actor.system.resources[key].current??actor.system.resources[key].value);
@@ -13,6 +14,11 @@ export async function executeConsequences({actor,operations=[],source=""}={}){
  if(!actor?.isOwner)return {rows:[],rolls:[]};
  const rows=[],rolls=[];
  for(const op of operations){
+  if(op.operation==='createConsumable'){
+   const item=await createConjuredConsumable(actor,op);
+   if(item)rows.push({operation:'createConsumable',amount:1,rolled:0,source:item.name});
+   continue;
+  }
   if(!["heal","damage","fearReduction","resourceGain","risk"].includes(op.operation))throw new Error(`Unknown consequence operation: ${op.operation}`);
   let value;
   if(/^\d+(?:\.\d+)?$/.test(String(op.formula??"0")))value=Number(op.formula??0);

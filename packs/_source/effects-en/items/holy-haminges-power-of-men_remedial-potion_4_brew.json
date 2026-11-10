@@ -1,0 +1,45 @@
+{
+  "_id": "8visVgMhNiOjPkQl",
+  "_key": "!items!8visVgMhNiOjPkQl",
+  "name": "Prepare a remedial potion",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:remedial-potion:4#brew",
+    "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d10 + 1 Body Points if ingested within the duration. The spirit conjurer can have a maximum of two brews at one time.",
+    "summary": "Prepares a curative potion to be drunk before it expires.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "jWKKGeHcIdJeKfLg",
+      "_key": "!items.effects!8visVgMhNiOjPkQl.jWKKGeHcIdJeKfLg",
+      "name": "Prepare a remedial potion",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d10 + 1 Body Points if ingested within the duration. The spirit conjurer can have a maximum of two brews at one time.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:remedial-potion:4#brew",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:remedial-potion:4#brew",
+            "sourceId": "holy-haminges-power-of-men:remedial-potion:4",
+            "summary": "Prepares a curative potion to be drunk before it expires.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

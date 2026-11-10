@@ -81,7 +81,14 @@ for(const kind of ["powers","feats"]){
     if(!Array.isArray(s.parts)||!s.parts.length||keys.some(k=>typeof k!=="string"||!["fr","en"].every(c=>k.split(".").reduce((v,p)=>v?.[p],lang[c])))||indices.some(i=>!Number.isInteger(i)||!(entry.effectParameters??[]).some(p=>p.target==="summaryPart"&&p.index===i)))throw Error(`Invalid summary components for ${key}`);
    }
    if(t.onApply&&(!["fearReduction"].includes(t.onApply.operation)||!Array.isArray(t.onApply.formulas)||!t.onApply.formulas.length||!t.onApply.formulas.every(formula=>/^\d+d\d+(?:x>=\d+)?(?:\s*\+\s*\d+)?$/i.test(formula))))throw Error(`Invalid application consequence for ${key}`);
-   if(t.instant&&(!["heal"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
+   if(t.instant&&(!["heal","createConsumable"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
+   if(t.instant?.operation==='createConsumable'){
+    const c=t.instant.consumable;
+    if(!c||!c.nameKey||!c.descriptionKey||!Array.isArray(c.operations)||!c.operations.length||c.operations.some(op=>!['heal','fearReduction','resourceGain'].includes(op.operation)||typeof op.formula!=='string')
+      ||!['days','hours','rounds','minutes'].includes(c.duration?.units)||!Number.isInteger(c.duration.value)||c.duration.value<1||!entry.powerLevels[c.duration.index]
+      ||!Number.isInteger(c.duration.increment)||c.duration.increment<1||!entry.powerLevels[c.capacity?.index]||!Number.isInteger(c.capacity.base)||c.capacity.base<1||!Number.isInteger(c.capacity.max)||c.capacity.max<c.capacity.base||!Number.isInteger(c.capacity.increment)||c.capacity.increment<1)throw Error(`Invalid conjured consumable for ${key}`);
+    for(const label of [c.nameKey,c.descriptionKey])if(!['fr','en'].every(code=>label.split('.').reduce((v,k)=>v?.[k],lang[code])))throw Error(`Untranslated conjured consumable: ${label}`);
+   }
    if(!t.summary?.trim()||!translated.summary?.trim())throw Error(`Missing effect summary ${key}`);
    if(t.runeTiers){
     if(Boolean(t.requiresWeapon)!==Boolean(translated.requiresWeapon))throw Error(`Unaligned rune target ${key}`);

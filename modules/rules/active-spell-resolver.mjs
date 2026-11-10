@@ -47,7 +47,7 @@ export function fatalActiveSpellCost(actor) {
 /** Find extant effects by the provenance stored on them, including synthetic
  * token actors on inactive scenes. An empty result does not prove that a cast
  * has ended: it may not have been applied yet or a document may be unavailable. */
-export function maintainedSpellEffects({actors = [], scenes = []} = {}, {casterUuid, castingId} = {}) {
+export function maintainedSpellEffects({actors = [], scenes = [],items=[]} = {}, {casterUuid, castingId} = {}) {
   if (!casterUuid || !castingId) return [];
   const candidates = [...actors];
   for (const scene of scenes) for (const token of scene.tokens ?? []) if (token.actor) candidates.push(token.actor);
@@ -63,6 +63,12 @@ export function maintainedSpellEffects({actors = [], scenes = []} = {}, {casterU
       if (!effect.uuid || seenEffects.has(effect.uuid)) continue;
       seenEffects.add(effect.uuid);
       result.push({actorUuid: actor.uuid, effectUuid: effect.uuid});
+    }
+  }
+  for(const item of items)if(item.flags?.['trudvang-chronicles']?.conjuredConsumable)for(const effect of item.effects??[]){
+    const context=effect.flags?.['trudvang-chronicles']?.transformation?.ruleTestContext;
+    if(context?.casterUuid===casterUuid&&context?.castingId===castingId&&effect.uuid&&!seenEffects.has(effect.uuid)){
+      seenEffects.add(effect.uuid);result.push({actorUuid:'',effectUuid:effect.uuid});
     }
   }
   return result;

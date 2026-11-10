@@ -8,6 +8,7 @@ import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSit
 import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
+import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 
 const indicatedTraitTokens = new Map();
 
@@ -66,6 +67,7 @@ function attachListeners(message, html) {
       const key=button.dataset.transformationKey;
       if(!message.flags?.["trudvang-chronicles"]?.ruleTestContext || button.nextElementSibling?.classList?.contains("effect-target-list"))continue;
       button.setAttribute("aria-disabled",editable?"false":"true");
+      if(TRANSFORMATION_TEMPLATES[key]?.instant?.operation==='createConsumable')continue;
       const group=document.createElement("div");
       group.className="effect-target-group";
       button.before(group);

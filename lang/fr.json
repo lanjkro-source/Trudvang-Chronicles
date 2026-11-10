@@ -16815,6 +16815,15 @@
           "SourcePage": "272",
           "Duration": "2 minutes"
         },
+        "holy-haminges-power-of-men:remedial-potion:4#brew": {
+          "Name": "Préparer une potion de guérison",
+          "Summary": "Prépare une potion aux vertus curatives, à boire avant son expiration.",
+          "Description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 1d10 + 1 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder que deux potions de ce genre à la fois.",
+          "SourceName": "Potion de guérison",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "272",
+          "Duration": ""
+        },
         "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
           "Name": "Prouesse martiale",
           "Summary": "Accorde 5 points de combat libres.",
@@ -18388,7 +18397,8 @@
         "damage": "{source} : −{amount} PS.",
         "fearReduction": "{source} : −{amount} peur.",
         "resourceGain": "{source} : +{amount} {resource}.",
-        "risk": "{source} : {rolled} sur 1d20 — {outcome}."
+        "risk": "{source} : {rolled} sur 1d20 — {outcome}.",
+        "createConsumable": "{source} a été créée dans l’inventaire."
       }
     },
     "Aura": {
@@ -18463,6 +18473,12 @@
         "votive": "Votif",
         "vitner": "Tissage de vitner"
       }
+    },
+    "ConjuredConsumable": {
+      "HealingDescription": "Boire cette potion avant son expiration rend 1d10 + 1 points de santé, sans dépasser le maximum. Après expiration ou dissipation, le liquide ne possède plus de pouvoir de guérison.",
+      "Inert": "La préparation a perdu son pouvoir : aucun soin n’est appliqué.",
+      "CapacityReached": "Le nombre maximal de potions encore actives dans l’inventaire du conjurateur est atteint.",
+      "PreparedDetails": "Durée initiale : {duration} {unit}. Limite de possession retenue pour cette préparation : {maximum}."
     }
   }
 }

@@ -26,7 +26,7 @@ Sur une arme sans autre effet : appliquer Enchantement d’objet, puis attaquer 
 
 Le décompte des modèles d’effet ne prouve pas la couverture complète. Les attaques instantanées déjà proposées dans les cartes ne doivent pas recevoir artificiellement un effet permanent. Restent à traiter/vérifier, dans cet ordre pratique :
 
-1. Objets et armes invoqués, objets préparés comme potions et sceaux.
+1. Autres objets et armes invoqués, sceaux et liaison d’un sortilège préparé (Potion de guérison est désormais traitée).
 2. Effets à résistance renouvelable, maladies, peur et protections conditionnelles manquantes ; conséquences exactes de réussite et d’échec.
 3. Zones fixes et contacts (eau bouillante, flammes, parois), gestion d’entrée/sortie et événements de dégâts ; ne pas les remplacer par des auras mobiles.
 4. Dissipation, libérations et soins particuliers, retours à la vie, autres procédures instantanées ; distinguer automatisation et décisions du MJ.
@@ -34,6 +34,20 @@ Le décompte des modèles d’effet ne prouve pas la couverture complète. Les a
 6. Conséquences des tables d’échecs magiques, également comprises dans le chantier des effets.
 
 Les runes viennent après cette liste.
+
+## Préparations consommables — Potion de guérison
+
+Potion de guérison (Puissance des hommes, Haminges) crée désormais un objet consommable distinct dans l’inventaire du conjurateur. Le bouton de préparation agit directement sur le conjurateur, sans cible de combat à sélectionner ni liste de cibles artificielle. L’invocation ne soigne pas et ne lance pas les dés de guérison. Boire la potion lance `1d10+1`, ajoute les PS sans dépasser le maximum et consomme une dose selon le fonctionnement normal de l’inventaire. Les dés sont joints au message de chat pour l’intégration Dice So Nice. Les ingrédients et la préparation sur une flamme restent sous le contrôle du MJ.
+
+Chaque exemplaire conserve séparément sa durée : un jour de base, plus un jour par amélioration. L’effet de puissance porté par l’objet est supprimé à expiration ou peut être dissipé ; le liquide reste alors inerte. Une consommation tardive vérifie aussi directement l’horloge, même avant le nettoyage natif, et n’applique aucun soin. Les transferts conservent l’heure de préparation. L’expiration couvre aussi un objet déposé hors inventaire, sans expirer les références de bibliothèque.
+
+La limite de possession est vérifiée à la création sur les potions encore actives de cet inventaire : deux de base, jusqu’à quatre selon l’amélioration retenue. Les créations simultanées sont sérialisées. L’autorité du MJ réserve une seule préparation par invocation réussie ; elle annule la réservation en cas de limite atteinte pour permettre une nouvelle tentative après libération d’une place. La description garde la durée initiale et la limite retenues ; les choix sont conservés dans la provenance de la préparation. Aucun effet maintenu de sortilège n’est ajouté à l’acteur : il s’agit d’un pouvoir divin.
+
+Le mécanisme générique `createConsumable` (`modules/conjured-consumables.mjs`, conséquences et consommation) est piloté par les sources FR/EN. Il sépare création, opérations lors de l’ingestion, durée et capacité ; il pourra servir aux autres préparations magiques. Références : Livre des règles p.272–273, Player’s Handbook p.217, Remedial Potion. Les coûts d’amélioration de la référence française restent prioritaires lorsque l’édition anglaise diffère.
+
+Si ce pouvoir est placé dans une tablette de vitner, sa préparation reste liée au lancement maintenu via l’effet porté par l’objet, y compris après transfert dans les objets du monde. Arrêter le sortilège retire la puissance de la potion ; sa consommation ou son expiration libère le lancement. Ce suivi ne s’applique pas à l’invocation divine ordinaire.
+
+Contrôle représentatif dans Foundry : invoquer Potion de guérison sur un personnage blessé, créer la potion depuis la carte (aucun PS rendu à ce stade), puis cliquer sur son icône de consommation dans l’inventaire. Vérifier le jet `1d10+1`, le soin et le retrait de la dose. Une seconde préparation laissée un jour doit devenir inerte. Les tests automatisés couvrent aussi les améliorations, les maxima de PS et de possession, le transfert, les créations simultanées et l’autorité de la carte.
 
 ## Qualité et Rouille
 

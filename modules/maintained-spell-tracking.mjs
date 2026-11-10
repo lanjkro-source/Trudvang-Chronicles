@@ -2,6 +2,7 @@ import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-r
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
+import {instantConsequenceOperation} from './conjured-consumables.mjs';
 
 const jobs = new Map();
 const oldContexts = new WeakMap();
@@ -9,7 +10,7 @@ const replies = new Map();
 const channel = "system.trudvang-chronicles";
 const contextOf = effect => effect?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
 const isWriter = () => Boolean(game.users?.activeGM?.isSelf);
-const world = () => ({actors: game.actors ?? [], scenes: game.scenes ?? []});
+const world = () => ({actors: game.actors ?? [], scenes: game.scenes ?? [],items:game.items??[]});
 
 /** Rebuild references on the elected GM, never inferring that an empty list
  * means an unapplied or ended casting. Effect deletion is a separate step. */
@@ -119,8 +120,8 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   try{
    if(instant){
     const {executeConsequences,announceConsequences}=await import("./consequences.mjs");
-    const bonus=(template.parameters??[]).filter(p=>p.target==="instant").reduce((sum,p)=>sum+Number(p.value)*(countsById[p.optionId]??0),0);
-    const result=await executeConsequences({actor:target,operations:[{operation:instant.operation,formula:String(instant.base+bonus)}],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
+    const counts=(POWER_DETAILS_BY_ID[sourceId].powerLevels??[]).map(row=>countsById[row.id]??0);
+    const result=await executeConsequences({actor:target,operations:[instantConsequenceOperation(template,counts,provenance)],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
     if(!result.rows.length)throw Error("Failed to apply instant consequence");
     // A notification failure must not allow the already applied healing to be replayed.
     try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}
@@ -133,6 +134,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
    if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":prior});
    else {const current=activeSpellRecords(caster),existing=current.find(row=>row.id===castingId);
     if(existing){existing.targetAllocations=prior;await caster.update({"system.activeSpellCastings":current,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});}}
+   if(error.code==='consumable-capacity')return {status:'consumable-capacity'};
    throw error;
   }
  });
@@ -200,7 +202,7 @@ export function registerMaintainedSpellTracking() {
   void enqueueContext(current);
  });
  Hooks.on("deleteActiveEffect", effect => {if (tracked(effect)) void enqueueContext(contextOf(effect), {removed:true});});
- Hooks.on("deleteItem", item=>{if(item.parent?.documentName==="Actor")for(const effect of item.effects??[])void enqueueContext(contextOf(effect),{removed:true});});
+ Hooks.on("deleteItem", item=>{if(item.parent?.documentName==="Actor"||item.flags?.['trudvang-chronicles']?.conjuredConsumable)for(const effect of item.effects??[])void enqueueContext(contextOf(effect),{removed:true});});
  Hooks.on("updateActor", (actor, changed, options) => {
   if (options?.trudvangSpellTracking || (!changed.system?.activeSpellCastings && !Object.hasOwn(changed, "system.activeSpellCastings"))) return;
   for (const record of activeSpellRecords(actor)) void enqueue(actor.uuid, record.id);

@@ -9825,6 +9825,47 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-men:remedial-potion:4#brew": {
+    "id": "brew",
+    "icon": "icons/svg/regen.svg",
+    "duration": "",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "instant": {
+      "operation": "createConsumable",
+      "base": 0,
+      "consumable": {
+        "nameKey": "TRUDVANG.Content.Power.holy-haminges-power-of-men:remedial-potion:4.Name",
+        "descriptionKey": "TRUDVANG.ConjuredConsumable.HealingDescription",
+        "operations": [
+          {
+            "operation": "heal",
+            "formula": "1d10+1"
+          }
+        ],
+        "duration": {
+          "value": 1,
+          "units": "days",
+          "index": 0,
+          "increment": 1
+        },
+        "capacity": {
+          "base": 2,
+          "index": 1,
+          "increment": 1,
+          "max": 4
+        }
+      }
+    },
+    "sourceId": "holy-haminges-power-of-men:remedial-potion:4",
+    "parameters": []
+  },
   "holy-haminges-power-of-men:weapon-prowess:5#prouesse": {
     "id": "prouesse",
     "icon": "icons/svg/aura.svg",
@@ -15746,6 +15787,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-men:mastery:3": [
     "holy-haminges-power-of-men:mastery:3#effect"
+  ],
+  "holy-haminges-power-of-men:remedial-potion:4": [
+    "holy-haminges-power-of-men:remedial-potion:4#brew"
   ],
   "holy-haminges-power-of-men:weapon-prowess:5": [
     "holy-haminges-power-of-men:weapon-prowess:5#prouesse"

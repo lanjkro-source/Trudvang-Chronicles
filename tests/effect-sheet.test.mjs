@@ -1174,3 +1174,14 @@ test("Track effect launches the tracking specialty with the frozen bonus once",a
  assert.equal(await TrudvangEffectSheet.onRollConditionalSituation.call(sheetFor(document),{preventDefault(){}},{dataset:{index:"0"}}),"rolled");
  assert.deepEqual(calls,[[ability,{bonus:5,bonusLabel:"Pistage",excludeEffectId:"e"}]]);
 });
+
+test('a conjured potion moved to world items remains managed and loses its expired native effect without expiring library references',async t=>{
+ const {appliedWorldEffects,isManagedEffectClock,expireAppliedEffects}=await import('../modules/effects.mjs');
+ const previous=globalThis.game;t.after(()=>{globalThis.game=previous;});
+ const item={documentName:'Item',type:'gear',flags:{'trudvang-chronicles':{conjuredConsumable:{sourceId:'potion'}}},effects:[]};
+ const effect={type:'effect',name:'Potion',parent:item,start:{time:0},duration:{value:1,units:'days'},system:{changes:[]},flags:{'trudvang-chronicles':{transformation:{resolved:true,appliedAt:0}}},async delete(){this.deleted=true;item.effects=[];}};item.effects=[effect];
+ const library={...effect,parent:{documentName:'Item',type:'effect'},async delete(){throw Error('library reference must not expire');}};
+ globalThis.game={...previous,user:{id:'gm'},users:{activeGM:{isSelf:true}},actors:[],scenes:[],items:[item,{documentName:'Item',type:'effect',effects:[library]}],time:{worldTime:86400}};
+ assert.equal(isManagedEffectClock(effect),true);assert.equal(isManagedEffectClock(library),false);assert.deepEqual([...appliedWorldEffects()],[effect]);
+ await expireAppliedEffects({time:86400,managedClocksOnly:true});assert.equal(effect.deleted,true);
+});

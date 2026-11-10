@@ -9,7 +9,7 @@ class Field{constructor(options){this.options=options;}}
 let models;
 const applications=[];
 class CoreItem{
- constructor(source,parent){this._source=structuredClone(source);this.type=source.type;this.name=source.name;this.id='i';this.uuid='Actor.a.Item.i';this.documentName='Item';this.parent=parent;this.isOwner=true;this.effects=[];this.prepareData();}
+ constructor(source,parent){this._source=structuredClone(source);this.flags=this._source.flags??{};this.type=source.type;this.name=source.name;this.id='i';this.uuid='Actor.a.Item.i';this.documentName='Item';this.parent=parent;this.isOwner=true;this.effects=[];this.prepareData();}
  prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),_source:row,id:row._id??'e'+i,uuid:this.uuid+'.ActiveEffect.'+(row._id??'e'+i),parent:this,active:false,update:async data=>{this._source.effects[i]={...row,...structuredClone(data)};this.prepareData();return this.effects[i];}}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
  prepareEmbeddedDocuments(){}
  prepareDerivedData(){}
@@ -34,7 +34,7 @@ globalThis.document={createElement:()=>({set textContent(value){this.value=Strin
 const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url))),localize=key=>get(language,key)??key;
 globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize,format:(key,data)=>localize(key).replace(/\{(\w+)\}/g,(_,key)=>data[key])}};
 globalThis.ui={notifications:{warn:()=>{}}};
-const {WeaponData,ShieldData,ArmorData}=await import('../modules/data-models.mjs');models={weapon:WeaponData,shield:ShieldData,armor:ArmorData};
+const {WeaponData,ShieldData,ArmorData,GearData}=await import('../modules/data-models.mjs');models={weapon:WeaponData,shield:ShieldData,armor:ArmorData,gear:GearData};
 const {TrudvangItem}=await import('../modules/documents/item.mjs');
 const {TrudvangItemSheet}=await import('../modules/sheets/item-sheet.mjs');
 const {applyTransformation}=await import('../modules/transformations.mjs');
@@ -204,4 +204,12 @@ test('automatic ritual quality appears as an ordinary modifier row with no check
  assert.deepEqual(section.children,[]);assert.equal(list.children.length,2);assert.equal(list.children[0],existing);assert.equal(list.children[1].tagName,'li');
  assert.match(list.children[1].html,/>Épée - Tissage de vitner<\/span><b>\+2<\/b>/);assert.doesNotMatch(list.children[1].html,/<input|<i\b|checkbox/);
  assert.equal(output.nextElementSibling.textContent,'14');
+});
+
+test('a conjured consumable is magical only while its potency effect remains active, including after a sheet save',async()=>{
+ const data={type:'gear',name:'Potion',flags:{'trudvang-chronicles':{conjuredConsumable:{sourceId:'potion'}}},system:{magical:false,description:'',quantity:1},effects:[{type:'effect',transfer:false,duration:{value:1,units:'days'},flags:{'trudvang-chronicles':{transformation:{resolved:true,appliedAt:0},consumablePayload:{operations:[{operation:'heal',formula:'1d10+1'}]}}},system:{changes:[]}}]};
+ const item=new TrudvangItem(data,actor);actor.items=[item];assert.equal(item.system.magical,true);
+ const sheet=new TrudvangItemSheet({document:item});await sheet._prepareContext({});await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet,{},null,{object:{'system.magical':true}});
+ assert.equal(item._source.system.magical,false);assert.equal(item.system.magical,true);
+ item._source.effects=[];item.prepareData();assert.equal(item.system.magical,false);
 });

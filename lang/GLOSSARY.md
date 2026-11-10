@@ -14127,6 +14127,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.SourcePage` | 216 | 272 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.Duration` | 2 minutes | 2 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.Name` | Prepare a remedial potion | Préparer une potion de guérison |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.Description` | With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d10 + 1 Body Points if ingested within the duration. The spirit conjurer can have a maximum of two brews at one time. | Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 1d10 + 1 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder que deux potions de ce genre à la fois. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.SourceName` | Remedial Potion | Potion de guérison |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.SourcePage` | 216 | 272 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:weapon-prowess:5#prouesse`
 
 | Clé | English | Français |
@@ -16024,6 +16035,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.fearReduction` | {source}: −{amount} Fear Points. | {source} : −{amount} peur. |
 | `TRUDVANG.Consequence.Result.resourceGain` | {source}: +{amount} {resource}. | {source} : +{amount} {resource}. |
 | `TRUDVANG.Consequence.Result.risk` | {source}: {rolled} on 1d20 — {outcome}. | {source} : {rolled} sur 1d20 — {outcome}. |
+| `TRUDVANG.Consequence.Result.createConsumable` | {source} was created in the inventory. | {source} a été créée dans l’inventaire. |
 
 ## `TRUDVANG.Aura`
 
@@ -16121,3 +16133,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Quality.Special.none` | None | Non |
 | `TRUDVANG.Quality.Special.votive` | Votive | Votif |
 | `TRUDVANG.Quality.Special.vitner` | Vitner weaving | Tissage de vitner |
+
+## `TRUDVANG.ConjuredConsumable`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.ConjuredConsumable.HealingDescription` | Drinking this potion before it expires restores 1d10 + 1 Body Points, up to the maximum. After expiry or dispelling, the liquid has no healing power. | Boire cette potion avant son expiration rend 1d10 + 1 points de santé, sans dépasser le maximum. Après expiration ou dissipation, le liquide ne possède plus de pouvoir de guérison. |
+| `TRUDVANG.ConjuredConsumable.Inert` | The preparation has lost its power: no healing is applied. | La préparation a perdu son pouvoir : aucun soin n’est appliqué. |
+| `TRUDVANG.ConjuredConsumable.CapacityReached` | The conjurer’s inventory already contains the maximum number of active potions. | Le nombre maximal de potions encore actives dans l’inventaire du conjurateur est atteint. |
+| `TRUDVANG.ConjuredConsumable.PreparedDetails` | Initial duration: {duration} {unit}. Possession limit used for this preparation: {maximum}. | Durée initiale : {duration} {unit}. Limite de possession retenue pour cette préparation : {maximum}. |

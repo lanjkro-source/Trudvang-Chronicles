@@ -19,7 +19,7 @@ export const EFFECT_ITEM_TYPES = new Set(["weapon", "armor", "shield", "gear", "
 /** These item-local effects use the system clock, not Foundry's registry. */
 export function isManagedItemTransformation(effect) {
   return !effect?.transfer && effect?.parent?.documentName === "Item"
-    && effect.parent.parent?.documentName === "Actor"
+    && (effect.parent.parent?.documentName === "Actor"||Boolean(effect.parent.flags?.['trudvang-chronicles']?.conjuredConsumable))
     && Boolean(effect.flags?.["trudvang-chronicles"]?.transformation?.resolved);
 }
 
@@ -220,7 +220,7 @@ export function finishExpiredEffect(effect, options = {}) {
     // whether this is an applied instance from its document ancestry instead.
     const parent = effect.parent;
     const applied = parent?.documentName === "Actor"
-      || (parent?.documentName === "Item" && parent.parent?.documentName === "Actor"
+      || (parent?.documentName === "Item" && (parent.parent?.documentName === "Actor"||Boolean(parent.flags?.['trudvang-chronicles']?.conjuredConsumable))
         && (effect.transfer || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved));
     if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
       || !applied || parent?.type === "effect" || effect.inCompendium) return;
@@ -281,6 +281,7 @@ export function appliedWorldEffects() {
   const actors = new Set(Array.from(game.actors ?? []));
   for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) if (token.actor) actors.add(token.actor);
   const effects = new Set();
+  for(const item of game.items??[])if(item.flags?.['trudvang-chronicles']?.conjuredConsumable)for(const effect of item.effects??[])effects.add(effect);
   for (const actor of actors) {
     // Prepared applicable lists can omit suppressed/expired entries. Include
     // the stored collections so previously greyed-out instances are removed.

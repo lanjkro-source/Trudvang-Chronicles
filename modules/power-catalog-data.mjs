@@ -3261,6 +3261,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:remedial-potion:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-men:remedial-potion:4:0",
+        "holy-haminges-power-of-men:remedial-potion:4:1"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:remedial-potion:4:0",

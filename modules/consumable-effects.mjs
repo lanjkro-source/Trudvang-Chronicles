@@ -1,5 +1,6 @@
 import {EXTRACT_EFFECTS,CONSUMABLE_EFFECTS} from "./rules/consumable-effects.mjs";
 import {executeConsequences,createConsequenceEffect} from "./consequences.mjs";
+import {activeConjuredConsumable} from './conjured-consumables.mjs';
 const SCOPE="trudvang-chronicles",levels=["Mild","Moderate","Strong","Total"];
 const localize=key=>game.i18n.localize(key);
 const testViews=tests=>tests.map(t=>({...t,action:t.actionKey?localize(t.actionKey):t.action}));
@@ -10,6 +11,11 @@ export async function applyConsumableConsequences(item,actor,{stage=null,duratio
  const id=consumableEffectId(item),rows=[],rolls=[],effects=[],tests=[];
  const name=item.name,img=item.img;
  const execute=async operations=>{const result=await executeConsequences({actor,operations,source:name});rows.push(...result.rows);rolls.push(...result.rolls);};
+ if(id==='ConjuredConsumable'){
+  const payload=activeConjuredConsumable(item);
+  if(payload)await execute(payload.operations);
+  return {rows,rolls,effects,tests:[],description:payload?'':localize('TRUDVANG.ConjuredConsumable.Inert')};
+ }
  await execute(CONSUMABLE_EFFECTS[id]??[]);
  if(id==="MinokksHeart"){
   const resistance={kind:"resist",sv:10,trait:"psyche",actionKey:"TRUDVANG.Consequence.ResistCharge"};

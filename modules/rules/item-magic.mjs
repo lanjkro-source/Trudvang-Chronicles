@@ -1,5 +1,6 @@
 import {rulesFromChanges} from './effect-rule-changes.mjs';
 import {itemQuality,equipmentDecimal} from './item-quality.mjs';
+import {activeConjuredConsumable} from '../conjured-consumables.mjs';
 
 const active=effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired;
 export function itemMagicEffects(item){return Array.from(item?.effects??[]).filter(active);}
@@ -45,6 +46,10 @@ export function prepareItemLocalEffects(item,phase){
  if(phase==='final')for(const key of ['system.weight','system.value']){
   const before=at(item,key),after=equipmentDecimal(before);
   if(typeof before==='number'&&before!==after){assign(item,key,after);records.push({system:item.system,key,type:'round',source:at(item._source,key),before,after});}
+ }
+ if(phase==='final'&&item.flags?.['trudvang-chronicles']?.conjuredConsumable){
+  const key='system.magical',before=item.system.magical,after=Boolean(activeConjuredConsumable(item));
+  if(before!==after){item.system.magical=after;records.push({system:item.system,key,type:'override',source:at(item._source,key),before,after});}
  }
 }
 /** Snapshot the values displayed by a sheet, so saving the full form does not
