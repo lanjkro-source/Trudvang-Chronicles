@@ -816,7 +816,7 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({actor = null, usedItem = null, title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = [], mountedCombat = null}) {
+export async function combatPointDialog({actor = null, usedItem = null, action = "", title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = [], mountedCombat = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
@@ -996,7 +996,7 @@ export async function combatPointDialog({actor = null, usedItem = null, title, p
   });
   buttons.push({action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false});
 
-  return blessingDialog(CombatPointDialog,showModifier?actor:null,'modifier',{item:usedItem}).wait({
+  return blessingDialog(CombatPointDialog,showModifier?actor:null,'modifier',{item:usedItem,action}).wait({
     window: {title},
     content,
     buttons,

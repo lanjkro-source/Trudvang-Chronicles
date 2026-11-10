@@ -1,0 +1,53 @@
+{
+  "_id": "mjupSy1w2x3y4z5A",
+  "_key": "!items!mjupSy1w2x3y4z5A",
+  "name": "Bolgomek",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon",
+    "description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir.",
+    "summary": "Invoque une lance sacrée temporaire dans l’inventaire.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 240
+    }
+  },
+  "effects": [
+    {
+      "_id": "jdMruE5A6B7C8D9E",
+      "_key": "!items.effects!mjupSy1w2x3y4z5A.jdMruE5A6B7C8D9E",
+      "name": "Bolgomek",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.equipment",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 6\",\"openRoll\":7,\"protection\":20,\"breach\":{\"value\":200,\"max\":200},\"initiativeModifier\":-4,\"weaponActions\":3,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\"}},\"useBonus\":2,\"armorBonus\":4,\"outnumberedParry\":2}]",
+            "phase": "initial",
+            "priority": 30
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:bolgemek:4",
+            "summary": "Invoque une lance sacrée temporaire dans l’inventaire.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

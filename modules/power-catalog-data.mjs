@@ -180,6 +180,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2:0",
@@ -220,6 +225,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:bolgemek:4": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:0",
@@ -377,6 +387,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-ealdtradition-halawen-s-offering:roggdrasil:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
+    },
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:roggdrasil:8:0",

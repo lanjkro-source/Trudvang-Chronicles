@@ -133,7 +133,7 @@ async function applyOnGM(payload) {
     && (payload.channel !== "defense" || row.itemUuid === item?.uuid));
   if (!appliedRow) {
     const result = payload.channel === "fear" ? await actor.applyFearFactor(amount, {announce: false})
-      : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount})
+      : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount,qualification:message.getFlag(SYSTEM_ID,"damageContext")?.qualification})
         : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, announce: false});
     if (!result) return {status: "unavailable"};
     appliedRow = {actorUuid: actor.uuid, tokenUuid: "", name: actor.name, channel: payload.channel,

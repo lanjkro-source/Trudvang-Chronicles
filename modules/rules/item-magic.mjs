@@ -1,9 +1,10 @@
+import {equipmentGrantActive} from './granted-equipment.mjs';
 import {rulesFromChanges} from './effect-rule-changes.mjs';
 import {itemQuality,equipmentDecimal} from './item-quality.mjs';
 import {activeConjuredConsumable} from '../conjured-consumables.mjs';
 
 const active=effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired;
-export function itemMagicEffects(item){return item?.flags?.['trudvang-chronicles']?.inventoryTransfer?[]:Array.from(item?.effects??[]).filter(active);}
+export function itemMagicEffects(item){return item?.flags?.['trudvang-chronicles']?.inventoryTransfer||!equipmentGrantActive(item)?[]:Array.from(item?.effects??[]).filter(active);}
 export function preparedItemProtection(item){
  const hasLocalValue=itemMagicEffects(item).some(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(change=>change.key==='system.protection'));
  return hasLocalValue&&Number.isFinite(Number(item?.system?.protection))?Math.max(0,Number(item.system.protection)):Math.ceil(Math.max(0,Number(item?.system?.breach?.value)||0)/10);
@@ -76,7 +77,7 @@ export function intrinsicItemSheetUpdate(update,state=[]){
  }
  return update;
 }
-export function itemUseBonuses(actor,{castingType}={}){
+export function itemUseBonuses(actor,{castingType,action}={}){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
  if(item.flags?.['trudvang-chronicles']?.inventoryTransfer)return [];
  if(castingType&&['weapon','armor','shield'].includes(item.type)&&!item.system?.equipped)return [];
@@ -86,7 +87,8 @@ export function itemUseBonuses(actor,{castingType}={}){
  const qualityRows=eligible&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id,automatic:Boolean(castingType)}]:[];
  return [...qualityRows,...itemMagicEffects(item).flatMap(effect=>{
   const value=Number(rulesFromChanges(effect.system?.changes).objectUse)||0;
-  return value?[{id:effect.uuid??`${item.id}:${effect.id}`,item,effect,value}]:[];
+  const outnumbered=action==='parry'?Number(rulesFromChanges(effect.system?.changes).objectParryOutnumbered)||0:0;
+  return [...(outnumbered?[{id:(effect.uuid??effect.id)+':outnumbered',item,effect:{name:game.i18n.localize('TRUDVANG.Transformation.OutnumberedParry')},value:outnumbered,optional:true}]:[]),...(value?[{id:effect.uuid??`${item.id}:${effect.id}`,item,effect,value}]:[])];
  })];});
 }
 export function itemProtectionModifiers(item){

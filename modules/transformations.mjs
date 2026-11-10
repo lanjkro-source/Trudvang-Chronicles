@@ -1,3 +1,5 @@
+import {equipmentGrantItems,equipmentGrantActive,grantedEquipmentData} from './rules/granted-equipment.mjs';
+import {readiedHandConflicts} from './rules/combat-pool-resolver.mjs';
 import {resolveEffectNote} from './rules/effect-note.mjs';
 import {NID_BLESSINGS,nidBlessingRestriction} from "./rules/nid-blessings.mjs";
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
@@ -532,9 +534,10 @@ export async function resolveDuration(text,context={}){
  return normalizeEffectDuration({value:Math.max(0,value),units});
 }
 /** Only generated grants are removed. Inventory and original actor data are never restored from a snapshot. */
-async function cleanGrants(effect){
+export async function cleanGrants(effect){
  const actor=effect.parent;if(actor?.documentName!=="Actor")return;
  await grantQueues.get(`${actor.uuid??actor.id??"actor"}:${effect.id}`)?.catch(()=>{});
+ for(const item of equipmentGrantItems(effect,actor))if(item.parent?.uuid!==actor.uuid)await item.delete();
  const ids=Array.from(actor.items).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id).map(i=>i.id);
  if(ids.length)await actor.deleteEmbeddedDocuments("Item",ids);
 }
@@ -554,6 +557,15 @@ export function syncEffectGrants(effect,actor=effect.parent){
  const run=async()=>{
   if(!effect.id || (actor.effects?.get&&!actor.effects.get(effect.id)))return;
   const r=effectRules(effect);
+  const equipment=(r.equipment??[]).map(row=>grantedEquipmentData(row,effect));
+  const existingEquipment=equipmentGrantItems(effect,actor);
+  if(equipment.length){
+   const signature=JSON.stringify(equipment);
+   if(existingEquipment.length!==equipment.length||existingEquipment.some(i=>i.flags?.[SCOPE]?.grantSignature!==signature)){
+    for(const item of existingEquipment)await item.delete();
+    for(const item of equipment){item.flags[SCOPE].grantSignature=signature;item.system.equipped=!readiedHandConflicts(actor.items,item).length;await actor.createEmbeddedDocuments('Item',[item]);}
+   }
+  }else for(const item of existingEquipment)await item.delete();
   const items=(r.attacks??[]).filter(row=>!row.isUnarmed).map(row=>naturalWeapon({...row,name:game.i18n.localize(row.name)},effect.id));
   if(r.extraWeaponAction?.weaponId){
    const weapon=actor.items.get(r.extraWeaponAction.weaponId);
@@ -575,7 +587,7 @@ export function syncEffectGrants(effect,actor=effect.parent){
    items.push(data);
   }
   for(const name of r.capabilityNames??[]){const ref=CREATURE_ABILITY_REFERENCES[name];if(ref)items.push({name:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Name`),type:"creatureAbility",system:{catalogId:ref.id,description:game.i18n.localize(`TRUDVANG.Content.CreatureAbility.${ref.id}.Description`)},flags:{[SCOPE]:{transformationGrant:effect.id}}});}
-  const existing=Array.from(actor.items??[]).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id);
+  const existing=Array.from(actor.items??[]).filter(i=>i.flags?.[SCOPE]?.transformationGrant===effect.id&&!i.flags?.[SCOPE]?.equipmentGrantUuid);
   const signature=JSON.stringify(items);
   if(existing.length===items.length&&existing.every(i=>i.flags?.[SCOPE]?.grantSignature===signature))return;
   if(existing.length)await actor.deleteEmbeddedDocuments("Item",existing.map(i=>i.id));
@@ -587,6 +599,7 @@ export function syncEffectGrants(effect,actor=effect.parent){
  return pending.finally(()=>{if(grantQueues.get(id)===pending)grantQueues.delete(id);});
 }
 export function transformationItemActive(item){
+ if(item?.flags?.[SCOPE]?.equipmentGrantUuid)return equipmentGrantActive(item);
  const id=item?.flags?.[SCOPE]?.transformationGrant;
  return !id||activeTransformations(item.actor).some(e=>e.id===id);
 }

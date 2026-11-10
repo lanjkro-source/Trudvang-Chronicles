@@ -1316,7 +1316,7 @@ export class TrudvangActor extends BaseActor {
       ? game.i18n.localize("TRUDVANG.Combat.NaturalParryHint")
       : "";
     const rememberedMount = this.getFlag?.("trudvang-chronicles", "mountedCombat") ?? {};
-    const options = await combatPointDialog({actor:this,usedItem:item,
+    const options = await combatPointDialog({actor:this,usedItem:item,action:kind,
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
       pools: defaultMode.pools,
       defaultAllocation: defaultMode.defaultAllocation,

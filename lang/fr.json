@@ -1003,7 +1003,8 @@
       "DeliveryMelee": "Arme de mêlée",
       "DeliveryRanged": "Arme à distance ou de lancer",
       "Origin": "Origine",
-      "FixedHint": "Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul."
+      "FixedHint": "Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul.",
+      "ArmorReduction": "Réduction de la protection adverse (VP)"
     },
     "Dialog": {
       "MountedCombat": "Combat monté",
@@ -1508,7 +1509,9 @@
         "damageQualification": "Qualifications des dégâts de l’objet",
         "magicalProtection": "VP protégeant aussi contre les dégâts réservés aux armures magiques",
         "objectUse": "Modificateur de VC/SV lorsque l’objet est utilisé",
-        "itemProtection": "Modificateur de VP propre à cet objet"
+        "itemProtection": "Modificateur de VP propre à cet objet",
+        "equipment": "Équipement temporaire",
+        "objectParryOutnumbered": "Parade en infériorité numérique"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
       "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
@@ -16025,6 +16028,28 @@
           "SourcePage": "239",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon": {
+          "Name": "Fléau de Blotfang",
+          "Summary": "Invoque une lance sacrée temporaire dans l’inventaire.",
+          "Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 8) + 4, VP 15, VI 150, MI −4, AA 3. Le porteur reçoit +2 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir.",
+          "SourceName": "Fléau de Blotfang",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "239",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Fléau de Blotfang",
+          "Equipment0Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 8) + 4, VP 15, VI 150, MI −4, AA 3. Le porteur reçoit +2 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir."
+        },
+        "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon": {
+          "Name": "Bolgomek",
+          "Summary": "Invoque une lance sacrée temporaire dans l’inventaire.",
+          "Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir.",
+          "SourceName": "Bolgomek",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "240",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Bolgomek",
+          "Equipment0Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir."
+        },
         "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
           "Name": "Mur contre la sorcellerie",
           "Summary": "Permet de résister individuellement aux sortilèges reçus.",
@@ -16060,6 +16085,17 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "240",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon": {
+          "Name": "Roggdrasil",
+          "Summary": "Invoque une lance sacrée temporaire dans l’inventaire.",
+          "Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 8, VP 30, VI 300, MI −2, AA 4. Le porteur reçoit +6 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +4 VC. Les coups réduisent de 3 la VP totale de la cible. La Force s’ajoute normalement aux dégâts. Le porteur peut tenter de parer les sorts qui le visent avec l’action Parade ; le MJ en gère la résolution. L’inversion légendaire des traits négatifs reste à l’appréciation du MJ. La lance disparaît avec le pouvoir.",
+          "SourceName": "Roggdrasil",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "241",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Roggdrasil",
+          "Equipment0Description": "Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 8, VP 30, VI 300, MI −2, AA 4. Le porteur reçoit +6 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +4 VC. Les coups réduisent de 3 la VP totale de la cible. La Force s’ajoute normalement aux dégâts. Le porteur peut tenter de parer les sorts qui le visent avec l’action Parade ; le MJ en gère la résolution. L’inversion légendaire des traits négatifs reste à l’appréciation du MJ. La lance disparaît avec le pouvoir."
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Sang brûlant (Tribut de Morgu)",
@@ -18251,7 +18287,8 @@
       "MagicalItemUnaffected": "Cet objet est magique : Rouille ne peut pas l’affecter.",
       "QualityUnchanged": "La qualité de cet objet ne peut pas être réduite davantage.",
       "ItemQualityValues": "{item} : qualité {from} → {to}.",
-      "RavenPenalty": "Malus à toutes les actions : {value}."
+      "RavenPenalty": "Malus à toutes les actions : {value}.",
+      "OutnumberedParry": "Parade en infériorité numérique"
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

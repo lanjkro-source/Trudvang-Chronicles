@@ -13,8 +13,8 @@ const effectParameters=(entry,t)=>/recovery|exhaustion/.test(t.id)?[]:(entry.eff
 const changeMechanics=changes=>changes.map(row=>{
  const value=typeof row.value==="string"?(()=>{try{return JSON.parse(row.value);}catch{return row.value;}})():row.value;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length);
- const strip=value=>Array.isArray(value)?value.map(strip):value&&typeof value==="object"?Object.fromEntries(Object.entries(value).filter(([key])=>!["name","label"].includes(key)).map(([k,v])=>[k,strip(v)])):value;
- return {...row,value:["senses","capabilities","capabilityNames","immunities"].includes(key)?value.map(v=>typeof v==="string"?"text":strip(v)):strip(value)};
+ const strip=value=>Array.isArray(value)?value.map(strip):value&&typeof value==="object"?Object.fromEntries(Object.entries(value).filter(([key])=>!["name","label","description"].includes(key)).map(([k,v])=>[k,strip(v)])):value;
+ return {...row,value:["senses","capabilities","capabilityNames","immunities","equipment"].includes(key)?value.map(v=>typeof v==="string"?"text":strip(v)):strip(value)};
 });
 for(const c of ["fr","en"])lang[c].TRUDVANG.Content.Transformation={};
 for(const kind of ["powers","feats"]){
@@ -140,6 +140,7 @@ for(const kind of ["powers","feats"]){
    }
    for(const c of ["fr","en"])lang[c].TRUDVANG.Content.Transformation[key]={Name:(c==="fr"?t:translated).name,Summary:(c==="fr"?t:translated).summary,Description:(c==="fr"?t:translated).description,
      SourceName:(c==="fr"?entry:englishEntry).name,SourceBook:(c==="fr"?entry:englishEntry).source.book,SourcePage:String((c==="fr"?entry:englishEntry).source.page),Duration:(c==="fr"?t:translated).duration,
+     ...Object.fromEntries(((c==='fr'?sourceRules:translatedRules).equipment??[]).flatMap((a,i)=>[[`Equipment${i}Name`,a.name],[`Equipment${i}Description`,a.description]])),
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).attacks??[]).map((a,i)=>[`Attack${i}`,a.name])),
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).senses??[]).map((s,i)=>[`Sense${i}`,typeof s==="string"?s:s.label])),
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).capabilities??[]).map((s,i)=>[`Capability${i}`,s])),
@@ -151,6 +152,7 @@ for(const kind of ["powers","feats"]){
      ...rules,
      ...(sourceRules.senses?{senses:sourceRules.senses.map((s,i)=>typeof s==="string"?`TRUDVANG.Content.Transformation.${key}.Sense${i}`:{...s,label:`TRUDVANG.Content.Transformation.${key}.Sense${i}`})}:{}),
      ...(sourceRules.capabilities?{capabilities:sourceRules.capabilities.map((s,i)=>`TRUDVANG.Content.Transformation.${key}.Capability${i}`)}:{}),
+     ...(sourceRules.equipment?{equipment:sourceRules.equipment.map((a,i)=>({...a,name:`TRUDVANG.Content.Transformation.${key}.Equipment${i}Name`,description:`TRUDVANG.Content.Transformation.${key}.Equipment${i}Description`}))}:{}),
      ...(sourceRules.attacks?{attacks:sourceRules.attacks.map((a,i)=>({...a,name:`TRUDVANG.Content.Transformation.${key}.Attack${i}`}))}:{})
    },{priority:t.priority})];
    registry[key]={...data,sourceId:id,parameters};bySource[id].push(key);

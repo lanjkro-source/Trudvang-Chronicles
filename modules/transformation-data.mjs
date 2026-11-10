@@ -6656,6 +6656,70 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "10 minutes",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.equipment",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 4\",\"openRoll\":8,\"protection\":15,\"breach\":{\"value\":150,\"max\":150},\"initiativeModifier\":-4,\"weaponActions\":3,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\"}},\"useBonus\":2,\"armorBonus\":2}]",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "10 minutes",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.equipment",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 6\",\"openRoll\":7,\"protection\":20,\"breach\":{\"value\":200,\"max\":200},\"initiativeModifier\":-4,\"weaponActions\":3,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\"}},\"useBonus\":2,\"armorBonus\":4,\"outnumberedParry\":2}]",
+        "phase": "initial",
+        "priority": 30
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:bolgemek:4",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:bolgemek:4:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:bolgemek:4:1"
+      }
+    ]
+  },
   "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
     "id": "ward",
     "icon": "icons/svg/aura.svg",
@@ -6781,6 +6845,38 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1"
+      }
+    ]
+  },
+  "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/sword.svg",
+    "duration": "10 minutes",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.equipment",
+        "type": "override",
+        "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 8\",\"openRoll\":7,\"protection\":30,\"breach\":{\"value\":300,\"max\":300},\"initiativeModifier\":-2,\"weaponActions\":4,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\",\"armorReduction\":3}},\"useBonus\":4,\"armorBonus\":6}]",
+        "phase": "initial",
+        "priority": 50
+      }
+    ],
+    "sourceId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 60,
+        "optionId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8:0"
+      },
+      {
+        "index": 1,
+        "target": "duration",
+        "value": 3600,
+        "optionId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8:1"
       }
     ]
   },
@@ -15787,6 +15883,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": [
     "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal"
   ],
+  "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": [
+    "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon"
+  ],
+  "holy-ealdtradition-halawen-s-offering:bolgemek:4": [
+    "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon"
+  ],
   "holy-ealdtradition-halawen-s-offering:witch-wall:5": [
     "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward"
   ],
@@ -15796,6 +15898,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": [
     "holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward"
+  ],
+  "holy-ealdtradition-halawen-s-offering:roggdrasil:8": [
+    "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon"
   ],
   "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": [
     "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood"

@@ -1,3 +1,4 @@
+import {equipmentGrantActive} from './granted-equipment.mjs';
 /** Pure, Foundry-independent resolution of Trudvang's linked Combat Point pools. */
 
 export const COMBAT_POOL_IDS = Object.freeze([
@@ -70,6 +71,7 @@ function finite(value, fallback = 0) {
 /** Extra arms keep a weapon's real usage, but have their own actions and CP. */
 export const isExtraWeaponAction = item => Boolean(item?.flags?.["trudvang-chronicles"]?.extraWeaponAction);
 const activeGrant=(actor,item)=>{
+  if(item?.flags?.["trudvang-chronicles"]?.equipmentGrantUuid)return equipmentGrantActive(item,actor);
   const id=item?.flags?.["trudvang-chronicles"]?.transformationGrant;
   return !id||Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).some(e=>e.id===id&&!e.disabled&&!e.isSuppressed&&!e.duration?.expired);
 };

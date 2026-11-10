@@ -6,19 +6,20 @@ export const EFFECT_RULE_PREFIX = "system.transformation.";
 export const roundEffectValue = value => Math.round((value + Number.EPSILON) * 100) / 100;
 export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegrity", "naturalArmor",
   "movement", "testFactor", "traits", "chooseBestiary", "formPolicy", "formName", "senses",
-  "capabilities", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
+  "capabilities", "equipment", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "ignoreFearPenalty", "ignoreFearGain", "ignoreFearThrough", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection","objectUse","itemProtection"];
-const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds","damageDefenses"]);
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection","objectUse","objectParryOutnumbered","itemProtection"];
+const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds","damageDefenses","equipment"]);
 const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge","damageQualification"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
-const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough","magicalProtection","objectUse","itemProtection"]);
+const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","ignoreFearThrough","magicalProtection","objectUse","objectParryOutnumbered","itemProtection"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};
 export function validProfileChange(row){
  if(!row.key?.startsWith(EFFECT_RULE_PREFIX))return true;
  const key=row.key.slice(EFFECT_RULE_PREFIX.length),value=parse(row.value);
  if(!EFFECT_RULE_KEYS.includes(key))return false;
+ if(key==="equipment")return Array.isArray(value)&&value.every(row=>row&&typeof row.name==='string'&&row.type==='weapon'&&row.system&&typeof row.system==='object'&&typeof row.system.damage==='string'&&Number.isFinite(row.useBonus)&&Number.isFinite(row.armorBonus));
  if(key==="damageDefenses")return Array.isArray(value)&&value.every(rule=>rule&&typeof rule==="object"&&Number.isFinite(rule.factor)&&rule.factor>=0
   &&(!rule.nature||DAMAGE_NATURES.includes(rule.nature))&&(!rule.type||DAMAGE_TYPES.includes(rule.type))&&(!rule.delivery||DAMAGE_DELIVERIES.includes(rule.delivery))
   &&(!rule.stage||["beforeArmor","afterArmor"].includes(rule.stage))&&(!rule.material||typeof rule.material==="string"));

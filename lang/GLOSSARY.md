@@ -1175,6 +1175,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.DamageRoll.DeliveryRanged` | Ranged or throwing weapon | Arme à distance ou de lancer |
 | `TRUDVANG.DamageRoll.Origin` | Origin | Origine |
 | `TRUDVANG.DamageRoll.FixedHint` | For fixed damage, use 0 dice and a nonzero modifier. | Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul. |
+| `TRUDVANG.DamageRoll.ArmorReduction` | Enemy protection reduction (PV) | Réduction de la protection adverse (VP) |
 
 ## `TRUDVANG.Dialog`
 
@@ -1763,6 +1764,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.magicalProtection` | PV effective against damage requiring magical armor | VP protégeant aussi contre les dégâts réservés aux armures magiques |
 | `TRUDVANG.Effect.Profile.objectUse` | SV/Situation modifier when this item is used | Modificateur de VC/SV lorsque l’objet est utilisé |
 | `TRUDVANG.Effect.Profile.itemProtection` | Protection Value modifier local to this item | Modificateur de VP propre à cet objet |
+| `TRUDVANG.Effect.Profile.equipment` | Temporary equipment | Équipement temporaire |
+| `TRUDVANG.Effect.Profile.objectParryOutnumbered` | Outnumbered parry | Parade en infériorité numérique |
 
 ## `TRUDVANG.Effect.Activation`
 
@@ -13163,6 +13166,32 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.SourcePage` | 178 | 239 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3#principal.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Name` | Bloodfangsbane | Fléau de Blotfang |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Description` | Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 8) + 4, VP 15, VI 150, MI −4, AA 3. Le porteur reçoit +2 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.SourceName` | Bloodfangsbane | Fléau de Blotfang |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.SourcePage` | 178 | 239 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Duration` | 10 minutes | 10 minutes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Name` | Bloodfangsbane | Fléau de Blotfang |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Description` | Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 8) + 4, VP 15, VI 150, MI −4, AA 3. Le porteur reçoit +2 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir. |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Name` | Bolgemek | Bolgomek |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Description` | Sacred two-handed spear: damage 1d10 (OR 7) + 6, PV 20, BV 200, IM −4, weapon actions 3. The wielder receives +4 PV while equipped and +2 SV on all tests using this weapon. Parries have an optional additional +2 SV while outnumbered. Strength applies normally to damage. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.SourceName` | Bolgemek | Bolgomek |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.SourcePage` | 178 | 240 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Duration` | 10 minutes | 10 minutes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Name` | Bolgemek | Bolgomek |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon.Equipment0Description` | Sacred two-handed spear: damage 1d10 (OR 7) + 6, PV 20, BV 200, IM −4, weapon actions 3. The wielder receives +4 PV while equipped and +2 SV on all tests using this weapon. Parries have an optional additional +2 SV while outnumbered. Strength applies normally to damage. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 6, VP 20, VI 200, MI −4, AA 3. Le porteur reçoit +4 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +2 VC. En parade, un bonus conditionnel supplémentaire de +2 VC est disponible en infériorité numérique. La Force s’ajoute normalement aux dégâts. La lance disparaît avec le pouvoir. |
+
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:witch-wall:5#ward`
 
 | Clé | English | Français |
@@ -13206,6 +13235,19 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.SourcePage` | 178 | 240 |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:mistur-barrier:7#ward.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Name` | Roggdrasil | Roggdrasil |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Description` | Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 8, VP 30, VI 300, MI −2, AA 4. Le porteur reçoit +6 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +4 VC. Les coups réduisent de 3 la VP totale de la cible. La Force s’ajoute normalement aux dégâts. Le porteur peut tenter de parer les sorts qui le visent avec l’action Parade ; le MJ en gère la résolution. L’inversion légendaire des traits négatifs reste à l’appréciation du MJ. La lance disparaît avec le pouvoir. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.SourceName` | Roggdrasil | Roggdrasil |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.SourcePage` | 178 | 241 |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Duration` | 10 minutes | 10 minutes |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Name` | Roggdrasil | Roggdrasil |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Description` | Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power. | Lance sacrée à deux mains : dégâts 1d10 (JO 7) + 8, VP 30, VI 300, MI −2, AA 4. Le porteur reçoit +6 VP tant que la lance est équipée ; tous les tests utilisant cette arme reçoivent +4 VC. Les coups réduisent de 3 la VP totale de la cible. La Force s’ajoute normalement aux dégâts. Le porteur peut tenter de parer les sorts qui le visent avec l’action Parade ; le MJ en gère la résolution. L’inversion légendaire des traits négatifs reste à l’appréciation du MJ. La lance disparaît avec le pouvoir. |
 
 ## `TRUDVANG.Content.Transformation.holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood`
 
@@ -15823,6 +15865,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.QualityUnchanged` | This object’s quality cannot be lowered any further. | La qualité de cet objet ne peut pas être réduite davantage. |
 | `TRUDVANG.Transformation.ItemQualityValues` | {item}: quality {from} → {to}. | {item} : qualité {from} → {to}. |
 | `TRUDVANG.Transformation.RavenPenalty` | Penalty to all actions: {value}. | Malus à toutes les actions : {value}. |
+| `TRUDVANG.Transformation.OutnumberedParry` | Parrying while outnumbered | Parade en infériorité numérique |
 
 ## `TRUDVANG.Transformation.Modes`
 

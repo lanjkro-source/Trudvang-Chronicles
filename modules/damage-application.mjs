@@ -57,7 +57,15 @@ export function prepareDamageTargets(targets) {
  * remaining protection (natural armor and effects). Each armor item loses the
  * excess that passes through its current VP; the remainder reaches Body Points.
  */
-export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0, protectionFor = protection} = {}) {
+export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0, protectionFor = protection, armorReduction = 0} = {}) {
+  let penetration=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(armorReduction))));
+  const reduce=value=>{const used=Math.min(Math.max(0,value),penetration);penetration-=used;return Math.max(0,value-used);};
+  const rawOuter=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
+  const effectiveOuter=reduce(rawOuter),effectiveArmor=new Map(armor.map(item=>[item,reduce(protectionFor(item))]));
+  const rawArmor=armor.reduce((sum,item)=>sum+protectionFor(item),0);
+  const effectiveOther=reduce(Math.max(0,Math.trunc(number(totalProtection))-rawOuter-rawArmor));
+  totalProtection=effectiveOuter+[...effectiveArmor.values()].reduce((sum,n)=>sum+n,0)+effectiveOther;
+  protectionFor=item=>effectiveArmor.get(item)??0;outerProtection=effectiveOuter;
   const outer=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
   let remaining = Math.max(0, Math.trunc(number(damage)) - outer);
   const armorProtection = armor.reduce((total, item) => total + protectionFor(item), 0);
@@ -99,7 +107,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
     : number(actor.system?.protection)+conditionalProtection+wornArmor.reduce((sum,item)=>sum+protectionFor(item)-protection(item),0);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}
-    : calculateArmoredDamage({damage: amount, totalProtection, armor, protectionFor,
+    : calculateArmoredDamage({damage: amount, totalProtection, armor, protectionFor,armorReduction:qualified.armorReduction,
       outerProtection:conditionalProtection+(specialProtection ? 0 : activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0))});
   result.conditionalProtection=conditionalProtection;
   result.qualification=qualified;
@@ -137,10 +145,10 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
 }
 
 /** Apply a parried hit to a shield-hand or two-handed weapon, never to its bearer. */
-export async function applyDamageToDefenseItem({item, damage} = {}) {
+export async function applyDamageToDefenseItem({item, damage, qualification} = {}) {
   if (!item?.isOwner) return null;
   const amount = Math.max(0, Math.trunc(number(damage)));
-  const result = damageIntegrity(item, Math.max(0, amount - protection(item)));
+  const result = damageIntegrity(item, Math.max(0, amount - Math.max(0,protection(item)-Math.max(0,number(qualification?.armorReduction)))));
   if (result.integrityLoss) await item.update(itemIntegrityUpdate(item,result.integrity));
   return result;
 }

@@ -1003,7 +1003,8 @@
       "DeliveryMelee": "Melee weapon",
       "DeliveryRanged": "Ranged or throwing weapon",
       "Origin": "Origin",
-      "FixedHint": "For fixed damage, use 0 dice and a nonzero modifier."
+      "FixedHint": "For fixed damage, use 0 dice and a nonzero modifier.",
+      "ArmorReduction": "Enemy protection reduction (PV)"
     },
     "Dialog": {
       "MountedCombat": "Mounted combat",
@@ -1508,7 +1509,9 @@
         "damageQualification": "Item damage qualifiers",
         "magicalProtection": "PV effective against damage requiring magical armor",
         "objectUse": "SV/Situation modifier when this item is used",
-        "itemProtection": "Protection Value modifier local to this item"
+        "itemProtection": "Protection Value modifier local to this item",
+        "equipment": "Temporary equipment",
+        "objectParryOutnumbered": "Outnumbered parry"
       },
       "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
       "InvalidProfileChange": "Invalid value for {path}. See the profile change examples.",
@@ -16025,6 +16028,28 @@
           "SourcePage": "178",
           "Duration": "1 minute"
         },
+        "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon": {
+          "Name": "Bloodfangsbane",
+          "Summary": "Conjures a temporary sacred spear in the inventory.",
+          "Description": "Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power.",
+          "SourceName": "Bloodfangsbane",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Bloodfangsbane",
+          "Equipment0Description": "Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power."
+        },
+        "holy-ealdtradition-halawen-s-offering:bolgemek:4#weapon": {
+          "Name": "Bolgemek",
+          "Summary": "Conjures a temporary sacred spear in the inventory.",
+          "Description": "Sacred two-handed spear: damage 1d10 (OR 7) + 6, PV 20, BV 200, IM −4, weapon actions 3. The wielder receives +4 PV while equipped and +2 SV on all tests using this weapon. Parries have an optional additional +2 SV while outnumbered. Strength applies normally to damage. The spear disappears with the power.",
+          "SourceName": "Bolgemek",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Bolgemek",
+          "Equipment0Description": "Sacred two-handed spear: damage 1d10 (OR 7) + 6, PV 20, BV 200, IM −4, weapon actions 3. The wielder receives +4 PV while equipped and +2 SV on all tests using this weapon. Parries have an optional additional +2 SV while outnumbered. Strength applies normally to damage. The spear disappears with the power."
+        },
         "holy-ealdtradition-halawen-s-offering:witch-wall:5#ward": {
           "Name": "Witch Wall",
           "Summary": "Allows individual resistance against incoming spells.",
@@ -16060,6 +16085,17 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "178",
           "Duration": "1 minute"
+        },
+        "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon": {
+          "Name": "Roggdrasil",
+          "Summary": "Conjures a temporary sacred spear in the inventory.",
+          "Description": "Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power.",
+          "SourceName": "Roggdrasil",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "178",
+          "Duration": "10 minutes",
+          "Equipment0Name": "Roggdrasil",
+          "Equipment0Description": "Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power."
         },
         "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood": {
           "Name": "Simmering Blood (Tribute of Morgu)",
@@ -18251,7 +18287,8 @@
       "MagicalItemUnaffected": "This item is magical: Rust cannot affect it.",
       "QualityUnchanged": "This object’s quality cannot be lowered any further.",
       "ItemQualityValues": "{item}: quality {from} → {to}.",
-      "RavenPenalty": "Penalty to all actions: {value}."
+      "RavenPenalty": "Penalty to all actions: {value}.",
+      "OutnumberedParry": "Parrying while outnumbered"
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

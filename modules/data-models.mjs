@@ -23,7 +23,7 @@ const number = (initial = 0, options = {}) => new fields.NumberField({
 });
 const boolean = (initial = false) => new fields.BooleanField({required: true, nullable: false, initial});
 const schema = definition => new fields.SchemaField(definition);
-const damageQualificationSchema = () => schema({nature: string("normal"), delivery: string("other"), type: string("other"), protection: string("normal"), material: string()});
+const damageQualificationSchema = () => schema({nature: string("normal"), delivery: string("other"), type: string("other"), protection: string("normal"), material: string(), armorReduction: integer(0,{min:0})});
 // Legacy worlds may hold weapon ranges as strings (the sheet wrote raw text before
 // type="number" inputs). Foundry runs field clean() during DataModel construction,
 // so coercing here heals those documents at load time — otherwise they fail

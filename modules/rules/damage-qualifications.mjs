@@ -85,6 +85,7 @@ export function damageQualification({item, context = {}, usage = ""} = {}) {
       : ["", "magic"].includes(usage) && DAMAGE_DELIVERIES.includes(stored.delivery) ? stored.delivery : delivery,
     type: DAMAGE_TYPES.includes(merged.type) ? merged.type : "other",
     material: String(override.material ?? (item?.system?.material || stored.material || natural?.material || "")),
+    ...(Number(merged.armorReduction)>0?{armorReduction:Math.max(0,Math.trunc(Number(merged.armorReduction)))}:{}),
     protection: DAMAGE_PROTECTIONS.includes(merged.protection) ? merged.protection : "normal"
   };
 }

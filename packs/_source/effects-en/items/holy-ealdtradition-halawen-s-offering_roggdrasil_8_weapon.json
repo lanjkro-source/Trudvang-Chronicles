@@ -1,0 +1,53 @@
+{
+  "_id": "IxkFP8B7C8D9EaGb",
+  "_key": "!items!IxkFP8B7C8D9EaGb",
+  "name": "Roggdrasil",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon",
+    "description": "Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power.",
+    "summary": "Conjures a temporary sacred spear in the inventory.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "Lex4l0sYtZu0v1w2",
+      "_key": "!items.effects!IxkFP8B7C8D9EaGb.Lex4l0sYtZu0v1w2",
+      "name": "Roggdrasil",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "Sacred two-handed spear: damage 1d10 (OR 7) + 8, PV 30, BV 300, IM −2, weapon actions 4. The wielder receives +6 PV while equipped and +4 SV on all tests using this weapon. Hits reduce the target’s combined PV by 3. Strength applies normally to damage. The wielder may attempt to parry targeted spells with the Parry action; the GM resolves this. The legendary reversal of negative traits remains at the GM’s discretion. The spear disappears with the power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.equipment",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 8\",\"openRoll\":7,\"protection\":30,\"breach\":{\"value\":300,\"max\":300},\"initiativeModifier\":-2,\"weaponActions\":4,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\",\"armorReduction\":3}},\"useBonus\":4,\"armorBonus\":6}]",
+            "phase": "initial",
+            "priority": 50
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:roggdrasil:8#weapon",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8",
+            "summary": "Conjures a temporary sacred spear in the inventory.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

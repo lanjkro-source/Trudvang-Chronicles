@@ -1,3 +1,4 @@
+import {equipmentGrantActive} from './rules/granted-equipment.mjs';
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {registerPersistentDamageHooks} from './persistent-damage.mjs';
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
@@ -119,6 +120,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   }
 
   get isSuppressed() {
+    if(this.parent?.documentName==='Item'&&!equipmentGrantActive(this.parent))return true;
     if(this.parent?.documentName==='Item'&&this.parent.flags?.['trudvang-chronicles']?.inventoryTransfer)return true;
     if (super.isSuppressed) return true;
     if (this.system?.stackId === "trudvang-fatigued" && this.parent?.documentName === "Actor"

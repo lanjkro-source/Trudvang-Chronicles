@@ -3,10 +3,10 @@ import {nidBlessingBonus} from './rules/nid-blessings.mjs';
 import {escapeHtml} from './helpers.mjs';
 import {itemUseBonuses} from './rules/item-magic.mjs';
 import {itemUseModifierTotal} from './rules/item-quality.mjs';
-function conditionalChoices(actor,{item,castingType}={}){
+export function conditionalChoices(actor,{item,castingType,action}={}){
  const blessing=nidBlessingBonus(actor);
  return [...(blessing?[{id:`nid:${blessing.effectId}`,selector:'[data-nid-blessing]',attribute:'data-nid-blessing',value:blessing.value,label:game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label})}]:[]),
-  ...itemUseBonuses(actor,{castingType}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:Boolean(item)||row.automatic,value:row.value,qualityLevel:row.qualityLevel,label:item||row.automatic?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
+  ...itemUseBonuses(actor,{castingType,action}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:(Boolean(item)&&!row.optional)||row.automatic,value:row.value,qualityLevel:row.qualityLevel,label:item||row.automatic?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
 }
 /** Add the conditional choice to the existing dialog, without another prompt. */
 export function blessingDialog(Base,actor,mode='modifier',context={}){

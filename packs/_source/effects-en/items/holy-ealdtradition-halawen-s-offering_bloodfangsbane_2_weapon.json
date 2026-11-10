@@ -1,0 +1,53 @@
+{
+  "_id": "5ABaZeIdJeKfLgMh",
+  "_key": "!items!5ABaZeIdJeKfLgMh",
+  "name": "Bloodfangsbane",
+  "type": "effect",
+  "img": "icons/svg/sword.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon",
+    "description": "Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power.",
+    "summary": "Conjures a temporary sacred spear in the inventory.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 178
+    }
+  },
+  "effects": [
+    {
+      "_id": "oYhTVlOjPkQlRmSn",
+      "_key": "!items.effects!5ABaZeIdJeKfLgMh.oYhTVlOjPkQlRmSn",
+      "name": "Bloodfangsbane",
+      "type": "effect",
+      "img": "icons/svg/sword.svg",
+      "description": "Sacred two-handed spear: damage 1d10 (OR 8) + 4, PV 15, BV 150, IM −4, weapon actions 3. The wielder receives +2 PV while equipped and +2 SV on all tests using this weapon. Strength applies normally to damage. The spear disappears with the power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.equipment",
+            "type": "override",
+            "value": "[{\"name\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Name\",\"description\":\"TRUDVANG.Content.Transformation.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon.Equipment0Description\",\"type\":\"weapon\",\"system\":{\"category\":\"twoHanded\",\"combatSpecialty\":\"twoHandedWeapons\",\"hand\":\"weapon\",\"material\":\"steel\",\"magical\":true,\"strengthApplies\":true,\"damage\":\"1d10 + 4\",\"openRoll\":8,\"protection\":15,\"breach\":{\"value\":150,\"max\":150},\"initiativeModifier\":-4,\"weaponActions\":3,\"combatPointBonus\":0,\"damageQualification\":{\"nature\":\"magical\",\"delivery\":\"melee\",\"type\":\"piercing\",\"protection\":\"normal\"}},\"useBonus\":2,\"armorBonus\":2}]",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2#weapon",
+            "sourceId": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2",
+            "summary": "Conjures a temporary sacred spear in the inventory.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
