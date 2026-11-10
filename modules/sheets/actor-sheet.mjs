@@ -13,6 +13,7 @@ import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import {isConsumable} from "../consumables.mjs";
+import {isInventoryTransferItem,requestInventoryTransfer} from '../inventory-transfer.mjs';
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
@@ -773,7 +774,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
   }
 
-  /** @override — délègue au parent V2 (le diagnostic a été retiré en 0.5.4) */
+  // Accept the drop gesture on read-only recipient sheets; only the dedicated
+  // transfer path delegates writes to the GM. All other native drops stay gated.
+  _canDragDrop() {return true;}
+
+  /** @override */
   async _onDrop(event) {
     let data;
     try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { /* Other native drop formats. */ }
@@ -788,6 +793,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const destinationItem=item&&EFFECT_ITEM_TYPES.has(item.type)?item:null;
       return applyTransformation(this.actor, data.key, {source, counts: data.counts ?? [],context:data.context,delegateTokenUuid:row?.tokenUuid??"",destinationItem,targetName:destinationItem?.name??""});
     }
+    if(data?.type==='Item'&&data.uuid){
+      const item=await foundry.utils.fromUuid(data.uuid);
+      if(isInventoryTransferItem(item)&&(item.actor??item.parent).uuid!==this.actor.uuid)return requestInventoryTransfer(item,this.actor);
+    }
+    if(!this.actor.canUserModify(game.user,'update'))return false;
     return super._onDrop(event);
   }
 
@@ -843,6 +853,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return false;
       }
     }
+    if(isInventoryTransferItem(itemDoc))return requestInventoryTransfer(itemDoc,this.actor);
     const itemData = itemDoc.toObject();
     return this._handleDrop(itemData, {equipmentOnly: this.actor.type === "npc" && this._activeTab === "equipment"});
   }

@@ -8,15 +8,18 @@ export function instantConsequenceOperation(template,counts=[],context={}){
  return {operation:instant.operation,formula:String(instant.base+bonus)};
 }
 /** Recheck time even before the GM has deleted the expired native effect. */
-export function activeConjuredConsumable(item,{time=Number(game.time?.worldTime),combat=game.combat}={}){
+export function activeConjuredConsumable(item,{time=Number(game.time?.worldTime),combat=game.combat,forCapacity=false}={}){
  if(!item.flags?.[SCOPE]?.conjuredConsumable)return null;
- const effect=Array.from(item.effects??[]).find(effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired&&effect.flags?.[SCOPE]?.consumablePayload&&itemEffectRemainingSeconds(effect,{time,combat})>0);
+ const effect=Array.from(item.effects??[]).find(effect=>!effect.disabled&&(!effect.isSuppressed||(forCapacity&&item.flags[SCOPE]?.inventoryTransfer))&&!effect.duration?.expired&&effect.flags?.[SCOPE]?.consumablePayload&&itemEffectRemainingSeconds(effect,{time,combat})>0);
  return effect?.flags[SCOPE].consumablePayload??null;
 }
 export function countConjuredConsumables(actor,sourceId){
- return Array.from(actor.items??[]).reduce((sum,item)=>{
+ const actors=new Map(Array.from(game.actors??[],entry=>[entry.uuid,entry]));actors.set(actor.uuid,actor);
+ for(const scene of game.scenes??[])for(const token of scene.tokens??[])if(token.actor)actors.set(token.actor.uuid,token.actor);
+ const items=new Map([...Array.from(game.items??[]),...[...actors.values()].flatMap(entry=>Array.from(entry.items??[]))].map(item=>[item.uuid??item,item]));
+ return [...items.values()].reduce((sum,item)=>{
   const origin=item.flags?.[SCOPE]?.conjuredConsumable;
-  return sum+(origin?.sourceId===sourceId&&activeConjuredConsumable(item)?Math.max(0,Number(item.system?.quantity??1)):0);
+  return sum+(origin?.creatorUuid===actor.uuid&&origin.sourceId===sourceId&&activeConjuredConsumable(item,{forCapacity:true})?Math.max(0,Number(item.system?.quantity??1)):0);
  },0);
 }
 export async function createConjuredConsumable(actor,{definition,sourceId,counts=[],context={}}){

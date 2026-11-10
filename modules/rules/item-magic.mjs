@@ -3,7 +3,7 @@ import {itemQuality,equipmentDecimal} from './item-quality.mjs';
 import {activeConjuredConsumable} from '../conjured-consumables.mjs';
 
 const active=effect=>!effect.disabled&&!effect.isSuppressed&&!effect.duration?.expired;
-export function itemMagicEffects(item){return Array.from(item?.effects??[]).filter(active);}
+export function itemMagicEffects(item){return item?.flags?.['trudvang-chronicles']?.inventoryTransfer?[]:Array.from(item?.effects??[]).filter(active);}
 export function preparedItemProtection(item){
  const hasLocalValue=itemMagicEffects(item).some(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(change=>change.key==='system.protection'));
  return hasLocalValue&&Number.isFinite(Number(item?.system?.protection))?Math.max(0,Number(item.system.protection)):Math.ceil(Math.max(0,Number(item?.system?.breach?.value)||0)/10);
@@ -78,6 +78,7 @@ export function intrinsicItemSheetUpdate(update,state=[]){
 }
 export function itemUseBonuses(actor,{castingType}={}){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
+ if(item.flags?.['trudvang-chronicles']?.inventoryTransfer)return [];
  if(castingType&&['weapon','armor','shield'].includes(item.type)&&!item.system?.equipped)return [];
  const quality=itemQuality(item.system?.quality),qualityEffect=itemMagicEffects(item).find(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(row=>row.key==='system.quality'));
  const special=item.system?.specialUse??'none';

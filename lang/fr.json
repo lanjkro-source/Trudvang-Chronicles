@@ -18477,8 +18477,15 @@
     "ConjuredConsumable": {
       "HealingDescription": "Boire cette potion avant son expiration rend 1d10 + 1 points de santé, sans dépasser le maximum. Après expiration ou dissipation, le liquide ne possède plus de pouvoir de guérison.",
       "Inert": "La préparation a perdu son pouvoir : aucun soin n’est appliqué.",
-      "CapacityReached": "Le nombre maximal de potions encore actives dans l’inventaire du conjurateur est atteint.",
-      "PreparedDetails": "Durée initiale : {duration} {unit}. Limite de possession retenue pour cette préparation : {maximum}."
+      "CapacityReached": "Le nombre maximal de potions créées par ce conjurateur et encore actives est atteint, quel que soit leur détenteur.",
+      "PreparedDetails": "Durée initiale : {duration} {unit}. Nombre maximal de préparations actives de ce conjurateur : {maximum}."
+    },
+    "InventoryTransfer": {
+      "denied": "Vous ne pouvez donner que les objets d’un acteur que vous contrôlez.",
+      "unavailable": "Cet objet ne peut plus être transféré. Vérifiez les inventaires et réessayez.",
+      "noGM": "Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas.",
+      "failed": "Le transfert a échoué ; l’objet d’origine est conservé.",
+      "pending": "Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde."
     }
   }
 }

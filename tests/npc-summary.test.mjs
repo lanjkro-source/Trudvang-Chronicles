@@ -16,6 +16,19 @@ import {actorStateRollModifiers, rollModifierTotal} from "../modules/rules/roll-
 import {TABLET_CATALOG, powerItemData, tabletItemData} from "../modules/tablet-catalog.mjs";
 import {POWER_COMPENDIUM_ICON_BY_ITEM_ID, powerIconClassForId, powerIconClassForItem} from "../modules/power-icons.mjs";
 
+test('dropping owned equipment on a read-only actor sheet delegates a real transfer instead of falling through native ownership checks',async t=>{
+ const {TrudvangActorSheet}=await import('../modules/sheets/actor-sheet.mjs');
+ const previous={user:game.user,users:game.users,fromUuid:foundry.utils.fromUuid};t.after(()=>{game.user=previous.user;game.users=previous.users;foundry.utils.fromUuid=previous.fromUuid;});
+ const user={id:'giver',active:true},sourceActor={uuid:'Actor.giver',documentName:'Actor',canUserModify:u=>u.id==='giver'};let deleted=false,created;
+ const source={uuid:'Actor.giver.Item.gift',documentName:'Item',parent:sourceActor,type:'gear',system:{quantity:1},effects:[],toObject:()=>({name:'Gift',type:'gear',system:{quantity:1}}),async delete(){deleted=true;}};
+ const target={uuid:'Actor.recipient',documentName:'Actor',canUserModify:()=>false,async createEmbeddedDocuments(type,rows){assert.equal(type,'Item');created=rows[0];return [{uuid:'Actor.recipient.Item.gift',async update(){},async delete(){}}];}};
+ game.user=user;game.users={activeGM:{isSelf:true},get:()=>user};foundry.utils.fromUuid=async uuid=>uuid===source.uuid&&!deleted?source:uuid===target.uuid?target:null;
+ const sheet={actor:target};assert.equal(TrudvangActorSheet.prototype._canDragDrop.call(sheet),true);
+ const result=await TrudvangActorSheet.prototype._onDrop.call(sheet,{dataTransfer:{getData:()=>JSON.stringify({type:'Item',uuid:source.uuid})}});
+ assert.equal(result.status,'ok');assert.equal(deleted,true);assert.equal(created.name,'Gift');assert.equal(created.system.equipped,false);
+ assert.equal(await TrudvangActorSheet.prototype._onDrop.call(sheet,{dataTransfer:{getData:()=>JSON.stringify({type:'Actor',uuid:'Actor.other'})}}),false);
+});
+
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
   const keys = path.split(".");

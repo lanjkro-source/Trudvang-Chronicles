@@ -52,11 +52,13 @@ test('expired or dispelled potions remain inert even before native cleanup and n
  await createConjuredConsumable(a,op);assert.equal(countConjuredConsumables(a,id),1);
 });
 
-test('transfer keeps the original expiry and heals the recipient, while the possession limit follows the current inventory',async()=>{
+test('transfer keeps the original expiry and heals the recipient, while the active limit remains attached to the creator',async t=>{
+ const previous=game.actors;t.after(()=>{game.actors=previous;});
  const creator=actor(),recipient=actor(),item=await createConjuredConsumable(creator,instantConsequenceOperation(template,[]));
  creator.items=[];recipient.items=[item];item.parent=item.actor=recipient;
- game.time.worldTime=10;assert.ok(activeConjuredConsumable(item));assert.equal(countConjuredConsumables(creator,id),0);assert.equal(countConjuredConsumables(recipient,id),1);
+ game.actors=[creator,recipient];game.time.worldTime=10;assert.ok(activeConjuredConsumable(item));assert.equal(countConjuredConsumables(creator,id),1);assert.equal(countConjuredConsumables(recipient,id),0);
  await consumeInventoryItem(item,recipient);assert.equal(recipient.system.resources.body.current,16);assert.equal(creator.system.resources.body.current,10);
+ assert.equal(countConjuredConsumables(creator,id),0);
 });
 
 test('simultaneous creations cannot exceed the caster inventory limit and consumption is limited to the recipient maximum',async()=>{
@@ -65,6 +67,19 @@ test('simultaneous creations cannot exceed the caster inventory limit and consum
  assert.equal(results.filter(row=>row.status==='fulfilled').length,2);assert.equal(a.items.length,2);
  a.system.resources.body.current=a.system.resources.body.value=28;a._source.system.resources.body.value=28;
  await consumeInventoryItem(a.items[0],a);assert.equal(a.system.resources.body.current,30);
+});
+
+test('potions given away or left on the ground still prevent new preparations by their creator until consumed or expired',async t=>{
+ const previous={actors:game.actors,items:game.items,scenes:game.scenes};t.after(()=>Object.assign(game,previous));
+ const creator=actor(),recipient=actor(),other=actor(),op=instantConsequenceOperation(template,[]);
+ const first=await createConjuredConsumable(creator,op),second=await createConjuredConsumable(creator,op);
+ creator.items=[];recipient.items=[first];first.actor=first.parent=recipient;second.actor=second.parent=null;
+ game.actors=[creator,other];game.items=[second];game.scenes=[{tokens:[{actor:recipient},{actor:recipient}]}];
+ assert.equal(countConjuredConsumables(creator,id),2);assert.equal(countConjuredConsumables(other,id),0);
+ await assert.rejects(()=>createConjuredConsumable(creator,op),error=>error.code==='consumable-capacity');
+ await createConjuredConsumable(other,op);assert.equal(countConjuredConsumables(creator,id),2);
+ await consumeInventoryItem(first,recipient);assert.equal(countConjuredConsumables(creator,id),1);await createConjuredConsumable(creator,op);assert.equal(countConjuredConsumables(creator,id),2);
+ game.time.worldTime=86400;assert.equal(countConjuredConsumables(creator,id),0);
 });
 
 test('the GM authorizes one preparation per successful divine casting and rolls back a capacity rejection so it can be retried',async t=>{

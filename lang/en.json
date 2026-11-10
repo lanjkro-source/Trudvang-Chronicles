@@ -18477,8 +18477,15 @@
     "ConjuredConsumable": {
       "HealingDescription": "Drinking this potion before it expires restores 1d10 + 1 Body Points, up to the maximum. After expiry or dispelling, the liquid has no healing power.",
       "Inert": "The preparation has lost its power: no healing is applied.",
-      "CapacityReached": "The conjurer’s inventory already contains the maximum number of active potions.",
-      "PreparedDetails": "Initial duration: {duration} {unit}. Possession limit used for this preparation: {maximum}."
+      "CapacityReached": "This conjurer has reached the maximum number of active potions they created, regardless of who currently holds them.",
+      "PreparedDetails": "Initial duration: {duration} {unit}. Maximum active preparations created by this conjurer: {maximum}."
+    },
+    "InventoryTransfer": {
+      "denied": "You may only give items belonging to an actor you own.",
+      "unavailable": "This item is no longer available for transfer. Check the inventories and try again.",
+      "noGM": "An online GM is required to give an item to an actor you do not own.",
+      "failed": "The transfer failed; the original item was retained.",
+      "pending": "The transfer is pending completion. The GM can recover it when the world next loads."
     }
   }
 }

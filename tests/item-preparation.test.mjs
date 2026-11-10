@@ -213,3 +213,8 @@ test('a conjured consumable is magical only while its potency effect remains act
  assert.equal(item._source.system.magical,false);assert.equal(item.system.magical,true);
  item._source.effects=[];item.prepareData();assert.equal(item.system.magical,false);
 });
+
+test('a provisional transfer copy cannot be edited or used by its recipient and grants no item-use modifier',async()=>{
+ const data=source();data.flags={'trudvang-chronicles':{inventoryTransfer:{sourceUuid:'Actor.source.Item.item'}}};data.effects=[{type:'effect',transfer:false,system:{changes:[{key:'system.damageBonus',type:'add',value:'4',phase:'initial'}]}}];
+ const item=new TrudvangItem(data,actor);actor.items=[item];assert.equal(item.system.damageBonus,0);assert.equal(item.canUserModify({isGM:false},'update'),false);assert.equal(item.canUserModify({isGM:true},'update'),true);assert.equal(await item.roll(),null);
+});

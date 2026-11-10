@@ -9,6 +9,10 @@ import {prepareItemLocalEffects} from '../rules/item-magic.mjs';
 const BaseItem = foundry.documents.Item;
 
 export class TrudvangItem extends BaseItem {
+  canUserModify(user,action,data){
+    if(this.flags?.['trudvang-chronicles']?.inventoryTransfer&&!user?.isGM&&['update','delete'].includes(action))return false;
+    return super.canUserModify(user,action,data);
+  }
   prepareEmbeddedDocuments() {
     super.prepareEmbeddedDocuments();
     // The system model derives VP after embedded preparation, before the
@@ -22,6 +26,7 @@ export class TrudvangItem extends BaseItem {
   }
 
   async roll() {
+    if(this.flags?.['trudvang-chronicles']?.inventoryTransfer)return null;
     if (this.type === "effect") {
       const {applyTransformation} = await import("../transformations.mjs");
       return applyTransformation(this.actor ?? globalThis.canvas?.tokens?.controlled?.find(t=>t.actor?.isOwner)?.actor ?? game.user.character, this.system.catalogId, {source:this});

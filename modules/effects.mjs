@@ -119,6 +119,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   }
 
   get isSuppressed() {
+    if(this.parent?.documentName==='Item'&&this.parent.flags?.['trudvang-chronicles']?.inventoryTransfer)return true;
     if (super.isSuppressed) return true;
     if (this.system?.stackId === "trudvang-fatigued" && this.parent?.documentName === "Actor"
       && Array.from(this.parent.effects ?? []).some(effect => !effect.disabled && !effect.duration?.expired

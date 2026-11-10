@@ -9,6 +9,7 @@ const pendingUses = new WeakSet();
 /** Consume one actor-owned unit. Repeated clicks while a prompt is open are ignored. */
 export async function consumeInventoryItem(item, actor = item?.actor) {
   if (!actor?.isOwner || !isConsumable(item) || !Array.from(actor.items ?? []).includes(item) || pendingUses.has(item)) return null;
+  if(item.flags?.['trudvang-chronicles']?.inventoryTransfer)return null;
   const quantity = Number(item.system.quantity ?? 1);
   if (!Number.isInteger(quantity) || quantity <= 0) return null;
   pendingUses.add(item);

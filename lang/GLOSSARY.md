@@ -16140,5 +16140,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.ConjuredConsumable.HealingDescription` | Drinking this potion before it expires restores 1d10 + 1 Body Points, up to the maximum. After expiry or dispelling, the liquid has no healing power. | Boire cette potion avant son expiration rend 1d10 + 1 points de santé, sans dépasser le maximum. Après expiration ou dissipation, le liquide ne possède plus de pouvoir de guérison. |
 | `TRUDVANG.ConjuredConsumable.Inert` | The preparation has lost its power: no healing is applied. | La préparation a perdu son pouvoir : aucun soin n’est appliqué. |
-| `TRUDVANG.ConjuredConsumable.CapacityReached` | The conjurer’s inventory already contains the maximum number of active potions. | Le nombre maximal de potions encore actives dans l’inventaire du conjurateur est atteint. |
-| `TRUDVANG.ConjuredConsumable.PreparedDetails` | Initial duration: {duration} {unit}. Possession limit used for this preparation: {maximum}. | Durée initiale : {duration} {unit}. Limite de possession retenue pour cette préparation : {maximum}. |
+| `TRUDVANG.ConjuredConsumable.CapacityReached` | This conjurer has reached the maximum number of active potions they created, regardless of who currently holds them. | Le nombre maximal de potions créées par ce conjurateur et encore actives est atteint, quel que soit leur détenteur. |
+| `TRUDVANG.ConjuredConsumable.PreparedDetails` | Initial duration: {duration} {unit}. Maximum active preparations created by this conjurer: {maximum}. | Durée initiale : {duration} {unit}. Nombre maximal de préparations actives de ce conjurateur : {maximum}. |
+
+## `TRUDVANG.InventoryTransfer`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.InventoryTransfer.denied` | You may only give items belonging to an actor you own. | Vous ne pouvez donner que les objets d’un acteur que vous contrôlez. |
+| `TRUDVANG.InventoryTransfer.unavailable` | This item is no longer available for transfer. Check the inventories and try again. | Cet objet ne peut plus être transféré. Vérifiez les inventaires et réessayez. |
+| `TRUDVANG.InventoryTransfer.noGM` | An online GM is required to give an item to an actor you do not own. | Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas. |
+| `TRUDVANG.InventoryTransfer.failed` | The transfer failed; the original item was retained. | Le transfert a échoué ; l’objet d’origine est conservé. |
+| `TRUDVANG.InventoryTransfer.pending` | The transfer is pending completion. The GM can recover it when the world next loads. | Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde. |
