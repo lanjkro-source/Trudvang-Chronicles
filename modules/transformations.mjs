@@ -157,6 +157,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const supplied=source?.documentName==="ActiveEffect"&&(!sourceKey||sourceKey===key)?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
  const stored=supplied?effectSource(supplied):null;
+ // Resistance relief belongs to its recipient, never to a newly copied effect.
+ const relief=stored?.flags?.[SCOPE]?.roundResistanceRelief;
+ if(relief){const row=stored.system.changes[relief.index];if(row?.key===relief.key&&String(row.value)===relief.after)row.value=relief.before;}
  const template=stored?{...reference,changes:stored.system.changes,statuses:Array.from(stored.statuses??[]),icon:stored.img??reference.icon}:structuredClone(reference);
  // TEMPORARY WORLD MIGRATION — pre-0.97 references kept dynamic rules in flags.
  // Convert only that historical format on the new copy. Never refill rows that
@@ -400,7 +403,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,optionId:p.optionId||"",count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
- let summary=metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ let summary=relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
@@ -441,6 +444,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(template.roundResistance)meta.roundResistance=structuredClone(resolvedCopy?(metadata(supplied)?.roundResistance??template.roundResistance):template.roundResistance);
  if(template.runeTiers){
   meta.runeLevel=runeLevel;meta.summaryResolved=true;
   const bases=resolvedCopy?metadata(supplied)?.ruleTestBases:template.runeTiers[runeLevel-1].ruleTestBases;

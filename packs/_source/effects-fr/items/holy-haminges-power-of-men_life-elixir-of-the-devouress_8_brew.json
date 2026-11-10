@@ -1,0 +1,45 @@
+{
+  "_id": "OCRpAFaGbHcIdJeK",
+  "_key": "!items!OCRpAFaGbHcIdJeK",
+  "name": "Préparer un élixir de vie de la dévoreuse",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+    "description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 2d10 + 2 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder qu’une potion de ce genre à la fois.",
+    "summary": "Prépare une dose curative, à consommer avant son expiration.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 273
+    }
+  },
+  "effects": [
+    {
+      "_id": "VOlMfTkQlRmSnToU",
+      "_key": "!items.effects!OCRpAFaGbHcIdJeK.VOlMfTkQlRmSnToU",
+      "name": "Préparer un élixir de vie de la dévoreuse",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 2d10 + 2 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder qu’une potion de ce genre à la fois.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+            "sourceId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+            "summary": "Prépare une dose curative, à consommer avant son expiration.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

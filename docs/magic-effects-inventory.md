@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 336 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 341 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -101,7 +101,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner animal | Messager | sortilège | `vitner-animal-vitner:messenger:0` | 3 | 0 | 1 | — | — |
 | Vitner animal | Parler aux animaux | sortilège | `vitner-animal-vitner:speak-to-animals:1` | 2 | 0 | 1 | — | — |
 | Vitner animal | Appel des animaux | sortilège | `vitner-animal-vitner:call-on-animals:2` | 4 | 0 | 1 | — | — |
-| Vitner animal | Conjuration de corbeaux | sortilège | `vitner-animal-vitner:conjure-ravens:3` | 5 | 1 | 0 | — | — |
+| Vitner animal | Conjuration de corbeaux | sortilège | `vitner-animal-vitner:conjure-ravens:3` | 5 | 1 | 1 | — | — |
 | Vitner animal | Contrôle des animaux | sortilège | `vitner-animal-vitner:control-animals:4` | 6 | 0 | 1 | — | — |
 | Vitner animal | Esprit du loup | sortilège | `vitner-animal-vitner:mind-of-the-wolf:5` | 6 | 0 | 1 | — | — |
 | Vitner animal | Création de messager | sortilège | `vitner-animal-vitner:create-messenger:7` | 6 | 0 | 1 | — | — |
@@ -134,7 +134,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner des objets | Analyse de la composition | sortilège | `vitner-vitner-of-objects:detect-composition:0` | 4 | 0 | 1 | — | — |
 | Vitner des objets | Résistance à l’eau | sortilège | `vitner-vitner-of-objects:waterproof:1` | 6 | 0 | 1 | — | — |
 | Vitner des objets | Lien | sortilège | `vitner-vitner-of-objects:bind:2` | 5 | 0 | 1 | — | — |
-| Vitner des objets | Rouille | sortilège | `vitner-vitner-of-objects:rust:3` | 5 | 0 | 0 | — | — |
+| Vitner des objets | Rouille | sortilège | `vitner-vitner-of-objects:rust:3` | 5 | 0 | 1 | — | — |
 | Vitner des objets | Objet d’alarme | sortilège | `vitner-vitner-of-objects:alarm-object:4` | 7 | 1 | 1 | — | — |
 | Vitner des objets | Verrouillage/ déverrouillage | sortilège | `vitner-vitner-of-objects:unlock-lock:5` | 2 | 1 | 0 | — | — |
 | Vitner des objets | Agrandissement/ rapetissement d’objet | sortilège | `vitner-vitner-of-objects:enlarge-reduce-object:6` | 7 | 0 | 1 | — | — |
@@ -323,12 +323,12 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des hommes | Accompli | pouvoir | `holy-haminges-power-of-men:accomplished:1` | 3 | 0 | 1 | — | — |
 | Puissance des hommes | Vision des nains | pouvoir | `holy-haminges-power-of-men:sight-of-the-dwarves:0` | 2 | 0 | 1 | — | — |
 | Puissance des hommes | Maître | pouvoir | `holy-haminges-power-of-men:mastery:3` | 3 | 0 | 1 | — | — |
-| Puissance des hommes | Mixture curative | pouvoir | `holy-haminges-power-of-men:curative-draught:2` | 2 | 0 | 0 | — | — |
-| Puissance des hommes | Potion de guérison | pouvoir | `holy-haminges-power-of-men:remedial-potion:4` | 2 | 0 | 0 | — | — |
+| Puissance des hommes | Mixture curative | pouvoir | `holy-haminges-power-of-men:curative-draught:2` | 2 | 0 | 1 | — | — |
+| Puissance des hommes | Potion de guérison | pouvoir | `holy-haminges-power-of-men:remedial-potion:4` | 2 | 0 | 1 | — | — |
 | Puissance des hommes | Prouesse martiale | pouvoir | `holy-haminges-power-of-men:weapon-prowess:5` | 1 | 0 | 1 | — | — |
 | Puissance des hommes | Forgeron nain | pouvoir | `holy-haminges-power-of-men:dwarven-smith:6` | 2 | 0 | 1 | — | — |
 | Puissance des hommes | Légendaire | pouvoir | `holy-haminges-power-of-men:legendary:7` | 2 | 0 | 1 | — | — |
-| Puissance des hommes | Élixir de vie de la dévoreuse | pouvoir | `holy-haminges-power-of-men:life-elixir-of-the-devouress:8` | 2 | 0 | 0 | — | — |
+| Puissance des hommes | Élixir de vie de la dévoreuse | pouvoir | `holy-haminges-power-of-men:life-elixir-of-the-devouress:8` | 2 | 0 | 1 | — | — |
 | Puissance des trolls | Infection | pouvoir | `holy-haminges-power-of-trolls:disease-carrier:0` | 3 | 1 | 0 | — | — |
 | Puissance des trolls | Volonté | pouvoir | `holy-haminges-power-of-trolls:willpower:1` | 2 | 0 | 1 | — | — |
 | Puissance des trolls | Sans peur | pouvoir | `holy-haminges-power-of-trolls:fearless:3` | 3 | 0 | 0 | — | — |

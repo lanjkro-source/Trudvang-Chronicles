@@ -1,3 +1,4 @@
+import {applyRoundResistanceRelief} from "./round-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
@@ -223,7 +224,7 @@ function abilityEntryFor(actor, catalogId) {
 }
 
 export async function performRuleTest({document, index, actor = testActorForUser(), context} = {}) {
-  if (document?.flags?.[SYSTEM_ID]?.consequenceTests && document.parent?.documentName === "Actor") actor = document.parent;
+  if ((document?.flags?.[SYSTEM_ID]?.consequenceTests || document?.flags?.[SYSTEM_ID]?.transformation?.roundResistance) && document.parent?.documentName === "Actor") actor = document.parent;
   if (document?.flags?.[SYSTEM_ID]?.consequenceTests && !actor?.isOwner) return null;
   const test = ruleTestsForDocument(document)[Number(index)];
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
@@ -234,7 +235,9 @@ export async function performRuleTest({document, index, actor = testActorForUser
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context});
     const modifierRows=localizeResistanceRows(magicResistanceRows(test,{context:casting,actor}));
-    return rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",castingModifierRows:modifierRows});
+    const result=await rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",castingModifierRows:modifierRows});
+    if(result)await applyRoundResistanceRelief(document,Number(index),result);
+    return result;
   }
   const entry = abilityEntryFor(actor, test.skill);
   const skillKey = entry?.skillKey || (CONFIG.TRUDVANG?.skills?.[test.skill] ? test.skill : "");

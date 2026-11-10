@@ -2642,6 +2642,54 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-animal-vitner:conjure-ravens:3#ravens": {
+    "id": "ravens",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.allActions",
+        "type": "add",
+        "value": "-3",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "roundResistance": {
+      "testIndex": 0,
+      "relief": 2,
+      "key": "system.modifiers.rolls.allActions",
+      "summaryKey": "TRUDVANG.Transformation.RavenPenalty"
+    },
+    "sourceId": "vitner-animal-vitner:conjure-ravens:3",
+    "parameters": [
+      {
+        "index": 0,
+        "target": "duration",
+        "value": 5,
+        "optionId": "vitner-animal-vitner:conjure-ravens:3:0"
+      },
+      {
+        "index": 3,
+        "target": "modifier",
+        "key": "system.modifiers.rolls.allActions",
+        "value": -1,
+        "optionId": "vitner-animal-vitner:conjure-ravens:3:3"
+      },
+      {
+        "index": 3,
+        "target": "note",
+        "base": -3,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.RavenPenalty",
+        "tooltip": true,
+        "optionId": "vitner-animal-vitner:conjure-ravens:3:3"
+      }
+    ]
+  },
   "vitner-animal-vitner:control-animals:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -9825,6 +9873,47 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-men:curative-draught:2#brew": {
+    "id": "brew",
+    "icon": "icons/svg/regen.svg",
+    "duration": "",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "instant": {
+      "operation": "createConsumable",
+      "base": 0,
+      "consumable": {
+        "nameKey": "TRUDVANG.Content.Power.holy-haminges-power-of-men:curative-draught:2.Name",
+        "descriptionKey": "TRUDVANG.ConjuredConsumable.CurativeDescription",
+        "operations": [
+          {
+            "operation": "heal",
+            "formula": "1d6"
+          }
+        ],
+        "duration": {
+          "value": 1,
+          "units": "days",
+          "index": 0,
+          "increment": 1
+        },
+        "capacity": {
+          "base": 3,
+          "index": 1,
+          "increment": 1,
+          "max": 6
+        }
+      }
+    },
+    "sourceId": "holy-haminges-power-of-men:curative-draught:2",
+    "parameters": []
+  },
   "holy-haminges-power-of-men:remedial-potion:4#brew": {
     "id": "brew",
     "icon": "icons/svg/regen.svg",
@@ -9956,6 +10045,47 @@ export const TRANSFORMATION_TEMPLATES = {
         "optionId": "holy-haminges-power-of-men:legendary:7:1"
       }
     ]
+  },
+  "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew": {
+    "id": "brew",
+    "icon": "icons/svg/regen.svg",
+    "duration": "",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "instant": {
+      "operation": "createConsumable",
+      "base": 0,
+      "consumable": {
+        "nameKey": "TRUDVANG.Content.Power.holy-haminges-power-of-men:life-elixir-of-the-devouress:8.Name",
+        "descriptionKey": "TRUDVANG.ConjuredConsumable.ElixirDescription",
+        "operations": [
+          {
+            "operation": "heal",
+            "formula": "2d10+2"
+          }
+        ],
+        "duration": {
+          "value": 2,
+          "units": "days",
+          "index": 0,
+          "increment": 1
+        },
+        "capacity": {
+          "base": 1,
+          "index": 1,
+          "increment": 1,
+          "max": 2
+        }
+      }
+    },
+    "sourceId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+    "parameters": []
   },
   "holy-haminges-power-of-trolls:willpower:1#volonte": {
     "id": "volonte",
@@ -15229,6 +15359,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-animal-vitner:call-on-animals:2": [
     "vitner-animal-vitner:call-on-animals:2#effect"
   ],
+  "vitner-animal-vitner:conjure-ravens:3": [
+    "vitner-animal-vitner:conjure-ravens:3#ravens"
+  ],
   "vitner-animal-vitner:control-animals:4": [
     "vitner-animal-vitner:control-animals:4#effect"
   ],
@@ -15788,6 +15921,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-haminges-power-of-men:mastery:3": [
     "holy-haminges-power-of-men:mastery:3#effect"
   ],
+  "holy-haminges-power-of-men:curative-draught:2": [
+    "holy-haminges-power-of-men:curative-draught:2#brew"
+  ],
   "holy-haminges-power-of-men:remedial-potion:4": [
     "holy-haminges-power-of-men:remedial-potion:4#brew"
   ],
@@ -15799,6 +15935,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-men:legendary:7": [
     "holy-haminges-power-of-men:legendary:7#effect"
+  ],
+  "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": [
+    "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew"
   ],
   "holy-haminges-power-of-trolls:willpower:1": [
     "holy-haminges-power-of-trolls:willpower:1#volonte"

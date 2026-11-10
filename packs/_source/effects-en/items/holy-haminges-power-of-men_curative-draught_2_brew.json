@@ -1,0 +1,45 @@
+{
+  "_id": "AEKDZ7C8D9EaGbHc",
+  "_key": "!items!AEKDZ7C8D9EaGbHc",
+  "name": "Prepare a curative draught",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:curative-draught:2#brew",
+    "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d6 Body Points if ingested within the duration. The spirit conjurer can have a maximum of three brews at one time.",
+    "summary": "Prepare one healing dose, to be consumed before it expires.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "xhycI2tZu0v1w2x3",
+      "_key": "!items.effects!AEKDZ7C8D9EaGbHc.xhycI2tZu0v1w2x3",
+      "name": "Prepare a curative draught",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d6 Body Points if ingested within the duration. The spirit conjurer can have a maximum of three brews at one time.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:curative-draught:2#brew",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:curative-draught:2#brew",
+            "sourceId": "holy-haminges-power-of-men:curative-draught:2",
+            "summary": "Prepare one healing dose, to be consumed before it expires.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -3152,6 +3152,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:curative-draught:2": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-men:curative-draught:2:0",
+        "holy-haminges-power-of-men:curative-draught:2:1"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:curative-draught:2:0",
@@ -3215,6 +3224,15 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-men:life-elixir-of-the-devouress:8:0",
+        "holy-haminges-power-of-men:life-elixir-of-the-devouress:8:1"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8:0",
@@ -8634,6 +8652,20 @@ export const POWER_DETAILS_BY_ID = {
   },
   "vitner-animal-vitner:conjure-ravens:3": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-animal-vitner:conjure-ravens:3:4",
+          "count": 1
+        }
+      ],
+      "allocatableOptions": [
+        "vitner-animal-vitner:conjure-ravens:3:0",
+        "vitner-animal-vitner:conjure-ravens:3:2",
+        "vitner-animal-vitner:conjure-ravens:3:3"
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:0",

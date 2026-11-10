@@ -155,3 +155,22 @@ test('shared consumable cards have one consumption button and never offer the ge
  assert.match(html,/data-action="consume-item"/);assert.match(html,/Consommer/);assert.doesNotMatch(html,/data-action="apply-effects"/);
  const itemSource=fs.readFileSync(new URL('../modules/documents/item.mjs',import.meta.url),'utf8');assert.match(itemSource,/canApplyEffects: !isConsumable\(this\)/);
 });
+
+test('mixture and elixir have separate per-creator limits, exact healing dice and power-level durations',async()=>{
+ const noaj=actor(),other=actor();game.actors=[noaj,other];game.items=[];game.scenes=[];
+ for(const [sourceId,formula,days,base,maximum] of [
+  ['holy-haminges-power-of-men:curative-draught:2','1d6',1,3,6],
+  ['holy-haminges-power-of-men:life-elixir-of-the-devouress:8','2d10+2',2,1,2]
+ ]){
+  const t=TRANSFORMATION_TEMPLATES[sourceId+'#brew'];assert.ok(t);
+  const make=(caster,counts=[])=>createConjuredConsumable(caster,instantConsequenceOperation(t,counts));
+  for(let i=0;i<base;i++)await make(noaj);
+  assert.equal(countConjuredConsumables(noaj,sourceId),base);await assert.rejects(()=>make(noaj),error=>error.code==='consumable-capacity');
+  const independent=await make(other);assert.equal(countConjuredConsumables(other,sourceId),1);assert.equal(independent.effects[0].duration.value,days);
+  const increased=await make(noaj,[2,maximum-base]);assert.equal(increased.effects[0].duration.value,days+2);
+  assert.equal(increased.flags['trudvang-chronicles'].conjuredConsumable.preparation.capacity,maximum);
+  const held=noaj.items.find(i=>i.flags['trudvang-chronicles'].conjuredConsumable.sourceId===sourceId);
+  formulas.length=0;const before=noaj.system.resources.body.current;await consumeInventoryItem(held,noaj);
+  assert.deepEqual(formulas,[formula]);assert.equal(noaj.system.resources.body.current,Math.min(30,before+6));
+ }
+});

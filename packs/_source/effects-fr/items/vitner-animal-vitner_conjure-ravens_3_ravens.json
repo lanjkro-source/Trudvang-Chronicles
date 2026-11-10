@@ -1,0 +1,53 @@
+{
+  "_id": "ViWphZtZu0v1w2x3",
+  "_key": "!items!ViWphZtZu0v1w2x3",
+  "name": "Conjuration de corbeaux",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:conjure-ravens:3#ravens",
+    "description": "Les corbeaux imposent un malus de −3 à toutes les actions, aggravé par la ténacité choisie au tissage. Un test de situation de Psychisme (VC 8, modifiée par les niveaux de puissance) réussi ramène le malus de base à −1 pour le round en cours. La ténacité supplémentaire reste applicable. Au round suivant, le malus normal revient.",
+    "summary": "Les corbeaux gênent toutes les actions ; une résistance réussie atténue le malus pour ce round.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 189
+    }
+  },
+  "effects": [
+    {
+      "_id": "wqoLlgHcIdJeKfLg",
+      "_key": "!items.effects!ViWphZtZu0v1w2x3.wqoLlgHcIdJeKfLg",
+      "name": "Conjuration de corbeaux",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les corbeaux imposent un malus de −3 à toutes les actions, aggravé par la ténacité choisie au tissage. Un test de situation de Psychisme (VC 8, modifiée par les niveaux de puissance) réussi ramène le malus de base à −1 pour le round en cours. La ténacité supplémentaire reste applicable. Au round suivant, le malus normal revient.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:conjure-ravens:3#ravens",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-3",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:conjure-ravens:3#ravens",
+            "sourceId": "vitner-animal-vitner:conjure-ravens:3",
+            "summary": "Les corbeaux gênent toutes les actions ; une résistance réussie atténue le malus pour ce round.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -11830,6 +11830,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.SourcePage` | 92 | 188 |
 | `TRUDVANG.Content.Transformation.vitner-animal-vitner:call-on-animals:2#effect.Duration` | 10 minutes | 10 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.Name` | Conjure Ravens | Conjuration de corbeaux |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.Description` | The ravens impose −3 on all actions, worsened by the tenacity chosen when weaving. A successful Psyche Situation roll (SV 8, modified by power levels) reduces the base penalty to −1 for the current round. Additional tenacity still applies. The normal penalty returns next round. | Les corbeaux imposent un malus de −3 à toutes les actions, aggravé par la ténacité choisie au tissage. Un test de situation de Psychisme (VC 8, modifiée par les niveaux de puissance) réussi ramène le malus de base à −1 pour le round en cours. La ténacité supplémentaire reste applicable. Au round suivant, le malus normal revient. |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.SourceName` | Conjure Ravens | Conjuration de corbeaux |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.SourcePage` | 92 | 189 |
+| `TRUDVANG.Content.Transformation.vitner-animal-vitner:conjure-ravens:3#ravens.Duration` | 3 action rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-animal-vitner:control-animals:4#effect`
 
 | Clé | English | Français |
@@ -14127,6 +14138,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.SourcePage` | 216 | 272 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:mastery:3#effect.Duration` | 2 minutes | 2 minutes |
 
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.Name` | Prepare a curative draught | Préparer une mixture curative |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.Description` | With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d6 Body Points if ingested within the duration. The spirit conjurer can have a maximum of three brews at one time. | Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 1d6 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder que trois potions de ce genre à la fois. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.SourceName` | Curative Draught | Mixture curative |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.SourcePage` | 216 | 272 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:curative-draught:2#brew.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:remedial-potion:4#brew`
 
 | Clé | English | Français |
@@ -14170,6 +14192,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.SourcePage` | 216 | 273 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:legendary:7#effect.Duration` | 3 minutes | 3 minutes |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.Name` | Prepare a life elixir of the Devouress | Préparer un élixir de vie de la dévoreuse |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.Description` | Devouress With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 2d10 + 2 Body Points if ingested within the duration. The spirit conjurer can have a maximum of one brew at one time. | Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 2d10 + 2 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder qu’une potion de ce genre à la fois. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.SourceName` | Life Elixir of the Devouress | Élixir de vie de la dévoreuse |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.SourcePage` | 216 | 273 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte`
 
@@ -15756,6 +15789,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.MagicalItemUnaffected` | This item is magical: Rust cannot affect it. | Cet objet est magique : Rouille ne peut pas l’affecter. |
 | `TRUDVANG.Transformation.QualityUnchanged` | This object’s quality cannot be lowered any further. | La qualité de cet objet ne peut pas être réduite davantage. |
 | `TRUDVANG.Transformation.ItemQualityValues` | {item}: quality {from} → {to}. | {item} : qualité {from} → {to}. |
+| `TRUDVANG.Transformation.RavenPenalty` | Penalty to all actions: {value}. | Malus à toutes les actions : {value}. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16143,6 +16177,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.ConjuredConsumable.Inert` | The preparation has lost its power: no healing is applied. | La préparation a perdu son pouvoir : aucun soin n’est appliqué. |
 | `TRUDVANG.ConjuredConsumable.CapacityReached` | This conjurer has reached the maximum number of active potions they created, regardless of who currently holds them. | Le nombre maximal de potions créées par ce conjurateur et encore actives est atteint, quel que soit leur détenteur. |
 | `TRUDVANG.ConjuredConsumable.PreparedDetails` | Initial duration: {duration} {unit}. Maximum active preparations created by this conjurer: {maximum}. | Durée initiale : {duration} {unit}. Nombre maximal de préparations actives de ce conjurateur : {maximum}. |
+| `TRUDVANG.ConjuredConsumable.CurativeDescription` | Drinking this draught restores 1d6 Body Points, up to the maximum. It no longer heals after its potency expires or is dispelled. | Boire cette mixture rend 1d6 points de santé, sans dépasser le maximum. Après expiration ou dissipation de sa puissance, elle ne soigne plus. |
+| `TRUDVANG.ConjuredConsumable.ElixirDescription` | Drinking this elixir restores 2d10+2 Body Points, up to the maximum. It no longer heals after its potency expires or is dispelled. | Boire cet élixir rend 2d10+2 points de santé, sans dépasser le maximum. Après expiration ou dissipation de sa puissance, il ne soigne plus. |
 
 ## `TRUDVANG.InventoryTransfer`
 

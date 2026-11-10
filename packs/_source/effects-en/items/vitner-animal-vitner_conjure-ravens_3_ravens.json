@@ -1,0 +1,53 @@
+{
+  "_id": "ViWphZtZu0v1w2x3",
+  "_key": "!items!ViWphZtZu0v1w2x3",
+  "name": "Conjure Ravens",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-animal-vitner:conjure-ravens:3#ravens",
+    "description": "The ravens impose −3 on all actions, worsened by the tenacity chosen when weaving. A successful Psyche Situation roll (SV 8, modified by power levels) reduces the base penalty to −1 for the current round. Additional tenacity still applies. The normal penalty returns next round.",
+    "summary": "The ravens hinder every action; a successful resistance reduces the penalty for this round.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 92
+    }
+  },
+  "effects": [
+    {
+      "_id": "wqoLlgHcIdJeKfLg",
+      "_key": "!items.effects!ViWphZtZu0v1w2x3.wqoLlgHcIdJeKfLg",
+      "name": "Conjure Ravens",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The ravens impose −3 on all actions, worsened by the tenacity chosen when weaving. A successful Psyche Situation roll (SV 8, modified by power levels) reduces the base penalty to −1 for the current round. Additional tenacity still applies. The normal penalty returns next round.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-animal-vitner:conjure-ravens:3#ravens",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-3",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-animal-vitner:conjure-ravens:3#ravens",
+            "sourceId": "vitner-animal-vitner:conjure-ravens:3",
+            "summary": "The ravens hinder every action; a successful resistance reduces the penalty for this round.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

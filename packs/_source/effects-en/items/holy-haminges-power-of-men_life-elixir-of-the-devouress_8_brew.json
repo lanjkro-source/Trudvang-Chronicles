@@ -1,0 +1,45 @@
+{
+  "_id": "OCRpAFaGbHcIdJeK",
+  "_key": "!items!OCRpAFaGbHcIdJeK",
+  "name": "Prepare a life elixir of the Devouress",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+    "description": "Devouress With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 2d10 + 2 Body Points if ingested within the duration. The spirit conjurer can have a maximum of one brew at one time.",
+    "summary": "Prepare one healing dose, to be consumed before it expires.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 216
+    }
+  },
+  "effects": [
+    {
+      "_id": "VOlMfTkQlRmSnToU",
+      "_key": "!items.effects!OCRpAFaGbHcIdJeK.VOlMfTkQlRmSnToU",
+      "name": "Prepare a life elixir of the Devouress",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Devouress With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 2d10 + 2 Body Points if ingested within the duration. The spirit conjurer can have a maximum of one brew at one time.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew",
+            "sourceId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+            "summary": "Prepare one healing dose, to be consumed before it expires.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

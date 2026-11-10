@@ -14932,6 +14932,15 @@
           "SourcePage": "188",
           "Duration": "10 minutes"
         },
+        "vitner-animal-vitner:conjure-ravens:3#ravens": {
+          "Name": "Conjuration de corbeaux",
+          "Summary": "Les corbeaux gênent toutes les actions ; une résistance réussie atténue le malus pour ce round.",
+          "Description": "Les corbeaux imposent un malus de −3 à toutes les actions, aggravé par la ténacité choisie au tissage. Un test de situation de Psychisme (VC 8, modifiée par les niveaux de puissance) réussi ramène le malus de base à −1 pour le round en cours. La ténacité supplémentaire reste applicable. Au round suivant, le malus normal revient.",
+          "SourceName": "Conjuration de corbeaux",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "189",
+          "Duration": "3 tours de jeu"
+        },
         "vitner-animal-vitner:control-animals:4#effect": {
           "Name": "Contrôle des animaux",
           "Summary": "Contrôle des animaux",
@@ -16815,6 +16824,15 @@
           "SourcePage": "272",
           "Duration": "2 minutes"
         },
+        "holy-haminges-power-of-men:curative-draught:2#brew": {
+          "Name": "Préparer une mixture curative",
+          "Summary": "Prépare une dose curative, à consommer avant son expiration.",
+          "Description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 1d6 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder que trois potions de ce genre à la fois.",
+          "SourceName": "Mixture curative",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "272",
+          "Duration": ""
+        },
         "holy-haminges-power-of-men:remedial-potion:4#brew": {
           "Name": "Préparer une potion de guérison",
           "Summary": "Prépare une potion aux vertus curatives, à boire avant son expiration.",
@@ -16850,6 +16868,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "273",
           "Duration": "3 minutes"
+        },
+        "holy-haminges-power-of-men:life-elixir-of-the-devouress:8#brew": {
+          "Name": "Préparer un élixir de vie de la dévoreuse",
+          "Summary": "Prépare une dose curative, à consommer avant son expiration.",
+          "Description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié. La concoction nécessite une pincée d’herbe, de la terre, de l’eau et une goutte de sang ou d’un autre fluide corporel. La concoction doit être mélangée au-dessus d’une flamme. Cette mixture a des pouvoirs de guérison divine mais ne dure qu’un certain temps. Une fois la durée expirée, la potion n’est plus qu’un liquide sans intérêt. Cette potion soigne 2d10 + 2 points de santé si on l’ingère avant son expiration. Le conjurateur ne peut posséder qu’une potion de ce genre à la fois.",
+          "SourceName": "Élixir de vie de la dévoreuse",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "273",
+          "Duration": ""
         },
         "holy-haminges-power-of-trolls:willpower:1#volonte": {
           "Name": "Volonté des trolls",
@@ -18196,7 +18223,8 @@
       "CombinedAlterationRequired": "L’amélioration permettant de modifier l’apparence et les caractéristiques doit être achetée.",
       "MagicalItemUnaffected": "Cet objet est magique : Rouille ne peut pas l’affecter.",
       "QualityUnchanged": "La qualité de cet objet ne peut pas être réduite davantage.",
-      "ItemQualityValues": "{item} : qualité {from} → {to}."
+      "ItemQualityValues": "{item} : qualité {from} → {to}.",
+      "RavenPenalty": "Malus à toutes les actions : {value}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18479,7 +18507,9 @@
       "HealingDescription": "Boire cette potion avant son expiration rend 1d10 + 1 points de santé, sans dépasser le maximum. Après expiration ou dissipation, le liquide ne possède plus de pouvoir de guérison.",
       "Inert": "La préparation a perdu son pouvoir : aucun soin n’est appliqué.",
       "CapacityReached": "Le nombre maximal de potions créées par ce conjurateur et encore actives est atteint, quel que soit leur détenteur.",
-      "PreparedDetails": "Durée initiale : {duration} {unit}. Nombre maximal de préparations actives de ce conjurateur : {maximum}."
+      "PreparedDetails": "Durée initiale : {duration} {unit}. Nombre maximal de préparations actives de ce conjurateur : {maximum}.",
+      "CurativeDescription": "Boire cette mixture rend 1d6 points de santé, sans dépasser le maximum. Après expiration ou dissipation de sa puissance, elle ne soigne plus.",
+      "ElixirDescription": "Boire cet élixir rend 2d10+2 points de santé, sans dépasser le maximum. Après expiration ou dissipation de sa puissance, il ne soigne plus."
     },
     "InventoryTransfer": {
       "denied": "Vous ne pouvez donner que les objets d’un acteur que vous contrôlez.",
