@@ -29,6 +29,7 @@ import {registerMaintainedSpellTracking} from "./modules/maintained-spell-tracki
 import {registerAuraSupport} from "./modules/aura.mjs";
 import {registerDamageEnrichers} from "./modules/damage-icons.mjs";
 import {migrateDamageQualifications} from "./modules/damage-qualification-migration.mjs";
+import {registerSharedConsumptionSocket} from './modules/shared-consumption.mjs';
 import {registerInventoryTransferSocket,recoverInventoryTransfers} from './modules/inventory-transfer.mjs';
 
 Hooks.once("init", () => {
@@ -271,6 +272,7 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
   registerInventoryTransferSocket();
+  registerSharedConsumptionSocket();
   await recoverInventoryTransfers();
   try { await migrateDamageQualifications(); }
   catch (error) { console.error("Trudvang Chronicles | Damage qualifier migration failed", error); }

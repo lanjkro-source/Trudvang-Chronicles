@@ -7,7 +7,7 @@ const set=(object,path,value)=>{const parts=path.split('.'),last=parts.pop();par
 class Model{constructor(data,{parent}={}){Object.assign(this,structuredClone(data));this.parent=parent;}toObject(){return structuredClone(Object.fromEntries(Object.entries(this).filter(([key])=>key!=='parent')));}prepareDerivedData(){}static defineSchema(){return {};}}
 class Field{constructor(options){this.options=options;}}
 let models;
-const applications=[];
+const applications=[],renderedItemContexts=[];
 class CoreItem{
  constructor(source,parent){this._source=structuredClone(source);this.flags=this._source.flags??{};this.type=source.type;this.name=source.name;this.id='i';this.uuid='Actor.a.Item.i';this.documentName='Item';this.parent=parent;this.isOwner=true;this.effects=[];this.prepareData();}
  prepareData(){this.system=new models[this.type](this._source.system,{parent:this});this.effects=(this._source.effects??[]).map((row,i)=>({...structuredClone(row),_source:row,id:row._id??'e'+i,uuid:this.uuid+'.ActiveEffect.'+(row._id??'e'+i),parent:this,active:false,update:async data=>{this._source.effects[i]={...row,...structuredClone(data)};this.prepareData();return this.effects[i];}}));this.prepareEmbeddedDocuments();this.system.prepareDerivedData();this.prepareDerivedData();}
@@ -29,7 +29,7 @@ class CoreEffect{
 CoreEffect.implementation=CoreEffect;CoreEffect.getEffectStart=()=>({time:0});
 class Sheet{constructor({document}){this.document=this.item=document;this.isEditable=true;this.element={};}async _prepareContext(){return {};}}
 globalThis.foundry={abstract:{TypeDataModel:Model},data:{ActiveEffectTypeDataModel:Model,fields:new Proxy({},{get:()=>Field})},documents:{Item:CoreItem,ActiveEffect:CoreEffect},
- applications:{handlebars:{renderTemplate:async()=>''},api:{HandlebarsApplicationMixin:Base=>Base},sheets:{ItemSheetV2:Sheet},ux:{TextEditor:{implementation:{enrichHTML:async value=>value}}}},utils:{deepClone:structuredClone,getProperty:get,setProperty:set,expandObject:flat=>{const result={};for(const [key,value] of Object.entries(flat))set(result,key,value);return result;}}};
+ applications:{handlebars:{renderTemplate:async(path,data)=>{renderedItemContexts.push(data);return '';}},api:{HandlebarsApplicationMixin:Base=>Base},sheets:{ItemSheetV2:Sheet},ux:{TextEditor:{implementation:{enrichHTML:async value=>value}}}},utils:{deepClone:structuredClone,getProperty:get,setProperty:set,expandObject:flat=>{const result={};for(const [key,value] of Object.entries(flat))set(result,key,value);return result;}}};
 globalThis.document={createElement:()=>({set textContent(value){this.value=String(value).replaceAll('<','&lt;');},get innerHTML(){return this.value;}})};
 const language=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url))),localize=key=>get(language,key)??key;
 globalThis.game={user:{id:'gm'},time:{worldTime:0},i18n:{lang:'fr',localize,format:(key,data)=>localize(key).replace(/\{(\w+)\}/g,(_,key)=>data[key])}};
@@ -217,4 +217,12 @@ test('a conjured consumable is magical only while its potency effect remains act
 test('a provisional transfer copy cannot be edited or used by its recipient and grants no item-use modifier',async()=>{
  const data=source();data.flags={'trudvang-chronicles':{inventoryTransfer:{sourceUuid:'Actor.source.Item.item'}}};data.effects=[{type:'effect',transfer:false,system:{changes:[{key:'system.damageBonus',type:'add',value:'4',phase:'initial'}]}}];
  const item=new TrudvangItem(data,actor);actor.items=[item];assert.equal(item.system.damageBonus,0);assert.equal(item.canUserModify({isGM:false},'update'),false);assert.equal(item.canUserModify({isGM:true},'update'),true);assert.equal(await item.roll(),null);
+});
+
+test('sharing a consumable uses the real item-card context and suppresses the storage-effect application action',async t=>{
+ const previous=globalThis.ChatMessage;
+ t.after(()=>{globalThis.ChatMessage=previous;});
+ globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>data};
+ const item=new TrudvangItem({name:'Potion',type:'gear',system:{consumable:true,description:'Soins'},effects:[{name:'Potency',transfer:false,disabled:false,system:{changes:[]}}]},actor);
+ await item.toChat();const context=renderedItemContexts.at(-1);assert.equal(context.canConsume,true);assert.equal(context.canApplyEffects,false);
 });

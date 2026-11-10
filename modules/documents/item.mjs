@@ -6,6 +6,8 @@ import {GRADED_EFFECT_IDS} from "../rules/effect-stacking.mjs";
 import {applyGradedEffect} from "../graded-effects.mjs";
 import {prepareItemLocalEffects} from '../rules/item-magic.mjs';
 
+import {isConsumable} from "../consumables.mjs";
+
 const BaseItem = foundry.documents.Item;
 
 export class TrudvangItem extends BaseItem {
@@ -39,8 +41,8 @@ export class TrudvangItem extends BaseItem {
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/item-card.hbs", {
       item: this,
       system: this.system,
-      canUseExtract: this.type === "potion",
-      canApplyEffects: (EFFECT_ITEM_TYPES.has(this.type) || this.system.catalogId === SURPRISED_ITEM || GRADED_EFFECT_IDS.has(this.system.catalogId)) && this.effects.some(effect => !effect.transfer && !effect.disabled),
+      canConsume: isConsumable(this),
+      canApplyEffects: !isConsumable(this) && (EFFECT_ITEM_TYPES.has(this.type) || this.system.catalogId === SURPRISED_ITEM || GRADED_EFFECT_IDS.has(this.system.catalogId)) && this.effects.some(effect => !effect.transfer && !effect.disabled),
       description: annotateRuleTestDescription(
         await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true}), this)
     });
@@ -51,6 +53,7 @@ export class TrudvangItem extends BaseItem {
   }
 
   async applyEffects(targets = null) {
+    if(isConsumable(this)){const {requestSharedConsumption}=await import("../shared-consumption.mjs");return requestSharedConsumption(this);}
     if (this.type === "effect" && (this.system.catalogId === SURPRISED_ITEM || GRADED_EFFECT_IDS.has(this.system.catalogId))) {
       const candidates = targets ? Array.from(targets) : Array.from(game.user.targets?.size ? game.user.targets : globalThis.canvas?.tokens?.controlled ?? []);
       if (!candidates.length && this.actor) candidates.push(this.actor);

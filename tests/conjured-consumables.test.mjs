@@ -127,3 +127,31 @@ test('a preparation converted to vitner stays linked while carried or on the gro
  await reconcileMaintainedSpell(a,context.castingId,{removed:true});assert.equal(a.system.activeSpellCastings.length,1);assert.deepEqual(a.system.activeSpellCastings[0].effectUuids,[effect.uuid]);
  assert.equal(await endMaintainedSpellOnGM(a.uuid,context.castingId,'owner'),true);assert.equal(a.system.activeSpellCastings.length,0);assert.equal(activeConjuredConsumable(item),null);assert.equal(game.items.length,1);
 });
+
+test('shared consumption heals the selected recipient, spends the source stack and rejects other players',async t=>{
+ const {consumeSharedItemOnGM,canConsumeSharedItem}=await import('../modules/shared-consumption.mjs');
+ const previous={users:game.users,user:game.user,fromUuid:foundry.utils.fromUuid};t.after(()=>{game.users=previous.users;game.user=previous.user;foundry.utils.fromUuid=previous.fromUuid;});
+ const noaj=actor(),recipient=actor(),user={id:'noaj',active:true},intruder={id:'intruder',active:true},gm={id:'gm',active:true,isGM:true};
+ noaj.canUserModify=u=>u.id===user.id;recipient.canUserModify=()=>false;
+ const potion=await createConjuredConsumable(noaj,instantConsequenceOperation(template,[]));potion.system.quantity=2;
+ const docs=new Map([[noaj.uuid,noaj],[recipient.uuid,recipient],[potion.uuid,potion]]);
+ foundry.utils.fromUuid=async uuid=>docs.get(uuid);
+ game.users={activeGM:{isSelf:true},get:id=>[user,intruder,gm].find(u=>u.id===id)};game.user=gm;
+ const payload={itemUuid:potion.uuid,targetUuid:recipient.uuid,userId:intruder.id};
+ assert.equal(canConsumeSharedItem(potion,intruder),false);assert.equal(canConsumeSharedItem(potion,user),true);
+ assert.equal((await consumeSharedItemOnGM(payload)).status,'denied');assert.equal(recipient.system.resources.body.current,10);
+ payload.userId=user.id;assert.equal((await consumeSharedItemOnGM(payload)).status,'ok');
+ assert.equal(recipient.system.resources.body.current,16);assert.equal(noaj.system.resources.body.current,10);assert.equal(potion.system.quantity,1);assert.equal(recipient.effects.length,0);
+ const attempts=await Promise.all([consumeSharedItemOnGM(payload),consumeSharedItemOnGM(payload)]);
+ assert.equal(attempts.filter(r=>r.status==='ok').length,1);assert.equal(recipient.system.resources.body.current,22);assert.equal(noaj.items.length,0);
+});
+
+test('shared consumable cards have one consumption button and never offer the generic effect-copy button',async t=>{
+ // Render the real template with the same consumable classification used by toChat.
+ const {default:Handlebars}=await import('handlebars');
+ Handlebars.registerHelper('localize',key=>game.i18n.localize(key));Handlebars.registerHelper('concat',(...args)=>args.slice(0,-1).join(''));
+ const source=fs.readFileSync(new URL('../templates/chat/item-card.hbs',import.meta.url),'utf8');
+ const html=Handlebars.compile(source)({item:{uuid:'Actor.n.Item.p',name:'Potion',type:'gear'},canConsume:true,canApplyEffects:false});
+ assert.match(html,/data-action="consume-item"/);assert.match(html,/Consommer/);assert.doesNotMatch(html,/data-action="apply-effects"/);
+ const itemSource=fs.readFileSync(new URL('../modules/documents/item.mjs',import.meta.url),'utf8');assert.match(itemSource,/canApplyEffects: !isConsumable\(this\)/);
+});

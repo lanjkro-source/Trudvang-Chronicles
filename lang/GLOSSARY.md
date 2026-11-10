@@ -16011,6 +16011,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consumable.Label` | Consumable | Consommable |
 | `TRUDVANG.Consumable.Used` | {actor} used {item}. | {actor} a utilisé {item}. |
 | `TRUDVANG.Consumable.InventoryRequired` | This item must be in the character’s inventory to be consumed. | Cet objet doit être présent dans l’inventaire du personnage pour être consommé. |
+| `TRUDVANG.Consumable.Consume` | Consume | Consommer |
 
 ## `TRUDVANG.Consequence`
 

@@ -70,10 +70,10 @@ export async function promptExtractStageRoll({actor = null, strength = 0, streng
 }
 
 /** Resolve the effect level of an extract for an actor. */
-export async function useExtract(item, actor) {
+export async function useExtract(item, actor, preparedChoice = null) {
   if (!item || item.type !== "potion" || !actor) return;
   const strength = Number(item.system.strength || 0);
-  const choice = await promptExtractStageRoll({
+  const choice = preparedChoice ?? await promptExtractStageRoll({
     actor,
     strength,
     strengthEditable: false,

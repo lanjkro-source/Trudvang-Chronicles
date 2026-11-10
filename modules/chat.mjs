@@ -1,5 +1,6 @@
 import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
-import {consumeInventoryItem} from "./consumables.mjs";
+import {isConsumable} from "./consumables.mjs";
+import {canConsumeSharedItem,requestSharedConsumption} from "./shared-consumption.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
 import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
@@ -159,9 +160,11 @@ function attachListeners(message, html) {
     });
   });
   html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
+    foundry.utils.fromUuid(button.dataset.itemUuid).then(item=>{if(isConsumable(item)){button.textContent=game.i18n.localize("TRUDVANG.Consumable.Consume");button.hidden=!canConsumeSharedItem(item);}});
     button.addEventListener("click", async event => {
       event.preventDefault();
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
+      if (isConsumable(item)) return requestSharedConsumption(item);
       if (item?.isOwner) await item.applyEffects();
     });
   });
@@ -217,17 +220,16 @@ function attachListeners(message, html) {
       }
     });
   });
-  html.querySelectorAll("[data-action='use-extract']").forEach(button => {
+  // Also intercept old shared consumable cards; never copy their storage effects.
+  html.querySelectorAll("[data-action='consume-item'],[data-action='use-extract']").forEach(button => {
+    button.textContent = game.i18n.localize("TRUDVANG.Consumable.Consume");
+    const itemUuid=button.closest("[data-item-uuid]")?.dataset.itemUuid;
+    foundry.utils.fromUuid(itemUuid).then(item=>{button.hidden=!canConsumeSharedItem(item);});
     button.addEventListener("click", async event => {
-      event.preventDefault();
-      const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
-      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
-      const item = await foundry.utils.fromUuid(button.closest("[data-item-uuid]")?.dataset.itemUuid);
-      const starterId = item?.getFlag?.("trudvang-chronicles", "starterId");
-      const owned = item?.actor === actor ? item : Array.from(actor.items ?? []).find(candidate => candidate.type === "potion"
-        && ((starterId && candidate.getFlag?.("trudvang-chronicles", "starterId") === starterId) || candidate.name === item?.name));
-      if (!owned) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Consumable.InventoryRequired"));
-      await consumeInventoryItem(owned, actor);
+      event.preventDefault(); if(button.disabled)return;
+      button.disabled=true;
+      try {await requestSharedConsumption(await foundry.utils.fromUuid(itemUuid));}
+      finally {button.disabled=false;}
     });
   });
   html.querySelectorAll("[data-action='consequence-resistance']").forEach(button => {

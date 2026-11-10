@@ -68,3 +68,10 @@ Vérification représentative : prendre une arme non magique de qualité Normale
 ## Réserves temporaires et repos
 
 Le repos nocturne retire un seul point de divinité temporaire par clic, sans descendre sous zéro, pour toutes les religions sauf l’Ancienne Tradition (`ealdTradition`). Celle-ci conserve ses points temporaires ; la fin des serments reste gérée par le MJ. La réserve ordinaire de Thuuldom conserve son fonctionnement sans renouvellement nocturne. Le message de repos annonce uniquement les points effectivement perdus. Référence : Livre des règles, Offrande de sang ; Player’s Handbook, Blood Gifting (exemple de Hrimhrappe), avec l’exception de l’Ancienne Tradition explicitement fixée pour le jeu.
+
+### Correctif de consommation partagée et gestes d’inventaire — 10 novembre 2026
+
+- Les cartes de tous les extraits et consommables proposent **Consommer**, jamais la copie générique de leurs effets de conservation. Les anciennes cartes passent également par cette consommation.
+- Seul le propriétaire de l’acteur détenteur ou un MJ peut utiliser ce bouton. Il désigne les tokens ciblés (ou, sans cible, les tokens contrôlés) ; une dose est consommée par acteur distinct. Il n’y a aucun repli implicite sur le lanceur.
+- Le détenteur fournit la dose ; le destinataire reçoit les soins, le jet d’extrait et les véritables conséquences. Le MJ connecté réalise les écritures sur un destinataire que le joueur ne contrôle pas. Les demandes portant sur une même pile sont sérialisées.
+- L’icône et le nom d’un objet d’inventaire sont explicitement glissables. Le dépôt sur une fiche est traité une seule fois, même après ses réaffichages. Le transfert existant conserve ses contrôles de permission et sa récupération en cas d’interruption.

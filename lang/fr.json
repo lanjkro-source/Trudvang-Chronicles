@@ -18380,7 +18380,8 @@
     "Consumable": {
       "Label": "Consommable",
       "Used": "{actor} a utilisé {item}.",
-      "InventoryRequired": "Cet objet doit être présent dans l’inventaire du personnage pour être consommé."
+      "InventoryRequired": "Cet objet doit être présent dans l’inventaire du personnage pour être consommé.",
+      "Consume": "Consommer"
     },
     "Consequence": {
       "FindWay": "Ne pas se perdre dans les brumes",

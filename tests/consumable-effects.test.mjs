@@ -100,3 +100,13 @@ test("the native effect editor updates clock duration and changes without replay
  assert.equal(clock.stages[0].seconds,259200);assert.equal(clock.stageStartedAt,7);assert.equal(clock.stages[0].changes[0].value,"2");assert.equal(a.system.resources.body.current,10);
  assert.equal(editedConsequenceClock(e,{duration:{value:null}}),null);
 });
+
+test('giving an extract uses the recipient trait and creates its stages only on the recipient',async()=>{
+ const source=actor(),recipient=actor();recipient.getTraitValue=()=>5;source.getTraitValue=()=>-10;
+ const extract={...item('Gaveblom'),actor:source,system:{...item('Gaveblom').system,strength:10,duration:'1 heure'}};
+ source.items.push(extract);results=[5];formulas.length=0;
+ const used=await consumeInventoryItem(extract,recipient,{inventoryActor:source,extractChoice:{traitKey:'constitution'}});
+ assert.equal(used.remaining,0);assert.equal(source.items.length,0);assert.equal(source.effects.length,0);
+ assert.equal(recipient.effects.length,1);assert.equal(recipient.effects[0].system.stages.length,2);
+ assert.deepEqual(formulas,['1d20']);
+});

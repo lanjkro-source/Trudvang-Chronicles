@@ -742,7 +742,7 @@ test("equipment quantity and equip actions update only the actor on the token sh
   const npc = actor([localItem]); npc.isToken = true; npc.items.get = id => npc.items.find(item => item.id === id);
   const sheet = new TrudvangNpcSheet(); sheet.actor = npc;
   const input = {value: "3", dataset: {itemField: "quantity"}, closest: () => ({dataset: {itemId: "Leather"}}), addEventListener(type, listener) { this.listener = listener; }};
-  sheet.element = {querySelectorAll: selector => selector === "input[data-item-field]" ? [input] : []};
+  sheet.element = {addEventListener(){},removeEventListener(){},querySelectorAll: selector => selector === "input[data-item-field]" ? [input] : []};
   sheet._activateTabs = () => {}; sheet._restoreViewState = () => {}; sheet._captureViewState = () => {};
   await sheet._onRender({}, {});
   await input.listener({currentTarget: input});

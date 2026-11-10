@@ -7,21 +7,21 @@ export const isConsumable = item => item?.type === "potion" || (item?.type === "
 const pendingUses = new WeakSet();
 
 /** Consume one actor-owned unit. Repeated clicks while a prompt is open are ignored. */
-export async function consumeInventoryItem(item, actor = item?.actor) {
-  if (!actor?.isOwner || !isConsumable(item) || !Array.from(actor.items ?? []).includes(item) || pendingUses.has(item)) return null;
+export async function consumeInventoryItem(item, actor = item?.actor, {inventoryActor = item?.actor ?? actor, extractChoice = null} = {}) {
+  if (!actor?.isOwner || !inventoryActor?.isOwner || !isConsumable(item) || !Array.from(inventoryActor.items ?? []).includes(item) || pendingUses.has(item)) return null;
   if(item.flags?.['trudvang-chronicles']?.inventoryTransfer)return null;
   const quantity = Number(item.system.quantity ?? 1);
   if (!Number.isInteger(quantity) || quantity <= 0) return null;
   pendingUses.add(item);
   try {
     const name = item.name;
-    if (item.type === "potion" && !await useExtract(item, actor)) return null;
+    if (item.type === "potion" && !await useExtract(item, actor, extractChoice)) return null;
     const consequences = item.type !== "potion" ? await applyConsumableConsequences(item, actor) : null;
     // Re-read after the extract prompt; another client may have changed the stack.
-    if (!Array.from(actor.items ?? []).includes(item) || Number(item.system.quantity ?? 1) <= 0) return null;
+    if (!Array.from(inventoryActor.items ?? []).includes(item) || Number(item.system.quantity ?? 1) <= 0) return null;
     const remaining = Number(item.system.quantity ?? 1) - 1;
-    if (remaining <= 0) await actor.deleteEmbeddedDocuments("Item", [item.id]);
-    else await actor.updateEmbeddedDocuments("Item", [{_id: item.id, "system.quantity": remaining}]);
+    if (remaining <= 0) await inventoryActor.deleteEmbeddedDocuments("Item", [item.id]);
+    else await inventoryActor.updateEmbeddedDocuments("Item", [{_id: item.id, "system.quantity": remaining}]);
     if (item.type !== "potion") {
       const text = game.i18n.format("TRUDVANG.Consumable.Used", {actor: actor.token?.name || actor.name, item: name});
       const tests = consequences.tests;

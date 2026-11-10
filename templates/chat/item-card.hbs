@@ -1,6 +1,6 @@
 <article class="trudvang chat-card item" data-item-uuid="{{item.uuid}}" data-rule-document-uuid="{{item.uuid}}">
   <header><img src="{{item.img}}"><div><button type="button" class="card-title" data-action="open-item-sheet">{{item.name}}</button><small>{{localize (concat "TYPES.Item." item.type)}}</small></div></header>
   <div class="card-flavor shared-description">{{{description}}}</div>
-  {{#if canUseExtract}}<button type="button" data-action="use-extract"><i class="fas fa-flask"></i> {{localize "TRUDVANG.Action.Use"}}</button>{{/if}}
+  {{#if canConsume}}<button type="button" data-action="consume-item"><i class="fas fa-flask"></i> {{localize "TRUDVANG.Consumable.Consume"}}</button>{{/if}}
   {{#if canApplyEffects}}<button type="button" data-action="apply-effects" data-item-uuid="{{item.uuid}}"><i class="fas fa-person-rays"></i> {{localize "TRUDVANG.Action.ApplyEffects"}}</button>{{/if}}
 </article>

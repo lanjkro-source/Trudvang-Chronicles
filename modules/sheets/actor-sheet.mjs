@@ -12,6 +12,7 @@ import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../ta
 import { EFFECT_ITEM_TYPES, effectTooltipSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
+import {bindInventoryDrag} from '../inventory-drag.mjs';
 import {isConsumable} from "../consumables.mjs";
 import {isInventoryTransferItem,requestInventoryTransfer} from '../inventory-transfer.mjs';
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
@@ -537,6 +538,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     openEffectSheets.add(this);
     bindSheetListMenus(this);
     const root = this.element;
+    bindInventoryDrag(this);
     root.querySelectorAll('.profile-img[data-action="manage-portraits"]').forEach(image => {
       image.addEventListener("keydown", event => {
         if (!["Enter", " "].includes(event.key)) return;
