@@ -2,9 +2,10 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");}})};
-globalThis.foundry={applications:{api:{DialogV2:{wait:async()=>({duration:"2 rounds",boost1:1,boost3:1})}},handlebars:{renderTemplate:async()=>"card"}},utils:{}};
+globalThis.foundry={applications:{api:{DialogV2:{wait:async()=>({duration:"2 rounds",boost1:1,boost3:1})}},handlebars:{renderTemplate:async(_path,data)=>{renderedCards.push(data);return "card";}}},utils:{}};
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=7;return this;}};
 globalThis.ui={notifications:{warn(){},error(){}}};
+const renderedCards=[];
 const documents=new Map(),messages=new Map(),gm={id:"gm",isGM:true,active:true};
 globalThis.game={user:gm,users:{activeGM:{isSelf:true},get:id=>id==="gm"?gm:null},messages,actors:[],scenes:[],time:{worldTime:0},i18n:{localize:key=>key,format:(key,data)=>`${key}:${JSON.stringify(data)}`}};
 foundry.utils.fromUuid=async uuid=>documents.get(uuid);
@@ -428,4 +429,18 @@ test("Fearless requires an empowered other person before applying the secondary 
   await assert.rejects(()=>applyTransformation(friends[2],`${power}#allie`,{source:item,context}),/MagicTargetLimit/);
   assert.ok(await applyTransformation(caster,`${power}#allie`,{source:item,context}));
  }finally{foundry.applications.api.DialogV2=previous;}
+});
+
+test('all three infectious invocations automatically create the source on the caster without target allocation or a manual button',async t=>{
+ const previous=globalThis.canvas;t.after(()=>{globalThis.canvas=previous;});
+ for(const tail of ['disease-carrier:0','contagious:4','lord-of-the-flies:6']){
+  const sourceId='holy-haminges-power-of-trolls:'+tail;let created;
+  const caster={uuid:'Actor.auto.'+tail,name:'Noaj',items:[],effects:[],canUserModify:()=>true,createTrudvangEffect:async data=>{created=data;return null;}};
+  const token={uuid:'Scene.s.Token.noaj',actor:caster};globalThis.canvas={tokens:{controlled:[{document:token}],placeables:[]}};
+  const item={uuid:caster.uuid+'.Item.power',type:'divineFeat',system:{catalogId:sourceId}};
+  await rollUnder({actor:caster,item,kind:'divine',target:12,label:'Power',castingId:'auto-'+tail,powerLevelCounts:[1,2,2]});
+  assert.ok(created,tail);const context=created.flags[scope].transformation.ruleTestContext;
+  assert.equal(context.auraSource,true);assert.equal(context.casterUuid,caster.uuid);assert.equal(context.casterTokenUuid,token.uuid);assert.ok(context.messageId);
+  assert.equal(renderedCards.at(-1).transformationLinks,'');assert.equal(created.flags[scope].transformation.auraChanges.length,tail==='lord-of-the-flies:6'?1:0);
+ }
 });

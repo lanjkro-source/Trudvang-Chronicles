@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0#exposure",
-    "description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+    "description": "Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -2 to all actions. Leaving the area does not remove incubation or disease.",
     "summary": "Spreads an infectious stench; exposed people must resist the disease.",
     "source": {
       "book": "Player's Handbook",
@@ -21,7 +21,7 @@
       "name": "Disease Carrier",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+      "description": "Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -2 to all actions. Leaving the area does not remove incubation or disease.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-trolls:disease-carrier:0#exposure",

@@ -16881,7 +16881,7 @@
         "holy-haminges-power-of-trolls:disease-carrier:0#exposure": {
           "Name": "Infection",
           "Summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
-          "Description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+          "Description": "Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -2 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie.",
           "SourceName": "Infection",
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
@@ -16908,7 +16908,7 @@
         "holy-haminges-power-of-trolls:contagious:4#exposure": {
           "Name": "Contagion",
           "Summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
-          "Description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+          "Description": "Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -4 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie.",
           "SourceName": "Contagion",
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
@@ -16931,6 +16931,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "275",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure": {
+          "Name": "Seigneur des mouches",
+          "Summary": "L’odeur et les mouches gênent le combat et provoquent une incubation infectieuse.",
+          "Description": "Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 4 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) et développent 2d10 + 2 gros bubons. Chaque jour, 1d6 de ces bubons éclatent et infligent 2 points de dégâts chacun. Un test de situation réussi signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière. Que la victime ait réussi son test de situation ou pas, elle subit un malus de -3 à toutes ses actions de combat tant qu’elle se trouve à portée du conjurateur, à cause de l’odeur et du bourdonnement des mouches.",
+          "SourceName": "Seigneur des mouches",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "275",
+          "Duration": "3 heures"
         },
         "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
           "Name": "Suggestion murmurée",
@@ -18450,7 +18459,7 @@
     },
     "Aura": {
       "Behavior": "Aura Trudvang",
-      "NoToken": "Sélectionnez le token du lanceur pour créer l’aura.",
+      "NoToken": "L’effet est ajouté au lanceur, mais aucun token unique ne permet encore de placer l’aura.",
       "NoGM": "Un MJ connecté est nécessaire pour créer et synchroniser l’aura.",
       "Failed": "Impossible de créer l’aura ; vérifiez la console.",
       "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone.",
@@ -18537,17 +18546,24 @@
       "pending": "Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde."
     },
     "Disease": {
-      "Exposure": "Odeur infectieuse : résistance de Constitution (VC de base {sv}). En cas d’échec, incubation de 1d6 minutes puis fièvre pendant 1d6 jours : {penalty} à toutes les actions. Une réussite immunise contre ce pouvoir pendant un jour. Quitter l’aura ne guérit pas une infection contractée.",
+      "Exposure": "Entrer dans l’aura sans immunité crée une incubation de 1d6 minutes. Réussir sa résistance de Constitution (VC de base {sv}) la remplace par une immunité d’un jour. Sinon, la fièvre dure 1d6 jours et impose {penalty} à toutes les actions. Sortir de la zone ne guérit pas l’incubation ou la maladie.",
       "Incubation": "Incubation",
       "Fever": "Fièvre",
       "Immunity": "Immunité",
       "Pending": "Un jet contre cette maladie est déjà en cours.",
       "Already": "Cette exposition a déjà été résolue : la maladie ou son immunité est encore active.",
-      "IncubationDescription": "La maladie se déclarera après l’incubation ; aucun malus pour le moment.",
+      "IncubationDescription": "Incubation en cours : réussir le test de résistance avant son terme la remplace par une immunité d’un jour. Sortir de l’aura ne retire pas cette incubation.",
       "FeverDescription": "La fièvre inflige {penalty} à toutes les actions jusqu’à sa guérison.",
       "ImmuneDescription": "Immunisé contre ce pouvoir pendant un jour.",
       "InfectedNotice": "{actor} : incubation de {minutes} min, puis maladie pendant {days} jour(s) ({penalty} à toutes les actions).",
-      "ImmuneNotice": "{actor} résiste à {source} et y est immunisé pendant un jour."
+      "ImmuneNotice": "{actor} résiste à {source} et y est immunisé pendant un jour.",
+      "Resist": "Résister à la maladie",
+      "ResistanceFailure": "L’incubation continue et évoluera vers la maladie.",
+      "IncubationNotice": "{actor} : incubation de {minutes} min. Résister avant son terme évite la fièvre ({penalty} pendant {days} jour(s)).",
+      "SoresNotice": "{actor} : incubation de {minutes} min, puis {remaining} bubons si la résistance échoue.",
+      "SoresExposure": "L’odeur et les mouches imposent −3 à toutes les actions de combat dans la zone, même en cas d’immunité à la maladie. Sans immunité, une incubation est appliquée ; sa résistance de Constitution (VC de base {sv}) permet de la remplacer par une immunité d’un jour. Sinon, 2d10+2 bubons se forment après 1d6 minutes ; chaque jour, 1d6 éclatent, infligeant 2 dégâts chacun sans protection.",
+      "SoresLabel": "Bubons ({remaining})",
+      "SoresDescription": "Il reste {remaining} bubons. Chaque jour, 1d6 éclatent et infligent 2 dégâts chacun sans protection, sans dépasser le nombre restant. La maladie se termine quand le dernier bubon éclate."
     }
   }
 }

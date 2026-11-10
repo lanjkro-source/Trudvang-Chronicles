@@ -114,15 +114,30 @@ test("an older active source transfers its changes to a separate caster recipien
  assert.match(marker.description,/TRUDVANG\.Aura\.Radius/);
 });
 
-test('infectious auras carry their own resistance and exact improved SV, while leaving only removes exposure',async t=>{
- const previous={fromUuid:foundry.utils.fromUuid,format:game.i18n.format};t.after(()=>{foundry.utils.fromUuid=previous.fromUuid;game.i18n.format=previous.format;});
- for(const [tail,rangeIndex,resistIndex,base,penalty]of [['disease-carrier:0',1,2,8,-2],['contagious:4',2,1,6,-4]]){
-  const id='holy-haminges-power-of-trolls:'+tail;
-  const disease={...source,system:{changes:[]},flags:{[S]:{transformation:{key:id+'#exposure',sourceId:id,ruleTestContext:{sourceId:id,countsById:{[`${id}:${rangeIndex}`]:2,[`${id}:${resistIndex}`]:2}}}}}};
-  foundry.utils.fromUuid=async()=>disease;game.i18n.format=(key,data)=>`${key}: ${JSON.stringify(data)}`;
-  const victim=actor('Actor.v'),token={id:'v',actor:victim},region={uuid:'Scene.s.Region.infection',flags:{[S]:{aura:{sourceEffectUuid:disease.uuid,casterUuid:'Actor.c'}}},tokens:new Set([token])};
-  assert.equal(auraRadius(disease),3);await reconcileAuraToken(region,token);
-  const exposure=victim.effects[0];assert.equal(exposure.flags[S].transformation.sourceId,id);assert.match(exposure.description,new RegExp(`"sv":${base-2}`));assert.match(exposure.description,new RegExp(`"penalty":${penalty}`));
-  victim.effects.push({id:'disease',flags:{[S]:{diseaseOutcome:{sourceId:id}}}});await reconcileAuraToken(region,token,{leaving:true});assert.equal(victim.effects.length,1);assert.equal(victim.effects[0].id,'disease');
+
+test('a successful infectious source creates a visible, wall-restricted region and automatically incubates its occupants',async t=>{
+ const previous={document:globalThis.document,fromUuid:foundry.utils.fromUuid,documents:foundry.documents,time:game.time,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage,canvas:globalThis.canvas};
+ t.after(()=>{globalThis.document=previous.document;foundry.utils.fromUuid=previous.fromUuid;foundry.documents=previous.documents;game.time=previous.time;globalThis.Roll=previous.Roll;globalThis.ChatMessage=previous.ChatMessage;globalThis.canvas=previous.canvas;});
+ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value);}})};
+ foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:0})}}};game.time={worldTime:0};
+ globalThis.Roll=class{async evaluate(){this.total=2;return this;}};globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>data};
+ const {synchronizeAuraSource}=await import('../modules/aura.mjs');
+ const {TRANSFORMATION_TEMPLATES}=await import('../modules/transformation-data.mjs');
+ function recipient(uuid){const a=actor(uuid);a.isOwner=true;a.documentName='Actor';a.name=uuid;a.createTrudvangEffect=async data=>{const e={...structuredClone(data),id:crypto.randomUUID(),uuid:uuid+'.ActiveEffect.'+crypto.randomUUID(),parent:a};a.effects.push(e);return e;};return a;}
+ for(const tail of ['disease-carrier:0','contagious:4','lord-of-the-flies:6']){
+  const caster=recipient('Actor.c'),victim=recipient('Actor.v'),id='holy-haminges-power-of-trolls:'+tail,rangeIndex=tail==='disease-carrier:0'?1:2;
+  const scene={grid:{size:100,distance:1,units:'m'},regions:[]};let regionData;
+  const token={id:'c',uuid:'Scene.s.Token.c',actor:caster,parent:scene,x:0,y:0,width:1,height:1,update:async()=>{}},target={id:'v',actor:victim,parent:scene};scene.tokens=[token,target];
+  globalThis.canvas={tokens:{placeables:[{document:token},{document:target}]}};
+  // Also exercises sources already placed manually without an explicit token UUID.
+  const root={uuid:'Actor.c.ActiveEffect.source',name:'Aura',parent:caster,system:{changes:[]},flags:{[S]:{transformation:{key:id+'#exposure',sourceId:id,auraChanges:TRANSFORMATION_TEMPLATES[id+'#exposure'].changes,auraStatuses:[],ruleTestContext:{sourceId:id,casterUuid:tail==='disease-carrier:0'?'':caster.uuid,countsById:{[`${id}:${rangeIndex}`]:2}}}}},toObject:()=>({start:{time:0}})};caster.effects.push(root);
+  foundry.utils.fromUuid=async uuid=>uuid===token.uuid?token:uuid===root.uuid?root:null;
+  scene.createEmbeddedDocuments=async(type,rows)=>{assert.equal(type,'Region');regionData=rows[0];const region={...rows[0],uuid:'Scene.s.Region.aura',tokens:new Set([target])};scene.regions.push(region);return [region];};
+  await synchronizeAuraSource(root);
+  assert.equal(regionData.visibility,CONST.REGION_VISIBILITY.ALWAYS);assert.equal(regionData.highlightMode,'coverage');assert.equal(regionData.restriction.enabled,true);assert.equal(regionData.shapes[0].radius,300);
+  assert.equal(victim.effects.filter(e=>e.flags?.[S]?.diseaseIncubation).length,1);assert.equal(caster.effects.filter(e=>e.flags?.[S]?.diseaseIncubation).length,1);
+  const ambient=victim.effects.find(e=>e.flags?.[S]?.auraRecipient);
+  if(tail==='lord-of-the-flies:6')assert.equal(ambient.system.changes[0].value,'-3');else assert.equal(ambient,undefined);
+  await reconcileAuraToken(scene.regions[0],target,{leaving:true});assert.equal(victim.effects.length,1);assert.ok(victim.effects[0].flags[S].diseaseIncubation);
  }
 });

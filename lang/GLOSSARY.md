@@ -14209,7 +14209,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Name` | Disease Carrier | Infection |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Description` | This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area. | Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -2 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.Description` | Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -2 to all actions. Leaving the area does not remove incubation or disease. | Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -2 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourceName` | Disease Carrier | Infection |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:disease-carrier:0#exposure.SourcePage` | 223 | 274 |
@@ -14242,7 +14242,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Name` | Contagious | Contagion |
-| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Description` | This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area. | Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.Description` | Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -4 to all actions. Leaving the area does not remove incubation or disease. | Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -4 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie. |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourceName` | Contagious | Contagion |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:contagious:4#exposure.SourcePage` | 223 | 274 |
@@ -14269,6 +14269,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.SourcePage` | 223 | 275 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:troll-wit:7#effect.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.Name` | Lord of the Flies | Seigneur des mouches |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.Description` | The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes, though the conjurer is not disturbed by this. Anyone who comes within range must make a Situation roll with a Situation value of 4 (Psyche modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with 2d10 + 2 large boils. Every day, 1d6 of the boils burst, causing 2 points of damage per boil. A successful Situation roll makes that character immune to this ability for one day. Regardless of whether the victim succeeds on the Situation roll, they suffer a -3 on all combat actions when within range of the conjurer because of the stench and all the buzzing flies. | Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 4 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) et développent 2d10 + 2 gros bubons. Chaque jour, 1d6 de ces bubons éclatent et infligent 2 points de dégâts chacun. Un test de situation réussi signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière. Que la victime ait réussi son test de situation ou pas, elle subit un malus de -3 à toutes ses actions de combat tant qu’elle se trouve à portée du conjurateur, à cause de l’odeur et du bourdonnement des mouches. |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.SourceName` | Lord of the Flies | Seigneur des mouches |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.SourcePage` | 223 | 275 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure.Duration` | 3 hours | 3 heures |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect`
 
@@ -16099,7 +16110,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Aura.Behavior` | Aura Trudvang | Aura Trudvang |
-| `TRUDVANG.Aura.NoToken` | Select the caster’s token to create the aura. | Sélectionnez le token du lanceur pour créer l’aura. |
+| `TRUDVANG.Aura.NoToken` | The effect is added to the caster, but no unique token is available yet to place the aura. | L’effet est ajouté au lanceur, mais aucun token unique ne permet encore de placer l’aura. |
 | `TRUDVANG.Aura.NoGM` | A connected GM is required to create and synchronize the aura. | Un MJ connecté est nécessaire pour créer et synchroniser l’aura. |
 | `TRUDVANG.Aura.Failed` | The aura could not be created; check the console. | Impossible de créer l’aura ; vérifiez la console. |
 | `TRUDVANG.Aura.Automatic` | Aura effects are applied automatically within its area. | Les effets de l’aura sont appliqués automatiquement dans sa zone. |
@@ -16216,14 +16227,21 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Disease.Exposure` | Infectious stench: Constitution resistance (base SV {sv}). Failure causes 1d6 minutes of incubation, then 1d6 days of fever: {penalty} to all actions. Success grants one day of immunity to this ability. Leaving the aura does not cure an infection. | Odeur infectieuse : résistance de Constitution (VC de base {sv}). En cas d’échec, incubation de 1d6 minutes puis fièvre pendant 1d6 jours : {penalty} à toutes les actions. Une réussite immunise contre ce pouvoir pendant un jour. Quitter l’aura ne guérit pas une infection contractée. |
+| `TRUDVANG.Disease.Exposure` | Entering the aura without immunity starts 1d6 minutes of incubation. Its successful Constitution resistance (base SV {sv}) replaces it with one day of immunity. Otherwise, fever lasts 1d6 days and imposes {penalty} to all actions. Leaving the area does not cure incubation or disease. | Entrer dans l’aura sans immunité crée une incubation de 1d6 minutes. Réussir sa résistance de Constitution (VC de base {sv}) la remplace par une immunité d’un jour. Sinon, la fièvre dure 1d6 jours et impose {penalty} à toutes les actions. Sortir de la zone ne guérit pas l’incubation ou la maladie. |
 | `TRUDVANG.Disease.Incubation` | Incubation | Incubation |
 | `TRUDVANG.Disease.Fever` | Fever | Fièvre |
 | `TRUDVANG.Disease.Immunity` | Immunity | Immunité |
 | `TRUDVANG.Disease.Pending` | A resistance roll against this disease is already in progress. | Un jet contre cette maladie est déjà en cours. |
 | `TRUDVANG.Disease.Already` | This exposure has already been resolved: its disease or immunity is still active. | Cette exposition a déjà été résolue : la maladie ou son immunité est encore active. |
-| `TRUDVANG.Disease.IncubationDescription` | The disease develops after incubation; there is no penalty yet. | La maladie se déclarera après l’incubation ; aucun malus pour le moment. |
+| `TRUDVANG.Disease.IncubationDescription` | Incubation is active: successful resistance before it ends replaces it with one day of immunity. Leaving the aura does not remove this incubation. | Incubation en cours : réussir le test de résistance avant son terme la remplace par une immunité d’un jour. Sortir de l’aura ne retire pas cette incubation. |
 | `TRUDVANG.Disease.FeverDescription` | Fever imposes {penalty} to all actions until it ends. | La fièvre inflige {penalty} à toutes les actions jusqu’à sa guérison. |
 | `TRUDVANG.Disease.ImmuneDescription` | Immune to this ability for one day. | Immunisé contre ce pouvoir pendant un jour. |
 | `TRUDVANG.Disease.InfectedNotice` | {actor}: {minutes} min incubation, then {days} day(s) of disease ({penalty} to all actions). | {actor} : incubation de {minutes} min, puis maladie pendant {days} jour(s) ({penalty} à toutes les actions). |
 | `TRUDVANG.Disease.ImmuneNotice` | {actor} resists {source} and is immune to it for one day. | {actor} résiste à {source} et y est immunisé pendant un jour. |
+| `TRUDVANG.Disease.Resist` | Resist the disease | Résister à la maladie |
+| `TRUDVANG.Disease.ResistanceFailure` | Incubation continues and will develop into disease. | L’incubation continue et évoluera vers la maladie. |
+| `TRUDVANG.Disease.IncubationNotice` | {actor}: {minutes} min incubation. Resisting before it ends prevents fever ({penalty} for {days} day(s)). | {actor} : incubation de {minutes} min. Résister avant son terme évite la fièvre ({penalty} pendant {days} jour(s)). |
+| `TRUDVANG.Disease.SoresNotice` | {actor}: {minutes} min incubation, then {remaining} boils if resistance fails. | {actor} : incubation de {minutes} min, puis {remaining} bubons si la résistance échoue. |
+| `TRUDVANG.Disease.SoresExposure` | The stench and flies impose −3 on all combat actions in the area, even when immune to the disease. Without immunity, incubation is applied; its Constitution resistance (base SV {sv}) can replace it with one day of immunity. Otherwise, 2d10+2 boils develop after 1d6 minutes; 1d6 burst each day, dealing 2 damage each without protection. | L’odeur et les mouches imposent −3 à toutes les actions de combat dans la zone, même en cas d’immunité à la maladie. Sans immunité, une incubation est appliquée ; sa résistance de Constitution (VC de base {sv}) permet de la remplacer par une immunité d’un jour. Sinon, 2d10+2 bubons se forment après 1d6 minutes ; chaque jour, 1d6 éclatent, infligeant 2 dégâts chacun sans protection. |
+| `TRUDVANG.Disease.SoresLabel` | Boils ({remaining}) | Bubons ({remaining}) |
+| `TRUDVANG.Disease.SoresDescription` | {remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts. | Il reste {remaining} bubons. Chaque jour, 1d6 éclatent et infligent 2 dégâts chacun sans protection, sans dépasser le nombre restant. La maladie se termine quand le dernier bubon éclate. |

@@ -113,7 +113,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: !pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
+    transformationLinks: !auraKey&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
     ruleTests: !pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -154,7 +154,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
     if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
-    card.transformationLinks=transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
+    card.transformationLinks=auraKey?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.magicDamage=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
@@ -168,7 +168,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if(!token)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoToken"));
     else if(!game.users?.activeGM)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoGM"));
     else try{
-      const applied=await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,auraSource:true,casterTokenUuid:token.uuid}});
+      const applied=await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,messageId:message.id,auraSource:true,...(token?{casterTokenUuid:token.uuid}:{})}});
       if(applied){
         card.transformationLinks="";
         card.successConsequence=[card.successConsequence,game.i18n.localize("TRUDVANG.Aura.Automatic")].filter(Boolean).join(" ");

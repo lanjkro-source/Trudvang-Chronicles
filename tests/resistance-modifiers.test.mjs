@@ -109,18 +109,24 @@ test('informative tooltip notes never become a second situation modifier; genuin
  assert.equal(conditionalSituationBonuses(make(smell,smell+'#ameliore')).length,1);
 });
 
-test('a disease resistance button rolls for its actual holder even when another token is selected',async()=>{
- const a=clonableActor(),effect=a.effects[0],sourceId='holy-haminges-power-of-trolls:disease-carrier:0';
- effect.system.changes=[];a.effects=[effect];a.system.modifiers.rolls.allActions=0;
- effect.parent=a;effect.name='Exposition';effect.description='';effect.flags={[S]:{transformation:{key:sourceId+'#exposure',sourceId,ruleTestContext:{sourceId,kind:'divine',counts:[0,0,0]}}}};
- effect.toObject=()=>({_id:effect.id,name:effect.name,system:structuredClone(effect.system),flags:structuredClone(effect.flags)});
- let created;
- a.createTrudvangEffect=async data=>{created=data;const doc={...data,parent:a};a.effects.push(doc);return doc;};
- const previousCanvas=globalThis.canvas;globalThis.canvas={tokens:{controlled:[{actor:{type:'character',isOwner:true,name:'Wrong actor'}}]}};
- const previousRoll=globalThis.Roll;globalThis.Roll=class{async evaluate(){this.total=1;return this;}};
+
+test('the incubation button replaces the actual holder’s incubation with immunity even if another token is selected',async()=>{
+ const {beginDiseaseIncubation}=await import('../modules/disease-resistance.mjs');
+ const a=clonableActor();a.effects=[a.effects[1]];a.system.modifiers.rolls.allActions=-2;
+ a.createTrudvangEffect=async data=>{
+  const effect={...structuredClone(data),id:crypto.randomUUID(),uuid:'Actor.a.ActiveEffect.'+crypto.randomUUID(),documentName:'ActiveEffect',parent:a,isOwner:true};
+  effect.toObject=()=>({_id:effect.id,name:effect.name,system:structuredClone(effect.system),flags:structuredClone(effect.flags)});
+  effect.update=async changes=>{for(const [path,value]of Object.entries(changes)){const keys=path.split('.'),last=keys.pop(),target=keys.reduce((o,k)=>o[k]??={},effect);target[last]=structuredClone(value);}};
+  effect.delete=async()=>a.effects.splice(a.effects.indexOf(effect),1);a.effects.push(effect);return effect;
+ };
+ const sourceId='holy-haminges-power-of-trolls:disease-carrier:0';
+ const incubation=await beginDiseaseIncubation({flags:{[S]:{transformation:{key:sourceId+'#exposure',sourceId,ruleTestContext:{sourceId,kind:'divine',counts:[0,0,0]}}}}},a);
+ const previous=globalThis.canvas;globalThis.canvas={tokens:{controlled:[{actor:{type:'character',isOwner:true,name:'Wrong'}}]}};
  try{
-  const sheet=new TrudvangEffectSheet({document:effect});
+  const sheet=new TrudvangEffectSheet({document:incubation}),context=await sheet._preparePartContext('details',{});
+  assert.equal(context.resistanceButtons.length,1);
   const result=await TrudvangEffectSheet.onRollRuleTest.call(sheet,{preventDefault(){}},{dataset:{testIndex:'0'}});
-  assert.equal(result.success,true);assert.equal(created.flags[S].diseaseOutcome.kind,'immunity');assert.equal(a.effects.length,2);
- }finally{globalThis.canvas=previousCanvas;globalThis.Roll=previousRoll;}
+  assert.equal(result.target,6);assert.equal(result.success,true);assert.equal(a.effects.includes(incubation),false);
+  assert.equal(a.effects.find(e=>e.flags?.[S]?.diseaseOutcome)?.flags[S].diseaseOutcome.kind,'immunity');
+ }finally{globalThis.canvas=previous;}
 });

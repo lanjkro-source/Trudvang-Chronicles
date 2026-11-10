@@ -7,7 +7,7 @@
   "folder": null,
   "system": {
     "catalogId": "holy-haminges-power-of-trolls:contagious:4#exposure",
-    "description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+    "description": "Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -4 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie.",
     "summary": "Diffuse une odeur infectieuse ; les personnes exposées doivent résister à la maladie.",
     "source": {
       "book": "Livre des règles",
@@ -21,7 +21,7 @@
       "name": "Contagion",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Cette odeur infectieuse expose les personnes à portée à une maladie. Un échec à la résistance entraîne une incubation de 1d6 minutes puis une fièvre de 1d6 jours, avec un malus de -4 à toutes les actions. Une réussite accorde une journée d’immunité contre ce pouvoir. L’incubation et la maladie persistent après la sortie de la zone.",
+      "description": "Entrer à portée sans immunité crée immédiatement une incubation de 1d6 minutes. Son test de résistance de Constitution réussi remplace l’incubation par une immunité d’un jour contre ce pouvoir. En cas d’échec, ou sans résistance réussie avant la fin de l’incubation, la fièvre dure 1d6 jours et impose -4 à toutes les actions. Sortir de la zone ne retire pas l’incubation ou la maladie.",
       "transfer": false,
       "system": {
         "stackId": "holy-haminges-power-of-trolls:contagious:4#exposure",

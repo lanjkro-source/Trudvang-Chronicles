@@ -4512,6 +4512,16 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-haminges-power-of-trolls:lord-of-the-flies:6": {
     "isRune": false,
+    "targeting": {
+      "baseTargets": 1,
+      "casterOnly": true,
+      "additionalTargets": [],
+      "allocatableOptions": [
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6:0",
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6:1",
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6:2"
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:0",

@@ -1,0 +1,53 @@
+{
+  "_id": "5fdH0JdJeKfLgMhN",
+  "_key": "!items!5fdH0JdJeKfLgMhN",
+  "name": "Lord of the Flies",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure",
+    "description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes, though the conjurer is not disturbed by this. Anyone who comes within range must make a Situation roll with a Situation value of 4 (Psyche modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with 2d10 + 2 large boils. Every day, 1d6 of the boils burst, causing 2 points of damage per boil. A successful Situation roll makes that character immune to this ability for one day. Regardless of whether the victim succeeds on the Situation roll, they suffer a -3 on all combat actions when within range of the conjurer because of the stench and all the buzzing flies.",
+    "summary": "The stench and flies hinder combat and cause infectious incubation.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "8kKOQToUpVqWrXsY",
+      "_key": "!items.effects!5fdH0JdJeKfLgMhN.8kKOQToUpVqWrXsY",
+      "name": "Lord of the Flies",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes, though the conjurer is not disturbed by this. Anyone who comes within range must make a Situation roll with a Situation value of 4 (Psyche modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with 2d10 + 2 large boils. Every day, 1d6 of the boils burst, causing 2 points of damage per boil. A successful Situation roll makes that character immune to this ability for one day. Regardless of whether the victim succeeds on the Situation roll, they suffer a -3 on all combat actions when within range of the conjurer because of the stench and all the buzzing flies.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.combatActions",
+            "type": "add",
+            "value": "-3",
+            "phase": "initial",
+            "priority": 40
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure",
+            "sourceId": "holy-haminges-power-of-trolls:lord-of-the-flies:6",
+            "summary": "The stench and flies hinder combat and cause infectious incubation.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

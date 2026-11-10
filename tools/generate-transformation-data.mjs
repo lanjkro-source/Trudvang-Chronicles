@@ -72,7 +72,9 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.roundResistance??null)!==JSON.stringify(translated.roundResistance??null))throw Error(`Unaligned round resistance for ${key}`);
    if(t.roundResistance&&(!Number.isInteger(t.roundResistance.testIndex)||t.roundResistance.testIndex<0||!Number.isFinite(t.roundResistance.relief)||t.roundResistance.relief<=0||!t.changes.some(c=>c.key===t.roundResistance.key&&c.type==="add")||!["fr","en"].every(code=>t.roundResistance.summaryKey.split(".").reduce((value,key)=>value?.[key],lang[code]))))throw Error(`Invalid round resistance for ${key}`);
    if(JSON.stringify(t.disease??null)!==JSON.stringify(translated.disease??null))throw Error(`Unaligned disease for ${key}`);
-   if(t.disease&&(!t.aura||!Number.isInteger(t.disease.testIndex)||t.disease.testIndex<0||!Number.isInteger(t.disease.penalty)||t.disease.penalty>=0||![t.disease.incubation,t.disease.duration].every(formula=>/^\d+d\d+$/.test(formula))))throw Error(`Invalid exposure disease for ${key}`);
+   if(t.disease){const d=t.disease,formula=v=>typeof v==='string'&&/^\d+d\d+(?:\+\d+)?$/.test(v);
+    if(!t.aura||!Number.isInteger(d.testIndex)||d.testIndex<0||!formula(d.incubation)||(d.kind==='sores'?(!formula(d.lesions)||!formula(d.daily)||!Number.isInteger(d.damagePer)||d.damagePer<=0):(d.kind!==undefined||!Number.isInteger(d.penalty)||d.penalty>=0||!formula(d.duration))))throw Error(`Invalid exposure disease for ${key}`);
+   }
    if(t.periodic&&(!Number.isFinite(t.periodic.interval)||t.periodic.interval<=0||t.periodic.operation!=="heal"||!Number.isInteger(t.periodic.amount)||t.periodic.amount<=0))throw Error(`Invalid periodic consequence for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(JSON.stringify(t.aura??null)!==JSON.stringify(translated.aura??null))throw Error(`Unaligned aura for ${key}`);

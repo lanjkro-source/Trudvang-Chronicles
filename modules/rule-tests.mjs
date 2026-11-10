@@ -1,3 +1,4 @@
+import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
@@ -20,6 +21,7 @@ export function ruleTestsForDocument(document) {
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
+  if((TRANSFORMATIONS_BY_SOURCE[id]??[]).some(key=>TRANSFORMATION_TEMPLATES[key]?.disease))return [];
   const bases=document?.flags?.[SYSTEM_ID]?.transformation?.ruleTestBases;
   const tests=(id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : []).map((test,index)=>Number.isFinite(bases?.[index])?{...test,sv:bases[index]}:test);
   if(!game.i18n?.lang || game.i18n.lang==="fr")return tests;
@@ -234,7 +236,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
   }
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
-    const casting=ruleTestCastingContext(document,{context});
+    const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
     const result=await withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting}));
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;

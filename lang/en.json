@@ -16881,7 +16881,7 @@
         "holy-haminges-power-of-trolls:disease-carrier:0#exposure": {
           "Name": "Disease Carrier",
           "Summary": "Spreads an infectious stench; exposed people must resist the disease.",
-          "Description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -2 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+          "Description": "Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -2 to all actions. Leaving the area does not remove incubation or disease.",
           "SourceName": "Disease Carrier",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
@@ -16908,7 +16908,7 @@
         "holy-haminges-power-of-trolls:contagious:4#exposure": {
           "Name": "Contagious",
           "Summary": "Spreads an infectious stench; exposed people must resist the disease.",
-          "Description": "This infectious stench exposes people within range to disease. Failed resistance causes 1d6 minutes of incubation, then 1d6 days of fever with -4 to all actions. Successful resistance grants one day of immunity to this ability. Incubation and disease persist after leaving the area.",
+          "Description": "Entering range without immunity immediately starts 1d6 minutes of incubation. Its successful Constitution resistance replaces incubation with one day of immunity to this ability. Failed resistance, or no successful resistance before incubation ends, causes 1d6 days of fever and -4 to all actions. Leaving the area does not remove incubation or disease.",
           "SourceName": "Contagious",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
@@ -16931,6 +16931,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure": {
+          "Name": "Lord of the Flies",
+          "Summary": "The stench and flies hinder combat and cause infectious incubation.",
+          "Description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes, though the conjurer is not disturbed by this. Anyone who comes within range must make a Situation roll with a Situation value of 4 (Psyche modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with 2d10 + 2 large boils. Every day, 1d6 of the boils burst, causing 2 points of damage per boil. A successful Situation roll makes that character immune to this ability for one day. Regardless of whether the victim succeeds on the Situation roll, they suffer a -3 on all combat actions when within range of the conjurer because of the stench and all the buzzing flies.",
+          "SourceName": "Lord of the Flies",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "3 hours"
         },
         "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
           "Name": "Whispered Suggestion",
@@ -18450,7 +18459,7 @@
     },
     "Aura": {
       "Behavior": "Aura Trudvang",
-      "NoToken": "Select the caster’s token to create the aura.",
+      "NoToken": "The effect is added to the caster, but no unique token is available yet to place the aura.",
       "NoGM": "A connected GM is required to create and synchronize the aura.",
       "Failed": "The aura could not be created; check the console.",
       "Automatic": "Aura effects are applied automatically within its area.",
@@ -18537,17 +18546,24 @@
       "pending": "The transfer is pending completion. The GM can recover it when the world next loads."
     },
     "Disease": {
-      "Exposure": "Infectious stench: Constitution resistance (base SV {sv}). Failure causes 1d6 minutes of incubation, then 1d6 days of fever: {penalty} to all actions. Success grants one day of immunity to this ability. Leaving the aura does not cure an infection.",
+      "Exposure": "Entering the aura without immunity starts 1d6 minutes of incubation. Its successful Constitution resistance (base SV {sv}) replaces it with one day of immunity. Otherwise, fever lasts 1d6 days and imposes {penalty} to all actions. Leaving the area does not cure incubation or disease.",
       "Incubation": "Incubation",
       "Fever": "Fever",
       "Immunity": "Immunity",
       "Pending": "A resistance roll against this disease is already in progress.",
       "Already": "This exposure has already been resolved: its disease or immunity is still active.",
-      "IncubationDescription": "The disease develops after incubation; there is no penalty yet.",
+      "IncubationDescription": "Incubation is active: successful resistance before it ends replaces it with one day of immunity. Leaving the aura does not remove this incubation.",
       "FeverDescription": "Fever imposes {penalty} to all actions until it ends.",
       "ImmuneDescription": "Immune to this ability for one day.",
       "InfectedNotice": "{actor}: {minutes} min incubation, then {days} day(s) of disease ({penalty} to all actions).",
-      "ImmuneNotice": "{actor} resists {source} and is immune to it for one day."
+      "ImmuneNotice": "{actor} resists {source} and is immune to it for one day.",
+      "Resist": "Resist the disease",
+      "ResistanceFailure": "Incubation continues and will develop into disease.",
+      "IncubationNotice": "{actor}: {minutes} min incubation. Resisting before it ends prevents fever ({penalty} for {days} day(s)).",
+      "SoresNotice": "{actor}: {minutes} min incubation, then {remaining} boils if resistance fails.",
+      "SoresExposure": "The stench and flies impose −3 on all combat actions in the area, even when immune to the disease. Without immunity, incubation is applied; its Constitution resistance (base SV {sv}) can replace it with one day of immunity. Otherwise, 2d10+2 boils develop after 1d6 minutes; 1d6 burst each day, dealing 2 damage each without protection.",
+      "SoresLabel": "Boils ({remaining})",
+      "SoresDescription": "{remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts."
     }
   }
 }

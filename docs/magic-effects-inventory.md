@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 343 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 344 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -336,7 +336,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des trolls | Contagion | pouvoir | `holy-haminges-power-of-trolls:contagious:4` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Persuasion | pouvoir | `holy-haminges-power-of-trolls:persuade:5` | 4 | 1 | 1 | — | — |
 | Puissance des trolls | Hardiesse des trolls | pouvoir | `holy-haminges-power-of-trolls:troll-wit:7` | 2 | 0 | 1 | — | — |
-| Puissance des trolls | Seigneur des mouches | pouvoir | `holy-haminges-power-of-trolls:lord-of-the-flies:6` | 3 | 1 | 0 | — | — |
+| Puissance des trolls | Seigneur des mouches | pouvoir | `holy-haminges-power-of-trolls:lord-of-the-flies:6` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Charme de la montagne | pouvoir | `holy-haminges-power-of-trolls:taken-by-the-mountain:8` | 4 | 2 | 1 | — | — |
 | Puissance des tursirs | Force du troll | pouvoir | `holy-haminges-power-of-the-thurses:troll-strength:1` | 2 | 0 | 1 | — | — |
 | Puissance des tursirs | Peau du hrimtroll | pouvoir | `holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0` | 1 | 0 | 1 | — | — |

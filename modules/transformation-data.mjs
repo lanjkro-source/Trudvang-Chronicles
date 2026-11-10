@@ -10298,6 +10298,46 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure": {
+    "id": "exposure",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 heures",
+    "priority": 40,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.modifiers.rolls.combatActions",
+        "type": "add",
+        "value": "-3",
+        "phase": "initial",
+        "priority": 40
+      }
+    ],
+    "disease": {
+      "testIndex": 0,
+      "kind": "sores",
+      "incubation": "1d6",
+      "lesions": "2d10+2",
+      "daily": "1d6",
+      "damagePer": 2
+    },
+    "aura": {
+      "radius": 1,
+      "radiusOptionId": "holy-haminges-power-of-trolls:lord-of-the-flies:6:2",
+      "light": false,
+      "recipientDescriptionKey": "TRUDVANG.Disease.SoresExposure"
+    },
+    "sourceId": "holy-haminges-power-of-trolls:lord-of-the-flies:6",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "holy-haminges-power-of-trolls:lord-of-the-flies:6:0",
+        "target": "duration",
+        "value": 3600
+      }
+    ]
+  },
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -16016,6 +16056,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-trolls:troll-wit:7": [
     "holy-haminges-power-of-trolls:troll-wit:7#effect"
+  ],
+  "holy-haminges-power-of-trolls:lord-of-the-flies:6": [
+    "holy-haminges-power-of-trolls:lord-of-the-flies:6#exposure"
   ],
   "holy-haminges-power-of-trolls:taken-by-the-mountain:8": [
     "holy-haminges-power-of-trolls:taken-by-the-mountain:8#effect"

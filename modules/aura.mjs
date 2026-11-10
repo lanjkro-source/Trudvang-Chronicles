@@ -80,9 +80,15 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  }
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
  const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
+ const disease=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease;
+ if(disease){
+  const {beginDiseaseIncubation}=await import("./disease-resistance.mjs");
+  await beginDiseaseIncubation(source,actor);
+  if(!changes.length){if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));return;}
+ }
  const data={name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,statuses:sourceMeta(source)?.auraStatuses??[],
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
-  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage||TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
+  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
  const existing=children[0];
  if(existing){await existing.update(data);if(children.length>1)await actor.deleteEmbeddedDocuments("ActiveEffect",children.slice(1).map(effect=>effect.id));}
  else await actor.createEmbeddedDocuments("ActiveEffect",[data]);
@@ -117,15 +123,20 @@ export function auraLightUpdate(token, radii){
 function refreshLight(token){
  const previous=lightJobs.get(token.uuid)??Promise.resolve();
  const job=previous.catch(()=>{}).then(async()=>{
-  const radii=actorEffects(token.actor).filter(effect=>active(effect)&&getAura(effect)?.light&&sourceMeta(effect)?.ruleTestContext?.casterTokenUuid===token.uuid).map(effect=>metresToSceneUnits(token.parent,auraRadius(effect)));
+  const radii=actorEffects(token.actor).filter(effect=>active(effect)&&getAura(effect)?.light&&sourceTokenUuid(effect)===token.uuid).map(effect=>metresToSceneUnits(token.parent,auraRadius(effect)));
   const updates=auraLightUpdate(token,radii);if(Object.keys(updates).length)await token.update(updates);
  }).finally(()=>{if(lightJobs.get(token.uuid)===job)lightJobs.delete(token.uuid);});
  lightJobs.set(token.uuid,job);return job;
 }
-function activeSource(effect){const context=sourceMeta(effect)?.ruleTestContext;return active(effect)&&getAura(effect)&&context?.auraSource===true&&context.casterUuid===effect.parent?.uuid&&context.casterTokenUuid;}
+function sourceTokenUuid(effect){
+ const context=sourceMeta(effect)?.ruleTestContext??{};
+ if(childFlags(effect)||sourceMeta(effect)?.auraSource===false||(context.casterUuid&&context.casterUuid!==effect.parent?.uuid))return null;
+ return context.casterTokenUuid??auraCasterToken(effect.parent,[],globalThis.canvas?.tokens?.placeables??effect.parent?.getActiveTokens?.(true,true))?.uuid??auraCasterToken(effect.parent,[],Array.from(game.scenes??[]).flatMap(scene=>Array.from(scene.tokens??[])))?.uuid;
+}
+function activeSource(effect){return active(effect)&&getAura(effect)&&sourceTokenUuid(effect);}
 export async function synchronizeAuraSource(effect,{removed=false}={}){
  if(!isWriter())return;
- const context=sourceMeta(effect)?.ruleTestContext,tokenUuid=context?.casterTokenUuid;if(!tokenUuid)return;
+ const context=sourceMeta(effect)?.ruleTestContext,tokenUuid=sourceTokenUuid(effect);if(!tokenUuid)return;
  const token=await foundry.utils.fromUuid(tokenUuid),scene=token?.parent;if(!token||!scene)return;
  const regions=Array.from(scene.regions??[]).filter(region=>auraForRegion(region)?.sourceEffectUuid===effect.uuid);
  if(removed||!activeSource(effect)){
@@ -154,7 +165,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  const shapes=[{type:"circle",x:center.x,y:center.y,radius:radius*scale}];
  if(!regions.length){
   const [region]=await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
-  if(region)await reconcileAuraToken(region,token);
+  if(region){for(const target of region.tokens??[])await reconcileAuraToken(region,target);if(!Array.from(region.tokens??[]).some(target=>target.id===token.id))await reconcileAuraToken(region,token);}
  }else {
   const update={};
   if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
@@ -189,8 +200,9 @@ export function registerAuraSupport(){
   const job=previous.catch(()=>{}).then(()=>synchronizeAuraSource(effect,{removed})).catch(error=>console.error("Trudvang | Aura synchronization failed",error)).finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});jobs.set(key,job);
  };
  Hooks.on("createActiveEffect",effect=>{if(activeSource(effect))schedule(effect);});
- Hooks.on("updateActiveEffect",effect=>{if(sourceMeta(effect)?.ruleTestContext?.auraSource)schedule(effect);});
- Hooks.on("deleteActiveEffect",effect=>{if(sourceMeta(effect)?.ruleTestContext?.auraSource)schedule(effect,true);});
+ Hooks.on("updateActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);});
+ Hooks.on("deleteActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect,true);});
  Hooks.on("updateToken",(token,changes)=>{if(!isWriter()||changes.disposition===undefined)return;for(const region of token.parent?.regions??[])if(auraForRegion(region)&&region.tokens?.has(token))void reconcileAuraToken(region,token);});
+ Hooks.on("createToken",token=>{if(isWriter())for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});
  Hooks.on("canvasReady",()=>{if(!isWriter())return;for(const token of canvas.scene?.tokens??[])for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});
 }

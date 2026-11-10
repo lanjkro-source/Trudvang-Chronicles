@@ -81,12 +81,25 @@ export async function processConsequenceEffects(effects,now,{announce=true}={}){
  while(active.size){
   const next=[...active].map(effect=>({effect,event:nextConsequenceEvent(clockFlag(effect))})).filter(r=>r.event&&r.event.at<=now).sort((a,b)=>a.event.at-b.event.at||((a.event.kind==="tick"?0:1)-(b.event.kind==="tick"?0:1)))[0];
   if(!next)break;if(++count>10000)throw new Error("Too many consequence events in one time advance");
-  const {effect,event}=next,actor=effect.parent,clock=structuredClone(clockFlag(effect));
+  const {effect,event}=next,actor=effect.parent;
+  if(actor.effects&&!Array.from(actor.effects).includes(effect)){active.delete(effect);continue;}
+  const clock=structuredClone(clockFlag(effect));
   const previous=results.get(actor)??{rows:[],rolls:[]};results.set(actor,previous);
   if(event.kind==="tick"){
-   const result=await executeConsequences({actor,operations:effect.disabled?[]:event.operations,source:effect.name});previous.rows.push(...result.rows);previous.rolls.push(...result.rolls);
+   const periodic=clock.stages[clock.stage].periodic[event.index],budget=periodic.budget;
+   let operations=event.operations??[],presentation={};
+   if(budget&&!effect.disabled){
+    const roll=await new Roll(budget.formula).evaluate();previous.rolls.push(roll);
+    const used=Math.min(budget.remaining,Math.max(0,Math.trunc(Number(roll.total)||0)));budget.remaining-=used;
+    operations=[{operation:budget.operation,formula:String(used*budget.perUnit),ignoreArmor:budget.ignoreArmor===true}];
+    const stage=clock.stages[clock.stage];
+    if(budget.labelKey){stage.label=game.i18n.format(budget.labelKey,{remaining:budget.remaining});presentation.name=clock.name+' — '+stage.label;}
+    if(budget.descriptionKey){stage.description=game.i18n.format(budget.descriptionKey,{remaining:budget.remaining});presentation.description=stage.description;}
+    if(budget.remaining<=0)stage.seconds=event.at-clock.stageStartedAt;
+   }
+   const result=await executeConsequences({actor,operations:effect.disabled?[]:operations,source:effect.name});previous.rows.push(...result.rows);previous.rolls.push(...result.rolls);
    clock.ticks[event.index]=(clock.ticks[event.index]??0)+1;
-   await effect.update({[`flags.${SCOPE}.consequenceClock`]:clock},{trudvangStageTransition:true});
+   await effect.update({...presentation,[`flags.${SCOPE}.consequenceClock`]:clock},{trudvangStageTransition:true});
   }else{
    clock.stage++;clock.stageStartedAt=event.at;clock.ticks=[];const stage=clock.stages[clock.stage];
    if(!stage){active.delete(effect);await effect.delete({trudvangExpired:true});continue;}
