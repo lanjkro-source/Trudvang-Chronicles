@@ -15866,6 +15866,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ItemQualityValues` | {item}: quality {from} → {to}. | {item} : qualité {from} → {to}. |
 | `TRUDVANG.Transformation.RavenPenalty` | Penalty to all actions: {value}. | Malus à toutes les actions : {value}. |
 | `TRUDVANG.Transformation.OutnumberedParry` | Parrying while outnumbered | Parade en infériorité numérique |
+| `TRUDVANG.Transformation.ChoosePersonalEffect` | Choose the personal effect’s form | Choisir la forme de l’effet personnel |
+| `TRUDVANG.Transformation.AutomaticSelf` | Effect applied to the caster. | Effet appliqué au lanceur. |
+| `TRUDVANG.Transformation.AutomaticSelfFailed` | The personal effect could not be applied to the caster. | L’effet personnel n’a pas pu être appliqué au lanceur. |
 
 ## `TRUDVANG.Transformation.Modes`
 

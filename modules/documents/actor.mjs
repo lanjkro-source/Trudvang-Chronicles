@@ -1544,6 +1544,7 @@ export class TrudvangActor extends BaseActor {
     if (trackedPersistent && result?.success && this.isOwner) {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
         id: castingId, itemId: item.id, cost: options.cost,
+        effectUuids:result.automaticEffectUuids??[],effectsApplied:Boolean(result.automaticEffectUuids?.length),
         startedAt: Number(game.time?.worldTime || 0), duration: String(item.system.duration || ""),
         powerLevelCounts: result.perfectSelection?.counts ?? options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
         powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: result.perfectSelection?.counts[index] ?? (Number(entry.count) || 0), unitCost: Number(entry.unitCost) || 0}))

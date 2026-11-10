@@ -91,6 +91,10 @@ for (const id of [...french.keys()].sort()) {
   }
   validatePowerOptionIdentities(id, f.powerLevels, e.powerLevels);
   validatePowerTargeting(f,e);
+  for(const field of ['selfOnly','casterFirstEffects'])if(JSON.stringify(f[field]??null)!==JSON.stringify(e[field]??null))fail(id+': unaligned '+field);
+  if(f.selfOnly!==undefined&&typeof f.selfOnly!=='boolean')fail(id+': invalid self-only declaration');
+  if(f.selfOnly&&(f.targeting?.groups??[f.targeting]).filter(Boolean).some(g=>g.contactOptionId||g.additionalTargets.length||g.baseTargets!==1))fail(id+': self-only power permits other targets');
+  if(f.casterFirstEffects&&(!Array.isArray(f.casterFirstEffects)||f.casterFirstEffects.some(id=>!f.effectTemplates?.some(t=>t.id===id))))fail(id+': invalid caster-first variants');
   if(JSON.stringify(f.damageRoll??null)!==JSON.stringify(e.damageRoll??null))fail(`${id}: EN damage roll differs from FR`);
     if(JSON.stringify(f.damageQualification??null)!==JSON.stringify(e.damageQualification??null))fail(`${id}: EN damage qualification differs from FR`);
     if(f.damageQualification){
@@ -127,6 +131,8 @@ for (const id of [...french.keys()].sort()) {
   optionCount += f.powerLevels.length;
   powerDetails[id] = {
     isRune: rune,
+    ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
+    ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
     ...(f.damageQualification ? {damageQualification:f.damageQualification} : {}),
     ...(f.fearRoll ? {fearRoll:f.fearRoll} : {}),

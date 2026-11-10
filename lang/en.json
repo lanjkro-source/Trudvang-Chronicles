@@ -18288,7 +18288,10 @@
       "QualityUnchanged": "This object’s quality cannot be lowered any further.",
       "ItemQualityValues": "{item}: quality {from} → {to}.",
       "RavenPenalty": "Penalty to all actions: {value}.",
-      "OutnumberedParry": "Parrying while outnumbered"
+      "OutnumberedParry": "Parrying while outnumbered",
+      "ChoosePersonalEffect": "Choose the personal effect’s form",
+      "AutomaticSelf": "Effect applied to the caster.",
+      "AutomaticSelfFailed": "The personal effect could not be applied to the caster."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

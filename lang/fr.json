@@ -18288,7 +18288,10 @@
       "QualityUnchanged": "La qualité de cet objet ne peut pas être réduite davantage.",
       "ItemQualityValues": "{item} : qualité {from} → {to}.",
       "RavenPenalty": "Malus à toutes les actions : {value}.",
-      "OutnumberedParry": "Parade en infériorité numérique"
+      "OutnumberedParry": "Parade en infériorité numérique",
+      "ChoosePersonalEffect": "Choisir la forme de l’effet personnel",
+      "AutomaticSelf": "Effet appliqué au lanceur.",
+      "AutomaticSelfFailed": "L’effet personnel n’a pas pu être appliqué au lanceur."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

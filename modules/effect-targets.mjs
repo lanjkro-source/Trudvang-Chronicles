@@ -1,3 +1,4 @@
+import {casterFirstEffect} from './rules/self-effects.mjs';
 import {escapeHtml,escapeAttribute} from "./helpers.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {currentCastingCounts} from "./rules/magic-resistance.mjs";
@@ -13,7 +14,17 @@ export function snapshotEffectTargets(tokens){
   seen.add(actor.uuid);return [{tokenUuid:uuid,actorUuid:actor.uuid,name:token.name||actor.name||""}];
  });
 }
-export function initialEffectTargets(keys,tokens){const rows=snapshotEffectTargets(tokens);return Object.fromEntries(keys.map(key=>[key,structuredClone(rows)]));}
+export function initialEffectTargets(keys,tokens,{caster}={}){
+ const rows=snapshotEffectTargets(tokens);
+ const ownToken=caster?.token??Array.from(caster?.getActiveTokens?.(true,true)??[])[0];
+ const ownDoc=ownToken?.document??ownToken;
+ return Object.fromEntries(keys.map(key=>{
+  if(!caster?.uuid||!casterFirstEffect(key))return [key,structuredClone(rows)];
+  const existing=rows.find(row=>row.actorUuid===caster.uuid);
+  const own=existing??{actorUuid:caster.uuid,tokenUuid:ownDoc?.uuid??'',name:ownToken?.name||caster.name};
+  return [key,[structuredClone(own),...structuredClone(rows.filter(row=>row.actorUuid!==caster.uuid))]];
+ }));
+}
 export async function canManageEffectTargets(message,user){
  if(!message||!user)return false;
  if(user.isGM||authorId(message)===user.id)return true;

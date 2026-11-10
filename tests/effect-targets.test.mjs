@@ -34,3 +34,16 @@ test("delegated application rejects a non-caster and tokens absent from the effe
  assert.equal((await applyEffectForCasterOnGM({messageId:"m",userId:"stranger",key,tokenUuid:token.uuid,sourceUuid:source.uuid,answers:{}})).status,"unavailable");
  assert.equal((await applyEffectForCasterOnGM({messageId:"m",userId:"caster",key,tokenUuid:"Scene.s.Token.other",sourceUuid:source.uuid,answers:{}})).status,"unavailable");
 });
+
+test('caster is first in a shared-beneficiary list even without targeting themselves, never duplicated',()=>{
+ const caster={uuid:'Actor.caster',name:'Caster'},friend={uuid:'Actor.friend',name:'Friend'},token={uuid:'Scene.s.Token.friend',actor:friend,name:'Friend'};
+ const own={uuid:'Scene.s.Token.caster',actor:caster,name:'Caster'};caster.getActiveTokens=()=>[own];
+ const source='holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7',ally=source+'#ally',enemy=source+'#enemy';
+ let rows=initialEffectTargets([ally,enemy],[token],{caster});assert.deepEqual(rows[ally].map(r=>r.actorUuid),[caster.uuid,friend.uuid]);assert.deepEqual(rows[enemy].map(r=>r.actorUuid),[friend.uuid]);assert.equal(rows[ally][0].tokenUuid,own.uuid);
+ rows=initialEffectTargets([ally],[token,own,{...own,uuid:'Scene.s.Token.caster2'}],{caster});assert.deepEqual(rows[ally].map(r=>r.actorUuid),[caster.uuid,friend.uuid]);
+});
+test('a caster without a scene token still appears first, and chosen-target groups keep their original list',()=>{
+ const caster={uuid:'Actor.caster',name:'Caster'},friend={uuid:'Actor.friend'};
+ const id='holy-gerbanis-power-of-enken:heart-of-enken:6',chosen=id+'#c-ur-d-enken',allies=id+'#c-ur-d-enken-allies';
+ const rows=initialEffectTargets([chosen,allies],[{uuid:'Token.friend',actor:friend}],{caster});assert.equal(rows[allies][0].actorUuid,caster.uuid);assert.equal(rows[allies][0].tokenUuid,'');assert.deepEqual(rows[chosen].map(row=>row.actorUuid),[friend.uuid]);
+});

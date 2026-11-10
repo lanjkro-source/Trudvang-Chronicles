@@ -1,3 +1,4 @@
+import {applyPersonalCasting} from './self-effects.mjs';
 import {actorForResistance} from "./resistance-actor.mjs";
 import {magicDamageHasBaseTargets} from "./magic-damage.mjs";
 import {damageQualificationFields, damageIcons} from "./damage-icons.mjs";
@@ -73,6 +74,8 @@ export async function openD10(options = {}) {
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null,publishMessage=null}) {
   if(blessing)flavor+='<br>'+rollModifierFlavor([blessing]);
   const finalTarget = Number(target) + Number(modifier || 0);
+  const selfOnly=Boolean(item&&['spell','divine','rune'].includes(kind)&&POWER_DETAILS_BY_ID[item.system?.catalogId]?.selfOnly);
+  const automaticEffectUuids=[];
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();
   let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
@@ -113,7 +116,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: !auraKey&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
+    transformationLinks: !auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
     ruleTests: !pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -137,7 +140,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor) ? {[SYSTEM_ID]: {...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(transformationKeys(item),game.user?.targets)}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor) ? {[SYSTEM_ID]: {...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
@@ -156,7 +159,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
     if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
-    card.transformationLinks=auraKey?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
+    card.transformationLinks=auraKey||selfOnly?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.magicDamage=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
@@ -165,20 +168,28 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
     await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext});
   }
+  if(success&&selfOnly&&!auraKey){
+   try{
+    const effects=await applyPersonalCasting(actor,item,{context:ruleTestContext,counts:powerLevelCounts,messageId:message.id});
+    automaticEffectUuids.push(...effects.map(e=>e.uuid).filter(Boolean));
+    if(effects.length){card.successConsequence=[card.successConsequence,game.i18n.localize('TRUDVANG.Transformation.AutomaticSelf')].filter(Boolean).join(' ');await message.update({content:await renderTemplate('systems/trudvang-chronicles/templates/chat/roll-card.hbs',card)});}
+   }catch(error){console.error('Trudvang | Personal effect activation failed',error);ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.AutomaticSelfFailed'));}
+  }
   if(success&&auraKey){
     const token=auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables);
     if(!token)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoToken"));
-    else if(!game.users?.activeGM)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoGM"));
-    else try{
+    if(!game.users?.activeGM)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoGM"));
+    try{
       const applied=await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,messageId:message.id,auraSource:true,...(token?{casterTokenUuid:token.uuid}:{})}});
       if(applied){
+        if(applied.uuid)automaticEffectUuids.push(applied.uuid);
         card.transformationLinks="";
         card.successConsequence=[card.successConsequence,game.i18n.localize("TRUDVANG.Aura.Automatic")].filter(Boolean).join(" ");
         await message.update({content:await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card)});
       }
     }catch(error){console.error("Trudvang | Aura activation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.Failed"));}
   }
-  return {roll,...(publication?.response??{}),...(publication?.animate===false?{duplicate:true}:{}), result:publication?.response?.result??result, target: publication?.response?.target??(targetResults.length === 1 ? targetResults[0].target : finalTarget), success:publication?.response?.success??success, critical:publication?.response?.critical??critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...(damageResistanceFor?{messageId:message.id}:{})};
+  return {roll,automaticEffectUuids,...(publication?.response??{}),...(publication?.animate===false?{duplicate:true}:{}), result:publication?.response?.result??result, target: publication?.response?.target??(targetResults.length === 1 ? targetResults[0].target : finalTarget), success:publication?.response?.success??success, critical:publication?.response?.critical??critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...(damageResistanceFor?{messageId:message.id}:{})};
 }
 
 function numericModifier(value) {
