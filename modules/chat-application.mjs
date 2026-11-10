@@ -246,7 +246,7 @@ export async function requestDamageResistance({message,actor}){
  try{
   const resistance=context.resistance;
   let result=begin.proofId?{messageId:begin.proofId}:null;
-  if(!result){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,reactive:resistance.scope!=='presence',test:resistance.test,sourceName:resistance.sourceName,castingModifierRows:localizeResistanceRows(magicResistanceRows(resistance.test,{context:resistance.casting,actor})),damageResistanceFor:{messageId:message.id,actorUuid:actor.uuid}});}
+  if(!result){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,reactive:resistance.scope!=='presence',test:resistance.test,sourceName:resistance.sourceName,damageResistanceFor:{messageId:message.id,actorUuid:actor.uuid},resistedEffectUuid:context.sourceEffectUuid??"",resistanceContext:resistance.casting});}
   if(!result)return {status:'cancelled'};
   const response=await requestChatUpdate(message,{...payload,action:'finish',token:begin.token,proofId:result.messageId});
   if(response.status==='resolved'&&!context.alternatives?.length)return requestChatApplication({message,actor,channel:'body'});

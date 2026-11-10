@@ -3,7 +3,7 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {annotateTransformationDescription} from "./transformations.mjs";
-import {ruleTestCastingContext,magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const legacyAbilityIdByName = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, ref]) => [name, ref.id]));
@@ -234,8 +234,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context});
-    const modifierRows=localizeResistanceRows(magicResistanceRows(test,{context:casting,actor}));
-    const result=await rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",castingModifierRows:modifierRows});
+    const result=await rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting});
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }

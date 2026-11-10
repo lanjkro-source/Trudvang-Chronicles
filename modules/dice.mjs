@@ -1,3 +1,4 @@
+import {actorForResistance} from "./resistance-actor.mjs";
 import {magicDamageHasBaseTargets} from "./magic-damage.mjs";
 import {damageQualificationFields, damageIcons} from "./damage-icons.mjs";
 import {conditionalModifierSection} from "./conditional-modifier-ui.mjs";
@@ -20,7 +21,7 @@ import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {auraCasterToken} from "./aura.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
-import {ruleTestCastingContext,withCastingCounts} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext,withCastingCounts,magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistance.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
@@ -221,7 +222,10 @@ function ruleTestSituationOptions(test) {
 }
 
 /** Run a resistance test from a rule description; the clicking user rolls for their selected PC/NPC. */
-export async function rollConfiguredTraitSituation({actor, test, sourceName = "",castingModifierRows=[],damageResistanceFor=null,reactive=false} = {}) {
+export async function rollConfiguredTraitSituation({actor, test, sourceName = "",castingModifierRows=[],damageResistanceFor=null,reactive=false,resistedEffect=null,resistedEffectUuid="",resistanceContext=null} = {}) {
+  const originalActor=actor;
+  if(actor)actor=await actorForResistance(actor,{effect:resistedEffect,effectUuid:resistedEffectUuid,context:resistanceContext});
+  if(resistanceContext&&actor&&test)castingModifierRows=localizeResistanceRows(magicResistanceRows(test,{context:resistanceContext,actor}));
   if (!actor || !test || (!reactive&&!actor.canPerformAction())) return actor?.warnCannotAct?.() ?? null;
   const situation = ruleTestSituationOptions(test);
   const configuredTraits = (Array.isArray(test.trait) ? test.trait : [test.trait]).slice(0, 2);
@@ -258,7 +262,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
     traitMethod: test.traitMethod || "first", effect, effectRows, ...situation, modifierRows});
   if (!options) return null;
   const target = (options.situationValue ?? situation.base) + (options.traitModifier ?? traitValue) + effect + Number(options.configuredModifier || 0) + Number(options.repeatedModifier || 0) + rollModifierTotal(modifierRows);
-  return rollUnder({actor,damageResistanceFor, blessing:options.blessing, label: title, target, modifier: options.modifier, kind: "situation",
+  return rollUnder({actor:originalActor,damageResistanceFor, blessing:options.blessing, label: title, target, modifier: options.modifier, kind: "situation",
     flavor: rollModifierFlavor([...effectRows, ...modifierRows]), successConsequence: test.success || "", failureConsequence: test.failure || "",
     criticalSuccessConsequence: test.criticalSuccess || "", criticalFailureConsequence: test.criticalFailure || ""});
 }
@@ -1268,7 +1272,8 @@ export async function playerTraitSituationDialog({actor = null, title, traitLabe
     : trait;
   const multiTrait = traitValues.filter(row => row.key !== "aucun").length > 1;
   const extraTotal = root => extraNumberFields.reduce((sum, field) => sum + (Number(root.querySelector(`[name="${field.name}"]`)?.value ?? field.value ?? 0) || 0), 0);
-  const multiTraitRows = hasTwoTraitSlots ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div></div>` : "";
+  const effectField = effectRows.length ? "" : `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>`;
+  const multiTraitRows = hasTwoTraitSlots ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}${effectField}</div>` : "";
   const traitMethodControl = multiTrait ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitMethod"))}</label><select name="trait-method">${[
     ["first", game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitFirst")],
     ["second", game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitSecond")],
