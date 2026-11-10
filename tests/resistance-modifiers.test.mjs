@@ -74,3 +74,37 @@ test('an effect transferred by an owned object is excluded only from the ephemer
  await actorForResistance(a,{effectUuid:effect.uuid});
  assert.equal(copied.effects.length,2);assert.deepEqual(copied.items[0].effects,[]);assert.equal(ring.effects.length,1);
 });
+
+foundry.applications.sheets={ActiveEffectConfig:class{
+ static PARTS={header:{},tabs:{},footer:{}};
+ constructor({document}){this.document=document;}
+ get isEditable(){return true;}
+ async _preparePartContext(){return {tabs:{details:{id:'details'}}};}
+}};
+foundry.applications.ux={TextEditor:{implementation:{enrichHTML:async html=>html}}};
+globalThis.CONFIG={statusEffects:{}};
+const {TrudvangEffectSheet}=await import('../modules/sheets/effect-sheet.mjs');
+const {TRANSFORMATION_TEMPLATES}=await import('../modules/transformation-data.mjs');
+const {conditionalSituationBonuses}=await import('../modules/rules/effect-conditional-tests.mjs');
+test('the actual button below raven details excludes its penalty and applies round relief on success',async()=>{
+ const a=clonableActor(),effect=a.effects[0],sourceId='vitner-animal-vitner:conjure-ravens:3',key=sourceId+'#ravens';
+ effect.system.changes[0].value='-5';a.system.modifiers.rolls.allActions=-7;
+ effect.parent=a;effect.isOwner=true;effect.description=game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.Description`);
+ effect.flags={[S]:{transformation:{key,sourceId,resolved:true,summary:'Malus : -5',roundResistance:TRANSFORMATION_TEMPLATES[key].roundResistance,ruleTestContext:{sourceId,counts:[0,0,0,2,0]}}}};
+ effect.toObject=()=>({_id:effect.id,name:effect.name,system:structuredClone(effect.system),flags:structuredClone(effect.flags)});
+ effect.update=async updates=>{for(const [path,value]of Object.entries(updates)){const parts=path.split('.'),last=parts.pop(),parent=parts.reduce((o,k)=>o[k]??={},effect);parent[last]=structuredClone(value);}a.system.modifiers.rolls.allActions=a.effects.reduce((sum,e)=>sum+Number(e.system.changes[0].value),0);};
+ game.combat={id:'c',round:1,started:true};
+ const sheet=new TrudvangEffectSheet({document:effect}),context=await sheet._preparePartContext('details',{});
+ assert.equal(context.resistanceButtons.length,1);assert.equal(context.resistanceButtons[0].index,0);assert.deepEqual(context.conditionalSituationButtons,[]);
+ const {default:Handlebars}=await import('handlebars');Handlebars.registerHelper('localize',key=>game.i18n.localize(key));
+ const html=Handlebars.compile(fs.readFileSync('templates/effect/details.hbs','utf8'))(context);
+ assert.match(html,/data-action="roll-rule-test" data-test-index="0"/);assert.doesNotMatch(html,/data-action="roll-conditional-situation"/);
+ const result=await TrudvangEffectSheet.onRollRuleTest.call(sheet,{preventDefault(){}},{dataset:{testIndex:String(context.resistanceButtons[0].index)}});
+ assert.equal(result.target,6);assert.equal(result.success,true);assert.equal(effect.system.changes[0].value,'-3');assert.equal(a.system.modifiers.rolls.allActions,-5);
+});
+test('informative tooltip notes never become a second situation modifier; genuine conditional skill bonuses remain',()=>{
+ const raven='vitner-animal-vitner:conjure-ravens:3',smell='vitner-body-vitner:sense-of-smell:3';
+ const make=(sourceId,key)=>({flags:{[S]:{transformation:{key,sourceId,ruleTestContext:{counts:[0,0,0,2]}}}}});
+ assert.deepEqual(conditionalSituationBonuses(make(raven,raven+'#ravens')),[]);
+ assert.equal(conditionalSituationBonuses(make(smell,smell+'#ameliore')).length,1);
+});

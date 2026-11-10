@@ -9,7 +9,7 @@ export function conditionalSituationBonuses(effect) {
  const template=TRANSFORMATION_TEMPLATES[meta?.key];
  if(!template || meta?.sourceId!==template.sourceId)return [];
  const context=meta.ruleTestContext??{};
- return (template.parameters??[]).filter(p=>p.target==="note").map(p=>({
+ return (template.parameters??[]).filter(p=>p.target==="note"&&(!p.tooltip||p.skill||p.ability||p.skillChoice)).map(p=>({
   labelKey:p.labelKey,
   skill:p.skill ?? "",
   ability:p.ability ?? "",
