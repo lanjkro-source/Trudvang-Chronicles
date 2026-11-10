@@ -1,3 +1,4 @@
+import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
 import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
 import {isConsumable} from "./consumables.mjs";
 import {canConsumeSharedItem,requestSharedConsumption} from "./shared-consumption.mjs";
@@ -27,6 +28,7 @@ export function registerChatListeners() {
   Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
+  registerDiseaseResistanceSocket();
   registerChatApplicationSocket();
   registerEffectTargetSocket();
 }
@@ -214,7 +216,7 @@ function attachListeners(message, html) {
       if (!document) return;
       button.disabled = true;
       try {
-        await performRuleTest({document, index: button.dataset.testIndex,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext});
+        await performRuleTest({document, index: button.dataset.testIndex,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext,resultMessage:message});
       } finally {
         button.disabled = false;
       }

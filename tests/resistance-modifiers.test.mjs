@@ -130,3 +130,25 @@ test('the incubation button replaces the actual holder’s incubation with immun
   assert.equal(a.effects.find(e=>e.flags?.[S]?.diseaseOutcome)?.flags[S].diseaseOutcome.kind,'immunity');
  }finally{globalThis.canvas=previous;}
 });
+
+test('incubation resistance stays in its private notice and animates only for its owners and GM',async()=>{
+ const {beginDiseaseIncubation}=await import('../modules/disease-resistance.mjs');
+ const a=clonableActor();a.effects=[a.effects[1]];a.system.modifiers.rolls.allActions=-2;
+ const saved={users:game.users,user:game.user,messages:game.messages,modules:game.modules,dice3d:game.dice3d,create:ChatMessage.create,fromUuid:foundry.utils.fromUuid};
+ const gm={id:'gm',isGM:true,active:true},owner={id:'owner',active:true},observer={id:'observer',active:true},users=new Map([[gm.id,gm],[owner.id,owner],[observer.id,observer]]);users.activeGM=gm;
+ const cards=new Map(),animations=[];game.users=users;game.user=gm;game.messages=cards;game.modules=new Map([['dice-so-nice',{active:true}]]);game.dice3d={showForRoll:async(...args)=>animations.push(args)};
+ a.testUserPermission=user=>user.id==='owner';
+ const update=object=>async changes=>{for(const [path,value]of Object.entries(changes)){const keys=path.split('.'),last=keys.pop(),target=keys.reduce((o,k)=>o[k]??={},object);target[last]=value;}};
+ ChatMessage.create=async data=>{const card={...data,id:'notice'};card.update=update(card);cards.set(card.id,card);return card;};
+ Roll.prototype.toJSON=function(){return {total:this.total};};Roll.fromData=data=>data;
+ a.createTrudvangEffect=async data=>{const e={...structuredClone(data),id:crypto.randomUUID(),uuid:a.uuid+'.ActiveEffect.'+crypto.randomUUID(),documentName:'ActiveEffect',parent:a,isOwner:true};e.update=update(e);e.delete=async()=>a.effects.splice(a.effects.indexOf(e),1);e.toObject=()=>({_id:e.id,name:e.name,system:structuredClone(e.system),flags:structuredClone(e.flags)});a.effects.push(e);return e;};
+ foundry.utils.fromUuid=async uuid=>uuid===a.uuid?a:a.effects.find(e=>e.uuid===uuid);
+ try{
+  const sourceId='holy-haminges-power-of-trolls:disease-carrier:0';
+  const effect=await beginDiseaseIncubation({flags:{[S]:{transformation:{key:sourceId+'#exposure',sourceId,ruleTestContext:{sourceId,kind:'divine',counts:[0,0,0]}}}}},a);
+  const card=cards.get('notice');assert.deepEqual(card.whisper,['gm','owner']);
+  const sheet=new TrudvangEffectSheet({document:effect});
+  const result=await TrudvangEffectSheet.onRollRuleTest.call(sheet,{preventDefault(){}},{dataset:{testIndex:'0'}});
+  assert.equal(result.success,true);assert.equal(cards.size,1);assert.match(card.content,/D20 : 4 \/ VC : 6/);assert.match(card.content,/Succès/);assert.deepEqual(card.whisper,['gm','owner']);assert.equal(animations.length,1);assert.deepEqual(animations[0][3],['gm','owner']);assert.equal(a.effects.includes(effect),false);
+ }finally{Object.assign(game,{users:saved.users,user:saved.user,messages:saved.messages,modules:saved.modules,dice3d:saved.dice3d});ChatMessage.create=saved.create;foundry.utils.fromUuid=saved.fromUuid;}
+});

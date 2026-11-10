@@ -70,7 +70,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null,publishMessage=null}) {
   if(blessing)flavor+='<br>'+rollModifierFlavor([blessing]);
   const finalTarget = Number(target) + Number(modifier || 0);
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
@@ -126,12 +126,12 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     longRange: Boolean(longRange)
   };
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", card);
-  const useDiceSoNice = animateWithDiceSoNice
+  const useDiceSoNice = (animateWithDiceSoNice || Boolean(publishMessage))
     && game.modules?.get("dice-so-nice")?.active
     && typeof game.dice3d?.showForRoll === "function";
   const divineAllocation=kind==="divine"&&success&&castingId&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.targeting
     ?{castingId,casterUuid:actor.uuid,sourceId:ruleTestContext.sourceId,selected:ruleTestContext.countsById,targetAllocations:[]}:null;
-  const message = await ChatMessage.create({
+  const messageData = {
     speaker: ChatMessage.getSpeaker({actor}),
     content,
     rolls: [roll, ...(procedure?.rolls ?? [])],
@@ -139,10 +139,12 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
       ...((targetResults.length||ruleTestContext||damageResistanceFor) ? {[SYSTEM_ID]: {...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(transformationKeys(item),game.user?.targets)}:{})}} : {})
     }} : {})
-  });
-  if (useDiceSoNice) {
+  };
+  const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
+  const message=publication?.message??await ChatMessage.create(messageData);
+  if (useDiceSoNice && publication?.animate!==false) {
     try {
-      await game.dice3d.showForRoll(roll, game.user, true, message.whisper ?? [], Boolean(message.blind), message.id, message.speaker);
+      await game.dice3d.showForRoll(roll, game.user, true, publication?.whisper ?? message.whisper ?? [], Boolean(message.blind), message.id, message.speaker);
     } catch (error) {
       console.error("Trudvang | Dice So Nice could not animate a concentration roll", error);
     }
@@ -176,7 +178,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       }
     }catch(error){console.error("Trudvang | Aura activation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.Failed"));}
   }
-  return {roll, result, target: targetResults.length === 1 ? targetResults[0].target : finalTarget, success, critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...(damageResistanceFor?{messageId:message.id}:{})};
+  return {roll,...(publication?.response??{}),...(publication?.animate===false?{duplicate:true}:{}), result:publication?.response?.result??result, target: publication?.response?.target??(targetResults.length === 1 ? targetResults[0].target : finalTarget), success:publication?.response?.success??success, critical:publication?.response?.critical??critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...(damageResistanceFor?{messageId:message.id}:{})};
 }
 
 function numericModifier(value) {
@@ -222,7 +224,7 @@ function ruleTestSituationOptions(test) {
 }
 
 /** Run a resistance test from a rule description; the clicking user rolls for their selected PC/NPC. */
-export async function rollConfiguredTraitSituation({actor, test, sourceName = "",castingModifierRows=[],damageResistanceFor=null,reactive=false,resistedEffect=null,resistedEffectUuid="",resistanceContext=null} = {}) {
+export async function rollConfiguredTraitSituation({actor, test, sourceName = "",castingModifierRows=[],damageResistanceFor=null,reactive=false,resistedEffect=null,resistedEffectUuid="",resistanceContext=null,publishMessage=null} = {}) {
   const originalActor=actor;
   if(actor)actor=await actorForResistance(actor,{effect:resistedEffect,effectUuid:resistedEffectUuid,context:resistanceContext});
   if(resistanceContext&&actor&&test)castingModifierRows=localizeResistanceRows(magicResistanceRows(test,{context:resistanceContext,actor}));
@@ -262,7 +264,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
     traitMethod: test.traitMethod || "first", effect, effectRows, ...situation, modifierRows});
   if (!options) return null;
   const target = (options.situationValue ?? situation.base) + (options.traitModifier ?? traitValue) + effect + Number(options.configuredModifier || 0) + Number(options.repeatedModifier || 0) + rollModifierTotal(modifierRows);
-  return rollUnder({actor:originalActor,damageResistanceFor, blessing:options.blessing, label: title, target, modifier: options.modifier, kind: "situation",
+  return rollUnder({actor:originalActor,damageResistanceFor,publishMessage, blessing:options.blessing, label: title, target, modifier: options.modifier, kind: "situation",
     flavor: rollModifierFlavor([...effectRows, ...modifierRows]), successConsequence: test.success || "", failureConsequence: test.failure || "",
     criticalSuccessConsequence: test.criticalSuccess || "", criticalFailureConsequence: test.criticalFailure || ""});
 }

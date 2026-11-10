@@ -18563,7 +18563,9 @@
       "SoresNotice": "{actor}: {minutes} min incubation, then {remaining} boils if resistance fails.",
       "SoresExposure": "The stench and flies impose −3 on all combat actions in the area, even when immune to the disease. Without immunity, incubation is applied; its Constitution resistance (base SV {sv}) can replace it with one day of immunity. Otherwise, 2d10+2 boils develop after 1d6 minutes; 1d6 burst each day, dealing 2 damage each without protection.",
       "SoresLabel": "Boils ({remaining})",
-      "SoresDescription": "{remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts."
+      "SoresDescription": "{remaining} boils remain. Each day, 1d6 burst and deal 2 damage each without protection, capped at the number remaining. The disease ends when the last boil bursts.",
+      "ResistanceResult": "D20: {result} / SV: {target}",
+      "ResistanceLate": "Rolled after incubation ended."
     }
   }
 }

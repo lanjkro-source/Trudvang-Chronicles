@@ -1270,3 +1270,7 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 
 .trudvang-sheet .item-modifier-indicator { margin: 3px 4px; color: var(--trudvang-on-header); font-size: .8rem; }
 .trudvang-sheet .item-list img[draggable="true"], .trudvang-sheet .item-list .item-name[draggable="true"] { cursor: grab; }
+
+.trudvang.consequence-notice .disease-resistance-result {display:flex;flex-wrap:wrap;gap:.3rem .7rem;align-items:center;margin-top:.4rem;border-top:1px solid var(--trudvang-accent);padding-top:.3rem;}
+.trudvang.consequence-notice .disease-resistance-result--success strong {color:var(--trudvang-positive);}
+.trudvang.consequence-notice .disease-resistance-result--failure strong {color:var(--trudvang-negative);}

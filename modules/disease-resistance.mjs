@@ -1,3 +1,4 @@
+import {diseaseRecipients,diseaseRecordedResult} from './disease-resistance-chat.mjs';
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {RULE_TESTS_BY_CATALOG_ID} from './rule-test-data.mjs';
 import {createConsequenceEffect} from './consequences.mjs';
@@ -34,14 +35,15 @@ export async function beginDiseaseIncubation(source,actor){
   ]});
   if(effect){
    const text=game.i18n.format(spec.kind==='sores'?'TRUDVANG.Disease.SoresNotice':'TRUDVANG.Disease.IncubationNotice',{actor:actor.name,minutes,days:count,remaining:count,penalty:spec.penalty});
-   await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),rolls:[incubation,amount],content:`<div class="trudvang consequence-notice" data-rule-document-uuid="${escapeAttribute(effect.uuid??'')}"><p>${escapeHtml(text)}</p><button type="button" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20"></i> ${escapeHtml(local('Resist'))}</button></div>`});
+   const message=await ChatMessage.create({whisper:diseaseRecipients(actor),flags:{[S]:{diseaseResistance:{actorUuid:actor.uuid,effectUuid:effect.uuid}}},speaker:ChatMessage.getSpeaker({actor}),rolls:[incubation,amount],content:`<div class="trudvang consequence-notice" data-rule-document-uuid="${escapeAttribute(effect.uuid??'')}"><p>${escapeHtml(text)}</p><button type="button" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20"></i> ${escapeHtml(local('Resist'))}</button></div>`});
+   if(message?.id)await effect.update({['flags.'+S+'.diseaseIncubation.messageId']:message.id});
   }
   return effect;
  };
  const job=(creations.get(actor)??Promise.resolve()).catch(()=>{}).then(work);creations.set(actor,job);
  try{return await job;}finally{if(creations.get(actor)===job)creations.delete(actor);}
 }
-export async function withDiseaseResistance(document,index,actor,roll){
+export async function withDiseaseResistance(document,index,actor,roll,resultMessage){
  const incubation=document?.flags?.[S]?.diseaseIncubation;
  if(!incubation||index!==0)return roll();
  if(!actor?.isOwner)return null;
@@ -50,7 +52,8 @@ export async function withDiseaseResistance(document,index,actor,roll){
  if(pending.has(document)){ui.notifications.warn(game.i18n.localize('TRUDVANG.Disease.Pending'));return null;}
  pending.add(document);
  try{
-  const result=await roll();if(!result)return null;
+  const result=diseaseRecordedResult(document,resultMessage)??await roll();if(!result)return null;
+  if(result.late||result.duplicate)return result;
   const liveClock=document.flags[S].consequenceClock;
   if(document.flags[S].diseaseIncubation.resolved||liveClock?.stage!==0||liveClock.stageStartedAt+liveClock.stages[0].seconds<=Number(game.time?.worldTime)||!Array.from(actor.effects??[]).includes(document))return result;
   if(result.success){

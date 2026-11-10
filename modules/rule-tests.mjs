@@ -1,4 +1,5 @@
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
+import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
@@ -226,7 +227,7 @@ function abilityEntryFor(actor, catalogId) {
   return null;
 }
 
-export async function performRuleTest({document, index, actor = testActorForUser(), context} = {}) {
+export async function performRuleTest({document, index, actor = testActorForUser(), context,resultMessage} = {}) {
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests || document?.flags?.[SYSTEM_ID]?.transformation?.roundResistance) && document.parent?.documentName === "Actor") actor = document.parent;
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests) && !actor?.isOwner) return null;
   const test = ruleTestsForDocument(document)[Number(index)];
@@ -237,7 +238,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
-    const result=await withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting}));
+    const result=await withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage);
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }
