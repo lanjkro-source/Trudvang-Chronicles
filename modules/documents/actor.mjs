@@ -1,7 +1,7 @@
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
 import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rules/effect-conditional-tests.mjs";
-import {effectStackId, isGradedEffect, effectDegree} from "../rules/effect-stacking.mjs";
+import {effectStackId, isGradedEffect, effectDegree, markActorDeleting} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
 import { TRUDVANG } from "../config.mjs";
 import {naturalWeaponQualification} from "../rules/damage-qualifications.mjs";
@@ -79,6 +79,13 @@ export class TrudvangActor extends BaseActor {
     const dimensions = creatureTokenDimensions(this.system.details?.size);
     this.updateSource({"prototypeToken.actorLink": data.prototypeToken?.actorLink ?? false,
       ...(dimensions ? {"prototypeToken.width": dimensions.width, "prototypeToken.height": dimensions.height} : {})});
+  }
+
+  /** Mark the actor as deleting so its permanent effects (Serment de sang /
+   * Parjure) are removed with it instead of blocking the deletion. */
+  async _preDelete(options, user) {
+    markActorDeleting(this);
+    return super._preDelete(options, user);
   }
 
   /** Size newly generated creature tokens without changing already placed tokens. */
@@ -2044,8 +2051,8 @@ export class TrudvangActor extends BaseActor {
     ui.notifications.info(game.i18n.localize(entering ? "TRUDVANG.Notification.CreationModeEnabled" : "TRUDVANG.Notification.CreationModeDisabled"));
   }
 
-  async createTrudvangEffect(data) {
-    const run = () => this._createTrudvangEffectNow(data);
+  async createTrudvangEffect(data, options = {}) {
+    const run = () => this._createTrudvangEffectNow(data, options);
     const previous = effectApplicationJobs.get(this) ?? Promise.resolve();
     const job = previous.then(run, run).finally(() => {
       if (effectApplicationJobs.get(this) === job) effectApplicationJobs.delete(this);
@@ -2054,7 +2061,7 @@ export class TrudvangActor extends BaseActor {
     return job;
   }
 
-  async _createTrudvangEffectNow(data) {
+  async _createTrudvangEffectNow(data, options = {}) {
     if (!this.canUserModify(game.user, "update")) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.EffectPermission"));
     }
@@ -2092,7 +2099,7 @@ export class TrudvangActor extends BaseActor {
       }
       await existing.delete();
     }
-    const [created] = await this.createEmbeddedDocuments("ActiveEffect", [prepared]);
+    const [created] = await this.createEmbeddedDocuments("ActiveEffect", [prepared], options);
     return created;
   }
 

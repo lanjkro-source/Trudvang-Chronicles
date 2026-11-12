@@ -19,7 +19,7 @@ import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
 import {naturalWeaponQualification} from "./rules/damage-qualifications.mjs";
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
-import {GRADED_EFFECT_IDS} from "./rules/effect-stacking.mjs";
+import {STACKABLE_EFFECT_IDS} from "./rules/effect-stacking.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 import {normalizeEffectDuration, addDurationSeconds, effectDurationSeconds, durationUntilDayEnd} from "./rules/effect-duration.mjs";
 import {itemQualityChanges,isMagicalItem} from './rules/item-quality.mjs';
@@ -124,7 +124,7 @@ export function selectFormData(form,policy){
 }
 export async function applyTransformation(actor,key,{source=null,elapsed=0,counts=[],context,targetName="",skipDialog=false,preselectedAnswers=null,delegateTokenUuid="",destinationItem=null}={}){
  if(key===SURPRISED_ITEM)return applySurprised(actor,source);
- if(GRADED_EFFECT_IDS.has(key))return applyGradedEffect(actor,source);
+ if(STACKABLE_EFFECT_IDS.has(key))return applyGradedEffect(actor,source);
  const owned=Boolean(actor?.canUserModify(game.user,"update"));
  const message=context?.messageId?game.messages?.get(context.messageId):null;
  const delegated=!owned&&delegateTokenUuid&&message&&await canManageEffectTargets(message,game.user)&&effectTargetsFor(message,key).some(row=>row.tokenUuid===delegateTokenUuid&&row.actorUuid===actor?.uuid);

@@ -1,5 +1,6 @@
 import {actorStateStatuses} from "./rules/actor-status-resolver.mjs";
 import {bodyHealthPersistence} from "./rules/body-health.mjs";
+import {syncReligionEffects} from "./religion-effects.mjs";
 
 const systemId = "trudvang-chronicles";
 const pendingSyncs = new WeakMap();
@@ -73,7 +74,11 @@ async function synchronize(actor) {
   if (remove.length) await actor.deleteEmbeddedDocuments("ActiveEffect", remove, {...syncOptions});
   if (update.length) await actor.updateEmbeddedDocuments("ActiveEffect", update, {...syncOptions});
   if (create.length) await actor.createEmbeddedDocuments("ActiveEffect", create, {...syncOptions});
-  return Boolean(health || remove.length || update.length || create.length);
+  // The permanent religion marks (Serment de sang / Parjure) are added here so
+  // they follow the same elected writer as the status markers. They are never
+  // removed: an oath sworn and an oath broken both endure.
+  const religion = await syncReligionEffects(actor, {...syncOptions});
+  return Boolean(health || remove.length || update.length || create.length || religion);
 }
 
 /** Serialize resource/effect changes and reread the latest prepared state each time. */

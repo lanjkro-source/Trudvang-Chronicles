@@ -1423,6 +1423,8 @@
     },
     "Effect": {
       "Permanent": "Permanent",
+      "PermanentCannotDelete": "Cet effet est permanent et ne peut être supprimé.",
+      "PermanentCannotDisable": "Cet effet est permanent et ne peut être désactivé.",
       "BaseValue": "Valeur de base",
       "Transferred": "Transféré tant que l'objet est actif",
       "Applied": "Appliqué aux cibles sélectionnées",
@@ -1519,6 +1521,7 @@
       "ReapplicationHint": "Renouveler remplace la durée restante par celle de la nouvelle application. Cumuler augmente le degré du même effet ; ses modifications s’appliquent autant de fois.",
       "Degree": "Degré",
       "DegreeHint": "Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré.",
+      "PermanentDegreeHint": "Cet effet est permanent : il ne peut être ni supprimé, ni désactivé, ni expirer. Chaque degré retire un point de santé maximum ; le degré 0 n’en retire aucun.",
       "CumulativeDegreeHint": "Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante.",
       "ItemActivation": "Activation sur le porteur",
       "ItemActivationHint": "Un effet automatique agit depuis son objet. Le mode inventaire ne nécessite pas de l’équiper ; l’effet cesse si l’objet quitte l’inventaire ou si sa quantité atteint zéro.",
@@ -1560,6 +1563,8 @@
       "Folder": {
         "GMItems": "Maître de jeu",
         "GMTables": "Maître de jeu",
+        "Nature": "Nature",
+        "Religion": "Religion",
         "Weapons": "Armes",
         "WeaponsLight": "Armes légères",
         "WeaponsHeavy": "Armes lourdes",
@@ -2488,6 +2493,16 @@
           "Name": "Assoiffé",
           "Summary": "−1 à toutes les actions par degré.",
           "Description": "<p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p>"
+        },
+        "SermentDeSang": {
+          "Name": "Serment de sang",
+          "Summary": "−1 point de santé maximum par degré.",
+          "Description": "<p>Serment sacré de l’Ancienne Tradition : chaque degré correspond à un serment de sang non encore accompli et coûte 1 point de santé maximum, que le personnage ne récupère que lorsque le serment est accompli. Si le serment est rompu, la blessure devient définitive. Cet effet est ajouté automatiquement, au degré 0, à tout personnage suivant l’Ancienne Tradition ; il ne peut être ni supprimé ni désactivé. Modifiez son degré dans Durée & Modifications.</p>"
+        },
+        "Parjure": {
+          "Name": "Parjure",
+          "Summary": "−1 point de santé maximum par degré.",
+          "Description": "<p>Conséquence permanente d’un serment de sang brisé : chaque degré correspond à une perte définitive de 1 point de santé maximum, que rien ne peut jamais récupérer. La cicatrice du serment reste évidente et disgracieuse, et identifie immédiatement le personnage comme un parjure. Cet effet est ajouté automatiquement, au degré 0, à tout personnage suivant l’Ancienne Tradition ; il ne peut être ni supprimé ni désactivé. Modifiez son degré dans Durée & Modifications.</p>"
         },
         "Blodstor": {
           "Name": "Blodstör",

@@ -43,7 +43,7 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // starter armor copies, preserving explicit materials and all individual stats.
 // TEMPORARY WORLD MIGRATION — version 69 installs the Blodstör, Vitner Stafur
 // and votive statuette in previously populated development worlds.
-const CONTENT_VERSION = 69;
+const CONTENT_VERSION = 70;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -246,6 +246,12 @@ export function folderOwnership(config) {
   return {default: level};
 }
 
+/** GM-only starter folders replace their ownership on every import, which strips
+ * the explicit player grants an earlier import may have left behind. */
+export function gmOnlyFolder(config) {
+  return config?.gmOnly === true || /\.GM(?:Items|Tables|Macros)$/.test(config?.nameKey ?? "");
+}
+
 // Resolves a starter folder when a call site has no folder map (e.g. the GM-entry repair
 // path), so documents still land in the folder created by the last import.
 function starterFolder(slug, type) {
@@ -265,8 +271,10 @@ async function upsertFolder(slug, config, translations, parent) {
     if (existing.name !== localized) update.name = localized;
     if (color && existing.color !== color) update.color = color;
     // Only folders that opt in carry a role, so this never touches per-user grants the GM
-    // made on the other starter folders.
-    if (ownership) update.ownership = /\.GM(?:Items|Tables|Macros)$/.test(config.nameKey)
+    // made on the other starter folders. GM-only folders replace their ownership
+    // outright, which also strips any explicit player grant left over from an
+    // earlier import.
+    if (ownership) update.ownership = gmOnlyFolder(config)
       ? foundry.data.operators.ForcedReplacement.create(ownership) : ownership;
     await existing.update(update);
   }
@@ -347,7 +355,7 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     if (existing) {
       const update = presentationUpdate(payload, key);
       update.folder = payload.folder;
-      if (payload.ownership) update.ownership = destination === "gmItems"
+      if (payload.ownership) update.ownership = destination === "gmItems" || gmOnlyFolder(source.folders[destination])
         ? foundry.data.operators.ForcedReplacement.create(payload.ownership) : payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
       if (payload.system?.consumable === true) update["system.consumable"] = true;

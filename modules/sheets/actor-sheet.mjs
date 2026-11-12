@@ -16,6 +16,7 @@ import {bindInventoryDrag} from '../inventory-drag.mjs';
 import {isConsumable} from "../consumables.mjs";
 import {isInventoryTransferItem,requestInventoryTransfer} from '../inventory-transfer.mjs';
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
+import {isPermanentMark} from "../rules/effect-stacking.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
@@ -317,7 +318,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       suppressed: effect.isSuppressed,
       transferred: effect.parent?.documentName === "Item",
       canEdit: effect.canUserModify(game.user, "update"),
-      canDelete: effect.canUserModify(game.user, "delete") && !isCarriedTransferredEffect(effect)
+      // A permanent mark cannot be disabled, so it offers no toggle either.
+      canToggle: !isPermanentMark(effect),
+      canDelete: effect.canUserModify(game.user, "delete") && !isCarriedTransferredEffect(effect) && !isPermanentMark(effect)
     }));
     context.itemsByGroup = {};
     for (const [group, types] of Object.entries(TRUDVANG.actorItemGroups)) {
@@ -691,8 +694,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "collapse-tree": return this._setTreeExpanded(root, false);
       case "effect-add": return this.actor.createBlankEffect();
       case "effect-edit": return effect?.sheet.render({force: true});
-      case "effect-toggle": return effect?.update({disabled: !effect.disabled});
-      case "effect-delete": return effect && !isCarriedTransferredEffect(effect) ? effect.delete() : null;
+      case "effect-toggle": return effect && !isPermanentMark(effect) ? effect.update({disabled: !effect.disabled}) : null;
+      case "effect-delete": return effect && !isCarriedTransferredEffect(effect) && !isPermanentMark(effect) ? effect.delete() : null;
       default: return null;
     }
   }

@@ -141,7 +141,7 @@ test("the materiaux and the centennial amber live in the GM-only magic objects f
   const sourceCode = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
   assert.match(sourceCode, /folderOwnership\(source\.folders\[destination\]\)/,
     "starter items derive their ownership from the destination folder config");
-  assert.match(sourceCode, /if \(payload\.ownership\) update\.ownership = destination === "gmItems"[\s\S]*?ForcedReplacement\.create\(payload\.ownership\) : payload\.ownership;/,
+  assert.match(sourceCode, /if \(payload\.ownership\) update\.ownership = destination === "gmItems" \|\| gmOnlyFolder\(source\.folders\[destination\]\)[\s\S]*?ForcedReplacement\.create\(payload\.ownership\) : payload\.ownership;/,
     "replays move existing starter items onto their folder's default level");
 });
 
@@ -234,4 +234,79 @@ test("amber inventory effects migrate world, actor and unlinked token copies onc
  await syncStarterInventoryEffects(starter,new Map());assert.deepEqual(made,[world,owned,token]);
  for(const i of made){assert.equal(i.system.quantity,2);assert.equal(i.effects[0].name,"Custom");assert.equal(i.effects[1].transfer,true);assert.equal(i.effects[1].name,"Ambre de sève centenaire de vidrjotun");}
  made.length=0;await syncStarterInventoryEffects(starter,new Map());assert.equal(made.length,0);assert.equal(already.effects[1].disabled,true);assert.equal(custom.effects.length,1);
+});
+
+test("Nature and Religion are subfolders of the GM items folder, declared after their parent", () => {
+  const order = Object.keys(starter.folders);
+  assert.ok(order.indexOf("gmItems") < order.indexOf("gmNature"), "gmNature is declared after gmItems");
+  assert.ok(order.indexOf("gmItems") < order.indexOf("gmReligion"), "gmReligion is declared after gmItems");
+  assert.equal(starter.folders.gmNature.parent, "gmItems", "gmNature hangs under gmItems");
+  assert.equal(starter.folders.gmReligion.parent, "gmItems", "gmReligion hangs under gmItems");
+  assert.equal(starter.folders.gmNature.type, "Item");
+  assert.equal(starter.folders.gmReligion.type, "Item");
+  assert.equal(starter.folders.gmNature.colorRole, "accent");
+  assert.equal(starter.folders.gmReligion.colorRole, "accent");
+  assert.equal(starter.folders.gmNature.defaultRole, "NONE");
+  assert.equal(starter.folders.gmReligion.defaultRole, "NONE");
+  assert.equal(starter.folders.gmNature.gmOnly, true, "the Nature subfolder is GM-only");
+  assert.equal(starter.folders.gmReligion.gmOnly, true, "the Religion subfolder is GM-only");
+});
+
+test("Fatigue, Hunger and Thirsty live in the Nature subfolder", () => {
+  for (const catalogId of ["trudvang-fatigued", "trudvang-hungry", "trudvang-thirsty"]) {
+    const item = starter.items.find(item => item.system?.catalogId === catalogId);
+    assert.ok(item, `${catalogId} exists in starter content`);
+    assert.equal(item.folder, "gmNature", `${catalogId} is in the Nature subfolder`);
+  }
+});
+
+test("Serment de sang and Parjure live in the Religion subfolder as permanent graded effects", () => {
+  for (const catalogId of ["trudvang-serment-de-sang", "trudvang-parjure"]) {
+    const item = starter.items.find(item => item.system?.catalogId === catalogId);
+    assert.ok(item, `${catalogId} exists in starter content`);
+    assert.equal(item.folder, "gmReligion", `${catalogId} is in the Religion subfolder`);
+    const effect = item.effects[0];
+    assert.equal(effect.system.stackId, catalogId);
+    assert.equal(effect.system.stacking, "stack");
+    assert.equal(effect.flags?.["trudvang-chronicles"]?.permanent, true, `${catalogId} is flagged permanent`);
+    assert.equal(effect.duration.value, null, `${catalogId} never expires`);
+    const change = effect.system.changes.find(c => c.key === "system.modifiers.bodyMax");
+    assert.ok(change, `${catalogId} has a bodyMax change`);
+    assert.equal(change.type, "add");
+    assert.equal(change.value, "-1");
+  }
+});
+
+test("Nature and Religion folder names are localized in both shipped languages", () => {
+  for (const slug of ["gmNature", "gmReligion"]) {
+    const key = starter.folders[slug].nameKey;
+    for (const lang of ["fr", "en"]) {
+      const value = resolve(locales, lang, key);
+      assert.notEqual(value, key, `${lang} is missing ${key}`);
+      assert.ok(value.length, `${lang} has an empty value for ${key}`);
+    }
+  }
+  assert.equal(resolve(locales, "fr", "TRUDVANG.Content.Folder.Nature"), "Nature");
+  assert.equal(resolve(locales, "en", "TRUDVANG.Content.Folder.Nature"), "Nature");
+  assert.equal(resolve(locales, "fr", "TRUDVANG.Content.Folder.Religion"), "Religion");
+  assert.equal(resolve(locales, "en", "TRUDVANG.Content.Folder.Religion"), "Religion");
+});
+
+// The reimport must move the already-installed GM states into the Nature
+// subfolder and install the two new permanent effects into the Religion one.
+test("the reimport moves the GM states into Nature and installs the permanent effects into Religion", () => {
+  const gmOnly = ["gmNature", "gmReligion"].every(slug => starter.folders[slug].gmOnly === true);
+  assert.ok(gmOnly, "both subfolders are GM-only and reset explicit player grants");
+  for (const catalogId of ["trudvang-fatigued", "trudvang-hungry", "trudvang-thirsty"]) {
+    const item = starter.items.find(item => item.system?.catalogId === catalogId);
+    assert.ok(item, `${catalogId} exists in starter content`);
+    assert.equal(item.folder, "gmNature", `${catalogId} is filed under Nature`);
+    assert.ok(starter.folders[item.folder], `${item.folder} is a declared folder`);
+  }
+  for (const catalogId of ["trudvang-serment-de-sang", "trudvang-parjure"]) {
+    const item = starter.items.find(item => item.system?.catalogId === catalogId);
+    assert.ok(item, `${catalogId} exists in starter content`);
+    assert.equal(item.folder, "gmReligion", `${catalogId} is filed under Religion`);
+    assert.ok(starter.folders[item.folder], `${item.folder} is a declared folder`);
+  }
 });

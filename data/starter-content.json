@@ -6,6 +6,22 @@
       "colorRole": "accent",
       "defaultRole": "NONE"
     },
+    "gmNature": {
+      "nameKey": "TRUDVANG.Content.Folder.Nature",
+      "type": "Item",
+      "parent": "gmItems",
+      "colorRole": "accent",
+      "defaultRole": "NONE",
+      "gmOnly": true
+    },
+    "gmReligion": {
+      "nameKey": "TRUDVANG.Content.Folder.Religion",
+      "type": "Item",
+      "parent": "gmItems",
+      "colorRole": "accent",
+      "defaultRole": "NONE",
+      "gmOnly": true
+    },
     "gmTables": {
       "nameKey": "TRUDVANG.Content.Folder.GMTables",
       "type": "RollTable",
@@ -123,7 +139,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.Fatigued.Name",
       "type": "effect",
-      "folder": "gmItems",
+      "folder": "gmNature",
       "img": "systems/trudvang-chronicles/assets/icons/statuses/fatigued.svg",
       "system": {
         "catalogId": "trudvang-fatigued",
@@ -171,7 +187,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.Hungry.Name",
       "type": "effect",
-      "folder": "gmItems",
+      "folder": "gmNature",
       "img": "systems/trudvang-chronicles/assets/icons/statuses/hungry.svg",
       "system": {
         "catalogId": "trudvang-hungry",
@@ -219,7 +235,7 @@
     {
       "nameKey": "TRUDVANG.Content.Item.Thirsty.Name",
       "type": "effect",
-      "folder": "gmItems",
+      "folder": "gmNature",
       "img": "systems/trudvang-chronicles/assets/icons/statuses/thirsty.svg",
       "system": {
         "catalogId": "trudvang-thirsty",
@@ -260,6 +276,98 @@
                 "phase": "initial"
               }
             ]
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.SermentDeSang.Name",
+      "type": "effect",
+      "folder": "gmReligion",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/blood-oath.svg",
+      "system": {
+        "catalogId": "trudvang-serment-de-sang",
+        "summaryKey": "TRUDVANG.Content.Item.SermentDeSang.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.SermentDeSang.Description"
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.SermentDeSang.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.SermentDeSang.Description",
+          "type": "effect",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/blood-oath.svg",
+          "transfer": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-serment-de-sang",
+            "stacking": "stack",
+            "degree": 1,
+            "stages": [],
+            "changes": [
+              {
+                "key": "system.modifiers.bodyMax",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              }
+            ]
+          },
+          "flags": {
+            "trudvang-chronicles": {
+              "permanent": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Parjure.Name",
+      "type": "effect",
+      "folder": "gmReligion",
+      "img": "systems/trudvang-chronicles/assets/icons/statuses/oath-breaker.svg",
+      "system": {
+        "catalogId": "trudvang-parjure",
+        "summaryKey": "TRUDVANG.Content.Item.Parjure.Summary",
+        "descriptionKey": "TRUDVANG.Content.Item.Parjure.Description"
+      },
+      "effects": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.Parjure.Name",
+          "descriptionKey": "TRUDVANG.Content.Item.Parjure.Description",
+          "type": "effect",
+          "img": "systems/trudvang-chronicles/assets/icons/statuses/oath-breaker.svg",
+          "transfer": false,
+          "duration": {
+            "value": null,
+            "units": "rounds",
+            "expiry": null,
+            "expired": false
+          },
+          "system": {
+            "stackId": "trudvang-parjure",
+            "stacking": "stack",
+            "degree": 1,
+            "stages": [],
+            "changes": [
+              {
+                "key": "system.modifiers.bodyMax",
+                "type": "add",
+                "value": "-1",
+                "priority": 20,
+                "phase": "initial"
+              }
+            ]
+          },
+          "flags": {
+            "trudvang-chronicles": {
+              "permanent": true
+            }
           }
         }
       ]

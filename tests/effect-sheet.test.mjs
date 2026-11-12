@@ -21,6 +21,7 @@ class StubActiveEffect {
   get isExpiryTrackable() { return true; }
   async _preCreate() { return true; }
   async _preUpdate() { return true; }
+  async _preDelete() { return true; }
 }
 StubActiveEffect.implementation = {getEffectStart: () => 777};
 
@@ -78,6 +79,7 @@ globalThis.CONFIG = {statusEffects: {}};
 const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks, expireAppliedEffects} = await import("../modules/effects.mjs");
+const {markActorDeleting} = await import("../modules/rules/effect-stacking.mjs");
 const {advanceDay, advanceWorldTime, advanceDuration} = await import("../modules/world-time.mjs");
 const {applyGradedEffect} = await import("../modules/graded-effects.mjs");
 
@@ -373,7 +375,7 @@ test("three GM states prepare exactly minus one per degree without changing thei
   const graded = source.items.filter(item => ["trudvang-fatigued", "trudvang-hungry", "trudvang-thirsty"].includes(item.system?.catalogId));
   assert.equal(graded.length, 3);
   for (const item of graded) {
-    assert.equal(item.folder, "gmItems");
+    assert.equal(item.folder, "gmNature");
     const effect = new TrudvangActiveEffect();
     effect.system = deepClone(item.effects[0].system);
     effect.name = "Fatigué"; effect._source = {name: "Fatigué"};
@@ -455,6 +457,134 @@ test("graded reference application preserves the edited degree, duration and rea
   assert.equal(applied.start, null);
   assert.equal(applied.transfer, false);
   assert.equal(applied.origin, "Item.hunger");
+});
+
+// The two permanent religion marks (Serment de sang / Parjure) may never be
+// disabled, expire, or be deleted from the actor carrying them.
+test("permanent religion effects refuse to be disabled, to expire, or to be deleted", async () => {
+  const warnings = [];
+  const previousWarn = globalThis.ui.notifications.warn;
+  globalThis.ui.notifications.warn = message => warnings.push(message);
+  try {
+    const permanent = new TrudvangActiveEffect();
+    permanent.system = {stackId: "trudvang-serment-de-sang", stacking: "stack", degree: 0, changes: []};
+    permanent.flags = {"trudvang-chronicles": {permanent: true}};
+    permanent.parent = {documentName: "Actor", isOwner: true};
+    permanent._source = {duration: {value: null, units: "rounds"}, name: "Serment de sang"};
+
+    const disabled = {disabled: true, duration: {value: 5, units: "rounds", expired: true}};
+    await permanent._preUpdate(disabled, {}, {});
+    assert.equal(disabled.disabled, undefined, "the effect cannot be disabled");
+    assert.equal(disabled.duration.value, null, "the effect cannot be given an expiry");
+    assert.equal(disabled.duration.expired, false);
+    assert.ok(warnings.length >= 1, "the refusal is reported to the GM");
+
+    const stacking = {system: {stacking: "refresh"}};
+    await permanent._preUpdate(stacking, {}, {});
+    assert.equal(stacking.system.stacking, "stack", "a permanent mark keeps its graded rule");
+
+    assert.equal(await permanent._preDelete({}, {}), false, "the effect cannot be deleted from its actor");
+
+    const owner = new TrudvangActiveEffect();
+    owner.system = {stackId: "trudvang-parjure", stacking: "stack", degree: 0, changes: []};
+    owner.flags = {"trudvang-chronicles": {permanent: true}};
+    owner.parent = {documentName: "Actor", isOwner: true};
+    markActorDeleting(owner.parent);
+    assert.equal(await owner._preDelete({}, {}), true, "deleting the owning actor removes the mark with it");
+  } finally {
+    globalThis.ui.notifications.warn = previousWarn;
+  }
+});
+
+test("the graded GM states keep a minimum of one degree while permanent marks may sit at zero", async () => {
+  const fatigued = new TrudvangActiveEffect();
+  fatigued.system = {stackId: "trudvang-fatigued", stacking: "stack", degree: 1, changes: []};
+  fatigued.flags = {};
+  fatigued.parent = {documentName: "Actor", isOwner: true};
+  fatigued._source = {duration: {value: null, units: "rounds"}, name: "Fatigué"};
+
+  const data = {system: {degree: 0}};
+  await fatigued._preUpdate(data, {}, {});
+  assert.equal(data.system.degree, 1, "Fatigué never drops below one degree");
+
+  const permanent = new TrudvangActiveEffect();
+  permanent.system = {stackId: "trudvang-serment-de-sang", stacking: "stack", degree: 0, changes: []};
+  permanent.flags = {"trudvang-chronicles": {permanent: true}};
+  permanent.parent = {documentName: "Actor", isOwner: true};
+  permanent._source = {duration: {value: null, units: "rounds"}, name: "Serment de sang"};
+  const free = {system: {degree: 0}};
+  await permanent._preUpdate(free, {}, {});
+  assert.equal(free.system.degree, 0, "a permanent mark may sit at degree 0");
+});
+
+// The actor sheet must not offer a way to disable or remove a permanent mark.
+test("the actor sheet offers no toggle or delete button for a permanent mark", async () => {
+  const {isPermanentMark} = await import("../modules/rules/effect-stacking.mjs");
+  const mark = {system: {stackId: "trudvang-serment-de-sang", stacking: "stack", degree: 0},
+    flags: {"trudvang-chronicles": {permanent: true}}, parent: {documentName: "Actor", isOwner: true}};
+  const ordinary = {system: {stackId: "trudvang-fatigued", stacking: "stack", degree: 1},
+    flags: {}, parent: {documentName: "Actor", isOwner: true}};
+  assert.equal(isPermanentMark(mark), true, "a permanent mark on an actor is protected");
+  assert.equal(isPermanentMark(ordinary), false, "an ordinary effect is not protected");
+  const template = {system: {stackId: "trudvang-serment-de-sang", stacking: "stack", degree: 1},
+    flags: {"trudvang-chronicles": {permanent: true}}, parent: {documentName: "Item", isOwner: true}};
+  assert.equal(isPermanentMark(template), false, "the world reference template stays editable");
+});
+
+// The two permanent religion marks must lower the actor's maximum Body Points
+// by one per degree, on a real prepared actor.
+test("a permanent religion mark lowers the maximum Body Points by one per degree", async () => {
+  const {TrudvangActor} = await import("../modules/documents/actor.mjs");
+  const traits = {strength: 4, constitution: 4, dexterity: 2, intelligence: 2, perception: 2, psyche: 2, charisma: 2};
+  const instance = new TrudvangActor();
+  Object.assign(instance, {type: "character", name: "Eira", id: "pc", img: "", items: [], statuses: new Set(),
+    system: {traits, traitCurrent: {constitution: null}, skills: {},
+      effective: {traits: {...traits}, skills: {}},
+      resources: {body: {value: 30, max: 40}, combat: {value: 20, max: 20}, fear: {value: 0, max: 50},
+        vitner: {value: 0, max: 0}, divinity: {value: 0, max: 0}},
+      combatPools: {}, movement: {base: 10}, initiative: {base: 3},
+      modifiers: {rolls: {}, bodyMax: 0, bodyValue: 0, movement: 0, protection: 0, recovery: 0, damage: 0,
+        combatMax: 0, combatValue: 0, vitnerMax: 0, vitnerValue: 0, divinityMax: 0, divinityValue: 0,
+        raudValue: 0, fearValue: 0, fearFactor: 0},
+      details: {race: "human", culture: "mittlander", archetype: "soldier", religion: "", naturalArmor: 0},
+      survivalRounds: -1, skillTree: []},
+    calculateBuildCost: () => 0, calculateCreationCosts: () => ({}), getKnowledgeLevelCost: () => 0,
+    canChooseCatalogKnowledge: () => true, allApplicableEffects: () => instance.effects ?? []});
+  instance._source = {system: structuredClone(instance.system)};
+
+  const prepare = () => {
+    instance.system = structuredClone(instance._source.system);
+    instance.system.effective.traits = {...traits};
+    instance.system.modifiers.bodyMax = 0;
+    instance.prepareDerivedData();
+    return instance.system.resources.body.max;
+  };
+  const baseline = prepare();
+
+  const effect = new TrudvangActiveEffect();
+  effect.name = "Serment de sang";
+  effect._source = {name: "Serment de sang", duration: {value: null, units: "rounds"}};
+  effect.system = {
+    stackId: "trudvang-serment-de-sang", stacking: "stack", degree: 0, stages: [],
+    changes: [{key: "system.modifiers.bodyMax", type: "add", value: "-1", priority: 20, phase: "initial"}]
+  };
+  effect.flags = {"trudvang-chronicles": {permanent: true}};
+  effect.parent = {documentName: "Actor", isOwner: true};
+  effect.prepareBaseData();
+  instance.effects = [effect];
+
+  // The mark's contribution is applied exactly like any other native effect.
+  const maximumAt = degree => {
+    effect.system.degree = degree;
+    const change = {...effect.system.changes[0], effect};
+    instance.system.modifiers.bodyMax = TrudvangActiveEffect.applyChange(instance, change, {})["system.modifiers.bodyMax"];
+    instance.prepareDerivedData();
+    return instance.system.resources.body.max;
+  };
+
+  assert.equal(maximumAt(0), baseline, "degree 0 costs no maximum Body Point");
+  assert.equal(maximumAt(1), baseline - 1, "degree 1 costs one maximum Body Point");
+  assert.equal(maximumAt(3), baseline - 3, "degree 3 costs three maximum Body Points");
 });
 
 // P1-1 intent lock: suppressing transferred effects parented to item types

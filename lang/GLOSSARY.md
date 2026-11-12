@@ -1664,6 +1664,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Effect.Permanent` | Permanent | Permanent |
+| `TRUDVANG.Effect.PermanentCannotDelete` | This effect is permanent and cannot be deleted. | Cet effet est permanent et ne peut être supprimé. |
+| `TRUDVANG.Effect.PermanentCannotDisable` | This effect is permanent and cannot be disabled. | Cet effet est permanent et ne peut être désactivé. |
 | `TRUDVANG.Effect.BaseValue` | Base value | Valeur de base |
 | `TRUDVANG.Effect.Transferred` | Transferred while the item is active | Transféré tant que l'objet est actif |
 | `TRUDVANG.Effect.Applied` | Applied to selected targets | Appliqué aux cibles sélectionnées |
@@ -1711,6 +1713,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Degree` | Degree | Degré |
 | `TRUDVANG.Effect.DegreeHint` | Each degree imposes −1 to all Skill and Situation Rolls and to initiative. The penalty is calculated automatically from this degree. | Chaque degré impose −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative. Le malus est calculé automatiquement depuis ce degré. |
 | `TRUDVANG.Effect.CumulativeDegreeHint` | Base numeric modifications are applied once per degree. In Stack mode, reapplying increases this degree and preserves the current duration. | Les modifications numériques de base sont appliquées une fois par degré. En mode Cumuler, une nouvelle application augmente ce degré, en conservant la durée courante. |
+| `TRUDVANG.Effect.PermanentDegreeHint` | This effect is permanent: it can neither be deleted, disabled, nor expire. Each degree removes one maximum HP; degree 0 removes none. | Cet effet est permanent : il ne peut être ni supprimé, ni désactivé, ni expirer. Chaque degré retire un point de santé maximum ; le degré 0 n’en retire aucun. |
 | `TRUDVANG.Effect.ItemActivation` | Activation on the bearer | Activation sur le porteur |
 | `TRUDVANG.Effect.ItemActivationHint` | An automatic effect acts from its item. Inventory mode does not require equipping it; the effect stops when the item leaves the inventory or its quantity reaches zero. | Un effet automatique agit depuis son objet. Le mode inventaire ne nécessite pas de l’équiper ; l’effet cesse si l’objet quitte l’inventaire ou si sa quantité atteint zéro. |
 
@@ -1828,6 +1831,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Folder.GMItems` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.GMTables` | Game Master | Maître de jeu |
+| `TRUDVANG.Content.Folder.Nature` | Nature | Nature |
+| `TRUDVANG.Content.Folder.Religion` | Religion | Religion |
 | `TRUDVANG.Content.Folder.Weapons` | Weapons | Armes |
 | `TRUDVANG.Content.Folder.WeaponsLight` | Light weapons | Armes légères |
 | `TRUDVANG.Content.Folder.WeaponsHeavy` | Heavy weapons | Armes lourdes |
@@ -3318,6 +3323,20 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Item.Thirsty.Name` | Thirsty | Assoiffé |
 | `TRUDVANG.Content.Item.Thirsty.Description` | <p>A graded state managed by the GM: −1 to all Skill and Situation Rolls and to initiative per degree. Edit the degree in Duration & Changes.</p><p>Drop this item onto a PC or NPC sheet: each application increases the existing effect’s degree. Fatigued, Hungry and Thirsty are independent and their penalties add together.</p><p>By default this state remains until manually removed, without automatic recovery on rest. You may set a duration and change its stacking rule.</p> | <p>État à degrés géré par le maître de jeu : −1 à tous les tests de compétence et de situation, ainsi qu’à l’initiative, par degré. Le degré est modifiable dans Durée & Modifications.</p><p>Glissez cet objet sur une feuille de PJ ou PNJ : chaque nouvelle application augmente le degré de l’effet existant. Fatigué, Affamé et Assoiffé sont indépendants et leurs malus se cumulent.</p><p>Par défaut, cet état reste jusqu’à son retrait manuel, sans récupération automatique au repos. Vous pouvez lui attribuer une durée et modifier sa règle de cumul.</p> |
+
+## `TRUDVANG.Content.Item.SermentDeSang`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SermentDeSang.Name` | Blood Oath | Serment de sang |
+| `TRUDVANG.Content.Item.SermentDeSang.Description` | <p>Sacred oath of the Ancient Tradition: each degree is an unfulfilled blood oath and costs 1 max HP, which the character only recovers once the oath is fulfilled. If the oath is broken, the wound becomes permanent. This effect is added automatically, at degree 0, to every character following the Ancient Tradition; it can neither be deleted nor disabled. Edit its degree in Duration & Changes.</p> | <p>Serment sacré de l’Ancienne Tradition : chaque degré correspond à un serment de sang non encore accompli et coûte 1 point de santé maximum, que le personnage ne récupère que lorsque le serment est accompli. Si le serment est rompu, la blessure devient définitive. Cet effet est ajouté automatiquement, au degré 0, à tout personnage suivant l’Ancienne Tradition ; il ne peut être ni supprimé ni désactivé. Modifiez son degré dans Durée & Modifications.</p> |
+
+## `TRUDVANG.Content.Item.Parjure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Parjure.Name` | Oath Breaking | Parjure |
+| `TRUDVANG.Content.Item.Parjure.Description` | <p>Permanent consequence of a broken blood oath: each degree is a final loss of 1 max HP, which nothing can ever recover. The oath’s scar stays blatant and unsightly, and immediately identifies the character as an oath breaker. This effect is added automatically, at degree 0, to every character following the Ancient Tradition; it can neither be deleted nor disabled. Edit its degree in Duration & Changes.</p> | <p>Conséquence permanente d’un serment de sang brisé : chaque degré correspond à une perte définitive de 1 point de santé maximum, que rien ne peut jamais récupérer. La cicatrice du serment reste évidente et disgracieuse, et identifie immédiatement le personnage comme un parjure. Cet effet est ajouté automatiquement, au degré 0, à tout personnage suivant l’Ancienne Tradition ; il ne peut être ni supprimé ni désactivé. Modifiez son degré dans Durée & Modifications.</p> |
 
 ## `TRUDVANG.Content.Item.Blodstor`
 

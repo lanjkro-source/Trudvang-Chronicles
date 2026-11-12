@@ -18,6 +18,7 @@ import {spellActorForItem,spellAvailability} from "../rules/spell-availability.m
 import {knowledgeProcedureDescription, performKnowledgeProcedure} from "../knowledge-procedures.mjs";
 import {performTrainedAnimalAction} from "../trained-animal-actions.mjs";
 import {isCarriedTransferredEffect} from "../effects-summary.mjs";
+import {isPermanentMark} from "../rules/effect-stacking.mjs";
 import {customTabletPower,customTabletChild} from "../rules/custom-tablet.mjs";
 import {itemEffectEditState,intrinsicItemSheetUpdate,itemProtectionModifiers} from "../rules/item-magic.mjs";
 import {ITEM_QUALITIES,itemQuality,intrinsicQualityUpdate} from "../rules/item-quality.mjs";
@@ -132,7 +133,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       name: effect.name,
       img: effect.img,
       transfer: effect.transfer,
-      canDelete: !isCarriedTransferredEffect(effect),
+      canDelete: !isCarriedTransferredEffect(effect) && !isPermanentMark(effect),
       activationLabel: effect.transfer ? game.i18n.localize(`TRUDVANG.Effect.Activation.${effect.system?.activation === "inventory" ? "inventory" : "equipped"}`) : summary,
       duration: durationLabel,
       disabled: effect.disabled,
@@ -453,7 +454,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static async #onEffectDelete(event, target) {
     const id=target.closest("[data-effect-id]")?.dataset.effectId;
     const effect = id ? this.item.effects.get(id) : null;
-    return effect && !isCarriedTransferredEffect(effect) ? effect.delete() : null;
+    return effect && !isCarriedTransferredEffect(effect) && !isPermanentMark(effect) ? effect.delete() : null;
   }
 
   static async #onApplyEffects() {

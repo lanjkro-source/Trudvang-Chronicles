@@ -11,7 +11,7 @@ import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription} from "./rule-tests.mjs";
 import {currentRoundExpiry, registerCombatEffectHooks} from "./combat-effects.mjs";
 import {normalizeEffectDuration, normalizeEffectStage, effectDurationSeconds, itemEffectRemainingSeconds} from "./rules/effect-duration.mjs";
-import {isGradedEffect, isGradedState, effectDegree, gradedEffectName, cumulativeChangeValue} from "./rules/effect-stacking.mjs";
+import {isGradedEffect, isGradedState, effectDegree, gradedEffectName, cumulativeChangeValue, isPermanentMark, isPermanentMarkData, isActorDeleting} from "./rules/effect-stacking.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -61,7 +61,7 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
         choices: ["stack", "refresh", "replace", "highest"]
       }),
       potency: integer(0),
-      degree: new fields.NumberField({required: true, nullable: true, initial: null, min: 1, integer: true}),
+      degree: new fields.NumberField({required: true, nullable: true, initial: null, min: 0, integer: true}),
       stage: integer(0, {min: 0}),
       stages: new fields.ArrayField(new fields.SchemaField({
         label: string(),
@@ -144,7 +144,10 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // original author. Never infer authorship from lastModifiedBy.
     if (user?.id) this.updateSource({"flags.trudvang-chronicles.creatorId": user.id});
     if (isGradedEffect(this)) this.updateSource({showIcon: foundry.CONST.ACTIVE_EFFECT_SHOW_ICON.ALWAYS, "system.degree": effectDegree(this)});
-    this.updateSource({duration: normalizeEffectDuration(data.duration ?? {value: null, units: "rounds"})});
+    // A permanent mark applied to an actor never expires, whatever the
+    // reference template it was copied from carried.
+    if (isPermanentMarkData(this, data)) this.updateSource({duration: {value: null, units: "rounds", expiry: null, expired: false}});
+    else this.updateSource({duration: normalizeEffectDuration(data.duration ?? {value: null, units: "rounds"})});
     if (data.system?.stages) this.updateSource({"system.stages": data.system.stages.map(normalizeEffectStage)});
     if (this.parent?.documentName === "Actor" && data.flags?.["trudvang-chronicles"]?.untilRoundEnd) {
       const expiry = currentRoundExpiry();
@@ -176,12 +179,58 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
       if (data.duration?.expired === true) data.duration.expired = false;
       if (data["duration.expired"] === true) data["duration.expired"] = false;
     }
+    // Permanent religion marks can neither be disabled nor allowed to expire.
+    if (isPermanentMark(this)) {
+      if (data.disabled === true) {
+        ui.notifications.warn(game.i18n.localize("TRUDVANG.Effect.PermanentCannotDisable"));
+        delete data.disabled;
+      }
+      // An indefinite duration is part of the permanent contract: a finite one
+      // would let the effect expire and erase the mark it records.
+      const touchesDuration = data.duration !== undefined
+        || ["duration.value", "duration.units", "duration.expiry", "duration.expired"].some(key => key in data);
+      if (touchesDuration) {
+        data.duration = {value: null, units: "rounds", expiry: null, expired: false};
+        delete data["duration.value"];
+        delete data["duration.units"];
+        delete data["duration.expiry"];
+        delete data["duration.expired"];
+      }
+      // These marks are graded: their degree is the whole record, so a refresh
+      // or replacement rule would silently reset the oaths they carry.
+      if (data.system?.stacking !== undefined) data.system.stacking = "stack";
+      if (data["system.stacking"] !== undefined) data["system.stacking"] = "stack";
+    }
+    // The three GM states always keep at least one degree; only the permanent
+    // religion marks applied to an actor may sit at degree 0.
+    if (isGradedEffect(this) && !isPermanentMark(this)) {
+      const degree = data.system?.degree ?? data["system.degree"];
+      if (degree !== undefined && Number(degree) < 1) {
+        if (data.system?.degree !== undefined) data.system.degree = 1;
+        if (data["system.degree"] !== undefined) data["system.degree"] = 1;
+      }
+    }
     // The editable header displays the prepared name, including its degree.
     // Keep that display suffix out of the stored base name on ordinary saves.
     if (isGradedEffect(this) && data.name === this.name && this._source.name !== this.name) data.name = this._source.name;
     if (data.duration) data.duration = normalizeEffectDuration({...this._source.duration, ...data.duration});
     if (Array.isArray(data.system?.stages)) data.system.stages = data.system.stages.map(normalizeEffectStage);
     return super._preUpdate(data, options, user);
+  }
+
+  async _preDelete(options, user) {
+    const allowed = await super._preDelete(options, user);
+    if (allowed === false) return false;
+    // A permanent mark on a world actor can never be removed. Deleting the
+    // owning actor removes its effects with it, and the world reference item
+    // keeps a deletable copy of the rule.
+    const parent = this.parent;
+    const ownedByActor = parent?.documentName === "Actor" && !parent?.isToken;
+    if (isPermanentMark(this) && ownedByActor && !isActorDeleting(parent)) {
+      ui.notifications.warn(game.i18n.localize("TRUDVANG.Effect.PermanentCannotDelete"));
+      return false;
+    }
+    return true;
   }
 }
 
