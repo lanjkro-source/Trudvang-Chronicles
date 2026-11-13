@@ -2599,6 +2599,53 @@ test("each night removes one temporary divinity point except for the Eald Tradit
  }
 });
 
+// FR Rules pp. 273, 281-284: the Thuul's divine points are locked in rune-imbued
+// sacred objects and are only recovered by the long meditation ritual, never by
+// a night's sleep. The objects themselves regenerate their capital daily.
+test("a Thuul's spent divine points are never restored by a night's rest",async t=>{
+  const runtime=mockActionRuntime(t);
+  const instance=actor();instance.isOwner=true;instance.name="Durin";instance.calmFear=async()=>null;
+  instance.system.healthRecovery={amount:1,days:1};instance.system.resources.body.current=10;instance.system.resources.body.max=10;
+  Object.assign(instance.system.resources.vitner,{value:0,max:4});Object.assign(instance.system.resources.divinity,{value:2,max:7,temporary:0});
+  instance._source.system.rest={healthRecoveryNights:0};
+  instance.update=async data=>{for(const [key,value]of Object.entries(data)){set(instance,key,value);set(instance._source,key,value);}};
+  Object.defineProperty(instance,'selectedReligion',{value:{id:"thuuldom"},configurable:true});
+  for(let night=1;night<=3;night++){
+   await instance.restForNight();
+   assert.equal(instance.system.resources.divinity.value,2,`the spent points stay spent, night ${night}`);
+   assert.match(runtime.messages.at(-1).content,/non renouvelée/);
+  }
+  // Every other religion recovers its whole reserve overnight.
+  for(const religion of ['gerbanis','tenetNid','haminges','toikalokke','ealdTradition']){
+   const other=actor();other.isOwner=true;other.name=religion;other.calmFear=async()=>null;
+   other.system.healthRecovery={amount:1,days:1};other.system.resources.body.current=10;other.system.resources.body.max=10;
+   Object.assign(other.system.resources.vitner,{value:0,max:4});Object.assign(other.system.resources.divinity,{value:2,max:7,temporary:0});
+   other._source.system.rest={healthRecoveryNights:0};
+   other.update=async data=>{for(const [key,value]of Object.entries(data)){set(other,key,value);set(other._source,key,value);}};
+   Object.defineProperty(other,'selectedReligion',{value:{id:religion},configurable:true});
+   await other.restForNight();
+   assert.equal(other.system.resources.divinity.value,7,`${religion} recovers its reserve`);
+  }
+});
+
+// The same guarantee must hold for a real character whose religion comes from
+// the Forgeage Thuul specialty, not from a hand-set field.
+test("a character with the Forgeage Thuul specialty never regains divine points at rest",async t=>{
+  const runtime=mockActionRuntime(t);
+  const forging={id:"forge",type:"ability",name:"Forgeage Thuul",system:{kind:"specialty",catalogId:"thuulForging",level:3}};
+  const instance=actor([forging]);instance.type="character";instance.isOwner=true;instance.name="Kadrin";instance.calmFear=async()=>null;
+  instance.system.healthRecovery={amount:1,days:1};instance.system.resources.body.current=10;instance.system.resources.body.max=10;
+  Object.assign(instance.system.resources.vitner,{value:0,max:4});Object.assign(instance.system.resources.divinity,{value:3,max:9,temporary:0});
+  instance.system.details={race:"buratja",culture:"buratja",archetype:"smith",religion:""};
+  instance._source.system.rest={healthRecoveryNights:0};
+  instance.update=async data=>{for(const [key,value]of Object.entries(data)){set(instance,key,value);set(instance._source,key,value);}};
+  // The Forgeage Thuul specialty is what identifies a Thuul.
+  assert.equal(instance.selectedReligion.id,"thuuldom","the Forgeage Thuul specialty identifies the Thuuldom");
+  await instance.restForNight();
+  assert.equal(instance.system.resources.divinity.value,3,"the spent points stay spent");
+  assert.match(runtime.messages.at(-1).content,/non renouvelée/);
+});
+
 test("a matching target grants the conditional attack bonus to a multi-target roll",async t=>{
  const runtime=mockActionRuntime(t,{die:7}),oldTargets=game.user.targets;t.after(()=>{game.user.targets=oldTargets;});
  const item=inventoryItem('weapon','Axe',{equipped:true}),npc=spendableNpc([item]);npc.system.damage.penalty=0;npc.system.details.size='1';

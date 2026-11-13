@@ -69,6 +69,14 @@ Vérification représentative : prendre une arme non magique de qualité Normale
 
 Le repos nocturne retire un seul point de divinité temporaire par clic, sans descendre sous zéro, pour toutes les religions sauf l’Ancienne Tradition (`ealdTradition`). Celle-ci conserve ses points temporaires ; la fin des serments reste gérée par le MJ. La réserve ordinaire de Thuuldom conserve son fonctionnement sans renouvellement nocturne. Le message de repos annonce uniquement les points effectivement perdus. Référence : Livre des règles, Offrande de sang ; Player’s Handbook, Blood Gifting (exemple de Hrimhrappe), avec l’exception de l’Ancienne Tradition explicitement fixée pour le jeu.
 
+### Points de divinité du Thuul — dépense définitive — 13 novembre 2026
+
+Un forgeron thuul ne regagne **aucun** point de divinité pendant un repos nocturne : la dépense est définitive pour lui. Cela découle de la mécanique propre au Thuuldom, où les points de divinité ne sont pas une réserve personnelle mais un capital lié aux objets sacrés — « Le thuul ne régénère pas les points de divinité avec lesquels il a imprégné l’objet : ils sont verrouillés et liés à une rune spécifique » (Livre des règles, p. 281). Un point de divinité déjà depensé reste donc perdu ; seul le rituel de récupération, qui exige une semaine de méditation par niveau de rune inscrite (p. 283-284), peut le rendre, et le capital disponible dans un objet sacré se régénère seul, quotidiennement (p. 283).
+
+L’exclusion du renouvellement porte sur la réserve ordinaire (`system.resources.divinity.value`) : `restForNight()` ne la réécrit pas pour le Thuuldom et le message de repos annonce « non renouvelée ». Les points temporaires suivent la règle générale de dissipation d’un point par jour. La religion est résolue comme pour les autres personnages : la spécialité Forgeage Thuul suffit à identifier un thuul, que le champ `system.details.religion` soit renseigné ou non.
+
+**Travail restant** : les objets sacrés du Thuuldom ne sont pas encore implémentés. Aucun objet ne peut donc être imprégné de points de divinité, aucune rune n’est gravée sur un objet et aucun capital d’objet ne se régénère quotidiennement. En attendant, les points de divinité d’un thuul ne sont dépensables que comme ceux des autres adeptes, et leur perte au repos reste définitive. Lorsque les objets sacrés arriveront, leur capital devra se régénérer chaque jour, indépendamment du repos de leur porteur.
+
 ### Correctif de consommation partagée et gestes d’inventaire — 10 novembre 2026
 
 - Les cartes de tous les extraits et consommables proposent **Consommer**, jamais la copie générique de leurs effets de conservation. Les anciennes cartes passent également par cette consommation.
