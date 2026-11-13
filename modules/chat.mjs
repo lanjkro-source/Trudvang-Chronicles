@@ -8,6 +8,7 @@ import {playerTraitSituationDialog} from "./dice.mjs";
 import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
 import {openPortraitPopout} from "./portrait.mjs";
 import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse, applyEnvironmentFatigue} from "./trait-situation-request.mjs";
+import {rollProposedSkill} from "./skill-roll-request.mjs";
 import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
@@ -378,6 +379,24 @@ function attachListeners(message, html) {
         const status = await requestTraitSituationResponse({message, actor, token, modifier: options.modifier});
         if (status !== "recorded") ui.notifications.warn(game.i18n.localize(
           status === "alreadyRolled" ? "TRUDVANG.Warning.TraitSituationAlreadyRolled" : "TRUDVANG.Warning.TraitSituationUnavailable"));
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+  html.querySelectorAll("[data-action='roll-skill-request']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const request = message.getFlag("trudvang-chronicles", "skillRollRequest");
+      if (!request) return;
+      const controlled = Array.from(canvas.tokens?.controlled || []).find(token =>
+        ["character", "npc"].includes(token.actor?.type) && token.actor.isOwner);
+      const actor = controlled?.actor ?? game.user.character;
+      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForSkillRoll"));
+      button.disabled = true;
+      try {
+        await rollProposedSkill(actor, request);
       } finally {
         button.disabled = false;
       }

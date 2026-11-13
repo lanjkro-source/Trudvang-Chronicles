@@ -34,7 +34,7 @@ test("existing GM macros replace the ownership mapping without deprecated per-us
   assert.deepEqual(macro.ownership, {default: 0});
   assert.equal(macro.folder, "gm-macros");
   assert.deepEqual(folders.get("gm-macros").ownership, {default: 0});
-  assert.equal(created.length, 6);
+  assert.equal(created.length, 7);
   const environment = created.find(data => data.flags["trudvang-chronicles"].macro === "request-environment");
   assert.equal(environment.ownership.default, 0);
   assert.equal(environment.folder, "gm-macros");
@@ -47,4 +47,10 @@ test("existing GM macros replace the ownership mapping without deprecated per-us
   assert.match(environment.img, /environment.svg$/);
   assert.equal(created.find(data => data.flags["trudvang-chronicles"].macro === "request-situation").ownership.default, 0);
   assert.equal(created.find(data => data.flags["trudvang-chronicles"].macro === "generic-damage").ownership.default, 3);
+  const skillRoll = created.find(data => data.flags["trudvang-chronicles"].macro === "request-skill-roll");
+  assert.ok(skillRoll, "the skill-roll proposal macro is installed");
+  assert.equal(skillRoll.name, "TRUDVANG.Macro.ProposeSkillRoll");
+  assert.equal(skillRoll.command, "await game.trudvang.requestSkillRoll();");
+  assert.equal(skillRoll.folder, "gm-macros", "the macro lives in the GM folder");
+  assert.equal(skillRoll.ownership.default, 0, "only the GM may run it");
 });

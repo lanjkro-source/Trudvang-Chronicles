@@ -23,6 +23,7 @@ import {registerActorStatusHooks} from "./modules/actor-statuses.mjs";
 import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
 import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
+import { requestSkillRoll } from "./modules/skill-roll-request.mjs";
 import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
 import {registerTransformationHooks} from "./modules/transformations.mjs";
 import {registerMaintainedSpellTracking} from "./modules/maintained-spell-tracking.mjs";
@@ -199,7 +200,7 @@ Hooks.once("init", () => {
 
   // Public macro API: the generic situation-roll macro calls
   // `game.trudvang.rollGenericSituation()` (no actor required).
-  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll, advanceDay, advanceDuration, advanceWorldTime, requestEnvironmentRoll, executeConsequences, createConsequenceEffect, announceConsequences};
+  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll, advanceDay, advanceDuration, advanceWorldTime, requestEnvironmentRoll, requestSkillRoll, executeConsequences, createConsequenceEffect, announceConsequences};
 
   const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 

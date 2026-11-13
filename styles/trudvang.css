@@ -1005,6 +1005,8 @@
 .trudvang.chat-card .extract-stage { font-weight: 700; }
 .trudvang.chat-card .extract-duration { color: var(--trudvang-muted); }
 .trudvang.chat-card .roll-details.is-collapsed { display: none !important; }
+.trudvang.chat-card .skill-roll-request-knowledge { margin: 4px 8px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.trudvang.chat-card .skill-roll-request-modifier { color: var(--trudvang-muted); }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card .trait-situation-results { margin: 2px 8px 8px; padding: 0; list-style: none; }
 .trudvang.chat-card .trait-situation-consequence { margin: 4px 8px; padding: 4px 7px; border-left: 2px solid currentColor; background: color-mix(in srgb, currentColor 8%, var(--trudvang-paper-light)); }

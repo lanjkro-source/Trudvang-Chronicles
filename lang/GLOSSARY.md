@@ -1321,6 +1321,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 | `TRUDVANG.Macro.RequestEnvironment` | Request an environment roll | Provoquer un jet d’environnement |
+| `TRUDVANG.Macro.ProposeSkillRoll` | Propose a skill roll | Proposer un jet de compétence |
+| `TRUDVANG.Macro.ProposeSkillRollKnowledge` | Skill, discipline or specialty | Compétence, discipline ou spécialité |
+| `TRUDVANG.Macro.ProposeSkillRollModifier` | Situation modifier | Modificateur de situation |
+| `TRUDVANG.Macro.ProposeSkillRollButton` | Roll {knowledge} | Jet de {knowledge} |
+| `TRUDVANG.Macro.ProposeSkillRollHint` | Select your PC or NPC, then roll the requested test. | Sélectionnez votre PJ ou PNJ, puis lancez le jet demandé. |
+| `TRUDVANG.Macro.InvalidSkillRoll` | Choose a skill, a discipline or a specialty, and a situation modifier. | Choisissez une compétence, une discipline ou une spécialité, et un modificateur de situation. |
 | `TRUDVANG.Macro.AdvanceDuration` | Advance time | Passer une durée |
 | `TRUDVANG.Macro.AdvanceDurationConfirm` | Advance time | Passer cette durée |
 | `TRUDVANG.Macro.AdvanceDurationGMOnly` | Only the game master can advance world time. | Seul le maître de jeu peut faire avancer le temps du monde. |
@@ -1494,6 +1500,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
 | `TRUDVANG.Warning.NoControlledActorForTraitRoll` | Select a PC or NPC before making a resistance roll. | Sélectionnez un PJ ou un PNJ avant de lancer un jet de résistance. |
+| `TRUDVANG.Warning.NoControlledActorForSkillRoll` | Select a PC or NPC before making a skill roll. | Sélectionnez un PJ ou un PNJ avant de lancer un jet de compétence. |
 | `TRUDVANG.Warning.TraitSituationAlreadyRolled` | This PC or NPC has already made its resistance roll on this card. | Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte. |
 | `TRUDVANG.Warning.TraitSituationUnavailable` | The resistance roll could not be recorded. Check that a GM is connected. | Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté. |
 | `TRUDVANG.Warning.NoActorForAbilityUse` | Select a PC or NPC you own before using an ability. | Sélectionnez un PJ ou un PNJ que vous contrôlez avant d’utiliser une capacité. |

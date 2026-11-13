@@ -1091,7 +1091,8 @@ export async function ensureUtilityMacros() {
     ["generic-fear", "FearRoll", "await game.trudvang.rollGenericFear();", "icons/svg/terror.svg", players, 3],
     ["request-situation", "RequestSituation", "await game.trudvang.requestGenericSituationRoll();", "icons/svg/d20.svg", gm, 0],
     ["advance-day", "AdvanceDuration", "await game.trudvang.advanceDuration();", "systems/trudvang-chronicles/assets/icons/advance-day.svg", gm, 0],
-    ["request-environment", "RequestEnvironment", "await game.trudvang.requestEnvironmentRoll();", "systems/trudvang-chronicles/assets/icons/environment.svg", gm, 0]
+    ["request-environment", "RequestEnvironment", "await game.trudvang.requestEnvironmentRoll();", "systems/trudvang-chronicles/assets/icons/environment.svg", gm, 0],
+    ["request-skill-roll", "ProposeSkillRoll", "await game.trudvang.requestSkillRoll();", "icons/svg/d20.svg", gm, 0]
   ]) {
     const data = {name: game.i18n.localize(`TRUDVANG.Macro.${key}`), type: "script", scope: "global", command, img,
       folder: folder.id, ownership: {default: permission}, flags: {[SYSTEM_ID]: {macro: id}}};
