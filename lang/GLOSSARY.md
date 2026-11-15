@@ -1321,11 +1321,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 | `TRUDVANG.Macro.RequestEnvironment` | Request an environment roll | Provoquer un jet d’environnement |
+| `TRUDVANG.Macro.NameGender` | Name sex | Sexe du nom |
+| `TRUDVANG.Macro.NameGenderMale` | Male | Homme |
+| `TRUDVANG.Macro.NameGenderFemale` | Female | Femme |
 | `TRUDVANG.Macro.ProposeSkillRoll` | Propose a skill roll | Proposer un jet de compétence |
 | `TRUDVANG.Macro.ProposeSkillRollKnowledge` | Skill, discipline or specialty | Compétence, discipline ou spécialité |
 | `TRUDVANG.Macro.ProposeSkillRollModifier` | Situation modifier | Modificateur de situation |
 | `TRUDVANG.Macro.ProposeSkillRollButton` | Roll {knowledge} | Jet de {knowledge} |
-| `TRUDVANG.Macro.ProposeSkillRollHint` | Select your PC or NPC, then roll the requested test. | Sélectionnez votre PJ ou PNJ, puis lancez le jet demandé. |
 | `TRUDVANG.Macro.InvalidSkillRoll` | Choose a skill, a discipline or a specialty, and a situation modifier. | Choisissez une compétence, une discipline ou une spécialité, et un modificateur de situation. |
 | `TRUDVANG.Macro.AdvanceDuration` | Advance time | Passer une durée |
 | `TRUDVANG.Macro.AdvanceDurationConfirm` | Advance time | Passer cette durée |
@@ -3485,6 +3487,55 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Table.RaceStats.Name` | Racial Body Points and Movement | Points de santé et mouvement raciaux |
+
+## `TRUDVANG.Content.Table.StormlanderNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.StormlanderNames.Name` | Stormlander Names | Noms Stormlanders |
+| `TRUDVANG.Content.Table.StormlanderNames.Description` | Name prefixes and suffixes for Stormlanders, for both sexes. Source: Rules Book, p. 67. | Préfixes et suffixes des noms stormlanders, pour les deux sexes. Source : Livre des règles, p. 67. |
+
+## `TRUDVANG.Content.Table.MittlanderNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.MittlanderNames.Name` | Mittlander Names | Noms Mittlanders |
+| `TRUDVANG.Content.Table.MittlanderNames.Description` | Name prefixes and suffixes for Mittlanders, for both sexes. Source: Rules Book, p. 67. | Préfixes et suffixes des noms mittlanders, pour les deux sexes. Source : Livre des règles, p. 67. |
+
+## `TRUDVANG.Content.Table.VirannNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.VirannNames.Name` | Virann Names | Noms Viranns |
+| `TRUDVANG.Content.Table.VirannNames.Description` | Name prefixes and suffixes for Viranns, for both sexes. Source: Rules Book, p. 68. | Préfixes et suffixes des noms viranns, pour les deux sexes. Source : Livre des règles, p. 68. |
+
+## `TRUDVANG.Content.Table.DwarfNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.DwarfNames.Name` | Dwarf Names | Noms Nains |
+| `TRUDVANG.Content.Table.DwarfNames.Description` | Name prefixes and suffixes for dwarves. Source: Rules Book, p. 68. | Préfixes et suffixes des noms nains. Source : Livre des règles, p. 68. |
+
+## `TRUDVANG.Content.Table.TrollNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.TrollNames.Name` | Troll Names | Noms Trolls |
+| `TRUDVANG.Content.Table.TrollNames.Description` | Troll name affixes: draw two and assemble them. Source: Rules Book, p. 68. | Affixes des noms trolls : tirez-en deux et assemblez-les. Source : Livre des règles, p. 68. |
+
+## `TRUDVANG.Content.Table.WildfolkNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.WildfolkNames.Name` | Wildfolk Names | Noms Sauvages |
+| `TRUDVANG.Content.Table.WildfolkNames.Description` | Name prefixes and suffixes for the wildfolk, for both sexes. Source: Rules Book, p. 68. | Préfixes et suffixes des noms sauvages, pour les deux sexes. Source : Livre des règles, p. 68. |
+
+## `TRUDVANG.Content.Table.ElfNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.ElfNames.Name` | Elf Names | Noms Elfes |
+| `TRUDVANG.Content.Table.ElfNames.Description` | Name prefixes and suffixes for elves, for both sexes. Source: Rules Book, p. 68. | Préfixes et suffixes des noms elfes, pour les deux sexes. Source : Livre des règles, p. 68. |
 
 ## `TRUDVANG.Content.Table.StormlanderTraits`
 

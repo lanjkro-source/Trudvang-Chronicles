@@ -1141,11 +1141,13 @@
       "TraitSituationRoll": "Request a resistance roll",
       "LegacyTraitSituationRoll": "Trait situation roll",
       "RequestEnvironment": "Request an environment roll",
+      "NameGender": "Name sex",
+      "NameGenderMale": "Male",
+      "NameGenderFemale": "Female",
       "ProposeSkillRoll": "Propose a skill roll",
       "ProposeSkillRollKnowledge": "Skill, discipline or specialty",
       "ProposeSkillRollModifier": "Situation modifier",
       "ProposeSkillRollButton": "Roll {knowledge}",
-      "ProposeSkillRollHint": "Select your PC or NPC, then roll the requested test.",
       "InvalidSkillRoll": "Choose a skill, a discipline or a specialty, and a situation modifier.",
       "AdvanceDuration": "Advance time",
       "AdvanceDurationConfirm": "Advance time",
@@ -2608,6 +2610,34 @@
         },
         "RaceStats": {
           "Name": "Racial Body Points and Movement"
+        },
+        "StormlanderNames": {
+          "Name": "Stormlander Names",
+          "Description": "Name prefixes and suffixes for Stormlanders, for both sexes. Source: Rules Book, p. 67."
+        },
+        "MittlanderNames": {
+          "Name": "Mittlander Names",
+          "Description": "Name prefixes and suffixes for Mittlanders, for both sexes. Source: Rules Book, p. 67."
+        },
+        "VirannNames": {
+          "Name": "Virann Names",
+          "Description": "Name prefixes and suffixes for Viranns, for both sexes. Source: Rules Book, p. 68."
+        },
+        "DwarfNames": {
+          "Name": "Dwarf Names",
+          "Description": "Name prefixes and suffixes for dwarves. Source: Rules Book, p. 68."
+        },
+        "TrollNames": {
+          "Name": "Troll Names",
+          "Description": "Troll name affixes: draw two and assemble them. Source: Rules Book, p. 68."
+        },
+        "WildfolkNames": {
+          "Name": "Wildfolk Names",
+          "Description": "Name prefixes and suffixes for the wildfolk, for both sexes. Source: Rules Book, p. 68."
+        },
+        "ElfNames": {
+          "Name": "Elf Names",
+          "Description": "Name prefixes and suffixes for elves, for both sexes. Source: Rules Book, p. 68."
         },
         "StormlanderTraits": {
           "Name": "Special Stormlander Traits and Abilities",

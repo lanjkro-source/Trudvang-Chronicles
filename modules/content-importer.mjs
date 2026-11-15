@@ -43,7 +43,7 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // starter armor copies, preserving explicit materials and all individual stats.
 // TEMPORARY WORLD MIGRATION — version 69 installs the Blodstör, Vitner Stafur
 // and votive statuette in previously populated development worlds.
-const CONTENT_VERSION = 70;
+const CONTENT_VERSION = 71;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -461,7 +461,7 @@ export async function syncStarterArmorMaterials(source,translationsByKey){
  }
 }
 
-async function rebuildTables(source, folders, translationsByKey) {
+export async function rebuildTables(source, folders, translationsByKey) {
   const sourceKeys = new Set(source.tables.map(entry => starterKey(entry.nameKey)));
   const sourceNames = new Set(source.tables.flatMap(entry => [...(translationsByKey.get(entry.nameKey) ?? [])]));
   const stale = game.tables.filter(table => {
@@ -472,12 +472,20 @@ async function rebuildTables(source, folders, translationsByKey) {
   }).map(table => table.id);
   if (stale.length) await RollTable.deleteDocuments(stale);
 
-  const tables = source.tables.map(entry => ({
-    ...localizeTree(entry),
-    folder: folders[entry.folder]?.id,
-    ...(folderOwnership(source.folders[entry.folder] ?? {}) ? {ownership: folderOwnership(source.folders[entry.folder])} : {}),
-    flags: {[SYSTEM_ID]: {starterId: starterKey(entry.nameKey), tableKey: starterKey(entry.nameKey)}}
-  }));
+  const tables = source.tables.map(entry => {
+    // Extra flags declared on the entry (name tables carry their own metadata)
+    // survive alongside the starter bookkeeping flags.
+    const entryFlags = entry.flags ?? {};
+    return {
+      ...localizeTree(entry),
+      folder: folders[entry.folder]?.id,
+      ...(folderOwnership(source.folders[entry.folder] ?? {}) ? {ownership: folderOwnership(source.folders[entry.folder])} : {}),
+      flags: {
+        ...entryFlags,
+        [SYSTEM_ID]: {...entryFlags[SYSTEM_ID], starterId: starterKey(entry.nameKey), tableKey: starterKey(entry.nameKey)}
+      }
+    };
+  });
   await RollTable.createDocuments(tables);
 }
 

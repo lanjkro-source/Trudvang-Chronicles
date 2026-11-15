@@ -1141,11 +1141,13 @@
       "TraitSituationRoll": "Provoquer un jet de résistance",
       "LegacyTraitSituationRoll": "Jet de situation de trait",
       "RequestEnvironment": "Provoquer un jet d’environnement",
+      "NameGender": "Sexe du nom",
+      "NameGenderMale": "Homme",
+      "NameGenderFemale": "Femme",
       "ProposeSkillRoll": "Proposer un jet de compétence",
       "ProposeSkillRollKnowledge": "Compétence, discipline ou spécialité",
       "ProposeSkillRollModifier": "Modificateur de situation",
       "ProposeSkillRollButton": "Jet de {knowledge}",
-      "ProposeSkillRollHint": "Sélectionnez votre PJ ou PNJ, puis lancez le jet demandé.",
       "InvalidSkillRoll": "Choisissez une compétence, une discipline ou une spécialité, et un modificateur de situation.",
       "AdvanceDuration": "Passer une durée",
       "AdvanceDurationConfirm": "Passer cette durée",
@@ -2608,6 +2610,34 @@
         },
         "RaceStats": {
           "Name": "Points de santé et mouvement raciaux"
+        },
+        "StormlanderNames": {
+          "Name": "Noms Stormlanders",
+          "Description": "Préfixes et suffixes des noms stormlanders, pour les deux sexes. Source : Livre des règles, p. 67."
+        },
+        "MittlanderNames": {
+          "Name": "Noms Mittlanders",
+          "Description": "Préfixes et suffixes des noms mittlanders, pour les deux sexes. Source : Livre des règles, p. 67."
+        },
+        "VirannNames": {
+          "Name": "Noms Viranns",
+          "Description": "Préfixes et suffixes des noms viranns, pour les deux sexes. Source : Livre des règles, p. 68."
+        },
+        "DwarfNames": {
+          "Name": "Noms Nains",
+          "Description": "Préfixes et suffixes des noms nains. Source : Livre des règles, p. 68."
+        },
+        "TrollNames": {
+          "Name": "Noms Trolls",
+          "Description": "Affixes des noms trolls : tirez-en deux et assemblez-les. Source : Livre des règles, p. 68."
+        },
+        "WildfolkNames": {
+          "Name": "Noms Sauvages",
+          "Description": "Préfixes et suffixes des noms sauvages, pour les deux sexes. Source : Livre des règles, p. 68."
+        },
+        "ElfNames": {
+          "Name": "Noms Elfes",
+          "Description": "Préfixes et suffixes des noms elfes, pour les deux sexes. Source : Livre des règles, p. 68."
         },
         "StormlanderTraits": {
           "Name": "Traits & capacités spéciaux des stormlanders",

@@ -36,30 +36,30 @@ export function proposedKnowledgeOptions() {
   return options;
 }
 
+/**
+ * The same catalogue as a tree, for the single dropdown of the GM dialog:
+ * skill, then its disciplines, then their specialties.
+ */
+export function proposedKnowledgeTree() {
+  return Object.entries(TRUDVANG.skills).map(([skillKey, skillLabel]) => ({
+    skillKey,
+    label: game.i18n.localize(skillLabel),
+    disciplines: (TRUDVANG.knowledgeTree[skillKey] ?? []).map(discipline => ({
+      id: discipline.id,
+      label: game.i18n.localize(discipline.label),
+      specialties: (discipline.specialties ?? []).map(specialty => ({
+        id: specialty.id, label: game.i18n.localize(specialty.label)
+      }))
+    }))
+  }));
+}
+
 /** Label of a proposed knowledge, for the chat card and the roll window. */
 export function proposedKnowledgeLabel(option) {
   if (!option) return game.i18n.localize("TRUDVANG.Macro.ProposeSkillRoll");
   if (option.kind === "skill") return game.i18n.localize(TRUDVANG.skills[option.skillKey] ?? option.skillKey);
   const entry = catalogEntry(option.catalogId);
   return entry ? game.i18n.localize(entry.label) : option.label;
-}
-
-/**
- * The full path of a proposed knowledge. A specialty alone is ambiguous in the
- * chat (several disciplines share specialty names), so the skill and the
- * discipline are shown before it.
- */
-export function proposedKnowledgePath(option) {
-  if (!option) return "";
-  if (option.kind === "skill") return proposedKnowledgeLabel(option);
-  const parts = [game.i18n.localize(TRUDVANG.skills[option.skillKey] ?? option.skillKey)];
-  const entry = catalogEntry(option.catalogId);
-  if (entry?.kind === "specialty") {
-    const parent = catalogEntry(entry.parentCatalogId);
-    if (parent) parts.push(game.i18n.localize(parent.label));
-  }
-  parts.push(proposedKnowledgeLabel(option));
-  return parts.join(" · ");
 }
 
 /** Resolve a catalogue id (discipline or specialty) from the knowledge tree. */
@@ -146,14 +146,18 @@ export async function rollProposedSkill(actor, request = {}) {
 export async function proposeSkillRollDialog() {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const options = proposedKnowledgeOptions();
-  const groups = new Map();
-  for (const option of options) {
-    if (!groups.has(option.group)) groups.set(option.group, []);
-    groups.get(option.group).push(option);
-  }
-  const select = [...groups.entries()].map(([group, entries]) =>
-    `<optgroup label="${escapeHtml(group)}">${entries.map(option =>
-      `<option value="${escapeHtml(option.id)}">${escapeHtml(option.label)}</option>`).join("")}</optgroup>`).join("");
+  // One dropdown, one three-level tree: skill, discipline, specialty. HTML has no
+  // nested option groups, so the two lower levels are indented instead.
+  const select = proposedKnowledgeTree().map(skill => {
+    const entries = [`<option value="${escapeHtml(`skill:${skill.skillKey}`)}">${escapeHtml(skill.label)}</option>`];
+    for (const discipline of skill.disciplines) {
+      entries.push(`<option value="${escapeHtml(`catalog:${discipline.id}`)}">&nbsp;&nbsp;${escapeHtml(discipline.label)}</option>`);
+      for (const specialty of discipline.specialties) {
+        entries.push(`<option value="${escapeHtml(`catalog:${specialty.id}`)}">&nbsp;&nbsp;&nbsp;&nbsp;${escapeHtml(specialty.label)}</option>`);
+      }
+    }
+    return `<optgroup label="${escapeHtml(skill.label)}">${entries.join("")}</optgroup>`;
+  }).join("");
   const content = `<div class="trudvang roll-dialog">
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Macro.ProposeSkillRollKnowledge"))}</label><select name="knowledge">${select}</select></div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Macro.ProposeSkillRollModifier"))}</label><input name="modifier" type="number" value="0"></div>
@@ -215,7 +219,6 @@ export async function requestSkillRoll({skillKey = "", catalogId = "", modifier 
     gmImg: game.user.avatar || "icons/svg/d20.svg",
     title: rollTitle,
     buttonLabel,
-    knowledgeLabel: proposedKnowledgePath(option),
     modifier: Number(modifier) || 0
   });
   await ChatMessage.create({

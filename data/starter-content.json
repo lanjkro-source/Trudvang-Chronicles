@@ -3846,6 +3846,2929 @@
           "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B20"
         }
       ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.StormlanderNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.StormlanderNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d30",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "stormlander-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "As-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Bod-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Bryn-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Hall-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Hraf-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Ing-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Jor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Tor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Vig-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Vret-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "-biorn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-geir",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-grim",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-galt",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-jald",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-orm",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-ulf",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-ur",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-vald",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-varr",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-a",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "-dis",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "-dott",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "-gerd",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "-hild",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "-umbla",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "-unn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "-veig",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "-vida",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            999
+          ],
+          "text": "-vigg",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.MittlanderNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.MittlanderNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d30",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "mittlander-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "Bran-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Edel-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Eid-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Eo-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Gul(d)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Hedel-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Her-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Log-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Mau(g)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Mor(d)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "-(b)jard",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-(g)jar",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-(h)ed",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-finn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-fraidh",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-han",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-marr",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-red",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-rik",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-win(n)",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-(an)non",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "-(el)de",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "-(h)eid",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "-(i)trude",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "-frid",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "-lynn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "-n(hj)a",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "-rynn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "-wa",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            999
+          ],
+          "text": "-wen",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.VirannNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.VirannNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d30",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "virann-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "Bruni-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Fride-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Gals-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Huni-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Klod(i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Mar(i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Mero-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Rod(e)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Sul(i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Tryn(i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "-ba(l)d",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-gar",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-gist",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-kar",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-kind",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-pis",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-red",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-rik",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-vard",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-wig/-vik",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-(di)t",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "-fing",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "-gond",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "-hed(d)",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "-kild",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "-len",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "-mynt(a)",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "-nell",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "-strid",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            999
+          ],
+          "text": "-winda",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.DwarfNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.DwarfNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d22",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "dwarf-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "Bor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Brok-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Dvor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Fifun-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Glo-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Jo(r)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Niful-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Ru(k)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Tjeb-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Tor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "Zvor-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-(d)olga",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-(k)ka",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-(r)ust",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-drank",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-gel",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-linkk",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-logi",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-rovv",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-van",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-var",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            999
+          ],
+          "text": "-zink",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.TrollNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.TrollNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d36",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "troll-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "a",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "mo",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "claw",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "mud",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "dy",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "must",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "e",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "nose",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "fart",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "ogg",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "fur",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "ryt",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "furm",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "snot",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "gnak",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "snus",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "grik",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "stink",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "grinn",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "sto",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "grish",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "tande",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "hog",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "tide",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "hro",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "tov",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "ke",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "urg",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "knor",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            30
+          ],
+          "text": "vis",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            31,
+            31
+          ],
+          "text": "lill",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            32,
+            32
+          ],
+          "text": "warf",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            33,
+            33
+          ],
+          "text": "lork",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            34,
+            34
+          ],
+          "text": "yge",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            35,
+            35
+          ],
+          "text": "lus",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            36,
+            999
+          ],
+          "text": "yt",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "affix"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.WildfolkNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.WildfolkNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d30",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "wildfolk-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "Ad(a ou e)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Ber(o)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Frid-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Gaut(a ou o)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Hrod-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Kun(e ou i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Rud(i ou o)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Sig(a ou i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Wald-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Wid-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "-cher",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-helm",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-jotz",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-(o)lin",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-(e)lric",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-mar",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-munt",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-ort",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-ram",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-reiks",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-danes",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "-heidis",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "-hild",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "-lindis",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "-(i)nda",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "-(a)ndu",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "-nor",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "-(i)vfa",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "-warda",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            999
+          ],
+          "text": "-wig",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.ElfNames.Name",
+      "descriptionKey": "TRUDVANG.Content.Table.ElfNames.Description",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d30",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "elf-names",
+          "nameTable": true
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "text": "Harp-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "text": "Jep(pi)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "text": "Kyll-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "text": "Lep(o)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "text": "Norm(a ou o)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "text": "Pojh(a)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "text": "Sirp(a)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "text": "Syll-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "text": "Vajn(e)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "text": "Val(i)-",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "prefix"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "text": "-(e)hang",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "text": "-(p)iaho",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "text": "-akka",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "text": "-ingas",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "text": "-jias",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "text": "-lainen",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "text": "-mojna",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "text": "-pihi",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "text": "-taja",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "text": "-ua",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "male"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "text": "-(p)ala",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "text": "-atta",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "text": "-hiska",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "text": "-ika",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "text": "-iul(l)u",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "text": "-kosva",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "text": "-lajna",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "text": "-likki",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "text": "-olvi",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            999
+          ],
+          "text": "-sinka",
+          "flags": {
+            "trudvang-chronicles": {
+              "namePart": "suffix",
+              "gender": "female"
+            }
+          }
+        }
+      ]
     }
   ],
   "actors": []

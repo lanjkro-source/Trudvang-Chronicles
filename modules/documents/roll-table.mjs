@@ -2,6 +2,7 @@ import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
 import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
+import { nameTableMeta, rollNameTable } from "../name-tables.mjs";
 
 const EXTRACT_STAGE_IDS = new Map([
   ["extract-stage", "extract-stage"],
@@ -14,7 +15,7 @@ function extractStageTableId(table) {
   return EXTRACT_STAGE_IDS.get(starterId) ?? EXTRACT_STAGE_IDS.get(tableKey) ?? null;
 }
 
-/** Special handling is confined to the two supplied fatal-effect tables and the extract-stage table. */
+/** Special handling is confined to the supplied fatal-effect tables, the extract-stage table and the name tables. */
 export class TrudvangRollTable extends foundry.documents.RollTable {
   get fatalTableId() {
     return fatalTableId(this);
@@ -35,6 +36,8 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
   }
 
   async draw({displayChat = true, ...options} = {}) {
+    // Name tables assemble a prefix and a suffix instead of drawing one result.
+    if (nameTableMeta(this).isNameTable) return rollNameTable(this, {displayChat});
     if (!extractStageTableId(this)) return super.draw({displayChat, ...options});
     const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
     if (!actor) {

@@ -16,12 +16,13 @@ globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, d
 
 const {
   proposedKnowledgeOptions,
+  proposedKnowledgeTree,
   proposedKnowledgeFor,
   proposedKnowledgeLabel,
-  proposedKnowledgePath,
   resolveProposedRoll,
   rollProposedSkill,
-  requestSkillRoll
+  requestSkillRoll,
+  proposeSkillRollDialog
 } = await import("../modules/skill-roll-request.mjs");
 
 function mockGame(overrides = {}) {
@@ -69,17 +70,40 @@ test("a proposed knowledge resolves back to its option and label", () => {
     assert.equal(specialty.kind, "specialty");
     assert.equal(specialty.catalogId, "hardMaterials");
     assert.equal(proposedKnowledgeLabel(specialty), "Matériaux durs");
-    assert.equal(proposedKnowledgePath(specialty), "Savoir-faire · Artisanat · Matériaux durs",
-      "a specialty shows its skill and discipline, which the chat card needs");
     const skill = proposedKnowledgeFor("care");
     assert.equal(skill.kind, "skill");
     assert.equal(proposedKnowledgeLabel(skill), "Savoir-faire");
-    assert.equal(proposedKnowledgePath(skill), "Savoir-faire");
-    const discipline = proposedKnowledgeFor("care", "handicraft");
-    assert.equal(proposedKnowledgePath(discipline), "Savoir-faire · Artisanat");
     assert.equal(proposedKnowledgeFor("care", "unknown"), null, "an unknown catalog id is refused");
   } finally {
     globalThis.game = previous;
+  }
+});
+
+test("the GM dialog offers one dropdown with a three-level knowledge tree", async () => {
+  const previous = {game: globalThis.game, DialogV2: globalThis.DialogV2, document: globalThis.document};
+  let captured;
+  globalThis.game = mockGame();
+  // escapeHtml serializes through a DOM text node.
+  globalThis.document = {createElement: () => ({set textContent(value) {this.innerHTML = String(value ?? "");}, innerHTML: ""})};
+  globalThis.DialogV2 = class {
+    static wait(options) {captured = options; return false;}
+  };
+  try {
+    await proposeSkillRollDialog();
+    assert.ok(captured, "the dialog opens");
+    const select = captured.content.match(/<select name="knowledge">([\s\S]*?)<\/select>/)?.[1] ?? "";
+    assert.ok(select.includes('<optgroup label="Savoir-faire">'), "the skill is a group header");
+    assert.ok(select.includes('<option value="skill:care">Savoir-faire</option>'), "the skill itself is selectable");
+    assert.ok(select.includes('&nbsp;&nbsp;Artisanat</option>'), "the discipline is the second level");
+    assert.ok(select.includes('&nbsp;&nbsp;&nbsp;&nbsp;Matériaux durs</option>'), "the specialty is the third level");
+    // Every selectable knowledge is present exactly once.
+    const ids = [...select.matchAll(/value="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(new Set(ids).size, ids.length, "no knowledge is offered twice");
+    assert.equal(ids.length, proposedKnowledgeOptions().length, "every knowledge is offered");
+  } finally {
+    globalThis.game = previous.game;
+    globalThis.DialogV2 = previous.DialogV2;
+    globalThis.document = previous.document;
   }
 });
 
@@ -186,11 +210,14 @@ test("a skill-roll request is posted as a chat card carrying the knowledge and t
     assert.equal(request.catalogId, "hardMaterials");
     assert.equal(request.modifier, -2);
     assert.equal(request.title, "Porte condamnée");
-    // The card offers a button every player can use.
+    // The card offers a button every player can use, and nothing else.
     const html = created[0].content;
     assert.match(html, /data-action="roll-skill-request"/, "the card carries the roll button");
     assert.match(html, /Matériaux durs/, "the card names the proposed knowledge");
     assert.match(html, /Porte condamnée/, "the card shows the requested title");
+    assert.doesNotMatch(html, /Sélectionnez votre PJ/, "the card no longer spells out the procedure");
+    assert.doesNotMatch(html, /Compétence, discipline ou spécialité/, "the card no longer repeats the knowledge label");
+    assert.equal((html.match(/<button/g) ?? []).length, 1, "the card has a single button");
   } finally {
     globalThis.game = previous.game;
     globalThis.CONST = previous.CONST;

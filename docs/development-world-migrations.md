@@ -1,5 +1,9 @@
 # Migrations temporaires des mondes de développement
 
+## Tables de noms — version de contenu 71
+
+Le palier `CONTENT_VERSION = 71` de `modules/content-importer.mjs` relance l’import standard dans les anciens mondes pour y installer les sept tables de noms du dossier Création de Personnages : Stormlanders, Mittlanders, Viranns, Nains, Trolls, Sauvages et Elfes (Livre des règles, p. 67-68). Chaque table porte un flag `nameTable` que `rebuildTables()` préserve désormais, et `TrudvangRollTable.draw()` détecte : elle demande le sexe pour les cinq cultures à suffixes genrés, tire un préfixe puis un suffixe, et publie le nom assemblé dans le chat. Les tables des nains (sans sexe) et des trolls (deux affixes) suivent leurs propres règles. Retirer ce palier historique/commentaire lors du nettoyage des migrations ; les sept tables et la détection du flag restent nécessaires.
+
 ## Serment de sang et Parjure — version de contenu 70
 
 Le palier `CONTENT_VERSION = 70` de `modules/content-importer.mjs` relance l’import standard dans les anciens mondes : il crée les sous-dossiers Nature et Religion sous le dossier Maître de jeu, y déplace Fatigué, Affamé et Assoiffé, et installe les deux effets permanents Serment de sang et Parjure. La synchronisation des acteurs (`syncReligionEffects()` dans `modules/religion-effects.mjs`, appelée par `modules/actor-statuses.mjs`) ajoute ensuite ces deux effets, au degré 0, à tout adepte de l’Ancienne Tradition ; elle ne les retire jamais. Les effets déjà pose sur un acteur conservent le degré que le maître de jeu leur a donné. Ce palier historique/commentaire peut être retiré lors du nettoyage des migrations ; les deux entrées du catalogue, les deux sous-dossiers et la synchronisation permanente restent nécessaires.

@@ -6,11 +6,6 @@
       <h3>{{title}}</h3>
     </div>
   </header>
-  <p class="card-flavor">{{localize "TRUDVANG.Macro.ProposeSkillRollHint"}}</p>
-  <p class="skill-roll-request-knowledge">
-    <strong>{{localize "TRUDVANG.Macro.ProposeSkillRollKnowledge"}} :</strong> {{knowledgeLabel}}
-    {{#if modifier}}<span class="skill-roll-request-modifier">{{localize "TRUDVANG.Macro.ProposeSkillRollModifier"}} : {{modifier}}</span>{{/if}}
-  </p>
   <button type="button" data-action="roll-skill-request">
     <i class="fas fa-dice-d20" aria-hidden="true"></i> {{buttonLabel}}
   </button>

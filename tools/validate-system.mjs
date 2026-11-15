@@ -165,7 +165,14 @@ for (const extract of (content.items || []).filter(item => item.type === "potion
 for (const key of localization) if (!frenchLocalization.has(key)) failures.push(`Missing French localization key: ${key}`);
 for (const key of frenchLocalization) if (!localization.has(key)) failures.push(`Missing English localization key: ${key}`);
 
-const requiredTables = new Map([["fatal-magic-effects", 29], ["fatal-failure-effects", 11], ["extract-stage", 4], ["stormlander-traits", 40], ["huvfurwurm-head-regeneration", 17]]);
+const requiredTables = new Map([
+  ["fatal-magic-effects", 29], ["fatal-failure-effects", 11], ["extract-stage", 4], ["stormlander-traits", 40],
+  ["huvfurwurm-head-regeneration", 17],
+  // Name tables, FR Rules pp. 67-68: prefixes plus gendered suffixes, or one affix
+  // pool for dwarves and trolls.
+  ["stormlander-names", 30], ["mittlander-names", 30], ["virann-names", 30], ["dwarf-names", 22],
+  ["troll-names", 36], ["wildfolk-names", 30], ["elf-names", 30]
+]);
 if (content.tables?.length !== requiredTables.size) failures.push(`Starter content must contain exactly ${requiredTables.size} rule tables.`);
 for (const table of content.tables || []) {
   const id = table.flags?.["trudvang-chronicles"]?.starterId;
