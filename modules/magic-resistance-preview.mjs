@@ -3,8 +3,9 @@ import {magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistan
 import {escapeHtml} from "./helpers.mjs";
 
 /** Preview the source-side adjustments, separate from the caster's own roll VC. */
-export function magicResistancePreview(context){
- const sections=(RULE_TESTS_BY_CATALOG_ID[context?.sourceId]??[]).flatMap(test=>{
+export function magicResistancePreview(context,{excludeTests=[]}={}){
+ const sections=(RULE_TESTS_BY_CATALOG_ID[context?.sourceId]??[]).flatMap((test,index)=>{
+  if(excludeTests.includes(index))return [];
   const rows=localizeResistanceRows(magicResistanceRows(test,{context}));
   if(!rows.length)return [];
   return [`<section><strong>${escapeHtml(test.action)}</strong><ul class="roll-state-modifiers">${rows.map(row=>`<li><span>${escapeHtml(row.label)}</span><b>${row.value>0?"+":""}${row.value}</b></li>`).join("")}</ul></section>`];

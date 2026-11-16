@@ -18678,7 +18678,9 @@
       "Notice": "{actor} doit résister à {effect}.",
       "Resist": "Résister",
       "Busy": "Une résistance est déjà en cours pour cet effet.",
-      "Unavailable": "La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet."
+      "Unavailable": "La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet.",
+      "UnwillingTarget": "Cible non consentante",
+      "AwareUnwillingTarget": "Cible consciente du sort et non consentante"
     }
   }
 }

@@ -16397,3 +16397,5 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.InitialResistance.Resist` | Resist | Résister |
 | `TRUDVANG.InitialResistance.Busy` | A resistance roll is already in progress for this effect. | Une résistance est déjà en cours pour cet effet. |
 | `TRUDVANG.InitialResistance.Unavailable` | This resistance could not be confirmed. Try again from the effect. | La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet. |
+| `TRUDVANG.InitialResistance.UnwillingTarget` | Unwilling target | Cible non consentante |
+| `TRUDVANG.InitialResistance.AwareUnwillingTarget` | Target aware of the spell and unwilling | Cible consciente du sort et non consentante |

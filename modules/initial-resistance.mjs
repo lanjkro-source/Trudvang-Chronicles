@@ -26,6 +26,8 @@ export function initialResistanceTestDisabled(document,index,spec){
 }
 function live(effect){
  if(!effect||effect.disabled||effect.isSuppressed||effect.duration?.expired)return false;
+ const duration=effect._source?.duration??effect.duration;
+ if(duration?.value==null)return true;
  const remaining=itemEffectRemainingSeconds(effect,{time:Number(game.time?.worldTime)||0,combat:game.combat});
  return remaining===null||remaining>0;
 }

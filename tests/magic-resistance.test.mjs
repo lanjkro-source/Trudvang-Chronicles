@@ -56,7 +56,7 @@ globalThis.CONFIG={TRUDVANG:{}};
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=1;return this;}};
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{messages.push(data);return data;}};
 const {performRuleTest}=await import("../modules/rule-tests.mjs");
-const {rollUnder,magicDialog}=await import("../modules/dice.mjs");
+const {rollUnder,magicDialog,rollConfiguredTraitSituation}=await import("../modules/dice.mjs");
 const {applyTransformation}=await import("../modules/transformations.mjs");
 const target=()=>({...ranks(1),type:"character",name:"Victime",isOwner:true,system:{damage:{penalty:-1},fearPenalty:-2},canPerformAction:()=>true,getTraitValue:()=>1,
  getRollModifier:()=>1,rollEffectRows:()=>[{label:"Amulette",value:1}],traitEffectRows:()=>[],effects:[],allApplicableEffects:()=>[]});
@@ -69,7 +69,7 @@ test("a successful cast carries its own improvement and rank snapshot into the a
   assert.equal(context.specialtyLevel,2);assert.equal(context.counts[3],3);
   assert.match(cards.at(-1).transformationLinks,/data-rule-test-context=/);
   caster.findRuleKnowledge=()=>({system:{level:5}});
-  const result=await performRuleTest({document:item,index:0,actor:target(),context});
+  const result=await rollConfiguredTraitSituation({test:tests[id][0],actor:target(),resistedEffect:item,resistanceContext:context,sourceName:item.name});
   assert.equal(result.target,5,"6 base +1 Constitution +1 effect -3 improvements -4 caster +2 target -1 wounds -2 fear +5 manual");
   const html=dialogs.at(-1).content;
   for(const text of [/Amélioration 4/,/3 × -1/,/Puissance du lanceur Lanceur/,/niveau 2 × −2/,/Puissance de Victime/,/niveau 1 × \+2/,/Amulette/,/Malus de blessures/,/Pénalité de peur/])assert.match(html,text);
@@ -133,7 +133,7 @@ test("effect application exposes and persists resistance improvements, with a li
   assert.equal(stored.counts[3],2);assert.equal(stored.specialtyLevel,2);
   created.type="effect";created.documentName="ActiveEffect";
   foundry.applications.api.DialogV2=previous;
-  const result=await performRuleTest({document:created,index:0,actor:target()});
+  const result=await rollConfiguredTraitSituation({test:tests[haste][0],actor:target(),resistedEffect:created,resistanceContext:stored,sourceName:created.name});
   assert.equal(result.target,6,"edited resistance improvement is used by the effect's description link");
  }finally{foundry.applications.api.DialogV2=previous;}
 });
@@ -168,7 +168,7 @@ test("the real chat listener forwards the message's snapshot and rolls for the c
   const hooks={};globalThis.Hooks={on:(name,fn)=>{hooks[name]=fn;}};
   let clicked;const button={disabled:false,dataset:{testIndex:"0"},closest:()=>({dataset:{ruleDocumentUuid:"Item.haste"}}),addEventListener:(name,fn)=>{clicked=fn;}};
   globalThis.HTMLElement=class{constructor(){this.dataset={};}querySelectorAll(selector){return selector==="[data-action='roll-rule-test']"?[button]:[];}};
-  const caster=ranks(2),item=doc(haste,caster),context=ruleTestCastingContext(item,{counts:[0,0,0,3]});
+  const caster=ranks(2),item=doc("vitner-witchcraft:fever:2",caster),context=ruleTestCastingContext(item,{counts:[0,0,0,3]});
   caster.findRuleKnowledge=()=>({system:{level:5}});
   foundry.utils={fromUuid:async()=>item};game.user.character=target();
   const {registerChatListeners}=await import("../modules/chat.mjs");registerChatListeners();

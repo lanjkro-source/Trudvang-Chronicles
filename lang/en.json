@@ -18678,7 +18678,9 @@
       "Notice": "{actor} must resist {effect}.",
       "Resist": "Resist",
       "Busy": "A resistance roll is already in progress for this effect.",
-      "Unavailable": "This resistance could not be confirmed. Try again from the effect."
+      "Unavailable": "This resistance could not be confirmed. Try again from the effect.",
+      "UnwillingTarget": "Unwilling target",
+      "AwareUnwillingTarget": "Target aware of the spell and unwilling"
     }
   }
 }

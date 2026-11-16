@@ -233,13 +233,13 @@ function abilityEntryFor(actor, catalogId) {
 
 export async function performRuleTest({document, index, actor = testActorForUser(), context,resultMessage} = {}) {
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests || document?.flags?.[SYSTEM_ID]?.transformation?.roundResistance) && document.parent?.documentName === "Actor") actor = document.parent;
-  if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests) && !actor?.isOwner) return null;
   const test = ruleTestsForDocument(document)[Number(index)];
   if(test?.casterTest){
-   const uuid=context?.casterUuid??document?.actor?.uuid;
+   const uuid=context?.casterUuid??document?.flags?.[SYSTEM_ID]?.transformation?.ruleTestContext?.casterUuid??document?.actor?.uuid;
    if(uuid)actor=await foundry.utils.fromUuid(uuid);
    if(!actor?.isOwner){ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.Permission'));return null;}
   }
+  if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests) && !actor?.isOwner) return null;
   if (test?.disabled)return null;
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));

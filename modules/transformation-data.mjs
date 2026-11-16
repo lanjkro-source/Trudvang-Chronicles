@@ -607,6 +607,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-two-thirds"
     ],
     "priority": 50,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": [
       {
@@ -1218,6 +1221,11 @@ export const TRANSFORMATION_TEMPLATES = {
       8,
       9
     ],
+    "initialResistance": {
+      "testIndex": 0,
+      "optional": true,
+      "conditionKey": "TRUDVANG.InitialResistance.UnwillingTarget"
+    },
     "sourceId": "vitner-wind-craft:lift:5",
     "parameters": [
       {
@@ -1256,6 +1264,11 @@ export const TRANSFORMATION_TEMPLATES = {
       7,
       8
     ],
+    "initialResistance": {
+      "testIndex": 0,
+      "optional": true,
+      "conditionKey": "TRUDVANG.InitialResistance.UnwillingTarget"
+    },
     "sourceId": "vitner-wind-craft:wind-catcher:9",
     "parameters": [
       {
@@ -2348,6 +2361,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-witchcraft:amnesia:4",
     "parameters": []
   },
@@ -2945,6 +2961,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:hearing-deafness:2",
     "parameters": [
       {
@@ -3075,6 +3094,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:sense-of-smell:3",
     "parameters": [
       {
@@ -3173,6 +3195,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:vision-blindness:4",
     "parameters": [
       {
@@ -3276,6 +3301,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       3
     ],
+    "initialResistance": {
+      "testIndex": 0,
+      "optional": true,
+      "conditionKey": "TRUDVANG.InitialResistance.AwareUnwillingTarget"
+    },
     "sourceId": "vitner-body-vitner:appearance-change:7",
     "parameters": [
       {
@@ -3403,6 +3433,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 40,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:hasten:9",
     "parameters": [
       {
@@ -3493,6 +3526,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 40,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:strengthen:8",
     "parameters": [
       {
@@ -3589,6 +3625,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 50,
+    "initialResistance": {
+      "testIndex": 0,
+      "optional": true,
+      "conditionKey": "TRUDVANG.InitialResistance.UnwillingTarget"
+    },
     "sourceId": "vitner-body-vitner:change-creature:11",
     "parameters": [
       {
@@ -3737,6 +3778,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0,
+      "optional": true,
+      "conditionKey": "TRUDVANG.InitialResistance.UnwillingTarget"
+    },
     "sourceId": "vitner-delusion-vitner:ghost-voice:5",
     "parameters": [
       {
@@ -4599,6 +4645,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
     "parameters": [
       {
@@ -4705,6 +4754,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
     "parameters": [
       {
@@ -4824,6 +4876,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7",
     "parameters": [
       {
@@ -5907,6 +5962,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
     "parameters": [
       {
@@ -7721,6 +7779,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-two-thirds"
     ],
     "priority": 30,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
     "parameters": [
       {
@@ -7820,6 +7881,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-two-thirds"
     ],
     "priority": 50,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": [
       {
@@ -9833,6 +9897,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-two-thirds"
     ],
     "priority": 50,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": [
       {
@@ -10361,6 +10428,9 @@ export const TRANSFORMATION_TEMPLATES = {
       2
     ],
     "inputKey": "TRUDVANG.Transformation.SuggestedTask",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-haminges-power-of-trolls:persuade:5",
     "parameters": [
       {
@@ -10478,6 +10548,9 @@ export const TRANSFORMATION_TEMPLATES = {
       2
     ],
     "inputKey": "TRUDVANG.Transformation.SuggestedTask",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
     "parameters": [
       {
@@ -14509,6 +14582,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
     "parameters": []
   },

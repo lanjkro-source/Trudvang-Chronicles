@@ -645,6 +645,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
       "traitMethod": "first",
       "magicResistance": false,
+      "casterTest": true,
       "kind": "resist",
       "index": 1
     }
@@ -745,6 +746,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
       "traitMethod": "first",
       "magicResistance": false,
+      "casterTest": true,
       "kind": "resist",
       "index": 1
     }

@@ -29,7 +29,8 @@ const {prepareInitialResistance,resolveInitialResistanceOnAuthority,withInitialR
 const {ruleTestsForDocument,ruleTestActionViews,performRuleTest,annotateRuleTestDescription}=await import('../modules/rule-tests.mjs');
 const {applyTransformation}=await import('../modules/transformations.mjs');
 test('all nine FR/EN templates create pending effects with no active consequences or raw localization keys',async()=>{
- const entries=Object.entries(templates).filter(([,t])=>t.initialResistance);assert.equal(entries.length,9);
+ const original=['ecstasy','imagining','creature-control','possess-creature','immobilize','blood-brothers','grace-of-gave','divine-pact','paralyzing-gaze'];
+ const entries=Object.entries(templates).filter(([,t])=>t.initialResistance&&original.includes(t.sourceId.split(':')[1]));assert.equal(entries.length,9);
  for(const lang of ['fr','en'])for(const [key,template] of entries){
   const actor=setup(lang);let created;
   actor.createTrudvangEffect=async input=>(created=input,null);
@@ -119,4 +120,72 @@ test('an unavailable GM connection retains the roll for retry instead of rolling
  game.users.activeGM=null;
  await withInitialResistance(e,0,actor,async()=>{rolls++;return {success:true};});
  assert.equal(rolls,1);assert.equal(e.flags[S].initialResistance.resolved,true);
+});
+
+test('all 31 recipient-resistance templates defer their native consequences in both languages, including chosen forms',async()=>{
+ const {BESTIARY_ENTRIES}=await import('../modules/bestiary-catalog-data.mjs');
+ const entries=Object.entries(templates).filter(([,row])=>row.initialResistance);assert.equal(entries.length,31);
+ for(const lang of ['fr','en'])for(const [key,template] of entries){
+  const actor=setup(lang);actor.getTraitValue=()=>0;actor.system.resources={body:{max:20}};let created;
+  actor.createTrudvangEffect=async input=>(created=input,null);
+  await applyTransformation(actor,key,{preselectedAnswers:{duration:'1 minute',resistApplication:true,form:BESTIARY_ENTRIES[0].id}});
+  assert.ok(created.flags[S].initialResistance,key);assert.deepEqual(created.system.changes,[],key);assert.deepEqual(created.statuses,[],key);
+  assert.doesNotMatch(created.name+created.description,/undefined|TRUDVANG\./,key);
+ }
+});
+test('all five beneficial/reversed pairs resist only the impaired version, with blindness and deafness deferred',async()=>{
+ for(const [source,good,bad]of [['hearing-deafness:2','ameliore','affaibli'],['sense-of-smell:3','ameliore','affaibli'],['vision-blindness:4','ameliore','affaibli'],['hasten:9','hate','hate-inverse'],['strengthen:8','vigueur','vigueur-inverse']]){
+  const actor=setup();actor.getTraitValue=()=>0;let created;actor.createTrudvangEffect=async input=>(created=input,null);
+  const id='vitner-body-vitner:'+source,counts=[];counts[5]=8;
+  await applyTransformation(actor,id+'#'+good,{skipDialog:true,counts});
+  assert.equal(created.flags[S].initialResistance,undefined,good);assert.equal(ruleTestActionViews(created).length,0);
+  await applyTransformation(actor,id+'#'+bad,{skipDialog:true,counts});
+  const e=effect(actor,created);assert.deepEqual(e.statuses,[]);assert.deepEqual(e.system.changes,[]);
+  await withInitialResistance(e,0,actor,async()=>({success:false}));
+  if(source.startsWith('vision-'))assert.deepEqual(e.statuses,['blind']);
+  if(source.startsWith('hearing-'))assert.deepEqual(e.statuses,['deaf']);
+  if(source.startsWith('hasten')||source.startsWith('strengthen'))assert.ok(e.system.changes.length>0);
+ }
+});
+test('five consent-sensitive effects apply directly when accepted and wait only when explicitly resisted',async()=>{
+ const {BESTIARY_ENTRIES}=await import('../modules/bestiary-catalog-data.mjs');
+ for(const [key,template]of Object.entries(templates).filter(([,row])=>row.initialResistance?.optional)){
+  const actor=setup();actor.getTraitValue=()=>0;actor.system.resources={body:{max:20}};let created;actor.createTrudvangEffect=async input=>(created=input,null);
+  for(const consent of [false,true,'on']){
+   await applyTransformation(actor,key,{preselectedAnswers:{duration:'1 minute',resistApplication:consent,form:BESTIARY_ENTRIES[0].id}});
+   assert.equal(Boolean(created.flags[S].initialResistance),Boolean(consent),key);
+  }
+ }
+});
+test('the optional resistance preview follows the actual checkbox and the application dialog cancels cleanly',async()=>{
+ const actor=setup(),prior=foundry.applications.api;let options,root;
+ const fields={duration:{value:'1 minute'},resistApplication:{checked:false}};
+ root={querySelector:selector=>selector==='[data-resistance-preview]'?root.output:fields[selector.match(/name="([^"]+)"/)?.[1]],output:{innerHTML:''},addEventListener:(name,callback)=>root[name]=callback};
+ foundry.applications.api={DialogV2:class{_onRender(){}static async wait(config){options=config;const dialog=new this();dialog.element=root;dialog._onRender({},{});assert.equal(root.output.innerHTML,'');fields.resistApplication.checked=true;root.input();assert.match(root.output.innerHTML,/résister à la modification/);return false;}}};
+ try{
+  assert.equal(await applyTransformation(actor,'vitner-delusion-vitner:ghost-voice:5#voix',{counts:[0,0,0,2]}),null);
+  assert.match(options.content,/name="resistApplication" type="checkbox"/);assert.doesNotMatch(options.content,/name="resistApplication" type="checkbox" checked/);
+ }finally{foundry.applications.api=prior;}
+});
+test('permanent amnesia remains resistible after time advances and exposes recovery only after failure',async()=>{
+ const actor=setup();let created;actor.createTrudvangEffect=async input=>(created=input,null);
+ await applyTransformation(actor,'vitner-witchcraft:amnesia:4#effect',{skipDialog:true});assert.equal(created.duration.value,null);
+ const e=effect(actor,created);game.time.worldTime+=86400;
+ await withInitialResistance(e,0,actor,async()=>({success:false}));assert.equal(e.flags[S].initialResistance.resolved,true);
+ assert.deepEqual(ruleTestActionViews(e).map(row=>row.index),[1]);
+});
+test('petrification recovery links are unavailable while resistance is pending, then retained without their own initial resistance',async()=>{
+ const {transformationKeys}=await import('../modules/transformations.mjs'),actor=setup();let created;actor.createTrudvangEffect=async input=>(created=input,null);
+ const key='holy-tenetnid-tablet-of-anger:statue:5#statue';
+ await applyTransformation(actor,key,{preselectedAnswers:{duration:'5 rounds'}});const e=effect(actor,created);
+ assert.deepEqual(transformationKeys(e),[]);await withInitialResistance(e,0,actor,async()=>({success:false}));
+ assert.equal(transformationKeys(e).length,2);assert.deepEqual(e.statuses,['paralysis']);
+ const child=transformationKeys(e)[0];await applyTransformation(actor,child,{source:e,preselectedAnswers:{duration:'3 days'}});assert.equal(created.flags[S].initialResistance,undefined);
+});
+test('wind-control follow-up belongs to the original caster even when its recipient is not owned by the clicker',async()=>{
+ const recipient=setup();recipient.isOwner=false;
+ let called=false;const caster={documentName:'Actor',uuid:'Actor.caster',type:'character',isOwner:true,effects:[],canPerformAction:()=>{called=true;return false;}};
+ entities.set(caster.uuid,caster);
+ const sourceId='vitner-wind-craft:lift:5',e={documentName:'ActiveEffect',parent:recipient,flags:{[S]:{transformation:{sourceId,ruleTestContext:{sourceId,kind:'spell',casterUuid:caster.uuid,counts:[]}}}}};
+ assert.equal(await performRuleTest({document:e,index:1,actor:recipient}),null);assert.equal(called,true);
 });

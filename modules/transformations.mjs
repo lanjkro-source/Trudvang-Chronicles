@@ -76,6 +76,7 @@ function transformationCasting(document,counts,context){
  return ruleTestCastingContext(document,{counts,context});
 }
 export function transformationKeys(document){
+ if(document?.flags?.[SCOPE]?.initialResistance&&!document.flags[SCOPE].initialResistance.resolved)return [];
  const meta=metadata(document);
  if(meta)return (meta.related??[]).map(id=>`${meta.sourceId}#${id}`).filter(key=>TRANSFORMATION_TEMPLATES[key]);
  const id=sourceId(document);
@@ -91,7 +92,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="0" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.checkbox?`<input name="${f.name}" type="checkbox"${f.value?" checked":""}>`:f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="0" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -100,7 +101,7 @@ async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
      const input=root.querySelector('[name="duration"]'),level=Number(root.querySelector('[name="runeLevel"]')?.value);
      if(input&&input.value===autoDuration){autoDuration=runeDurations[level-1]??autoDuration;input.value=autoDuration;}
     }
-    const values=Object.fromEntries(fields.map(f=>[f.name,root.querySelector(`[name="${f.name}"]`)?.value??f.value]));const output=root.querySelector("[data-resistance-preview]");if(output)output.innerHTML=preview(values);};
+    const values=Object.fromEntries(fields.map(f=>[f.name,(f.checkbox?root.querySelector(`[name="${f.name}"]`)?.checked:root.querySelector(`[name="${f.name}"]`)?.value)??f.value]));const output=root.querySelector("[data-resistance-preview]");if(output)output.innerHTML=preview(values);};
    root.addEventListener("input",refresh);refresh();
   }
  };
@@ -239,6 +240,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   }
   fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
+ if(template.initialResistance?.optional&&(!resolvedCopy||!copiedResistance))fields.push({name:'resistApplication',label:game.i18n.localize(template.initialResistance.conditionKey),checkbox:true,value:false});
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label,numeric:true,...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -250,9 +252,12 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(rules.extraWeaponAction)fields.push({name:"weapon",label:local("Weapon"),options:Array.from(actor.items??[]).filter(i=>i.type==="weapon"&&!i.flags?.[SCOPE]?.extraWeaponAction).map(i=>({value:i.id,label:i.name}))});
  if(rules.chooseBestiary)fields.unshift({name:"form",label:local("Form"),options:BESTIARY_ENTRIES.map(e=>({value:e.id,label:game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)}))});
+ const requiresInitialResistance=values=>Boolean(template.initialResistance&&(!template.initialResistance.optional||copiedResistance||values.resistApplication===true||values.resistApplication==='on'));
  const preview=values=>{
+  const initialTests=[...new Set((TRANSFORMATIONS_BY_SOURCE[template.sourceId]??[]).flatMap(key=>TRANSFORMATION_TEMPLATES[key].initialResistance?[TRANSFORMATION_TEMPLATES[key].initialResistance.testIndex]:[]))];
+  const excludeTests=requiresInitialResistance(values)?initialTests.filter(index=>index!==template.initialResistance.testIndex):initialTests;
   const tier=!resolvedCopy&&template.runeTiers?.[Number(values.runeLevel)-1];
-  return (tier?`<p>${escapeHtml(game.i18n.localize(tier.summaryKey))}</p>`:"")+magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))));
+  return (tier?`<p>${escapeHtml(game.i18n.localize(tier.summaryKey))}</p>`:"")+magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))),{excludeTests});
  };
  const answers=preselectedAnswers??(skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
   await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro,resolvedCopy?[]:template.runeTiers?.map(t=>t.duration)));
@@ -488,7 +493,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
- if(template.initialResistance)prepareInitialResistance(data,template.initialResistance,actor,supplied);
+ if(requiresInitialResistance(answers))prepareInitialResistance(data,template.initialResistance,actor,supplied);
  if(template.periodic){
   const seconds=effectDurationSeconds(duration);
   if(seconds===null)throw Error("A periodic effect requires a finite duration");
@@ -533,7 +538,7 @@ async function rollEffectValue(formula,{actor,name=""}={}){
 export async function resolveDuration(text,context={}){
  const notation=String(text).replace(/\(JO\s*(\d+)(?:[-–]\d+)?\)/gi,"xo>=$1");
  const match=notation.trim().match(/^([\ddD+ .xo>=-]+)\s*(seconds?|secondes?|minutes?|heures?|hours?|journées?|jours?|days?|semaines?|weeks?|mois|months?|années?|ans?|years?|siècles?|centur(?:y|ies)|tours?(?: de jeu)?|rounds?)$/i);
-  if(!match){if(String(text).trim())throw Error(local("InvalidDuration"));return {value:0,units:"seconds"};}
+  if(!match){if(String(text).trim())throw Error(local("InvalidDuration"));return {value:null,units:"rounds"};}
  const value=Number.isFinite(Number(match[1]))?Number(match[1]):await rollEffectValue(match[1],context);
  const unit=match[2].toLowerCase();
  const units=/^minute/.test(unit)?"minutes":/^(heure|hour)/.test(unit)?"hours":/^(jour|day)/.test(unit)?"days":/^(semaine|week)/.test(unit)?"weeks":/^(mois|month)/.test(unit)?"months":/^(année|an|year)/.test(unit)?"years":/^(siècle|centur)/.test(unit)?"centuries":/^(tour|round)/.test(unit)?"rounds":"seconds";

@@ -204,7 +204,9 @@ test("mental influence records the task and both improved resistance tests",asyn
   assert.match(created.description,/résistance SV 4 \+ Psychisme/);
   assert.match(created.description,/SV 10 \+ Psychisme/);
   const enriched=annotateRuleTestDescription(created.description,created);
-  assert.match(enriched,/data-test-index="0"/);assert.match(enriched,/data-test-index="1"/);
+  assert.match(enriched,/data-test-index="0"/);assert.doesNotMatch(enriched,/data-test-index="1"/);
+  created.flags[S].initialResistance.resolved=true;
+  assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="1"/);
  }finally{globalThis.game=previous;}
 });
 test("both phantom plague variants retain independent resistance and examination modifiers",async()=>{
@@ -341,7 +343,7 @@ test("the seven Joaring powers have all eight generated tests and a link for eac
  for(const id of ids){
   const description=language.TRUDVANG.Content.Power[id].Description;
   const html=annotateRuleTestDescription(description,{system:{catalogId:id}});
-  for(let i=0;i<RULE_TESTS_BY_CATALOG_ID[id].length;i++)assert.ok(html.includes(`data-test-index="${i}"`),id);
+  for(let i=0;i<RULE_TESTS_BY_CATALOG_ID[id].length;i++)assert.equal(html.includes(`data-test-index="${i}"`),!(id.endsWith(":amnesia:4")&&i===0),id);
  }
 });
 test("applying a form creates independent owned grants and native trait changes, keeping original items intact",async()=>{
@@ -377,7 +379,7 @@ test("recovery penalties name their contributor, apply once, and leave unrelated
 test("Hasten and its reverse resolve the book's separate skill-VC table from spell and compendium sources",async()=>{
  const language=JSON.parse(fs.readFileSync(new URL("../lang/fr.json",import.meta.url)));
  const localize=key=>key.split('.').reduce((o,k)=>o?.[k],language)??key;
- globalThis.game={user:{id:"player"},time:{worldTime:100},i18n:{localize}};
+ globalThis.game={user:{id:"gm"},time:{worldTime:100},i18n:{localize,format:(key,data)=>Object.entries(data).reduce((s,[k,v])=>s.replaceAll(`{${k}}`,String(v)),localize(key))}};
  globalThis.foundry={applications:{api:{DialogV2:{wait:async()=>({duration:"5 tours de jeu"})}}}};
  const references=buildEffectPackDocuments({localize}).items;
  for(const [id,base,trait,bonus]of [["hate",0,1,1],["hate",2,4,3],["hate",8,8,5],["hate-inverse",0,-1,-1],["hate-inverse",-4,-6,-4],["hate-inverse",-8,-8,-5]]){
@@ -389,7 +391,7 @@ test("Hasten and its reverse resolve the book's separate skill-VC table from spe
    let created;
    const actor={canUserModify:()=>true,getTraitValue:()=>base,createTrudvangEffect:async data=>{created=data;return null;}};
    await applyTransformation(actor,key,{source});
-   const rows=created.system.changes;
+   const rows=created.flags[S].initialResistance?.payload.changes??created.system.changes;
    assert.equal(rows.find(c=>c.key==="system.effective.traits.dexterity").value,String(trait));
    for(const skill of ["agility","fighting"]){
     const changes=rows.filter(c=>c.key===`system.effective.skills.${skill}`);
@@ -811,7 +813,7 @@ test("effect improvements change their base fields, including inverse traits, at
  let created,answers,dialog;
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
- const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);return created;};
+ const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);const payload=created.flags[S].initialResistance?.payload;return payload?{...created,system:{...created.system,changes:payload.changes}}:created;};
  for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.itemOnly&&!t.weaponDamage&&!t.armorBlessing&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
   assert.equal((await apply(key,{["boost"+p.index]:7})).duration.value,19,key);
@@ -1071,7 +1073,7 @@ test("Sense of Smell applies the selected potency and range to the resulting eff
  for(const [variant,expected] of [["ameliore",6],["affaibli",-6]]){
   const counts=[];counts[5]=2;counts[7]=3;
   await applyTransformation(actor,`${id}#${variant}`,{counts});
-  assert.match(created.flags[S].transformation.summary,new RegExp(String(expected)));
+  assert.match(created.flags[S].initialResistance?.payload.summary??created.flags[S].transformation.summary,new RegExp(String(expected)));
   if(variant==="ameliore")assert.equal(rulesFromChanges(created.system.changes).senses[0].range,70);
  }
 });
@@ -1087,7 +1089,7 @@ test("impaired hearing and sight add their status at the loss threshold",async()
   for(const [count,expected] of [[6,[]],[7,[status]],[8,[status]]]){
    const counts=[];counts[5]=count;
    await applyTransformation(actor,`${id}#affaibli`,{counts});
-   assert.deepEqual(created.statuses,expected);
+   assert.deepEqual(created.statuses,[]);assert.deepEqual(created.flags[S].initialResistance.payload.statuses,expected);
   }
   const counts=[];counts[5]=8;
   await applyTransformation(actor,`${id}#ameliore`,{counts});
@@ -1322,7 +1324,8 @@ test("illusion variants preserve their distinctions, duration and selected range
  await applyTransformation(actor,"holy-haminges-power-of-trolls:illusion-tricks:2#illusions",{counts:[0,0,2]});
  assert.match(created.flags[S].transformation.summary,/15 m/);assert.match(created.description,/autres sens/);
  await applyTransformation(actor,"vitner-delusion-vitner:ghost-voice:5#voix");
- assert.match(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
+ assert.equal(created.flags[S].initialResistance,undefined);
+ assert.doesNotMatch(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
  const head=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:increase-sounds:3#voix"].Description;
  const body=language.TRUDVANG.Content.Transformation["vitner-delusion-vitner:increase-sounds:3#bruits"].Description;
  assert.match(head,/paroles/);assert.match(body,/mouvements/);
@@ -1531,7 +1534,9 @@ test("amnesia offers both separate tests and keeps the effect until recovery",as
   for(const id of ['vitner-witchcraft:amnesia:4','holy-joaringfaith-curses-of-sonntag:amnesia:4']){
    await applyTransformation(actor,`${id}#effect`,{counts:[0,0,2],skipDialog:true});
    const enriched=annotateRuleTestDescription(created.description,created);
-   assert.match(enriched,/data-test-index="0"/);assert.match(enriched,/data-test-index="1"/);
+   assert.match(enriched,/data-test-index="0"/);assert.doesNotMatch(enriched,/data-test-index="1"/);
+   created.flags[S].initialResistance.resolved=true;
+   assert.match(annotateRuleTestDescription(created.description,created),/data-test-index="1"/);
    assert.match(created.description,/\+2/);
    assert.ok(!created.duration?.value);
   }

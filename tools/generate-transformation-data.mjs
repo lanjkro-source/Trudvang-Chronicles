@@ -39,6 +39,7 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.initialResistance??null)!==JSON.stringify(translated.initialResistance??null))throw Error('Unaligned initial resistance for '+key);
    if(t.initialResistance){
     const index=t.initialResistance.testIndex;
+    if(t.initialResistance.optional!==undefined&&(typeof t.initialResistance.optional!=="boolean"||!t.initialResistance.conditionKey||!["fr","en"].every(c=>t.initialResistance.conditionKey.split(".").reduce((o,k)=>o?.[k],lang[c]))))throw Error("Invalid initial resistance choice for "+key);
     if(!Number.isInteger(index)||index<0||!entry.resist?.[index]||entry.ruleTestModifiers?.find(row=>row.test===index)?.casterTest||t.instant||t.onApply||t.aura||t.periodic||t.persistentDamage||t.itemOnly)throw Error('Invalid initial resistance for '+key);
    }
    if(t.dispelCategory!==translated.dispelCategory||t.dispelPermanent!==translated.dispelPermanent||t.dispelCategory!==undefined&&!['control'].includes(t.dispelCategory)||t.dispelPermanent!==undefined&&typeof t.dispelPermanent!=='boolean')throw Error(`Invalid dispel policy for ${key}`);
