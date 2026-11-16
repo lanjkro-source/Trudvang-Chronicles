@@ -15869,7 +15869,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.TrackedCreature` | Tracked creature | Créature suivie |
 | `TRUDVANG.Transformation.TrackingBonus` | Track the chosen creature: +{value}. | Pister la créature suivie : +{value}. |
 | `TRUDVANG.Transformation.HealingPoisonCurseNote` | Bonus to the test to neutralize poison or dispel the curse: +{value}. | Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}. |
-| `TRUDVANG.Transformation.AllocationAvailable` | {count} available for this target | {count} disponible(s) pour cette cible |
+| `TRUDVANG.Transformation.AllocationAvailable` | {count} available | {count} disponible(s) |
 | `TRUDVANG.Transformation.Apply` | Apply | Appliquer |
 | `TRUDVANG.Transformation.Cancel` | Cancel | Annuler |
 | `TRUDVANG.Transformation.Duration` | Duration (e.g. 3 days; blank: no expiry) | Durée (ex. 3 jours ; vide : sans expiration) |

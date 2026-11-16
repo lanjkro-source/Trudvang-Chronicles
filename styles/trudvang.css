@@ -1278,3 +1278,15 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang.consequence-notice .disease-resistance-result {display:flex;flex-wrap:wrap;gap:.3rem .7rem;align-items:center;margin-top:.4rem;border-top:1px solid var(--trudvang-accent);padding-top:.3rem;}
 .trudvang.consequence-notice .disease-resistance-result--success strong {color:var(--trudvang-positive);}
 .trudvang.consequence-notice .disease-resistance-result--failure strong {color:var(--trudvang-negative);}
+
+/* Keep the footer reachable; only the body scrolls inside tall magic dialogs. */
+.application.trudvang:is(.magic-roll-window, .transformation-application-window) { max-height: calc(100dvh - 40px); max-width: calc(100vw - 32px); }
+.application.trudvang:is(.magic-roll-window, .transformation-application-window) .window-content { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.application.trudvang:is(.magic-roll-window, .transformation-application-window) .dialog-content { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.application.trudvang:is(.magic-roll-window, .transformation-application-window) :is(.form-footer, .dialog-buttons) { flex: 0 0 auto; }
+.trudvang.transformation-application-dialog .form-group.transformation-boost-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+.trudvang.transformation-application-dialog .transformation-boost-row > label { min-width: 0; overflow-wrap: anywhere; }
+.trudvang.transformation-application-dialog .transformation-boost-allocation { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.trudvang.transformation-application-dialog .transformation-boost-allocation input { flex: 0 0 auto; width: calc(3ch + 1.25rem); min-width: 0; padding: 2px 5px; text-align: center; font-variant-numeric: tabular-nums; appearance: textfield; }
+.trudvang.transformation-application-dialog .transformation-boost-allocation input::-webkit-inner-spin-button,
+.trudvang.transformation-application-dialog .transformation-boost-allocation input::-webkit-outer-spin-button { appearance: none; margin: 0; }

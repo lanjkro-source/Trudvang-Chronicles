@@ -18261,7 +18261,7 @@
       "TrackedCreature": "Tracked creature",
       "TrackingBonus": "Track the chosen creature: +{value}.",
       "HealingPoisonCurseNote": "Bonus to the test to neutralize poison or dispel the curse: +{value}.",
-      "AllocationAvailable": "{count} available for this target",
+      "AllocationAvailable": "{count} available",
       "Apply": "Apply",
       "Cancel": "Cancel",
       "Duration": "Duration (e.g. 3 days; blank: no expiry)",

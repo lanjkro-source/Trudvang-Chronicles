@@ -18261,7 +18261,7 @@
       "TrackedCreature": "Créature suivie",
       "TrackingBonus": "Pister la créature suivie : +{value}.",
       "HealingPoisonCurseNote": "Bonus au test pour neutraliser le poison ou dissiper la malédiction : +{value}.",
-      "AllocationAvailable": "{count} disponible(s) pour cette cible",
+      "AllocationAvailable": "{count} disponible(s)",
       "Apply": "Appliquer",
       "Cancel": "Annuler",
       "Duration": "Durée (ex. 3 jours ; vide : sans expiration)",

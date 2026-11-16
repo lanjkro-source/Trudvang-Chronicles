@@ -463,6 +463,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     }
   }
   return blessingDialog(MagicRollDialog,castingActor,'magic',{castingType:ruleDocument?.type==='divineFeat'?'divine':'vitner'}).wait({
+    classes: ['trudvang', 'magic-roll-window'],
     window: {title},
     content,
     buttons: [

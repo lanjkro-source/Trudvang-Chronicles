@@ -91,7 +91,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div>${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group"><label>${escapeHtml(f.label)}</label>${f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="0" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -104,7 +104,7 @@ async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
    root.addEventListener("input",refresh);refresh();
   }
  };
- return DialogClass.wait({window:{title},content,buttons:[{action:"apply",label:local("Apply"),default:true,callback:(event,button)=>({action:"apply",...Object.fromEntries(new FormData(button.form))})},{action:"cancel",label:local("Cancel"),callback:()=>false}],close:()=>false});
+ return DialogClass.wait({classes:["trudvang","transformation-application-window"],window:{title},position:{width:600},content,buttons:[{action:"apply",label:local("Apply"),default:true,callback:(event,button)=>({action:"apply",...Object.fromEntries(new FormData(button.form))})},{action:"cancel",label:local("Cancel"),callback:()=>false}],close:()=>false});
 }
 function naturalWeapon(row,effectId){
  const profile=naturalWeaponQualification(row.name);
@@ -241,7 +241,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
-  fields.push({name:`boost${index}`,label:targeting?`${label} — ${game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:availableById[id]??0})}`:label,value:counts[index]??0,readonly:sharedIds.has(id)});}
+  fields.push({name:`boost${index}`,label,numeric:true,...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>({value:String(i+1),label:String(i+1)}))});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
