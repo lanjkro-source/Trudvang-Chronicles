@@ -17335,6 +17335,15 @@
           "RuneSummary5": "Esprit : vision dans le noir 25 m, puis vision nocturne 25 m ; charge 2.5 kg ; 5 m/tour.",
           "RuneDescription5": "Un esprit mineur est lié à une pierre pendant 5 heure(s). Esprit : vision dans le noir 25 m, puis vision nocturne 25 m ; charge 2.5 kg ; 5 m/tour. Ces capacités appartiennent à l’esprit, pas au thuul. Le MJ gère son déplacement, les objets qu’il rapporte et les consignes précises de surveillance ; il signale ses découvertes par un bruit de pierres qui s’entrechoquent."
         },
+        "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect": {
+          "Name": "Main de Borjorn",
+          "Summary": "Bonus au prochain test de compétence.",
+          "Description": "<p>Les conseils de la montagne accordent le bonus indiqué au prochain test de compétence. Le bonus est utilisé automatiquement et l’effet se termine après ce test, même en cas d’échec.</p>",
+          "SourceName": "Main de Borjorn",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "287",
+          "Duration": ""
+        },
         "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect": {
           "Name": "Marque de Brokk",
           "Summary": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
@@ -18383,7 +18392,8 @@
       "AutomaticSelfFailed": "L’effet personnel n’a pas pu être appliqué au lanceur.",
       "HearingActionPenalty": "Actions reposant sur l’ouïe : {value} VC.",
       "PhysicalMovementPenalty": "Actions reposant sur le mouvement : {value} VC.",
-      "RoarRadius": "Rayon de la déflagration : {value} m."
+      "RoarRadius": "Rayon de la déflagration : {value} m.",
+      "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18675,7 +18685,8 @@
       "unavailable": "Cet objet ne peut plus être transféré. Vérifiez les inventaires et réessayez.",
       "noGM": "Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas.",
       "failed": "Le transfert a échoué ; l’objet d’origine est conservé.",
-      "pending": "Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde."
+      "pending": "Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde.",
+      "sacred": "Cet objet sacré reste lié à son créateur. Retirez-le dans Vitner & Foi pour récupérer les points avant de créer un autre objet."
     },
     "Disease": {
       "Exposure": "Entrer dans l’aura sans immunité crée une incubation de 1d6 minutes. Réussir sa résistance de Constitution (VC de base {sv}) la remplace par une immunité d’un jour. Sinon, la fièvre dure 1d6 jours et impose {penalty} à toutes les actions. Sortir de la zone ne guérit pas l’incubation ou la maladie.",
@@ -18744,6 +18755,59 @@
       "LeapValues": "Bond : jusqu’à {length} m en longueur et {height} m en hauteur. Un seul bond tous les 3 tours (15 secondes).",
       "BadHeight": "Indiquez une taille positive en mètres.",
       "Cooldown": "Ce pouvoir est encore en récupération : {seconds} s restantes."
+    },
+    "Sacred": {
+      "Title": "Objets sacrés",
+      "Runes": "Runes",
+      "Capacity": "Points de divinité maximum par objet",
+      "Capacities": "Durs : {hard} · Souples : {soft}",
+      "Balance": "Points libres : {free} · Investis : {invested} · Total : {total}",
+      "Overdrawn": "Les objets dépassent le total de {amount} points : restituez des points avant tout nouvel investissement.",
+      "Type": "Type d’objet",
+      "Craft": "Artisanat",
+      "Copy": "Copier un objet initial du monde",
+      "Template": "Objet à copier",
+      "Create": "Fabriquer un objet sacré",
+      "Fabricate": "Fabriquer",
+      "Tools": "Atelier / paquetage adéquat",
+      "Tool0": "Atelier ou forge",
+      "Tool1": "Grand paquetage",
+      "Tool2": "Paquetage ordinaire",
+      "Tool3": "Petit paquetage",
+      "Quality": "Qualité obtenue",
+      "Invest": "Ajouter des points de divinité",
+      "InvestAvailable": "{max} point(s) disponible(s)",
+      "Points": "Points à investir",
+      "Allocation": "Affectation",
+      "Unassigned": "À affecter à une rune",
+      "Inscribe": "Inscrire / améliorer une rune",
+      "Rune": "Rune",
+      "InscriptionWarning": "Un échec empêche cette inscription sur cet objet. Les runes déjà présentes restent intactes.",
+      "RuneModifier": "Modificateur de la rune / inscription",
+      "NoRunes": "Aucune rune apprise.",
+      "Remove": "Retirer l’objet sacré",
+      "RemoveConfirm": "Détruire « {name} » de l’inventaire et restituer ses {points} points de divinité investis ? La désacralisation est gérée à la main.",
+      "Invalid": "Objet sacré ou choix invalide.",
+      "InvalidTemplate": "Cet objet initial n’est pas accessible aux joueurs.",
+      "InvalidBalance": "Les points de cet objet sont incohérents. Vérifiez ses réserves avant de poursuivre.",
+      "InvalidInvestment": "Investissement impossible : vérifiez les points libres, la capacité de l’objet et l’affectation à la rune.",
+      "InvalidRune": "Inscription impossible : vérifiez le niveau appris, les points affectables et les inscriptions précédentes.",
+      "Unavailable": "Cette rune n’a plus de points ou d’utilisations disponibles aujourd’hui.",
+      "Permission": "Vous devez contrôler le créateur de cet objet sacré.",
+      "ActivationCost": "Niveau {level} · Coût : {level} points de l’objet · Réserve de la rune : {current}/{invested}",
+      "Daily": "Invocations restantes / maximum",
+      "Permanent": "Permanente",
+      "Empty": "Aucun objet sacré.",
+      "NoInscription": "Aucune rune inscrite.",
+      "CurrentInvested": "Points actuels / investis",
+      "CapacityObject": "Capacité : {max}",
+      "Open": "Ouvrir l’objet",
+      "Details": "Voir les runes",
+      "Name": "Nom",
+      "HeldCondition": "Le bénéfice exige que l’objet soit équipé ; respecter aussi les conditions indiquées par la rune.",
+      "NextSkill": "Prochain test de compétence",
+      "WrongRuneObject": "Cette rune ne peut pas être inscrite sur ce type d’objet ou de matériau.",
+      "PairedGear": "Pour Poings d’acier, l’objet doit représenter la paire complète de gants, bracelets ou brassards."
     }
   }
 }

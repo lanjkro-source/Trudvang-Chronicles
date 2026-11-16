@@ -704,6 +704,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -734,6 +735,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -1194,6 +1196,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -1230,6 +1233,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 10,
             "damageBonus": 0,
@@ -1269,6 +1273,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -1357,6 +1362,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -3352,6 +3358,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -3389,6 +3396,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -3425,6 +3433,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -3457,6 +3466,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 21,
             "value": 70,
             "material": "steel",
+            "craftMaterial": "hardMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -4196,6 +4206,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -4233,6 +4244,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -4270,6 +4282,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -4306,6 +4319,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -4338,6 +4352,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 21,
             "value": 70,
             "material": "steel",
+            "craftMaterial": "hardMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -5164,6 +5179,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -5200,6 +5216,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -5232,6 +5249,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 21,
             "value": 70,
             "material": "steel",
+            "craftMaterial": "hardMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -5673,6 +5691,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
@@ -5711,6 +5730,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -5749,6 +5769,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
@@ -5786,6 +5807,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -5818,6 +5840,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 10.5,
             "value": 15,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -6227,6 +6250,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -6476,6 +6500,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
@@ -6504,6 +6529,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 4,
             "value": 5,
             "material": "cloth",
+            "craftMaterial": "softMaterials",
             "initiativeModifier": 0,
             "quantity": 1,
             "equipped": true
@@ -8323,6 +8349,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -9062,6 +9089,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -9435,6 +9463,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -11299,6 +11328,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -11524,6 +11554,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -12066,6 +12097,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -12292,6 +12324,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -12769,6 +12802,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -12799,6 +12833,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -13191,6 +13226,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -13228,6 +13264,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -13265,6 +13302,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -13300,6 +13338,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -13329,6 +13368,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 13,
             "value": 30,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -13830,6 +13870,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -13867,6 +13908,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -13894,6 +13936,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 13,
             "value": 30,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -14345,6 +14388,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -14383,6 +14427,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
@@ -14414,6 +14459,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -14875,6 +14921,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -14912,6 +14959,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -14947,6 +14995,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -14979,6 +15028,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -15515,6 +15565,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -15552,6 +15603,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -15579,6 +15631,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 13,
             "value": 30,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "initiativeModifier": -1,
             "quantity": 1,
             "equipped": true
@@ -16009,6 +16062,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": false,
@@ -16048,6 +16102,7 @@ export const BESTIARY_ENTRIES = [
               "type": "piercing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -16084,6 +16139,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d5",
             "openRoll": 0,
             "damageBonus": 0,
@@ -16116,6 +16172,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -19553,6 +19610,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedLightWeapons",
@@ -19590,6 +19648,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -19622,6 +19681,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -19750,6 +19810,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedHeavyWeapons",
@@ -19787,6 +19848,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -19819,6 +19881,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -19949,6 +20012,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 2,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
@@ -20079,6 +20143,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "twoHandedWeapons",
@@ -20217,6 +20282,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "combatSpecialty": "oneHandedHeavyWeapons",
@@ -20254,6 +20320,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -20286,6 +20353,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -20415,6 +20483,7 @@ export const BESTIARY_ENTRIES = [
               "type": "slashing",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damageBonus": 0,
             "quantity": 1,
             "equipped": true,
@@ -20451,6 +20520,7 @@ export const BESTIARY_ENTRIES = [
               "type": "bludgeoning",
               "protection": "normal"
             },
+            "craftMaterial": "hardMaterials",
             "damage": "1d10",
             "openRoll": 0,
             "damageBonus": 0,
@@ -20483,6 +20553,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -20605,6 +20676,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 7.5,
             "value": 8.6,
             "material": "leather",
+            "craftMaterial": "softMaterials",
             "quantity": 1,
             "equipped": true
           },
@@ -20724,6 +20796,7 @@ export const BESTIARY_ENTRIES = [
             "weight": 21,
             "value": 70,
             "material": "steel",
+            "craftMaterial": "hardMaterials",
             "quantity": 1,
             "equipped": true
           },

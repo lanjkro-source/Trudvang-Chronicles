@@ -14760,6 +14760,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneSummary5` | Spirit: darkvision 25 m, then low-light vision 25 m; load 2.5 kg; 5 m/round. | Esprit : vision dans le noir 25 m, puis vision nocturne 25 m ; charge 2.5 kg ; 5 m/tour. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-stoneling:stoneling:0#effect.RuneDescription5` | A minor spirit is bound to a stone for 5 hour(s). Spirit: darkvision 25 m, then low-light vision 25 m; load 2.5 kg; 5 m/round. These abilities belong to the spirit, not the Thuul. The GM handles its movement, fetched objects and precise watch instructions; it signals discoveries with the sound of clattering stones. | Un esprit mineur est lié à une pierre pendant 5 heure(s). Esprit : vision dans le noir 25 m, puis vision nocturne 25 m ; charge 2.5 kg ; 5 m/tour. Ces capacités appartiennent à l’esprit, pas au thuul. Le MJ gère son déplacement, les objets qu’il rapporte et les consignes précises de surveillance ; il signale ses découvertes par un bruit de pierres qui s’entrechoquent. |
 
+## `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.Name` | Borjorn's Hand | Main de Borjorn |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.Description` | <p>The mountain grants the stated bonus to the next Skill Roll. The bonus applies automatically and the effect ends after that roll, even on failure.</p> | <p>Les conseils de la montagne accordent le bonus indiqué au prochain test de compétence. Le bonus est utilisé automatiquement et l’effet se termine après ce test, même en cas d’échec.</p> |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.SourceName` | Borjorn's Hand | Main de Borjorn |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.SourcePage` | 229 | 287 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect`
 
 | Clé | English | Français |
@@ -15994,6 +16005,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.HearingActionPenalty` | Actions relying on hearing: {value} SV. | Actions reposant sur l’ouïe : {value} VC. |
 | `TRUDVANG.Transformation.PhysicalMovementPenalty` | Actions relying on movement: {value} SV. | Actions reposant sur le mouvement : {value} VC. |
 | `TRUDVANG.Transformation.RoarRadius` | Blast radius: {value} m. | Rayon de la déflagration : {value} m. |
+| `TRUDVANG.Transformation.BorjornNextSkill` | Bonus to the next Skill Roll: +{value}. | Bonus au prochain test de compétence : +{value}. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16393,6 +16405,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.InventoryTransfer.noGM` | An online GM is required to give an item to an actor you do not own. | Un MJ connecté est nécessaire pour donner un objet à un acteur que vous ne contrôlez pas. |
 | `TRUDVANG.InventoryTransfer.failed` | The transfer failed; the original item was retained. | Le transfert a échoué ; l’objet d’origine est conservé. |
 | `TRUDVANG.InventoryTransfer.pending` | The transfer is pending completion. The GM can recover it when the world next loads. | Le transfert attend sa finalisation. Le MJ pourra le rétablir au prochain chargement du monde. |
+| `TRUDVANG.InventoryTransfer.sacred` | This sacred object remains bound to its creator. Remove it in Vitner & Faith to reclaim its points before creating another object. | Cet objet sacré reste lié à son créateur. Retirez-le dans Vitner & Foi pour récupérer les points avant de créer un autre objet. |
 
 ## `TRUDVANG.Disease`
 
@@ -16476,3 +16489,59 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Mobility.LeapValues` | Leap: up to {length} m horizontally and {height} m vertically. One leap every 3 rounds (15 seconds). | Bond : jusqu’à {length} m en longueur et {height} m en hauteur. Un seul bond tous les 3 tours (15 secondes). |
 | `TRUDVANG.Mobility.BadHeight` | Enter a positive height in metres. | Indiquez une taille positive en mètres. |
 | `TRUDVANG.Mobility.Cooldown` | This power is still recovering: {seconds} s remaining. | Ce pouvoir est encore en récupération : {seconds} s restantes. |
+
+## `TRUDVANG.Sacred`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Sacred.Title` | Sacred objects | Objets sacrés |
+| `TRUDVANG.Sacred.Runes` | Runes | Runes |
+| `TRUDVANG.Sacred.Capacity` | Maximum Divinity Points per object | Points de divinité maximum par objet |
+| `TRUDVANG.Sacred.Capacities` | Hard: {hard} · Soft: {soft} | Durs : {hard} · Souples : {soft} |
+| `TRUDVANG.Sacred.Balance` | Free points: {free} · Invested: {invested} · Total: {total} | Points libres : {free} · Investis : {invested} · Total : {total} |
+| `TRUDVANG.Sacred.Overdrawn` | Objects exceed the total by {amount} points: reclaim points before investing further. | Les objets dépassent le total de {amount} points : restituez des points avant tout nouvel investissement. |
+| `TRUDVANG.Sacred.Type` | Object type | Type d’objet |
+| `TRUDVANG.Sacred.Craft` | Handicraft | Artisanat |
+| `TRUDVANG.Sacred.Copy` | Copy a world starter item | Copier un objet initial du monde |
+| `TRUDVANG.Sacred.Template` | Item to copy | Objet à copier |
+| `TRUDVANG.Sacred.Create` | Craft a sacred object | Fabriquer un objet sacré |
+| `TRUDVANG.Sacred.Fabricate` | Craft | Fabriquer |
+| `TRUDVANG.Sacred.Tools` | Suitable workshop / kit | Atelier / paquetage adéquat |
+| `TRUDVANG.Sacred.Tool0` | Workshop or forge | Atelier ou forge |
+| `TRUDVANG.Sacred.Tool1` | Large kit | Grand paquetage |
+| `TRUDVANG.Sacred.Tool2` | Ordinary kit | Paquetage ordinaire |
+| `TRUDVANG.Sacred.Tool3` | Small kit | Petit paquetage |
+| `TRUDVANG.Sacred.Quality` | Resulting quality | Qualité obtenue |
+| `TRUDVANG.Sacred.Invest` | Add Divinity Points | Ajouter des points de divinité |
+| `TRUDVANG.Sacred.InvestAvailable` | {max} point(s) available | {max} point(s) disponible(s) |
+| `TRUDVANG.Sacred.Points` | Points to invest | Points à investir |
+| `TRUDVANG.Sacred.Allocation` | Allocation | Affectation |
+| `TRUDVANG.Sacred.Unassigned` | Not assigned to a rune | À affecter à une rune |
+| `TRUDVANG.Sacred.Inscribe` | Inscribe / improve a rune | Inscrire / améliorer une rune |
+| `TRUDVANG.Sacred.Rune` | Rune | Rune |
+| `TRUDVANG.Sacred.InscriptionWarning` | Failure prevents this inscription on this object. Existing runes remain intact. | Un échec empêche cette inscription sur cet objet. Les runes déjà présentes restent intactes. |
+| `TRUDVANG.Sacred.RuneModifier` | Rune / inscription modifier | Modificateur de la rune / inscription |
+| `TRUDVANG.Sacred.NoRunes` | No learned runes. | Aucune rune apprise. |
+| `TRUDVANG.Sacred.Remove` | Remove sacred object | Retirer l’objet sacré |
+| `TRUDVANG.Sacred.RemoveConfirm` | Destroy “{name}” in the inventory and reclaim its {points} invested Divinity Points? Desecration is handled manually. | Détruire « {name} » de l’inventaire et restituer ses {points} points de divinité investis ? La désacralisation est gérée à la main. |
+| `TRUDVANG.Sacred.Invalid` | Invalid sacred object or choice. | Objet sacré ou choix invalide. |
+| `TRUDVANG.Sacred.InvalidTemplate` | This starter item is not accessible to players. | Cet objet initial n’est pas accessible aux joueurs. |
+| `TRUDVANG.Sacred.InvalidBalance` | This object’s points are inconsistent. Check its reserves before proceeding. | Les points de cet objet sont incohérents. Vérifiez ses réserves avant de poursuivre. |
+| `TRUDVANG.Sacred.InvalidInvestment` | Cannot invest: check free points, object capacity and rune allocation. | Investissement impossible : vérifiez les points libres, la capacité de l’objet et l’affectation à la rune. |
+| `TRUDVANG.Sacred.InvalidRune` | Cannot inscribe: check the learned level, available points and previous inscriptions. | Inscription impossible : vérifiez le niveau appris, les points affectables et les inscriptions précédentes. |
+| `TRUDVANG.Sacred.Unavailable` | This rune has no remaining points or uses today. | Cette rune n’a plus de points ou d’utilisations disponibles aujourd’hui. |
+| `TRUDVANG.Sacred.Permission` | You must control this sacred object’s creator. | Vous devez contrôler le créateur de cet objet sacré. |
+| `TRUDVANG.Sacred.ActivationCost` | Level {level} · Cost: {level} object points · Rune reserve: {current}/{invested} | Niveau {level} · Coût : {level} points de l’objet · Réserve de la rune : {current}/{invested} |
+| `TRUDVANG.Sacred.Daily` | Remaining / maximum invocations | Invocations restantes / maximum |
+| `TRUDVANG.Sacred.Permanent` | Permanent | Permanente |
+| `TRUDVANG.Sacred.Empty` | No sacred objects. | Aucun objet sacré. |
+| `TRUDVANG.Sacred.NoInscription` | No inscribed runes. | Aucune rune inscrite. |
+| `TRUDVANG.Sacred.CurrentInvested` | Current / invested points | Points actuels / investis |
+| `TRUDVANG.Sacred.CapacityObject` | Capacity: {max} | Capacité : {max} |
+| `TRUDVANG.Sacred.Open` | Open object | Ouvrir l’objet |
+| `TRUDVANG.Sacred.Details` | Show runes | Voir les runes |
+| `TRUDVANG.Sacred.Name` | Name | Nom |
+| `TRUDVANG.Sacred.HeldCondition` | The benefit requires the object to be equipped; also respect the conditions stated by the rune. | Le bénéfice exige que l’objet soit équipé ; respecter aussi les conditions indiquées par la rune. |
+| `TRUDVANG.Sacred.NextSkill` | Next Skill Roll | Prochain test de compétence |
+| `TRUDVANG.Sacred.WrongRuneObject` | This rune cannot be inscribed on this object type or material. | Cette rune ne peut pas être inscrite sur ce type d’objet ou de matériau. |
+| `TRUDVANG.Sacred.PairedGear` | For Hammer Fists, the item must represent the complete pair of gloves, bracelets or bracers. | Pour Poings d’acier, l’objet doit représenter la paire complète de gants, bracelets ou brassards. |

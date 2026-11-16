@@ -248,7 +248,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label,numeric:true,...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
- if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>({value:String(i+1),label:String(i+1)}))});
+ if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>i+1).filter(level=>!casting.runeLevel||level===casting.runeLevel).map(level=>({value:String(level),label:String(level)}))});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
   const tablet=Array.from(caster.items??[]).find(i=>i.type==="tablet"&&i.system.catalogId===template.sourceId.split(":")[0]);
@@ -269,7 +269,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(Number.isInteger(template.requiredPowerOption)&&Number(answers[`boost${template.requiredPowerOption}`]??counts[template.requiredPowerOption]??0)<=0){ui.notifications.warn(local('CombinedAlterationRequired'));return null;}
  let runeLevel=metadata(supplied)?.runeLevel;
  if(!resolvedCopy&&template.runeTiers){
-  runeLevel=Number(answers.runeLevel);
+  runeLevel=Number(casting.runeLevel??answers.runeLevel);
+  if(casting.runeLevel&&Number(answers.runeLevel)!==casting.runeLevel)throw Error(local("InvalidRuneLevel"));
   if(!Number.isInteger(runeLevel)||runeLevel<1||runeLevel>5)throw Error(local("InvalidRuneLevel"));
   const tier=template.runeTiers[runeLevel-1];
   template.changes=structuredClone(tier.changes);template.statuses=tier.statuses??[];

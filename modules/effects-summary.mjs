@@ -7,7 +7,7 @@
 
 export function isCarriedTransferredEffect(effect) {
   const item = effect?.item ?? (effect?.parent?.documentName === "Item" ? effect.parent : null);
-  return Boolean(effect?.transfer && item && (item.actor || item.parent?.documentName === "Actor"));
+  return Boolean((effect?.transfer||effect?.flags?.['trudvang-chronicles']?.sacredRuneId) && item && (item.actor || item.parent?.documentName === "Actor"));
 }
 
 export function effectChangeSummary(effect) {

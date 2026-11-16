@@ -1,3 +1,4 @@
+import {sacredBalance,sacredObjects} from '../rules/sacred-objects.mjs';
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
 import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rules/effect-conditional-tests.mjs";
@@ -236,6 +237,7 @@ export class TrudvangActor extends BaseActor {
       resource.value = current;
     }
 
+    if(this.selectedReligion?.id==='thuuldom'||sacredObjects(this).length){const balance=sacredBalance(this);system.resources.divinity.current=system.resources.divinity.value=balance.free;}
     this.temporaryHealthState = temporaryHealthState(this);
     system.resources.body.temporary = this.temporaryHealthState.current;
     system.resources.body.temporaryMax = this.temporaryHealthState.maximum;
@@ -1785,6 +1787,7 @@ export class TrudvangActor extends BaseActor {
     if (bodyBefore <= 0 && bodyBefore + healthRecovered > 0) updates["system.survivalRounds"] = -1;
     if (!isThuuldom) updates["system.resources.divinity.value"] = divinityMax;
     await this.update(updates);
+    await (await import('../sacred-objects.mjs')).restoreSacredObjects(this);
     const restMessage = game.i18n.format("TRUDVANG.Notification.RestChat", {
       actor: this.name, health: healthRecovered, vitnerBefore, vitnerAfter: vitnerMax, vitnerMax,
       divinityBefore, divinityAfter: isThuuldom ? divinityBefore : divinityMax, divinityMax,

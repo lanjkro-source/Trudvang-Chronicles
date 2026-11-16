@@ -1,3 +1,4 @@
+import {registerSacredHooks,registerSacredSockets} from './modules/sacred-objects.mjs';
 import { TRUDVANG } from "./modules/config.mjs";
 import { TrudvangActor } from "./modules/documents/actor.mjs";
 import { TrudvangItem } from "./modules/documents/item.mjs";
@@ -38,6 +39,7 @@ import {registerInventoryTransferSocket,recoverInventoryTransfers} from './modul
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
+  registerSacredHooks();
   registerDamageEnrichers();
   configureEffects();
   registerAuraSupport();
@@ -276,6 +278,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", async () => {
+  registerSacredSockets();
   registerInventoryTransferSocket();
   registerSharedConsumptionSocket();
   await recoverInventoryTransfers();

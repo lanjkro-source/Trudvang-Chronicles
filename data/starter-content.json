@@ -449,7 +449,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -478,7 +479,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -506,7 +508,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -534,7 +537,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -564,7 +568,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -592,7 +597,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -622,7 +628,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -652,7 +659,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -680,7 +688,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -708,7 +717,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -736,7 +746,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -764,7 +775,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -792,7 +804,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -820,7 +833,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -848,7 +862,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -877,7 +892,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -906,7 +922,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -935,7 +952,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -963,7 +981,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -991,7 +1010,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1021,7 +1041,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1051,7 +1072,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1079,7 +1101,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1107,7 +1130,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1135,7 +1159,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1164,7 +1189,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1192,7 +1218,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1220,7 +1247,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1248,7 +1276,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1276,7 +1305,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1305,7 +1335,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1334,7 +1365,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1369,7 +1401,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1404,7 +1437,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1434,7 +1468,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1465,7 +1500,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1500,7 +1536,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1530,7 +1567,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1563,7 +1601,8 @@
           "delivery": "ranged",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -1593,7 +1632,8 @@
           "delivery": "melee",
           "type": "slashing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1623,7 +1663,8 @@
           "delivery": "melee",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1656,7 +1697,8 @@
           "delivery": "ranged",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1689,7 +1731,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1722,7 +1765,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1755,7 +1799,8 @@
           "delivery": "ranged",
           "type": "piercing",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1773,7 +1818,8 @@
         "heft": 9,
         "weight": 29,
         "value": 130,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1794,7 +1840,8 @@
         "initiativeModifier": -2,
         "weight": 21,
         "value": 70,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1812,7 +1859,8 @@
         "heft": 8,
         "weight": 28,
         "value": 100,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1833,7 +1881,8 @@
         "initiativeModifier": -1,
         "weight": 7.5,
         "value": 8.6,
-        "material": "leather"
+        "material": "leather",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -1854,7 +1903,8 @@
         "initiativeModifier": -1,
         "weight": 10.5,
         "value": 15,
-        "material": "leather"
+        "material": "leather",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -1872,7 +1922,8 @@
         "heft": 4,
         "weight": 13,
         "value": 30,
-        "material": "leather"
+        "material": "leather",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -1893,7 +1944,8 @@
         "initiativeModifier": -5,
         "weight": 32,
         "value": 160,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1911,7 +1963,8 @@
         "heft": 7,
         "weight": 23,
         "value": 115,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1929,7 +1982,8 @@
         "heft": 6,
         "weight": 27,
         "value": 90,
-        "material": "steel"
+        "material": "steel",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1947,7 +2001,8 @@
         "heft": 1,
         "weight": 4,
         "value": 5,
-        "material": "cloth"
+        "material": "cloth",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -1973,7 +2028,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -1999,7 +2055,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2026,7 +2083,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2052,7 +2110,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2078,7 +2137,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2105,7 +2165,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2131,7 +2192,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2157,7 +2219,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2184,7 +2247,8 @@
           "delivery": "melee",
           "type": "bludgeoning",
           "protection": "normal"
-        }
+        },
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2195,7 +2259,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 2,
-        "value": 10
+        "value": 10,
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2206,7 +2271,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 1.5,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2217,7 +2283,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 3,
-        "value": 50
+        "value": 50,
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2228,7 +2295,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 1,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2239,7 +2307,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2250,7 +2319,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 3,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2261,7 +2331,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 2,
-        "value": 1
+        "value": 1,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2272,7 +2343,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 14,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2283,7 +2355,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 8,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2294,7 +2367,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 2,
-        "value": 1
+        "value": 1,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2305,7 +2379,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 25,
-        "value": 8
+        "value": 8,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2316,7 +2391,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 10,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2327,7 +2403,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2338,7 +2415,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 15,
-        "value": 8
+        "value": 8,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2349,7 +2427,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 8,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2360,7 +2439,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 3,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2371,7 +2451,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 10,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2382,7 +2463,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 1
+        "value": 1,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2393,7 +2475,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 1,
-        "value": 0.5
+        "value": 0.5,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2404,7 +2487,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 8,
-        "value": 8
+        "value": 8,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2415,7 +2499,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2426,7 +2511,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 2,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2437,7 +2523,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 15,
-        "value": 8
+        "value": 8,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2448,7 +2535,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 8,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2459,7 +2547,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 3,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2470,7 +2559,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 10,
-        "value": 6
+        "value": 6,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2481,7 +2571,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 3
+        "value": 3,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2492,7 +2583,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 3,
-        "value": 1.5
+        "value": 1.5,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2503,7 +2595,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 8,
-        "value": 4
+        "value": 4,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2514,7 +2607,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 5,
-        "value": 2
+        "value": 2,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2525,7 +2619,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook127",
         "weight": 2,
-        "value": 1
+        "value": 1,
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2740,7 +2835,8 @@
       "system": {
         "sourceKey": "TRUDVANG.Content.Source.Rulebook126",
         "weight": 5,
-        "value": 250
+        "value": 250,
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2751,7 +2847,8 @@
       "system": {
         "consequenceId": "MinokksHeart",
         "consumable": true,
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary24"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary24",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2762,7 +2859,8 @@
       "system": {
         "consequenceId": "LindwurmRegeneratingHeart",
         "consumable": true,
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary118"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary118",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2773,7 +2871,8 @@
       "system": {
         "consequenceId": "FreshVidrjotunSap",
         "consumable": true,
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2784,7 +2883,8 @@
       "system": {
         "consequenceId": "HardenedVidrjotunSap",
         "consumable": true,
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2793,7 +2893,8 @@
       "img": "icons/equipment/neck/pendant-rough-orange.webp",
       "folder": "magicObjects",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary142"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary142",
+        "craftMaterial": "hardMaterials"
       },
       "effects": [
         {
@@ -2835,7 +2936,8 @@
       "img": "icons/svg/book.svg",
       "folder": "magicObjects",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary127"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary127",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2846,7 +2948,8 @@
       "system": {
         "consequenceId": "FairyDust",
         "consumable": true,
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary73"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary73",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2855,7 +2958,8 @@
       "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
       "folder": "magicObjects",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2864,7 +2968,8 @@
       "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
       "folder": "magicObjects",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2873,7 +2978,8 @@
       "img": "icons/svg/net.svg",
       "folder": "materials",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary16"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary16",
+        "craftMaterial": "softMaterials"
       }
     },
     {
@@ -2882,7 +2988,8 @@
       "img": "icons/consumables/potions/bottle-round-corked-red.webp",
       "folder": "materials",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary117"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary117",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2891,7 +2998,8 @@
       "img": "icons/svg/coins.svg",
       "folder": "materials",
       "system": {
-        "sourceKey": "TRUDVANG.Content.Source.Bestiary130"
+        "sourceKey": "TRUDVANG.Content.Source.Bestiary130",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2921,7 +3029,8 @@
           "protection": "normal"
         },
         "quality": 2,
-        "specialUse": "votive"
+        "specialUse": "votive",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2951,7 +3060,8 @@
           "protection": "normal"
         },
         "quality": 2,
-        "specialUse": "vitner"
+        "specialUse": "vitner",
+        "craftMaterial": "hardMaterials"
       }
     },
     {
@@ -2964,7 +3074,8 @@
         "quality": 2,
         "specialUse": "votive",
         "weight": 0.2,
-        "value": 1
+        "value": 1,
+        "craftMaterial": "hardMaterials"
       }
     }
   ],

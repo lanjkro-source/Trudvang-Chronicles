@@ -28,6 +28,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
@@ -66,6 +67,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damage": "1d10",
         "openRoll": 10,
         "damageBonus": 0,
@@ -107,6 +109,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
@@ -201,6 +204,7 @@
         "weight": 7.5,
         "value": 8.6,
         "material": "leather",
+        "craftMaterial": "softMaterials",
         "quantity": 1,
         "equipped": true
       },

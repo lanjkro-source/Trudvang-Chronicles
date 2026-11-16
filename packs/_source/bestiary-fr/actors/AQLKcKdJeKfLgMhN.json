@@ -59,6 +59,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,

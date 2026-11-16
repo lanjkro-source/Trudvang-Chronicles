@@ -226,3 +226,13 @@ test('sharing a consumable uses the real item-card context and suppresses the st
  const item=new TrudvangItem({name:'Potion',type:'gear',system:{consumable:true,description:'Soins'},effects:[{name:'Potency',transfer:false,disabled:false,system:{changes:[]}}]},actor);
  await item.toChat();const context=renderedItemContexts.at(-1);assert.equal(context.canConsume,true);assert.equal(context.canApplyEffects,false);
 });
+
+test('permanent weapon rune benefits stay local to the sacred weapon at the inscribed rank',async()=>{
+ const {syncPermanentRunes}=await import('../modules/sacred-objects.mjs');
+ const data=source();data.system.damageQualification={nature:'normal',delivery:'melee',type:'slashing',protection:'normal'};data.system.material='steel';
+ data.system.sacred={enabled:true,creatorUuid:actor.uuid,invested:3,current:3,lastDay:0,failed:[],runes:[{id:'fang',sourceId:'holy-thuuldom-fang-of-yukk:fang-of-yukk:0',level:3,invested:3,current:3,uses:0}]};
+ actor.isOwner=true;const item=new TrudvangItem(data,actor);actor.items=[item];
+ await syncPermanentRunes(item);assert.equal(item.effects.length,1);assert.equal(item.effects[0].transfer,false);
+ assert.equal(item.system.damageBonus,2);assert.equal(item.system.openRoll,9);assert.equal(item._source.system.damageBonus,0);assert.equal(item._source.system.openRoll,10);
+ assert.equal(item.effects[0].flags['trudvang-chronicles'].transformation.runeLevel,3);
+});

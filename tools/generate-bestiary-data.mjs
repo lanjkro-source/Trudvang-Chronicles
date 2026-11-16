@@ -209,7 +209,7 @@ const encodeCappedPortrait = (buffer, extension) => {
   return encode(sharp(buffer).resize(PORTRAIT_MAX_SIDE, PORTRAIT_MAX_SIDE, {fit: "inside", withoutEnlargement: true})).toBuffer();
 };
 const portraitMaxSide = async path => {
-  const meta = await sharp(path).metadata();
+  const meta = await sharp(readFileSync(path)).metadata();
   return Math.max(meta.width ?? 0, meta.height ?? 0);
 };
 await Promise.all(portraitChecks.map(async ({name, imageSource, imageTarget}) => {

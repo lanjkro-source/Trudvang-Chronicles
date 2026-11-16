@@ -1,3 +1,4 @@
+import {withConditionalEffectConsumption} from './rules/effect-conditional-tests.mjs';
 import {applyPersonalCasting} from './self-effects.mjs';
 import {actorForResistance} from "./resistance-actor.mjs";
 import {magicDamageHasBaseTargets} from "./magic-damage.mjs";
@@ -72,6 +73,10 @@ export async function openD10(options = {}) {
 }
 
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null,publishMessage=null}) {
+  if(blessing?.consumeEffectIds?.length){
+    const repeat={actor,label,target,modifier,kind,flavor,item,perfectSuccessMax,automaticSuccessMax,fatalEffect,feint,usage,longRange,animateWithDiceSoNice,successConsequence,failureConsequence,criticalSuccessConsequence,criticalFailureConsequence,effectTarget,attackTargets,targetName,powerLevelCounts,castingId,resolveProcedure,resolvePerfectSuccess,blessing:{...blessing,consumeEffectIds:[]},damageResistanceFor,publishMessage};
+    return withConditionalEffectConsumption(actor,blessing.consumeEffectIds.map(consumeEffectId=>({consumeEffectId})),()=>rollUnder(repeat));
+  }
   if(blessing)flavor+='<br>'+rollModifierFlavor([blessing]);
   const finalTarget = Number(target) + Number(modifier || 0);
   const selfOnly=Boolean(item&&['spell','divine','rune'].includes(kind)&&POWER_DETAILS_BY_ID[item.system?.catalogId]?.selfOnly);
@@ -92,6 +97,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
+  if(ruleTestContext&&item?.flags?.[SYSTEM_ID]?.runeActivation)Object.assign(ruleTestContext,{kind:'rune',runeLevel:item.flags[SYSTEM_ID].runeActivation.level,runeObjectUuid:item.flags[SYSTEM_ID].runeActivation.objectUuid});
   const card = {
     actorName: actor.name,
     actorImg: actor.img,
@@ -1098,7 +1104,7 @@ export async function genericSituationDialog({actor = null, defaultTarget = 10, 
       refresh();
     }
   }
-  return blessingDialog(SituationRollDialog,actor,'modifier').wait({
+  return blessingDialog(SituationRollDialog,actor,'situation').wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")},
     content,
     buttons: [
@@ -1367,7 +1373,7 @@ export async function playerTraitSituationDialog({actor = null, title, traitLabe
       refresh();
     }
   }
-  return blessingDialog(PlayerTraitDialog,actor,'modifier').wait({
+  return blessingDialog(PlayerTraitDialog,actor,'situation').wait({
     window: {title},
     content,
     buttons: [

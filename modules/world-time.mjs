@@ -34,6 +34,7 @@ export function advanceWorldTime({value = 1, unit = "days"} = {}) {
     }
     const time = await game.time.advance(seconds);
     await processWorldConsequences(time);
+    await (await import('./sacred-objects.mjs')).refreshDailySacredObjects(Number(time??game.time.worldTime));
     await registry.refresh("updateWorldTime");
     await expireAppliedEffects({time: Number(time ?? game.time.worldTime)});
     const unitLabel = t(`TimeUnits.${unit}.${value === 1 ? "one" : "other"}`);

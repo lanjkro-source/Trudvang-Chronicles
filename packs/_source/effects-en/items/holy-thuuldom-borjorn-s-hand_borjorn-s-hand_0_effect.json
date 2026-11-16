@@ -1,0 +1,45 @@
+{
+  "_id": "USkjfeFaGbHcIdJe",
+  "_key": "!items!USkjfeFaGbHcIdJe",
+  "name": "Borjorn's Hand",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+    "description": "<p>The mountain grants the stated bonus to the next Skill Roll. The bonus applies automatically and the effect ends after that roll, even on failure.</p>",
+    "summary": "Bonus to the next Skill Roll.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 229
+    }
+  },
+  "effects": [
+    {
+      "_id": "XjQzjuWrXsYtZu0v",
+      "_key": "!items.effects!USkjfeFaGbHcIdJe.XjQzjuWrXsYtZu0v",
+      "name": "Borjorn's Hand",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "<p>The mountain grants the stated bonus to the next Skill Roll. The bonus applies automatically and the effect ends after that roll, even on failure.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+            "sourceId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
+            "summary": "Bonus to the next Skill Roll.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

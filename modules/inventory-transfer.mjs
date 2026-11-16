@@ -24,6 +24,7 @@ export async function recoverInventoryTransfers(){
 async function perform({sourceItemUuid,targetActorUuid,userId,requestId},authority){
  const item=await foundry.utils.fromUuid(sourceItemUuid),target=await foundry.utils.fromUuid(targetActorUuid),user=game.users?.get(userId);
  if(!user?.active||!isInventoryTransferItem(item)||target?.documentName!=='Actor'||target.inCompendium)return {status:'unavailable'};
+ if(item.system?.sacred?.enabled)return {status:'sacred'};
  const source=item.actor??item.parent;
  if(!user.isGM&&!source.canUserModify?.(user,'update'))return {status:'denied'};
  if(!authority&&!target.canUserModify?.(user,'update'))return {status:'denied'};

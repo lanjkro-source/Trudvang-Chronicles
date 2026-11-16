@@ -61,6 +61,7 @@
           "type": "piercing",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "combatSpecialty": "oneHandedLightWeapons",
@@ -91,6 +92,7 @@
         "weight": 4,
         "value": 5,
         "material": "cloth",
+        "craftMaterial": "softMaterials",
         "initiativeModifier": 0,
         "quantity": 1,
         "equipped": true

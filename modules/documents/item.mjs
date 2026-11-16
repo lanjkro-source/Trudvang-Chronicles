@@ -27,6 +27,10 @@ export class TrudvangItem extends BaseItem {
     prepareItemLocalEffects(this,'final');
   }
 
+  async delete(options={}){
+    if(this.system.sacred?.enabled&&this.parent?.documentName==='Actor'&&!options.trudvangSacredDelete)return (await import('../sacred-objects.mjs')).removeSacredObject(this);
+    return super.delete(options);
+  }
   async roll() {
     if(this.flags?.['trudvang-chronicles']?.inventoryTransfer)return null;
     if (this.type === "effect") {

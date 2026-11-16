@@ -61,6 +61,7 @@
           "type": "piercing",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
@@ -100,6 +101,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
@@ -137,6 +139,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damage": "1d10",
         "openRoll": 0,
         "damageBonus": 0,
@@ -171,6 +174,7 @@
         "weight": 7.5,
         "value": 8.6,
         "material": "leather",
+        "craftMaterial": "softMaterials",
         "quantity": 1,
         "equipped": true
       },

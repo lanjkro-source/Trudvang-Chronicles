@@ -128,9 +128,15 @@ for (const id of [...french.keys()].sort()) {
       fail(`${id}: EN improvement ${index} still copies French text`);
     }
   }
+  if(rune){
+    if(JSON.stringify(f.runeActivation)!==JSON.stringify(e.runeActivation))fail(id+': unaligned rune activation');
+    const activation=f.runeActivation;
+    if(!activation||(!Number.isInteger(activation.daily)&&!Number.isInteger(activation.dailyPerLevel)))fail(id+': missing rune activation limit');
+  }
   optionCount += f.powerLevels.length;
   powerDetails[id] = {
     isRune: rune,
+    ...(f.runeActivation?{runeActivation:{...f.runeActivation,modifier:f.modifier??0}}:{}),
     level:f.level,
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),

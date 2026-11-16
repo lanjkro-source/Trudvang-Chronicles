@@ -22,6 +22,6 @@ export function magicCapacities({skill, level, vitnerBonus = 0, hasReligion = nu
   return {vitner: vitnerType && level("callVitner") > 0
     ? skill("vitnerCraft") + 5 * level("callVitner") + vitnerType[1].capacityPerLevel * level(vitnerType[0])
       + 10 * level("vitnerHabit") + vitnerBonus : null,
-  divinity: religion && level("divinePower") > 0
+  divinity: religion && (level("divinePower") > 0 || level("thuulForging") > 0)
     ? skill("faith") + 3 * level("divinePower") + 7 * level("faithful") + 7 * level("powerful") : null};
 }

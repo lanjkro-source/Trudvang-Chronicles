@@ -8,12 +8,12 @@ import {itemUseModifierTotal} from './rules/item-quality.mjs';
 export function conditionalChoices(actor,{item,castingType,action}={}){
  const blessing=nidBlessingBonus(actor);
  return [...(blessing?[{id:`nid:${blessing.effectId}`,selector:'[data-nid-blessing]',attribute:'data-nid-blessing',value:blessing.value,label:game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label})}]:[]),
-  ...Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).flatMap(effect=>conditionalSituationBonuses(effect).filter(row=>row.allActions).map((row,index)=>({id:'context:'+effect.id+':'+index,selector:'[data-effect-condition="'+effect.id+'-'+index+'"]',attribute:'data-effect-condition="'+effect.id+'-'+index+'"',testOnly:true,value:row.value,label:effect.name+' — '+game.i18n.localize(TRANSFORMATION_TEMPLATES[effect.flags['trudvang-chronicles'].transformation.key].conditionalLabelKey)}))),
+  ...Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).flatMap(effect=>conditionalSituationBonuses(effect).filter(row=>row.allActions).map((row,index)=>({id:'context:'+effect.id+':'+index,selector:'[data-effect-condition="'+effect.id+'-'+index+'"]',attribute:'data-effect-condition="'+effect.id+'-'+index+'"',testOnly:true,...(row.skillOnly?{skillOnly:true}:{}),...(row.consumeOnUse?{consumeEffectId:effect.id}:{}),fixed:row.automatic,value:row.value,label:effect.name+' — '+game.i18n.localize(TRANSFORMATION_TEMPLATES[effect.flags['trudvang-chronicles'].transformation.key].conditionalLabelKey)}))),
   ...itemUseBonuses(actor,{castingType,action}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:(Boolean(item)&&!row.optional)||row.automatic,value:row.value,qualityLevel:row.qualityLevel,label:item||row.automatic?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
 }
 /** Add the conditional choice to the existing dialog, without another prompt. */
 export function blessingDialog(Base,actor,mode='modifier',context={}){
- const choices=conditionalChoices(actor,context);if(!choices.length)return Base;
+ const choices=conditionalChoices(actor,context).filter(row=>!row.skillOnly||!['trait','situation','concentration'].includes(mode));if(!choices.length)return Base;
  return class extends Base{
   static wait(config){
    const buttons=config.buttons.map(button=>!button.callback||button.action==='cancel'?button:{...button,callback:async(event,control,dialog)=>{
@@ -25,7 +25,7 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
     else if(mode==='concentration')result.modifier=Number(result.modifier||0)+value;
     else if(mode==='trait'){const field=result.mode==='open'?'bonus':'situationValue';result[field]=Number(result[field]||0)+value;}
     else result.modifier=Number(result.modifier||0)+value;
-    result.blessing={label:selected.map(row=>row.label).join(' ; '),value};
+    result.blessing={label:selected.map(row=>row.label).join(' ; '),value,...(selected.some(row=>row.consumeEffectId)?{consumeEffectIds:selected.flatMap(row=>row.consumeEffectId?[row.consumeEffectId]:[])}:{})};
     return result;
    }});
    return super.wait({...config,buttons});

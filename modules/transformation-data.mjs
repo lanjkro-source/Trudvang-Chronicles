@@ -12081,6 +12081,33 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-stoneling:stoneling:0",
     "parameters": []
   },
+  "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/holy-shield.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "conditionalLabelKey": "TRUDVANG.Sacred.NextSkill",
+    "sourceId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:0",
+        "target": "note",
+        "base": 0,
+        "value": 0,
+        "perRuneLevel": 1,
+        "allActions": true,
+        "automatic": true,
+        "consumeOnUse": true,
+        "skillOnly": true,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.BorjornNextSkill"
+      }
+    ]
+  },
   "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect": {
     "id": "effect",
     "icon": "icons/svg/holy-shield.svg",
@@ -16520,6 +16547,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-thuuldom-stoneling:stoneling:0": [
     "holy-thuuldom-stoneling:stoneling:0#effect"
+  ],
+  "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": [
+    "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect"
   ],
   "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": [
     "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect"

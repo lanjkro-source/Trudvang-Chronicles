@@ -211,3 +211,8 @@ Les sorts instantanés à cibles limitées conservent désormais leur allocation
 Références : Livre des règles p.192, 197, 257 et 293–294 ; Player’s Handbook, Tipping, Roar, Snares of the Holy Ground et Feline Leap. Les tests isolés couvrent les deux langues, les limites, l’identité des options, les cibles, les droits, les annulations, les résistances réactives, la posture native, le succès critique et les horloges. Aucune migration de monde n’est ajoutée.
 
 Vérification représentative : réussir Croche-pied puis appliquer à une cible. Son propriétaire doit pouvoir ouvrir son test d’Agilité ; un échec la met À terre, et retirer ce statut permet de se relever sans autre effet de chute à supprimer. Réussir Bond du félin doit demander la taille en mètres, annoncer les distances, puis refuser une nouvelle invocation avant trois tours (ou 15 secondes de temps du monde).
+
+
+## Début de la gestion des runes — 16 novembre 2026
+
+À la demande du MJ, les runes ne sont plus reportées. Leur fabrication, leur inscription et les points liés aux objets sont décrits dans [sacred-objects.md](sacred-objects.md), avec le classement intégral des équipements et un parcours de test. Le registre passe à 424 variantes / 367 sources avec Main de Borjorn, désormais persistante : bonus automatique, figé au rang de la rune et consommé au prochain test de compétence. Les effets de rune déjà présents sont raccordés au rang inscrit ; les comportements restant narratifs ou liés à des événements particuliers devront continuer à être examinés séparément. Aucune migration de monde n’est ajoutée.

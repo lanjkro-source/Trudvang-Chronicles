@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 351 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 352 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -363,7 +363,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Croc de Yukk | Croc de Yukk | rune | `holy-thuuldom-fang-of-yukk:fang-of-yukk:0` | 5 | 0 | 1 | — | — |
 | Écailles | Écailles | rune | `holy-thuuldom-scales:scales:0` | 5 | 0 | 1 | — | — |
 | Enfant de la pierre | Enfant de la pierre | rune | `holy-thuuldom-stoneling:stoneling:0` | 5 | 0 | 1 | — | — |
-| Main de Borjorn | Main de Borjorn | rune | `holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0` | 5 | 0 | 0 | — | — |
+| Main de Borjorn | Main de Borjorn | rune | `holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0` | 5 | 0 | 1 | — | — |
 | Marque de Brokk | Marque de Brokk | rune | `holy-thuuldom-mark-of-brokk:mark-of-brokk:0` | 5 | 0 | 1 | — | — |
 | Poings d'acier | Poings d’acier | rune | `holy-thuuldom-hammer-fists:hammer-fists:0` | 5 | 0 | 1 | — | — |
 | Pouvoir de réparation | Pouvoir de réparation | rune | `holy-thuuldom-power-of-repair:power-of-repair:0` | 5 | 0 | 0 | — | — |

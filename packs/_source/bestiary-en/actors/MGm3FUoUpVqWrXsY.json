@@ -29,6 +29,7 @@
           "type": "slashing",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 2,
         "quantity": 1,
         "combatSpecialty": "twoHandedWeapons",

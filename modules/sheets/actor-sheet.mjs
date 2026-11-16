@@ -1,3 +1,4 @@
+import {sacredAffinity,sacredObjectViews,createSacredObjectDialog,removeSacredObject} from '../sacred-objects.mjs';
 import {damageIcons} from "../damage-icons.mjs";
 import {conditionalProtectionProfiles} from "../rules/conditional-protection.mjs";
 import {damageQualification} from "../rules/damage-qualifications.mjs";
@@ -112,6 +113,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "roll-initiative": TrudvangActorSheet.#onAction,
       "roll-concentration": TrudvangActorSheet.#onAction,
       "rest-for-night": TrudvangActorSheet.#onAction,
+      "sacred-create": TrudvangActorSheet.#onAction,
+      "sacred-remove": TrudvangActorSheet.#onAction,
       "calm-fear": TrudvangActorSheet.#onAction,
       "roll-survival-rounds": TrudvangActorSheet.#onAction,
       "roll-fear-factor": TrudvangActorSheet.#onAction,
@@ -505,6 +508,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       }));
     }
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
+    context.sacredAffinity=sacredAffinity(this.actor);
+    context.thuulDivinityLocked=this.actor.selectedReligion?.id==='thuuldom'||Boolean(context.sacredAffinity);
+    context.sacredObjects=sacredObjectViews(this.actor);
     context.hasActiveSpellTracker = Boolean(this.actor.activeSpellLimit > 0
       && (Number(this.actor.system.resources.vitner.max || 0) > 0 || this.actor.unlimitedVitner));
     context.activeSpellLimit = context.hasActiveSpellTracker ? Number.isFinite(this.actor.activeSpellLimit) ? this.actor.activeSpellLimit : "∞" : 0;
@@ -647,6 +653,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
       case "roll-concentration": return this.actor.rollConcentration();
       case "rest-for-night": return this.actor.restForNight();
+      case "sacred-create": return createSacredObjectDialog(this.actor).catch(error=>ui.notifications.warn(error.message));
+      case "sacred-remove": return item?removeSacredObject(item).catch(error=>ui.notifications.warn(error.message)):null;
       case "calm-fear": return this.actor.calmFear();
       case "roll-survival-rounds": return this.actor.rollSurvivalRounds();
       case "roll-fear-factor": return this.actor.rollFearFactor();
@@ -1396,6 +1404,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   async _deleteItem(item) {
     if (!item) return;
+    if(item.system.sacred?.enabled)return removeSacredObject(item);
     if (this.actor.type === "character" && ["ability", "tablet"].includes(item.type) && !this.actor.system.experience?.creationMode) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CreationModeRequired"));
     }

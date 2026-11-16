@@ -21,6 +21,7 @@
         "weight": 21,
         "value": 70,
         "material": "steel",
+        "craftMaterial": "hardMaterials",
         "quantity": 1,
         "equipped": true
       },

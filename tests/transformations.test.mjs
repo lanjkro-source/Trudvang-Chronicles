@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,366);
+ assert.equal(Object.keys(sources).length,367);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{

@@ -59,6 +59,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
@@ -98,6 +99,7 @@
           "type": "bludgeoning",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": false,
@@ -127,6 +129,7 @@
         "weight": 13,
         "value": 30,
         "material": "leather",
+        "craftMaterial": "softMaterials",
         "initiativeModifier": -1,
         "quantity": 1,
         "equipped": true

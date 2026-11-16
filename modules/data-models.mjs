@@ -1,3 +1,4 @@
+import {equipmentCraftMaterial,SACRED_TYPES} from './rules/sacred-objects.mjs';
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
 import {npcCurrentTrait, npcBookSkillRows} from "./rules/npc-summary.mjs";
 import {TRUDVANG} from "./config.mjs";
@@ -364,6 +365,10 @@ export class NpcData extends foundry.abstract.TypeDataModel {
 
 function itemBaseSchema() {
   return {
+    craftMaterial: string(),
+    sacred: schema({enabled:boolean(false),creatorUuid:string(),invested:integer(0,{min:0}),current:integer(0,{min:0}),lastDay:integer(0),
+      runes:new fields.ArrayField(schema({id:string(),sourceId:string(),level:integer(1,{min:1,max:5}),invested:integer(0,{min:0}),current:integer(0,{min:0}),uses:integer(0,{min:0})}),{required:true,initial:[]}),
+      failed:new fields.ArrayField(schema({sourceId:string(),level:integer(1,{min:1,max:5})}),{required:true,initial:[]})}),
     quality: integer(2, {min: 0, max: 5}),
     magical: boolean(false),
     specialUse: string("none"),
@@ -418,6 +423,7 @@ class BaseItemData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
+    if(SACRED_TYPES.includes(this.parent?.type))this.craftMaterial=equipmentCraftMaterial(this.parent);
     if (this.breach && Number.isFinite(Number(this.breach.value))) {
       this.protection = Math.ceil(Math.max(0, Number(this.breach.value)) / 10);
     }

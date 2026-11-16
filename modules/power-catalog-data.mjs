@@ -7856,6 +7856,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-anvil-shock:anvil-shock:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 0,
+      "objectRestriction": "bludgeoningWeapon",
+      "modifier": 0
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -7890,8 +7895,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": 0
+    },
     "level": 1,
-    "selfOnly": false,
+    "selfOnly": true,
     "powerLevels": [
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:0",
@@ -7919,12 +7928,16 @@ export const POWER_DETAILS_BY_ID = {
         "maxCount": null
       }
     ],
-    "spellType": "permanent",
+    "spellType": "lasting",
     "page": 229,
     "pageFr": 287
   },
   "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 1,
+      "modifier": -4
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [
@@ -7960,6 +7973,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-earthquake:earthquake:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 3,
+      "modifier": 0
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -7994,6 +8011,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 0,
+      "permanentTarget": "object",
+      "objectRestriction": "metalSlashing",
+      "modifier": 0
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8028,6 +8051,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": -2
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [],
@@ -8037,6 +8064,12 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-hammer-fists:hammer-fists:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 0,
+      "permanentTarget": "equipped",
+      "objectRestriction": "pairedGear",
+      "modifier": 0
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [
@@ -8072,6 +8105,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-healing-rune:healing-rune:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": -2
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8106,6 +8143,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": -2
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8140,6 +8181,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 0,
+      "permanentTarget": "inventory",
+      "modifier": 0
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8174,6 +8220,11 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 0,
+      "permanentTarget": "equipped",
+      "modifier": 0
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [
@@ -8209,6 +8260,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-power-of-repair:power-of-repair:0": {
     "isRune": true,
+    "runeActivation": {
+      "dailyPerLevel": 1,
+      "modifier": -2
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8243,6 +8298,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-scales:scales:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": -4
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [
@@ -8278,6 +8337,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stone-to-clay:stone-to-clay:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 1,
+      "modifier": -2
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8312,6 +8375,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stoneling:stoneling:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 2,
+      "modifier": -4
+    },
     "level": 1,
     "powerLevels": [
       {
@@ -8346,6 +8413,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-stoneshape:stoneshape:0": {
     "isRune": true,
+    "runeActivation": {
+      "dailyPerLevel": 1,
+      "modifier": -2
+    },
     "level": 1,
     "selfOnly": false,
     "powerLevels": [
@@ -8381,6 +8452,10 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-thuuldom-well-of-water:well-of-water:0": {
     "isRune": true,
+    "runeActivation": {
+      "daily": 1,
+      "modifier": -4
+    },
     "level": 1,
     "powerLevels": [
       {

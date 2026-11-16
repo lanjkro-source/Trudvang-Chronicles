@@ -1,3 +1,5 @@
+import {sacredRuneViews,investSacredDialog,inscribeRuneDialog,activateSacredRune} from '../sacred-objects.mjs';
+import {isSacredObject,SACRED_TYPES,equipmentCraftMaterial,sacredCapacity} from '../rules/sacred-objects.mjs';
 import {damageQualificationFields} from "../damage-icons.mjs";
 import {damageQualification} from "../rules/damage-qualifications.mjs";
 import { TRUDVANG } from "../config.mjs";
@@ -27,6 +29,7 @@ const isCustomTablet = item => item.type === "tablet" && !TABLET_BY_ID.has(item.
 
 const magicSheets=new Set();
 const effectSheets=new Set();
+const sacredSheets=new Set();
 export function itemEffectDurationLabel(effect,{time=Number(game.time?.worldTime),combat=game.combat}={}){
   const duration=effect._source?.duration ?? effect.duration;
   const total=effectDurationSeconds(duration);
@@ -38,6 +41,8 @@ export function itemEffectDurationLabel(effect,{time=Number(game.time?.worldTime
 }
 export function registerMagicSheetAvailabilityHooks(){
   const refresh=()=>{for(const sheet of magicSheets)sheet.refreshMagicCastingButton();};
+  const refreshSacred=item=>{for(const sheet of sacredSheets)if(item?.id===sheet.item.id||item?.uuid===sheet.item.parent?.uuid)sheet.render({force:true});};
+  Hooks.on("updateItem",refreshSacred);Hooks.on("updateActor",refreshSacred);
   for(const hook of ["controlToken","updateUser","updateActor","createItem","updateItem","deleteItem","createActiveEffect","updateActiveEffect","deleteActiveEffect"])Hooks.on(hook,refresh);
   Hooks.on("updateWorldTime",()=>{for(const sheet of effectSheets)sheet.refreshEffectDurations();});
   for(const hook of ["combatTurnChange","updateCombat"])Hooks.on(hook,combat=>{for(const sheet of effectSheets)sheet.refreshEffectDurations(combat);});
@@ -75,6 +80,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     },
     actions: {
       roll: TrudvangItemSheet.#onRoll,
+      'sacred-invest': function(){return investSacredDialog(this.item).catch(error=>ui.notifications.warn(error.message));},
+      'sacred-inscribe': function(){return inscribeRuneDialog(this.item).catch(error=>ui.notifications.warn(error.message));},
+      'sacred-activate': function(event,target){return activateSacredRune(this.item,target.dataset.runeId).catch(error=>ui.notifications.warn(error.message));},
       "delete-item": TrudvangItemSheet.#onDeleteItem,
       "effect-add": TrudvangItemSheet.#onEffectAdd,
       "effect-edit": TrudvangItemSheet.#onEffectEdit,
@@ -98,6 +106,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.item = this.item;
+    context.isSacredObject=isSacredObject(this.item);
+    context.sacredRunes=context.isSacredObject?sacredRuneViews(this.item):[];
+    context.sacredCapacity=context.isSacredObject&&this.item.parent?sacredCapacity(this.item.parent,equipmentCraftMaterial(this.item)):0;
+    context.craftOptions=SACRED_TYPES.includes(this.item.type)?['hardMaterials','softMaterials'].map(value=>({value,label:game.i18n.localize('TRUDVANG.Knowledge.'+value),selected:value===equipmentCraftMaterial(this.item)})):null;
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
     // Show the object's current values, without including bonuses to its bearer.
@@ -192,7 +204,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         catalogId: power.id, name: powerName(power), summary: getPowerSummary(power), iconClass: powerIconClassForId(power.id)
       }))
     })).filter(group => group.powers.length) : context.customTablet ? Array.from({length:5},(_,index)=>({level:index+1,accessible:true,powers:Array.from(this.item.system.customPowers??[]).filter(entry=>Number(entry.level)===index+1).map(entry=>({customId:entry.id,name:entry.data?.name,summary:entry.data?.system?.summary,iconClass:powerIconClassForItem(entry.data),level:entry.level,levelOptions:[1,2,3,4,5].map(value=>({value,selected:value===Number(entry.level)}))}))})).filter(group=>group.powers.length) : [];
-    context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.customTablet || context.tabletPowerGroups.length > 0;
+    context.hasItemTabs = context.isSacredObject || context.supportsEffects || context.hasModifiers || context.customTablet || context.tabletPowerGroups.length > 0;
     context.enrichedDescription = knowledgeProcedureDescription(annotateRuleTestDescription(
       await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner}), this.item), this.item);
     return context;
@@ -204,6 +216,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     bindSheetListMenus(this);
     if(["spell","divineFeat"].includes(this.item.type)){magicSheets.add(this);this.refreshMagicCastingButton();}
     if(context.supportsEffects)effectSheets.add(this);
+    if(context.isSacredObject)sacredSheets.add(this);
     const root = this.element;
     if (root?.addEventListener && this._transformationDropRoot !== root) {
       this._transformationDropRoot = root;
@@ -302,7 +315,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       if(effect&&label)label.textContent=itemEffectDurationLabel(effect,{combat});
     }
   }
-  async close(options){magicSheets.delete(this);effectSheets.delete(this);return super.close(options);}
+  async close(options){magicSheets.delete(this);effectSheets.delete(this);sacredSheets.delete(this);return super.close(options);}
 
   _activateTabs(root) {
     const nav = root.querySelector(".item-sheet-tabs");

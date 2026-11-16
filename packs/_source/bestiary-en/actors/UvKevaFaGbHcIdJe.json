@@ -61,6 +61,7 @@
           "type": "slashing",
           "protection": "normal"
         },
+        "craftMaterial": "hardMaterials",
         "damageBonus": 0,
         "quantity": 1,
         "equipped": true,
@@ -93,6 +94,7 @@
         "weight": 7.5,
         "value": 8.6,
         "material": "leather",
+        "craftMaterial": "softMaterials",
         "quantity": 1,
         "equipped": true
       },

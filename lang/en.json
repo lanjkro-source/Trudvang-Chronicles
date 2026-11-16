@@ -17335,6 +17335,15 @@
           "RuneSummary5": "Spirit: darkvision 25 m, then low-light vision 25 m; load 2.5 kg; 5 m/round.",
           "RuneDescription5": "A minor spirit is bound to a stone for 5 hour(s). Spirit: darkvision 25 m, then low-light vision 25 m; load 2.5 kg; 5 m/round. These abilities belong to the spirit, not the Thuul. The GM handles its movement, fetched objects and precise watch instructions; it signals discoveries with the sound of clattering stones."
         },
+        "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect": {
+          "Name": "Borjorn's Hand",
+          "Summary": "Bonus to the next Skill Roll.",
+          "Description": "<p>The mountain grants the stated bonus to the next Skill Roll. The bonus applies automatically and the effect ends after that roll, even on failure.</p>",
+          "SourceName": "Borjorn's Hand",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "229",
+          "Duration": ""
+        },
         "holy-thuuldom-mark-of-brokk:mark-of-brokk:0#effect": {
           "Name": "Mark of Brokk",
           "Summary": "Strengthens a sacred object and enhances the rune it bears.",
@@ -18383,7 +18392,8 @@
       "AutomaticSelfFailed": "The personal effect could not be applied to the caster.",
       "HearingActionPenalty": "Actions relying on hearing: {value} SV.",
       "PhysicalMovementPenalty": "Actions relying on movement: {value} SV.",
-      "RoarRadius": "Blast radius: {value} m."
+      "RoarRadius": "Blast radius: {value} m.",
+      "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18675,7 +18685,8 @@
       "unavailable": "This item is no longer available for transfer. Check the inventories and try again.",
       "noGM": "An online GM is required to give an item to an actor you do not own.",
       "failed": "The transfer failed; the original item was retained.",
-      "pending": "The transfer is pending completion. The GM can recover it when the world next loads."
+      "pending": "The transfer is pending completion. The GM can recover it when the world next loads.",
+      "sacred": "This sacred object remains bound to its creator. Remove it in Vitner & Faith to reclaim its points before creating another object."
     },
     "Disease": {
       "Exposure": "Entering the aura without immunity starts 1d6 minutes of incubation. Its successful Constitution resistance (base SV {sv}) replaces it with one day of immunity. Otherwise, fever lasts 1d6 days and imposes {penalty} to all actions. Leaving the area does not cure incubation or disease.",
@@ -18744,6 +18755,59 @@
       "LeapValues": "Leap: up to {length} m horizontally and {height} m vertically. One leap every 3 rounds (15 seconds).",
       "BadHeight": "Enter a positive height in metres.",
       "Cooldown": "This power is still recovering: {seconds} s remaining."
+    },
+    "Sacred": {
+      "Title": "Sacred objects",
+      "Runes": "Runes",
+      "Capacity": "Maximum Divinity Points per object",
+      "Capacities": "Hard: {hard} · Soft: {soft}",
+      "Balance": "Free points: {free} · Invested: {invested} · Total: {total}",
+      "Overdrawn": "Objects exceed the total by {amount} points: reclaim points before investing further.",
+      "Type": "Object type",
+      "Craft": "Handicraft",
+      "Copy": "Copy a world starter item",
+      "Template": "Item to copy",
+      "Create": "Craft a sacred object",
+      "Fabricate": "Craft",
+      "Tools": "Suitable workshop / kit",
+      "Tool0": "Workshop or forge",
+      "Tool1": "Large kit",
+      "Tool2": "Ordinary kit",
+      "Tool3": "Small kit",
+      "Quality": "Resulting quality",
+      "Invest": "Add Divinity Points",
+      "InvestAvailable": "{max} point(s) available",
+      "Points": "Points to invest",
+      "Allocation": "Allocation",
+      "Unassigned": "Not assigned to a rune",
+      "Inscribe": "Inscribe / improve a rune",
+      "Rune": "Rune",
+      "InscriptionWarning": "Failure prevents this inscription on this object. Existing runes remain intact.",
+      "RuneModifier": "Rune / inscription modifier",
+      "NoRunes": "No learned runes.",
+      "Remove": "Remove sacred object",
+      "RemoveConfirm": "Destroy “{name}” in the inventory and reclaim its {points} invested Divinity Points? Desecration is handled manually.",
+      "Invalid": "Invalid sacred object or choice.",
+      "InvalidTemplate": "This starter item is not accessible to players.",
+      "InvalidBalance": "This object’s points are inconsistent. Check its reserves before proceeding.",
+      "InvalidInvestment": "Cannot invest: check free points, object capacity and rune allocation.",
+      "InvalidRune": "Cannot inscribe: check the learned level, available points and previous inscriptions.",
+      "Unavailable": "This rune has no remaining points or uses today.",
+      "Permission": "You must control this sacred object’s creator.",
+      "ActivationCost": "Level {level} · Cost: {level} object points · Rune reserve: {current}/{invested}",
+      "Daily": "Remaining / maximum invocations",
+      "Permanent": "Permanent",
+      "Empty": "No sacred objects.",
+      "NoInscription": "No inscribed runes.",
+      "CurrentInvested": "Current / invested points",
+      "CapacityObject": "Capacity: {max}",
+      "Open": "Open object",
+      "Details": "Show runes",
+      "Name": "Name",
+      "HeldCondition": "The benefit requires the object to be equipped; also respect the conditions stated by the rune.",
+      "NextSkill": "Next Skill Roll",
+      "WrongRuneObject": "This rune cannot be inscribed on this object type or material.",
+      "PairedGear": "For Hammer Fists, the item must represent the complete pair of gloves, bracelets or bracers."
     }
   }
 }

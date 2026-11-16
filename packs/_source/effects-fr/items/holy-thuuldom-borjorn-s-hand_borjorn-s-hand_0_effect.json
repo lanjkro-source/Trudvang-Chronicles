@@ -1,0 +1,45 @@
+{
+  "_id": "USkjfeFaGbHcIdJe",
+  "_key": "!items!USkjfeFaGbHcIdJe",
+  "name": "Main de Borjorn",
+  "type": "effect",
+  "img": "icons/svg/holy-shield.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+    "description": "<p>Les conseils de la montagne accordent le bonus indiqué au prochain test de compétence. Le bonus est utilisé automatiquement et l’effet se termine après ce test, même en cas d’échec.</p>",
+    "summary": "Bonus au prochain test de compétence.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 287
+    }
+  },
+  "effects": [
+    {
+      "_id": "XjQzjuWrXsYtZu0v",
+      "_key": "!items.effects!USkjfeFaGbHcIdJe.XjQzjuWrXsYtZu0v",
+      "name": "Main de Borjorn",
+      "type": "effect",
+      "img": "icons/svg/holy-shield.svg",
+      "description": "<p>Les conseils de la montagne accordent le bonus indiqué au prochain test de compétence. Le bonus est utilisé automatiquement et l’effet se termine après ce test, même en cas d’échec.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0#effect",
+            "sourceId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
+            "summary": "Bonus au prochain test de compétence.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
