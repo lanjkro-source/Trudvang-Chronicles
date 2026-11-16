@@ -18681,6 +18681,20 @@
       "Unavailable": "La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet.",
       "UnwillingTarget": "Cible non consentante",
       "AwareUnwillingTarget": "Cible consciente du sort et non consentante"
+    },
+    "FollowupTest": {
+      "DailyLimit": "Ce test a déjà été tenté aujourd’hui. Faites avancer le temps jusqu’au jour suivant pour réessayer.",
+      "WaitNextDay": "La récupération des souvenirs peut commencer le jour suivant.",
+      "Busy": "Un test est déjà en cours pour cet effet.",
+      "Unavailable": "Les conséquences du test n’ont pas pu être confirmées. Réessayez depuis l’effet.",
+      "Changed": "Cet effet a changé ou ce test a déjà été résolu ; ce résultat ne le modifie pas.",
+      "MemoryBonus": "Souvenirs retrouvés : bonus de récupération +{bonus} VC.",
+      "MemorySuccess": "Un souvenir est retrouvé. Prochain test : bonus +{bonus} VC.",
+      "MemoryFailure": "Aucun souvenir retrouvé. Bonus conservé : +{bonus} VC.",
+      "Recovered": "Tous les souvenirs sont retrouvés ; {effect} prend fin.",
+      "Revealed": "Illusion identifiée par la victime ; les symptômes visibles et le malus social persistent jusqu’à la fin du sort.",
+      "Removed": "{effect} prend fin.",
+      "RecoveryLabel": "Récupération des souvenirs"
     }
   }
 }

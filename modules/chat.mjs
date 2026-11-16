@@ -1,3 +1,4 @@
+import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
 import {registerDispelSocket} from './dispel.mjs';
 import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
@@ -33,6 +34,7 @@ export function registerChatListeners() {
   registerTraitSituationSocket();
   registerDispelSocket();
   registerInitialResistanceSocket();
+  registerFollowupSocket();
   registerDiseaseResistanceSocket();
   registerChatApplicationSocket();
   registerEffectTargetSocket();

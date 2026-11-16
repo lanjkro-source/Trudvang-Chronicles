@@ -239,6 +239,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const originalActor=actor;
   if(actor)actor=await actorForResistance(actor,{effect:resistedEffect,effectUuid:resistedEffectUuid,context:resistanceContext});
   if(resistanceContext&&actor&&test)castingModifierRows=localizeResistanceRows(magicResistanceRows(test,{context:resistanceContext,actor}));
+  if(test?.followupBonus)castingModifierRows.push({labelKey:"TRUDVANG.FollowupTest.RecoveryLabel",value:test.followupBonus});
   if (!actor || !test || (!reactive&&!actor.canPerformAction())) return actor?.warnCannotAct?.() ?? null;
   const situation = ruleTestSituationOptions(test);
   const configuredTraits = (Array.isArray(test.trait) ? test.trait : [test.trait]).slice(0, 2);

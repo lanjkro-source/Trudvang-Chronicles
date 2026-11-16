@@ -415,7 +415,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,optionId:p.optionId||"",count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
- let summary=copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ const copiedProgress=stored?.flags?.[SCOPE]?.ruleTestProgress;
+ let summary=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?metadata(supplied)?.summary:copiedProgress.baseSummary):null)||copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
@@ -462,7 +463,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const bases=resolvedCopy?metadata(supplied)?.ruleTestBases:template.runeTiers[runeLevel-1].ruleTestBases;
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
- let description=stored?.description??text(key,"Description");
+ let description=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?supplied.description:copiedProgress.baseDescription):null)??stored?.description??text(key,"Description");
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
@@ -493,6 +494,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
+ if(copiedProgress&&supplied?.parent?.uuid===actor.uuid)data.flags[SCOPE].ruleTestProgress=structuredClone(copiedProgress);
  if(requiresInitialResistance(answers))prepareInitialResistance(data,template.initialResistance,actor,supplied);
  if(template.periodic){
   const seconds=effectDurationSeconds(duration);

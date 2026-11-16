@@ -1,5 +1,7 @@
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
+import {withFollowupTest} from './followup-tests.mjs';
+import {followupRollTest,followupPolicy} from './rules/followup-tests.mjs';
 import {withInitialResistance,initialResistanceTestDisabled} from './initial-resistance.mjs';
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
@@ -28,6 +30,7 @@ export function ruleTestsForDocument(document) {
   const tests=(id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : []).map((test,index)=>Number.isFinite(bases?.[index])?{...test,sv:bases[index]}:test);
   const spec=(TRANSFORMATIONS_BY_SOURCE[id]??[]).map(key=>TRANSFORMATION_TEMPLATES[key]?.initialResistance).find(Boolean);
   for(let i=0;i<tests.length;i++)if(initialResistanceTestDisabled(document,i,spec))tests[i]={...tests[i],disabled:true};
+  for(let i=0;i<tests.length;i++)tests[i]=followupRollTest(document,tests[i],i);
   if(!game.i18n?.lang || game.i18n.lang==="fr")return tests;
   return tests.map((test,index)=>{
     const {action,anchor,success,failure,criticalSuccess,criticalFailure,condition,repeat,note,traitRule,...mechanics}=test;
@@ -249,7 +252,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
     if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting});}
-    const result=await withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",reactive:Boolean(document?.flags?.[SYSTEM_ID]?.initialResistance),resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage));
+    const result=await withFollowupTest(document,Number(index),actor,()=>withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resolveProcedure:followupPolicy(document,Number(index))?()=>({flags:{followupTest:{effectUuid:document.uuid,index:Number(index)}}}):null,reactive:Boolean(document?.flags?.[SYSTEM_ID]?.initialResistance),resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage)));
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }

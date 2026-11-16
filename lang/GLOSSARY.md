@@ -16399,3 +16399,20 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.InitialResistance.Unavailable` | This resistance could not be confirmed. Try again from the effect. | La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet. |
 | `TRUDVANG.InitialResistance.UnwillingTarget` | Unwilling target | Cible non consentante |
 | `TRUDVANG.InitialResistance.AwareUnwillingTarget` | Target aware of the spell and unwilling | Cible consciente du sort et non consentante |
+
+## `TRUDVANG.FollowupTest`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.FollowupTest.DailyLimit` | This test has already been attempted today. Advance time to the following day to try again. | Ce test a déjà été tenté aujourd’hui. Faites avancer le temps jusqu’au jour suivant pour réessayer. |
+| `TRUDVANG.FollowupTest.WaitNextDay` | Memory recovery can begin on the following day. | La récupération des souvenirs peut commencer le jour suivant. |
+| `TRUDVANG.FollowupTest.Busy` | A test is already in progress for this effect. | Un test est déjà en cours pour cet effet. |
+| `TRUDVANG.FollowupTest.Unavailable` | The consequences of this test could not be confirmed. Try again from the effect. | Les conséquences du test n’ont pas pu être confirmées. Réessayez depuis l’effet. |
+| `TRUDVANG.FollowupTest.Changed` | This effect has changed or this test has already been resolved; this result does not alter it. | Cet effet a changé ou ce test a déjà été résolu ; ce résultat ne le modifie pas. |
+| `TRUDVANG.FollowupTest.MemoryBonus` | Memories recovered: recovery bonus +{bonus} SV. | Souvenirs retrouvés : bonus de récupération +{bonus} VC. |
+| `TRUDVANG.FollowupTest.MemorySuccess` | One memory is recovered. Next test: +{bonus} SV bonus. | Un souvenir est retrouvé. Prochain test : bonus +{bonus} VC. |
+| `TRUDVANG.FollowupTest.MemoryFailure` | No memory recovered. Retained bonus: +{bonus} SV. | Aucun souvenir retrouvé. Bonus conservé : +{bonus} VC. |
+| `TRUDVANG.FollowupTest.Recovered` | All memories are recovered; {effect} ends. | Tous les souvenirs sont retrouvés ; {effect} prend fin. |
+| `TRUDVANG.FollowupTest.Revealed` | The victim has identified the illusion; visible symptoms and the social penalty remain until the spell ends. | Illusion identifiée par la victime ; les symptômes visibles et le malus social persistent jusqu’à la fin du sort. |
+| `TRUDVANG.FollowupTest.Removed` | {effect} ends. | {effect} prend fin. |
+| `TRUDVANG.FollowupTest.RecoveryLabel` | Memory recovery | Récupération des souvenirs |

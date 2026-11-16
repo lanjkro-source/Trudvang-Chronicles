@@ -2156,6 +2156,13 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "followupTests": [
+      {
+        "testIndex": 0,
+        "success": "reveal",
+        "frequency": "day"
+      }
+    ],
     "sourceId": "vitner-witchcraft:phantom-plague:1",
     "parameters": [
       {
@@ -2364,6 +2371,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "initialResistance": {
       "testIndex": 0
     },
+    "followupTests": [
+      {
+        "testIndex": 1,
+        "success": "memory",
+        "frequency": "day",
+        "startAfterDays": 1,
+        "increment": 2,
+        "completeAt": 20
+      }
+    ],
     "sourceId": "vitner-witchcraft:amnesia:4",
     "parameters": []
   },
@@ -10551,6 +10568,12 @@ export const TRANSFORMATION_TEMPLATES = {
     "initialResistance": {
       "testIndex": 0
     },
+    "followupTests": [
+      {
+        "testIndex": 1,
+        "success": "remove"
+      }
+    ],
     "sourceId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
     "parameters": [
       {
@@ -14377,6 +14400,13 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "changes": [],
+    "followupTests": [
+      {
+        "testIndex": 0,
+        "success": "reveal",
+        "frequency": "day"
+      }
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
     "parameters": [
       {
@@ -14585,6 +14615,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "initialResistance": {
       "testIndex": 0
     },
+    "followupTests": [
+      {
+        "testIndex": 1,
+        "success": "memory",
+        "frequency": "day",
+        "startAfterDays": 1,
+        "increment": 2,
+        "completeAt": 20
+      }
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
     "parameters": []
   },

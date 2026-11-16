@@ -18681,6 +18681,20 @@
       "Unavailable": "This resistance could not be confirmed. Try again from the effect.",
       "UnwillingTarget": "Unwilling target",
       "AwareUnwillingTarget": "Target aware of the spell and unwilling"
+    },
+    "FollowupTest": {
+      "DailyLimit": "This test has already been attempted today. Advance time to the following day to try again.",
+      "WaitNextDay": "Memory recovery can begin on the following day.",
+      "Busy": "A test is already in progress for this effect.",
+      "Unavailable": "The consequences of this test could not be confirmed. Try again from the effect.",
+      "Changed": "This effect has changed or this test has already been resolved; this result does not alter it.",
+      "MemoryBonus": "Memories recovered: recovery bonus +{bonus} SV.",
+      "MemorySuccess": "One memory is recovered. Next test: +{bonus} SV bonus.",
+      "MemoryFailure": "No memory recovered. Retained bonus: +{bonus} SV.",
+      "Recovered": "All memories are recovered; {effect} ends.",
+      "Revealed": "The victim has identified the illusion; visible symptoms and the social penalty remain until the spell ends.",
+      "Removed": "{effect} ends.",
+      "RecoveryLabel": "Memory recovery"
     }
   }
 }

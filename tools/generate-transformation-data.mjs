@@ -36,6 +36,12 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=englishEntry?.effectTemplates?.find(v=>v.id===t.id);
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if(JSON.stringify(t.followupTests??[])!==JSON.stringify(translated.followupTests??[]))throw Error('Unaligned follow-up tests for '+key);
+   const followups=new Set();
+   for(const policy of t.followupTests??[]){
+    if(!Number.isInteger(policy.testIndex)||policy.testIndex===t.initialResistance?.testIndex||followups.has(policy.testIndex)||!entry.resist?.[policy.testIndex]||!['memory','reveal','remove'].includes(policy.success)||policy.frequency!==undefined&&policy.frequency!=='day'||policy.startAfterDays!==undefined&&(!Number.isInteger(policy.startAfterDays)||policy.startAfterDays<0)||policy.success==='memory'&&(!Number.isFinite(policy.increment)||policy.increment<=0||!Number.isFinite(policy.completeAt)||typeof entry.resist[policy.testIndex].sv!=='number')||entry.ruleTestModifiers?.find(row=>row.test===policy.testIndex)?.casterTest)throw Error('Invalid follow-up test for '+key);
+    followups.add(policy.testIndex);
+   }
    if(JSON.stringify(t.initialResistance??null)!==JSON.stringify(translated.initialResistance??null))throw Error('Unaligned initial resistance for '+key);
    if(t.initialResistance){
     const index=t.initialResistance.testIndex;
