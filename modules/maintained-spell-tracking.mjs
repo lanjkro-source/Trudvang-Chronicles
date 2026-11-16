@@ -1,3 +1,4 @@
+import {effectTargetRestriction} from './rules/mobility-effects.mjs';
 import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
@@ -88,11 +89,12 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
  if(!isWriter())return {status:"unavailable"};
  return queueCaster(casterUuid,async()=>{
   const caster=await foundry.utils.fromUuid(casterUuid), target=await foundry.utils.fromUuid(targetUuid), user=game.users.get(userId);
-  if(!user || !target?.canUserModify?.(user,"update") || !caster?.canUserModify?.(game.user,"update"))return {status:"unavailable"};
+  if(!user || !target || !caster?.canUserModify?.(game.user,"update"))return {status:"unavailable"};
   const targetItem=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
-  if(itemUuid&&(!targetItem||targetItem.parent?.uuid!==target.uuid||!targetItem.canUserModify?.(user,"update")))return {status:"unavailable"};
+  if(itemUuid&&(!targetItem||targetItem.parent?.uuid!==target.uuid))return {status:"unavailable"};
   const message=messageId?game.messages?.get(messageId):null;
-  const divine=message?.flags?.["trudvang-chronicles"]?.divineAllocation;
+  const allocationKey=message?.flags?.["trudvang-chronicles"]?.instantAllocation?"instantAllocation":"divineAllocation";
+  const divine=message?.flags?.["trudvang-chronicles"]?.[allocationKey];
   if(messageId&&!message)return {status:"unavailable"};
   const records=divine?null:activeSpellRecords(caster), record=divine??records?.find(row=>row.id===castingId);
   const item=!divine&&record?Array.from(caster.items??[]).find(row=>row.id===record.itemId):null;
@@ -100,22 +102,28 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const targeting=POWER_DETAILS_BY_ID[sourceId]?.targeting;
   const provenance=data?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
   if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==sourceId
-   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!=="divine")))return {status:"unavailable"};
+   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!==(allocationKey==="instantAllocation"?"spell":"divine"))))return {status:"unavailable"};
   const selected=divine?divine.selected:Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const template=TRANSFORMATION_TEMPLATES[effectKey];
-  const instant=template?.sourceId===sourceId?template.instant:null;
+  if(template?.sourceId!==sourceId)return {status:"unavailable"};
+  if(!target.canUserModify?.(user,'update')||targetItem&&!targetItem.canUserModify?.(user,'update')){
+   const {canManageEffectTargets,effectTargetsFor}=await import('./effect-targets.mjs');
+   if(!message||!await canManageEffectTargets(message,user)||!effectTargetsFor(message,effectKey).some(row=>row.actorUuid===target.uuid))return {status:'unavailable'};
+  }
+  if(effectTargetRestriction(template,target,provenance))return {status:"target-restricted"};
+  const instant=template.instant;
   const allocationTarget=itemUuid||targetUuid;
   const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
-  if(existing&&(instant||template?.onApply||template?.initialResistance))return {status:"already-applied"};
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
+  if(existing&&(instant||template?.onApply||template?.initialResistance||template?.oncePerCasting))return {status:"already-applied"};
   const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
   allocations.push({targetUuid:allocationTarget,effectKey,countsById});
   const validation=validateMagicAllocations({targeting,selected,allocations,casterUuid});
   if(!validation.ok)return {status:validation.reason};
   const prior=structuredClone(record.targetAllocations??[]);
   record.targetAllocations=allocations.map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,counts:Object.entries(row.countsById).map(([optionId,count])=>({optionId,count}))}));
-  if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":record.targetAllocations});
+  if(divine)await message.update({["flags.trudvang-chronicles."+allocationKey+".targetAllocations"]:record.targetAllocations});
   else await caster.update({"system.activeSpellCastings":records,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});
   try{
    if(instant){
@@ -132,7 +140,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
    if(template?.initialResistance)await (await import('./initial-resistance.mjs')).announceInitialResistance(effect,target).catch(error=>console.error('Trudvang | Resistance notice failed',error));
    return {status:"ok",effectUuid:effect.uuid};
   }catch(error){
-   if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":prior});
+   if(divine)await message.update({["flags.trudvang-chronicles."+allocationKey+".targetAllocations"]:prior});
    else {const current=activeSpellRecords(caster),existing=current.find(row=>row.id===castingId);
     if(existing){existing.targetAllocations=prior;await caster.update({"system.activeSpellCastings":current,"system.activeSpellCastingsMigrated":true},{trudvangSpellTracking:true});}}
    if(error.code==='consumable-capacity')return {status:'consumable-capacity'};

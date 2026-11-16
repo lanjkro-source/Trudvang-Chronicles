@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 113 ; avec au moins un modèle d'effet répertorié : 347 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 351 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -108,7 +108,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner animal | Possession animale | sortilège | `vitner-animal-vitner:possess-animals:6` | 6 | 0 | 1 | — | — |
 | Vitner animal | Messager magique | sortilège | `vitner-animal-vitner:send-message:8` | 4 | 0 | 1 | — | — |
 | Vitner corporel | Adhérence | sortilège | `vitner-body-vitner:grip:0` | 5 | 0 | 1 | — | — |
-| Vitner corporel | Croche-pied | sortilège | `vitner-body-vitner:tipping:1` | 3 | 0 | 0 | — | — |
+| Vitner corporel | Croche-pied | sortilège | `vitner-body-vitner:tipping:1` | 3 | 1 | 1 | — | — |
 | Vitner corporel | Acuité auditive/surdité | sortilège | `vitner-body-vitner:hearing-deafness:2` | 7 | 1 | 2 | — | — |
 | Vitner corporel | Sens de l’odorat | sortilège | `vitner-body-vitner:sense-of-smell:3` | 9 | 1 | 2 | — | — |
 | Vitner corporel | Vision/cécité | sortilège | `vitner-body-vitner:vision-blindness:4` | 7 | 1 | 2 | — | — |
@@ -120,7 +120,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner corporel | Emprisonnement | sortilège | `vitner-body-vitner:imprison:10` | 5 | 1 | 1 | oui | — |
 | Vitner corporel | Transformation | sortilège | `vitner-body-vitner:change-creature:11` | 11 | 1 | 1 | — | — |
 | Vitner illusoire | Amplification des sons | sortilège | `vitner-delusion-vitner:increase-sounds:3` | 4 | 0 | 2 | — | — |
-| Vitner illusoire | Grondement | sortilège | `vitner-delusion-vitner:roar:0` | 3 | 0 | 0 | — | — |
+| Vitner illusoire | Grondement | sortilège | `vitner-delusion-vitner:roar:0` | 3 | 0 | 1 | — | — |
 | Vitner illusoire | Son aigu | sortilège | `vitner-delusion-vitner:shriek:2` | 3 | 0 | 0 | — | — |
 | Vitner illusoire | Son illusoire | sortilège | `vitner-delusion-vitner:phantom-sound:1` | 3 | 0 | 1 | — | — |
 | Vitner illusoire | Sans trace | sortilège | `vitner-delusion-vitner:traceless:4` | 5 | 0 | 1 | — | — |
@@ -275,7 +275,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tablette des voix | Sagesse de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:sanity-of-gave:6` | 3 | 0 | 1 | — | — |
 | Tablette des voix | Faveurs de Gave | pouvoir | `holy-tenetnid-tablet-of-voices:favorites-of-gave:7` | 4 | 0 | 1 | — | — |
 | Tablette des voix | Pacte divin | pouvoir | `holy-tenetnid-tablet-of-voices:divine-pact:8` | 4 | 1 | 1 | — | — |
-| Tablette du bouclier | Entraves de la terre consacrée | pouvoir | `holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0` | 3 | 0 | 0 | — | — |
+| Tablette du bouclier | Entraves de la terre consacrée | pouvoir | `holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0` | 3 | 0 | 1 | — | — |
 | Tablette du bouclier | Refuge | pouvoir | `holy-tenetnid-tablet-of-the-shield:sheltering:1` | 2 | 0 | 1 | — | — |
 | Tablette du bouclier | Mur d’épines | pouvoir | `holy-tenetnid-tablet-of-the-shield:thornwall:3` | 7 | 0 | 1 | — | — |
 | Tablette du bouclier | Protection contre les éléments | pouvoir | `holy-tenetnid-tablet-of-the-shield:storm-protection:2` | 2 | 0 | 1 | — | — |
@@ -375,7 +375,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Tremblement de terre | Tremblement de terre | rune | `holy-thuuldom-earthquake:earthquake:0` | 5 | 1 | 0 | — | — |
 | Agilité du lynx | Chemin forestier | pouvoir | `holy-toikalokke-lynx-power:tree-walk:1` | 3 | 0 | 1 | — | — |
 | Agilité du lynx | Orientation | pouvoir | `holy-toikalokke-lynx-power:orientation:0` | 3 | 0 | 1 | — | — |
-| Agilité du lynx | Bond du félin | pouvoir | `holy-toikalokke-lynx-power:feline-leap:3` | 2 | 1 | 0 | — | — |
+| Agilité du lynx | Bond du félin | pouvoir | `holy-toikalokke-lynx-power:feline-leap:3` | 2 | 1 | 1 | — | — |
 | Agilité du lynx | Ouïe fine | pouvoir | `holy-toikalokke-lynx-power:hearing:2` | 4 | 0 | 1 | — | — |
 | Agilité du lynx | Pistage | pouvoir | `holy-toikalokke-lynx-power:track:6` | 3 | 0 | 1 | — | — |
 | Agilité du lynx | Réflexes de félin | pouvoir | `holy-toikalokke-lynx-power:feline-reflexes:4` | 1 | 0 | 0 | — | — |

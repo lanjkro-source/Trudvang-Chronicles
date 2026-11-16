@@ -1,0 +1,47 @@
+{
+  "_id": "Y01evNiOjPkQlRmS",
+  "_key": "!items!Y01evNiOjPkQlRmS",
+  "name": "Croche-pied",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:tipping:1#trip",
+    "description": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre. La victime de ce sort doit immédiatement effectuer un test de compétence en Agilité. En cas d’échec, la victime trébuche et tombe à terre. Dans le cas contraire, la victime ne remarque pas ce qui vient de se passer et peut continuer d’agir normalement.",
+    "summary": "Fait perdre l’équilibre à une créature et la fait chuter.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 192
+    }
+  },
+  "effects": [
+    {
+      "_id": "lXYcrMhNiOjPkQlR",
+      "_key": "!items.effects!Y01evNiOjPkQlRmS.lXYcrMhNiOjPkQlR",
+      "name": "Croche-pied",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre. La victime de ce sort doit immédiatement effectuer un test de compétence en Agilité. En cas d’échec, la victime trébuche et tombe à terre. Dans le cas contraire, la victime ne remarque pas ce qui vient de se passer et peut continuer d’agir normalement.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:tipping:1#trip",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "prone"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:tipping:1#trip",
+            "sourceId": "vitner-body-vitner:tipping:1",
+            "summary": "Fait perdre l’équilibre à une créature et la fait chuter.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

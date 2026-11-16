@@ -1,3 +1,4 @@
+import {castingCooldownRemaining} from './mobility-effects.mjs';
 import {TRUDVANG} from "../config.mjs";
 import {TABLET_BY_ID} from "../tablet-catalog.mjs";
 import {activeSpellInstances} from "./active-spell-resolver.mjs";
@@ -19,6 +20,7 @@ export function spellAvailability(actor,item){
  if(!actor||!["character","npc"].includes(actor.type))return deny("TRUDVANG.Warning.SpellCasterRequired");
  if(actor.isOwner===false)return deny("TRUDVANG.Warning.SpellCasterPermission");
  if(actor.canPerformAction?.()===false)return deny("TRUDVANG.Warning.CannotAct");
+ const cooldown=castingCooldownRemaining(actor,item.system?.catalogId);if(cooldown>0)return deny("TRUDVANG.Mobility.Cooldown",{seconds:cooldown});
  const grant=item.flags?.["trudvang-chronicles"]?.transformationGrant;
  if(grant&&!Array.from(actor.allApplicableEffects?.()??actor.effects??[]).some(e=>e.id===grant&&!e.disabled&&!e.isSuppressed&&!e.duration?.expired))return deny("TRUDVANG.Transformation.Restricted");
  const divine=item.type==="divineFeat",items=Array.from(actor.items??[]),discipline=divine?"invoke":"vitnerShaping";

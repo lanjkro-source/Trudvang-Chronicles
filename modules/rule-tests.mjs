@@ -9,7 +9,7 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {annotateTransformationDescription} from "./transformations.mjs";
-import {ruleTestCastingContext} from "./rules/magic-resistance.mjs";
+import {ruleTestCastingContext,magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistance.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const legacyAbilityIdByName = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, ref]) => [name, ref.id]));
@@ -279,7 +279,9 @@ export async function performRuleTest({document, index, actor = testActorForUser
   const modifier = Number(test.sv || 0);
   const notes = [test.condition, test.modifier].filter(Boolean);
   if (Number.isFinite(Number(test.base))) notes.push(game.i18n.format("TRUDVANG.Dialog.RuleTestBaseVC", {value: Number(test.base)}));
-  return actor.rollAbility(rollItem, {
+  return withInitialResistance(document,Number(index),actor,()=>actor.rollAbility(rollItem, {
+    reactive:Boolean(document?.flags?.[SYSTEM_ID]?.initialResistance),
+    modifierRows:localizeResistanceRows(magicResistanceRows(test,{context:ruleTestCastingContext(document,{context}),actor})),
     disciplineLevel: Number(discipline?.system?.level || 0),
     bonus: modifier,
     notes,
@@ -288,5 +290,5 @@ export async function performRuleTest({document, index, actor = testActorForUser
     failureConsequence: test.failure || "",
     criticalSuccessConsequence: test.criticalSuccess || "",
     criticalFailureConsequence: test.criticalFailure || ""
-  });
+  }));
 }

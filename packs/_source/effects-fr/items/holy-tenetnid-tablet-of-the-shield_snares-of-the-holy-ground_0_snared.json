@@ -1,0 +1,45 @@
+{
+  "_id": "4fGyq1u0v1w2x3y4",
+  "_key": "!items!4fGyq1u0v1w2x3y4",
+  "name": "Entraves de la terre consacrée",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared",
+    "description": "Des racines gênent les mouvements du démon pendant la durée restante. Le malus ne concerne que les tests de compétence ou de situation d’une action reposant sur le mouvement ; il ne modifie pas les réserves de PC.",
+    "summary": "Entrave les démons et limite leur efficacité dans une zone consacrée.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 257
+    }
+  },
+  "effects": [
+    {
+      "_id": "zciyvXoUpVqWrXsY",
+      "_key": "!items.effects!4fGyq1u0v1w2x3y4.zciyvXoUpVqWrXsY",
+      "name": "Entraves de la terre consacrée",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Des racines gênent les mouvements du démon pendant la durée restante. Le malus ne concerne que les tests de compétence ou de situation d’une action reposant sur le mouvement ; il ne modifie pas les réserves de PC.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared",
+            "sourceId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+            "summary": "Entrave les démons et limite leur efficacité dans une zone consacrée.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

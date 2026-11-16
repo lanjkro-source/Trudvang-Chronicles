@@ -5,12 +5,14 @@ import {TRANSFORMATION_TEMPLATES} from "../transformation-data.mjs";
  * the caster's latest invocation. This also supports effects already applied. */
 export function conditionalSituationBonuses(effect) {
  if(effect?.disabled || effect?.isSuppressed || effect?.duration?.expired)return [];
+ if(effect.flags?.["trudvang-chronicles"]?.initialResistance&&!effect.flags["trudvang-chronicles"].initialResistance.resolved)return [];
  const meta=effect?.flags?.["trudvang-chronicles"]?.transformation;
  const template=TRANSFORMATION_TEMPLATES[meta?.key];
  if(!template || meta?.sourceId!==template.sourceId)return [];
  const context=meta.ruleTestContext??{};
- return (template.parameters??[]).filter(p=>p.target==="note"&&(!p.tooltip||p.skill||p.ability||p.skillChoice)).map(p=>({
+ return (template.parameters??[]).filter(p=>p.target==="note"&&(!p.tooltip||p.skill||p.ability||p.skillChoice||p.allActions)).map(p=>({
   labelKey:p.labelKey,
+  ...(p.allActions?{allActions:true}:{}),
   skill:p.skill ?? "",
   ability:p.ability ?? "",
   skillChoice:p.skillChoice === true,

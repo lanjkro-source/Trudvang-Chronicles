@@ -1,0 +1,47 @@
+{
+  "_id": "Y01evNiOjPkQlRmS",
+  "_key": "!items!Y01evNiOjPkQlRmS",
+  "name": "Tipping",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:tipping:1#trip",
+    "description": "The enchanter makes a creature stumble and lose its balance. The victim of the spell must immediately make a Skill roll for Agility. Failure means the victim tumbles to the ground. Success means the victim takes no notice of what has happened and is able to continue as normal.",
+    "summary": "Unbalances a creature so that it falls to the ground.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "lXYcrMhNiOjPkQlR",
+      "_key": "!items.effects!Y01evNiOjPkQlRmS.lXYcrMhNiOjPkQlR",
+      "name": "Tipping",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The enchanter makes a creature stumble and lose its balance. The victim of the spell must immediately make a Skill roll for Agility. Failure means the victim tumbles to the ground. Success means the victim takes no notice of what has happened and is able to continue as normal.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:tipping:1#trip",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "prone"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:tipping:1#trip",
+            "sourceId": "vitner-body-vitner:tipping:1",
+            "summary": "Unbalances a creature so that it falls to the ground.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

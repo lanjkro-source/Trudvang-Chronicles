@@ -57,12 +57,12 @@ test("simultaneous targets share one casting's target and improvement budget",as
   const target=uuid=>({uuid,canUserModify:()=>true,async createTrudvangEffect(){return {uuid:`${uuid}.ActiveEffect.test`};}});
   const a=target("Actor.a"),b=target("Actor.b"),c=target("Actor.c"),docs=new Map([caster,a,b,c].map(x=>[x.uuid,x]));
   globalThis.game={user:{id:"gm"},users:{activeGM:{isSelf:true},get:()=>user},actors:[caster,a,b,c],scenes:[]};globalThis.foundry={utils:{fromUuid:async uuid=>docs.get(uuid)}};
-  const data={flags:{"trudvang-chronicles":{transformation:{key:"hate",ruleTestContext:{casterUuid:caster.uuid,castingId:"cast",sourceId:id}}}}};
+  const data={flags:{"trudvang-chronicles":{transformation:{key:id+"#hate",ruleTestContext:{casterUuid:caster.uuid,castingId:"cast",sourceId:id}}}}};
   const apply=(who,count)=>applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:who.uuid,countsById:{[`${id}:0`]:count},data,userId:user.id});
   const result=await Promise.all([apply(a,1),apply(b,1),apply(c,0)]);
   assert.deepEqual(result.map(row=>row.status),["ok","ok","exceeds-targets"]);
   assert.equal((await apply(b,2)).status,"exceeds-improvements");
-  const other=structuredClone(data);other.flags["trudvang-chronicles"].transformation.key="hate-inverse";
+  const other=structuredClone(data);other.flags["trudvang-chronicles"].transformation.key=id+"#hate-inverse";
   assert.equal((await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:"cast",targetUuid:a.uuid,countsById:{},data:other,userId:user.id})).status,"duplicate-target");
   assert.equal(caster.system.activeSpellCastings[0].targetAllocations.length,2);
   assert.deepEqual((await Promise.all([apply(a,0),apply(a,1)])).map(row=>row.status),["ok","ok"]);

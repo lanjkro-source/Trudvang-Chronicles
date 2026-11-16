@@ -31,3 +31,15 @@ test("perfect-success dialog retries invalid budgets and allows cancellation",as
  foundry.applications.api.DialogV2=class{static async wait(){return null;}};
  assert.deepEqual(await perfectSuccessDialog({title:"Hâte",powerLevels:levels,entries,bonus:3}),{counts:[1],spent:0,remaining:3});
 });
+
+
+test('perfect instant spells update their target allocation with the final purchased improvements',async()=>{
+ const id='vitner-body-vitner:tipping:1',actor={name:'Mage',uuid:'Actor.mage',items:[]},item={type:'spell',system:{catalogId:id,spellType:'instant'}};
+ const previous=ChatMessage.create;let update;
+ ChatMessage.create=async data=>({...data,async update(changes){update=changes;}});
+ try{
+  await rollUnder({actor,item,kind:'spell',target:12,label:'Croche-pied',castingId:'trip',powerLevelCounts:[0,1,0],resolvePerfectSuccess:async()=>({counts:[0,3,1],flavor:'bonus'})});
+  assert.equal(update['flags.trudvang-chronicles.instantAllocation.selected'][id+':1'],3);
+  assert.equal(update['flags.trudvang-chronicles.instantAllocation.selected'][id+':2'],1);
+ }finally{ChatMessage.create=previous;}
+});

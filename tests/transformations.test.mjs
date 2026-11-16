@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,362);
+ assert.equal(Object.keys(sources).length,366);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -812,7 +812,7 @@ test("effect improvements change their base fields, including inverse traits, at
  globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key.split(".").reduce((o,k)=>o?.[k],language)??key,format:(key,data)=>(key.split(".").reduce((o,k)=>o?.[k],language)??key).replaceAll("{value}",String(data.value))}};
  let created,answers,dialog;
  foundry.applications.api.DialogV2.wait=async options=>{dialog=options;return {duration:"1 minute",...answers};};
- const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
+ const actor={system:{tags:["démon"]},canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  const apply=async(key,fields={})=>{answers=fields;await applyTransformation(actor,key);const payload=created.flags[S].initialResistance?.payload;return payload?{...created,system:{...created.system,changes:payload.changes}}:created;};
  for(const [key,template]of Object.entries(templates).filter(([k,t])=>!t.itemOnly&&!t.weaponDamage&&!t.armorBlessing&&!k.includes("huvfurwurm")&&t.parameters.some(p=>p.target==="duration"&&p.value===5))){
   const p=template.parameters.find(p=>p.target==="duration"&&p.value===5);
@@ -981,7 +981,7 @@ test("copying already resolved effects preserves improvements, duration and roll
  try{
   globalThis.Roll=class {async evaluate(){this.total=7;rolls++;return this;}async toMessage(){}};
   globalThis.ChatMessage={getSpeaker:()=>({})};
-  const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[{type:"ability",name:"Matériaux durs",system:{kind:"specialty",catalogId:"hardMaterials",level:1}}],getCatalogEntry:()=>({parentCatalogId:"handicraft"}),createTrudvangEffect:async data=>{created=data;return null;}};
+  const actor={system:{tags:["démon"]},canUserModify:()=>true,getTraitValue:()=>0,items:[{type:"ability",name:"Matériaux durs",system:{kind:"specialty",catalogId:"hardMaterials",level:1}}],getCatalogEntry:()=>({parentCatalogId:"handicraft"}),createTrudvangEffect:async data=>{created=data;return null;}};
   foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute",effectInput:"hardMaterials"});
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){

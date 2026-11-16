@@ -1,0 +1,45 @@
+{
+  "_id": "yxCwU5y4z5A6B7C8",
+  "_key": "!items!yxCwU5y4z5A6B7C8",
+  "name": "Bourdonnements — Grondement",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:roar:0#hearing",
+    "description": "Les oreilles bourdonnent après la déflagration. Pendant la durée restante, les tests de compétence et de situation reposant sur l’ouïe subissent −4. Le lanceur est épargné. Appliquer uniquement aux personnes qui se trouvaient dans la zone sonore au moment du grondement ; quitter la zone ne retire pas ces séquelles.",
+    "summary": "Ouïe temporairement perturbée après la déflagration.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 197
+    }
+  },
+  "effects": [
+    {
+      "_id": "93wphMfLgMhNiOjP",
+      "_key": "!items.effects!yxCwU5y4z5A6B7C8.93wphMfLgMhNiOjP",
+      "name": "Bourdonnements — Grondement",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les oreilles bourdonnent après la déflagration. Pendant la durée restante, les tests de compétence et de situation reposant sur l’ouïe subissent −4. Le lanceur est épargné. Appliquer uniquement aux personnes qui se trouvaient dans la zone sonore au moment du grondement ; quitter la zone ne retire pas ces séquelles.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:roar:0#hearing",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:roar:0#hearing",
+            "sourceId": "vitner-delusion-vitner:roar:0",
+            "summary": "Ouïe temporairement perturbée après la déflagration.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

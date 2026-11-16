@@ -10,7 +10,7 @@ const authority=()=>Boolean(game.users?.activeGM?.isSelf);
  * recipient preserves its decision and cannot provide another saving throw. */
 export function prepareInitialResistance(data,spec,actor,source){
  const old=source?.parent?.uuid===actor.uuid?stateOf(source):null;
- const payload={name:data.name,description:data.description,summary:data.flags[S].transformation.summary,summaryResolved:data.flags[S].transformation.summaryResolved,changes:structuredClone(data.system.changes),statuses:[...data.statuses]};
+ const payload={name:data.name,description:data.description,summary:data.flags[S].transformation.summary,summaryResolved:data.flags[S].transformation.summaryResolved,changes:structuredClone(data.system.changes),statuses:[...data.statuses],...(spec.failureNativeStatuses?{nativeStatuses:[...spec.failureNativeStatuses]}:{})};
  const state=old?structuredClone(old):{id:crypto.randomUUID(),testIndex:spec.testIndex,resolved:false,messageId:'',payload};
  data.flags[S].initialResistance=state;
  if(state.resolved)return;
@@ -48,6 +48,11 @@ export function resolveInitialResistanceOnAuthority(payload){
   if(!user||(!authority()&&game.users?.activeGM)||!effect?.parent?.canUserModify?.(user,'update'))return 'unavailable';
   if(!state||state.id!==payload.id||state.resolved||!live(effect)||typeof payload.success!=='boolean')return 'changed';
   if(payload.success){await effect.delete();return 'resisted';}
+  if(state.payload.nativeStatuses){
+   // Native posture outlives the instantaneous spell, without duplicate prone markers.
+   for(const status of state.payload.nativeStatuses)await effect.parent.toggleStatusEffect(status,{active:true});
+   await effect.delete();return 'activated';
+  }
   await effect.update({name:state.payload.name,description:state.payload.description,statuses:state.payload.statuses,'system.changes':state.payload.changes,['flags.'+S+'.transformation.summary']:state.payload.summary,['flags.'+S+'.transformation.summaryResolved']:state.payload.summaryResolved,['flags.'+S+'.initialResistance.resolved']:true});
   return 'activated';
  });

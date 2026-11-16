@@ -1315,3 +1315,16 @@ test('a conjured potion moved to world items remains managed and loses its expir
  assert.equal(isManagedEffectClock(effect),true);assert.equal(isManagedEffectClock(library),false);assert.deepEqual([...appliedWorldEffects()],[effect]);
  await expireAppliedEffects({time:86400,managedClocksOnly:true});assert.equal(effect.deleted,true);
 });
+
+
+test('pending skill resistance is exposed once and contextual hearing/movement penalties do not invent extra test buttons',async()=>{
+ const S='trudvang-chronicles',id='vitner-body-vitner:tipping:1',actor={documentName:'Actor',isOwner:true};
+ const effect={uuid:'Actor.a.ActiveEffect.trip',isOwner:true,parent:actor,description:'<p>Test</p>',_source:{},statuses:[],duration:{},flags:{[S]:{transformation:{key:id+'#trip',sourceId:id},initialResistance:{resolved:false}}}};
+ const sheet=sheetFor(effect);let context=await sheet._preparePartContext('details',{});
+ assert.equal(context.resistanceButtons.length,1);assert.equal(context.resistanceButtons[0].index,0);
+ effect.flags[S].initialResistance.resolved=true;context=await sheet._preparePartContext('details',{});assert.equal(context.resistanceButtons.length,0);
+ delete effect.flags[S].initialResistance;
+ for(const [source,variant]of [['vitner-delusion-vitner:roar:0','hearing'],['holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0','snared']]){
+  effect.flags[S].transformation={key:source+'#'+variant,sourceId:source};assert.equal((await sheet._preparePartContext('details',{})).conditionalSituationButtons.length,0);
+ }
+});

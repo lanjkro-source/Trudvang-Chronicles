@@ -7129,6 +7129,28 @@ export const POWER_DETAILS_BY_ID = {
   "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": {
     "isRune": false,
     "level": 1,
+    "targeting": {
+      "groups": [
+        {
+          "id": "area",
+          "variants": [
+            "snared"
+          ],
+          "baseTargets": null,
+          "additionalTargets": [],
+          "sharedOptions": [
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:1",
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:2"
+          ],
+          "allocatableOptions": [
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:1",
+            "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:2"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
@@ -10085,6 +10107,15 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-body-vitner:tipping:1": {
     "isRune": false,
     "level": 1,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [
+        {
+          "optionId": "vitner-body-vitner:tipping:1:2",
+          "count": 1
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-body-vitner:tipping:1:0",
@@ -10464,6 +10495,28 @@ export const POWER_DETAILS_BY_ID = {
     "isRune": false,
     "level": 1,
     "selfOnly": false,
+    "targeting": {
+      "groups": [
+        {
+          "id": "area",
+          "variants": [
+            "hearing"
+          ],
+          "baseTargets": null,
+          "additionalTargets": [],
+          "sharedOptions": [
+            "vitner-delusion-vitner:roar:0:0",
+            "vitner-delusion-vitner:roar:0:1",
+            "vitner-delusion-vitner:roar:0:2"
+          ],
+          "allocatableOptions": [
+            "vitner-delusion-vitner:roar:0:0",
+            "vitner-delusion-vitner:roar:0:1",
+            "vitner-delusion-vitner:roar:0:2"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-delusion-vitner:roar:0:0",

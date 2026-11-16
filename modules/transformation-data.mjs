@@ -2921,6 +2921,25 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-body-vitner:tipping:1#trip": {
+    "id": "trip",
+    "icon": "icons/svg/aura.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [
+      "prone"
+    ],
+    "related": [],
+    "changes": [],
+    "initialResistance": {
+      "testIndex": 0,
+      "failureNativeStatuses": [
+        "prone"
+      ]
+    },
+    "sourceId": "vitner-body-vitner:tipping:1",
+    "parameters": []
+  },
   "vitner-body-vitner:hearing-deafness:2#ameliore": {
     "id": "ameliore",
     "icon": "icons/svg/aura.svg",
@@ -3732,6 +3751,46 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "vitner-delusion-vitner:increase-sounds:3:2"
+      }
+    ]
+  },
+  "vitner-delusion-vitner:roar:0#hearing": {
+    "id": "hearing",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1d6 minutes",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "excludeCaster": true,
+    "conditionalLabelKey": "TRUDVANG.Mobility.HearingAction",
+    "displayPowerOptions": [
+      0,
+      1,
+      2
+    ],
+    "oncePerCasting": true,
+    "refreshOnRecast": true,
+    "sourceId": "vitner-delusion-vitner:roar:0",
+    "parameters": [
+      {
+        "index": 2,
+        "optionId": "vitner-delusion-vitner:roar:0:2",
+        "target": "note",
+        "base": -4,
+        "value": 0,
+        "allActions": true,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.HearingActionPenalty"
+      },
+      {
+        "index": 2,
+        "optionId": "vitner-delusion-vitner:roar:0:2",
+        "target": "note",
+        "base": 10,
+        "value": 10,
+        "skillOnly": true,
+        "labelKey": "TRUDVANG.Transformation.RoarRadius"
       }
     ]
   },
@@ -8428,6 +8487,41 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared": {
+    "id": "snared",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 tours de jeu",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "requiredTags": [
+      "démon",
+      "demon"
+    ],
+    "conditionalLabelKey": "TRUDVANG.Mobility.MovementAction",
+    "oncePerCasting": true,
+    "sourceId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
+        "target": "duration",
+        "value": 5
+      },
+      {
+        "index": 2,
+        "optionId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:2",
+        "target": "note",
+        "base": -1,
+        "value": -1,
+        "minimum": -5,
+        "allActions": true,
+        "tooltip": true,
+        "labelKey": "TRUDVANG.Transformation.PhysicalMovementPenalty"
+      }
+    ]
+  },
   "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -12331,6 +12425,36 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-toikalokke-lynx-power:feline-leap:3#leap": {
+    "id": "leap",
+    "icon": "icons/svg/aura.svg",
+    "duration": "3 rounds",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "inputKey": "TRUDVANG.Mobility.BodyHeight",
+    "inputDefault": "1.8",
+    "displayPowerOptions": [
+      0,
+      1
+    ],
+    "cooldownSeconds": 15,
+    "leap": {
+      "lengthFactor": 3,
+      "heightFactor": 2,
+      "lengthIndex": 0,
+      "heightIndex": 1,
+      "lengthStep": 0.5,
+      "heightStep": 0.1,
+      "maxLength": 15,
+      "maxHeight": 8,
+      "lengthOptionId": "holy-toikalokke-lynx-power:feline-leap:3:0",
+      "heightOptionId": "holy-toikalokke-lynx-power:feline-leap:3:1"
+    },
+    "sourceId": "holy-toikalokke-lynx-power:feline-leap:3",
+    "parameters": []
+  },
   "holy-toikalokke-lynx-power:hearing:2#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -15727,6 +15851,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-body-vitner:grip:0": [
     "vitner-body-vitner:grip:0#adherence"
   ],
+  "vitner-body-vitner:tipping:1": [
+    "vitner-body-vitner:tipping:1#trip"
+  ],
   "vitner-body-vitner:hearing-deafness:2": [
     "vitner-body-vitner:hearing-deafness:2#ameliore",
     "vitner-body-vitner:hearing-deafness:2#affaibli"
@@ -15765,6 +15892,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-delusion-vitner:increase-sounds:3": [
     "vitner-delusion-vitner:increase-sounds:3#voix",
     "vitner-delusion-vitner:increase-sounds:3#bruits"
+  ],
+  "vitner-delusion-vitner:roar:0": [
+    "vitner-delusion-vitner:roar:0#hearing"
   ],
   "vitner-delusion-vitner:phantom-sound:1": [
     "vitner-delusion-vitner:phantom-sound:1#effect"
@@ -16150,6 +16280,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-tenetnid-tablet-of-voices:divine-pact:8": [
     "holy-tenetnid-tablet-of-voices:divine-pact:8#effect"
   ],
+  "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": [
+    "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared"
+  ],
   "holy-tenetnid-tablet-of-the-shield:sheltering:1": [
     "holy-tenetnid-tablet-of-the-shield:sheltering:1#effect"
   ],
@@ -16408,6 +16541,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-lynx-power:orientation:0": [
     "holy-toikalokke-lynx-power:orientation:0#orientation"
+  ],
+  "holy-toikalokke-lynx-power:feline-leap:3": [
+    "holy-toikalokke-lynx-power:feline-leap:3#leap"
   ],
   "holy-toikalokke-lynx-power:hearing:2": [
     "holy-toikalokke-lynx-power:hearing:2#effect"

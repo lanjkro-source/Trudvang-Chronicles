@@ -1,0 +1,45 @@
+{
+  "_id": "LNiad1tZu0v1w2x3",
+  "_key": "!items!LNiad1tZu0v1w2x3",
+  "name": "Bond du félin — récupération",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+    "description": "Le bond peut atteindre les distances indiquées sans difficulté et sans dégâts à l’atterrissage. Pour aller au-delà, utiliser le test d’Agilité avec le modificateur fixé par le MJ. Les muscles doivent récupérer pendant 3 tours (15 secondes) avant un nouveau bond. Cette récupération ne confère aucune immunité générale aux chutes.",
+    "summary": "Permet d’accomplir des bonds remarquables en longueur comme en hauteur.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 293
+    }
+  },
+  "effects": [
+    {
+      "_id": "kkMEnrWrXsYtZu0v",
+      "_key": "!items.effects!LNiad1tZu0v1w2x3.kkMEnrWrXsYtZu0v",
+      "name": "Bond du félin — récupération",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bond peut atteindre les distances indiquées sans difficulté et sans dégâts à l’atterrissage. Pour aller au-delà, utiliser le test d’Agilité avec le modificateur fixé par le MJ. Les muscles doivent récupérer pendant 3 tours (15 secondes) avant un nouveau bond. Cette récupération ne confère aucune immunité générale aux chutes.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+            "sourceId": "holy-toikalokke-lynx-power:feline-leap:3",
+            "summary": "Permet d’accomplir des bonds remarquables en longueur comme en hauteur.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -2688,3 +2688,12 @@ test("fear summary preserves its level but reports when its penalty is suppresse
  sheet.actor.system.resources.fear.current=55;context=await sheet._prepareContext({});assert.equal(context.fearStatus.level,"mad");assert.equal(context.fearStatus.consequence,"Ignore les malus de peur");
  sheet.actor.transformationProfile.ignoreFearPenalty=false;context=await sheet._prepareContext({});assert.match(context.fearStatus.consequence,/−7/);
 });
+
+test('a reactive skill test remains possible when ordinary actions are blocked and displays power-level modifiers once',async t=>{
+ const runtime=mockActionRuntime(t),instance=actor([]);instance.canPerformAction=()=>false;instance.warnCannotAct=()=>null;
+ instance.getAbilityBreakdown=()=>({base:10,skillLabel:'Agility',modifierRows:[]});
+ const ability={name:'Agility',type:'ability',system:{parentSkill:'agility',kind:'discipline',catalogId:'agility'}};
+ assert.equal(await instance.rollAbility(ability),null);assert.equal(runtime.dialogs.length,0);
+ runtime.response={modifier:0};const result=await instance.rollAbility(ability,{reactive:true,modifierRows:[{label:'Croche-pied — amélioration',value:-3}]});
+ assert.equal(result.target,7);assert.match(runtime.dialogs[0].content,/Croche-pied/);assert.match(renderedCards.at(-1).data.flavor,/-3/);assert.equal(runtime.messages.length,1);
+});

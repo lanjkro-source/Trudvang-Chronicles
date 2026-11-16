@@ -11,11 +11,15 @@ const result = {};
 function testsFor(entry) {
   return [
     ...(entry.resist ?? []).map((test, index) => {
-      const {test:configuredIndex,...configuration}=entry.ruleTestModifiers?.find(row=>row.test===index)??{};
+      const {test:configuredIndex,...configuration}=entry.ruleTestModifiers?.find(row=>(row.kind??"resist")==="resist"&&row.test===index)??{};
       if(configuration.powerLevelModifiers)configuration.powerLevelModifiers=configuration.powerLevelModifiers.map(row=>resolvePowerOptionReference(entry,row));
       return {...test,...configuration,kind:"resist",index};
     }),
-    ...(entry.skillTest ?? []).map((test, index) => ({...test, kind: "skill", index}))
+    ...(entry.skillTest ?? []).map((test,index)=>{
+      const {test:configuredIndex,...configuration}=entry.ruleTestModifiers?.find(row=>row.kind==='skill'&&row.test===index)??{};
+      if(configuration.powerLevelModifiers)configuration.powerLevelModifiers=configuration.powerLevelModifiers.map(row=>resolvePowerOptionReference(entry,row));
+      return {...test,...configuration,kind:'skill',index};
+    })
   ];
 }
 
@@ -25,8 +29,9 @@ for (const entry of powers) {
   if(JSON.stringify(entry.ruleTestModifiers??[])!==JSON.stringify(translated?.ruleTestModifiers??[]))throw Error(`Unaligned resistance modifiers for ${entry.catalogId}`);
   const configured=new Set();
   for(const row of entry.ruleTestModifiers??[]){
-    if(!entry.resist?.[row.test]||configured.has(row.test)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
-    configured.add(row.test);
+    const kind=row.kind??'resist',key=kind+':'+row.test;
+    if(!['resist','skill'].includes(kind)||!(kind==='skill'?entry.skillTest:entry.resist)?.[row.test]||configured.has(key)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
+    configured.add(key);
     if(row.casterTest!==undefined&&typeof row.casterTest!=='boolean')throw Error('Invalid acting caster for '+entry.catalogId);
     if(row.dispel&&(!row.casterTest||!['vitner','control'].includes(row.dispel.mode)||!row.dispel.values||Object.entries(row.dispel.values).some(([level,value])=>![1,2,3,4,5].includes(Number(level))||!Number.isFinite(value))||row.dispel.sameVitnerBonus!==undefined&&row.dispel.sameVitnerBonus!==2))throw Error('Invalid dispel procedure for '+entry.catalogId);
     for(const p of row.powerLevelModifiers??[]){resolvePowerOptionReference(entry,p);if(!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);}

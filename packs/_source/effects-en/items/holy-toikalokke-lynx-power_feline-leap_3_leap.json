@@ -1,0 +1,45 @@
+{
+  "_id": "LNiad1tZu0v1w2x3",
+  "_key": "!items!LNiad1tZu0v1w2x3",
+  "name": "Feline Leap — recovery",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+    "description": "The leap can reach the listed distances without difficulty or landing damage. To go farther, use the Agility test with the modifier set by the GM. Muscles must recover for 3 rounds (15 seconds) before another leap. This recovery does not grant general immunity to falling.",
+    "summary": "The Ihana has the ability to leap with the incredible agility and grace of a feline.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 239
+    }
+  },
+  "effects": [
+    {
+      "_id": "kkMEnrWrXsYtZu0v",
+      "_key": "!items.effects!LNiad1tZu0v1w2x3.kkMEnrWrXsYtZu0v",
+      "name": "Feline Leap — recovery",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The leap can reach the listed distances without difficulty or landing damage. To go farther, use the Agility test with the modifier set by the GM. Muscles must recover for 3 rounds (15 seconds) before another leap. This recovery does not grant general immunity to falling.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-lynx-power:feline-leap:3#leap",
+            "sourceId": "holy-toikalokke-lynx-power:feline-leap:3",
+            "summary": "The Ihana has the ability to leap with the incredible agility and grace of a feline.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

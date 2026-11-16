@@ -122,9 +122,9 @@ test('an unavailable GM connection retains the roll for retry instead of rolling
  assert.equal(rolls,1);assert.equal(e.flags[S].initialResistance.resolved,true);
 });
 
-test('all 31 recipient-resistance templates defer their native consequences in both languages, including chosen forms',async()=>{
+test('all 32 recipient-resistance templates defer their native consequences in both languages, including chosen forms',async()=>{
  const {BESTIARY_ENTRIES}=await import('../modules/bestiary-catalog-data.mjs');
- const entries=Object.entries(templates).filter(([,row])=>row.initialResistance);assert.equal(entries.length,31);
+ const entries=Object.entries(templates).filter(([,row])=>row.initialResistance);assert.equal(entries.length,32);
  for(const lang of ['fr','en'])for(const [key,template] of entries){
   const actor=setup(lang);actor.getTraitValue=()=>0;actor.system.resources={body:{max:20}};let created;
   actor.createTrudvangEffect=async input=>(created=input,null);

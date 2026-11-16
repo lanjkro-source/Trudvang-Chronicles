@@ -11988,6 +11988,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.SourcePage` | 96 | 192 |
 | `TRUDVANG.Content.Transformation.vitner-body-vitner:grip:0#adherence.Duration` | 10 rounds | 10 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.Name` | Tipping | Croche-pied |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.Description` | The enchanter makes a creature stumble and lose its balance. The victim of the spell must immediately make a Skill roll for Agility. Failure means the victim tumbles to the ground. Success means the victim takes no notice of what has happened and is able to continue as normal. | L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre. La victime de ce sort doit immédiatement effectuer un test de compétence en Agilité. En cas d’échec, la victime trébuche et tombe à terre. Dans le cas contraire, la victime ne remarque pas ce qui vient de se passer et peut continuer d’agir normalement. |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.SourceName` | Tipping | Croche-pied |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.SourcePage` | 96 | 192 |
+| `TRUDVANG.Content.Transformation.vitner-body-vitner:tipping:1#trip.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.vitner-body-vitner:hearing-deafness:2#ameliore`
 
 | Clé | English | Français |
@@ -12175,6 +12186,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.SourcePage` | 101 | 197 |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:increase-sounds:3#bruits.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.Name` | Ringing ears — Roar | Bourdonnements — Grondement |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.Description` | Ears ring after the blast. Skill and Situation rolls relying on hearing take −4 for the remaining duration. The caster is unaffected. Apply only to creatures within the sound area when the blast occurred; leaving it does not remove the after-effects. | Les oreilles bourdonnent après la déflagration. Pendant la durée restante, les tests de compétence et de situation reposant sur l’ouïe subissent −4. Le lanceur est épargné. Appliquer uniquement aux personnes qui se trouvaient dans la zone sonore au moment du grondement ; quitter la zone ne retire pas ces séquelles. |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.SourceName` | Roar | Grondement |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.SourcePage` | 101 | 197 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:roar:0#hearing.Duration` | 1d6 minutes | 1d6 minutes |
 
 ## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:phantom-sound:1#effect`
 
@@ -13737,6 +13759,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.SourcePage` | 206 | 257 |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-voices:divine-pact:8#effect.Duration` | 5 action rounds | 5 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.Name` | Snares of the Holy Ground | Entraves de la terre consacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.Description` | Roots hinder the demon’s movements for the remaining duration. The penalty applies only to Skill or Situation rolls for actions relying on movement; it does not alter Combat Point pools. | Des racines gênent les mouvements du démon pendant la durée restante. Le malus ne concerne que les tests de compétence ou de situation d’une action reposant sur le mouvement ; il ne modifie pas les réserves de PC. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.SourceName` | Snares of the Holy Ground | Entraves de la terre consacrée |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.SourcePage` | 201 | 257 |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0#snared.Duration` | 3 action rounds | 3 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:sheltering:1#effect`
 
 | Clé | English | Français |
@@ -14844,6 +14877,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.SourcePage` | 239 | 293 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:orientation:0#orientation.Duration` | 1 hour | 1 heure |
 
+## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.Name` | Feline Leap — recovery | Bond du félin — récupération |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.Description` | The leap can reach the listed distances without difficulty or landing damage. To go farther, use the Agility test with the modifier set by the GM. Muscles must recover for 3 rounds (15 seconds) before another leap. This recovery does not grant general immunity to falling. | Le bond peut atteindre les distances indiquées sans difficulté et sans dégâts à l’atterrissage. Pour aller au-delà, utiliser le test d’Agilité avec le modificateur fixé par le MJ. Les muscles doivent récupérer pendant 3 tours (15 secondes) avant un nouveau bond. Cette récupération ne confère aucune immunité générale aux chutes. |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.SourceName` | Feline Leap | Bond du félin |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.SourcePage` | 239 | 293 |
+| `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:feline-leap:3#leap.Duration` | 3 rounds | 3 rounds |
+
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-lynx-power:hearing:2#effect`
 
 | Clé | English | Français |
@@ -15947,6 +15991,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.ChoosePersonalEffect` | Choose the personal effect’s form | Choisir la forme de l’effet personnel |
 | `TRUDVANG.Transformation.AutomaticSelf` | Effect applied to the caster. | Effet appliqué au lanceur. |
 | `TRUDVANG.Transformation.AutomaticSelfFailed` | The personal effect could not be applied to the caster. | L’effet personnel n’a pas pu être appliqué au lanceur. |
+| `TRUDVANG.Transformation.HearingActionPenalty` | Actions relying on hearing: {value} SV. | Actions reposant sur l’ouïe : {value} VC. |
+| `TRUDVANG.Transformation.PhysicalMovementPenalty` | Actions relying on movement: {value} SV. | Actions reposant sur le mouvement : {value} VC. |
+| `TRUDVANG.Transformation.RoarRadius` | Blast radius: {value} m. | Rayon de la déflagration : {value} m. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16416,3 +16463,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FollowupTest.Revealed` | The victim has identified the illusion; visible symptoms and the social penalty remain until the spell ends. | Illusion identifiée par la victime ; les symptômes visibles et le malus social persistent jusqu’à la fin du sort. |
 | `TRUDVANG.FollowupTest.Removed` | {effect} ends. | {effect} prend fin. |
 | `TRUDVANG.FollowupTest.RecoveryLabel` | Memory recovery | Récupération des souvenirs |
+
+## `TRUDVANG.Mobility`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Mobility.WrongTarget` | This effect does not affect this creature category. | Cet effet n’affecte pas cette catégorie de créature. |
+| `TRUDVANG.Mobility.CasterUnaffected` | The caster is unaffected by this effect. | Le lanceur n’est pas affecté par cet effet. |
+| `TRUDVANG.Mobility.MovementAction` | Action relying on movement | Action reposant sur le mouvement |
+| `TRUDVANG.Mobility.HearingAction` | Action relying on hearing | Action reposant sur l’ouïe |
+| `TRUDVANG.Mobility.BodyHeight` | Actual character height (m) | Taille réelle du personnage (m) |
+| `TRUDVANG.Mobility.LeapValues` | Leap: up to {length} m horizontally and {height} m vertically. One leap every 3 rounds (15 seconds). | Bond : jusqu’à {length} m en longueur et {height} m en hauteur. Un seul bond tous les 3 tours (15 secondes). |
+| `TRUDVANG.Mobility.BadHeight` | Enter a positive height in metres. | Indiquez une taille positive en mètres. |
+| `TRUDVANG.Mobility.Cooldown` | This power is still recovering: {seconds} s remaining. | Ce pouvoir est encore en récupération : {seconds} s restantes. |

@@ -45,9 +45,15 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.initialResistance??null)!==JSON.stringify(translated.initialResistance??null))throw Error('Unaligned initial resistance for '+key);
    if(t.initialResistance){
     const index=t.initialResistance.testIndex;
+    if(t.initialResistance.failureNativeStatuses&&(!Array.isArray(t.initialResistance.failureNativeStatuses)||!t.initialResistance.failureNativeStatuses.length||t.initialResistance.failureNativeStatuses.some(id=>id!=='prone')||t.changes?.length))throw Error('Invalid native resistance outcome '+key);
     if(t.initialResistance.optional!==undefined&&(typeof t.initialResistance.optional!=="boolean"||!t.initialResistance.conditionKey||!["fr","en"].every(c=>t.initialResistance.conditionKey.split(".").reduce((o,k)=>o?.[k],lang[c]))))throw Error("Invalid initial resistance choice for "+key);
-    if(!Number.isInteger(index)||index<0||!entry.resist?.[index]||entry.ruleTestModifiers?.find(row=>row.test===index)?.casterTest||t.instant||t.onApply||t.aura||t.periodic||t.persistentDamage||t.itemOnly)throw Error('Invalid initial resistance for '+key);
+    if(!Number.isInteger(index)||index<0||![...(entry.resist??[]),...(entry.skillTest??[])][index]||entry.ruleTestModifiers?.find(row=>row.test===index)?.casterTest||t.instant||t.onApply||t.aura||t.periodic||t.persistentDamage||t.itemOnly)throw Error('Invalid initial resistance for '+key);
    }
+   for(const field of ['requiredTags','excludeCaster','oncePerCasting','refreshOnRecast','conditionalLabelKey','inputDefault','cooldownSeconds','leap'])if(JSON.stringify(t[field]??null)!==JSON.stringify(translated[field]??null))throw Error('Unaligned mobility policy '+key+' '+field);
+   if(t.oncePerCasting!==undefined&&typeof t.oncePerCasting!=='boolean')throw Error('Invalid application policy '+key);
+   if(t.requiredTags&&(!Array.isArray(t.requiredTags)||!t.requiredTags.length||t.requiredTags.some(tag=>typeof tag!=='string'||!tag.trim())))throw Error('Invalid creature restriction '+key);
+   if(t.cooldownSeconds!==undefined&&(!Number.isFinite(t.cooldownSeconds)||t.cooldownSeconds<=0))throw Error('Invalid casting cooldown '+key);
+   if(t.leap&&(!entry.powerLevels[t.leap.lengthIndex]||!entry.powerLevels[t.leap.heightIndex]||!['lengthFactor','heightFactor','lengthStep','heightStep','maxLength','maxHeight'].every(field=>Number.isFinite(t.leap[field])&&t.leap[field]>0)))throw Error('Invalid leap profile '+key);
    if(t.dispelCategory!==translated.dispelCategory||t.dispelPermanent!==translated.dispelPermanent||t.dispelCategory!==undefined&&!['control'].includes(t.dispelCategory)||t.dispelPermanent!==undefined&&typeof t.dispelPermanent!=='boolean')throw Error(`Invalid dispel policy for ${key}`);
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
@@ -159,6 +165,11 @@ for(const kind of ["powers","feats"]){
      ...Object.fromEntries(((c==="fr"?sourceRules:translatedRules).capabilities??[]).map((s,i)=>[`Capability${i}`,s])),
      ...Object.fromEntries(((c==="fr"?t:translated).runeTiers??[]).flatMap((row,i)=>[[`RuneSummary${i+1}`,row.summary],[`RuneDescription${i+1}`,row.description]]))};
    const {name,summary,description,...data}=t;
+   if(t.leap){
+    const length=resolvePowerOptionReference(entry,{index:t.leap.lengthIndex,optionId:t.leap.lengthOptionId});
+    const height=resolvePowerOptionReference(entry,{index:t.leap.heightIndex,optionId:t.leap.heightOptionId});
+    data.leap={...t.leap,lengthIndex:length.index,heightIndex:height.index};
+   }
    if(t.runeTiers)data.runeTiers=t.runeTiers.map(({summary,description,...row},i)=>({...row,summaryKey:`TRUDVANG.Content.Transformation.${key}.RuneSummary${i+1}`,descriptionKey:`TRUDVANG.Content.Transformation.${key}.RuneDescription${i+1}`}));
    const rules=structuredClone(sourceRules);
    data.changes=[...data.changes.filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX)),...changesFromRules({

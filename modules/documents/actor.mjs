@@ -991,9 +991,9 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollAbility(item, context = {}) {
-    if (!this.canPerformAction()) return this.warnCannotAct();
+    if (!context.reactive && !this.canPerformAction()) return this.warnCannotAct();
     const breakdown = this.getAbilityBreakdown(item, context);
-    const modifierRows = [...breakdown.modifierRows];
+    const modifierRows = [...breakdown.modifierRows,...(context.modifierRows??[])];
     modifierRows.push(...conditionalSkillModifiers(this,item.system.parentSkill,item,context.excludeEffectId,{automatic:true}));
     if (Number(context.bonus || 0)) modifierRows.push(context.bonusLabel ? {label:context.bonusLabel,value:Number(context.bonus)} : {labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
     modifierRows.push(...transformationRollRows(this, {target: breakdown.base + rollModifierTotal(modifierRows), skillKey: item.system.parentSkill, movement: Boolean(context.movement)}));
@@ -1523,7 +1523,7 @@ export class TrudvangActor extends BaseActor {
     const fatalKind = isDivine ? "faith" : "vitner";
     // Allocate before publishing the card so its effects and maintained record
     // share the identity of this particular casting, even for the same spell.
-    const castingId = trackedPersistent || (isDivine && POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting) ? foundry.utils.randomID() : "";
+    const castingId = trackedPersistent || POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting ? foundry.utils.randomID() : "";
     const result = await rollUnder({blessing:options.blessing, actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
       flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,

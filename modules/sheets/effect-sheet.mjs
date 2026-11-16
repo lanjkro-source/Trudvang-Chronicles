@@ -1,5 +1,5 @@
 import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
-import {annotateRuleTestDescription, performRuleTest, ruleTestsForDocument} from "../rule-tests.mjs";
+import {annotateRuleTestDescription, performRuleTest, ruleTestsForDocument, ruleTestActionViews} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectChangePhase} from "../rules/effect-contributions.mjs";
 import {effectChangesSource} from "../rules/effect-source.mjs";
@@ -103,9 +103,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         {async: true, secrets: this.document.isOwner}
       ), this.document);
       partContext.resistanceButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
-        ? ruleTestsForDocument(this.document).map((test,index)=>({test,index})).filter(({test})=>test.kind==="resist").map(({test,index})=>({index,label:test.action||game.i18n.localize("TRUDVANG.RuleTest.RollResistance")})) : [];
+        ? ruleTestActionViews(this.document).map(row=>({index:row.index,label:row.action})) : [];
       partContext.conditionalSituationButtons=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner
-        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly).map(({bonus,index})=>({index,label:bonus.skill||bonus.ability?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
+        ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly&&!bonus.allActions).map(({bonus,index})=>({index,label:bonus.skill||bonus.ability?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
       partContext.canRollMagicDamage=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner && Boolean(magicDamageProfile(this.document)) && !POWER_DETAILS_BY_ID[this.document.flags?.["trudvang-chronicles"]?.transformation?.sourceId]?.damageRoll?.automatic;
       partContext.origin = this.document.origin || "";
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);

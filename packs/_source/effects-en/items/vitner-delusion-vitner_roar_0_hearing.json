@@ -1,0 +1,45 @@
+{
+  "_id": "yxCwU5y4z5A6B7C8",
+  "_key": "!items!yxCwU5y4z5A6B7C8",
+  "name": "Ringing ears — Roar",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:roar:0#hearing",
+    "description": "Ears ring after the blast. Skill and Situation rolls relying on hearing take −4 for the remaining duration. The caster is unaffected. Apply only to creatures within the sound area when the blast occurred; leaving it does not remove the after-effects.",
+    "summary": "Hearing temporarily disrupted after the blast.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "93wphMfLgMhNiOjP",
+      "_key": "!items.effects!yxCwU5y4z5A6B7C8.93wphMfLgMhNiOjP",
+      "name": "Ringing ears — Roar",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Ears ring after the blast. Skill and Situation rolls relying on hearing take −4 for the remaining duration. The caster is unaffected. Apply only to creatures within the sound area when the blast occurred; leaving it does not remove the after-effects.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:roar:0#hearing",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:roar:0#hearing",
+            "sourceId": "vitner-delusion-vitner:roar:0",
+            "summary": "Hearing temporarily disrupted after the blast.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

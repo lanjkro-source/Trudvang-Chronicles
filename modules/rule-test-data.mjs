@@ -1428,6 +1428,25 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "index": 0
     }
   ],
+  "vitner-body-vitner:tipping:1": [
+    {
+      "action": "garder l’équilibre",
+      "skill": "agility",
+      "sv": 0,
+      "success": "reste debout et peut agir normalement.",
+      "failure": "trébuche et tombe à terre.",
+      "kind": "skill",
+      "magicResistance": false,
+      "powerLevelModifiers": [
+        {
+          "index": 1,
+          "value": -1,
+          "optionId": "vitner-body-vitner:tipping:1:1"
+        }
+      ],
+      "index": 0
+    }
+  ],
   "vitner-body-vitner:hearing-deafness:2": [
     {
       "action": "résister à la perte du sens",

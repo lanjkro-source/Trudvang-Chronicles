@@ -1,3 +1,4 @@
+import {effectTargetRestriction,leapDistances} from './rules/mobility-effects.mjs';
 import {equipmentGrantItems,equipmentGrantActive,grantedEquipmentData} from './rules/granted-equipment.mjs';
 import {readiedHandConflicts} from './rules/combat-pool-resolver.mjs';
 import {resolveEffectNote} from './rules/effect-note.mjs';
@@ -49,7 +50,7 @@ const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[do
 export function transformationStackId(key,casting,reference){
  // An item's quality is one property: a renewed degradation replaces the
  // previous one, rather than applying the same quality adjustment twice.
- if(reference.itemQuality)return key;
+ if(reference.itemQuality||reference.refreshOnRecast)return key;
  return (casting.kind==="spell"||casting.auraSource||reference.periodic)&&casting.castingId&&casting.casterUuid?`${key}::${casting.casterUuid}::${casting.castingId}`:key;
 }
 /** Learned specialties of the recipient, including custom entries and NPC book rows. */
@@ -140,6 +141,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||reference.instant||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
+ const targetRestriction=effectTargetRestriction(reference,actor,casting);if(targetRestriction){ui.notifications.warn(game.i18n.localize(targetRestriction));return null;}
  if(NID_BLESSINGS[reference.sourceId]){
   if(destinationItem){ui.notifications.warn(game.i18n.localize("TRUDVANG.Blessing.ActorOnly"));return null;}
   const reason=nidBlessingRestriction(actor,{flags:{[SCOPE]:{transformation:{sourceId:reference.sourceId,ruleTestContext:casting}}}});
@@ -199,8 +201,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const targeting=!automaticSource&&!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set();
  if(targeting){
-  if(casting.kind==="divine"){
-   const entry=game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.divineAllocation;
+  if(casting.kind==="divine"||game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.instantAllocation){
+   const flags=game.messages?.get(casting.messageId)?.flags?.[SCOPE];
+   const entry=casting.kind==="divine"?flags?.divineAllocation:flags?.instantAllocation;
    if(entry?.castingId===casting.castingId&&entry?.casterUuid===casting.casterUuid&&entry?.sourceId===template.sourceId)
     allocationRecord={targetAllocations:entry.targetAllocations??[],powerLevelSnapshot:Object.entries(entry.selected??{}).map(([id,count])=>({id,count}))};
   }else{
@@ -238,9 +241,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    inputOptions=specialtyChoices(actor,template.inputDiscipline);
    if(!inputOptions.length){ui.notifications.warn(local("NoCraftSpecialty"));return null;}
   }
-  fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??"",...(inputOptions.length?{options:inputOptions}:{})});
+  fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??template.inputDefault??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
  if(template.initialResistance?.optional&&(!resolvedCopy||!copiedResistance))fields.push({name:'resistApplication',label:game.i18n.localize(template.initialResistance.conditionKey),checkbox:true,value:false});
+ if(template.cooldownSeconds){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
  const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label,numeric:true,...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -287,6 +291,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
+ const leap=template.leap?leapDistances(template.leap,answers.effectInput??metadata(supplied)?.input??template.inputDefault,casting):null;
+ if(template.leap&&!leap){ui.notifications.warn(game.i18n.localize("TRUDVANG.Mobility.BadHeight"));return null;}
  let formMaximum;
  if(rules.chooseBestiary||rules.formName){
   const form=BESTIARY_ENTRIES.find(e=>e.id===answers.form)||BESTIARY_ENTRIES.find(e=>game.i18n.localize(`TRUDVANG.Content.Creature.${e.id}.Name`)===rules.formName);
@@ -295,7 +301,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   Object.assign(rules,selected.rules);
   if(!rules.preserveHP)formMaximum=selected.maximum;
  }
- const duration=template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
+ const duration=template.cooldownSeconds?normalizeEffectDuration({value:template.cooldownSeconds,units:"seconds"}):template.instant?{value:0,units:"seconds"}:await resolveDuration(answers.duration,{actor,name:`${effectName} — ${local("Duration")}`});
   const changes=structuredClone(template.changes??[]).filter(c=>!c.key.startsWith(EFFECT_RULE_PREFIX));
  let itemValues;
  let qualityValues;
@@ -417,6 +423,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const copiedProgress=stored?.flags?.[SCOPE]?.ruleTestProgress;
  let summary=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?metadata(supplied)?.summary:copiedProgress.baseSummary):null)||copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ if(leap)summary=game.i18n.format("TRUDVANG.Mobility.LeapValues",leap);
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
@@ -457,6 +464,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(leap){meta.leap=leap;meta.summaryResolved=true;}
  if(template.roundResistance)meta.roundResistance=structuredClone(resolvedCopy?(metadata(supplied)?.roundResistance??template.roundResistance):template.roundResistance);
  if(template.runeTiers){
   meta.runeLevel=runeLevel;meta.summaryResolved=true;
@@ -464,6 +472,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
  let description=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?supplied.description:copiedProgress.baseDescription):null)??stored?.description??text(key,"Description");
+ if(leap)description+=`<p>${escapeHtml(summary)}</p>`;
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
@@ -508,7 +517,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.messageId??"",targetUuid:actor.uuid,itemUuid:destinationItem?.uuid??"",countsById:allocation,data});
   if(result.status==='consumable-capacity'){ui.notifications.warn(game.i18n.localize('TRUDVANG.ConjuredConsumable.CapacityReached'));return null;}
-  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="requires-other-target"?"TRUDVANG.Warning.MagicRequiresOtherTarget":result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
+  if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="target-restricted"?"TRUDVANG.Mobility.WrongTarget":result.status==="requires-other-target"?"TRUDVANG.Warning.MagicRequiresOtherTarget":result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   if(result.instant)return result;
   effect=await foundry.utils.fromUuid(result.effectUuid);
  }else if(template.instant){

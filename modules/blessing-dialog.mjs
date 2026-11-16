@@ -1,3 +1,5 @@
+import {conditionalSituationBonuses} from './rules/effect-conditional-tests.mjs';
+import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {activeConditionalModifierSection} from "./conditional-modifier-ui.mjs";
 import {nidBlessingBonus} from './rules/nid-blessings.mjs';
 import {escapeHtml} from './helpers.mjs';
@@ -6,6 +8,7 @@ import {itemUseModifierTotal} from './rules/item-quality.mjs';
 export function conditionalChoices(actor,{item,castingType,action}={}){
  const blessing=nidBlessingBonus(actor);
  return [...(blessing?[{id:`nid:${blessing.effectId}`,selector:'[data-nid-blessing]',attribute:'data-nid-blessing',value:blessing.value,label:game.i18n.format('TRUDVANG.Blessing.Contributes',{goal:blessing.goal||blessing.label})}]:[]),
+  ...Array.from(actor?.allApplicableEffects?.()??actor?.effects??[]).flatMap(effect=>conditionalSituationBonuses(effect).filter(row=>row.allActions).map((row,index)=>({id:'context:'+effect.id+':'+index,selector:'[data-effect-condition="'+effect.id+'-'+index+'"]',attribute:'data-effect-condition="'+effect.id+'-'+index+'"',testOnly:true,value:row.value,label:effect.name+' — '+game.i18n.localize(TRANSFORMATION_TEMPLATES[effect.flags['trudvang-chronicles'].transformation.key].conditionalLabelKey)}))),
   ...itemUseBonuses(actor,{castingType,action}).filter(row=>!item||row.item===item||(row.item.uuid&&row.item.uuid===item.uuid)).map((row,index)=>({id:`item:${row.id}`,selector:`[data-item-use="${index}"]`,attribute:`data-item-use="${index}"`,fixed:(Boolean(item)&&!row.optional)||row.automatic,value:row.value,qualityLevel:row.qualityLevel,label:item||row.automatic?`${row.item.name} - ${row.effect.name}`:game.i18n.format('TRUDVANG.Transformation.UseEnchantedItem',{item:row.item.name,effect:row.effect.name})}))];
 }
 /** Add the conditional choice to the existing dialog, without another prompt. */
@@ -15,7 +18,7 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
   static wait(config){
    const buttons=config.buttons.map(button=>!button.callback||button.action==='cancel'?button:{...button,callback:async(event,control,dialog)=>{
     const result=await button.callback(event,control,dialog);if(!result||typeof result!=='object')return result;
-    const current=conditionalChoices(actor,context),selected=choices.filter(choice=>choice.fixed||dialog.element?.querySelector(choice.selector)?.checked).map(choice=>current.find(row=>row.id===choice.id)).filter(Boolean);
+    const current=conditionalChoices(actor,context),selected=choices.filter(choice=>(!choice.testOnly||result.mode!=='open')&&(choice.fixed||dialog.element?.querySelector(choice.selector)?.checked)).map(choice=>current.find(row=>row.id===choice.id)).filter(Boolean);
     if(!selected.length)return result;
     const value=itemUseModifierTotal(selected);
     if(mode==='magic')result.target+=value;
@@ -37,7 +40,7 @@ export function blessingDialog(Base,actor,mode='modifier',context={}){
    const outputSelector='[data-final-target], [data-combat-final-target], [data-combat-target-final], [data-concentration-total], [data-fixed-attack-final], [data-fixed-attack-no-target-final], [data-open-modifier], [data-procedure-target], [data-animal-final]';
    const section=activeConditionalModifierSection(root);if(!section)return;
    const destination=row=>row.fixed?(Array.from(root.querySelectorAll('[data-applied-item-modifiers]')).find(list=>!list.closest('[hidden]'))??section):activeConditionalModifierSection(root);
-   const refresh=()=>{for(const [index,label] of labels.entries()){const target=destination(choices[index]);if(target&&label.parentNode!==target)target.append(label);}const selected=labels.map((label,index)=>({row:choices[index],checked:choices[index].fixed||label.querySelector('input')?.checked})).filter(entry=>entry.checked),enabled=selected.length>0,value=itemUseModifierTotal(selected.map(entry=>entry.row));for(const output of root.querySelectorAll(outputSelector)){
+   const refresh=()=>{const open=root.querySelector('[name=mode]')?.value==='open';for(const [index,label] of labels.entries()){label.hidden=Boolean(choices[index].testOnly&&open);const target=destination(choices[index]);if(target&&label.parentNode!==target)target.append(label);}const selected=labels.map((label,index)=>({row:choices[index],checked:!label.hidden&&(choices[index].fixed||label.querySelector('input')?.checked)})).filter(entry=>entry.checked),enabled=selected.length>0,value=itemUseModifierTotal(selected.map(entry=>entry.row));for(const output of root.querySelectorAll(outputSelector)){
     let extra=output.nextElementSibling;if(!extra?.hasAttribute('data-nid-final')){extra=document.createElement('strong');extra.setAttribute('data-nid-final','');output.after(extra);}
     output.hidden=enabled;extra.hidden=!enabled;extra.textContent=String(Number(output.textContent)+value);
    }};
