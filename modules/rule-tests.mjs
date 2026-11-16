@@ -1,5 +1,6 @@
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
+import {withInitialResistance,initialResistanceTestDisabled} from './initial-resistance.mjs';
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
@@ -25,6 +26,8 @@ export function ruleTestsForDocument(document) {
   if((TRANSFORMATIONS_BY_SOURCE[id]??[]).some(key=>TRANSFORMATION_TEMPLATES[key]?.disease))return [];
   const bases=document?.flags?.[SYSTEM_ID]?.transformation?.ruleTestBases;
   const tests=(id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : []).map((test,index)=>Number.isFinite(bases?.[index])?{...test,sv:bases[index]}:test);
+  const spec=(TRANSFORMATIONS_BY_SOURCE[id]??[]).map(key=>TRANSFORMATION_TEMPLATES[key]?.initialResistance).find(Boolean);
+  for(let i=0;i<tests.length;i++)if(initialResistanceTestDisabled(document,i,spec))tests[i]={...tests[i],disabled:true};
   if(!game.i18n?.lang || game.i18n.lang==="fr")return tests;
   return tests.map((test,index)=>{
     const {action,anchor,success,failure,criticalSuccess,criticalFailure,condition,repeat,note,traitRule,...mechanics}=test;
@@ -43,8 +46,8 @@ export function ruleTestsForDocument(document) {
 
 /** Usage cards label each response with the action from the French source data. */
 export function ruleTestActionViews(document) {
-  return ruleTestsForDocument(document).map((test, index) => ({index, action: test.action,
-    title: game.i18n.localize(test.kind === "skill" ? "TRUDVANG.RuleTest.RollSkill" : "TRUDVANG.RuleTest.RollResistance")}));
+  return ruleTestsForDocument(document).map((test, index) => ({index, action: test.action, disabled:test.disabled,
+    title: game.i18n.localize(test.kind === "skill" ? "TRUDVANG.RuleTest.RollSkill" : "TRUDVANG.RuleTest.RollResistance")})).filter(row=>!row.disabled).map(({disabled,...row})=>row);
 }
 
 export function ruleTestValueLabel(test, localize = key => game.i18n.localize(key)) {
@@ -155,6 +158,7 @@ function testMatchesAnchor(test, anchor) {
 }
 
 function inlineTestButton(test, index, phrase, label = phrase) {
+  if(test.disabled)return escapeHtml(label);
   const kind = test.kind;
   const buttonTitle = test.tooltip || game.i18n.localize(kind === "resist"
     ? "TRUDVANG.RuleTest.RollResistance" : "TRUDVANG.RuleTest.RollSkill");
@@ -236,6 +240,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
    if(uuid)actor=await foundry.utils.fromUuid(uuid);
    if(!actor?.isOwner){ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.Permission'));return null;}
   }
+  if (test?.disabled)return null;
   if (!test || !actor || !["character", "npc"].includes(actor.type)) {
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
     return null;
@@ -244,7 +249,7 @@ export async function performRuleTest({document, index, actor = testActorForUser
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
     if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting});}
-    const result=await withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage);
+    const result=await withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",reactive:Boolean(document?.flags?.[SYSTEM_ID]?.initialResistance),resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage));
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }

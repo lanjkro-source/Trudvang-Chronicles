@@ -18669,6 +18669,15 @@
       "Unavailable": "Removing the effect requires its owner or a connected GM.",
       "Removed": "{effect} is dispelled.",
       "Gone": "The targeted effect has already ended."
+    },
+    "InitialResistance": {
+      "PendingName": "{effect} — resistance pending",
+      "PendingSummary": "Resistance pending: no consequences have been applied yet.",
+      "PendingDescription": "A successful roll removes this effect. On failure, its consequences take effect for the remaining duration.",
+      "Notice": "{actor} must resist {effect}.",
+      "Resist": "Resist",
+      "Busy": "A resistance roll is already in progress for this effect.",
+      "Unavailable": "This resistance could not be confirmed. Try again from the effect."
     }
   }
 }

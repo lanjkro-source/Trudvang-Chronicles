@@ -1308,7 +1308,7 @@ test("Imagining preserves the thought and exposes a resistance test",async()=>{
  let created;const actor={canUserModify:()=>true,items:[],getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
  const counts=[];counts[2]=2;
  await applyTransformation(actor,"vitner-power-of-thought:imagining:6#pensee",{counts});
- assert.match(created.description,/La porte est sûre/);assert.match(created.flags[S].transformation.summary,/La porte est sûre/);
+ assert.match(created.description,/La porte est sûre/);assert.match(created.flags[S].initialResistance.payload.summary,/La porte est sûre/);
  assert.match(annotateRuleTestDescription(created.description,created),/data-action="roll-rule-test"/);
  assert.equal(created.flags[S].transformation.ruleTestContext.countsById["vitner-power-of-thought:imagining:6:2"],2);
 });
@@ -1371,7 +1371,7 @@ test("movement, vision and concealment effects preserve individual duration and 
  globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
  let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
  await applyTransformation(actor,immobilize,{counts:[1,1,0,0,0,0,0],skipDialog:true});
- assert.deepEqual(created.statuses,["restrain"]);assert.deepEqual(created.duration,{value:18,units:"rounds"});
+ assert.deepEqual(created.statuses,[]);assert.deepEqual(created.flags[S].initialResistance.payload.statuses,["restrain"]);assert.deepEqual(created.duration,{value:18,units:"rounds"});
 });
 
 test("healing invocations create independent clocks with the correct interval and improved duration",async()=>{

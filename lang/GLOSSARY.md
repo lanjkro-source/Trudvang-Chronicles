@@ -16384,3 +16384,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dispel.Unavailable` | Removing the effect requires its owner or a connected GM. | La suppression de l’effet nécessite son propriétaire ou un MJ connecté. |
 | `TRUDVANG.Dispel.Removed` | {effect} is dispelled. | {effect} est dissipé. |
 | `TRUDVANG.Dispel.Gone` | The targeted effect has already ended. | L’effet visé a déjà pris fin. |
+
+## `TRUDVANG.InitialResistance`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.InitialResistance.PendingName` | {effect} — resistance pending | {effect} — résistance en attente |
+| `TRUDVANG.InitialResistance.PendingSummary` | Resistance pending: no consequences have been applied yet. | Résistance à résoudre : aucune conséquence appliquée pour le moment. |
+| `TRUDVANG.InitialResistance.PendingDescription` | A successful roll removes this effect. On failure, its consequences take effect for the remaining duration. | Réussir le jet retire cet effet. En cas d’échec, ses conséquences prennent effet pour la durée restante. |
+| `TRUDVANG.InitialResistance.Notice` | {actor} must resist {effect}. | {actor} doit résister à {effect}. |
+| `TRUDVANG.InitialResistance.Resist` | Resist | Résister |
+| `TRUDVANG.InitialResistance.Busy` | A resistance roll is already in progress for this effect. | Une résistance est déjà en cours pour cet effet. |
+| `TRUDVANG.InitialResistance.Unavailable` | This resistance could not be confirmed. Try again from the effect. | La résolution de cette résistance n’a pas pu être confirmée. Réessayez depuis l’effet. |

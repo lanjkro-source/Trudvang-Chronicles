@@ -2,7 +2,7 @@ import {hasProfileChanges, rulesFromChanges, roundEffectValue} from "./effect-ru
 import {upgradeFearFactor} from "./fear-resolver.mjs";
 import {sensoryProfile,sensoryVision} from "./senses.mjs";
 export const TRANSFORMATION_SCOPE = "trudvang-chronicles";
-export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
+export const activeTransformations = actor => Array.from(actor?.allApplicableEffects?.() ?? actor?.effects ?? []).filter(e => !e.disabled && !e.isSuppressed && !e.duration?.expired && (!e.flags?.[TRANSFORMATION_SCOPE]?.initialResistance || e.flags[TRANSFORMATION_SCOPE].initialResistance.resolved) && (hasProfileChanges(e) || e.flags?.[TRANSFORMATION_SCOPE]?.transformation))
  .sort((a,b)=>Math.min(...Array.from(a.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity)-Math.min(...Array.from(b.system?.changes??[]).map(c=>Number(c.priority??0)),Infinity));
 // Compatibility for existing world effects. New effects store all configuration
 // in editable changes; clearing their rows must not revive legacy metadata.

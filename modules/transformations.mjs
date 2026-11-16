@@ -8,6 +8,7 @@ import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {escapeHtml,escapeAttribute} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
 import {changesFromRules,rulesFromChanges,hasProfileChanges,validProfileChange,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
+import {prepareInitialResistance,announceInitialResistance} from './initial-resistance.mjs';
 import {effectSource} from "./rules/effect-source.mjs";
 import {creatureTokenDimensions} from "./rules/creature-token-size.mjs";
 import {TABLET_CATALOG,powerItemData} from "./tablet-catalog.mjs";
@@ -130,6 +131,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const delegated=!owned&&delegateTokenUuid&&message&&await canManageEffectTargets(message,game.user)&&effectTargetsFor(message,key).some(row=>row.tokenUuid===delegateTokenUuid&&row.actorUuid===actor?.uuid);
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
+ if(reference.initialResistance&&destinationItem){ui.notifications.warn(local('ActorTargetRequired'));return null;}
  if(reference.itemOnly&&!['weapon','shield','armor','gear','potion'].includes(destinationItem?.type)){ui.notifications.warn(local("ItemTargetRequired"));return null;}
  if(reference.itemQuality?.excludeMagical&&isMagicalItem(destinationItem)){ui.notifications.warn(local('MagicalItemUnaffected'));return null;}
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
@@ -159,6 +161,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const supplied=source?.documentName==="ActiveEffect"&&(!sourceKey||sourceKey===key)?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
  const stored=supplied?effectSource(supplied):null;
+ const copiedResistance=stored?.flags?.[SCOPE]?.initialResistance;
+ if(copiedResistance){stored.system.changes=structuredClone(copiedResistance.payload.changes);stored.statuses=[...copiedResistance.payload.statuses];stored.description=copiedResistance.payload.description;}
  // Resistance relief belongs to its recipient, never to a newly copied effect.
  const relief=stored?.flags?.[SCOPE]?.roundResistanceRelief;
  if(relief){const row=stored.system.changes[relief.index];if(row?.key===relief.key&&String(row.value)===relief.after)row.value=relief.before;}
@@ -181,7 +185,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // Invalid structured rows must not be stripped and silently create an empty
  // effect. Keep the same validation/error as the effect editor.
  for(const row of template.changes)if(!validProfileChange(row))throw new Error(game.i18n.format("TRUDVANG.Effect.InvalidProfileChange",{path:row.key}));
- const effectName=supplied?.name||text(key,"Name");
+ const effectName=copiedResistance?.payload.name||supplied?.name||text(key,"Name");
  let rules=rulesFromChanges(template.changes);
  if(rules.senses)rules.senses=rules.senses.map(s=>typeof s==="string"?game.i18n.localize(s):({...s,label:game.i18n.localize(s.label??s.labelKey??"")}));
  if(rules.capabilities)rules.capabilities=rules.capabilities.map(s=>game.i18n.localize(s));
@@ -406,7 +410,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    return matches.length===1&&Number.isFinite(Number(matches[0].value))?[{key,index:p.index,optionId:p.optionId||"",count,unit:Number(p.value),resolved:Number(matches[0].value)}]:[];});
  });
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
- let summary=relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ let summary=copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
  if(!resolvedCopy&&template.runeTiers)summary=game.i18n.localize(template.runeTiers[runeLevel-1].summaryKey);
@@ -453,7 +457,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const bases=resolvedCopy?metadata(supplied)?.ruleTestBases:template.runeTiers[runeLevel-1].ruleTestBases;
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
- let description=supplied?.description??text(key,"Description");
+ let description=stored?.description??text(key,"Description");
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
@@ -484,6 +488,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
+ if(template.initialResistance)prepareInitialResistance(data,template.initialResistance,actor,supplied);
  if(template.periodic){
   const seconds=effectDurationSeconds(duration);
   if(seconds===null)throw Error("A periodic effect requires a finite duration");
@@ -507,6 +512,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   return result;
  }else effect=destinationItem?await applyItemTransformation(destinationItem,data):await actor.createTrudvangEffect(data);
  if(!effect)return null;
+ if(template.initialResistance)await announceInitialResistance(effect,actor).catch(error=>console.error('Trudvang | Resistance notice failed',error));
  if(!resolvedCopy&&template.onApply){
   const step=(template.parameters??[]).find(p=>p.target==="onApplyStep");
   const count=Math.max(0,Math.trunc(Number(step?casting.counts[step.index]:0)||0));

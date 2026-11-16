@@ -36,6 +36,11 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=englishEntry?.effectTemplates?.find(v=>v.id===t.id);
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if(JSON.stringify(t.initialResistance??null)!==JSON.stringify(translated.initialResistance??null))throw Error('Unaligned initial resistance for '+key);
+   if(t.initialResistance){
+    const index=t.initialResistance.testIndex;
+    if(!Number.isInteger(index)||index<0||!entry.resist?.[index]||entry.ruleTestModifiers?.find(row=>row.test===index)?.casterTest||t.instant||t.onApply||t.aura||t.periodic||t.persistentDamage||t.itemOnly)throw Error('Invalid initial resistance for '+key);
+   }
    if(t.dispelCategory!==translated.dispelCategory||t.dispelPermanent!==translated.dispelPermanent||t.dispelCategory!==undefined&&!['control'].includes(t.dispelCategory)||t.dispelPermanent!==undefined&&typeof t.dispelPermanent!=='boolean')throw Error(`Invalid dispel policy for ${key}`);
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);

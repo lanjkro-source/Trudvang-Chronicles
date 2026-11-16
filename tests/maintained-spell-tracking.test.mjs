@@ -169,3 +169,15 @@ test("Change Creature reserves one target per maintained casting",async()=>{
   assert.equal((await apply(a)).status,"ok");assert.equal((await apply(b)).status,"exceeds-targets");
  }finally{globalThis.game=old.game;globalThis.foundry=old.foundry;}
 });
+
+test('an initially resisted casting cannot reapply its resistance to the same reserved target',async()=>{
+ const previous={game:globalThis.game,foundry:globalThis.foundry};
+ try{
+  const sourceId='vitner-power-of-thought:imagining:6',caster={uuid:'Actor.caster',items:[{id:'spell',type:'spell',system:{catalogId:sourceId,spellType:'lasting'}}],system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:'cast',itemId:'spell',powerLevelSnapshot:[],targetAllocations:[{targetUuid:'Actor.target',effectKey:sourceId+'#pensee',counts:[]}]}]},canUserModify:()=>true};
+  const target={uuid:'Actor.target',type:'character',canUserModify:()=>true,createTrudvangEffect:()=>assert.fail('no new effect after a saved resistance')};
+  globalThis.game={user:{id:'gm'},users:{activeGM:{isSelf:true},get:()=>({id:'gm',isGM:true})}};
+  globalThis.foundry={utils:{fromUuid:async uuid=>uuid===caster.uuid?caster:target}};
+  const result=await applyAllocatedEffectOnGM({casterUuid:caster.uuid,castingId:'cast',targetUuid:target.uuid,countsById:{},userId:'gm',data:{flags:{'trudvang-chronicles':{transformation:{key:sourceId+'#pensee',ruleTestContext:{casterUuid:caster.uuid,castingId:'cast',sourceId}}}}}});
+  assert.equal(result.status,'already-applied');
+ }finally{globalThis.game=previous.game;globalThis.foundry=previous.foundry;}
+});

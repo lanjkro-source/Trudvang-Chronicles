@@ -1659,6 +1659,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       2
     ],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-power-of-thought:ecstasy:5",
     "parameters": [
       {
@@ -1684,6 +1687,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [],
     "changes": [],
     "inputKey": "TRUDVANG.Transformation.ImplantedThought",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-power-of-thought:imagining:6",
     "parameters": [
       {
@@ -1807,6 +1813,9 @@ export const TRANSFORMATION_TEMPLATES = {
       0
     ],
     "dispelCategory": "control",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-power-of-thought:creature-control:8",
     "parameters": [
       {
@@ -1865,6 +1874,9 @@ export const TRANSFORMATION_TEMPLATES = {
       1
     ],
     "dispelCategory": "control",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-power-of-thought:possess-creature:10",
     "parameters": [
       {
@@ -3222,6 +3234,9 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "breakOnDamage": true,
     "dispelCategory": "control",
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "vitner-body-vitner:immobilize:6",
     "parameters": [
       {
@@ -8103,6 +8118,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-tenetnid-tablet-of-voices:blood-brothers:2",
     "parameters": [
       {
@@ -8206,6 +8224,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
     "parameters": [
       {
@@ -8303,6 +8324,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
     "parameters": [
       {
@@ -11134,6 +11158,9 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "related": [],
     "priority": 20,
+    "initialResistance": {
+      "testIndex": 0
+    },
     "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
     "parameters": [
       {

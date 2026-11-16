@@ -107,7 +107,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const instant=template?.sourceId===sourceId?template.instant:null;
   const allocationTarget=itemUuid||targetUuid;
   const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
-  if(existing&&(instant||template?.onApply))return {status:"already-applied"};
+  if(existing&&(instant||template?.onApply||template?.initialResistance))return {status:"already-applied"};
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
   const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
   allocations.push({targetUuid:allocationTarget,effectKey,countsById});
@@ -129,6 +129,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
    }
    const effect=targetItem?await (await import("./item-effect-application.mjs")).applyItemTransformation(targetItem,data):await target.createTrudvangEffect(data);
    if(!effect)throw Error("Failed to create allocated effect");
+   if(template?.initialResistance)await (await import('./initial-resistance.mjs')).announceInitialResistance(effect,target).catch(error=>console.error('Trudvang | Resistance notice failed',error));
    return {status:"ok",effectUuid:effect.uuid};
   }catch(error){
    if(divine)await message.update({"flags.trudvang-chronicles.divineAllocation.targetAllocations":prior});
