@@ -4,6 +4,8 @@ import {spawnSync} from "node:child_process";
 
 const root = process.cwd();
 const failures = [];
+const sacredEquipmentAudit=spawnSync(process.execPath,['tools/generate-sacred-equipment.mjs','--check'],{cwd:root,encoding:'utf8'});
+if(sacredEquipmentAudit.status!==0)failures.push(sacredEquipmentAudit.stderr||sacredEquipmentAudit.stdout);
 if (existsSync(join(root, "game doc/fr/trudvang-creatures-fr.json"))) {
   const result = spawnSync(process.execPath, ["tools/generate-npc-inventories.mjs", "--check"], {cwd: root, encoding: "utf8"});
   if (result.status !== 0) failures.push(`NPC inventory source audit failed: ${result.stderr || result.stdout}`);

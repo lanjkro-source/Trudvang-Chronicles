@@ -8,7 +8,7 @@ Livre des règles, sections Artisanat et Qualité, p.281–284 (Thuuldom), p.285
 
 Avec Forgeage thuul > 0, la fiche PJ/PNJ affiche les capacités souple et dure : Invocation + Artisanat + 2 × Forgeage thuul + 2 × spécialité de matériau. Le cadre Objets sacrés permet de fabriquer un objet, d’ouvrir son inventaire, de voir ses runes et de le détruire après confirmation. Cette dernière action rend l’investissement complet, y compris les points d’activation déjà consommés ; la désacralisation narrative reste au MJ, conformément à la demande.
 
-Le test de fabrication utilise Savoir-faire, Artisanat, la spécialité de matériau choisie, uniquement 2 × le niveau de Forgeage thuul, l’outillage, les états/effets et un modificateur libre. Le choix d’outillage propose l’atelier et les valeurs −3/−5/−7 des paquetages de la section Réparations, comme repères de travail ; l’atelier est supposé approprié, les conditions matérielles et le temps nécessaire restent au MJ. Le personnage peut modifier le résultat au moyen du modificateur situationnel. Seul un succès crée l’objet. Sa qualité correspond au rang du matériau utilisé ; les caractéristiques intrinsèques sont ajustées une seule fois par le résolveur de qualité existant. Le matériel copiable vient exclusivement des objets initiaux du monde visibles aux joueurs : les droits du MJ ne rendent pas une référence cachée accessible à cette liste. Les images et les caractéristiques de la copie sont conservées ; les identifiants d’import et les droits du modèle ne sont pas copiés.
+Le test de fabrication utilise Savoir-faire, Artisanat, la spécialité de matériau choisie, uniquement 2 × le niveau de Forgeage thuul, l’outillage, les états/effets et un modificateur libre. Le choix d’outillage propose l’atelier et les valeurs −3/−5/−7 des paquetages de la section Réparations, comme repères de travail ; l’atelier est supposé approprié, les conditions matérielles et le temps nécessaire restent au MJ. Le personnage peut modifier le résultat au moyen du modificateur situationnel. Seul un succès crée l’objet. Sa qualité correspond au rang du matériau utilisé ; les caractéristiques intrinsèques sont ajustées une seule fois par le résolveur de qualité existant. Le matériel copiable vient exclusivement des références initiales publiques du monde, identifiées par le catalogue public généré. Les permissions NONE héritées par défaut des imports ordinaires ne les excluent plus. Les références du catalogue MJ et les branches de dossiers MJ ou privés restent exclues. Les images et les caractéristiques de la copie sont conservées ; les identifiants d’import et les droits du modèle ne sont pas copiés.
 
 L’onglet Runes accepte des investissements depuis les points libres permanents du créateur, limités par sa capacité par objet. Des points restent affectables avant l’inscription. L’inscription choisit une rune réellement apprise et un rang au plus égal à la tablette connue ; le test emploie Foi + Invocation + Forgeage thuul − rang, et −2 par autre rune déjà inscrite. L’échec bloque cette tentative et les rangs supérieurs sur cet objet sans détruire les runes déjà présentes. Une amélioration conserve les dépenses quotidiennes antérieures. Croc de Yukk exige une arme métallique tranchante, Choc de l’enclume une arme contondante, et Poings d’acier un équipement représentant la paire complète décrite par la rune.
 
@@ -16,7 +16,7 @@ Chaque rune possède son investissement, sa réserve actuelle et son compteur d�
 
 La réserve libre du thuul est préparée comme total − somme investie dans ses objets : une dépense d’activation ne change jamais cet investissement. Les points temporaires ne servent pas à financer les objets. Une baisse du total sous l’investissement existant est signalée et bloque tout nouvel investissement ; elle ne détruit pas silencieusement des runes. Le repos renouvelle les réserves d’objet et les compteurs d’invocation. Le passage d’une journée du calendrier les renouvelle aussi, de façon idempotente. L’édition manuelle de la réserve libre est verrouillée car elle est désormais dérivée. Un objet sacré reste lié à son créateur ; le transfert ordinaire d’inventaire le refuse pour préserver ce compte. Pour réaffecter ces points, le retirer avec confirmation puis fabriquer l’autre objet.
 
-Les mutations de réserve sont sérialisées sur le MJ actif, ou localement si aucun MJ n’est connecté. Seul un propriétaire du créateur ou le MJ peut les demander. Une fenêtre d’activation devenue périmée ne peut pas dépenser un ancien état de rune. Les mises à jour ne nécessitent aucune migration de monde : les nouveaux champs ont des valeurs initiales et le matériau des anciennes copies d’équipement utilise la même inférence permanente que celui d’un nouvel objet non classé. Aucun accès à l’installation Foundry n’a été effectué.
+Les mutations de réserve sont sérialisées sur le MJ actif, ou localement si aucun MJ n’est connecté. Seul un propriétaire du créateur ou le MJ peut les demander. Une fenêtre d’activation devenue périmée ne peut pas dépenser un ancien état de rune. Les nouveaux champs ont des valeurs initiales. La correction des anciennes copies du Stafur slingu est une reprise temporaire documentée dans development-world-migrations.md ; l’inférence normale des autres objets reste nécessaire. Aucun accès à l’installation Foundry n’a été effectué.
 
 ## Vérification représentative
 
@@ -26,7 +26,7 @@ Les mutations de réserve sont sérialisées sur le MJ actif, ou localement si a
 
 ## Classement intégral du catalogue
 
-Le classement reste éditable. Le bois, l’os, le métal et la pierre sont durs ; vêtements, fourrure, cuir, soie et tissus sont souples. Pour les boucliers renforcés de fourrure et la fronde à manche, la structure en bois conduit au choix dur. Pour les paquetages, le classement porte sur l’outillage principal ; un MJ peut choisir souple pour le contenant lui-même. Les consommables liquides sont classés selon leur récipient.
+Le classement reste éditable. Le bois, l’os, le métal et la pierre sont durs ; vêtements, fourrure, cuir, soie et tissus sont souples. Les boucliers renforcés de fourrure restent durs en raison de leur structure ; le Stafur slingu est classé souple sur décision du MJ. Pour les paquetages, le classement porte sur l’outillage principal ; un MJ peut choisir souple pour le contenant lui-même. Les consommables liquides sont classés selon leur récipient.
 
 | Type | Objet | Artisanat |
 |---|---|---|
@@ -71,7 +71,7 @@ Le classement reste éditable. Le bois, l’os, le métal et la pierre sont durs
 | Arme | Slingu (fronde) | Matériaux souples |
 | Arme | Split axi (lancer) | Matériaux durs |
 | Arme | Staaf spjót (lancer) | Matériaux durs |
-| Arme | Stafur slingu (fronde à manche) | Matériaux durs |
+| Arme | Stafur slingu (fronde à manche) | Matériaux souples |
 | Arme | Tunkur krossbogur (arbalète lourde) | Matériaux durs |
 | Arme | Tve bogi (arc composite) | Matériaux durs |
 | Arme | Volk krossbogur (arbalète légère) | Matériaux durs |
@@ -141,3 +141,10 @@ Le classement reste éditable. Le bois, l’os, le métal et la pierre sont durs
 | Arme | Blodstör | Matériaux durs |
 | Arme | Vitner stafur | Matériaux durs |
 | Équipement | Statuette votive | Matériaux durs |
+
+
+## Correctifs de la gestion des objets sacrés
+
+Tous les objets sacrés sont votifs. Pour un thuul, leur bonus de qualité à l’invocation est limité à la rune inscrite sur cet objet précisément, en conservant l’exigence d’équipement pour les armes, armures et boucliers. Les autres objets votifs ne contribuent pas à cette invocation, ni à l’inscription d’une rune qui n’est pas encore présente. Le calcul et le détail du jet utilisent le même contexte de rune.
+
+Chaque échec d’inscription produit un effet permanent non transféré dans l’onglet Effets de l’objet, avec le nom de la rune et son niveau, sans modificateur mécanique. Son texte indique le blocage des tentatives au même niveau ou à un niveau supérieur. Il n’est pas supprimable ou désactivable individuellement ; détruire l’objet retire son historique avec lui. La synchronisation normale recrée les marqueurs manquants à partir de l’historique canonique, y compris après interruption d’une écriture ou rechargement.

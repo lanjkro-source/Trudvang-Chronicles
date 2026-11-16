@@ -16545,3 +16545,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sacred.NextSkill` | Next Skill Roll | Prochain test de compétence |
 | `TRUDVANG.Sacred.WrongRuneObject` | This rune cannot be inscribed on this object type or material. | Cette rune ne peut pas être inscrite sur ce type d’objet ou de matériau. |
 | `TRUDVANG.Sacred.PairedGear` | For Hammer Fists, the item must represent the complete pair of gloves, bracelets or bracers. | Pour Poings d’acier, l’objet doit représenter la paire complète de gants, bracelets ou brassards. |
+| `TRUDVANG.Sacred.FailedName` | Inscription blocked: {rune} (level {level}) | Inscription impossible : {rune} (niveau {level}) |
+| `TRUDVANG.Sacred.FailedDescription` | Inscribing {rune} at level {level} failed. This object can no longer receive this rune at that or a higher level. Its other runes remain intact. | L’inscription de {rune} au niveau {level} a échoué. Cet objet ne peut plus recevoir cette rune à ce niveau ni à un niveau supérieur. Ses autres runes restent intactes. |
+| `TRUDVANG.Sacred.FailedSummary` | Inscription permanently blocked from level {level}. | Inscription définitivement bloquée à partir du niveau {level}. |
+| `TRUDVANG.Sacred.FailurePermanent` | This failed inscription is permanent and bound to the object. | Cette impossibilité d’inscription est permanente et liée à l’objet. |

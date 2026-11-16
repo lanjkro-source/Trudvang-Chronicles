@@ -1,3 +1,4 @@
+import {weaponType} from './rules/combat-pool-resolver.mjs';
 import {SACRED_TYPES,CRAFT_MATERIALS,isSacredObject,sacredState,sacredObjects,sacredBalance,sacredCapacity,runeDefinition,runeRow,validSacredState,publicSacredTemplates,equipmentCraftMaterial,runeObjectEligible} from './rules/sacred-objects.mjs';
 import {intrinsicQualityUpdate} from './rules/item-quality.mjs';
 import {knowledgeRank} from './rules/magic-resistance.mjs';
@@ -40,7 +41,7 @@ export function sacredCraftData(actor,{type,subtype='oneHandedLightWeapons',temp
  const data=template?template.toObject():{type,img:type==='weapon'?'icons/svg/sword.svg':type==='armor'?'icons/svg/armor.svg':type==='shield'?'icons/svg/shield.svg':'icons/svg/item-bag.svg',system:{}};
  for(const key of ['_id','_stats','folder','sort','ownership'])delete data[key];
  data.flags={};data.name=String(name||template?.name||game.i18n.localize('TYPES.Item.'+type)).trim();
- data.system={...data.system,craftMaterial:material,quantity:1,equipped:false,magical:true};
+ data.system={...data.system,craftMaterial:material,quantity:1,equipped:false,magical:true,specialUse:'votive'};
  if(type==='weapon'&&!template){
   const category={oneHandedLightWeapons:'oneHandedLight',oneHandedHeavyWeapons:'oneHandedHeavy',twoHandedWeapons:'twoHanded',crossbow:'ranged',bowsSlings:'ranged'}[subtype];
   if(!category)throw Error(t('Invalid'));Object.assign(data.system,{category,combatSpecialty:subtype});
@@ -90,6 +91,7 @@ async function mutate({actorUuid,itemId,operation,values={},userId},authority){
  }else throw Error(t('Invalid'));
  if(!validSacredState(s))throw Error(t('InvalidBalance'));
  await item.update({'system.sacred':s});
+ if(operation==='inscribe')await syncFailedInscriptions(item);
 
  return {itemId:item.id};
 }
@@ -128,7 +130,7 @@ export async function createSacredObjectDialog(actor){
    const refresh=()=>{
     let v=read(root);root.querySelector('[name=subtype]').closest('.form-group').hidden=v.type!=='weapon';
     const recipe=[v.type,v.subtype,v.copy].join('|'),control=root.querySelector('[name=templateUuid]');
-    const eligible=templates.filter(item=>item.type===v.type&&(v.type!=='weapon'||item.system.combatSpecialty===v.subtype));
+    const eligible=templates.filter(item=>item.type===v.type&&(v.type!=='weapon'||weaponType(item)===v.subtype));
     if(recipe!==lastRecipe){control.innerHTML=eligible.map(item=>'<option value="'+a(item.uuid)+'">'+e(item.name)+'</option>').join('');lastRecipe=recipe;}
     control.closest('.form-group').hidden=!v.copy;v=read(root);
     const chosen=eligible.find(item=>item.uuid===v.templateUuid),signature=v.copy?chosen?.uuid:v.type+':'+v.subtype;
@@ -183,7 +185,7 @@ export async function activateSacredRune(item,runeId){
  class ActivationDialog extends foundry.applications.api.DialogV2{
   _onRender(c,o){super._onRender(c,o);const root=this.element;root.querySelector('[name=modifier]').addEventListener('input',event=>{root.querySelector('[data-procedure-target]').textContent=p.target+Number(event.target.value||0);});}
  }
- const choice=await blessingDialog(ActivationDialog,actor).wait({window:{title:item.name+' — '+game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.ActivationCost',{level:row.level,current:row.current,invested:row.invested}))+'</p><p>'+p.base+'<br>'+rollModifierFlavor(p.rows)+'</p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-rune-base="'+p.target+'" data-procedure-target>'+p.target+'</strong></p></div>',buttons:buttons('activate',game.i18n.localize('TRUDVANG.Action.Roll'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
+ const choice=await blessingDialog(ActivationDialog,actor,'modifier',{castingType:'divine',runeObjectUuid:item.uuid,runeSourceId:row.sourceId}).wait({window:{title:item.name+' — '+game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.ActivationCost',{level:row.level,current:row.current,invested:row.invested}))+'</p><p>'+p.base+'<br>'+rollModifierFlavor(p.rows)+'</p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-rune-base="'+p.target+'" data-procedure-target>'+p.target+'</strong></p></div>',buttons:buttons('activate',game.i18n.localize('TRUDVANG.Action.Roll'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
  if(!choice)return null;
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId,expected:JSON.stringify(row)});
  const tablet=TABLET_BY_ID.get(row.sourceId.split(':')[0]),power=tablet?.powers.find(p=>p.id===row.sourceId);if(!power)return null;
@@ -212,6 +214,32 @@ export async function refreshDailySacredObjects(time){
  const actors=new Set(Array.from(game.actors??[]));for(const scene of game.scenes??[])for(const token of scene.tokens??[])if(token.actor)actors.add(token.actor);
  for(const actor of actors)if(sacredObjects(actor).some(item=>sacredState(item).lastDay<Math.floor(time/86400)))await requestSacredMutation(actor,'dailyRest');
 }
+const failedSyncJobs=new Map();
+export function syncFailedInscriptions(item){
+ if(!isSacredObject(item))return Promise.resolve();
+ const old=failedSyncJobs.get(item.uuid);if(old)return old;
+ const job=(async()=>{
+  for(const failure of sacredState(item).failed??[]){
+   if(Array.from(item.effects??[]).some(effect=>{const flag=effect.flags?.[S]?.sacredInscriptionFailure;return flag?.sourceId===failure.sourceId&&flag.level===failure.level;}))continue;
+   const args={rune:game.i18n.localize('TRUDVANG.Content.Power.'+failure.sourceId+'.Name'),level:failure.level};
+   await item.createEmbeddedDocuments('ActiveEffect',[{name:game.i18n.format('TRUDVANG.Sacred.FailedName',args),img:'icons/svg/downgrade.svg',type:'effect',transfer:false,disabled:false,duration:{value:null,units:'rounds'},description:'<p>'+e(game.i18n.format('TRUDVANG.Sacred.FailedDescription',args))+'</p>',system:{changes:[],stacking:'replace',stackId:'sacred-inscription-failure:'+failure.sourceId+':'+failure.level},flags:{[S]:{sacredInscriptionFailure:{...failure},summary:game.i18n.format('TRUDVANG.Sacred.FailedSummary',args)}}}]);
+  }
+ })().finally(()=>failedSyncJobs.delete(item.uuid));failedSyncJobs.set(item.uuid,job);return job;
+}
+function sacredWorldItems(){
+ const actors=new Set(Array.from(game.actors??[]));for(const scene of game.scenes??[])for(const token of scene.tokens??[])if(token.actor)actors.add(token.actor);
+ return new Set([...Array.from(game.items??[]),...[...actors].flatMap(actor=>Array.from(actor.items??[]))]);
+}
+export async function migrateSacredEquipmentCorrections(){
+ // TEMPORARY WORLD MIGRATION — v0.217.0 explicitly classified Stafur Slingu as hard.
+ // Correct recognized starter copies once; custom untracked equipment is untouched.
+ if(!writer()||Number(game.settings.get(S,'sacredEquipmentCorrections'))>=1)return;
+ for(const item of sacredWorldItems())if(item.flags?.[S]?.starterId==='TRUDVANG.Content.Item.StafurSlingu'&&item.system?.craftMaterial==='hardMaterials')await item.update({'system.craftMaterial':'softMaterials'});
+ await game.settings.set(S,'sacredEquipmentCorrections',1);
+}
 export function registerSacredHooks(){
+ game.settings.register(S,'sacredEquipmentCorrections',{scope:'world',config:false,type:Number,default:0});
+ Hooks.once('ready',async()=>{await migrateSacredEquipmentCorrections();for(const item of sacredWorldItems())if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner))await syncFailedInscriptions(item);});
+ Hooks.on('updateItem',item=>{if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner))void syncFailedInscriptions(item).catch(error=>console.error('Trudvang | Inscription history synchronization failed',error));});
  Hooks.on('updateWorldTime',time=>refreshDailySacredObjects(time).catch(error=>console.error('Trudvang | Sacred recovery failed',error)));
 }

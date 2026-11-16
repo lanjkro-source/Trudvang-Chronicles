@@ -7,7 +7,7 @@
 
 export function isCarriedTransferredEffect(effect) {
   const item = effect?.item ?? (effect?.parent?.documentName === "Item" ? effect.parent : null);
-  return Boolean((effect?.transfer||effect?.flags?.['trudvang-chronicles']?.sacredRuneId) && item && (item.actor || item.parent?.documentName === "Actor"));
+  return Boolean((effect?.transfer||effect?.flags?.['trudvang-chronicles']?.sacredRuneId||isSacredInscriptionFailure(effect)) && item && (item.actor || item.parent?.documentName === "Actor"));
 }
 
 export function effectChangeSummary(effect) {
@@ -21,7 +21,7 @@ export function effectChangeSummary(effect) {
 export function effectTooltipSummary(effect) {
   const parentSummary = effect?.parent?.type === "effect" ? effect.parent.system?.summary : "";
   const meta=effect?.flags?.["trudvang-chronicles"]?.transformation;
-  const summary=meta?.summary
+  const summary=effect?.flags?.['trudvang-chronicles']?.summary||meta?.summary
     || effect?.system?.summary
     || parentSummary;
   if(meta?.summaryResolved && summary)return summary;
@@ -34,4 +34,10 @@ export function effectTooltipSummary(effect) {
   }
   // Raw change paths and values belong to the effect's detailed sheet.
   return summary || effect?.name || "";
+}
+
+/** A failed inscription is an immutable part of its sacred object's history. */
+export function isSacredInscriptionFailure(effect){
+ const item=effect?.item??(effect?.parent?.documentName==='Item'?effect.parent:null);
+ return Boolean(effect?.flags?.['trudvang-chronicles']?.sacredInscriptionFailure&&item?.system?.sacred?.enabled);
 }

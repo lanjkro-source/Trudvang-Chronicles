@@ -1328,3 +1328,14 @@ test('pending skill resistance is exposed once and contextual hearing/movement p
   effect.flags[S].transformation={key:source+'#'+variant,sourceId:source};assert.equal((await sheet._preparePartContext('details',{})).conditionalSituationButtons.length,0);
  }
 });
+
+
+test('an inscription failure on a sacred object cannot be disabled, given a duration or deleted individually',async()=>{
+ const previous=ui.notifications.warn;ui.notifications.warn=()=>{};
+ try{
+  const effect=new TrudvangActiveEffect();effect.parent={documentName:'Item',system:{sacred:{enabled:true}},parent:{documentName:'Actor'}};
+  effect.system={changes:[],stacking:'replace'};effect.flags={'trudvang-chronicles':{sacredInscriptionFailure:{sourceId:'rune',level:2}}};effect._source={name:'Inscription',duration:{value:null,units:'rounds'}};
+  const update={disabled:true,transfer:true,'duration.value':2};await effect._preUpdate(update,{},{});assert.equal(update.disabled,undefined);assert.equal(update.transfer,undefined);assert.equal(update.duration.value,null);
+  assert.equal(await effect._preDelete({},{}),false);assert.equal(await effect._preDelete({trudvangSacredDelete:true},{}),true);
+ }finally{ui.notifications.warn=previous;}
+});

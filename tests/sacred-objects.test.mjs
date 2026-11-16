@@ -11,7 +11,7 @@ globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=Strin
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=rollTotal;return this;}};
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),async update(){}};messages.push(message);return message;}};
 globalThis.ui={notifications:{warn:()=>{}}};
-const {refreshDailySacredObjects,requestSacredMutation,sacredCraftData,craftingBreakdown,activateSacredRune,removeSacredObject,restoreSacredObjects,sacredObjectViews}=await import('../modules/sacred-objects.mjs');
+const {refreshDailySacredObjects,requestSacredMutation,syncFailedInscriptions,migrateSacredEquipmentCorrections,sacredCraftData,craftingBreakdown,activateSacredRune,removeSacredObject,restoreSacredObjects,sacredObjectViews}=await import('../modules/sacred-objects.mjs');
 class Collection extends Map{[Symbol.iterator](){return this.values();}}
 function fixture({total=30,rank=3}={}){
  docs.clear();messages.length=0;dialogChoice=false;rollTotal=6;
@@ -20,7 +20,7 @@ function fixture({total=30,rank=3}={}){
  const levels={invoke:rank,thuulForging:rank,handicraft:rank,hardMaterials:rank,softMaterials:1};
  const actor={documentName:'Actor',uuid:'Actor.thuul',type:'character',name:'Thuul',isOwner:true,items:new Collection(),effects:[],system:{resources:{divinity:{max:total,value:total}},modifiers:{}},findRuleKnowledge:id=>({name:get('TRUDVANG.Knowledge.'+id),system:{catalogId:id,level:levels[id]??0,parentSkill:['hardMaterials','softMaterials'].includes(id)?'care':'faith',parentDiscipline:['hardMaterials','softMaterials'].includes(id)?'handicraft':'invoke',kind:'specialty',rollBonus:2}}),getAbilityBreakdown:item=>({base:10+(item.system.parentSkill==='care'?levels.handicraft:levels.invoke)+2*item.system.level,modifierRows:[{label:'Effet',value:-1}]}),canPerformAction:()=>true,canUserModify:()=>true};
  actor.createEmbeddedDocuments=async(_kind,data)=>data.map(d=>{
-  const item={...structuredClone(d),documentName:'Item',id:crypto.randomUUID(),isOwner:true,parent:actor,canUserModify:()=>true,effects:[],async update(change){if(change['system.sacred'])this.system.sacred=structuredClone(change['system.sacred']);},async delete(){actor.items.delete(this.id);docs.delete(this.uuid);}};item.uuid=actor.uuid+'.Item.'+item.id;actor.items.set(item.id,item);docs.set(item.uuid,item);return item;
+  const item={...structuredClone(d),documentName:'Item',id:crypto.randomUUID(),isOwner:true,parent:actor,canUserModify:()=>true,effects:[],async createEmbeddedDocuments(_kind,data){const effects=data.map(d=>({...structuredClone(d),id:crypto.randomUUID(),parent:this}));this.effects.push(...effects);return effects;},async update(change){if(change['system.sacred'])this.system.sacred=structuredClone(change['system.sacred']);},async delete(){actor.items.delete(this.id);docs.delete(this.uuid);}};item.uuid=actor.uuid+'.Item.'+item.id;actor.items.set(item.id,item);docs.set(item.uuid,item);return item;
  });
  actor.updateEmbeddedDocuments=async(_kind,changes)=>{for(const change of changes)await actor.items.get(change._id).update(change);};
  docs.set(actor.uuid,actor);return {actor,levels};
@@ -40,8 +40,9 @@ test('all starter equipment has an explicit classification and catalogued except
  assert.equal(equipmentCraftMaterial({system:{},flags:{[S]:{starterId:'TRUDVANG.Content.Item.Slingu'}}}),'softMaterials');
 });
 test('only player-visible starter world equipment can be copied, even for the GM',()=>{
- fixture();const publicItem={type:'weapon',uuid:'Item.public',system:{},flags:{[S]:{starterId:'starter'}},ownership:{default:2}};
- assert.deepEqual(publicSacredTemplates([publicItem,{...publicItem,ownership:{default:0}},{...publicItem,flags:{}},{...publicItem,folder:{flags:{[S]:{starterId:'gmItems'}}}},{...publicItem,inCompendium:true}]),[publicItem]);
+ fixture();const publicItem={type:'weapon',uuid:'Item.public',system:{},flags:{[S]:{starterId:'TRUDVANG.Content.Item.Glaaf'}},ownership:{default:2}};
+ const inherited={...publicItem,ownership:{default:0},folder:{ownership:{default:0},flags:{[S]:{starterId:'weaponsLight'}}}};
+ assert.deepEqual(publicSacredTemplates([publicItem,inherited,{...publicItem,flags:{}},{...publicItem,folder:{flags:{[S]:{starterId:'gmItems'}}}},{...publicItem,flags:{[S]:{starterId:'TRUDVANG.Content.Item.MinokksHeart'}}},{...publicItem,inCompendium:true}]),[publicItem,inherited]);
 });
 test('crafting uses only the Thuul specialty bonus, keeps ordinary modifiers and applies intrinsic quality once',()=>{
  const {actor}=fixture(),p=craftingBreakdown(actor,'hardMaterials',{tools:-3,modifier:2});assert.equal(p.base,19);assert.equal(p.target,23);assert.equal(p.rows.find(r=>r.label===get('TRUDVANG.Knowledge.thuulForging')).value,6);
@@ -122,4 +123,28 @@ test('a rune roll of 1 is an ordinary success and 20 spends charges and offers t
  const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);const id=item.system.sacred.runes[0].id;dialogChoice={modifier:0};rollTotal=1;
  const one=await activateSacredRune(item,id);assert.equal(one.success,true);assert.equal(one.critical,'');
  rollTotal=20;const twenty=await activateSacredRune(item,id);assert.equal(twenty.success,false);assert.equal(twenty.critical,'failure');assert.equal(item.system.sacred.current,2);
+});
+
+
+test('failed inscriptions produce one permanent, non-transferred visible history effect even after reload synchronization',async()=>{
+ const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item,heat,2,2,false);
+ assert.equal(item.effects.length,1);const effect=item.effects[0];assert.equal(effect.transfer,false);assert.equal(effect.duration.value,null);assert.match(effect.name,/Inscription impossible.*niveau 2/);assert.match(effect.description,/Chaleur des profondeurs/);assert.deepEqual(effect.system.changes,[]);
+ await Promise.all([syncFailedInscriptions(item),syncFailedInscriptions(item)]);assert.equal(item.effects.length,1);
+ item.effects=[];await syncFailedInscriptions(item);assert.equal(item.effects.length,1);await assert.rejects(inscription(actor,item,heat,2,2));
+});
+test('votive quality for a Thuul is restricted to an equipped object and its own inscribed rune',async()=>{
+ const {itemUseBonuses}=await import('../modules/rules/item-magic.mjs');const {conditionalChoices}=await import('../modules/blessing-dialog.mjs');
+ const {actor}=fixture(),one=await object(actor),two=await object(actor);await requestSacredMutation(actor,'invest',{itemId:one.id,amount:4});await inscription(actor,one);
+ one.system.equipped=two.system.equipped=true;assert.equal(one.system.specialUse,'votive');
+ assert.equal(itemUseBonuses(actor,{castingType:'divine'}).length,0);
+ const choice={castingType:'divine',runeObjectUuid:one.uuid,runeSourceId:heat};assert.deepEqual(itemUseBonuses(actor,choice).map(r=>r.item.id),[one.id]);
+ assert.equal(conditionalChoices(actor,choice)[0].fixed,true);assert.equal(itemUseBonuses(actor,{...choice,runeSourceId:fang}).length,0);
+ one.system.equipped=false;assert.equal(itemUseBonuses(actor,choice).length,0);
+ actor.findRuleKnowledge=()=>null;actor.selectedReligion={id:'gerbanis'};one.system.equipped=true;assert.equal(itemUseBonuses(actor,{castingType:'divine'}).length,2);
+});
+test('the one-time Stafur Slingu correction visits existing world copies only once and leaves custom items unchanged',async()=>{
+ fixture();let version=0;game.settings={get:()=>version,set:async(_s,_k,v)=>version=v};const changes=[];
+ const tracked={flags:{[S]:{starterId:'TRUDVANG.Content.Item.StafurSlingu'}},system:{craftMaterial:'hardMaterials'},update:async data=>changes.push(data)};
+ game.items=[tracked,{...tracked,flags:{},update:()=>assert.fail('custom item changed')}];game.actors=[];game.scenes=[];
+ await migrateSacredEquipmentCorrections();assert.deepEqual(changes,[{'system.craftMaterial':'softMaterials'}]);await migrateSacredEquipmentCorrections();assert.equal(changes.length,1);assert.equal(version,1);
 });

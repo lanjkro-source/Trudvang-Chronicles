@@ -77,14 +77,16 @@ export function intrinsicItemSheetUpdate(update,state=[]){
  }
  return update;
 }
-export function itemUseBonuses(actor,{castingType,action}={}){
+export function itemUseBonuses(actor,{castingType,action,runeObjectUuid,runeSourceId}={}){
  return Array.from(actor?.items??[]).filter(item=>Number(item.system?.quantity??1)>0).flatMap(item=>{
  if(item.flags?.['trudvang-chronicles']?.inventoryTransfer)return [];
  if(castingType&&['weapon','armor','shield'].includes(item.type)&&!item.system?.equipped)return [];
  const quality=itemQuality(item.system?.quality),qualityEffect=itemMagicEffects(item).find(effect=>!effect.transfer&&Array.from(effect.system?.changes??[]).some(row=>row.key==='system.quality'));
- const special=item.system?.specialUse??'none';
+ const special=item.system?.sacred?.enabled?'votive':item.system?.specialUse??'none';
+ const thuul=actor?.selectedReligion?.id==='thuuldom'||Number(actor?.findRuleKnowledge?.('thuulForging')?.system?.level)>0;
+ const ownRune=!thuul||runeObjectUuid===item.uuid&&item.system?.sacred?.runes?.some(row=>row.sourceId===runeSourceId);
  const eligible=castingType?['weapon','gear','armor','shield'].includes(item.type)&&special===(castingType==='divine'?'votive':'vitner'):['gear','potion'].includes(item.type)&&special==='none';
- const qualityRows=eligible&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id,automatic:Boolean(castingType)}]:[];
+ const qualityRows=eligible&&(castingType!=='divine'||ownRune)&&quality.modifier?[{id:`${item.uuid??item.id}:quality`,item,effect:qualityEffect??{id:'quality',name:game.i18n.localize(castingType?`TRUDVANG.Quality.Special.${special}`:'TRUDVANG.Quality.Label')},value:quality.modifier,qualityLevel:quality.id,automatic:Boolean(castingType)}]:[];
  return [...qualityRows,...itemMagicEffects(item).flatMap(effect=>{
   const value=Number(rulesFromChanges(effect.system?.changes).objectUse)||0;
   const outnumbered=action==='parry'?Number(rulesFromChanges(effect.system?.changes).objectParryOutnumbered)||0:0;

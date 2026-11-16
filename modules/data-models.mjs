@@ -423,7 +423,7 @@ class BaseItemData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    if(SACRED_TYPES.includes(this.parent?.type))this.craftMaterial=equipmentCraftMaterial(this.parent);
+    if(SACRED_TYPES.includes(this.parent?.type)){this.craftMaterial=equipmentCraftMaterial(this.parent);if(this.sacred?.enabled)this.specialUse='votive';}
     if (this.breach && Number.isFinite(Number(this.breach.value))) {
       this.protection = Math.ceil(Math.max(0, Number(this.breach.value)) / 10);
     }

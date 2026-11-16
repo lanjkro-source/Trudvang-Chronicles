@@ -18807,7 +18807,11 @@
       "HeldCondition": "Le bénéfice exige que l’objet soit équipé ; respecter aussi les conditions indiquées par la rune.",
       "NextSkill": "Prochain test de compétence",
       "WrongRuneObject": "Cette rune ne peut pas être inscrite sur ce type d’objet ou de matériau.",
-      "PairedGear": "Pour Poings d’acier, l’objet doit représenter la paire complète de gants, bracelets ou brassards."
+      "PairedGear": "Pour Poings d’acier, l’objet doit représenter la paire complète de gants, bracelets ou brassards.",
+      "FailedName": "Inscription impossible : {rune} (niveau {level})",
+      "FailedDescription": "L’inscription de {rune} au niveau {level} a échoué. Cet objet ne peut plus recevoir cette rune à ce niveau ni à un niveau supérieur. Ses autres runes restent intactes.",
+      "FailedSummary": "Inscription définitivement bloquée à partir du niveau {level}.",
+      "FailurePermanent": "Cette impossibilité d’inscription est permanente et liée à l’objet."
     }
   }
 }

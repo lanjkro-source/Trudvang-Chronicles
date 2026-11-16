@@ -1,3 +1,4 @@
+import {PUBLIC_STARTER_CRAFTS,PUBLIC_STARTER_FOLDERS} from '../sacred-equipment-data.mjs';
 import {POWER_DETAILS_BY_ID} from '../power-catalog-data.mjs';
 export const SACRED_TYPES=['weapon','armor','shield','gear'];
 export const CRAFT_MATERIALS=['hardMaterials','softMaterials'];
@@ -7,7 +8,7 @@ export const isSacredObject=item=>SACRED_TYPES.includes(item?.type)&&sacredState
 export function equipmentCraftMaterial(item){
  const s=item?.system??{};if(CRAFT_MATERIALS.includes(s.craftMaterial))return s.craftMaterial;
  const id=String(item?.flags?.['trudvang-chronicles']?.starterId??'').split('.').at(-1);
- if(['Slingu','AverageClothes','PoorClothes','RichClothes','SlaveClothes','RoyalAttire','SpiderSilkBraidedRope','SpiderSilkBowstring','SpiderSilk','MinokksHeart','LindwurmRegeneratingHeart'].includes(id))return 'softMaterials';
+ if(['Slingu','StafurSlingu','AverageClothes','PoorClothes','RichClothes','SlaveClothes','RoyalAttire','SpiderSilkBraidedRope','SpiderSilkBowstring','SpiderSilk','MinokksHeart','LindwurmRegeneratingHeart'].includes(id))return 'softMaterials';
  return ['leather','cloth'].includes(s.material)?'softMaterials':'hardMaterials';
 }
 export const sacredCapacity=(actor,material)=>['invoke','handicraft'].reduce((sum,id)=>sum+n(actor.findRuleKnowledge?.(id)?.system?.level),0)+2*n(actor.findRuleKnowledge?.('thuulForging')?.system?.level)+2*n(actor.findRuleKnowledge?.(material)?.system?.level);
@@ -30,13 +31,16 @@ export function validSacredState(s){
  for(const row of s.runes??[]){if(ids.has(row.id)||!runeDefinition(row.sourceId)||!Number.isInteger(row.level)||row.level<1||row.level>5||!Number.isInteger(row.invested)||row.invested<row.level||!Number.isInteger(row.current)||row.current<0||row.current>row.invested||!Number.isInteger(row.uses)||row.uses<0)return false;ids.add(row.id);invested+=row.invested;current+=row.current;}
  return invested<=s.invested&&current<=s.current&&s.current-current<=s.invested-invested;
 }
-/** Only world starter equipment visible by default to players; GM ownership is never a shortcut. */
+/** Public starter identities do not require explicit ownership: normal imports inherit
+ * NONE from core defaults. GM catalogue entries and private folder branches remain excluded. */
 export function publicSacredTemplates(items){
  return Array.from(items??[]).filter(item=>{
   if(!SACRED_TYPES.includes(item.type)||isSacredObject(item)||!item.flags?.['trudvang-chronicles']?.starterId||item.inCompendium)return false;
-  const accessible=Number(item.ownership?.default??0)>=2||Array.from(globalThis.game?.users?.values?.()??[]).some(user=>!user.isGM&&item.testUserPermission?.(user,'OBSERVER'));
-  if(!accessible)return false;
-  for(let folder=item.folder;folder;folder=folder.folder)if(folder.flags?.['trudvang-chronicles']?.starterId==='gmItems'||folder.ownership&&Number(folder.ownership.default??0)<2)return false;
+  if(!Object.hasOwn(PUBLIC_STARTER_CRAFTS,item.flags['trudvang-chronicles'].starterId))return false;
+  for(let folder=item.folder;folder;folder=folder.folder){
+   const id=folder.flags?.['trudvang-chronicles']?.starterId;
+   if(/^gm/i.test(id??'')||folder.flags?.['trudvang-chronicles']?.gmOnly||folder.ownership&&Number(folder.ownership.default??0)<2&&!PUBLIC_STARTER_FOLDERS.includes(id))return false;
+  }
   return true;
  });
 }

@@ -1,3 +1,4 @@
+import {isSacredInscriptionFailure} from './effects-summary.mjs';
 import {equipmentGrantActive} from './rules/granted-equipment.mjs';
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {registerPersistentDamageHooks} from './persistent-damage.mjs';
@@ -168,6 +169,11 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   }
 
   async _preUpdate(data, options, user) {
+    if(isSacredInscriptionFailure(this)){
+      if(data.disabled===true||data.transfer===true)ui.notifications.warn(game.i18n.localize('TRUDVANG.Sacred.FailurePermanent'));
+      delete data.disabled;delete data.transfer;
+      if(data.duration!==undefined||Object.keys(data).some(key=>key.startsWith('duration.'))){for(const key of Object.keys(data))if(key.startsWith('duration.'))delete data[key];data.duration={value:null,units:'rounds',expiry:null,expired:false};}
+    }
     if (!options?.trudvangStageTransition) {
       const clock = editedConsequenceClock(this, data);
       if (clock !== undefined) data["flags.trudvang-chronicles.consequenceClock"] = clock;
@@ -224,6 +230,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     // A permanent mark on a world actor can never be removed. Deleting the
     // owning actor removes its effects with it, and the world reference item
     // keeps a deletable copy of the rule.
+    if(isSacredInscriptionFailure(this)&&!options?.trudvangSacredDelete){ui.notifications.warn(game.i18n.localize('TRUDVANG.Sacred.FailurePermanent'));return false;}
     const parent = this.parent;
     const ownedByActor = parent?.documentName === "Actor" && !parent?.isToken;
     if (isPermanentMark(this) && ownedByActor && !isActorDeleting(parent)) {

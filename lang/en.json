@@ -18807,7 +18807,11 @@
       "HeldCondition": "The benefit requires the object to be equipped; also respect the conditions stated by the rune.",
       "NextSkill": "Next Skill Roll",
       "WrongRuneObject": "This rune cannot be inscribed on this object type or material.",
-      "PairedGear": "For Hammer Fists, the item must represent the complete pair of gloves, bracelets or bracers."
+      "PairedGear": "For Hammer Fists, the item must represent the complete pair of gloves, bracelets or bracers.",
+      "FailedName": "Inscription blocked: {rune} (level {level})",
+      "FailedDescription": "Inscribing {rune} at level {level} failed. This object can no longer receive this rune at that or a higher level. Its other runes remain intact.",
+      "FailedSummary": "Inscription permanently blocked from level {level}.",
+      "FailurePermanent": "This failed inscription is permanent and bound to the object."
     }
   }
 }
