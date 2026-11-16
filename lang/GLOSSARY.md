@@ -1873,6 +1873,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Materials` | Materials | Matériaux |
 | `TRUDVANG.Content.Folder.Consumables` | Consumables | Consommables |
 | `TRUDVANG.Content.Folder.JournalMagic` | Magic | Magie |
+| `TRUDVANG.Content.Folder.Names` | Names | Noms |
 
 ## `TRUDVANG.Content.Scene`
 

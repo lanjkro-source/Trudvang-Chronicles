@@ -1604,7 +1604,8 @@
         "MagicObjects": "Objets magiques",
         "Materials": "Matériaux",
         "Consumables": "Consommables",
-        "JournalMagic": "Magie"
+        "JournalMagic": "Magie",
+        "Names": "Noms"
       },
       "Scene": {
         "WorldMap": "Carte du monde",

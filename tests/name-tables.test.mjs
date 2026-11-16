@@ -51,10 +51,12 @@ function runtime(t, {answers = {}, rolls = []} = {}) {
   return messages;
 }
 
-test("the seven name tables of the rules book are installed in the character creation folder", () => {
+test("the seven name tables are grouped under Character Creation / Names", () => {
   assert.equal(nameTables.length, 7, "one table per culture or race");
+  assert.equal(starter.folders.nameTables.parent,"characterCreationTables");
+  assert.equal(starter.folders.nameTables.type,"RollTable");
   for (const table of nameTables) {
-    assert.equal(table.folder, "characterCreationTables", `${table.nameKey} lives in the character creation folder`);
+    assert.equal(table.folder, "nameTables", `${table.nameKey} lives in the names subfolder`);
     assert.ok(table.results.length >= 20, `${table.nameKey} has affixes`);
     assert.ok(table.nameKey.endsWith(".Name"));
     assert.ok(table.descriptionKey.endsWith(".Description"));

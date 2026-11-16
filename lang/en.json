@@ -1604,7 +1604,8 @@
         "MagicObjects": "Magic Objects",
         "Materials": "Materials",
         "Consumables": "Consumables",
-        "JournalMagic": "Magic"
+        "JournalMagic": "Magic",
+        "Names": "Names"
       },
       "Scene": {
         "WorldMap": "World Map",

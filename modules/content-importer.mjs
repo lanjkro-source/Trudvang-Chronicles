@@ -43,7 +43,9 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // starter armor copies, preserving explicit materials and all individual stats.
 // TEMPORARY WORLD MIGRATION — version 69 installs the Blodstör, Vitner Stafur
 // and votive statuette in previously populated development worlds.
-const CONTENT_VERSION = 71;
+// TEMPORARY WORLD MIGRATION — version 72 groups existing name tables under
+// Character Creation / Names; the normal starter import recreates their folder assignment.
+const CONTENT_VERSION = 72;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
