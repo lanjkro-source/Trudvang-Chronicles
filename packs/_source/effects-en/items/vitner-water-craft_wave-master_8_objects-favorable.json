@@ -1,0 +1,45 @@
+{
+  "_id": "TjStK3v1w2x3y4z5",
+  "_key": "!items!TjStK3v1w2x3y4z5",
+  "name": "Wave Master — object favorable",
+  "type": "effect",
+  "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:wave-master:8#objects-favorable",
+    "description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p>",
+    "summary": "Changes water movement.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 138
+    }
+  },
+  "effects": [
+    {
+      "_id": "mxKJqPkQlRmSnToU",
+      "_key": "!items.effects!TjStK3v1w2x3y4z5.mxKJqPkQlRmSnToU",
+      "name": "Wave Master — object favorable",
+      "type": "effect",
+      "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+      "description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:wave-master:8#objects-favorable",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:wave-master:8#objects-favorable",
+            "sourceId": "vitner-water-craft:wave-master:8",
+            "summary": "Changes water movement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

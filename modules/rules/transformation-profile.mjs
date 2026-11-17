@@ -1,3 +1,4 @@
+import {waterMovementValues} from "./water-movement.mjs";
 import {hasProfileChanges, rulesFromChanges, roundEffectValue} from "./effect-rule-changes.mjs";
 import {upgradeFearFactor} from "./fear-resolver.mjs";
 import {sensoryProfile,sensoryVision} from "./senses.mjs";
@@ -43,7 +44,7 @@ export function transformationProfile(actor) {
  profile.vision=sensoryVision(profile.sensory)?.mode;
  return profile;
 }
-/** Movement multipliers change metres per 2 CP, never the per-turn maximum. */
+/** Ordinary multipliers change metres per 2 CP only; water degrees also change the aquatic maximum. */
 export function movementDetails(base, rows, changes, modifier=0) {
  const number=(value,fallback)=>{const n=Number.parseFloat(String(value??"").replace(",","."));return Number.isFinite(n)?n:fallback;};
  const modes=Object.fromEntries((rows??[]).map(r=>[({terrestre:"land",vol:"flight",nage:"swim"}[r.mode]??r.mode),{max:Math.max(0,number(r.max,0)+modifier),metersPerTwo:Math.max(0,number(r.distance,1))}]));
@@ -52,6 +53,12 @@ export function movementDetails(base, rows, changes, modifier=0) {
  for(const row of changes){
   const keys=row.mode==="all"?Object.keys(modes):[row.mode];
   for(const key of keys){
+   if(row.method==="waterDegrees"){
+    if(key!=="swim")continue;
+    const baseline=modes.swim??row.base;
+    if(baseline)modes.swim=waterMovementValues(baseline,row.value);
+    continue;
+   }
    const current=modes[key]??{max:base,metersPerTwo:baseRate};
    if(row.method==="multiply"||row.method==="baseMultiple"){
     modes[key]={...current,metersPerTwo:Math.max(0,(row.method==="baseMultiple"?baseRate:current.metersPerTwo)*row.value)};

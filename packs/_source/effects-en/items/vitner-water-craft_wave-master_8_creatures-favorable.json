@@ -1,0 +1,45 @@
+{
+  "_id": "nnpg6jLgMhNiOjPk",
+  "_key": "!items!nnpg6jLgMhNiOjPk",
+  "name": "Wave Master — creature favorable",
+  "type": "effect",
+  "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:wave-master:8#creatures-favorable",
+    "description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p>",
+    "summary": "Changes water movement.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 138
+    }
+  },
+  "effects": [
+    {
+      "_id": "uDcJzuYtZu0v1w2x",
+      "_key": "!items.effects!nnpg6jLgMhNiOjPk.uDcJzuYtZu0v1w2x",
+      "name": "Wave Master — creature favorable",
+      "type": "effect",
+      "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+      "description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:wave-master:8#creatures-favorable",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:wave-master:8#creatures-favorable",
+            "sourceId": "vitner-water-craft:wave-master:8",
+            "summary": "Changes water movement.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

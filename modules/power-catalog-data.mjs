@@ -14048,6 +14048,88 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-water-craft:wave-master:8": {
     "isRune": false,
     "level": 5,
+    "targeting": {
+      "sharedCapacity": {
+        "baseTargets": 1,
+        "additionalTargets": [
+          {
+            "optionId": "vitner-water-craft:wave-master:8:5",
+            "count": 1
+          },
+          {
+            "optionId": "vitner-water-craft:wave-master:8:6",
+            "count": 1
+          },
+          {
+            "optionId": "vitner-water-craft:wave-master:8:7",
+            "count": 10
+          }
+        ]
+      },
+      "primaryOnlyOptions": [
+        "vitner-water-craft:wave-master:8:4"
+      ],
+      "groups": [
+        {
+          "id": "creatures",
+          "variants": [
+            "creatures-favorable",
+            "creatures-adverse"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [
+            {
+              "optionId": "vitner-water-craft:wave-master:8:5",
+              "count": 1
+            },
+            {
+              "optionId": "vitner-water-craft:wave-master:8:7",
+              "count": 10
+            }
+          ],
+          "allocatableOptions": [
+            "vitner-water-craft:wave-master:8:0",
+            "vitner-water-craft:wave-master:8:1",
+            "vitner-water-craft:wave-master:8:2",
+            "vitner-water-craft:wave-master:8:3",
+            "vitner-water-craft:wave-master:8:4"
+          ],
+          "sharedOptions": [
+            "vitner-water-craft:wave-master:8:0",
+            "vitner-water-craft:wave-master:8:1",
+            "vitner-water-craft:wave-master:8:2",
+            "vitner-water-craft:wave-master:8:3"
+          ]
+        },
+        {
+          "id": "objects",
+          "variants": [
+            "objects-favorable",
+            "objects-adverse"
+          ],
+          "baseTargets": 1,
+          "additionalTargets": [
+            {
+              "optionId": "vitner-water-craft:wave-master:8:6",
+              "count": 1
+            }
+          ],
+          "allocatableOptions": [
+            "vitner-water-craft:wave-master:8:0",
+            "vitner-water-craft:wave-master:8:1",
+            "vitner-water-craft:wave-master:8:2",
+            "vitner-water-craft:wave-master:8:3",
+            "vitner-water-craft:wave-master:8:4"
+          ],
+          "sharedOptions": [
+            "vitner-water-craft:wave-master:8:0",
+            "vitner-water-craft:wave-master:8:1",
+            "vitner-water-craft:wave-master:8:2",
+            "vitner-water-craft:wave-master:8:3"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "vitner-water-craft:wave-master:8:0",
@@ -14091,7 +14173,7 @@ export const POWER_DETAILS_BY_ID = {
       }
     ],
     "spellType": "lasting",
-    "page": 135,
+    "page": 138,
     "pageFr": 166
   },
   "vitner-wind-craft:air-armor:4": {

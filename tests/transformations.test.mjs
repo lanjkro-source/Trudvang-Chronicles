@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,371);
+ assert.equal(Object.keys(sources).length,372);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -982,7 +982,7 @@ test("copying already resolved effects preserves improvements, duration and roll
   globalThis.Roll=class {async evaluate(){this.total=7;rolls++;return this;}async toMessage(){}};
   globalThis.ChatMessage={getSpeaker:()=>({})};
   const actor={system:{tags:["démon"]},canUserModify:()=>true,getTraitValue:()=>0,items:[{type:"ability",name:"Matériaux durs",system:{kind:"specialty",catalogId:"hardMaterials",level:1}}],getCatalogEntry:()=>({parentCatalogId:"handicraft"}),createTrudvangEffect:async data=>{created=data;return null;}};
-  foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute",effectInput:"hardMaterials"});
+  foundry.applications.api.DialogV2.wait=async options=>({duration:options.content.match(/name="duration"[^>]*value="([^"]*)"/)?.[1]||"1 minute",effectInput:"hardMaterials",water_max:12,water_metersPerTwo:2});
   const covered=new Set();
   for(const [key,t]of Object.entries(templates)){
    const rules=rulesFromChanges(t.changes);

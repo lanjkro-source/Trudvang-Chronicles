@@ -1,3 +1,4 @@
+import {waterMovementValues,waterMovementBase,waterMovementDegree} from "./rules/water-movement.mjs";
 import {effectTargetRestriction,leapDistances} from './rules/mobility-effects.mjs';
 import {equipmentGrantItems,equipmentGrantActive,grantedEquipmentData} from './rules/granted-equipment.mjs';
 import {readiedHandConflicts} from './rules/combat-pool-resolver.mjs';
@@ -37,7 +38,7 @@ function legacyResistanceConsequence(effect){
 }
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
-import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
+import {magicTargetCapacity,magicTargetGroup,magicSharedTargetCapacity} from "./rules/magic-target-allocation.mjs";
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
 import {runeConsequenceText} from './rune-consequences.mjs';
 import {instantConsequenceOperation} from './conjured-consumables.mjs';
@@ -94,7 +95,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.checkbox?`<input name="${f.name}" type="checkbox"${f.value?" checked":""}>`:f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="${f.minimum??0}" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.checkbox?`<input name="${f.name}" type="checkbox"${f.value?" checked":""}>`:f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="${f.minimum??0}" step="${f.step??1}"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -135,6 +136,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(!owned&&!delegated){ui.notifications.warn(local("Permission"));return null;}
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  if(reference.initialResistance&&destinationItem){ui.notifications.warn(local('ActorTargetRequired'));return null;}
+ if(reference.actorOnly&&destinationItem){ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.ActorRequired"));return null;}
  if(reference.itemOnly&&!['weapon','shield','armor','gear','potion'].includes(destinationItem?.type)){ui.notifications.warn(local("ItemTargetRequired"));return null;}
  if(reference.itemQuality?.excludeMagical&&isMagicalItem(destinationItem)){ui.notifications.warn(local('MagicalItemUnaffected'));return null;}
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
@@ -202,7 +204,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const automaticSource=Boolean(casting.casterUuid===actor.uuid&&((template.aura&&casting.auraSource)||(POWER_DETAILS_BY_ID[template.sourceId]?.selfOnly&&casting.selfSource)));
  const targeting=!automaticSource&&!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
- let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set();
+ let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set(),primaryTarget=true;
  if(targeting){
   if(casting.kind==="divine"||casting.kind==='rune'||game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.instantAllocation){
    const flags=game.messages?.get(casting.messageId)?.flags?.[SCOPE];
@@ -218,16 +220,18 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const others=Array.from(allocationRecord.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget);
   const own=Array.from(allocationRecord.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
   const chosen=Object.fromEntries(Array.from(allocationRecord.powerLevelSnapshot??[],row=>[row.id,Number(row.count)||0]));
+  primaryTarget=!allocationRecord.targetAllocations?.length||allocationRecord.targetAllocations[0].targetUuid===allocationTarget;
   const already=Object.fromEntries(Array.from(own?.counts??[],row=>[row.optionId,Number(row.count)||0]));
   const options=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels??[];
   const group=magicTargetGroup(targeting,key),definition=targeting.groups?.find(row=>row.id===group);
   if(!group)throw Error(game.i18n.localize("TRUDVANG.Warning.MagicAllocationUnavailable"));
   sharedIds=new Set(definition?.sharedOptions??[]);
   availableById=Object.fromEntries(options.map(option=>[option.id,definition?.sharedOptions?.includes(option.id)?(chosen[option.id]??0):Math.max(0,(chosen[option.id]??0)-others.reduce((sum,row)=>sum+Array.from(row.counts??[]).filter(c=>c.optionId===option.id).reduce((n,c)=>n+Number(c.count||0),0),0))]));
+  if(!primaryTarget)for(const id of targeting.primaryOnlyOptions??[])availableById[id]=0;
   counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
   const groupUsed=Array.from(allocationRecord.targetAllocations??[]).filter(row=>magicTargetGroup(targeting,row.effectKey)===group).length;
-  const maximum=magicTargetCapacity(targeting,chosen,group);
-  allocationIntro=game.i18n.format(template.instant?.rune?'TRUDVANG.RuneConsequence.Allocations':"TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:Number.isFinite(maximum)?maximum:"∞"});
+  const maximum=targeting.sharedCapacity?magicSharedTargetCapacity(targeting,chosen):magicTargetCapacity(targeting,chosen,group);
+  allocationIntro=game.i18n.format(template.instant?.rune?'TRUDVANG.RuneConsequence.Allocations':"TRUDVANG.Transformation.AllocationTargets",{used:targeting.sharedCapacity?allocationRecord.targetAllocations.length:groupUsed,max:Number.isFinite(maximum)?maximum:"∞"});
   Object.assign(casting,withCastingCounts(casting,counts));
  }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
@@ -239,6 +243,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
  if(template.instant?.rune)allocationIntro=[runeConsequenceText(POWER_DETAILS_BY_ID[template.sourceId],casting),allocationIntro].filter(Boolean).join(' ');
  const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];
+ const waterBase=!resolvedCopy&&template.waterMovement?waterMovementBase(destinationItem??actor):null;
+ if(!resolvedCopy&&template.waterMovement){
+  for(const [field,label]of [["max","BaseMax"],["metersPerTwo","BaseRate"]])fields.push({name:`water_${field}`,label:game.i18n.localize(`TRUDVANG.WaterMovement.${label}`),numeric:true,step:"any",readonly:Boolean(waterBase),value:waterBase?.[field]??""});
+ }
  let inputOptions=[];
  if(!resolvedCopy&&template.inputKey){
   if(template.inputDiscipline){
@@ -251,7 +259,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(template.cooldownSeconds){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
  const indices=[...new Set([...(Number.isInteger(template.instant?.rune?.allocationIndex)?[template.instant.rune.allocationIndex]:[]),...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(template.instant?.rune?.allocationIndex===index?'TRUDVANG.RuneConsequence.HealingDice':`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
-  fields.push({name:`boost${index}`,label,numeric:true,...(template.instant?.rune?.allocationIndex===index?{minimum:1}:{}),...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
+  fields.push({name:`boost${index}`,label,numeric:true,...(template.instant?.rune?.allocationIndex===index?{minimum:1}:{}),...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)||Boolean(targeting?.primaryOnlyOptions?.includes(id)&&!primaryTarget)});}
  if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>i+1).filter(level=>!casting.runeLevel||level===casting.runeLevel).map(level=>({value:String(level),label:String(level)}))});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
@@ -265,7 +273,13 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const initialTests=[...new Set((TRANSFORMATIONS_BY_SOURCE[template.sourceId]??[]).flatMap(key=>TRANSFORMATION_TEMPLATES[key].initialResistance?[TRANSFORMATION_TEMPLATES[key].initialResistance.testIndex]:[]))];
   const excludeTests=requiresInitialResistance(values)?initialTests.filter(index=>index!==template.initialResistance.testIndex):initialTests;
   const tier=!resolvedCopy&&template.runeTiers?.[Number(values.runeLevel)-1];
-  return (tier?`<p>${escapeHtml(game.i18n.localize(tier.summaryKey))}</p>`:"")+magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))),{excludeTests});
+  let waterPreview="";
+  if(!resolvedCopy&&template.waterMovement){
+   const base=waterBase??{max:Number(String(values.water_max??"").replace(",",".")),metersPerTwo:Number(String(values.water_metersPerTwo??"").replace(",","."))};
+   const degree=waterMovementDegree(template.waterMovement,{counts:Object.assign([...counts],{[template.waterMovement.degreeIndex]:Number(values[`boost${template.waterMovement.degreeIndex}`])||0})});
+   waterPreview=`<p>${escapeHtml(game.i18n.format("TRUDVANG.WaterMovement.Values",{degree,...waterMovementValues(base,degree)}))}</p>`;
+  }
+  return waterPreview+(tier?`<p>${escapeHtml(game.i18n.localize(tier.summaryKey))}</p>`:"")+magicResistancePreview(withCastingCounts(casting,Object.assign([...counts],Object.fromEntries(indices.map(i=>[i,Math.max(0,Number(values[`boost${i}`])||0)])))),{excludeTests});
  };
  const answers=preselectedAnswers??(skipDialog?Object.fromEntries(fields.map(field=>[field.name,field.value])):
   await askFields(targetName||actor.name?`${effectName} — ${targetName||actor.name}`:effectName,fields,preview,allocationIntro,resolvedCopy?[]:template.runeTiers?.map(t=>t.duration)));
@@ -297,6 +311,15 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
  const leap=template.leap?leapDistances(template.leap,answers.effectInput??metadata(supplied)?.input??template.inputDefault,casting):null;
+ let water;
+ if(!resolvedCopy&&template.waterMovement){
+  const parse=value=>value!==undefined&&String(value).trim()!==""?Number(String(value).replace(",",".")):NaN;
+  const base=waterBase??{max:parse(answers.water_max),metersPerTwo:parse(answers.water_metersPerTwo)};
+  if(!Object.values(base).every(v=>Number.isFinite(v)&&v>=0)){ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.BaseRequired"));return null;}
+  const degree=waterMovementDegree(template.waterMovement,casting);
+  water={base,degree,...waterMovementValues(base,degree)};
+  rules.movement=[{mode:"swim",method:"waterDegrees",value:degree,base}];
+ }
  if(template.leap&&!leap){ui.notifications.warn(game.i18n.localize("TRUDVANG.Mobility.BadHeight"));return null;}
  let formMaximum;
  if(rules.chooseBestiary||rules.formName){
@@ -428,6 +451,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const copiedProgress=stored?.flags?.[SCOPE]?.ruleTestProgress;
  let summary=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?metadata(supplied)?.summary:copiedProgress.baseSummary):null)||copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ if(water)summary=game.i18n.format("TRUDVANG.WaterMovement.Values",water);
  if(leap)summary=game.i18n.format("TRUDVANG.Mobility.LeapValues",leap);
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
  if(qualityValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemQualityValues',qualityValues);
@@ -469,6 +493,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(water){meta.waterMovement=water;meta.summaryResolved=true;}
+ else if(resolvedCopy&&rules.movement?.some(row=>row.method==="waterDegrees")){
+  meta.waterMovement=structuredClone(metadata(supplied)?.waterMovement);meta.summaryResolved=Boolean(metadata(supplied)?.summaryResolved);
+ }
  if(leap){meta.leap=leap;meta.summaryResolved=true;}
  if(template.roundResistance)meta.roundResistance=structuredClone(resolvedCopy?(metadata(supplied)?.roundResistance??template.roundResistance):template.roundResistance);
  if(template.runeTiers){
@@ -477,6 +505,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
  let description=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?supplied.description:copiedProgress.baseDescription):null)??stored?.description??text(key,"Description");
+ if(water)description+=`<p>${escapeHtml(summary)}</p>`;
  if(leap)description+=`<p>${escapeHtml(summary)}</p>`;
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}

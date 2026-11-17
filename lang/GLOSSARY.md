@@ -11351,6 +11351,50 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-water-craft:water-walk:7#effect.SourcePage` | 135 | 165 |
 | `TRUDVANG.Content.Transformation.vitner-water-craft:water-walk:7#effect.Duration` | 2 minutes | 2 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.Name` | Wave Master — creature favorable | Maître des flots — créature favorisée |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.Description` | <p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p> | <p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p> |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.SourceName` | Wave Master | Maître des flots |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.SourcePage` | 138 | 166 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-favorable.Duration` | 1 hour | 1 hour |
+
+## `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.Name` | Wave Master — creature adverse | Maître des flots — créature entravée |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.Description` | <p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p> | <p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p> |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.SourceName` | Wave Master | Maître des flots |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.SourcePage` | 138 | 166 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#creatures-adverse.Duration` | 1 hour | 1 hour |
+
+## `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.Name` | Wave Master — object favorable | Maître des flots — objet favorisé |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.Description` | <p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p> | <p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p> |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.SourceName` | Wave Master | Maître des flots |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.SourcePage` | 138 | 166 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-favorable.Duration` | 1 hour | 1 hour |
+
+## `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.Name` | Wave Master — object adverse | Maître des flots — objet entravé |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.Description` | <p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p> | <p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p> |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.SourceName` | Wave Master | Maître des flots |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.SourcePage` | 138 | 166 |
+| `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.Duration` | 1 hour | 1 hour |
+
 ## `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect`
 
 | Clé | English | Français |
@@ -16084,6 +16128,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.RoarRadius` | Blast radius: {value} m. | Rayon de la déflagration : {value} m. |
 | `TRUDVANG.Transformation.BorjornNextSkill` | Bonus to the next Skill Roll: +{value}. | Bonus au prochain test de compétence : +{value}. |
 | `TRUDVANG.Transformation.WeaponHitRequired` | This effect is applied automatically with damage after an open roll. | Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert. |
+| `TRUDVANG.Transformation.WaterRange` | Range: {value} m. | Portée : {value} m. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16648,3 +16693,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.WeaponHit.Triggered` | {name} triggered! | {name} déclenché ! |
+
+## `TRUDVANG.WaterMovement`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.WaterMovement.BaseMax` | Base water movement: maximum per round (m) | Mouvement aquatique de base : maximum par tour (m) |
+| `TRUDVANG.WaterMovement.BaseRate` | Base water movement: metres per 2 CP | Mouvement aquatique de base : mètres pour 2 PC |
+| `TRUDVANG.WaterMovement.BaseRequired` | Enter both base water movement values (0 or more). Land movement is not a swimming speed. | Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Le déplacement terrestre ne sert pas de valeur de nage. |
+| `TRUDVANG.WaterMovement.ActorRequired` | Apply this variant to a creature; use the object variant for a ship. | Appliquez cette variante à une créature ; utilisez la variante objet pour un navire. |
+| `TRUDVANG.WaterMovement.Values` | Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only. | Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement. |
+| `TRUDVANG.WaterMovement.Unavailable` | No further water movement is possible this round. | Aucun déplacement aquatique supplémentaire n’est possible ce tour. |

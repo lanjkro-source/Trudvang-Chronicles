@@ -2697,3 +2697,19 @@ test('a reactive skill test remains possible when ordinary actions are blocked a
  runtime.response={modifier:0};const result=await instance.rollAbility(ability,{reactive:true,modifierRows:[{label:'Croche-pied — amélioration',value:-3}]});
  assert.equal(result.target,7);assert.match(runtime.dialogs[0].content,/Croche-pied/);assert.match(renderedCards.at(-1).data.flavor,/-3/);assert.equal(runtime.messages.length,1);
 });
+
+test('Wave Master movement applies its per-round water cap before charging further PC and expires without changing land speed',async t=>{
+ const runtime=mockActionRuntime(t),npc=spendableNpc([]);
+ npc._source.system.details.move=[{mode:'nage',distance:'2',max:'12'},{mode:'terrestre',distance:'1',max:'18'}];
+ npc.system.details.move=structuredClone(npc._source.system.details.move);
+ npc.effects=[{id:'waves',name:'Maître des flots',system:{changes:[{key:'system.transformation.movement',type:'override',value:JSON.stringify([{mode:'swim',method:'waterDegrees',value:-2}])}]}}];
+ npc.allApplicableEffects=()=>npc.effects;
+ npc.prepareDerivedData();game.combat={id:'fight',round:1,started:true,combatants:[{actor:npc}]};
+ assert.equal(npc.transformationMovement.swim,1);assert.equal(npc.transformationMovement.land,18);
+ runtime.response={allocation:{free:2},movementMode:'swim'};
+ assert.equal((await npc.rollCombatMovement()).paidMeters,1);
+ const spent=structuredClone(npc.system.combatPools.free),messages=runtime.messages.length;
+ await npc.rollCombatMovement();assert.deepEqual(npc.system.combatPools.free,spent);assert.equal(runtime.messages.length,messages);assert.equal(runtime.warnings.length,1);
+ game.combat.round=2;assert.equal((await npc.rollCombatMovement()).paidMeters,1);
+ npc.effects=[];npc.prepareDerivedData();assert.equal(npc.transformationMovement.swim,12);assert.equal(npc.transformationMovement.land,18);
+});

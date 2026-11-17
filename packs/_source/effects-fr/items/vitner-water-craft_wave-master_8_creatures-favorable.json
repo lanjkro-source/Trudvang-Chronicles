@@ -1,0 +1,45 @@
+{
+  "_id": "nnpg6jLgMhNiOjPk",
+  "_key": "!items!nnpg6jLgMhNiOjPk",
+  "name": "Maître des flots — créature favorisée",
+  "type": "effect",
+  "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:wave-master:8#creatures-favorable",
+    "description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p>",
+    "summary": "Modifie le déplacement aquatique.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "uDcJzuYtZu0v1w2x",
+      "_key": "!items.effects!nnpg6jLgMhNiOjPk.uDcJzuYtZu0v1w2x",
+      "name": "Maître des flots — créature favorisée",
+      "type": "effect",
+      "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+      "description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:wave-master:8#creatures-favorable",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:wave-master:8#creatures-favorable",
+            "sourceId": "vitner-water-craft:wave-master:8",
+            "summary": "Modifie le déplacement aquatique.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

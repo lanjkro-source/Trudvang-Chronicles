@@ -1,0 +1,45 @@
+{
+  "_id": "lST7KwZu0v1w2x3y",
+  "_key": "!items!lST7KwZu0v1w2x3y",
+  "name": "Maître des flots — objet entravé",
+  "type": "effect",
+  "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:wave-master:8#objects-adverse",
+    "description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p>",
+    "summary": "Modifie le déplacement aquatique.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 166
+    }
+  },
+  "effects": [
+    {
+      "_id": "khjIbOiOjPkQlRmS",
+      "_key": "!items.effects!lST7KwZu0v1w2x3y.khjIbOiOjPkQlRmS",
+      "name": "Maître des flots — objet entravé",
+      "type": "effect",
+      "img": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+      "description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:wave-master:8#objects-adverse",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:wave-master:8#objects-adverse",
+            "sourceId": "vitner-water-craft:wave-master:8",
+            "summary": "Modifie le déplacement aquatique.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

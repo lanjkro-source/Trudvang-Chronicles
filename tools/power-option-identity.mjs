@@ -42,5 +42,17 @@ export function validatePowerTargeting(entry, english) {
    seen.add(row.optionId);
   }
  }
+ if(target.sharedCapacity){
+  const shared=target.sharedCapacity;
+  if(!target.groups||!Number.isInteger(shared.baseTargets)||shared.baseTargets<1||!Array.isArray(shared.additionalTargets))throw new Error(`${entry.catalogId}: invalid shared target budget`);
+  const ids=new Set();
+  for(const row of shared.additionalTargets){
+   resolvePowerOptionReference(entry,row);
+   if(ids.has(row.optionId)||!seen.has(row.optionId)||!Number.isInteger(row.count)||row.count<1||!groups.some(g=>g.additionalTargets.some(r=>r.optionId===row.optionId&&r.count===row.count)))throw new Error(`${entry.catalogId}: invalid shared target option`);
+   ids.add(row.optionId);
+  }
+  if(ids.size!==seen.size)throw new Error(`${entry.catalogId}: incomplete shared target budget`);
+ }
+ if(target.primaryOnlyOptions&&(!target.sharedCapacity||!Array.isArray(target.primaryOnlyOptions)||target.primaryOnlyOptions.some(id=>!groups.every(g=>g.allocatableOptions.includes(id)&&!g.sharedOptions?.includes(id)))))throw new Error(`${entry.catalogId}: invalid primary target improvements`);
  for(const group of groups)if(group.allocatableOptions?.some(id=>seen.has(id)))throw new Error(`${entry.catalogId}: target option cannot be allocated`);
 }

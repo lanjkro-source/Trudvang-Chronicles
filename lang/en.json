@@ -9923,7 +9923,7 @@
         "vitner-water-craft:wave-master:8": {
           "Name": "Wave Master",
           "Summary": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.",
-          "Description": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it. The enchanter can change the waves’ movement and strength, therefore allowing boats to move faster without a sail, or much slower even with the aid of a sail. Beings who are affected by the spell can either swim faster through the water or swim much slower, depending on which effect the enchanter desires. The enchanter can choose one being or one object (such as a ship) within 100 m, which becomes the center of the spell. With extra levels of power, additional beings or objects can also be selected. An object or a being that is affected in a positive manner by this spell is aided by the water, and its movement rate is 1 degree higher (see the table below). If it is affected in a negative manner, the movement rate is 1 degree lower instead. An unaffected<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.</td></tr></tbody></table>object or being has average movement (degree 0). All beings on an enchanted object (such as a ship) move on the water with the movement rate of the object. WAVE MASTER MOVEMENT DEGREES Degree Movement -3 No movement at all -2 Maximum 1 meter per action round -1 Half movement 0 Normal movement 1 Double movement 2 Triple movement 3 Quadruple movement",
+          "Description": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it. The enchanter can change the waves’ movement and strength, therefore allowing boats to move faster without a sail, or much slower even with the aid of a sail. Beings who are affected by the spell can either swim faster through the water or swim much slower, depending on which effect the enchanter desires. The enchanter can choose one being or one object (such as a ship) within 100 m, which becomes the center of the spell. With extra levels of power, additional beings or objects can also be selected. An object or a being that is affected in a positive manner by this spell is aided by the water, and its movement rate is 1 degree higher (see the table below). If it is affected in a negative manner, the movement rate is 1 degree lower instead. An unaffected object or being has average movement (degree 0). All beings on an enchanted object (such as a ship) move on the water with the movement rate of the object. <table><thead><tr><th>Degree</th><th>Movement</th></tr></thead><tbody><tr><td>-3</td><td>No movement</td></tr><tr><td>-2</td><td>Maximum 1 metre per action round</td></tr><tr><td>-1</td><td>Half movement</td></tr><tr><td>0</td><td>Normal movement</td></tr><tr><td>1</td><td>Double movement</td></tr><tr><td>2</td><td>Triple movement</td></tr><tr><td>3</td><td>Quadruple movement</td></tr></tbody></table>",
           "SwedishName": "Vannkongr",
           "DamageQualificationNote": "",
           "Duration": "1 hour",
@@ -14530,6 +14530,42 @@
           "SourcePage": "135",
           "Duration": "2 minutes"
         },
+        "vitner-water-craft:wave-master:8#creatures-favorable": {
+          "Name": "Wave Master — creature favorable",
+          "Summary": "Changes water movement.",
+          "Description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p>",
+          "SourceName": "Wave Master",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "138",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#creatures-adverse": {
+          "Name": "Wave Master — creature adverse",
+          "Summary": "Changes water movement.",
+          "Description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p>",
+          "SourceName": "Wave Master",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "138",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#objects-favorable": {
+          "Name": "Wave Master — object favorable",
+          "Summary": "Changes water movement.",
+          "Description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p>",
+          "SourceName": "Wave Master",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "138",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#objects-adverse": {
+          "Name": "Wave Master — object adverse",
+          "Summary": "Changes water movement.",
+          "Description": "<p>Changes movement through water only. Only the first recipient can receive additional movement degrees; additional recipients receive the base degree. Degrees are limited to −3 through +3.</p><p>Passengers travel with this object on water; their personal movement is unchanged. The GM moves the ship.</p>",
+          "SourceName": "Wave Master",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "138",
+          "Duration": "1 hour"
+        },
         "vitner-flame-craft:heat-water:0#effect": {
           "Name": "Heat Water",
           "Summary": "Heat Water",
@@ -18461,7 +18497,8 @@
       "PhysicalMovementPenalty": "Actions relying on movement: {value} SV.",
       "RoarRadius": "Blast radius: {value} m.",
       "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}.",
-      "WeaponHitRequired": "This effect is applied automatically with damage after an open roll."
+      "WeaponHitRequired": "This effect is applied automatically with damage after an open roll.",
+      "WaterRange": "Range: {value} m."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18895,6 +18932,14 @@
     },
     "WeaponHit": {
       "Triggered": "{name} triggered!"
+    },
+    "WaterMovement": {
+      "BaseMax": "Base water movement: maximum per round (m)",
+      "BaseRate": "Base water movement: metres per 2 CP",
+      "BaseRequired": "Enter both base water movement values (0 or more). Land movement is not a swimming speed.",
+      "ActorRequired": "Apply this variant to a creature; use the object variant for a ship.",
+      "Values": "Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only.",
+      "Unavailable": "No further water movement is possible this round."
     }
   }
 }

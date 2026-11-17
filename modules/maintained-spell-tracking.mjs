@@ -108,6 +108,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const template=TRANSFORMATION_TEMPLATES[effectKey];
   if(template?.sourceId!==sourceId)return {status:"unavailable"};
+  if(template.waterMovement&&(template.itemOnly?!targetItem:Boolean(targetItem)))return {status:"unavailable"};
   if(!target.canUserModify?.(user,'update')||targetItem&&!targetItem.canUserModify?.(user,'update')){
    const {canManageEffectTargets,effectTargetsFor}=await import('./effect-targets.mjs');
    if(!message||!await canManageEffectTargets(message,user)||!effectTargetsFor(message,effectKey).some(row=>row.actorUuid===target.uuid))return {status:'unavailable'};
@@ -129,7 +130,8 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
   if(existing&&(instant||template?.onApply||template?.initialResistance||template?.oncePerCasting))return {status:"already-applied"};
   const allocations=(record.targetAllocations??[]).filter(row=>row.targetUuid!==allocationTarget).map(row=>({targetUuid:row.targetUuid,effectKey:row.effectKey,countsById:Object.fromEntries(row.counts.map(c=>[c.optionId,c.count]))}));
-  allocations.push({targetUuid:allocationTarget,effectKey,countsById});
+  const previousIndex=(record.targetAllocations??[]).findIndex(row=>row.targetUuid===allocationTarget);
+  allocations.splice(previousIndex<0?allocations.length:previousIndex,0,{targetUuid:allocationTarget,effectKey,countsById});
   const validation=validateMagicAllocations({targeting,selected,allocations,casterUuid});
   if(!validation.ok)return {status:validation.reason};
   const prior=structuredClone(record.targetAllocations??[]);

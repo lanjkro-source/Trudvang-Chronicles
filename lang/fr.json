@@ -14530,6 +14530,42 @@
           "SourcePage": "165",
           "Duration": "2 minutes"
         },
+        "vitner-water-craft:wave-master:8#creatures-favorable": {
+          "Name": "Maître des flots — créature favorisée",
+          "Summary": "Modifie le déplacement aquatique.",
+          "Description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p>",
+          "SourceName": "Maître des flots",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "166",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#creatures-adverse": {
+          "Name": "Maître des flots — créature entravée",
+          "Summary": "Modifie le déplacement aquatique.",
+          "Description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p>",
+          "SourceName": "Maître des flots",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "166",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#objects-favorable": {
+          "Name": "Maître des flots — objet favorisé",
+          "Summary": "Modifie le déplacement aquatique.",
+          "Description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p>",
+          "SourceName": "Maître des flots",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "166",
+          "Duration": "1 hour"
+        },
+        "vitner-water-craft:wave-master:8#objects-adverse": {
+          "Name": "Maître des flots — objet entravé",
+          "Summary": "Modifie le déplacement aquatique.",
+          "Description": "<p>Modifie uniquement le déplacement dans l’eau. La première cible peut recevoir les degrés supplémentaires ; les autres reçoivent le degré de base. Les degrés sont limités à −3 et +3.</p><p>Les passagers bénéficient du déplacement de cet objet sur l’eau, sans modification de leur déplacement personnel. Le MJ déplace le navire.</p>",
+          "SourceName": "Maître des flots",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "166",
+          "Duration": "1 hour"
+        },
         "vitner-flame-craft:heat-water:0#effect": {
           "Name": "Ébullition",
           "Summary": "Ébullition",
@@ -18461,7 +18497,8 @@
       "PhysicalMovementPenalty": "Actions reposant sur le mouvement : {value} VC.",
       "RoarRadius": "Rayon de la déflagration : {value} m.",
       "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}.",
-      "WeaponHitRequired": "Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert."
+      "WeaponHitRequired": "Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert.",
+      "WaterRange": "Portée : {value} m."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18895,6 +18932,14 @@
     },
     "WeaponHit": {
       "Triggered": "{name} déclenché !"
+    },
+    "WaterMovement": {
+      "BaseMax": "Mouvement aquatique de base : maximum par tour (m)",
+      "BaseRate": "Mouvement aquatique de base : mètres pour 2 PC",
+      "BaseRequired": "Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Le déplacement terrestre ne sert pas de valeur de nage.",
+      "ActorRequired": "Appliquez cette variante à une créature ; utilisez la variante objet pour un navire.",
+      "Values": "Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement.",
+      "Unavailable": "Aucun déplacement aquatique supplémentaire n’est possible ce tour."
     }
   }
 }

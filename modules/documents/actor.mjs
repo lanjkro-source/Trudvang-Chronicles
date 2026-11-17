@@ -1,3 +1,4 @@
+import {waterMovementBudget} from "../rules/water-movement.mjs";
 import {sacredBalance,sacredObjects} from '../rules/sacred-objects.mjs';
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
@@ -1815,6 +1816,7 @@ export class TrudvangActor extends BaseActor {
     const movementModes = this.transformationMovementRows?.length ? this.transformationMovementRows.filter(row => row.metersPerTwo > 0) : this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
       ...mode, label: movementRows[Number(mode.id)]?.mode || mode.mode
     })) : [];
+    if(this.transformationProfile?.movements?.some(row=>row.method==="waterDegrees")&&!movementModes.length)return ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.Unavailable"));
     const options = await combatPointDialog({actor:this,
       title: game.i18n.localize("TRUDVANG.Combat.MovementAction"),
       pools: poolResolution.eligible,
@@ -1829,8 +1831,11 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
     const selectedMode = movementModes.find(mode => mode.id === options.movementMode) ?? movementModes[0];
-    const paidMeters = roundEffectValue(spending.total / 2 * (selectedMode?.metersPerTwo ?? 1));
+    const budget=waterMovementBudget(this,selectedMode?.mode);
+    if(budget&&!budget.remaining)return ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.Unavailable"));
+    const paidMeters = roundEffectValue(Math.min(budget?.remaining??Infinity,spending.total / 2 * (selectedMode?.metersPerTwo ?? 1)));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    if(budget&&this.isOwner)await this.update({"flags.trudvang-chronicles.waterMovementTravel":{combatId:budget.combatId,round:budget.round,meters:roundEffectValue(budget.spent+paidMeters)}});
     await postActorEvent({actor: this, kind: "movement", amount: spending.total, meters: paidMeters,
       mode: selectedMode?.label ?? game.i18n.localize("TRUDVANG.Npc.MovementModes.land")});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));

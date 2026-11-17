@@ -921,6 +921,202 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-water-craft:wave-master:8#creatures-favorable": {
+    "id": "creatures-favorable",
+    "duration": "1 hour",
+    "icon": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+    "priority": 50,
+    "changes": [],
+    "actorOnly": true,
+    "itemOnly": false,
+    "waterMovement": {
+      "direction": 1,
+      "degreeIndex": 4,
+      "degreeOptionId": "vitner-water-craft:wave-master:8:4"
+    },
+    "displayPowerOptions": [
+      4
+    ],
+    "related": [],
+    "statuses": [],
+    "sourceId": "vitner-water-craft:wave-master:8",
+    "parameters": [
+      {
+        "optionId": "vitner-water-craft:wave-master:8:0",
+        "target": "duration",
+        "value": 3600,
+        "index": 0
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:1",
+        "target": "duration",
+        "value": 86400,
+        "index": 1
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:2",
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "extraTerms": [
+          {
+            "index": 3,
+            "optionId": "vitner-water-craft:wave-master:8:3",
+            "value": 1000
+          }
+        ],
+        "labelKey": "TRUDVANG.Transformation.WaterRange",
+        "index": 2
+      }
+    ]
+  },
+  "vitner-water-craft:wave-master:8#creatures-adverse": {
+    "id": "creatures-adverse",
+    "duration": "1 hour",
+    "icon": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+    "priority": 50,
+    "changes": [],
+    "actorOnly": true,
+    "itemOnly": false,
+    "waterMovement": {
+      "direction": -1,
+      "degreeIndex": 4,
+      "degreeOptionId": "vitner-water-craft:wave-master:8:4"
+    },
+    "displayPowerOptions": [
+      4
+    ],
+    "related": [],
+    "statuses": [],
+    "sourceId": "vitner-water-craft:wave-master:8",
+    "parameters": [
+      {
+        "optionId": "vitner-water-craft:wave-master:8:0",
+        "target": "duration",
+        "value": 3600,
+        "index": 0
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:1",
+        "target": "duration",
+        "value": 86400,
+        "index": 1
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:2",
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "extraTerms": [
+          {
+            "index": 3,
+            "optionId": "vitner-water-craft:wave-master:8:3",
+            "value": 1000
+          }
+        ],
+        "labelKey": "TRUDVANG.Transformation.WaterRange",
+        "index": 2
+      }
+    ]
+  },
+  "vitner-water-craft:wave-master:8#objects-favorable": {
+    "id": "objects-favorable",
+    "duration": "1 hour",
+    "icon": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+    "priority": 50,
+    "changes": [],
+    "actorOnly": false,
+    "itemOnly": true,
+    "waterMovement": {
+      "direction": 1,
+      "degreeIndex": 4,
+      "degreeOptionId": "vitner-water-craft:wave-master:8:4"
+    },
+    "displayPowerOptions": [
+      4
+    ],
+    "related": [],
+    "statuses": [],
+    "sourceId": "vitner-water-craft:wave-master:8",
+    "parameters": [
+      {
+        "optionId": "vitner-water-craft:wave-master:8:0",
+        "target": "duration",
+        "value": 3600,
+        "index": 0
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:1",
+        "target": "duration",
+        "value": 86400,
+        "index": 1
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:2",
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "extraTerms": [
+          {
+            "index": 3,
+            "optionId": "vitner-water-craft:wave-master:8:3",
+            "value": 1000
+          }
+        ],
+        "labelKey": "TRUDVANG.Transformation.WaterRange",
+        "index": 2
+      }
+    ]
+  },
+  "vitner-water-craft:wave-master:8#objects-adverse": {
+    "id": "objects-adverse",
+    "duration": "1 hour",
+    "icon": "systems/trudvang-chronicles/assets/icons/wave-master.svg",
+    "priority": 50,
+    "changes": [],
+    "actorOnly": false,
+    "itemOnly": true,
+    "waterMovement": {
+      "direction": -1,
+      "degreeIndex": 4,
+      "degreeOptionId": "vitner-water-craft:wave-master:8:4"
+    },
+    "displayPowerOptions": [
+      4
+    ],
+    "related": [],
+    "statuses": [],
+    "sourceId": "vitner-water-craft:wave-master:8",
+    "parameters": [
+      {
+        "optionId": "vitner-water-craft:wave-master:8:0",
+        "target": "duration",
+        "value": 3600,
+        "index": 0
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:1",
+        "target": "duration",
+        "value": 86400,
+        "index": 1
+      },
+      {
+        "optionId": "vitner-water-craft:wave-master:8:2",
+        "target": "note",
+        "base": 100,
+        "value": 100,
+        "extraTerms": [
+          {
+            "index": 3,
+            "optionId": "vitner-water-craft:wave-master:8:3",
+            "value": 1000
+          }
+        ],
+        "labelKey": "TRUDVANG.Transformation.WaterRange",
+        "index": 2
+      }
+    ]
+  },
   "vitner-flame-craft:heat-water:0#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -15946,6 +16142,12 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-water-craft:water-walk:7": [
     "vitner-water-craft:water-walk:7#effect"
+  ],
+  "vitner-water-craft:wave-master:8": [
+    "vitner-water-craft:wave-master:8#creatures-favorable",
+    "vitner-water-craft:wave-master:8#creatures-adverse",
+    "vitner-water-craft:wave-master:8#objects-favorable",
+    "vitner-water-craft:wave-master:8#objects-adverse"
   ],
   "vitner-flame-craft:heat-water:0": [
     "vitner-flame-craft:heat-water:0#effect"

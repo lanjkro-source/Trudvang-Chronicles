@@ -12,6 +12,12 @@ export function magicTargetCapacity(targeting, selected, groupId="default") {
  return group.baseTargets===null?Infinity:group.baseTargets + group.additionalTargets.reduce((total,row)=>total + row.count * (selected[row.optionId] ?? 0),0);
 }
 
+/** A common budget prevents each recipient group from claiming its own free target. */
+export function magicSharedTargetCapacity(targeting, selected) {
+ const shared=targeting?.sharedCapacity;
+ return shared ? shared.baseTargets+shared.additionalTargets.reduce((n,row)=>n+row.count*(selected[row.optionId]??0),0) : Infinity;
+}
+
 export function validateMagicAllocations({targeting, selected, allocations, casterUuid}) {
  if (!targeting) return {ok:false, reason:"unknown-targeting"};
  if (!selected || Object.values(selected).some(n=>!Number.isInteger(n)||n<0)) return {ok:false,reason:"invalid-selection"};
@@ -26,6 +32,9 @@ export function validateMagicAllocations({targeting, selected, allocations, cast
   if(groupDefinition.casterOnly && allocation.targetUuid!==casterUuid && !(groupDefinition.contactOptionId && selected[groupDefinition.contactOptionId]>0))return {ok:false,reason:"caster-only"};
   used[group]=(used[group]??0)+1;
  }
+ const totalCapacity=magicSharedTargetCapacity(targeting,selected);
+ if(allocations.length>totalCapacity)return {ok:false,reason:"exceeds-targets",capacity:totalCapacity};
+ for(const allocation of allocations.slice(1))if((targeting.primaryOnlyOptions??[]).some(id=>(allocation.countsById?.[id]??0)>0))return {ok:false,reason:"invalid-allocation"};
  for(const group of groups){const capacity=magicTargetCapacity(targeting,selected,group.id);if((used[group.id]??0)>capacity)return {ok:false,reason:"exceeds-targets",capacity,group:group.id};}
  for(const group of groups)if(group.requiresOtherTargetGroup && (used[group.id]??0)>0){
   if(!casterUuid)return {ok:false,reason:"invalid-allocation"};
