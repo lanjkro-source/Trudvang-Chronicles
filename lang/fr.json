@@ -18783,7 +18783,7 @@
       "Inscribe": "Inscrire / améliorer une rune",
       "Rune": "Rune",
       "InscriptionWarning": "Un échec empêche cette inscription sur cet objet. Les runes déjà présentes restent intactes.",
-      "RuneModifier": "Modificateur de la rune / inscription",
+      "RuneModifier": "Modificateur de la rune",
       "NoRunes": "Aucune rune apprise.",
       "Remove": "Retirer l’objet sacré",
       "RemoveConfirm": "Détruire « {name} » de l’inventaire et restituer ses {points} points de divinité investis ? La désacralisation est gérée à la main.",
@@ -18812,7 +18812,9 @@
       "FailedDescription": "L’inscription de {rune} au niveau {level} a échoué. Cet objet ne peut plus recevoir cette rune à ce niveau ni à un niveau supérieur. Ses autres runes restent intactes.",
       "FailedSummary": "Inscription définitivement bloquée à partir du niveau {level}.",
       "FailurePermanent": "Cette impossibilité d’inscription est permanente et liée à l’objet.",
-      "DirectFunds": "Personnage : {free} points disponibles · Ajout possible à cet objet : {available}."
+      "DirectFunds": "Personnage : {free} points disponibles · Ajout possible à cet objet : {available}.",
+      "InscriptionRuneLevel": "Niveau de la rune ({level})",
+      "InscriptionOtherRunes": "Autres runes inscrites ({count} × −2)"
     }
   }
 }

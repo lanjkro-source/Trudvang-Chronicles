@@ -183,7 +183,7 @@ export async function inscribeRuneDialog(item){
     v=read(root);if(v.level!==selectedLevel){root.querySelector('[name=amount]').value=v.level??k?.level??1;selectedLevel=v.level;v=read(root);}
     const available=runeInvestmentAvailable(actor,item),amount=root.querySelector('[name=amount]');amount.min=Math.max(0,Number(v.level)-(old?.invested??0));amount.max=available;
     root.querySelector('[data-rune-funds]').textContent=game.i18n.format('TRUDVANG.Sacred.DirectFunds',{free:sacredBalance(actor).free,available});
-    const penalty=-Number(v.level||0)-2*s.runes.filter(row=>row.sourceId!==v.sourceId).length,p=faithBreakdown(actor,penalty,v.modifier);
+    const p=inscriptionBreakdown(actor,item,v.sourceId,Number(v.level||0),v.modifier);
     root.querySelector('[data-procedure-target]').textContent=p.target;root.querySelector('[data-sacred-breakdown]').innerHTML=rollModifierFlavor(p.rows);
     let valid=true;try{inscriptionPlan(actor,item,v);}catch{valid=false;}
     root.querySelector('[data-action=inscribe]').disabled=!valid;
@@ -194,17 +194,24 @@ export async function inscribeRuneDialog(item){
  const choice=await blessingDialog(InscribeDialog,actor).wait({window:{title:item.name+' — '+t('Inscribe')},classes:['trudvang','dialog'],position:{width:560},content:'<div class="trudvang roll-dialog">'+select('sourceId',t('Rune'),known.map(row=>({value:row.id,label:row.name})))+'<fieldset class="sacred-rune-ranks"><legend>'+e(game.i18n.localize('TRUDVANG.Field.Level'))+'</legend><div data-rune-ranks role="radiogroup" aria-label="'+a(game.i18n.localize('TRUDVANG.Field.Level'))+'"></div></fieldset>'+input('amount',t('Points'),known[0].level)+'<p data-rune-funds></p><p>'+e(t('InscriptionWarning'))+'</p><p data-sacred-breakdown></p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-procedure-target></strong></p></div>',buttons:buttons('inscribe',t('Inscribe'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
  if(!choice)return null;
  try{inscriptionPlan(actor,item,choice);}catch(error){return ui.notifications.warn(error.message);}
- const penalty=-choice.level-2*s.runes.filter(row=>row.sourceId!==choice.sourceId).length,p=faithBreakdown(actor,penalty,choice.modifier);
+ const p=inscriptionBreakdown(actor,item,choice.sourceId,choice.level,choice.modifier);
  const result=await rollUnder({actor,label:item.name+' — '+t('Inscribe'),target:p.target,kind:'skill',blessing:choice.blessing,flavor:rollModifierFlavor(p.rows)+'<br>'+e(game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+' : '+choice.modifier});
  if(!result)return null;
  await requestSacredMutation(actor,'inscribe',{itemId:item.id,...choice,success:result.success});
  if(result.success)await syncPermanentRunes(item);
  return result;
 }
+export function inscriptionBreakdown(actor,item,sourceId,level,modifier=0){
+ const count=Array.from(sacredState(item).runes??[]).filter(row=>row.sourceId!==sourceId).length;
+ return faithBreakdown(actor,[
+  {label:game.i18n.format('TRUDVANG.Sacred.InscriptionRuneLevel',{level}),value:-Number(level)},
+  {label:game.i18n.format('TRUDVANG.Sacred.InscriptionOtherRunes',{count}),value:count?-2*count:0}
+ ],modifier);
+}
 export function faithBreakdown(actor,penalty=0,modifier=0){
  const item=actor.findRuleKnowledge('thuulForging'),b=actor.getAbilityBreakdown(item),rows=[...b.modifierRows,...conditionalSkillModifiers(actor,'faith',item,'',{automatic:true})];
  rows.push(...transformationRollRows(actor,{target:b.base+rollModifierTotal(rows),skillKey:'faith'}));
- if(penalty)rows.push({label:t('RuneModifier'),value:penalty});
+ if(Array.isArray(penalty))rows.push(...penalty);else if(penalty)rows.push({label:t('RuneModifier'),value:penalty});
  return {target:b.base+rollModifierTotal(rows)+Number(modifier),base:b.base,rows};
 }
 export async function activateSacredRune(item,runeId){

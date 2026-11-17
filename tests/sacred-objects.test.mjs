@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {sacredCapacity,sacredBalance,runeRow,validSacredState,publicSacredTemplates,equipmentCraftMaterial} from '../modules/rules/sacred-objects.mjs';
 const S='trudvang-chronicles',heat='holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0',fang='holy-thuuldom-fang-of-yukk:fang-of-yukk:0';
-const lang=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url))),docs=new Map(),messages=[];
+const lang=JSON.parse(fs.readFileSync(new URL('../lang/fr.json',import.meta.url))),docs=new Map(),messages=[],cards=[];
 const get=key=>key.split('.').reduce((v,k)=>v?.[k],lang)??key;
 let dialogChoice=false,rollTotal=6;
-globalThis.foundry={applications:{api:{DialogV2:class{static async wait(){return dialogChoice;}static async confirm(){return dialogChoice;}}},handlebars:{renderTemplate:async()=>'<article>Roll</article>'}},utils:{fromUuid:async id=>docs.get(id)}};
+globalThis.foundry={applications:{api:{DialogV2:class{static async wait(){return dialogChoice;}static async confirm(){return dialogChoice;}}},handlebars:{renderTemplate:async(_path,data)=>(cards.push(data),'<article>Roll</article>')}},utils:{fromUuid:async id=>docs.get(id)}};
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v);}})};
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=rollTotal;return this;}};
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),async update(){}};messages.push(message);return message;}};
@@ -14,7 +14,7 @@ globalThis.ui={notifications:{warn:()=>{}}};
 const {refreshDailySacredObjects,requestSacredMutation,inscribeRuneDialog,syncFailedInscriptions,migrateSacredEquipmentCorrections,sacredCraftData,craftingBreakdown,activateSacredRune,removeSacredObject,restoreSacredObjects,sacredObjectViews}=await import('../modules/sacred-objects.mjs');
 class Collection extends Map{[Symbol.iterator](){return this.values();}}
 function fixture({total=30,rank=3}={}){
- docs.clear();messages.length=0;dialogChoice=false;rollTotal=6;
+ docs.clear();messages.length=0;cards.length=0;dialogChoice=false;rollTotal=6;
  const gm={id:'gm',isGM:true},user={id:'owner'},users=new Map([[gm.id,gm],[user.id,user]]);users.activeGM={isSelf:true};
  globalThis.game={user:gm,users,items:[],time:{worldTime:0},i18n:{lang:'fr',localize:get,format:(k,d)=>get(k).replace(/\{(\w+)\}/g,(_,k)=>d[k])}};
  const levels={invoke:rank,thuulForging:rank,handicraft:rank,hardMaterials:rank,softMaterials:1};
@@ -163,4 +163,13 @@ test('unassigned investments from the old object-prefund flow are refunded witho
  game.settings={get:()=>version,set:async(_s,_k,v)=>version=v};const changes=[];const update=item.update;item.update=async values=>{changes.push(values);for(const [key,v]of Object.entries(values)){if(key==='system.sacred.invested')item.system.sacred.invested=v;if(key==='system.sacred.current')item.system.sacred.current=v;}return update(values);};
  assert.equal(sacredBalance(actor).free,26);await migrateSacredEquipmentCorrections();assert.equal(item.system.sacred.invested,4);assert.equal(item.system.sacred.current,2);assert.equal(item.system.sacred.runes[0].current,2);assert.equal(version,2);assert.equal(changes.length,1);
  await migrateSacredEquipmentCorrections();assert.equal(changes.length,1);
+});
+
+
+test('inscription shows separate rune-level and other-rune penalties and uses the same rows in chat',async()=>{
+ const {inscriptionBreakdown}=await import('../modules/sacred-objects.mjs');const {actor}=fixture(),item=await object(actor);learn(actor);
+ item.system.sacred.runes=[{id:'other',sourceId:'holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0',level:1,invested:1,current:1,uses:0}];item.system.sacred.invested=item.system.sacred.current=1;
+ const p=inscriptionBreakdown(actor,item,heat,3,0);assert.deepEqual(p.rows.slice(-2).map(row=>row.value),[-3,-2]);assert.match(p.rows.at(-2).label,/Niveau de la rune.*3/);assert.match(p.rows.at(-1).label,/1 × −2/);assert.equal(p.target,13);
+ const improvement=inscriptionBreakdown(actor,item,item.system.sacred.runes[0].sourceId,3);assert.deepEqual(improvement.rows.slice(-2).map(row=>row.value),[-3,0]);
+ dialogChoice={sourceId:heat,level:3,amount:3,modifier:0};await inscribeRuneDialog(item);const card=cards.at(-1);assert.match(card.flavor,/Niveau de la rune.*3.*-3/);assert.match(card.flavor,/Autres runes inscrites.*1 × −2.*-2/);
 });

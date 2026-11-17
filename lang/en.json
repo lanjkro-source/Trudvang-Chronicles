@@ -18783,7 +18783,7 @@
       "Inscribe": "Inscribe / improve a rune",
       "Rune": "Rune",
       "InscriptionWarning": "Failure prevents this inscription on this object. Existing runes remain intact.",
-      "RuneModifier": "Rune / inscription modifier",
+      "RuneModifier": "Rune modifier",
       "NoRunes": "No learned runes.",
       "Remove": "Remove sacred object",
       "RemoveConfirm": "Destroy “{name}” in the inventory and reclaim its {points} invested Divinity Points? Desecration is handled manually.",
@@ -18812,7 +18812,9 @@
       "FailedDescription": "Inscribing {rune} at level {level} failed. This object can no longer receive this rune at that or a higher level. Its other runes remain intact.",
       "FailedSummary": "Inscription permanently blocked from level {level}.",
       "FailurePermanent": "This failed inscription is permanent and bound to the object.",
-      "DirectFunds": "Character: {free} points available · This object can receive {available} more."
+      "DirectFunds": "Character: {free} points available · This object can receive {available} more.",
+      "InscriptionRuneLevel": "Rune level ({level})",
+      "InscriptionOtherRunes": "Other inscribed runes ({count} × −2)"
     }
   }
 }

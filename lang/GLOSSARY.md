@@ -16520,7 +16520,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sacred.Inscribe` | Inscribe / improve a rune | Inscrire / améliorer une rune |
 | `TRUDVANG.Sacred.Rune` | Rune | Rune |
 | `TRUDVANG.Sacred.InscriptionWarning` | Failure prevents this inscription on this object. Existing runes remain intact. | Un échec empêche cette inscription sur cet objet. Les runes déjà présentes restent intactes. |
-| `TRUDVANG.Sacred.RuneModifier` | Rune / inscription modifier | Modificateur de la rune / inscription |
+| `TRUDVANG.Sacred.RuneModifier` | Rune modifier | Modificateur de la rune |
 | `TRUDVANG.Sacred.NoRunes` | No learned runes. | Aucune rune apprise. |
 | `TRUDVANG.Sacred.Remove` | Remove sacred object | Retirer l’objet sacré |
 | `TRUDVANG.Sacred.RemoveConfirm` | Destroy “{name}” in the inventory and reclaim its {points} invested Divinity Points? Desecration is handled manually. | Détruire « {name} » de l’inventaire et restituer ses {points} points de divinité investis ? La désacralisation est gérée à la main. |
@@ -16550,3 +16550,5 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sacred.FailedSummary` | Inscription permanently blocked from level {level}. | Inscription définitivement bloquée à partir du niveau {level}. |
 | `TRUDVANG.Sacred.FailurePermanent` | This failed inscription is permanent and bound to the object. | Cette impossibilité d’inscription est permanente et liée à l’objet. |
 | `TRUDVANG.Sacred.DirectFunds` | Character: {free} points available · This object can receive {available} more. | Personnage : {free} points disponibles · Ajout possible à cet objet : {available}. |
+| `TRUDVANG.Sacred.InscriptionRuneLevel` | Rune level ({level}) | Niveau de la rune ({level}) |
+| `TRUDVANG.Sacred.InscriptionOtherRunes` | Other inscribed runes ({count} × −2) | Autres runes inscrites ({count} × −2) |
