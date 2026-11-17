@@ -1,4 +1,4 @@
-/** Wave Master changes aquatic movement, never a land or flight fallback. */
+/** Wave Master changes aquatic movement only. Missing swimming defaults to half land movement. */
 export function waterMovementDegree(definition,context={}){
  const extra=Math.max(0,Math.trunc(Number(context.countsById?.[definition.degreeOptionId]??context.counts?.[definition.degreeIndex])||0));
  return Math.max(-3,Math.min(3,definition.direction*(1+extra)));
@@ -9,13 +9,33 @@ export function waterMovementValues(base,degree){
  const cap=d===-2?1:Infinity,round=n=>Math.round(n*100)/100;
  return {max:round(Math.min(cap,Math.max(0,Number(base.max)||0)*multiplier)),metersPerTwo:round(Math.min(cap,Math.max(0,Number(base.metersPerTwo)||0)*multiplier))};
 }
+/** A land creature's implicit swimming rate exists only while a water effect needs it. */
+export function defaultWaterMovement(land){
+ if(!land||![land.max,land.metersPerTwo].every(n=>Number.isFinite(n)&&n>=0))return null;
+ return {max:land.max/2,metersPerTwo:land.metersPerTwo/2};
+}
 export function waterMovementBase(document){
  if(document?.documentName==='Item'||['weapon','armor','shield','gear','potion'].includes(document?.type))return null;
- const row=(document?._source?.system?.details?.move??document?.system?.details?.move??[]).find(row=>['nage','swim'].includes(row.mode));
- if(!row)return null;
+ const rows=document?._source?.system?.details?.move??document?.system?.details?.move??[];
  const parse=v=>Number.parseFloat(String(v??'').replace(',','.'));
- const result={max:parse(row.max),metersPerTwo:parse(row.distance)};
- return Object.values(result).every(n=>Number.isFinite(n)&&n>=0)?result:null;
+ const profile=row=>({max:parse(row.max),metersPerTwo:parse(row.distance)});
+ const swimming=rows.find(row=>['nage','swim'].includes(row.mode));
+ if(swimming){
+  const result=profile(swimming);
+  return Object.values(result).every(n=>Number.isFinite(n)&&n>=0)?result:null;
+ }
+ const land=rows.find(row=>['terrestre','land'].includes(row.mode));
+ // Prepared land values already include other active movement effects. A water
+ // effect never modifies land, so reapplication cannot double its own bonus.
+ const prepared=document?.transformationMovementRows?.find(row=>row.mode==='land');
+ const max=document?.transformationMovement?.land;
+ if(Number.isFinite(max))return defaultWaterMovement({max,metersPerTwo:prepared?.metersPerTwo??(land?profile(land).metersPerTwo:1)});
+ if(land)return defaultWaterMovement(profile(land));
+ if(!rows.length){
+  const current=Number(document?.system?.movement?.current);
+  if(Number.isFinite(current))return defaultWaterMovement({max:current,metersPerTwo:1});
+ }
+ return null;
 }
 
 /** A round budget for water movement; no effect or counter is ever written in preparation. */

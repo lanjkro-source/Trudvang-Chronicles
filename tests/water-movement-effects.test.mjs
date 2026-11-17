@@ -26,12 +26,12 @@ test('all seven water degrees obey the rule table and leave land and flight unch
  }
  assert.equal(waterMovementDegree({direction:1,degreeIndex:4,degreeOptionId:oid(4)},{counts:[0,0,0,0,100]}),3);
  assert.equal(waterMovementDegree({direction:-1,degreeIndex:4,degreeOptionId:oid(4)},{counts:[0,0,0,0,100],countsById:{[oid(4)]:0}}),-1);
- const missing=movementDetails(18,[],[{mode:'swim',method:'waterDegrees',value:1}]);assert.equal(missing.swim,undefined);
- const supplied=movementDetails(18,[],[{mode:'swim',method:'waterDegrees',value:1,base:{max:10,metersPerTwo:0.5}}]);assert.deepEqual(supplied.swim,{max:20,metersPerTwo:1});
+ const missing=movementDetails(18,[],[{mode:'swim',method:'waterDegrees',value:1}]);assert.deepEqual(missing.swim,{max:18,metersPerTwo:1});
+ const supplied=movementDetails(18,[],[{mode:'swim',method:'waterDegrees',value:1,base:{max:10,metersPerTwo:0.5}}]);assert.deepEqual(supplied.swim,{max:18,metersPerTwo:1});
 });
-test('water base never comes from land movement or prepared values and is not borrowed from the bearer of an object',()=>{
+test('explicit swimming is preserved and default swimming uses half land movement without leaking to carried objects',()=>{
  const actor=setup();actor._source={system:{details:{move:[{mode:'swim',max:'8,5',distance:'0,5'}]}}};assert.deepEqual(waterMovementBase(actor),{max:8.5,metersPerTwo:0.5});
- assert.equal(waterMovementBase({type:'character',system:{movement:{current:18}}}),null);assert.equal(waterMovementBase({type:'gear',parent:actor}),null);
+ assert.deepEqual(waterMovementBase({type:'character',system:{movement:{current:18}}}),{max:9,metersPerTwo:0.5});assert.equal(waterMovementBase({type:'gear',parent:actor}),null);
 });
 test('both bilingual creature variants calculate duration, exact degree, effective water values and range without doubling on copies',async()=>{
  for(const c of ['fr','en'])for(const adverse of [false,true]){
@@ -42,7 +42,7 @@ test('both bilingual creature variants calculate duration, exact degree, effecti
   await applyTransformation(actor,key('creatures',adverse),{source:{documentName:'ActiveEffect',...first},counts:[100,100,100,100,100],skipDialog:true});assert.deepEqual(created.system.changes,first.system.changes);assert.deepEqual(created.duration,first.duration);assert.equal(warnings.length,0);
  }
 });
-test('missing swimming values require explicit input; boats keep their own effect without changing passengers',async()=>{
+test('missing land and swimming values require explicit input; boats keep their own effect without changing passengers',async()=>{
  const actor=setup();actor.system.details.move=[];await applyTransformation(actor,key(),{skipDialog:true});assert.equal(created,null);assert.equal(warnings.length,1);
  await applyTransformation(actor,key(),{preselectedAnswers:{duration:'1 hour',water_max:'8,5',water_metersPerTwo:'0,5'}});assert.deepEqual(created.flags[S].transformation.waterMovement,{base:{max:8.5,metersPerTwo:0.5},degree:1,max:17,metersPerTwo:1});
  for(const value of ['',-1,'no']){created=null;await applyTransformation(actor,key(),{preselectedAnswers:{duration:'1 hour',water_max:value,water_metersPerTwo:1}});assert.equal(created,null);}
@@ -78,4 +78,25 @@ test('GM allocation preserves the first recipient on renewal and serializes the 
  const fresh={...caster,uuid:'Actor.fresh',system:{activeSpellCastingsMigrated:true,activeSpellCastings:[{id:'cast',itemId:'spell',powerLevelSnapshot:[],targetAllocations:[]}]}};docs.set(fresh.uuid,fresh);
  const payload={casterUuid:fresh.uuid,castingId:'cast',userId:'gm',countsById:{},data:structuredClone(data)};payload.data.flags[S].transformation.ruleTestContext.casterUuid=fresh.uuid;
  const results=await Promise.all([actor,b].map(target=>applyAllocatedEffectOnGM({...payload,targetUuid:target.uuid})));assert.deepEqual(results.map(r=>r.status),['ok','exceeds-targets']);
+});
+
+test('FR/EN characters and land creatures accept Wave Master without swimming input and gain only a temporary half-land swimming mode',async()=>{
+ for(const c of ['fr','en'])for(const type of ['character','npc']){
+  const actor=setup(c);actor.type=type;
+  actor.system={movement:{current:12},details:{move:type==='npc'?[{mode:'terrestre',distance:'1',max:'12'}]:[]}};
+  const before=structuredClone(actor.system);
+  await applyTransformation(actor,key(),{counts:[0,0,0,0,1],skipDialog:true});assert.ok(created);assert.equal(warnings.length,0);
+  assert.deepEqual(created.flags[S].transformation.waterMovement,{base:{max:6,metersPerTwo:0.5},degree:2,max:18,metersPerTwo:1.5});
+  const changes=rulesFromChanges(created.system.changes).movement;
+  const active=movementDetails(12,actor.system.details.move,changes);assert.deepEqual(active.swim,{max:18,metersPerTwo:1.5});assert.deepEqual(active.land,{max:12,metersPerTwo:1});
+  const removed=movementDetails(12,actor.system.details.move,[]);assert.equal(removed.swim,undefined);assert.deepEqual(actor.system,before);
+  await applyTransformation(actor,key('creatures',true),{skipDialog:true});assert.deepEqual(created.flags[S].transformation.waterMovement,{base:{max:6,metersPerTwo:0.5},degree:-1,max:3,metersPerTwo:0.25});
+ }
+});
+test('implicit swimming follows current land modifiers, leaves explicit swimming authoritative and never uses flight',()=>{
+ const actor=setup();actor.system.details.move=[{mode:'terrestre',max:'12',distance:'1'}];actor.transformationMovement={land:30};actor.transformationMovementRows=[{mode:'land',metersPerTwo:3}];
+ assert.deepEqual(waterMovementBase(actor),{max:15,metersPerTwo:1.5});
+ const rows=movementDetails(12,actor.system.details.move,[{mode:'land',method:'replace',value:30,metersPerTwo:3},{mode:'swim',method:'waterDegrees',value:1,base:{max:6,metersPerTwo:0.5}}]);assert.deepEqual(rows.swim,{max:30,metersPerTwo:3});
+ actor.system.details.move.push({mode:'nage',max:'8',distance:'2'});assert.deepEqual(waterMovementBase(actor),{max:8,metersPerTwo:2});
+ const flight={type:'npc',system:{movement:{current:12},details:{move:[{mode:'vol',max:'24',distance:'2'}]}}};assert.equal(waterMovementBase(flight),null);
 });

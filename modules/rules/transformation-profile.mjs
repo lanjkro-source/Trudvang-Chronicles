@@ -1,4 +1,4 @@
-import {waterMovementValues} from "./water-movement.mjs";
+import {waterMovementValues,defaultWaterMovement} from "./water-movement.mjs";
 import {hasProfileChanges, rulesFromChanges, roundEffectValue} from "./effect-rule-changes.mjs";
 import {upgradeFearFactor} from "./fear-resolver.mjs";
 import {sensoryProfile,sensoryVision} from "./senses.mjs";
@@ -55,7 +55,7 @@ export function movementDetails(base, rows, changes, modifier=0) {
   for(const key of keys){
    if(row.method==="waterDegrees"){
     if(key!=="swim")continue;
-    const baseline=modes.swim??row.base;
+    const baseline=modes.swim??defaultWaterMovement(modes.land)??row.base;
     if(baseline)modes.swim=waterMovementValues(baseline,row.value);
     continue;
    }

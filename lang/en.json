@@ -18936,7 +18936,7 @@
     "WaterMovement": {
       "BaseMax": "Base water movement: maximum per round (m)",
       "BaseRate": "Base water movement: metres per 2 CP",
-      "BaseRequired": "Enter both base water movement values (0 or more). Land movement is not a swimming speed.",
+      "BaseRequired": "Enter both base water movement values (0 or more). Without explicit swimming, a creature uses half its land movement; objects require their own values.",
       "ActorRequired": "Apply this variant to a creature; use the object variant for a ship.",
       "Values": "Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only.",
       "Unavailable": "No further water movement is possible this round."

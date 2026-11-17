@@ -16700,7 +16700,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.WaterMovement.BaseMax` | Base water movement: maximum per round (m) | Mouvement aquatique de base : maximum par tour (m) |
 | `TRUDVANG.WaterMovement.BaseRate` | Base water movement: metres per 2 CP | Mouvement aquatique de base : mètres pour 2 PC |
-| `TRUDVANG.WaterMovement.BaseRequired` | Enter both base water movement values (0 or more). Land movement is not a swimming speed. | Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Le déplacement terrestre ne sert pas de valeur de nage. |
+| `TRUDVANG.WaterMovement.BaseRequired` | Enter both base water movement values (0 or more). Without explicit swimming, a creature uses half its land movement; objects require their own values. | Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Sans nage explicite, une créature utilise la moitié de son déplacement terrestre ; les objets nécessitent leurs propres valeurs. |
 | `TRUDVANG.WaterMovement.ActorRequired` | Apply this variant to a creature; use the object variant for a ship. | Appliquez cette variante à une créature ; utilisez la variante objet pour un navire. |
 | `TRUDVANG.WaterMovement.Values` | Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only. | Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement. |
 | `TRUDVANG.WaterMovement.Unavailable` | No further water movement is possible this round. | Aucun déplacement aquatique supplémentaire n’est possible ce tour. |

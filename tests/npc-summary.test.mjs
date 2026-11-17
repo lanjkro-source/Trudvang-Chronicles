@@ -2713,3 +2713,11 @@ test('Wave Master movement applies its per-round water cap before charging furth
  game.combat.round=2;assert.equal((await npc.rollCombatMovement()).paidMeters,1);
  npc.effects=[];npc.prepareDerivedData();assert.equal(npc.transformationMovement.swim,12);assert.equal(npc.transformationMovement.land,18);
 });
+
+test('a land-only NPC gains half-speed swimming only while its native water effect is active',()=>{
+ const npc=spendableNpc([]);npc._source.system.details.move=[{mode:'terrestre',distance:'1',max:'12'}];npc.system.details.move=structuredClone(npc._source.system.details.move);
+ npc.effects=[{id:'waves',name:'Maître des flots',system:{changes:[{key:'system.transformation.movement',type:'override',value:JSON.stringify([{mode:'swim',method:'waterDegrees',value:2,base:{max:6,metersPerTwo:0.5}}])}]}}];npc.allApplicableEffects=()=>npc.effects;
+ npc.prepareDerivedData();assert.equal(npc.transformationMovement.land,12);assert.equal(npc.transformationMovement.swim,18);assert.equal(npc.transformationMovementRows.find(row=>row.mode==='swim').metersPerTwo,1.5);
+ assert.deepEqual(npc._source.system.details.move,[{mode:'terrestre',distance:'1',max:'12'}]);
+ npc.effects=[];npc.prepareDerivedData();assert.equal(npc.transformationMovement.swim,undefined);assert.equal(npc.transformationMovement.land,12);
+});

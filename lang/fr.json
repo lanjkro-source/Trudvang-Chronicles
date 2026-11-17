@@ -18936,7 +18936,7 @@
     "WaterMovement": {
       "BaseMax": "Mouvement aquatique de base : maximum par tour (m)",
       "BaseRate": "Mouvement aquatique de base : mètres pour 2 PC",
-      "BaseRequired": "Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Le déplacement terrestre ne sert pas de valeur de nage.",
+      "BaseRequired": "Indiquez les deux valeurs du déplacement aquatique de base (0 ou plus). Sans nage explicite, une créature utilise la moitié de son déplacement terrestre ; les objets nécessitent leurs propres valeurs.",
       "ActorRequired": "Appliquez cette variante à une créature ; utilisez la variante objet pour un navire.",
       "Values": "Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement.",
       "Unavailable": "Aucun déplacement aquatique supplémentaire n’est possible ce tour."
