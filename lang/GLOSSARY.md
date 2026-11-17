@@ -14803,6 +14803,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.SourcePage` | 231 | 287 |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier.Duration` | permanente tant que les deux runes sont portées et alimentées en points de divinité | permanente tant que les deux runes sont portées et alimentées en points de divinité |
 
+## `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.Name` | Runic repair | Réparation runique |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.Description` | Restore {amount} BV to one object, up to its intrinsic maximum integrity. | Répare un objet de {amount} VI, sans dépasser son intégrité initiale maximale. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.SourceName` | Power of Repair | Pouvoir de réparation |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.SourcePage` | 231 | 287 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-power-of-repair:power-of-repair:0#effect.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect`
 
 | Clé | English | Français |
@@ -14824,6 +14835,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneSummary5` | Climbing: movement/2 + 5 m; ceiling walking. | Escalade : mouvement/2 + 5 m ; marche au plafond. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect.RuneDescription5` | The beneficiary climbs vertical walls and walks on ceilings. Climbing speed is calculated from movement at application: movement/2 + 5 m. Both hands and feet are required for full speed; normal carrying capacity is retained. Expiration while aloft causes a fall, handled by the GM. Ordinary ground movement is unchanged. | Le bénéficiaire escalade les parois verticales et marche au plafond. Sa vitesse d’escalade est calculée à partir de son mouvement au moment de l’application : mouvement/2 + 5 m. Il doit utiliser mains et pieds pour sa pleine vitesse et conserve sa capacité de charge habituelle. À l’expiration en hauteur, il chute ; le MJ gère cette chute. Son déplacement terrestre ordinaire n’est pas réduit. |
 
+## `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.Name` | Runic healing | Guérison runique |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.Description` | Distribute {level}d6 of healing among touched recipients over 2 action rounds. | Répartit {level}d6 de soins entre les bénéficiaires touchés, pendant 2 tours de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.SourceName` | Healing Rune | Rune de guérison |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.SourcePage` | 231 | 287 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-healing-rune:healing-rune:0#effect.Duration` |  |  |
+
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect`
 
 | Clé | English | Français |
@@ -14844,6 +14866,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription4` | For 4 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 13. If transported unconscious, use SV 8. Failure prevents recalling the journey’s details. The rolls remain available from this effect. | Le thuul se souvient avec précision des distances et directions parcourues pendant 4 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 13. S’il a été transporté inconscient, la SV est 8. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneSummary5` | Route memory; SV 14 while blindfolded, SV 9 if unconscious. | Mémoire du trajet ; SV 14 yeux couverts, SV 9 si inconscient. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect.RuneDescription5` | For 5 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 14. If transported unconscious, use SV 9. Failure prevents recalling the journey’s details. The rolls remain available from this effect. | Le thuul se souvient avec précision des distances et directions parcourues pendant 5 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 14. S’il a été transporté inconscient, la SV est 9. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet. |
+
+## `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.Name` | Healing water spring | Source d’eau guérisseuse |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.Description` | Spring lasting {minutes} minutes: wash wounds to restore {amount} BP per recipient; 1 liter per action round. Collected water loses its healing power. | Source pendant {minutes} minutes : lave les blessures et rend {amount} PS par bénéficiaire ; 1 litre par tour de jeu. L’eau emportée perd son pouvoir de guérison. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.SourceName` | Well of Water | Source d’eau |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.SourcePage` | 232 | 298 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-well-of-water:well-of-water:0#effect.Duration` |  |  |
 
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-stone-to-clay:stone-to-clay:0#effect`
 
@@ -16287,6 +16320,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.resourceGain` | {source}: +{amount} {resource}. | {source} : +{amount} {resource}. |
 | `TRUDVANG.Consequence.Result.risk` | {source}: {rolled} on 1d20 — {outcome}. | {source} : {rolled} sur 1d20 — {outcome}. |
 | `TRUDVANG.Consequence.Result.createConsumable` | {source} was created in the inventory. | {source} a été créée dans l’inventaire. |
+| `TRUDVANG.Consequence.Result.repair` | {source}: {amount} BV repaired. | {source} : {amount} VI réparés. |
 
 ## `TRUDVANG.Aura`
 
@@ -16552,3 +16586,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sacred.DirectFunds` | Character: {free} points available · This object can receive {available} more. | Personnage : {free} points disponibles · Ajout possible à cet objet : {available}. |
 | `TRUDVANG.Sacred.InscriptionRuneLevel` | Rune level ({level}) | Niveau de la rune ({level}) |
 | `TRUDVANG.Sacred.InscriptionOtherRunes` | Other inscribed runes ({count} × −2) | Autres runes inscrites ({count} × −2) |
+
+## `TRUDVANG.RuneConsequence`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.RuneConsequence.HealingDice` | Healing dice (D6) | Dés de guérison (D6) |
+| `TRUDVANG.RuneConsequence.EmptyAllocation` | Allocate at least one healing die. | Attribuez au moins un dé de guérison. |
+| `TRUDVANG.RuneConsequence.Expired` | This rune activation has ended. | Cette activation runique est terminée. |
+| `TRUDVANG.RuneConsequence.IntegrityRequired` | Choose an item with a maximum integrity value. | Choisissez un objet possédant une intégrité maximale. |
+| `TRUDVANG.RuneConsequence.Allocations` | Applications: {used} / {max}. | Applications : {used} / {max}. |

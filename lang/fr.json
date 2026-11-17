@@ -17372,6 +17372,15 @@
           "SourcePage": "287",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-thuuldom-power-of-repair:power-of-repair:0#effect": {
+          "Name": "Réparation runique",
+          "Summary": "Répare l’usure d’un objet endommagé.",
+          "Description": "Répare un objet de {amount} VI, sans dépasser son intégrité initiale maximale.",
+          "SourceName": "Pouvoir de réparation",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "287",
+          "Duration": ""
+        },
         "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect": {
           "Name": "Prise de l’araignée des cavernes",
           "Summary": "Permet d’escalader murs et plafonds comme une araignée.",
@@ -17391,6 +17400,15 @@
           "RuneSummary5": "Escalade : mouvement/2 + 5 m ; marche au plafond.",
           "RuneDescription5": "Le bénéficiaire escalade les parois verticales et marche au plafond. Sa vitesse d’escalade est calculée à partir de son mouvement au moment de l’application : mouvement/2 + 5 m. Il doit utiliser mains et pieds pour sa pleine vitesse et conserve sa capacité de charge habituelle. À l’expiration en hauteur, il chute ; le MJ gère cette chute. Son déplacement terrestre ordinaire n’est pas réduit."
         },
+        "holy-thuuldom-healing-rune:healing-rune:0#effect": {
+          "Name": "Guérison runique",
+          "Summary": "Répartit les dés de soins entre les bénéficiaires touchés.",
+          "Description": "Répartit {level}d6 de soins entre les bénéficiaires touchés, pendant 2 tours de jeu.",
+          "SourceName": "Rune de guérison",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "287",
+          "Duration": ""
+        },
         "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect": {
           "Name": "Sang du labyrinthe",
           "Summary": "Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route.",
@@ -17409,6 +17427,15 @@
           "RuneDescription4": "Le thuul se souvient avec précision des distances et directions parcourues pendant 4 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 13. S’il a été transporté inconscient, la SV est 8. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet.",
           "RuneSummary5": "Mémoire du trajet ; SV 14 yeux couverts, SV 9 si inconscient.",
           "RuneDescription5": "Le thuul se souvient avec précision des distances et directions parcourues pendant 5 heure(s). Avec les yeux couverts, il effectue un test de situation de SV 14. S’il a été transporté inconscient, la SV est 9. Un échec ne permet pas de retrouver les détails du voyage. Les tests restent accessibles depuis cet effet."
+        },
+        "holy-thuuldom-well-of-water:well-of-water:0#effect": {
+          "Name": "Source d’eau guérisseuse",
+          "Summary": "Source temporaire dont l’eau fraîche soigne les blessures.",
+          "Description": "Source pendant {minutes} minutes : lave les blessures et rend {amount} PS par bénéficiaire ; 1 litre par tour de jeu. L’eau emportée perd son pouvoir de guérison.",
+          "SourceName": "Source d’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "298",
+          "Duration": ""
         },
         "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect": {
           "Name": "Transformation de pierre en argile",
@@ -18596,7 +18623,8 @@
         "fearReduction": "{source} : −{amount} peur.",
         "resourceGain": "{source} : +{amount} {resource}.",
         "risk": "{source} : {rolled} sur 1d20 — {outcome}.",
-        "createConsumable": "{source} a été créée dans l’inventaire."
+        "createConsumable": "{source} a été créée dans l’inventaire.",
+        "repair": "{source} : {amount} VI réparés."
       }
     },
     "Aura": {
@@ -18815,6 +18843,13 @@
       "DirectFunds": "Personnage : {free} points disponibles · Ajout possible à cet objet : {available}.",
       "InscriptionRuneLevel": "Niveau de la rune ({level})",
       "InscriptionOtherRunes": "Autres runes inscrites ({count} × −2)"
+    },
+    "RuneConsequence": {
+      "HealingDice": "Dés de guérison (D6)",
+      "EmptyAllocation": "Attribuez au moins un dé de guérison.",
+      "Expired": "Cette activation runique est terminée.",
+      "IntegrityRequired": "Choisissez un objet possédant une intégrité maximale.",
+      "Allocations": "Applications : {used} / {max}."
     }
   }
 }

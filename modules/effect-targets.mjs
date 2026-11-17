@@ -63,7 +63,8 @@ export async function applyEffectForCasterOnGM({messageId,userId,key,tokenUuid,s
  if(itemUuid&&(!item||item.parent?.uuid!==token.actor.uuid))return {status:"unavailable"};
  const source=sourceUuid?await foundry.utils.fromUuid(sourceUuid):null;
  if(!source||!["spell","divineFeat"].includes(source.type)||source.system?.catalogId!==context.sourceId)return {status:"unavailable"};
- const selected=currentCastingCounts(context);
+ const rune=message.flags?.[SCOPE]?.runeAllocation;
+ const selected=rune?currentCastingCounts({...context,countsById:rune.selected}):currentCastingCounts(context);
  for(const [name,value] of Object.entries(answers??{}))if(/^boost\d+$/.test(name)){
   const index=Number(name.slice(5)),count=Number(value);
   if(!Number.isInteger(count)||count<0||count>Number(selected[index]??0))return {status:"unavailable"};

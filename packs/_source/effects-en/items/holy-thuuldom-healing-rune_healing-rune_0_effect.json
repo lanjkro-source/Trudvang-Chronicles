@@ -1,0 +1,45 @@
+{
+  "_id": "eCj1OhNiOjPkQlRm",
+  "_key": "!items!eCj1OhNiOjPkQlRm",
+  "name": "Runic healing",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+    "description": "Distribute {level}d6 of healing among touched recipients over 2 action rounds.",
+    "summary": "Distribute healing dice among touched recipients.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "LZnXG7C8D9EaGbHc",
+      "_key": "!items.effects!eCj1OhNiOjPkQlRm.LZnXG7C8D9EaGbHc",
+      "name": "Runic healing",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Distribute {level}d6 of healing among touched recipients over 2 action rounds.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+            "sourceId": "holy-thuuldom-healing-rune:healing-rune:0",
+            "summary": "Distribute healing dice among touched recipients.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

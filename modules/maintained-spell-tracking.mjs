@@ -1,3 +1,4 @@
+import {runeConsequenceExpired,validRuneConsequenceAllocation} from './rules/rune-consequences.mjs';
 import {effectTargetRestriction} from './rules/mobility-effects.mjs';
 import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
@@ -93,7 +94,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const targetItem=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
   if(itemUuid&&(!targetItem||targetItem.parent?.uuid!==target.uuid))return {status:"unavailable"};
   const message=messageId?game.messages?.get(messageId):null;
-  const allocationKey=message?.flags?.["trudvang-chronicles"]?.instantAllocation?"instantAllocation":"divineAllocation";
+  const allocationKey=message?.flags?.['trudvang-chronicles']?.runeAllocation?'runeAllocation':message?.flags?.["trudvang-chronicles"]?.instantAllocation?"instantAllocation":"divineAllocation";
   const divine=message?.flags?.["trudvang-chronicles"]?.[allocationKey];
   if(messageId&&!message)return {status:"unavailable"};
   const records=divine?null:activeSpellRecords(caster), record=divine??records?.find(row=>row.id===castingId);
@@ -102,7 +103,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const targeting=POWER_DETAILS_BY_ID[sourceId]?.targeting;
   const provenance=data?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
   if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==sourceId
-   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!==(allocationKey==="instantAllocation"?"spell":"divine"))))return {status:"unavailable"};
+   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!==(allocationKey==='runeAllocation'?'rune':allocationKey==="instantAllocation"?"spell":"divine"))))return {status:"unavailable"};
   const selected=divine?divine.selected:Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const template=TRANSFORMATION_TEMPLATES[effectKey];
@@ -113,6 +114,16 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   }
   if(effectTargetRestriction(template,target,provenance))return {status:"target-restricted"};
   const instant=template.instant;
+  if(instant?.rune){
+   if(allocationKey!=='runeAllocation'||provenance.runeLevel!==record.runeLevel||provenance.runeObjectUuid!==record.runeObjectUuid)return {status:'unavailable'};
+   if(runeConsequenceExpired(record,{time:game.time?.worldTime,combat:game.combat}))return {status:'rune-expired'};
+   if(!validRuneConsequenceAllocation(instant.rune,record,countsById,POWER_DETAILS_BY_ID[sourceId]))return {status:'invalid-allocation'};
+   if(instant.rune.source){
+    const source=record.sourceEffectUuid?await foundry.utils.fromUuid(record.sourceEffectUuid):null;
+    if(!source||source.disabled||source.duration?.expired||source.parent?.uuid!==record.runeObjectUuid||source.flags?.['trudvang-chronicles']?.runeConsequenceSource?.castingId!==castingId)return {status:'rune-expired'};
+   }
+  }
+  if(instant?.rune&&(template.itemOnly?!['weapon','armor','shield','gear','potion'].includes(targetItem?.type):Boolean(targetItem)))return {status:'unavailable'};
   const allocationTarget=itemUuid||targetUuid;
   const existing=(record.targetAllocations??[]).find(row=>row.targetUuid===allocationTarget);
   if(existing?.effectKey&&existing.effectKey!==effectKey)return {status:"duplicate-target"};
@@ -129,7 +140,7 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
    if(instant){
     const {executeConsequences,announceConsequences}=await import("./consequences.mjs");
     const counts=(POWER_DETAILS_BY_ID[sourceId].powerLevels??[]).map(row=>countsById[row.id]??0);
-    const result=await executeConsequences({actor:target,operations:[instantConsequenceOperation(template,counts,provenance)],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
+    const result=await executeConsequences({actor:target,item:targetItem,operations:[instantConsequenceOperation(template,counts,provenance)],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
     if(!result.rows.length)throw Error("Failed to apply instant consequence");
     // A notification failure must not allow the already applied healing to be replayed.
     try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}

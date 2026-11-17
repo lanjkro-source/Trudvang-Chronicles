@@ -1,0 +1,45 @@
+{
+  "_id": "u0VnF2x3y4z5A6B7",
+  "_key": "!items!u0VnF2x3y4z5A6B7",
+  "name": "Réparation runique",
+  "type": "effect",
+  "img": "icons/svg/anvil.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+    "description": "Répare un objet de {amount} VI, sans dépasser son intégrité initiale maximale.",
+    "summary": "Répare l’usure d’un objet endommagé.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 287
+    }
+  },
+  "effects": [
+    {
+      "_id": "7umoYHaGbHcIdJeK",
+      "_key": "!items.effects!u0VnF2x3y4z5A6B7.7umoYHaGbHcIdJeK",
+      "name": "Réparation runique",
+      "type": "effect",
+      "img": "icons/svg/anvil.svg",
+      "description": "Répare un objet de {amount} VI, sans dépasser son intégrité initiale maximale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+            "sourceId": "holy-thuuldom-power-of-repair:power-of-repair:0",
+            "summary": "Répare l’usure d’un objet endommagé.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

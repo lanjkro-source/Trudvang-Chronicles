@@ -10,7 +10,7 @@ const current=(actor,key)=>number(actor.system.resources[key].current??actor.sys
 
 /** Explicit operations, never actor preparation or formula evaluation hooks.
  * Callers choose the recipient and whether to announce the collected results. */
-export async function executeConsequences({actor,operations=[],source=""}={}){
+export async function executeConsequences({actor,item=null,operations=[],source=""}={}){
  if(!actor?.isOwner)return {rows:[],rolls:[]};
  const rows=[],rolls=[];
  for(const op of operations){
@@ -19,12 +19,17 @@ export async function executeConsequences({actor,operations=[],source=""}={}){
    if(item)rows.push({operation:'createConsumable',amount:1,rolled:0,source:item.name});
    continue;
   }
-  if(!["heal","damage","fearReduction","resourceGain","risk"].includes(op.operation))throw new Error(`Unknown consequence operation: ${op.operation}`);
+  if(!["heal","repair","damage","fearReduction","resourceGain","risk"].includes(op.operation))throw new Error(`Unknown consequence operation: ${op.operation}`);
+  if(op.operation==='repair'&&(!item?.isOwner||item.parent?.uuid!==actor.uuid||!['weapon','shield','armor','gear'].includes(item.type)||!(Number(item._source?.system?.breach?.max)>0)))throw Error(game.i18n.localize('TRUDVANG.RuneConsequence.IntegrityRequired'));
   let value;
   if(/^\d+(?:\.\d+)?$/.test(String(op.formula??"0")))value=Number(op.formula??0);
   else{const roll=new Roll(String(op.formula));await roll.evaluate();rolls.push(roll);value=number(roll.total);}
   value=Math.max(0,Math.trunc(value));let amount=0;
-  if(op.operation==="heal"){
+  if(op.operation==='repair'){
+   // Repair real wear, never restore a spent temporary integrity grant.
+   const before=number(item._source.system.breach.value),after=Math.min(number(item._source.system.breach.max),before+value);
+   amount=Math.max(0,after-before);if(amount)await item.update({'system.breach.value':after});
+  }else if(op.operation==="heal"){
    const before=current(actor,"body"),after=Math.min(number(actor.system.resources.body.max),before+value);amount=Math.max(0,after-before);
    if(amount)await actor.update(bodyHealthUpdate(actor,after));
   }else if(op.operation==="fearReduction"){
@@ -37,7 +42,7 @@ export async function executeConsequences({actor,operations=[],source=""}={}){
    const before=current(actor,op.resource),after=Math.min(number(actor.system.resources[op.resource].max),before+value);amount=Math.max(0,after-before);
    if(amount)await actor.update({[`system.resources.${op.resource}.value`]:number(actor._source?.system.resources[op.resource].value??actor.system.resources[op.resource].value)+amount});
   }else amount=value<=number(op.threshold)?1:0;
-  rows.push({operation:op.operation,resource:op.resource??"",amount,rolled:value,source});
+  rows.push({operation:op.operation,resource:op.resource??"",amount,rolled:value,source:op.operation==='repair'?item.name:source});
  }
  return {rows,rolls};
 }

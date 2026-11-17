@@ -12223,6 +12223,25 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "parameters": []
   },
+  "holy-thuuldom-power-of-repair:power-of-repair:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/anvil.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "itemOnly": true,
+    "instant": {
+      "operation": "repair",
+      "base": 0,
+      "rune": {
+        "perLevel": 10
+      }
+    },
+    "sourceId": "holy-thuuldom-power-of-repair:power-of-repair:0",
+    "parameters": []
+  },
   "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect": {
     "id": "effect",
     "icon": "icons/svg/holy-shield.svg",
@@ -12274,6 +12293,27 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ],
     "sourceId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+    "parameters": []
+  },
+  "holy-thuuldom-healing-rune:healing-rune:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/regen.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 0,
+      "rune": {
+        "perLevel": 1,
+        "die": 6,
+        "allocationIndex": 0,
+        "seconds": 10
+      }
+    },
+    "sourceId": "holy-thuuldom-healing-rune:healing-rune:0",
     "parameters": []
   },
   "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect": {
@@ -12342,6 +12382,26 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ],
     "sourceId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0",
+    "parameters": []
+  },
+  "holy-thuuldom-well-of-water:well-of-water:0#effect": {
+    "id": "effect",
+    "icon": "icons/svg/regen.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "instant": {
+      "operation": "heal",
+      "base": 0,
+      "rune": {
+        "perLevel": 1,
+        "secondsPerLevel": 180,
+        "source": true
+      }
+    },
+    "sourceId": "holy-thuuldom-well-of-water:well-of-water:0",
     "parameters": []
   },
   "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect": {
@@ -16557,11 +16617,20 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-thuuldom-hammer-fists:hammer-fists:0": [
     "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier"
   ],
+  "holy-thuuldom-power-of-repair:power-of-repair:0": [
+    "holy-thuuldom-power-of-repair:power-of-repair:0#effect"
+  ],
   "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": [
     "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect"
   ],
+  "holy-thuuldom-healing-rune:healing-rune:0": [
+    "holy-thuuldom-healing-rune:healing-rune:0#effect"
+  ],
   "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": [
     "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect"
+  ],
+  "holy-thuuldom-well-of-water:well-of-water:0": [
+    "holy-thuuldom-well-of-water:well-of-water:0#effect"
   ],
   "holy-thuuldom-stone-to-clay:stone-to-clay:0": [
     "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect"

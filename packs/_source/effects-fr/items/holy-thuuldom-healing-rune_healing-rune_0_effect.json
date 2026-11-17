@@ -1,0 +1,45 @@
+{
+  "_id": "eCj1OhNiOjPkQlRm",
+  "_key": "!items!eCj1OhNiOjPkQlRm",
+  "name": "Guérison runique",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+    "description": "Répartit {level}d6 de soins entre les bénéficiaires touchés, pendant 2 tours de jeu.",
+    "summary": "Répartit les dés de soins entre les bénéficiaires touchés.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 287
+    }
+  },
+  "effects": [
+    {
+      "_id": "LZnXG7C8D9EaGbHc",
+      "_key": "!items.effects!eCj1OhNiOjPkQlRm.LZnXG7C8D9EaGbHc",
+      "name": "Guérison runique",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Répartit {level}d6 de soins entre les bénéficiaires touchés, pendant 2 tours de jeu.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-healing-rune:healing-rune:0#effect",
+            "sourceId": "holy-thuuldom-healing-rune:healing-rune:0",
+            "summary": "Répartit les dés de soins entre les bénéficiaires touchés.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

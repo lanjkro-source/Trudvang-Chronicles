@@ -1,0 +1,45 @@
+{
+  "_id": "u0VnF2x3y4z5A6B7",
+  "_key": "!items!u0VnF2x3y4z5A6B7",
+  "name": "Runic repair",
+  "type": "effect",
+  "img": "icons/svg/anvil.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+    "description": "Restore {amount} BV to one object, up to its intrinsic maximum integrity.",
+    "summary": "Repairs wear on a damaged item.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "7umoYHaGbHcIdJeK",
+      "_key": "!items.effects!u0VnF2x3y4z5A6B7.7umoYHaGbHcIdJeK",
+      "name": "Runic repair",
+      "type": "effect",
+      "img": "icons/svg/anvil.svg",
+      "description": "Restore {amount} BV to one object, up to its intrinsic maximum integrity.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-power-of-repair:power-of-repair:0#effect",
+            "sourceId": "holy-thuuldom-power-of-repair:power-of-repair:0",
+            "summary": "Repairs wear on a damaged item.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

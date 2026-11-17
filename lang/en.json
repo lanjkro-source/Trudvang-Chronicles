@@ -17372,6 +17372,15 @@
           "SourcePage": "231",
           "Duration": "permanente tant que les deux runes sont portées et alimentées en points de divinité"
         },
+        "holy-thuuldom-power-of-repair:power-of-repair:0#effect": {
+          "Name": "Runic repair",
+          "Summary": "Repairs wear on a damaged item.",
+          "Description": "Restore {amount} BV to one object, up to its intrinsic maximum integrity.",
+          "SourceName": "Power of Repair",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "231",
+          "Duration": ""
+        },
         "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0#effect": {
           "Name": "Cave Spider's Grip",
           "Summary": "Lets the Thuul climb walls and ceilings like a spider.",
@@ -17391,6 +17400,15 @@
           "RuneSummary5": "Climbing: movement/2 + 5 m; ceiling walking.",
           "RuneDescription5": "The beneficiary climbs vertical walls and walks on ceilings. Climbing speed is calculated from movement at application: movement/2 + 5 m. Both hands and feet are required for full speed; normal carrying capacity is retained. Expiration while aloft causes a fall, handled by the GM. Ordinary ground movement is unchanged."
         },
+        "holy-thuuldom-healing-rune:healing-rune:0#effect": {
+          "Name": "Runic healing",
+          "Summary": "Distribute healing dice among touched recipients.",
+          "Description": "Distribute {level}d6 of healing among touched recipients over 2 action rounds.",
+          "SourceName": "Healing Rune",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "231",
+          "Duration": ""
+        },
         "holy-thuuldom-labyrinth-blood:labyrinth-blood:0#effect": {
           "Name": "Labyrinth Blood",
           "Summary": "Gives the Thuul a supernatural memory of the way and helps them find their path again.",
@@ -17409,6 +17427,15 @@
           "RuneDescription4": "For 4 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 13. If transported unconscious, use SV 8. Failure prevents recalling the journey’s details. The rolls remain available from this effect.",
           "RuneSummary5": "Route memory; SV 14 while blindfolded, SV 9 if unconscious.",
           "RuneDescription5": "For 5 hour(s), the Thuul precisely remembers travelled distances and directions. While blindfolded, make a Situation roll with SV 14. If transported unconscious, use SV 9. Failure prevents recalling the journey’s details. The rolls remain available from this effect."
+        },
+        "holy-thuuldom-well-of-water:well-of-water:0#effect": {
+          "Name": "Healing water spring",
+          "Summary": "Temporary spring whose fresh water heals wounds.",
+          "Description": "Spring lasting {minutes} minutes: wash wounds to restore {amount} BP per recipient; 1 liter per action round. Collected water loses its healing power.",
+          "SourceName": "Well of Water",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "232",
+          "Duration": ""
         },
         "holy-thuuldom-stone-to-clay:stone-to-clay:0#effect": {
           "Name": "Stone to Clay",
@@ -18596,7 +18623,8 @@
         "fearReduction": "{source}: −{amount} Fear Points.",
         "resourceGain": "{source}: +{amount} {resource}.",
         "risk": "{source}: {rolled} on 1d20 — {outcome}.",
-        "createConsumable": "{source} was created in the inventory."
+        "createConsumable": "{source} was created in the inventory.",
+        "repair": "{source}: {amount} BV repaired."
       }
     },
     "Aura": {
@@ -18815,6 +18843,13 @@
       "DirectFunds": "Character: {free} points available · This object can receive {available} more.",
       "InscriptionRuneLevel": "Rune level ({level})",
       "InscriptionOtherRunes": "Other inscribed runes ({count} × −2)"
+    },
+    "RuneConsequence": {
+      "HealingDice": "Healing dice (D6)",
+      "EmptyAllocation": "Allocate at least one healing die.",
+      "Expired": "This rune activation has ended.",
+      "IntegrityRequired": "Choose an item with a maximum integrity value.",
+      "Allocations": "Applications: {used} / {max}."
     }
   }
 }

@@ -27,6 +27,8 @@ import {ruleTestCastingContext,withCastingCounts,magicResistanceRows,localizeRes
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
 import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {runeConsequenceAllocation,runeConsequenceDefinition} from './rules/rune-consequences.mjs';
+import {createRuneConsequenceSource,runeConsequenceText} from './rune-consequences.mjs';
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
 import {magicFearHasBaseTargets} from "./magic-fear.mjs";
@@ -83,6 +85,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const automaticEffectUuids=[];
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();
+  if(kind==='rune'&&runeConsequenceDefinition(POWER_DETAILS_BY_ID[item?.system?.catalogId])&&!castingId)castingId=foundry.utils.randomID();
   let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
   const roll = await evaluate("1d20");
@@ -98,6 +101,12 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
   if(ruleTestContext&&item?.flags?.[SYSTEM_ID]?.runeActivation)Object.assign(ruleTestContext,{kind:'rune',runeLevel:item.flags[SYSTEM_ID].runeActivation.level,runeObjectUuid:item.flags[SYSTEM_ID].runeActivation.objectUuid});
+  const runeDetails=kind==='rune'&&success?POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]:null;
+  const runeAllocation=runeDetails?runeConsequenceAllocation(runeDetails,ruleTestContext,{time:game.time?.worldTime,combat:game.combat}):null;
+  if(runeAllocation){
+   const source=await createRuneConsequenceSource(runeDetails,ruleTestContext);
+   if(source)runeAllocation.sourceEffectUuid=source.uuid;
+  }
   const card = {
     actorName: actor.name,
     actorImg: actor.img,
@@ -114,7 +123,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor: [flavor, ...attackTargets.flatMap(row => (row.defenseRows || []).map(effect => `${escapeHtml(row.name)} · ${escapeHtml(effect.label)}: ${signedModifier(effect.value)}`))].filter(Boolean).join("<br>"),
-    successConsequence: consequenceText(procedure?.text && outcome.success ? procedure.text : successConsequence),
+    successConsequence: consequenceText(runeAllocation?runeConsequenceText(runeDetails,ruleTestContext):procedure?.text && outcome.success ? procedure.text : successConsequence),
     failureConsequence: consequenceText(procedure?.text && !outcome.success ? procedure.text : failureConsequence),
     criticalSuccessConsequence: consequenceText(criticalSuccessConsequence),
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
@@ -148,7 +157,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;

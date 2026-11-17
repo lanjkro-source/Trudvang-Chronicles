@@ -1,6 +1,6 @@
-# Priorité des effets hors runes
+# Suivi des effets magiques
 
-Décision du 9 novembre 2026 : terminer les autres effets avant de reprendre les runes. Les effets de rune déjà livrés restent disponibles ; les prochains développements ne les étendent pas.
+Décision du 17 novembre 2026 : les runes rejoignent les autres effets dans les prochains lots, maintenant que les objets sacrés et leurs activations sont disponibles. La priorité du 9 novembre qui les reportait est levée.
 
 ## Objets enchantés, maudits et altérés
 
@@ -33,7 +33,7 @@ Le décompte des modèles d’effet ne prouve pas la couverture complète. Les a
 5. Relecture des effets déjà implémentés : paramètres, cibles supplémentaires de base, protections spécifiques et auras/lumières oubliées.
 6. Conséquences des tables d’échecs magiques, également comprises dans le chantier des effets.
 
-Les runes viennent après cette liste.
+Les runes sont traitées avec cette liste, selon les mécanismes communs à développer.
 
 ## Préparations consommables — Potion de guérison
 
@@ -75,7 +75,7 @@ Un forgeron thuul ne regagne **aucun** point de divinité pendant un repos noctu
 
 L’exclusion du renouvellement porte sur la réserve ordinaire (`system.resources.divinity.value`) : `restForNight()` ne la réécrit pas pour le Thuuldom et le message de repos annonce « non renouvelée ». Les points temporaires suivent la règle générale de dissipation d’un point par jour. La religion est résolue comme pour les autres personnages : la spécialité Forgeage Thuul suffit à identifier un thuul, que le champ `system.details.religion` soit renseigné ou non.
 
-**Travail restant** : les objets sacrés du Thuuldom ne sont pas encore implémentés. Aucun objet ne peut donc être imprégné de points de divinité, aucune rune n’est gravée sur un objet et aucun capital d’objet ne se régénère quotidiennement. En attendant, les points de divinité d’un thuul ne sont dépensables que comme ceux des autres adeptes, et leur perte au repos reste définitive. Lorsque les objets sacrés arriveront, leur capital devra se régénérer chaque jour, indépendamment du repos de leur porteur.
+**État historique au 13 novembre, remplacé par la livraison des objets sacrés du 16 novembre** : les objets sacrés du Thuuldom n’étaient pas encore implémentés. Aucun objet ne peut donc être imprégné de points de divinité, aucune rune n’est gravée sur un objet et aucun capital d’objet ne se régénère quotidiennement. En attendant, les points de divinité d’un thuul ne sont dépensables que comme ceux des autres adeptes, et leur perte au repos reste définitive. Lorsque les objets sacrés arriveront, leur capital devra se régénérer chaque jour, indépendamment du repos de leur porteur.
 
 ### Correctif de consommation partagée et gestes d’inventaire — 10 novembre 2026
 
@@ -216,3 +216,15 @@ Vérification représentative : réussir Croche-pied puis appliquer à une cible
 ## Début de la gestion des runes — 16 novembre 2026
 
 À la demande du MJ, les runes ne sont plus reportées. Leur fabrication, leur inscription et les points liés aux objets sont décrits dans [sacred-objects.md](sacred-objects.md), avec le classement intégral des équipements et un parcours de test. Le registre passe à 424 variantes / 367 sources avec Main de Borjorn, désormais persistante : bonus automatique, figé au rang de la rune et consommé au prochain test de compétence. Les effets de rune déjà présents sont raccordés au rang inscrit ; les comportements restant narratifs ou liés à des événements particuliers devront continuer à être examinés séparément. Aucune migration de monde n’est ajoutée.
+
+## Soins et réparations runiques — 17 novembre 2026
+
+Sources : Livre des règles p.287–288 (table de guérison contrôlée dans le PDF), Player’s Handbook p.231–232. Les sources FR/EN et leurs données générées restent alignées.
+
+- Rune de guérison : une activation fournit un budget partagé de niveau × D6, à répartir entre les bénéficiaires touchés pendant les deux tours de jeu de l’activation. Chaque application choisit ses dés ; les demandes simultanées sont sérialisées par le MJ. Aucun dé déjà attribué n’est réutilisable, aucune application à zéro dé, aucun soin libre depuis une référence hors activation. Les dés réels sont attachés au message pour Dice So Nice.
+- Pouvoir de réparation : une activation répare un seul objet de niveau × 10 VI, dans la limite de son maximum intrinsèque. L’objet reste la cible du glisser-déposer. La réparation ne restaure pas une réserve de VI temporaires déjà dépensée. Aucun effet permanent fictif n’est ajouté à l’objet réparé.
+- Source d’eau : une activation crée sur l’objet runique un marqueur natif de source pour trois minutes par niveau, avec les valeurs réelles et le débit textuel. Le bouton soigne un bénéficiaire par application (niveau PS), une fois par bénéficiaire et par activation ; le contact avec la source reste vérifié par le MJ, sans rayon ou aura inventés. Supprimer/désactiver la source ou laisser finir sa durée bloque tout nouveau soin. L’eau collectée ne devient pas un consommable de guérison.
+
+La limite une fois par bénéficiaire pour une même source évite de réutiliser indéfiniment le même soin en recliquant ; ce garde-fou d’interface ne modélise pas le débit ni les déplacements. Le temps restant est contrôlé au moment de l’application, même avant la suppression native de l’effet expiré. Pas de migration d’anciens mondes.
+
+Test représentatif : inscrire une Rune de guérison de niveau 3 avec assez de points pour une activation ; activer, attribuer deux dés à un acteur et un à un autre. Un quatrième dé doit être refusé ; après deux rounds, le reliquat éventuel est inutilisable. Pour la réparation, déposer le bouton sur une arme ayant perdu de la VI. Pour la source, l’effet doit apparaître sur l’objet inscrit et le bouton cesser de soigner après expiration/suppression.

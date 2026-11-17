@@ -1,0 +1,45 @@
+{
+  "_id": "AjyDa8y4z5A6B7C8",
+  "_key": "!items!AjyDa8y4z5A6B7C8",
+  "name": "Source d’eau guérisseuse",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+    "description": "Source pendant {minutes} minutes : lave les blessures et rend {amount} PS par bénéficiaire ; 1 litre par tour de jeu. L’eau emportée perd son pouvoir de guérison.",
+    "summary": "Source temporaire dont l’eau fraîche soigne les blessures.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 298
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZafB4eIdJeKfLgMh",
+      "_key": "!items.effects!AjyDa8y4z5A6B7C8.ZafB4eIdJeKfLgMh",
+      "name": "Source d’eau guérisseuse",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Source pendant {minutes} minutes : lave les blessures et rend {amount} PS par bénéficiaire ; 1 litre par tour de jeu. L’eau emportée perd son pouvoir de guérison.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+            "sourceId": "holy-thuuldom-well-of-water:well-of-water:0",
+            "summary": "Source temporaire dont l’eau fraîche soigne les blessures.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

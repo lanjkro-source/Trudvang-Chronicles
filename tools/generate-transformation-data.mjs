@@ -106,7 +106,14 @@ for(const kind of ["powers","feats"]){
     if(!Array.isArray(s.parts)||!s.parts.length||keys.some(k=>typeof k!=="string"||!["fr","en"].every(c=>k.split(".").reduce((v,p)=>v?.[p],lang[c])))||indices.some(i=>!Number.isInteger(i)||!(entry.effectParameters??[]).some(p=>p.target==="summaryPart"&&p.index===i)))throw Error(`Invalid summary components for ${key}`);
    }
    if(t.onApply&&(!["fearReduction"].includes(t.onApply.operation)||!Array.isArray(t.onApply.formulas)||!t.onApply.formulas.length||!t.onApply.formulas.every(formula=>/^\d+d\d+(?:x>=\d+)?(?:\s*\+\s*\d+)?$/i.test(formula))))throw Error(`Invalid application consequence for ${key}`);
-   if(t.instant&&(!["heal","createConsumable"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
+   if(t.instant&&(!["heal","repair","createConsumable"].includes(t.instant.operation)||!Number.isInteger(t.instant.base)||t.instant.base<0))throw Error(`Invalid instant consequence for ${key}`);
+   if(t.instant?.rune){
+    const r=t.instant.rune;
+    if(!entry.isRune||!Number.isInteger(r.perLevel)||r.perLevel<1
+     ||(r.die!==undefined&&r.die!==6)||(r.allocationIndex!==undefined&&(!Number.isInteger(r.allocationIndex)||!entry.powerLevels?.[r.allocationIndex]||!r.die))
+     ||(r.seconds!==undefined&&(!Number.isInteger(r.seconds)||r.seconds<1))||(r.secondsPerLevel!==undefined&&(!Number.isInteger(r.secondsPerLevel)||r.secondsPerLevel<1))
+     ||(r.source&&!r.secondsPerLevel)||(t.instant.operation==='repair'&&!t.itemOnly))throw Error(`Invalid rune consequence for ${key}`);
+   }
    if(t.instant?.operation==='createConsumable'){
     const c=t.instant.consumable;
     if(!c||!c.nameKey||!c.descriptionKey||!Array.isArray(c.operations)||!c.operations.length||c.operations.some(op=>!['heal','fearReduction','resourceGain'].includes(op.operation)||typeof op.formula!=='string')

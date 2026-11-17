@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 352 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 355 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -366,11 +366,11 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Main de Borjorn | Main de Borjorn | rune | `holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0` | 5 | 0 | 1 | — | — |
 | Marque de Brokk | Marque de Brokk | rune | `holy-thuuldom-mark-of-brokk:mark-of-brokk:0` | 5 | 0 | 1 | — | — |
 | Poings d'acier | Poings d’acier | rune | `holy-thuuldom-hammer-fists:hammer-fists:0` | 5 | 0 | 1 | — | — |
-| Pouvoir de réparation | Pouvoir de réparation | rune | `holy-thuuldom-power-of-repair:power-of-repair:0` | 5 | 0 | 0 | — | — |
+| Pouvoir de réparation | Pouvoir de réparation | rune | `holy-thuuldom-power-of-repair:power-of-repair:0` | 5 | 0 | 1 | — | — |
 | Prise de l'araignée des cavernes | Prise de l’araignée des cavernes | rune | `holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0` | 5 | 0 | 1 | — | — |
-| Rune de guérison | Rune de guérison | rune | `holy-thuuldom-healing-rune:healing-rune:0` | 5 | 0 | 0 | — | — |
+| Rune de guérison | Rune de guérison | rune | `holy-thuuldom-healing-rune:healing-rune:0` | 5 | 0 | 1 | — | — |
 | Sang du labyrinthe | Sang du labyrinthe | rune | `holy-thuuldom-labyrinth-blood:labyrinth-blood:0` | 5 | 2 | 1 | — | — |
-| Source d’eau | Source d’eau | rune | `holy-thuuldom-well-of-water:well-of-water:0` | 5 | 0 | 0 | — | — |
+| Source d’eau | Source d’eau | rune | `holy-thuuldom-well-of-water:well-of-water:0` | 5 | 0 | 1 | — | — |
 | Transformation de pierre en argile | Transformation de pierre en argile | rune | `holy-thuuldom-stone-to-clay:stone-to-clay:0` | 5 | 0 | 1 | — | — |
 | Tremblement de terre | Tremblement de terre | rune | `holy-thuuldom-earthquake:earthquake:0` | 5 | 1 | 0 | — | — |
 | Agilité du lynx | Chemin forestier | pouvoir | `holy-toikalokke-lynx-power:tree-walk:1` | 3 | 0 | 1 | — | — |

@@ -137,6 +137,7 @@ for (const id of [...french.keys()].sort()) {
   powerDetails[id] = {
     isRune: rune,
     ...(f.runeActivation?{runeActivation:{...f.runeActivation,modifier:f.modifier??0}}:{}),
+    ...(f.effectTemplates?.some(t=>t.instant?.rune)?{runeConsequence:f.effectTemplates.find(t=>t.instant?.rune).instant.rune}:{}),
     level:f.level,
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),

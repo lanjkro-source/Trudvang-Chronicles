@@ -1,0 +1,45 @@
+{
+  "_id": "AjyDa8y4z5A6B7C8",
+  "_key": "!items!AjyDa8y4z5A6B7C8",
+  "name": "Healing water spring",
+  "type": "effect",
+  "img": "icons/svg/regen.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+    "description": "Spring lasting {minutes} minutes: wash wounds to restore {amount} BP per recipient; 1 liter per action round. Collected water loses its healing power.",
+    "summary": "Temporary spring whose fresh water heals wounds.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 232
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZafB4eIdJeKfLgMh",
+      "_key": "!items.effects!AjyDa8y4z5A6B7C8.ZafB4eIdJeKfLgMh",
+      "name": "Healing water spring",
+      "type": "effect",
+      "img": "icons/svg/regen.svg",
+      "description": "Spring lasting {minutes} minutes: wash wounds to restore {amount} BP per recipient; 1 liter per action round. Collected water loses its healing power.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-well-of-water:well-of-water:0#effect",
+            "sourceId": "holy-thuuldom-well-of-water:well-of-water:0",
+            "summary": "Temporary spring whose fresh water heals wounds.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,8 +1,14 @@
 import {normalizeEffectDuration,itemEffectRemainingSeconds} from './rules/effect-duration.mjs';
+import {runeConsequenceAmount} from './rules/rune-consequences.mjs';
 const SCOPE='trudvang-chronicles',jobs=new Map();
 const count=(counts,index)=>Number.isFinite(Number(counts[index]))?Math.max(0,Math.trunc(Number(counts[index]))):0;
 export function instantConsequenceOperation(template,counts=[],context={}){
  const instant=template.instant;
+ if(instant.rune){
+  const r=instant.rune,amount=Number.isInteger(r.allocationIndex)?count(counts,r.allocationIndex):runeConsequenceAmount(r,context.runeLevel);
+  if(amount<1)throw Error(game.i18n.localize('TRUDVANG.RuneConsequence.EmptyAllocation'));
+  return {operation:instant.operation,formula:r.die?`${amount}d${r.die}`:String(amount)};
+ }
  if(instant.operation==='createConsumable')return {operation:'createConsumable',definition:instant.consumable,sourceId:template.sourceId,counts,context};
  const bonus=(template.parameters??[]).filter(row=>row.target==='instant').reduce((sum,row)=>sum+Number(row.value)*count(counts,row.index),0);
  return {operation:instant.operation,formula:String(instant.base+bonus)};

@@ -39,6 +39,7 @@ import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {requestAllocatedEffect} from "./maintained-spell-tracking.mjs";
 import {magicTargetCapacity,magicTargetGroup} from "./rules/magic-target-allocation.mjs";
 import {executeConsequences,announceConsequences} from "./consequences.mjs";
+import {runeConsequenceText} from './rune-consequences.mjs';
 import {instantConsequenceOperation} from './conjured-consumables.mjs';
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
@@ -93,7 +94,7 @@ export function annotateTransformationDescription(description,document){
 }
 async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
  const defaults=Object.fromEntries(fields.map(f=>[f.name,f.value]));
- const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.checkbox?`<input name="${f.name}" type="checkbox"${f.value?" checked":""}>`:f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="0" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
+ const content=`<div class="trudvang transformation-application-dialog">${intro?`<p>${escapeHtml(intro)}</p>`:""}${fields.map(f=>`<div class="form-group${f.numeric?" transformation-boost-row":""}"><label>${escapeHtml(f.label)}</label>${f.checkbox?`<input name="${f.name}" type="checkbox"${f.value?" checked":""}>`:f.numeric?`<div class="transformation-boost-allocation"><input name="${f.name}" type="number" min="${f.minimum??0}" step="1"${Number.isFinite(f.available)?` max="${f.available}"`:""} value="${escapeHtml(String(f.value??0))}" aria-label="${escapeHtml(f.label)}"${f.readonly?" readonly":""}>${Number.isFinite(f.available)?`<span> / ${escapeHtml(game.i18n.format("TRUDVANG.Transformation.AllocationAvailable",{count:f.available}))}</span>`:""}</div>`:f.options?`<select name="${f.name}">${f.options.map(o=>`<option value="${escapeHtml(o.value)}"${String(o.value)===String(f.value)?" selected":""}>${escapeHtml(o.label)}</option>`).join("")}</select>`:`<input name="${f.name}" type="text" value="${escapeHtml(String(f.value??""))}"${f.readonly?" readonly":""}>`}</div>`).join("")}<div data-resistance-preview>${preview(defaults)}</div></div>`;
  const Base=foundry.applications.api.DialogV2;
  const DialogClass=typeof Base!=="function"?Base:class extends Base{
   _onRender(context,options){super._onRender(context,options);const root=this.element;
@@ -139,8 +140,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(reference.weaponDamage&&(!destinationItem||!['weapon','shield'].includes(destinationItem.type))){ui.notifications.warn(local("WeaponTargetRequired"));return null;}
  if(reference.conditionalProtection&&destinationItem){ui.notifications.warn(local("ActorTargetRequired"));return null;}
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
- if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||reference.instant||reference.onApply))return null;
+ if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||(reference.instant&&!reference.instant.rune)||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
+ if(reference.instant?.rune&&(!casting.castingId||!casting.messageId||!game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.runeAllocation))throw Error(game.i18n.localize('TRUDVANG.Warning.MagicAllocationUnavailable'));
  const targetRestriction=effectTargetRestriction(reference,actor,casting);if(targetRestriction){ui.notifications.warn(game.i18n.localize(targetRestriction));return null;}
  if(NID_BLESSINGS[reference.sourceId]){
   if(destinationItem){ui.notifications.warn(game.i18n.localize("TRUDVANG.Blessing.ActorOnly"));return null;}
@@ -201,9 +203,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const targeting=!automaticSource&&!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set();
  if(targeting){
-  if(casting.kind==="divine"||game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.instantAllocation){
+  if(casting.kind==="divine"||casting.kind==='rune'||game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.instantAllocation){
    const flags=game.messages?.get(casting.messageId)?.flags?.[SCOPE];
-   const entry=casting.kind==="divine"?flags?.divineAllocation:flags?.instantAllocation;
+   const entry=casting.kind==='rune'?flags?.runeAllocation:casting.kind==="divine"?flags?.divineAllocation:flags?.instantAllocation;
    if(entry?.castingId===casting.castingId&&entry?.casterUuid===casting.casterUuid&&entry?.sourceId===template.sourceId)
     allocationRecord={targetAllocations:entry.targetAllocations??[],powerLevelSnapshot:Object.entries(entry.selected??{}).map(([id,count])=>({id,count}))};
   }else{
@@ -224,7 +226,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   counts=options.map(option=>own?(already[option.id]??0):availableById[option.id]);
   const groupUsed=Array.from(allocationRecord.targetAllocations??[]).filter(row=>magicTargetGroup(targeting,row.effectKey)===group).length;
   const maximum=magicTargetCapacity(targeting,chosen,group);
-  allocationIntro=game.i18n.format("TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:Number.isFinite(maximum)?maximum:"∞"});
+  allocationIntro=game.i18n.format(template.instant?.rune?'TRUDVANG.RuneConsequence.Allocations':"TRUDVANG.Transformation.AllocationTargets",{used:groupUsed,max:Number.isFinite(maximum)?maximum:"∞"});
   Object.assign(casting,withCastingCounts(casting,counts));
  }
  let durationText=resolvedCopy&&stored?.duration?.value!=null?`${stored.duration.value} ${stored.duration.units||"seconds"}`:template.duration??"";
@@ -234,6 +236,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!/^\s*\d/.test(durationText))durationText="";
  if(rules.durationFromElapsed&&elapsed)durationText=`${elapsed*rules.durationFromElapsed} seconds`;
+ if(template.instant?.rune)allocationIntro=[runeConsequenceText(POWER_DETAILS_BY_ID[template.sourceId],casting),allocationIntro].filter(Boolean).join(' ');
  const fields=template.instant?[]:[{name:"duration",label:local("Duration"),value:durationText}];
  let inputOptions=[];
  if(!resolvedCopy&&template.inputKey){
@@ -245,9 +248,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(template.initialResistance?.optional&&(!resolvedCopy||!copiedResistance))fields.push({name:'resistApplication',label:game.i18n.localize(template.initialResistance.conditionKey),checkbox:true,value:false});
  if(template.cooldownSeconds){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
- const indices=[...new Set([...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
- for(const index of indices){const label=game.i18n.localize(`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
-  fields.push({name:`boost${index}`,label,numeric:true,...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
+ const indices=[...new Set([...(Number.isInteger(template.instant?.rune?.allocationIndex)?[template.instant.rune.allocationIndex]:[]),...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ for(const index of indices){const label=game.i18n.localize(template.instant?.rune?.allocationIndex===index?'TRUDVANG.RuneConsequence.HealingDice':`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
+  fields.push({name:`boost${index}`,label,numeric:true,...(template.instant?.rune?.allocationIndex===index?{minimum:1}:{}),...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
  if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>i+1).filter(level=>!casting.runeLevel||level===casting.runeLevel).map(level=>({value:String(level),label:String(level)}))});
  if(!resolvedCopy&&template.levelParameter){
   const caster=source?.actor??(source?.parent?.documentName==="Actor"?source.parent:actor);
@@ -518,6 +521,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const allocation=Object.fromEntries(indices.map(index=>[levels[index]?.id,casting.counts[index]??0]).filter(([id])=>id));
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.messageId??"",targetUuid:actor.uuid,itemUuid:destinationItem?.uuid??"",countsById:allocation,data});
   if(result.status==='consumable-capacity'){ui.notifications.warn(game.i18n.localize('TRUDVANG.ConjuredConsumable.CapacityReached'));return null;}
+  if(result.status==='rune-expired')throw Error(game.i18n.localize('TRUDVANG.RuneConsequence.Expired'));
   if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="target-restricted"?"TRUDVANG.Mobility.WrongTarget":result.status==="requires-other-target"?"TRUDVANG.Warning.MagicRequiresOtherTarget":result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   if(result.instant)return result;
   effect=await foundry.utils.fromUuid(result.effectUuid);

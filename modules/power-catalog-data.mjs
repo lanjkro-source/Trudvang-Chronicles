@@ -8109,7 +8109,28 @@ export const POWER_DETAILS_BY_ID = {
       "daily": 2,
       "modifier": -2
     },
+    "runeConsequence": {
+      "perLevel": 1,
+      "die": 6,
+      "allocationIndex": 0,
+      "seconds": 10
+    },
     "level": 1,
+    "targeting": {
+      "groups": [
+        {
+          "id": "healing",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": null,
+          "additionalTargets": [],
+          "allocatableOptions": [
+            "holy-thuuldom-healing-rune:healing-rune:0:0"
+          ]
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:0",
@@ -8264,7 +8285,14 @@ export const POWER_DETAILS_BY_ID = {
       "dailyPerLevel": 1,
       "modifier": -2
     },
+    "runeConsequence": {
+      "perLevel": 10
+    },
     "level": 1,
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": []
+    },
     "powerLevels": [
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:0",
@@ -8456,7 +8484,25 @@ export const POWER_DETAILS_BY_ID = {
       "daily": 1,
       "modifier": -4
     },
+    "runeConsequence": {
+      "perLevel": 1,
+      "secondsPerLevel": 180,
+      "source": true
+    },
     "level": 1,
+    "targeting": {
+      "groups": [
+        {
+          "id": "water",
+          "variants": [
+            "effect"
+          ],
+          "baseTargets": null,
+          "additionalTargets": [],
+          "allocatableOptions": []
+        }
+      ]
+    },
     "powerLevels": [
       {
         "id": "holy-thuuldom-well-of-water:well-of-water:0:0",
