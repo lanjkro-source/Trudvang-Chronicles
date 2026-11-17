@@ -1,3 +1,4 @@
+import {effectMessageContext} from './rules/weapon-hit-effects.mjs';
 import {casterFirstEffect} from './rules/self-effects.mjs';
 import {escapeHtml,escapeAttribute} from "./helpers.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
@@ -34,7 +35,7 @@ export async function canManageEffectTargets(message,user){
 }
 export function effectTargetsFor(message,key){return Array.from(targetMap(message)[key]??[]);}
 export async function updateEffectTargetsOnGM({messageId,userId,key,add=[],remove=""}){
- const message=game.messages?.get(messageId),user=game.users?.get(userId),context=message?.flags?.[SCOPE]?.ruleTestContext;
+ const message=game.messages?.get(messageId),user=game.users?.get(userId),context=effectMessageContext(message,key);
  if(!message||!user?.active||!await canManageEffectTargets(message,user)||!context||TRANSFORMATION_TEMPLATES[key]?.sourceId!==context.sourceId)return {status:"unavailable"};
  const whispers=Array.from(message.whisper??[],u=>typeof u==="string"?u:u.id);
  if(!user.isGM&&(message.blind||(whispers.length&&!whispers.includes(user.id)&&authorId(message)!==user.id)))return {status:"unavailable"};
@@ -51,7 +52,7 @@ export async function updateEffectTargetsOnGM({messageId,userId,key,add=[],remov
  map[key]=next;await message.update({[`flags.${SCOPE}.transformationTargets`]:map});return {status:"updated"};
 }
 export async function applyEffectForCasterOnGM({messageId,userId,key,tokenUuid,sourceUuid,itemUuid="",answers}){
- const message=game.messages?.get(messageId),user=game.users?.get(userId),context=message?.flags?.[SCOPE]?.ruleTestContext;
+ const message=game.messages?.get(messageId),user=game.users?.get(userId),context=effectMessageContext(message,key);
  if(!game.users?.activeGM?.isSelf||!message||!user?.active||!await canManageEffectTargets(message,user)||!context||TRANSFORMATION_TEMPLATES[key]?.sourceId!==context.sourceId)return {status:"unavailable"};
  const caster=context.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
  if(!caster||(!user.isGM&&!caster.testUserPermission?.(user,"OWNER")))return {status:"unavailable"};
@@ -61,8 +62,9 @@ export async function applyEffectForCasterOnGM({messageId,userId,key,tokenUuid,s
  if(!token?.actor||token.actor.uuid!==row.actorUuid)return {status:"unavailable"};
  const item=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
  if(itemUuid&&(!item||item.parent?.uuid!==token.actor.uuid))return {status:"unavailable"};
+ const hit=message.flags?.[SCOPE]?.weaponHitEffects?.[key];
  const source=sourceUuid?await foundry.utils.fromUuid(sourceUuid):null;
- if(!source||!["spell","divineFeat"].includes(source.type)||source.system?.catalogId!==context.sourceId)return {status:"unavailable"};
+ if(hit?sourceUuid!==hit.sourceUuid:!source||!["spell","divineFeat"].includes(source.type)||source.system?.catalogId!==context.sourceId)return {status:"unavailable"};
  const rune=message.flags?.[SCOPE]?.runeAllocation;
  const selected=rune?currentCastingCounts({...context,countsById:rune.selected}):currentCastingCounts(context);
  for(const [name,value] of Object.entries(answers??{}))if(/^boost\d+$/.test(name)){

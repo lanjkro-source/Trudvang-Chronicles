@@ -17278,6 +17278,44 @@
           "RuneSummary5": "Zone au sol : 5 m² ; température ajustable de ±50 °C.",
           "RuneDescription5": "L’objet posé au sol canalise la chaleur de la montagne sur 5 m² pendant 15 heures. Le thuul choisit la température dans une amplitude de ±50 degrés. Cette zone fixe doit être placée et suivie par le MJ : elle ne se déplace pas avec le porteur et ne génère pas de lumière."
         },
+        "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
+          "Name": "Choc de l’enclume (arme inscrite)",
+          "Summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
+          "Description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
+          "SourceName": "Choc de l'enclume",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "285",
+          "Duration": "",
+          "RuneSummary1": "Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription1": "La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary2": "Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription2": "La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary3": "Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription3": "La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary4": "Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription4": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary5": "Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu.",
+          "RuneDescription5": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants."
+        },
+        "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
+          "Name": "Choc de l’enclume (victime)",
+          "Summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
+          "Description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+          "SourceName": "Choc de l'enclume",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "285",
+          "Duration": "2 rounds",
+          "RuneSummary1": "Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription1": "La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary2": "Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription2": "La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary3": "Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription3": "La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary4": "Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu.",
+          "RuneDescription4": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneSummary5": "Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu.",
+          "RuneDescription5": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants."
+        },
         "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect": {
           "Name": "Croc de Yukk",
           "Summary": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
@@ -18420,7 +18458,9 @@
       "HearingActionPenalty": "Actions reposant sur l’ouïe : {value} VC.",
       "PhysicalMovementPenalty": "Actions reposant sur le mouvement : {value} VC.",
       "RoarRadius": "Rayon de la déflagration : {value} m.",
-      "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}."
+      "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}.",
+      "WeaponHitRequired": "Appliquez cet effet depuis une attaque réussie avec l’arme inscrite.",
+      "WeaponHitExpired": "Ce choc est déjà terminé ; sa durée commence à la touche."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",

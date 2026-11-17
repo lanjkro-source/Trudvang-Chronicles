@@ -230,13 +230,19 @@ export async function activateSacredRune(item,runeId){
  return rollUnder({actor,item:virtual,label:item.name+' — '+data.name,target:p.target+choice.modifier,blessing:choice.blessing,kind:'rune',perfectSuccessMax:0,automaticSuccessMax:1,fatalEffect:{kind:'faith',threshold:9,modifier:actor.fatalEffectModifier?.('faith',row.level)??0},powerLevelCounts:Array.from({length:5},(_,i)=>i===row.level-1?1:0),flavor:rollModifierFlavor(p.rows)+'<br>'+e(game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+' : '+choice.modifier});
 }
 /** Permanent native rune benefits belong to the item and transfer only while carried. */
-export async function syncPermanentRunes(item){
- if(!isSacredObject(item)||!item.parent?.isOwner)return;
- const {TRANSFORMATIONS_BY_SOURCE}=await import('./transformation-data.mjs');
+const permanentSyncJobs=new Map();
+export function syncPermanentRunes(item){
+ if(!isSacredObject(item)||!item.parent?.isOwner||game.users?.activeGM&&!writer())return Promise.resolve();
+ const previous=permanentSyncJobs.get(item.uuid)??Promise.resolve(),job=previous.catch(()=>{}).then(()=>syncPermanentRunesNow(item));
+ permanentSyncJobs.set(item.uuid,job);return job.finally(()=>{if(permanentSyncJobs.get(item.uuid)===job)permanentSyncJobs.delete(item.uuid);});
+}
+async function syncPermanentRunesNow(item){
+ const {TRANSFORMATIONS_BY_SOURCE,TRANSFORMATION_TEMPLATES}=await import('./transformation-data.mjs');
  const {applyTransformation}=await import('./transformations.mjs');
  for(const row of sacredState(item).runes){
   const target=runeDefinition(row.sourceId)?.runeActivation?.permanentTarget;if(!target)continue;
   for(const key of TRANSFORMATIONS_BY_SOURCE[row.sourceId]??[]){
+   if(TRANSFORMATION_TEMPLATES[key]?.weaponHitOnly)continue;
    const old=Array.from(item.effects??[]).find(effect=>effect.flags?.[S]?.sacredRuneId===row.id&&effect.flags?.[S]?.transformation?.key===key);
    if(old?.flags[S].transformation?.runeLevel===row.level)continue;
    const result=await applyTransformation(item.parent,key,{counts:Array.from({length:5},(_,i)=>i===row.level-1?1:0),skipDialog:true,preselectedAnswers:{runeLevel:row.level,duration:''},destinationItem:item,context:{sourceId:row.sourceId,kind:'rune',casterUuid:item.parent.uuid,runeLevel:row.level}});
@@ -282,7 +288,7 @@ export async function migrateSacredEquipmentCorrections(){
 }
 export function registerSacredHooks(){
  game.settings.register(S,'sacredEquipmentCorrections',{scope:'world',config:false,type:Number,default:0});
- Hooks.once('ready',async()=>{await migrateSacredEquipmentCorrections();for(const item of sacredWorldItems())if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner))await syncFailedInscriptions(item);});
- Hooks.on('updateItem',item=>{if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner))void syncFailedInscriptions(item).catch(error=>console.error('Trudvang | Inscription history synchronization failed',error));});
+ Hooks.once('ready',async()=>{await migrateSacredEquipmentCorrections();for(const item of sacredWorldItems())if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner)){await syncFailedInscriptions(item);await syncPermanentRunes(item);}});
+ Hooks.on('updateItem',item=>{if(isSacredObject(item)&&(writer()||!game.users?.activeGM&&item.isOwner))void (async()=>{await syncFailedInscriptions(item);await syncPermanentRunes(item);})().catch(error=>console.error('Trudvang | Sacred inscription synchronization failed',error));});
  Hooks.on('updateWorldTime',time=>refreshDailySacredObjects(time).catch(error=>console.error('Trudvang | Sacred recovery failed',error)));
 }

@@ -1,0 +1,47 @@
+{
+  "_id": "ZAoDBTmSnToUpVqW",
+  "_key": "!items!ZAoDBTmSnToUpVqW",
+  "name": "Choc de l’enclume (arme inscrite)",
+  "type": "effect",
+  "img": "icons/svg/hammer.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+    "description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
+    "summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 285
+    }
+  },
+  "effects": [
+    {
+      "_id": "WCUe1sVqWrXsYtZu",
+      "_key": "!items.effects!ZAoDBTmSnToUpVqW.WCUe1sVqWrXsYtZu",
+      "name": "Choc de l’enclume (arme inscrite)",
+      "type": "effect",
+      "img": "icons/svg/hammer.svg",
+      "description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+            "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+            "summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
+            "editableChanges": true,
+            "related": [
+              "shock"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

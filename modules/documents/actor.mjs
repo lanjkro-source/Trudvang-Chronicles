@@ -2095,7 +2095,8 @@ export class TrudvangActor extends BaseActor {
         if (update.flags?.["trudvang-chronicles"]?.consumablePolicy) update.flags["trudvang-chronicles"].consumablePolicy = foundry.data.operators.ForcedReplacement.create(update.flags["trudvang-chronicles"].consumablePolicy);
         delete update._id;
         update.disabled ??= false;
-        update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
+        update.start = prepared.flags?.['trudvang-chronicles']?.transformation?.ruleTestContext?.weaponHit
+          ? prepared.start : foundry.documents.ActiveEffect.implementation.getEffectStart();
         update.duration = {...(update.duration || existing._source.duration), expired: false};
         await existing.update(update);
         return existing;

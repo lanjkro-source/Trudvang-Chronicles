@@ -11822,6 +11822,141 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
     "parameters": []
   },
+  "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
+    "id": "weapon",
+    "icon": "icons/svg/hammer.svg",
+    "duration": "",
+    "priority": 10,
+    "statuses": [],
+    "related": [
+      "shock"
+    ],
+    "changes": [],
+    "itemOnly": true,
+    "requiresWeapon": true,
+    "onWeaponHit": {
+      "effectId": "shock",
+      "requiresInscription": true
+    },
+    "runeTiers": [
+      {
+        "duration": "",
+        "statuses": [],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription1"
+      },
+      {
+        "duration": "",
+        "statuses": [],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription2"
+      },
+      {
+        "duration": "",
+        "statuses": [],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription3"
+      },
+      {
+        "duration": "",
+        "statuses": [],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription4"
+      },
+      {
+        "duration": "",
+        "statuses": [],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+    "parameters": []
+  },
+  "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
+    "id": "shock",
+    "icon": "icons/svg/daze.svg",
+    "duration": "2 rounds",
+    "priority": 10,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "weaponHitOnly": true,
+    "oncePerCasting": true,
+    "refreshOnRecast": true,
+    "runeTiers": [
+      {
+        "duration": "2 rounds",
+        "statuses": [],
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial",
+            "priority": 10
+          }
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary1",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription1"
+      },
+      {
+        "duration": "2 rounds",
+        "statuses": [],
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-4",
+            "phase": "initial",
+            "priority": 10
+          }
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary2",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription2"
+      },
+      {
+        "duration": "2 rounds",
+        "statuses": [],
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.allActions",
+            "type": "add",
+            "value": "-6",
+            "phase": "initial",
+            "priority": 10
+          }
+        ],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary3",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription3"
+      },
+      {
+        "duration": "2 rounds",
+        "statuses": [
+          "stun"
+        ],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary4",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription4"
+      },
+      {
+        "duration": "3 rounds",
+        "statuses": [
+          "stun"
+        ],
+        "changes": [],
+        "summaryKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary5",
+        "descriptionKey": "TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription5"
+      }
+    ],
+    "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+    "parameters": []
+  },
   "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect": {
     "id": "effect",
     "icon": "icons/svg/holy-shield.svg",
@@ -16643,6 +16778,10 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": [
     "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect"
+  ],
+  "holy-thuuldom-anvil-shock:anvil-shock:0": [
+    "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+    "holy-thuuldom-anvil-shock:anvil-shock:0#shock"
   ],
   "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": [
     "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect"

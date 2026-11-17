@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 355 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 356 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -359,7 +359,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Aspect de la pierre | Aspect de la pierre | rune | `holy-thuuldom-stoneshape:stoneshape:0` | 5 | 1 | 1 | — | — |
 | Branchies du brochet | Branchies du brochet | rune | `holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0` | 0 | 0 | 1 | — | — |
 | Chaleur des profondeurs | Chaleur des profondeurs | rune | `holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0` | 5 | 0 | 1 | — | — |
-| Choc de l'enclume | Choc de l'enclume | rune | `holy-thuuldom-anvil-shock:anvil-shock:0` | 5 | 0 | 0 | — | — |
+| Choc de l'enclume | Choc de l'enclume | rune | `holy-thuuldom-anvil-shock:anvil-shock:0` | 5 | 0 | 2 | — | — |
 | Croc de Yukk | Croc de Yukk | rune | `holy-thuuldom-fang-of-yukk:fang-of-yukk:0` | 5 | 0 | 1 | — | — |
 | Écailles | Écailles | rune | `holy-thuuldom-scales:scales:0` | 5 | 0 | 1 | — | — |
 | Enfant de la pierre | Enfant de la pierre | rune | `holy-thuuldom-stoneling:stoneling:0` | 5 | 0 | 1 | — | — |

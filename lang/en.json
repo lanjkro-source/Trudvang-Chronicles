@@ -7125,7 +7125,7 @@
         "holy-thuuldom-anvil-shock:anvil-shock:0": {
           "Name": "Anvil Shock",
           "Summary": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
-          "Description": "The rune is attached to a blunt weapon (any non-edged weapon), which is then capable of causing an earthshattering shock<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Makes a blunt weapon release an earth-shattering shock when it strikes.</td></tr></tbody></table>whenever the Thuul attacks. Any victim struck by this shock is paralyzed by the force and incapable of acting. Every time the weapon’s damage roll scores an open roll, the victim is exposed to the Anvil Shock’s effect, which depends on the level of the rune (see the table below). This rune is always active but must still have the requisite number of Divinity Points linked to it.",
+          "Description": "This rune must be inscribed on a blunt weapon. A victim actually struck by the Thuul with this weapon suffers Anvil Shock according to the inscribed rune level. The rune remains active permanently but requires its associated Divinity Points. Levels 1, 2 and 3 impose penalties of -2, -4 and -6 to all actions for the remainder of the current action round and the whole next round. Level 4 prevents all actions for that same duration; level 5 prevents all actions for the current round and the next two rounds.",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "",
@@ -7136,7 +7136,7 @@
             "0": "Increase the penalty suffered by the victim for 2 action rounds by -2",
             "1": "Increase the penalty suffered by the victim for 2 action rounds by -4",
             "2": "Increase the penalty suffered by the victim for 2 action rounds by -6",
-            "3": "The victim suffers -2 on all actions for the remainder of the current action round as well as the entire next action round.",
+            "3": "The victim cannot take any action for the remainder of the current round and the whole next round.",
             "4": "The victim cannot take any action for 3 action rounds"
           }
         },
@@ -17278,6 +17278,44 @@
           "RuneSummary5": "Ground area: 5 m²; temperature adjustment up to ±50 °C.",
           "RuneDescription5": "The item placed on the ground channels mountain heat over 5 m² for 15 hours. The Thuul chooses the temperature within ±50 degrees. The GM places and tracks this fixed area; it does not follow the bearer or emit light."
         },
+        "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
+          "Name": "Anvil Shock (inscribed weapon)",
+          "Summary": "Runic weapon whose hits can inflict Anvil Shock.",
+          "Description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
+          "SourceName": "Anvil Shock",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "229",
+          "Duration": "",
+          "RuneSummary1": "Anvil Shock: -2 to all actions through the end of the next action round.",
+          "RuneDescription1": "The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary2": "Anvil Shock: -4 to all actions through the end of the next action round.",
+          "RuneDescription2": "The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary3": "Anvil Shock: -6 to all actions through the end of the next action round.",
+          "RuneDescription3": "The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary4": "Anvil Shock: unable to act through the end of the next action round.",
+          "RuneDescription4": "The struck victim cannot act for the remainder of the current round and the next round.",
+          "RuneSummary5": "Anvil Shock: unable to act through the end of the next two action rounds.",
+          "RuneDescription5": "The struck victim cannot act for the remainder of the current round and the next two rounds."
+        },
+        "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
+          "Name": "Anvil Shock (victim)",
+          "Summary": "Weakens or prevents actions after a hit with the runic weapon.",
+          "Description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
+          "SourceName": "Anvil Shock",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "229",
+          "Duration": "2 rounds",
+          "RuneSummary1": "Anvil Shock: -2 to all actions through the end of the next action round.",
+          "RuneDescription1": "The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary2": "Anvil Shock: -4 to all actions through the end of the next action round.",
+          "RuneDescription2": "The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary3": "Anvil Shock: -6 to all actions through the end of the next action round.",
+          "RuneDescription3": "The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round.",
+          "RuneSummary4": "Anvil Shock: unable to act through the end of the next action round.",
+          "RuneDescription4": "The struck victim cannot act for the remainder of the current round and the next round.",
+          "RuneSummary5": "Anvil Shock: unable to act through the end of the next two action rounds.",
+          "RuneDescription5": "The struck victim cannot act for the remainder of the current round and the next two rounds."
+        },
         "holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect": {
           "Name": "Fang of Yukk",
           "Summary": "Empowers a cutting weapon to deal more damage and trigger open rolls more often.",
@@ -18420,7 +18458,9 @@
       "HearingActionPenalty": "Actions relying on hearing: {value} SV.",
       "PhysicalMovementPenalty": "Actions relying on movement: {value} SV.",
       "RoarRadius": "Blast radius: {value} m.",
-      "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}."
+      "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}.",
+      "WeaponHitRequired": "Apply this effect from a successful attack with the inscribed weapon.",
+      "WeaponHitExpired": "This shock has already ended; its duration starts at the hit."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",

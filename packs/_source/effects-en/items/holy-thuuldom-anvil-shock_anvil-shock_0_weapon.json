@@ -1,0 +1,47 @@
+{
+  "_id": "ZAoDBTmSnToUpVqW",
+  "_key": "!items!ZAoDBTmSnToUpVqW",
+  "name": "Anvil Shock (inscribed weapon)",
+  "type": "effect",
+  "img": "icons/svg/hammer.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+    "description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
+    "summary": "Runic weapon whose hits can inflict Anvil Shock.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 229
+    }
+  },
+  "effects": [
+    {
+      "_id": "WCUe1sVqWrXsYtZu",
+      "_key": "!items.effects!ZAoDBTmSnToUpVqW.WCUe1sVqWrXsYtZu",
+      "name": "Anvil Shock (inscribed weapon)",
+      "type": "effect",
+      "img": "icons/svg/hammer.svg",
+      "description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
+            "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+            "summary": "Runic weapon whose hits can inflict Anvil Shock.",
+            "editableChanges": true,
+            "related": [
+              "shock"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -29,6 +29,7 @@ import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {runeConsequenceAllocation,runeConsequenceDefinition} from './rules/rune-consequences.mjs';
 import {createRuneConsequenceSource,runeConsequenceText} from './rune-consequences.mjs';
+import {weaponHitOffers} from './rules/weapon-hit-effects.mjs';
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
 import {magicFearHasBaseTargets} from "./magic-fear.mjs";
@@ -107,6 +108,13 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
    const source=await createRuneConsequenceSource(runeDetails,ruleTestContext);
    if(source)runeAllocation.sourceEffectUuid=source.uuid;
   }
+  const hitOffers=success&&kind==='attack'?weaponHitOffers(item,actor,{success,kind,time:globalThis.game?.time?.worldTime,combat:globalThis.game?.combat}):[];
+  if(hitOffers.length){
+   const hitId=foundry.utils.randomID();
+   for(const offer of hitOffers){offer.record.castingId=hitId;offer.record.context.castingId=hitId;}
+   ruleTestContext??=structuredClone(hitOffers[0].record.context);
+  }
+  const weaponHitEffects=Object.fromEntries(hitOffers.map(offer=>[offer.key,offer.record]));
   const card = {
     actorName: actor.name,
     actorImg: actor.img,
@@ -131,7 +139,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: !auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
+    transformationLinks: (!auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "")+hitOffers.map(offer=>transformationLinks(offer.effect,offer.record.context.counts,{context:offer.record.context})).join(' '),
     ruleTests: !pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -157,7 +165,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(hitOffers.length?{weaponHitEffects}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:[...transformationKeys(item),...hitOffers.map(offer=>offer.key)],game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;

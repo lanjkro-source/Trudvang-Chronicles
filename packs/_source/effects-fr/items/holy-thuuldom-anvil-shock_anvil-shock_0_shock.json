@@ -1,0 +1,45 @@
+{
+  "_id": "tIVkLKcIdJeKfLgM",
+  "_key": "!items!tIVkLKcIdJeKfLgM",
+  "name": "Choc de l’enclume (victime)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+    "description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+    "summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 285
+    }
+  },
+  "effects": [
+    {
+      "_id": "0UkeGKdJeKfLgMhN",
+      "_key": "!items.effects!tIVkLKcIdJeKfLgM.0UkeGKdJeKfLgMhN",
+      "name": "Choc de l’enclume (victime)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+            "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+            "summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

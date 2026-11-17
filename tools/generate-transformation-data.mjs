@@ -57,6 +57,10 @@ for(const kind of ["powers","feats"]){
    if(t.dispelCategory!==translated.dispelCategory||t.dispelPermanent!==translated.dispelPermanent||t.dispelCategory!==undefined&&!['control'].includes(t.dispelCategory)||t.dispelPermanent!==undefined&&typeof t.dispelPermanent!=='boolean')throw Error(`Invalid dispel policy for ${key}`);
    if(JSON.stringify(t.instant??null)!==JSON.stringify(translated.instant??null))throw Error(`Unaligned instant consequence for ${key}`);
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
+   if(JSON.stringify(t.onWeaponHit??null)!==JSON.stringify(translated.onWeaponHit??null)||t.weaponHitOnly!==translated.weaponHitOnly)throw Error(`Unaligned weapon hit effect ${key}`);
+   if(t.onWeaponHit&&(!t.itemOnly||!t.requiresWeapon||!entry.effectTemplates.some(row=>row.id===t.onWeaponHit.effectId&&row.weaponHitOnly)||typeof t.onWeaponHit.requiresInscription!=='boolean'))throw Error(`Invalid weapon hit source ${key}`);
+   if(t.weaponHitOnly&&(!t.oncePerCasting||t.itemOnly||t.instant||!t.runeTiers||!entry.effectTemplates.some(row=>row.onWeaponHit?.effectId===t.id)))throw Error(`Invalid weapon hit victim ${key}`);
+   if(t.weaponHitOnly&&t.runeTiers.some(tier=>!/^\d+ rounds$/.test(tier.duration)))throw Error(`Invalid weapon hit lifetime ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);
    if(JSON.stringify(t.periodic??null)!==JSON.stringify(translated.periodic??null))throw Error(`Unaligned periodic consequence for ${key}`);
    if(JSON.stringify(t.persistentDamage??null)!==JSON.stringify(translated.persistentDamage??null))throw Error(`Unaligned persistent damage for ${key}`);

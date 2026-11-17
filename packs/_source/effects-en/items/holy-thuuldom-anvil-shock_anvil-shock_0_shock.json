@@ -1,0 +1,45 @@
+{
+  "_id": "tIVkLKcIdJeKfLgM",
+  "_key": "!items!tIVkLKcIdJeKfLgM",
+  "name": "Anvil Shock (victim)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+    "description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
+    "summary": "Weakens or prevents actions after a hit with the runic weapon.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 229
+    }
+  },
+  "effects": [
+    {
+      "_id": "0UkeGKdJeKfLgMhN",
+      "_key": "!items.effects!tIVkLKcIdJeKfLgM.0UkeGKdJeKfLgMhN",
+      "name": "Anvil Shock (victim)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
+            "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
+            "summary": "Weakens or prevents actions after a hit with the runic weapon.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

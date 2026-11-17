@@ -14697,6 +14697,48 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneSummary5` | Ground area: 5 m²; temperature adjustment up to ±50 °C. | Zone au sol : 5 m² ; température ajustable de ±50 °C. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0#effect.RuneDescription5` | The item placed on the ground channels mountain heat over 5 m² for 15 hours. The Thuul chooses the temperature within ±50 degrees. The GM places and tracks this fixed area; it does not follow the bearer or emit light. | L’objet posé au sol canalise la chaleur de la montagne sur 5 m² pendant 15 heures. Le thuul choisit la température dans une amplitude de ±50 degrés. Cette zone fixe doit être placée et suivie par le MJ : elle ne se déplace pas avec le porteur et ne génère pas de lumière. |
 
+## `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Name` | Anvil Shock (inscribed weapon) | Choc de l’enclume (arme inscrite) |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Description` | After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level. | Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourceName` | Anvil Shock | Choc de l'enclume |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourcePage` | 229 | 285 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Duration` |  |  |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary1` | Anvil Shock: -2 to all actions through the end of the next action round. | Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription1` | The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary2` | Anvil Shock: -4 to all actions through the end of the next action round. | Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription2` | The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary3` | Anvil Shock: -6 to all actions through the end of the next action round. | Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription3` | The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary4` | Anvil Shock: unable to act through the end of the next action round. | Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription4` | The struck victim cannot act for the remainder of the current round and the next round. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary5` | Anvil Shock: unable to act through the end of the next two action rounds. | Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription5` | The struck victim cannot act for the remainder of the current round and the next two rounds. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants. |
+
+## `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Name` | Anvil Shock (victim) | Choc de l’enclume (victime) |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Description` | Shock suffered after an actual hit; the inscription level fixes its consequences. | Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourceName` | Anvil Shock | Choc de l'enclume |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourcePage` | 229 | 285 |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Duration` | 2 rounds | 2 rounds |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary1` | Anvil Shock: -2 to all actions through the end of the next action round. | Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription1` | The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary2` | Anvil Shock: -4 to all actions through the end of the next action round. | Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription2` | The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary3` | Anvil Shock: -6 to all actions through the end of the next action round. | Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription3` | The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary4` | Anvil Shock: unable to act through the end of the next action round. | Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription4` | The struck victim cannot act for the remainder of the current round and the next round. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneSummary5` | Anvil Shock: unable to act through the end of the next two action rounds. | Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.RuneDescription5` | The struck victim cannot act for the remainder of the current round and the next two rounds. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants. |
+
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-fang-of-yukk:fang-of-yukk:0#effect`
 
 | Clé | English | Français |
@@ -16039,6 +16081,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.PhysicalMovementPenalty` | Actions relying on movement: {value} SV. | Actions reposant sur le mouvement : {value} VC. |
 | `TRUDVANG.Transformation.RoarRadius` | Blast radius: {value} m. | Rayon de la déflagration : {value} m. |
 | `TRUDVANG.Transformation.BorjornNextSkill` | Bonus to the next Skill Roll: +{value}. | Bonus au prochain test de compétence : +{value}. |
+| `TRUDVANG.Transformation.WeaponHitRequired` | Apply this effect from a successful attack with the inscribed weapon. | Appliquez cet effet depuis une attaque réussie avec l’arme inscrite. |
+| `TRUDVANG.Transformation.WeaponHitExpired` | This shock has already ended; its duration starts at the hit. | Ce choc est déjà terminé ; sa durée commence à la touche. |
 
 ## `TRUDVANG.Transformation.Modes`
 
