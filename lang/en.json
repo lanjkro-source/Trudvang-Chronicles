@@ -18811,7 +18811,8 @@
       "FailedName": "Inscription blocked: {rune} (level {level})",
       "FailedDescription": "Inscribing {rune} at level {level} failed. This object can no longer receive this rune at that or a higher level. Its other runes remain intact.",
       "FailedSummary": "Inscription permanently blocked from level {level}.",
-      "FailurePermanent": "This failed inscription is permanent and bound to the object."
+      "FailurePermanent": "This failed inscription is permanent and bound to the object.",
+      "DirectFunds": "Character: {free} points available · This object can receive {available} more."
     }
   }
 }

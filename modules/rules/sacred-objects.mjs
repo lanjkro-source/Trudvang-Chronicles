@@ -13,8 +13,11 @@ export function equipmentCraftMaterial(item){
 }
 export const sacredCapacity=(actor,material)=>['invoke','handicraft'].reduce((sum,id)=>sum+n(actor.findRuleKnowledge?.(id)?.system?.level),0)+2*n(actor.findRuleKnowledge?.('thuulForging')?.system?.level)+2*n(actor.findRuleKnowledge?.(material)?.system?.level);
 export function sacredObjects(actor){return Array.from(actor?.items??[]).filter(item=>isSacredObject(item)&&(!sacredState(item).creatorUuid||sacredState(item).creatorUuid===actor.uuid));}
+export function sacredRuneTotals(item){
+ return Array.from(sacredState(item)?.runes??[]).reduce((sum,row)=>({invested:sum.invested+n(row.invested),current:sum.current+n(row.current)}),{invested:0,current:0});
+}
 export function sacredBalance(actor){
- const invested=sacredObjects(actor).reduce((sum,item)=>sum+n(sacredState(item).invested),0),total=n(actor?.system?.resources?.divinity?.max);
+ const invested=sacredObjects(actor).reduce((sum,item)=>sum+sacredRuneTotals(item).invested,0),total=n(actor?.system?.resources?.divinity?.max);
  return {total,invested,free:Math.max(0,total-invested),overdrawn:Math.max(0,invested-total)};
 }
 export function runeDefinition(id){return POWER_DETAILS_BY_ID[id]?.isRune?POWER_DETAILS_BY_ID[id]:null;}

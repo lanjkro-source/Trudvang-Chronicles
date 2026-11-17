@@ -11,7 +11,7 @@ globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=Strin
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=rollTotal;return this;}};
 globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),async update(){}};messages.push(message);return message;}};
 globalThis.ui={notifications:{warn:()=>{}}};
-const {refreshDailySacredObjects,requestSacredMutation,syncFailedInscriptions,migrateSacredEquipmentCorrections,sacredCraftData,craftingBreakdown,activateSacredRune,removeSacredObject,restoreSacredObjects,sacredObjectViews}=await import('../modules/sacred-objects.mjs');
+const {refreshDailySacredObjects,requestSacredMutation,inscribeRuneDialog,syncFailedInscriptions,migrateSacredEquipmentCorrections,sacredCraftData,craftingBreakdown,activateSacredRune,removeSacredObject,restoreSacredObjects,sacredObjectViews}=await import('../modules/sacred-objects.mjs');
 class Collection extends Map{[Symbol.iterator](){return this.values();}}
 function fixture({total=30,rank=3}={}){
  docs.clear();messages.length=0;dialogChoice=false;rollTotal=6;
@@ -50,42 +50,44 @@ test('crafting uses only the Thuul specialty bonus, keeps ordinary modifiers and
  const data=sacredCraftData(actor,{type:'weapon',templateUuid:template.uuid,material:'hardMaterials'},[template]);assert.equal(data.system.quality,3);assert.equal(data.system.combatPointBonus,1);assert.equal(data.system.value,20);assert.equal(data.system.magical,true);assert.equal(data.system.sacred.creatorUuid,actor.uuid);
  assert.throws(()=>sacredCraftData(actor,{type:'weapon',material:'hardMaterials',templateUuid:'Item.hidden'},[template]));
 });
-test('investments serialize across objects, cannot create points and do not draw from temporary DP',async()=>{
- const {actor}=fixture({total:20});actor.system.resources.divinity.temporary=100;const one=await object(actor),two=await object(actor);
- const attempts=await Promise.allSettled([requestSacredMutation(actor,'invest',{itemId:one.id,amount:12}),requestSacredMutation(actor,'invest',{itemId:two.id,amount:12})]);
- assert.equal(attempts.filter(r=>r.status==='fulfilled').length,1);assert.deepEqual(sacredBalance(actor),{total:20,invested:12,free:8,overdrawn:0});assert.equal(actor.system.resources.divinity.temporary,100);
- await assert.rejects(requestSacredMutation(actor,'invest',{itemId:one.id,amount:7}));assert.equal(sacredBalance(actor).invested,12);
+test('direct inscription investments serialize across objects and cannot create points or use temporary DP',async()=>{
+ const {actor}=fixture({total:20});actor.system.resources.divinity.temporary=100;const one=await object(actor),two=await object(actor);learn(actor);
+ const apply=item=>requestSacredMutation(actor,'inscribe',{itemId:item.id,sourceId:heat,level:2,amount:12,success:true});
+ const attempts=await Promise.allSettled([apply(one),apply(two)]);assert.equal(attempts.filter(r=>r.status==='fulfilled').length,1);
+ assert.deepEqual(sacredBalance(actor),{total:20,invested:12,free:8,overdrawn:0});assert.equal(actor.system.resources.divinity.temporary,100);
+ await assert.rejects(requestSacredMutation(actor,'invest',{itemId:one.id,runeId:one.system.sacred.runes[0].id,amount:7}));assert.equal(sacredBalance(actor).invested,12);
+ await assert.rejects(requestSacredMutation(actor,'invest',{itemId:two.id,amount:1}));
 });
 test('a rune uses only its own assigned reserve, with the daily cap and investment cap both enforced',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:12});await inscription(actor,item,heat,2,6);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item,heat,2,6);
  const row=item.system.sacred.runes[0];assert.equal(runeRow(row).max,2);
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id});await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id});
- assert.equal(item.system.sacred.current,8);assert.equal(item.system.sacred.runes[0].current,2);assert.equal(runeRow(item.system.sacred.runes[0]).remaining,0);
- await assert.rejects(requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id}));assert.equal(sacredBalance(actor).free,18);assert.ok(validSacredState(item.system.sacred));
- await restoreSacredObjects(actor);assert.equal(item.system.sacred.current,12);assert.equal(runeRow(item.system.sacred.runes[0]).remaining,2);assert.equal(sacredBalance(actor).free,18);
+ assert.equal(item.system.sacred.current,2);assert.equal(item.system.sacred.runes[0].current,2);assert.equal(runeRow(item.system.sacred.runes[0]).remaining,0);
+ await assert.rejects(requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id}));assert.equal(sacredBalance(actor).free,24);assert.ok(validSacredState(item.system.sacred));
+ await restoreSacredObjects(actor);assert.equal(item.system.sacred.current,6);assert.equal(runeRow(item.system.sacred.runes[0]).remaining,2);assert.equal(sacredBalance(actor).free,24);
 });
 test('points added to an already inscribed rune increase its reserve without losing expenditure',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:4});await inscription(actor,item);const id=item.system.sacred.runes[0].id;
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);const id=item.system.sacred.runes[0].id;
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:id});await requestSacredMutation(actor,'invest',{itemId:item.id,amount:2,runeId:id});
  assert.equal(item.system.sacred.invested,6);assert.equal(item.system.sacred.current,4);assert.equal(item.system.sacred.runes[0].current,4);assert.equal(sacredBalance(actor).free,24);
 });
 test('failed inscriptions keep existing runes and prohibit retrying that or a higher level on the same object',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item,heat,1,2);
- await inscription(actor,item,heat,2,1,false);assert.equal(item.system.sacred.runes[0].level,1);assert.equal(item.system.sacred.current,6);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item,heat,1,2);
+ await inscription(actor,item,heat,2,1,false);assert.equal(item.system.sacred.runes[0].level,1);assert.equal(item.system.sacred.current,2);assert.equal(sacredBalance(actor).free,28);
  await assert.rejects(inscription(actor,item,heat,2,1));await assert.rejects(inscription(actor,item,heat,3,1));
 });
 test('permanent runes have no activation button or spend action',()=>{
  fixture();const row=runeRow({sourceId:fang,level:3,invested:3,current:3,uses:0});assert.equal(row.permanent,true);assert.equal(row.canUse,false);assert.equal(row.max,null);
 });
 test('cancelled activation or removal has no side effects; confirmed removal reclaims the full investment, including spent charges',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);const row=item.system.sacred.runes[0];
- assert.equal(await activateSacredRune(item,row.id),null);assert.equal(item.system.sacred.current,6);assert.equal(messages.length,0);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);const row=item.system.sacred.runes[0];
+ assert.equal(await activateSacredRune(item,row.id),null);assert.equal(item.system.sacred.current,4);assert.equal(messages.length,0);
  assert.equal(await removeSacredObject(item),null);assert.ok(actor.items.has(item.id));
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id});dialogChoice=true;await removeSacredObject(item);assert.equal(sacredBalance(actor).free,30);assert.ok(!actor.items.has(item.id));
 });
 test('actual activation publishes a rune roll and its fixed rank while spending only object points',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);dialogChoice={modifier:3};
- const result=await activateSacredRune(item,item.system.sacred.runes[0].id);assert.ok(result.success);assert.equal(messages.length,1);assert.equal(messages[0].flags[S].ruleTestContext.runeLevel,2);assert.equal(messages[0].flags[S].ruleTestContext.runeObjectUuid,item.uuid);assert.equal(messages[0].flags[S].ruleTestContext.kind,'rune');assert.equal(item.system.sacred.current,4);assert.equal(sacredBalance(actor).free,24);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);dialogChoice={modifier:3};
+ const result=await activateSacredRune(item,item.system.sacred.runes[0].id);assert.ok(result.success);assert.equal(messages.length,1);assert.equal(messages[0].flags[S].ruleTestContext.runeLevel,2);assert.equal(messages[0].flags[S].ruleTestContext.runeObjectUuid,item.uuid);assert.equal(messages[0].flags[S].ruleTestContext.kind,'rune');assert.equal(item.system.sacred.current,2);assert.equal(sacredBalance(actor).free,26);
 });
 test('the two actor templates and equipment sheet expose the compact sacred sections without embedding editable accounting fields',()=>{
  for(const p of ['character','npc']){const h=fs.readFileSync(new URL('../templates/actor/'+p+'-sheet.hbs',import.meta.url),'utf8');assert.match(h,/sacred-objects-panel/);assert.match(h,/sacred-create/);assert.match(h,/sacred-remove/);}
@@ -105,36 +107,36 @@ test('Main de Borjorn is persistent with two daily uses and a compulsory, single
  await rollUnder({actor,label:'Attack',kind:'attack',target:15,blessing:result.blessing});assert.equal(actor.effects.length,0);assert.equal(messages.length,1);
 });
 test('calendar recovery is idempotent and leaves the creator’s free divinity unchanged',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);const id=item.system.sacred.runes[0].id;
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);const id=item.system.sacred.runes[0].id;
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:id});game.actors=[actor];game.scenes=[];game.time.worldTime=86400;
- await Promise.all([refreshDailySacredObjects(86400),refreshDailySacredObjects(86400)]);assert.equal(item.system.sacred.current,6);
- await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:id});await refreshDailySacredObjects(86400);assert.equal(item.system.sacred.current,4);assert.equal(sacredBalance(actor).free,24);
+ await Promise.all([refreshDailySacredObjects(86400),refreshDailySacredObjects(86400)]);assert.equal(item.system.sacred.current,4);
+ await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:id});await refreshDailySacredObjects(86400);assert.equal(item.system.sacred.current,2);assert.equal(sacredBalance(actor).free,26);
 });
 
 test('only an owner of the creator can mutate a sacred object, and a changed rune cannot be spent from a stale dialog',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);const row=item.system.sacred.runes[0],before=JSON.stringify(row);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);const row=item.system.sacred.runes[0],before=JSON.stringify(row);
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id,expected:before});
- await assert.rejects(requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id,expected:before}));assert.equal(item.system.sacred.current,4);
- actor.canUserModify=()=>false;await assert.rejects(requestSacredMutation(actor,'invest',{itemId:item.id,amount:1}));assert.equal(item.system.sacred.invested,6);
+ await assert.rejects(requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id,expected:before}));assert.equal(item.system.sacred.current,2);
+ actor.canUserModify=()=>false;await assert.rejects(requestSacredMutation(actor,'invest',{itemId:item.id,amount:1}));assert.equal(item.system.sacred.invested,4);
 });
 
 
 test('a rune roll of 1 is an ordinary success and 20 spends charges and offers the divine critical-failure table',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item);const id=item.system.sacred.runes[0].id;dialogChoice={modifier:0};rollTotal=1;
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item);const id=item.system.sacred.runes[0].id;dialogChoice={modifier:0};rollTotal=1;
  const one=await activateSacredRune(item,id);assert.equal(one.success,true);assert.equal(one.critical,'');
- rollTotal=20;const twenty=await activateSacredRune(item,id);assert.equal(twenty.success,false);assert.equal(twenty.critical,'failure');assert.equal(item.system.sacred.current,2);
+ rollTotal=20;const twenty=await activateSacredRune(item,id);assert.equal(twenty.success,false);assert.equal(twenty.critical,'failure');assert.equal(item.system.sacred.current,0);
 });
 
 
 test('failed inscriptions produce one permanent, non-transferred visible history effect even after reload synchronization',async()=>{
- const {actor}=fixture(),item=await object(actor);await requestSacredMutation(actor,'invest',{itemId:item.id,amount:6});await inscription(actor,item,heat,2,2,false);
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item,heat,2,2,false);
  assert.equal(item.effects.length,1);const effect=item.effects[0];assert.equal(effect.transfer,false);assert.equal(effect.duration.value,null);assert.match(effect.name,/Inscription impossible.*niveau 2/);assert.match(effect.description,/Chaleur des profondeurs/);assert.deepEqual(effect.system.changes,[]);
  await Promise.all([syncFailedInscriptions(item),syncFailedInscriptions(item)]);assert.equal(item.effects.length,1);
  item.effects=[];await syncFailedInscriptions(item);assert.equal(item.effects.length,1);await assert.rejects(inscription(actor,item,heat,2,2));
 });
 test('votive quality for a Thuul is restricted to an equipped object and its own inscribed rune',async()=>{
  const {itemUseBonuses}=await import('../modules/rules/item-magic.mjs');const {conditionalChoices}=await import('../modules/blessing-dialog.mjs');
- const {actor}=fixture(),one=await object(actor),two=await object(actor);await requestSacredMutation(actor,'invest',{itemId:one.id,amount:4});await inscription(actor,one);
+ const {actor}=fixture(),one=await object(actor),two=await object(actor);await inscription(actor,one);
  one.system.equipped=two.system.equipped=true;assert.equal(one.system.specialUse,'votive');
  assert.equal(itemUseBonuses(actor,{castingType:'divine'}).length,0);
  const choice={castingType:'divine',runeObjectUuid:one.uuid,runeSourceId:heat};assert.deepEqual(itemUseBonuses(actor,choice).map(r=>r.item.id),[one.id]);
@@ -146,5 +148,19 @@ test('the one-time Stafur Slingu correction visits existing world copies only on
  fixture();let version=0;game.settings={get:()=>version,set:async(_s,_k,v)=>version=v};const changes=[];
  const tracked={flags:{[S]:{starterId:'TRUDVANG.Content.Item.StafurSlingu'}},system:{craftMaterial:'hardMaterials'},update:async data=>changes.push(data)};
  game.items=[tracked,{...tracked,flags:{},update:()=>assert.fail('custom item changed')}];game.actors=[];game.scenes=[];
- await migrateSacredEquipmentCorrections();assert.deepEqual(changes,[{'system.craftMaterial':'softMaterials'}]);await migrateSacredEquipmentCorrections();assert.equal(changes.length,1);assert.equal(version,1);
+ await migrateSacredEquipmentCorrections();assert.deepEqual(changes,[{'system.craftMaterial':'softMaterials'}]);await migrateSacredEquipmentCorrections();assert.equal(changes.length,1);assert.equal(version,2);
+});
+
+
+test('the real inscription flow draws points only after success and defaults need no object prefunding',async()=>{
+ const {actor}=fixture();const item=await object(actor);learn(actor);dialogChoice={sourceId:heat,level:3,amount:3,modifier:0};rollTotal=20;
+ const failure=await inscribeRuneDialog(item);assert.equal(failure.success,false);assert.equal(sacredBalance(actor).free,30);assert.equal(item.system.sacred.invested,0);assert.equal(item.effects.length,1);
+ const second=await object(actor);rollTotal=1;const success=await inscribeRuneDialog(second);assert.equal(success.success,true);assert.equal(sacredBalance(actor).free,27);assert.equal(second.system.sacred.invested,3);assert.equal(second.system.sacred.runes[0].current,3);
+});
+test('unassigned investments from the old object-prefund flow are refunded without refilling spent rune charges',async()=>{
+ const {actor}=fixture(),item=await object(actor);await inscription(actor,item,heat,2,4);const row=item.system.sacred.runes[0];await requestSacredMutation(actor,'consume',{itemId:item.id,runeId:row.id});
+ item.system.sacred.invested+=7;item.system.sacred.current+=7;game.items=[];game.actors=[actor];game.scenes=[];let version=1;
+ game.settings={get:()=>version,set:async(_s,_k,v)=>version=v};const changes=[];const update=item.update;item.update=async values=>{changes.push(values);for(const [key,v]of Object.entries(values)){if(key==='system.sacred.invested')item.system.sacred.invested=v;if(key==='system.sacred.current')item.system.sacred.current=v;}return update(values);};
+ assert.equal(sacredBalance(actor).free,26);await migrateSacredEquipmentCorrections();assert.equal(item.system.sacred.invested,4);assert.equal(item.system.sacred.current,2);assert.equal(item.system.sacred.runes[0].current,2);assert.equal(version,2);assert.equal(changes.length,1);
+ await migrateSacredEquipmentCorrections();assert.equal(changes.length,1);
 });

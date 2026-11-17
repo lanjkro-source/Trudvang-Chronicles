@@ -16549,3 +16549,4 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sacred.FailedDescription` | Inscribing {rune} at level {level} failed. This object can no longer receive this rune at that or a higher level. Its other runes remain intact. | L’inscription de {rune} au niveau {level} a échoué. Cet objet ne peut plus recevoir cette rune à ce niveau ni à un niveau supérieur. Ses autres runes restent intactes. |
 | `TRUDVANG.Sacred.FailedSummary` | Inscription permanently blocked from level {level}. | Inscription définitivement bloquée à partir du niveau {level}. |
 | `TRUDVANG.Sacred.FailurePermanent` | This failed inscription is permanent and bound to the object. | Cette impossibilité d’inscription est permanente et liée à l’objet. |
+| `TRUDVANG.Sacred.DirectFunds` | Character: {free} points available · This object can receive {available} more. | Personnage : {free} points disponibles · Ajout possible à cet objet : {available}. |

@@ -18811,7 +18811,8 @@
       "FailedName": "Inscription impossible : {rune} (niveau {level})",
       "FailedDescription": "L’inscription de {rune} au niveau {level} a échoué. Cet objet ne peut plus recevoir cette rune à ce niveau ni à un niveau supérieur. Ses autres runes restent intactes.",
       "FailedSummary": "Inscription définitivement bloquée à partir du niveau {level}.",
-      "FailurePermanent": "Cette impossibilité d’inscription est permanente et liée à l’objet."
+      "FailurePermanent": "Cette impossibilité d’inscription est permanente et liée à l’objet.",
+      "DirectFunds": "Personnage : {free} points disponibles · Ajout possible à cet objet : {available}."
     }
   }
 }

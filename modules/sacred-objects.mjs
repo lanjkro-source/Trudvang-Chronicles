@@ -1,5 +1,5 @@
 import {weaponType} from './rules/combat-pool-resolver.mjs';
-import {SACRED_TYPES,CRAFT_MATERIALS,isSacredObject,sacredState,sacredObjects,sacredBalance,sacredCapacity,runeDefinition,runeRow,validSacredState,publicSacredTemplates,equipmentCraftMaterial,runeObjectEligible} from './rules/sacred-objects.mjs';
+import {SACRED_TYPES,CRAFT_MATERIALS,isSacredObject,sacredState,sacredObjects,sacredBalance,sacredRuneTotals,sacredCapacity,runeDefinition,runeRow,validSacredState,publicSacredTemplates,equipmentCraftMaterial,runeObjectEligible} from './rules/sacred-objects.mjs';
 import {intrinsicQualityUpdate} from './rules/item-quality.mjs';
 import {knowledgeRank} from './rules/magic-resistance.mjs';
 import {powerItemData,TABLET_BY_ID} from './tablet-catalog.mjs';
@@ -15,7 +15,7 @@ const t=key=>game.i18n.localize('TRUDVANG.Sacred.'+key),e=escapeHtml,a=escapeAtt
 const state=item=>structuredClone(sacredState(item)?.toObject?.()??sacredState(item));
 const owner=actor=>actor?.isOwner&&knowledgeRank(actor,'thuulForging')>0;
 const writer=()=>Boolean(game.users?.activeGM?.isSelf);
-export function sacredObjectViews(actor){return sacredObjects(actor).map(item=>({id:item.id,name:item.name,img:item.img,current:sacredState(item).current,invested:sacredState(item).invested,runes:sacredRuneViews(item)}));}
+export function sacredObjectViews(actor){return sacredObjects(actor).map(item=>({id:item.id,name:item.name,img:item.img,...sacredRuneTotals(item),runes:sacredRuneViews(item)}));}
 export function sacredRuneViews(item){return Array.from(sacredState(item)?.runes??[],row=>({...runeRow(row),name:game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name')}));}
 export function sacredAffinity(actor){
  if(!knowledgeRank(actor,'thuulForging')&&!sacredObjects(actor).length)return null;
@@ -62,29 +62,29 @@ async function mutate({actorUuid,itemId,operation,values={},userId},authority){
   const data=sacredCraftData(actor,values);return {itemId:(await actor.createEmbeddedDocuments('Item',[data]))[0]?.id};
  }
  if(operation==='rest'||operation==='dailyRest'){
-  const updates=sacredObjects(actor).filter(item=>operation==='rest'||sacredState(item).lastDay<Math.floor(Number(game.time?.worldTime||0)/86400)).map(item=>{const s=state(item);s.current=s.invested;s.runes=s.runes.map(row=>({...row,current:row.invested,uses:0}));s.lastDay=Math.floor(Number(game.time?.worldTime||0)/86400);return {_id:item.id,'system.sacred':s};});
+  const updates=sacredObjects(actor).filter(item=>operation==='rest'||sacredState(item).lastDay<Math.floor(Number(game.time?.worldTime||0)/86400)).map(item=>{const s=state(item);Object.assign(s,sacredRuneTotals(item));s.current=s.invested;s.runes=s.runes.map(row=>({...row,current:row.invested,uses:0}));s.lastDay=Math.floor(Number(game.time?.worldTime||0)/86400);return {_id:item.id,'system.sacred':s};});
   if(updates.length)await actor.updateEmbeddedDocuments('Item',updates);return {restored:updates.length};
  }
  const item=actor.items.get(itemId);if(!isSacredObject(item)||sacredState(item).creatorUuid!==actor.uuid)throw Error(t('Invalid'));
- const s=state(item);if(!validSacredState(s))throw Error(t('InvalidBalance'));
+ const s=state(item);Object.assign(s,sacredRuneTotals(item));if(!validSacredState(s))throw Error(t('InvalidBalance'));
  if(operation==='remove'){
   await item.delete({trudvangSacredDelete:true});return {removed:true};
  }
  if(operation==='invest'){
   const amount=Number(values.amount),balance=sacredBalance(actor);
   if(!Number.isInteger(amount)||amount<1||amount>balance.free||balance.overdrawn||s.invested+amount>sacredCapacity(actor,equipmentCraftMaterial(item)))throw Error(t('InvalidInvestment'));
-  const rune=values.runeId?s.runes.find(row=>row.id===values.runeId):null;if(values.runeId&&!rune)throw Error(t('Invalid'));
-  s.invested+=amount;s.current+=amount;if(rune){rune.invested+=amount;rune.current+=amount;}
+  const rune=s.runes.find(row=>row.id===values.runeId);if(!rune)throw Error(t('InvalidRune'));
+  s.invested+=amount;s.current+=amount;rune.invested+=amount;rune.current+=amount;
  }else if(operation==='inscribe'){
-  const known=knownRunes(actor).find(r=>r.id===values.sourceId),level=Number(values.level),amount=Number(values.amount);
+  if(typeof values.success!=='boolean')throw Error(t('Invalid'));
+  const {level,amount}=inscriptionPlan(actor,item,values,{checkFunds:values.success});
   const old=s.runes.find(row=>row.sourceId===values.sourceId);
-  if(!runeObjectEligible(item,values.sourceId))throw Error(t('WrongRuneObject'));
-  if(!known||!Number.isInteger(level)||level<1||level>known.level||old&&level<=old.level||s.failed.some(row=>row.sourceId===values.sourceId&&row.level<=level))throw Error(t('InvalidRune'));
-  const unassigned=s.invested-s.runes.reduce((sum,row)=>sum+row.invested,0);
-  if(!Number.isInteger(amount)||amount<Math.max(0,level-(old?.invested??0))||amount>unassigned)throw Error(t('InvalidInvestment'));
   if(!values.success)s.failed.push({sourceId:values.sourceId,level});
-  else if(old){old.level=level;old.invested+=amount;old.current+=amount;}
-  else s.runes.push({id:crypto.randomUUID(),sourceId:values.sourceId,level,invested:amount,current:amount,uses:0});
+  else{
+   s.invested+=amount;s.current+=amount;
+   if(old){old.level=level;old.invested+=amount;old.current+=amount;}
+   else s.runes.push({id:crypto.randomUUID(),sourceId:values.sourceId,level,invested:amount,current:amount,uses:0});
+  }
  }else if(operation==='consume'){
   const row=s.runes.find(row=>row.id===values.runeId);if(!row||!runeRow(row).canUse||values.expected&&JSON.stringify(row)!==values.expected)throw Error(t('Unavailable'));
   row.current-=row.level;row.uses++;s.current-=row.level;
@@ -112,12 +112,12 @@ export function registerSacredSockets(){
 }
 export async function removeSacredObject(item){
  const actor=item.parent;if(!actor?.isOwner)return null;
- const accepted=await foundry.applications.api.DialogV2.confirm({window:{title:t('Remove')},content:'<p>'+e(game.i18n.format('TRUDVANG.Sacred.RemoveConfirm',{name:item.name,points:sacredState(item).invested}))+'</p>'});
+ const accepted=await foundry.applications.api.DialogV2.confirm({window:{title:t('Remove')},content:'<p>'+e(game.i18n.format('TRUDVANG.Sacred.RemoveConfirm',{name:item.name,points:sacredRuneTotals(item).invested}))+'</p>'});
  return accepted?requestSacredMutation(actor,'remove',{itemId:item.id}):null;
 }
 const select=(name,label,options)=>'<div class="form-group"><label>'+e(label)+'</label><select name="'+a(name)+'">'+options.map(row=>'<option value="'+a(row.value)+'">'+e(row.label)+'</option>').join('')+'</select></div>';
 const input=(name,label,value=0,type='number')=>'<div class="form-group"><label>'+e(label)+'</label><input name="'+a(name)+'" type="'+type+'" value="'+a(String(value))+'"'+(type==='number'?' step="1"':'')+'></div>';
-const read=root=>Object.fromEntries(Array.from(root.querySelectorAll('[name]'),el=>[el.name,el.type==='checkbox'?el.checked:el.type==='number'?Number(el.value):el.value]));
+const read=root=>Object.fromEntries(Array.from(root.querySelectorAll('[name]')).filter(el=>el.type!=='radio'||el.checked).map(el=>[el.name,el.type==='checkbox'?el.checked:['number','radio'].includes(el.type)?Number(el.value):el.value]));
 const cancel={action:'cancel',label:()=>game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false};
 const buttons=(action,label,callback)=>[{action,label,default:true,callback}, {...cancel,label:cancel.label()}];
 export async function createSacredObjectDialog(actor){
@@ -149,25 +149,54 @@ export async function createSacredObjectDialog(actor){
  if(!result.success)return null;
  return requestSacredMutation(actor,'create',{type:choice.type,subtype:choice.subtype,templateUuid:choice.copy?choice.templateUuid:'',name:choice.name,material:choice.material});
 }
-export async function investSacredDialog(item){
+export function runeInvestmentAvailable(actor,item){
+ const balance=sacredBalance(actor),totals=sacredRuneTotals(item);
+ return balance.overdrawn?0:Math.max(0,Math.min(balance.free,sacredCapacity(actor,equipmentCraftMaterial(item))-totals.invested));
+}
+export function inscriptionPlan(actor,item,values,{checkFunds=true}={}){
+ const s=state(item),known=knownRunes(actor).find(row=>row.id===values.sourceId),level=Number(values.level),amount=Number(values.amount),old=s.runes.find(row=>row.sourceId===values.sourceId);
+ if(!runeObjectEligible(item,values.sourceId))throw Error(t('WrongRuneObject'));
+ if(!known||!Number.isInteger(level)||level<1||level>known.level||old&&level<=old.level||s.failed.some(row=>row.sourceId===values.sourceId&&row.level<=level))throw Error(t('InvalidRune'));
+ if(!Number.isInteger(amount)||amount<Math.max(0,level-(old?.invested??0))||checkFunds&&amount>runeInvestmentAvailable(actor,item))throw Error(t('InvalidInvestment'));
+ return {level,amount};
+}
+export async function investSacredDialog(item,runeId){
  if(!item.parent?.isOwner)return null;
- const s=state(item),balance=sacredBalance(item.parent),max=Math.max(0,Math.min(balance.free,sacredCapacity(item.parent,equipmentCraftMaterial(item))-s.invested));
- const choice=await foundry.applications.api.DialogV2.wait({window:{title:item.name+' — '+t('Invest')},content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.InvestAvailable',{max}))+'</p>'+select('runeId',t('Allocation'),[{value:'',label:t('Unassigned')},...s.runes.map(row=>({value:row.id,label:game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name')}))])+input('amount',t('Points'),Math.min(1,max))+'</div>',buttons:buttons('invest',t('Invest'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
- return choice?requestSacredMutation(item.parent,'invest',{itemId:item.id,...choice}):null;
+ const row=sacredState(item).runes.find(row=>row.id===runeId);if(!row)return ui.notifications.warn(t('InvalidRune'));
+ const max=runeInvestmentAvailable(item.parent,item),runeName=game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name');
+ const choice=await foundry.applications.api.DialogV2.wait({window:{title:item.name+' — '+runeName},content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.InvestAvailable',{max}))+'</p>'+input('amount',t('Points'),Math.min(row.level,max))+'</div>',buttons:buttons('invest',t('Invest'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
+ return choice?requestSacredMutation(item.parent,'invest',{itemId:item.id,runeId,amount:choice.amount}):null;
 }
 export async function inscribeRuneDialog(item){
  const actor=item.parent;if(!owner(actor))return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
  const known=knownRunes(actor).filter(row=>runeObjectEligible(item,row.id));if(!known.length)return ui.notifications.warn(t('NoRunes'));
- const s=state(item),unassigned=s.invested-s.runes.reduce((sum,row)=>sum+row.invested,0);
+ const s=state(item);
  class InscribeDialog extends foundry.applications.api.DialogV2{
-  _onRender(c,o){super._onRender(c,o);const root=this.element;const refresh=()=>{const v=read(root),k=known.find(row=>row.id===v.sourceId),old=s.runes.find(row=>row.sourceId===v.sourceId);root.querySelector('[name=level]').max=k?.level??1;const penalty=-v.level-2*s.runes.filter(row=>row.sourceId!==v.sourceId).length;root.querySelector('[data-procedure-target]').textContent=faithBreakdown(actor,penalty,v.modifier).target;root.querySelector('[data-sacred-breakdown]').innerHTML=rollModifierFlavor(faithBreakdown(actor,penalty,v.modifier).rows);};root.addEventListener('input',refresh);root.addEventListener('change',refresh);refresh();}
+  _onRender(c,o){
+   super._onRender(c,o);const root=this.element;let selectedSource='',selectedLevel=0;
+   const refresh=()=>{
+    let v=read(root);const k=known.find(row=>row.id===v.sourceId),old=s.runes.find(row=>row.sourceId===v.sourceId);
+    if(k&&selectedSource!==v.sourceId){
+     root.querySelector('[data-rune-ranks]').innerHTML=Array.from({length:k.level},(_,i)=>{const level=i+1,blocked=level<=Number(old?.level??0)||s.failed.some(row=>row.sourceId===v.sourceId&&row.level<=level);return '<label><input name="level" type="radio" value="'+level+'"'+(level===k.level?' checked':'')+(blocked?' disabled':'')+'><span>'+level+'</span></label>';}).join('');
+     selectedSource=v.sourceId;selectedLevel=0;
+    }
+    v=read(root);if(v.level!==selectedLevel){root.querySelector('[name=amount]').value=v.level??k?.level??1;selectedLevel=v.level;v=read(root);}
+    const available=runeInvestmentAvailable(actor,item),amount=root.querySelector('[name=amount]');amount.min=Math.max(0,Number(v.level)-(old?.invested??0));amount.max=available;
+    root.querySelector('[data-rune-funds]').textContent=game.i18n.format('TRUDVANG.Sacred.DirectFunds',{free:sacredBalance(actor).free,available});
+    const penalty=-Number(v.level||0)-2*s.runes.filter(row=>row.sourceId!==v.sourceId).length,p=faithBreakdown(actor,penalty,v.modifier);
+    root.querySelector('[data-procedure-target]').textContent=p.target;root.querySelector('[data-sacred-breakdown]').innerHTML=rollModifierFlavor(p.rows);
+    let valid=true;try{inscriptionPlan(actor,item,v);}catch{valid=false;}
+    root.querySelector('[data-action=inscribe]').disabled=!valid;
+   };
+   root.addEventListener('input',refresh);root.addEventListener('change',refresh);refresh();
+  }
  }
- const choice=await blessingDialog(InscribeDialog,actor).wait({window:{title:item.name+' — '+t('Inscribe')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog">'+select('sourceId',t('Rune'),known.map(row=>({value:row.id,label:row.name+' (1–'+row.level+')'})))+input('level',game.i18n.localize('TRUDVANG.Field.Level'),1)+input('amount',t('Points'),Math.min(1,unassigned))+'<p>'+e(game.i18n.format('TRUDVANG.Sacred.InvestAvailable',{max:unassigned}))+'</p><p>'+e(t('InscriptionWarning'))+'</p><p data-sacred-breakdown></p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-procedure-target></strong></p></div>',buttons:buttons('inscribe',t('Inscribe'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
+ const choice=await blessingDialog(InscribeDialog,actor).wait({window:{title:item.name+' — '+t('Inscribe')},classes:['trudvang','dialog'],position:{width:560},content:'<div class="trudvang roll-dialog">'+select('sourceId',t('Rune'),known.map(row=>({value:row.id,label:row.name})))+'<fieldset class="sacred-rune-ranks"><legend>'+e(game.i18n.localize('TRUDVANG.Field.Level'))+'</legend><div data-rune-ranks role="radiogroup" aria-label="'+a(game.i18n.localize('TRUDVANG.Field.Level'))+'"></div></fieldset>'+input('amount',t('Points'),known[0].level)+'<p data-rune-funds></p><p>'+e(t('InscriptionWarning'))+'</p><p data-sacred-breakdown></p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-procedure-target></strong></p></div>',buttons:buttons('inscribe',t('Inscribe'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
  if(!choice)return null;
- const old=s.runes.find(row=>row.sourceId===choice.sourceId),k=known.find(row=>row.id===choice.sourceId);
- if(!k||!Number.isInteger(choice.level)||choice.level<1||choice.level>k.level||old&&choice.level<=old.level||s.failed.some(row=>row.sourceId===choice.sourceId&&row.level<=choice.level)||!Number.isInteger(choice.amount)||choice.amount<Math.max(0,choice.level-(old?.invested??0))||choice.amount>unassigned)return ui.notifications.warn(t('InvalidRune'));
+ try{inscriptionPlan(actor,item,choice);}catch(error){return ui.notifications.warn(error.message);}
  const penalty=-choice.level-2*s.runes.filter(row=>row.sourceId!==choice.sourceId).length,p=faithBreakdown(actor,penalty,choice.modifier);
  const result=await rollUnder({actor,label:item.name+' — '+t('Inscribe'),target:p.target,kind:'skill',blessing:choice.blessing,flavor:rollModifierFlavor(p.rows)+'<br>'+e(game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+' : '+choice.modifier});
+ if(!result)return null;
  await requestSacredMutation(actor,'inscribe',{itemId:item.id,...choice,success:result.success});
  if(result.success)await syncPermanentRunes(item);
  return result;
@@ -233,9 +262,16 @@ function sacredWorldItems(){
 export async function migrateSacredEquipmentCorrections(){
  // TEMPORARY WORLD MIGRATION — v0.217.0 explicitly classified Stafur Slingu as hard.
  // Correct recognized starter copies once; custom untracked equipment is untouched.
- if(!writer()||Number(game.settings.get(S,'sacredEquipmentCorrections'))>=1)return;
- for(const item of sacredWorldItems())if(item.flags?.[S]?.starterId==='TRUDVANG.Content.Item.StafurSlingu'&&item.system?.craftMaterial==='hardMaterials')await item.update({'system.craftMaterial':'softMaterials'});
- await game.settings.set(S,'sacredEquipmentCorrections',1);
+ if(!writer())return;
+ const version=Number(game.settings.get(S,'sacredEquipmentCorrections'));
+ if(version>=2)return;
+ for(const item of sacredWorldItems()){
+  if(version<1&&item.flags?.[S]?.starterId==='TRUDVANG.Content.Item.StafurSlingu'&&item.system?.craftMaterial==='hardMaterials')await item.update({'system.craftMaterial':'softMaterials'});
+  // TEMPORARY WORLD MIGRATION — pre-direct-funding objects could hold unassigned DP.
+  // Return that unused investment by keeping only their existing rune totals.
+  if(isSacredObject(item)){const totals=sacredRuneTotals(item);if(totals.current!==sacredState(item).current||totals.invested!==sacredState(item).invested)await item.update({'system.sacred.current':totals.current,'system.sacred.invested':totals.invested});}
+ }
+ await game.settings.set(S,'sacredEquipmentCorrections',2);
 }
 export function registerSacredHooks(){
  game.settings.register(S,'sacredEquipmentCorrections',{scope:'world',config:false,type:Number,default:0});

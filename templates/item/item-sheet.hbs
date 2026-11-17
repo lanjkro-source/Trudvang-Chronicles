@@ -126,11 +126,11 @@
   </div>{{/if}}
 
   {{#if isSacredObject}}<div class="tab sacred-runes-tab" data-tab="runes"><section class="panel">
-    <div class="section-heading"><h2>{{localize "TRUDVANG.Sacred.CurrentInvested"}}</h2><strong>{{system.sacred.current}}/{{system.sacred.invested}}</strong><button type="button" data-action="sacred-invest" title="{{localize 'TRUDVANG.Sacred.Invest'}}"><i class="fas fa-plus"></i></button></div>
+    <div class="section-heading"><h2>{{localize "TRUDVANG.Sacred.CurrentInvested"}}</h2><strong>{{system.sacred.current}}/{{system.sacred.invested}}</strong></div>
     <p>{{localize "TRUDVANG.Sacred.CapacityObject" max=sacredCapacity}}</p>
     <div class="section-heading"><h2>{{localize "TRUDVANG.Sacred.Runes"}}</h2><button type="button" data-action="sacred-inscribe"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Sacred.Inscribe"}}</button></div>
     <table class="power-level-table sacred-rune-table"><thead><tr><th>{{localize "TRUDVANG.Sacred.Rune"}}</th><th>{{localize "TRUDVANG.Field.Level"}}</th><th>{{localize "TRUDVANG.Sacred.CurrentInvested"}}</th><th>{{localize "TRUDVANG.Sacred.Daily"}}</th><th></th></tr></thead><tbody>
-    {{#each sacredRunes}}<tr><td title="{{name}}">{{name}}</td><td>{{level}}</td><td>{{current}}/{{invested}}</td><td>{{#if permanent}}{{localize "TRUDVANG.Sacred.Permanent"}}{{else}}{{remaining}}/{{max}}{{/if}}</td><td>{{#unless permanent}}<button type="button" data-action="sacred-activate" data-rune-id="{{id}}" {{#unless canUse}}disabled{{/unless}} title="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-wand-sparkles"></i></button>{{/unless}}</td></tr>{{else}}<tr><td colspan="5">{{localize "TRUDVANG.Sacred.NoInscription"}}</td></tr>{{/each}}</tbody></table>
+    {{#each sacredRunes}}<tr><td title="{{name}}">{{name}}</td><td>{{level}}</td><td><span class="sacred-rune-points">{{current}}/{{invested}}<button type="button" class="sacred-rune-invest" data-action="sacred-invest" data-rune-id="{{id}}" title="{{localize 'TRUDVANG.Sacred.Invest'}}"><i class="fas fa-plus"></i></button></span></td><td>{{#if permanent}}{{localize "TRUDVANG.Sacred.Permanent"}}{{else}}{{remaining}}/{{max}}{{/if}}</td><td>{{#unless permanent}}<button type="button" data-action="sacred-activate" data-rune-id="{{id}}" {{#unless canUse}}disabled{{/unless}} title="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-wand-sparkles"></i></button>{{/unless}}</td></tr>{{else}}<tr><td colspan="5">{{localize "TRUDVANG.Sacred.NoInscription"}}</td></tr>{{/each}}</tbody></table>
   </section></div>{{/if}}
   {{#if supportsEffects}}<div class="tab" data-tab="effects">
     <section class="panel effects-panel item-effects">

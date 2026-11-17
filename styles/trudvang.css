@@ -1313,3 +1313,10 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang-sheet.item-sheet .sacred-rune-table th:nth-child(3) { width: 18%; }
 .trudvang-sheet.item-sheet .sacred-rune-table th:nth-child(4) { width: 29%; }
 .trudvang-sheet.item-sheet .sacred-rune-table th:last-child { width: 7%; }
+.trudvang .sacred-rune-ranks { border: 0; padding: 0; margin: 8px 0; }
+.trudvang .sacred-rune-ranks > div { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 5px; }
+.trudvang .sacred-rune-ranks label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.trudvang .sacred-rune-ranks input { width: 1em; height: 1em; margin: 0; accent-color: var(--trudvang-gold); }
+.trudvang .sacred-rune-ranks label:has(input:disabled) { opacity: .5; cursor: default; }
+.trudvang-sheet .sacred-rune-points { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.trudvang-sheet .sacred-rune-invest { width: auto; min-height: 0; padding: 0 2px; border: 0; background: transparent; color: inherit; line-height: inherit; }

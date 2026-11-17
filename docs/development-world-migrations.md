@@ -171,3 +171,6 @@ La version 4 remplace uniquement l’ancien profil exact de Main funeste par la 
 
 
 `migrateSacredEquipmentCorrections()` dans `modules/sacred-objects.mjs` porte le commentaire `TEMPORARY WORLD MIGRATION`. La reprise version 1 corrige une seule fois les copies du Stafur Slingu reconnues par leur `starterId`, classées `hardMaterials` dans la 0.217.0, vers `softMaterials`. Elle parcourt les objets du monde, acteurs et tokens non liés ; les objets non reconnus ne sont pas modifiés. La fonction, son appel au démarrage et le réglage caché `sacredEquipmentCorrections` pourront être retirés avec les anciens mondes. Le classement du catalogue, les valeurs initiales et la synchronisation normale des effets permanents d’échec d’inscription restent nécessaires.
+
+
+La version 2 de `migrateSacredEquipmentCorrections()` (même réglage caché `sacredEquipmentCorrections`) supprime les anciennes préallocations d’objets : leurs compteurs actuels/investis sont ramenés à la somme des réserves de leurs runes, sans renouveler les points consommés de ces runes. Les points non affectés redeviennent libres pour le créateur. Le bloc porte son commentaire `TEMPORARY WORLD MIGRATION` ; il pourra être retiré avec les anciens mondes. Le calcul normal des totaux par rune, le financement direct sur réussite et le bouton + par rune restent nécessaires.

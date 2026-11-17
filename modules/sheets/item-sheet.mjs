@@ -1,5 +1,5 @@
 import {sacredRuneViews,investSacredDialog,inscribeRuneDialog,activateSacredRune} from '../sacred-objects.mjs';
-import {isSacredObject,SACRED_TYPES,equipmentCraftMaterial,sacredCapacity} from '../rules/sacred-objects.mjs';
+import {isSacredObject,SACRED_TYPES,equipmentCraftMaterial,sacredCapacity,sacredRuneTotals} from '../rules/sacred-objects.mjs';
 import {damageQualificationFields} from "../damage-icons.mjs";
 import {damageQualification} from "../rules/damage-qualifications.mjs";
 import { TRUDVANG } from "../config.mjs";
@@ -80,7 +80,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     },
     actions: {
       roll: TrudvangItemSheet.#onRoll,
-      'sacred-invest': function(){return investSacredDialog(this.item).catch(error=>ui.notifications.warn(error.message));},
+      'sacred-invest': function(event,target){return investSacredDialog(this.item,target.dataset.runeId).catch(error=>ui.notifications.warn(error.message));},
       'sacred-inscribe': function(){return inscribeRuneDialog(this.item).catch(error=>ui.notifications.warn(error.message));},
       'sacred-activate': function(event,target){return activateSacredRune(this.item,target.dataset.runeId).catch(error=>ui.notifications.warn(error.message));},
       "delete-item": TrudvangItemSheet.#onDeleteItem,
@@ -117,6 +117,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     this._itemEffectEditState=itemEffectEditState(this.item);
     if(['weapon','shield','armor','gear','potion'].includes(this.item.type)){
       context.system=this.item.system.toObject?.(false)??{...this.item.system};
+      if(context.isSacredObject)context.system.sacred={...context.system.sacred,...sacredRuneTotals(this.item)};
       context.system.protection=Math.max(0,Number(this.item.system.protection||0)+itemProtectionModifiers(this.item).reduce((sum,row)=>sum+row.amount,0));
       context.qualityOptions=ITEM_QUALITIES.map(row=>({...row,label:game.i18n.localize(`TRUDVANG.Quality.${row.key}`),selected:row.id===itemQuality(context.system.quality).id}));
       context.qualityLocked=this._itemEffectEditState.some(row=>row.key==='system.quality');
