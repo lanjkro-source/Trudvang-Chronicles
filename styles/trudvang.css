@@ -1327,3 +1327,6 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang.chat-card .roll-outcome.failure, .trudvang.chat-card .test-outcome.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
 .trudvang.chat-card .test-outcome { display: inline-block; padding: 2px 5px; }
 .trudvang.chat-card .weapon-damage-effects { color: var(--trudvang-accent); font-weight: 700; }
+
+.trudvang.chat-card .application-result--resisted { grid-template-columns: minmax(0, 1fr) auto auto auto; }
+.trudvang.chat-card [data-fear-resistance-results] p { margin: 3px 8px; }

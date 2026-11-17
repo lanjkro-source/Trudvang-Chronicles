@@ -1,0 +1,60 @@
+{
+  "_id": "0f8kD8A6B7C8D9Ea",
+  "_key": "!items!0f8kD8A6B7C8D9Ea",
+  "name": "Fearless (Haminges)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:fearless:3#protection",
+    "description": "<p>Reduces the fear factor before Psyche and other personal protections. Existing fear points remain; first-level fear consequences are ignored while the power is active.</p>",
+    "summary": "Weakens received fear factors and suppresses their initial effects.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 223
+    }
+  },
+  "effects": [
+    {
+      "_id": "3qAm1qToUpVqWrXs",
+      "_key": "!items.effects!0f8kD8A6B7C8D9Ea.3qAm1qToUpVqWrXs",
+      "name": "Fearless (Haminges)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Reduces the fear factor before Psyche and other personal protections. Existing fear points remain; first-level fear consequences are ignored while the power is active.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:fearless:3#protection",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.fearReductionDegrees",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFearThrough",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:fearless:3#protection",
+            "sourceId": "holy-haminges-power-of-trolls:fearless:3",
+            "summary": "Weakens received fear factors and suppresses their initial effects.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

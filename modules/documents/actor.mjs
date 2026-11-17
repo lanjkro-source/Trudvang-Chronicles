@@ -1720,7 +1720,7 @@ export class TrudvangActor extends BaseActor {
       ...(Number(options.situational || 0) ? [game.i18n.format("TRUDVANG.Calculation.FearSituation", {amount: Number(options.situational)})] : [])
     ];
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-card.hbs", {actorName: this.name, actorImg: this.img, total: Math.max(0, roll.total), detail: roll.rolls.join(" + "), factor: notation, modifierDetails});
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: roll.diceRolls});
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: roll.diceRolls,flags:{"trudvang-chronicles":{fearContext:{profile:{dice:factor.dice,faces:factor.faces,threshold:factor.threshold,modifier:0},values:roll.rolls,adjustment:modifier}}}});
     return roll;
   }
 

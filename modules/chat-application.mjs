@@ -1,3 +1,6 @@
+import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
+import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
+import {adjustedFearFactor,fearRecipientEligible} from "./rules/fear-protection.mjs";
 import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from "./damage-application.mjs";
 import {renderTemplate,escapeHtml} from "./helpers.mjs";
 import {magicResistanceRows,localizeResistanceRows} from './rules/magic-resistance.mjs';
@@ -14,6 +17,9 @@ const resistanceLocks=new Map();
 let registered = false;
 const authorId = message => message?.author?.id ?? message?._source?.author;
 const rowsFor = message => message.getFlag(SYSTEM_ID, "applications") ?? [];
+function pendingFearResults(results,applied=[]){
+ return '<section data-fear-resistance-results>'+results.filter(row=>!applied.some(a=>a.channel==='fear'&&a.actorUuid===row.actorUuid)).map(row=>'<p>'+escapeHtml(row.name??'')+' — <strong class="test-outcome '+(row.success?'success':'failure')+'">'+escapeHtml(rollOutcomeText(row.outcome??{},key=>game.i18n.localize(key)))+'</strong></p>').join('')+'</section>';
+}
 const damageTargetsSection = /<section\b[^>]*\bdata-damage-targets(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
 
 export function hasChatApplication(message, actorUuid, channel, itemUuid = "") {
@@ -89,6 +95,22 @@ async function removeDamageTargetOnGM(payload) {
   return {status: "removed", removed: targets.length - remaining.length};
 }
 
+async function reserveFearRecipient(message,actor){
+ const context=message.getFlag(SYSTEM_ID,'fearContext'),definition=POWER_DETAILS_BY_ID[context?.sourceId]?.fearRoll;
+ if(!definition?.targetLimitOptionId)return null;
+ const origin=context.originMessageId?game.messages.get(context.originMessageId):message;
+ const casting=context.originMessageId?origin?.getFlag(SYSTEM_ID,'ruleTestContext'):context.casting;
+ if(!origin||casting?.sourceId!==context.sourceId||casting?.casterUuid!==context.casterUuid)return {status:'unavailable'};
+ const records=origin.getFlag(SYSTEM_ID,'fearRecipients')??[],existing=records.find(row=>row.actorUuid===actor.uuid);
+ if(existing)return existing.cardId===message.id?null:{status:'alreadyApplied'};
+ const option=definition.targetLimitOptionId,index=POWER_DETAILS_BY_ID[context.sourceId].powerLevels.findIndex(row=>row.id===option);
+ const extra=Math.max(0,Math.trunc(Number(casting.countsById?.[option]??casting.counts?.[index])||0));
+ if(records.length>=1+extra||!context.baseOnly&&records.some(row=>!row.baseOnly))return {status:'targetLimit'};
+ const entry={actorUuid:actor.uuid,cardId:message.id,baseOnly:Boolean(context.baseOnly)};
+ await origin.update({[`flags.${SYSTEM_ID}.fearRecipients`]:[...records,entry]});
+ return {rollback:()=>origin.update({[`flags.${SYSTEM_ID}.fearRecipients`]:records})};
+}
+
 async function applyOnGM(payload) {
   const message = game.messages.get(payload.messageId);
   const user = game.users.get(payload.userId);
@@ -99,6 +121,18 @@ async function applyOnGM(payload) {
   const actor = await foundry.utils.fromUuid(payload.actorUuid);
   if (!actor?.isOwner || !["character", "npc"].includes(actor.type)
     || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
+  let fearAdjustment=null;
+  if(payload.channel==="fear"){
+   const context=message.getFlag(SYSTEM_ID,'fearContext');
+   if(!fearRecipientEligible(actor,context))return {status:'ineligibleTarget'};
+   const result=message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
+   if(context?.resistance&&!result&&!actor.transformationProfile?.ignoreFear&&!actor.transformationProfile?.ignoreFearGain)return {status:'resistanceRequired'};
+   if(context?.profile){
+    fearAdjustment=adjustedFearFactor(actor,context,{success:result?.success===true});
+    if(!fearAdjustment)return {status:'unavailable'};
+    amount=fearAdjustment.amount;
+   }
+  }
   if(payload.channel!=="fear"){
     let applicationFactor=1;
     const context=message.getFlag(SYSTEM_ID,'damageContext')??{};
@@ -134,15 +168,21 @@ async function applyOnGM(payload) {
   let appliedRow = pending.find(row => row.actorUuid === actor.uuid && row.channel === payload.channel
     && (payload.channel !== "defense" || row.itemUuid === item?.uuid));
   if (!appliedRow) {
-    const result = payload.channel === "fear" ? await actor.applyFearFactor(amount, {announce: false})
+    const reservation=payload.channel==='fear'?await reserveFearRecipient(message,actor):null;
+    if(reservation?.status)return reservation;
+    let result;
+    try{result = payload.channel === "fear" ? (fearAdjustment?.profile.dice===0?{applied:0}:await actor.applyFearFactor(amount, {announce: false}))
       : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount,qualification:message.getFlag(SYSTEM_ID,"damageContext")?.qualification})
         : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, announce: false});
+    }catch(error){if(reservation?.rollback)await reservation.rollback();throw error;}
+    if(!result&&reservation?.rollback)await reservation.rollback();
     if (!result) return {status: "unavailable"};
     appliedRow = {actorUuid: actor.uuid, tokenUuid: "", name: actor.name, channel: payload.channel,
       itemUuid: item?.uuid ?? "", itemName: item?.name ?? "",
       calculation: payload.channel === "body" ? [game.i18n.format("TRUDVANG.Damage.Application",{before:amount,after:result.bodyDamage,temporary:result.temporaryDamage??0}),
         ...(result.armorDamage??[]).map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.item.name??"",protection:row.protection})),
         ...(result.resistances??[]).map(row=>`${row.source} ×${row.factor}`)].join(" · ") : "",
+      ...(payload.channel==='fear'&&fearAdjustment?{calculation:game.i18n.format('TRUDVANG.MagicFear.ProtectedFactor',{factor:fearAdjustment.profile.dice?`${fearAdjustment.profile.dice}d${fearAdjustment.profile.faces}${fearAdjustment.profile.threshold?' '+game.i18n.localize('TRUDVANG.Field.OpenRollShort')+' '+fearAdjustment.profile.threshold:''}${fearAdjustment.profile.modifier?' + '+fearAdjustment.profile.modifier:''}`:'0',amount:fearAdjustment.amount})}:{}),
       amount: Number(result.applied ?? result.integrityLoss ?? result.bodyDamage), ignoreArmor: payload.ignoreArmor === true};
     pending.push(appliedRow); unrecorded.set(message.id, pending);
     const token = payload.tokenUuid ? await foundry.utils.fromUuid(payload.tokenUuid) : actor.token;
@@ -153,15 +193,18 @@ async function applyOnGM(payload) {
   if(payload.channel==='body')await applyWeaponDamageEffects(message,actor,appliedRow);
   const rows = [...rowsFor(message), ...pending.filter(row => !hasChatApplication(message, row.actorUuid, row.channel, row.itemUuid))];
   const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
-    rows: rows.map(row => ({...row,
+    rows: rows.map(row => {
+      const resistance=row.channel==='fear'?message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(r=>r.actorUuid===row.actorUuid):null;
+      return {...row,...(resistance?{outcomeText:rollOutcomeText(resistance.outcome??{},key=>game.i18n.localize(key)),outcomeClass:resistance.success?'success':'failure'}:{}),
       label: row.channel === "defense" ? game.i18n.format("TRUDVANG.ChatApplication.DefenseName", {actor: row.name, item: row.itemName}) : row.name,
       icon: row.channel === "fear" ? "fa-face-grimace" : row.channel === "defense" ? "fa-shield" : "fa-heart-crack",
-      result: game.i18n.format(`TRUDVANG.ChatApplication.${row.channel === "fear" ? "Fear" : row.channel === "defense" ? "Integrity" : "Body"}Amount`, {amount: row.amount})}))
+      result: game.i18n.format(`TRUDVANG.ChatApplication.${row.channel === "fear" ? "Fear" : row.channel === "defense" ? "Integrity" : "Body"}Amount`, {amount: row.amount})};})
   });
   const original = String(message.content);
   const section = /<section\b[^>]*\bdata-application-results(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
-  const content = section.test(original) ? original.replace(section, () => html)
+  let content = section.test(original) ? original.replace(section, () => html)
     : /<\/article>\s*$/.test(original) ? original.replace(/<\/article>(\s*)$/, () => `${html}</article>`) : `${original}${html}`;
+  if(message.getFlag(SYSTEM_ID,'fearResistanceResults'))content=content.replace(/<section data-fear-resistance-results>[\s\S]*?<\/section>/,()=>pendingFearResults(message.getFlag(SYSTEM_ID,'fearResistanceResults'),rows));
   await message.update({content, [`flags.${SYSTEM_ID}.applications`]: rows});
   unrecorded.delete(message.id);
   return {status: "applied", amount: appliedRow.amount};
@@ -170,9 +213,10 @@ async function applyOnGM(payload) {
 async function damageResistanceOnGM(payload){
  const message=game.messages.get(payload.messageId),user=game.users.get(payload.userId);
  if(!game.user.isGM||!message||!user?.active||!canReadMessage(message,user))return {status:'unavailable'};
- const context=message.getFlag(SYSTEM_ID,'damageContext'),actor=await foundry.utils.fromUuid(payload.actorUuid);
- if(!context?.resistance||context.boundActorUuid!==actor?.uuid||!actor?.testUserPermission(user,'OWNER')||(!['presence','consequence'].includes(context.resistance.scope)&&hasChatApplication(message,actor.uuid,'body')))return {status:'unavailable'};
- const existing=message.getFlag(SYSTEM_ID,'damageResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
+ const fear=payload.type==='chatFearResistance',resultKey=fear?'fearResistanceResults':'damageResistanceResults';
+ const context=message.getFlag(SYSTEM_ID,fear?'fearContext':'damageContext'),actor=await foundry.utils.fromUuid(payload.actorUuid);
+ if(!context?.resistance||(!fear&&context.boundActorUuid!==actor?.uuid)||!actor?.testUserPermission(user,'OWNER')||(fear?!fearRecipientEligible(actor,context)||hasChatApplication(message,actor.uuid,'fear'):!['presence','consequence'].includes(context.resistance.scope)&&hasChatApplication(message,actor.uuid,'body')))return {status:'unavailable'};
+ const existing=message.getFlag(SYSTEM_ID,resultKey)?.find(row=>row.actorUuid===actor.uuid);
  if(existing)return {status:'alreadyRolled'};
  const key=`${message.id}:${actor.uuid}`,lock=resistanceLocks.get(key);
  if(payload.action==='begin'){
@@ -181,17 +225,30 @@ async function damageResistanceOnGM(payload){
  }
  if(!lock||lock.userId!==user.id||lock.token!==payload.token)return {status:'unavailable'};
  if(payload.action==='cancel'){resistanceLocks.delete(key);return {status:'cancelled'};}
- const proof=game.messages.get(payload.proofId),flags=proof?.flags?.[SYSTEM_ID];
+ let proof=game.messages.get(payload.proofId),flags=proof?.flags?.[SYSTEM_ID],inlineRoll=null;
+ if(fear&&payload.roll){
+  try{inlineRoll=Roll.fromData(payload.roll);}catch{return {status:'unavailable'};}
+  const die=Number(inlineRoll.total),target=Number(payload.target);
+  if(inlineRoll.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
+  flags={damageResistanceFor:{messageId:message.id,actorUuid:actor.uuid},rollOutcome:{...resolveRollUnderOutcome(die,target),result:die,target}};
+  proof={id:message.id,author:user,flags:{[SYSTEM_ID]:flags}};
+ }
  if(message.getFlag(SYSTEM_ID,'damageOutcomePlan')&&message.getFlag(SYSTEM_ID,'damageOutcomePlan').proofId!==proof?.id)return {status:'unavailable'};
  const resume=message.getFlag(SYSTEM_ID,'damageOutcomePlan')?.proofId===proof?.id;
  if((authorId(proof)!==user.id&&!resume)||flags?.damageResistanceFor?.messageId!==message.id||flags.damageResistanceFor.actorUuid!==actor.uuid||typeof flags.rollOutcome?.success!=='boolean')return {status:'unavailable'};
  if(context.resistance.outcomes){const {applyDamageOutcome}=await import('./damage-outcomes.mjs');await applyDamageOutcome({message,actor,success:flags.rollOutcome.success,proofId:proof.id});}
- const results=[...(message.getFlag(SYSTEM_ID,'damageResistanceResults')??[]),{actorUuid:actor.uuid,success:flags.rollOutcome.success,proofId:proof.id}];
+ const results=[...(message.getFlag(SYSTEM_ID,resultKey)??[]),{actorUuid:actor.uuid,success:flags.rollOutcome.success,proofId:proof.id,...(fear?{name:actor.name,outcome:structuredClone(flags.rollOutcome)}:{})}];
  const outcomeLabel=context.resistance.outcomes?.[flags.rollOutcome.success?'success':'failure']?.labelKey;
  const label=game.i18n.localize(outcomeLabel??(context.resistance.scope==='presence'
   ? flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Stay':'TRUDVANG.PersistentDamage.Flee'
   : flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Resisted':'TRUDVANG.PersistentDamage.NotResisted'));
+ if(fear){
+  const previous=String(message.content),section=/<section data-fear-resistance-results>[\s\S]*?<\/section>/;
+  const html=pendingFearResults(results,rowsFor(message));
+  await message.update({content:section.test(previous)?previous.replace(section,()=>html):previous.replace(/<\/article>\s*$/,html+'</article>'),...(inlineRoll?{rolls:[...(message.rolls??[]),inlineRoll],'flags.dice-so-nice.skip':true}:{}),[`flags.${SYSTEM_ID}.${resultKey}`]:results});
+ }else{
  await message.update({content:String(message.content).replace(/(<span\b[^>]*data-damage-resistance-result[^>]*>)[\s\S]*?<\/span>/,(_,open)=>`${open}<strong class="test-outcome ${flags.rollOutcome.success?'success':'failure'}">${escapeHtml(rollOutcomeText(flags.rollOutcome,key=>game.i18n.localize(key)))}</strong> — ${escapeHtml(label)}</span>`).replace(/(<button\b[^>]*data-action="resist-damage"[^>]*)(>)/,'$1 disabled$2'),[`flags.${SYSTEM_ID}.damageResistanceResults`]:results});
+ }
  resistanceLocks.delete(key);
  if(context.resistance.scope==='continuation'&&((flags.rollOutcome.success&&context.resistance.successEndsEffect)||(!flags.rollOutcome.success&&context.resistance.failureEndsEffect))){
   const effect=await foundry.utils.fromUuid(context.sourceEffectUuid);if(effect?.parent?.uuid===actor.uuid)await effect.delete();
@@ -203,12 +260,13 @@ async function damageResistanceOnGM(payload){
  * no second application when the same actor's owners click at the same time.
  */
 export async function applyChatApplication(payload) {
-  const previous = queues.get(payload.messageId) ?? Promise.resolve();
+  const queueKey=game.messages.get(payload.messageId)?.getFlag(SYSTEM_ID,"fearContext")?.originMessageId||payload.messageId;
+  const previous = queues.get(queueKey) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
-    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : payload.type==='chatDamageResistance'?damageResistanceOnGM(payload):applyOnGM(payload));
-  queues.set(payload.messageId, next);
+    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
+  queues.set(queueKey, next);
   try { return await next; }
-  finally { if (queues.get(payload.messageId) === next) queues.delete(payload.messageId); }
+  finally { if (queues.get(queueKey) === next) queues.delete(queueKey); }
 }
 
 export function registerChatApplicationSocket() {
@@ -221,7 +279,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -234,10 +292,36 @@ export async function requestChatApplication({message, actor, token, channel, it
   if (!actor?.isOwner) return {status: "unavailable"};
   if(channel!=="fear"&&!damageCanAffect(actor,message.getFlag(SYSTEM_ID,"damageContext")?.targetTags))return {status:"ineligibleTarget"};
   if (hasChatApplication(message, actor.uuid, channel, itemUuid)) return {status: "alreadyApplied"};
+  if(channel==='fear'){
+   const context=message.getFlag(SYSTEM_ID,'fearContext');
+   if(!fearRecipientEligible(actor,context))return {status:'ineligibleTarget'};
+   if(context?.resistance&&!message.getFlag(SYSTEM_ID,'fearResistanceResults')?.some(row=>row.actorUuid===actor.uuid)&&!actor.transformationProfile?.ignoreFear&&!actor.transformationProfile?.ignoreFearGain)return requestFearResistance({message,actor,token});
+  }
   const payload = {type: "chatApplication", requestId: crypto.randomUUID(), messageId: message.id,
     userId: game.user.id, actorUuid: actor.uuid, tokenUuid: token?.document?.uuid ?? token?.uuid ?? actor.token?.uuid ?? "",
     channel, itemUuid, ignoreArmor,variant};
   return requestChatUpdate(message, payload);
+}
+
+export async function requestFearResistance({message,actor,token}){
+ if(!actor?.isOwner)return {status:'unavailable'};
+ const context=message.getFlag(SYSTEM_ID,'fearContext');
+ const payload={type:'chatFearResistance',messageId:message.id,userId:game.user.id,actorUuid:actor.uuid};
+ const begin=await requestChatUpdate(message,{...payload,action:'begin'});
+ if(begin.status==='alreadyRolled')return requestChatApplication({message,actor,token,channel:'fear'});
+ if(begin.status!=='reserved')return begin;
+ try{
+  const {rollConfiguredTraitSituation}=await import('./dice.mjs');
+  let resolution;
+  const publishMessage=async(data,outcome)=>{
+   resolution=await requestChatUpdate(message,{...payload,action:'finish',token:begin.token,roll:data.rolls[0].toJSON(),target:outcome.target});
+   if(!['resolved','alreadyRolled'].includes(resolution.status))throw Error(game.i18n.localize('TRUDVANG.ChatApplication.Unavailable'));
+   return {message,animate:resolution.status==='resolved'};
+  };
+  const result=await rollConfiguredTraitSituation({actor,reactive:true,test:context.resistance.test,sourceName:context.resistance.sourceName+' — '+actor.name,resistanceContext:context.resistance.casting,publishMessage});
+  if(!result)return {status:'cancelled'};
+  return requestChatApplication({message,actor,token,channel:'fear'});
+ }finally{await requestChatUpdate(message,{...payload,action:'cancel',token:begin.token});}
 }
 
 export async function requestDamageResistance({message,actor}){

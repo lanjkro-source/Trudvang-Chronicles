@@ -60,7 +60,7 @@ test('magic fear prefills the confirmation and cancellation posts neither dice n
  try{
   await rollMagicFear({document,actor:{isOwner:true},context:{sourceId:id,countsById:{[id+':2']:4}}});
   assert.match(content,/name="threshold"[^>]*value="6"/);assert.match(content,/Figure sinistre/);
-  await rollMagicFear({document,actor:{isOwner:true},context:{sourceId:id,countsById:{[id+':2']:4}},baseOnly:true});
+  await rollMagicFear({document,actor:{isOwner:true},context:{sourceId:id,countsById:{[id+':2']:4,[id+':1']:1}},baseOnly:true});
   assert.match(content,/name="threshold"[^>]*value="10"/);
   assert.equal(messages.length,before);
  }finally{foundry.applications.api.DialogV2.wait=oldWait;}

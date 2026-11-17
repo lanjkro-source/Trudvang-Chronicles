@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 357 ; avec jet de dégâts magique : 36 ; avec jet de peur magique : 7.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 114 ; avec au moins un modèle d'effet répertorié : 361 ; avec jet de dégâts magique : 37 ; avec jet de peur magique : 8.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur |
 |---|---|---|---|---:|---:|---:|---|---|
@@ -130,7 +130,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Vitner illusoire | Paysage illusoire | sortilège | `vitner-delusion-vitner:landscape-illusion:8` | 6 | 6 | 1 | — | — |
 | Vitner illusoire | Silence | sortilège | `vitner-delusion-vitner:silence:9` | 5 | 0 | 1 | — | — |
 | Vitner illusoire | Invisibilité | sortilège | `vitner-delusion-vitner:invisibility:11` | 5 | 3 | 1 | — | — |
-| Vitner illusoire | Lindwurm illusoire | sortilège | `vitner-delusion-vitner:lindwurm-illusion:10` | 6 | 1 | 0 | — | — |
+| Vitner illusoire | Lindwurm illusoire | sortilège | `vitner-delusion-vitner:lindwurm-illusion:10` | 6 | 1 | 1 | oui | oui |
 | Vitner des objets | Analyse de la composition | sortilège | `vitner-vitner-of-objects:detect-composition:0` | 4 | 0 | 1 | — | — |
 | Vitner des objets | Résistance à l’eau | sortilège | `vitner-vitner-of-objects:waterproof:1` | 6 | 0 | 1 | — | — |
 | Vitner des objets | Lien | sortilège | `vitner-vitner-of-objects:bind:2` | 5 | 0 | 1 | — | — |
@@ -163,10 +163,10 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Fureur de Tyrd | Langue du loup | pouvoir | `holy-gerbanis-wrath-of-tyrd:wolf-tongue:2` | 2 | 0 | 0 | — | oui |
 | Fureur de Tyrd | Marque du brasier | pouvoir | `holy-gerbanis-wrath-of-tyrd:pyre-mark:3` | 3 | 0 | 2 | oui | — |
 | Fureur de Tyrd | Cri de guerre | pouvoir | `holy-gerbanis-wrath-of-tyrd:war-cry:4` | 6 | 0 | 2 | — | — |
-| Fureur de Tyrd | Figure sinistre | pouvoir | `holy-gerbanis-wrath-of-tyrd:dark-visage:5` | 3 | 0 | 0 | — | oui |
+| Fureur de Tyrd | Figure sinistre | pouvoir | `holy-gerbanis-wrath-of-tyrd:dark-visage:5` | 3 | 0 | 1 | — | oui |
 | Fureur de Tyrd | Tempête de feu | pouvoir | `holy-gerbanis-wrath-of-tyrd:firestorm:6` | 2 | 0 | 1 | oui | — |
 | Fureur de Tyrd | Tonnerre victorieux | pouvoir | `holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7` | 4 | 0 | 2 | — | — |
-| Fureur de Tyrd | Grondement de Tyrd | pouvoir | `holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8` | 2 | 0 | 0 | — | oui |
+| Fureur de Tyrd | Grondement de Tyrd | pouvoir | `holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8` | 2 | 0 | 1 | — | oui |
 | Influence de Jorn | Mur du crépuscule | pouvoir | `holy-gerbanis-influence-of-jorn:wall-of-dusk:1` | 4 | 0 | 1 | — | — |
 | Influence de Jorn | Souffle de mort | pouvoir | `holy-gerbanis-influence-of-jorn:death-gust:0` | 2 | 0 | 0 | oui | — |
 | Influence de Jorn | Falfax | pouvoir | `holy-gerbanis-influence-of-jorn:falfax:2` | 1 | 0 | 1 | — | — |
@@ -331,7 +331,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Puissance des hommes | Élixir de vie de la dévoreuse | pouvoir | `holy-haminges-power-of-men:life-elixir-of-the-devouress:8` | 2 | 0 | 1 | — | — |
 | Puissance des trolls | Infection | pouvoir | `holy-haminges-power-of-trolls:disease-carrier:0` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Volonté | pouvoir | `holy-haminges-power-of-trolls:willpower:1` | 2 | 0 | 1 | — | — |
-| Puissance des trolls | Sans peur | pouvoir | `holy-haminges-power-of-trolls:fearless:3` | 3 | 0 | 0 | — | — |
+| Puissance des trolls | Sans peur | pouvoir | `holy-haminges-power-of-trolls:fearless:3` | 3 | 0 | 1 | — | — |
 | Puissance des trolls | Tours illusoires | pouvoir | `holy-haminges-power-of-trolls:illusion-tricks:2` | 3 | 0 | 1 | — | — |
 | Puissance des trolls | Contagion | pouvoir | `holy-haminges-power-of-trolls:contagious:4` | 3 | 1 | 1 | — | — |
 | Puissance des trolls | Persuasion | pouvoir | `holy-haminges-power-of-trolls:persuade:5` | 4 | 1 | 1 | — | — |

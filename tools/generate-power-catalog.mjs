@@ -114,6 +114,9 @@ for (const id of [...french.keys()].sort()) {
   if(JSON.stringify(f.fearRoll??null)!==JSON.stringify(e.fearRoll??null))fail(`${id}: EN fear roll differs from FR`);
   if(f.fearRoll){
     const d=f.fearRoll;
+    if(d.targetLimitOptionId&&!f.powerLevels.some(p=>p.optionId===d.targetLimitOptionId))fail(`${id}: invalid fear target option`);
+    if(d.resistance&&(!d.requiresResistance||!Number.isInteger(d.resistance.testIndex)||!f.resist?.[d.resistance.testIndex]||d.resistance.successProfile&&(!Number.isInteger(d.resistance.successProfile.dice)||d.resistance.successProfile.dice<1||![3,4,5,6,10].includes(d.resistance.successProfile.faces)||!Number.isInteger(d.resistance.successProfile.threshold)||!Number.isInteger(d.resistance.successProfile.modifier))))fail(`${id}: invalid fear resistance`);
+    if(d.eligibility&&Object.entries(d.eligibility).some(([k,v])=>!['excludeCaster','requiresHearing','intelligentOnly'].includes(k)||typeof v!=='boolean'))fail(`${id}: invalid fear recipients`);
     if(!Array.isArray(d.steps)||!d.steps.length||!f.powerLevels.some(p=>p.optionId===d.optionId)||(d.baseTargetOptionId&&!f.powerLevels.some(p=>p.optionId===d.baseTargetOptionId))||
       d.steps.some(s=>!Number.isInteger(s.dice)||s.dice<1||![3,4,5,6,10].includes(s.faces)||!Number.isInteger(s.threshold)||(s.threshold!==0&&(s.threshold<2||s.threshold>s.faces))||!Number.isInteger(s.modifier))||
       (d.requiresResistance!==undefined&&typeof d.requiresResistance!=='boolean'))fail(`${id}: invalid fear roll`);

@@ -2925,7 +2925,11 @@ export const POWER_DETAILS_BY_ID = {
         }
       ],
       "requiresResistance": false,
-      "baseTargetOptionId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:1"
+      "baseTargetOptionId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5:1",
+      "eligibility": {
+        "excludeCaster": true,
+        "intelligentOnly": true
+      }
     },
     "powerLevels": [
       {
@@ -3229,7 +3233,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
-      "requiresResistance": false
+      "requiresResistance": false,
+      "eligibility": {
+        "excludeCaster": true,
+        "intelligentOnly": true
+      }
     },
     "powerLevels": [
       {
@@ -3361,7 +3369,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
-      "requiresResistance": false
+      "requiresResistance": false,
+      "eligibility": {
+        "excludeCaster": true,
+        "intelligentOnly": true
+      }
     },
     "powerLevels": [
       {
@@ -4180,7 +4192,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
-      "requiresResistance": false
+      "requiresResistance": false,
+      "eligibility": {
+        "excludeCaster": true,
+        "requiresHearing": true
+      }
     },
     "powerLevels": [
       {
@@ -4335,7 +4351,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
-      "requiresResistance": false
+      "requiresResistance": false,
+      "eligibility": {
+        "excludeCaster": true,
+        "requiresHearing": true
+      }
     },
     "powerLevels": [
       {
@@ -4418,7 +4438,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
-      "requiresResistance": false
+      "requiresResistance": false,
+      "eligibility": {
+        "excludeCaster": true,
+        "requiresHearing": true
+      }
     },
     "powerLevels": [
       {
@@ -4839,7 +4863,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:2",
         "cost": 5,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "lasting",
@@ -10546,12 +10570,77 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-delusion-vitner:lindwurm-illusion:10": {
     "isRune": false,
     "level": 5,
-    "selfOnly": false,
+    "selfOnly": true,
+    "damageRoll": {
+      "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:4",
+      "steps": [
+        {
+          "formula": "2d10",
+          "openRoll": 0
+        },
+        {
+          "formula": "2d10",
+          "openRoll": 10
+        },
+        {
+          "formula": "2d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "2d10",
+          "openRoll": 8
+        }
+      ],
+      "qualification": {
+        "nature": "magical",
+        "delivery": "melee",
+        "type": "piercing",
+        "protection": "normal"
+      }
+    },
     "damageQualification": {
       "nature": "magical",
       "delivery": "melee",
       "type": "piercing",
       "protection": "normal"
+    },
+    "fearRoll": {
+      "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:3",
+      "steps": [
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 9,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 8,
+          "modifier": 0
+        },
+        {
+          "dice": 1,
+          "faces": 10,
+          "threshold": 7,
+          "modifier": 0
+        }
+      ],
+      "requiresResistance": true,
+      "resistance": {
+        "testIndex": 0,
+        "successProfile": {
+          "dice": 1,
+          "faces": 5,
+          "threshold": 0,
+          "modifier": 0
+        }
+      }
+    },
+    "targeting": {
+      "baseTargets": 1,
+      "additionalTargets": [],
+      "casterOnly": true
     },
     "powerLevels": [
       {
@@ -12047,7 +12136,11 @@ export const POWER_DETAILS_BY_ID = {
         }
       ],
       "requiresResistance": true,
-      "baseTargetOptionId": "vitner-power-of-thought:fear:3:0"
+      "baseTargetOptionId": "vitner-power-of-thought:fear:3:0",
+      "resistance": {
+        "testIndex": 0
+      },
+      "targetLimitOptionId": "vitner-power-of-thought:fear:3:0"
     },
     "powerLevels": [
       {

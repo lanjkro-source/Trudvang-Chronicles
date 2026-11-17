@@ -15333,6 +15333,15 @@
           "SourcePage": "101",
           "Duration": "5 minutes"
         },
+        "vitner-delusion-vitner:lindwurm-illusion:10#illusion": {
+          "Name": "Lindwurm Illusion — concealment",
+          "Summary": "Conceals the caster in a terrifying illusory creature capable of biting.",
+          "Description": "<p>The first round causes fear; in the second, the beast seeks prey; from the third, it may bite once per round (SV 10). Parry and dodge remain possible. The caster stays concealed but can be detected using Shadow Arts. The GM manages the beast’s movement and attack resolution.</p>",
+          "SourceName": "Lindwurm Illusion",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "101",
+          "Duration": "3 rounds"
+        },
         "vitner-vitner-of-objects:detect-composition:0#effect": {
           "Name": "Detect Composition",
           "Summary": "Detect Composition",
@@ -15648,6 +15657,15 @@
           "SourcePage": "171",
           "Duration": "3 action rounds"
         },
+        "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight": {
+          "Name": "Dark Visage — fleeing animals",
+          "Summary": "Forces the creature to flee and delays its return.",
+          "Description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+          "SourceName": "Dark Visage",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "1 hours"
+        },
         "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
           "Name": "Burns — Firestorm",
           "Summary": "Burns hinder combat actions.",
@@ -15674,6 +15692,15 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "171",
           "Duration": "5 action rounds"
+        },
+        "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight": {
+          "Name": "Tyrd's Bellow — fleeing animals",
+          "Summary": "Forces the creature to flee and delays its return.",
+          "Description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+          "SourceName": "Tyrd's Bellow",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "171",
+          "Duration": "7 days"
         },
         "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
           "Name": "Wall of Dusk",
@@ -17046,6 +17073,15 @@
           "Summary": "Fear points received: −4.",
           "Description": "Reduces fear points received from each fear factor roll by 4.",
           "SourceName": "Willpower",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "223",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:fearless:3#protection": {
+          "Name": "Fearless (Haminges)",
+          "Summary": "Weakens received fear factors and suppresses their initial effects.",
+          "Description": "<p>Reduces the fear factor before Psyche and other personal protections. Existing fear points remain; first-level fear consequences are ignored while the power is active.</p>",
+          "SourceName": "Fearless",
           "SourceBook": "Player's Handbook",
           "SourcePage": "223",
           "Duration": "1 minute"
@@ -18498,7 +18534,10 @@
       "RoarRadius": "Blast radius: {value} m.",
       "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}.",
       "WeaponHitRequired": "This effect is applied automatically with damage after an open roll.",
-      "WaterRange": "Range: {value} m."
+      "WaterRange": "Range: {value} m.",
+      "LindwurmRange": "Maximum distance between the lindwurm and caster: {value} m.",
+      "LindwurmObserver": "Shadow Arts to detect the caster: {value} to the observer’s SV.",
+      "LindwurmConcealment": "Caster concealment against Shadow Arts: bonus {value}."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18728,7 +18767,14 @@
     "MagicFear": {
       "ResistanceFirst": "Apply only to victims who failed the required resistance test.",
       "EligibleRecipients": "Apply only to creatures affected according to range, hearing and the power’s restrictions.",
-      "BaseRecipients": "Base fear — additional recipients"
+      "BaseRecipients": "Base fear — additional recipients",
+      "ProtectionValues": "Fear factors reduced by {degrees} step(s). First fear level ignored.",
+      "ProtectedFactor": "Personal factor: {factor} → {amount} before personal mitigation.",
+      "LesserOnly": "This consequence applies to animals and other lesser-intelligence creatures.",
+      "ResistFirst": "A resistance test is offered before applying fear.",
+      "PartialFear": "Resistance reduces fear to 1d5.",
+      "TargetLimit": "This casting has reached its target limit, or its improved effect is already assigned. Use the base version for additional recipients.",
+      "Ineligible": "A selected creature does not meet this fear factor’s conditions (hearing, intelligence or exclusion of the caster). It was not affected."
     },
     "MagicDamage": {
       "BaseRecipients": "Base damage — additional targets"

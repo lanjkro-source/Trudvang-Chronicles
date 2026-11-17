@@ -1,0 +1,45 @@
+{
+  "_id": "ZmrMYYtZu0v1w2x3",
+  "_key": "!items!ZmrMYYtZu0v1w2x3",
+  "name": "Dark Visage — fleeing animals",
+  "type": "effect",
+  "img": "icons/svg/terror.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+    "description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+    "summary": "Forces the creature to flee and delays its return.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "0WvIoRkQlRmSnToU",
+      "_key": "!items.effects!ZmrMYYtZu0v1w2x3.0WvIoRkQlRmSnToU",
+      "name": "Dark Visage — fleeing animals",
+      "type": "effect",
+      "img": "icons/svg/terror.svg",
+      "description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5",
+            "summary": "Forces the creature to flee and delays its return.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

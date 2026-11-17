@@ -12332,6 +12332,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:invisibility:11#effect.SourcePage` | 101 | 200 |
 | `TRUDVANG.Content.Transformation.vitner-delusion-vitner:invisibility:11#effect.Duration` | 5 minutes | 5 minutes |
 
+## `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.Name` | Lindwurm Illusion — concealment | Lindwurm illusoire — dissimulation |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.Description` | <p>The first round causes fear; in the second, the beast seeks prey; from the third, it may bite once per round (SV 10). Parry and dodge remain possible. The caster stays concealed but can be detected using Shadow Arts. The GM manages the beast’s movement and attack resolution.</p> | <p>Le premier tour provoque la peur ; au deuxième, la bête cherche une proie ; à partir du troisième, elle peut mordre une fois par tour (VC 10). La parade et l’esquive restent possibles. L’enchanteur reste dissimulé, mais peut être détecté par Arts des ombres. Le déplacement de la bête et la résolution de son attaque restent à décider avec le MJ.</p> |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.SourceName` | Lindwurm Illusion | Lindwurm illusoire |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.SourcePage` | 101 | 200 |
+| `TRUDVANG.Content.Transformation.vitner-delusion-vitner:lindwurm-illusion:10#illusion.Duration` | 3 rounds | 3 rounds |
+
 ## `TRUDVANG.Content.Transformation.vitner-vitner-of-objects:detect-composition:0#effect`
 
 | Clé | English | Français |
@@ -12717,6 +12728,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.SourcePage` | 171 | 221 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy.Duration` | 3 action rounds | 3 tours de jeu |
 
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.Name` | Dark Visage — fleeing animals | Figure sinistre — fuite animale |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.Description` | <p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p> | <p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p> |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.SourceName` | Dark Visage | Figure sinistre |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight.Duration` | 1 hours | 1 hours |
+
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:firestorm:6#burns`
 
 | Clé | English | Français |
@@ -12749,6 +12771,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.SourcePage` | 171 | 221 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy.Duration` | 5 action rounds | 5 tours de jeu |
+
+## `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.Name` | Tyrd's Bellow — fleeing animals | Grondement de Tyrd — fuite animale |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.Description` | <p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p> | <p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p> |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.SourceName` | Tyrd's Bellow | Grondement de Tyrd |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.SourcePage` | 171 | 221 |
+| `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.Duration` | 7 days | 7 days |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect`
 
@@ -14424,6 +14457,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.SourcePage` | 223 | 274 |
 | `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:willpower:1#volonte.Duration` | 1 minute | 1 minute |
+
+## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.Name` | Fearless (Haminges) | Sans peur (Haminges) |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.Description` | <p>Reduces the fear factor before Psyche and other personal protections. Existing fear points remain; first-level fear consequences are ignored while the power is active.</p> | <p>Réduit le facteur de peur avant le Psychisme et les autres protections personnelles. Les points de peur déjà acquis sont conservés ; les conséquences du premier niveau sont ignorées tant que le pouvoir reste actif.</p> |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.SourceName` | Fearless | Sans peur |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.SourcePage` | 223 | 274 |
+| `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:fearless:3#protection.Duration` | 1 minute | 1 minute |
 
 ## `TRUDVANG.Content.Transformation.holy-haminges-power-of-trolls:illusion-tricks:2#illusions`
 
@@ -16129,6 +16173,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.BorjornNextSkill` | Bonus to the next Skill Roll: +{value}. | Bonus au prochain test de compétence : +{value}. |
 | `TRUDVANG.Transformation.WeaponHitRequired` | This effect is applied automatically with damage after an open roll. | Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert. |
 | `TRUDVANG.Transformation.WaterRange` | Range: {value} m. | Portée : {value} m. |
+| `TRUDVANG.Transformation.LindwurmRange` | Maximum distance between the lindwurm and caster: {value} m. | Distance maximale entre le lindwurm et l’enchanteur : {value} m. |
+| `TRUDVANG.Transformation.LindwurmObserver` | Shadow Arts to detect the caster: {value} to the observer’s SV. | Arts des ombres pour détecter l’enchanteur : {value} à la VC de l’observateur. |
+| `TRUDVANG.Transformation.LindwurmConcealment` | Caster concealment against Shadow Arts: bonus {value}. | Dissimulation de l’enchanteur face à Arts des ombres : bonus de {value}. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16445,6 +16492,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.ResistanceFirst` | Apply only to victims who failed the required resistance test. | Appliquer uniquement aux victimes ayant raté le test de résistance préalable. |
 | `TRUDVANG.MagicFear.EligibleRecipients` | Apply only to creatures affected according to range, hearing and the power’s restrictions. | Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir. |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
+| `TRUDVANG.MagicFear.ProtectionValues` | Fear factors reduced by {degrees} step(s). First fear level ignored. | Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré. |
+| `TRUDVANG.MagicFear.ProtectedFactor` | Personal factor: {factor} → {amount} before personal mitigation. | Facteur personnel : {factor} → {amount} avant protections personnelles. |
+| `TRUDVANG.MagicFear.LesserOnly` | This consequence applies to animals and other lesser-intelligence creatures. | Cette conséquence concerne les animaux et autres créatures d’intelligence inférieure. |
+| `TRUDVANG.MagicFear.ResistFirst` | A resistance test is offered before applying fear. | Un test de résistance est proposé avant d’appliquer la peur. |
+| `TRUDVANG.MagicFear.PartialFear` | Resistance reduces fear to 1d5. | La résistance réduit la peur à 1d5. |
+| `TRUDVANG.MagicFear.TargetLimit` | This casting has reached its target limit, or its improved effect is already assigned. Use the base version for additional recipients. | Le nombre de victimes de ce lancement est atteint, ou ses effets améliorés ont déjà été attribués. Utilisez la version de base pour les victimes supplémentaires. |
+| `TRUDVANG.MagicFear.Ineligible` | A selected creature does not meet this fear factor’s conditions (hearing, intelligence or exclusion of the caster). It was not affected. | Une créature sélectionnée ne remplit pas les conditions de ce facteur de peur (ouïe, intelligence ou exclusion du lanceur). Elle n’a pas été affectée. |
 
 ## `TRUDVANG.MagicDamage`
 

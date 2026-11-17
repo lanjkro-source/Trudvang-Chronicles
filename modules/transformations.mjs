@@ -257,7 +257,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(template.initialResistance?.optional&&(!resolvedCopy||!copiedResistance))fields.push({name:'resistApplication',label:game.i18n.localize(template.initialResistance.conditionKey),checkbox:true,value:false});
  if(template.cooldownSeconds){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
- const indices=[...new Set([...(Number.isInteger(template.instant?.rune?.allocationIndex)?[template.instant.rune.allocationIndex]:[]),...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
+ const indices=[...new Set([...(Number.isInteger(template.instant?.rune?.allocationIndex)?[template.instant.rune.allocationIndex]:[]),...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(!resolvedCopy&&template.fearDegreeProtection?[template.fearDegreeProtection.index]:[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(template.instant?.rune?.allocationIndex===index?'TRUDVANG.RuneConsequence.HealingDice':`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label,numeric:true,...(template.instant?.rune?.allocationIndex===index?{minimum:1}:{}),...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)||Boolean(targeting?.primaryOnlyOptions?.includes(id)&&!primaryTarget)});}
  if(rules.unarmedDamage||(!resolvedCopy&&template.runeTiers))fields.unshift({name:"runeLevel",label:local("RuneLevel"),value:Math.min(5,Math.max(1,counts.findLastIndex(n=>Number(n)>0)+1)),options:Array.from({length:5},(_,i)=>i+1).filter(level=>!casting.runeLevel||level===casting.runeLevel).map(level=>({value:String(level),label:String(level)}))});
@@ -310,6 +310,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  for(const index of indices)casting.counts[index]=Math.max(0,Number(answers[`boost${index}`]??counts[index])||0);
  Object.assign(casting,withCastingCounts(casting,casting.counts));
+ if(!resolvedCopy&&template.fearDegreeProtection)rules.fearReductionDegrees=Number(casting.countsById?.[template.fearDegreeProtection.optionId]??casting.counts[template.fearDegreeProtection.index])>0?2:1;
  const leap=template.leap?leapDistances(template.leap,answers.effectInput??metadata(supplied)?.input??template.inputDefault,casting):null;
  let water;
  if(!resolvedCopy&&template.waterMovement){
@@ -451,6 +452,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const parentSummary=supplied?.parent?.type==="effect"?supplied.parent.system?.summary:"";
  const copiedProgress=stored?.flags?.[SCOPE]?.ruleTestProgress;
  let summary=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?metadata(supplied)?.summary:copiedProgress.baseSummary):null)||copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
+ if(!resolvedCopy&&template.fearDegreeProtection)summary=game.i18n.format("TRUDVANG.MagicFear.ProtectionValues",{degrees:rules.fearReductionDegrees});
  if(water)summary=game.i18n.format("TRUDVANG.WaterMovement.Values",water);
  if(leap)summary=game.i18n.format("TRUDVANG.Mobility.LeapValues",leap);
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
@@ -493,6 +495,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
  const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ if(template.fearDegreeProtection)meta.summaryResolved=true;
  if(water){meta.waterMovement=water;meta.summaryResolved=true;}
  else if(resolvedCopy&&rules.movement?.some(row=>row.method==="waterDegrees")){
   meta.waterMovement=structuredClone(metadata(supplied)?.waterMovement);meta.summaryResolved=Boolean(metadata(supplied)?.summaryResolved);
@@ -505,6 +508,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   if(bases)meta.ruleTestBases=structuredClone(bases);
  }
  let description=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?supplied.description:copiedProgress.baseDescription):null)??stored?.description??text(key,"Description");
+ if(!resolvedCopy&&template.fearDegreeProtection)description+=`<p>${escapeHtml(summary)}</p>`;
  if(water)description+=`<p>${escapeHtml(summary)}</p>`;
  if(leap)description+=`<p>${escapeHtml(summary)}</p>`;
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}

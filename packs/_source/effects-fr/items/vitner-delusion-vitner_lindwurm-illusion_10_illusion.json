@@ -1,0 +1,45 @@
+{
+  "_id": "Ygg43TlRmSnToUpV",
+  "_key": "!items!Ygg43TlRmSnToUpV",
+  "name": "Lindwurm illusoire — dissimulation",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+    "description": "<p>Le premier tour provoque la peur ; au deuxième, la bête cherche une proie ; à partir du troisième, elle peut mordre une fois par tour (VC 10). La parade et l’esquive restent possibles. L’enchanteur reste dissimulé, mais peut être détecté par Arts des ombres. Le déplacement de la bête et la résolution de son attaque restent à décider avec le MJ.</p>",
+    "summary": "Dissimule l’enchanteur dans une créature illusoire terrifiante capable de mordre.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 200
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZzFDk4v1w2x3y4z5",
+      "_key": "!items.effects!Ygg43TlRmSnToUpV.ZzFDk4v1w2x3y4z5",
+      "name": "Lindwurm illusoire — dissimulation",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "<p>Le premier tour provoque la peur ; au deuxième, la bête cherche une proie ; à partir du troisième, elle peut mordre une fois par tour (VC 10). La parade et l’esquive restent possibles. L’enchanteur reste dissimulé, mais peut être détecté par Arts des ombres. Le déplacement de la bête et la résolution de son attaque restent à décider avec le MJ.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+            "sourceId": "vitner-delusion-vitner:lindwurm-illusion:10",
+            "summary": "Dissimule l’enchanteur dans une créature illusoire terrifiante capable de mordre.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import {escapeHtml, renderTemplate} from "./helpers.mjs";
 import {prepareDamageTargets} from "./damage-application.mjs";
 
 /** Standalone rolls retain the normal chat-card application controls. */
-export async function rollGenericImpact(kind = "damage", {actor: requestedActor, title: requestedTitle, dice=1, faces=10, threshold=0, modifier=0, notice=""} = {}) {
+export async function rollGenericImpact(kind = "damage", {actor: requestedActor, title: requestedTitle, dice=1, faces=10, threshold=0, modifier=0, notice="",fearContext=null} = {}) {
   if(kind!=="fear")return rollStandaloneDamage({actor:requestedActor,title:requestedTitle,dice,faces,threshold,modifier});
   const fear = true;
   const localize = key => game.i18n.localize(key);
@@ -48,7 +48,7 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
     modifierDetails: notice?[notice]:[], title: choice.title, itemName: choice.title, itemImg: "icons/svg/d20.svg", total, detail: fear ? detail : `${factor} : ${detail}`, factor, targetsHTML
   });
   await ChatMessage.create({speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(), content,
-    rolls: rolled.diceRolls, flags: {"trudvang-chronicles": fear ? {} : {damageTargets: targets,damageContext:{usage:choice.damageUsage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification}}}});
+    rolls: rolled.diceRolls, flags: {"trudvang-chronicles": fear ? {fearContext:{...fearContext,profile:{dice:choice.dice,faces:choice.faces,threshold:choice.threshold,modifier:Number(fearContext?.profile?.modifier)||0},values:rolled.rolls,adjustment:choice.modifier-(Number(fearContext?.profile?.modifier)||0)}} : {damageTargets: targets,damageContext:{usage:choice.damageUsage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification}}}});
   return rolled;
 }
 

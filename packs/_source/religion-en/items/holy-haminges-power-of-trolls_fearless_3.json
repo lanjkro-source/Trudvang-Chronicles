@@ -44,7 +44,7 @@
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:2",
         "cost": 5,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Increase the effect so the spirit conjurer can reduce fear factors by two steps"
       }
     ],

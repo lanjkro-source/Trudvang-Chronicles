@@ -1,0 +1,45 @@
+{
+  "_id": "lm9Zv7y4z5A6B7C8",
+  "_key": "!items!lm9Zv7y4z5A6B7C8",
+  "name": "Tyrd's Bellow — fleeing animals",
+  "type": "effect",
+  "img": "icons/svg/terror.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight",
+    "description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+    "summary": "Forces the creature to flee and delays its return.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 171
+    }
+  },
+  "effects": [
+    {
+      "_id": "22PvQ0tZu0v1w2x3",
+      "_key": "!items.effects!lm9Zv7y4z5A6B7C8.22PvQ0tZu0v1w2x3",
+      "name": "Tyrd's Bellow — fleeing animals",
+      "type": "effect",
+      "img": "icons/svg/terror.svg",
+      "description": "<p>The lesser-intelligence creature flees the Stormkelt and will not return before expiry. This does not impose a universal roll penalty: the GM manages flight direction and movement.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
+            "summary": "Forces the creature to flee and delays its return.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

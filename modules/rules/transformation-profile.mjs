@@ -31,6 +31,7 @@ export function transformationProfile(actor) {
   if(r.damage)profile.damage.push({effect:effect.name,...r.damage});
   for(const attack of r.attacks??[])if(attack.isUnarmed)profile.unarmedAttack=attack;
   for(const key of ["suspendEquipment","preserveHP","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","noParry","noDodge","endAtEmptyHP"])profile[key] ||= Boolean(r[key]);
+  if(r.fearReductionDegrees!==undefined)profile.fearReductionDegrees=Math.max(profile.fearReductionDegrees??0,Number(r.fearReductionDegrees)||0);
   if(r.ignoreFearThrough!==undefined)profile.ignoreFearThrough=Math.max(profile.ignoreFearThrough??0,Number(r.ignoreFearThrough)||0);
   if(r.size!==undefined)profile.size=r.size;
   if(r.vision)profile.vision=r.vision;

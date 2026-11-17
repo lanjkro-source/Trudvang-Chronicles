@@ -409,3 +409,70 @@ test("conditional long-range damage rounds after adding the target-specific bonu
  flags.conditionalDamage=[{tags:['troll'],damage:3}];flags.conditionalDamageBeforeRange=15;flags.conditionalDamageLongRange=true;
  assert.deepEqual(await applyChatApplication(payload(troll)),{status:'applied',amount:9});
 });
+
+test('Fearless reduces each recipient’s dice factor on the same source card before flat mitigation without rerolls',async t=>{
+ const {message,flags,makeActor,payload}=runtime(t,'fear');message.content=message.content.replace('data-fear="10"','data-fear="23"');
+ flags.fearContext={profile:{dice:1,faces:10,threshold:9,modifier:0},values:[9,10,4],adjustment:0};
+ const protectedActor=makeActor('Protected',2),ordinary=makeActor('Ordinary',1);protectedActor.transformationProfile={fearReductionDegrees:2};
+ assert.deepEqual(await applyChatApplication(payload(protectedActor)),{status:'applied',amount:7});assert.deepEqual(await applyChatApplication(payload(ordinary)),{status:'applied',amount:22});
+ assert.match(flags.applications[0].calculation,/1d10.*9/);assert.equal(flags.applications.length,2);assert.equal(protectedActor.system.resources.fear.value,7);
+ assert.deepEqual(await applyChatApplication(payload(protectedActor)),{status:'alreadyApplied'});
+});
+test('fear recipient rules reject a deaf hearer, the excluded caster and lower-intelligence victims on the GM',async t=>{
+ const {flags,makeActor,payload}=runtime(t,'fear');const target=makeActor('Target');flags.fearContext={eligibility:{excludeCaster:true,requiresHearing:true},casterUuid:target.uuid};
+ assert.equal((await applyChatApplication(payload(target))).status,'ineligibleTarget');flags.fearContext.casterUuid='Actor.someone';target.statuses=new Set(['deafened']);assert.equal((await applyChatApplication(payload(target))).status,'ineligibleTarget');
+ assert.equal(target.system.resources.fear.value,0);
+});
+test('Peur and Lindwurm require a real reserved resistance, publish compact results on the same card, and distinguish zero from partial fear',async t=>{
+ const oldDocument=globalThis.document;t.after(()=>{globalThis.document=oldDocument;});
+ globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');}})};
+ const {message,flags,makeActor,payload}=runtime(t,'fear');const target=makeActor('Resister');
+ flags.fearContext={profile:{dice:1,faces:10,threshold:9,modifier:0},values:[9,10,4],adjustment:0,resistance:{test:{sv:4,trait:['psyche']},successProfile:{dice:1,faces:5,threshold:0,modifier:0}}};
+ assert.equal((await applyChatApplication(payload(target))).status,'resistanceRequired');assert.equal(target.system.resources.fear.value,0);
+ const ask=action=>({type:'chatFearResistance',messageId:message.id,userId:player.id,actorUuid:target.uuid,action});
+ const reservation=await applyChatApplication(ask('begin'));assert.equal(reservation.status,'reserved');assert.equal((await applyChatApplication(ask('begin'))).status,'resistancePending');
+ const proof={id:'fear-proof',author:player,speaker:{alias:target.name},flags:{'trudvang-chronicles':{damageResistanceFor:{messageId:message.id,actorUuid:target.uuid},rollOutcome:{result:1,target:4,success:true}}}};game.messages.set(proof.id,proof);
+ assert.equal((await applyChatApplication({...ask('finish'),token:'wrong',proofId:proof.id})).status,'unavailable');
+ assert.equal((await applyChatApplication({...ask('finish'),token:reservation.token,proofId:proof.id})).status,'resolved');
+ assert.match(message.content,/Resister.*Succès auto\./);assert.doesNotMatch(message.content,/Succès auto\. \(/);
+ assert.deepEqual(await applyChatApplication(payload(target)),{status:'applied',amount:5});assert.equal(flags.fearResistanceResults.length,1);
+ const second=makeActor('Avoided');second.applyFearFactor=()=>assert.fail('successful resistance must not generate points from a bad Psyche');delete flags.fearContext.resistance.successProfile;flags.fearResistanceResults.push({actorUuid:second.uuid,success:true,proofId:'proof2'});
+ assert.deepEqual(await applyChatApplication(payload(second)),{status:'applied',amount:0});assert.equal(second.system.resources.fear.value,0);
+});
+test('cancelled fear resistance releases the reservation and applies nothing, while forged direct success is ignored',async t=>{
+ const {message,flags,makeActor,payload}=runtime(t,'fear'),target=makeActor('Cancel');flags.fearContext={resistance:{test:{sv:8}},profile:{dice:1,faces:10,threshold:0,modifier:0},values:[8]};
+ const begin={type:'chatFearResistance',messageId:message.id,userId:player.id,actorUuid:target.uuid,action:'begin'},reservation=await applyChatApplication(begin);
+ assert.equal((await applyChatApplication({...begin,action:'cancel',token:reservation.token})).status,'cancelled');
+ assert.equal((await applyChatApplication(payload(target,{success:true}))).status,'resistanceRequired');assert.equal(target.system.resources.fear.value,0);
+ assert.equal((await applyChatApplication(begin)).status,'reserved');
+});
+
+test('fear resistance publishes and animates on its source card without creating another chat message',async t=>{
+ Handlebars.registerHelper('eq',(a,b)=>a===b);
+ const {message,flags,makeActor}=runtime(t,'fear'),target=makeActor('Inline');
+ const previous={Roll:globalThis.Roll,document:globalThis.document,ChatMessage:globalThis.ChatMessage,api:foundry.applications.api,ui:globalThis.ui};
+ t.after(()=>{Object.assign(globalThis,{Roll:previous.Roll,document:previous.document,ChatMessage:previous.ChatMessage,ui:previous.ui});foundry.applications.api=previous.api;});
+ globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');}})};
+ globalThis.ui={notifications:{warn:v=>assert.fail(v)}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=3;return this;}toJSON(){return {formula:this.formula,total:this.total};}static fromData(data){return {...data};}};
+ globalThis.ChatMessage={getSpeaker:()=>({}),create:()=>assert.fail('resistance must stay on the source fear card')};
+ foundry.applications.api={DialogV2:class{static async wait(){return {modifier:0,situationValue:8,traitModifier:0};}}};
+ Object.assign(target,{getTraitValue:()=>0,getRollModifier:()=>0,effects:[],items:[],statuses:new Set()});
+ flags.fearContext={profile:{dice:1,faces:10,threshold:0,modifier:0},values:[8],resistance:{test:{sv:8,trait:['psyche','aucun']},sourceName:'Peur'}};
+ let animations=0;game.modules=new Map([['dice-so-nice',{active:true}]]);game.dice3d={showForRoll:async()=>{animations++;}};
+ const result=await requestChatApplication({message,actor:target,channel:'fear'});
+ assert.deepEqual(result,{status:'applied',amount:0});assert.equal(animations,1);assert.equal(message.rolls?.length??flags.fearResistanceResults.length,1);assert.equal(flags.fearResistanceResults[0].outcome.result,3);
+ assert.match(message.content,/Inline[\s\S]*Succès \(\+5\)/);assert.equal(target.system.resources.fear.value,0);
+});
+test('Peur shares one primary and its bought base recipients across separate fear cards from the same casting',async t=>{
+ const {message,flags,makeActor,payload}=runtime(t,'fear'),sid='vitner-power-of-thought:fear:3';
+ const rootFlags={ruleTestContext:{sourceId:sid,casterUuid:'Actor.caster',countsById:{[sid+':0']:1}}};
+ const root={id:'casting',getFlag:(_s,key)=>rootFlags[key],async update(changes){for(const [path,value]of Object.entries(changes))rootFlags[path.split('.').at(-1)]=structuredClone(value);}};game.messages.set(root.id,root);
+ const definition={sourceId:sid,casterUuid:'Actor.caster',originMessageId:root.id,profile:{dice:1,faces:10,threshold:0,modifier:0},values:[8]};flags.fearContext=definition;
+ const first=makeActor('Primary'),second=makeActor('Secondary'),third=makeActor('Extra');
+ assert.equal((await applyChatApplication(payload(first))).status,'applied');assert.equal((await applyChatApplication(payload(second))).status,'targetLimit');
+ const secondFlags={fearContext:{...definition,baseOnly:true}},base={...message,id:'base-fear',getFlag:(_s,key)=>secondFlags[key],async update(changes){if(changes.content!==undefined)this.content=changes.content;for(const [path,value]of Object.entries(changes))if(path.startsWith('flags.trudvang-chronicles.'))secondFlags[path.split('.').at(-1)]=value;}};game.messages.set(base.id,base);
+ const results=await Promise.all([second,third].map(actor=>applyChatApplication({...payload(actor),messageId:base.id})));
+ assert.deepEqual(results.map(row=>row.status),['applied','targetLimit']);assert.equal(rootFlags.fearRecipients.length,2);
+ assert.equal((await applyChatApplication({...payload(first),messageId:base.id})).status,'alreadyApplied');
+});

@@ -1,0 +1,45 @@
+{
+  "_id": "ZmrMYYtZu0v1w2x3",
+  "_key": "!items!ZmrMYYtZu0v1w2x3",
+  "name": "Figure sinistre — fuite animale",
+  "type": "effect",
+  "img": "icons/svg/terror.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+    "description": "<p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p>",
+    "summary": "Contraint la créature à fuir et retarde son retour.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "0WvIoRkQlRmSnToU",
+      "_key": "!items.effects!ZmrMYYtZu0v1w2x3.0WvIoRkQlRmSnToU",
+      "name": "Figure sinistre — fuite animale",
+      "type": "effect",
+      "img": "icons/svg/terror.svg",
+      "description": "<p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight",
+            "sourceId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5",
+            "summary": "Contraint la créature à fuir et retarde son retour.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

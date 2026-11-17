@@ -1,0 +1,45 @@
+{
+  "_id": "Ygg43TlRmSnToUpV",
+  "_key": "!items!Ygg43TlRmSnToUpV",
+  "name": "Lindwurm Illusion — concealment",
+  "type": "effect",
+  "img": "icons/svg/eye.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+    "description": "<p>The first round causes fear; in the second, the beast seeks prey; from the third, it may bite once per round (SV 10). Parry and dodge remain possible. The caster stays concealed but can be detected using Shadow Arts. The GM manages the beast’s movement and attack resolution.</p>",
+    "summary": "Conceals the caster in a terrifying illusory creature capable of biting.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 101
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZzFDk4v1w2x3y4z5",
+      "_key": "!items.effects!Ygg43TlRmSnToUpV.ZzFDk4v1w2x3y4z5",
+      "name": "Lindwurm Illusion — concealment",
+      "type": "effect",
+      "img": "icons/svg/eye.svg",
+      "description": "<p>The first round causes fear; in the second, the beast seeks prey; from the third, it may bite once per round (SV 10). Parry and dodge remain possible. The caster stays concealed but can be detected using Shadow Arts. The GM manages the beast’s movement and attack resolution.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-delusion-vitner:lindwurm-illusion:10#illusion",
+            "sourceId": "vitner-delusion-vitner:lindwurm-illusion:10",
+            "summary": "Conceals the caster in a terrifying illusory creature capable of biting.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

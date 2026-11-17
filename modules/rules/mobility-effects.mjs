@@ -1,8 +1,10 @@
+import {isLesserIntelligence} from './fear-protection.mjs';
 import {TRANSFORMATION_TEMPLATES} from '../transformation-data.mjs';
 import {matchingCreatureBonus} from './creature-conditional-bonus.mjs';
 import {itemEffectRemainingSeconds} from './effect-duration.mjs';
 const S='trudvang-chronicles';
 export function effectTargetRestriction(template,actor,context={}){
+ if(template.lesserIntelligenceOnly&&!isLesserIntelligence(actor))return 'TRUDVANG.MagicFear.LesserOnly';
  if(template.requiredTags&&!matchingCreatureBonus({tags:template.requiredTags},actor))return 'TRUDVANG.Mobility.WrongTarget';
  if(template.excludeCaster&&context.casterUuid&&context.casterUuid===actor.uuid)return 'TRUDVANG.Mobility.CasterUnaffected';
  return '';

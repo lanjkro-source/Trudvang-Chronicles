@@ -4237,6 +4237,52 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-delusion-vitner:lindwurm-illusion:10#illusion": {
+    "id": "illusion",
+    "icon": "icons/svg/eye.svg",
+    "duration": "3 rounds",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "displayPowerOptions": [
+      3,
+      4
+    ],
+    "sourceId": "vitner-delusion-vitner:lindwurm-illusion:10",
+    "parameters": [
+      {
+        "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:5",
+        "target": "duration",
+        "value": 5,
+        "index": 5
+      },
+      {
+        "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:0",
+        "target": "note",
+        "base": 20,
+        "value": 10,
+        "labelKey": "TRUDVANG.Transformation.LindwurmRange",
+        "index": 0
+      },
+      {
+        "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:1",
+        "target": "note",
+        "base": 0,
+        "value": -1,
+        "labelKey": "TRUDVANG.Transformation.LindwurmObserver",
+        "index": 1
+      },
+      {
+        "optionId": "vitner-delusion-vitner:lindwurm-illusion:10:2",
+        "target": "note",
+        "base": 0,
+        "value": 1,
+        "labelKey": "TRUDVANG.Transformation.LindwurmConcealment",
+        "index": 2
+      }
+    ]
+  },
   "vitner-vitner-of-objects:detect-composition:0#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -5352,6 +5398,19 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight": {
+    "id": "flight",
+    "icon": "icons/svg/terror.svg",
+    "duration": "1 hours",
+    "priority": 30,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "lesserIntelligenceOnly": true,
+    "excludeCaster": true,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5",
+    "parameters": []
+  },
   "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
     "id": "burns",
     "icon": "icons/svg/downgrade.svg",
@@ -5459,6 +5518,19 @@ export const TRANSFORMATION_TEMPLATES = {
         ]
       }
     ]
+  },
+  "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight": {
+    "id": "flight",
+    "icon": "icons/svg/terror.svg",
+    "duration": "7 days",
+    "priority": 50,
+    "statuses": [],
+    "related": [],
+    "changes": [],
+    "lesserIntelligenceOnly": true,
+    "excludeCaster": true,
+    "sourceId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
+    "parameters": []
   },
   "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
     "id": "effect",
@@ -10693,6 +10765,49 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-haminges-power-of-trolls:willpower:1:1"
+      }
+    ]
+  },
+  "holy-haminges-power-of-trolls:fearless:3#protection": {
+    "id": "protection",
+    "icon": "icons/svg/aura.svg",
+    "duration": "1 minute",
+    "priority": 20,
+    "statuses": [],
+    "related": [],
+    "changes": [
+      {
+        "key": "system.transformation.fearReductionDegrees",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      },
+      {
+        "key": "system.transformation.ignoreFearThrough",
+        "type": "override",
+        "value": "1",
+        "phase": "initial",
+        "priority": 20
+      }
+    ],
+    "fearDegreeProtection": {
+      "index": 2,
+      "optionId": "holy-haminges-power-of-trolls:fearless:3:2"
+    },
+    "sourceId": "holy-haminges-power-of-trolls:fearless:3",
+    "parameters": [
+      {
+        "optionId": "holy-haminges-power-of-trolls:fearless:3:0",
+        "target": "duration",
+        "value": 60,
+        "index": 0
+      },
+      {
+        "optionId": "holy-haminges-power-of-trolls:fearless:3:1",
+        "target": "duration",
+        "value": 3600,
+        "index": 1
       }
     ]
   },
@@ -16388,6 +16503,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "vitner-delusion-vitner:invisibility:11": [
     "vitner-delusion-vitner:invisibility:11#effect"
   ],
+  "vitner-delusion-vitner:lindwurm-illusion:10": [
+    "vitner-delusion-vitner:lindwurm-illusion:10#illusion"
+  ],
   "vitner-vitner-of-objects:detect-composition:0": [
     "vitner-vitner-of-objects:detect-composition:0#effect"
   ],
@@ -16481,12 +16599,18 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#ally",
     "holy-gerbanis-wrath-of-tyrd:war-cry:4#enemy"
   ],
+  "holy-gerbanis-wrath-of-tyrd:dark-visage:5": [
+    "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight"
+  ],
   "holy-gerbanis-wrath-of-tyrd:firestorm:6": [
     "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns"
   ],
   "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": [
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#ally",
     "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7#enemy"
+  ],
+  "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": [
+    "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight"
   ],
   "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": [
     "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect"
@@ -16901,6 +17025,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-haminges-power-of-trolls:willpower:1": [
     "holy-haminges-power-of-trolls:willpower:1#volonte"
+  ],
+  "holy-haminges-power-of-trolls:fearless:3": [
+    "holy-haminges-power-of-trolls:fearless:3#protection"
   ],
   "holy-haminges-power-of-trolls:illusion-tricks:2": [
     "holy-haminges-power-of-trolls:illusion-tricks:2#illusions"

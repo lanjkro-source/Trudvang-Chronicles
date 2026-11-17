@@ -15333,6 +15333,15 @@
           "SourcePage": "200",
           "Duration": "5 minutes"
         },
+        "vitner-delusion-vitner:lindwurm-illusion:10#illusion": {
+          "Name": "Lindwurm illusoire — dissimulation",
+          "Summary": "Dissimule l’enchanteur dans une créature illusoire terrifiante capable de mordre.",
+          "Description": "<p>Le premier tour provoque la peur ; au deuxième, la bête cherche une proie ; à partir du troisième, elle peut mordre une fois par tour (VC 10). La parade et l’esquive restent possibles. L’enchanteur reste dissimulé, mais peut être détecté par Arts des ombres. Le déplacement de la bête et la résolution de son attaque restent à décider avec le MJ.</p>",
+          "SourceName": "Lindwurm illusoire",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "200",
+          "Duration": "3 rounds"
+        },
         "vitner-vitner-of-objects:detect-composition:0#effect": {
           "Name": "Analyse de la composition",
           "Summary": "Analyse de la composition",
@@ -15648,6 +15657,15 @@
           "SourcePage": "221",
           "Duration": "3 tours de jeu"
         },
+        "holy-gerbanis-wrath-of-tyrd:dark-visage:5#flight": {
+          "Name": "Figure sinistre — fuite animale",
+          "Summary": "Contraint la créature à fuir et retarde son retour.",
+          "Description": "<p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p>",
+          "SourceName": "Figure sinistre",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "221",
+          "Duration": "1 hours"
+        },
         "holy-gerbanis-wrath-of-tyrd:firestorm:6#burns": {
           "Name": "Brûlures — Tempête de feu",
           "Summary": "Les brûlures gênent les actions de combat.",
@@ -15674,6 +15692,15 @@
           "SourceBook": "Livre des règles",
           "SourcePage": "221",
           "Duration": "5 tours de jeu"
+        },
+        "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight": {
+          "Name": "Grondement de Tyrd — fuite animale",
+          "Summary": "Contraint la créature à fuir et retarde son retour.",
+          "Description": "<p>La créature d’intelligence inférieure fuit le stormikjalt et n’ose pas revenir avant expiration. Il ne s’agit pas d’un malus universel aux jets : le MJ gère la direction et le déplacement de la fuite.</p>",
+          "SourceName": "Grondement de Tyrd",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "221",
+          "Duration": "7 days"
         },
         "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
           "Name": "Mur du crépuscule",
@@ -17046,6 +17073,15 @@
           "Summary": "Points de peur reçus : −4.",
           "Description": "Réduit de 4 les points de peur reçus à chaque jet de facteur de peur.",
           "SourceName": "Volonté",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "274",
+          "Duration": "1 minute"
+        },
+        "holy-haminges-power-of-trolls:fearless:3#protection": {
+          "Name": "Sans peur (Haminges)",
+          "Summary": "Affaiblit les facteurs de peur reçus et permet d’en ignorer les premiers effets.",
+          "Description": "<p>Réduit le facteur de peur avant le Psychisme et les autres protections personnelles. Les points de peur déjà acquis sont conservés ; les conséquences du premier niveau sont ignorées tant que le pouvoir reste actif.</p>",
+          "SourceName": "Sans peur",
           "SourceBook": "Livre des règles",
           "SourcePage": "274",
           "Duration": "1 minute"
@@ -18498,7 +18534,10 @@
       "RoarRadius": "Rayon de la déflagration : {value} m.",
       "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}.",
       "WeaponHitRequired": "Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert.",
-      "WaterRange": "Portée : {value} m."
+      "WaterRange": "Portée : {value} m.",
+      "LindwurmRange": "Distance maximale entre le lindwurm et l’enchanteur : {value} m.",
+      "LindwurmObserver": "Arts des ombres pour détecter l’enchanteur : {value} à la VC de l’observateur.",
+      "LindwurmConcealment": "Dissimulation de l’enchanteur face à Arts des ombres : bonus de {value}."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18728,7 +18767,14 @@
     "MagicFear": {
       "ResistanceFirst": "Appliquer uniquement aux victimes ayant raté le test de résistance préalable.",
       "EligibleRecipients": "Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir.",
-      "BaseRecipients": "Peur de base — cibles supplémentaires"
+      "BaseRecipients": "Peur de base — cibles supplémentaires",
+      "ProtectionValues": "Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré.",
+      "ProtectedFactor": "Facteur personnel : {factor} → {amount} avant protections personnelles.",
+      "LesserOnly": "Cette conséquence concerne les animaux et autres créatures d’intelligence inférieure.",
+      "ResistFirst": "Un test de résistance est proposé avant d’appliquer la peur.",
+      "PartialFear": "La résistance réduit la peur à 1d5.",
+      "TargetLimit": "Le nombre de victimes de ce lancement est atteint, ou ses effets améliorés ont déjà été attribués. Utilisez la version de base pour les victimes supplémentaires.",
+      "Ineligible": "Une créature sélectionnée ne remplit pas les conditions de ce facteur de peur (ouïe, intelligence ou exclusion du lanceur). Elle n’a pas été affectée."
     },
     "MagicDamage": {
       "BaseRecipients": "Dégâts de base — cibles supplémentaires"

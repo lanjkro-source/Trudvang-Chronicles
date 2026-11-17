@@ -1,0 +1,60 @@
+{
+  "_id": "0f8kD8A6B7C8D9Ea",
+  "_key": "!items!0f8kD8A6B7C8D9Ea",
+  "name": "Sans peur (Haminges)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:fearless:3#protection",
+    "description": "<p>Réduit le facteur de peur avant le Psychisme et les autres protections personnelles. Les points de peur déjà acquis sont conservés ; les conséquences du premier niveau sont ignorées tant que le pouvoir reste actif.</p>",
+    "summary": "Affaiblit les facteurs de peur reçus et permet d’en ignorer les premiers effets.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 274
+    }
+  },
+  "effects": [
+    {
+      "_id": "3qAm1qToUpVqWrXs",
+      "_key": "!items.effects!0f8kD8A6B7C8D9Ea.3qAm1qToUpVqWrXs",
+      "name": "Sans peur (Haminges)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Réduit le facteur de peur avant le Psychisme et les autres protections personnelles. Les points de peur déjà acquis sont conservés ; les conséquences du premier niveau sont ignorées tant que le pouvoir reste actif.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-trolls:fearless:3#protection",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.transformation.fearReductionDegrees",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          },
+          {
+            "key": "system.transformation.ignoreFearThrough",
+            "type": "override",
+            "value": "1",
+            "phase": "initial",
+            "priority": 20
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-trolls:fearless:3#protection",
+            "sourceId": "holy-haminges-power-of-trolls:fearless:3",
+            "summary": "Affaiblit les facteurs de peur reçus et permet d’en ignorer les premiers effets.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

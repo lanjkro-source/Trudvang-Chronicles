@@ -145,7 +145,7 @@ function attachListeners(message, html) {
       const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
       if(!actor?.isOwner||!item)return;
       const {rollMagicFear}=await import('./magic-fear.mjs');
-      await rollMagicFear({document:item,actor,context:message.flags?.['trudvang-chronicles']?.ruleTestContext,baseOnly:button.dataset.baseOnly==='true'});
+      await rollMagicFear({document:item,actor,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
     });
   });
   html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
@@ -317,8 +317,11 @@ function attachListeners(message, html) {
       if (!controlled.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledFearCharacters"));
       button.disabled = true;
       try {
-        const results = await Promise.all(controlled.map(token => requestChatApplication({message, actor: token.actor, token, channel: "fear"})));
-        if (results.some(result => result.status === "unavailable")) ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+        const results=[];
+        for(const token of controlled)results.push(await requestChatApplication({message, actor: token.actor, token, channel: "fear"}));
+        if(results.some(result=>result.status==="targetLimit"))ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.TargetLimit"));
+        else if(results.some(result=>result.status==="ineligibleTarget"))ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.Ineligible"));
+        else if (results.some(result => result.status === "unavailable")) ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
         else if (results.every(result => result.status === "alreadyApplied")) ui.notifications.info(game.i18n.localize("TRUDVANG.ChatApplication.AlreadyApplied"));
       } finally { button.disabled = false; }
     });
