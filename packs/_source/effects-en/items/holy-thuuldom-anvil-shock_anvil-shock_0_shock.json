@@ -3,7 +3,7 @@
   "_key": "!items!tIVkLKcIdJeKfLgM",
   "name": "Anvil Shock (victim)",
   "type": "effect",
-  "img": "icons/svg/daze.svg",
+  "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
@@ -20,7 +20,7 @@
       "_key": "!items.effects!tIVkLKcIdJeKfLgM.0UkeGKdJeKfLgMhN",
       "name": "Anvil Shock (victim)",
       "type": "effect",
-      "img": "icons/svg/daze.svg",
+      "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
       "description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
       "transfer": false,
       "system": {

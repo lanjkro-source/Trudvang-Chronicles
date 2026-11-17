@@ -3,7 +3,7 @@
   "_key": "!items!ZAoDBTmSnToUpVqW",
   "name": "Anvil Shock (inscribed weapon)",
   "type": "effect",
-  "img": "icons/svg/hammer.svg",
+  "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
@@ -20,7 +20,7 @@
       "_key": "!items.effects!ZAoDBTmSnToUpVqW.WCUe1sVqWrXsYtZu",
       "name": "Anvil Shock (inscribed weapon)",
       "type": "effect",
-      "img": "icons/svg/hammer.svg",
+      "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
       "description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
       "transfer": false,
       "system": {

@@ -3,7 +3,7 @@
   "_key": "!items!tIVkLKcIdJeKfLgM",
   "name": "Choc de l’enclume (victime)",
   "type": "effect",
-  "img": "icons/svg/daze.svg",
+  "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
@@ -20,7 +20,7 @@
       "_key": "!items.effects!tIVkLKcIdJeKfLgM.0UkeGKdJeKfLgMhN",
       "name": "Choc de l’enclume (victime)",
       "type": "effect",
-      "img": "icons/svg/daze.svg",
+      "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
       "description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
       "transfer": false,
       "system": {

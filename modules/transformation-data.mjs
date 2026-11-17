@@ -11824,7 +11824,7 @@ export const TRANSFORMATION_TEMPLATES = {
   },
   "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
     "id": "weapon",
-    "icon": "icons/svg/hammer.svg",
+    "icon": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
     "duration": "",
     "priority": 10,
     "statuses": [],
@@ -11880,7 +11880,7 @@ export const TRANSFORMATION_TEMPLATES = {
   },
   "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
     "id": "shock",
-    "icon": "icons/svg/daze.svg",
+    "icon": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
     "duration": "2 rounds",
     "priority": 10,
     "statuses": [],
