@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
-    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
-    "summary": "Rider's Melody",
+    "description": "The song heals the singer and nearby allies who can hear it for 1 BP per full minute of listening, up to 5 BP per recipient per day. Healing stops outside the aura. Its effective radius includes the selected power levels.",
+    "summary": "Healing song for the singer and nearby allies who can hear it.",
     "source": {
       "book": "Player's Handbook",
       "page": 183
@@ -21,7 +21,7 @@
       "name": "Rider's Melody",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
+      "description": "The song heals the singer and nearby allies who can hear it for 1 BP per full minute of listening, up to 5 BP per recipient per day. Healing stops outside the aura. Its effective radius includes the selected power levels.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect",
             "sourceId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
-            "summary": "Rider's Melody",
+            "summary": "Healing song for the singer and nearby allies who can hear it.",
             "editableChanges": true,
             "related": []
           }

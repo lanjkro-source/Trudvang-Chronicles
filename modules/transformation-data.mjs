@@ -6106,6 +6106,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 5,
+      "radiusOptionId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1:1",
+      "radiusStep": 5,
+      "light": false,
+      "recipients": "allies",
+      "requiresHearing": true,
+      "recipientDescriptionKey": "TRUDVANG.Aura.HealingRecipient"
+    },
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 1,
+      "dailyLimit": 5
+    },
     "sourceId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
     "parameters": [
       {
@@ -6149,6 +6164,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 10,
+      "radiusOptionId": "holy-ealdtradition-magh-s-gift:hero-s-song:4:1",
+      "radiusStep": 5,
+      "light": false,
+      "recipients": "allies",
+      "requiresHearing": true,
+      "recipientDescriptionKey": "TRUDVANG.Aura.HealingRecipient"
+    },
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 2,
+      "dailyLimit": 10
+    },
     "sourceId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
     "parameters": [
       {
@@ -6170,6 +6200,21 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 10,
+      "radiusOptionId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6:1",
+      "radiusStep": 5,
+      "light": false,
+      "recipients": "allies",
+      "requiresHearing": true,
+      "recipientDescriptionKey": "TRUDVANG.Aura.HealingRecipient"
+    },
+    "periodic": {
+      "interval": 60,
+      "operation": "heal",
+      "amount": 4,
+      "dailyLimit": 20
+    },
     "sourceId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
     "parameters": [
       {

@@ -15856,8 +15856,8 @@
         },
         "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect": {
           "Name": "Rider's Melody",
-          "Summary": "Rider's Melody",
-          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 1 Body Point per minute for the duration of the ability. This song can heal a maximum of 5 Body Points per person per day.",
+          "Summary": "Healing song for the singer and nearby allies who can hear it.",
+          "Description": "The song heals the singer and nearby allies who can hear it for 1 BP per full minute of listening, up to 5 BP per recipient per day. Healing stops outside the aura. Its effective radius includes the selected power levels.",
           "SourceName": "Rider's Melody",
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
@@ -15874,8 +15874,8 @@
         },
         "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect": {
           "Name": "Hero's Song",
-          "Summary": "Hero's Song",
-          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed for 2 Body Points per minute for the duration of the ability. This song can heal a maximum of 10 Body Points per person per day.",
+          "Summary": "Healing song for the singer and nearby allies who can hear it.",
+          "Description": "The song heals the singer and nearby allies who can hear it for 2 BP per full minute of listening, up to 10 BP per recipient per day. Healing stops outside the aura. Its effective radius includes the selected power levels.",
           "SourceName": "Hero's Song",
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
@@ -15883,8 +15883,8 @@
         },
         "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect": {
           "Name": "King's Anthem",
-          "Summary": "King's Anthem",
-          "Description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future. This song has a healing effect on the Bruid and all allies who are within range and listening to the song. They are healed 4 Body Points per minute for the duration of the ability. This song can heal a maximum of 20 Body Points per person per day.",
+          "Summary": "Healing song for the singer and nearby allies who can hear it.",
+          "Description": "The song heals the singer and nearby allies who can hear it for 4 BP per full minute of listening, up to 20 BP per recipient per day. Healing stops outside the aura. Its effective radius includes the selected power levels.",
           "SourceName": "King's Anthem",
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
@@ -18637,7 +18637,8 @@
       "RecipientName": "Aura: {name}",
       "AllyName": "Aura: {name} (ally)",
       "Radius": "Effective radius: {value} m.",
-      "LightRecipients": "All occupants ignore fear penalties; the caster and allies also gain the indicated bonus."
+      "LightRecipients": "All occupants ignore fear penalties; the caster and allies also gain the indicated bonus.",
+      "HealingRecipient": "While listening inside this song’s aura: {amount} BP per full minute, up to {limit} BP per day from this song. Healing stops when leaving the aura or when the song can no longer be heard."
     },
     "Blessing": {
       "Goal": "Blessed goal",

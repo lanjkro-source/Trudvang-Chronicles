@@ -15856,8 +15856,8 @@
         },
         "holy-ealdtradition-magh-s-gift:rider-s-melody:1#effect": {
           "Name": "Mélodie du cavalier",
-          "Summary": "Mélodie du cavalier",
-          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent tous 1 point de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 5 points de santé par personne et par jour",
+          "Summary": "Chant guérisseur pour le chanteur et ses alliés à portée qui peuvent l’entendre.",
+          "Description": "Le chant soigne le chanteur et ses alliés à portée capables de l’entendre de 1 PS par minute complète d’écoute, au maximum 5 PS par personne et par jour. Le soin cesse hors de l’aura. Son rayon effectif tient compte des niveaux de puissance.",
           "SourceName": "Mélodie du cavalier",
           "SourceBook": "Livre des règles",
           "SourcePage": "232",
@@ -15874,8 +15874,8 @@
         },
         "holy-ealdtradition-magh-s-gift:hero-s-song:4#effect": {
           "Name": "Chant du héros",
-          "Summary": "Chant du héros",
-          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour.",
+          "Summary": "Chant guérisseur pour le chanteur et ses alliés à portée qui peuvent l’entendre.",
+          "Description": "Le chant soigne le chanteur et ses alliés à portée capables de l’entendre de 2 PS par minute complète d’écoute, au maximum 10 PS par personne et par jour. Le soin cesse hors de l’aura. Son rayon effectif tient compte des niveaux de puissance.",
           "SourceName": "Chant du héros",
           "SourceBook": "Livre des règles",
           "SourcePage": "233",
@@ -15883,8 +15883,8 @@
         },
         "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect": {
           "Name": "Hymne royal",
-          "Summary": "Hymne royal",
-          "Description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+          "Summary": "Chant guérisseur pour le chanteur et ses alliés à portée qui peuvent l’entendre.",
+          "Description": "Le chant soigne le chanteur et ses alliés à portée capables de l’entendre de 4 PS par minute complète d’écoute, au maximum 20 PS par personne et par jour. Le soin cesse hors de l’aura. Son rayon effectif tient compte des niveaux de puissance.",
           "SourceName": "Hymne royal",
           "SourceBook": "Livre des règles",
           "SourcePage": "234",
@@ -18637,7 +18637,8 @@
       "RecipientName": "Aura : {name}",
       "AllyName": "Aura : {name} (allié)",
       "Radius": "Rayon effectif : {value} m.",
-      "LightRecipients": "Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué."
+      "LightRecipients": "Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué.",
+      "HealingRecipient": "En écoutant ce chant dans son aura : {amount} PS par minute complète, dans la limite de {limit} PS par jour pour ce chant. Les soins s’arrêtent en quittant l’aura ou si le chant n’est plus audible."
     },
     "Blessing": {
       "Goal": "Objectif béni",

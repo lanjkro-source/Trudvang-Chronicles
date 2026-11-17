@@ -95,9 +95,13 @@ for(const kind of ["powers","feats"]){
     if(!t.aura||!Number.isInteger(d.testIndex)||d.testIndex<0||!formula(d.incubation)||(d.kind==='sores'?(!formula(d.lesions)||!formula(d.daily)||!Number.isInteger(d.damagePer)||d.damagePer<=0):(d.kind!==undefined||!Number.isInteger(d.penalty)||d.penalty>=0||!formula(d.duration))))throw Error(`Invalid exposure disease for ${key}`);
    }
    if(t.periodic&&(!Number.isFinite(t.periodic.interval)||t.periodic.interval<=0||t.periodic.operation!=="heal"||!Number.isInteger(t.periodic.amount)||t.periodic.amount<=0))throw Error(`Invalid periodic consequence for ${key}`);
+   if(t.periodic?.dailyLimit!==undefined&&(!Number.isInteger(t.periodic.dailyLimit)||t.periodic.dailyLimit<1))throw Error(`Invalid periodic daily limit for ${key}`);
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(JSON.stringify(t.aura??null)!==JSON.stringify(translated.aura??null))throw Error(`Unaligned aura for ${key}`);
    if(t.aura&&(!Number.isFinite(t.aura.radius)||t.aura.radius<0||!entry.powerLevels?.some(p=>p.optionId===t.aura.radiusOptionId)||typeof t.aura.light!=="boolean"||![undefined,"none"].includes(t.aura.recipientMode)))throw Error(`Invalid aura for ${key}`);
+   if(t.aura&&((t.aura.radiusStep!==undefined&&(!Number.isFinite(t.aura.radiusStep)||t.aura.radiusStep<=0))
+    ||![undefined,'allies'].includes(t.aura.recipients)||![undefined,true,false].includes(t.aura.requiresHearing)
+    ||t.periodic&&(!t.aura.requiresHearing||t.aura.recipients!=='allies'||t.aura.light||t.aura.recipientMode)))throw Error(`Invalid healing aura for ${key}`);
    if(JSON.stringify(t.displayPowerOptions??[])!==JSON.stringify(translated.displayPowerOptions??[]) || (t.displayPowerOptions??[]).some(i=>!Number.isInteger(i)||!entry.powerLevels?.[i]))throw Error(`Invalid displayed power options for ${key}`);
    if(t.summaryParts){
     const s=t.summaryParts,keys=[s.labelKey,...(s.overrideKey?[s.overrideKey]:[]),...(s.parts??[]).flatMap(p=>[p.singularKey,p.pluralKey])];

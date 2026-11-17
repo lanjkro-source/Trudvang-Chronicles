@@ -4,13 +4,20 @@ import {nextConsequenceEvent} from "./rules/consumable-effects.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {announceEffectStage} from "./effect-expiration-notice.mjs";
 import {createConjuredConsumable} from './conjured-consumables.mjs';
+import {dailyConsequenceAllowance,dailyConsequenceUsage} from './rules/consequence-daily-limit.mjs';
 const SCOPE="trudvang-chronicles";
 const number=v=>Number.isFinite(Number(v))?Number(v):0;
 const current=(actor,key)=>number(actor.system.resources[key].current??actor.system.resources[key].value);
 
 /** Explicit operations, never actor preparation or formula evaluation hooks.
  * Callers choose the recipient and whether to announce the collected results. */
-export async function executeConsequences({actor,item=null,operations=[],source=""}={}){
+const actorJobs=new WeakMap();
+export function executeConsequences(options={}){
+ const actor=options.actor;if(!actor?.isOwner)return Promise.resolve({rows:[],rolls:[]});
+ const previous=actorJobs.get(actor)??Promise.resolve(),job=previous.catch(()=>{}).then(()=>executeConsequencesNow(options));
+ actorJobs.set(actor,job);return job.finally(()=>{if(actorJobs.get(actor)===job)actorJobs.delete(actor);});
+}
+async function executeConsequencesNow({actor,item=null,operations=[],source=""}={}){
  if(!actor?.isOwner)return {rows:[],rolls:[]};
  const rows=[],rolls=[];
  for(const op of operations){
@@ -30,8 +37,9 @@ export async function executeConsequences({actor,item=null,operations=[],source=
    const before=number(item._source.system.breach.value),after=Math.min(number(item._source.system.breach.max),before+value);
    amount=Math.max(0,after-before);if(amount)await item.update({'system.breach.value':after});
   }else if(op.operation==="heal"){
-   const before=current(actor,"body"),after=Math.min(number(actor.system.resources.body.max),before+value);amount=Math.max(0,after-before);
-   if(amount)await actor.update(bodyHealthUpdate(actor,after));
+   const allowance=dailyConsequenceAllowance(actor,op.dailyLimit,Number(op.at??game.time?.worldTime??0));
+   const before=current(actor,"body"),after=Math.min(number(actor.system.resources.body.max),before+Math.min(value,allowance?.remaining??Infinity));amount=Math.max(0,after-before);
+   if(amount)await actor.update({...bodyHealthUpdate(actor,after),...(allowance?{[`flags.${SCOPE}.consequenceDailyUsage`]:dailyConsequenceUsage(allowance,amount)}:{})});
   }else if(op.operation==="fearReduction"){
    const before=current(actor,"fear");amount=Math.min(Math.max(0,before),value);
    if(amount)await actor.update({"system.resources.fear.value":number(actor._source?.system.resources.fear.value??actor.system.resources.fear.value)-amount});
@@ -80,7 +88,11 @@ export function processWorldConsequences(now=Number(game.time?.worldTime??0)){
 }
 /** Process all clocks together in chronological order; boundary ticks precede
  * transitions. Persist each cursor so reloads and native expiry cannot replay it. */
-export async function processConsequenceEffects(effects,now,{announce=true}={}){
+let effectJobs=Promise.resolve();
+export function processConsequenceEffects(effects,now,options={}){
+ const job=effectJobs.catch(()=>{}).then(()=>processConsequenceEffectsNow(effects,now,options));effectJobs=job;return job;
+}
+async function processConsequenceEffectsNow(effects,now,{announce=true}={}){
  const active=new Set(effects.filter(e=>e.parent?.documentName==="Actor"&&clockFlag(e)));
  const results=new Map();let count=0;
  while(active.size){
@@ -102,7 +114,7 @@ export async function processConsequenceEffects(effects,now,{announce=true}={}){
     if(budget.descriptionKey){stage.description=game.i18n.format(budget.descriptionKey,{remaining:budget.remaining});presentation.description=stage.description;}
     if(budget.remaining<=0)stage.seconds=event.at-clock.stageStartedAt;
    }
-   const result=await executeConsequences({actor,operations:effect.disabled?[]:operations,source:effect.name});previous.rows.push(...result.rows);previous.rolls.push(...result.rolls);
+   const result=await executeConsequences({actor,operations:effect.disabled?[]:operations.map(op=>({...op,at:event.at})),source:effect.name});previous.rows.push(...result.rows);previous.rolls.push(...result.rolls);
    clock.ticks[event.index]=(clock.ticks[event.index]??0)+1;
    await effect.update({...presentation,[`flags.${SCOPE}.consequenceClock`]:clock},{trudvangStageTransition:true});
   }else{

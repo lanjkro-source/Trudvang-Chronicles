@@ -2,6 +2,7 @@ import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicDamageProfile} from './magic-damage.mjs';
+import {itemEffectRemainingSeconds,normalizeEffectDuration} from './rules/effect-duration.mjs';
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
 const jobs=new Map();
@@ -24,13 +25,27 @@ export function auraCasterToken(actor, controlled=[], activeTokens=[]) {
 export function auraRadius(effect){
  const aura=getAura(effect),context=sourceMeta(effect)?.ruleTestContext;
  if(!aura)return 0;
- return Math.max(0,Number(aura.radius)||0)+Math.max(0,Number(context?.countsById?.[aura.radiusOptionId])||0);
+ return Math.max(0,Number(aura.radius)||0)+Math.max(0,Number(context?.countsById?.[aura.radiusOptionId])||0)*Number(aura.radiusStep??1);
 }
 function auraForRegion(region){return region?.flags?.[S]?.aura;}
 function childFlags(effect){return effect?.flags?.[S]?.auraRecipient;}
 function actorEffects(actor){return Array.from(actor?.effects??[]);}
 function sameActor(a,b){return Boolean(a?.actor?.uuid&&a.actor.uuid===b?.actor?.uuid);}
 const friendly=token=>Number(token.disposition)===Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY??1);
+async function removeAuraRecipients(actor,children){
+ // Settle earned full minutes before removing their clock. The global clock
+ // queue also prevents a world-time update from replaying the same tick.
+ if(children.some(child=>child.flags?.[S]?.consequenceClock))await (await import('./consequences.mjs')).processConsequenceEffects(children,Number(game.time?.worldTime??0));
+ const ids=children.filter(child=>actorEffects(actor).some(row=>row.id===child.id)).map(child=>child.id);
+ if(ids.length)await actor.deleteEmbeddedDocuments('ActiveEffect',ids);
+}
+function healingClock(source,name,periodic){
+ const now=Number(game.time?.worldTime??0),seconds=itemEffectRemainingSeconds(source,{time:now,combat:game.combat});
+ if(!(seconds>0))return null;
+ return {name,stage:0,stageStartedAt:now,ticks:[],stages:[{seconds,periodic:[{interval:periodic.interval,operations:[{
+  operation:periodic.operation,formula:String(periodic.amount),...(periodic.dailyLimit?{dailyLimit:{key:sourceMeta(source).sourceId,maximum:periodic.dailyLimit}}:{})
+ }]}]}]};
+}
 export function auraBonusDescription(changes){
  const value=Number(Array.from(changes??[]).find(row=>row.key==="system.modifiers.rolls.allActions")?.value);
  if(!Number.isFinite(value))return "";
@@ -62,9 +77,10 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const others=Array.from(region.tokens??[]).filter(candidate=>candidate.id!==token.id&&sameActor(candidate,token));
  const inside=!force&&(!leaving||others.length>0);
  const self=actor.uuid===info.casterUuid;
- const eligible=inside&&active(source)&&!(self&&getAura(source)?.excludeSource);
- if(!eligible){if(children.length)await actor.deleteEmbeddedDocuments("ActiveEffect",children.map(effect=>effect.id));return;}
  const allies=self||(!leaving&&friendly(token))||others.some(friendly);
+ const eligible=inside&&active(source)&&!(self&&getAura(source)?.excludeSource)
+  &&(getAura(source)?.recipients!=='allies'||allies)&&(!getAura(source)?.requiresHearing||(!actor.statuses?.has('deaf')&&!actor.statuses?.has('deafened')&&!source.parent?.statuses?.has('silenced')));
+ if(!eligible){if(children.length)await removeAuraRecipients(actor,children);return;}
  const aura=getAura(source),fearLight=aura?.light===true;
  const changes=Array.from(sourceMeta(source)?.auraChanges??source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
  const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;
@@ -76,7 +92,8 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
   const test=spec?RULE_TESTS_BY_CATALOG_ID[sourceMeta(source)?.sourceId]?.[spec.testIndex]:null;
   const context=sourceMeta(source)?.ruleTestContext??{};
   const sv=Number(test?.sv??0)+(test?.powerLevelModifiers??[]).reduce((sum,p)=>sum+Number(p.value)*Number(context.countsById?.[p.optionId]??context.counts?.[p.index]??0),0);
-  description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2),sv,penalty:spec?.penalty});
+  const periodic=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.periodic;
+  description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2),sv,penalty:spec?.penalty,amount:periodic?.amount,limit:periodic?.dailyLimit});
  }
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
  const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
@@ -90,6 +107,17 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
   flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
  const existing=children[0];
+ const periodic=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.periodic;
+ if(periodic){
+  const clock=existing?.flags?.[S]?.consequenceClock??healingClock(source,name,periodic);
+  if(!clock)return;
+  if(!existing?.flags?.[S]?.consequenceClock)data.flags[S].consequenceClock=clock;
+  data.duration=normalizeEffectDuration({value:clock.stages[0].seconds,units:'seconds'});
+  data.start={...source.toObject().start,time:clock.stageStartedAt};
+  // This recipient may have joined after the source's combat start. Its own
+  // elapsed world-time clock is authoritative, with no inherited old round.
+  delete data.start.combat;delete data.start.round;delete data.start.turn;
+ }
  if(existing){await existing.update(data);if(children.length>1)await actor.deleteEmbeddedDocuments("ActiveEffect",children.slice(1).map(effect=>effect.id));}
  else await actor.createEmbeddedDocuments("ActiveEffect",[data]);
 }
@@ -144,8 +172,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
    // Clean by provenance even when the scene is not currently viewed.
    const actors=new Map(Array.from(scene.tokens??[]).filter(row=>row.actor?.uuid).map(row=>[row.actor.uuid,row.actor]));
    for(const actor of actors.values()){
-    const ids=actorEffects(actor).filter(child=>childFlags(child)?.regionUuid===region.uuid).map(child=>child.id);
-    if(ids.length)await actor.deleteEmbeddedDocuments("ActiveEffect",ids);
+    await removeAuraRecipients(actor,actorEffects(actor).filter(child=>childFlags(child)?.regionUuid===region.uuid));
    }
    await region.delete();
   }
@@ -199,9 +226,21 @@ export function registerAuraSupport(){
   const key=effect.uuid,previous=jobs.get(key)??Promise.resolve();
   const job=previous.catch(()=>{}).then(()=>synchronizeAuraSource(effect,{removed})).catch(error=>console.error("Trudvang | Aura synchronization failed",error)).finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});jobs.set(key,job);
  };
- Hooks.on("createActiveEffect",effect=>{if(activeSource(effect))schedule(effect);});
- Hooks.on("updateActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);});
- Hooks.on("deleteActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect,true);});
+ const hearingStatus=effect=>Array.from(effect.statuses??[]).some(id=>['deaf','deafened','silenced'].includes(id));
+ const refreshHearing=actor=>{
+  if(!isWriter()||actor?.documentName!=='Actor')return;
+  const key='hearing:'+actor.uuid,previous=jobs.get(key)??Promise.resolve();
+  const job=previous.catch(()=>{}).then(async()=>{
+   for(const scene of game.scenes??[])for(const region of scene.regions??[]){
+    const info=auraForRegion(region),source=info?await foundry.utils.fromUuid(info.sourceEffectUuid):null;
+    if(!getAura(source)?.requiresHearing)continue;
+    for(const token of region.tokens??[])if(actor.uuid===info.casterUuid||token.actor?.uuid===actor.uuid)await reconcileAuraToken(region,token);
+   }
+  }).catch(error=>console.error('Trudvang | Hearing aura synchronization failed',error)).finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});jobs.set(key,job);
+ };
+ Hooks.on("createActiveEffect",effect=>{if(activeSource(effect))schedule(effect);if(hearingStatus(effect))refreshHearing(effect.parent);});
+ Hooks.on("updateActiveEffect",(effect,changes)=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);if(!childFlags(effect)&&(hearingStatus(effect)||changes?.statuses!==undefined))refreshHearing(effect.parent);});
+ Hooks.on("deleteActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect,true);if(hearingStatus(effect))refreshHearing(effect.parent);});
  Hooks.on("updateToken",(token,changes)=>{if(!isWriter()||changes.disposition===undefined)return;for(const region of token.parent?.regions??[])if(auraForRegion(region)&&region.tokens?.has(token))void reconcileAuraToken(region,token);});
  Hooks.on("createToken",token=>{if(isWriter())for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});
  Hooks.on("canvasReady",()=>{if(!isWriter())return;for(const token of canvas.scene?.tokens??[])for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});

@@ -509,7 +509,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
  if(copiedProgress&&supplied?.parent?.uuid===actor.uuid)data.flags[SCOPE].ruleTestProgress=structuredClone(copiedProgress);
  if(requiresInitialResistance(answers))prepareInitialResistance(data,template.initialResistance,actor,supplied);
- if(template.periodic){
+ if(template.periodic&&!template.aura){
   const seconds=effectDurationSeconds(duration);
   if(seconds===null)throw Error("A periodic effect requires a finite duration");
   const priorClock=resolvedCopy?supplied?.flags?.[SCOPE]?.consequenceClock:null;

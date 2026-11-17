@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
-    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
-    "summary": "Hymne royal",
+    "description": "Le chant soigne le chanteur et ses alliés à portée capables de l’entendre de 4 PS par minute complète d’écoute, au maximum 20 PS par personne et par jour. Le soin cesse hors de l’aura. Son rayon effectif tient compte des niveaux de puissance.",
+    "summary": "Chant guérisseur pour le chanteur et ses alliés à portée qui peuvent l’entendre.",
     "source": {
       "book": "Livre des règles",
       "page": 234
@@ -21,7 +21,7 @@
       "name": "Hymne royal",
       "type": "effect",
       "img": "icons/svg/aura.svg",
-      "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+      "description": "Le chant soigne le chanteur et ses alliés à portée capables de l’entendre de 4 PS par minute complète d’écoute, au maximum 20 PS par personne et par jour. Le soin cesse hors de l’aura. Son rayon effectif tient compte des niveaux de puissance.",
       "transfer": false,
       "system": {
         "stackId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-ealdtradition-magh-s-gift:king-s-anthem:6#effect",
             "sourceId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
-            "summary": "Hymne royal",
+            "summary": "Chant guérisseur pour le chanteur et ses alliés à portée qui peuvent l’entendre.",
             "editableChanges": true,
             "related": []
           }
