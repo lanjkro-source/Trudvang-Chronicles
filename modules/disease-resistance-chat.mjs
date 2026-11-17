@@ -1,5 +1,6 @@
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
+import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 const S='trudvang-chronicles',channel='system.'+S,jobs=new Map(),replies=new Map();
 let registered=false;
 /** Whisper to owners (including offline owners) and every GM, never observers. */
@@ -36,7 +37,7 @@ async function recordNow(payload){
  const clock=effect.flags[S].consequenceClock;
  const late=clock?.stage!==0||clock.stageStartedAt+clock.stages[0].seconds<=Number(game.time?.worldTime||0);
  const response={actorUuid:actor.uuid,name:actor.name,result:payload.result,target:payload.target,...resolveRollUnderOutcome(payload.result,payload.target),late};
- const label=game.i18n.localize(response.success?'TRUDVANG.Roll.Success':'TRUDVANG.Roll.Failure');
+ const label=rollOutcomeText(response,key=>game.i18n.localize(key));
  const detail=game.i18n.format('TRUDVANG.Disease.ResistanceResult',response);
  const row='<div class="disease-resistance-result disease-resistance-result--'+(response.success?'success':'failure')+'"><span>'+escapeHtml(actor.name)+'</span><span>'+escapeHtml(detail)+'</span><strong>'+escapeHtml(label)+'</strong>'+(late?'<em>'+escapeHtml(game.i18n.localize('TRUDVANG.Disease.ResistanceLate'))+'</em>':'')+'</div>';
  const content=message.content.replace(/<button\b([^>]*data-action="roll-rule-test"[^>]*)>/,'<button disabled$1>').replace(/<\/div>\s*$/,row+'</div>');

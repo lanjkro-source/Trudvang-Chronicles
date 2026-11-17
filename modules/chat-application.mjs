@@ -2,6 +2,8 @@ import {applyDamageToActor, applyDamageToDefenseItem, prepareDamageTargets} from
 import {renderTemplate,escapeHtml} from "./helpers.mjs";
 import {magicResistanceRows,localizeResistanceRows} from './rules/magic-resistance.mjs';
 import {conditionalDamageBonus,damageCanAffect} from "./rules/creature-conditional-bonus.mjs";
+import {applyWeaponDamageEffects} from './weapon-damage-effects.mjs';
+import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -148,6 +150,7 @@ async function applyOnGM(payload) {
       appliedRow.tokenUuid = token.uuid; appliedRow.name = token.name || actor.name;
     }
   }
+  if(payload.channel==='body')await applyWeaponDamageEffects(message,actor,appliedRow);
   const rows = [...rowsFor(message), ...pending.filter(row => !hasChatApplication(message, row.actorUuid, row.channel, row.itemUuid))];
   const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
     rows: rows.map(row => ({...row,
@@ -188,7 +191,7 @@ async function damageResistanceOnGM(payload){
  const label=game.i18n.localize(outcomeLabel??(context.resistance.scope==='presence'
   ? flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Stay':'TRUDVANG.PersistentDamage.Flee'
   : flags.rollOutcome.success?'TRUDVANG.PersistentDamage.Resisted':'TRUDVANG.PersistentDamage.NotResisted'));
- await message.update({content:String(message.content).replace(/(<span\b[^>]*data-damage-resistance-result[^>]*>)[\s\S]*?<\/span>/,(_,open)=>`${open}${escapeHtml(label)}</span>`).replace(/(<button\b[^>]*data-action="resist-damage"[^>]*)(>)/,'$1 disabled$2'),[`flags.${SYSTEM_ID}.damageResistanceResults`]:results});
+ await message.update({content:String(message.content).replace(/(<span\b[^>]*data-damage-resistance-result[^>]*>)[\s\S]*?<\/span>/,(_,open)=>`${open}<strong class="test-outcome ${flags.rollOutcome.success?'success':'failure'}">${escapeHtml(rollOutcomeText(flags.rollOutcome,key=>game.i18n.localize(key)))}</strong> — ${escapeHtml(label)}</span>`).replace(/(<button\b[^>]*data-action="resist-damage"[^>]*)(>)/,'$1 disabled$2'),[`flags.${SYSTEM_ID}.damageResistanceResults`]:results});
  resistanceLocks.delete(key);
  if(context.resistance.scope==='continuation'&&((flags.rollOutcome.success&&context.resistance.successEndsEffect)||(!flags.rollOutcome.success&&context.resistance.failureEndsEffect))){
   const effect=await foundry.utils.fromUuid(context.sourceEffectUuid);if(effect?.parent?.uuid===actor.uuid)await effect.delete();

@@ -11828,15 +11828,14 @@ export const TRANSFORMATION_TEMPLATES = {
     "duration": "",
     "priority": 10,
     "statuses": [],
-    "related": [
-      "shock"
-    ],
+    "related": [],
     "changes": [],
     "itemOnly": true,
     "requiresWeapon": true,
     "onWeaponHit": {
       "effectId": "shock",
-      "requiresInscription": true
+      "requiresInscription": true,
+      "requiresOpenRoll": true
     },
     "runeTiers": [
       {

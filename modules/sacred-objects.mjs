@@ -244,7 +244,10 @@ async function syncPermanentRunesNow(item){
   for(const key of TRANSFORMATIONS_BY_SOURCE[row.sourceId]??[]){
    if(TRANSFORMATION_TEMPLATES[key]?.weaponHitOnly)continue;
    const old=Array.from(item.effects??[]).find(effect=>effect.flags?.[S]?.sacredRuneId===row.id&&effect.flags?.[S]?.transformation?.key===key);
-   if(old?.flags[S].transformation?.runeLevel===row.level)continue;
+   const template=TRANSFORMATION_TEMPLATES[key],tier=template.runeTiers?.[row.level-1];
+   // Weapon-rune markers are derived from their inscription. Keep their
+   // canonical rule text synchronized as the catalogue evolves, too.
+   if(old?.flags[S].transformation?.runeLevel===row.level&&(!template.onWeaponHit||old.description===game.i18n.localize(tier?.descriptionKey)))continue;
    const result=await applyTransformation(item.parent,key,{counts:Array.from({length:5},(_,i)=>i===row.level-1?1:0),skipDialog:true,preselectedAnswers:{runeLevel:row.level,duration:''},destinationItem:item,context:{sourceId:row.sourceId,kind:'rune',casterUuid:item.parent.uuid,runeLevel:row.level}});
    if(result){await result.update({transfer:target!=='object','system.activation':target==='equipped'?'equipped':'inventory',['flags.'+S+'.sacredRuneId']:row.id});if(old&&old.id!==result.id)await old.delete();}
   }

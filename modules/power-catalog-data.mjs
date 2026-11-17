@@ -7863,19 +7863,6 @@ export const POWER_DETAILS_BY_ID = {
       "modifier": 0
     },
     "level": 1,
-    "targeting": {
-      "groups": [
-        {
-          "id": "victims",
-          "variants": [
-            "shock"
-          ],
-          "baseTargets": null,
-          "additionalTargets": [],
-          "allocatableOptions": []
-        }
-      ]
-    },
     "powerLevels": [
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:0",

@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
-    "description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
-    "summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
+    "description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+    "summary": "Choc reçu avec les dégâts à jet ouvert d’une arme runique.",
     "source": {
       "book": "Livre des règles",
       "page": 285
@@ -21,7 +21,7 @@
       "name": "Choc de l’enclume (victime)",
       "type": "effect",
       "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
-      "description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+      "description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
             "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
-            "summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
+            "summary": "Choc reçu avec les dégâts à jet ouvert d’une arme runique.",
             "editableChanges": true,
             "related": []
           }

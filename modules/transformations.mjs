@@ -44,7 +44,6 @@ import {instantConsequenceOperation} from './conjured-consumables.mjs';
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
 import {auraBonusDescription,auraRadius} from "./aura.mjs";
-import {effectMessageContext,weaponHitExpired} from './rules/weapon-hit-effects.mjs';
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -87,7 +86,7 @@ export function transformationKeys(document){
 }
 export function transformationLinks(document,counts=[],{context}={}){
  const casting=transformationCasting(document,counts,context);
- return transformationKeys(document).filter(key=>!TRANSFORMATION_TEMPLATES[key].weaponHitOnly||casting.weaponHit).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeAttribute(key)}" data-transformation-counts="${escapeAttribute(JSON.stringify(casting.counts))}" data-rule-test-context="${escapeAttribute(JSON.stringify(casting))}" data-transformation-source="${escapeAttribute(document.uuid||"")}" title="${escapeAttribute(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
+ return transformationKeys(document).filter(key=>!TRANSFORMATION_TEMPLATES[key].weaponHitOnly).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeAttribute(key)}" data-transformation-counts="${escapeAttribute(JSON.stringify(casting.counts))}" data-rule-test-context="${escapeAttribute(JSON.stringify(casting))}" data-transformation-source="${escapeAttribute(document.uuid||"")}" title="${escapeAttribute(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
 }
 export function annotateTransformationDescription(description,document){
  const links=transformationLinks(document);
@@ -143,13 +142,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||(reference.instant&&!reference.instant.rune)||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
- if(reference.weaponHitOnly){
-  const hit=message?.flags?.[SCOPE]?.weaponHitEffects?.[key];
-  if(!hit)throw Error(local('WeaponHitRequired'));
-  if(weaponHitExpired(key,hit,{time:game.time?.worldTime,combat:game.combat}))throw Error(local('WeaponHitExpired'));
-  Object.assign(casting,structuredClone(hit.context),{messageId:message.id});
-  if(destinationItem){ui.notifications.warn(local('ActorTargetRequired'));return null;}
- }
+ if(reference.weaponHitOnly)throw Error(local('WeaponHitRequired'));
  if(reference.instant?.rune&&(!casting.castingId||!casting.messageId||!game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.runeAllocation))throw Error(game.i18n.localize('TRUDVANG.Warning.MagicAllocationUnavailable'));
  const targetRestriction=effectTargetRestriction(reference,actor,casting);if(targetRestriction){ui.notifications.warn(game.i18n.localize(targetRestriction));return null;}
  if(NID_BLESSINGS[reference.sourceId]){
@@ -161,7 +154,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  // original casting. Keep its provenance and explanatory counts without
  // keeping the original target reservation or maintained-spell lifetime.
  const predecessor=metadata(source)??Array.from(source?.effects??[],effect=>metadata(effect)).find(meta=>meta?.sourceId===reference.sourceId&&meta.related?.includes(reference.id));
- if(!reference.weaponHitOnly&&predecessor?.sourceId===reference.sourceId&&predecessor.key!==key&&predecessor.related?.includes(reference.id)){
+ if(predecessor?.sourceId===reference.sourceId&&predecessor.key!==key&&predecessor.related?.includes(reference.id)){
   delete casting.castingId;
   delete casting.messageId;
  }
@@ -213,7 +206,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(targeting){
   if(casting.kind==="divine"||casting.kind==='rune'||game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.instantAllocation){
    const flags=game.messages?.get(casting.messageId)?.flags?.[SCOPE];
-   const entry=reference.weaponHitOnly?flags?.weaponHitEffects?.[key]:casting.kind==='rune'?flags?.runeAllocation:casting.kind==="divine"?flags?.divineAllocation:flags?.instantAllocation;
+   const entry=casting.kind==='rune'?flags?.runeAllocation:casting.kind==="divine"?flags?.divineAllocation:flags?.instantAllocation;
    if(entry?.castingId===casting.castingId&&entry?.casterUuid===casting.casterUuid&&entry?.sourceId===template.sourceId)
     allocationRecord={targetAllocations:entry.targetAllocations??[],powerLevelSnapshot:Object.entries(entry.selected??{}).map(([id,count])=>({id,count}))};
   }else{
@@ -255,7 +248,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   fields.push({name:"effectInput",label:game.i18n.localize(template.inputKey),value:inputOptions[0]?.value??template.inputDefault??"",...(inputOptions.length?{options:inputOptions}:{})});
  }
  if(template.initialResistance?.optional&&(!resolvedCopy||!copiedResistance))fields.push({name:'resistApplication',label:game.i18n.localize(template.initialResistance.conditionKey),checkbox:true,value:false});
- if(template.cooldownSeconds||template.weaponHitOnly){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
+ if(template.cooldownSeconds){const field=fields.find(f=>f.name==="duration");if(field)field.readonly=true;}
  const indices=[...new Set([...(Number.isInteger(template.instant?.rune?.allocationIndex)?[template.instant.rune.allocationIndex]:[]),...(resolvedCopy?[]:template.parameters??[]).flatMap(p=>[p.index,...(p.extraTerms??[]).map(term=>term.index)]),...(resolvedCopy?[]:[template.itemEnchantment?.useIndex,template.itemEnchantment?.statsIndex].filter(Number.isInteger)),...(resolvedCopy?[]:template.displayPowerOptions??[]),...(/recovery|exhaustion/.test(template.id)?[]:(RULE_TESTS_BY_CATALOG_ID[template.sourceId]??[]).flatMap(t=>(t.powerLevelModifiers??[]).map(p=>p.index)))])];
  for(const index of indices){const label=game.i18n.localize(template.instant?.rune?.allocationIndex===index?'TRUDVANG.RuneConsequence.HealingDice':`TRUDVANG.Content.Power.${template.sourceId}.PowerLevels.${index}`),id=POWER_DETAILS_BY_ID[template.sourceId]?.powerLevels?.[index]?.id;
   fields.push({name:`boost${index}`,label,numeric:true,...(template.instant?.rune?.allocationIndex===index?{minimum:1}:{}),...(targeting?{available:availableById[id]??0}:{}),value:counts[index]??0,readonly:sharedIds.has(id)});}
@@ -286,7 +279,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const tier=template.runeTiers[runeLevel-1];
   template.changes=structuredClone(tier.changes);template.statuses=tier.statuses??[];
   rules=rulesFromChanges(template.changes);
-  if(answers.duration===durationText||!answers.duration||template.weaponHitOnly)answers.duration=tier.duration;
+  if(answers.duration===durationText||!answers.duration)answers.duration=tier.duration;
   if(Number.isFinite(tier.climbingBonus))rules.movement=[{mode:"climb",method:"replace",value:Math.max(0,Number(actor.system?.movement?.current??0)/2+tier.climbingBonus)}];
  }
  if(inputOptions.length){
@@ -515,10 +508,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  }
  const data={name:effectName,img:template.icon,type:"effect",description,origin:source?.uuid||null,transfer:false,statuses:[...statuses],duration,
   system:{stackId,stacking:"replace",changes},flags:{[SCOPE]:{transformation:meta}}};
- if(reference.weaponHitOnly){
-  meta.appliedAt=casting.hitTime;
-  data.start={time:casting.hitTime,...(casting.hitCombatId?{combat:casting.hitCombatId,round:casting.hitRound}:{} )};
- }
+
  if(copiedProgress&&supplied?.parent?.uuid===actor.uuid)data.flags[SCOPE].ruleTestProgress=structuredClone(copiedProgress);
  if(requiresInitialResistance(answers))prepareInitialResistance(data,template.initialResistance,actor,supplied);
  if(template.periodic&&!template.aura){
@@ -534,7 +524,6 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   const result=await requestAllocatedEffect({casterUuid:casting.casterUuid,castingId:casting.castingId,messageId:casting.messageId??"",targetUuid:actor.uuid,itemUuid:destinationItem?.uuid??"",countsById:allocation,data});
   if(result.status==='consumable-capacity'){ui.notifications.warn(game.i18n.localize('TRUDVANG.ConjuredConsumable.CapacityReached'));return null;}
   if(result.status==='rune-expired')throw Error(game.i18n.localize('TRUDVANG.RuneConsequence.Expired'));
-  if(result.status==='weapon-hit-expired')throw Error(local('WeaponHitExpired'));
   if(result.status!=="ok")throw Error(game.i18n.localize(result.status==="target-restricted"?"TRUDVANG.Mobility.WrongTarget":result.status==="requires-other-target"?"TRUDVANG.Warning.MagicRequiresOtherTarget":result.status==="already-applied"?"TRUDVANG.Warning.MagicInstantAlreadyApplied":result.status==="caster-only"?"TRUDVANG.Warning.MagicCasterOnly":result.status==="exceeds-targets"?"TRUDVANG.Warning.MagicTargetLimit":result.status==="duplicate-target"?"TRUDVANG.Warning.MagicTargetAlreadyAffected":result.status==="exceeds-improvements"?"TRUDVANG.Warning.MagicPowerBudget":"TRUDVANG.Warning.MagicAllocationUnavailable"));
   if(result.instant)return result;
   effect=await foundry.utils.fromUuid(result.effectUuid);
@@ -679,7 +668,7 @@ async function updateTransformationTokens(actor){
  * message still holds the complete casting snapshot, so do not lose the boosts. */
 export function transformationRequest(button){
  const messageId=button.closest?.("[data-message-id]")?.dataset.messageId;
- const saved=messageId?effectMessageContext(game.messages?.get(messageId),button.dataset.transformationKey):null;
+ const saved=messageId?game.messages?.get(messageId)?.flags?.[SCOPE]?.ruleTestContext:null;
  const parse=(value,fallback)=>{try{return value?JSON.parse(value):fallback;}catch{return fallback;}};
  let context=parse(button.dataset.ruleTestContext,saved??null);
  if(context&&messageId)context={...context,messageId};

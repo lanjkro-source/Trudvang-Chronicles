@@ -29,7 +29,8 @@ import {mountedCombatValues} from "./rules/mounted-combat.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {runeConsequenceAllocation,runeConsequenceDefinition} from './rules/rune-consequences.mjs';
 import {createRuneConsequenceSource,runeConsequenceText} from './rune-consequences.mjs';
-import {weaponHitOffers} from './rules/weapon-hit-effects.mjs';
+import {weaponDamageEffects} from './rules/weapon-hit-effects.mjs';
+import {rollOutcomeView} from './rules/roll-outcome-view.mjs';
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
 import {magicFearHasBaseTargets} from "./magic-fear.mjs";
@@ -54,12 +55,14 @@ async function evaluate(formula) {
 export async function openDice({dice = 1, faces = 10, threshold = 10, modifier = 0} = {}) {
   const rolls = [];
   const diceRolls = []; // Real Roll objects kept so chat messages can animate them (Dice So Nice).
+  let explosions = 0;
   let total = Number(modifier) || 0;
   for (let die = 0; die < dice; die += 1) {
     let chained = true;
     let guard = 0;
     while (chained && guard < 100) {
       const roll = await evaluate(`1d${faces}`);
+      if(guard>0)explosions++;
       const result = Number(roll.total);
       rolls.push(result);
       diceRolls.push(roll);
@@ -68,7 +71,7 @@ export async function openDice({dice = 1, faces = 10, threshold = 10, modifier =
       guard += 1;
     }
   }
-  return {total, rolls, diceRolls, threshold, modifier: Number(modifier) || 0};
+  return {total, rolls, diceRolls, explosions, threshold, modifier: Number(modifier) || 0};
 }
 
 export async function openD10(options = {}) {
@@ -97,7 +100,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const attackMargin = target => `${target - result >= 0 ? "+" : ""}${target - result}`;
   const targetResults = attackTargets.map(row => {
     const target = finalTarget + row.modifier - attackTargets[0].modifier + Number(row.defenseModifier || 0);
-    return {...row, target, attackMargin: attackMargin(target), ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
+    const resolved=resolveRollUnderOutcome(result,target,{perfectSuccessMax,automaticSuccessMax});
+    return {...row, target, attackMargin: attackMargin(target), ...resolved,...rollOutcomeView({result,target,success:resolved.success})};
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
@@ -108,13 +112,6 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
    const source=await createRuneConsequenceSource(runeDetails,ruleTestContext);
    if(source)runeAllocation.sourceEffectUuid=source.uuid;
   }
-  const hitOffers=success&&kind==='attack'?weaponHitOffers(item,actor,{success,kind,time:globalThis.game?.time?.worldTime,combat:globalThis.game?.combat}):[];
-  if(hitOffers.length){
-   const hitId=foundry.utils.randomID();
-   for(const offer of hitOffers){offer.record.castingId=hitId;offer.record.context.castingId=hitId;}
-   ruleTestContext??=structuredClone(hitOffers[0].record.context);
-  }
-  const weaponHitEffects=Object.fromEntries(hitOffers.map(offer=>[offer.key,offer.record]));
   const card = {
     actorName: actor.name,
     actorImg: actor.img,
@@ -123,6 +120,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     target: targetResults.length === 1 ? targetResults[0].target : finalTarget,
     modifier: Number(modifier || 0),
     success,
+    ...rollOutcomeView({result,target:targetResults.length===1?targetResults[0].target:finalTarget,success}),
     margin,
     attackMargin: attackMargin(finalTarget),
     targetName,
@@ -139,7 +137,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: (!auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "")+hitOffers.map(offer=>transformationLinks(offer.effect,offer.record.context.counts,{context:offer.record.context})).join(' '),
+    transformationLinks: !auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
     ruleTests: !pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
@@ -165,7 +163,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(hitOffers.length?{weaponHitEffects}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:[...transformationKeys(item),...hitOffers.map(offer=>offer.key)],game.user?.targets,{caster:actor})}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
@@ -652,6 +650,7 @@ export async function rollDamage({actor, item, context = {}}) {
   let unclampedTotal;
   let detail;
   let rolls = [];
+  let explosions = 0;
   if (parsed) {
     const fixed = choice.fixedModifier;
     const exploded = await openDice({dice: choice.dice, faces: parsed.faces, threshold: choice.openRoll, modifier: fixed});
@@ -661,12 +660,14 @@ export async function rollDamage({actor, item, context = {}}) {
     if (fixed > 0) detail += ` + ${fixed}`;
     else if (fixed < 0) detail += ` - ${Math.abs(fixed)}`;
     rolls = exploded.diceRolls; // Pass the open-ended Roll objects so Dice So Nice animates them too.
+    explosions=exploded.explosions;
   } else {
     const roll = await evaluate(`(${choice.formula}) + (${choice.fixedModifier})`);
     unclampedTotal = Number(roll.total);
     total = Math.max(profile.minimumTotal, unclampedTotal);
     detail = roll.formula;
     rolls = [roll];
+    explosions=Array.from(roll.dice??[]).flatMap(die=>die.results??[]).filter(result=>result.exploded).length;
   }
   const modifierDetails = damageBreakdownRows(profile).map(row => `${row.label} : ${row.value}${row.source ? ` (${row.source})` : ""}`);
   if (choice.modifier) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.SituationalDetail", {amount: signedDamage(choice.modifier)}));
@@ -684,6 +685,7 @@ export async function rollDamage({actor, item, context = {}}) {
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
   const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
+  const damageEffects=weaponDamageEffects(item,actor,{explosions});
   const conditionalDamage=context.usage==="magic"?[]:creatureConditionalBonuses(actor,item).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets, fixedTarget:Boolean(context.boundActorUuid)});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
@@ -692,6 +694,7 @@ export async function rollDamage({actor, item, context = {}}) {
     itemName: item.name,
     itemImg: item.img,
     total,
+    triggeredEffects:damageEffects.map(entry=>game.i18n.format('TRUDVANG.WeaponHit.Triggered',{name:game.i18n.localize(`TRUDVANG.Content.Power.${entry.sourceId}.Name`),effect:game.i18n.localize(entry.tier.summaryKey)})),
     conditionalDamage,
     conditionalLongRange: Boolean(choice.longRange),
     detail,
@@ -702,7 +705,7 @@ export async function rollDamage({actor, item, context = {}}) {
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
   });
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,damageContext:{boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return context.returnMessage?{total,message}:total;
 }
 

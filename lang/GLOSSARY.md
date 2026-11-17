@@ -1387,6 +1387,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Roll.Margin` | Success margin | Marge de réussite |
 | `TRUDVANG.Roll.FeintParry` | Feint → Parry -{points} | Feinte → Parade -{points} |
 | `TRUDVANG.Roll.OpenTraitFormula` | 1d10 (open on 10) + trait + bonus + effects | 1d10 (jet ouvert sur 10) + trait + bonus + effets |
+| `TRUDVANG.Roll.AutomaticSuccess` | Automatic success | Succès auto. |
+| `TRUDVANG.Roll.AutomaticFailure` | Automatic failure | Échec auto. |
 
 ## `TRUDVANG.Roll.Critical`
 
@@ -4122,7 +4124,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Name` | Anvil Shock | Choc de l'enclume |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Description` | Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim. | Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Description` | This permanent rune is inscribed on a blunt weapon. If its damage roll explodes at least once, the shock is applied to the victim with damage, with or without armor. Damage applied to a parrying weapon or shield does not inflict shock on its bearer. The inscription level determines the penalty or incapacity and its duration. | Cette rune permanente s’inscrit sur une arme contondante. Lorsque son jet de dégâts déclenche au moins un jet ouvert, le choc est appliqué à la victime en même temps que les dégâts, avec ou sans armure. Les dégâts appliqués à une arme ou un bouclier de parade ne provoquent pas le choc sur leur porteur. Le niveau de la rune détermine le malus ou l’incapacité et leur durée. |
 | `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand`
@@ -14702,28 +14704,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Name` | Anvil Shock (inscribed weapon) | Choc de l’enclume (arme inscrite) |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Description` | After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level. | Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Description` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourceName` | Anvil Shock | Choc de l'enclume |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.SourcePage` | 229 | 285 |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.Duration` |  |  |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary1` | Anvil Shock: -2 to all actions through the end of the next action round. | Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription1` | The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription1` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary2` | Anvil Shock: -4 to all actions through the end of the next action round. | Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription2` | The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription2` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary3` | Anvil Shock: -6 to all actions through the end of the next action round. | Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu. |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription3` | The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round. | La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription3` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary4` | Anvil Shock: unable to act through the end of the next action round. | Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu. |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription4` | The struck victim cannot act for the remainder of the current round and the next round. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription4` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim cannot act for the remainder of the current round and the next round. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneSummary5` | Anvil Shock: unable to act through the end of the next two action rounds. | Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu. |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription5` | The struck victim cannot act for the remainder of the current round and the next two rounds. | La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#weapon.RuneDescription5` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim cannot act for the remainder of the current round and the next two rounds. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants. |
 
 ## `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Name` | Anvil Shock (victim) | Choc de l’enclume (victime) |
-| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Description` | Shock suffered after an actual hit; the inscription level fixes its consequences. | Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences. |
+| `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.Description` | The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. Shock suffered after an actual hit; the inscription level fixes its consequences. | Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences. |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourceName` | Anvil Shock | Choc de l'enclume |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-thuuldom-anvil-shock:anvil-shock:0#shock.SourcePage` | 229 | 285 |
@@ -16081,8 +16083,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Transformation.PhysicalMovementPenalty` | Actions relying on movement: {value} SV. | Actions reposant sur le mouvement : {value} VC. |
 | `TRUDVANG.Transformation.RoarRadius` | Blast radius: {value} m. | Rayon de la déflagration : {value} m. |
 | `TRUDVANG.Transformation.BorjornNextSkill` | Bonus to the next Skill Roll: +{value}. | Bonus au prochain test de compétence : +{value}. |
-| `TRUDVANG.Transformation.WeaponHitRequired` | Apply this effect from a successful attack with the inscribed weapon. | Appliquez cet effet depuis une attaque réussie avec l’arme inscrite. |
-| `TRUDVANG.Transformation.WeaponHitExpired` | This shock has already ended; its duration starts at the hit. | Ce choc est déjà terminé ; sa durée commence à la touche. |
+| `TRUDVANG.Transformation.WeaponHitRequired` | This effect is applied automatically with damage after an open roll. | Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert. |
 
 ## `TRUDVANG.Transformation.Modes`
 
@@ -16641,3 +16642,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.RuneConsequence.Expired` | This rune activation has ended. | Cette activation runique est terminée. |
 | `TRUDVANG.RuneConsequence.IntegrityRequired` | Choose an item with a maximum integrity value. | Choisissez un objet possédant une intégrité maximale. |
 | `TRUDVANG.RuneConsequence.Allocations` | Applications: {used} / {max}. | Applications : {used} / {max}. |
+
+## `TRUDVANG.WeaponHit`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.WeaponHit.Triggered` | {name} triggered! | {name} déclenché ! |

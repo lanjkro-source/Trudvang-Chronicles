@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
-    "description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
-    "summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
+    "description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade.",
+    "summary": "Arme runique dont les jets ouverts peuvent provoquer un choc avec les dégâts.",
     "source": {
       "book": "Livre des règles",
       "page": 285
@@ -21,7 +21,7 @@
       "name": "Choc de l’enclume (arme inscrite)",
       "type": "effect",
       "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
-      "description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
+      "description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
@@ -34,11 +34,9 @@
           "transformation": {
             "key": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
             "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
-            "summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
+            "summary": "Arme runique dont les jets ouverts peuvent provoquer un choc avec les dégâts.",
             "editableChanges": true,
-            "related": [
-              "shock"
-            ]
+            "related": []
           }
         }
       }

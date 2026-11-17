@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock",
-    "description": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
-    "summary": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
+    "description": "This permanent rune is inscribed on a blunt weapon. If its damage roll explodes at least once, the shock is applied to the victim with damage, with or without armor. Damage applied to a parrying weapon or shield does not inflict shock on its bearer. The inscription level determines the penalty or incapacity and its duration.",
+    "summary": "A blunt weapon inflicts a shock when its damage roll explodes.",
     "swedishName": "",
     "negation": "",
     "affinity": {

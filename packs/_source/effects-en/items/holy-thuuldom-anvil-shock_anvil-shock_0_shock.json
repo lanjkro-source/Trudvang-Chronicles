@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
-    "description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
-    "summary": "Weakens or prevents actions after a hit with the runic weapon.",
+    "description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. Shock suffered after an actual hit; the inscription level fixes its consequences.",
+    "summary": "Shock received with open-roll damage from a runic weapon.",
     "source": {
       "book": "Player's Handbook",
       "page": 229
@@ -21,7 +21,7 @@
       "name": "Anvil Shock (victim)",
       "type": "effect",
       "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
-      "description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
+      "description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. Shock suffered after an actual hit; the inscription level fixes its consequences.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
@@ -34,7 +34,7 @@
           "transformation": {
             "key": "holy-thuuldom-anvil-shock:anvil-shock:0#shock",
             "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
-            "summary": "Weakens or prevents actions after a hit with the runic weapon.",
+            "summary": "Shock received with open-roll damage from a runic weapon.",
             "editableChanges": true,
             "related": []
           }

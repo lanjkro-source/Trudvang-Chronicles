@@ -7,8 +7,8 @@
   "folder": null,
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
-    "description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
-    "summary": "Runic weapon whose hits can inflict Anvil Shock.",
+    "description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield.",
+    "summary": "Runic weapon whose open damage rolls can inflict a shock.",
     "source": {
       "book": "Player's Handbook",
       "page": 229
@@ -21,7 +21,7 @@
       "name": "Anvil Shock (inscribed weapon)",
       "type": "effect",
       "img": "systems/trudvang-chronicles/assets/icons/anvil-shock.svg",
-      "description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
+      "description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield.",
       "transfer": false,
       "system": {
         "stackId": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
@@ -34,11 +34,9 @@
           "transformation": {
             "key": "holy-thuuldom-anvil-shock:anvil-shock:0#weapon",
             "sourceId": "holy-thuuldom-anvil-shock:anvil-shock:0",
-            "summary": "Runic weapon whose hits can inflict Anvil Shock.",
+            "summary": "Runic weapon whose open damage rolls can inflict a shock.",
             "editableChanges": true,
-            "related": [
-              "shock"
-            ]
+            "related": []
           }
         }
       }

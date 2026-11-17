@@ -1197,7 +1197,9 @@
       "OpenInitiative": "L'initiative utilise 1d10 avec un jet ouvert sur 10.",
       "Margin": "Marge de réussite",
       "FeintParry": "Feinte → Parade -{points}",
-      "OpenTraitFormula": "1d10 (jet ouvert sur 10) + trait + bonus + effets"
+      "OpenTraitFormula": "1d10 (jet ouvert sur 10) + trait + bonus + effets",
+      "AutomaticSuccess": "Succès auto.",
+      "AutomaticFailure": "Échec auto."
     },
     "Extract": {
       "Stage": "Stade : {stage}",
@@ -3072,8 +3074,8 @@
         },
         "holy-thuuldom-anvil-shock": {
           "Name": "Choc de l'enclume",
-          "Summary": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
-          "Description": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
+          "Summary": "Une arme contondante provoque un choc lorsque ses dégâts déclenchent un jet ouvert.",
+          "Description": "Cette rune permanente s’inscrit sur une arme contondante. Lorsque son jet de dégâts déclenche au moins un jet ouvert, le choc est appliqué à la victime en même temps que les dégâts, avec ou sans armure. Les dégâts appliqués à une arme ou un bouclier de parade ne provoquent pas le choc sur leur porteur. Le niveau de la rune détermine le malus ou l’incapacité et leur durée.",
           "Negation": ""
         },
         "holy-thuuldom-borjorn-s-hand": {
@@ -7124,8 +7126,8 @@
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0": {
           "Name": "Choc de l'enclume",
-          "Summary": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
-          "Description": "Cette rune doit être placée sur une arme contondante (n’importe quelle arme dénuée de lame) dont l’impact est désormais aussi puissant qu’un choc sismique quand le thuul s’en sert pour frapper. Toute victime touchée par ce choc est exposée au Choc de l’enclume, qui dépend du niveau de la rune. <table><thead><tr><th colspan=\"2\">NIVEAUX DE PUISSANCE</th></tr><tr><th>Niveau</th><th>Effet</th></tr></thead><tbody><tr><td>1</td><td>La victime subit un malus de -2 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>2</td><td>La victime subit un malus de -4 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>3</td><td>La victime subit un malus de -6 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>4</td><td>La victime est incapable de la moindre action jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>5</td><td>La victime est incapable de la moindre action jusqu’à la fin du tour de jeu en cours ainsi que pendant les deux tours de jeu suivants.</td></tr></tbody></table>",
+          "Summary": "Une arme contondante provoque un choc lorsque ses dégâts déclenchent un jet ouvert.",
+          "Description": "Cette rune doit être placée sur une arme contondante (n’importe quelle arme dénuée de lame) dont l’impact est désormais aussi puissant qu’un choc sismique quand le thuul s’en sert pour frapper. Une victime effectivement touchée est exposée au Choc de l’enclume si le jet de dégâts de l’arme déclenche au moins un jet ouvert. Le choc dépend du niveau de la rune. <table><thead><tr><th colspan=\"2\">NIVEAUX DE PUISSANCE</th></tr><tr><th>Niveau</th><th>Effet</th></tr></thead><tbody><tr><td>1</td><td>La victime subit un malus de -2 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>2</td><td>La victime subit un malus de -4 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>3</td><td>La victime subit un malus de -6 à toutes ses actions jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>4</td><td>La victime est incapable de la moindre action jusqu’à la fin du tour de jeu en cours ainsi que pendant tout le tour de jeu suivant.</td></tr><tr><td>5</td><td>La victime est incapable de la moindre action jusqu’à la fin du tour de jeu en cours ainsi que pendant les deux tours de jeu suivants.</td></tr></tbody></table>",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "",
@@ -17280,27 +17282,27 @@
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
           "Name": "Choc de l’enclume (arme inscrite)",
-          "Summary": "Arme runique dont les coups peuvent provoquer le Choc de l’enclume.",
-          "Description": "Après une touche effective avec cette arme, appliquer le choc depuis la carte de l’attaque réussie, après résolution de la parade ou de l’esquive. Le niveau est celui de la rune inscrite.",
+          "Summary": "Arme runique dont les jets ouverts peuvent provoquer un choc avec les dégâts.",
+          "Description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade.",
           "SourceName": "Choc de l'enclume",
           "SourceBook": "Livre des règles",
           "SourcePage": "285",
           "Duration": "",
           "RuneSummary1": "Choc de l’enclume : -2 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
-          "RuneDescription1": "La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneDescription1": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -2 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
           "RuneSummary2": "Choc de l’enclume : -4 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
-          "RuneDescription2": "La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneDescription2": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -4 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
           "RuneSummary3": "Choc de l’enclume : -6 à toutes les actions jusqu’à la fin du prochain tour de jeu.",
-          "RuneDescription3": "La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneDescription3": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée subit -6 à toutes ses actions pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
           "RuneSummary4": "Choc de l’enclume : aucune action jusqu’à la fin du prochain tour de jeu.",
-          "RuneDescription4": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
+          "RuneDescription4": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et le tour de jeu suivant.",
           "RuneSummary5": "Choc de l’enclume : aucune action jusqu’à la fin des deux prochains tours de jeu.",
-          "RuneDescription5": "La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants."
+          "RuneDescription5": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. La victime touchée ne peut entreprendre aucune action pendant le reste du tour de jeu en cours et les deux tours de jeu suivants."
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
           "Name": "Choc de l’enclume (victime)",
-          "Summary": "Affaiblit ou empêche les actions après une touche avec l’arme runique.",
-          "Description": "Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
+          "Summary": "Choc reçu avec les dégâts à jet ouvert d’une arme runique.",
+          "Description": "Le choc ne se déclenche que si le jet de dégâts de cette arme déclenche au moins un jet ouvert. Il est appliqué à la victime en même temps que les dégâts, avec ou sans armure ; il ne s’applique pas à une arme ou un bouclier de parade. Choc subi après une touche effective ; le niveau de la rune fixe ses conséquences.",
           "SourceName": "Choc de l'enclume",
           "SourceBook": "Livre des règles",
           "SourcePage": "285",
@@ -18459,8 +18461,7 @@
       "PhysicalMovementPenalty": "Actions reposant sur le mouvement : {value} VC.",
       "RoarRadius": "Rayon de la déflagration : {value} m.",
       "BorjornNextSkill": "Bonus au prochain test de compétence : +{value}.",
-      "WeaponHitRequired": "Appliquez cet effet depuis une attaque réussie avec l’arme inscrite.",
-      "WeaponHitExpired": "Ce choc est déjà terminé ; sa durée commence à la touche."
+      "WeaponHitRequired": "Cet effet s’applique automatiquement lors de l’application des dégâts après un jet ouvert."
     },
     "Resistance": {
       "PowerLevel": "Amélioration {index} — {description} ({count} × {unit})",
@@ -18891,6 +18892,9 @@
       "Expired": "Cette activation runique est terminée.",
       "IntegrityRequired": "Choisissez un objet possédant une intégrité maximale.",
       "Allocations": "Applications : {used} / {max}."
+    },
+    "WeaponHit": {
+      "Triggered": "{name} déclenché !"
     }
   }
 }

@@ -1,5 +1,4 @@
 import {runeConsequenceExpired,validRuneConsequenceAllocation} from './rules/rune-consequences.mjs';
-import {weaponHitExpired} from './rules/weapon-hit-effects.mjs';
 import {effectTargetRestriction} from './rules/mobility-effects.mjs';
 import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
@@ -95,10 +94,8 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const targetItem=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
   if(itemUuid&&(!targetItem||targetItem.parent?.uuid!==target.uuid))return {status:"unavailable"};
   const message=messageId?game.messages?.get(messageId):null;
-  const hitKey=data?.flags?.['trudvang-chronicles']?.transformation?.key;
-  const hit=message?.flags?.['trudvang-chronicles']?.weaponHitEffects?.[hitKey];
-  const allocationKey=hit?'weaponHitEffects.'+hitKey:message?.flags?.['trudvang-chronicles']?.runeAllocation?'runeAllocation':message?.flags?.["trudvang-chronicles"]?.instantAllocation?"instantAllocation":"divineAllocation";
-  const divine=hit??message?.flags?.["trudvang-chronicles"]?.[allocationKey];
+  const allocationKey=message?.flags?.['trudvang-chronicles']?.runeAllocation?'runeAllocation':message?.flags?.["trudvang-chronicles"]?.instantAllocation?"instantAllocation":"divineAllocation";
+  const divine=message?.flags?.["trudvang-chronicles"]?.[allocationKey];
   if(messageId&&!message)return {status:"unavailable"};
   const records=divine?null:activeSpellRecords(caster), record=divine??records?.find(row=>row.id===castingId);
   const item=!divine&&record?Array.from(caster.items??[]).find(row=>row.id===record.itemId):null;
@@ -106,13 +103,11 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
   const targeting=POWER_DETAILS_BY_ID[sourceId]?.targeting;
   const provenance=data?.flags?.["trudvang-chronicles"]?.transformation?.ruleTestContext;
   if(!record||!targeting||provenance?.casterUuid!==casterUuid||provenance?.castingId!==castingId||provenance?.sourceId!==sourceId
-   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!==((hit||allocationKey==='runeAllocation')?'rune':allocationKey==="instantAllocation"?"spell":"divine"))))return {status:"unavailable"};
+   ||(divine&&(divine.casterUuid!==casterUuid||divine.castingId!==castingId||provenance.kind!==(allocationKey==='runeAllocation'?'rune':allocationKey==="instantAllocation"?"spell":"divine"))))return {status:"unavailable"};
   const selected=divine?divine.selected:Object.fromEntries((record.powerLevelSnapshot??[]).map(row=>[row.id,row.count]));
   const effectKey=data.flags["trudvang-chronicles"].transformation.key??"";
   const template=TRANSFORMATION_TEMPLATES[effectKey];
   if(template?.sourceId!==sourceId)return {status:"unavailable"};
-  if(template.weaponHitOnly&&(!hit||itemUuid||provenance.runeLevel!==hit.runeLevel||provenance.runeObjectUuid!==hit.runeObjectUuid))return {status:'unavailable'};
-  if(hit&&weaponHitExpired(effectKey,hit,{time:game.time?.worldTime,combat:game.combat}))return {status:'weapon-hit-expired'};
   if(!target.canUserModify?.(user,'update')||targetItem&&!targetItem.canUserModify?.(user,'update')){
    const {canManageEffectTargets,effectTargetsFor}=await import('./effect-targets.mjs');
    if(!message||!await canManageEffectTargets(message,user)||!effectTargetsFor(message,effectKey).some(row=>row.actorUuid===target.uuid))return {status:'unavailable'};

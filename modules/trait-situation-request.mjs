@@ -1,6 +1,7 @@
 import {renderTemplate} from "./helpers.mjs";
 import {TRUDVANG} from "./config.mjs";
 import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
+import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {environmentActorValues, environmentCardView} from "./rules/environment.mjs";
 import {applyGradedEffect} from "./graded-effects.mjs";
 
@@ -32,7 +33,7 @@ export function hasTraitSituationResponse(message, actorUuid) {
 function responseView(entry) {
   const outcome = entry.result === 1 ? "perfectSuccess" : entry.result === 20 ? "perfectFailure"
     : entry.success ? "success" : "failure";
-  return {...entry, outcome, outcomeLabel: game.i18n.localize(`TRUDVANG.Dialog.TraitSituationResult.${outcome}`)};
+  return {...entry, outcome, outcomeLabel: rollOutcomeText(entry,key=>game.i18n.localize(key))};
 }
 
 async function cardContent(message, request, responses) {

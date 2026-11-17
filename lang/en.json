@@ -1197,7 +1197,9 @@
       "OpenInitiative": "Initiative uses 1d10 with an open roll on 10.",
       "Margin": "Success margin",
       "FeintParry": "Feint → Parry -{points}",
-      "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects"
+      "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects",
+      "AutomaticSuccess": "Automatic success",
+      "AutomaticFailure": "Automatic failure"
     },
     "Extract": {
       "Stage": "Stage: {stage}",
@@ -3072,8 +3074,8 @@
         },
         "holy-thuuldom-anvil-shock": {
           "Name": "Anvil Shock",
-          "Summary": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
-          "Description": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
+          "Summary": "A blunt weapon inflicts a shock when its damage roll explodes.",
+          "Description": "This permanent rune is inscribed on a blunt weapon. If its damage roll explodes at least once, the shock is applied to the victim with damage, with or without armor. Damage applied to a parrying weapon or shield does not inflict shock on its bearer. The inscription level determines the penalty or incapacity and its duration.",
           "Negation": ""
         },
         "holy-thuuldom-borjorn-s-hand": {
@@ -7124,8 +7126,8 @@
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0": {
           "Name": "Anvil Shock",
-          "Summary": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
-          "Description": "This rune must be inscribed on a blunt weapon. A victim actually struck by the Thuul with this weapon suffers Anvil Shock according to the inscribed rune level. The rune remains active permanently but requires its associated Divinity Points. Levels 1, 2 and 3 impose penalties of -2, -4 and -6 to all actions for the remainder of the current action round and the whole next round. Level 4 prevents all actions for that same duration; level 5 prevents all actions for the current round and the next two rounds.",
+          "Summary": "A blunt weapon inflicts a shock when its damage roll explodes.",
+          "Description": "This rune must be inscribed on a blunt weapon. A victim actually struck by the Thuul with this weapon suffers Anvil Shock according to the inscribed rune level if the weapon’s damage roll explodes at least once. The rune remains active permanently but requires its associated Divinity Points. Levels 1, 2 and 3 impose penalties of -2, -4 and -6 to all actions for the remainder of the current action round and the whole next round. Level 4 prevents all actions for that same duration; level 5 prevents all actions for the current round and the next two rounds.",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "",
@@ -17280,27 +17282,27 @@
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0#weapon": {
           "Name": "Anvil Shock (inscribed weapon)",
-          "Summary": "Runic weapon whose hits can inflict Anvil Shock.",
-          "Description": "After an actual hit with this weapon, apply the shock from the successful attack card after resolving any parry or dodge. The effect uses the inscribed rune level.",
+          "Summary": "Runic weapon whose open damage rolls can inflict a shock.",
+          "Description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield.",
           "SourceName": "Anvil Shock",
           "SourceBook": "Player's Handbook",
           "SourcePage": "229",
           "Duration": "",
           "RuneSummary1": "Anvil Shock: -2 to all actions through the end of the next action round.",
-          "RuneDescription1": "The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round.",
+          "RuneDescription1": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -2 to all actions for the remainder of the current round and the whole next round.",
           "RuneSummary2": "Anvil Shock: -4 to all actions through the end of the next action round.",
-          "RuneDescription2": "The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round.",
+          "RuneDescription2": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -4 to all actions for the remainder of the current round and the whole next round.",
           "RuneSummary3": "Anvil Shock: -6 to all actions through the end of the next action round.",
-          "RuneDescription3": "The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round.",
+          "RuneDescription3": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim suffers -6 to all actions for the remainder of the current round and the whole next round.",
           "RuneSummary4": "Anvil Shock: unable to act through the end of the next action round.",
-          "RuneDescription4": "The struck victim cannot act for the remainder of the current round and the next round.",
+          "RuneDescription4": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim cannot act for the remainder of the current round and the next round.",
           "RuneSummary5": "Anvil Shock: unable to act through the end of the next two action rounds.",
-          "RuneDescription5": "The struck victim cannot act for the remainder of the current round and the next two rounds."
+          "RuneDescription5": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. The struck victim cannot act for the remainder of the current round and the next two rounds."
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0#shock": {
           "Name": "Anvil Shock (victim)",
-          "Summary": "Weakens or prevents actions after a hit with the runic weapon.",
-          "Description": "Shock suffered after an actual hit; the inscription level fixes its consequences.",
+          "Summary": "Shock received with open-roll damage from a runic weapon.",
+          "Description": "The shock triggers only if this weapon’s damage roll explodes at least once. Apply it to the victim with damage, with or without armor; it does not affect a parrying weapon or shield. Shock suffered after an actual hit; the inscription level fixes its consequences.",
           "SourceName": "Anvil Shock",
           "SourceBook": "Player's Handbook",
           "SourcePage": "229",
@@ -18459,8 +18461,7 @@
       "PhysicalMovementPenalty": "Actions relying on movement: {value} SV.",
       "RoarRadius": "Blast radius: {value} m.",
       "BorjornNextSkill": "Bonus to the next Skill Roll: +{value}.",
-      "WeaponHitRequired": "Apply this effect from a successful attack with the inscribed weapon.",
-      "WeaponHitExpired": "This shock has already ended; its duration starts at the hit."
+      "WeaponHitRequired": "This effect is applied automatically with damage after an open roll."
     },
     "Resistance": {
       "PowerLevel": "Improvement {index} — {description} ({count} × {unit})",
@@ -18891,6 +18892,9 @@
       "Expired": "This rune activation has ended.",
       "IntegrityRequired": "Choose an item with a maximum integrity value.",
       "Allocations": "Applications: {used} / {max}."
+    },
+    "WeaponHit": {
+      "Triggered": "{name} triggered!"
     }
   }
 }

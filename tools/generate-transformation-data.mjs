@@ -59,6 +59,7 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.onApply??null)!==JSON.stringify(translated.onApply??null))throw Error(`Unaligned application consequence for ${key}`);
    if(JSON.stringify(t.onWeaponHit??null)!==JSON.stringify(translated.onWeaponHit??null)||t.weaponHitOnly!==translated.weaponHitOnly)throw Error(`Unaligned weapon hit effect ${key}`);
    if(t.onWeaponHit&&(!t.itemOnly||!t.requiresWeapon||!entry.effectTemplates.some(row=>row.id===t.onWeaponHit.effectId&&row.weaponHitOnly)||typeof t.onWeaponHit.requiresInscription!=='boolean'))throw Error(`Invalid weapon hit source ${key}`);
+   if(t.onWeaponHit?.requiresOpenRoll!==undefined&&typeof t.onWeaponHit.requiresOpenRoll!=='boolean')throw Error(`Invalid weapon open-roll trigger ${key}`);
    if(t.weaponHitOnly&&(!t.oncePerCasting||t.itemOnly||t.instant||!t.runeTiers||!entry.effectTemplates.some(row=>row.onWeaponHit?.effectId===t.id)))throw Error(`Invalid weapon hit victim ${key}`);
    if(t.weaponHitOnly&&t.runeTiers.some(tier=>!/^\d+ rounds$/.test(tier.duration)))throw Error(`Invalid weapon hit lifetime ${key}`);
    if(JSON.stringify(t.breakOnDamage??false)!==JSON.stringify(translated.breakOnDamage??false)||![undefined,true,false].includes(t.breakOnDamage))throw Error(`Invalid damage-ending condition for ${key}`);

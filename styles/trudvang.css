@@ -1320,3 +1320,10 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang .sacred-rune-ranks label:has(input:disabled) { opacity: .5; cursor: default; }
 .trudvang-sheet .sacred-rune-points { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
 .trudvang-sheet .sacred-rune-invest { width: auto; min-height: 0; padding: 0 2px; border: 0; background: transparent; color: inherit; line-height: inherit; }
+
+/* All d20 test outcomes share the attack result palette and compact margin. */
+.trudvang.chat-card .roll-outcome { margin: 8px; padding: 5px; border-left: 2px solid currentColor; }
+.trudvang.chat-card .roll-outcome.success, .trudvang.chat-card .test-outcome.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
+.trudvang.chat-card .roll-outcome.failure, .trudvang.chat-card .test-outcome.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
+.trudvang.chat-card .test-outcome { display: inline-block; padding: 2px 5px; }
+.trudvang.chat-card .weapon-damage-effects { color: var(--trudvang-accent); font-weight: 700; }
