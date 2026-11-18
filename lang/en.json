@@ -1006,7 +1006,9 @@
       "DeliveryRanged": "Ranged or throwing weapon",
       "Origin": "Origin",
       "FixedHint": "For fixed damage, use 0 dice and a nonzero modifier.",
-      "ArmorReduction": "Enemy protection reduction (PV)"
+      "ArmorReduction": "Enemy protection reduction (PV)",
+      "PrimaryComponent": "Physical hit",
+      "ComponentModifier": "Modifier for this component"
     },
     "Dialog": {
       "MountedCombat": "Mounted combat",
@@ -1526,7 +1528,8 @@
         "objectUse": "SV/Situation modifier when this item is used",
         "itemProtection": "Protection Value modifier local to this item",
         "equipment": "Temporary equipment",
-        "objectParryOutnumbered": "Outnumbered parry"
+        "objectParryOutnumbered": "Outnumbered parry",
+        "weaponLock": "Weapon restriction for one round"
       },
       "ProfileHelp": "Use Override to set a property. Booleans: true / false; numbers: 5; fear factor: 1d10. To add flight: system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Rage damage: system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Lists and objects must be valid JSON.",
       "InvalidProfileChange": "Invalid value for {path}. See the profile change examples.",
@@ -8640,7 +8643,7 @@
         },
         "vitner-flame-craft:burning-hand:2": {
           "Name": "Burning Hand",
-          "Summary": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune).",
+          "Summary": "Ignites one hand: a successful punch deals its normal damage and additional fire damage.",
           "Description": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune). In battle, a successful hit is still needed to touch an enemy. The damage caused by Burning Hand is addition to the normal damage a fist does with a successful attack (1d5). To avoid the mage’s attack, the same rules apply as for typical combat, which means that the target can attempt to parry or evade the attack. Aside from causing damage, there is a small chance that the burning hand ignites fl ammable objects that it touches, which is up to the game master to determine. Armor absorbs damage in the normal fashion, but it may ignite if it is made from fl ammable materials. The mage cannot take any armed actions in the same action round in which they conjure the spell.",
           "SwedishName": "Loghönd",
           "DamageQualificationNote": "",
@@ -14586,6 +14589,15 @@
           "SourcePage": "109",
           "Duration": "1 minute"
         },
+        "vitner-flame-craft:burning-hand:2#burning-hands": {
+          "Name": "Burning Hand",
+          "Summary": "An ignited hand adds fire damage to punches.",
+          "Description": "<p>Burning-hand attacks use unarmed CP and actions. Physical punch damage and fire damage are shown separately on one card; Strength only modifies the punch. The optional second hand uses base fire damage. Armor applies to the hit; parrying or evading remains possible. No weapon can be used during the casting round. Ignition of touched objects remains with the GM. The caster is immune to the fire produced by their own hand.</p>",
+          "SourceName": "Burning Hand",
+          "SourceBook": "Player's Handbook",
+          "SourcePage": "109",
+          "Duration": "4 tours de jeu"
+        },
         "vitner-flame-craft:protection-from-fire:4#effect": {
           "Name": "Protection from Fire",
           "Summary": "Protects the creature and its equipment against ordinary fire, but not magical flames or dragon fire. Apply manually.",
@@ -18779,7 +18791,8 @@
       "Ineligible": "A selected creature does not meet this fear factor’s conditions (hearing, intelligence or exclusion of the caster). It was not affected."
     },
     "MagicDamage": {
-      "BaseRecipients": "Damage — basic version"
+      "BaseRecipients": "Damage — basic version",
+      "AttackRequired": "Roll this damage from the attack granted by the effect."
     },
     "PersistentDamage": {
       "Resist": "Resist damage",
@@ -19050,6 +19063,12 @@
       "AlreadyPlaced": "This casting’s area is already placed and cannot be moved.",
       "MoveNextRound": "This area can only be moved again next round.",
       "InstantDissipated": "{name}: the flames dissipate."
+    },
+    "BurningHand": {
+      "First": "Burning Hand — first hand",
+      "Second": "Burning Hand — second hand",
+      "Profile": "{hands} burning hand(s): punch + {fire} fire for the first; second hand: {second} if present.",
+      "WeaponLock": "Burning Hand: weapons cannot be used during the casting round."
     }
   }
 }

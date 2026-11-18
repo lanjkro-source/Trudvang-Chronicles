@@ -109,6 +109,7 @@ for (const id of [...french.keys()].sort()) {
   if(f.spellZone)for(const key of ['rangeOptionId','radiusOptionId','durationOptionId','severityOptionId'])if(f.spellZone[key]&&!f.powerLevels.some(p=>p.optionId===f.spellZone[key]))fail(`${id}: invalid zone option`);
   if(f.damageRoll){
     const d=f.damageRoll;
+    if(d.requiresAttack!==undefined&&typeof d.requiresAttack!=="boolean")fail(`${id}: invalid attack-only damage`);
     if(d.minimumAfterArmor&&(!Number.isInteger(d.minimumAfterArmor.base)||d.minimumAfterArmor.base<0||!f.powerLevels.some(p=>p.optionId===d.minimumAfterArmor.optionId)))fail(`${id}: invalid minimum after armor`);
     if(d.impact&&(d.impact.kind!=='windKnockback'||d.impact.skill!=='agility'||d.impact.trait!=='strength'||d.impact.damagePenalty!==true))fail(`${id}: invalid impact`);
     if(d.baseRepeatOptionId&&!f.powerLevels.some(p=>p.optionId===d.baseRepeatOptionId))fail(`${id}: invalid base repeat option`);

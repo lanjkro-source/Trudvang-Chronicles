@@ -8,6 +8,7 @@
   {{#unless parsed}}<p class="damage-roll-hint">{{localize "TRUDVANG.DamageRoll.ComplexFormula"}}</p>{{/unless}}
   {{#if rows}}<ul class="damage-roll-breakdown">{{#each rows}}<li><span>{{label}}{{#if source}}<small>{{source}}</small>{{/if}}</span><b>{{value}}</b></li>{{/each}}</ul>{{/if}}
   <div class="form-group"><label>{{localize "TRUDVANG.DamageRoll.Situational"}}</label><input type="number" name="damage-modifier" value="{{situational}}" step="1" required></div>
+  {{#each supplements}}<fieldset class="damage-roll-supplement"><legend>{{name}} {{{icons}}}</legend><div class="damage-roll-fields"><label>{{localize "TRUDVANG.DamageRoll.DiceCount"}}<span><input type="number" name="damage-extra-dice-{{@index}}" value="{{parsed.dice}}" min="1" max="100"><b>d{{parsed.faces}}</b></span></label><label>{{localize "TRUDVANG.Field.OpenRoll"}}<input type="number" name="damage-extra-open-{{@index}}" value="{{openRoll}}" min="0" max="{{parsed.faces}}"></label></div><div class="form-group"><label>{{localize "TRUDVANG.DamageRoll.ComponentModifier"}}</label><input type="number" name="damage-extra-modifier-{{@index}}" value="{{parsed.modifier}}"></div></fieldset>{{/each}}
   {{#if ranged}}<label class="checkbox damage-long-range"><input type="checkbox" name="damage-long-range" {{#if longRange}}checked{{/if}}> {{localize "TRUDVANG.DamageRoll.LongRange"}}</label>{{/if}}
   {{{qualificationFields}}}
   <div class="damage-roll-preview"><span>{{localize "TRUDVANG.DamageRoll.Calculation"}}</span><strong data-damage-preview></strong></div>

@@ -9,9 +9,9 @@ export const EFFECT_RULE_KEYS = ["suspendEquipment", "preserveHP", "statueIntegr
   "capabilities", "equipment", "attacks", "defense", "vitality", "temporaryHP", "damage", "noParry", "noDodge",
   "ignoreFear", "ignoreFearPenalty", "ignoreFearGain", "ignoreFearThrough", "fearReductionDegrees", "fearFactor", "size", "durationFromElapsed", "ignoreWounds", "endAtEmptyHP",
   "damageTakenFactor", "immunities", "extraWeaponAction", "capabilityNames", "unarmedDamage",
-  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection","objectUse","objectParryOutnumbered","itemProtection"];
+  "knowledge", "vision", "recalculateHP", "heightBonus", "weightBonus","powerIds","sensesReplace","outerProtection","damageDefenses","damageQualification","magicalProtection","objectUse","objectParryOutnumbered","itemProtection","weaponLock"];
 const arrays=new Set(["movement","traits","senses","capabilities","attacks","immunities","capabilityNames","unarmedDamage","powerIds","damageDefenses","equipment"]);
-const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge","damageQualification"]);
+const objects=new Set(["testFactor","damage","extraWeaponAction","knowledge","damageQualification","weaponLock"]);
 const booleans=new Set(["suspendEquipment","preserveHP","chooseBestiary","noParry","noDodge","ignoreFear","ignoreFearPenalty","ignoreFearGain","ignoreWounds","endAtEmptyHP","recalculateHP","sensesReplace"]);
 const numbers=new Set(["statueIntegrity","naturalArmor","defense","temporaryHP","size","durationFromElapsed","damageTakenFactor","heightBonus","weightBonus","outerProtection","fearReductionDegrees","ignoreFearThrough","magicalProtection","objectUse","objectParryOutnumbered","itemProtection"]);
 const parse=value=>{if(typeof value!=="string")return value;try{return JSON.parse(value);}catch{return value;}};

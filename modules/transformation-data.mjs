@@ -1178,6 +1178,31 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
+  "vitner-flame-craft:burning-hand:2#burning-hands": {
+    "id": "burning-hands",
+    "icon": "icons/svg/fire.svg",
+    "duration": "4 tours de jeu",
+    "changes": [],
+    "burningHands": {
+      "secondOptionId": "vitner-flame-craft:burning-hand:2:1",
+      "damageOptionId": "vitner-flame-craft:burning-hand:2:2",
+      "punch": "1d5",
+      "selfImmune": true,
+      "blockWeaponsCastingRound": true
+    },
+    "priority": 20,
+    "related": [],
+    "statuses": [],
+    "sourceId": "vitner-flame-craft:burning-hand:2",
+    "parameters": [
+      {
+        "index": 0,
+        "optionId": "vitner-flame-craft:burning-hand:2:0",
+        "target": "duration",
+        "value": 5
+      }
+    ]
+  },
   "vitner-flame-craft:protection-from-fire:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -16324,6 +16349,9 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-flame-craft:spark:1": [
     "vitner-flame-craft:spark:1#effect"
+  ],
+  "vitner-flame-craft:burning-hand:2": [
+    "vitner-flame-craft:burning-hand:2#burning-hands"
   ],
   "vitner-flame-craft:protection-from-fire:4": [
     "vitner-flame-craft:protection-from-fire:4#effect"

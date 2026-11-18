@@ -1,3 +1,4 @@
+import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {actorForResistance} from '../resistance-actor.mjs';
 import {waterMovementBudget} from "../rules/water-movement.mjs";
 import {sacredBalance,sacredObjects} from '../rules/sacred-objects.mjs';
@@ -1075,7 +1076,7 @@ export class TrudvangActor extends BaseActor {
     const max = resolveEquipment({item, actor: this}).characteristics.weaponActions.value;
     // The transient humanoid-natural item has no update() and cannot persist its
     // counter: bare-hands AA (p317, max 4) is read from the actor instead.
-    const rawSpent = typeof item?.update === "function"
+    const rawSpent = !item.system?.isUnarmed && typeof item?.update === "function"
       ? Number(item?.system?.weaponActionsSpent || 0)
       : Number(this.system?.unarmedActionsSpent || 0);
     const spent = ignoreSpent ? 0 : Math.min(max, Math.max(0, rawSpent));
@@ -1086,7 +1087,7 @@ export class TrudvangActor extends BaseActor {
     if (!this.isInActiveCombat || !item?.id) return true;
     const state = this.getWeaponActionState(item);
     if (state.current <= 0) return false;
-    if (typeof item.update === "function") {
+    if (!item.system?.isUnarmed && typeof item.update === "function") {
       if (this.isOwner) await item.update({"system.weaponActionsSpent": state.spent + 1});
     } else if (this.isOwner) {
       await this.update({"system.unarmedActionsSpent": state.spent + 1});
@@ -1276,6 +1277,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollWeaponAction(item, kind, {defaultPoints = 5, throwing = null} = {}) {
+    if(!item.system?.isUnarmed&&weaponUseLocked(this))return ui.notifications.warn(game.i18n.localize("TRUDVANG.BurningHand.WeaponLock"));
     if (!transformationItemActive(item) || (this.transformationProfile?.suspendEquipment && !item.flags?.["trudvang-chronicles"]?.transformationGrant)
       || (kind === "parry" && this.transformationProfile?.noParry)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();

@@ -306,3 +306,11 @@ test('soil blast additional rounds expose base damage without buying another tar
  assert.equal(magicDamageHasBaseTargets(source,{sourceId:id,countsById:{[id+':4']:1}}),true);
  assert.equal(magicDamageHasBaseTargets(source,{sourceId:id,countsById:{[id+':4']:0}}),false);
 });
+
+test('a burning punch confirms both parts, adds Strength only once and keeps a single target list',async t=>{
+ const {cards,rolls,dialogs}=runtime(t,{results:[3,10,4]});const a=actor(2),item=weapon({category:'natural',isUnarmed:true,damage:'1d5',openRoll:0});item.name='Main brûlante';item.flags={'trudvang-chronicles':{supplementalDamage:[{name:'Feu',formula:'1d10',openRoll:10,qualification:{nature:'normal',delivery:'melee',type:'fire',protection:'normal'}}]}};
+ assert.equal(await rollDamage({actor:a,item,context:{targets:[]}}),19);assert.equal(cards.length,1);assert.deepEqual(rolls.map(r=>r.formula),['1d5','1d10','1d10']);const parts=cards[0].flags['trudvang-chronicles'].damageContext.components;assert.equal(parts[0].damage,5);assert.equal(parts[1].damage,14);assert.equal(parts[1].qualification.type,'fire');assert.match(dialogs[0].content,/damage-extra-open-0/);assert.match(dialogs[0].content,/value="10"/);assert.doesNotMatch(cards[0].content,/undefined|TRUDVANG\./);assert.equal((cards[0].content.match(/<section class="damage-targets"/g)??[]).length,1);
+});
+test('cancelling composed damage rolls no dice and an edited fire JO remains independent of the punch',async t=>{
+ const {cards,rolls}=runtime(t,{response:false});const a=actor(),item=weapon({damage:'1d5',openRoll:0});item.flags={'trudvang-chronicles':{supplementalDamage:[{name:'Feu',formula:'1d10 + 1',openRoll:8,qualification:{nature:'normal',delivery:'melee',type:'fire',protection:'normal'}}]}};assert.equal(await rollDamage({actor:a,item}),null);assert.equal(rolls.length,0);assert.equal(cards.length,0);const p=prepareDamageRoll({actor:a,item});assert.equal(damageRollChoice(p,{supplements:[{dice:1,openRoll:9,modifier:2}]}).supplements[0].openRoll,9);assert.equal(damageRollChoice(p,{supplements:[{dice:0}]}),null);
+});

@@ -504,3 +504,7 @@ test('human wind projection rolls open d10s and animates each distance die once'
  const base={type:'chatImpactTest',messageId:message.id,userId:player.id,actorUuid:actor.uuid},begin=await applyChatApplication({...base,action:'begin'});game.messages.set('projection-proof',{author:player,rolls:[{formula:'1d20',total:20}],flags:{'trudvang-chronicles':{impactTestFor:{messageId:message.id,actorUuid:actor.uuid,token:begin.token,target:10}}}});
  assert.equal((await applyChatApplication({...base,action:'finish',token:begin.token,proofId:'projection-proof'})).status,'resolved');assert.equal(flags.applications[0].impact.distance,13);assert.equal(animations,2);assert.equal(values.length,0);
 });
+
+test('a composed hit is applied once from its shared chat target row and retains separate fire immunity',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t),a=makeActor('Burning target',5);a.system.damageDefenses=[{type:'fire',factor:0}];addDamageTarget(a);flags.damageContext={usage:'natural',components:[{name:'Poing',damage:6,qualification:{nature:'normal',delivery:'melee',type:'blunt',protection:'normal'}},{name:'Feu',damage:2,qualification:{nature:'normal',delivery:'melee',type:'fire',protection:'normal'}}]};assert.equal((await applyChatApplication(payload(a))).status,'applied');assert.equal(a.system.resources.body.value,19);assert.equal((await applyChatApplication(payload(a))).status,'alreadyApplied');assert.equal(a.system.resources.body.value,19);
+});

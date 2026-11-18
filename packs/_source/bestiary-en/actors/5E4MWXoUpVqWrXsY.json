@@ -335,7 +335,7 @@
         "tabletId": "vitner-flame-craft",
         "tablet": "Flame Craft",
         "description": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune). In battle, a successful hit is still needed to touch an enemy. The damage caused by Burning Hand is addition to the normal damage a fist does with a successful attack (1d5). To avoid the mage’s attack, the same rules apply as for typical combat, which means that the target can attempt to parry or evade the attack. Aside from causing damage, there is a small chance that the burning hand ignites fl ammable objects that it touches, which is up to the game master to determine. Armor absorbs damage in the normal fashion, but it may ignite if it is made from fl ammable materials. The mage cannot take any armed actions in the same action round in which they conjure the spell.",
-        "summary": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune).",
+        "summary": "Ignites one hand: a successful punch deals its normal damage and additional fire damage.",
         "swedishName": "Loghönd",
         "duration": "4 action rounds",
         "range": "personal",
@@ -360,7 +360,7 @@
           {
             "id": "vitner-flame-craft:burning-hand:2:1",
             "cost": 3,
-            "maxCount": null,
+            "maxCount": 1,
             "effect": "The enchanter's other hand catches fire (and gains the spell's basic effect)"
           },
           {

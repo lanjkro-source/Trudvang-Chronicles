@@ -1,3 +1,4 @@
+import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {sacredAffinity,sacredObjectViews,createSacredObjectDialog,removeSacredObject} from '../sacred-objects.mjs';
 import {damageIcons} from "../damage-icons.mjs";
 import {conditionalProtectionProfiles} from "../rules/conditional-protection.mjs";
@@ -348,7 +349,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
       .map(item => {
         const weaponActions = this.actor.getWeaponActionState(item);
-        return {item, isShield: item.type === "shield", readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
+        return {item, isShield: item.type === "shield", readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0 && (item.system.isUnarmed||!weaponUseLocked(this.actor)), depleted: weaponActions.current <= 0 || (!item.system.isUnarmed&&weaponUseLocked(this.actor))};
       });
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
     const unarmedActions = this.actor.getWeaponActionState(this.actor.humanoidNaturalWeapon);
@@ -1050,7 +1051,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const damage = resolveDamage({item, actor: this.actor});
       const open = damage.openRoll.value;
       const bonus = damage.modifier.value;
-      return `${damage.formula}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
+      return `${damage.formula}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}${Array.from(item.flags?.["trudvang-chronicles"]?.supplementalDamage??[]).map(row=>` + ${row.formula}${row.openRoll?` (${openShort}${row.openRoll})`:""}`).join("")}`;
     }
     return "";
   }

@@ -67,7 +67,8 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
   const qualification = damageQualification({item, context:{...context,qualification:{...qualificationEffects,...context.qualification}}, usage});
   if(qualification.armorReduction)rows.push({labelKey:'TRUDVANG.DamageRoll.ArmorReduction',value:'−'+qualification.armorReduction,source:item.name});
   rows.push(...(context.damageExplanations??[]));
-  return {resolution, rows, allowZeroDice:usage==="magic"&&resolution.parsed?.dice===0, qualificationNote:context.qualificationNote ?? item?.system?.damageQualificationNote ?? "", qualification, weaponHit: usage!=="magic", magicalWeapon: qualification.nature === "magical", ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
+  const supplements=Array.from(item?.flags?.['trudvang-chronicles']?.supplementalDamage??[]).map(row=>({...row,parsed:parseSimpleDamageFormula(row.formula)})).filter(row=>row.parsed);
+  return {supplements,resolution, rows, allowZeroDice:usage==="magic"&&resolution.parsed?.dice===0, qualificationNote:context.qualificationNote ?? item?.system?.damageQualificationNote ?? "", qualification, weaponHit: usage!=="magic", magicalWeapon: qualification.nature === "magical", ranged, longRange: Boolean(longRange), usage, formula: resolution.formula,
     parsed: resolution.parsed, openRoll: resolution.openRoll.value, fixedModifier: preparedIntrinsic + resolution.modifier.value - resolution.modifier.base + transformationBonus,
     situational: finite(context.damageModifier), minimumTotal: resolution.minimumTotal};
 }
@@ -84,7 +85,15 @@ export function damageRollChoice(profile, options = {}) {
     || (profile.parsed && (!Number.isInteger(dice) || dice < (profile.allowZeroDice?0:1) || dice > 100 || faces < 1)) || (!profile.parsed && !formula)) return null;
   if(profile.editableFaces && (![3,4,5,6,10].includes(faces) || !Number.isInteger(modifier) || (dice>0 && openRoll!==0 && (openRoll<2 || openRoll>faces))))return null;
   if(profile.allowZeroDice && dice===0 && profile.fixedModifier+modifier===0)return null;
+  const supplements=damageSupplementChoices(profile,options.supplements);if(!supplements)return null;
   const qualification = damageQualification({context: {qualification: {...profile.qualification, ...(options.magicalWeapon !== undefined && options.qualification?.nature === undefined ? {nature:options.magicalWeapon ? "magical" : "normal"} : {}), ...options.qualification}, magicalWeapon: options.magicalWeapon ?? profile.magicalWeapon}, usage: profile.usage});
-  return {dice, faces, formula, openRoll, modifier, qualification, magicalWeapon:qualification.nature === "magical", longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
+  return {supplements,dice, faces, formula, openRoll, modifier, qualification, magicalWeapon:qualification.nature === "magical", longRange: profile.ranged && Boolean(options.longRange ?? profile.longRange),
     fixedModifier: profile.fixedModifier + modifier};
+}
+
+/** Supplemental damage has its own dice/JO and never inherits Strength twice. */
+export function damageSupplementChoices(profile,choices){
+ const rows=profile.supplements??[];if(choices&&(!Array.isArray(choices)||choices.length!==rows.length))return null;
+ const resolved=rows.map((row,index)=>{const choice=choices?.[index]??{},dice=Number(choice.dice??row.parsed.dice),openRoll=Number(choice.openRoll??row.openRoll??0),modifier=Number(choice.modifier??row.parsed.modifier);return {...row,dice,openRoll,modifier};});
+ return resolved.some(row=>!Number.isInteger(row.dice)||row.dice<1||row.dice>100||!Number.isInteger(row.openRoll)||row.openRoll<0||row.openRoll===1||row.openRoll>row.parsed.faces||!Number.isFinite(row.modifier))?null:resolved;
 }

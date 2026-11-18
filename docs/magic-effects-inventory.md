@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 115 ; avec au moins un modèle d'effet répertorié : 361 ; avec jet de dégâts magique : 38 ; avec jet de peur magique : 8 ; avec région fixe : 5.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 115 ; avec au moins un modèle d'effet répertorié : 362 ; avec jet de dégâts magique : 38 ; avec jet de peur magique : 8 ; avec région fixe : 5.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur | Région fixe |
 |---|---|---|---|---:|---:|---:|---|---|---|
@@ -46,7 +46,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Maîtrise de l'eau | Maître des flots | sortilège | `vitner-water-craft:wave-master:8` | 8 | 0 | 4 | — | — | — |
 | Maîtrise des flammes | Ébullition | sortilège | `vitner-flame-craft:heat-water:0` | 5 | 0 | 1 | oui | — | — |
 | Maîtrise des flammes | Flammèche | sortilège | `vitner-flame-craft:spark:1` | 5 | 0 | 1 | — | — | — |
-| Maîtrise des flammes | Main brûlante | sortilège | `vitner-flame-craft:burning-hand:2` | 3 | 0 | 0 | oui | — | — |
+| Maîtrise des flammes | Main brûlante | sortilège | `vitner-flame-craft:burning-hand:2` | 3 | 0 | 1 | oui | — | — |
 | Maîtrise des flammes | Éruption de flammes | sortilège | `vitner-flame-craft:flame-burst:3` | 4 | 0 | 0 | oui | — | oui |
 | Maîtrise des flammes | Protection contre le feu | sortilège | `vitner-flame-craft:protection-from-fire:4` | 6 | 0 | 1 | — | — | — |
 | Maîtrise des flammes | Chaleur | sortilège | `vitner-flame-craft:warmth:6` | 7 | 0 | 1 | — | — | — |

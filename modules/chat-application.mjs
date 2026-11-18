@@ -174,7 +174,7 @@ async function applyOnGM(payload) {
     let result;
     try{result = payload.channel === "fear" ? (fearAdjustment?.profile.dice===0?{applied:0}:await actor.applyFearFactor(amount, {announce: false}))
       : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount,qualification:message.getFlag(SYSTEM_ID,"damageContext")?.qualification})
-        : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, minimumAfterArmor:Number(message.getFlag(SYSTEM_ID,"damageContext")?.minimumAfterArmor)||0, announce: false});
+        : await applyDamageToActor({actor, damage: amount, components:message.getFlag(SYSTEM_ID,"damageContext")?.components, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, minimumAfterArmor:Number(message.getFlag(SYSTEM_ID,"damageContext")?.minimumAfterArmor)||0, announce: false});
     }catch(error){if(reservation?.rollback)await reservation.rollback();throw error;}
     if(!result&&reservation?.rollback)await reservation.rollback();
     if (!result) return {status: "unavailable"};

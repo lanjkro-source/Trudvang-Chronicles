@@ -144,3 +144,16 @@ test('the minimum after armor preserves immunities before and after armor and do
  for(const stage of ['beforeArmor','afterArmor']){actor.system.damageDefenses=[{factor:0,stage}];assert.equal((await applyDamageToActor({actor,damage:3,minimumAfterArmor:4,announce:false})).bodyDamage,0,stage);}
  actor.system.damageDefenses=[];assert.equal((await applyDamageToActor({actor,damage:3,minimumAfterArmor:4,announce:false})).bodyDamage,4);assert.equal(actor.system.resources.body.value,16);
 });
+
+test('a physical-and-fire hit shares armor once and commits health and integrity once',async()=>{
+ const mail=armor('mail',50),updates=[],hp=[];const a={isOwner:true,items:[mail],effects:[],system:{protection:5,resources:{body:{value:30}}},async update(data){hp.push(data);a.system.resources.body.value=data['system.resources.body.value'];},async updateEmbeddedDocuments(type,rows){updates.push(rows);mail.system.breach.value=rows[0]['system.breach.value'];}};
+ const q=type=>({nature:'normal',delivery:'melee',type,protection:'normal'});const result=await applyDamageToActor({actor:a,damage:13,announce:false,components:[{damage:3,qualification:q('blunt')},{damage:10,qualification:q('fire')}]});assert.equal(result.bodyDamage,8);assert.equal(a.system.resources.body.value,22);assert.equal(hp.length,1);assert.equal(updates.length,1);assert.equal(mail.system.breach.value,42);
+});
+test('fire immunity only removes the fire part of a burning punch, while ignoring armor bypasses shared protection',async()=>{
+ const q=type=>({nature:'normal',delivery:'melee',type,protection:'normal'}),parts=[{damage:6,qualification:q('blunt')},{damage:10,qualification:q('fire')}];
+ const a={isOwner:true,items:[],effects:[],system:{protection:5,damageDefenses:[{type:'fire',factor:0}],resources:{body:{value:30}}},async update(data){a.system.resources.body.value=data['system.resources.body.value'];}};assert.equal((await applyDamageToActor({actor:a,damage:16,components:parts,announce:false})).bodyDamage,1);assert.equal(a.system.resources.body.value,29);a.system.damageDefenses=[];a.system.resources.body.value=30;assert.equal((await applyDamageToActor({actor:a,damage:16,components:parts,ignoreArmor:true,announce:false})).bodyDamage,16);
+});
+
+test('the caster is immune only to the fire component from their own burning hand',async()=>{
+ const a={uuid:'Actor.caster',isOwner:true,items:[],effects:[],system:{protection:0,resources:{body:{value:30}}},async update(data){a.system.resources.body.value=data['system.resources.body.value'];}};const parts=[{damage:6,qualification:{nature:'normal',delivery:'melee',type:'blunt',protection:'normal'}},{damage:10,excludedActorUuid:a.uuid,qualification:{nature:'normal',delivery:'melee',type:'fire',protection:'normal'}}];assert.equal((await applyDamageToActor({actor:a,damage:16,components:parts,announce:false})).bodyDamage,6);a.system.resources.body.value=30;parts[1].excludedActorUuid='Actor.other';assert.equal((await applyDamageToActor({actor:a,damage:16,components:parts,announce:false})).bodyDamage,16);
+});

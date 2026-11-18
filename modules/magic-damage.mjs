@@ -48,6 +48,7 @@ export function magicDamageExplanations(document,damage){
 /** Use the same confirmation and target application card as weapon damage. */
 export async function rollMagicDamage({document,actor,context,targets,baseOnly=false}={}) {
   if(!actor?.isOwner)return null;
+  if(POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.damageRoll?.requiresAttack)return ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicDamage.AttackRequired"));
   if(baseOnly&&!magicDamageHasBaseTargets(document,context))return null;
   const damage=magicDamageProfile(document,context,{baseOnly});if(!damage)return null;
   const item={name:baseOnly?`${document.name} — ${game.i18n.localize("TRUDVANG.MagicDamage.BaseRecipients")}`:document.name,img:document.img,system:{category:"magic",damage:damage.formula,openRoll:damage.openRoll,damageBonus:0,strengthApplies:false,damageQualification:document.system?.damageQualification ?? damage.qualification}};

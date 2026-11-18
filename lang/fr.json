@@ -1006,7 +1006,9 @@
       "DeliveryRanged": "Arme à distance ou de lancer",
       "Origin": "Origine",
       "FixedHint": "Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul.",
-      "ArmorReduction": "Réduction de la protection adverse (VP)"
+      "ArmorReduction": "Réduction de la protection adverse (VP)",
+      "PrimaryComponent": "Coup physique",
+      "ComponentModifier": "Modificateur de cette composante"
     },
     "Dialog": {
       "MountedCombat": "Combat monté",
@@ -1526,7 +1528,8 @@
         "objectUse": "Modificateur de VC/SV lorsque l’objet est utilisé",
         "itemProtection": "Modificateur de VP propre à cet objet",
         "equipment": "Équipement temporaire",
-        "objectParryOutnumbered": "Parade en infériorité numérique"
+        "objectParryOutnumbered": "Parade en infériorité numérique",
+        "weaponLock": "Interdiction d’armes pendant un round"
       },
       "ProfileHelp": "Utilisez Remplacer pour définir une propriété. Booléens : true / false ; nombres : 5 ; facteur de peur : 1d10. Pour ajouter le vol : system.transformation.movement = [{\"mode\":\"flight\",\"method\":\"replace\",\"value\":24}]. Pour les dégâts de Rage : system.transformation.damage = {\"value\":2,\"usages\":[\"melee\",\"throwing\",\"natural\"]}. Une liste ou un objet doit être un JSON valide.",
       "InvalidProfileChange": "Valeur invalide pour {path}. Consultez les exemples des modifications de profil.",
@@ -8640,7 +8643,7 @@
         },
         "vitner-flame-craft:burning-hand:2": {
           "Name": "Main brûlante",
-          "Summary": "Projette une flamme depuis la main pour infliger des dégâts de feu à une cible.",
+          "Summary": "Enflamme une main : un coup de poing réussi inflige ses dégâts habituels et des dégâts de feu supplémentaires.",
           "Description": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé). En combat, l’enchanteur doit réussir une attaque pour pouvoir toucher un ennemi. Les dégâts causés par la Main brûlante viennent s’ajouter aux dégâts normaux infligés par le coup de poing en cas d’attaque réussie (1d5). Pour éviter l’attaque de l’enchanteur, la cible utilise les mêmes règles que pour un combat classique, ce qui signifie qu’elle peut tenter de parer ou d’esquiver le coup. En plus des dégâts directs qu’elle provoque, la Main brûlante a une petite chance d’embraser les objets inflammables qu’elle touche, à la discrétion du maître de jeu. Les armures absorbent les dégâts selon les règles habituelles, mais elles peuvent prendre feu si elles se composent de matériaux inflammables. L’enchanteur ne peut utiliser aucune arme au cours du tour où il évoque ce sort.",
           "SwedishName": "Loghönd",
           "DamageQualificationNote": "",
@@ -14586,6 +14589,15 @@
           "SourcePage": "167",
           "Duration": "1 minute"
         },
+        "vitner-flame-craft:burning-hand:2#burning-hands": {
+          "Name": "Main brûlante",
+          "Summary": "Une main embrasée ajoute ses dégâts de feu aux coups de poing.",
+          "Description": "<p>Les attaques des mains embrasées utilisent les PC et les actions à mains nues. Les dégâts physiques du poing et les dégâts de feu sont distingués sur une carte commune ; la Force ne s’ajoute qu’au coup de poing. La deuxième main, si achetée, utilise les dégâts de feu de base. Les armures s’appliquent au coup ; une parade ou une esquive reste possible. Aucune arme ne peut être utilisée pendant le round du lancement. L’embrasement des objets touchés reste au MJ. L’enchanteur est immunisé au feu produit par sa propre main.</p>",
+          "SourceName": "Main brûlante",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "168",
+          "Duration": "4 tours de jeu"
+        },
         "vitner-flame-craft:protection-from-fire:4#effect": {
           "Name": "Protection contre le feu",
           "Summary": "Protège la créature et son équipement contre le feu ordinaire, mais pas contre les flammes magiques ou le feu des dragons. À appliquer manuellement.",
@@ -18779,7 +18791,8 @@
       "Ineligible": "Une créature sélectionnée ne remplit pas les conditions de ce facteur de peur (ouïe, intelligence ou exclusion du lanceur). Elle n’a pas été affectée."
     },
     "MagicDamage": {
-      "BaseRecipients": "Dégâts — version de base"
+      "BaseRecipients": "Dégâts — version de base",
+      "AttackRequired": "Ces dégâts se lancent depuis l’attaque accordée par l’effet."
     },
     "PersistentDamage": {
       "Resist": "Résister aux dégâts",
@@ -19050,6 +19063,12 @@
       "AlreadyPlaced": "La zone de ce lancement est déjà placée et ne peut pas être déplacée.",
       "MoveNextRound": "Cette zone ne pourra être déplacée qu’au prochain round.",
       "InstantDissipated": "{name} : les flammes se dissipent."
+    },
+    "BurningHand": {
+      "First": "Main brûlante — première main",
+      "Second": "Main brûlante — seconde main",
+      "Profile": "{hands} main(s) embrasée(s) : coup de poing + {fire} feu pour la première ; seconde main : {second} si présente.",
+      "WeaponLock": "Main brûlante : aucune arme utilisable pendant le round du lancement."
     }
   }
 }

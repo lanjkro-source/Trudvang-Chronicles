@@ -1178,6 +1178,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.DamageRoll.Origin` | Origin | Origine |
 | `TRUDVANG.DamageRoll.FixedHint` | For fixed damage, use 0 dice and a nonzero modifier. | Pour des dégâts fixes, utilisez 0 dé et un modificateur non nul. |
 | `TRUDVANG.DamageRoll.ArmorReduction` | Enemy protection reduction (PV) | Réduction de la protection adverse (VP) |
+| `TRUDVANG.DamageRoll.PrimaryComponent` | Physical hit | Coup physique |
+| `TRUDVANG.DamageRoll.ComponentModifier` | Modifier for this component | Modificateur de cette composante |
 
 ## `TRUDVANG.Dialog`
 
@@ -1782,6 +1784,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Profile.itemProtection` | Protection Value modifier local to this item | Modificateur de VP propre à cet objet |
 | `TRUDVANG.Effect.Profile.equipment` | Temporary equipment | Équipement temporaire |
 | `TRUDVANG.Effect.Profile.objectParryOutnumbered` | Outnumbered parry | Parade en infériorité numérique |
+| `TRUDVANG.Effect.Profile.weaponLock` | Weapon restriction for one round | Interdiction d’armes pendant un round |
 
 ## `TRUDVANG.Effect.Activation`
 
@@ -11419,6 +11422,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.SourcePage` | 109 | 167 |
 | `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect.Duration` | 1 minute | 1 minute |
 
+## `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.Name` | Burning Hand | Main brûlante |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.Description` | <p>Burning-hand attacks use unarmed CP and actions. Physical punch damage and fire damage are shown separately on one card; Strength only modifies the punch. The optional second hand uses base fire damage. Armor applies to the hit; parrying or evading remains possible. No weapon can be used during the casting round. Ignition of touched objects remains with the GM. The caster is immune to the fire produced by their own hand.</p> | <p>Les attaques des mains embrasées utilisent les PC et les actions à mains nues. Les dégâts physiques du poing et les dégâts de feu sont distingués sur une carte commune ; la Force ne s’ajoute qu’au coup de poing. La deuxième main, si achetée, utilise les dégâts de feu de base. Les armures s’appliquent au coup ; une parade ou une esquive reste possible. Aucune arme ne peut être utilisée pendant le round du lancement. L’embrasement des objets touchés reste au MJ. L’enchanteur est immunisé au feu produit par sa propre main.</p> |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.SourceName` | Burning Hand | Main brûlante |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.SourceBook` | Player's Handbook | Livre des règles |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.SourcePage` | 109 | 168 |
+| `TRUDVANG.Content.Transformation.vitner-flame-craft:burning-hand:2#burning-hands.Duration` | 4 tours de jeu | 4 tours de jeu |
+
 ## `TRUDVANG.Content.Transformation.vitner-flame-craft:protection-from-fire:4#effect`
 
 | Clé | English | Français |
@@ -16507,6 +16521,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.MagicDamage.BaseRecipients` | Damage — basic version | Dégâts — version de base |
+| `TRUDVANG.MagicDamage.AttackRequired` | Roll this damage from the attack granted by the effect. | Ces dégâts se lancent depuis l’attaque accordée par l’effet. |
 
 ## `TRUDVANG.PersistentDamage`
 
@@ -16834,3 +16849,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.AlreadyPlaced` | This casting’s area is already placed and cannot be moved. | La zone de ce lancement est déjà placée et ne peut pas être déplacée. |
 | `TRUDVANG.SpellZone.MoveNextRound` | This area can only be moved again next round. | Cette zone ne pourra être déplacée qu’au prochain round. |
 | `TRUDVANG.SpellZone.InstantDissipated` | {name}: the flames dissipate. | {name} : les flammes se dissipent. |
+
+## `TRUDVANG.BurningHand`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.BurningHand.First` | Burning Hand — first hand | Main brûlante — première main |
+| `TRUDVANG.BurningHand.Second` | Burning Hand — second hand | Main brûlante — seconde main |
+| `TRUDVANG.BurningHand.Profile` | {hands} burning hand(s): punch + {fire} fire for the first; second hand: {second} if present. | {hands} main(s) embrasée(s) : coup de poing + {fire} feu pour la première ; seconde main : {second} si présente. |
+| `TRUDVANG.BurningHand.WeaponLock` | Burning Hand: weapons cannot be used during the casting round. | Main brûlante : aucune arme utilisable pendant le round du lancement. |

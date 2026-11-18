@@ -124,3 +124,6 @@ export function transformationRollRows(actor,{target=0,skillKey="",traitKey="",m
  }
  return rows;
 }
+
+/** Restrictions granted by an effect can end with a round while the effect continues. */
+export function weaponUseLocked(actor,combat=globalThis.game?.combat){return Boolean(combat?.started&&activeTransformations(actor).some(effect=>{const lock=effectRules(effect).weaponLock;return Boolean(lock)&&lock.combatId===combat.id&&Number(lock.round)===Number(combat.round);}));}

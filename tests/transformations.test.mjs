@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,376);
+ assert.equal(Object.keys(sources).length,377);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1672,4 +1672,13 @@ test('anti-magic, imprisonment and vitner resistance expose tests with their fro
   assert.equal(magicResistanceRows(RULE_TESTS_BY_CATALOG_ID[id][0],{context:created.flags[S].transformation.ruleTestContext,actor}).reduce((sum,row)=>sum+row.value,0),bonus);
   assert.ok(created.duration.value>0);
  }}finally{globalThis.game=previous;}
+});
+
+test('Burning Hand freezes improved first-hand fire and base second-hand fire, shares unarmed pools and expires its weapon lock next round',async t=>{
+ const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils,documents:foundry.documents};t.after(()=>{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;});const id='vitner-flame-craft:burning-hand:2',key=id+'#burning-hands';foundry.utils={deepClone:structuredClone};foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:100,combat:'combat',round:2})}}};globalThis.ui={notifications:{warn:message=>assert.fail(message)}};
+ for(const lang of ['fr','en']){const language=JSON.parse(fs.readFileSync('lang/'+lang+'.json','utf8')),lookup=k=>k.split('.').reduce((v,k)=>v?.[k],language)??k;globalThis.game={user:{id:'gm'},users:{activeGM:{isSelf:true}},combat:{id:'combat',round:2,started:true},time:{worldTime:100},i18n:{lang,localize:lookup,format:(key,data)=>Object.entries(data??{}).reduce((s,[k,v])=>s.replaceAll('{'+k+'}',String(v)),lookup(key))}};
+  const a={uuid:'Actor.caster',name:'Caster',type:'character',documentName:'Actor',isOwner:false,isInActiveCombat:true,items:[],effects:[],system:{skills:{fighting:{value:8}}},canUserModify:()=>true,async createTrudvangEffect(data){const e={...data,id:'hands',parent:a};a.effects=[e];return e;},async createEmbeddedDocuments(type,rows){a.items.push(...rows.map((row,i)=>({...row,id:'hand'+i,parent:a})));return a.items;}};
+  const e=await applyTransformation(a,key,{counts:[2,1,3],context:{sourceId:id,casterUuid:a.uuid,countsById:{[id+':0']:2,[id+':1']:1,[id+':2']:3},selfSource:true},skipDialog:true});const rules=effectRules(e);assert.equal(e.duration.value,6);assert.equal(rules.attacks.length,2);assert.equal(rules.attacks[0].damage,'1d5');assert.equal(rules.attacks[0].damageComponents[0].openRoll,8);assert.equal(rules.attacks[1].damageComponents[0].openRoll,0);assert.deepEqual(rules.weaponLock,{combatId:'combat',round:2});assert.doesNotMatch(e.description,/undefined|TRUDVANG\./);assert.match(e.description,/1d10/);
+  a.isOwner=true;await syncEffectGrants(e,a);assert.equal(a.items.length,2);assert.ok(a.items.every(i=>i.system.isUnarmed&&i.system.naturalCombatPool==='natural'));assert.equal(a.items[0].flags[S].supplementalDamage[0].openRoll,8);const {weaponUseLocked}=await import('../modules/rules/transformation-profile.mjs');assert.equal(weaponUseLocked(a),true);game.combat.round=3;assert.equal(weaponUseLocked(a),false);const {cleanGrants}=await import('../modules/transformations.mjs');a.deleteEmbeddedDocuments=async(type,ids)=>{a.items=a.items.filter(i=>!ids.includes(i.id));};await cleanGrants(e);assert.equal(a.items.length,0);
+ }
 });

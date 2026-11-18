@@ -57,7 +57,7 @@ export function prepareDamageTargets(targets) {
  * remaining protection (natural armor and effects). Each armor item loses the
  * excess that passes through its current VP; the remainder reaches Body Points.
  */
-export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0, protectionFor = protection, armorReduction = 0} = {}) {
+export function calculateArmoredDamage({damage, totalProtection, armor = [], outerProtection = 0, protectionFor = protection, armorReduction = 0, spentProtection = new Map()} = {}) {
   let penetration=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(armorReduction))));
   const reduce=value=>{const used=Math.min(Math.max(0,value),penetration);penetration-=used;return Math.max(0,value-used);};
   const rawOuter=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
@@ -67,20 +67,28 @@ export function calculateArmoredDamage({damage, totalProtection, armor = [], out
   totalProtection=effectiveOuter+[...effectiveArmor.values()].reduce((sum,n)=>sum+n,0)+effectiveOther;
   protectionFor=item=>effectiveArmor.get(item)??0;outerProtection=effectiveOuter;
   const outer=Math.min(Math.max(0,Math.trunc(number(totalProtection))),Math.max(0,Math.trunc(number(outerProtection))));
-  let remaining = Math.max(0, Math.trunc(number(damage)) - outer);
+  const absorb=(key,value,incoming)=>{const available=Math.max(0,value-(spentProtection.get(key)??0)),used=Math.min(incoming,available);spentProtection.set(key,(spentProtection.get(key)??0)+used);return incoming-used;};
+  let remaining = absorb('outer',outer,Math.max(0, Math.trunc(number(damage))));
   const armorProtection = armor.reduce((total, item) => total + protectionFor(item), 0);
   const armorDamage = armor.map(item => {
-    const excess = Math.max(0, remaining - protectionFor(item));
+    const excess = absorb(item.uuid??item,protectionFor(item),remaining);
     remaining = excess;
     return {item, protection: protectionFor(item), ...damageIntegrity(item, excess)};
   });
   const otherProtection = Math.max(0, Math.trunc(number(totalProtection)) - armorProtection - outer);
-  return {bodyDamage: Math.max(0, remaining - otherProtection), armorDamage};
+  return {bodyDamage: absorb('other',otherProtection,remaining), armorDamage};
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification,minimumAfterArmor=0} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification,minimumAfterArmor=0,components=null,prepareOnly=false,spentProtection} = {}) {
   if (!actor?.isOwner) return null;
+  if(components?.length){
+    const budget=new Map(),prepared=[];const sum=components.reduce((n,c)=>n+number(c.damage),0);
+    for(const [index,component]of components.entries())prepared.push(await applyDamageToActor({actor,damage:component.excludedActorUuid&&component.excludedActorUuid===actor.uuid?0:Math.max(0,number(component.damage)+(index===0?number(damage)-sum:0)),qualification:component.qualification,usage,ignoreArmor,announce:false,prepareOnly:true,spentProtection:budget}));
+    const armor=new Map();for(const part of prepared)for(const row of part.armorDamage){const previous=armor.get(row.item)??{...row,integrityLoss:0};previous.integrityLoss+=row.integrityLoss;previous.integrity=integrity(row.item)-previous.integrityLoss;armor.set(row.item,previous);}
+    const result={bodyDamage:prepared.reduce((n,r)=>n+r.bodyDamage,0),armorDamage:[...armor.values()],resistances:prepared.flatMap(r=>r.resistances),qualification,components:prepared};
+    return commitActorDamage(actor,result,{ignoreArmor,announce});
+  }
   const qualified = damageQualification({context: {magicalWeapon, qualification: {type: damageType, ...qualification}}, usage});
   ignoreArmor ||= qualified.protection === "none";
   const applicableEffects = Array.from(actor.allApplicableEffects?.() ?? actor.effects ?? []).filter(effect => !effect.disabled && !effect.isSuppressed && effect.active !== false && !effect.duration?.expired);
@@ -107,19 +115,23 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
     : number(actor.system?.protection)+conditionalProtection+wornArmor.reduce((sum,item)=>sum+protectionFor(item)-protection(item),0);
   const result = ignoreArmor
     ? {bodyDamage: amount, armorDamage: []}
-    : calculateArmoredDamage({damage: amount, totalProtection, armor, protectionFor,armorReduction:qualified.armorReduction,
+    : calculateArmoredDamage({damage: amount, totalProtection, armor, protectionFor,armorReduction:qualified.armorReduction,spentProtection,
       outerProtection:conditionalProtection+(specialProtection ? 0 : activeTransformations(actor).reduce((sum,effect)=>sum+Math.max(0,number(effectRules(effect).outerProtection)),0))});
   result.conditionalProtection=conditionalProtection;
   result.qualification=qualified;
   result.resistances=resistance.applied;
-  const armorUpdates = result.armorDamage
-    .filter(entry => entry.integrityLoss > 0)
-    .map(entry => ({_id: entry.item.id, ...itemIntegrityUpdate(entry.item,entry.integrity)}));
-  if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   if(amount>0&&Number.isFinite(minimumAfterArmor))result.bodyDamage=Math.max(result.bodyDamage,Math.max(0,Math.trunc(minimumAfterArmor)));
   const bodyResistance = qualifyDamage(result.bodyDamage, qualified, rules.filter(rule => rule.stage !== "beforeArmor"));
   result.resistances.push(...bodyResistance.applied);
   result.bodyDamage = Math.ceil(bodyResistance.amount * (actor.transformationProfile?.damageTakenFactor ?? 1));
+  if(prepareOnly)return result;
+  return commitActorDamage(actor,result,{ignoreArmor,announce});
+}
+async function commitActorDamage(actor,result,{ignoreArmor=false,announce=true}={}){
+  const armorUpdates = result.armorDamage
+    .filter(entry => entry.integrityLoss > 0)
+    .map(entry => ({_id: entry.item.id, ...itemIntegrityUpdate(entry.item,entry.integrity)}));
+  if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   for (const effect of ignoreArmor ? [] : activeTransformations(actor)) {
     const meta = effect.flags?.[TRANSFORMATION_SCOPE]?.transformation;
     const integrity = remainingStoneIntegrity(effect);

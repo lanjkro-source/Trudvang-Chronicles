@@ -11313,7 +11313,8 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "melee",
         "type": "fire",
         "protection": "normal"
-      }
+      },
+      "requiresAttack": true
     },
     "damageQualification": {
       "nature": "normal",
@@ -11335,7 +11336,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-flame-craft:burning-hand:2:1",
         "cost": 3,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "vitner-flame-craft:burning-hand:2:2",

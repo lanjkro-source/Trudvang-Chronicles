@@ -145,7 +145,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     magicFearBase: Boolean(!pendingPerfect && success && item && magicFearHasBaseTargets(item,ruleTestContext)),
     magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
     spellZone:Boolean(!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone),
-    magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
+    magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
     actorUuid: actor.uuid,
     usage,
     longRange: Boolean(longRange)
@@ -187,7 +187,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.spellZone=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone);
-    card.magicDamage=Boolean(!card.spellZone&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
+    card.magicDamage=Boolean(!card.spellZone&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
     card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
@@ -579,6 +579,7 @@ export async function damageRollDialog({item, profile}) {
   const DialogClass = foundry.applications.api.DialogV2;
   const readChoice = root => {
    const choice=damageRollChoice(profile, {
+    supplements:(profile.supplements??[]).map((row,index)=>({dice:root.querySelector(`[name=damage-extra-dice-${index}]`)?.value??row.parsed.dice,openRoll:root.querySelector(`[name=damage-extra-open-${index}]`)?.value??row.openRoll,modifier:root.querySelector(`[name=damage-extra-modifier-${index}]`)?.value??row.parsed.modifier})),
     dice: root.querySelector("[name=damage-dice]")?.value,
     faces: root.querySelector("[name=damage-faces]")?.value,
     formula: root.querySelector("[name=damage-formula]")?.value,
@@ -591,7 +592,7 @@ export async function damageRollDialog({item, profile}) {
    return choice;
   };
   const content = await renderTemplate("systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs", {
-    ...profile, qualificationFields: damageQualificationFields(profile.qualification ?? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}, {origin:profile.generic,note:profile.qualificationNote}), minimumDice:profile.allowZeroDice?0:1, dieTypes:[3,4,5,6,10].map(value=>({value,selected:value===profile.parsed?.faces})), rows: damageBreakdownRows(profile)
+    ...profile,supplements:(profile.supplements??[]).map(row=>({...row,icons:damageIcons(row.qualification)})), qualificationFields: damageQualificationFields(profile.qualification ?? {nature:"normal",delivery:"other",type:"other",protection:"normal",material:""}, {origin:profile.generic,note:profile.qualificationNote}), minimumDice:profile.allowZeroDice?0:1, dieTypes:[3,4,5,6,10].map(value=>({value,selected:value===profile.parsed?.faces})), rows: damageBreakdownRows(profile)
   });
   class DamageRollDialog extends DialogClass {
     async _onRender(context, options) {
@@ -610,7 +611,8 @@ export async function damageRollDialog({item, profile}) {
         const openRoll = profile.parsed && choice.openRoll
           ? ` ${game.i18n.format("TRUDVANG.DamageRoll.OpenRollPreview", {threshold: choice.openRoll})}` : "";
         const fixed = choice.fixedModifier ? ` ${signedDamage(choice.fixedModifier)}` : "";
-        output.textContent = `${dice}${openRoll}${fixed}${choice.longRange ? ` · ${game.i18n.localize("TRUDVANG.DamageRoll.HalfDamage")}` : ""}`;
+        const extra=choice.supplements.map(row=>` + ${row.dice}d${row.parsed.faces}${row.openRoll?` (${game.i18n.localize("TRUDVANG.Field.OpenRollShort")} ${row.openRoll})`:""}${row.modifier?` ${signedDamage(row.modifier)}`:""}`).join("");
+        output.textContent = `${dice}${openRoll}${fixed}${extra}${choice.longRange ? ` · ${game.i18n.localize("TRUDVANG.DamageRoll.HalfDamage")}` : ""}`;
       };
       root.querySelectorAll("input, select").forEach(input => {input.addEventListener("input", refresh);input.addEventListener("change", refresh);});
       refresh();
@@ -671,15 +673,21 @@ export async function rollDamage({actor, item, context = {}}) {
     rolls = [roll];
     explosions=Array.from(roll.dice??[]).flatMap(die=>die.results??[]).filter(result=>result.exploded).length;
   }
+  const components=[];
+  if(choice.supplements.length){
+    components.push({name:game.i18n.localize('TRUDVANG.DamageRoll.PrimaryComponent'),damage:total,qualification:choice.qualification});
+    for(const row of choice.supplements){const rolled=await openDice({dice:row.dice,faces:row.parsed.faces,threshold:row.openRoll,modifier:row.modifier}),damage=Math.max(0,rolled.total);components.push({name:row.name,damage,qualification:row.qualification,...(row.excludedActorUuid?{excludedActorUuid:row.excludedActorUuid}:{})});rolls.push(...rolled.diceRolls);explosions+=rolled.explosions;detail+=` + (${rolled.rolls.join(' + ')}${row.modifier?` ${signedDamage(row.modifier)}`:''})`;total+=damage;}
+  }
   const modifierDetails = damageBreakdownRows(profile).map(row => `${row.label} : ${row.value}${row.source ? ` (${row.source})` : ""}`);
   if (choice.modifier) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.SituationalDetail", {amount: signedDamage(choice.modifier)}));
   if (parsed && choice.dice !== parsed.dice) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.DiceAdjusted", {before: parsed.dice, after: choice.dice}));
   if (parsed && choice.openRoll !== profile.openRoll) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.OpenRollAdjusted", {before: profile.openRoll, after: choice.openRoll}));
   if (!parsed && choice.formula !== profile.formula) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.FormulaAdjusted", {before: profile.formula, after: choice.formula}));
-  if (total !== unclampedTotal) {
+  if ((components[0]?.damage??total) !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
   }
 
+  for(const row of choice.supplements)modifierDetails.push(`${row.name} : ${row.dice}d${row.parsed.faces}${row.openRoll?` (${game.i18n.localize('TRUDVANG.Field.OpenRollShort')} ${row.openRoll})`:''}${row.modifier?` ${signedDamage(row.modifier)}`:''}`);
   const beforeRange=total;
   if (choice.longRange) {
     const beforeLongRange = total;
@@ -696,6 +704,7 @@ export async function rollDamage({actor, item, context = {}}) {
     itemName: item.name,
     itemImg: item.img,
     total,
+    components:components.map(row=>({...row,icons:damageIcons(row.qualification)})),
     triggeredEffects:damageEffects.map(entry=>game.i18n.format('TRUDVANG.WeaponHit.Triggered',{name:game.i18n.localize(`TRUDVANG.Content.Power.${entry.sourceId}.Name`),effect:game.i18n.localize(entry.tier.summaryKey)})),
     conditionalDamage,
     conditionalLongRange: Boolean(choice.longRange),
@@ -707,7 +716,7 @@ export async function rollDamage({actor, item, context = {}}) {
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
   });
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return context.returnMessage?{total,message}:total;
 }
 

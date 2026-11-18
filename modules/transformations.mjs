@@ -112,7 +112,7 @@ async function askFields(title,fields,preview=()=>"",intro="",runeDurations=[]){
 }
 function naturalWeapon(row,effectId){
  const profile=naturalWeaponQualification(row.name);
- return {name:row.name,type:"weapon",img:"icons/svg/sword.svg",system:{category:"natural",material:profile?.material||"natural",damageQualification:row.damageQualification??profile?.damageQualification??{nature:"normal",delivery:"melee",type:"other",protection:"normal"},combatSpecialty:"natural",equipped:true,strengthApplies:true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId}}};
+ return {name:row.name,type:"weapon",img:row.img??"icons/svg/sword.svg",system:{category:"natural",material:profile?.material||"natural",damageQualification:row.damageQualification??profile?.damageQualification??{nature:"normal",delivery:"melee",type:"other",protection:"normal"},combatSpecialty:"natural",equipped:true,strengthApplies:true,isUnarmed:row.unarmedPool===true,quantity:1,damage:row.damage,openRoll:row.openRoll??0,naturalCombatPool:row.unarmedPool?"natural":row.name,naturalCombatPoints:row.combatPoints??0,weaponActions:row.maxActions||4},flags:{[SCOPE]:{transformationGrant:effectId,...(row.damageComponents?{supplementalDamage:row.damageComponents}:{})}}};
 }
 export function selectFormData(form,policy){
  const s=form.actor.system;
@@ -398,6 +398,12 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
    else{rules.damage??={value:0,usages:["melee","throwing","natural"]};rules.damage.value+=count*p.value;}
   }
  }
+ if(!resolvedCopy&&template.burningHands){
+  const definition=POWER_DETAILS_BY_ID[template.sourceId].damageRoll,config=template.burningHands;
+  const level=Math.max(0,Number(casting.countsById?.[config.damageOptionId])||0),damage=definition.steps[Math.min(level,definition.steps.length-1)],second=Number(casting.countsById?.[config.secondOptionId])>0;
+  rules.attacks=[damage,...(second?[definition.steps[0]]:[])].map((step,index)=>({name:game.i18n.localize(index?'TRUDVANG.BurningHand.Second':'TRUDVANG.BurningHand.First'),damage:config.punch,openRoll:0,unarmedPool:true,img:'icons/svg/fire.svg',damageQualification:{nature:'normal',delivery:'melee',type:'blunt',protection:'normal'},damageComponents:[{name:effectName,formula:step.formula,openRoll:step.openRoll,qualification:definition.qualification,...(config.selfImmune?{excludedActorUuid:casting.casterUuid||actor.uuid}:{})}]}));
+  if(config.blockWeaponsCastingRound&&game.combat?.started&&actor.isInActiveCombat)rules.weaponLock={combatId:game.combat.id,round:game.combat.round};
+ }
  if(rules.vitality){addVitality(await rollEffectValue(rules.vitality,{actor,name:effectName}));delete rules.vitality;}
  // Replacing a dynamic effect must resolve against the actor without the old
  // instance. A detached clone retains all other effects and equipment; it never
@@ -453,6 +459,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const copiedProgress=stored?.flags?.[SCOPE]?.ruleTestProgress;
  let summary=(copiedProgress?(supplied?.parent?.uuid===actor.uuid?metadata(supplied)?.summary:copiedProgress.baseSummary):null)||copiedResistance?.payload.summary||relief?.summary||metadata(supplied)?.summary||parentSummary||text(key,"Summary");
  if(!resolvedCopy&&template.fearDegreeProtection)summary=game.i18n.format("TRUDVANG.MagicFear.ProtectionValues",{degrees:rules.fearReductionDegrees});
+ if(!resolvedCopy&&template.burningHands){const hand=rules.attacks[0].damageComponents[0];summary=game.i18n.format('TRUDVANG.BurningHand.Profile',{hands:rules.attacks.length,fire:hand.formula+(hand.openRoll?` (${game.i18n.localize('TRUDVANG.Field.OpenRollShort')} ${hand.openRoll})`:''),second:POWER_DETAILS_BY_ID[template.sourceId].damageRoll.steps[0].formula});}
  if(water)summary=game.i18n.format("TRUDVANG.WaterMovement.Values",water);
  if(leap)summary=game.i18n.format("TRUDVANG.Mobility.LeapValues",leap);
  if(itemValues)summary=game.i18n.format('TRUDVANG.Transformation.ItemMagicValues',Object.fromEntries(Object.entries(itemValues).map(([key,value])=>[key,typeof value==='number'&&value>0?`+${value}`:value])));
@@ -494,7 +501,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
   summary=game.i18n.format("TRUDVANG.Transformation.FeverValues",{value,damage:formula});
  }
  if(!resolvedCopy && template.inputKey && String(answers.effectInput??"").trim())summary+=` — ${String(answers.effectInput).trim()}`;
- const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
+ const meta={key,sourceId:template.sourceId,summary,summaryResolved:Boolean(template.burningHands||template.rolledModifier||Number.isInteger(template.attackTooltip)||template.armorBlessing||template.weaponDamage||template.inputKey||template.senseTooltip||template.summaryParts||(template.parameters??[]).some(p=>p.target==="note"&&(p.skill||p.tooltip))),input:resolvedCopy?(metadata(supplied)?.input??""):String(answers.effectInput??"").trim(),inputId:resolvedCopy?(metadata(supplied)?.inputId??""):(answers.effectInputId??""),...(template.levelParameter?{powerLevel:resolvedCopy?(metadata(supplied)?.powerLevel??template.levelParameter.default):Math.max(0,Number(answers.powerLevel??template.levelParameter.default)||0)}:{}),editableChanges:true,resolved:true,...(resolvedCopy&&(metadata(supplied)?.resistanceConsequence||/* TEMPORARY WORLD MIGRATION */legacyResistanceConsequence(stored))?{resistanceConsequence:true}:{}),related:template.related??[],temporaryHPSpent:0,stoneIntegritySpent:0,appliedAt:game.time.worldTime,sourceUuid:source?.uuid||"",ruleTestContext:casting,powerContributions};
  if(template.fearDegreeProtection)meta.summaryResolved=true;
  if(water){meta.waterMovement=water;meta.summaryResolved=true;}
  else if(resolvedCopy&&rules.movement?.some(row=>row.method==="waterDegrees")){
@@ -514,7 +521,7 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(itemValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(qualityValues){meta.summaryResolved=true;description+=`<p>${escapeHtml(summary)}</p>`;}
  if(!resolvedCopy&&template.runeTiers)description=game.i18n.localize(template.runeTiers[runeLevel-1].descriptionKey);
- if(!resolvedCopy&&(template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
+ if(!resolvedCopy&&(template.burningHands||template.rolledModifier||template.weaponDamage||template.armorBlessing||Number.isInteger(template.attackTooltip)))description+=`<p>${escapeHtml(summary)}</p>`;
  if(!resolvedCopy&&template.aura?.light){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${escapeHtml(bonus)}</p>`;}
  if(!resolvedCopy&&template.displayPowerOptions?.length){
   const options=template.displayPowerOptions.flatMap(index=>{

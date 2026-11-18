@@ -151,6 +151,7 @@ for(const kind of ["powers","feats"]){
      source:{...(c==="fr"?entry:englishEntry).source,name:(c==="fr"?entry:englishEntry).name},
      ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:effectParameters(entry,t)});
    const sourceRules=rulesFromChanges(t.changes),translatedRules=rulesFromChanges(translated.changes);
+   if(JSON.stringify(t.burningHands??null)!==JSON.stringify(translated.burningHands??null)||t.burningHands&&(!entry.damageRoll?.requiresAttack||['secondOptionId','damageOptionId'].some(key=>!entry.powerLevels.some(p=>p.optionId===t.burningHands[key]))||!/^\d+d(?:3|4|5|6|10)(?:\s*\+\s*\d+)?$/i.test(t.burningHands.punch)||typeof t.burningHands.selfImmune!=='boolean'||typeof t.burningHands.blockWeaponsCastingRound!=='boolean'))throw Error('Invalid burning hands configuration '+key);
    if(t.attackTooltip!==translated.attackTooltip || (t.attackTooltip!==undefined&&(!Number.isInteger(t.attackTooltip)||!sourceRules.attacks?.[t.attackTooltip])))throw Error(`Invalid attack tooltip for ${key}`);
    for(const id of sourceRules.powerIds??[])if(!powerIds.has(id))throw Error(`Unknown granted power ${id} in ${key}`);
    if(t.levelParameter){

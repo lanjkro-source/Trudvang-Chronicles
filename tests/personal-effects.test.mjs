@@ -79,3 +79,7 @@ test('an aura source is still automatically put on the caster before a token or 
  try{await rollUnder({actor:a,item,kind:'divine',target:15});assert.equal(created.length,1);assert.equal(created[0].flags[S].transformation.ruleTestContext.auraSource,true);assert.equal(cards.at(-1).transformationLinks,'');}
  finally{game.users.activeGM=old;}
 });
+
+test('a successful Burning Hand cast automatically grants the two attacks with frozen fire and no premature damage button',async()=>{
+ const a=caster(),id='vitner-flame-craft:burning-hand:2',item=itemFor(a,id,'spell');await rollUnder({actor:a,item,kind:'spell',target:15,powerLevelCounts:[2,1,4]});assert.equal(created.length,1);assert.equal(a.items.filter(i=>i.type==='weapon').length,2);const hands=a.items.filter(i=>i.type==='weapon');assert.equal(hands[0].flags[S].supplementalDamage[0].formula,'1d10 + 1');assert.equal(hands[0].flags[S].supplementalDamage[0].openRoll,8);assert.equal(hands[1].flags[S].supplementalDamage[0].formula,'1d10');assert.equal(hands[1].flags[S].supplementalDamage[0].openRoll,0);assert.equal(cards.at(-1).magicDamage,false);assert.equal(dialogs.length,0);assert.equal(created[0].duration.value,6);assert.deepEqual(warnings,[]);
+});

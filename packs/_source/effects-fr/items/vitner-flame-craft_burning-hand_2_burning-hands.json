@@ -1,0 +1,45 @@
+{
+  "_id": "JOr6iXpVqWrXsYtZ",
+  "_key": "!items!JOr6iXpVqWrXsYtZ",
+  "name": "Main brûlante",
+  "type": "effect",
+  "img": "icons/svg/fire.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:burning-hand:2#burning-hands",
+    "description": "<p>Les attaques des mains embrasées utilisent les PC et les actions à mains nues. Les dégâts physiques du poing et les dégâts de feu sont distingués sur une carte commune ; la Force ne s’ajoute qu’au coup de poing. La deuxième main, si achetée, utilise les dégâts de feu de base. Les armures s’appliquent au coup ; une parade ou une esquive reste possible. Aucune arme ne peut être utilisée pendant le round du lancement. L’embrasement des objets touchés reste au MJ. L’enchanteur est immunisé au feu produit par sa propre main.</p>",
+    "summary": "Une main embrasée ajoute ses dégâts de feu aux coups de poing.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 168
+    }
+  },
+  "effects": [
+    {
+      "_id": "oG6vXYtZu0v1w2x3",
+      "_key": "!items.effects!JOr6iXpVqWrXsYtZ.oG6vXYtZu0v1w2x3",
+      "name": "Main brûlante",
+      "type": "effect",
+      "img": "icons/svg/fire.svg",
+      "description": "<p>Les attaques des mains embrasées utilisent les PC et les actions à mains nues. Les dégâts physiques du poing et les dégâts de feu sont distingués sur une carte commune ; la Force ne s’ajoute qu’au coup de poing. La deuxième main, si achetée, utilise les dégâts de feu de base. Les armures s’appliquent au coup ; une parade ou une esquive reste possible. Aucune arme ne peut être utilisée pendant le round du lancement. L’embrasement des objets touchés reste au MJ. L’enchanteur est immunisé au feu produit par sa propre main.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:burning-hand:2#burning-hands",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:burning-hand:2#burning-hands",
+            "sourceId": "vitner-flame-craft:burning-hand:2",
+            "summary": "Une main embrasée ajoute ses dégâts de feu aux coups de poing.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

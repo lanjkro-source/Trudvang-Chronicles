@@ -1,0 +1,45 @@
+{
+  "_id": "JOr6iXpVqWrXsYtZ",
+  "_key": "!items!JOr6iXpVqWrXsYtZ",
+  "name": "Burning Hand",
+  "type": "effect",
+  "img": "icons/svg/fire.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-flame-craft:burning-hand:2#burning-hands",
+    "description": "<p>Burning-hand attacks use unarmed CP and actions. Physical punch damage and fire damage are shown separately on one card; Strength only modifies the punch. The optional second hand uses base fire damage. Armor applies to the hit; parrying or evading remains possible. No weapon can be used during the casting round. Ignition of touched objects remains with the GM. The caster is immune to the fire produced by their own hand.</p>",
+    "summary": "An ignited hand adds fire damage to punches.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 109
+    }
+  },
+  "effects": [
+    {
+      "_id": "oG6vXYtZu0v1w2x3",
+      "_key": "!items.effects!JOr6iXpVqWrXsYtZ.oG6vXYtZu0v1w2x3",
+      "name": "Burning Hand",
+      "type": "effect",
+      "img": "icons/svg/fire.svg",
+      "description": "<p>Burning-hand attacks use unarmed CP and actions. Physical punch damage and fire damage are shown separately on one card; Strength only modifies the punch. The optional second hand uses base fire damage. Armor applies to the hit; parrying or evading remains possible. No weapon can be used during the casting round. Ignition of touched objects remains with the GM. The caster is immune to the fire produced by their own hand.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-flame-craft:burning-hand:2#burning-hands",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-flame-craft:burning-hand:2#burning-hands",
+            "sourceId": "vitner-flame-craft:burning-hand:2",
+            "summary": "An ignited hand adds fire damage to punches.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
