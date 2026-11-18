@@ -12962,6 +12962,35 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-soil-craft:soil-blast:4": {
     "isRune": false,
     "level": 3,
+    "damageRoll": {
+      "steps": [
+        {
+          "formula": "1d10",
+          "openRoll": 9
+        },
+        {
+          "formula": "1d10",
+          "openRoll": 8
+        },
+        {
+          "formula": "1d10 + 1",
+          "openRoll": 8
+        }
+      ],
+      "optionId": "vitner-soil-craft:soil-blast:4:5",
+      "baseTargetOptionId": "vitner-soil-craft:soil-blast:4:3",
+      "minimumAfterArmor": {
+        "base": 1,
+        "optionId": "vitner-soil-craft:soil-blast:4:2"
+      },
+      "qualification": {
+        "nature": "normal",
+        "delivery": "ranged",
+        "type": "bludgeoning",
+        "protection": "normal"
+      },
+      "baseRepeatOptionId": "vitner-soil-craft:soil-blast:4:4"
+    },
     "damageQualification": {
       "nature": "normal",
       "delivery": "ranged",
@@ -14575,6 +14604,12 @@ export const POWER_DETAILS_BY_ID = {
         "delivery": "ranged",
         "type": "bludgeoning",
         "protection": "normal"
+      },
+      "impact": {
+        "kind": "windKnockback",
+        "skill": "agility",
+        "trait": "strength",
+        "damagePenalty": true
       }
     },
     "damageQualification": {

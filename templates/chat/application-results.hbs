@@ -6,6 +6,8 @@
       {{#if outcomeText}}<strong class="test-outcome {{outcomeClass}}">{{outcomeText}}</strong>{{/if}}
       <i class="fas {{icon}}" aria-hidden="true"></i>
       <strong title="{{calculation}}">{{result}}</strong>
+      {{#if impactPending}}<button type="button" class="impact-test-button" data-action="resist-impact" data-target-actor-uuid="{{actorUuid}}">{{localize "TRUDVANG.Impact.Resist"}}</button>{{/if}}
+      {{#if impactText}}<small class="impact-test-result">{{impactText}}</small>{{/if}}
     </li>
     {{/each}}
   </ul>

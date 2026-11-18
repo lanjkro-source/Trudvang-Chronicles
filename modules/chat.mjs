@@ -1,3 +1,4 @@
+import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
 import {registerDispelSocket} from './dispel.mjs';
@@ -267,6 +268,10 @@ function attachListeners(message, html) {
       if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
+  html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
+    event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);
+    if(actor?.isOwner)await requestDamageImpact({message,actor});
+  }));
   html.querySelectorAll("[data-action='add-damage-targets']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();

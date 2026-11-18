@@ -16504,7 +16504,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.MagicDamage.BaseRecipients` | Base damage — additional targets | Dégâts de base — cibles supplémentaires |
+| `TRUDVANG.MagicDamage.BaseRecipients` | Damage — basic version | Dégâts — version de base |
 
 ## `TRUDVANG.PersistentDamage`
 
@@ -16792,3 +16792,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Cleansing.Category.supernaturalDisease` | Supernatural disease | Maladie surnaturelle |
 | `TRUDVANG.Cleansing.Category.madness` | Madness | Folie |
 | `TRUDVANG.Cleansing.Category.lostLimb` | Lost organ or limb | Organe ou membre perdu |
+
+## `TRUDVANG.Impact`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Impact.MinimumAfterArmor` | Minimum damage after armor | Dégâts minimaux après armure |
+| `TRUDVANG.Impact.Resist` | Resist knockback | Résister au déséquilibre |
+| `TRUDVANG.Impact.DamagePenalty` | Damage taken | Dégâts subis |
+| `TRUDVANG.Impact.Projected` | Prone · thrown: {distance} m | À terre · projection : {distance} m |
+| `TRUDVANG.Impact.Defenses` | Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty. | Impossible à parer. Protection passive du bouclier applicable ; esquive possible avant toute action, avec le malus d’initiative prévu par le sort. |

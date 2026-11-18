@@ -1,3 +1,4 @@
+import {minimumDamageAfterArmor} from './rules/impact.mjs';
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {ruleTestCastingContext,ruleTestSourceId} from "./rules/magic-resistance.mjs";
 
@@ -18,14 +19,17 @@ export function magicDamageProfile(document,context,{baseOnly=false}={}) {
     const bonus=Number(parts[3]??0)+levels*(scaling.modifier??0);
     step.formula=`${dice}d${parts[2]}${bonus?` + ${bonus}`:''}`;
   }
-  return {...step, qualification:definition.qualification};
+  return {...step, qualification:definition.qualification,...(definition.minimumAfterArmor?{minimumAfterArmor:minimumDamageAfterArmor(definition,casting,baseOnly)}:{}),...(definition.impact?{impact:definition.impact}:{})};
 }
 
 export function magicDamageHasBaseTargets(document,context){
-  const id=ruleTestSourceId(document),optionId=POWER_DETAILS_BY_ID[id]?.damageRoll?.baseTargetOptionId;
-  if(!optionId)return false;
-  const casting=ruleTestCastingContext(document,{context}),index=POWER_DETAILS_BY_ID[id].powerLevels.findIndex(option=>option.id===optionId);
-  return Number(casting.countsById?.[optionId]??casting.counts?.[index]??0)>0;
+  const id=ruleTestSourceId(document),definition=POWER_DETAILS_BY_ID[id]?.damageRoll;
+  if(!definition)return false;
+  const casting=ruleTestCastingContext(document,{context});
+  return [definition.baseTargetOptionId,definition.baseRepeatOptionId].filter(Boolean).some(optionId=>{
+   const index=POWER_DETAILS_BY_ID[id].powerLevels.findIndex(option=>option.id===optionId);
+   return Number(casting.countsById?.[optionId]??casting.counts?.[index]??0)>0;
+  });
 }
 
 export function magicDamageExplanations(document,damage){
@@ -36,6 +40,8 @@ export function magicDamageExplanations(document,damage){
   const rows=base.formula!==damage.formula||base.openRoll!==damage.openRoll
     ? [{labelKey:"TRUDVANG.Power.Levels",value:base.formula===damage.formula?`${openRollLabel} ${base.openRoll} → ${openRollLabel} ${damage.openRoll}`:`${base.formula} → ${damage.formula}`,source:base.formula!==damage.formula&&base.openRoll!==damage.openRoll?`${openRollLabel} : ${base.openRoll} → ${damage.openRoll}`:""}]:[];
   if(definition.targetTags?.length)rows.push({labelKey:"TRUDVANG.Damage.TargetRestriction",value:game.i18n.localize(definition.targetLabelKey)});
+  if(definition.impact||damage.minimumAfterArmor)rows.push({labelKey:'TRUDVANG.Impact.Defenses',value:''});
+  if(damage.minimumAfterArmor)rows.push({labelKey:'TRUDVANG.Impact.MinimumAfterArmor',value:damage.minimumAfterArmor});
   return rows;
 }
 
@@ -48,5 +54,5 @@ export async function rollMagicDamage({document,actor,context,targets,baseOnly=f
   const {rollDamage}=await import("./dice.mjs");
   const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll;
   const damageExplanations=magicDamageExplanations(document,damage);
-  return rollDamage({actor,item,context:{usage:"magic",targets,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
+  return rollDamage({actor,item,context:{usage:"magic",targets,minimumAfterArmor:damage.minimumAfterArmor,impact:damage.impact,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
 }

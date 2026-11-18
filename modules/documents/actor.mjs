@@ -1010,7 +1010,7 @@ export class TrudvangActor extends BaseActor {
     const trainingRows = options.extraModifiers ?? [];
     return withConditionalEffectConsumption(this,trainingRows,()=>rollUnder({blessing:options.blessing, actor: this, label, target: target + rollModifierTotal(trainingRows), modifier: options.modifier, kind: "ability", item,
       flavor: [escapeHtml(breakdown.skillLabel), rollModifierFlavor([...modifierRows, ...trainingRows])].filter(Boolean).join("<br>"), successConsequence: context.successConsequence || "",
-      failureConsequence: context.failureConsequence || "",
+      failureConsequence: context.failureConsequence || "",resolveProcedure:context.resolveProcedure,publishMessage:context.publishMessage,
       criticalSuccessConsequence: context.criticalSuccessConsequence || "",
       criticalFailureConsequence: context.criticalFailureConsequence || ""}));
   }

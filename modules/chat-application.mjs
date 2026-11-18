@@ -1,3 +1,4 @@
+import {resolveImpactTest,impactResultText,requestImpactTest} from './impact-tests.mjs';
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
 import {adjustedFearFactor,fearRecipientEligible} from "./rules/fear-protection.mjs";
@@ -173,7 +174,7 @@ async function applyOnGM(payload) {
     let result;
     try{result = payload.channel === "fear" ? (fearAdjustment?.profile.dice===0?{applied:0}:await actor.applyFearFactor(amount, {announce: false}))
       : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount,qualification:message.getFlag(SYSTEM_ID,"damageContext")?.qualification})
-        : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, announce: false});
+        : await applyDamageToActor({actor, damage: amount, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, minimumAfterArmor:Number(message.getFlag(SYSTEM_ID,"damageContext")?.minimumAfterArmor)||0, announce: false});
     }catch(error){if(reservation?.rollback)await reservation.rollback();throw error;}
     if(!result&&reservation?.rollback)await reservation.rollback();
     if (!result) return {status: "unavailable"};
@@ -183,7 +184,7 @@ async function applyOnGM(payload) {
         ...(result.armorDamage??[]).map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.item.name??"",protection:row.protection})),
         ...(result.resistances??[]).map(row=>`${row.source} ×${row.factor}`)].join(" · ") : "",
       ...(payload.channel==='fear'&&fearAdjustment?{calculation:game.i18n.format('TRUDVANG.MagicFear.ProtectedFactor',{factor:fearAdjustment.profile.dice?`${fearAdjustment.profile.dice}d${fearAdjustment.profile.faces}${fearAdjustment.profile.threshold?' '+game.i18n.localize('TRUDVANG.Field.OpenRollShort')+' '+fearAdjustment.profile.threshold:''}${fearAdjustment.profile.modifier?' + '+fearAdjustment.profile.modifier:''}`:'0',amount:fearAdjustment.amount})}:{}),
-      amount: Number(result.applied ?? result.integrityLoss ?? result.bodyDamage), ignoreArmor: payload.ignoreArmor === true};
+      impactDamage:Number(result.bodyDamage??0)+Number(result.temporaryDamage??0),amount: Number(result.applied ?? result.integrityLoss ?? result.bodyDamage), ignoreArmor: payload.ignoreArmor === true};
     pending.push(appliedRow); unrecorded.set(message.id, pending);
     const token = payload.tokenUuid ? await foundry.utils.fromUuid(payload.tokenUuid) : actor.token;
     if (token?.documentName === "Token" && token.actor?.uuid === actor.uuid) {
@@ -192,20 +193,7 @@ async function applyOnGM(payload) {
   }
   if(payload.channel==='body')await applyWeaponDamageEffects(message,actor,appliedRow);
   const rows = [...rowsFor(message), ...pending.filter(row => !hasChatApplication(message, row.actorUuid, row.channel, row.itemUuid))];
-  const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
-    rows: rows.map(row => {
-      const resistance=row.channel==='fear'?message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(r=>r.actorUuid===row.actorUuid):null;
-      return {...row,...(resistance?{outcomeText:rollOutcomeText(resistance.outcome??{},key=>game.i18n.localize(key)),outcomeClass:resistance.success?'success':'failure'}:{}),
-      label: row.channel === "defense" ? game.i18n.format("TRUDVANG.ChatApplication.DefenseName", {actor: row.name, item: row.itemName}) : row.name,
-      icon: row.channel === "fear" ? "fa-face-grimace" : row.channel === "defense" ? "fa-shield" : "fa-heart-crack",
-      result: game.i18n.format(`TRUDVANG.ChatApplication.${row.channel === "fear" ? "Fear" : row.channel === "defense" ? "Integrity" : "Body"}Amount`, {amount: row.amount})};})
-  });
-  const original = String(message.content);
-  const section = /<section\b[^>]*\bdata-application-results(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
-  let content = section.test(original) ? original.replace(section, () => html)
-    : /<\/article>\s*$/.test(original) ? original.replace(/<\/article>(\s*)$/, () => `${html}</article>`) : `${original}${html}`;
-  if(message.getFlag(SYSTEM_ID,'fearResistanceResults'))content=content.replace(/<section data-fear-resistance-results>[\s\S]*?<\/section>/,()=>pendingFearResults(message.getFlag(SYSTEM_ID,'fearResistanceResults'),rows));
-  await message.update({content, [`flags.${SYSTEM_ID}.applications`]: rows});
+  await refreshApplications(message,rows);
   unrecorded.delete(message.id);
   return {status: "applied", amount: appliedRow.amount};
 }
@@ -263,7 +251,7 @@ export async function applyChatApplication(payload) {
   const queueKey=game.messages.get(payload.messageId)?.getFlag(SYSTEM_ID,"fearContext")?.originMessageId||payload.messageId;
   const previous = queues.get(queueKey) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
-    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
+    : payload.type==='chatImpactTest'?resolveImpactTest(payload,{refresh:refreshApplications,canReadMessage}):payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
   queues.set(queueKey, next);
   try { return await next; }
   finally { if (queues.get(queueKey) === next) queues.delete(queueKey); }
@@ -279,7 +267,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -365,3 +353,24 @@ async function requestChatUpdate(message, payload) {
     game.socket.emit(SOCKET_CHANNEL, payload);
   });
 }
+
+async function refreshApplications(message,rows,{rolls=[]}={}){
+  const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
+    rows: rows.map(row => {
+      const resistance=row.channel==='fear'?message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(r=>r.actorUuid===row.actorUuid):null;
+      return {...row,actorUuid:row.actorUuid,impactPending:row.channel==='body'&&message.getFlag(SYSTEM_ID,'damageContext')?.impact?.kind==='windKnockback'&&!row.impact?.resolved,impactText:impactResultText(row),...(resistance?{outcomeText:rollOutcomeText(resistance.outcome??{},key=>game.i18n.localize(key)),outcomeClass:resistance.success?'success':'failure'}:{}),
+      label: row.channel === "defense" ? game.i18n.format("TRUDVANG.ChatApplication.DefenseName", {actor: row.name, item: row.itemName}) : row.name,
+      icon: row.channel === "fear" ? "fa-face-grimace" : row.channel === "defense" ? "fa-shield" : "fa-heart-crack",
+      result: game.i18n.format(`TRUDVANG.ChatApplication.${row.channel === "fear" ? "Fear" : row.channel === "defense" ? "Integrity" : "Body"}Amount`, {amount: row.amount})};})
+  });
+  const original = String(message.content);
+  const section = /<section\b[^>]*\bdata-application-results(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
+  let content = section.test(original) ? original.replace(section, () => html)
+    : /<\/article>\s*$/.test(original) ? original.replace(/<\/article>(\s*)$/, () => `${html}</article>`) : `${original}${html}`;
+  if(message.getFlag(SYSTEM_ID,'fearResistanceResults'))content=content.replace(/<section data-fear-resistance-results>[\s\S]*?<\/section>/,()=>pendingFearResults(message.getFlag(SYSTEM_ID,'fearResistanceResults'),rows));
+  await message.update({content, [`flags.${SYSTEM_ID}.applications`]: rows,...(rolls.length?{rolls:[...message.rolls??[],...rolls],'flags.dice-so-nice.skip':true}:{})});
+  for(const roll of rolls)await game.dice3d?.showForRoll?.(roll,game.user,true);
+
+}
+
+export const requestDamageImpact=({message,actor})=>requestImpactTest({message,actor,request:requestChatUpdate});

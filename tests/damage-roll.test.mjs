@@ -294,3 +294,15 @@ test('generic damage shares the weapon layout with its header first and an edita
  assert.equal(damageRollChoice(profile,{dice:0,modifier:12}).fixedModifier,12);
  assert.equal(damageRollChoice(profile,{dice:1,faces:3,openRoll:9,modifier:0}),null);
 });
+
+test('soil blast confirms the actual damage progression, improved floor, and separate base-only damage',async t=>{
+ const {cards,dialogs}=runtime(t,{response:{},results:[4]});const id='vitner-soil-craft:soil-blast:4',source={name:'Projection de terre',system:{catalogId:id}},context={sourceId:id,countsById:{[id+':5']:2,[id+':2']:3,[id+':3']:1}};
+ const improved=magicDamageProfile(source,context);assert.equal(improved.formula,'1d10 + 1');assert.equal(improved.minimumAfterArmor,4);const base=magicDamageProfile(source,context,{baseOnly:true});assert.equal(base.formula,'1d10');assert.equal(base.openRoll,9);assert.equal(base.minimumAfterArmor,1);
+ const caster=actor();caster.isOwner=true;await rollMagicDamage({document:source,actor:caster,context});assert.equal(cards[0].flags['trudvang-chronicles'].damageContext.minimumAfterArmor,4);assert.match(cards[0].content,/Dégâts minimaux après armure/);
+});
+
+test('soil blast additional rounds expose base damage without buying another target',()=>{
+ const id='vitner-soil-craft:soil-blast:4',source={system:{catalogId:id}};
+ assert.equal(magicDamageHasBaseTargets(source,{sourceId:id,countsById:{[id+':4']:1}}),true);
+ assert.equal(magicDamageHasBaseTargets(source,{sourceId:id,countsById:{[id+':4']:0}}),false);
+});

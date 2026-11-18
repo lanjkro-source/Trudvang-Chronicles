@@ -18777,7 +18777,7 @@
       "Ineligible": "A selected creature does not meet this fear factor’s conditions (hearing, intelligence or exclusion of the caster). It was not affected."
     },
     "MagicDamage": {
-      "BaseRecipients": "Base damage — additional targets"
+      "BaseRecipients": "Damage — basic version"
     },
     "PersistentDamage": {
       "Resist": "Resist damage",
@@ -19014,6 +19014,13 @@
       "Unclassified": "None",
       "Classification": "Affliction (cleansing)",
       "ClassificationHint": "For manually authored effects: identifies their nature for appropriate cleansing abilities. Does not turn this effect into a disease."
+    },
+    "Impact": {
+      "MinimumAfterArmor": "Minimum damage after armor",
+      "Resist": "Resist knockback",
+      "DamagePenalty": "Damage taken",
+      "Projected": "Prone · thrown: {distance} m",
+      "Defenses": "Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty."
     }
   }
 }

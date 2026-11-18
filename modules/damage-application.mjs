@@ -79,7 +79,7 @@ export function calculateArmoredDamage({damage, totalProtection, armor = [], out
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification,minimumAfterArmor=0} = {}) {
   if (!actor?.isOwner) return null;
   const qualified = damageQualification({context: {magicalWeapon, qualification: {type: damageType, ...qualification}}, usage});
   ignoreArmor ||= qualified.protection === "none";
@@ -116,6 +116,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, ...itemIntegrityUpdate(entry.item,entry.integrity)}));
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
+  if(amount>0&&Number.isFinite(minimumAfterArmor))result.bodyDamage=Math.max(result.bodyDamage,Math.max(0,Math.trunc(minimumAfterArmor)));
   const bodyResistance = qualifyDamage(result.bodyDamage, qualified, rules.filter(rule => rule.stage !== "beforeArmor"));
   result.resistances.push(...bodyResistance.applied);
   result.bodyDamage = Math.ceil(bodyResistance.amount * (actor.transformationProfile?.damageTakenFactor ?? 1));

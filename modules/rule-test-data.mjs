@@ -705,7 +705,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "vitner-wind-craft:wind-blast:7": [
     {
       "action": "rester debout face à la rafale",
-      "skill": "jumpingClimbingBalancing",
+      "skill": "agility",
       "sv": null,
       "modifier": "malus égal aux dégâts infligés par la rafale, en tenant compte du modificateur de Force",
       "kind": "skill",

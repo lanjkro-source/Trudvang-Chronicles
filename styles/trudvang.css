@@ -1330,3 +1330,7 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 
 .trudvang.chat-card .application-result--resisted { grid-template-columns: minmax(0, 1fr) auto auto auto; }
 .trudvang.chat-card [data-fear-resistance-results] p { margin: 3px 8px; }
+
+.trudvang .application-result .impact-test-button,.trudvang .application-result .impact-test-result{grid-column:1/-1;font-size:.9em;margin:0;}
+
+.trudvang .impact-test-button{background:var(--trudvang-paper);color:var(--trudvang-ink);border:1px solid var(--trudvang-line);border-radius:3px;height:auto;line-height:1.4;}

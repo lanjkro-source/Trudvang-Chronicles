@@ -137,3 +137,10 @@ test("a shield is preferred over an off-hand or two-handed weapon for defense da
   assert.equal(defensiveItem({items: [twoHanded, offHand]}), offHand);
   assert.equal(defensiveItem({items: [twoHanded]}), twoHanded);
 });
+
+test('the minimum after armor preserves immunities before and after armor and does not create damage from zero',async()=>{
+ const actor={isOwner:true,items:[],effects:[],system:{protection:30,resources:{body:{value:20}},damageDefenses:[]},async update(changes){if(changes['system.resources.body.value']!==undefined)this.system.resources.body.value=changes['system.resources.body.value'];}};
+ assert.equal((await applyDamageToActor({actor,damage:0,minimumAfterArmor:4,announce:false})).bodyDamage,0);
+ for(const stage of ['beforeArmor','afterArmor']){actor.system.damageDefenses=[{factor:0,stage}];assert.equal((await applyDamageToActor({actor,damage:3,minimumAfterArmor:4,announce:false})).bodyDamage,0,stage);}
+ actor.system.damageDefenses=[];assert.equal((await applyDamageToActor({actor,damage:3,minimumAfterArmor:4,announce:false})).bodyDamage,4);assert.equal(actor.system.resources.body.value,16);
+});

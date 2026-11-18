@@ -17,7 +17,7 @@ const template = name => Handlebars.compile(readFileSync(new URL(`../templates/$
 globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, data) => template(path.split("/").at(-1).replace(".hbs", ""))(data)}},
   utils: {fromUuid: async uuid => documents.get(uuid)}};
 globalThis.ChatMessage = {create: () => assert.fail("applications must update the source card, never create another message")};
-const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval} = await import("../modules/chat-application.mjs");
+const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval,requestDamageImpact} = await import("../modules/chat-application.mjs");
 const {rollDamage} = await import("../modules/dice.mjs");
 
 function runtime(t, kind = "damage") {
@@ -475,4 +475,32 @@ test('Peur shares one primary and its bought base recipients across separate fea
  const results=await Promise.all([second,third].map(actor=>applyChatApplication({...payload(actor),messageId:base.id})));
  assert.deepEqual(results.map(row=>row.status),['applied','targetLimit']);assert.equal(rootFlags.fearRecipients.length,2);
  assert.equal((await applyChatApplication({...payload(first),messageId:base.id})).status,'alreadyApplied');
+});
+
+test('wind impact uses actual per-recipient damage, Strength, and a single validated skill response',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);flags.damageContext={impact:{kind:'windKnockback'}};
+ const actor=makeActor('Wind victim',3);actor.getTraitValue=()=>3;let testContext;
+ actor.rollAbility=async(item,context)=>{testContext=context;assert.equal(item.system.parentSkill,'agility');assert.equal(item.system.level,0);assert.equal(context.reactive,true);const proof={id:'wind-proof',author:gm,rolls:[{formula:'1d20',total:6}],flags:{'trudvang-chronicles':context.resolveProcedure({target:10}).flags}};game.messages.set(proof.id,proof);return {messageId:proof.id};};
+ addDamageTarget(actor);await applyChatApplication(payload(actor));assert.equal(flags.applications[0].impactDamage,5);assert.match(message.content,/resist-impact/);
+ assert.equal((await requestDamageImpact({message,actor})).status,'resolved');assert.deepEqual(testContext.modifierRows.map(r=>r.value),[3,-5]);assert.equal(flags.applications[0].impact.resolved,true);assert.match(message.content,/Succès/);assert.doesNotMatch(message.content,/resist-impact/);
+ assert.equal((await requestDamageImpact({message,actor})).status,'alreadyRolled');assert.equal(actor.system.resources.body.value,15);
+});
+test('failed wind impact throws a giant one metre and cannot affect a parrying weapon or replay the status',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);flags.damageContext={impact:{kind:'windKnockback'}};const actor=makeActor('Giant');actor.type='npc';actor.system.details={size:10};let statuses=0;actor.toggleStatusEffect=async(id,{active})=>{assert.equal(id,'prone');assert.equal(active,true);statuses++;};addDamageTarget(actor);await applyChatApplication(payload(actor));
+ const base={type:'chatImpactTest',messageId:message.id,userId:player.id,actorUuid:actor.uuid},begin=await applyChatApplication({...base,action:'begin'});assert.equal(begin.status,'reserved');assert.equal((await applyChatApplication({...base,action:'begin'})).status,'resistancePending');
+ game.messages.set('impact-proof',{id:'impact-proof',author:player,rolls:[{formula:'1d20',total:20}],flags:{'trudvang-chronicles':{impactTestFor:{messageId:message.id,actorUuid:actor.uuid,token:begin.token,target:99}}}});
+ const finish={...base,action:'finish',token:begin.token,proofId:'impact-proof'};assert.equal((await applyChatApplication(finish)).status,'resolved');assert.equal(flags.applications[0].impact.distance,1);assert.match(message.content,/projection : 1 m/);assert.equal((await applyChatApplication(finish)).status,'alreadyRolled');assert.equal(statuses,1);
+});
+test('impact cancellation, missing damage application and forged proof never add a consequence',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);flags.damageContext={impact:{kind:'windKnockback'}};const actor=makeActor('Victim');const base={type:'chatImpactTest',messageId:message.id,userId:player.id,actorUuid:actor.uuid};assert.equal((await applyChatApplication({...base,action:'begin'})).status,'unavailable');addDamageTarget(actor);await applyChatApplication(payload(actor));const begin=await applyChatApplication({...base,action:'begin'});assert.equal((await applyChatApplication({...base,action:'finish',token:begin.token,proofId:'missing'})).status,'unavailable');await applyChatApplication({...base,action:'cancel',token:begin.token});assert.equal(flags.applications[0].impact,undefined);
+});
+test('soil blast minimum is applied after armor from the immutable card rather than a supplied socket value',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);flags.damageContext={minimumAfterArmor:3};const actor=makeActor('Armored',20);addDamageTarget(actor);const result=await applyChatApplication(payload(actor,{minimumAfterArmor:100}));assert.equal(result.amount,3);assert.equal(actor.system.resources.body.value,17);
+});
+
+test('human wind projection rolls open d10s and animates each distance die once',async t=>{
+ const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);flags.damageContext={impact:{kind:'windKnockback'}};const actor=makeActor('Human');actor.toggleStatusEffect=async()=>{};addDamageTarget(actor);await applyChatApplication(payload(actor));
+ const previous=globalThis.Roll;t.after(()=>globalThis.Roll=previous);const values=[10,3];globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=values.shift();assert.notEqual(this.total,undefined);}};let animations=0;game.dice3d={showForRoll:async()=>animations++};
+ const base={type:'chatImpactTest',messageId:message.id,userId:player.id,actorUuid:actor.uuid},begin=await applyChatApplication({...base,action:'begin'});game.messages.set('projection-proof',{author:player,rolls:[{formula:'1d20',total:20}],flags:{'trudvang-chronicles':{impactTestFor:{messageId:message.id,actorUuid:actor.uuid,token:begin.token,target:10}}}});
+ assert.equal((await applyChatApplication({...base,action:'finish',token:begin.token,proofId:'projection-proof'})).status,'resolved');assert.equal(flags.applications[0].impact.distance,13);assert.equal(animations,2);assert.equal(values.length,0);
 });

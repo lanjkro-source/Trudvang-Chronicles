@@ -18777,7 +18777,7 @@
       "Ineligible": "Une créature sélectionnée ne remplit pas les conditions de ce facteur de peur (ouïe, intelligence ou exclusion du lanceur). Elle n’a pas été affectée."
     },
     "MagicDamage": {
-      "BaseRecipients": "Dégâts de base — cibles supplémentaires"
+      "BaseRecipients": "Dégâts — version de base"
     },
     "PersistentDamage": {
       "Resist": "Résister aux dégâts",
@@ -19014,6 +19014,13 @@
       "Unclassified": "Aucune",
       "Classification": "Affliction (purification)",
       "ClassificationHint": "Pour les effets ajoutés manuellement : indique leur nature afin de les proposer aux pouvoirs de guérison adaptés. Ne transforme pas cet effet en maladie."
+    },
+    "Impact": {
+      "MinimumAfterArmor": "Dégâts minimaux après armure",
+      "Resist": "Résister au déséquilibre",
+      "DamagePenalty": "Dégâts subis",
+      "Projected": "À terre · projection : {distance} m",
+      "Defenses": "Impossible à parer. Protection passive du bouclier applicable ; esquive possible avant toute action, avec le malus d’initiative prévu par le sort."
     }
   }
 }
