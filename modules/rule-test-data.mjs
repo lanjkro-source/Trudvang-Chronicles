@@ -464,7 +464,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "vitner-soil-craft:earthquake:2": [
     {
       "action": "éviter de tomber à la renverse",
-      "skill": "jumpingClimbingBalancing",
+      "skill": "agility",
       "sv": null,
       "modifier": "modificateur indiqué par la table selon la taille de la créature et le niveau de puissance",
       "kind": "skill",
@@ -3198,7 +3198,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       ],
       "success": "évite d’être déséquilibré et de perdre sa capacité d’agir pendant le tour en cours et le suivant.",
       "traitMethod": "first",
-      "magicResistance": true,
+      "magicResistance": false,
       "kind": "resist",
       "index": 0
     }
@@ -3269,7 +3269,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "holy-toikalokke-master-of-elements:earthquake:7": [
     {
       "action": "éviter de tomber à la renverse",
-      "skill": "jumpingClimbingBalancing",
+      "skill": "agility",
       "sv": null,
       "modifier": "modificateur indiqué par la table selon la taille de la créature et le niveau de puissance",
       "kind": "skill",

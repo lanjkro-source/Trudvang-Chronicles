@@ -1,3 +1,4 @@
+import {placeSpellZone,requestSpellZoneTest} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
@@ -268,6 +269,8 @@ function attachListeners(message, html) {
       if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
+  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await placeSpellZone(message);}));
+  html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid);}));
   html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
     event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);
     if(actor?.isOwner)await requestDamageImpact({message,actor});

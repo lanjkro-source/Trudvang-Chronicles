@@ -101,6 +101,11 @@ for (const id of [...french.keys()].sort()) {
       const q=f.damageQualification;
       if(!DAMAGE_NATURES.includes(q.nature)||!DAMAGE_TYPES.includes(q.type)||!DAMAGE_DELIVERIES.includes(q.delivery)||!DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
     }
+  if(JSON.stringify(f.spellZone??null)!==JSON.stringify(e.spellZone??null))fail(`${id}: unaligned spell zone`);
+  if(f.spellZone?.kind==='earthquake'&&(!Array.isArray(f.spellZone.sizeModifiers)||f.spellZone.sizeModifiers.length!==7||f.spellZone.sizeModifiers.some(n=>!Number.isFinite(n))||!Number.isFinite(f.spellZone.severityModifier)||!Number.isFinite(f.spellZone.penalty)||!(f.spellZone.radius>0)||!(f.spellZone.range>=0)))fail(`${id}: invalid earthquake profile`);
+  if(f.spellZone?.kind==='runeEarthquake'&&(!Array.isArray(f.spellZone.sizeSV)||f.spellZone.sizeSV.length!==7||f.spellZone.sizeSV.some(n=>n!==null&&!Number.isFinite(n))||!Number.isFinite(f.spellZone.levelModifier)||!(f.spellZone.stunRounds>0)||!(f.spellZone.radiusPerLevel>0)||!(f.spellZone.rangePerAdditionalLevel>=0)))fail(`${id}: invalid rune earthquake profile`);
+  if(f.spellZone&&!['earthquake','runeEarthquake'].includes(f.spellZone.kind))fail(`${id}: invalid spell zone`);
+  if(f.spellZone)for(const key of ['rangeOptionId','radiusOptionId','durationOptionId','severityOptionId'])if(f.spellZone[key]&&!f.powerLevels.some(p=>p.optionId===f.spellZone[key]))fail(`${id}: invalid zone option`);
   if(f.damageRoll){
     const d=f.damageRoll;
     if(d.minimumAfterArmor&&(!Number.isInteger(d.minimumAfterArmor.base)||d.minimumAfterArmor.base<0||!f.powerLevels.some(p=>p.optionId===d.minimumAfterArmor.optionId)))fail(`${id}: invalid minimum after armor`);
@@ -147,6 +152,7 @@ for (const id of [...french.keys()].sort()) {
     level:f.level,
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
+    ...(f.spellZone?{spellZone:f.spellZone}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
     ...(f.damageQualification ? {damageQualification:f.damageQualification} : {}),
     ...(f.fearRoll ? {fearRoll:f.fearRoll} : {}),

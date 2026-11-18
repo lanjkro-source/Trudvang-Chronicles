@@ -1,3 +1,4 @@
+import {registerSpellZoneSupport} from './modules/spell-zones.mjs';
 import {registerSacredHooks,registerSacredSockets} from './modules/sacred-objects.mjs';
 import { TRUDVANG } from "./modules/config.mjs";
 import { TrudvangActor } from "./modules/documents/actor.mjs";
@@ -43,6 +44,7 @@ Hooks.once("init", () => {
   registerDamageEnrichers();
   configureEffects();
   registerAuraSupport();
+  registerSpellZoneSupport();
   registerEffectHooks();
   registerMagicSheetAvailabilityHooks();
   registerActorEffectDurationHooks();

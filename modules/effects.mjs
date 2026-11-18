@@ -1,3 +1,4 @@
+import {deleteEffectOnce} from './effect-deletion.mjs';
 import {isSacredInscriptionFailure} from './effects-summary.mjs';
 import {equipmentGrantActive} from './rules/granted-equipment.mjs';
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
@@ -297,7 +298,7 @@ export function finishExpiredEffect(effect, options = {}) {
     // Starting each stage at "now" would lose all excess time in a large jump.
     while (true) {
       const next = stages[nextIndex];
-      if (!next) {await effect.delete({trudvangExpired: true}); return;}
+      if (!next) {await deleteEffectOnce(effect,{trudvangExpired: true}); return;}
       const duration = normalizeEffectDuration({value: Number(next.durationValue || 0), units: next.durationUnit || "rounds", expiry: null, expired: false});
       const start = implementation.getEffectStart();
       await effect.update({"system.stage": nextIndex, "system.changes": effectChangesSource(next.changes), duration,

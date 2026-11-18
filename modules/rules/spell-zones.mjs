@@ -1,0 +1,15 @@
+export function earthquakeProfile(definition,context={}){
+ if(!definition)return null;
+ const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
+ if(definition.kind==='runeEarthquake'){
+  const level=Number(context.runeLevel);if(!Number.isInteger(level)||level<1||level>5)return null;
+  return {kind:definition.kind,radius:definition.radiusPerLevel*level,range:definition.rangePerAdditionalLevel*(level-1),rounds:1,level,sizeSV:definition.sizeSV,levelModifier:definition.levelModifier,stunRounds:definition.stunRounds,excludeCaster:true,centered:level===1};
+ }
+ const severity=Math.min(definition.maxSeverity,count(definition.severityOptionId));
+ return {kind:definition.kind,radius:definition.radius+count(definition.radiusOptionId)+(definition.centered?5*count(definition.rangeOptionId):0),range:definition.centered?0:definition.range+5*count(definition.rangeOptionId),rounds:1+count(definition.durationOptionId),severity,sizeModifiers:definition.sizeModifiers,severityModifier:definition.severityModifier,penalty:definition.penalty,collapseChance:20+10*severity,damage:1+severity,centered:definition.centered,excludeCaster:definition.excludeCaster};
+}
+export function earthquakeSizeIndex(size){const n=Number(size)||1;return n<1/3?0:n<.5?1:n<1.5?2:n<3?3:n<5?4:n<10?5:6;}
+export function earthquakeTest(profile,size){const i=earthquakeSizeIndex(size);return profile.kind==='runeEarthquake'?(profile.sizeSV[i]===null?{immune:true}:{sv:profile.sizeSV[i]+profile.levelModifier*profile.level}):{modifier:profile.sizeModifiers[i]+profile.severityModifier*profile.severity};}
+export function spellZoneExpired(info,{time=0,combat}={}){return Number(time)>=info.until||(info.combatId&&combat?.id===info.combatId&&Number(combat.round)>=info.expiresRound);}
+export function spellZonePhase(info,{time=0,combat}={}){return info.combatId&&combat?.id===info.combatId?'round:'+Number(combat.round):'time:'+Math.floor((Number(time)-info.createdAt)/5);}
+export function zonePixelScale(scene){const unit=String(scene?.grid?.units??'m').toLowerCase();const conversion=/^(ft|feet|foot|pi|pieds?)$/.test(unit)?1/.3048:/^(km|kilom)/.test(unit)?.001:1;return Number(scene?.grid?.size||1)/Number(scene?.grid?.distance||1)*conversion;}

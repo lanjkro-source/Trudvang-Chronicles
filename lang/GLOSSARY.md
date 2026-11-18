@@ -16802,3 +16802,22 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Impact.DamagePenalty` | Damage taken | Dégâts subis |
 | `TRUDVANG.Impact.Projected` | Prone · thrown: {distance} m | À terre · projection : {distance} m |
 | `TRUDVANG.Impact.Defenses` | Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty. | Impossible à parer. Protection passive du bouclier applicable ; esquive possible avant toute action, avec le malus d’initiative prévu par le sort. |
+
+## `TRUDVANG.SpellZone`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.SpellZone.Place` | Place earthquake | Placer le séisme |
+| `TRUDVANG.SpellZone.Instruction` | Each creature’s owner or the GM may make their test. | Le contrôleur de chaque créature ou le MJ peut faire son test. |
+| `TRUDVANG.SpellZone.Test` | Resist earthquake | Résister au séisme |
+| `TRUDVANG.SpellZone.PenaltyDescription` | The ground shakes: {penalty} to Skill and Situation tests while the creature remains in the area. | Le sol tremble : {penalty} aux tests de compétence et de situation tant que la créature reste dans la zone. |
+| `TRUDVANG.SpellZone.RuneFailure` | The creature cannot act during the current round or the following round. | La créature ne peut pas agir pendant le round en cours ni le suivant. |
+| `TRUDVANG.SpellZone.Behavior` | Trudvang earthquake | Séisme de Trudvang |
+| `TRUDVANG.SpellZone.SelectCaster` | Select a single token of the caster on this scene. | Sélectionnez un unique token du lanceur sur la scène. |
+| `TRUDVANG.SpellZone.OutOfRange` | The earthquake’s centre is beyond its range. | Le centre du séisme dépasse la portée autorisée. |
+| `TRUDVANG.SpellZone.Unavailable` | Earthquake unavailable: check the active GM, permissions or remaining duration. | Séisme indisponible : vérifiez le MJ connecté, les permissions ou la durée restante. |
+| `TRUDVANG.SpellZone.SizeModifier` | Creature size and earthquake power | Taille et puissance du séisme |
+| `TRUDVANG.SpellZone.Underground` | Underground: {chance}% chance of a cave-in. | Sous terre : risque d’éboulement de {chance} %. |
+| `TRUDVANG.SpellZone.Profile` | Radius: {radius} m; duration: {rounds} round(s). | Rayon : {radius} m ; durée : {rounds} round(s). |
+| `TRUDVANG.SpellZone.Collapse` | Cave-in or landslide ({chance}%): the GM determines the consequences. | Éboulement ou glissement de terrain ({chance} %) : le MJ en détermine les conséquences. |
+| `TRUDVANG.SpellZone.NoCollapse` | No cave-in or landslide (risk: {chance}%). | Aucun éboulement ni glissement de terrain (risque : {chance} %). |

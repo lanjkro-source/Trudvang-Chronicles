@@ -1334,3 +1334,6 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 .trudvang .application-result .impact-test-button,.trudvang .application-result .impact-test-result{grid-column:1/-1;font-size:.9em;margin:0;}
 
 .trudvang .impact-test-button{background:var(--trudvang-paper);color:var(--trudvang-ink);border:1px solid var(--trudvang-line);border-radius:3px;height:auto;line-height:1.4;}
+
+.trudvang.spell-zone-card .trait-situation-result{display:flex;align-items:center;justify-content:space-between;gap:.4rem;}
+.trudvang.spell-zone-card button[data-action="spell-zone-test"]{background:var(--trudvang-paper);color:var(--trudvang-ink);border:1px solid var(--trudvang-line);height:auto;line-height:1.4;padding:.15rem .35rem;}

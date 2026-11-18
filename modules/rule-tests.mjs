@@ -1,3 +1,4 @@
+import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
 import {withFollowupTest} from './followup-tests.mjs';
@@ -49,6 +50,7 @@ export function ruleTestsForDocument(document) {
 
 /** Usage cards label each response with the action from the French source data. */
 export function ruleTestActionViews(document) {
+  if(POWER_DETAILS_BY_ID[document?.system?.catalogId]?.spellZone)return [];
   return ruleTestsForDocument(document).map((test, index) => ({index, action: test.action, disabled:test.disabled,
     title: game.i18n.localize(test.kind === "skill" ? "TRUDVANG.RuleTest.RollSkill" : "TRUDVANG.RuleTest.RollResistance")})).filter(row=>!row.disabled).map(({disabled,...row})=>row);
 }
@@ -174,6 +176,7 @@ export function annotateRuleTestDescription(description, document) {
 }
 
 function annotateTests(description, document) {
+  if(POWER_DETAILS_BY_ID[document?.system?.catalogId]?.spellZone)return String(description??'');
   const tests = ruleTestsForDocument(document);
   if (!tests.length) return String(description ?? "");
   const anchors = descriptionAnchors(description, tests)

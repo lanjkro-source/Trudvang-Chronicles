@@ -8003,6 +8003,23 @@ export const POWER_DETAILS_BY_ID = {
       "modifier": 0
     },
     "level": 1,
+    "spellZone": {
+      "kind": "runeEarthquake",
+      "radiusPerLevel": 2,
+      "rangePerAdditionalLevel": 3,
+      "excludeCaster": true,
+      "sizeSV": [
+        8,
+        10,
+        12,
+        14,
+        16,
+        20,
+        null
+      ],
+      "levelModifier": -1,
+      "stunRounds": 2
+    },
     "powerLevels": [
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:0",
@@ -8032,7 +8049,7 @@ export const POWER_DETAILS_BY_ID = {
     ],
     "spellType": "instant",
     "page": 229,
-    "pageFr": 298
+    "pageFr": 288
   },
   "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": {
     "isRune": true,
@@ -9104,7 +9121,30 @@ export const POWER_DETAILS_BY_ID = {
   },
   "holy-toikalokke-master-of-elements:earthquake:7": {
     "isRune": false,
-    "level": 3,
+    "level": 2,
+    "spellZone": {
+      "kind": "earthquake",
+      "radius": 2,
+      "range": 10,
+      "centered": false,
+      "excludeCaster": false,
+      "rangeOptionId": "holy-toikalokke-master-of-elements:earthquake:7:0",
+      "radiusOptionId": "holy-toikalokke-master-of-elements:earthquake:7:1",
+      "durationOptionId": "holy-toikalokke-master-of-elements:earthquake:7:2",
+      "severityOptionId": "holy-toikalokke-master-of-elements:earthquake:7:3",
+      "maxSeverity": 5,
+      "sizeModifiers": [
+        -5,
+        -2,
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "severityModifier": -2,
+      "penalty": -3
+    },
     "damageRoll": {
       "steps": [
         {
@@ -9164,8 +9204,8 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-master-of-elements:earthquake:7:3",
-        "cost": 3,
-        "maxCount": null
+        "cost": 4,
+        "maxCount": 5
       }
     ],
     "spellType": "instant",
@@ -12698,6 +12738,29 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-soil-craft:earthquake:2": {
     "isRune": false,
     "level": 2,
+    "spellZone": {
+      "kind": "earthquake",
+      "radius": 2,
+      "range": 10,
+      "centered": false,
+      "excludeCaster": false,
+      "rangeOptionId": "vitner-soil-craft:earthquake:2:0",
+      "radiusOptionId": "vitner-soil-craft:earthquake:2:1",
+      "durationOptionId": "vitner-soil-craft:earthquake:2:2",
+      "severityOptionId": "vitner-soil-craft:earthquake:2:3",
+      "maxSeverity": 5,
+      "sizeModifiers": [
+        -5,
+        -2,
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "severityModifier": -2,
+      "penalty": -3
+    },
     "damageRoll": {
       "steps": [
         {
@@ -17489,10 +17552,10 @@ export const POWER_CATALOG_BY_TABLET = {
     {
       "id": "holy-toikalokke-master-of-elements:earthquake:7",
       "name": "Earthquake",
-      "level": 3,
+      "level": 2,
       "type": "divineFeat",
-      "cost": 6,
-      "modifier": -6
+      "cost": 4,
+      "modifier": -4
     },
     {
       "id": "holy-toikalokke-master-of-elements:spring-of-water:8",
