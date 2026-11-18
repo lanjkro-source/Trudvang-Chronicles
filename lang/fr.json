@@ -163,7 +163,9 @@
       "PaletteSpring": "Printemps",
       "PaletteSummer": "Été",
       "PaletteAutumn": "Automne",
-      "PaletteWinter": "Hiver"
+      "PaletteWinter": "Hiver",
+      "InitiativeChatMessagesName": "Afficher les jets d’initiative dans le chat",
+      "InitiativeChatMessagesHint": "Si cette option est décochée, seul le score du tracker de combat est mis à jour. Aucun message ni dé 3D d’initiative n’est affiché."
     },
     "Tab": {
       "Summary": "Résumé",
@@ -19047,7 +19049,7 @@
       "CastingFinished": "La zone de ce lancement est déjà terminée. Relancez le sort pour créer une nouvelle zone.",
       "AlreadyPlaced": "La zone de ce lancement est déjà placée et ne peut pas être déplacée.",
       "MoveNextRound": "Cette zone ne pourra être déplacée qu’au prochain round.",
-      "InstantResolved": "Les flammes instantanées ont été résolues : aucune zone persistante ne reste sur la scène."
+      "InstantDissipated": "{name} : les flammes se dissipent."
     }
   }
 }

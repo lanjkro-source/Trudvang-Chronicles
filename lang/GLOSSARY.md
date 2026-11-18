@@ -191,6 +191,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.PaletteSummer` | Summer | Été |
 | `TRUDVANG.Settings.PaletteAutumn` | Autumn | Automne |
 | `TRUDVANG.Settings.PaletteWinter` | Winter | Hiver |
+| `TRUDVANG.Settings.InitiativeChatMessagesName` | Show initiative rolls in chat | Afficher les jets d’initiative dans le chat |
+| `TRUDVANG.Settings.InitiativeChatMessagesHint` | When unchecked, only the combat tracker score is updated. No initiative message or 3D die is shown. | Si cette option est décochée, seul le score du tracker de combat est mis à jour. Aucun message ni dé 3D d’initiative n’est affiché. |
 
 ## `TRUDVANG.Tab`
 
@@ -16831,4 +16833,4 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.CastingFinished` | This casting’s area has already ended. Cast the spell again to create a new area. | La zone de ce lancement est déjà terminée. Relancez le sort pour créer une nouvelle zone. |
 | `TRUDVANG.SpellZone.AlreadyPlaced` | This casting’s area is already placed and cannot be moved. | La zone de ce lancement est déjà placée et ne peut pas être déplacée. |
 | `TRUDVANG.SpellZone.MoveNextRound` | This area can only be moved again next round. | Cette zone ne pourra être déplacée qu’au prochain round. |
-| `TRUDVANG.SpellZone.InstantResolved` | The instantaneous flames have been resolved: no persistent area remains on the scene. | Les flammes instantanées ont été résolues : aucune zone persistante ne reste sur la scène. |
+| `TRUDVANG.SpellZone.InstantDissipated` | {name}: the flames dissipate. | {name} : les flammes se dissipent. |

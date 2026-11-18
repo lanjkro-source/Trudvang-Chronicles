@@ -1031,6 +1031,7 @@ export class TrudvangActor extends BaseActor {
     const combatants = combatant ? [combatant] : Array.from(activeCombat?.combatants?.values?.() ?? activeCombat?.combatants ?? [])
       .filter(candidate => candidate.actor === this || candidate.actor?.uuid === this.uuid);
     if (combatants.length) await Promise.all(combatants.map(candidate => candidate.update({initiative: result.total})));
+    if (!game.settings?.get("trudvang-chronicles", "initiativeChatMessages")) return result.total;
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/initiative-card.hbs", {
       actorName: this.name,
       actorImg: this.img,

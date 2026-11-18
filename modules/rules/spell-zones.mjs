@@ -11,6 +11,6 @@ export function earthquakeProfile(definition,context={}){
 }
 export function earthquakeSizeIndex(size){const n=Number(size)||1;return n<1/3?0:n<.5?1:n<1.5?2:n<3?3:n<5?4:n<10?5:6;}
 export function earthquakeTest(profile,size){const i=earthquakeSizeIndex(size);return profile.kind==='runeEarthquake'?(profile.sizeSV[i]===null?{immune:true}:{sv:profile.sizeSV[i]+profile.levelModifier*profile.level}):{modifier:profile.sizeModifiers[i]+profile.severityModifier*profile.severity};}
-export function spellZoneExpired(info,{time=0,combat}={}){return Number(time)>=info.until||(info.combatId&&combat?.id===info.combatId&&Number(combat.round)>=info.expiresRound);}
-export function spellZonePhase(info,{time=0,combat}={}){return info.combatId&&combat?.id===info.combatId?'round:'+Number(combat.round):'time:'+Math.floor((Number(time)-info.createdAt)/5);}
+export function spellZoneExpired(info,{time=0,combat}={}){if(info.profile?.instant)return false;return Number(time)>=info.until||(info.combatId&&combat?.id===info.combatId&&Number(combat.round)>=info.expiresRound);}
+export function spellZonePhase(info,{time=0,combat}={}){if(info.profile?.instant)return 'instant';return info.combatId&&combat?.id===info.combatId?'round:'+Number(combat.round):'time:'+Math.floor((Number(time)-info.createdAt)/5);}
 export function zonePixelScale(scene){const unit=String(scene?.grid?.units??'m').toLowerCase();const conversion=/^(ft|feet|foot|pi|pieds?)$/.test(unit)?1/.3048:/^(km|kilom)/.test(unit)?.001:1;return Number(scene?.grid?.size||1)/Number(scene?.grid?.distance||1)*conversion;}

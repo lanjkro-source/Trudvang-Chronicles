@@ -18,7 +18,14 @@ const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
 const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(info.profile.kind==='fire'||!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s)))&&(info.profile.kind==='fire'||!earthquakeTest(info.profile,impactSize(actor)).immune);
-const members=(region,{entering,leaving}={})=>new Map([...values(region.tokens).filter(t=>t.uuid!==leaving?.uuid),...(entering?[entering]:[])].filter(t=>eligible(t.actor,infoOf(region))).map(t=>[t.actor.uuid,t]));
+// Region.tokens can still be empty while native creation events are being processed.
+// Query the public containment API against scene documents before freezing a burst.
+const members=(region,{entering,leaving}={})=>{
+ const info=infoOf(region),sceneTokens=values(region.parent?.tokens);
+ if(info.profile.instant&&info.initialTokens)return new Map(info.initialTokens.map(row=>[row.actorUuid,sceneTokens.find(t=>t.uuid===row.tokenUuid)]).filter(([,t])=>t?.actor));
+ const inside=sceneTokens.filter(t=>typeof t.testInsideRegion==='function'?t.testInsideRegion(region):values(region.tokens).some(r=>r.uuid===t.uuid));
+ return new Map([...inside.filter(t=>t.uuid!==leaving?.uuid),...(entering?[entering]:[])].filter(t=>eligible(t.actor,info)).map(t=>[t.actor.uuid,t]));
+};
 const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type===TYPE&&!b.disabled);
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
@@ -28,6 +35,21 @@ function regionPresent(region){return !region.id||!region.parent?.regions?.get||
 function deleteZoneOnce(region){
  if(regionDeletions.has(region))return regionDeletions.get(region);
  const job=Promise.resolve().then(()=>regionPresent(region)?region.delete():false).finally(()=>regionDeletions.delete(region));regionDeletions.set(region,job);return job;
+}
+const instantVisualTimers=new Map();
+function scheduleInstantVisual(region){
+ const info=infoOf(region);if(!info?.profile.instant||instantVisualTimers.has(region.uuid))return;
+ const timer=setTimeout(()=>{instantVisualTimers.delete(region.uuid);void expireInstantSpellZone(region).catch(error=>console.error('Trudvang | Instant area cleanup failed',error));},Math.max(0,Number(info.visualExpiresAt)-Date.now()));
+ timer.unref?.();instantVisualTimers.set(region.uuid,timer);
+}
+/** Visual lifetime is real time; pending victim decisions survive in their chat card. */
+export function expireInstantSpellZone(region,{now=Date.now()}={}){
+ return serial(region.uuid,async()=>{
+  const info=infoOf(region);if(!writer()||!info?.profile.instant||!regionPresent(region)||now<info.visualExpiresAt)return false;
+  const timer=instantVisualTimers.get(region.uuid);if(timer){clearTimeout(timer);instantVisualTimers.delete(region.uuid);}
+  await deleteZoneOnce(region);
+  await ChatMessage.create({speaker:{alias:nameOf(info)},content:'<p class="trudvang consequence-notice">'+escapeHtml(local('InstantDissipated',{name:nameOf(info)}))+'</p>'});return true;
+ });
 }
 async function removeRecipients(region,{expired=false}={}){
  const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
@@ -45,7 +67,7 @@ async function promptMembers(region,info,tokens){
  if(!tokens.size)return;
  const phase=spellZonePhase(info,clock(info));
  let message=values(game.messages).find(m=>m.flags?.[S]?.spellZoneTest?.regionUuid===region.uuid&&m.flags[S].spellZoneTest.phase===phase);
- const state=structuredClone(message?.flags?.[S]?.spellZoneTest??{regionUuid:region.uuid,phase,recipients:[],responses:{}});
+ const state=structuredClone(message?.flags?.[S]?.spellZoneTest??{regionUuid:region.uuid,phase,recipients:[],responses:{},...(info.profile.instant?{instantInfo:structuredClone(info)}:{})});
  for(const [uuid,token]of tokens)if(!state.recipients.some(r=>r.actorUuid===uuid))state.recipients.push({actorUuid:uuid,name:token.name??token.actor.name,tokenUuid:token.uuid,...(info.profile.kind==='fire'?{canEvade:Number(fireEvadeItem(token.actor)?.system?.level)>0&&token.actor.canPerformAction?.({movement:true})!==false}:{})});
  const actors=state.recipients.map(r=>tokens.get(r.actorUuid)?.actor).filter(Boolean),whisper=values(game.users).filter(u=>u.isGM||actors.some(a=>a.testUserPermission(u,'OWNER'))).map(u=>u.id);
  if(!message){message=await ChatMessage.create({speaker:{alias:nameOf(info)},whisper,content:promptHTML(info,state.recipients,state.responses),flags:{[S]:{spellZoneTest:state}}});}
@@ -59,7 +81,7 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);return;}
   if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await deleteZoneOnce(region);return;}
   let tokens=members(region,{entering,leaving});
-  if(info.profile.instant){if(!info.initialActors){info.initialActors=[...tokens.keys()];await region.update({['flags.'+S+'.spellZone.initialActors']:info.initialActors});}tokens=new Map([...tokens].filter(([id])=>info.initialActors.includes(id)));}
+  if(info.profile.instant){if(!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}scheduleInstantVisual(region);}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())if(!tokens.has(actor.uuid))for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect);
   if(info.profile.kind==='earthquake'||info.profile.kind==='fire'&&info.profile.penalty&&!info.profile.instant)for(const [uuid,token]of tokens){
@@ -71,7 +93,6 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   }
   const prompt=await promptMembers(region,info,tokens);
   if(info.profile.kind==='fire'){if(prompt){const state=structuredClone(prompt.flags[S].spellZoneTest);for(const [id,token]of tokens){const row=state.recipients.find(r=>r.actorUuid===id);if(!row?.canEvade&&!state.responses[responseKey(id)]?.resolved){await applyZoneFireDamage({actor:token.actor,token,info,message:prompt});state.responses[responseKey(id)]={resolved:true,avoided:false};await updatePrompt(prompt,info,state);}}}
-   if(info.profile.instant&&(!prompt||prompt.flags[S].spellZoneTest.recipients.every(r=>prompt.flags[S].spellZoneTest.responses[responseKey(r.actorUuid)]?.resolved))){await removeRecipients(region);await deleteZoneOnce(region);}
   }
  });
 }
@@ -84,7 +105,6 @@ async function previousPlacement(ready){
 }
 function placementFeedback(result){
  if(result.reason)ui.notifications.warn(local(result.reason));
- else if(result.status==='placed'&&result.finished)ui.notifications.info(local('InstantResolved'));
  else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='outOfRange'?'OutOfRange':'Unavailable'));
 }
 export async function createSpellZoneOnAuthority(payload){
@@ -99,7 +119,7 @@ export async function createSpellZoneOnAuthority(payload){
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
  const info={context:structuredClone(cast),profile,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
- info.lastMovedPhase=spellZonePhase(info,clock(info));
+ info.lastMovedPhase=spellZonePhase(info,clock(info));if(profile.instant)info.visualExpiresAt=Date.now()+10000;
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
   levels:token.level?[token.level]:[],shapes:[{type:'circle',x:payload.point.x,y:payload.point.y,radius:profile.radius*zonePixelScale(scene)}],flags:{[S]:{spellZone:info}},behaviors:[{type:TYPE,name:nameOf(info),system:{}}]}]);
@@ -114,8 +134,11 @@ export async function createSpellZoneOnAuthority(payload){
 }
 export async function resolveSpellZoneTestOnAuthority(payload){
  const message=game.messages.get(payload.messageId),state=message?.flags?.[S]?.spellZoneTest,user=game.users.get(payload.userId);
- const region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=infoOf(region),actor=await foundry.utils.fromUuid(payload.actorUuid);
- if(!writer()||!state||!info||!enabled(region)||!user?.active||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||spellZoneExpired(info,clock(info))||state.phase!==spellZonePhase(info,clock(info))||!members(region).has(actor.uuid)||!state.recipients.some(r=>r.actorUuid===actor.uuid))return {status:'unavailable'};
+ const region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(payload.actorUuid);
+ const row=state?.recipients.find(r=>r.actorUuid===actor?.uuid),instant=info?.profile.instant===true;
+ if(!writer()||!state||!info||!user?.active||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!row)return {status:'unavailable'};
+ if(!instant&&(!enabled(region)||spellZoneExpired(info,clock(info))||state.phase!==spellZonePhase(info,clock(info))||!members(region).has(actor.uuid)))return {status:'unavailable'};
+ const victimToken=instant?(await foundry.utils.fromUuid(row.tokenUuid)??{uuid:row.tokenUuid,actor,name:row.name}):members(region).get(actor.uuid);
  const old=state.responses[responseKey(actor.uuid)];if(old?.resolved)return {status:'alreadyRolled'};
  const key=message.id+':'+actor.uuid,lock=locks.get(key);
  if(payload.action==='begin'){
@@ -124,12 +147,12 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  }
  if(!lock||lock.token!==payload.token||lock.userId!==user.id)return {status:'unavailable'};
  if(payload.action==='cancel'){locks.delete(key);return {status:'cancelled'};}
- if(info.profile.kind==='fire'&&payload.choice==='accept'&&payload.action==='finish'){const next=structuredClone(state);await applyZoneFireDamage({actor,token:members(region).get(actor.uuid),info,message});next.responses[responseKey(actor.uuid)]={resolved:true,avoided:false};await updatePrompt(message,info,next);locks.delete(key);if(info.profile.instant&&next.recipients.every(r=>next.responses[responseKey(r.actorUuid)]?.resolved))await deleteZoneOnce(region);return {status:'resolved'};}
+ if(info.profile.kind==='fire'&&payload.choice==='accept'&&payload.action==='finish'){const next=structuredClone(state);await applyZoneFireDamage({actor,token:victimToken,info,message});next.responses[responseKey(actor.uuid)]={resolved:true,avoided:false};await updatePrompt(message,info,next);locks.delete(key);return {status:'resolved'};}
  const proof=game.messages.get(payload.proofId),test=proof?.flags?.[S]?.spellZoneProof,die=Number(proof?.rolls?.[0]?.total),target=Number(test?.target);
  if(payload.action!=='finish'||(proof?.author?.id??proof?._source?.author)!==user.id||test?.messageId!==message.id||test?.actorUuid!==actor.uuid||test.token!==lock.token&&old?.proofId!==payload.proofId||proof?.rolls?.[0]?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
  const next=structuredClone(state),response=next.responses[responseKey(actor.uuid)]??={outcome:{...resolveRollUnderOutcome(die,target),result:die,target},proofId:payload.proofId,resolved:false};
  await updatePrompt(message,info,next);
- if(info.profile.kind==='fire'){if(!response.outcome.success)await applyZoneFireDamage({actor,token:members(region).get(actor.uuid),info,message});response.avoided=response.outcome.success;response.resolved=true;await updatePrompt(message,info,next);locks.delete(key);if(info.profile.instant&&next.recipients.every(r=>next.responses[responseKey(r.actorUuid)]?.resolved))await deleteZoneOnce(region);return {status:'resolved'};}
+ if(info.profile.kind==='fire'){if(!response.outcome.success)await applyZoneFireDamage({actor,token:victimToken,info,message});response.avoided=response.outcome.success;response.resolved=true;await updatePrompt(message,info,next);locks.delete(key);return {status:'resolved'};}
  if(!response.outcome.success){
   if(info.profile.kind==='runeEarthquake'){
    const stackId='quake-stun:'+message.id;
@@ -177,7 +200,7 @@ export async function placeSpellZone(message){
  const result=await request({type:'createSpellZone',messageId:message.id,sceneId:canvas.scene.id,tokenId:token.id,point,underground});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
- const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);
+ const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);
  if(!info||!actor?.isOwner)return null;
  const base={type:'spellZoneTest',messageId:message.id,actorUuid,choice};const begin=await request({...base,action:'begin'});if(begin.status!=='reserved')return begin;
  try{
@@ -185,7 +208,7 @@ export async function requestSpellZoneTest(message,actorUuid,choice='test'){
   if(info.profile.kind==='fire'&&!begin.proofId&&!canEvadeZoneFire(actor)){ui.notifications.warn(local('FireCannotEvade'));return {status:'unavailable'};}
   let proofId=begin.proofId;
   if(!proofId){
-   const spec=info.profile.kind==='fire'?{}:earthquakeTest(info.profile,impactSize(actor)),effect=effectsFor(actor,region)[0];
+   const spec=info.profile.kind==='fire'?{}:earthquakeTest(info.profile,impactSize(actor)),effect=region?effectsFor(actor,region)[0]:null;
    const procedure=outcome=>({flags:{spellZoneProof:{messageId:message.id,actorUuid,token:begin.token,target:outcome.target}}});let result;
    if(info.profile.kind==='fire'){const evade=fireEvadeItem(actor),options={resistedEffect:effect,reactive:true,modifierRows:[{labelKey:'TRUDVANG.SpellZone.FireInitiative',value:zoneFireInitiativePenalty(actor)}],resolveProcedure:procedure};result=(actor.isInActiveCombat??actor.isInCombatActive?.())?await actor.rollDodge(options):await actor.rollAbility(evade,options);}
    else if(info.profile.kind==='runeEarthquake'){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,resistedEffect:effect,reactive:true,test:{sv:spec.sv,trait:['dexterity','aucun'],traitMethod:'first',action:local('Test')},sourceName:nameOf(info)+' — '+actor.name,resolveProcedure:procedure});}
@@ -203,11 +226,11 @@ export function registerSpellZoneSupport(){
  const flightChanged=(effect,changes={})=>{if(changes.statuses!==undefined||values(effect.statuses).some(id=>['fly','hover','flying','hovering'].includes(id)))safely();};
  for(const hook of ['createActiveEffect','updateActiveEffect','deleteActiveEffect'])Hooks.on(hook,flightChanged);
  Hooks.on('deleteRegion',region=>{if(infoOf(region))void reconcileSpellZone(region,{removed:true}).catch(error=>console.error('Trudvang | Zone cleanup failed',error));});
- for(const hook of ['updateCombat','updateWorldTime','canvasReady'])Hooks.on(hook,safely);
+ for(const hook of ['updateCombat','updateWorldTime','canvasReady','updateUser'])Hooks.on(hook,safely);
  Hooks.on('deleteCombat',combat=>{if(writer()){
   const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(s=>values(s.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())for(const effect of values(actor.effects))if(effect.flags?.[S]?.spellZoneStun?.combatId===combat.id)void deleteEffectOnce(effect,{trudvangExpired:true}).catch(error=>console.error('Trudvang | Zone stun cleanup failed',error));
- } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region)?.combatId===combat.id)void deleteZoneOnce(region).catch(error=>console.error('Trudvang | Zone deletion failed',error));});
+ } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region)?.combatId===combat.id&&!infoOf(region).profile.instant)void deleteZoneOnce(region).catch(error=>console.error('Trudvang | Zone deletion failed',error));});
  Hooks.once('ready',async()=>{registerSocket();
   // TEMPORARY WORLD MIGRATION — remove with the pre-zone development worlds.
   try{await migrateToikalokkeEarthquake();}catch(error){console.error('Trudvang | Earthquake catalogue migration failed',error);}

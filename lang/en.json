@@ -163,7 +163,9 @@
       "PaletteSpring": "Spring",
       "PaletteSummer": "Summer",
       "PaletteAutumn": "Autumn",
-      "PaletteWinter": "Winter"
+      "PaletteWinter": "Winter",
+      "InitiativeChatMessagesName": "Show initiative rolls in chat",
+      "InitiativeChatMessagesHint": "When unchecked, only the combat tracker score is updated. No initiative message or 3D die is shown."
     },
     "Tab": {
       "Summary": "Summary",
@@ -19047,7 +19049,7 @@
       "CastingFinished": "This casting’s area has already ended. Cast the spell again to create a new area.",
       "AlreadyPlaced": "This casting’s area is already placed and cannot be moved.",
       "MoveNextRound": "This area can only be moved again next round.",
-      "InstantResolved": "The instantaneous flames have been resolved: no persistent area remains on the scene."
+      "InstantDissipated": "{name}: the flames dissipate."
     }
   }
 }
