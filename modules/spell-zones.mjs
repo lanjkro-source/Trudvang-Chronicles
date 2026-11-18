@@ -124,7 +124,7 @@ function registerSocket(){
  });
 }
 async function request(payload){
- payload={...payload,userId:game.user.id,requestId:crypto.randomUUID()};if(writer())return resolveSpellZoneRequest(payload);
+ payload={...payload,userId:game.user.id,requestId:crypto.randomUUID()};if(writer()){try{return await resolveSpellZoneRequest(payload);}catch(error){console.error('Trudvang | Spell zone failed',error);return {status:'unavailable'};}}
  if(!game.users?.activeGM||!game.socket)return {status:'unavailable'};registerSocket();
  return new Promise(resolve=>{const timer=setTimeout(()=>{replies.delete(payload.requestId);resolve({status:'unavailable'});},30000);replies.set(payload.requestId,{resolve,timer});game.socket.emit(channel,payload);});
 }
