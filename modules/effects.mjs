@@ -33,7 +33,9 @@ export function isManagedEffectClock(effect) {
   if (isManagedItemTransformation(effect)) return true;
   return effect.parent?.documentName === "Actor" && effect.parent.type !== "effect"
     && Boolean(effect.flags?.["trudvang-chronicles"]?.consequenceClock
-      || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved);
+      || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved
+      || effect.flags?.["trudvang-chronicles"]?.spellZoneRecipient
+      || effect.flags?.["trudvang-chronicles"]?.spellZoneStun);
 }
 
 const string = (initial = "") => new fields.StringField({required: true, nullable: false, initial});
@@ -89,6 +91,8 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
  * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
   get isExpiryTrackable() {
+    const actor=this.parent?.documentName==='Actor'?this.parent:this.parent?.parent;
+    if((actor?.flags??actor?._source?.flags)?.['trudvang-chronicles']?.resistancePreparation)return false;
     return isManagedEffectClock(this) ? false : super.isExpiryTrackable;
   }
   canUserModify(user, action, data = {}) {

@@ -27,7 +27,7 @@ function clonableActor(){
  a.effects.push({id:'fatigue',uuid:'Actor.a.ActiveEffect.fatigue',name:'Fatigue',system:{changes:[{key:'system.modifiers.rolls.allActions',type:'add',value:'-2'}]}});
  a.system.modifiers.rolls.allActions=-5;
  a.clone=async function(changes,options){
-  assert.equal(options.keepId,true);this.cloneCount++;
+  assert.equal(options.keepId,true);assert.equal(changes.flags["trudvang-chronicles"].resistancePreparation,true);this.cloneCount++;
   const copy={...this,system:structuredClone(this.system),effects:changes.effects,items:changes.items??this.items};
   copy.system.modifiers.rolls.allActions=copy.effects.reduce((sum,e)=>sum+e.system.changes.filter(c=>c.key==='system.modifiers.rolls.allActions').reduce((n,c)=>n+Number(c.value),0),0);
   return copy;

@@ -1339,3 +1339,9 @@ test('an inscription failure on a sacred object cannot be disabled, given a dura
   assert.equal(await effect._preDelete({},{}),false);assert.equal(await effect._preDelete({trudvangSacredDelete:true},{}),true);
  }finally{ui.notifications.warn=previous;}
 });
+
+test('earthquake recipients and rune stun use the system clock and detached calculation actors never register expiry',async()=>{
+ const {isManagedEffectClock}=await import('../modules/effects.mjs');const S='trudvang-chronicles';
+ for(const field of ['spellZoneRecipient','spellZoneStun']){const e=new TrudvangActiveEffect();e.type='effect';e.parent={documentName:'Actor',type:'npc'};e.flags={[S]:{[field]:{regionUuid:'Region.quake'}}};assert.equal(isManagedEffectClock(e),true);assert.equal(e.isExpiryTrackable,false);}
+ for(const item of [false,true]){const e=new TrudvangActiveEffect();const actor={documentName:'Actor',flags:{[S]:{resistancePreparation:true}}};e.parent=item?{documentName:'Item',parent:actor}:actor;e.flags={};assert.equal(e.isExpiryTrackable,false);}
+});

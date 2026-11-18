@@ -21,6 +21,12 @@ const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
 function allowedPoint(point,token,scene,profile){const p=center(token,scene);return Number.isFinite(point.x)&&Number.isFinite(point.y)&&Math.hypot(point.x-p.x,point.y-p.y)<=profile.range*zonePixelScale(scene)+.01;}
+const regionDeletions=new WeakMap();
+function regionPresent(region){return !region.id||!region.parent?.regions?.get||region.parent.regions.get(region.id)===region;}
+function deleteZoneOnce(region){
+ if(regionDeletions.has(region))return regionDeletions.get(region);
+ const job=Promise.resolve().then(()=>regionPresent(region)?region.delete():false).finally(()=>regionDeletions.delete(region));regionDeletions.set(region,job);return job;
+}
 async function removeRecipients(region,{expired=false}={}){
  const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
  for(const actor of actors.values())for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect,expired?{trudvangExpired:true}:{});
@@ -46,8 +52,8 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
  return serial(region.uuid,async()=>{
   if(!writer()||!infoOf(region))return;
   const info=infoOf(region);
-  if(removed||!enabled(region)){await removeRecipients(region);return;}
-  if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await region.delete();return;}
+  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);return;}
+  if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await deleteZoneOnce(region);return;}
   const tokens=members(region,{entering,leaving}),actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())if(!tokens.has(actor.uuid))for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect);
   if(info.profile.kind==='earthquake')for(const [uuid,token]of tokens){
@@ -172,7 +178,7 @@ export function registerSpellZoneSupport(){
  Hooks.on('deleteCombat',combat=>{if(writer()){
   const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(s=>values(s.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())for(const effect of values(actor.effects))if(effect.flags?.[S]?.spellZoneStun?.combatId===combat.id)void deleteEffectOnce(effect,{trudvangExpired:true}).catch(error=>console.error('Trudvang | Zone stun cleanup failed',error));
- } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region)?.combatId===combat.id)void region.delete().catch(error=>console.error('Trudvang | Zone deletion failed',error));});
+ } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region)?.combatId===combat.id)void deleteZoneOnce(region).catch(error=>console.error('Trudvang | Zone deletion failed',error));});
  Hooks.once('ready',async()=>{registerSocket();
   // TEMPORARY WORLD MIGRATION — remove with the pre-zone development worlds.
   try{await migrateToikalokkeEarthquake();}catch(error){console.error('Trudvang | Earthquake catalogue migration failed',error);}

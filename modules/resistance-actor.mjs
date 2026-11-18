@@ -18,7 +18,7 @@ export async function actorForResistance(actor,{effect=null,effectUuid='',contex
  const applicable=values(actor.allApplicableEffects?.()??actor.effects);
  const excluded=new Set(applicable.filter(matches));
  if(!excluded.size)return actor;
- const changes={effects:values(actor.effects).filter(row=>!excluded.has(row)).map(effectSource)};
+ const changes={flags:{...actor.flags,[S]:{...actor.flags?.[S],resistancePreparation:true}},effects:values(actor.effects).filter(row=>!excluded.has(row)).map(effectSource)};
  const affectedItems=values(actor.items).filter(item=>values(item.effects).some(row=>excluded.has(row)));
  if(affectedItems.length)changes.items=values(actor.items).map(item=>{
   const source=item.toObject(true);
