@@ -24,9 +24,11 @@ export function attackSizeModifier(attackerSize, targetSize) {
 }
 
 /** Named modifiers imposed by effects on the defender, never on the attacker. */
-export function targetDefenseRows(actor) {
+export function targetDefenseRows(actor,attacker) {
   const rows = (actor?.transformationProfile?.effects ?? []).map(effect => ({label: effect.name, value: Number(effectRules(effect).defense || 0)})).filter(row => row.value);
   if (!rows.length && actor?.transformationProfile?.defense) rows.push({label: actor.name, value: Number(actor.transformationProfile.defense)});
+  const own=Math.min(0,Number(attacker?.system?.modifiers?.rolls?.visibility)||0),target=Math.min(0,Number(actor?.system?.modifiers?.rolls?.visibility)||0),extra=Math.min(0,target-own);
+  if(extra){const effect=Array.from(actor?.effects??[]).find(e=>!e.disabled&&!e.isSuppressed&&e.flags?.['trudvang-chronicles']?.spellZoneRecipient?.visibility);rows.push({label:effect?.name??actor.name,value:extra});}
   return rows;
 }
 
@@ -35,7 +37,7 @@ export function attackSizeTargets(attacker, targets = []) {
   return Array.from(targets).filter(token => token?.actor).map(token => ({
     name: token.name || token.actor.name || "", actorUuid: token.actor.uuid || "",
     tokenUuid: token.document?.uuid || token.uuid || "",
-    ...(token.actor.transformationProfile?.defense ? {defenseModifier: token.actor.transformationProfile.defense, defenseRows: targetDefenseRows(token.actor)} : {}),
+    ...(token.actor.transformationProfile?.defense||token.actor.system?.modifiers?.rolls?.visibility ? {defenseModifier:targetDefenseRows(token.actor,attacker).reduce((n,r)=>n+r.value,0),defenseRows:targetDefenseRows(token.actor,attacker)}:{}),
     modifier: attackSizeModifier(size(attacker), size(token.actor))
   }));
 }

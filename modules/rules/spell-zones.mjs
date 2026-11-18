@@ -1,6 +1,7 @@
 export function earthquakeProfile(definition,context={}){
  if(!definition)return null;
  const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
+ if(definition.kind==='fire'){const extra=count(definition.durationOptionId);return {kind:'fire',radius:definition.radius+definition.radiusStep*count(definition.radiusOptionId),range:definition.range+5*count(definition.rangeOptionId),rounds:1+extra,instant:extra===0,movable:definition.movable&&extra>0,penalty:definition.visibilityPenalty,excludeCaster:false,centered:false};}
  if(definition.kind==='runeEarthquake'){
   const level=Number(context.runeLevel);if(!Number.isInteger(level)||level<1||level>5)return null;
   return {kind:definition.kind,radius:definition.radiusPerLevel*level,range:definition.rangePerAdditionalLevel*(level-1),rounds:1,level,sizeSV:definition.sizeSV,levelModifier:definition.levelModifier,stunRounds:definition.stunRounds,excludeCaster:true,centered:level===1};

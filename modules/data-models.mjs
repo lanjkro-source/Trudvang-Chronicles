@@ -150,6 +150,7 @@ function effectiveSkillsSchema(initial = 1) {
 function rollModifiersSchema() {
   return schema({
     allActions: integer(0, {persisted: false}),
+    visibility: integer(0, {persisted: false}),
     combatActions: integer(0, {persisted: false}),
     movementActions: integer(0, {persisted: false}),
     attack: integer(0, {persisted: false}),

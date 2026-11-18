@@ -19023,20 +19023,27 @@
       "Defenses": "Impossible à parer. Protection passive du bouclier applicable ; esquive possible avant toute action, avec le malus d’initiative prévu par le sort."
     },
     "SpellZone": {
-      "Place": "Placer le séisme",
+      "Place": "Placer / déplacer la zone",
       "Instruction": "Le contrôleur de chaque créature ou le MJ peut faire son test.",
       "Test": "Résister au séisme",
       "PenaltyDescription": "Le sol tremble : {penalty} aux tests de compétence et de situation tant que la créature reste dans la zone.",
       "RuneFailure": "La créature ne peut pas agir pendant le round en cours ni le suivant.",
-      "Behavior": "Séisme de Trudvang",
+      "Behavior": "Zone de sortilège de Trudvang",
       "SelectCaster": "Sélectionnez un unique token du lanceur sur la scène.",
-      "OutOfRange": "Le centre du séisme dépasse la portée autorisée.",
-      "Unavailable": "Séisme indisponible : vérifiez le MJ connecté, les permissions ou la durée restante.",
+      "OutOfRange": "Le centre de la zone dépasse la portée autorisée.",
+      "Unavailable": "Zone indisponible : vérifiez le MJ connecté, les permissions ou la durée restante.",
       "SizeModifier": "Taille et puissance du séisme",
       "Underground": "Sous terre : risque d’éboulement de {chance} %.",
       "Profile": "Rayon : {radius} m ; durée : {rounds} round(s).",
       "Collapse": "Éboulement ou glissement de terrain ({chance} %) : le MJ en détermine les conséquences.",
-      "NoCollapse": "Aucun éboulement ni glissement de terrain (risque : {chance} %)."
+      "NoCollapse": "Aucun éboulement ni glissement de terrain (risque : {chance} %).",
+      "FireVisibility": "Les flammes gênent la visibilité : {penalty} aux tests de compétence dans la zone et aux attaques visant une personne dans la zone. Ce malus ne se cumule pas avec lui-même.",
+      "FireApplied": "Dégâts appliqués",
+      "FireAvoided": "Flammes évitées",
+      "FireEvade": "Esquiver",
+      "FireAccept": "Subir les dégâts",
+      "FireCannotEvade": "Esquive impossible : la spécialité est requise et, en combat, toutes les réserves de PC et les actions doivent être intactes.",
+      "FireInitiative": "Écart avec l’initiative actuelle"
     }
   }
 }

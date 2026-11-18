@@ -270,7 +270,7 @@ function attachListeners(message, html) {
     });
   });
   html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await placeSpellZone(message);}));
-  html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid);}));
+  html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid,button.dataset.zoneChoice);}));
   html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
     event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);
     if(actor?.isOwner)await requestDamageImpact({message,actor});

@@ -285,6 +285,7 @@ export class TrudvangActor extends BaseActor {
   getRollModifier({kind = "", skillKey = "", traitKey = "", movement = false, includeState = true} = {}) {
     const modifiers = this.system.modifiers?.rolls || {};
     let total = Number(modifiers.allActions || 0);
+    if(["attack","parry","ability","magic","skill","dodge"].includes(kind))total+=Number(modifiers.visibility||0);
     const combatKinds = new Set(["attack", "parry", "ability", "magic"]);
     if (["attack", "parry"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.combatActions || 0);
     if (movement) total += Number(modifiers.movementActions || 0);
@@ -1118,24 +1119,25 @@ export class TrudvangActor extends BaseActor {
     return this.getSkillTarget("agility", battleManeuver, {kind: "ability", movement: true});
   }
 
-  async rollDodge() {
+  async rollDodge(context={}) {
     if (this.transformationProfile?.noDodge) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     if (!combatPoolsAreFull(this)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DodgeRequiresFullCombatPools"));
     const label = game.i18n.localize("TRUDVANG.Combat.Dodge");
-    const evade = this.findKnowledgeItem("evade");
-    const breakdown = evade ? this.getAbilityBreakdown(evade) : {
+    const calculationActor=context.resistedEffect?await actorForResistance(this,{effect:context.resistedEffect}):this;
+    const evade = calculationActor.findRuleKnowledge("evade")??calculationActor.findKnowledgeItem("evade");
+    const breakdown = evade ? calculationActor.getAbilityBreakdown(evade) : {
       base: this.getSkillValue("agility") + Number(this.findKnowledgeItem("battleManeuver")?.system.level || 0),
       modifierRows: this.skillRollModifierRows("agility", {kind: "ability", movement: true})
     };
-    const {base, modifierRows} = breakdown;
+    const base=breakdown.base,modifierRows=[...breakdown.modifierRows,...(context.modifierRows??[])];
     const target = base + rollModifierTotal(modifierRows);
     const options = await modifierDialog({actor:this, title: label, target: base, modifierRows});
     if (!options) return null;
     const pools = resolveCombatPools({actor: this}).active;
     if (this.isOwner) await this.spendCombatPoints(Object.fromEntries(pools.map(pool => [pool.id, pool.current])));
-    return rollUnder({blessing:options.blessing, actor: this, label, target, modifier: options.modifier, kind: "dodge", flavor: rollModifierFlavor(modifierRows)});
+    return rollUnder({blessing:options.blessing, actor: this, label, target, modifier: options.modifier, kind: "dodge",resolveProcedure:context.resolveProcedure, flavor: rollModifierFlavor(modifierRows)});
   }
 
   async rollWrestlingAction(kind = "grapple", {defaultPoints = 10} = {}) {
@@ -1225,7 +1227,7 @@ export class TrudvangActor extends BaseActor {
   async rollFixedAttack({name, target, targetTrait = "none", successConsequence = ""} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const baseVC = Number.isFinite(Number(target)) ? Math.trunc(Number(target)) : 0;
-    const targets = resolveFixedAttackTargets({baseVC, targetTrait, targets: Array.from(game.user.targets || [])});
+    const targets = resolveFixedAttackTargets({attacker:this,baseVC, targetTrait, targets: Array.from(game.user.targets || [])});
     const traitLabel = targetTrait === "none"
       ? game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTrait")
       : game.i18n.localize(TRUDVANG.traits[targetTrait] ?? targetTrait);

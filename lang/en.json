@@ -19023,20 +19023,27 @@
       "Defenses": "Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty."
     },
     "SpellZone": {
-      "Place": "Place earthquake",
+      "Place": "Place / move the area",
       "Instruction": "Each creature’s owner or the GM may make their test.",
       "Test": "Resist earthquake",
       "PenaltyDescription": "The ground shakes: {penalty} to Skill and Situation tests while the creature remains in the area.",
       "RuneFailure": "The creature cannot act during the current round or the following round.",
-      "Behavior": "Trudvang earthquake",
+      "Behavior": "Trudvang spell area",
       "SelectCaster": "Select a single token of the caster on this scene.",
-      "OutOfRange": "The earthquake’s centre is beyond its range.",
-      "Unavailable": "Earthquake unavailable: check the active GM, permissions or remaining duration.",
+      "OutOfRange": "The centre of the area exceeds the permitted range.",
+      "Unavailable": "Area unavailable: check the connected GM, permissions or remaining duration.",
       "SizeModifier": "Creature size and earthquake power",
       "Underground": "Underground: {chance}% chance of a cave-in.",
       "Profile": "Radius: {radius} m; duration: {rounds} round(s).",
       "Collapse": "Cave-in or landslide ({chance}%): the GM determines the consequences.",
-      "NoCollapse": "No cave-in or landslide (risk: {chance}%)."
+      "NoCollapse": "No cave-in or landslide (risk: {chance}%).",
+      "FireVisibility": "Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself.",
+      "FireApplied": "Damage applied",
+      "FireAvoided": "Flames avoided",
+      "FireEvade": "Evade",
+      "FireAccept": "Take damage",
+      "FireCannotEvade": "Cannot evade: the specialty is required and, in combat, all CP pools and actions must be unspent.",
+      "FireInitiative": "Difference from the current initiative"
     }
   }
 }

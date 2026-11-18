@@ -11350,6 +11350,17 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-flame-craft:flame-burst:3": {
     "isRune": false,
     "level": 3,
+    "spellZone": {
+      "kind": "fire",
+      "radius": 0.5,
+      "radiusStep": 0.5,
+      "range": 10,
+      "rangeOptionId": "vitner-flame-craft:flame-burst:3:0",
+      "radiusOptionId": "vitner-flame-craft:flame-burst:3:1",
+      "durationOptionId": "vitner-flame-craft:flame-burst:3:3",
+      "movable": true,
+      "visibilityPenalty": 0
+    },
     "damageRoll": {
       "steps": [
         {
@@ -11557,6 +11568,17 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-flame-craft:sea-of-fire:7": {
     "isRune": false,
     "level": 5,
+    "spellZone": {
+      "kind": "fire",
+      "radius": 2,
+      "radiusStep": 1,
+      "range": 20,
+      "rangeOptionId": "vitner-flame-craft:sea-of-fire:7:0",
+      "radiusOptionId": "vitner-flame-craft:sea-of-fire:7:1",
+      "durationOptionId": "vitner-flame-craft:sea-of-fire:7:3",
+      "movable": false,
+      "visibilityPenalty": -5
+    },
     "damageRoll": {
       "steps": [
         {

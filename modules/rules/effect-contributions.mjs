@@ -63,6 +63,7 @@ export function effectContributionText(rows) {
 
 export function rollEffectKeys(actor, {kind = "", skillKey = "", traitKey = "", movement = false} = {}) {
   const keys = ["allActions"];
+  if(["attack","parry","ability","magic","skill","dodge"].includes(kind))keys.push("visibility");
   if (["attack", "parry"].includes(kind) || (["ability", "magic", "skill"].includes(kind) && actor.isInCombatActive())) keys.push("combatActions");
   if (movement) keys.push("movementActions");
   if (["attack", "parry", "magic"].includes(kind)) keys.push(kind);

@@ -4,7 +4,7 @@ const NO_TRAIT = "none";
 /** Resolve a fixed attack's per-target VC while keeping a stable target reference
  * for any future effect application after a successful roll.
  */
-export function resolveFixedAttackTargets({baseVC = 0, targetTrait = NO_TRAIT, targets = []} = {}) {
+export function resolveFixedAttackTargets({attacker=null,baseVC = 0, targetTrait = NO_TRAIT, targets = []} = {}) {
   const base = Number.isFinite(Number(baseVC)) ? Math.trunc(Number(baseVC)) : 0;
   const trait = String(targetTrait || NO_TRAIT);
   const resolve = token => {
@@ -18,9 +18,9 @@ export function resolveFixedAttackTargets({baseVC = 0, targetTrait = NO_TRAIT, t
       name: String(token?.name || actor?.name || token?.document?.name || ""),
       trait,
       traitValue,
-      defenseRows: targetDefenseRows(actor),
-      defenseModifier: Number(actor?.transformationProfile?.defense || 0),
-      target: base - traitValue + Number(actor?.transformationProfile?.defense || 0),
+      defenseRows: targetDefenseRows(actor,attacker),
+      defenseModifier: targetDefenseRows(actor,attacker).reduce((n,r)=>n+r.value,0),
+      target: base - traitValue + targetDefenseRows(actor,attacker).reduce((n,r)=>n+r.value,0),
       effectTarget: actor ? {actorUuid: actor.uuid ?? "", tokenUuid: token?.document?.uuid ?? token?.uuid ?? ""} : null
     };
   };
