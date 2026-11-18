@@ -5,7 +5,6 @@ import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,zonePix
 import {impactSize} from './rules/impact.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
-import {actorForResistance} from './resistance-actor.mjs';
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {auraCasterToken,auraColor} from './aura.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
@@ -152,10 +151,10 @@ export async function requestSpellZoneTest(message,actorUuid){
  try{
   let proofId=begin.proofId;
   if(!proofId){
-   const spec=earthquakeTest(info.profile,impactSize(actor)),effect=effectsFor(actor,region)[0],view=effect?await actorForResistance(actor,{effect}):actor;
+   const spec=earthquakeTest(info.profile,impactSize(actor)),effect=effectsFor(actor,region)[0];
    const procedure=outcome=>({flags:{spellZoneProof:{messageId:message.id,actorUuid,token:begin.token,target:outcome.target}}});let result;
-   if(info.profile.kind==='runeEarthquake'){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor:view,reactive:true,test:{sv:spec.sv,trait:['dexterity','aucun'],traitMethod:'first',action:local('Test')},sourceName:nameOf(info)+' — '+actor.name,resolveProcedure:procedure});}
-   else result=await view.rollAbility({name:game.i18n.localize('TRUDVANG.Skill.Agility'),type:'ability',system:{catalogId:'agility',parentSkill:'agility',kind:'skill',level:0,rollBonus:1}},{reactive:true,label:nameOf(info)+' — '+actor.name,modifierRows:[{labelKey:'TRUDVANG.SpellZone.SizeModifier',value:spec.modifier}],resolveProcedure:procedure});
+   if(info.profile.kind==='runeEarthquake'){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,resistedEffect:effect,reactive:true,test:{sv:spec.sv,trait:['dexterity','aucun'],traitMethod:'first',action:local('Test')},sourceName:nameOf(info)+' — '+actor.name,resolveProcedure:procedure});}
+   else result=await actor.rollAbility({name:game.i18n.localize('TRUDVANG.Skill.Agility'),type:'ability',system:{catalogId:'agility',parentSkill:'agility',kind:'skill',level:0,rollBonus:1}},{reactive:true,resistedEffect:effect,label:nameOf(info)+' — '+actor.name,modifierRows:[{labelKey:'TRUDVANG.SpellZone.SizeModifier',value:spec.modifier}],resolveProcedure:procedure});
    if(!result)return {status:'cancelled'};proofId=result.messageId;
   }
   return await request({...base,action:'finish',token:begin.token,proofId});
