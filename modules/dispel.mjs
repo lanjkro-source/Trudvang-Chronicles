@@ -55,22 +55,37 @@ export async function performDispelTest({document,test,index,actor,context}={}){
  return result;
 }
 export function resolveDispelOnAuthority(payload){
- const previous=jobs.get(payload.messageId)??Promise.resolve(),job=previous.catch(()=>{}).then(()=>resolveNow(payload));jobs.set(payload.messageId,job);
- return job.finally(()=>{if(jobs.get(payload.messageId)===job)jobs.delete(payload.messageId);});
+ const key=game.messages?.get(payload.messageId)?.flags?.[S]?.dispelAttempt?.originMessageId||payload.messageId;
+ const previous=jobs.get(key)??Promise.resolve(),job=previous.catch(()=>{}).then(()=>resolveNow(payload));jobs.set(key,job);
+ return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});
 }
 async function resolveNow({messageId,userId}){
  const message=game.messages?.get(messageId),attempt=message?.flags?.[S]?.dispelAttempt,user=game.users?.get(userId);
  const caster=attempt?await foundry.utils.fromUuid(attempt.casterUuid):null;
- if(!attempt||!user?.active||!caster||(!user.isGM&&!caster.testUserPermission?.(user,'OWNER')))return 'unavailable';
+ if(!attempt||!user?.active||!caster)return 'unavailable';
+ const recipient=attempt.recipientUuid?await foundry.utils.fromUuid(attempt.recipientUuid):null;
+ if(!user.isGM&&!caster.testUserPermission?.(user,'OWNER')&&!recipient?.testUserPermission?.(user,'OWNER'))return 'unavailable';
  const source=await foundry.utils.fromUuid(attempt.sourceUuid),test=RULE_TESTS_BY_CATALOG_ID[attempt.sourceId]?.[attempt.testIndex];
  if(!source||!['spell','divineFeat'].includes(source.type)||source.system?.catalogId!==attempt.sourceId||!test?.dispel||!attempt.success||!Number.isFinite(attempt.target))return 'unavailable';
- const die=Number(message.rolls?.[0]?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';
+ const cleansing=test.dispel.mode==='cleanse';
+ const automatic=cleansing&&(test.dispel.roll==='none'||test.dispel.roll==='self'&&recipient?.uuid!==caster.uuid);
+ if(automatic!==Boolean(attempt.automatic))return 'unavailable';
+ if(automatic&&!user.isGM&&!caster.testUserPermission?.(user,'OWNER'))return 'unavailable';
+ if(!automatic){const die=Number(message.rolls?.[0]?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';}
  if(attempt.resolved)return attempt.status??'removed';
  const effect=await foundry.utils.fromUuid(attempt.effectUuid);
  if(!authority()&&(!message.canUserModify?.(game.user,'update')||(effect&&!effect.canUserModify?.(game.user,'delete'))))return 'unavailable';
  let status='gone';
- if(effect){const info=dispelCandidate(effect,test.dispel);if(!info||dispelFingerprint(effect)!==attempt.fingerprint)return 'changed';await effect.delete();status='removed';}
- const line='<p class="dispel-result">'+escapeHtml(game.i18n.format(status==='removed'?'TRUDVANG.Dispel.Removed':'TRUDVANG.Dispel.Gone',{effect:effect?.name??''}))+'</p>';
+ if(cleansing&&effect&&effect.parent?.uuid!==recipient?.uuid)return 'unavailable';
+ if(effect){const info=dispelCandidate(effect,test.dispel);if(!info||dispelFingerprint(effect)!==attempt.fingerprint)return 'changed';
+ if(cleansing&&attempt.originMessageId){
+  const origin=game.messages.get(attempt.originMessageId),cast=origin?.flags?.[S]?.ruleTestContext;
+  if(cast?.sourceId!==attempt.sourceId||cast?.casterUuid!==caster.uuid)return 'unavailable';
+  const recipients=origin.flags[S].cleansingRecipients??[],extra=test.dispel.roll==='self'?Math.max(0,Math.floor(Number(cast.countsById?.[attempt.sourceId+':2']??cast.counts?.[2])||0)):0;
+  if(!recipients.includes(recipient.uuid)){if(recipients.length>=1+extra)return 'unavailable';await origin.update({['flags.'+S+'.cleansingRecipients']:[...recipients,recipient.uuid]});}
+ }
+ await effect.delete();status='removed';}
+ const line='<p class="dispel-result">'+escapeHtml(game.i18n.format(status==='removed'?(cleansing?'TRUDVANG.Cleansing.Removed':'TRUDVANG.Dispel.Removed'):'TRUDVANG.Dispel.Gone',{effect:effect?.name??''}))+'</p>';
  const content=String(message.content).replace(/<\/article>\s*$/,line+'</article>');
  await message.update({content,['flags.'+S+'.dispelAttempt']:{...attempt,resolved:true,status}});return status;
 }
@@ -83,7 +98,7 @@ export function registerDispelSocket(){
   game.socket.emit(channel,{type:'dispelReply',userId:payload.userId,requestId:payload.requestId,status});
  });
 }
-async function requestDispel(messageId){
+export async function requestDispel(messageId){
  const payload={type:'dispelEffect',requestId:crypto.randomUUID(),messageId,userId:game.user.id};
  if(authority()||!game.users?.activeGM)return resolveDispelOnAuthority(payload);
  if(!game.socket)return 'unavailable';registerDispelSocket();

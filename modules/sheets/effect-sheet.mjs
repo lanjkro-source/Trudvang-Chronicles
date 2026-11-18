@@ -1,3 +1,4 @@
+import {CLEANSING_CATEGORIES} from '../rules/dispel.mjs';
 import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {annotateRuleTestDescription, performRuleTest, ruleTestsForDocument, ruleTestActionViews} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
@@ -96,6 +97,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
+      partContext.canClassifyAffliction=Boolean(game.user?.isGM&&this.isEditable);
+      partContext.afflictionCategory=this.document.flags?.['trudvang-chronicles']?.affliction?.category??'';
+      partContext.afflictionChoices=Object.fromEntries(['',...CLEANSING_CATEGORIES].map(key=>[key,game.i18n.localize('TRUDVANG.Cleansing.'+(key?'Category.'+key:'Unclassified'))]));
       partContext.documentUuid = this.document.uuid ?? "";
       partContext.description = this.document._source?.description ?? this.document.description ?? "";
       partContext.enrichedDescription = annotateRuleTestDescription(await TextEditorImpl.enrichHTML(
@@ -237,6 +241,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     // can only come from the core ActiveEffectConfig path, which must never
     // clobber or duplicate our namespaced storage on save.
     delete submitData.changes;
+    if(game.user?.isGM&&['',...CLEANSING_CATEGORIES].includes(raw.trudvang?.afflictionCategory)){
+      submitData.flags??={};submitData.flags['trudvang-chronicles']??={};
+      submitData.flags['trudvang-chronicles'].affliction={...(this.document.flags?.['trudvang-chronicles']?.affliction??{}),category:raw.trudvang.afflictionCategory};
+    }
     const item = this.document.item ?? (this.document.parent?.documentName === "Item" ? this.document.parent : null);
     const activation = raw.trudvang?.itemActivation;
     if (["weapon", "armor", "shield", "gear"].includes(item?.type) && ["manual", "equipped", "inventory"].includes(activation)) {

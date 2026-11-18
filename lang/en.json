@@ -6432,7 +6432,7 @@
         },
         "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
           "Name": "Hand of Gave",
-          "Summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+          "Summary": "Treats supernatural diseases, restores lost limbs and breaks curses; complete healing requires a Constitution test.",
           "Description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care. In this way the priest can heal unnatural diseases such as lycanthropy and Ulm plague, reconstruct lost organs or body parts, and break curses. This ability is also the only way to cure a character of madness (see Fear Level in the Game Master Guide book). In order for the c ondition to disappear c ompletely (beyond t emporary relief), the c haracter receiving the healing grace has to succeed on a Situation roll with a S ituation value of 8 (Constitution modifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -6446,7 +6446,7 @@
         },
         "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": {
           "Name": "Hand of Mercy",
-          "Summary": "The priest invokes Gave and lays glowing hands upon an ailing person in their care.",
+          "Summary": "Relieves minor afflictions and old injuries; a Constitution test allows a complete cure.",
           "Description": "The priest invokes Gave and lays glowing hands upon an ailing person in their care. In this way the priest can heal colds, minor illnesses, rheumatism, hair loss, pain, deformities, and lameness caused by past injuries. In order for the condition to disappear completely (beyond temporary relief), the character receiving the healing grace has to succeed on a Situation roll with a Situation value of 8 (Constitution modifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -6506,7 +6506,7 @@
         },
         "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": {
           "Name": "Will of Bete Wiemdas",
-          "Summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+          "Summary": "Treats natural diseases, memory loss and infertility, and neutralizes poisons; complete healing requires a Constitution test.",
           "Description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care. In this way the priest can heal natural diseases, lost minds, and impotence/infertility, and neutralize all poisons. In order for the condition to disappear completely (beyond temporary relief), the character receiving the healing grace has to succeed on a Situation roll with a Situation value of 8 (Constitution m odifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -18986,6 +18986,34 @@
       "ActorRequired": "Apply this variant to a creature; use the object variant for a ship.",
       "Values": "Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only.",
       "Unavailable": "No further water movement is possible this round."
+    },
+    "Cleansing": {
+      "NoEffect": "No compatible affliction. Afflictions recorded only in notes are handled with the GM.",
+      "Scope": "Select only an affliction covered by this ability. Cleansing removes that effect without restoring Body Points.",
+      "Effect": "Affliction to cleanse",
+      "Confirm": "This effect is harmful and is covered by this cleansing.",
+      "Permission": "The recipient’s owner or GM must make their test; the caster or GM must apply cleansing without a test.",
+      "Unavailable": "Cleansing unavailable: check permissions or retry after the effect changed.",
+      "Removed": "{effect} is cleansed.",
+      "TemporaryRelief": "Temporary relief only: the GM determines its duration; the affliction remains present.",
+      "Category": {
+        "mentalVitner": "Harmful foreign thought imposed by vitner",
+        "possession": "Possession by a soul or spirit",
+        "demonic": "Demonic possession",
+        "transformation": "Harmful transformation",
+        "curse": "Curse",
+        "minorAffliction": "Minor affliction or old injury",
+        "naturalDisease": "Natural disease",
+        "poison": "Poison",
+        "memory": "Memory loss",
+        "fertility": "Impotence or infertility",
+        "supernaturalDisease": "Supernatural disease",
+        "madness": "Madness",
+        "lostLimb": "Lost organ or limb"
+      },
+      "Unclassified": "None",
+      "Classification": "Affliction (cleansing)",
+      "ClassificationHint": "For manually authored effects: identifies their nature for appropriate cleansing abilities. Does not turn this effect into a disease."
     }
   }
 }

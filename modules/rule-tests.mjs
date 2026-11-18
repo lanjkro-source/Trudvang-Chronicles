@@ -237,6 +237,7 @@ function abilityEntryFor(actor, catalogId) {
 export async function performRuleTest({document, index, actor = testActorForUser(), context,resultMessage} = {}) {
   if ((document?.documentName==="ActiveEffect" || document?.flags?.[SYSTEM_ID]?.consequenceTests || document?.flags?.[SYSTEM_ID]?.transformation?.roundResistance) && document.parent?.documentName === "Actor") actor = document.parent;
   const test = ruleTestsForDocument(document)[Number(index)];
+  if(test?.dispel?.mode==='cleanse'){const {performCleansing}=await import('./cleansing.mjs');return performCleansing({document,test,index,actor,context:ruleTestCastingContext(document,{context}),originMessage:resultMessage});}
   if(test?.casterTest){
    const uuid=context?.casterUuid??document?.flags?.[SYSTEM_ID]?.transformation?.ruleTestContext?.casterUuid??document?.actor?.uuid;
    if(uuid)actor=await foundry.utils.fromUuid(uuid);

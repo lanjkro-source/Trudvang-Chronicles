@@ -14,6 +14,7 @@
       <input type="text" name="origin" value="{{origin}}" readonly>
     </div>
   </fieldset>
+  {{#if canClassifyAffliction}}<div class="form-group"><label>{{localize "TRUDVANG.Cleansing.Classification"}}</label><div class="form-fields"><select name="trudvang.afflictionCategory">{{selectOptions afflictionChoices selected=afflictionCategory}}</select></div><p class="hint">{{localize "TRUDVANG.Cleansing.ClassificationHint"}}</p></div>{{/if}}
   <fieldset class="effect-statuses">
     <legend>{{localize "EFFECT.StatusConditions"}}</legend>
     <div class="form-group stacked">

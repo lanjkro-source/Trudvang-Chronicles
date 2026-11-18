@@ -9,7 +9,7 @@ const lang=JSON.parse(fs.readFileSync('lang/fr.json')),get=(o,path)=>path.split(
 let die=6,choose=true,cancelRoll=false,mutateChoice,allowSame=false,changes=0;
 const gm={id:'gm',isGM:true,active:true,isSelf:true},owner={id:'owner',active:true,isGM:false},other={id:'other',active:true,isGM:false};
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value).replaceAll('<','&lt;').replaceAll('>','&gt;');}})};
-globalThis.foundry={applications:{api:{DialogV2:class{_onRender(){}static async wait(config){dialogs.push(config);if(config.content.includes('name="effect"')){if(!choose)return false;mutateChoice?.();return {effectUuid:effect.uuid,sameVitner:allowSame};}if(cancelRoll)return false;return {situationValue:Number(config.content.match(/name="sv"[^>]*value="([^"]*)"/)[1]),modifier:0};}}},handlebars:{renderTemplate:async(_path,data)=>'<article>'+JSON.stringify(data)+'</article>'}},utils:{fromUuid:async uuid=>docs.get(uuid)}};
+globalThis.foundry={applications:{api:{DialogV2:class{_onRender(){}static async wait(config){dialogs.push(config);if(config.content.includes('name="effect"')){if(!choose)return false;mutateChoice?.();return config.content.includes('name="confirm"')?{uuid:effect.uuid,confirmed:true}:{effectUuid:effect.uuid,sameVitner:allowSame};}if(cancelRoll)return false;return {situationValue:Number(config.content.match(/name="sv"[^>]*value="([^"]*)"/)[1]),modifier:0};}}},handlebars:{renderTemplate:async(_path,data)=>'<article>'+JSON.stringify(data)+'</article>'}},utils:{fromUuid:async uuid=>docs.get(uuid)}};
 globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=die;return this;}};
 globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.uuid}),create:async data=>{const m={...data,id:'m'+messages.size,canUserModify:()=>true,async update(data){for(const [path,value]of Object.entries(data)){const keys=path.split('.'),last=keys.pop(),target=keys.reduce((o,k)=>o[k]??={},this);target[last]=value;}}};messages.set(m.id,m);return m;}};
 const users=new Map([[gm.id,gm],[owner.id,owner],[other.id,other]]);users.activeGM=gm;
@@ -26,6 +26,7 @@ function setup(sourceId=id,targetId='vitner-body-vitner:immobilize:6',level=3){
  source={uuid:caster.uuid+'.Item.dispel',name:'Dissipation',type:sourceId.startsWith('vitner-')?'spell':'divineFeat',system:{catalogId:sourceId,level:4},actor:caster,parent:caster};
  const key=Object.keys((awaitlessTemplates())).find(key=>key.startsWith(targetId+'#'));
  effect={uuid:target.uuid+'.ActiveEffect.e',id:'e',name:'Entrave',parent:target,documentName:'ActiveEffect',duration:{value:12,units:'rounds'},system:{changes:[]},flags:{[S]:{transformation:{key,sourceId:targetId,resolved:true,appliedAt:0,ruleTestContext:{kind:'spell',sourceLevel:level,vitnerType:'hwitalja',castingId:'original',casterUuid:'Actor.enemy'}}}},canUserModify:()=>false,async delete(){changes++;effect.parent.effects.splice(effect.parent.effects.indexOf(effect),1);docs.delete(effect.uuid);}};
+ for(const a of [caster,target])a.clone=async changes=>({...a,effects:changes.effects});
  target.effects.push(effect);game.user.targets=new Set([{uuid:'Token.t',actor:target}]);for(const d of [caster,target,source,effect])docs.set(d.uuid,d);
  return {sourceId};
 }
@@ -108,4 +109,44 @@ test('a player’s successful roll requests the active GM to remove an effect on
  owner.targets=game.user.targets;game.user=owner;
  try{const result=await run();assert.equal(result.success,true);assert.equal(changes,1);assert.equal(packets[0].type,'dispelEffect');assert.equal(packets[0].success,undefined);assert.equal(messages.get(result.messageId).flags[S].dispelAttempt.status,'removed');}
  finally{Object.defineProperty(gm,'isSelf',descriptor);game.user=gm;game.socket=old;}
+});
+
+const {performCleansing}=await import('../modules/cleansing.mjs');
+const steel='holy-gerbanis-wisdom-of-windinna:steel-mind:3',mercy='holy-tenetnid-tablet-of-grace:hand-of-mercy:0';
+const cleanse=(originMessage)=>performCleansing({document:source,test:RULE_TESTS_BY_CATALOG_ID[source.system.catalogId][0],index:0,actor:caster,context:ruleTestCastingContext(source,{caster,counts:[2,2,0]}),originMessage});
+test('Windinna cleanses a chosen foreign mental influence on another actor without an artificial roll',async()=>{
+ setup(steel,'vitner-power-of-thought:creature-control:8');const result=await cleanse();assert.equal(result.success,true);assert.equal(changes,1);assert.equal(messages.size,1);assert.equal([...messages.values()][0].rolls,undefined);assert.match([...messages.values()][0].content,/purifié/);
+});
+test('self cleansing requires the correct Psyche test and does not clear an effect on failure',async()=>{
+ setup(steel,'vitner-power-of-thought:creature-control:8');effect.parent=caster;caster.effects.push(effect);target.effects=[];game.user.targets=new Set([{actor:caster}]);die=20;let result=await cleanse();assert.equal(result.success,false);assert.equal(changes,0);assert.equal(result.target,9,'10 +2 improved -3 remaining fatigue');
+ die=1;result=await cleanse();assert.equal(result.success,true);assert.equal(changes,1);
+});
+test('recipient Constitution controls permanent cures; failure retains the affliction and adds the temporary-relief note',async()=>{
+ setup(mercy);effect.flags[S]={affliction:{categories:['minorAffliction']}};target.isOwner=true;target.system=caster.system;target.getTraitValue=()=>2;target.getRollModifier=()=>0;target.rollEffectRows=()=>[];die=20;
+ const result=await cleanse();assert.equal(result.target,12);assert.equal(changes,0);assert.match(messages.get(result.messageId).content,/Soulagement temporaire/);die=1;assert.equal((await cleanse()).success,true);assert.equal(changes,1);
+});
+test('a major disease is not silently cured by the minor-affliction prayer; immunity and beneficial effects are excluded',async()=>{
+ setup(mercy);effect.flags[S]={diseaseOutcome:{sourceId:'infection',kind:'incubation'}};assert.equal(await cleanse(),null);assert.equal(changes,0);
+ effect.flags[S].diseaseOutcome.kind='immunity';const gave=RULE_TESTS_BY_CATALOG_ID['holy-tenetnid-tablet-of-grace:hand-of-gave:7'][0];assert.equal(dispelCandidate(effect,gave.dispel),null);
+});
+test('renewal during selection and cancellation cannot remove a different or refreshed affliction',async()=>{
+ setup(steel,'vitner-power-of-thought:creature-control:8');choose=false;assert.equal(await cleanse(),null);assert.equal(messages.size,0);
+ choose=true;mutateChoice=()=>effect.flags[S].transformation.appliedAt=1;assert.equal(await cleanse(),null);assert.equal(changes,0);
+});
+test('a forged automatic recipient cure cannot bypass the Constitution test',async()=>{
+ setup(mercy);effect.flags[S]={affliction:{categories:['minorAffliction']}};target.isOwner=true;target.system=caster.system;target.getTraitValue=()=>0;target.getRollModifier=()=>0;target.rollEffectRows=()=>[];die=1;
+ const result=await cleanse();const message=messages.get(result.messageId);message.flags[S].dispelAttempt.resolved=false;message.flags[S].dispelAttempt.automatic=true;assert.equal(await resolveDispelOnAuthority({messageId:message.id,userId:gm.id}),'unavailable');
+});
+
+test('a single invocation cannot cleanse an unpaid second recipient and replay never spends another place',async()=>{
+ setup(steel,'vitner-power-of-thought:creature-control:8');
+ const origin={id:'origin',flags:{[S]:{ruleTestContext:ruleTestCastingContext(source,{caster,counts:[0,0,0]})}},async update(data){this.flags[S].cleansingRecipients=data['flags.'+S+'.cleansingRecipients'];}};messages.set(origin.id,origin);
+ assert.equal((await cleanse(origin)).success,true);assert.deepEqual(origin.flags[S].cleansingRecipients,['Actor.target']);
+ target.uuid='Actor.second';effect.uuid='Actor.second.ActiveEffect.e';target.effects.push(effect);docs.set(effect.uuid,effect);docs.set(target.uuid,target);
+ assert.equal((await cleanse(origin)).success,false);assert.equal(changes,1);assert.equal(target.effects.length,1);
+});
+test('physical immobilization is not a foreign thought; natural diseases remain distinct from supernatural ones',()=>{
+ setup();const steelSpec=RULE_TESTS_BY_CATALOG_ID[steel][0].dispel;assert.equal(dispelCandidate(effect,steelSpec),null);
+ const natural=RULE_TESTS_BY_CATALOG_ID['holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2'][0].dispel;
+ effect.flags[S]={affliction:{category:'naturalDisease'}};assert.ok(dispelCandidate(effect,natural));effect.flags[S]={diseaseOutcome:{kind:'incubation'}};assert.equal(dispelCandidate(effect,natural),null);
 });

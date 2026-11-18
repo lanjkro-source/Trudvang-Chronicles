@@ -16758,3 +16758,37 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.WaterMovement.ActorRequired` | Apply this variant to a creature; use the object variant for a ship. | Appliquez cette variante à une créature ; utilisez la variante objet pour un navire. |
 | `TRUDVANG.WaterMovement.Values` | Degree {degree}: {metersPerTwo} m / 2 CP; maximum {max} m / round, through water only. | Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement. |
 | `TRUDVANG.WaterMovement.Unavailable` | No further water movement is possible this round. | Aucun déplacement aquatique supplémentaire n’est possible ce tour. |
+
+## `TRUDVANG.Cleansing`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Cleansing.NoEffect` | No compatible affliction. Afflictions recorded only in notes are handled with the GM. | Aucune affliction compatible. Les afflictions uniquement décrites dans les notes sont à gérer avec le MJ. |
+| `TRUDVANG.Cleansing.Scope` | Select only an affliction covered by this ability. Cleansing removes that effect without restoring Body Points. | Choisissez uniquement une affliction relevant du pouvoir. La purification retire cet effet, sans rendre de PS. |
+| `TRUDVANG.Cleansing.Effect` | Affliction to cleanse | Affliction à purifier |
+| `TRUDVANG.Cleansing.Confirm` | This effect is harmful and is covered by this cleansing. | Cet effet est néfaste et relève bien de cette purification. |
+| `TRUDVANG.Cleansing.Permission` | The recipient’s owner or GM must make their test; the caster or GM must apply cleansing without a test. | Le contrôleur du bénéficiaire ou le MJ doit effectuer son test ; le lanceur ou le MJ doit appliquer une purification sans test. |
+| `TRUDVANG.Cleansing.Unavailable` | Cleansing unavailable: check permissions or retry after the effect changed. | Purification indisponible : vérifiez les permissions ou relancez après modification de l’effet. |
+| `TRUDVANG.Cleansing.Removed` | {effect} is cleansed. | {effect} est purifié. |
+| `TRUDVANG.Cleansing.TemporaryRelief` | Temporary relief only: the GM determines its duration; the affliction remains present. | Soulagement temporaire seulement : le MJ détermine sa durée ; l’affliction reste présente. |
+| `TRUDVANG.Cleansing.Unclassified` | None | Aucune |
+| `TRUDVANG.Cleansing.Classification` | Affliction (cleansing) | Affliction (purification) |
+| `TRUDVANG.Cleansing.ClassificationHint` | For manually authored effects: identifies their nature for appropriate cleansing abilities. Does not turn this effect into a disease. | Pour les effets ajoutés manuellement : indique leur nature afin de les proposer aux pouvoirs de guérison adaptés. Ne transforme pas cet effet en maladie. |
+
+## `TRUDVANG.Cleansing.Category`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Cleansing.Category.mentalVitner` | Harmful foreign thought imposed by vitner | Pensée étrangère négative imposée par le vitner |
+| `TRUDVANG.Cleansing.Category.possession` | Possession by a soul or spirit | Possession par une âme ou un esprit |
+| `TRUDVANG.Cleansing.Category.demonic` | Demonic possession | Possession démoniaque |
+| `TRUDVANG.Cleansing.Category.transformation` | Harmful transformation | Transformation néfaste |
+| `TRUDVANG.Cleansing.Category.curse` | Curse | Malédiction |
+| `TRUDVANG.Cleansing.Category.minorAffliction` | Minor affliction or old injury | Affliction bénigne ou séquelle ancienne |
+| `TRUDVANG.Cleansing.Category.naturalDisease` | Natural disease | Maladie naturelle |
+| `TRUDVANG.Cleansing.Category.poison` | Poison | Poison |
+| `TRUDVANG.Cleansing.Category.memory` | Memory loss | Perte de mémoire |
+| `TRUDVANG.Cleansing.Category.fertility` | Impotence or infertility | Impuissance ou infertilité |
+| `TRUDVANG.Cleansing.Category.supernaturalDisease` | Supernatural disease | Maladie surnaturelle |
+| `TRUDVANG.Cleansing.Category.madness` | Madness | Folie |
+| `TRUDVANG.Cleansing.Category.lostLimb` | Lost organ or limb | Organe ou membre perdu |

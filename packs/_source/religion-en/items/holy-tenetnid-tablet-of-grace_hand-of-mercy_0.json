@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
     "description": "The priest invokes Gave and lays glowing hands upon an ailing person in their care. In this way the priest can heal colds, minor illnesses, rheumatism, hair loss, pain, deformities, and lameness caused by past injuries. In order for the condition to disappear completely (beyond temporary relief), the character receiving the healing grace has to succeed on a Situation roll with a Situation value of 8 (Constitution modifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
-    "summary": "The priest invokes Gave and lays glowing hands upon an ailing person in their care.",
+    "summary": "Relieves minor afflictions and old injuries; a Constitution test allows a complete cure.",
     "swedishName": "",
     "duration": "",
     "range": "contact",

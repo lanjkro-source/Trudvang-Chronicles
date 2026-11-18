@@ -1955,14 +1955,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   ],
   "holy-gerbanis-wisdom-of-windinna:steel-mind:3": [
     {
-      "action": "garder sa concentration pour lancer le pouvoir",
+      "action": "purifier l’affliction choisie",
       "sv": 10,
       "trait": [
         "psyche",
         "aucun"
       ],
-      "success": "parvient à lancer le pouvoir malgré la distraction ou les dégâts.",
-      "condition": "si le Stormikjalt subit des dégâts ou est distrait",
+      "success": "L’affliction choisie est complètement guérie.",
+      "condition": "Test uniquement si le bénéficiaire est le lanceur.",
       "traitMethod": "first",
       "magicResistance": false,
       "powerLevelModifiers": [
@@ -1972,20 +1972,27 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:1"
         }
       ],
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "mentalVitner"
+        ],
+        "roll": "self"
+      },
       "kind": "resist",
       "index": 0
     }
   ],
   "holy-gerbanis-wisdom-of-windinna:vitner-protection:5": [
     {
-      "action": "garder sa concentration pour maintenir la protection",
+      "action": "purifier l’affliction choisie",
       "sv": 12,
       "trait": [
         "psyche",
         "aucun"
       ],
-      "success": "maintient la protection malgré la distraction ou les dégâts.",
-      "condition": "si le Stormikjalt subit des dégâts ou est distrait",
+      "success": "L’affliction choisie est complètement guérie.",
+      "condition": "Test uniquement si le bénéficiaire est le lanceur.",
       "traitMethod": "first",
       "magicResistance": false,
       "powerLevelModifiers": [
@@ -1995,6 +2002,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5:1"
         }
       ],
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "mentalVitner",
+          "possession"
+        ],
+        "roll": "self"
+      },
       "kind": "resist",
       "index": 0
     }
@@ -2017,6 +2032,33 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:1"
         }
       ],
+      "kind": "resist",
+      "index": 0
+    }
+  ],
+  "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8": [
+    {
+      "action": "purifier l’affliction choisie",
+      "sv": 0,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
+      "traitMethod": "first",
+      "condition": "Purification sans test supplémentaire.",
+      "success": "L’affliction choisie est complètement guérie.",
+      "magicResistance": false,
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "mentalVitner",
+          "possession",
+          "demonic",
+          "transformation",
+          "curse"
+        ],
+        "roll": "none"
+      },
       "kind": "resist",
       "index": 0
     }
@@ -2568,14 +2610,15 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   ],
   "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": [
     {
-      "action": "recevoir la guérison complète",
+      "action": "purifier l’affliction choisie",
       "sv": 8,
       "trait": [
         "constitution",
         "aucun"
       ],
-      "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "success": "L’affliction choisie est complètement guérie.",
       "traitMethod": "first",
+      "condition": "Soulagement temporaire en cas d’échec ; durée à déterminer par le MJ.",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2584,20 +2627,28 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-tenetnid-tablet-of-grace:hand-of-mercy:0:0"
         }
       ],
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "minorAffliction"
+        ],
+        "roll": "recipient"
+      },
       "kind": "resist",
       "index": 0
     }
   ],
   "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": [
     {
-      "action": "recevoir la guérison complète",
+      "action": "purifier l’affliction choisie",
       "sv": 8,
       "trait": [
         "constitution",
         "aucun"
       ],
-      "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "success": "L’affliction choisie est complètement guérie.",
       "traitMethod": "first",
+      "condition": "Soulagement temporaire en cas d’échec ; durée à déterminer par le MJ.",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2606,20 +2657,31 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2:0"
         }
       ],
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "naturalDisease",
+          "poison",
+          "memory",
+          "fertility"
+        ],
+        "roll": "recipient"
+      },
       "kind": "resist",
       "index": 0
     }
   ],
   "holy-tenetnid-tablet-of-grace:hand-of-gave:7": [
     {
-      "action": "recevoir la guérison complète",
+      "action": "purifier l’affliction choisie",
       "sv": 8,
       "trait": [
         "constitution",
         "aucun"
       ],
-      "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "success": "L’affliction choisie est complètement guérie.",
       "traitMethod": "first",
+      "condition": "Soulagement temporaire en cas d’échec ; durée à déterminer par le MJ.",
       "magicResistance": false,
       "powerLevelModifiers": [
         {
@@ -2628,6 +2690,16 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0"
         }
       ],
+      "dispel": {
+        "mode": "cleanse",
+        "categories": [
+          "supernaturalDisease",
+          "curse",
+          "madness",
+          "lostLimb"
+        ],
+        "roll": "recipient"
+      },
       "kind": "resist",
       "index": 0
     }

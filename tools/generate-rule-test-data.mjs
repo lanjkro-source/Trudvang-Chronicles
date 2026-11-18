@@ -33,7 +33,8 @@ for (const entry of powers) {
     if(!['resist','skill'].includes(kind)||!(kind==='skill'?entry.skillTest:entry.resist)?.[row.test]||configured.has(key)||typeof row.magicResistance!=="boolean")throw Error(`Invalid resistance configuration for ${entry.catalogId}`);
     configured.add(key);
     if(row.casterTest!==undefined&&typeof row.casterTest!=='boolean')throw Error('Invalid acting caster for '+entry.catalogId);
-    if(row.dispel&&(!row.casterTest||!['vitner','control'].includes(row.dispel.mode)||!row.dispel.values||Object.entries(row.dispel.values).some(([level,value])=>![1,2,3,4,5].includes(Number(level))||!Number.isFinite(value))||row.dispel.sameVitnerBonus!==undefined&&row.dispel.sameVitnerBonus!==2))throw Error('Invalid dispel procedure for '+entry.catalogId);
+    if(row.dispel&&row.dispel.mode!=='cleanse'&&(!row.casterTest||!['vitner','control'].includes(row.dispel.mode)||!row.dispel.values||Object.entries(row.dispel.values).some(([level,value])=>![1,2,3,4,5].includes(Number(level))||!Number.isFinite(value))||row.dispel.sameVitnerBonus!==undefined&&row.dispel.sameVitnerBonus!==2))throw Error('Invalid dispel procedure for '+entry.catalogId);
+    if(row.dispel?.mode==='cleanse'&&(!['self','recipient','none'].includes(row.dispel.roll)||!Array.isArray(row.dispel.categories)||!row.dispel.categories.length||row.dispel.categories.some(x=>!['mentalVitner','possession','demonic','transformation','curse','minorAffliction','naturalDisease','poison','memory','fertility','supernaturalDisease','madness','lostLimb'].includes(x))))throw Error('Invalid cleansing procedure for '+entry.catalogId);
     for(const p of row.powerLevelModifiers??[]){resolvePowerOptionReference(entry,p);if(!Number.isFinite(p.value)||(p.minimum!==undefined&&!Number.isFinite(p.minimum)))throw Error(`Invalid resistance improvement for ${entry.catalogId}`);}
   }
   const tests = testsFor(entry);

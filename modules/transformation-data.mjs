@@ -393,6 +393,9 @@ export const TRANSFORMATION_TEMPLATES = {
       3
     ],
     "dispelCategory": "control",
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "vitner-dimvitner:control-undead:7",
     "parameters": [
       {
@@ -2025,6 +2028,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "initialResistance": {
       "testIndex": 0
     },
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "vitner-power-of-thought:creature-control:8",
     "parameters": [
       {
@@ -2086,6 +2092,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "initialResistance": {
       "testIndex": 0
     },
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "vitner-power-of-thought:possess-creature:10",
     "parameters": [
       {
@@ -2359,6 +2368,9 @@ export const TRANSFORMATION_TEMPLATES = {
         "frequency": "day"
       }
     ],
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "vitner-witchcraft:phantom-plague:1",
     "parameters": [
       {
@@ -2495,6 +2507,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       3
     ],
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "vitner-witchcraft:curse-object:3",
     "parameters": [
       {
@@ -2553,6 +2568,9 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "displayPowerOptions": [],
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "vitner-witchcraft:curse-object:3",
     "parameters": []
   },
@@ -2595,6 +2613,9 @@ export const TRANSFORMATION_TEMPLATES = {
         "phase": "initial",
         "priority": 40
       }
+    ],
+    "cleansingCategories": [
+      "curse"
     ],
     "sourceId": "vitner-witchcraft:curse-creature:5",
     "parameters": [
@@ -2726,6 +2747,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "tree-recovery"
     ],
     "priority": 50,
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": [
       {
@@ -2777,6 +2801,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 50,
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
   },
@@ -2947,6 +2974,9 @@ export const TRANSFORMATION_TEMPLATES = {
       5
     ],
     "dispelCategory": "control",
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "vitner-animal-vitner:control-animals:4",
     "parameters": [
       {
@@ -3039,6 +3069,10 @@ export const TRANSFORMATION_TEMPLATES = {
       5
     ],
     "dispelCategory": "control",
+    "cleansingCategories": [
+      "mentalVitner",
+      "possession"
+    ],
     "sourceId": "vitner-animal-vitner:possess-animals:6",
     "parameters": [
       {
@@ -3862,6 +3896,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "optional": true,
       "conditionKey": "TRUDVANG.InitialResistance.UnwillingTarget"
     },
+    "cleansingCategories": [
+      "transformation"
+    ],
     "sourceId": "vitner-body-vitner:change-creature:11",
     "parameters": [
       {
@@ -15108,6 +15145,9 @@ export const TRANSFORMATION_TEMPLATES = {
         "frequency": "day"
       }
     ],
+    "cleansingCategories": [
+      "mentalVitner"
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
     "parameters": [
       {
@@ -15244,6 +15284,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       3
     ],
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
     "parameters": [
       {
@@ -15302,6 +15345,9 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "displayPowerOptions": [],
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
     "parameters": []
   },
@@ -15344,6 +15390,9 @@ export const TRANSFORMATION_TEMPLATES = {
         "phase": "initial",
         "priority": 40
       }
+    ],
+    "cleansingCategories": [
+      "curse"
     ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:curse-creature:5",
     "parameters": [
@@ -15475,6 +15524,9 @@ export const TRANSFORMATION_TEMPLATES = {
       "tree-recovery"
     ],
     "priority": 50,
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
     "parameters": [
       {
@@ -15526,6 +15578,9 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "related": [],
     "priority": 50,
+    "cleansingCategories": [
+      "curse"
+    ],
     "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
     "parameters": []
   },

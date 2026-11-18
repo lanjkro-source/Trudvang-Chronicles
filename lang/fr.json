@@ -6432,7 +6432,7 @@
         },
         "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
           "Name": "Main de Gave",
-          "Summary": "Soigne les blessures et afflictions d’une créature par le toucher.",
+          "Summary": "Soigne les maladies surnaturelles, restaure les membres perdus et rompt les malédictions ; la guérison complète demande un test de Constitution.",
           "Description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante. Il peut ainsi soigner les maladies surnaturelles comme la lycanthropie et la peste d’ulm, reconstruire les organes ou membres perdus, et rompre les malédictions. Ce pouvoir constitue également le seul moyen de guérir la folie chez une personne (Cf. le paragraphe Niveau de peur au chapitre Dégâts et peur). Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -6446,7 +6446,7 @@
         },
         "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": {
           "Name": "Main de la miséricorde",
-          "Summary": "Soigne les blessures d’une créature touchée.",
+          "Summary": "Soulage les afflictions bénignes et les séquelles anciennes ; un test de Constitution permet leur guérison complète.",
           "Description": "Le prêtre invoque Gave et place ses mains sur une personne souffrante. Il peut ainsi soigner les coups de froid, les maladies bénignes, les rhumatismes, les pertes de cheveux, les douleurs, les difformités et les handicaps causés par d’anciennes blessures. Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -6506,7 +6506,7 @@
         },
         "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": {
           "Name": "Volonté de Bete Wiemdas",
-          "Summary": "Soulage les souffrances et soigne les blessures d’une créature touchée.",
+          "Summary": "Soigne les maladies naturelles, les pertes de mémoire et la stérilité, et neutralise les poisons ; la guérison complète demande un test de Constitution.",
           "Description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante. Il peut ainsi soigner les maladies naturelles, les pertes de mémoire, l’impuissance et l’infertilité, mais aussi neutraliser tous les poisons. Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
           "SwedishName": "",
           "DamageQualificationNote": "",
@@ -18986,6 +18986,34 @@
       "ActorRequired": "Appliquez cette variante à une créature ; utilisez la variante objet pour un navire.",
       "Values": "Degré {degree} : {metersPerTwo} m / 2 PC ; maximum {max} m / tour, dans l’eau uniquement.",
       "Unavailable": "Aucun déplacement aquatique supplémentaire n’est possible ce tour."
+    },
+    "Cleansing": {
+      "NoEffect": "Aucune affliction compatible. Les afflictions uniquement décrites dans les notes sont à gérer avec le MJ.",
+      "Scope": "Choisissez uniquement une affliction relevant du pouvoir. La purification retire cet effet, sans rendre de PS.",
+      "Effect": "Affliction à purifier",
+      "Confirm": "Cet effet est néfaste et relève bien de cette purification.",
+      "Permission": "Le contrôleur du bénéficiaire ou le MJ doit effectuer son test ; le lanceur ou le MJ doit appliquer une purification sans test.",
+      "Unavailable": "Purification indisponible : vérifiez les permissions ou relancez après modification de l’effet.",
+      "Removed": "{effect} est purifié.",
+      "TemporaryRelief": "Soulagement temporaire seulement : le MJ détermine sa durée ; l’affliction reste présente.",
+      "Category": {
+        "mentalVitner": "Pensée étrangère négative imposée par le vitner",
+        "possession": "Possession par une âme ou un esprit",
+        "demonic": "Possession démoniaque",
+        "transformation": "Transformation néfaste",
+        "curse": "Malédiction",
+        "minorAffliction": "Affliction bénigne ou séquelle ancienne",
+        "naturalDisease": "Maladie naturelle",
+        "poison": "Poison",
+        "memory": "Perte de mémoire",
+        "fertility": "Impuissance ou infertilité",
+        "supernaturalDisease": "Maladie surnaturelle",
+        "madness": "Folie",
+        "lostLimb": "Organe ou membre perdu"
+      },
+      "Unclassified": "Aucune",
+      "Classification": "Affliction (purification)",
+      "ClassificationHint": "Pour les effets ajoutés manuellement : indique leur nature afin de les proposer aux pouvoirs de guérison adaptés. Ne transforme pas cet effet en maladie."
     }
   }
 }
