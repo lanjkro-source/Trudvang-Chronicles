@@ -1,4 +1,4 @@
-import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage} from './fire-zones.mjs';
+import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage,syncSpellZoneFireLight,cleanupOrphanSpellZoneLights} from './fire-zones.mjs';
 import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {TABLET_BY_ID,powerItemData} from './tablet-catalog.mjs';
@@ -30,11 +30,13 @@ const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
 function allowedPoint(point,token,scene,profile){const p=center(token,scene);return Number.isFinite(point.x)&&Number.isFinite(point.y)&&Math.hypot(point.x-p.x,point.y-p.y)<=profile.range*zonePixelScale(scene)+.01;}
+// Lighting failures must not prevent a victim's damage or Evade decision.
+async function syncZoneLight(region,options){try{await syncSpellZoneFireLight(region,options);}catch(error){console.error('Trudvang | Fire area lighting failed',error);}}
 const regionDeletions=new WeakMap();
 function regionPresent(region){return !region.id||!region.parent?.regions?.get||region.parent.regions.get(region.id)===region;}
 function deleteZoneOnce(region){
  if(regionDeletions.has(region))return regionDeletions.get(region);
- const job=Promise.resolve().then(()=>regionPresent(region)?region.delete():false).finally(()=>regionDeletions.delete(region));regionDeletions.set(region,job);return job;
+ const job=Promise.resolve().then(async()=>{await syncZoneLight(region,{removed:true});return regionPresent(region)?region.delete():false;}).finally(()=>regionDeletions.delete(region));regionDeletions.set(region,job);return job;
 }
 const instantVisualTimers=new Map();
 function scheduleInstantVisual(region){
@@ -78,8 +80,9 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
  return serial(region.uuid,async()=>{
   if(!writer()||!infoOf(region))return;
   const info=infoOf(region);
-  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);return;}
+  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);await syncZoneLight(region,{removed:true});return;}
   if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await deleteZoneOnce(region);return;}
+  await syncZoneLight(region);
   let tokens=members(region,{entering,leaving});
   if(info.profile.instant){if(!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}scheduleInstantVisual(region);}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
@@ -118,7 +121,7 @@ export async function createSpellZoneOnAuthority(payload){
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
- const info={context:structuredClone(cast),profile,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
+ const info={context:structuredClone(cast),profile,elevation:Number(token.elevation)||0,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
  info.lastMovedPhase=spellZonePhase(info,clock(info));if(profile.instant)info.visualExpiresAt=Date.now()+10000;
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
@@ -222,9 +225,10 @@ export function registerSpellZoneSupport(){
  const Base=foundry.data?.regionBehaviors?.RegionBehaviorType;if(!Base)return;
  class SpellZoneBehavior extends Base{static defineSchema(){return {};};static events={tokenEnter:async function(e){await reconcileSpellZone(e.region,{entering:e.data.token});},tokenExit:async function(e){await reconcileSpellZone(e.region,{leaving:e.data.token});},behaviorActivated:async function(e){await reconcileSpellZone(e.region);},behaviorDeactivated:async function(e){await reconcileSpellZone(e.region,{removed:true});}};}
  CONFIG.RegionBehavior.dataModels[TYPE]=SpellZoneBehavior;CONFIG.RegionBehavior.typeLabels[TYPE]='TRUDVANG.SpellZone.Behavior';CONFIG.RegionBehavior.typeIcons[TYPE]='fa-solid fa-house-crack';
- const safely=()=>{if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone reconciliation failed',error));};
+ const safely=()=>{if(writer())for(const scene of values(game.scenes)){void cleanupOrphanSpellZoneLights(scene).catch(error=>console.error('Trudvang | Orphan area light cleanup failed',error));for(const region of values(scene.regions))if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone reconciliation failed',error));}};
  const flightChanged=(effect,changes={})=>{if(changes.statuses!==undefined||values(effect.statuses).some(id=>['fly','hover','flying','hovering'].includes(id)))safely();};
  for(const hook of ['createActiveEffect','updateActiveEffect','deleteActiveEffect'])Hooks.on(hook,flightChanged);
+ Hooks.on('updateRegion',region=>{if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone update failed',error));});
  Hooks.on('deleteRegion',region=>{if(infoOf(region))void reconcileSpellZone(region,{removed:true}).catch(error=>console.error('Trudvang | Zone cleanup failed',error));});
  for(const hook of ['updateCombat','updateWorldTime','canvasReady','updateUser'])Hooks.on(hook,safely);
  Hooks.on('deleteCombat',combat=>{if(writer()){
