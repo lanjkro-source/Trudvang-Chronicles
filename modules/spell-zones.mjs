@@ -75,12 +75,24 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   }
  });
 }
+/** A casting is single-use even after its instantaneous region has disappeared. */
+async function previousPlacement(ready){
+ if(!ready?.regionUuid)return null;
+ const region=await foundry.utils.fromUuid(ready.regionUuid),info=infoOf(region);
+ const reason=!info||!regionPresent(region)||spellZoneExpired(info,clock(info))?'CastingFinished':!info.profile.movable?'AlreadyPlaced':info.lastMovedPhase===spellZonePhase(info,clock(info))?'MoveNextRound':null;
+ return {region,reason};
+}
+function placementFeedback(result){
+ if(result.reason)ui.notifications.warn(local(result.reason));
+ else if(result.status==='placed'&&result.finished)ui.notifications.info(local('InstantResolved'));
+ else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='outOfRange'?'OutOfRange':'Unavailable'));
+}
 export async function createSpellZoneOnAuthority(payload){
  const message=game.messages.get(payload.messageId),cast=message?.flags?.[S]?.ruleTestContext,ready=message?.flags?.[S]?.spellZoneCasting,user=game.users.get(payload.userId);
  const actor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null,definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast);
  const die=Number(message?.rolls?.[0]?.total);
  if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!ready||!profile||!Number.isInteger(die)||die<1||die>19||(die!==1&&die>ready.target))return {status:'unavailable'};
- if(ready.regionUuid){const existing=await foundry.utils.fromUuid(ready.regionUuid),info=infoOf(existing);if(!info?.profile.movable||spellZoneExpired(info,clock(info))||info.lastMovedPhase===spellZonePhase(info,clock(info)))return {status:'alreadyPlaced',regionUuid:ready.regionUuid};const scene=existing.parent,token=scene.tokens.get(payload.tokenId);if(scene.id!==payload.sceneId||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};await existing.update({shapes:[{type:'circle',...payload.point,radius:profile.radius*zonePixelScale(scene)}],['flags.'+S+'.spellZone.lastMovedPhase']:spellZonePhase(info,clock(info))});await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};}
+ if(ready.regionUuid){const previous=await previousPlacement(ready),existing=previous.region,info=infoOf(existing);if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};const scene=existing.parent,token=scene.tokens.get(payload.tokenId);if(scene.id!==payload.sceneId||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};await existing.update({shapes:[{type:'circle',...payload.point,radius:profile.radius*zonePixelScale(scene)}],['flags.'+S+'.spellZone.lastMovedPhase']:spellZonePhase(info,clock(info))});await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};}
  const scene=game.scenes.get(payload.sceneId),token=scene?.tokens?.get(payload.tokenId);
  if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
@@ -98,7 +110,7 @@ export async function createSpellZoneOnAuthority(payload){
   await region.update({['flags.'+S+'.spellZone.collapseRolled']:true});
   await ChatMessage.create({speaker:{alias:nameOf(info)},rolls:result.diceRolls,content:'<p class="trudvang consequence-notice">'+escapeHtml(local(result.total<=profile.collapseChance/5?'Collapse':'NoCollapse',{chance:profile.collapseChance}))+'</p>'});
  }
- await reconcileSpellZone(region);return {status:'placed',regionUuid:region.uuid};
+ await reconcileSpellZone(region);return {status:'placed',regionUuid:region.uuid,finished:!regionPresent(region)};
 }
 export async function resolveSpellZoneTestOnAuthority(payload){
  const message=game.messages.get(payload.messageId),state=message?.flags?.[S]?.spellZoneTest,user=game.users.get(payload.userId);
@@ -149,7 +161,8 @@ async function request(payload){
 }
 export async function placeSpellZone(message){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
- if(!profile||!actor?.isOwner||!globalThis.canvas?.scene)return null;
+ if(!profile||!actor?.isOwner||!globalThis.canvas?.scene){ui.notifications.warn(local('Unavailable'));return null;}
+ const previous=await previousPlacement(message.flags?.[S]?.spellZoneCasting);if(previous?.reason){const result={status:'alreadyPlaced',reason:previous.reason};placementFeedback(result);return result;}
  const token=auraCasterToken(actor,canvas.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==canvas.scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
  let underground=false;
  if(profile.kind==='earthquake'){
@@ -161,7 +174,7 @@ export async function placeSpellZone(message){
   const preview=await canvas.regions.placeRegion({name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[{type:'circle',x:0,y:0,radius:profile.radius*zonePixelScale(canvas.scene)}],color:auraColor(),levels:token.level?[token.level]:[],highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS},{create:false,attachToToken:false,allowRotation:false,preConfirm:({shape})=>{if(allowedPoint(shape,token,canvas.scene,profile))return true;ui.notifications.warn(local('OutOfRange'));return false;}});
   if(!preview)return null;point={x:preview.shapes[0].x,y:preview.shapes[0].y};
  }
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:canvas.scene.id,tokenId:token.id,point,underground});if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local('Unavailable'));return result;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:canvas.scene.id,tokenId:token.id,point,underground});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);

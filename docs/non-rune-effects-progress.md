@@ -354,3 +354,8 @@ Les dégâts sont tirés et appliqués automatiquement, y compris aux créatures
 Aucune migration de monde ajoutée. Tests automatisés : impacts initiaux et répétés, JO amélioré, esquive réussie/ratée/annulée, choix de subir, ressources et initiative, limites de portée et déplacement, visibilité sans double application, nettoyage. Aperçus isolés FR/EN dans toutes les palettes à 320 px.
 
 Contrôle représentatif demandé : lancer Éruption de flammes avec un round supplémentaire et une amélioration de JO ; placer sur un acteur avec Esquive et ses PC intacts, puis essayer l’esquive. Au round suivant déplacer la zone via sa carte et vérifier les dégâts, puis sa disparition à l’expiration. Pour Mer de flammes prolongée, entrer puis sortir et vérifier le malus de cinq dans une attaque/compétence ; cibler un occupant depuis l’extérieur doit aussi le montrer, et le malus ne doit apparaître qu’une fois si les deux sont dedans.
+
+
+### Retour explicite du placement — 18 novembre 2026
+
+Les cartes d’un lancement déjà placé pouvaient ouvrir une nouvelle prévisualisation puis refuser silencieusement la création (y compris après suppression/expiration de la région). Le contrôle est maintenant fait avant la prévisualisation et répété par le MJ : message distinct pour lancement terminé, zone fixe déjà placée, ou déplacement possible au prochain round. Une flamme instantanée entièrement résolue annonce qu’aucune zone persistante ne reste. Le bouton est verrouillé pendant le placement pour éviter deux prévisualisations simultanées. Aucune autorisation de rejouer les dégâts ni migration de monde ajoutée. Les cas sont couverts par des tests du pipeline réel ; ce correctif de retour utilisateur ne démontre pas que tous les incidents de placement signalés ont cette origine.

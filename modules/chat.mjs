@@ -269,7 +269,7 @@ function attachListeners(message, html) {
       if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
-  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await placeSpellZone(message);}));
+  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();if(button.disabled)return;button.disabled=true;try{await placeSpellZone(message);}finally{button.disabled=false;}}));
   html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid,button.dataset.zoneChoice);}));
   html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
     event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);

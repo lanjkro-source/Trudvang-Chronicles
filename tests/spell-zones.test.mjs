@@ -157,3 +157,17 @@ test('failed fire Evade uses a proof and applies the frozen improved damage once
  try{const p=setup(burst,{[burst+':2']:4});target.findRuleKnowledge=()=>({system:{level:1}});target.rollAbility=async(item,context)=>{const proof=await ChatMessage.create({rolls:[{formula:'1d20',total:20}],flags:{[S]:context.resolveProcedure({target:10}).flags},content:'<article></article>'});return {messageId:proof.id};};await createSpellZoneOnAuthority(p);const r=[...regions.values()][0];assert.equal(r.flags[S].spellZone.profile.openRoll,8);assert.equal(r.flags[S].spellZone.profile.damageFormula,'1d10 + 1');const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest);assert.equal((await requestSpellZoneTest(prompt,target.uuid,'evade')).status,'resolved');assert.equal(target.system.resources.body.value,15);assert.equal(regions.size,0);}
  finally{globalThis.Roll=old;}
 });
+
+test('a used casting reports why placement is unavailable before starting another preview',async()=>{
+ const p=setup(vitner,{[vitner+':3']:1});await createSpellZoneOnAuthority(p);const oldCanvas=globalThis.canvas,oldUi=globalThis.ui;const warnings=[];let previews=0;globalThis.ui={notifications:{warn:message=>warnings.push(message)}};const token=scene.tokens.get('caster');caster.getActiveTokens=()=>[token];globalThis.canvas={scene,tokens:{controlled:[token]},regions:{placeRegion:async()=>{previews++;throw Error('Preview should not start');}}};
+ try{assert.equal((await placeSpellZone(message)).reason,'AlreadyPlaced');assert.match(warnings.at(-1),/déjà placée/);game.combat.round=3;await reconcileSpellZone([...regions.values()][0]);assert.equal((await placeSpellZone(message)).reason,'CastingFinished');assert.match(warnings.at(-1),/Relancez le sort/);assert.equal(previews,0);assert.equal(regions.size,0);assert.equal((await createSpellZoneOnAuthority(p)).reason,'CastingFinished');}
+ finally{globalThis.canvas=oldCanvas;globalThis.ui=oldUi;}
+});
+test('an extended fire cast reports the next-round restriction and remains movable next round',async()=>{
+ const p=setup(burst,{[burst+':3']:2});caster.findRuleKnowledge=target.findRuleKnowledge=()=>({system:{level:1}});await createSpellZoneOnAuthority(p);assert.equal((await createSpellZoneOnAuthority(p)).reason,'MoveNextRound');game.combat.round=2;assert.equal((await createSpellZoneOnAuthority({...p,point:{x:250,y:50}})).status,'placed');
+});
+test('a new instantaneous cast reports completion instead of silently removing its region',async()=>{
+ setup(burst);const oldCanvas=globalThis.canvas,oldUi=globalThis.ui,oldRoll=globalThis.Roll;const notices=[];globalThis.ui={notifications:{warn:message=>assert.fail(message),info:message=>notices.push(message)}};globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;}};const token=scene.tokens.get('caster');caster.getActiveTokens=()=>[token];globalThis.canvas={scene,tokens:{controlled:[token]},regions:{placeRegion:async()=>({shapes:[{x:50,y:50}]})}};
+ try{const result=await placeSpellZone(message);assert.equal(result.status,'placed');assert.equal(result.finished,true);assert.equal(regions.size,0);assert.equal(notices.length,1);assert.match(notices[0],/instantanées/);assert.equal(target.system.resources.body.value,16);}
+ finally{globalThis.canvas=oldCanvas;globalThis.ui=oldUi;globalThis.Roll=oldRoll;}
+});

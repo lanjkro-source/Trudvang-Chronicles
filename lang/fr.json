@@ -19043,7 +19043,11 @@
       "FireEvade": "Esquiver",
       "FireAccept": "Subir les dégâts",
       "FireCannotEvade": "Esquive impossible : la spécialité est requise et, en combat, toutes les réserves de PC et les actions doivent être intactes.",
-      "FireInitiative": "Écart avec l’initiative actuelle"
+      "FireInitiative": "Écart avec l’initiative actuelle",
+      "CastingFinished": "La zone de ce lancement est déjà terminée. Relancez le sort pour créer une nouvelle zone.",
+      "AlreadyPlaced": "La zone de ce lancement est déjà placée et ne peut pas être déplacée.",
+      "MoveNextRound": "Cette zone ne pourra être déplacée qu’au prochain round.",
+      "InstantResolved": "Les flammes instantanées ont été résolues : aucune zone persistante ne reste sur la scène."
     }
   }
 }

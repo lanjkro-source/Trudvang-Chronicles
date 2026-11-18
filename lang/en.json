@@ -19043,7 +19043,11 @@
       "FireEvade": "Evade",
       "FireAccept": "Take damage",
       "FireCannotEvade": "Cannot evade: the specialty is required and, in combat, all CP pools and actions must be unspent.",
-      "FireInitiative": "Difference from the current initiative"
+      "FireInitiative": "Difference from the current initiative",
+      "CastingFinished": "This casting’s area has already ended. Cast the spell again to create a new area.",
+      "AlreadyPlaced": "This casting’s area is already placed and cannot be moved.",
+      "MoveNextRound": "This area can only be moved again next round.",
+      "InstantResolved": "The instantaneous flames have been resolved: no persistent area remains on the scene."
     }
   }
 }

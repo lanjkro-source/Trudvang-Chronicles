@@ -16828,3 +16828,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.FireAccept` | Take damage | Subir les dégâts |
 | `TRUDVANG.SpellZone.FireCannotEvade` | Cannot evade: the specialty is required and, in combat, all CP pools and actions must be unspent. | Esquive impossible : la spécialité est requise et, en combat, toutes les réserves de PC et les actions doivent être intactes. |
 | `TRUDVANG.SpellZone.FireInitiative` | Difference from the current initiative | Écart avec l’initiative actuelle |
+| `TRUDVANG.SpellZone.CastingFinished` | This casting’s area has already ended. Cast the spell again to create a new area. | La zone de ce lancement est déjà terminée. Relancez le sort pour créer une nouvelle zone. |
+| `TRUDVANG.SpellZone.AlreadyPlaced` | This casting’s area is already placed and cannot be moved. | La zone de ce lancement est déjà placée et ne peut pas être déplacée. |
+| `TRUDVANG.SpellZone.MoveNextRound` | This area can only be moved again next round. | Cette zone ne pourra être déplacée qu’au prochain round. |
+| `TRUDVANG.SpellZone.InstantResolved` | The instantaneous flames have been resolved: no persistent area remains on the scene. | Les flammes instantanées ont été résolues : aucune zone persistante ne reste sur la scène. |
