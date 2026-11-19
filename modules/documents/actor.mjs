@@ -1,6 +1,7 @@
 import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {actorForResistance} from '../resistance-actor.mjs';
 import {waterMovementBudget} from "../rules/water-movement.mjs";
+import {quagmireMovement,quagmireTravelBudget} from "../rules/quagmire.mjs";
 import {sacredBalance,sacredObjects} from '../rules/sacred-objects.mjs';
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
@@ -181,8 +182,10 @@ export class TrudvangActor extends BaseActor {
       system.resources.body.max = Math.max(1, race.body + Number(this._source.system.traits.constitution || 0) + Number(this._source.system.traits.strength || 0) + Number(system.modifiers.bodyMax || 0));
     }
     const movement = movementDetails(system.movement.current, this._source?.system?.details?.move, this.transformationProfile.movements, Number(system.modifiers.movement||0));
+    this.quagmireMovement = quagmireMovement(movement.land,this.effects);
+    if (this.quagmireMovement) movement.land = this.quagmireMovement.land;
     this.transformationMovement = Object.fromEntries(Object.entries(movement).map(([mode,row])=>[mode,row.max]));
-    const movementModified=this.transformationProfile.movements.length||Number(system.modifiers.movement||0);
+    const movementModified=this.quagmireMovement||this.transformationProfile.movements.length||Number(system.modifiers.movement||0);
     this.transformationMovementRows = movementModified || this.type === "character" ? Object.entries(movement).map(([mode,row]) => ({
       id: mode, mode, label: game.i18n.localize(`TRUDVANG.Transformation.Modes.${mode}`), metersPerTwo: row.metersPerTwo, distance: `${row.metersPerTwo} m`, max: `${row.max} m`
     })) : [];
@@ -1831,6 +1834,7 @@ export class TrudvangActor extends BaseActor {
       ...mode, label: movementRows[Number(mode.id)]?.mode || mode.mode
     })) : [];
     if(this.transformationProfile?.movements?.some(row=>row.method==="waterDegrees")&&!movementModes.length)return ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.Unavailable"));
+    if(this.quagmireMovement&&!movementModes.length)return ui.notifications.warn(game.i18n.localize("TRUDVANG.SpellZone.QuagmireTrapped"));
     const options = await combatPointDialog({actor:this,
       title: game.i18n.localize("TRUDVANG.Combat.MovementAction"),
       pools: poolResolution.eligible,
@@ -1845,11 +1849,14 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
     const selectedMode = movementModes.find(mode => mode.id === options.movementMode) ?? movementModes[0];
-    const budget=waterMovementBudget(this,selectedMode?.mode);
-    if(budget&&!budget.remaining)return ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.Unavailable"));
-    const paidMeters = roundEffectValue(Math.min(budget?.remaining??Infinity,spending.total / 2 * (selectedMode?.metersPerTwo ?? 1)));
+    const land = !selectedMode || selectedMode.mode === "land";
+    const bog = land ? quagmireTravelBudget(this,game.combat) : null;
+    const budget=bog??waterMovementBudget(this,selectedMode?.mode);
+    if(budget&&!budget.remaining)return ui.notifications.warn(game.i18n.localize(bog?"TRUDVANG.SpellZone.QuagmireTrapped":"TRUDVANG.WaterMovement.Unavailable"));
+    const rate=bog ? this.quagmireMovement.land.metersPerTwo : selectedMode?.metersPerTwo ?? 1;
+    const paidMeters = roundEffectValue(Math.min(budget?.remaining??Infinity,spending.total / 2 * rate));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
-    if(budget&&this.isOwner)await this.update({"flags.trudvang-chronicles.waterMovementTravel":{combatId:budget.combatId,round:budget.round,meters:roundEffectValue(budget.spent+paidMeters)}});
+    if(budget&&this.isOwner)await this.update({[`flags.trudvang-chronicles.${bog?"quagmireTravel":"waterMovementTravel"}`]:{combatId:budget.combatId,round:budget.round,meters:roundEffectValue(budget.spent+paidMeters)}});
     await postActorEvent({actor: this, kind: "movement", amount: spending.total, meters: paidMeters,
       mode: selectedMode?.label ?? game.i18n.localize("TRUDVANG.Npc.MovementModes.land")});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));

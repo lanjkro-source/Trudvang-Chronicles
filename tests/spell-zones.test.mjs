@@ -3,6 +3,7 @@ import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,zonePix
 import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
 import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
+import {quagmireMovement,quagmireTravelBudget} from '../modules/rules/quagmire.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('<','&lt;').replaceAll('>','&gt;')}})};
@@ -26,6 +27,60 @@ function setup(id=vitner,counts={},runeLevel=1){
  return {messageId:message.id,userId:owner.id,sceneId:scene.id,tokenId:'caster',point:{x:50,y:50}};
 }
 const jorn='holy-gerbanis-influence-of-jorn:';
+const quagmire='vitner-soil-craft:quagmire:3';
+test('Quagmire freezes diameter, depth, range and both duration increments',()=>{
+ const definition=POWER_DETAILS_BY_ID[quagmire].spellZone;
+ const countsById=Object.fromEntries([2,3,1,2,1].map((count,i)=>[quagmire+':'+i,count]));
+ assert.deepEqual(earthquakeProfile(definition),{kind:'quagmire',radius:1.5,depth:1,range:10,rounds:12});
+ assert.deepEqual(earthquakeProfile(definition,{countsById}),{kind:'quagmire',radius:2.5,depth:4,range:15,rounds:756});
+});
+
+test('Quagmire slows grounded occupants; a rope test grants one metre per round until exit',async()=>{
+ const payload=setup(quagmire,{[quagmire+':1']:2});
+ caster.statuses.add('fly');
+ Object.defineProperty(target,'quagmireMovement',{get:()=>quagmireMovement({max:3,metersPerTwo:1},target.effects)});
+ assert.equal((await createSpellZoneOnAuthority(payload)).status,'placed');
+ const region=[...regions.values()][0];
+ assert.equal(region.shapes[0].radius,150);
+ assert.deepEqual(caster.effects,[]);
+ assert.equal(target.quagmireMovement.land.max,0);
+ assert.equal(quagmireMovement({max:6,metersPerTwo:2},target.effects).land.max,3);
+ const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest);
+ assert.match(prompt.content,/Tester avec une corde/);
+ assert.deepEqual(prompt.whisper,[gm.id,owner.id]);
+ const base={type:'spellZoneTest',messageId:prompt.id,userId:owner.id,actorUuid:target.uuid};
+ const roll=async (die,id)=>{
+  const begin=await resolveSpellZoneRequest({...base,action:'begin'});
+  assert.equal(begin.status,'reserved');
+  game.messages.set(id,{author:owner,rolls:[{formula:'1d20',total:die}],flags:{[S]:{spellZoneProof:{messageId:prompt.id,actorUuid:target.uuid,token:begin.token,target:12}}}});
+  assert.equal((await resolveSpellZoneRequest({...base,action:'finish',token:begin.token,proofId:id})).status,'resolved');
+ };
+ await roll(20,'failure');
+ assert.equal((await resolveSpellZoneRequest({...base,action:'begin'})).status,'alreadyRolled');
+ game.combat.round++;
+ await reconcileSpellZone(region);
+ assert.equal([...game.messages.values()].filter(m=>m.flags?.[S]?.spellZoneTest).length,1);
+ target.effects[0].update=async change=>{
+  target.effects[0].flags[S].spellZoneRecipient.quagmire.rescued=change['flags.'+S+'.spellZoneRecipient.quagmire.rescued'];
+ };
+ await roll(1,'success');
+ assert.equal(target.quagmireMovement.land.max,1);
+ target.flags={[S]:{quagmireTravel:{combatId:game.combat.id,round:game.combat.round,meters:1}}};
+ assert.equal(quagmireTravelBudget(target,game.combat).remaining,0);
+ assert.equal(quagmireTravelBudget(target,{...game.combat,round:game.combat.round+1}).remaining,1);
+ assert.doesNotMatch(prompt.content,/Tester avec une corde/);
+ await reconcileSpellZone(region,{leaving:scene.tokens.get('target')});
+ assert.equal(target.quagmireMovement,null);
+ await reconcileSpellZone(region,{entering:scene.tokens.get('target')});
+ assert.equal(target.quagmireMovement.trapped,true);
+ assert.match(prompt.content,/Tester avec une corde/);
+ game.time.worldTime=60;
+ await reconcileSpellZone(region);
+ assert.equal(regions.size,0);
+ assert.equal(target.quagmireMovement,null);
+ assert.doesNotMatch(prompt.content,/Tester avec une corde/);
+});
+
 test('Jorn darkness respects its footprint and duration, and removes penalties on exit or expiry',async()=>{
  const id=jorn+'wall-of-dusk:1';
  const payload=setup(id);

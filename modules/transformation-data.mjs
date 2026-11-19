@@ -446,35 +446,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
-  "vitner-soil-craft:quagmire:3#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "1 minute",
-    "priority": 20,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      0,
-      1,
-      2
-    ],
-    "sourceId": "vitner-soil-craft:quagmire:3",
-    "parameters": [
-      {
-        "index": 3,
-        "target": "duration",
-        "value": 60,
-        "optionId": "vitner-soil-craft:quagmire:3:3"
-      },
-      {
-        "index": 4,
-        "target": "duration",
-        "value": 3600,
-        "optionId": "vitner-soil-craft:quagmire:3:4"
-      }
-    ]
-  },
   "vitner-soil-craft:soil-walk:5#soil-walk": {
     "id": "soil-walk",
     "icon": "icons/svg/aura.svg",
@@ -16180,9 +16151,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-soil-craft:shape-soil:1": [
     "vitner-soil-craft:shape-soil:1#effect"
-  ],
-  "vitner-soil-craft:quagmire:3": [
-    "vitner-soil-craft:quagmire:3#effect"
   ],
   "vitner-soil-craft:soil-walk:5": [
     "vitner-soil-craft:soil-walk:5#soil-walk"

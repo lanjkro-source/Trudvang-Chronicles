@@ -445,22 +445,6 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "index": 0
     }
   ],
-  "vitner-soil-craft:quagmire:3": [
-    {
-      "action": "avancer dans le bourbier avec l’aide d’une corde",
-      "sv": 12,
-      "trait": [
-        "strength",
-        "aucun"
-      ],
-      "success": "avance de 1 mètre vers la sortie par tour.",
-      "condition": "la victime piégée reçoit une corde ou un objet similaire",
-      "traitMethod": "first",
-      "magicResistance": true,
-      "kind": "resist",
-      "index": 0
-    }
-  ],
   "vitner-soil-craft:earthquake:2": [
     {
       "action": "éviter de tomber à la renverse",

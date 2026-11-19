@@ -14414,15 +14414,6 @@
           "SourcePage": "123",
           "Duration": "5 minutes"
         },
-        "vitner-soil-craft:quagmire:3#effect": {
-          "Name": "Quagmire",
-          "Summary": "Quagmire",
-          "Description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
-          "SourceName": "Quagmire",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "123",
-          "Duration": "1 minute"
-        },
         "vitner-soil-craft:soil-walk:5#soil-walk": {
           "Name": "Soil Walk",
           "Summary": "Allows travel through stationary soil.",
@@ -19033,6 +19024,12 @@
       "NoCollapse": "No cave-in or landslide (risk: {chance}%).",
       "FireVisibility": "Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself.",
       "FogVisibility": "In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}.",
+      "QuagmireEffect": "Land movement: −{depth} m while the token remains in the quagmire.",
+      "QuagmireInstruction": "If someone throws you a rope or provides similar help, make a Situation roll (SV 12, Strength). On success, you can move 1 m per round until you are out.",
+      "QuagmireRope": "Make a test with a rope",
+      "QuagmireRescued": "With the rope, you can move 1 m per round until you leave the quagmire.",
+      "QuagmireRetry": "Wait until the next round before trying again.",
+      "QuagmireTrapped": "No land movement is available in the quagmire this round.",
       "FogMoveTooFar": "The fog can move up to 5 m per action round.",
       "EndFog": "Dispel the fog",
       "DarknessVisibility": "Fighting in the darkness: {penalty} to SV, or {nightPenalty} with low-light vision. Darkvision and True Sight negate this penalty.",

@@ -11210,17 +11210,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:shape-soil:1#effect.SourcePage` | 123 | 159 |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:shape-soil:1#effect.Duration` | 5 minutes | 5 minutes |
 
-## `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Name` | Quagmire | Bourbier |
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Description` | The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire. | Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier. |
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourceName` | Quagmire | Bourbier |
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.SourcePage` | 123 | 159 |
-| `TRUDVANG.Content.Transformation.vitner-soil-craft:quagmire:3#effect.Duration` | 1 minute | 1 minute |
-
 ## `TRUDVANG.Content.Transformation.vitner-soil-craft:soil-walk:5#soil-walk`
 
 | Clé | English | Français |
@@ -16814,6 +16803,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.NoCollapse` | No cave-in or landslide (risk: {chance}%). | Aucun éboulement ni glissement de terrain (risque : {chance} %). |
 | `TRUDVANG.SpellZone.FireVisibility` | Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself. | Les flammes gênent la visibilité : {penalty} aux tests de compétence dans la zone et aux attaques visant une personne dans la zone. Ce malus ne se cumule pas avec lui-même. |
 | `TRUDVANG.SpellZone.FogVisibility` | In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}. | Dans le brouillard : {penalty} à la VC des actions de combat, portées des armes à distance divisées par {divisor}. |
+| `TRUDVANG.SpellZone.QuagmireEffect` | Land movement: −{depth} m while the token remains in the quagmire. | Déplacement terrestre : −{depth} m tant que le token reste dans le bourbier. |
+| `TRUDVANG.SpellZone.QuagmireInstruction` | If someone throws you a rope or provides similar help, make a Situation roll (SV 12, Strength). On success, you can move 1 m per round until you are out. | Si quelqu’un vous lance une corde ou vous apporte une aide équivalente, tentez un test de situation (VS 12, Force). En cas de réussite, vous pouvez avancer de 1 m par tour jusqu’à la sortie. |
+| `TRUDVANG.SpellZone.QuagmireRope` | Make a test with a rope | Tester avec une corde |
+| `TRUDVANG.SpellZone.QuagmireRescued` | With the rope, you can move 1 m per round until you leave the quagmire. | Avec l’aide de la corde, vous pouvez avancer de 1 m par tour jusqu’à la sortie du bourbier. |
+| `TRUDVANG.SpellZone.QuagmireRetry` | Wait until the next round before trying again. | Attendez le prochain tour pour retenter le test. |
+| `TRUDVANG.SpellZone.QuagmireTrapped` | No land movement is available in the quagmire this round. | Aucun déplacement terrestre disponible dans le bourbier pour ce tour. |
 | `TRUDVANG.SpellZone.FogMoveTooFar` | The fog can move up to 5 m per action round. | Le brouillard peut se déplacer de 5 m par tour de jeu. |
 | `TRUDVANG.SpellZone.EndFog` | Dispel the fog | Dissiper le brouillard |
 | `TRUDVANG.SpellZone.DarknessVisibility` | Fighting in the darkness: {penalty} to SV, or {nightPenalty} with low-light vision. Darkvision and True Sight negate this penalty. | Combat dans les ténèbres : {penalty} à la VC, ou {nightPenalty} avec la vision nocturne. La vision dans le noir et la vision véritable annulent le malus. |

@@ -10,6 +10,7 @@ import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {auraCasterToken,auraColor} from './aura.mjs';
 import {darknessPlacementShape} from './rules/jorn-darkness.mjs';
+import {quagmireRecipient} from './rules/quagmire.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -18,8 +19,8 @@ const clock=info=>({time:Number(game.time?.worldTime)||0,combat:game.combats?.ge
 const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=>{}).then(work);jobs.set(key,job);return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});};
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
-const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog','darkness'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&!earthquakeTest(info.profile,impactSize(actor)).immune));
-const lastsAfterCombat=profile=>['fog','darkness'].includes(profile.kind);
+const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog','darkness'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&(info.profile.kind==='quagmire'||!earthquakeTest(info.profile,impactSize(actor)).immune)));
+const lastsAfterCombat=profile=>['fog','darkness','quagmire'].includes(profile.kind);
 // Region.tokens can still be empty while native creation events are being processed.
 // Query the public containment API against scene documents before freezing a burst.
 const members=(region,{entering,leaving}={})=>{
@@ -30,6 +31,13 @@ const members=(region,{entering,leaving}={})=>{
 };
 const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type===TYPE&&!b.disabled);
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
+function ropeRecipient(region,actor){
+ const max=actor.quagmireMovement?.baseMax;
+ return max>0 ? effectsFor(actor,region).find(effect=>{
+  const mud=quagmireRecipient(effect);
+  return mud&&!mud.rescued&&mud.depth>=max;
+ }) : null;
+}
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
 function allowedPoint(point,token,scene,profile){const p=center(token,scene);return Number.isFinite(point.x)&&Number.isFinite(point.y)&&Math.hypot(point.x-p.x,point.y-p.y)<=profile.range*zonePixelScale(scene)+.01;}
 function fogMoveAllowed(point,region){
@@ -64,19 +72,33 @@ async function removeRecipients(region,{expired=false}={}){
  for(const actor of actors.values())for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect,expired?{trudvangExpired:true}:{});
 }
 function promptHTML(info,recipients,responses){
- return '<article class="trudvang chat-card spell-zone-card"><header><h3>'+escapeHtml(nameOf(info))+'</h3></header><p>'+escapeHtml(local('Instruction'))+'</p><ul class="trait-situation-results">'+recipients.map(row=>{
+ const mud=info.profile.kind==='quagmire';
+ return '<article class="trudvang chat-card spell-zone-card"><header><h3>'+escapeHtml(nameOf(info))+'</h3></header><p>'+escapeHtml(local(mud?'QuagmireInstruction':'Instruction'))+'</p><ul class="trait-situation-results">'+recipients.map(row=>{
   const response=responses[responseKey(row.actorUuid)],outcome=response?.outcome;
   if(info.profile.kind==='fire')return '<li class="trait-situation-result"><span>'+escapeHtml(row.name)+'</span>'+(response?.resolved?'<strong>'+escapeHtml(local(response.avoided?'FireAvoided':'FireApplied'))+'</strong>':(row.canEvade?'<button type="button" data-action="spell-zone-test" data-zone-choice="evade" data-actor-uuid="'+escapeAttribute(row.actorUuid)+'">'+escapeHtml(local('FireEvade'))+'</button>':'')+'<button type="button" data-action="spell-zone-test" data-zone-choice="accept" data-actor-uuid="'+escapeAttribute(row.actorUuid)+'">'+escapeHtml(local('FireAccept'))+'</button>')+'</li>';
-  return '<li class="trait-situation-result"><button type="button" class="trait-situation-token" data-action="locate-trait-situation-token" data-token-uuid="'+escapeAttribute(row.tokenUuid)+'" title="'+escapeAttribute(game.i18n.localize('TRUDVANG.Dialog.TraitSituationTokenHint'))+'">'+escapeHtml(row.name)+'</button>'+(response?.resolved?'<strong class="test-outcome '+(outcome.success?'success':'failure')+'">'+escapeHtml(rollOutcomeText(outcome,k=>game.i18n.localize(k)))+'</strong>':'<button type="button" data-action="spell-zone-test" data-actor-uuid="'+escapeAttribute(row.actorUuid)+'"><i class="fas fa-dice-d20"></i> '+escapeHtml(local('Test'))+'</button>')+'</li>';
+  const result=response?.resolved?'<strong class="test-outcome '+(outcome.success?'success':'failure')+'">'+escapeHtml(rollOutcomeText(outcome,k=>game.i18n.localize(k)))+'</strong>':'';
+  const showTest=mud ? row.trapped&&(!response?.resolved||!outcome.success) : !response?.resolved;
+  return '<li class="trait-situation-result"><button type="button" class="trait-situation-token" data-action="locate-trait-situation-token" data-token-uuid="'+escapeAttribute(row.tokenUuid)+'" title="'+escapeAttribute(game.i18n.localize('TRUDVANG.Dialog.TraitSituationTokenHint'))+'">'+escapeHtml(row.name)+'</button>'+result+(showTest?'<button type="button" data-action="spell-zone-test" data-actor-uuid="'+escapeAttribute(row.actorUuid)+'"><i class="fas fa-dice-d20"></i> '+escapeHtml(local(mud?'QuagmireRope':'Test'))+'</button>':'')+'</li>';
  }).join('')+'</ul></article>';
 }
 async function updatePrompt(message,info,state){await message.update({content:promptHTML(info,state.recipients,state.responses),['flags.'+S+'.spellZoneTest']:state});}
 async function promptMembers(region,info,tokens){
- if(!tokens.size)return;
- const phase=spellZonePhase(info,clock(info));
+ const mud=info.profile.kind==='quagmire';
+ if(!tokens.size&&!mud)return;
+ const phase=mud?'rope':spellZonePhase(info,clock(info));
  let message=values(game.messages).find(m=>m.flags?.[S]?.spellZoneTest?.regionUuid===region.uuid&&m.flags[S].spellZoneTest.phase===phase);
+ if(!message&&!tokens.size)return;
  const state=structuredClone(message?.flags?.[S]?.spellZoneTest??{regionUuid:region.uuid,phase,recipients:[],responses:{},...(info.profile.instant?{instantInfo:structuredClone(info)}:{})});
+ if(mud){
+  const alreadyTrapped=state.recipients.filter(row=>row.trapped).map(row=>row.actorUuid);
+  if(message&&alreadyTrapped.length===tokens.size&&alreadyTrapped.every(uuid=>tokens.has(uuid)))return message;
+  for(const row of state.recipients){
+   if(!row.trapped&&tokens.has(row.actorUuid))delete state.responses[responseKey(row.actorUuid)];
+   row.trapped=tokens.has(row.actorUuid);
+  }
+ }
  for(const [uuid,token]of tokens)if(!state.recipients.some(r=>r.actorUuid===uuid))state.recipients.push({actorUuid:uuid,name:token.name??token.actor.name,tokenUuid:token.uuid,...(info.profile.kind==='fire'?{canEvade:Number(fireEvadeItem(token.actor)?.system?.level)>0&&token.actor.canPerformAction?.({movement:true})!==false}:{})});
+ if(mud)for(const row of state.recipients)row.trapped=tokens.has(row.actorUuid);
  const actors=state.recipients.map(r=>tokens.get(r.actorUuid)?.actor).filter(Boolean),whisper=values(game.users).filter(u=>u.isGM||actors.some(a=>a.testUserPermission(u,'OWNER'))).map(u=>u.id);
  if(!message){message=await ChatMessage.create({speaker:{alias:nameOf(info)},whisper,content:promptHTML(info,state.recipients,state.responses),flags:{[S]:{spellZoneTest:state}}});}
  else await message.update({whisper:[...new Set([...message.whisper??[],...whisper])],content:promptHTML(info,state.recipients,state.responses),['flags.'+S+'.spellZoneTest']:state});
@@ -86,8 +108,8 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
  return serial(region.uuid,async()=>{
   if(!writer()||!infoOf(region))return;
   const info=infoOf(region);
-  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);await syncZoneLight(region,{removed:true});return;}
-  if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await deleteZoneOnce(region);return;}
+  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);if(info.profile.kind==='quagmire')await promptMembers(region,info,new Map());await syncZoneLight(region,{removed:true});return;}
+  if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});if(info.profile.kind==='quagmire')await promptMembers(region,info,new Map());await deleteZoneOnce(region);return;}
   if(info.profile.kind==='fog'){
    const shape=values(region.shapes)[0],radius=fogRadius(info,clock(info))*zonePixelScale(region.parent);
    if(shape&&Math.abs(shape.radius-radius)>.01)await region.update({shapes:[{type:'circle',x:shape.x,y:shape.y,radius}]});
@@ -97,21 +119,23 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   if(info.profile.instant){if(!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}scheduleInstantVisual(region);}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())if(!tokens.has(actor.uuid))for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect);
-  if(['earthquake','fog','darkness'].includes(info.profile.kind)||info.profile.kind==='fire'&&info.profile.penalty&&!info.profile.instant)for(const [uuid,token]of tokens){
+  if(['earthquake','fog','darkness','quagmire'].includes(info.profile.kind)||info.profile.kind==='fire'&&info.profile.penalty&&!info.profile.instant)for(const [uuid,token]of tokens){
    if(effectsFor(token.actor,region).length)continue;
    const remaining=Math.max(.01,(info.until-(Number(game.time?.worldTime)||0))/5),combat=clock(info).combat;
    const rounds=combat?Math.max(.01,info.expiresRound-Number(combat.round)):remaining;
    const fog=info.profile.kind==='fog',fire=info.profile.kind==='fire',darkness=info.profile.kind==='darkness';
-   const changes=darkness?[]:fog ? [
+   const mud=info.profile.kind==='quagmire';
+   const changes=darkness||mud?[]:fog ? [
     {key:'system.modifiers.rolls.fogCombat',type:'downgrade',value:String(info.profile.penalty),phase:'initial'},
     {key:'system.modifiers.fogRangeDivisor',type:'upgrade',value:String(info.profile.rangeDivisor),phase:'initial'}
    ] : [{key:fire?'system.modifiers.rolls.visibility':'system.modifiers.rolls.allActions',type:fire?'downgrade':'add',value:String(info.profile.penalty),phase:'initial',priority:10*Number(info.context.sourceLevel||1)}];
    await token.actor.createTrudvangEffect({name:nameOf(info),img:fire?'icons/svg/fire.svg':fog||darkness?'icons/svg/aura.svg':'systems/trudvang-chronicles/assets/icons/earthquake.svg',type:'effect',transfer:false,origin:region.uuid,
-    description:local(darkness?'DarknessVisibility':fog?'FogVisibility':fire?'FireVisibility':'PenaltyDescription',{penalty:info.profile.penalty,nightPenalty:info.profile.nightPenalty,divisor:info.profile.rangeDivisor}),
+    description:local(mud?'QuagmireEffect':darkness?'DarknessVisibility':fog?'FogVisibility':fire?'FireVisibility':'PenaltyDescription',{penalty:info.profile.penalty,nightPenalty:info.profile.nightPenalty,divisor:info.profile.rangeDivisor,depth:info.profile.depth}),
     duration:lastsAfterCombat(info.profile)?{value:null,units:'seconds'}:{value:rounds,units:'rounds'},start:foundry.documents.ActiveEffect.implementation.getEffectStart(),
     system:{stackId:'spell-zone:'+region.uuid,stacking:'replace',changes},flags:{[S]:{spellZoneRecipient:{regionUuid:region.uuid,...(fire?{visibility:true}:{}),
-     ...(darkness?{darkness:{penalty:info.profile.penalty,nightPenalty:info.profile.nightPenalty}}:{})}}}});
+     ...(darkness?{darkness:{penalty:info.profile.penalty,nightPenalty:info.profile.nightPenalty}}:{}),...(mud?{quagmire:{depth:info.profile.depth}}:{})}}}});
   }
+  if(info.profile.kind==='quagmire'){await promptMembers(region,info,new Map([...tokens].filter(([,token])=>ropeRecipient(region,token.actor))));return;}
   if(lastsAfterCombat(info.profile))return;
   const prompt=await promptMembers(region,info,tokens);
   if(info.profile.kind==='fire'){if(prompt){const state=structuredClone(prompt.flags[S].spellZoneTest);for(const [id,token]of tokens){const row=state.recipients.find(r=>r.actorUuid===id);if(!row?.canEvade&&!state.responses[responseKey(id)]?.resolved){await applyZoneFireDamage({actor:token.actor,token,info,message:prompt});state.responses[responseKey(id)]={resolved:true,avoided:false};await updatePrompt(prompt,info,state);}}}
@@ -174,20 +198,38 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  const region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(payload.actorUuid);
  const row=state?.recipients.find(r=>r.actorUuid===actor?.uuid),instant=info?.profile.instant===true;
  if(!writer()||!state||!info||!user?.active||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!row)return {status:'unavailable'};
- if(!instant&&(!enabled(region)||spellZoneExpired(info,clock(info))||state.phase!==spellZonePhase(info,clock(info))||!members(region).has(actor.uuid)))return {status:'unavailable'};
+ const mud=info.profile.kind==='quagmire',phase=spellZonePhase(info,clock(info));
+ if(!instant&&(!enabled(region)||spellZoneExpired(info,clock(info))||(!mud&&state.phase!==phase)||!members(region).has(actor.uuid)))return {status:'unavailable'};
+ const rope=mud?ropeRecipient(region,actor):null;
+ if(mud&&(!row.trapped||!rope))return {status:'unavailable'};
  const victimToken=instant?(await foundry.utils.fromUuid(row.tokenUuid)??{uuid:row.tokenUuid,actor,name:row.name}):members(region).get(actor.uuid);
- const old=state.responses[responseKey(actor.uuid)];if(old?.resolved)return {status:'alreadyRolled'};
+ const stored=state.responses[responseKey(actor.uuid)],old=mud&&stored?.phase!==phase?null:stored;
+ if(old?.resolved)return {status:'alreadyRolled'};
  const key=message.id+':'+actor.uuid,lock=locks.get(key);
  if(payload.action==='begin'){
-  if(lock&&lock.until>Date.now())return {status:'busy'};
-  const token=crypto.randomUUID();locks.set(key,{token,userId:user.id,until:Date.now()+120000});return {status:'reserved',token,proofId:old?.proofId};
+  if(lock&&lock.until>Date.now()&&(!mud||lock.phase===phase))return {status:'busy'};
+  const token=crypto.randomUUID();locks.set(key,{token,userId:user.id,phase,until:Date.now()+120000});return {status:'reserved',token,proofId:old?.proofId};
  }
  if(!lock||lock.token!==payload.token||lock.userId!==user.id)return {status:'unavailable'};
  if(payload.action==='cancel'){locks.delete(key);return {status:'cancelled'};}
+ if(mud&&lock.phase!==phase){locks.delete(key);return {status:'unavailable'};}
  if(info.profile.kind==='fire'&&payload.choice==='accept'&&payload.action==='finish'){const next=structuredClone(state);await applyZoneFireDamage({actor,token:victimToken,info,message});next.responses[responseKey(actor.uuid)]={resolved:true,avoided:false};await updatePrompt(message,info,next);locks.delete(key);return {status:'resolved'};}
  const proof=game.messages.get(payload.proofId),test=proof?.flags?.[S]?.spellZoneProof,die=Number(proof?.rolls?.[0]?.total),target=Number(test?.target);
  if(payload.action!=='finish'||(proof?.author?.id??proof?._source?.author)!==user.id||test?.messageId!==message.id||test?.actorUuid!==actor.uuid||test.token!==lock.token&&old?.proofId!==payload.proofId||proof?.rolls?.[0]?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
- const next=structuredClone(state),response=next.responses[responseKey(actor.uuid)]??={outcome:{...resolveRollUnderOutcome(die,target),result:die,target},proofId:payload.proofId,resolved:false};
+ const next=structuredClone(state);
+ if(mud&&!old)delete next.responses[responseKey(actor.uuid)];
+ const response=next.responses[responseKey(actor.uuid)]??={outcome:{...resolveRollUnderOutcome(die,target),result:die,target},proofId:payload.proofId,resolved:false};
+ if(mud){
+  if(response.outcome.success){
+   await rope.update({['flags.'+S+'.spellZoneRecipient.quagmire.rescued']:true,description:local('QuagmireRescued')});
+   next.recipients.find(recipient=>recipient.actorUuid===actor.uuid).trapped=false;
+  }
+  response.phase=phase;
+  response.resolved=true;
+  await updatePrompt(message,info,next);
+  locks.delete(key);
+  return {status:'resolved'};
+ }
  await updatePrompt(message,info,next);
  if(info.profile.kind==='fire'){if(!response.outcome.success)await applyZoneFireDamage({actor,token:victimToken,info,message});response.avoided=response.outcome.success;response.resolved=true;await updatePrompt(message,info,next);locks.delete(key);return {status:'resolved'};}
  if(!response.outcome.success){
@@ -283,16 +325,21 @@ export async function placeSpellZone(message){
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);
  if(!info||!actor?.isOwner)return null;
- const base={type:'spellZoneTest',messageId:message.id,actorUuid,choice};const begin=await request({...base,action:'begin'});if(begin.status!=='reserved')return begin;
+ const base={type:'spellZoneTest',messageId:message.id,actorUuid,choice};const begin=await request({...base,action:'begin'});
+ if(begin.status!=='reserved'){
+  if(info.profile.kind==='quagmire')ui.notifications.warn(local(begin.status==='alreadyRolled'?'QuagmireRetry':'Unavailable'));
+  return begin;
+ }
  try{
   if(info.profile.kind==='fire'&&choice==='accept')return await request({...base,action:'finish',token:begin.token});
   if(info.profile.kind==='fire'&&!begin.proofId&&!canEvadeZoneFire(actor)){ui.notifications.warn(local('FireCannotEvade'));return {status:'unavailable'};}
   let proofId=begin.proofId;
   if(!proofId){
-   const spec=info.profile.kind==='fire'?{}:earthquakeTest(info.profile,impactSize(actor)),effect=region?effectsFor(actor,region)[0]:null;
+   const spec=['fire','quagmire'].includes(info.profile.kind)?{}:earthquakeTest(info.profile,impactSize(actor)),effect=region?effectsFor(actor,region)[0]:null;
    const procedure=outcome=>({flags:{spellZoneProof:{messageId:message.id,actorUuid,token:begin.token,target:outcome.target}}});let result;
    if(info.profile.kind==='fire'){const evade=fireEvadeItem(actor),options={resistedEffect:effect,reactive:true,modifierRows:[{labelKey:'TRUDVANG.SpellZone.FireInitiative',value:zoneFireInitiativePenalty(actor)}],resolveProcedure:procedure};result=(actor.isInActiveCombat??actor.isInCombatActive?.())?await actor.rollDodge(options):await actor.rollAbility(evade,options);}
    else if(info.profile.kind==='runeEarthquake'){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,resistedEffect:effect,reactive:true,test:{sv:spec.sv,trait:['dexterity','aucun'],traitMethod:'first',action:local('Test')},sourceName:nameOf(info)+' — '+actor.name,resolveProcedure:procedure});}
+   else if(info.profile.kind==='quagmire'){const {rollConfiguredTraitSituation}=await import('./dice.mjs');result=await rollConfiguredTraitSituation({actor,reactive:true,test:{sv:12,trait:['strength'],traitMethod:'first',action:local('QuagmireRope')},sourceName:nameOf(info)+' — '+actor.name,resolveProcedure:procedure});}
    else result=await actor.rollAbility({name:game.i18n.localize('TRUDVANG.Skill.Agility'),type:'ability',system:{catalogId:'agility',parentSkill:'agility',kind:'skill',level:0,rollBonus:1}},{reactive:true,resistedEffect:effect,label:nameOf(info)+' — '+actor.name,modifierRows:[{labelKey:'TRUDVANG.SpellZone.SizeModifier',value:spec.modifier}],resolveProcedure:procedure});
    if(!result)return {status:'cancelled'};proofId=result.messageId;
   }

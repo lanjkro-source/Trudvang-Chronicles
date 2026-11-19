@@ -28,6 +28,8 @@ Sur une arme sans autre effet : appliquer Enchantement d’objet, puis attaquer 
 
 **Mur du crépuscule, Rideau de la nuit et Manteau de Jorn** (Livre des règles p. 222–223) disposent de régions fixes. Le placement permet de choisir un cercle ou un rectangle dans les limites de la surface et de la portée du pouvoir. La vision du combattant détermine le malus dans la zone ou lorsqu’il attaque une cible qui s’y trouve. Si les deux sont dans une zone, le malus n’est compté qu’une fois. La vision dans le noir et la vision véritable annulent le malus des trois pouvoirs, conformément à l’édition française.
 
+**Bourbier** (Livre des règles p. 159–160, Player’s Handbook p. 126) crée une région fixe avec les améliorations de diamètre, de profondeur, de portée et de durée. Il retire 1 m de déplacement terrestre par 10 cm de profondeur. Une carte pour les propriétaires concernés et le MJ permet aux personnages piégés de tenter le test avec une corde (VS 12, Force). En cas de réussite, la fiche et l’action de déplacement donnent au maximum 1 m par tour jusqu’à la sortie. La table confirme la présence de l’aide et déplace les tokens sur la carte.
+
 Le décompte des modèles d’effet ne prouve pas la couverture complète. Les attaques instantanées déjà proposées dans les cartes ne doivent pas recevoir artificiellement un effet permanent. Restent à traiter/vérifier, dans cet ordre pratique :
 
 1. Autres objets et armes invoqués, sceaux et liaison d’un sortilège préparé (Potion de guérison est désormais traitée).

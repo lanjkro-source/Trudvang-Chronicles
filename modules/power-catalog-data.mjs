@@ -13001,6 +13001,14 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-soil-craft:quagmire:3": {
     "isRune": false,
     "level": 2,
+    "spellZone": {
+      "kind": "quagmire",
+      "radiusOptionId": "vitner-soil-craft:quagmire:3:0",
+      "depthOptionId": "vitner-soil-craft:quagmire:3:1",
+      "rangeOptionId": "vitner-soil-craft:quagmire:3:2",
+      "durationOptionId": "vitner-soil-craft:quagmire:3:3",
+      "hoursOptionId": "vitner-soil-craft:quagmire:3:4"
+    },
     "powerLevels": [
       {
         "id": "vitner-soil-craft:quagmire:3:0",
