@@ -1,5 +1,9 @@
 # Migrations temporaires des mondes de développement
 
+## Sortilèges actifs et zones orphelines
+
+`recoverMaintainedSpellZones()` dans `modules/maintained-spell-tracking.mjs` s’exécute au démarrage côté MJ. Les cartes de placement existantes permettent de retrouver les entrées actives dont la zone a déjà disparu et les zones dont le lancement a déjà été supprimé de la fiche. Le rapprochement utilise le lanceur et l’identifiant du lancement. Les cartes sans zone placée sont ignorées. Retirer cette récupération une fois les mondes créés avant le correctif écartés ou mis à jour. Conserver la synchronisation des suppressions et des expirations.
+
 ## Tables de noms — version de contenu 71
 
 Le palier `CONTENT_VERSION = 71` de `modules/content-importer.mjs` relance l’import standard dans les anciens mondes pour y installer les sept tables de noms du dossier Création de Personnages : Stormlanders, Mittlanders, Viranns, Nains, Trolls, Sauvages et Elfes (Livre des règles, p. 67-68). Chaque table porte un flag `nameTable` que `rebuildTables()` préserve désormais, et `TrudvangRollTable.draw()` détecte : elle demande le sexe pour les cinq cultures à suffixes genrés, tire un préfixe puis un suffixe, et publie le nom assemblé dans le chat. Les tables des nains (sans sexe) et des trolls (deux affixes) suivent leurs propres règles. Retirer ce palier historique/commentaire lors du nettoyage des migrations ; les sept tables et la détection du flag restent nécessaires.

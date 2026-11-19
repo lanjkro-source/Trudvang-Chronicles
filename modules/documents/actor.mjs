@@ -1830,7 +1830,8 @@ export class TrudvangActor extends BaseActor {
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
     const movementRows = this.type === "npc" ? npcMovementRows(this.system, {localize: key => game.i18n.localize(key)}) : [];
-    const movementModes = this.transformationMovementRows?.length ? this.transformationMovementRows.filter(row => row.metersPerTwo > 0) : this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
+    const movementModes = this.transformationMovementRows?.length ? this.transformationMovementRows.filter(row => row.metersPerTwo > 0
+      && (row.mode !== "land" || !this.quagmireMovement || this.quagmireMovement.land.max > 0)) : this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
       ...mode, label: movementRows[Number(mode.id)]?.mode || mode.mode
     })) : [];
     if(this.transformationProfile?.movements?.some(row=>row.method==="waterDegrees")&&!movementModes.length)return ui.notifications.warn(game.i18n.localize("TRUDVANG.WaterMovement.Unavailable"));

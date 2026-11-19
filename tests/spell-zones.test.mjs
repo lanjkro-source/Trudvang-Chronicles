@@ -4,6 +4,7 @@ import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
 import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
 import {quagmireMovement,quagmireTravelBudget} from '../modules/rules/quagmire.mjs';
+import {endMaintainedSpellOnGM,recoverMaintainedSpellZones} from '../modules/maintained-spell-tracking.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('<','&lt;').replaceAll('>','&gt;')}})};
@@ -44,7 +45,7 @@ test('Quagmire slows grounded occupants; a rope test grants one metre per round 
  assert.equal(region.shapes[0].radius,150);
  assert.deepEqual(caster.effects,[]);
  assert.equal(target.quagmireMovement.land.max,0);
- assert.equal(quagmireMovement({max:6,metersPerTwo:2},target.effects).land.max,3);
+ assert.deepEqual(quagmireMovement({max:6,metersPerTwo:2},target.effects).land,{max:3,metersPerTwo:2});
  const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest);
  assert.match(prompt.content,/Tester avec une corde/);
  assert.deepEqual(prompt.whisper,[gm.id,owner.id]);
@@ -79,6 +80,59 @@ test('Quagmire slows grounded occupants; a rope test grants one metre per round 
  assert.equal(regions.size,0);
  assert.equal(target.quagmireMovement,null);
  assert.doesNotMatch(prompt.content,/Tester avec une corde/);
+});
+
+function maintainedQuagmire(){
+ const payload=setup(quagmire);
+ const spell={id:'spell',type:'spell',system:{spellType:'lasting',catalogId:quagmire}};
+ caster.items=[spell];
+ caster.system.activeSpellCastingsMigrated=true;
+ caster.system.activeSpellCastings=['cast-a','cast-b'].map(id=>({id,itemId:spell.id,cost:4}));
+ caster.canUserModify=user=>[gm.id,owner.id].includes(user.id);
+ caster.update=async changes=>{caster.system.activeSpellCastings=changes['system.activeSpellCastings'];};
+ message.flags[S].ruleTestContext.castingId='cast-a';
+ return payload;
+}
+
+test('ending the maintained Quagmire removes its region and occupants, and prevents replay',async()=>{
+ const payload=maintainedQuagmire();
+ assert.equal((await createSpellZoneOnAuthority(payload)).status,'placed');
+ assert.equal(caster.system.activeSpellCastings[0].effectsApplied,true);
+ assert.equal(target.effects.length,1);
+ assert.equal(await endMaintainedSpellOnGM(caster.uuid,'cast-a',owner.id),true);
+ assert.equal(regions.size,0);
+ assert.equal(target.effects.length,0);
+ assert.deepEqual(caster.system.activeSpellCastings.map(row=>row.id),['cast-b']);
+ assert.equal((await createSpellZoneOnAuthority(payload)).reason,'CastingFinished');
+});
+
+test('expiry ends only the cast that owns the zone even after every occupant leaves',async()=>{
+ const payload=maintainedQuagmire();
+ await createSpellZoneOnAuthority(payload);
+ const region=[...regions.values()][0];
+ region.tokens.clear();
+ await reconcileSpellZone(region);
+ assert.equal(target.effects.length,0);
+ assert.equal(caster.system.activeSpellCastings.length,2);
+ game.time.worldTime=60;
+ await reconcileSpellZone(region);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(regions.size,0);
+ assert.deepEqual(caster.system.activeSpellCastings.map(row=>row.id),['cast-b']);
+});
+
+test('startup recovers older placed casts with a missing zone and older zones with a missing cast',async()=>{
+ let payload=maintainedQuagmire();
+ await createSpellZoneOnAuthority(payload);
+ await [...regions.values()][0].delete();
+ await recoverMaintainedSpellZones();
+ assert.deepEqual(caster.system.activeSpellCastings.map(row=>row.id),['cast-b']);
+ payload=maintainedQuagmire();
+ await createSpellZoneOnAuthority(payload);
+ caster.system.activeSpellCastings.shift();
+ await recoverMaintainedSpellZones();
+ assert.equal(regions.size,0);
+ assert.equal(target.effects.length,0);
 });
 
 test('Jorn darkness respects its footprint and duration, and removes penalties on exit or expiry',async()=>{

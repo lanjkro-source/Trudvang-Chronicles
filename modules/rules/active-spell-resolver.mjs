@@ -44,6 +44,15 @@ export function fatalActiveSpellCost(actor) {
   return activeSpellInstances(actor).reduce((sum, casting) => sum + casting.cost, 0);
 }
 
+/** A zone can maintain its casting even if there are no occupants. */
+export function maintainedSpellZones({scenes = []} = {}, {casterUuid, castingId} = {}) {
+  if (!casterUuid || !castingId) return [];
+  return Array.from(scenes.values?.() ?? scenes).flatMap(scene => Array.from(scene.regions?.values?.() ?? scene.regions ?? []).filter(region => {
+    const context = region.flags?.["trudvang-chronicles"]?.spellZone?.context;
+    return context?.kind === "spell" && context.casterUuid === casterUuid && context.castingId === castingId;
+  }));
+}
+
 /** Find extant effects by the provenance stored on them, including synthetic
  * token actors on inactive scenes. An empty result does not prove that a cast
  * has ended: it may not have been applied yet or a document may be unavailable. */

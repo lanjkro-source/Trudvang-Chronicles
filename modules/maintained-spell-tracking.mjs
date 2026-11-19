@@ -1,6 +1,6 @@
 import {runeConsequenceExpired,validRuneConsequenceAllocation} from './rules/rune-consequences.mjs';
 import {effectTargetRestriction} from './rules/mobility-effects.mjs';
-import {activeSpellRecords, maintainedSpellEffects} from "./rules/active-spell-resolver.mjs";
+import {activeSpellRecords, maintainedSpellEffects, maintainedSpellZones} from "./rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
@@ -16,17 +16,18 @@ const world = () => ({actors: game.actors ?? [], scenes: game.scenes ?? [],items
 
 /** Rebuild references on the elected GM, never inferring that an empty list
  * means an unapplied or ended casting. Effect deletion is a separate step. */
-export async function reconcileMaintainedSpell(caster, castingId, {effectCreated = false, removed = false} = {}) {
+export async function reconcileMaintainedSpell(caster, castingId, {effectCreated = false, removed = false, zoneRemoved = false} = {}) {
  if (!isWriter() || !caster?.canUserModify?.(game.user, "update") || !castingId) return false;
  const records = activeSpellRecords(caster);
  const record = records.find(row => row.id === castingId);
  if (!record) return false;
  const references = maintainedSpellEffects(world(), {casterUuid: caster.uuid, castingId}).map(row => row.effectUuid).sort();
+ const hasZone = maintainedSpellZones(world(), {casterUuid: caster.uuid, castingId}).length > 0;
  const previous = Array.from(record.effectUuids ?? []).sort();
- const effectsApplied = record.effectsApplied || effectCreated || references.length > 0;
+ const effectsApplied = record.effectsApplied || effectCreated || references.length > 0 || hasZone;
  // Only an actual removal event can end a cast. An empty scan at startup or
  // before applying a spell is not evidence that the caster stopped it.
- if (removed && effectsApplied && references.length === 0) {
+ if ((zoneRemoved || removed && effectsApplied) && !hasZone && references.length === 0) {
   await caster.update({"system.activeSpellCastings": records.filter(row => row.id !== castingId), "system.activeSpellCastingsMigrated": true}, {trudvangSpellTracking: true});
   return true;
  }
@@ -46,6 +47,45 @@ function queueCaster(casterUuid, work) {
   if (jobs.get(casterUuid) === job) jobs.delete(casterUuid);
  });
 }
+
+export function withMaintainedZoneCasting(caster, context, place) {
+ if (context?.kind !== "spell" || !context.castingId) return place();
+ return queueCaster(caster.uuid, async () => {
+  const record = activeSpellRecords(caster).find(row => row.id === context.castingId);
+  if (!record) return {status:"unavailable", reason:"CastingFinished"};
+  const result = await place();
+  if (result?.status === "placed") await reconcileMaintainedSpell(caster, context.castingId);
+  return result;
+ });
+}
+
+export function trackSpellZoneRemoval(context) {
+ if (context?.kind === "spell") return enqueueContext(context, {zoneRemoved:true});
+}
+
+/** TEMPORARY WORLD MIGRATION — reconcile zones and castings separated by older versions. */
+export async function recoverMaintainedSpellZones() {
+ if (!isWriter()) return;
+ const seen = new Set();
+ for (const message of game.messages?.values?.() ?? game.messages ?? []) {
+  const flags = message.flags?.["trudvang-chronicles"];
+  const context = flags?.ruleTestContext, regionUuid = flags?.spellZoneCasting?.regionUuid;
+  if (context?.kind !== "spell" || !context.castingId || !regionUuid || !POWER_DETAILS_BY_ID[context.sourceId]?.spellZone || seen.has(regionUuid)) continue;
+  seen.add(regionUuid);
+  const region = await foundry.utils.fromUuid(regionUuid);
+  if (!region) {
+   await trackSpellZoneRemoval(context);
+   continue;
+  }
+  const origin = region.flags?.["trudvang-chronicles"]?.spellZone?.context;
+  if (origin?.casterUuid !== context.casterUuid || origin?.castingId !== context.castingId) continue;
+  const caster = await foundry.utils.fromUuid(context.casterUuid);
+  if (caster && !activeSpellRecords(caster).some(row => row.id === context.castingId)) {
+   const {removeSpellZone} = await import("./spell-zones.mjs");
+   await removeSpellZone(region);
+  }
+ }
+}
 function enqueue(casterUuid, castingId, options = {}) {
  if (!isWriter() || !casterUuid || !castingId) return Promise.resolve(false);
  return queueCaster(casterUuid, async () => reconcileMaintainedSpell(await foundry.utils.fromUuid(casterUuid), castingId, options));
@@ -59,6 +99,11 @@ export async function endMaintainedSpellOnGM(casterUuid, castingId, userId) {
   if (!user || !caster?.canUserModify?.(user, "update")) return false;
   const record = activeSpellRecords(caster).find(row => row.id === castingId);
   if (!record) return false;
+  const zones = maintainedSpellZones(world(), {casterUuid, castingId});
+  if (zones.length) {
+   const {removeSpellZone} = await import("./spell-zones.mjs");
+   for (const zone of zones) await removeSpellZone(zone);
+  }
   const live = maintainedSpellEffects(world(), {casterUuid, castingId});
   const uuids = new Set([...record.effectUuids, ...live.map(row => row.effectUuid)]);
   for (const uuid of uuids) {
@@ -233,5 +278,6 @@ export function registerMaintainedSpellTracking() {
   registerSocket();
   if (!isWriter()) return;
   for (const actor of worldActors()) for (const record of activeSpellRecords(actor)) void enqueue(actor.uuid, record.id);
+  void recoverMaintainedSpellZones().catch(error => console.error("Trudvang | Maintained spell zone recovery failed", error));
  });
 }

@@ -11,6 +11,7 @@ import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {auraCasterToken,auraColor} from './aura.mjs';
 import {darknessPlacementShape} from './rules/jorn-darkness.mjs';
 import {quagmireRecipient} from './rules/quagmire.mjs';
+import {trackSpellZoneRemoval,withMaintainedZoneCasting} from './maintained-spell-tracking.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -50,7 +51,16 @@ const regionDeletions=new WeakMap();
 function regionPresent(region){return !region.id||!region.parent?.regions?.get||region.parent.regions.get(region.id)===region;}
 function deleteZoneOnce(region){
  if(regionDeletions.has(region))return regionDeletions.get(region);
- const job=Promise.resolve().then(async()=>{await syncZoneLight(region,{removed:true});return regionPresent(region)?region.delete():false;}).finally(()=>regionDeletions.delete(region));regionDeletions.set(region,job);return job;
+ const job=Promise.resolve().then(async()=>{
+  await syncZoneLight(region,{removed:true});
+  if(!regionPresent(region))return false;
+  const result=await region.delete();
+  // The caster queue can itself be waiting on this region during manual removal.
+  void trackSpellZoneRemoval(infoOf(region)?.context);
+  return result;
+ }).finally(()=>regionDeletions.delete(region));
+ regionDeletions.set(region,job);
+ return job;
 }
 const instantVisualTimers=new Map();
 function scheduleInstantVisual(region){
@@ -70,6 +80,16 @@ export function expireInstantSpellZone(region,{now=Date.now()}={}){
 async function removeRecipients(region,{expired=false}={}){
  const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
  for(const actor of actors.values())for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect,expired?{trudvangExpired:true}:{});
+}
+async function clearSpellZoneRecipients(region,info,options){
+ await removeRecipients(region,options);
+ if(info.profile.kind==='quagmire')await promptMembers(region,info,new Map());
+}
+export function removeSpellZone(region){
+ return serial(region.uuid,async()=>{
+  await clearSpellZoneRecipients(region,infoOf(region));
+  await deleteZoneOnce(region);
+ });
 }
 function promptHTML(info,recipients,responses){
  const mud=info.profile.kind==='quagmire';
@@ -108,8 +128,9 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
  return serial(region.uuid,async()=>{
   if(!writer()||!infoOf(region))return;
   const info=infoOf(region);
-  if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);if(info.profile.kind==='quagmire')await promptMembers(region,info,new Map());await syncZoneLight(region,{removed:true});return;}
-  if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});if(info.profile.kind==='quagmire')await promptMembers(region,info,new Map());await deleteZoneOnce(region);return;}
+  if(removed||!regionPresent(region)){await clearSpellZoneRecipients(region,info);await syncZoneLight(region,{removed:true});return;}
+  if(spellZoneExpired(info,clock(info))){await clearSpellZoneRecipients(region,info,{expired:true});await deleteZoneOnce(region);return;}
+  if(!enabled(region)){await clearSpellZoneRecipients(region,info);await syncZoneLight(region,{removed:true});return;}
   if(info.profile.kind==='fog'){
    const shape=values(region.shapes)[0],radius=fogRadius(info,clock(info))*zonePixelScale(region.parent);
    if(shape&&Math.abs(shape.radius-radius)>.01)await region.update({shapes:[{type:'circle',x:shape.x,y:shape.y,radius}]});
@@ -158,6 +179,9 @@ export async function createSpellZoneOnAuthority(payload){
  const actor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null,definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast);
  const die=Number(message?.rolls?.[0]?.total);
  if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!ready||!profile||!Number.isInteger(die)||die<1||die>19||(die!==1&&die>ready.target))return {status:'unavailable'};
+ return withMaintainedZoneCasting(actor,cast,()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}));
+}
+async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}){
  if(ready.regionUuid){
   const previous=await previousPlacement(ready),existing=previous.region,info=infoOf(existing);
   if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};
@@ -253,10 +277,7 @@ async function endFogOnAuthority(payload){
  if(info?.profile.kind!=='fog'||info.messageId!==message.id||!regionPresent(region))return {status:'unavailable'};
  const actor=await foundry.utils.fromUuid(info.context.casterUuid);
  if(!user.isGM&&!actor?.testUserPermission(user,'OWNER'))return {status:'unavailable'};
- await serial(region.uuid,async()=>{
-  await removeRecipients(region);
-  await deleteZoneOnce(region);
- });
+ await removeSpellZone(region);
  return {status:'removed'};
 }
 export function resolveSpellZoneRequest(payload){return serial('request:'+(payload.messageId??''),()=>payload.type==='createSpellZone'?createSpellZoneOnAuthority(payload):payload.type==='endFog'?endFogOnAuthority(payload):resolveSpellZoneTestOnAuthority(payload));}
@@ -354,7 +375,12 @@ export function registerSpellZoneSupport(){
  const flightChanged=(effect,changes={})=>{if(changes.statuses!==undefined||values(effect.statuses).some(id=>['fly','hover','flying','hovering'].includes(id)))safely();};
  for(const hook of ['createActiveEffect','updateActiveEffect','deleteActiveEffect'])Hooks.on(hook,flightChanged);
  Hooks.on('updateRegion',region=>{if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone update failed',error));});
- Hooks.on('deleteRegion',region=>{if(infoOf(region))void reconcileSpellZone(region,{removed:true}).catch(error=>console.error('Trudvang | Zone cleanup failed',error));});
+ Hooks.on('deleteRegion',region=>{
+  const info=infoOf(region);
+  if(!info)return;
+  void reconcileSpellZone(region,{removed:true}).catch(error=>console.error('Trudvang | Zone cleanup failed',error));
+  void trackSpellZoneRemoval(info.context);
+ });
  for(const hook of ['updateCombat','updateWorldTime','canvasReady','updateUser'])Hooks.on(hook,safely);
  Hooks.on('deleteCombat',combat=>{if(writer()){
   const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(s=>values(s.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));

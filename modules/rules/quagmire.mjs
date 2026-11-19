@@ -14,7 +14,7 @@ export function quagmireMovement(land, effects) {
     ? Math.min(1,land.max)
     : land.max - bog.depth)));
   const assisted = !trapped && bogs.some(bog => bog.rescued);
-  return {trapped, baseMax:land.max,land:{max, metersPerTwo:assisted ? max : Math.round(100 * land.metersPerTwo * max / land.max) / 100}};
+  return {trapped, baseMax:land.max,land:{max, metersPerTwo:assisted ? max : land.metersPerTwo}};
 }
 
 export function quagmireTravelBudget(actor, combat) {
