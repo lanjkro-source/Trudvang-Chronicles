@@ -42,7 +42,7 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
   const total = Math.max(0, rolled.total);
   const factor = `${choice.dice}d${choice.faces}${choice.threshold ? ` ${localize("TRUDVANG.Roll.OpenRoll")} ${choice.threshold}+` : ""}`;
   const detail = `${rolled.rolls.join(" + ")}${choice.modifier ? ` ${choice.modifier > 0 ? "+" : "−"} ${Math.abs(choice.modifier)}` : ""}`;
-  const fearTargets = fearArea ? nativeFearTargets(fearArea,fearContext?.originMessageId) : null;
+  const fearTargets = fearArea ? nativeFearTargets(fearArea,fearContext?.originMessageId,fearContext?.casterUuid) : null;
   const fearTargetsHTML = fearArea ? await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs", {total, targets:fearTargets}) : "";
   const content = await renderTemplate(`systems/trudvang-chronicles/templates/chat/${fear ? "fear" : "damage"}-card.hbs`, {
     actorName: actor?.name ?? game.user.name, actorImg: actor?.img ?? game.user.avatar,

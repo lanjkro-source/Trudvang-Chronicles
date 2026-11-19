@@ -239,12 +239,21 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.fearStatus = {
       current: Number(fear.current || 0),
       max: Number(fear.max || 0),
+      meterValue: Math.min(Number(fear.max || 0),Number(fear.current || 0)),
       percent: percent(fear.current, fear.max),
       ...fearStatus,
       state: game.i18n.localize(`TRUDVANG.Status.FearState.${fearStatus.level}`),
       consequence: game.i18n.localize(fearStatus.penalty < 0 && (this.actor.transformationProfile?.ignoreFear || this.actor.transformationProfile?.ignoreFearPenalty || (!fearStatus.insane && Number(fear.current || 0) <= 10 * Number(this.actor.transformationProfile?.ignoreFearThrough || 0)))
         ? "TRUDVANG.Effect.Profile.ignoreFearPenalty" : `TRUDVANG.Status.FearConsequence.${fearStatus.level}`)
     };
+    context.fearStatusHtml = await renderTemplate("systems/trudvang-chronicles/templates/actor/fear-status.hbs",{
+      fearStatus:context.fearStatus, effectStatus:context.effectStatus, effectHints:context.effectHints,
+      resourceEffectHints:context.resourceEffectHints, system:context.system,
+      canCalmFear:context.editable && context.fearStatus.current > 0,
+      editableNpc:context.editable && this.actor.type === "npc",
+      showFearFactorRoll:this.actor.type === "character" && context.effectiveFearFactor.valid,
+      fearFactorNotation:context.fearFactorNotation
+    });
     context.creationMode = Boolean(this.actor.system.experience?.creationMode);
     context.pendingAdvancements = this.actor.pendingAdvancements ?? [];
     context.pendingAdventureCost = context.pendingAdvancements.reduce((sum, operation) => sum + Number(operation.cost || 0), 0);

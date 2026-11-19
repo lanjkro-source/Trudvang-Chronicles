@@ -53,7 +53,7 @@ function canReadMessage(message, user) {
 
 export function canManageFearTargets(message,user) {
   const context = message.getFlag(SYSTEM_ID,"fearContext");
-  return Boolean(context?.areaSceneId && (user.isGM || user.id === context.casterUserId));
+  return Boolean(context?.areaSceneId && !message.getFlag(SYSTEM_ID,"fearBatchApplied") && (user.isGM || user.id === context.casterUserId));
 }
 
 function canReceiveFear(message,actor) {
@@ -91,6 +91,32 @@ async function editFearTargetsOnGM(payload) {
   const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs",{total,targets:rows});
   await message.update({content:message.content.replace(fearTargetsSection,() => html),[`flags.${SYSTEM_ID}.fearTargets`]:rows});
   return {status:"updated"};
+}
+
+async function applyFearBatchOnGM(payload) {
+  const message = game.messages.get(payload.messageId), user = game.users.get(payload.userId);
+  if (!game.user.isGM || !message || !user?.active || !canReadMessage(message,user)) return {status:"unavailable"};
+  if (message.getFlag(SYSTEM_ID,"fearBatchApplied")) return {status:"alreadyApplied"};
+  const context = message.getFlag(SYSTEM_ID,"fearContext");
+  if (!canManageFearTargets(message,user) || !context?.grouped
+      || !fearTargetsSection.test(message.content) || sourceAmount(message,"fear") === null) return {status:"unavailable"};
+  // Two clients can finish the fear-roll dialog for the same casting concurrently.
+  // Only the first card that writes fear may finish that casting.
+  if (context.originMessageId && Array.from(game.messages.values()).some(card =>
+    card.id !== message.id && card.getFlag(SYSTEM_ID,"fearContext")?.grouped
+    && card.getFlag(SYSTEM_ID,"fearContext").originMessageId === context.originMessageId
+    && (card.getFlag(SYSTEM_ID,"fearBatchApplied") || rowsFor(card).some(row=>row.channel==="fear")))) return {status:"alreadyApplied"};
+  const targets = message.getFlag(SYSTEM_ID,"fearTargets") ?? [];
+  for (const target of targets) {
+    if (hasChatApplication(message,target.actorUuid,"fear")) continue;
+    const actor = await foundry.utils.fromUuid(target.actorUuid);
+    if (!actor) continue;
+    const result = await applyOnGM({...payload,channel:"fear",actorUuid:target.actorUuid,tokenUuid:target.tokenUuid},{grouped:true});
+    if (!["applied","alreadyApplied"].includes(result.status)) return {status:"unavailable"};
+  }
+  const content = message.content.replace('data-action="apply-fear-batch"','data-action="apply-fear-batch" data-fear-batch-applied');
+  await message.update({content,[`flags.${SYSTEM_ID}.fearBatchApplied`]:true});
+  return {status:"applied"};
 }
 
 async function addDamageTargetsOnGM(payload) {
@@ -156,7 +182,7 @@ async function reserveFearRecipient(message,actor){
  return {rollback:()=>origin.update({[`flags.${SYSTEM_ID}.fearRecipients`]:records})};
 }
 
-async function applyOnGM(payload) {
+async function applyOnGM(payload,{grouped=false}={}) {
   const message = game.messages.get(payload.messageId);
   const user = game.users.get(payload.userId);
   if (!game.user.isGM || !message || !user?.active || !["body", "fear", "defense"].includes(payload.channel)) return {status: "unavailable"};
@@ -165,10 +191,11 @@ async function applyOnGM(payload) {
   if (amount === null) return {status: "unavailable"};
   const actor = await foundry.utils.fromUuid(payload.actorUuid);
   if (!actor?.isOwner || !["character", "npc"].includes(actor.type)
-    || !actor.testUserPermission(user, "OWNER") || (payload.channel === "fear" && actor.type !== "character")) return {status: "unavailable"};
+    || (!grouped && !actor.testUserPermission(user, "OWNER"))) return {status: "unavailable"};
   let fearAdjustment=null;
   if(payload.channel==="fear"){
    const context=message.getFlag(SYSTEM_ID,'fearContext');
+   if(context?.grouped&&!grouped)return {status:'unavailable'};
    if(!canReceiveFear(message,actor))return {status:'ineligibleTarget'};
    const result=message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
    if(context?.resistance&&!result&&!actor.transformationProfile?.ignoreFear&&!actor.transformationProfile?.ignoreFearGain)return {status:'resistanceRequired'};
@@ -295,6 +322,7 @@ export async function applyChatApplication(payload) {
   const queueKey=game.messages.get(payload.messageId)?.getFlag(SYSTEM_ID,"fearContext")?.originMessageId||payload.messageId;
   const previous = queues.get(queueKey) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
+    : payload.type === "chatApplyFearBatch" ? applyFearBatchOnGM(payload)
     : ["chatAddFearTargets","chatRemoveFearTarget"].includes(payload.type) ? editFearTargetsOnGM(payload)
     : payload.type==='chatImpactTest'?resolveImpactTest(payload,{refresh:refreshApplications,canReadMessage}):payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
   queues.set(queueKey, next);
@@ -312,7 +340,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget","chatApplyFearBatch"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -393,6 +421,11 @@ export async function requestFearTargetEdit({message, tokens, actorUuid}) {
   const tokenUuids = Array.from(tokens ?? [], token => token.document?.uuid ?? token.uuid).filter(Boolean);
   return requestChatUpdate(message,{type:actorUuid?"chatRemoveFearTarget":"chatAddFearTargets",
     requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id,actorUuid,tokenUuids});
+}
+
+export async function requestFearBatch(message) {
+  if (!canManageFearTargets(message,game.user)) return {status:"unavailable"};
+  return requestChatUpdate(message,{type:"chatApplyFearBatch",requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id});
 }
 
 async function requestChatUpdate(message, payload) {

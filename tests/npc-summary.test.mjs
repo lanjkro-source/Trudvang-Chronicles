@@ -2678,6 +2678,21 @@ test("sacred light suppresses fear penalties without preventing new fear",async(
  instance.allApplicableEffects=()=>[];instance.prepareDerivedData();assert.ok(instance.system.fearPenalty<0);
 });
 
+test("a troll NPC takes fear after Psyche and uses the normal fear penalty",async()=>{
+ const troll=spendableNpc([]);
+ troll.system.tags=["troll"];
+ troll._source.system.resources.fear.value=troll.system.resources.fear.value=10;
+ troll.getTraitValue=key=>key==="psyche"?2:0;
+ troll.prepareDerivedData();
+ const result=await troll.applyFearFactor(8,{announce:false});
+ assert.equal(result.applied,6);
+ assert.equal(troll._source.system.resources.fear.value,16);
+ troll.system.resources.fear.value=16;
+ troll.prepareDerivedData();
+ assert.equal(troll.system.fearPenalty,-1);
+ assert.ok(actorStateRollModifiers(troll).some(row=>row.labelKey==="TRUDVANG.Resource.FearPenalty"&&row.value===-1));
+});
+
 test("fear summary preserves its level but reports when its penalty is suppressed",async()=>{
  const sheet=new TrudvangNpcSheet();sheet.actor=actor();sheet.isEditable=true;
  sheet.actor.system.resources.fear.current=15;

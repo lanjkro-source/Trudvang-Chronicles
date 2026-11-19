@@ -22,7 +22,7 @@ test('additional recipients can use the base fear profile only when bought',()=>
  assert.equal(magicFearProfile({system:{catalogId:cases[0][0]}}).requiresResistance,true);
 });
 
-test('Wolf Tongue snapshots hostile intelligent targets within its improved radius', () => {
+test('Wolf Tongue detects hostile tokens within its improved radius', () => {
  const id = 'holy-gerbanis-wrath-of-tyrd:wolf-tongue:2';
  const document = {system:{catalogId:id}};
  const token = (name, x, overrides={}) => ({
@@ -40,13 +40,12 @@ test('Wolf Tongue snapshots hostile intelligent targets within its improved radi
  ]};
  const base = magicFearArea(document,{},caster,scene);
  assert.equal(base.radius,5);
- assert.deepEqual(base.targets.map(row=>row.actorUuid),['near','troll']);
+ assert.deepEqual(base.targets.map(row=>row.actorUuid),['near','beast','troll']);
  const improved = magicFearArea(document,{countsById:{[id+':0']:1}},caster,scene);
  assert.equal(improved.radius,10);
  assert.equal(improved.radiusPixels,500);
- assert.deepEqual(improved.targets.map(row=>row.actorUuid),['near','far','hidden','troll']);
- assert.deepEqual(improved.targets.map(row=>row.name),['near','far','','troll']);
- assert.equal(improved.targets.at(-1).canApply,false);
+ assert.deepEqual(improved.targets.map(row=>row.actorUuid),['near','far','hidden','beast','troll']);
+ assert.deepEqual(improved.targets.map(row=>row.name),['near','far','','beast','troll']);
  const context = {areaActorUuids:improved.targets.map(row=>row.actorUuid)};
  assert.equal(fearRecipientEligible(far.actor,context),true);
  assert.equal(fearRecipientEligible(caster.actor,context),false);
@@ -74,8 +73,7 @@ test('the GM creates a native region once and removes it after application and t
  const scene = {id:'scene',grid:{size:100,distance:2,units:'m'},tokens,regions,
   async createEmbeddedDocuments(type,[data]) {
    assert.equal(type,'Region');
-   const region = {...data,parent:this,id:'region',async delete() {regions.delete(this.id);},
-    async update(updates) {this.flags['trudvang-chronicles'].magicFearTargets=updates['flags.trudvang-chronicles.magicFearTargets'];}};
+   const region = {...data,parent:this,id:'region',async delete() {regions.delete(this.id);}};
    regions.set(region.id,region);
    created.push(data);
    return [region];
@@ -99,13 +97,16 @@ test('the GM creates a native region once and removes it after application and t
  assert.equal(created.length,1);
  assert.equal(created[0].visibility,2);
  assert.deepEqual(created[0].shapes,[{type:'circle',x:50,y:50,radius:250}]);
- assert.deepEqual(nativeFearTargets({...area,targets:[]},message.id).map(row=>row.actorUuid),['hostile','hidden']);
+ assert.deepEqual(nativeFearTargets({...area,targets:[]},message.id,caster.actor.uuid).map(row=>row.actorUuid),['hostile','hidden']);
+ hostile.x=900;
+ assert.deepEqual(nativeFearTargets(area,message.id,caster.actor.uuid).map(row=>row.actorUuid),['hidden']);
+ hostile.x=100;
  assert.deepEqual(drawn[0],['target',97,-3,106,106,8]);
  hooks.get('canvasTearDown')();
  assert.deepEqual(drawn.at(-1),['destroy']);
  hooks.get('canvasReady')();
  assert.deepEqual(drawn.at(-1),['target',97,-3,106,106,8]);
- const fear = {id:'fear',flags:{[system]:{fearContext:{areaSceneId:scene.id,originMessageId:message.id},fearTargets:area.targets}}};
+ const fear = {id:'fear',flags:{[system]:{fearContext:{grouped:true,areaSceneId:scene.id,originMessageId:message.id},fearTargets:area.targets}}};
  messages.set(fear.id,fear);
  hooks.get('createChatMessage')(fear);
  assert.deepEqual(drawn.at(-1),['target',97,-3,106,106,8]);
@@ -114,6 +115,10 @@ test('the GM creates a native region once and removes it after application and t
  await synchronizeMagicFearRegion(message.id);
  assert.equal(regions.size,1);
  fear.flags[system].fearTargets = area.targets.filter(row=>row.actorUuid!=='hidden');
+ hooks.get('updateChatMessage')(fear);
+ await synchronizeMagicFearRegion(message.id);
+ assert.equal(regions.size,1);
+ fear.flags[system].fearBatchApplied = true;
  hooks.get('updateChatMessage')(fear);
  await synchronizeMagicFearRegion(message.id);
  assert.equal(regions.size,0);

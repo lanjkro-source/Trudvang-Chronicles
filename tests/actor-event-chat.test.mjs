@@ -122,7 +122,7 @@ test("damage bypassing armor reports the full loss, while a blocked hit reports 
   assert.match(messages.at(-1).content, /0 PS perdus/);
 });
 
-test("fear application announces each character and reports the gain after mitigation", async t => {
+test("fear application announces each PC or NPC and reports the gain after mitigation", async t => {
   const {actor, messages} = runtime(t);
   const result = await actor.applyFearFactor(10);
   assert.equal(result.applied, 8);
@@ -133,8 +133,10 @@ test("fear application announces each character and reports the gain after mitig
   await actor.applyFearFactor(10);
   assert.match(messages.at(-1).content, /\+0 point/);
   actor.type = "npc";
-  assert.equal(await actor.applyFearFactor(10), null);
-  assert.equal(messages.length, 2);
+  actor.system.fearFactorModifier = -3;
+  assert.equal((await actor.applyFearFactor(10)).applied, 7);
+  assert.match(messages.at(-1).content, /\+7 point/);
+  assert.equal(messages.length, 3);
 });
 
 test("token-bar losses announce damage once, including negative health, but healing and vetoed updates do not", async t => {

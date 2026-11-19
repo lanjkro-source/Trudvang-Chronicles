@@ -1,0 +1,17 @@
+<section class="status-protection status-fear-factor">
+  <span><strong>{{localize "TRUDVANG.Field.FearFactor"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" title="{{effectHints.fearFactor}}" data-stat="fearFactor">{{signed system.fearFactorModifier}} <i class="fas fa-circle-info"></i></button></span>
+  <button type="button" class="status-action" data-action="calm-fear" {{#unless canCalmFear}}disabled{{/unless}}><i class="fas fa-heart"></i> {{localize "TRUDVANG.Action.CalmFear"}}</button>
+</section>
+<section class="status-vital fear-vital">
+  <div class="status-vital-header">
+    <strong>{{localize "TRUDVANG.Resource.Fear"}}</strong>
+    <span class="status-vital-value">
+      {{#if editableNpc}}<input type="number" name="system.resources.fear.value" min="0" step="1" value="{{fearStatus.current}}" title="{{resourceEffectHints.fear}}" aria-label="{{localize 'TRUDVANG.Resource.Fear'}}">{{else}}{{fearStatus.current}}{{/if}}
+      / {{fearStatus.max}}
+    </span><span></span>
+  </div>
+  <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Fear'}}" aria-valuemin="0" aria-valuemax="{{fearStatus.max}}" aria-valuenow="{{fearStatus.meterValue}}"><span class="vital-meter-fill" style="width: {{fearStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 20%"></i><i class="vital-meter-mark" style="left: 40%"></i><i class="vital-meter-mark" style="left: 60%"></i><i class="vital-meter-mark" style="left: 80%"></i></div>
+  <p class="status-consequence"><strong>{{fearStatus.state}}</strong><span>{{fearStatus.consequence}}</span></p>
+  {{#if effectStatus.immunity}}<p class="status-consequence"><strong>{{localize "TRUDVANG.Transformation.FearImmunity"}}</strong><span>{{effectStatus.immunity}}</span></p>{{/if}}
+  {{#if showFearFactorRoll}}<p class="status-consequence"><button type="button" class="status-action" data-action="roll-fear-factor"><i class="fas fa-dice-d10"></i> {{localize "TRUDVANG.Field.FearFactor"}} : {{fearFactorNotation}}</button></p>{{/if}}
+</section>

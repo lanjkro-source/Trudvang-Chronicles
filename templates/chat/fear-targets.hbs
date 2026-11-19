@@ -6,11 +6,6 @@
   {{#each targets}}
   <div class="damage-target" {{#if hidden}}data-fear-hidden hidden{{/if}}>
     <button type="button" class="trait-situation-token damage-target-name" data-action="locate-trait-situation-token" data-token-uuid="{{tokenUuid}}" title="{{localize 'TRUDVANG.Dialog.TraitSituationTokenHint'}}">{{name}}</button>
-    {{#if canApply}}
-    <button type="button" data-action="apply-target-fear" data-actor-uuid="{{actorUuid}}" data-token-uuid="{{tokenUuid}}" title="{{localize 'TRUDVANG.MagicFear.ApplyTarget'}}" aria-label="{{localize 'TRUDVANG.MagicFear.ApplyTarget'}}" hidden><i class="fas fa-face-flushed" aria-hidden="true"></i></button>
-    {{else}}
-    <small>{{localize 'TRUDVANG.MagicFear.ManualTarget'}}</small>
-    {{/if}}
     <button type="button" class="damage-target-edit" data-action="remove-fear-target" data-actor-uuid="{{actorUuid}}" title="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" aria-label="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" hidden><i class="fas fa-minus" aria-hidden="true"></i></button>
   </div>
   {{/each}}

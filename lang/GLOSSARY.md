@@ -16519,12 +16519,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.AddTargets` | Add targeted (or selected) tokens | Ajouter les tokens ciblés (ou sélectionnés) |
 | `TRUDVANG.MagicFear.SelectTargets` | Target or select at least one token to add. | Ciblez ou sélectionnez au moins un token à ajouter. |
 | `TRUDVANG.MagicFear.NoEditableTargets` | No character or NPC tokens to add. | Aucun token de PJ ou de PNJ à ajouter. |
-| `TRUDVANG.MagicFear.ManualTarget` | GM adjudication | À gérer par le MJ |
 | `TRUDVANG.MagicFear.HiddenTarget` | Hidden target | Cible masquée |
 | `TRUDVANG.MagicFear.NoTargets` | No targets. | Aucune cible. |
 | `TRUDVANG.MagicFear.NoVisibleHostiles` | No visible eligible hostile tokens in range. | Aucun token hostile visible et éligible à portée. |
-| `TRUDVANG.MagicFear.TargetRemoved` | This target is no longer on the list. | Cette cible n’est plus dans la liste. |
-| `TRUDVANG.MagicFear.ApplyTarget` | Apply fear to this target | Appliquer la peur à cette cible |
+| `TRUDVANG.MagicFear.ApplyBatch` | Apply fear to all targets | Appliquer la peur à toutes les cibles |
+| `TRUDVANG.MagicFear.BatchApplied` | Fear applied | Peur appliquée |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
 | `TRUDVANG.MagicFear.ProtectionValues` | Fear factors reduced by {degrees} step(s). First fear level ignored. | Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré. |
 | `TRUDVANG.MagicFear.ProtectedFactor` | Personal factor: {factor} → {amount} before personal mitigation. | Facteur personnel : {factor} → {amount} avant protections personnelles. |

@@ -1,6 +1,6 @@
 import {auraColor} from './aura.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
-import {automaticFearTargets} from './magic-fear.mjs';
+import {automaticFearTargets,fearTargetsInCircle} from './magic-fear.mjs';
 
 const SYSTEM_ID = 'trudvang-chronicles';
 const jobs = new Map();
@@ -10,10 +10,15 @@ const values = collection => Array.from(collection?.values?.() ?? []);
 const writer = () => game.user?.isGM && game.users?.activeGM?.id === game.user.id;
 const regionCastId = region => region.flags?.[SYSTEM_ID]?.magicFearCastId;
 
-export function nativeFearTargets(area,id) {
- const scene = game.scenes?.get(area.sceneId);
+export function nativeFearTargets(area,id,casterUuid) {
+ const scene = game.scenes?.get(area.sceneId) ?? (globalThis.canvas?.scene?.id === area.sceneId ? globalThis.canvas.scene : null);
+ if (!scene) return area.targets;
  const region = values(scene?.regions).find(row => regionCastId(row) === id);
- return region?.flags?.[SYSTEM_ID]?.magicFearTargets ?? area.targets;
+ const circleTargets = fearTargetsInCircle(area,scene,casterUuid);
+ if (!region) return circleTargets;
+ const inCircle = new Set(circleTargets.map(row => row.tokenUuid));
+ return automaticFearTargets(values(scene.tokens),{casterUuid,eligibility:{excludeCaster:true}},
+  token => token.testInsideRegion?.(region) ?? inCircle.has(token.uuid));
 }
 
 function castId(message) {
@@ -23,9 +28,12 @@ function castId(message) {
 }
 
 function pendingTargets(id, area, deletedId) {
- const card = values(game.messages).findLast(row => row.id !== id && row.id !== deletedId && castId(row) === id);
+ const cards = values(game.messages).filter(row => row.id !== id && row.id !== deletedId && castId(row) === id);
+ const card = cards.find(row => section(row)?.fearBatchApplied) ?? cards.at(-1);
  const flags = section(card);
- if (!card) return {showZone:true,targets:nativeFearTargets(area,id)};
+ if (!card) return {showZone:true,targets:area.targets};
+ if (flags.fearContext?.grouped) return flags.fearBatchApplied
+  ? {showZone:false,targets:[]} : {showZone:true,targets:flags.fearTargets ?? []};
  const applied = new Set((flags.applications ?? []).filter(row => row.channel === 'fear').map(row => row.actorUuid));
  const targets = (flags.fearTargets ?? []).filter(row => !applied.has(row.actorUuid));
  return {showZone:targets.length > 0,targets};
@@ -58,7 +66,7 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
   const restricted = cast.blind || cast.whisper?.length;
   const recipients = [author.id,...Array.from(cast.whisper ?? [],user => user.id ?? user)];
   const levels = area.level ? [area.level] : [];
-  const [region] = await scene.createEmbeddedDocuments('Region',[{
+  await scene.createEmbeddedDocuments('Region',[{
    name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),
    color:auraColor(), highlightMode:'shapes', locked:true, levels,
    visibility:cast.blind ? CONST.REGION_VISIBILITY.GAMEMASTER
@@ -67,10 +75,6 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
    shapes:[{type:'circle',x,y,radius:area.radiusPixels}],
    flags:{[SYSTEM_ID]:{magicFearCastId:id}}
   }]);
-  if (!region) return;
-  const snapshot = automaticFearTargets(values(scene.tokens),{casterUuid:context.casterUuid,eligibility:fear.eligibility},
-   token => token.testInsideRegion?.(region) ?? area.targets.some(row => row.tokenUuid === token.uuid));
-  await region.update({[`flags.${SYSTEM_ID}.magicFearTargets`]:snapshot});
  });
  jobs.set(id,job);
  return job.finally(() => {if (jobs.get(id) === job) jobs.delete(id);});

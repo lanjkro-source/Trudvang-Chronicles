@@ -97,6 +97,35 @@ test("area fear edits are limited to the original caster and GM and application 
  assert.ok(!flags.fearTargets.some(row=>row.actorUuid===troll.uuid));
 });
 
+test("the caster applies one area roll to the edited list, including a troll they do not own", async t => {
+ const {message,flags,makeActor,makeToken,payload} = runtime(t,"fear");
+ const removed = makeActor("Removed");
+ const troll = makeActor("Troll",2);
+ troll.type = "npc";
+ troll.testUserPermission = user => user.isGM;
+ const hero = makeActor("Hero",4);
+ const trollToken = makeToken("troll",troll), heroToken = makeToken("hero",hero);
+ flags.fearContext = {grouped:true,areaSceneId:"scene",casterUserId:player.id};
+ flags.fearTargets = [{actorUuid:removed.uuid, name:removed.name}];
+ message.content = template("fear-card")({actorName:"Caster",total:10,fearArea:true,
+  fearTargetsHTML:template("fear-targets")({total:10,targets:flags.fearTargets})});
+ const act = (type,data={},user=player) => applyChatApplication({type,messageId:message.id,userId:user.id,...data});
+ await act("chatAddFearTargets",{tokenUuids:[trollToken.uuid,heroToken.uuid]});
+ await act("chatRemoveFearTarget",{actorUuid:removed.uuid});
+ assert.equal((message.content.match(/data-action="apply-fear-batch"/g)??[]).length,1);
+ assert.doesNotMatch(message.content,/apply-target-fear/);
+ assert.deepEqual(await act("chatApplyFearBatch",{},observer),{status:"unavailable"});
+ assert.deepEqual(await applyChatApplication(payload(hero)),{status:"unavailable"});
+ const total = await Promise.all([act("chatApplyFearBatch"),act("chatApplyFearBatch",{},gm)]);
+ assert.deepEqual(total.map(row=>row.status),["applied","alreadyApplied"]);
+ assert.equal(flags.fearBatchApplied,true);
+ assert.equal(troll.system.resources.fear.value,8);
+ assert.equal(hero.system.resources.fear.value,6);
+ assert.equal(removed.system.resources.fear.value,0);
+ assert.equal(flags.applications.length,2);
+ assert.deepEqual(await act("chatRemoveFearTarget",{actorUuid:troll.uuid}),{status:"unavailable"});
+});
+
 test("restricted damage checks the actual target tags on the GM even with armor bypass or forged payload tags",async t=>{
  const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);
  flags.damageContext={targetTags:['mort-vivant','undead']};
