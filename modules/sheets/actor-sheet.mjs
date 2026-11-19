@@ -246,14 +246,16 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       consequence: game.i18n.localize(fearStatus.penalty < 0 && (this.actor.transformationProfile?.ignoreFear || this.actor.transformationProfile?.ignoreFearPenalty || (!fearStatus.insane && Number(fear.current || 0) <= 10 * Number(this.actor.transformationProfile?.ignoreFearThrough || 0)))
         ? "TRUDVANG.Effect.Profile.ignoreFearPenalty" : `TRUDVANG.Status.FearConsequence.${fearStatus.level}`)
     };
-    context.fearStatusHtml = await renderTemplate("systems/trudvang-chronicles/templates/actor/fear-status.hbs",{
-      fearStatus:context.fearStatus, effectStatus:context.effectStatus, effectHints:context.effectHints,
-      resourceEffectHints:context.resourceEffectHints, system:context.system,
-      canCalmFear:context.editable && context.fearStatus.current > 0,
-      editableNpc:context.editable && this.actor.type === "npc",
-      showFearFactorRoll:this.actor.type === "character" && context.effectiveFearFactor.valid,
-      fearFactorNotation:context.fearFactorNotation
-    });
+    if (this.actor.type === "character" || this.actor.system.tags?.some(tag => tag.trim().toLowerCase() === "troll")) {
+      context.fearStatusHtml = await renderTemplate("systems/trudvang-chronicles/templates/actor/fear-status.hbs",{
+        fearStatus:context.fearStatus, effectStatus:context.effectStatus, effectHints:context.effectHints,
+        resourceEffectHints:context.resourceEffectHints, system:context.system,
+        canCalmFear:context.editable && context.fearStatus.current > 0,
+        editableNpc:context.editable && this.actor.type === "npc",
+        showFearFactorRoll:this.actor.type === "character" && context.effectiveFearFactor.valid,
+        fearFactorNotation:context.fearFactorNotation
+      });
+    }
     context.creationMode = Boolean(this.actor.system.experience?.creationMode);
     context.pendingAdvancements = this.actor.pendingAdvancements ?? [];
     context.pendingAdventureCost = context.pendingAdvancements.reduce((sum, operation) => sum + Number(operation.cost || 0), 0);

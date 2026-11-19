@@ -657,7 +657,7 @@
 .trudvang-sheet .editor-panel prose-mirror .editor-content { color: var(--trudvang-ink); }
 .trudvang-sheet.npc-sheet .npc-health-panel { margin-bottom: 10px; }
 .trudvang-sheet.npc-sheet .npc-health-panel .status-vitals { margin-bottom: 0; }
-.trudvang-sheet.npc-sheet .npc-health-panel .fear-vital { padding-bottom: 0; border-bottom: 0; }
+.trudvang-sheet.npc-sheet .npc-health-panel .status-vital:last-child { padding-bottom: 0; border-bottom: 0; }
 .trudvang-sheet.npc-sheet .status-protection small { margin-left: 5px; }
 .trudvang-sheet.npc-sheet .npc-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 .trudvang-sheet.npc-sheet .npc-traits-panel { grid-column: 1 / -1; }

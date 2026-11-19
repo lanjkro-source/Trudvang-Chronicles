@@ -2704,6 +2704,21 @@ test("fear summary preserves its level but reports when its penalty is suppresse
  sheet.actor.transformationProfile.ignoreFearPenalty=false;context=await sheet._prepareContext({});assert.match(context.fearStatus.consequence,/−7/);
 });
 
+test("only troll NPCs render the fear block while retaining the fear state for every NPC",async()=>{
+ const sheet=new TrudvangNpcSheet();
+ sheet.actor=actor();
+ sheet.isEditable=true;
+ sheet.actor.system.resources.fear.current=15;
+ sheet.actor.system.tags=["géant"];
+ const other=await sheet._prepareContext({});
+ assert.equal(other.fearStatus.level,"two");
+ assert.equal(other.fearStatusHtml,undefined);
+ sheet.actor.system.tags.push(" Troll ");
+ const start=renderedCards.length;
+ await sheet._prepareContext({});
+ assert.ok(renderedCards.slice(start).some(entry=>entry.path.endsWith("/fear-status.hbs")));
+});
+
 test('a reactive skill test remains possible when ordinary actions are blocked and displays power-level modifiers once',async t=>{
  const runtime=mockActionRuntime(t),instance=actor([]);instance.canPerformAction=()=>false;instance.warnCannotAct=()=>null;
  instance.getAbilityBreakdown=()=>({base:10,skillLabel:'Agility',modifierRows:[]});
