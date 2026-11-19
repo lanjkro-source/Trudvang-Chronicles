@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,376);
+ assert.equal(Object.keys(sources).length,373);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1448,8 +1448,7 @@ test("divine weather, travel and summoning effects preserve their duration impro
  const cases={
   "holy-gerbanis-warmth-of-sunvei:sunray:1":[3600],"holy-gerbanis-warmth-of-sunvei:summer-place:3":[3600],"holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6":[86400],
   "holy-gerbanis-strength-of-stormi:havar:2":[60,3600],"holy-gerbanis-strength-of-stormi:shield-disir:5":[60,3600],"holy-gerbanis-strength-of-stormi:einharjar:8":[60,3600],
-  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1":[5,60],"holy-gerbanis-influence-of-jorn:falfax:2":[3600],"holy-gerbanis-influence-of-jorn:night-curtain:3":[5,60,86400],
-  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4":[5,60,3600],"holy-gerbanis-influence-of-jorn:asiblack:6":[3600],"holy-gerbanis-influence-of-jorn:snarfari:8":[3600],
+  "holy-gerbanis-influence-of-jorn:falfax:2":[3600],"holy-gerbanis-influence-of-jorn:asiblack:6":[3600],"holy-gerbanis-influence-of-jorn:snarfari:8":[3600],
   "holy-ealdtradition-magh-s-gift:journey-wind:0":[3600],"holy-ealdtradition-magh-s-gift:elf-summer:3":[3600],"holy-ealdtradition-magh-s-gift:harvest-year:8":[],
   "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2":[86400],"holy-ealdtradition-nema-s-usefulness:meall-s-trail:5":[86400],"holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8":[86400],
   "holy-tenetnid-tablet-of-the-shield:sheltering:1":[3600],"holy-tenetnid-tablet-of-the-shield:storm-protection:2":[3600]

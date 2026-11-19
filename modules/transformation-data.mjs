@@ -5571,34 +5571,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
     "parameters": []
   },
-  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "3 tours de jeu",
-    "priority": 10,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      2,
-      3
-    ],
-    "sourceId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1",
-    "parameters": [
-      {
-        "index": 0,
-        "target": "duration",
-        "value": 5,
-        "optionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0"
-      },
-      {
-        "index": 1,
-        "target": "duration",
-        "value": 60,
-        "optionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1"
-      }
-    ]
-  },
   "holy-gerbanis-influence-of-jorn:falfax:2#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -5614,74 +5586,6 @@ export const TRANSFORMATION_TEMPLATES = {
         "target": "duration",
         "value": 3600,
         "optionId": "holy-gerbanis-influence-of-jorn:falfax:2:0"
-      }
-    ]
-  },
-  "holy-gerbanis-influence-of-jorn:night-curtain:3#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "3 tours de jeu",
-    "priority": 20,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      3,
-      4
-    ],
-    "sourceId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
-    "parameters": [
-      {
-        "index": 0,
-        "target": "duration",
-        "value": 5,
-        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:0"
-      },
-      {
-        "index": 1,
-        "target": "duration",
-        "value": 60,
-        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:1"
-      },
-      {
-        "index": 2,
-        "target": "duration",
-        "value": 86400,
-        "optionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:2"
-      }
-    ]
-  },
-  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "3 tours de jeu",
-    "priority": 30,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      3,
-      4
-    ],
-    "sourceId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
-    "parameters": [
-      {
-        "index": 0,
-        "target": "duration",
-        "value": 5,
-        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0"
-      },
-      {
-        "index": 1,
-        "target": "duration",
-        "value": 60,
-        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:1"
-      },
-      {
-        "index": 2,
-        "target": "duration",
-        "value": 3600,
-        "optionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:2"
       }
     ]
   },
@@ -16669,17 +16573,8 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": [
     "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight"
   ],
-  "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": [
-    "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect"
-  ],
   "holy-gerbanis-influence-of-jorn:falfax:2": [
     "holy-gerbanis-influence-of-jorn:falfax:2#effect"
-  ],
-  "holy-gerbanis-influence-of-jorn:night-curtain:3": [
-    "holy-gerbanis-influence-of-jorn:night-curtain:3#effect"
-  ],
-  "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": [
-    "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect"
   ],
   "holy-gerbanis-influence-of-jorn:asiblack:6": [
     "holy-gerbanis-influence-of-jorn:asiblack:6#effect"

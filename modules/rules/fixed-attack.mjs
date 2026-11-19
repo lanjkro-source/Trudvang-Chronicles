@@ -12,15 +12,17 @@ export function resolveFixedAttackTargets({attacker=null,baseVC = 0, targetTrait
     const value = trait === NO_TRAIT || !actor ? 0 : Number(actor.getTraitValue?.(trait)
       ?? actor.system?.effective?.traits?.[trait] ?? actor.system?.traits?.[trait] ?? 0);
     const traitValue = Number.isFinite(value) ? value : 0;
+    const defenseRows = targetDefenseRows(actor,attacker);
+    const defenseModifier = defenseRows.reduce((n,row)=>n+row.value,0);
     return {
       token,
       actor,
       name: String(token?.name || actor?.name || token?.document?.name || ""),
       trait,
       traitValue,
-      defenseRows: targetDefenseRows(actor,attacker),
-      defenseModifier: targetDefenseRows(actor,attacker).reduce((n,r)=>n+r.value,0),
-      target: base - traitValue + targetDefenseRows(actor,attacker).reduce((n,r)=>n+r.value,0),
+      defenseRows,
+      defenseModifier,
+      target: base - traitValue + defenseModifier,
       effectTarget: actor ? {actorUuid: actor.uuid ?? "", tokenUuid: token?.document?.uuid ?? token?.uuid ?? ""} : null
     };
   };

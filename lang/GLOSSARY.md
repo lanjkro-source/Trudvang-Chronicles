@@ -12796,17 +12796,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.SourcePage` | 171 | 221 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8#flight.Duration` | 7 days | 7 days |
 
-## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Name` | Wall of Dusk | Mur du crépuscule |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Description` | With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters. The Stormkelt is given 20 square meters of darkness to shape to their liking. A dimwalker who has 20 m² can thus make a wall that is 1 m wide and 20 m long, a wall 5 m wide and 4 m long, and so on. The height of this area extends as far as the eye can see. If a wall of darkness is raised in an area already occupied by a creature, that creature is immediately affected by the darkness and is given modifiers accordingly. The Stormkelt calls on Jorn, who grants a piece of the dusk that’s as dark and thick as night. This darkness, shaped by the dimwalker, gives a negative modifier of -3 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision, dark vision, or true vision is unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui. Le stormikjalt dispose d’une surface de 20 mètres carrés sur laquelle il peut façonner les fondations de son mur comme bon lui semble. Un arpenteur des brumes peut ainsi utiliser ces 20 m² pour créer un mur de 1 m d’épaisseur et 20 m de long, ou de 5 m d’épaisseur sur 4 m de long, etc. Ce mur s’étend aussi haut que le regard peut porter. Si un stormikjalt lève un mur de ténèbres à un endroit déjà occupé par une créature, cette dernière est immédiatement affectée par les ténèbres et reçoit les modificateurs adéquats. Le stormikjalt fait appel à Jorn, qui lui offre un morceau du crépuscule aussi noir et épais que la nuit. Ces ténèbres, auxquelles l’arpenteur des brumes peut donner la forme de son choix, confèrent un malus de -3 à toutes les actions de combat entreprises à l’intérieur des ténèbres ou qui visent une cible qui s’y trouve, comme en pleine nuit. Toute personne bénéficiant d’une vision de nuit, d’une vision dans le noir ou d’une vision véritable n’est pas affectée par ces ténèbres. |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourceName` | Wall of Dusk | Mur du crépuscule |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.SourcePage` | 160 | 222 |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect.Duration` | 3 action rounds | 3 tours de jeu |
-
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect`
 
 | Clé | English | Français |
@@ -12817,28 +12806,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.SourcePage` | 160 | 222 |
 | `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:falfax:2#effect.Duration` | 1 hour | 1 heure |
-
-## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Name` | Night Curtain | Rideau de la nuit |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Description` | With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres. |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourceName` | Night Curtain | Rideau de la nuit |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.SourcePage` | 160 | 222 |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:night-curtain:3#effect.Duration` | 3 action rounds | 3 tours de jeu |
-
-## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Name` | The Coat of Jorn | Manteau de Jorn |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Description` | With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness. | Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Rideau de la nuit, mais les ténèbres ont une surface de base de 100m2. Quand on dresse un Manteau de Jorn dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -15 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -8 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres. |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourceName` | The Coat of Jorn | Manteau de Jorn |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.SourcePage` | 160 | 223 |
-| `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect.Duration` | 3 action rounds | 3 tours de jeu |
 
 ## `TRUDVANG.Content.Transformation.holy-gerbanis-influence-of-jorn:asiblack:6#effect`
 
@@ -16849,6 +16816,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.FogVisibility` | In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}. | Dans le brouillard : {penalty} à la VC des actions de combat, portées des armes à distance divisées par {divisor}. |
 | `TRUDVANG.SpellZone.FogMoveTooFar` | The fog can move up to 5 m per action round. | Le brouillard peut se déplacer de 5 m par tour de jeu. |
 | `TRUDVANG.SpellZone.EndFog` | Dispel the fog | Dissiper le brouillard |
+| `TRUDVANG.SpellZone.DarknessVisibility` | Fighting in the darkness: {penalty} to SV, or {nightPenalty} with low-light vision. Darkvision and True Sight negate this penalty. | Combat dans les ténèbres : {penalty} à la VC, ou {nightPenalty} avec la vision nocturne. La vision dans le noir et la vision véritable annulent le malus. |
+| `TRUDVANG.SpellZone.DarknessAreaBudget` | Maximum area: {area} m². Enter the dimensions of the shape to place. | Surface maximale : {area} m². Saisissez les dimensions de la forme à placer. |
+| `TRUDVANG.SpellZone.DarknessAreaInvalid` | The shape needs positive dimensions within the maximum area. | La forme doit avoir des dimensions positives et respecter la surface maximale. |
+| `TRUDVANG.SpellZone.DarknessShape` | Shape of the Darkness | Forme des ténèbres |
+| `TRUDVANG.SpellZone.DarknessWidth` | Rectangle width (m) | Largeur du rectangle (m) |
+| `TRUDVANG.SpellZone.DarknessLength` | Rectangle length (m) | Longueur du rectangle (m) |
+| `TRUDVANG.SpellZone.DarknessRadius` | Circle radius (m) | Rayon du cercle (m) |
+| `TRUDVANG.SpellZone.DarknessRectangle` | Place the rectangle | Placer le rectangle |
+| `TRUDVANG.SpellZone.DarknessCircle` | Place the circle | Placer le cercle |
 | `TRUDVANG.SpellZone.FireApplied` | Damage applied | Dégâts appliqués |
 | `TRUDVANG.SpellZone.FireAvoided` | Flames avoided | Flammes évitées |
 | `TRUDVANG.SpellZone.FireEvade` | Evade | Esquiver |

@@ -1,6 +1,12 @@
 export function earthquakeProfile(definition,context={}){
  if(!definition)return null;
  const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
+ if(definition.kind==='darkness')return {
+  kind:'darkness',area:definition.area+definition.areaStep*count(definition.areaOptionId),
+  range:definition.range+definition.rangeStep*count(definition.rangeOptionId),
+  rounds:3+definition.duration.reduce((rounds,option)=>rounds+option.rounds*count(option.id),0),
+  penalty:definition.penalty,nightPenalty:definition.nightPenalty,movable:false
+ };
  if(definition.kind==='fog'){
   const thick=count(definition.thicknessOptionId)>0;
   return {kind:'fog',radius:2+2*count(definition.radiusOptionId),range:100+100*count(definition.rangeOptionId),

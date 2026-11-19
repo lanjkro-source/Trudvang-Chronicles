@@ -1,6 +1,8 @@
 import Handlebars from 'handlebars';import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,zonePixelScale} from '../modules/rules/spell-zones.mjs';
 import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
+import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
+import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('<','&lt;').replaceAll('>','&gt;')}})};
@@ -23,6 +25,49 @@ function setup(id=vitner,counts={},runeLevel=1){
  message={id:'cast',author:gm,rolls:[{formula:'1d20',total:5}],flags:{[S]:{ruleTestContext:context,spellZoneCasting:{target:12}}},async update(data){for(const[k,v]of Object.entries(data))if(k==='flags.'+S+'.spellZoneCasting')message.flags[S].spellZoneCasting=v;}};game.messages.set(message.id,message);
  return {messageId:message.id,userId:owner.id,sceneId:scene.id,tokenId:'caster',point:{x:50,y:50}};
 }
+const jorn='holy-gerbanis-influence-of-jorn:';
+test('Jorn darkness respects its footprint and duration, and removes penalties on exit or expiry',async()=>{
+ const id=jorn+'wall-of-dusk:1';
+ const payload=setup(id);
+ const rectangle={type:'rectangle',...payload.point,width:100,height:2000,rotation:45};
+ assert.equal((await createSpellZoneOnAuthority({...payload,shape:{...rectangle,height:2100}})).status,'invalidArea');
+ assert.equal(regions.size,0);
+ assert.equal((await createSpellZoneOnAuthority({...payload,shape:rectangle})).status,'placed');
+ const region=[...regions.values()][0];
+ assert.deepEqual(region.shapes[0],{...rectangle,anchorX:.5,anchorY:.5});
+ assert.equal(darknessCombatRow(target).value,-3);
+ assert.equal(game.messages.size,1);
+ region.tokens.delete(scene.tokens.get('target'));
+ await reconcileSpellZone(region,{exclude:new Set([scene.tokens.get('target').uuid])});
+ assert.equal(darknessCombatRow(target),null);
+ game.combat.round=4;
+ await reconcileSpellZone(region);
+ assert.equal(regions.size,0);
+ assert.equal(darknessCombatRow(caster),null);
+});
+
+test('the strongest darkness uses the combatant’s current vision on either side of the boundary',async()=>{
+ const curtain=jorn+'night-curtain:3',coat=jorn+'the-coat-of-jorn:4';
+ for(const [id,area,range,longDuration] of [[curtain,50,30,17280],[coat,150,70,720]]){
+  const definition=POWER_DETAILS_BY_ID[id].spellZone;
+  const countsById={[definition.areaOptionId]:1,[definition.rangeOptionId]:1,[definition.duration[2].id]:1};
+  const profile=earthquakeProfile(definition,{countsById});
+  assert.deepEqual([profile.area,profile.range,profile.rounds],[area,range,3+longDuration]);
+ }
+ const payload=setup(curtain);
+ await createSpellZoneOnAuthority({...payload,shape:{type:'circle',...payload.point,radius:300}});
+ assert.equal(darknessCombatRow(caster).value,-8);
+ assert.deepEqual(targetDefenseRows(target,caster),[]);
+ caster.effects=[];
+ assert.equal(targetDefenseRows(target,caster)[0].value,-8);
+ caster.system.senses=[{type:'night'}];
+ assert.equal(targetDefenseRows(target,caster)[0].value,-3);
+ caster.system.senses=[{type:'dark'}];
+ assert.deepEqual(targetDefenseRows(target,caster),[]);
+ caster.transformationProfile={sensory:[],effects:[{flags:{[S]:{transformation:{sourceId:'vitner-power-of-vision:true-sight:7'}}}}]};
+ assert.deepEqual(targetDefenseRows(target,caster),[]);
+});
+
 test('three zone profiles preserve their different centre, radius, duration and size rules',()=>{
  const p=earthquakeProfile(POWER_DETAILS_BY_ID[vitner].spellZone,{countsById:{[vitner+':3']:2,[vitner+':2']:3,[vitner+':1']:1}});assert.equal(p.radius,3);assert.equal(p.rounds,4);assert.equal(earthquakeTest(p,1).modifier,-4);assert.equal(p.collapseChance,40);
  const d=earthquakeProfile(POWER_DETAILS_BY_ID[divine].spellZone,{countsById:{[divine+':0']:1,[divine+':1']:2}});assert.equal(d.radius,4);assert.equal(d.range,15);assert.equal(d.centered,false);assert.equal(d.excludeCaster,false);assert.equal(POWER_DETAILS_BY_ID[divine].level,2);

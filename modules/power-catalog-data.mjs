@@ -1549,6 +1549,31 @@ export const POWER_DETAILS_BY_ID = {
   "holy-gerbanis-influence-of-jorn:night-curtain:3": {
     "isRune": false,
     "level": 2,
+    "spellZone": {
+      "kind": "darkness",
+      "area": 40,
+      "areaStep": 10,
+      "range": 20,
+      "rangeStep": 10,
+      "penalty": -8,
+      "nightPenalty": -3,
+      "duration": [
+        {
+          "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:0",
+          "rounds": 1
+        },
+        {
+          "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:1",
+          "rounds": 12
+        },
+        {
+          "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:2",
+          "rounds": 17280
+        }
+      ],
+      "rangeOptionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:3",
+      "areaOptionId": "holy-gerbanis-influence-of-jorn:night-curtain:3:4"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:0",
@@ -1664,6 +1689,31 @@ export const POWER_DETAILS_BY_ID = {
   "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
     "isRune": false,
     "level": 3,
+    "spellZone": {
+      "kind": "darkness",
+      "area": 100,
+      "areaStep": 50,
+      "range": 50,
+      "rangeStep": 20,
+      "penalty": -15,
+      "nightPenalty": -8,
+      "duration": [
+        {
+          "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0",
+          "rounds": 1
+        },
+        {
+          "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:1",
+          "rounds": 12
+        },
+        {
+          "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:2",
+          "rounds": 720
+        }
+      ],
+      "rangeOptionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:3",
+      "areaOptionId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:4"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0",
@@ -1698,6 +1748,27 @@ export const POWER_DETAILS_BY_ID = {
   "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": {
     "isRune": false,
     "level": 1,
+    "spellZone": {
+      "kind": "darkness",
+      "area": 20,
+      "areaStep": 10,
+      "range": 10,
+      "rangeStep": 10,
+      "penalty": -3,
+      "nightPenalty": 0,
+      "duration": [
+        {
+          "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0",
+          "rounds": 1
+        },
+        {
+          "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1",
+          "rounds": 12
+        }
+      ],
+      "rangeOptionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:2",
+      "areaOptionId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:3"
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0",

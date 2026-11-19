@@ -38,6 +38,7 @@ import {applyMounted, currentRoundExpiry} from "../combat-effects.mjs";
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
+import {darknessCombatRow} from "../rules/jorn-darkness.mjs";
 import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthState, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
 import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/body-health.mjs";
@@ -289,7 +290,9 @@ export class TrudvangActor extends BaseActor {
     if(["attack","parry","ability","magic","skill","dodge"].includes(kind))total+=Number(modifiers.visibility||0);
     const combatKinds = new Set(["attack", "parry", "ability", "magic"]);
     if (["attack", "parry"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.combatActions || 0);
-    if (["attack", "parry", "dodge"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.fogCombat || 0);
+    if (["attack", "parry", "dodge"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) {
+      total += Number(modifiers.fogCombat || 0) + (darknessCombatRow(this)?.value ?? 0);
+    }
     if (movement) total += Number(modifiers.movementActions || 0);
     if (["attack", "parry", "magic"].includes(kind)) total += Number(modifiers[kind] || 0);
     if (skillKey) total += Number(modifiers.skills?.[skillKey] || 0);
@@ -299,7 +302,9 @@ export class TrudvangActor extends BaseActor {
   }
 
   rollEffectRows(options = {}) {
-    return rollEffectKeys(this, options).flatMap(key => effectContributions(this, key));
+    const keys = rollEffectKeys(this,options);
+    const darkness = keys.includes("system.modifiers.rolls.fogCombat") ? darknessCombatRow(this) : null;
+    return [...keys.flatMap(key => effectContributions(this,key)),...(darkness ? [darkness] : [])];
   }
 
   skillEffectRows(skillKey) {

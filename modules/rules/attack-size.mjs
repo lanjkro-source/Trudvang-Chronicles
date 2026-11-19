@@ -1,4 +1,5 @@
 import {effectRules} from "./transformation-profile.mjs";
+import {darknessCombatRow} from "./jorn-darkness.mjs";
 
 /** FR Bestiaire de Jorge, pp. 8–10; EN GM Guide, creature size.
  * The first band is open (<1/3); other numeric sizes use the nearest column. */
@@ -29,17 +30,24 @@ export function targetDefenseRows(actor,attacker) {
   if (!rows.length && actor?.transformationProfile?.defense) rows.push({label: actor.name, value: Number(actor.transformationProfile.defense)});
   const own=Math.min(0,Number(attacker?.system?.modifiers?.rolls?.visibility)||0),target=Math.min(0,Number(actor?.system?.modifiers?.rolls?.visibility)||0),extra=Math.min(0,target-own);
   if(extra){const effect=Array.from(actor?.effects??[]).find(e=>!e.disabled&&!e.isSuppressed&&e.flags?.['trudvang-chronicles']?.spellZoneRecipient?.visibility);rows.push({label:effect?.name??actor.name,value:extra});}
+  const darkness = darknessCombatRow(actor,attacker);
+  const darknessExtra = (darkness?.value ?? 0) - (darknessCombatRow(attacker)?.value ?? 0);
+  if (darknessExtra < 0) rows.push({...darkness,value:darknessExtra});
   return rows;
 }
 
 export function attackSizeTargets(attacker, targets = []) {
   const size = actor => actor?.transformationProfile?.size ?? (actor?.type === "character" ? 1 : actor?.system?.details?.size ?? 1);
-  return Array.from(targets).filter(token => token?.actor).map(token => ({
+  return Array.from(targets).filter(token => token?.actor).map(token => {
+    const defenseRows = targetDefenseRows(token.actor,attacker);
+    return {
     name: token.name || token.actor.name || "", actorUuid: token.actor.uuid || "",
     tokenUuid: token.document?.uuid || token.uuid || "",
-    ...(token.actor.transformationProfile?.defense||token.actor.system?.modifiers?.rolls?.visibility ? {defenseModifier:targetDefenseRows(token.actor,attacker).reduce((n,r)=>n+r.value,0),defenseRows:targetDefenseRows(token.actor,attacker)}:{}),
+    ...(defenseRows.length || token.actor.transformationProfile?.defense || token.actor.system?.modifiers?.rolls?.visibility
+      ? {defenseModifier:defenseRows.reduce((n,r)=>n+r.value,0),defenseRows}:{}),
     modifier: attackSizeModifier(size(attacker), size(token.actor))
-  }));
+    };
+  });
 }
 
 export function allocatedCombatVC(allocated, feint = 0, sizeModifier = 0, pointCost = 1) {

@@ -23,8 +23,7 @@ Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs eff
 
 Autres zones déjà dotées d'un effet descriptif à traiter : Mur de vitner, Bourbier,
 Contrôle des précipitations, Chaleur, Paysage illusoire (zone fixe avec visibilité
-différente selon l'observateur), Mur du crépuscule, Rideau de la nuit, Manteau de
-Jorn et Mur d'épines. Vérifier la géométrie, l'ancrage et les obstacles propres à
+différente selon l'observateur) et Mur d'épines. Vérifier la géométrie, l'ancrage et les obstacles propres à
 chacun ; ne pas les convertir en auras mobiles. Purification de l'air présente
 deux modes distincts, zone autour de l'enchanteur ou filtre individuel sur une
 cible : prévoir ce choix avant de l'automatiser. Mélodie du cavalier, Chant du
@@ -32,6 +31,11 @@ héros et Hymne royal demandent une zone avec alliés qui écoutent, soins rép�
 plafond quotidien par personne. Aura de puissance et Aura de Gave demandent des
 conditions de perception, des tests et une gestion des résistances, plutôt qu'une
 application inconditionnelle en entrant dans un cercle.
+
+Mur du crépuscule, Rideau de la nuit et Manteau de Jorn utilisent désormais une
+région fixe, circulaire ou rectangulaire, avec assombrissement local et malus
+calculés selon la vision du combattant. L’assombrissement de la région ne change
+pas les règles de visibilité des tokens de Foundry.
 
 Lueur de l'aube produit désormais une lumière mobile de rayon connu, sans appliquer
 de bonus ni de suppression de peur aux occupants. La réduction volontaire de sa

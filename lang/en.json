@@ -4132,7 +4132,7 @@
         "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
           "Name": "The Coat of Jorn",
           "Summary": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 50 meters.",
-          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
+          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, and those with dark vision or true vision are unaffected by the darkness.",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "3 action rounds",
@@ -15712,15 +15712,6 @@
           "SourcePage": "171",
           "Duration": "7 days"
         },
-        "holy-gerbanis-influence-of-jorn:wall-of-dusk:1#effect": {
-          "Name": "Wall of Dusk",
-          "Summary": "Wall of Dusk",
-          "Description": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters. The Stormkelt is given 20 square meters of darkness to shape to their liking. A dimwalker who has 20 m² can thus make a wall that is 1 m wide and 20 m long, a wall 5 m wide and 4 m long, and so on. The height of this area extends as far as the eye can see. If a wall of darkness is raised in an area already occupied by a creature, that creature is immediately affected by the darkness and is given modifiers accordingly. The Stormkelt calls on Jorn, who grants a piece of the dusk that’s as dark and thick as night. This darkness, shaped by the dimwalker, gives a negative modifier of -3 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision, dark vision, or true vision is unaffected by the darkness.",
-          "SourceName": "Wall of Dusk",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "160",
-          "Duration": "3 action rounds"
-        },
         "holy-gerbanis-influence-of-jorn:falfax:2#effect": {
           "Name": "Falfax",
           "Summary": "Falfax",
@@ -15729,24 +15720,6 @@
           "SourceBook": "Player's Handbook",
           "SourcePage": "160",
           "Duration": "1 hour"
-        },
-        "holy-gerbanis-influence-of-jorn:night-curtain:3#effect": {
-          "Name": "Night Curtain",
-          "Summary": "Night Curtain",
-          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness.",
-          "SourceName": "Night Curtain",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "160",
-          "Duration": "3 action rounds"
-        },
-        "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4#effect": {
-          "Name": "The Coat of Jorn",
-          "Summary": "The Coat of Jorn",
-          "Description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
-          "SourceName": "The Coat of Jorn",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "160",
-          "Duration": "3 action rounds"
         },
         "holy-gerbanis-influence-of-jorn:asiblack:6#effect": {
           "Name": "Asiblack",
@@ -19062,6 +19035,15 @@
       "FogVisibility": "In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}.",
       "FogMoveTooFar": "The fog can move up to 5 m per action round.",
       "EndFog": "Dispel the fog",
+      "DarknessVisibility": "Fighting in the darkness: {penalty} to SV, or {nightPenalty} with low-light vision. Darkvision and True Sight negate this penalty.",
+      "DarknessAreaBudget": "Maximum area: {area} m². Enter the dimensions of the shape to place.",
+      "DarknessAreaInvalid": "The shape needs positive dimensions within the maximum area.",
+      "DarknessShape": "Shape of the Darkness",
+      "DarknessWidth": "Rectangle width (m)",
+      "DarknessLength": "Rectangle length (m)",
+      "DarknessRadius": "Circle radius (m)",
+      "DarknessRectangle": "Place the rectangle",
+      "DarknessCircle": "Place the circle",
       "FireApplied": "Damage applied",
       "FireAvoided": "Flames avoided",
       "FireEvade": "Evade",

@@ -113,8 +113,13 @@ for (const id of [...french.keys()].sort()) {
   if(f.spellZone?.kind==='fire'&&(!(f.spellZone.radius>0)||!(f.spellZone.radiusStep>0)||!(f.spellZone.range>=0)||typeof f.spellZone.movable!=='boolean'||!Number.isFinite(f.spellZone.visibilityPenalty)||!f.damageRoll))fail(`${id}: invalid fire zone`);
   if(f.spellZone?.kind==='earthquake'&&(!Array.isArray(f.spellZone.sizeModifiers)||f.spellZone.sizeModifiers.length!==7||f.spellZone.sizeModifiers.some(n=>!Number.isFinite(n))||!Number.isFinite(f.spellZone.severityModifier)||!Number.isFinite(f.spellZone.penalty)||!(f.spellZone.radius>0)||!(f.spellZone.range>=0)))fail(`${id}: invalid earthquake profile`);
   if(f.spellZone?.kind==='runeEarthquake'&&(!Array.isArray(f.spellZone.sizeSV)||f.spellZone.sizeSV.length!==7||f.spellZone.sizeSV.some(n=>n!==null&&!Number.isFinite(n))||!Number.isFinite(f.spellZone.levelModifier)||!(f.spellZone.stunRounds>0)||!(f.spellZone.radiusPerLevel>0)||!(f.spellZone.rangePerAdditionalLevel>=0)))fail(`${id}: invalid rune earthquake profile`);
-  if(f.spellZone&&!['earthquake','runeEarthquake','fire','fog'].includes(f.spellZone.kind))fail(`${id}: invalid spell zone`);
-  if(f.spellZone)for(const key of ['rangeOptionId','radiusOptionId','durationOptionId','severityOptionId','thicknessOptionId'])if(f.spellZone[key]&&!f.powerLevels.some(p=>p.optionId===f.spellZone[key]))fail(`${id}: invalid zone option`);
+  if(f.spellZone&&!['earthquake','runeEarthquake','fire','fog','darkness'].includes(f.spellZone.kind))fail(`${id}: invalid spell zone`);
+  if(f.spellZone)for(const key of ['rangeOptionId','radiusOptionId','durationOptionId','severityOptionId','thicknessOptionId','areaOptionId'])if(f.spellZone[key]&&!f.powerLevels.some(p=>p.optionId===f.spellZone[key]))fail(`${id}: invalid zone option`);
+  if(f.spellZone?.kind==='darkness'){
+    const d=f.spellZone;
+    if(![d.area,d.areaStep,d.range,d.rangeStep].every(n=>Number.isFinite(n)&&n>0)||!(d.penalty<0)||!(d.nightPenalty>=d.penalty&&d.nightPenalty<=0)||
+      !Array.isArray(d.duration)||!d.duration.every(o=>Number.isInteger(o.rounds)&&o.rounds>0&&f.powerLevels.some(p=>p.optionId===o.id)))fail(`${id}: invalid darkness zone`);
+  }
   if(f.damageRoll){
     const d=f.damageRoll;
     if(d.requiresAttack!==undefined&&typeof d.requiresAttack!=="boolean")fail(`${id}: invalid attack-only damage`);
