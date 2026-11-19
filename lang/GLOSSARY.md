@@ -15300,17 +15300,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.SourcePage` | 241 | 297 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau.Duration` | 1 heure | 1 heure |
 
-## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.Name` | Earth Wall | Mur de terre |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.Description` | The Ihana causes a wall of earth to shoot up from the ground for protection. The total volume of the wall is 1 cubic meter, which is shaped however the elf desires. Once the duration expires (or the wall is destroyed), the earth wall sinks back down into the soil and disappears. Each cubic meter of earth can endure 30 points of damage before crumbling. | L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler. |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.SourceName` | Earth Wall | Mur de terre |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.SourcePage` | 241 | 297 |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.Duration` | 30 minutes | 30 minutes |
-
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-tamer:4#effect`
 
 | Clé | English | Français |
@@ -16835,6 +16824,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.DarknessRadius` | Circle radius (m) | Rayon du cercle (m) |
 | `TRUDVANG.SpellZone.DarknessRectangle` | Place the rectangle | Placer le rectangle |
 | `TRUDVANG.SpellZone.DarknessCircle` | Place the circle | Placer le cercle |
+| `TRUDVANG.SpellZone.WallShape` | Shape the wall | Façonner le mur |
+| `TRUDVANG.SpellZone.WallVolume` | Available volume: {volume} m³. Each cubic metre can take {hp} damage. | Volume disponible : {volume} m³. Chaque mètre cube peut subir {hp} points de dégâts. |
+| `TRUDVANG.SpellZone.WallInvalidVolume` | Choose positive dimensions within the available volume. | Choisissez des dimensions positives qui restent dans la limite du volume disponible. |
+| `TRUDVANG.SpellZone.WallLength` | Length (m) | Longueur (m) |
+| `TRUDVANG.SpellZone.WallDepth` | Thickness (m) | Épaisseur (m) |
+| `TRUDVANG.SpellZone.WallHeight` | Height (m) | Hauteur (m) |
+| `TRUDVANG.SpellZone.WallDamage` | Damage the wall | Endommager le mur |
+| `TRUDVANG.SpellZone.WallDamageAmount` | Damage to apply | Dégâts à appliquer |
+| `TRUDVANG.SpellZone.WallSectionLabel` | Wall section | Section du mur |
+| `TRUDVANG.SpellZone.WallSection` | Section {n} · {hp}/{max} BP | Section {n} · {hp}/{max} PS |
+| `TRUDVANG.SpellZone.WallDestroyed` | The wall collapses. | Le mur s’effondre. |
 | `TRUDVANG.SpellZone.FireApplied` | Damage applied | Dégâts appliqués |
 | `TRUDVANG.SpellZone.FireAvoided` | Flames avoided | Flammes évitées |
 | `TRUDVANG.SpellZone.FireEvade` | Evade | Esquiver |

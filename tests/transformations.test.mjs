@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,372);
+ assert.equal(Object.keys(sources).length,371);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1406,16 +1406,11 @@ test("elemental and illusion effects keep their duration and chosen non-duration
   "vitner-delusion-vitner:silence:9":[5,60,3600],
   "vitner-vitner-of-objects:create-object:8":[3600,86400],
   "holy-toikalokke-master-of-elements:fire-tamer:4":[15,50],
-  "holy-toikalokke-master-of-elements:earth-wall:0":[1800,10800],
   "holy-toikalokke-master-of-elements:spring-of-water:8":[3600,14400],
   "holy-toikalokke-master-of-elements:shape-earth:5":[3600,18000],
   "holy-toikalokke-master-of-elements:control-wind:9":[3600]
  };
  for(const [id,values] of Object.entries(cases))assert.deepEqual(templates[`${id}#effect`].parameters.filter(p=>p.target==="duration").map(p=>p.value),values,id);
- globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:key=>key}};
- let created;const actor={canUserModify:()=>true,getTraitValue:()=>0,items:[],createTrudvangEffect:async data=>{created=data;return null;}};
- await applyTransformation(actor,"holy-toikalokke-master-of-elements:earth-wall:0#effect",{counts:[2,0,1],skipDialog:true});
- assert.deepEqual(created.duration,{value:2520,units:"rounds"});assert.match(created.description,/2 × TRUDVANG\.Content\.Power\.holy-toikalokke-master-of-elements:earth-wall:0\.PowerLevels\.0/);
 });
 
 test("Joar powers retain their source rules with their own option identities and target budgets",async()=>{

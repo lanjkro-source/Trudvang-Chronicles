@@ -17790,15 +17790,6 @@
           "SourcePage": "241",
           "Duration": "1 heure"
         },
-        "holy-toikalokke-master-of-elements:earth-wall:0#effect": {
-          "Name": "Earth Wall",
-          "Summary": "Earth Wall",
-          "Description": "The Ihana causes a wall of earth to shoot up from the ground for protection. The total volume of the wall is 1 cubic meter, which is shaped however the elf desires. Once the duration expires (or the wall is destroyed), the earth wall sinks back down into the soil and disappears. Each cubic meter of earth can endure 30 points of damage before crumbling.",
-          "SourceName": "Earth Wall",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "241",
-          "Duration": "30 minutes"
-        },
         "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
           "Name": "Fire Tamer",
           "Summary": "Fire Tamer",
@@ -19053,6 +19044,17 @@
       "DarknessRadius": "Circle radius (m)",
       "DarknessRectangle": "Place the rectangle",
       "DarknessCircle": "Place the circle",
+      "WallShape": "Shape the wall",
+      "WallVolume": "Available volume: {volume} m³. Each cubic metre can take {hp} damage.",
+      "WallInvalidVolume": "Choose positive dimensions within the available volume.",
+      "WallLength": "Length (m)",
+      "WallDepth": "Thickness (m)",
+      "WallHeight": "Height (m)",
+      "WallDamage": "Damage the wall",
+      "WallDamageAmount": "Damage to apply",
+      "WallSectionLabel": "Wall section",
+      "WallSection": "Section {n} · {hp}/{max} BP",
+      "WallDestroyed": "The wall collapses.",
       "FireApplied": "Damage applied",
       "FireAvoided": "Flames avoided",
       "FireEvade": "Evade",

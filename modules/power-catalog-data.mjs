@@ -9196,6 +9196,12 @@ export const POWER_DETAILS_BY_ID = {
   "holy-toikalokke-master-of-elements:earth-wall:0": {
     "isRune": false,
     "level": 1,
+    "spellZone": {
+      "kind": "earthWall",
+      "volumeOptionId": "holy-toikalokke-master-of-elements:earth-wall:0:0",
+      "durationOptionId": "holy-toikalokke-master-of-elements:earth-wall:0:1",
+      "hoursOptionId": "holy-toikalokke-master-of-elements:earth-wall:0:2"
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:0",

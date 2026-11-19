@@ -4,6 +4,7 @@ import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
 import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
 import {quagmireMovement,quagmireTravelBudget} from '../modules/rules/quagmire.mjs';
+import {spellWallSections} from '../modules/rules/spell-walls.mjs';
 import {endMaintainedSpellOnGM,recoverMaintainedSpellZones} from '../modules/maintained-spell-tracking.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
@@ -29,6 +30,66 @@ function setup(id=vitner,counts={},runeLevel=1){
 }
 const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
+const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
+
+test('Earth Wall converts selected volume and duration upgrades into independently destructible sections',()=>{
+ const def=POWER_DETAILS_BY_ID[earthWall].spellZone;
+ assert.deepEqual(earthquakeProfile(def,{countsById:{[earthWall+':0']:2,[earthWall+':1']:1,[earthWall+':2']:1}}),
+  {kind:'earthWall',range:2,volume:3,hitPoints:30,rounds:2880});
+ const shape={type:'rectangle',x:150,y:150,width:150,height:100,rotation:90};
+ const args={scale:100,height:1,volume:2,hitPoints:30};
+ const sections=spellWallSections(shape,args);
+ assert.deepEqual(sections.map(s=>s.hp),[30,15]);
+ assert.deepEqual(sections.map(s=>s.line.map(Math.round)),[[150,75,150,175],[150,175,150,225]]);
+ assert.equal(spellWallSections(shape,{...args,height:2}),null);
+});
+
+test('Earth Wall creates solid level-specific edges, opens a gap on damage and removes edges at expiry',async()=>{
+ const payload=setup(earthWall,{[earthWall+':0']:1});
+ message.flags[S].ruleTestContext.kind='divine';
+ const token=scene.tokens.get('caster');
+ token.level='ground';
+ const nativeCreate=scene.createEmbeddedDocuments;
+ scene.walls=new Map();
+ scene.createEmbeddedDocuments=async function(type,rows){
+  if(type!=='Wall')return nativeCreate.call(scene,type,rows);
+  return rows.map(row=>{
+   const wall={...row,id:crypto.randomUUID()};
+   scene.walls.set(wall.id,wall);return wall;
+  });
+ };
+ scene.deleteEmbeddedDocuments=async (type,ids)=>{
+  assert.equal(type,'Wall');
+  for(const id of ids)assert.equal(scene.walls.delete(id),true,'never delete a wall twice');
+ };
+ CONST.WALL_MOVEMENT_TYPES={NORMAL:20};
+ CONST.EDGE_SENSE_TYPES={NORMAL:20};
+ const point={x:150,y:50},shape={type:'rectangle',...point,width:200,height:100};
+ const placement={...payload,point,shape,wallHeight:1};
+ assert.equal((await createSpellZoneOnAuthority({...placement,wallHeight:2})).status,'invalidVolume');
+ assert.equal((await createSpellZoneOnAuthority(placement)).status,'placed');
+ const [region]=regions.values();
+ assert.equal(scene.walls.size,2);
+ assert.equal(region.shapes.length,2);
+ assert.equal(game.messages.size,1);
+ for(const wall of scene.walls.values()){
+  assert.deepEqual(wall.levels,['ground']);
+  assert.equal(wall.move,20);
+  assert.equal(wall.sight,20);
+ }
+ const damage={type:'damageSpellWall',messageId:message.id,index:0,damage:10};
+ assert.equal((await resolveSpellZoneRequest({...damage,userId:owner.id})).status,'unavailable');
+ assert.equal((await resolveSpellZoneRequest({...damage,userId:gm.id})).hp,20);
+ assert.equal(scene.walls.size,2);
+ assert.equal((await resolveSpellZoneRequest({...damage,userId:gm.id,damage:20})).hp,0);
+ assert.equal(scene.walls.size,1);
+ assert.equal(region.shapes.length,1);
+ assert.equal([...scene.walls.values()][0].flags[S].spellWall.index,1);
+ game.time.worldTime=1800;
+ await reconcileSpellZone(region);
+ assert.equal(regions.size,0);
+ assert.equal(scene.walls.size,0);
+});
 test('Quagmire freezes diameter, depth, range and both duration increments',()=>{
  const definition=POWER_DETAILS_BY_ID[quagmire].spellZone;
  const countsById=Object.fromEntries([2,3,1,2,1].map((count,i)=>[quagmire+':'+i,count]));

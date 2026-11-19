@@ -17790,15 +17790,6 @@
           "SourcePage": "297",
           "Duration": "1 heure"
         },
-        "holy-toikalokke-master-of-elements:earth-wall:0#effect": {
-          "Name": "Mur de terre",
-          "Summary": "Mur de terre",
-          "Description": "L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler.",
-          "SourceName": "Mur de terre",
-          "SourceBook": "Livre des règles",
-          "SourcePage": "297",
-          "Duration": "30 minutes"
-        },
         "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
           "Name": "Dompteur du feu",
           "Summary": "Dompteur du feu",
@@ -19053,6 +19044,17 @@
       "DarknessRadius": "Rayon du cercle (m)",
       "DarknessRectangle": "Placer le rectangle",
       "DarknessCircle": "Placer le cercle",
+      "WallShape": "Façonner le mur",
+      "WallVolume": "Volume disponible : {volume} m³. Chaque mètre cube peut subir {hp} points de dégâts.",
+      "WallInvalidVolume": "Choisissez des dimensions positives qui restent dans la limite du volume disponible.",
+      "WallLength": "Longueur (m)",
+      "WallDepth": "Épaisseur (m)",
+      "WallHeight": "Hauteur (m)",
+      "WallDamage": "Endommager le mur",
+      "WallDamageAmount": "Dégâts à appliquer",
+      "WallSectionLabel": "Section du mur",
+      "WallSection": "Section {n} · {hp}/{max} PS",
+      "WallDestroyed": "Le mur s’effondre.",
       "FireApplied": "Dégâts appliqués",
       "FireAvoided": "Flammes évitées",
       "FireEvade": "Esquiver",

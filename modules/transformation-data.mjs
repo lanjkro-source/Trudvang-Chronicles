@@ -13966,33 +13966,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
-  "holy-toikalokke-master-of-elements:earth-wall:0#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "30 minutes",
-    "priority": 10,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      0
-    ],
-    "sourceId": "holy-toikalokke-master-of-elements:earth-wall:0",
-    "parameters": [
-      {
-        "index": 1,
-        "target": "duration",
-        "value": 1800,
-        "optionId": "holy-toikalokke-master-of-elements:earth-wall:0:1"
-      },
-      {
-        "index": 2,
-        "target": "duration",
-        "value": 10800,
-        "optionId": "holy-toikalokke-master-of-elements:earth-wall:0:2"
-      }
-    ]
-  },
   "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -17163,9 +17136,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-master-of-elements:gift-of-water:3": [
     "holy-toikalokke-master-of-elements:gift-of-water:3#don-de-l-eau"
-  ],
-  "holy-toikalokke-master-of-elements:earth-wall:0": [
-    "holy-toikalokke-master-of-elements:earth-wall:0#effect"
   ],
   "holy-toikalokke-master-of-elements:fire-tamer:4": [
     "holy-toikalokke-master-of-elements:fire-tamer:4#effect"
