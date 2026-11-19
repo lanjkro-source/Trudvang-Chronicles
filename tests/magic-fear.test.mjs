@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {magicFearProfile,magicFearHasBaseTargets,magicFearArea,captureMagicFearArea} from '../modules/magic-fear.mjs';
-import {registerMagicFearPreview} from '../modules/magic-fear-preview.mjs';
+import {nativeFearTargets,registerMagicFearPreview,synchronizeMagicFearRegion} from '../modules/magic-fear-preview.mjs';
 import {fearRecipientEligible} from '../modules/rules/fear-protection.mjs';
 const cases=[['vitner-power-of-thought:fear:3',3,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-gerbanis-wrath-of-tyrd:wolf-tongue:2',1,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-gerbanis-wrath-of-tyrd:dark-visage:5',2,[[10,10,0],[10,9,0],[10,8,0],[10,7,0],[10,6,0]]],['holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8',1,[[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:dreadful-screech:0',1,[[5,0,0],[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:terrifying-howl:2',1,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:scream-of-the-devouress:6',1,[[10,10,0],[10,9,0],[10,8,0],[10,8,1]]]];
 test('all seven magical fear profiles match every French step and freeze choices by identity',()=>{
@@ -53,16 +53,13 @@ test('Wolf Tongue snapshots hostile intelligent targets within its improved radi
  assert.equal(fearRecipientEligible(near.actor,{areaActorUuids:[]}),false);
 });
 
-test('the successful cast preview persists and redraws until the last fear target is resolved', t => {
- const previous = {canvas:globalThis.canvas,game:globalThis.game,PIXI:globalThis.PIXI,Hooks:globalThis.Hooks};
+test('the GM creates a native region once and removes it after application and target edits', async t => {
+ const previous = {canvas:globalThis.canvas,game:globalThis.game,PIXI:globalThis.PIXI,Hooks:globalThis.Hooks,CONST:globalThis.CONST};
  t.after(() => Object.assign(globalThis,previous));
  const hooks = new Map(), drawn = [];
  globalThis.Hooks = {on:(name,fn) => hooks.set(name,fn)};
  globalThis.PIXI = {Graphics:class {
   lineStyle() { return this; }
-  beginFill() { return this; }
-  drawCircle(...args) { drawn.push(['circle',...args]); return this; }
-  endFill() { return this; }
   drawRoundedRect(...args) { drawn.push(['target',...args]); }
   destroy() { drawn.push(['destroy']); }
  }};
@@ -70,21 +67,40 @@ test('the successful cast preview persists and redraws until the last fear targe
   id,uuid:'Token.'+id,name:id,x,y:0,width:1,height:1,disposition,hidden,actor:{type:'character',uuid:id}
  });
  const caster = token('caster',0,1), hostile = token('hostile',100,-1);
+ caster.actor.testUserPermission = () => true;
  const hidden = token('hidden',200,-1,true), friendly = token('friendly',300,1);
  const tokens = new Map([caster,hostile,hidden,friendly].map(row => [row.id,row]));
- const scene = {id:'scene',grid:{size:100,distance:2,units:'m'},tokens};
+ const regions = new Map(), created = [];
+ const scene = {id:'scene',grid:{size:100,distance:2,units:'m'},tokens,regions,
+  async createEmbeddedDocuments(type,[data]) {
+   assert.equal(type,'Region');
+   const region = {...data,parent:this,id:'region',async delete() {regions.delete(this.id);},
+    async update(updates) {this.flags['trudvang-chronicles'].magicFearTargets=updates['flags.trudvang-chronicles.magicFearTargets'];}};
+   regions.set(region.id,region);
+   created.push(data);
+   return [region];
+  }};
  globalThis.canvas = {scene,ready:true,tokens:{placeables:[...tokens.values()].map(document => ({
   document,x:document.x,y:document.y,w:100,h:100,isVisible:!document.hidden
  }))},interface:{addChild:graphic => assert.equal(graphic.eventMode,'none')}};
  const messages = new Map();
- globalThis.game = {user:{id:'player'},messages};
+ const gm = {id:'gm',isGM:true};
+ globalThis.game = {user:gm,users:{activeGM:gm},messages,scenes:new Map([[scene.id,scene]]),i18n:{localize:key=>key}};
+ globalThis.CONST = {REGION_VISIBILITY:{ALWAYS:2}};
  registerMagicFearPreview();
  const area = captureMagicFearArea({system:{catalogId:cases[1][0]}},{},caster.actor,{scene:scene.id,token:caster.id});
  const system = 'trudvang-chronicles';
- const message = {id:'cast',flags:{[system]:{magicFearArea:area}}};
+ const message = {id:'cast',author:gm,rolls:[{total:7}],flags:{[system]:{
+  magicFearArea:{...area,nativeRegion:true,target:12},ruleTestContext:{sourceId:cases[1][0],casterUuid:caster.actor.uuid}
+ }}};
  messages.set(message.id,message);
  hooks.get('createChatMessage')(message);
- assert.deepEqual(drawn.slice(0,2),[['circle',50,50,250],['target',97,-3,106,106,8]]);
+ await Promise.all([synchronizeMagicFearRegion(message.id),synchronizeMagicFearRegion(message.id)]);
+ assert.equal(created.length,1);
+ assert.equal(created[0].visibility,2);
+ assert.deepEqual(created[0].shapes,[{type:'circle',x:50,y:50,radius:250}]);
+ assert.deepEqual(nativeFearTargets({...area,targets:[]},message.id).map(row=>row.actorUuid),['hostile','hidden']);
+ assert.deepEqual(drawn[0],['target',97,-3,106,106,8]);
  hooks.get('canvasTearDown')();
  assert.deepEqual(drawn.at(-1),['destroy']);
  hooks.get('canvasReady')();
@@ -95,11 +111,16 @@ test('the successful cast preview persists and redraws until the last fear targe
  assert.deepEqual(drawn.at(-1),['target',97,-3,106,106,8]);
  fear.flags[system].applications = [{channel:'fear',actorUuid:'hostile'}];
  hooks.get('updateChatMessage')(fear);
- assert.deepEqual(drawn.at(-1),['circle',50,50,250]);
- fear.flags[system].fearManualResolutions = ['hidden'];
+ await synchronizeMagicFearRegion(message.id);
+ assert.equal(regions.size,1);
+ fear.flags[system].fearTargets = area.targets.filter(row=>row.actorUuid!=='hidden');
  hooks.get('updateChatMessage')(fear);
+ await synchronizeMagicFearRegion(message.id);
+ assert.equal(regions.size,0);
  assert.deepEqual(drawn.at(-1),['destroy']);
  const completed = drawn.length;
  hooks.get('canvasReady')();
+ await synchronizeMagicFearRegion(message.id);
  assert.equal(drawn.length,completed);
+ assert.equal(created.length,1);
 });

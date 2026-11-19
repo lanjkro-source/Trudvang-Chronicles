@@ -22,6 +22,8 @@ test("Wolf Tongue records a permanent-until-resolved area and its hostile NPCs a
  const area=messages.at(-1).flags["trudvang-chronicles"].magicFearArea;
  assert.equal(area.radius,10);
  assert.equal(area.expiresAt,undefined);
+ assert.equal(area.nativeRegion,true);
+ assert.equal(area.target,12);
  assert.deepEqual(area.targets.map(row=>row.actorUuid),[troll.uuid]);
  globalThis.testDie=20;
  await rollUnder({actor,item,kind:"divine",target:12,label:"Wolf Tongue",powerLevelCounts:[1,0]});

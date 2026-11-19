@@ -76,9 +76,10 @@ test("area fear edits are limited to the original caster and GM and application 
   fearTargetsHTML:template("fear-targets")({total:10,targets:flags.fearTargets})});
  const edit = (type, data, user=player) => applyChatApplication({type,messageId:message.id,userId:user.id,...data});
  assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid]},observer),{status:"unavailable"});
- assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[ally.uuid]}),{status:"ineligibleTarget"});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[ally.uuid]}),{status:"updated"});
+ assert.deepEqual(await applyChatApplication(payload(friend)),{status:"applied",amount:10});
  assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid,hostile.uuid]}),{status:"updated"});
- assert.equal(flags.fearTargets.length,2);
+ assert.equal(flags.fearTargets.length,3);
  assert.match(message.content,/hostile token/);
  assert.doesNotMatch(message.content,/data-action="apply-fear"/);
  assert.deepEqual(await edit("chatRemoveFearTarget",{actorUuid:first.uuid},gm),{status:"updated"});
@@ -91,11 +92,9 @@ test("area fear edits are limited to the original caster and GM and application 
  troll.type = "npc";
  const trollToken = Object.assign(makeToken("troll",troll),{parent:{id:"scene"},disposition:-1});
  assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[trollToken.uuid]}),{status:"updated"});
- assert.deepEqual(await edit("chatResolveManualFearTarget",{actorUuid:troll.uuid}),{status:"unavailable"});
- assert.deepEqual(await edit("chatResolveManualFearTarget",{actorUuid:troll.uuid},gm),{status:"updated"});
- assert.deepEqual(flags.fearManualResolutions,[troll.uuid]);
- assert.match(message.content,/Réglé par le MJ/);
  assert.doesNotMatch(message.content,/data-action="resolve-manual-fear"/);
+ assert.deepEqual(await edit("chatRemoveFearTarget",{actorUuid:troll.uuid},gm),{status:"updated"});
+ assert.ok(!flags.fearTargets.some(row=>row.actorUuid===troll.uuid));
 });
 
 test("restricted damage checks the actual target tags on the GM even with armor bypass or forged payload tags",async t=>{

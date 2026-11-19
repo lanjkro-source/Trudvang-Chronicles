@@ -4,7 +4,7 @@ import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
 import {registerDispelSocket} from './dispel.mjs';
 import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
-import {canManageFearTargets, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval, requestFearTargetEdit, requestManualFearResolution} from "./chat-application.mjs";
+import {canManageFearTargets, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval, requestFearTargetEdit} from "./chat-application.mjs";
 import {registerMagicFearPreview} from "./magic-fear-preview.mjs";
 import {isConsumable} from "./consumables.mjs";
 import {canConsumeSharedItem,requestSharedConsumption} from "./shared-consumption.mjs";
@@ -337,22 +337,11 @@ function attachListeners(message, html) {
         button.disabled = true;
         try {
           const result = await requestFearTargetEdit({message,actorUuid,tokens});
-          if (result.status === "ineligibleTarget") ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.HostileTargetsOnly"));
+          if (result.status === "ineligibleTarget") ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.NoEditableTargets"));
           else if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
         } finally { button.disabled = false; }
       });
     }
-  }
-  for (const button of html.querySelectorAll("[data-action='resolve-manual-fear']")) {
-    if (!game.user.isGM) continue;
-    button.hidden = false;
-    button.addEventListener("click",async () => {
-      button.disabled = true;
-      try {
-        const result = await requestManualFearResolution(message,button.dataset.actorUuid);
-        if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
-      } finally { button.disabled = false; }
-    });
   }
   for (const button of html.querySelectorAll("[data-action='apply-target-fear']")) {
     const {actorUuid,tokenUuid} = button.dataset;

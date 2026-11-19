@@ -2,6 +2,7 @@ import {damageIcons} from "./damage-icons.mjs";
 import {openDice, damageRollDialog, requestTraitSituationRoll} from "./dice.mjs";
 import {escapeHtml, renderTemplate} from "./helpers.mjs";
 import {prepareDamageTargets} from "./damage-application.mjs";
+import {nativeFearTargets} from "./magic-fear-preview.mjs";
 
 /** Standalone rolls retain the normal chat-card application controls. */
 export async function rollGenericImpact(kind = "damage", {actor: requestedActor, title: requestedTitle, dice=1, faces=10, threshold=0, modifier=0, notice="",fearContext=null,fearArea=null} = {}) {
@@ -41,7 +42,8 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
   const total = Math.max(0, rolled.total);
   const factor = `${choice.dice}d${choice.faces}${choice.threshold ? ` ${localize("TRUDVANG.Roll.OpenRoll")} ${choice.threshold}+` : ""}`;
   const detail = `${rolled.rolls.join(" + ")}${choice.modifier ? ` ${choice.modifier > 0 ? "+" : "−"} ${Math.abs(choice.modifier)}` : ""}`;
-  const fearTargetsHTML = fearArea ? await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs", {total, targets:fearArea.targets}) : "";
+  const fearTargets = fearArea ? nativeFearTargets(fearArea,fearContext?.originMessageId) : null;
+  const fearTargetsHTML = fearArea ? await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs", {total, targets:fearTargets}) : "";
   const content = await renderTemplate(`systems/trudvang-chronicles/templates/chat/${fear ? "fear" : "damage"}-card.hbs`, {
     actorName: actor?.name ?? game.user.name, actorImg: actor?.img ?? game.user.avatar,
     modifierDetails: notice&&!fearArea?[notice]:[], title: choice.title, itemName: choice.title, itemImg: "icons/svg/d20.svg", total, detail, factor,
@@ -49,7 +51,7 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
   });
   await ChatMessage.create({speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(), content,
     rolls: rolled.diceRolls, flags: {"trudvang-chronicles": {
-      ...(fearArea?{fearTargets:fearArea.targets}:{}),
+      ...(fearArea?{fearTargets}:{}),
       fearContext:{...fearContext,profile:{dice:choice.dice,faces:choice.faces,threshold:choice.threshold,modifier:Number(fearContext?.profile?.modifier)||0},values:rolled.rolls,adjustment:choice.modifier-(Number(fearContext?.profile?.modifier)||0)}
     }}});
   return rolled;

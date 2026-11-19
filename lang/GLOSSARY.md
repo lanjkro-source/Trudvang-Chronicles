@@ -16518,10 +16518,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.AreaNeedsCaster` | The caster’s token must be identifiable on the current scene. | Le token du lanceur doit être identifiable sur la scène actuelle. |
 | `TRUDVANG.MagicFear.AddTargets` | Add targeted (or selected) tokens | Ajouter les tokens ciblés (ou sélectionnés) |
 | `TRUDVANG.MagicFear.SelectTargets` | Target or select at least one token to add. | Ciblez ou sélectionnez au moins un token à ajouter. |
-| `TRUDVANG.MagicFear.HostileTargetsOnly` | Add a hostile token of an intelligent creature from the scene where the power was cast. | Ajoutez un token hostile d’une créature intelligente sur la scène du lancement. |
+| `TRUDVANG.MagicFear.NoEditableTargets` | No character or NPC tokens to add. | Aucun token de PJ ou de PNJ à ajouter. |
 | `TRUDVANG.MagicFear.ManualTarget` | GM adjudication | À gérer par le MJ |
-| `TRUDVANG.MagicFear.ManualResolved` | Resolved by the GM | Réglé par le MJ |
-| `TRUDVANG.MagicFear.ResolveManual` | Confirm that fear has been resolved for this target | Confirmer que la peur a été gérée pour cette cible |
 | `TRUDVANG.MagicFear.HiddenTarget` | Hidden target | Cible masquée |
 | `TRUDVANG.MagicFear.NoTargets` | No targets. | Aucune cible. |
 | `TRUDVANG.MagicFear.NoVisibleHostiles` | No visible eligible hostile tokens in range. | Aucun token hostile visible et éligible à portée. |

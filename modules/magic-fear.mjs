@@ -4,13 +4,22 @@ import {fearRecipientEligible} from './rules/fear-protection.mjs';
 import {zonePixelScale} from './rules/spell-zones.mjs';
 import {auraCasterToken} from './aura.mjs';
 
-export function fearAreaTarget(token, policy) {
+export function fearTargetRow(token) {
  const actor = token?.actor;
- if (!actor?.uuid || !['character','npc'].includes(actor.type)
-     || Number(token.disposition) !== Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
-     || !fearRecipientEligible(actor, policy)) return null;
+ if (!actor?.uuid || !['character','npc'].includes(actor.type)) return null;
  return {actorUuid:actor.uuid, tokenUuid:token.uuid, hidden:!!token.hidden,
   name:token.hidden ? '' : token.name, canApply:actor.type === 'character'};
+}
+
+export function automaticFearTargets(tokens, policy, contains) {
+ const targets = new Map();
+ for (const token of tokens) {
+  if (Number(token.disposition) !== Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
+      || !fearRecipientEligible(token.actor,policy) || !contains(token)) continue;
+  const row = fearTargetRow(token);
+  if (row && (!targets.has(row.actorUuid) || targets.get(row.actorUuid).hidden)) targets.set(row.actorUuid,row);
+ }
+ return [...targets.values()];
 }
 
 export function magicFearArea(document, context, casterToken, scene, viewedLevel) {
@@ -29,16 +38,14 @@ export function magicFearArea(document, context, casterToken, scene, viewedLevel
  const level = viewedLevel && casterToken.includedInLevel?.(viewedLevel) !== false ? viewedLevel : casterToken.level;
  const policy = {casterUuid: casterToken.actor.uuid, eligibility: definition.eligibility};
  const radiusPixels = radius * zonePixelScale(scene);
- const targets = new Map();
- for (const token of scene.tokens?.values?.() ?? []) {
-  if (level && (token.includedInLevel?.(level) ?? (token.level == null || token.level === '' || token.level === level)) === false) continue;
-  const point = center(token);
-  if (Math.hypot(point.x - origin.x, point.y - origin.y) > radiusPixels + .01) continue;
-  const row = fearAreaTarget(token, policy);
-  if (row && (!targets.has(row.actorUuid) || targets.get(row.actorUuid).hidden)) targets.set(row.actorUuid, row);
- }
+ const targets = automaticFearTargets(scene.tokens?.values?.() ?? [],policy,token => {
+  if (level && (token.includedInLevel?.(level) ?? (token.level == null || token.level === '' || token.level === level)) === false) return false;
+  const points = token.getContainmentTestPoints?.();
+  return (points?.length ? points : [center(token)]).some(point =>
+   Math.hypot(point.x - origin.x, point.y - origin.y) <= radiusPixels + .01);
+ });
  return {sceneId:scene.id, level:level ?? null, casterTokenUuid:casterToken.uuid,
-  origin:{x:origin.x,y:origin.y}, radius, radiusPixels, targets:[...targets.values()]};
+  origin:{x:origin.x,y:origin.y}, radius, radiusPixels, targets};
 }
 
 export function captureMagicFearArea(document, context, actor, speaker) {
@@ -47,7 +54,7 @@ export function captureMagicFearArea(document, context, actor, speaker) {
  const scene = board?.scene;
  const speakingToken = speaker?.token && speaker.scene === scene?.id ? scene.tokens.get(speaker.token) : null;
  const casterToken = speakingToken?.actor?.uuid === actor.uuid
-  ? speakingToken : auraCasterToken(actor, board?.tokens?.controlled, board?.tokens?.placeables ?? actor.getActiveTokens?.(false, true));
+  ? speakingToken : auraCasterToken(actor, board?.tokens?.controlled, scene?.tokens?.values?.());
  return magicFearArea(document, context, casterToken, scene, board?.level?.id);
 }
 
@@ -75,7 +82,7 @@ export async function rollMagicFear({document,actor,context,baseOnly=false,speak
  const casting=baseOnly?withCastingCounts(initial,[]):initial;
  const base=baseOnly?definition.steps[0]:profile;
  const resistance=definition.resistance?{test:ruleTestsForDocument(document)[definition.resistance.testIndex],casting,sourceName:document.name,successProfile:definition.resistance.successProfile}:null;
- const area = castArea ?? captureMagicFearArea(document, casting, actor, speaker);
+ const area = castArea?.nativeRegion ? castArea : captureMagicFearArea(document, casting, actor, speaker);
  if (definition.area && !area) {
   ui.notifications.warn(game.i18n.localize('TRUDVANG.MagicFear.AreaNeedsCaster'));
   return null;

@@ -35,7 +35,7 @@ import {rollOutcomeView} from './rules/roll-outcome-view.mjs';
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
 import {captureMagicFearArea,magicFearHasBaseTargets} from "./magic-fear.mjs";
-import {showMagicFearPreview} from "./magic-fear-preview.mjs";
+import {synchronizeMagicFearRegion} from "./magic-fear-preview.mjs";
 import {blessingDialog} from "./blessing-dialog.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -161,7 +161,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if (area && !area.targets.some(row=>!row.hidden)) {
       card.magicFearAreaSummary += " · " + game.i18n.localize("TRUDVANG.MagicFear.NoVisibleHostiles");
     }
-    return area;
+    return area && {...area,nativeRegion:true,target:card.target};
   };
   const magicFearArea = describeFearArea();
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", card);
@@ -185,7 +185,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
   const message=publication?.message??await ChatMessage.create(messageData);
   if(magicFearArea){
-    try{showMagicFearPreview(message);}
+    try{await synchronizeMagicFearRegion(message.id);}
     catch(error){console.error("Trudvang | Fear area display failed",error);}
   }
   if (useDiceSoNice && publication?.animate!==false) {
