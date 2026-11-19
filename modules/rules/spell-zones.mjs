@@ -33,3 +33,17 @@ export function fogRadius(info,{time=0,combat}={}){
  return info.profile.radius*Math.min(1,(elapsed+1)/3);
 }
 export function zonePixelScale(scene){const unit=String(scene?.grid?.units??'m').toLowerCase();const conversion=/^(ft|feet|foot|pi|pieds?)$/.test(unit)?1/.3048:/^(km|kilom)/.test(unit)?.001:1;return Number(scene?.grid?.size||1)/Number(scene?.grid?.distance||1)*conversion;}
+
+export function spellZoneRange({origin, range, scale}, point) {
+ const x = point?.x, y = point?.y;
+ if (![origin?.x,origin?.y,x,y,range,scale].every(Number.isFinite) || range < 0 || scale <= 0) return null;
+ const dx = x - origin.x, dy = y - origin.y;
+ const pixels = Math.hypot(dx,dy);
+ const limit = range * scale;
+ const ratio = pixels > limit ? limit / pixels : 1;
+ return {
+  end:{x:origin.x+dx*ratio,y:origin.y+dy*ratio},
+  distance:pixels/scale,
+  inRange:pixels<=limit+.01
+ };
+}

@@ -19024,6 +19024,7 @@
       "NoCollapse": "Aucun éboulement ni glissement de terrain (risque : {chance} %).",
       "FireVisibility": "Les flammes gênent la visibilité : {penalty} aux tests de compétence dans la zone et aux attaques visant une personne dans la zone. Ce malus ne se cumule pas avec lui-même.",
       "FogVisibility": "Dans le brouillard : {penalty} à la VC des actions de combat, portées des armes à distance divisées par {divisor}.",
+      "RangeGuideDistance": "{distance} / {max} m",
       "QuagmireEffect": "Déplacement terrestre : −{depth} m tant que le token reste dans le bourbier.",
       "QuagmireInstruction": "Si quelqu’un vous lance une corde ou vous apporte une aide équivalente, tentez un test de situation (VS 12, Force). En cas de réussite, vous pouvez avancer de 1 m par tour jusqu’à la sortie.",
       "QuagmireRope": "Tester avec une corde",

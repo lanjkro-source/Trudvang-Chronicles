@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,zonePixelScale} from '../modules/rules/spell-zones.mjs';
+import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,spellZoneRange,zonePixelScale} from '../modules/rules/spell-zones.mjs';
 import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
 import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
@@ -243,6 +243,89 @@ test('native placement previews without creating a player-owned region and cance
  globalThis.canvas={scene,tokens:{controlled:[token]},regions:{placeRegion:async(data,options)=>{previews++;assert.equal(options.create,false);assert.equal(options.attachToToken,false);assert.equal(data.shapes[0].radius,200);assert.equal(options.preConfirm({shape:{x:5000,y:0}}),false);return null;}}};
  try{assert.equal(await placeSpellZone(message),null);assert.equal(regions.size,0);assert.equal(previews,1);canvas.regions.placeRegion=async()=>({shapes:[{x:50,y:50}]});assert.equal((await placeSpellZone(message)).status,'placed');assert.equal(regions.size,1);}
  finally{globalThis.canvas=oldCanvas;foundry.applications.api=oldApi;globalThis.ui=oldUi;}
+});
+
+test('the range projection clips diagonally and uses the scene’s metres conversion',()=>{
+ const limit={origin:{x:50,y:50},range:5,scale:100};
+ const result=spellZoneRange(limit,{x:770,y:1010});
+ assert.deepEqual(result,{end:{x:350,y:450},distance:12,inRange:false});
+ assert.equal(spellZoneRange(limit,{x:350,y:450}).inRange,true);
+ const scale=zonePixelScale({grid:{size:100,distance:5,units:'ft'}});
+ assert.equal(spellZoneRange({...limit,scale},{x:50+scale*6,y:50}).inRange,false);
+});
+
+test('the native range guide uses upgraded casting range, blocks invalid clicks and is cleaned up on cancel',async()=>{
+ setup(quagmire,{[quagmire+':2']:1});
+ const saved={canvas:globalThis.canvas,PIXI:globalThis.PIXI,ui:globalThis.ui,off:Hooks.off};
+ const token=scene.tokens.get('caster'),objects=[];
+ let warnings=0;
+ globalThis.ui={notifications:{warn:()=>warnings++}};
+ Hooks.off=name=>hooks.delete(name);
+ class PreviewObject {
+  position={set:(x,y)=>{this.x=x;this.y=y;}};
+  anchor={set:()=>{}};
+  scale={set:()=>{}};
+  destroy(){this.destroyed=true;}
+ }
+ globalThis.PIXI={Graphics:class extends PreviewObject {
+  clear(){this.colors=[];}
+  lineStyle(_width,color){this.colors.push(color);}
+  moveTo(){}
+  lineTo(){}
+ },Text:PreviewObject};
+ globalThis.canvas={scene,stage:{scale:{x:1}},tokens:{controlled:[token]},interface:{addChild:(...children)=>objects.push(...children)},regions:{
+  getSnappedPoint:()=>({x:1650,y:50}),
+  async placeRegion(_data, options){
+   const [line,label]=objects;
+   const out={x:1850,y:50},inside={x:1450,y:50};
+   options.onMove({position:out,snap:false});
+   assert.match(label.text,/18 \/ 15 m/);
+   assert.equal(label.x,1550);
+   assert.equal(line.colors.at(-1),0x733b2d);
+   assert.equal(options.preConfirm({shape:{x:1550,y:50}}),false,'a snap back into range does not validate an out-of-range click');
+   options.onMove({position:inside,snap:true});
+   assert.equal(line.colors.at(-1),0x733b2d);
+   assert.equal(options.preConfirm({shape:{x:1650,y:50}}),false,'the actual shape must also be in range');
+   options.onMove({position:inside,snap:false});
+   assert.match(label.text,/14 \/ 15 m/);
+   assert.equal(line.colors.at(-1),0xf4ecd9);
+   assert.equal(options.preConfirm({shape:inside}),true);
+   return null;
+  }
+ }};
+ try{
+  assert.equal(await placeSpellZone(message),null);
+  assert.equal(warnings,2);
+  assert.ok(objects.every(object=>object.destroyed));
+  assert.equal(hooks.has('canvasPan'),false);
+  assert.equal(regions.size,0);
+
+  const fogId='vitner-wind-craft:fog:2';
+  const payload=setup(fogId,{[fogId+':1']:1});
+  await createSpellZoneOnAuthority({...payload,point:{x:250,y:50}});
+  game.combat.round++;
+  objects.length=0;
+  canvas.scene=scene;
+  canvas.tokens.controlled=[scene.tokens.get('caster')];
+  canvas.regions.placeRegion=async(_data,options)=>{
+   const outside={x:850,y:50},limit={x:750,y:50};
+   options.onMove({position:outside});
+   assert.match(objects[1].text,/6 \/ 5 m/);
+   assert.equal(objects[1].x,750,'movement starts from the current fog centre');
+   assert.equal(options.preConfirm({shape:outside}),false);
+   options.onMove({position:limit});
+   assert.equal(options.preConfirm({shape:limit}),true);
+   return {shapes:[limit]};
+  };
+  assert.equal((await placeSpellZone(message)).status,'placed');
+  assert.equal([...regions.values()][0].shapes[0].x,750);
+  assert.ok(objects.every(object=>object.destroyed));
+ }finally{
+  globalThis.canvas=saved.canvas;
+  globalThis.PIXI=saved.PIXI;
+  globalThis.ui=saved.ui;
+  Hooks.off=saved.off;
+ }
 });
 
 test('Toikalokke and vitner source mechanics are identical after normalizing stable option identifiers',()=>{

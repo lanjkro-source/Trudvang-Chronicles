@@ -3,7 +3,8 @@ import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {TABLET_BY_ID,powerItemData} from './tablet-catalog.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
-import {earthquakeProfile,earthquakeTest,fogRadius,spellZoneExpired,spellZonePhase,zonePixelScale} from './rules/spell-zones.mjs';
+import {earthquakeProfile,earthquakeTest,fogRadius,spellZoneExpired,spellZonePhase,spellZoneRange,zonePixelScale} from './rules/spell-zones.mjs';
+import {createSpellZoneRangeGuide} from './spell-zone-range-guide.mjs';
 import {impactSize} from './rules/impact.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
@@ -40,11 +41,14 @@ function ropeRecipient(region,actor){
  }) : null;
 }
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
-function allowedPoint(point,token,scene,profile){const p=center(token,scene);return Number.isFinite(point.x)&&Number.isFinite(point.y)&&Math.hypot(point.x-p.x,point.y-p.y)<=profile.range*zonePixelScale(scene)+.01;}
-function fogMoveAllowed(point,region){
- const center=values(region.shapes)[0];
- return Number.isFinite(point.x)&&Number.isFinite(point.y)&&center&&Math.hypot(point.x-center.x,point.y-center.y)<=5*zonePixelScale(region.parent)+.01;
+function placementLimit(scene,token,profile,movingFog){
+ return {
+  origin:movingFog ? values(movingFog.shapes)[0] : center(token,scene),
+  range:movingFog ? 5 : profile.range,
+  scale:zonePixelScale(scene)
+ };
 }
+const pointInRange = (limit,point) => spellZoneRange(limit,point)?.inRange === true;
 // Lighting failures must not prevent a victim's damage or Evade decision.
 async function syncZoneLight(region,options){try{await syncSpellZoneFireLight(region,options);}catch(error){console.error('Trudvang | Fire area lighting failed',error);}}
 const regionDeletions=new WeakMap();
@@ -187,13 +191,13 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
   if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};
   const scene=existing.parent,token=scene.tokens.get(payload.tokenId),point=payload.point??{},fog=profile.kind==='fog';
   if(scene.id!==payload.sceneId||token?.actor?.uuid!==actor.uuid)return {status:'outOfRange'};
-  if(fog?!fogMoveAllowed(point,existing):!allowedPoint(point,token,scene,profile))return {status:fog?'fogMoveTooFar':'outOfRange'};
+  if(!pointInRange(placementLimit(scene,token,profile,fog?existing:null),point))return {status:fog?'fogMoveTooFar':'outOfRange'};
   const radius=(fog?fogRadius(info,clock(info)):profile.radius)*zonePixelScale(scene);
   await existing.update({shapes:[{type:'circle',x:point.x,y:point.y,radius}],['flags.'+S+'.spellZone.lastMovedPhase']:spellZonePhase(info,clock(info))});
   await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};
  }
  const scene=game.scenes.get(payload.sceneId),token=scene?.tokens?.get(payload.tokenId);
- if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};
+ if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||!pointInRange(placementLimit(scene,token,profile),payload.point))return {status:'outOfRange'};
  const darkness=profile.kind==='darkness',scale=zonePixelScale(scene);
  const footprint=darkness?darknessPlacementShape(payload.shape,profile.area,scale):null;
  if(darkness&&(!footprint||footprint.x!==payload.point.x||footprint.y!==payload.point.y))return {status:'invalidArea'};
@@ -321,27 +325,52 @@ async function chooseDarknessShape(profile,scene){
 }
 export async function placeSpellZone(message){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
- if(!profile||!actor?.isOwner||!globalThis.canvas?.scene){ui.notifications.warn(local('Unavailable'));return null;}
+ const board=globalThis.canvas,scene=board?.scene;
+ if(!profile||!actor?.isOwner||!scene){ui.notifications.warn(local('Unavailable'));return null;}
  const previous=await previousPlacement(message.flags?.[S]?.spellZoneCasting);if(previous?.reason){const result={status:'alreadyPlaced',reason:previous.reason};placementFeedback(result);return result;}
- const token=auraCasterToken(actor,canvas.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==canvas.scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
+ const token=auraCasterToken(actor,board.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
  let underground=false;
  if(profile.kind==='earthquake'){
   const choice=await foundry.applications.api.DialogV2.wait({window:{title:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(local('Profile',{radius:profile.radius,rounds:profile.rounds}))+'</p><label class="checkbox"><input type="checkbox" name="underground">'+escapeHtml(local('Underground',{chance:profile.collapseChance}))+'</label></div>',buttons:[{action:'continue',label:game.i18n.localize('TRUDVANG.Action.Continue'),default:true,callback:(_e,b)=>({underground:b.form.querySelector('[name=underground]').checked})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false}],close:()=>false,rejectClose:false});
   if(!choice||typeof choice!=='object')return null;underground=choice.underground;
  }
- let point=center(token,canvas.scene),footprint;
+ let point=center(token,scene),footprint;
  if(!profile.centered){
   const movingFog=profile.kind==='fog'&&previous?.region;
-  if(movingFog&&movingFog.parent.id!==canvas.scene.id){placementFeedback({status:'outOfRange'});return null;}
+  if(movingFog&&movingFog.parent.id!==scene.id){placementFeedback({status:'outOfRange'});return null;}
   const darkness=profile.kind==='darkness';
   const radius=profile.kind==='fog'?(movingFog?fogRadius(infoOf(movingFog),clock(infoOf(movingFog))):profile.radius/3):profile.radius;
-  const shape=darkness?await chooseDarknessShape(profile,canvas.scene):{type:'circle',x:0,y:0,radius:radius*zonePixelScale(canvas.scene)};
-  if(!shape)return null;
-  const preview=await canvas.regions.placeRegion({name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:auraColor(),levels:token.level?[token.level]:[],highlightMode:darkness?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS},{create:false,attachToToken:false,allowRotation:darkness&&shape.type==='rectangle',preConfirm:({shape})=>{if(movingFog?fogMoveAllowed(shape,movingFog):allowedPoint(shape,token,canvas.scene,profile))return true;ui.notifications.warn(local(movingFog?'FogMoveTooFar':'OutOfRange'));return false;}});
+  const shape=darkness?await chooseDarknessShape(profile,scene):{type:'circle',x:0,y:0,radius:radius*zonePixelScale(scene)};
+  if(!shape||board.scene!==scene)return null;
+  const guide=createSpellZoneRangeGuide(board);
+  const limit=()=>placementLimit(scene,token,profile,movingFog);
+  let pointer,preview;
+  try {
+   preview=await board.regions.placeRegion({
+    name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:auraColor(),
+    levels:token.level?[token.level]:[],highlightMode:darkness?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
+   },{
+    create:false,attachToToken:false,allowRotation:darkness&&shape.type==='rectangle',
+    onMove:({position,snap})=>{
+     pointer={x:position.x,y:position.y};
+     const range=limit(),snapped=snap ? board.regions.getSnappedPoint?.(position) : null;
+     guide?.draw(range,pointer,pointInRange(range,pointer)&&(!snapped||pointInRange(range,snapped)));
+    },
+    preConfirm:({shape,event})=>{
+     const range=limit(),clicked=event?.getLocalPosition?.(board.stage)??pointer??shape;
+     const valid=pointInRange(range,clicked)&&pointInRange(range,shape);
+     guide?.draw(range,clicked,valid);
+     if(valid)return true;
+     ui.notifications.warn(local(movingFog?'FogMoveTooFar':'OutOfRange'));
+     return false;
+    }
+   });
+  }finally{guide?.destroy();}
   if(!preview)return null;point={x:preview.shapes[0].x,y:preview.shapes[0].y};
-  if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,zonePixelScale(canvas.scene));
+  if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,zonePixelScale(scene));
  }
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:canvas.scene.id,tokenId:token.id,point,underground,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
+ if(board.scene!==scene)return null;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);

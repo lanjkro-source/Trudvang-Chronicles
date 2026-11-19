@@ -19024,6 +19024,7 @@
       "NoCollapse": "No cave-in or landslide (risk: {chance}%).",
       "FireVisibility": "Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself.",
       "FogVisibility": "In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}.",
+      "RangeGuideDistance": "{distance} / {max} m",
       "QuagmireEffect": "Land movement: −{depth} m while the token remains in the quagmire.",
       "QuagmireInstruction": "If someone throws you a rope or provides similar help, make a Situation roll (SV 12, Strength). On success, you can move 1 m per round until you are out.",
       "QuagmireRope": "Make a test with a rope",
