@@ -18792,7 +18792,7 @@
       "NoEditableTargets": "No character or NPC tokens to add.",
       "HiddenTarget": "Hidden target",
       "NoTargets": "No targets.",
-      "NoVisibleHostiles": "No visible eligible hostile tokens in range.",
+      "NoVisibleRecipients": "No visible eligible targets in range.",
       "ApplyBatch": "Apply fear to all targets",
       "BatchApplied": "Fear applied",
       "BaseRecipients": "Base fear — additional recipients",

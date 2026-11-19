@@ -133,7 +133,7 @@ for (const id of [...french.keys()].sort()) {
   if(f.fearRoll){
     const d=f.fearRoll;
     if(d.area&&(!Number.isFinite(d.area.radius)||d.area.radius<=0||!Number.isFinite(d.area.radiusStep)||d.area.radiusStep<=0||
-      !f.powerLevels.some(p=>p.optionId===d.area.radiusOptionId)))fail(`${id}: invalid fear area`);
+      !f.powerLevels.some(p=>p.optionId===d.area.radiusOptionId)||(d.area.hostileOnly!==undefined&&typeof d.area.hostileOnly!=='boolean')))fail(`${id}: invalid fear area`);
     if(d.targetLimitOptionId&&!f.powerLevels.some(p=>p.optionId===d.targetLimitOptionId))fail(`${id}: invalid fear target option`);
     if(d.resistance&&(!d.requiresResistance||!Number.isInteger(d.resistance.testIndex)||!f.resist?.[d.resistance.testIndex]||d.resistance.successProfile&&(!Number.isInteger(d.resistance.successProfile.dice)||d.resistance.successProfile.dice<1||![3,4,5,6,10].includes(d.resistance.successProfile.faces)||!Number.isInteger(d.resistance.successProfile.threshold)||!Number.isInteger(d.resistance.successProfile.modifier))))fail(`${id}: invalid fear resistance`);
     if(d.eligibility&&Object.entries(d.eligibility).some(([k,v])=>!['excludeCaster','requiresHearing','intelligentOnly'].includes(k)||typeof v!=='boolean'))fail(`${id}: invalid fear recipients`);

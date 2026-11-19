@@ -18792,7 +18792,7 @@
       "NoEditableTargets": "Aucun token de PJ ou de PNJ à ajouter.",
       "HiddenTarget": "Cible masquée",
       "NoTargets": "Aucune cible.",
-      "NoVisibleHostiles": "Aucun token hostile visible et éligible à portée.",
+      "NoVisibleRecipients": "Aucune cible visible et éligible à portée.",
       "ApplyBatch": "Appliquer la peur à toutes les cibles",
       "BatchApplied": "Peur appliquée",
       "BaseRecipients": "Peur de base — cibles supplémentaires",

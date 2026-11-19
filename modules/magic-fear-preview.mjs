@@ -1,6 +1,6 @@
 import {auraColor} from './aura.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
-import {automaticFearTargets,fearTargetsInCircle} from './magic-fear.mjs';
+import {automaticFearTargets,fearAreaPolicy,fearTargetsInCircle} from './magic-fear.mjs';
 
 const SYSTEM_ID = 'trudvang-chronicles';
 const jobs = new Map();
@@ -10,14 +10,15 @@ const values = collection => Array.from(collection?.values?.() ?? []);
 const writer = () => game.user?.isGM && game.users?.activeGM?.id === game.user.id;
 const regionCastId = region => region.flags?.[SYSTEM_ID]?.magicFearCastId;
 
-export function nativeFearTargets(area,id,casterUuid) {
+export function nativeFearTargets(area,id,{sourceId,casterUuid}={}) {
  const scene = game.scenes?.get(area.sceneId) ?? (globalThis.canvas?.scene?.id === area.sceneId ? globalThis.canvas.scene : null);
  if (!scene) return area.targets;
  const region = values(scene?.regions).find(row => regionCastId(row) === id);
- const circleTargets = fearTargetsInCircle(area,scene,casterUuid);
+ const policy = fearAreaPolicy(sourceId,casterUuid);
+ const circleTargets = fearTargetsInCircle(area,scene,policy);
  if (!region) return circleTargets;
  const inCircle = new Set(circleTargets.map(row => row.tokenUuid));
- return automaticFearTargets(values(scene.tokens),{casterUuid,eligibility:{excludeCaster:true}},
+ return automaticFearTargets(values(scene.tokens),policy,
   token => token.testInsideRegion?.(region) ?? inCircle.has(token.uuid));
 }
 
@@ -69,6 +70,7 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
   await scene.createEmbeddedDocuments('Region',[{
    name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),
    color:auraColor(), highlightMode:'shapes', locked:true, levels,
+   ...(fear.eligibility?.requiresHearing ? {restriction:{enabled:true,type:'sound'}} : {}),
    visibility:cast.blind ? CONST.REGION_VISIBILITY.GAMEMASTER
     : restricted ? CONST.REGION_VISIBILITY.OBSERVER : CONST.REGION_VISIBILITY.ALWAYS,
    ...(restricted ? {ownership:Object.fromEntries(recipients.map(id => [id,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER]))} : {}),

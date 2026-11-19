@@ -159,7 +159,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicFearAreaSummary = area ? game.i18n.format("TRUDVANG.MagicFear.AreaRadius",{radius:area.radius})
       : game.i18n.localize("TRUDVANG.MagicFear.AreaNeedsCaster");
     if (area && !area.targets.some(row=>!row.hidden)) {
-      card.magicFearAreaSummary += " · " + game.i18n.localize("TRUDVANG.MagicFear.NoVisibleHostiles");
+      card.magicFearAreaSummary += " · " + game.i18n.localize("TRUDVANG.MagicFear.NoVisibleRecipients");
     }
     return area && {...area,nativeRegion:true,target:card.target};
   };

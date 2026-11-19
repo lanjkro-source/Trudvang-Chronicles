@@ -3233,6 +3233,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
+      "area": {
+        "radius": 10,
+        "radiusOptionId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:0",
+        "radiusStep": 5
+      },
       "requiresResistance": false,
       "eligibility": {
         "excludeCaster": true,
@@ -3376,8 +3381,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       "requiresResistance": false,
       "eligibility": {
-        "excludeCaster": true,
-        "intelligentOnly": true
+        "excludeCaster": true
       }
     },
     "powerLevels": [
@@ -4197,6 +4201,12 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
+      "area": {
+        "radius": 5,
+        "radiusOptionId": "holy-haminges-power-of-the-scale:dreadful-screech:0:0",
+        "radiusStep": 5,
+        "hostileOnly": false
+      },
       "requiresResistance": false,
       "eligibility": {
         "excludeCaster": true,
@@ -4356,6 +4366,12 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
+      "area": {
+        "radius": 20,
+        "radiusOptionId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:0",
+        "radiusStep": 5,
+        "hostileOnly": false
+      },
       "requiresResistance": false,
       "eligibility": {
         "excludeCaster": true,
@@ -4443,6 +4459,12 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
+      "area": {
+        "radius": 10,
+        "radiusOptionId": "holy-haminges-power-of-the-scale:terrifying-howl:2:0",
+        "radiusStep": 5,
+        "hostileOnly": false
+      },
       "requiresResistance": false,
       "eligibility": {
         "excludeCaster": true,

@@ -14,7 +14,7 @@ export function fearTargetRow(token) {
 export function automaticFearTargets(tokens, policy, contains) {
  const targets = new Map();
  for (const token of tokens) {
-  if (Number(token.disposition) !== Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
+  if ((policy.hostileOnly && Number(token.disposition) !== Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1))
       || !fearRecipientEligible(token.actor,policy) || !contains(token)) continue;
   const row = fearTargetRow(token);
   if (row && (!targets.has(row.actorUuid) || targets.get(row.actorUuid).hidden)) targets.set(row.actorUuid,row);
@@ -22,9 +22,13 @@ export function automaticFearTargets(tokens, policy, contains) {
  return [...targets.values()];
 }
 
-export function fearTargetsInCircle(area,scene,casterUuid) {
+export function fearAreaPolicy(sourceId,casterUuid) {
+ const fear = POWER_DETAILS_BY_ID[sourceId]?.fearRoll;
+ return {casterUuid,hostileOnly:fear?.area?.hostileOnly!==false,eligibility:fear?.eligibility??{excludeCaster:true}};
+}
+
+export function fearTargetsInCircle(area,scene,policy) {
  const {level,origin,radiusPixels} = area;
- const policy = {casterUuid,eligibility:{excludeCaster:true}};
  return automaticFearTargets(scene.tokens?.values?.() ?? [],policy,token => {
   if (level && (token.includedInLevel?.(level) ?? (token.level == null || token.level === '' || token.level === level)) === false) return false;
   const points = token.getContainmentTestPoints?.();
@@ -41,7 +45,8 @@ function tokenCenter(token,scene) {
 }
 
 export function magicFearArea(document, context, casterToken, scene, viewedLevel) {
- const details = POWER_DETAILS_BY_ID[ruleTestSourceId(document)];
+ const sourceId = ruleTestSourceId(document);
+ const details = POWER_DETAILS_BY_ID[sourceId];
  const definition = details?.fearRoll;
  const area = definition?.area;
  if (!area || !casterToken?.actor || !scene || (casterToken.parent && casterToken.parent.id !== scene.id)) return null;
@@ -52,7 +57,7 @@ export function magicFearArea(document, context, casterToken, scene, viewedLevel
  const level = viewedLevel && casterToken.includedInLevel?.(viewedLevel) !== false ? viewedLevel : casterToken.level;
  const radiusPixels = radius * zonePixelScale(scene);
  const shape = {sceneId:scene.id, level:level ?? null, casterTokenUuid:casterToken.uuid,origin:{x,y},radius,radiusPixels};
- return {...shape,targets:fearTargetsInCircle(shape,scene,casterToken.actor.uuid)};
+ return {...shape,targets:fearTargetsInCircle(shape,scene,fearAreaPolicy(sourceId,casterToken.actor.uuid))};
 }
 
 export function captureMagicFearArea(document, context, actor, speaker) {

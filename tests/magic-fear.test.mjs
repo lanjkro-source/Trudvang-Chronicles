@@ -97,9 +97,10 @@ test('the GM creates a native region once and removes it after application and t
  assert.equal(created.length,1);
  assert.equal(created[0].visibility,2);
  assert.deepEqual(created[0].shapes,[{type:'circle',x:50,y:50,radius:250}]);
- assert.deepEqual(nativeFearTargets({...area,targets:[]},message.id,caster.actor.uuid).map(row=>row.actorUuid),['hostile','hidden']);
+ const wolfContext = {sourceId:cases[1][0],casterUuid:caster.actor.uuid};
+ assert.deepEqual(nativeFearTargets({...area,targets:[]},message.id,wolfContext).map(row=>row.actorUuid),['hostile','hidden']);
  hostile.x=900;
- assert.deepEqual(nativeFearTargets(area,message.id,caster.actor.uuid).map(row=>row.actorUuid),['hidden']);
+ assert.deepEqual(nativeFearTargets(area,message.id,wolfContext).map(row=>row.actorUuid),['hidden']);
  hostile.x=100;
  assert.deepEqual(drawn[0],['target',97,-3,106,106,8]);
  hooks.get('canvasTearDown')();
@@ -128,4 +129,37 @@ test('the GM creates a native region once and removes it after application and t
  await synchronizeMagicFearRegion(message.id);
  assert.equal(drawn.length,completed);
  assert.equal(created.length,1);
+
+ const sourceId = cases[5][0];
+ const cry = {id:'cry',author:gm,rolls:[{total:7}],flags:{[system]:{
+  magicFearArea:{...captureMagicFearArea({system:{catalogId:sourceId}},{},caster.actor,{scene:scene.id,token:caster.id}),nativeRegion:true,target:12},
+  ruleTestContext:{sourceId,casterUuid:caster.actor.uuid}
+ }}};
+ messages.set(cry.id,cry);
+ await synchronizeMagicFearRegion(cry.id);
+ assert.deepEqual(created.at(-1).restriction,{enabled:true,type:'sound'});
+ hostile.testInsideRegion = () => false;
+ hidden.actor.statuses = new Set(['deaf']);
+ assert.deepEqual(nativeFearTargets(cry.flags[system].magicFearArea,cry.id,{sourceId,casterUuid:caster.actor.uuid}).map(row=>row.actorUuid),['friendly']);
+});
+
+test('Haminges cries reach allies and neutrals that hear them, while Tyrd frightens only intelligent enemies',()=>{
+ const token = (id,x,disposition,extra={})=>({
+  uuid:'Token.'+id,name:id,x,y:0,width:1,height:1,disposition,actor:{type:'npc',uuid:id,...extra}
+ });
+ const caster=token('caster',0,-1);
+ const scene={grid:{size:100,distance:1,units:'m'},tokens:[
+  caster,token('ally',300,1),token('enemy',400,-1),token('neutral',490,0),
+  token('deaf',200,-1,{statuses:new Set(['deaf'])}),token('beast',200,-1,{system:{tags:['beast']}}),token('far',3000,1)
+ ]};
+ for(const [id,range] of [[cases[4][0],5],[cases[5][0],10],[cases[6][0],20]]){
+  const document={system:{catalogId:id}};
+  const base=magicFearArea(document,{},caster,scene);
+  assert.equal(base.radius,range);
+  assert.deepEqual(base.targets.map(row=>row.actorUuid),['ally','enemy','neutral','beast']);
+  assert.equal(magicFearArea(document,{countsById:{[id+':0']:2}},caster,scene).radius,range+10);
+ }
+ const bellow=magicFearArea({system:{catalogId:cases[3][0]}},{},caster,scene);
+ assert.equal(bellow.radius,10);
+ assert.deepEqual(bellow.targets.map(row=>row.actorUuid),['enemy','deaf']);
 });

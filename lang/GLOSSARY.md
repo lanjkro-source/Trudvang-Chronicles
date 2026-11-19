@@ -16521,7 +16521,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.NoEditableTargets` | No character or NPC tokens to add. | Aucun token de PJ ou de PNJ à ajouter. |
 | `TRUDVANG.MagicFear.HiddenTarget` | Hidden target | Cible masquée |
 | `TRUDVANG.MagicFear.NoTargets` | No targets. | Aucune cible. |
-| `TRUDVANG.MagicFear.NoVisibleHostiles` | No visible eligible hostile tokens in range. | Aucun token hostile visible et éligible à portée. |
+| `TRUDVANG.MagicFear.NoVisibleRecipients` | No visible eligible targets in range. | Aucune cible visible et éligible à portée. |
 | `TRUDVANG.MagicFear.ApplyBatch` | Apply fear to all targets | Appliquer la peur à toutes les cibles |
 | `TRUDVANG.MagicFear.BatchApplied` | Fear applied | Peur appliquée |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
