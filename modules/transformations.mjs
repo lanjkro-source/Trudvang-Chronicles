@@ -45,6 +45,7 @@ import {instantConsequenceOperation} from './conjured-consumables.mjs';
 import {canManageEffectTargets,effectTargetsFor,requestEffectForCaster} from "./effect-targets.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
 import {auraBonusDescription,auraRadius} from "./aura.mjs";
+import {weatherWard} from "./rules/weather-wards.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -543,6 +544,8 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(template.aura&&casting.auraSource){
   meta.auraChanges=changes.map(change=>({...change}));meta.auraStatuses=[...statuses];
   description+=`<p>${escapeHtml(game.i18n.format("TRUDVANG.Aura.Radius",{value:auraRadius({flags:{[SCOPE]:{transformation:meta}}})}))}</p>`;
+  const weather=template.aura.weather?weatherWard(template.aura.weather,casting):null;
+  if(weather?.temperature)description+=`<p>${escapeHtml(game.i18n.format("TRUDVANG.Aura.WeatherTemperature",{value:weather.temperature}))}</p>`;
   if(template.aura.light&&template.aura.recipientMode!=="none")description+=`<p>${escapeHtml(game.i18n.localize("TRUDVANG.Aura.LightRecipients"))}</p>`;
   changes.length=0;statuses.clear();
  }

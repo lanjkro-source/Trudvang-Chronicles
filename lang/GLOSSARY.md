@@ -13011,7 +13011,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Name` | Journey Wind | Brise du voyage |
-| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Description` | The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area. | Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats. |
+| `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.Description` | The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or wind. However, the temperature remains the same as in the surrounding area. | Le bruide appelle une brise favorable et une météo clémente. Jusqu’à expiration de ce pouvoir, l’arpenteur des brumes et la zone qui l’entoure ne sont pas affectés par la pluie, le brouillard ou le vent. En revanche, la température demeure la même que dans les environs immédiats. |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourceName` | Journey Wind | Brise du voyage |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-ealdtradition-magh-s-gift:journey-wind:0#effect.SourcePage` | 183 | 232 |
@@ -13845,7 +13845,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Name` | Storm Protection | Protection contre les éléments |
-| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Description` | The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate. | Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum. |
+| `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.Description` | The priest creates a sacred aura around herself, which protects against rain, snow, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate. | Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météorologiques magiques. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 40°C au maximum. |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourceName` | Storm Protection | Protection contre les éléments |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourceBook` | Player's Handbook | Livre des règles |
 | `TRUDVANG.Content.Transformation.holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect.SourcePage` | 201 | 258 |
@@ -16207,6 +16207,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Environment.comfort` | Comfort | Confort |
 | `TRUDVANG.Environment.temperatureClothing` | Appropriate clothing for the temperature | Vêtements adaptés à la température |
 | `TRUDVANG.Environment.precipitationClothing` | Appropriate clothing for the precipitation | Vêtements adaptés aux précipitations |
+| `TRUDVANG.Environment.ambientTemperature` | Exact outdoor temperature (°C, optional) | Température extérieure exacte (°C, facultatif) |
+| `TRUDVANG.Environment.magicalWeather` | Magical weather | Intempéries d’origine magique |
 | `TRUDVANG.Environment.protected` | appropriate clothing | équipement adapté |
 | `TRUDVANG.Environment.unprotected` | inappropriate clothing: doubled penalty | équipement inadapté : malus doublé |
 | `TRUDVANG.Environment.frostbite` | Risk of frostbite damage (apply manually) | Risque de dégâts de gelures (application manuelle) |
@@ -16434,6 +16436,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Aura.Behavior` | Aura Trudvang | Aura Trudvang |
 | `TRUDVANG.Aura.NoToken` | The effect is added to the caster, but no unique token is available yet to place the aura. | L’effet est ajouté au lanceur, mais aucun token unique ne permet encore de placer l’aura. |
+| `TRUDVANG.Aura.NoFixedSite` | Select the caster's token to anchor this power at the invocation site. | Sélectionnez le token du lanceur pour ancrer ce pouvoir au lieu de l’invocation. |
 | `TRUDVANG.Aura.NoGM` | A connected GM is required to create and synchronize the aura. | Un MJ connecté est nécessaire pour créer et synchroniser l’aura. |
 | `TRUDVANG.Aura.Failed` | The aura could not be created; check the console. | Impossible de créer l’aura ; vérifiez la console. |
 | `TRUDVANG.Aura.Automatic` | Aura effects are applied automatically within its area. | Les effets de l’aura sont appliqués automatiquement dans sa zone. |
@@ -16441,8 +16444,19 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Aura.RecipientName` | Aura: {name} | Aura : {name} |
 | `TRUDVANG.Aura.AllyName` | Aura: {name} (ally) | Aura : {name} (allié) |
 | `TRUDVANG.Aura.Radius` | Effective radius: {value} m. | Rayon effectif : {value} m. |
+| `TRUDVANG.Aura.WeatherTemperatureChoice` | Temperature change within the area (°C) | Variation de température dans la zone (°C) |
+| `TRUDVANG.Aura.WeatherTemperature` | Chosen temperature change: {value} °C. | Variation choisie de la température : {value} °C. |
 | `TRUDVANG.Aura.LightRecipients` | All occupants ignore fear penalties; the caster and allies also gain the indicated bonus. | Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué. |
 | `TRUDVANG.Aura.HealingRecipient` | While listening inside this song’s aura: {amount} BP per full minute, up to {limit} BP per day from this song. Healing stops when leaving the aura or when the song can no longer be heard. | En écoutant ce chant dans son aura : {amount} PS par minute complète, dans la limite de {limit} PS par jour pour ce chant. Les soins s’arrêtent en quittant l’aura ou si le chant n’est plus audible. |
+
+## `TRUDVANG.Aura.WeatherRecipient`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Aura.WeatherRecipient.refuge` | Protected from natural light rain, snow and wind within the area. | À l’abri de la pluie légère, de la neige et du vent naturels dans la zone. |
+| `TRUDVANG.Aura.WeatherRecipient.storm` | Protected from rain, snow and magical weather within the area. | À l’abri de la pluie, de la neige et des intempéries magiques dans la zone. |
+| `TRUDVANG.Aura.WeatherRecipient.summer` | Warms the area up to 30 °C. Temperatures already above 30 °C stay as they are. | Réchauffement jusqu’à 30 °C dans la zone. Les températures déjà supérieures restent telles quelles. |
+| `TRUDVANG.Aura.WeatherRecipient.journey` | Protected from rain, fog and wind within the area. The surrounding temperature still applies. | À l’abri de la pluie, du brouillard et du vent dans la zone. La température ambiante s’applique. |
 
 ## `TRUDVANG.Blessing`
 

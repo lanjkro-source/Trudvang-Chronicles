@@ -21,7 +21,8 @@ import {ruleTestActionViews} from "./rule-tests.mjs";
 import {allocatedCombatVC} from "./rules/attack-size.mjs";
 import {transformationLinks,transformationKeys,applyTransformation} from "./transformations.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
-import {auraCasterToken} from "./aura.mjs";
+import {auraCasterToken,auraSite} from "./aura.mjs";
+import {weatherTemperatureLimits} from "./rules/weather-wards.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
 import {ruleTestCastingContext,withCastingCounts,magicResistanceRows,localizeResistanceRows} from "./rules/magic-resistance.mjs";
@@ -90,6 +91,10 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const selfOnly=Boolean(item&&['spell','divine','rune'].includes(kind)&&POWER_DETAILS_BY_ID[item.system?.catalogId]?.selfOnly);
   const automaticEffectUuids=[];
   const auraKey=item&&["spell","divine","rune"].includes(kind)?transformationKeys(item).find(key=>TRANSFORMATION_TEMPLATES[key]?.aura):null;
+  const aura=TRANSFORMATION_TEMPLATES[auraKey]?.aura;
+  const mapToken=()=>auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables);
+  const fixedToken=aura?.fixed?mapToken():null;
+  const fixedSite=auraSite(fixedToken);
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();
   if(kind==='rune'&&runeConsequenceDefinition(POWER_DETAILS_BY_ID[item?.system?.catalogId])&&!castingId)castingId=foundry.utils.randomID();
   let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
@@ -224,11 +229,21 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
    }catch(error){console.error('Trudvang | Personal effect activation failed',error);ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.AutomaticSelfFailed'));}
   }
   if(success&&auraKey){
-    const token=auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables);
-    if(!token)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoToken"));
+    const token=aura.fixed?fixedToken:mapToken(),site=fixedSite;
+    if(!token)ui.notifications.warn(game.i18n.localize(aura.fixed?"TRUDVANG.Aura.NoFixedSite":"TRUDVANG.Aura.NoToken"));
     if(!game.users?.activeGM)ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoGM"));
     try{
-      const applied=await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,messageId:message.id,auraSource:true,...(token?{casterTokenUuid:token.uuid}:{})}});
+      let weatherTemperature;
+      if(site&&aura.weather?.temperature){
+        const {min,max}=weatherTemperatureLimits(aura.weather,ruleTestContext);
+        weatherTemperature=await foundry.applications.api.DialogV2.wait({
+          window:{title:item.name},classes:["dialog","trudvang"],
+          content:`<div class="roll-dialog form-group"><label for="weather-temperature">${escapeHtml(game.i18n.localize("TRUDVANG.Aura.WeatherTemperatureChoice"))}</label><input id="weather-temperature" name="weatherTemperature" type="number" step="1" min="${min}" max="${max}" value="${max}"></div>`,
+          buttons:[{action:"apply",label:game.i18n.localize("TRUDVANG.Action.Continue"),default:true,callback:(_event,button)=>button.form.elements.weatherTemperature.valueAsNumber}],
+          rejectClose:false
+        });
+      }
+      const applied=(!aura.fixed||site)&&await applyTransformation(actor,auraKey,{source:item,counts:powerLevelCounts,skipDialog:true,context:{...ruleTestContext,messageId:message.id,auraSource:true,...(token?{casterTokenUuid:token.uuid}:{}),...(site?{auraSite:site}:{}),...(Number.isFinite(weatherTemperature)?{weatherTemperature}:{})}});
       if(applied){
         if(applied.uuid)automaticEffectUuids.push(applied.uuid);
         card.transformationLinks="";

@@ -18553,6 +18553,8 @@
       "comfort": "Confort",
       "temperatureClothing": "Vêtements adaptés à la température",
       "precipitationClothing": "Vêtements adaptés aux précipitations",
+      "ambientTemperature": "Température extérieure exacte (°C, facultatif)",
+      "magicalWeather": "Intempéries d’origine magique",
       "protected": "équipement adapté",
       "unprotected": "équipement inadapté : malus doublé",
       "frostbite": "Risque de dégâts de gelures (application manuelle)",
@@ -18721,6 +18723,7 @@
     "Aura": {
       "Behavior": "Aura Trudvang",
       "NoToken": "L’effet est ajouté au lanceur, mais aucun token unique ne permet encore de placer l’aura.",
+      "NoFixedSite": "Sélectionnez le token du lanceur pour ancrer ce pouvoir au lieu de l’invocation.",
       "NoGM": "Un MJ connecté est nécessaire pour créer et synchroniser l’aura.",
       "Failed": "Impossible de créer l’aura ; vérifiez la console.",
       "Automatic": "Les effets de l’aura sont appliqués automatiquement dans sa zone.",
@@ -18728,6 +18731,14 @@
       "RecipientName": "Aura : {name}",
       "AllyName": "Aura : {name} (allié)",
       "Radius": "Rayon effectif : {value} m.",
+      "WeatherTemperatureChoice": "Variation de température dans la zone (°C)",
+      "WeatherTemperature": "Variation choisie de la température : {value} °C.",
+      "WeatherRecipient": {
+        "refuge": "À l’abri de la pluie légère, de la neige et du vent naturels dans la zone.",
+        "storm": "À l’abri de la pluie, de la neige et des intempéries magiques dans la zone.",
+        "summer": "Réchauffement jusqu’à 30 °C dans la zone. Les températures déjà supérieures restent telles quelles.",
+        "journey": "À l’abri de la pluie, du brouillard et du vent dans la zone. La température ambiante s’applique."
+      },
       "LightRecipients": "Tous les occupants ignorent les malus de peur ; le lanceur et ses alliés reçoivent aussi le bonus indiqué.",
       "HealingRecipient": "En écoutant ce chant dans son aura : {amount} PS par minute complète, dans la limite de {limit} PS par jour pour ce chant. Les soins s’arrêtent en quittant l’aura ou si le chant n’est plus audible."
     },

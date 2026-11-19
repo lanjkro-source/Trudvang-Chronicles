@@ -2,6 +2,50 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {environmentConditions, environmentActorValues, environmentCardLines, environmentCardView, normalizeEnvironment, ENVIRONMENT_OPTIONS, environmentKey} from "../modules/rules/environment.mjs";
+import {weatherWard,wardTemperature} from "../modules/rules/weather-wards.mjs";
+import {TRANSFORMATION_TEMPLATES} from "../modules/transformation-data.mjs";
+
+function ward(kind,temperature=0) {
+  return {name:kind,flags:{"trudvang-chronicles":{auraRecipient:{weather:{kind,temperature}}}}};
+}
+
+test("weather zones offset only the covered conditions and never grant the same protection twice", () => {
+  const ordinary = {wind:"storm",precipitation:"rain",precipitationClothing:false};
+  const shelter = ward("refuge"), journey = ward("journey"), storm = ward("storm");
+  const actor = {effects:[shelter,journey]};
+  let result = environmentActorValues(actor,ordinary);
+  assert.equal(result.protection,4);
+  assert.equal(result.frostbite,0);
+  assert.equal(result.modifier,0);
+  assert.deepEqual(result.protectionSources,["refuge"]);
+  result = environmentActorValues({effects:[shelter]},{...ordinary,magicalWeather:true});
+  assert.equal(result.protection,0);
+  assert.equal(result.frostbite,2);
+  result = environmentActorValues({effects:[storm]},{...ordinary,magicalWeather:true});
+  assert.equal(result.protection,4);
+  assert.equal(result.frostbite,0);
+  assert.equal(environmentActorValues({effects:[shelter]},{precipitation:"downpour"}).protection,0);
+  assert.equal(environmentActorValues({effects:[storm]},{precipitation:"downpour"}).protection,3);
+});
+
+test("temperature uses the GM's exact degrees, including each spell's limits", () => {
+  const context={countsById:{"holy-ealdtradition-magh-s-gift:elf-summer:3:1":1},weatherTemperature:90};
+  const spec=TRANSFORMATION_TEMPLATES["holy-ealdtradition-magh-s-gift:elf-summer:3#effect"].aura.weather;
+  const summer=weatherWard(spec,context);
+  assert.deepEqual(summer,{kind:"summer",temperature:50});
+  assert.equal(wardTemperature(-65,summer),-15);
+  assert.equal(wardTemperature(15,summer),30);
+  assert.equal(wardTemperature(32,summer),32);
+  const outside={ambientTemperature:-30,temperatureClothing:false};
+  assert.equal(environmentActorValues({},outside).modifier,-6);
+  const sheltered=environmentActorValues({effects:[ward("refuge",20)]},outside);
+  assert.equal(sheltered.modifier,-2);
+  assert.equal(sheltered.frostbite,2);
+  const warmed=environmentActorValues({effects:[ward("summer",50)]},outside);
+  assert.equal(warmed.modifier,0);
+  assert.equal(warmed.frostbite,0);
+  assert.equal(normalizeEnvironment({ambientTemperature:""}).ambientTemperature,undefined);
+});
 import Handlebars from "handlebars";
 import {migrateEffectReapplicationDefaults} from "../modules/content-importer.mjs";
 

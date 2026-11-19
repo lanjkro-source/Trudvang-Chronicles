@@ -1,6 +1,7 @@
 import {effectDegree, FATIGUED_ITEM} from "./effect-stacking.mjs";
 import {knowledgeRank} from "./magic-resistance.mjs";
 import {consumablePolicy} from "./consumable-effects.mjs";
+import {activeWeatherWards,temperatureBand,wardTemperature,weatherBlocks} from "./weather-wards.mjs";
 
 export const ENVIRONMENTS = ["mountain", "forest", "plains", "sea", "snow"];
 // FR Rules p. 302; EN GM Guide pp. 30–31. [modifier, required clothing].
@@ -17,6 +18,12 @@ export function normalizeEnvironment(data = {}) {
   const result = {environment: ENVIRONMENTS.includes(data.environment) ? data.environment : "forest"};
   for (const [field, choices] of Object.entries(ENVIRONMENT_OPTIONS)) result[field] = Object.hasOwn(choices, data[field]) ? data[field] : Object.keys(choices)[0];
   for (const field of ["temperatureClothing", "precipitationClothing"]) result[field] = data[field] !== false;
+  const ambient = data.ambientTemperature;
+  if ((typeof ambient === "number" || typeof ambient === "string" && ambient.trim()) && Number.isFinite(Number(ambient))) {
+    result.ambientTemperature = Number(ambient);
+    result.temperature = temperatureBand(result.ambientTemperature);
+  }
+  if (data.magicalWeather === true) result.magicalWeather = true;
   for (const field of ENVIRONMENT_COMFORTS) result[field] = data[field] === true;
   return result;
 }
@@ -41,15 +48,34 @@ export function environmentActorValues(actor, data) {
     .reduce((sum, effect) => sum + effectDegree(effect), 0);
   const level = knowledgeRank(actor, "weathered");
   const policy = consumablePolicy(actor);
-  const minimum = {mild: 10, cool: 0, cold: -10, freezing: -20, intense: -40}[conditions.options.temperature];
+  const wards = activeWeatherWards(actor);
+  const {ambientTemperature,magicalWeather} = conditions.options;
+  const temperatureWards = wards.filter(ward => ward.temperature && (!magicalWeather || ward.kind!=="refuge"));
+  const temperatures = Number.isFinite(ambientTemperature)
+    ? temperatureWards.map(ward => ({ward,value:wardTemperature(ambientTemperature,ward)}))
+    : [];
+  const warmest = temperatures.reduce((best,row) => !best || row.value > best.value ? row : best,null);
+  const adjusted = warmest ? environmentConditions({...conditions.options,ambientTemperature:warmest.value}) : conditions;
+  const minimum = {mild: 10, cool: 0, cold: -10, freezing: -20, intense: -40}[adjusted.options.temperature];
   const protectedFields = new Set();
   if (policy.temperature && Number.isFinite(minimum) && minimum >= policy.temperature[0]) protectedFields.add("temperature");
   if (policy.sleepHours === 0) protectedFields.add("sleep");
-  const protection = Math.max(0, -conditions.rows.filter(row => protectedFields.has(row.field) && row.value < 0).reduce((sum,row) => sum + row.value,0));
-  const temperature = conditions.rows.find(row => row.field === "temperature");
-  const frostbite = protectedFields.has("temperature") && temperature?.unprotected ? Math.max(0, conditions.frostbite - Math.abs(temperature.value)) : conditions.frostbite;
+  const names = new Set();
+  let effectiveNegative = 0, frostbite = 0;
+  for (const row of adjusted.rows) {
+    if (row.field === "temperature" && warmest && conditions.options.temperature !== adjusted.options.temperature) names.add(warmest.ward.name);
+    if (row.value >= 0) continue;
+    const ward = wards.find(ward => weatherBlocks(ward,row,magicalWeather));
+    if (ward) names.add(ward.name);
+    else if (protectedFields.has(row.field)) for (const name of policy.names) names.add(name);
+    else {
+      effectiveNegative += row.value;
+      if (row.unprotected) frostbite -= row.value;
+    }
+  }
+  const protection = effectiveNegative - conditions.negative;
   const mitigation = Math.min(conditions.favorable, Math.max(0, -conditions.negative - protection + fatigue));
-  return {...conditions, frostbite, protection, protectionSources: policy.names, fatigue, mitigation, weathered: 2 * level, modifier: conditions.negative + protection + mitigation + 2 * level};
+  return {...conditions, frostbite, protection, protectionSources: [...names], fatigue, mitigation, weathered: 2 * level, modifier: effectiveNegative + mitigation + 2 * level};
 }
 export function environmentCardLines(data, localize) {
   return environmentConditions(data).rows.filter(row => row.value !== 0).map(row => {

@@ -12,7 +12,7 @@
     "catalogId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Magh's Gift",
-    "description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+    "description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or wind. However, the temperature remains the same as in the surrounding area.",
     "summary": "The Bruid calls for a helpful tailwind and fair weather.",
     "swedishName": "",
     "duration": "1 hour",

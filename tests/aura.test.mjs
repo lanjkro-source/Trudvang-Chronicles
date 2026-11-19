@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {auraCasterToken,auraRadius,auraLightUpdate,auraColor,reconcileAuraToken,registerAuraSupport} from "../modules/aura.mjs";
+import {auraCasterToken,auraRadius,auraLightUpdate,auraColor,auraSite,reconcileAuraToken,registerAuraSupport,synchronizeAuraSource} from "../modules/aura.mjs";
+import {environmentActorValues} from "../modules/rules/environment.mjs";
 const S="trudvang-chronicles",id="holy-tenetnid-tablet-of-the-sun:thermal-light:3";
 const deletion=Symbol("delete");
 globalThis.game={users:{activeGM:{isSelf:true}},i18n:{localize:key=>key,format:(key,values)=>`${key}: ${values.value??values.name}`}};
@@ -55,14 +56,15 @@ test("linked tokens retain an effect until the final token leaves; caster gets a
  await reconcileAuraToken(region,u,{leaving:true,force:true});assert.equal(a.effects.length,0);
  const self={id:"c",actor:actor("Actor.c"),disposition:-1};await reconcileAuraToken(region,self);assert.equal(self.actor.effects.length,1);assert.equal(keys(self.actor).length,2);assert.match(self.actor.effects[0].name,/AllyName/);
 });
-test("a descriptive weather aura applies its own description to every occupant without changing light",async()=>{
+test("Journey Wind gives every occupant its weather protection without changing light",async()=>{
  const wind="holy-ealdtradition-magh-s-gift:journey-wind:0";
  const windSource={...source,system:{changes:[]},flags:{[S]:{transformation:{key:`${wind}#effect`,sourceId:wind,ruleTestContext:{countsById:{[`${wind}:1`]:2}}}}}};
  const previous=foundry.utils.fromUuid;foundry.utils.fromUuid=async()=>windSource;
  try{
   const a=actor("Actor.wind"),t={id:"w",actor:a,disposition:-1};const region={uuid:"Scene.s.Region.wind",flags:{[S]:{aura:{sourceEffectUuid:windSource.uuid,casterUuid:"Actor.c"}}},tokens:new Set([t])};
   assert.equal(auraRadius(windSource),5);await reconcileAuraToken(region,t);
-  assert.deepEqual(keys(a),[]);assert.match(a.effects[0].description,/journey-wind:0#effect\.Description/);
+  assert.deepEqual(keys(a),[]);assert.match(a.effects[0].description,/TRUDVANG\.Aura\.WeatherRecipient\.journey/);
+  assert.equal(environmentActorValues(a,{wind:"storm",precipitation:"rain"}).modifier,0);
   await reconcileAuraToken(region,t,{leaving:true});assert.equal(a.effects.length,0);
  }finally{foundry.utils.fromUuid=previous;}
 });
@@ -112,6 +114,42 @@ test("an older active source transfers its changes to a separate caster recipien
  assert.equal(marker.system.changes.length,0);assert.equal(marker.flags[S].transformation.auraChanges.length,2);
  assert.equal(a.effects.length,2);assert.deepEqual(a.effects[1].system.changes.map(change=>change.key),["system.modifiers.rolls.allActions","system.transformation.ignoreFearPenalty"]);
  assert.match(marker.description,/TRUDVANG\.Aura\.Radius/);
+});
+
+test("a fixed weather ward keeps its cast site and protects only occupants until expiration",async t=>{
+ const saved={scenes:game.scenes,fromUuid:foundry.utils.fromUuid};
+ t.after(()=>{game.scenes=saved.scenes;foundry.utils.fromUuid=saved.fromUuid;});
+ const refuge="holy-tenetnid-tablet-of-the-shield:sheltering:1";
+ const caster=actor("Actor.caster"),guest=actor("Actor.guest");
+ const scene={id:"fixed-site",grid:{size:100,distance:1},tokens:[],regions:[],async createEmbeddedDocuments(type,rows){
+  assert.equal(type,"Region");
+  const region={...rows[0],uuid:"Scene.fixed-site.Region.refuge",tokens:new Set(),async delete(){scene.regions=[];}};
+  scene.regions.push(region);return [region];
+ }};
+ const token={id:"c",uuid:"Scene.fixed-site.Token.c",parent:scene,actor:caster,x:100,y:300,level:"ground",flags:{},light:{},testInsideRegion:()=>false};
+ const guestToken={id:"g",actor:guest,testInsideRegion:()=>true};
+ scene.tokens=[token,guestToken];
+ const ctx={casterUuid:caster.uuid,casterTokenUuid:token.uuid,auraSite:auraSite(token),weatherTemperature:20,countsById:{[`${refuge}:1`]:2}};
+ const marker={uuid:"Actor.caster.ActiveEffect.source",name:"Refuge",parent:caster,system:{changes:[]},toObject:()=>({start:{}}),
+  flags:{[S]:{transformation:{key:refuge+"#effect",auraChanges:[],ruleTestContext:ctx}}}};
+ caster.effects=[marker];
+ game.scenes=new Map([[scene.id,scene]]);
+ foundry.utils.fromUuid=async uuid=>uuid===marker.uuid ? marker : uuid===token.uuid ? token : null;
+ token.x=1200;
+ await synchronizeAuraSource(marker);
+ const [region]=scene.regions;
+ assert.deepEqual(region.shapes,[{type:"circle",x:150,y:350,radius:500}]);
+ assert.equal(region.attachment,undefined);
+ assert.deepEqual(region.levels,["ground"]);
+ assert.equal(caster.effects.length,1);
+ assert.deepEqual(guest.effects[0].flags[S].auraRecipient.weather,{kind:"refuge",temperature:20});
+ assert.equal(environmentActorValues(guest,{wind:"storm"}).modifier,0);
+ await reconcileAuraToken(region,guestToken,{leaving:true});
+ assert.equal(environmentActorValues(guest,{wind:"storm"}).modifier,-2);
+ await reconcileAuraToken(region,guestToken);
+ await synchronizeAuraSource(marker,{removed:true});
+ assert.equal(scene.regions.length,0);
+ assert.equal(guest.effects.length,0);
 });
 
 

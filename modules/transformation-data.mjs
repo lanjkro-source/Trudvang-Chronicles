@@ -6265,7 +6265,11 @@ export const TRANSFORMATION_TEMPLATES = {
     "aura": {
       "radius": 3,
       "radiusOptionId": "holy-ealdtradition-magh-s-gift:journey-wind:0:1",
-      "light": false
+      "light": false,
+      "weather": {
+        "kind": "journey",
+        "temperature": 0
+      }
     },
     "sourceId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
     "parameters": [
@@ -6325,6 +6329,17 @@ export const TRANSFORMATION_TEMPLATES = {
       1,
       2
     ],
+    "aura": {
+      "radius": 3,
+      "radiusOptionId": "holy-ealdtradition-magh-s-gift:elf-summer:3:2",
+      "light": false,
+      "fixed": true,
+      "weather": {
+        "kind": "summer",
+        "temperature": 40,
+        "temperatureOptionId": "holy-ealdtradition-magh-s-gift:elf-summer:3:1"
+      }
+    },
     "sourceId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
     "parameters": [
       {
@@ -8760,6 +8775,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 3,
+      "radiusOptionId": "holy-tenetnid-tablet-of-the-shield:sheltering:1:1",
+      "light": false,
+      "fixed": true,
+      "weather": {
+        "kind": "refuge",
+        "temperature": 20
+      }
+    },
     "sourceId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
     "parameters": [
       {
@@ -8812,6 +8837,16 @@ export const TRANSFORMATION_TEMPLATES = {
     "displayPowerOptions": [
       1
     ],
+    "aura": {
+      "radius": 5,
+      "radiusOptionId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2:1",
+      "light": false,
+      "fixed": true,
+      "weather": {
+        "kind": "storm",
+        "temperature": 40
+      }
+    },
     "sourceId": "holy-tenetnid-tablet-of-the-shield:storm-protection:2",
     "parameters": [
       {

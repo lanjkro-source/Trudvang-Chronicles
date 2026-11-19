@@ -3,6 +3,7 @@ import {effectSource} from "./rules/effect-source.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicDamageProfile} from './magic-damage.mjs';
 import {itemEffectRemainingSeconds,normalizeEffectDuration} from './rules/effect-duration.mjs';
+import {weatherWard} from './rules/weather-wards.mjs';
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
 const jobs=new Map();
@@ -21,6 +22,13 @@ export function auraCasterToken(actor, controlled=[], activeTokens=[]) {
  if(selected.length>1)return null;
  if(actor?.isToken&&actor.token)return actor.token;
  const available=matching(activeTokens);return available.length===1?available[0]:null;
+}
+
+export function auraSite(token) {
+ if(!token?.parent)return null;
+ const size=Number(token.parent.grid?.size||1);
+ const center=token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*size/2,y:Number(token.y||0)+Number(token.height||1)*size/2};
+ return {sceneId:token.parent.id,level:token.level??null,x:center.x,y:center.y};
 }
 export function auraRadius(effect){
  const aura=getAura(effect),context=sourceMeta(effect)?.ruleTestContext;
@@ -96,6 +104,9 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
   description=game.i18n.format(aura.recipientDescriptionKey,{damage,winter:Math.ceil(damage/2),sv,penalty:spec?.penalty,amount:periodic?.amount,limit:periodic?.dailyLimit});
  }
  if(fearLight&&allies){const bonus=auraBonusDescription(changes);if(bonus)description+=`<p>${bonus}</p>`;}
+ const weather=aura.weather?weatherWard(aura.weather,sourceMeta(source)?.ruleTestContext):null;
+ if(weather)description=game.i18n.localize(`TRUDVANG.Aura.WeatherRecipient.${weather.kind}`);
+ if(weather?.temperature)description+=`<p>${game.i18n.format("TRUDVANG.Aura.WeatherTemperature",{value:weather.temperature})}</p>`;
  const name=game.i18n.format(fearLight&&allies?"TRUDVANG.Aura.AllyName":"TRUDVANG.Aura.RecipientName",{name:source.name});
  const disease=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease;
  if(disease){
@@ -105,7 +116,7 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  }
  const data={name,img:source.img,type:"effect",origin:region.uuid,transfer:false,start:source.toObject().start,description,statuses:sourceMeta(source)?.auraStatuses??[],
   system:{stackId:`aura:${region.uuid}`,stacking:"replace",changes:effectSource({system:{changes}}).system.changes},
-  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
+  flags:{[S]:{auraRecipient:{regionUuid:region.uuid,sourceEffectUuid:source.uuid,...(weather?{weather}:{})},...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.persistentDamage?{transformation:{...structuredClone(sourceMeta(source)),auraSource:false,...(TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.disease?{summary:description,summaryResolved:true}:{})}}:{})}}};
  const existing=children[0];
  const periodic=TRANSFORMATION_TEMPLATES[sourceMeta(source)?.key]?.periodic;
  if(periodic){
@@ -170,11 +181,13 @@ function sourceTokenUuid(effect){
  if(childFlags(effect)||sourceMeta(effect)?.auraSource===false||(context.casterUuid&&context.casterUuid!==effect.parent?.uuid))return null;
  return context.casterTokenUuid??auraCasterToken(effect.parent,[],globalThis.canvas?.tokens?.placeables??effect.parent?.getActiveTokens?.(true,true))?.uuid??auraCasterToken(effect.parent,[],Array.from(game.scenes??[]).flatMap(scene=>Array.from(scene.tokens??[])))?.uuid;
 }
-function activeSource(effect){return active(effect)&&getAura(effect)&&sourceTokenUuid(effect);}
+function activeSource(effect){return active(effect)&&getAura(effect)&&(getAura(effect).fixed?sourceMeta(effect)?.ruleTestContext?.auraSite:sourceTokenUuid(effect));}
 export async function synchronizeAuraSource(effect,{removed=false}={}){
  if(!isWriter())return;
- const context=sourceMeta(effect)?.ruleTestContext,tokenUuid=sourceTokenUuid(effect);if(!tokenUuid)return;
- const token=await foundry.utils.fromUuid(tokenUuid),scene=token?.parent;if(!token||!scene)return;
+ const context=sourceMeta(effect)?.ruleTestContext,fixed=getAura(effect)?.fixed,site=fixed?context?.auraSite:null;
+ const tokenUuid=sourceTokenUuid(effect),token=tokenUuid?await foundry.utils.fromUuid(tokenUuid):null;
+ const scene=fixed?game.scenes?.get(site?.sceneId):token?.parent;
+ if(!scene)return;
  const regions=Array.from(scene.regions??[]).filter(region=>auraForRegion(region)?.sourceEffectUuid===effect.uuid);
  if(removed||!activeSource(effect)){
   for(const region of regions){
@@ -185,7 +198,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
    }
    await region.delete();
   }
-  await refreshLight(token);return;
+  if(token)await refreshLight(token);return;
  }
  // TEMPORARY WORLD MIGRATION: move pre-0.170 aura changes off the source so
  // the caster receives the same separate recipient effect as everyone else.
@@ -197,11 +210,16 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   await effect.update({[`flags.${S}.transformation.auraChanges`]:auraChanges,[`flags.${S}.transformation.auraStatuses`]:auraStatuses,"system.changes":[],statuses:[],description});
  }
  const radius=auraRadius(effect),scale=Number(scene.grid?.size||1)/Number(scene.grid?.distance||1)*metresToSceneUnits(scene,1);
- const center=token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*Number(scene.grid?.size||1)/2,y:Number(token.y||0)+Number(token.height||1)*Number(scene.grid?.size||1)/2};
- const shapes=[{type:"circle",x:center.x,y:center.y,radius:radius*scale}];
+ const location=site??auraSite(token);
+ const shapes=[{type:"circle",x:location.x,y:location.y,radius:radius*scale}];
+ const syncMembers=async region=>{
+  const members=fixed?Array.from(scene.tokens??[]).filter(target=>target.testInsideRegion?.(region)??region.tokens?.has(target)):region.tokens??[];
+  for(const target of members)await reconcileAuraToken(region,target);
+  if(!fixed&&!Array.from(region.tokens??[]).some(target=>target.id===token.id))await reconcileAuraToken(region,token);
+ };
  if(!regions.length){
-  const [region]=await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,attachment:{token:token.id},levels:token.level?[token.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
-  if(region){for(const target of region.tokens??[])await reconcileAuraToken(region,target);if(!Array.from(region.tokens??[]).some(target=>target.id===token.id))await reconcileAuraToken(region,token);}
+  const [region]=await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,...(!fixed?{attachment:{token:token.id}}:{}),levels:location.level?[location.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
+  if(region)await syncMembers(region);
  }else {
   const update={};
   if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
@@ -210,10 +228,9 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   if(String(regions[0].color??"").toLowerCase()!==auraColor())update.color=auraColor();
   if(Object.keys(update).length)await regions[0].update(update);
   for(const region of regions.slice(1))await region.delete();
-  for(const target of regions[0].tokens??[])await reconcileAuraToken(regions[0],target);
-  if(!Array.from(regions[0].tokens??[]).some(target=>target.id===token.id))await reconcileAuraToken(regions[0],token);
+  await syncMembers(regions[0]);
  }
- await refreshLight(token);
+ if(token)await refreshLight(token);
 }
 
 /** V14 Region behavior: Foundry determines entry/exit; only the elected GM writes. */
@@ -270,6 +287,8 @@ export function registerAuraSupport(){
  Hooks.once("ready",()=>{
   if(!isWriter())return;
   for(const scene of game.scenes??[]) for(const token of scene.tokens??[]) scheduleLight(token);
+  const actors=new Set([...(game.actors??[]),...Array.from(game.scenes??[]).flatMap(scene=>Array.from(scene.tokens??[],token=>token.actor))]);
+  for(const actor of actors)for(const effect of actorEffects(actor))if(getAura(effect)?.fixed&&activeSource(effect))schedule(effect);
  });
  Hooks.on("canvasReady",()=>{
   if(!isWriter())return;

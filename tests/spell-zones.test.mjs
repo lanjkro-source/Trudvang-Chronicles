@@ -390,6 +390,11 @@ test('fog reduces both effective ranged limits and preserves the calculation det
  assert.deepEqual([range.short.value,range.long.value],[4,10]);
  assert.equal(range.long.steps.at(-1).explanationKey,'TRUDVANG.Calculation.Equipment.FogRange');
  assert.equal(item.system.range.long,43);
+ const protection={flags:{[S]:{auraRecipient:{weather:{kind:'journey',temperature:0}}}}};
+ actor.effects=[protection];
+ assert.equal(resolveWeaponRange({item,actor}).long.value,43);
+ protection.disabled=true;
+ assert.equal(resolveWeaponRange({item,actor}).long.value,10);
 });
 
 test('the fog retains elapsed rounds when combat ends and expires on the world clock',async()=>{

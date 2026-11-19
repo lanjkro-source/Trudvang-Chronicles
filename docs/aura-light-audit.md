@@ -4,7 +4,7 @@ Les termes et les numéros de page ci-dessous proviennent du Livre des règles f
 
 ## Auras prises en charge
 
-Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs effets à l'entrée et les retirent à la sortie. Brise du voyage fait de même pour son rappel de protection météorologique : la météo et les tests d'environnement ne sont pas modifiés automatiquement. Les murs bloquant la lumière limitent ces régions. Les seuls éclairages automatiques sont ceux des auras lumineuses. Les copies appliquées avant cette automatisation ne sont pas transformées en auras.
+Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs effets à l'entrée et les retirent à la sortie. Brise du voyage suit également le lanceur et protège les occupants dans les jets d’environnement et face à Brouillard. Refuge, Protection contre les éléments et Été elfique conservent le point de l’invocation. Les murs bloquant la lumière limitent ces régions. Les éclairages automatiques relèvent des auras lumineuses. Les copies appliquées avant cette automatisation ne sont pas transformées en auras fixes.
 
 ## À faire pour terminer les effets de zone
 
@@ -15,9 +15,6 @@ Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs eff
 | Rayons du soleil (p. 216) | Rayon fondé sur la VC de Foi ; zone fixée au lancement | Extérieur et jour seulement ; ne suit pas le lanceur. |
 | Cœur de l’été (p. 217) | Zone fondée sur la VC ; bien distinguer la zone ensoleillée et les terrains de chasse | Les conséquences sur le climat et la chasse sont conditionnelles. |
 | Heure de la chasse (p. 217) | Portée kilométrique, accrue par les niveaux | Conditions extérieures et diurnes ; bonus conditionnels de chasse et pêche. |
-| Été elfique (p. 233) | Rayon initial 3 m, augmenté par les niveaux | Température limitée à 30 °C et effets météorologiques selon les règles. |
-| Brise du voyage (p. 232) | Rayon initial 3 m, augmenté par les niveaux | Protection contre la pluie, le brouillard et le vent, sans changer la température. |
-| Refuge et Protection contre les éléments (p. 258) | Zones fixées au lieu de la prière | Conditions et sources météorologiques couvertes différentes selon le pouvoir. |
 | Purification de l’air (p. 170) | Modes de zone et individuel | Vérifier les conditions d’exposition et de protection propres à chaque mode. |
 | Flammèche (p. 167) | Flamme portée pouvant être laissée sur un objet si l’amélioration correspondante est choisie | Intensité de base comparable à une grosse bougie ; une amélioration permet l’intensité d’une torche. |
 

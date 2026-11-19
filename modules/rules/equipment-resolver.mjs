@@ -2,6 +2,7 @@ import { isThrowingWeapon, isDesignedForThrowing, weaponType, weaponUsesSeparate
 import {blessedWeaponEffects} from "./blessed-weapon.mjs";
 import {blessedArmorEffects} from "./blessed-armor.mjs";
 import {itemProtectionModifiers,preparedItemProtection} from './item-magic.mjs';
+import {ignoresSpellFog} from './weather-wards.mjs';
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -219,7 +220,7 @@ export function resolveWeaponRange({item, actor = null, modifiers = [], throwing
     explanationData: {amount: strength},
     rule: {book: "coreRules", printedPage: 118, englishBook: "gameMastersGuide", englishPrintedPage: 76}
   })) : [];
-  const divisor = Number(actor?.system?.modifiers?.fogRangeDivisor) || 1;
+  const divisor = ignoresSpellFog(actor) ? 1 : Number(actor?.system?.modifiers?.fogRangeDivisor) || 1;
   const fogModifiers = divisor > 1 ? ["rangeShort","rangeLong"].map(target => ({
     id:`fog-${target}`,target,operation:"multiply",amount:1/divisor,phase:"constraint",
     explanationKey:"TRUDVANG.Calculation.Equipment.FogRange",explanationData:{divisor}

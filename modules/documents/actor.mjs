@@ -2,6 +2,7 @@ import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {actorForResistance} from '../resistance-actor.mjs';
 import {waterMovementBudget} from "../rules/water-movement.mjs";
 import {quagmireMovement,quagmireTravelBudget} from "../rules/quagmire.mjs";
+import {ignoresSpellFog} from "../rules/weather-wards.mjs";
 import {sacredBalance,sacredObjects} from '../rules/sacred-objects.mjs';
 import {roundEffectValue} from "../rules/effect-rule-changes.mjs";
 import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
@@ -41,7 +42,9 @@ import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
 import {darknessCombatRow} from "../rules/jorn-darkness.mjs";
 import {transformationProfile, movementDetails, transformationRollRows, temporaryHealthState, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
-import {transformationItemActive} from "../transformations.mjs";
+import {transformationItemActive,transformationKeys} from "../transformations.mjs";
+import {TRANSFORMATION_TEMPLATES} from "../transformation-data.mjs";
+import {auraCasterToken} from "../aura.mjs";
 import {resolveBodyHealth,bodyHealthUpdate,maximumOnlyHealth} from "../rules/body-health.mjs";
 import {effectSource} from "../rules/effect-source.mjs";
 import {consumeInventoryItem, isConsumable} from "../consumables.mjs";
@@ -294,7 +297,8 @@ export class TrudvangActor extends BaseActor {
     const combatKinds = new Set(["attack", "parry", "ability", "magic"]);
     if (["attack", "parry"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.combatActions || 0);
     if (["attack", "parry", "dodge"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) {
-      total += Number(modifiers.fogCombat || 0) + (darknessCombatRow(this)?.value ?? 0);
+      if (!ignoresSpellFog(this)) total += Number(modifiers.fogCombat || 0);
+      total += darknessCombatRow(this)?.value ?? 0;
     }
     if (movement) total += Number(modifiers.movementActions || 0);
     if (["attack", "parry", "magic"].includes(kind)) total += Number(modifiers[kind] || 0);
@@ -307,7 +311,7 @@ export class TrudvangActor extends BaseActor {
   rollEffectRows(options = {}) {
     const keys = rollEffectKeys(this,options);
     const darkness = keys.includes("system.modifiers.rolls.fogCombat") ? darknessCombatRow(this) : null;
-    return [...keys.flatMap(key => effectContributions(this,key)),...(darkness ? [darkness] : [])];
+    return [...keys.filter(key=>key!=="system.modifiers.rolls.fogCombat"||!ignoresSpellFog(this)).flatMap(key => effectContributions(this,key)),...(darkness ? [darkness] : [])];
   }
 
   skillEffectRows(skillKey) {
@@ -1490,6 +1494,10 @@ export class TrudvangActor extends BaseActor {
     if (!options) return null;
     const currentAvailability=spellAvailability(this,item);
     if(!currentAvailability.ok)return ui.notifications.warn(game.i18n.format(currentAvailability.reason,currentAvailability.data));
+    if (transformationKeys(item).some(key=>TRANSFORMATION_TEMPLATES[key]?.aura?.fixed)
+      && !auraCasterToken(this,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables)) {
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoFixedSite"));
+    }
     if (trackedPersistent && activeSpellInstances(this).length >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;

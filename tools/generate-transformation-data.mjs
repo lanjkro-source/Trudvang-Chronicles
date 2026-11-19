@@ -106,6 +106,11 @@ for(const kind of ["powers","feats"]){
    if(JSON.stringify(t.summaryParts??null)!==JSON.stringify(translated.summaryParts??null))throw Error(`Unaligned summary components for ${key}`);
    if(JSON.stringify(t.aura??null)!==JSON.stringify(translated.aura??null))throw Error(`Unaligned aura for ${key}`);
    if(t.aura&&(!Number.isFinite(t.aura.radius)||t.aura.radius<0||!entry.powerLevels?.some(p=>p.optionId===t.aura.radiusOptionId)||typeof t.aura.light!=="boolean"||![undefined,"none"].includes(t.aura.recipientMode)))throw Error(`Invalid aura for ${key}`);
+   if(t.aura?.weather){
+    const w=t.aura.weather;
+    if(!["refuge","storm","summer","journey"].includes(w.kind)||!Number.isFinite(w.temperature)||w.temperature<0
+      ||Boolean(t.aura.fixed)!==(w.kind!=="journey")||w.temperatureOptionId&&!entry.powerLevels.some(p=>p.optionId===w.temperatureOptionId))throw Error(`Invalid weather aura for ${key}`);
+   }
    if(t.aura&&((t.aura.radiusStep!==undefined&&(!Number.isFinite(t.aura.radiusStep)||t.aura.radiusStep<=0))
     ||![undefined,'allies'].includes(t.aura.recipients)||![undefined,true,false].includes(t.aura.requiresHearing)
     ||t.periodic&&(!t.aura.requiresHearing||t.aura.recipients!=='allies'||t.aura.light||t.aura.recipientMode)))throw Error(`Invalid healing aura for ${key}`);

@@ -3692,7 +3692,7 @@
         "holy-ealdtradition-magh-s-gift:journey-wind:0": {
           "Name": "Journey Wind",
           "Summary": "The Bruid calls for a helpful tailwind and fair weather.",
-          "Description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+          "Description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or wind. However, the temperature remains the same as in the surrounding area.",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "1 hour",
@@ -6780,7 +6780,7 @@
         "holy-tenetnid-tablet-of-the-shield:storm-protection:2": {
           "Name": "Storm Protection",
           "Summary": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold.",
-          "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
+          "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
           "SwedishName": "",
           "DamageQualificationNote": "",
           "Duration": "1 hour",
@@ -15887,7 +15887,7 @@
         "holy-ealdtradition-magh-s-gift:journey-wind:0#effect": {
           "Name": "Journey Wind",
           "Summary": "Journey Wind",
-          "Description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or headwind. However, the temperature remains the same as in the surrounding area.",
+          "Description": "The Bruid calls for a helpful tailwind and fair weather. For the duration of the ability, the dimwalker and the area around them is unaffected by rain, fog, or wind. However, the temperature remains the same as in the surrounding area.",
           "SourceName": "Journey Wind",
           "SourceBook": "Player's Handbook",
           "SourcePage": "183",
@@ -16573,7 +16573,7 @@
         "holy-tenetnid-tablet-of-the-shield:storm-protection:2#effect": {
           "Name": "Storm Protection",
           "Summary": "Storm Protection",
-          "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
+          "Description": "The priest creates a sacred aura around herself, which protects against rain, snow, and natural heat or cold. It also protects against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 40°C as the dimwalker wishes to create a milder climate.",
           "SourceName": "Storm Protection",
           "SourceBook": "Player's Handbook",
           "SourcePage": "201",
@@ -18553,6 +18553,8 @@
       "comfort": "Comfort",
       "temperatureClothing": "Appropriate clothing for the temperature",
       "precipitationClothing": "Appropriate clothing for the precipitation",
+      "ambientTemperature": "Exact outdoor temperature (°C, optional)",
+      "magicalWeather": "Magical weather",
       "protected": "appropriate clothing",
       "unprotected": "inappropriate clothing: doubled penalty",
       "frostbite": "Risk of frostbite damage (apply manually)",
@@ -18721,6 +18723,7 @@
     "Aura": {
       "Behavior": "Aura Trudvang",
       "NoToken": "The effect is added to the caster, but no unique token is available yet to place the aura.",
+      "NoFixedSite": "Select the caster's token to anchor this power at the invocation site.",
       "NoGM": "A connected GM is required to create and synchronize the aura.",
       "Failed": "The aura could not be created; check the console.",
       "Automatic": "Aura effects are applied automatically within its area.",
@@ -18728,6 +18731,14 @@
       "RecipientName": "Aura: {name}",
       "AllyName": "Aura: {name} (ally)",
       "Radius": "Effective radius: {value} m.",
+      "WeatherTemperatureChoice": "Temperature change within the area (°C)",
+      "WeatherTemperature": "Chosen temperature change: {value} °C.",
+      "WeatherRecipient": {
+        "refuge": "Protected from natural light rain, snow and wind within the area.",
+        "storm": "Protected from rain, snow and magical weather within the area.",
+        "summer": "Warms the area up to 30 °C. Temperatures already above 30 °C stay as they are.",
+        "journey": "Protected from rain, fog and wind within the area. The surrounding temperature still applies."
+      },
       "LightRecipients": "All occupants ignore fear penalties; the caster and allies also gain the indicated bonus.",
       "HealingRecipient": "While listening inside this song’s aura: {amount} BP per full minute, up to {limit} BP per day from this song. Healing stops when leaving the aura or when the song can no longer be heard."
     },
