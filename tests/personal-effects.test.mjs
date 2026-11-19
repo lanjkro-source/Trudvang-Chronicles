@@ -83,3 +83,19 @@ test('an aura source is still automatically put on the caster before a token or 
 test('a successful Burning Hand cast automatically grants the two attacks with frozen fire and no premature damage button',async()=>{
  const a=caster(),id='vitner-flame-craft:burning-hand:2',item=itemFor(a,id,'spell');await rollUnder({actor:a,item,kind:'spell',target:15,powerLevelCounts:[2,1,4]});assert.equal(created.length,1);assert.equal(a.items.filter(i=>i.type==='weapon').length,2);const hands=a.items.filter(i=>i.type==='weapon');assert.ok(hands.every(hand=>hand.system.damageQualification.type==='bludgeoning'&&hand.system.material==='natural'&&hand.flags[S].supplementalDamage[0].qualification.nature==='magical'));assert.equal(hands[0].flags[S].supplementalDamage[0].formula,'1d10 + 1');assert.equal(hands[0].flags[S].supplementalDamage[0].openRoll,8);assert.equal(hands[1].flags[S].supplementalDamage[0].formula,'1d10');assert.equal(hands[1].flags[S].supplementalDamage[0].openRoll,0);assert.equal(cards.at(-1).magicDamage,false);assert.equal(dialogs.length,0);assert.equal(created[0].duration.value,6);assert.deepEqual(warnings,[]);
 });
+
+test('successful purification cards display one total with no marker, including a critical allocation and the lake option',async()=>{
+ const vitner='vitner-water-craft:purify-water:1',divine='holy-toikalokke-master-of-elements:purify-water:2';
+ let a=caster();
+ await rollUnder({actor:a,item:itemFor(a,vitner,'spell'),kind:'spell',target:15,powerLevelCounts:[0,1,1,1,0]});
+ assert.match(cards.at(-1).successConsequence,/1120 L/);assert.equal(cards.at(-1).transformationLinks,'');
+ a=caster();die=1;
+ await rollUnder({actor:a,item:itemFor(a,vitner,'spell'),kind:'spell',target:15,powerLevelCounts:[],resolvePerfectSuccess:async()=>({counts:[0,0,0,0,1]})});
+ assert.match(cards.at(-1).successConsequence,/petit lac/);
+ a=caster();
+ await rollUnder({actor:a,item:itemFor(a,divine),kind:'divine',target:15,powerLevelCounts:[4,3]});
+ assert.match(cards.at(-1).successConsequence,/5 L/);assert.equal(cards.at(-1).ruleTests.length,1);assert.equal(created.length,0);
+ a=caster();die=20;
+ await rollUnder({actor:a,item:itemFor(a,vitner,'spell'),kind:'spell',target:15});
+ assert.doesNotMatch(cards.at(-1).successConsequence??'',/Volume/);
+});

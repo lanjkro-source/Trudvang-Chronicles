@@ -101,6 +101,14 @@ for (const id of [...french.keys()].sort()) {
       const q=f.damageQualification;
       if(!DAMAGE_NATURES.includes(q.nature)||!DAMAGE_TYPES.includes(q.type)||!DAMAGE_DELIVERIES.includes(q.delivery)||!DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
     }
+  if(!same(f.purification,e.purification))fail(id+': unaligned purification');
+  if(f.purification){
+    const {litres,increments,lakeOptionId}=f.purification;
+    const hasOption=key=>f.powerLevels.some(p=>p.optionId===key);
+    if(!Number.isInteger(litres)||litres<=0||!increments||
+      Object.entries(increments).some(([key,value])=>!hasOption(key)||!Number.isInteger(value)||value<=0)||
+      (lakeOptionId&&!hasOption(lakeOptionId)))fail(id+': invalid purification capacity');
+  }
   if(JSON.stringify(f.spellZone??null)!==JSON.stringify(e.spellZone??null))fail(`${id}: unaligned spell zone`);
   if(f.spellZone?.kind==='fire'&&(!(f.spellZone.radius>0)||!(f.spellZone.radiusStep>0)||!(f.spellZone.range>=0)||typeof f.spellZone.movable!=='boolean'||!Number.isFinite(f.spellZone.visibilityPenalty)||!f.damageRoll))fail(`${id}: invalid fire zone`);
   if(f.spellZone?.kind==='earthquake'&&(!Array.isArray(f.spellZone.sizeModifiers)||f.spellZone.sizeModifiers.length!==7||f.spellZone.sizeModifiers.some(n=>!Number.isFinite(n))||!Number.isFinite(f.spellZone.severityModifier)||!Number.isFinite(f.spellZone.penalty)||!(f.spellZone.radius>0)||!(f.spellZone.range>=0)))fail(`${id}: invalid earthquake profile`);
@@ -154,6 +162,7 @@ for (const id of [...french.keys()].sort()) {
     level:f.level,
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
+    ...(f.purification?{purification:f.purification}:{}),
     ...(f.spellZone?{spellZone:f.spellZone}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
     ...(f.damageQualification ? {damageQualification:f.damageQualification} : {}),

@@ -181,3 +181,8 @@ La version 2 de `migrateSacredEquipmentCorrections()` (même réglage caché `sa
 ## Main brûlante — profils de la 0.227.0
 
 Le rattrapage dans `modules/damage-qualification-migration.mjs` corrige les qualifications précédemment générées du sort, de ses effets actifs et des poings accordés. La synchronisation des attaques conserve les AA dépensées sur l’acteur. Retirer ce rattrapage après la suppression ou la mise à niveau des mondes de développement.
+
+
+## Éclairage d’équipement et retrait des marqueurs d’eau
+
+Le palier 73 de `modules/content-importer.mjs` importe la torche et la lanterne dans les mondes existants. Le nettoyage au démarrage dans `modules/water-purification.mjs` retire uniquement les effets d’objet de Purification de l’eau générés en 0.227.1. Retirer ce palier, la fonction de nettoyage et son appel dans `trudvang.mjs` lorsque les mondes de développement auront été mis à jour ou supprimés.

@@ -515,7 +515,8 @@ export class ShieldData extends BaseItemData {
 
 export class GearData extends BaseItemData {
   static defineSchema() {
-    return {...super.defineSchema(), equipped: boolean(false), consumable: boolean(false), consequenceId: string()};
+    return {...super.defineSchema(), equipped: boolean(false), consumable: boolean(false), consequenceId: string(),
+      lightBright: number(0, {min: 0}), lightDim: number(0, {min: 0})};
   }
 }
 

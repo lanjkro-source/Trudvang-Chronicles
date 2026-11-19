@@ -98,6 +98,8 @@ export const PUBLIC_STARTER_CRAFTS = {
   "TRUDVANG.Content.Item.RoyalAttire": "softMaterials",
   "TRUDVANG.Content.Item.Blodstor": "hardMaterials",
   "TRUDVANG.Content.Item.VitnerStafur": "hardMaterials",
-  "TRUDVANG.Content.Item.VotiveStatuette": "hardMaterials"
+  "TRUDVANG.Content.Item.VotiveStatuette": "hardMaterials",
+  "TRUDVANG.Content.Item.Torch": "hardMaterials",
+  "TRUDVANG.Content.Item.Lantern": "hardMaterials"
 };
 export const PUBLIC_STARTER_FOLDERS = ["weapons","weaponsLight","weaponsHeavy","weaponsTwoHanded","weaponsRanged","protections","armor","shields","equipment","packages","extracts"];

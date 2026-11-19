@@ -132,14 +132,22 @@ export async function settleAuraJobs(){
 }
 
 /** Light state is restored only where it still equals the value we set. */
-export function auraLightUpdate(token, radii){
+export function equippedLightRadii(actor, scene) {
+ const equipped = Array.from(actor?.items ?? []).filter(item =>
+  item.type === "gear" && item.system?.equipped && Number(item.system.quantity ?? 1) > 0);
+ return {
+  bright: metresToSceneUnits(scene, Math.max(0,...equipped.map(item => Number(item.system.lightBright) || 0))),
+  dim: metresToSceneUnits(scene, Math.max(0,...equipped.map(item => Number(item.system.lightDim) || 0)))
+ };
+}
+export function auraLightUpdate(token, radii, gear = {}){
  const key=`flags.${S}.auraLight`,saved=token.flags?.[S]?.auraLight,current={bright:Number(token.light?.bright)||0,dim:Number(token.light?.dim)||0};
  const radius=Math.max(0,...radii.map(Number).filter(Number.isFinite));
- if(radius>0){
+ if(radius>0 || gear.bright>0 || gear.dim>0){
   const before=saved?.before??current;
   // Preserve deliberate edits made while an effect is active.
-  const bright=Math.max(Number(before.bright)||0,radius);
-  const desired={bright,dim:Math.max(Number(before.dim)||0,bright,radius)};
+  const bright=Math.max(Number(before.bright)||0,radius,gear.bright??0);
+  const desired={bright,dim:Math.max(Number(before.dim)||0,bright,gear.dim??0)};
   const changes={};for(const prop of ["bright","dim"])if(!saved||current[prop]===saved.applied[prop])if(current[prop]!==desired[prop])changes[`light.${prop}`]=desired[prop];
   const applied={...desired};for(const prop of ["bright","dim"])if(saved&&current[prop]!==saved.applied[prop])applied[prop]=saved.applied[prop];
   const state={before,applied};if(JSON.stringify(saved)!==JSON.stringify(state))changes[key]=state;return changes;
@@ -149,10 +157,11 @@ export function auraLightUpdate(token, radii){
  changes[key]=foundry.data.operators.ForcedDeletion.create();return changes;
 }
 function refreshLight(token){
+ if(!isWriter())return Promise.resolve();
  const previous=lightJobs.get(token.uuid)??Promise.resolve();
  const job=previous.catch(()=>{}).then(async()=>{
   const radii=actorEffects(token.actor).filter(effect=>active(effect)&&getAura(effect)?.light&&sourceTokenUuid(effect)===token.uuid).map(effect=>metresToSceneUnits(token.parent,auraRadius(effect)));
-  const updates=auraLightUpdate(token,radii);if(Object.keys(updates).length)await token.update(updates);
+  const updates=auraLightUpdate(token,radii,equippedLightRadii(token.actor,token.parent));if(Object.keys(updates).length)await token.update(updates);
  }).finally(()=>{if(lightJobs.get(token.uuid)===job)lightJobs.delete(token.uuid);});
  lightJobs.set(token.uuid,job);return job;
 }
@@ -242,6 +251,31 @@ export function registerAuraSupport(){
  Hooks.on("updateActiveEffect",(effect,changes)=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);if(!childFlags(effect)&&(hearingStatus(effect)||changes?.statuses!==undefined))refreshHearing(effect.parent);});
  Hooks.on("deleteActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect,true);if(hearingStatus(effect))refreshHearing(effect.parent);});
  Hooks.on("updateToken",(token,changes)=>{if(!isWriter()||changes.disposition===undefined)return;for(const region of token.parent?.regions??[])if(auraForRegion(region)&&region.tokens?.has(token))void reconcileAuraToken(region,token);});
- Hooks.on("createToken",token=>{if(isWriter())for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});
- Hooks.on("canvasReady",()=>{if(!isWriter())return;for(const token of canvas.scene?.tokens??[])for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);});
+ const scheduleLight=token=>refreshLight(token).catch(error=>console.error("Trudvang | Token light synchronization failed",error));
+ const refreshGear=item=>{
+  const actor=item.parent;
+  if(!isWriter()||item.type!=="gear"||actor?.documentName!=="Actor")return;
+  const tokens=Array.from(game.scenes??[]).flatMap(scene=>Array.from(scene.tokens??[]));
+  return Promise.all(tokens.filter(token=>token.actor?.uuid===actor.uuid).map(scheduleLight));
+ };
+ for(const hook of ["createItem","updateItem","deleteItem"])Hooks.on(hook,refreshGear);
+ Hooks.on("updateToken",(token,change)=>{
+  if(change.actorId!==undefined||change.actorLink!==undefined||change.delta!==undefined)scheduleLight(token);
+ });
+ Hooks.on("createToken",token=>{
+  if(!isWriter())return;
+  scheduleLight(token);
+  for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);
+ });
+ Hooks.once("ready",()=>{
+  if(!isWriter())return;
+  for(const scene of game.scenes??[]) for(const token of scene.tokens??[]) scheduleLight(token);
+ });
+ Hooks.on("canvasReady",()=>{
+  if(!isWriter())return;
+  for(const token of canvas.scene?.tokens??[]){
+   scheduleLight(token);
+   for(const effect of actorEffects(token.actor))if(activeSource(effect))schedule(effect);
+  }
+ });
 }

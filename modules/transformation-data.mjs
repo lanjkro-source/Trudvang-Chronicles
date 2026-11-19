@@ -689,74 +689,6 @@ export const TRANSFORMATION_TEMPLATES = {
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
-  "vitner-water-craft:purify-water:1#purified-water": {
-    "id": "purified-water",
-    "icon": "icons/svg/daze.svg",
-    "duration": "",
-    "priority": 10,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "itemOnly": true,
-    "summaryParts": {
-      "labelKey": "TRUDVANG.WaterPurification.Capacity",
-      "parts": [
-        {
-          "index": 1,
-          "base": 10,
-          "value": 10,
-          "singularKey": "TRUDVANG.WaterPurification.Litres",
-          "pluralKey": "TRUDVANG.WaterPurification.Litres"
-        },
-        {
-          "index": 2,
-          "base": 0,
-          "value": 100,
-          "singularKey": "TRUDVANG.WaterPurification.Litres",
-          "pluralKey": "TRUDVANG.WaterPurification.Litres"
-        },
-        {
-          "index": 3,
-          "base": 0,
-          "value": 1000,
-          "singularKey": "TRUDVANG.WaterPurification.Litres",
-          "pluralKey": "TRUDVANG.WaterPurification.Litres"
-        }
-      ],
-      "overrideIndex": 4,
-      "overrideKey": "TRUDVANG.WaterPurification.Lake"
-    },
-    "displayPowerOptions": [
-      0
-    ],
-    "sourceId": "vitner-water-craft:purify-water:1",
-    "parameters": [
-      {
-        "index": 1,
-        "optionId": "vitner-water-craft:purify-water:1:1",
-        "target": "summaryPart",
-        "value": 10
-      },
-      {
-        "index": 2,
-        "optionId": "vitner-water-craft:purify-water:1:2",
-        "target": "summaryPart",
-        "value": 100
-      },
-      {
-        "index": 3,
-        "optionId": "vitner-water-craft:purify-water:1:3",
-        "target": "summaryPart",
-        "value": 1000
-      },
-      {
-        "index": 4,
-        "optionId": "vitner-water-craft:purify-water:1:4",
-        "target": "summaryPart",
-        "value": 1
-      }
-    ]
-  },
   "vitner-water-craft:find-water:0#find-water": {
     "id": "find-water",
     "icon": "icons/svg/aura.svg",
@@ -14174,37 +14106,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
-  "holy-toikalokke-master-of-elements:purify-water:2#purified-water": {
-    "id": "purified-water",
-    "icon": "icons/svg/daze.svg",
-    "duration": "",
-    "priority": 10,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "itemOnly": true,
-    "summaryParts": {
-      "labelKey": "TRUDVANG.WaterPurification.Capacity",
-      "parts": [
-        {
-          "index": 0,
-          "base": 1,
-          "value": 1,
-          "singularKey": "TRUDVANG.WaterPurification.Litres",
-          "pluralKey": "TRUDVANG.WaterPurification.Litres"
-        }
-      ]
-    },
-    "sourceId": "holy-toikalokke-master-of-elements:purify-water:2",
-    "parameters": [
-      {
-        "index": 0,
-        "optionId": "holy-toikalokke-master-of-elements:purify-water:2:0",
-        "target": "summaryPart",
-        "value": 1
-      }
-    ]
-  },
   "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -16416,9 +16317,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
     "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds"
   ],
-  "vitner-water-craft:purify-water:1": [
-    "vitner-water-craft:purify-water:1#purified-water"
-  ],
   "vitner-water-craft:find-water:0": [
     "vitner-water-craft:find-water:0#find-water"
   ],
@@ -17396,9 +17294,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "holy-toikalokke-master-of-elements:earth-wall:0": [
     "holy-toikalokke-master-of-elements:earth-wall:0#effect"
-  ],
-  "holy-toikalokke-master-of-elements:purify-water:2": [
-    "holy-toikalokke-master-of-elements:purify-water:2#purified-water"
   ],
   "holy-toikalokke-master-of-elements:fire-tamer:4": [
     "holy-toikalokke-master-of-elements:fire-tamer:4#effect"

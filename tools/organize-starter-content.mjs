@@ -2,7 +2,7 @@ import fs from "node:fs";
 
 const path = "data/starter-content.json";
 const content = JSON.parse(fs.readFileSync(path, "utf8"));
-const removed = new Set(["ThrowingAxe", "Rope", "Torch", "AdventureKit"]);
+const removed = new Set(["ThrowingAxe", "Rope", "AdventureKit"]);
 const keyOf = entry => entry.nameKey.split(".").at(-2);
 
 content.items = content.items.filter(entry => !removed.has(keyOf(entry)));

@@ -3077,6 +3077,28 @@
         "value": 1,
         "craftMaterial": "hardMaterials"
       }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Torch.Name",
+      "type": "gear",
+      "img": "icons/svg/fire.svg",
+      "folder": "equipment",
+      "system": {
+        "craftMaterial": "hardMaterials",
+        "lightBright": 3,
+        "lightDim": 5
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.Lantern.Name",
+      "type": "gear",
+      "img": "icons/svg/light.svg",
+      "folder": "equipment",
+      "system": {
+        "craftMaterial": "hardMaterials",
+        "lightBright": 5,
+        "lightDim": 7
+      }
     }
   ],
   "tables": [

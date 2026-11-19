@@ -45,13 +45,13 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // and votive statuette in previously populated development worlds.
 // TEMPORARY WORLD MIGRATION — version 72 groups existing name tables under
 // Character Creation / Names; the normal starter import recreates their folder assignment.
-const CONTENT_VERSION = 72;
+// TEMPORARY WORLD MIGRATION — version 73 imports the torch and lantern in existing worlds.
+const CONTENT_VERSION = 73;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
   "TRUDVANG.Content.Item.ThrowingAxe",
   "TRUDVANG.Content.Item.Rope",
-  "TRUDVANG.Content.Item.Torch",
   "TRUDVANG.Content.Item.AdventureKit"
 ]);
 
@@ -360,6 +360,9 @@ async function upsertBaseItems(source, folders, translationsByKey) {
       if (payload.ownership) update.ownership = destination === "gmItems" || gmOnlyFolder(source.folders[destination])
         ? foundry.data.operators.ForcedReplacement.create(payload.ownership) : payload.ownership;
       if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
+      for (const key of ["lightBright", "lightDim"]) {
+        if (payload.system?.[key] && !existing.system?.[key]) update["system." + key] = payload.system[key];
+      }
       if (payload.system?.consumable === true) update["system.consumable"] = true;
       if (payload.system?.consequenceId) update["system.consequenceId"] = payload.system.consequenceId;
       // Leave player-renamed copies alone apart from artwork and wording refresh.

@@ -121,15 +121,15 @@
       </section>
       <section class="panel">
         <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Gear"}}</h2>{{#if editable}}<span><button type="button" data-action="item-create" data-type="gear"><i class="fas fa-plus"></i> {{localize "TYPES.Item.gear"}}</button><button type="button" data-action="item-create" data-type="potion"><i class="fas fa-plus"></i> {{localize "TYPES.Item.potion"}}</button></span>{{/if}}</div>
-        <ol class="item-list npc-inventory-list">
+        <ol class="item-list npc-inventory-list npc-gear-list">
           {{#each npcEquipment.equipment as |item|}}
           <li class="item" data-item-id="{{item.id}}">
             <img src="{{item.img}}" alt="">
             <input class="qty-input" type="number" min="0" step="1" value="{{item.system.quantity}}" data-item-field="quantity" aria-label="{{localize 'TRUDVANG.Field.Quantity'}}" {{#unless @root.editable}}disabled{{/unless}}><span class="qty-sep">×</span>
             <button type="button" class="item-name" data-action="item-edit" title="{{item.name}} — {{item._shortTitle}}">{{item.name}}</button>
             <span class="item-detail" title="{{item._hoverTitle}}">{{item._compactDetail}} {{{item._damageQualificationHTML}}}</span>
-            {{#unless item._consumable}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" title="{{localize 'TRUDVANG.Action.Equip'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-suitcase"></i></button>{{/unless}}
-            {{#if item._consumable}}<button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-flask" aria-hidden="true"></i></button>{{/if}}
+            {{#if item._consumable}}<button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-flask" aria-hidden="true"></i></button>{{else}}<span></span>{{/if}}
+            {{#if (eq item.type "gear")}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" aria-pressed="{{#if item.system.equipped}}true{{else}}false{{/if}}" title="{{localize 'TRUDVANG.Action.Equip'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-suitcase"></i></button>{{else}}<span></span>{{/if}}
             <button type="button" data-action="inspect-item" title="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button>
             <button type="button" data-action="item-delete" title="{{localize 'TRUDVANG.Action.Delete'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-trash"></i></button>
           </li>

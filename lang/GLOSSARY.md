@@ -3376,6 +3376,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Item.VotiveStatuette.Name` | Votive statuette | Statuette votive |
 | `TRUDVANG.Content.Item.VotiveStatuette.Description` | A small statuette used as a votive for divine invocations. Its bonus depends on its quality. | Petite statuette servant d’objet votif pour les invocations divines. Son bonus dépend de sa qualité. |
 
+## `TRUDVANG.Content.Item.Lantern`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Lantern.Name` | Lantern | Lanterne |
+| `TRUDVANG.Content.Item.Lantern.Description` | A portable oil lantern. | Une lanterne portable à huile. |
+
 ## `TRUDVANG.Content.Table.HeadRegeneration`
 
 | Clé | English | Français |
@@ -11279,17 +11286,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.SourcePage` | 123 | 162 |
 | `TRUDVANG.Content.Transformation.vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-two-thirds.Duration` | 3 days | 3 days |
 
-## `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.Name` | Purified Water (Vitner) | Eau purifiée (vitner) |
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.Description` | Marks a batch of purified water. Harmful and toxic substances are removed. The spell can also separate water from sediment. | Marque un lot d’eau purifié. Les substances dangereuses et toxiques sont retirées. Le sort peut aussi séparer l’eau des sédiments. |
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.SourceName` | Purify Water | Purification de l’eau |
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.SourcePage` | 135 | 163 |
-| `TRUDVANG.Content.Transformation.vitner-water-craft:purify-water:1#purified-water.Duration` |  |  |
-
 ## `TRUDVANG.Content.Transformation.vitner-water-craft:find-water:0#find-water`
 
 | Clé | English | Français |
@@ -15369,17 +15365,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.SourcePage` | 241 | 297 |
 | `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:earth-wall:0#effect.Duration` | 30 minutes | 30 minutes |
 
-## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.Name` | Purified Water (Toikalokke) | Eau purifiée (Toikalokke) |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.Description` | Marks a batch of purified water. For a poisoned or magical drink, the GM confirms the Ihana’s successful test before applying this marker. | Marque un lot d’eau purifié. Pour une boisson empoisonnée ou magique, le MJ confirme la réussite du test de l’ihana avant de poser ce marqueur. |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.SourceName` | Purify Water | Purification de l’eau |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.SourcePage` | 241 | 297 |
-| `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:purify-water:2#purified-water.Duration` |  |  |
-
 ## `TRUDVANG.Content.Transformation.holy-toikalokke-master-of-elements:fire-tamer:4#effect`
 
 | Clé | English | Français |
@@ -16885,6 +16870,5 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.WaterPurification.Capacity` | Volume that can be purified: {value} | Volume purifiable : {value} |
-| `TRUDVANG.WaterPurification.Litres` | {value} L | {value} L |
+| `TRUDVANG.WaterPurification.Capacity` | Volume that can be purified: {value}. | Volume purifiable : {value}. |
 | `TRUDVANG.WaterPurification.Lake` | a small lake | un petit lac |

@@ -2532,6 +2532,10 @@
         "VotiveStatuette": {
           "Name": "Votive statuette",
           "Description": "A small statuette used as a votive for divine invocations. Its bonus depends on its quality."
+        },
+        "Lantern": {
+          "Name": "Lantern",
+          "Description": "A portable oil lantern."
         }
       },
       "Table": {
@@ -14472,15 +14476,6 @@
           "SourcePage": "123",
           "Duration": "3 days"
         },
-        "vitner-water-craft:purify-water:1#purified-water": {
-          "Name": "Purified Water (Vitner)",
-          "Summary": "Records the maximum amount of purified water.",
-          "Description": "Marks a batch of purified water. Harmful and toxic substances are removed. The spell can also separate water from sediment.",
-          "SourceName": "Purify Water",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "135",
-          "Duration": ""
-        },
         "vitner-water-craft:find-water:0#find-water": {
           "Name": "Find Water",
           "Summary": "Locates sources and bodies of water.",
@@ -17848,15 +17843,6 @@
           "SourcePage": "241",
           "Duration": "30 minutes"
         },
-        "holy-toikalokke-master-of-elements:purify-water:2#purified-water": {
-          "Name": "Purified Water (Toikalokke)",
-          "Summary": "Records the maximum amount of purified water.",
-          "Description": "Marks a batch of purified water. For a poisoned or magical drink, the GM confirms the Ihana’s successful test before applying this marker.",
-          "SourceName": "Purify Water",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "241",
-          "Duration": ""
-        },
         "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
           "Name": "Fire Tamer",
           "Summary": "Fire Tamer",
@@ -19089,8 +19075,7 @@
       "WeaponLock": "Burning Hand: weapons cannot be used during the casting round."
     },
     "WaterPurification": {
-      "Capacity": "Volume that can be purified: {value}",
-      "Litres": "{value} L",
+      "Capacity": "Volume that can be purified: {value}.",
       "Lake": "a small lake"
     }
   }

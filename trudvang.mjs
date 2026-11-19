@@ -33,6 +33,7 @@ import {registerAuraSupport} from "./modules/aura.mjs";
 import {registerDamageEnrichers} from "./modules/damage-icons.mjs";
 import {migrateDamageQualifications} from "./modules/damage-qualification-migration.mjs";
 import {registerSharedConsumptionSocket} from './modules/shared-consumption.mjs';
+import {removeObsoletePurificationMarkers} from "./modules/water-purification.mjs";
 import {registerRoundResistanceHooks} from './modules/round-resistance.mjs';
 import {registerInventoryCanvasDrop} from './modules/inventory-canvas-drop.mjs';
 import {registerInventoryTransferSocket,recoverInventoryTransfers} from './modules/inventory-transfer.mjs';
@@ -289,6 +290,8 @@ Hooks.once("ready", async () => {
   registerInventoryTransferSocket();
   registerSharedConsumptionSocket();
   await recoverInventoryTransfers();
+  try { await removeObsoletePurificationMarkers(); }
+  catch (error) { console.error("Trudvang Chronicles | Purification marker cleanup failed", error); }
   try { await migrateDamageQualifications(); }
   catch (error) { console.error("Trudvang Chronicles | Damage qualifier migration failed", error); }
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));

@@ -190,6 +190,7 @@
 .trudvang-sheet.npc-sheet .npc-movement-separator { margin-right: 6px; color: var(--trudvang-on-header-muted); }
 .trudvang-sheet.npc-sheet .npc-inventory-hint { margin: 0 0 10px; color: var(--trudvang-ink); font-size: .8rem; line-height: 1.4; }
 .trudvang-sheet.npc-sheet .npc-inventory-list .item { grid-template-columns: 28px 26px 10px minmax(0, 1.2fr) minmax(0, 1fr) repeat(3, 24px); }
+.trudvang-sheet.npc-sheet .npc-gear-list .item { grid-template-columns: 28px 26px 10px minmax(0, 1.2fr) minmax(0, 1fr) repeat(4, 24px); }
 .trudvang-sheet.npc-sheet .npc-inventory-list .item button:not(.item-name) { width: 24px; }
 .trudvang-sheet.npc-sheet .npc-inventory-list .item .item-detail, .trudvang-sheet.npc-sheet .npc-inventory-list .qty-sep { color: var(--trudvang-ink); }
 .trudvang-sheet :is(.tab.combat, .tab.actions) > .combat-reserves-panel { position: sticky; top: 0; z-index: 2; flex: 0 0 auto; background: var(--trudvang-paper-light); box-shadow: 0 3px 8px color-mix(in srgb, var(--trudvang-ink) 24%, transparent); }
@@ -368,6 +369,7 @@
 .trudvang-sheet .tree-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
 .trudvang-sheet .item-list { margin: 0; padding: 0; list-style: none; }
 .trudvang-sheet .item-list .item { min-height: 34px; display: grid; grid-template-columns: 30px 27px 27px 26px 10px minmax(0, 1fr) auto repeat(3, 27px); gap: 3px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
+.trudvang-sheet .equipment-list .item { grid-template-columns: 30px 26px 10px minmax(0, 1fr) auto repeat(4, 27px); }
 .trudvang-sheet .item-list .item img { width: 28px; height: 28px; border: 1px solid var(--trudvang-line); object-fit: cover; }
 /* Foundry's default icons/svg/* glyphs are white-filled (designed for dark backgrounds) — print them as ink on parchment. */
 .trudvang-sheet .item-list .item > img[src^="icons/svg/"], .trudvang-sheet .knowledge-node img[src^="icons/svg/"] { filter: brightness(0); opacity: .82; background: color-mix(in srgb, var(--trudvang-paper-light) 40%, transparent); }

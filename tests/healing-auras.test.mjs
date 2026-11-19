@@ -70,7 +70,7 @@ test('removing the aura source settles earned minutes and removes every recipien
 });
 test('deaf recipients and a silenced singer receive no healing aura; hearing status hooks reconcile the existing scene',async()=>{
  const f=setup();await source(f);f.ally.statuses.add('deaf');assert.equal(await enter(f),undefined);f.ally.statuses.clear();await enter(f);assert.equal(f.ally.effects.length,1);
- const callbacks={};globalThis.Hooks={on:(name,fn)=>callbacks[name]=fn};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();
+ const callbacks={};globalThis.Hooks={once:()=>{},on:(name,fn)=>callbacks[name]=fn};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();
  f.ally.statuses.add('deaf');callbacks.createActiveEffect({parent:f.ally,statuses:new Set(['deaf'])});await settleAuraJobs();assert.equal(f.ally.effects.length,0);
  f.ally.statuses.clear();callbacks.deleteActiveEffect({parent:f.ally,statuses:new Set(['deaf'])});await settleAuraJobs();assert.equal(f.ally.effects.length,1);
  f.caster.statuses.add('silenced');callbacks.createActiveEffect({parent:f.caster,statuses:new Set(['silenced'])});await settleAuraJobs();assert.equal(f.ally.effects.length,0);

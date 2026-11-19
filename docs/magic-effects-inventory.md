@@ -4,7 +4,7 @@ Généré depuis `game doc/fr/trudvang-powers-fr.json` et les catalogues techniq
 
 Les nombres indiquent les éléments déjà répertoriés, pas une validation de leur exhaustivité ni de leur exactitude. Chaque ligne et chaque option restent à examiner dans les règles avant d'être déclarées couvertes.
 
-Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 115 ; avec au moins un modèle d'effet répertorié : 364 ; avec jet de dégâts magique : 38 ; avec jet de peur magique : 8 ; avec région fixe : 5.
+Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test répertorié : 115 ; avec au moins un modèle d'effet répertorié : 362 ; avec jet de dégâts magique : 38 ; avec jet de peur magique : 8 ; avec région fixe : 5.
 
 | Tablette | Nom | Type | Identifiant | Options | Tests existants | Modèles d'effet existants | Jet de dégâts | Jet de peur | Région fixe |
 |---|---|---|---|---:|---:|---:|---|---|---|
@@ -35,7 +35,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Maîtrise de la terre | Façonnage de la pierre | sortilège | `vitner-soil-craft:shape-stone:6` | 4 | 0 | 1 | — | — | — |
 | Maîtrise de la terre | Marche dans la pierre | sortilège | `vitner-soil-craft:stone-walk:7` | 5 | 0 | 1 | — | — | — |
 | Maîtrise de la terre | Pétrification/Annuler une pétrification | sortilège | `vitner-soil-craft:petrify-remove-petrification:8` | 6 | 2 | 3 | — | — | — |
-| Maîtrise de l'eau | Purification de l’eau | sortilège | `vitner-water-craft:purify-water:1` | 5 | 0 | 1 | — | — | — |
+| Maîtrise de l'eau | Purification de l’eau | sortilège | `vitner-water-craft:purify-water:1` | 5 | 0 | 0 | — | — | — |
 | Maîtrise de l'eau | Sourcier | sortilège | `vitner-water-craft:find-water:0` | 5 | 1 | 1 | — | — | — |
 | Maîtrise de l'eau | Façonnage de l’eau | sortilège | `vitner-water-craft:form-water:3` | 5 | 0 | 1 | — | — | — |
 | Maîtrise de l'eau | Respiration aquatique | sortilège | `vitner-water-craft:breathe:2` | 5 | 0 | 1 | — | — | — |
@@ -393,7 +393,7 @@ Entrées : 428 ; options de puissance : 1488 ; entrées avec au moins un test r�
 | Maître des éléments | Contrôle du feu | pouvoir | `holy-toikalokke-master-of-elements:control-fire:1` | 3 | 0 | 1 | — | — | — |
 | Maître des éléments | Don de l’eau | pouvoir | `holy-toikalokke-master-of-elements:gift-of-water:3` | 1 | 0 | 1 | — | — | — |
 | Maître des éléments | Mur de terre | pouvoir | `holy-toikalokke-master-of-elements:earth-wall:0` | 3 | 0 | 1 | — | — | — |
-| Maître des éléments | Purification de l’eau | pouvoir | `holy-toikalokke-master-of-elements:purify-water:2` | 2 | 1 | 1 | — | — | — |
+| Maître des éléments | Purification de l’eau | pouvoir | `holy-toikalokke-master-of-elements:purify-water:2` | 2 | 1 | 0 | — | — | — |
 | Maître des éléments | Dompteur du feu | pouvoir | `holy-toikalokke-master-of-elements:fire-tamer:4` | 4 | 0 | 1 | — | — | — |
 | Maître des éléments | Façonnage de la terre | pouvoir | `holy-toikalokke-master-of-elements:shape-earth:5` | 3 | 0 | 1 | — | — | — |
 | Maître des éléments | Flèche élémentaire | pouvoir | `holy-toikalokke-master-of-elements:elemental-arrow:6` | 3 | 0 | 0 | oui | — | — |

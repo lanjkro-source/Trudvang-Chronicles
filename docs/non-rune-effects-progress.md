@@ -395,8 +395,9 @@ Tests : lancement personnel réel sans application manuelle, FR/EN, durées amé
 
 Contrôle représentatif demandé : lancer Main brûlante avec la seconde main et trois améliorations de dégâts. Vérifier deux attaques dans Combat, première au feu 1d10 JO8 et seconde à 1d10 ordinaire, toutes deux avec leur poing 1d5. Porter un coup et confirmer ses dégâts : une seule carte et une seule liste de victimes, Force comptée une fois. Sur une cible avec 5 VP, les dégâts physiques + feu doivent perdre au total cinq points de protection, pas dix (hors immunités et autres effets). Vérifier que l’AA dépensée est aussi retirée de Poing & pied, que les armes sont bloquées au round du lancement puis rétablies au suivant, et que les attaques accordées disparaissent à expiration.
 
+
 ## Purification de l’eau — 19 novembre 2026
 
-Le vitner et Toikalokke fournissent un marqueur permanent à placer sur un objet représentant le lot d’eau. Son descriptif donne le volume que le lancement peut traiter, avec les améliorations achetées. La version vitner couvre aussi l’extraction de l’eau de la boue et l’option du petit lac. Pour une boisson empoisonnée ou magique, Toikalokke conserve le test de situation de base 15 avec les bonus achetés. Le test revient à l’ihana et le MJ saisit le malus du poison ou du niveau du sort. Le MJ applique le marqueur après la réussite et gère les volumes sans objet représentant le lot ainsi que le retrait effectif d’un poison ou enchantement d’objet.
+La carte d’un lancement réussi annonce le volume total, y compris les niveaux accordés par un succès critique. La version vitner affiche « un petit lac » si cette option a été achetée. Toikalokke conserve le test de situation de l’ihana pour une boisson empoisonnée ou magique. Le MJ décide de l’état de l’eau et des conséquences du test.
 
 Références. Livre des règles, p. 163 et 297. Player’s Handbook, Purify Water, p. 136 et 241.

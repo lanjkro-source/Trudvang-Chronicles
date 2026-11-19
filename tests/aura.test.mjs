@@ -77,7 +77,7 @@ test("Dawn Shine illuminates its area without granting any occupant fear relief 
  }finally{foundry.utils.fromUuid=previous;}
 });
 test("the registered native region behavior handles entry, exit and deactivation",()=>{
- const hooks={};globalThis.Hooks={on:(name,fn)=>{hooks[name]=fn;}};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};
+ const hooks={};globalThis.Hooks={once:()=>{},on:(name,fn)=>{hooks[name]=fn;}};globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};
  foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();
  const type=CONFIG.RegionBehavior.dataModels.trudvangAura;assert.ok(type);assert.equal(typeof type.events.tokenEnter,"function");assert.equal(typeof type.events.tokenExit,"function");assert.equal(typeof type.events.behaviorDeactivated,"function");assert.ok(hooks.deleteActiveEffect);
 });
@@ -140,4 +140,29 @@ test('a successful infectious source creates a visible, wall-restricted region a
   if(tail==='lord-of-the-flies:6')assert.equal(ambient.system.changes[0].value,'-3');else assert.equal(ambient,undefined);
   await reconcileAuraToken(scene.regions[0],target,{leaving:true});assert.equal(victim.effects.length,1);assert.ok(victim.effects[0].flags[S].diseaseIncubation);
  }
+});
+
+test('equipped gear lights linked tokens and falls back to the torch, the aura and then the original light',async t=>{
+ const {equippedLightRadii}=await import('../modules/aura.mjs');
+ const old={hooks:globalThis.Hooks,scenes:game.scenes,config:globalThis.CONFIG};t.after(()=>{globalThis.Hooks=old.hooks;game.scenes=old.scenes;globalThis.CONFIG=old.config;});
+ const callbacks=new Map();globalThis.Hooks={on:(name,fn)=>{const list=callbacks.get(name)??[];list.push(fn);callbacks.set(name,list);},once:()=>{}};
+ globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};foundry.data.regionBehaviors={RegionBehaviorType:class{}};registerAuraSupport();
+ const carrier={uuid:'Actor.lights',documentName:'Actor',effects:[],items:[]};
+ const gear=(bright,dim)=>({type:'gear',parent:carrier,system:{quantity:1,equipped:true,lightBright:bright,lightDim:dim}});
+ const torch=gear(3,5),lantern=gear(5,7);carrier.items=[torch,lantern];
+ const scene={grid:{units:'m'},tokens:[]};
+ const tokenFor=id=>({uuid:'Scene.s.Token.'+id,parent:scene,actor:carrier,light:{bright:1,dim:2},flags:{},async update(changes){
+   for(const [key,value] of Object.entries(changes)){
+     if(key.startsWith('light.'))this.light[key.slice(6)]=value;
+     else if(key===`flags.${S}.auraLight`){this.flags[S]??={};if(value===deletion)delete this.flags[S].auraLight;else this.flags[S].auraLight=value;}
+   }
+ }});
+ scene.tokens=[tokenFor('a'),tokenFor('b')];game.scenes=[scene];
+ const refresh=async item=>{for(const callback of callbacks.get('updateItem'))await callback(item);};
+ await refresh(lantern);for(const token of scene.tokens)assert.deepEqual(token.light,{bright:5,dim:7});
+ const token=scene.tokens[0];
+ assert.equal(auraLightUpdate(token,[6],equippedLightRadii(carrier,scene))['light.bright'],6);
+ assert.ok(Math.abs(equippedLightRadii(carrier,{grid:{units:'ft'}}).dim-7/0.3048)<1e-6);
+ lantern.system.quantity=0;await refresh(lantern);for(const token of scene.tokens)assert.deepEqual(token.light,{bright:3,dim:5});
+ torch.system.equipped=false;await refresh(torch);for(const token of scene.tokens)assert.deepEqual(token.light,{bright:1,dim:2});
 });

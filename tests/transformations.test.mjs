@@ -131,7 +131,7 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
- assert.equal(Object.keys(sources).length,379);
+ assert.equal(Object.keys(sources).length,377);
 });
 
 test("weapon blessings require an owned weapon and preserve their improved values and duration",async()=>{
@@ -1681,21 +1681,4 @@ test('Burning Hand freezes improved first-hand fire and base second-hand fire, s
   const e=await applyTransformation(a,key,{counts:[2,1,3],context:{sourceId:id,casterUuid:a.uuid,countsById:{[id+':0']:2,[id+':1']:1,[id+':2']:3},selfSource:true},skipDialog:true});const rules=effectRules(e);assert.equal(e.duration.value,6);assert.equal(rules.attacks.length,2);assert.equal(rules.attacks[0].damage,'1d5');assert.equal(rules.attacks[0].damageComponents[0].openRoll,8);assert.equal(rules.attacks[1].damageComponents[0].openRoll,0);assert.deepEqual(rules.weaponLock,{combatId:'combat',round:2});assert.doesNotMatch(e.description,/undefined|TRUDVANG\./);assert.match(e.description,/1d10/);
   a.isOwner=true;await syncEffectGrants(e,a);assert.equal(a.items.length,2);assert.ok(a.items.every(i=>i.system.isUnarmed&&i.system.naturalCombatPool==='natural'));assert.equal(a.items[0].flags[S].supplementalDamage[0].openRoll,8);const {weaponUseLocked}=await import('../modules/rules/transformation-profile.mjs');assert.equal(weaponUseLocked(a),true);game.combat.round=3;assert.equal(weaponUseLocked(a),false);const {cleanGrants}=await import('../modules/transformations.mjs');a.deleteEmbeddedDocuments=async(type,ids)=>{a.items=a.items.filter(i=>!ids.includes(i.id));};await cleanGrants(e);assert.equal(a.items.length,0);
  }
-});
-
-test('water purification markers record the improved quantity on the object and keep the Ihana test with the caster',async t=>{
- const previous={game:globalThis.game,ui:globalThis.ui,utils:foundry.utils,documents:foundry.documents};t.after(()=>{globalThis.game=previous.game;globalThis.ui=previous.ui;foundry.utils=previous.utils;foundry.documents=previous.documents;});
- const lang=JSON.parse(fs.readFileSync('lang/fr.json','utf8')),lookup=k=>k.split('.').reduce((v,p)=>v?.[p],lang)??k;
- globalThis.game={user:{id:'gm'},time:{worldTime:10},i18n:{lang:'fr',localize:lookup,format:(k,d)=>lookup(k).replace(/\{(\w+)\}/g,(_,key)=>d[key]??'')}};
- globalThis.ui={notifications:{warn:message=>assert.fail(message)}};foundry.utils={deepClone:structuredClone};foundry.documents={ActiveEffect:{implementation:{getEffectStart:()=>({time:10})}}};
- const actor={uuid:'Actor.a',name:'A',items:[],canUserModify:()=>true};let created;
- const item={type:'gear',name:'Gourde',parent:actor,effects:[],canUserModify:()=>true,createEmbeddedDocuments:async(_,rows)=>[created=rows[0]]};
- const vitner='vitner-water-craft:purify-water:1',divine='holy-toikalokke-master-of-elements:purify-water:2';
- await applyTransformation(actor,vitner+'#purified-water',{destinationItem:item,counts:[0,2,1],skipDialog:true});
- assert.match(created.description,/30 L \+ 100 L/);assert.equal(created.duration.value,null);
- await applyTransformation(actor,vitner+'#purified-water',{destinationItem:item,counts:[0,0,0,0,1],skipDialog:true});assert.match(created.description,/petit lac/);
- await applyTransformation(actor,divine+'#purified-water',{destinationItem:item,counts:[2,3],skipDialog:true});
- assert.match(created.description,/3 L/);assert.match(created.description,/avant de poser ce marqueur/);
- assert.equal(RULE_TESTS_BY_CATALOG_ID[divine][0].casterTest,true);
- assert.equal(RULE_TESTS_BY_CATALOG_ID[divine][0].powerLevelModifiers[0].value,1);
 });

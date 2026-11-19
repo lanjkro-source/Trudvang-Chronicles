@@ -9395,6 +9395,12 @@ export const POWER_DETAILS_BY_ID = {
   "holy-toikalokke-master-of-elements:purify-water:2": {
     "isRune": false,
     "level": 1,
+    "purification": {
+      "litres": 1,
+      "increments": {
+        "holy-toikalokke-master-of-elements:purify-water:2:0": 1
+      }
+    },
     "powerLevels": [
       {
         "id": "holy-toikalokke-master-of-elements:purify-water:2:0",
@@ -14119,6 +14125,15 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-water-craft:purify-water:1": {
     "isRune": false,
     "level": 1,
+    "purification": {
+      "litres": 10,
+      "increments": {
+        "vitner-water-craft:purify-water:1:1": 10,
+        "vitner-water-craft:purify-water:1:2": 100,
+        "vitner-water-craft:purify-water:1:3": 1000
+      },
+      "lakeOptionId": "vitner-water-craft:purify-water:1:4"
+    },
     "powerLevels": [
       {
         "id": "vitner-water-craft:purify-water:1:0",
