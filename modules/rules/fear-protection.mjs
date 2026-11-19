@@ -32,7 +32,8 @@ export function isLesserIntelligence(actor){
  return actor?.type!=='character'&&['bête','beast','animal'].some(t=>tags.has(t))&&!['humanoïde','humanoid','troll'].some(t=>tags.has(t));
 }
 export function fearRecipientEligible(actor,context={}){
- const policy=context.eligibility??{};
+ const policy=context?.eligibility??{};
+ if(context?.areaActorUuids&&!context.areaActorUuids.includes(actor?.uuid))return false;
  if(policy.excludeCaster&&context.casterUuid===actor?.uuid)return false;
  if(policy.requiresHearing&&['deaf','deafened'].some(id=>actor?.statuses?.has(id)))return false;
  if(policy.intelligentOnly&&isLesserIntelligence(actor))return false;

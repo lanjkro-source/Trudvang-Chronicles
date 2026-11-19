@@ -16514,6 +16514,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.MagicFear.ResistanceFirst` | Apply only to victims who failed the required resistance test. | Appliquer uniquement aux victimes ayant raté le test de résistance préalable. |
 | `TRUDVANG.MagicFear.EligibleRecipients` | Apply only to creatures affected according to range, hearing and the power’s restrictions. | Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir. |
+| `TRUDVANG.MagicFear.AreaRadius` | Fear radius: {radius} m | Rayon de peur : {radius} m |
+| `TRUDVANG.MagicFear.AreaNeedsCaster` | The caster’s token must be identifiable on the current scene. | Le token du lanceur doit être identifiable sur la scène actuelle. |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
 | `TRUDVANG.MagicFear.ProtectionValues` | Fear factors reduced by {degrees} step(s). First fear level ignored. | Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré. |
 | `TRUDVANG.MagicFear.ProtectedFactor` | Personal factor: {factor} → {amount} before personal mitigation. | Facteur personnel : {factor} → {amount} avant protections personnelles. |

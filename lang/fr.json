@@ -18785,6 +18785,8 @@
     "MagicFear": {
       "ResistanceFirst": "Appliquer uniquement aux victimes ayant raté le test de résistance préalable.",
       "EligibleRecipients": "Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir.",
+      "AreaRadius": "Rayon de peur : {radius} m",
+      "AreaNeedsCaster": "Le token du lanceur doit être identifiable sur la scène actuelle.",
       "BaseRecipients": "Peur de base — cibles supplémentaires",
       "ProtectionValues": "Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré.",
       "ProtectedFactor": "Facteur personnel : {factor} → {amount} avant protections personnelles.",

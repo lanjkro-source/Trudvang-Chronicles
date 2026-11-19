@@ -18785,6 +18785,8 @@
     "MagicFear": {
       "ResistanceFirst": "Apply only to victims who failed the required resistance test.",
       "EligibleRecipients": "Apply only to creatures affected according to range, hearing and the power’s restrictions.",
+      "AreaRadius": "Fear radius: {radius} m",
+      "AreaNeedsCaster": "The caster’s token must be identifiable on the current scene.",
       "BaseRecipients": "Base fear — additional recipients",
       "ProtectionValues": "Fear factors reduced by {degrees} step(s). First fear level ignored.",
       "ProtectedFactor": "Personal factor: {factor} → {amount} before personal mitigation.",

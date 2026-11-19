@@ -370,6 +370,7 @@
 .trudvang-sheet .item-list { margin: 0; padding: 0; list-style: none; }
 .trudvang-sheet .item-list .item { min-height: 34px; display: grid; grid-template-columns: 30px 27px 27px 26px 10px minmax(0, 1fr) auto repeat(3, 27px); gap: 3px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
 .trudvang-sheet .equipment-list .item { grid-template-columns: 30px 26px 10px minmax(0, 1fr) auto repeat(4, 27px); }
+.trudvang-sheet :is(.weapons-list, .protection-list) .item { grid-template-columns: 30px 26px 10px minmax(0, 1fr) auto repeat(3, 27px); }
 .trudvang-sheet .item-list .item img { width: 28px; height: 28px; border: 1px solid var(--trudvang-line); object-fit: cover; }
 /* Foundry's default icons/svg/* glyphs are white-filled (designed for dark backgrounds) — print them as ink on parchment. */
 .trudvang-sheet .item-list .item > img[src^="icons/svg/"], .trudvang-sheet .knowledge-node img[src^="icons/svg/"] { filter: brightness(0); opacity: .82; background: color-mix(in srgb, var(--trudvang-paper-light) 40%, transparent); }

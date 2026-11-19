@@ -3369,6 +3369,11 @@ export const POWER_DETAILS_BY_ID = {
           "modifier": 1
         }
       ],
+      "area": {
+        "radius": 5,
+        "radiusOptionId": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:0",
+        "radiusStep": 5
+      },
       "requiresResistance": false,
       "eligibility": {
         "excludeCaster": true,

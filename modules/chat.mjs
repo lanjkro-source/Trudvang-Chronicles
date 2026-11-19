@@ -147,7 +147,7 @@ function attachListeners(message, html) {
       const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
       if(!actor?.isOwner||!item)return;
       const {rollMagicFear}=await import('./magic-fear.mjs');
-      await rollMagicFear({document:item,actor,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
+      await rollMagicFear({document:item,actor,speaker:message.speaker,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
     });
   });
   html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
