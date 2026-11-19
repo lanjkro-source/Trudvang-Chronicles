@@ -4,7 +4,8 @@ import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
 import {registerDispelSocket} from './dispel.mjs';
 import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
-import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
+import {canManageFearTargets, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval, requestFearTargetEdit} from "./chat-application.mjs";
+import {registerMagicFearPreview} from "./magic-fear-preview.mjs";
 import {isConsumable} from "./consumables.mjs";
 import {canConsumeSharedItem,requestSharedConsumption} from "./shared-consumption.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
@@ -39,6 +40,7 @@ export function registerChatListeners() {
   registerFollowupSocket();
   registerDiseaseResistanceSocket();
   registerChatApplicationSocket();
+  registerMagicFearPreview();
   registerEffectTargetSocket();
 }
 
@@ -147,7 +149,8 @@ function attachListeners(message, html) {
       const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
       if(!actor?.isOwner||!item)return;
       const {rollMagicFear}=await import('./magic-fear.mjs');
-      await rollMagicFear({document:item,actor,speaker:message.speaker,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
+      await rollMagicFear({document:item,actor,speaker:message.speaker,castArea:message.getFlag('trudvang-chronicles','magicFearArea'),
+        casterUserId:message.author?.id,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
     });
   });
   html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
@@ -316,6 +319,47 @@ function attachListeners(message, html) {
       } catch (error) { button.disabled = false; throw error; }
     });
   });
+  for (const row of html.querySelectorAll("[data-fear-hidden]")) {
+    if (!game.user.isGM) continue;
+    const name = row.querySelector("[data-token-uuid]");
+    row.hidden = false;
+    void foundry.utils.fromUuid(name.dataset.tokenUuid).then(token => {
+      name.textContent = token?.name ?? game.i18n.localize("TRUDVANG.MagicFear.HiddenTarget");
+    });
+  }
+  if (canManageFearTargets(message,game.user)) {
+    for (const button of html.querySelectorAll("[data-action='add-fear-targets'],[data-action='remove-fear-target']")) {
+      button.hidden = false;
+      button.addEventListener("click",async () => {
+        const actorUuid = button.dataset.actorUuid;
+        const tokens = game.user.targets?.size ? game.user.targets : globalThis.canvas?.tokens?.controlled ?? [];
+        if (!actorUuid && !Array.from(tokens).length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.SelectTargets"));
+        button.disabled = true;
+        try {
+          const result = await requestFearTargetEdit({message,actorUuid,tokens});
+          if (result.status === "ineligibleTarget") ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.HostileTargetsOnly"));
+          else if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+        } finally { button.disabled = false; }
+      });
+    }
+  }
+  for (const button of html.querySelectorAll("[data-action='apply-target-fear']")) {
+    const {actorUuid,tokenUuid} = button.dataset;
+    void foundry.utils.fromUuid(actorUuid).then(actor => {
+      if (!actor?.isOwner) return;
+      button.hidden = false;
+      button.disabled = hasChatApplication(message,actorUuid,"fear");
+      button.addEventListener("click",async () => {
+        button.disabled = true;
+        try {
+          const result = await requestChatApplication({message,actor,token:await foundry.utils.fromUuid(tokenUuid),channel:"fear"});
+          if (result.status === "ineligibleTarget") ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicFear.TargetRemoved"));
+          else if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+          else if (["applied","alreadyApplied"].includes(result.status)) return;
+        } finally { button.disabled = hasChatApplication(message,actorUuid,"fear"); }
+      });
+    });
+  }
   html.querySelectorAll("[data-action='apply-fear']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();

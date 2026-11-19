@@ -34,7 +34,7 @@ import {weaponDamageEffects} from './rules/weapon-hit-effects.mjs';
 import {rollOutcomeView} from './rules/roll-outcome-view.mjs';
 import {creatureConditionalBonuses} from "./rules/creature-conditional-bonus.mjs";
 
-import {magicFearHasBaseTargets} from "./magic-fear.mjs";
+import {captureMagicFearArea,magicFearHasBaseTargets} from "./magic-fear.mjs";
 import {blessingDialog} from "./blessing-dialog.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -159,8 +159,10 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     ?{castingId,casterUuid:actor.uuid,sourceId:ruleTestContext.sourceId,selected:ruleTestContext.countsById,targetAllocations:[]}:null;
   const instantAllocation=kind==='spell'&&success&&castingId&&(item?.system?.spellType??POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellType)!=='lasting'&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.targeting
     ?{castingId,casterUuid:actor.uuid,sourceId:ruleTestContext.sourceId,selected:ruleTestContext.countsById,targetAllocations:[]}:null;
+  const speaker = ChatMessage.getSpeaker({actor});
+  const magicFearArea = card.magicFear ? captureMagicFearArea(item,ruleTestContext,actor,speaker) : null;
   const messageData = {
-    speaker: ChatMessage.getSpeaker({actor}),
+    speaker,
     content,
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
@@ -168,6 +170,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext,...(success&&POWER_DETAILS_BY_ID[ruleTestContext.sourceId]?.spellZone?{spellZoneCasting:{target:card.target}}:{})}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
+  if (magicFearArea) messageData.flags[SYSTEM_ID].magicFearArea = magicFearArea;
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
   const message=publication?.message??await ChatMessage.create(messageData);
   if (useDiceSoNice && publication?.animate!==false) {
@@ -193,7 +196,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
-    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
+    const area = card.magicFear ? captureMagicFearArea(item,ruleTestContext,actor,speaker) : null;
+    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
   }
   if(success&&selfOnly&&!auraKey){
    try{

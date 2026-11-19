@@ -16516,6 +16516,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.MagicFear.EligibleRecipients` | Apply only to creatures affected according to range, hearing and the power’s restrictions. | Appliquer uniquement aux créatures affectées selon la portée, l’audition et les restrictions du pouvoir. |
 | `TRUDVANG.MagicFear.AreaRadius` | Fear radius: {radius} m | Rayon de peur : {radius} m |
 | `TRUDVANG.MagicFear.AreaNeedsCaster` | The caster’s token must be identifiable on the current scene. | Le token du lanceur doit être identifiable sur la scène actuelle. |
+| `TRUDVANG.MagicFear.AddTargets` | Add targeted (or selected) tokens | Ajouter les tokens ciblés (ou sélectionnés) |
+| `TRUDVANG.MagicFear.SelectTargets` | Target or select at least one token to add. | Ciblez ou sélectionnez au moins un token à ajouter. |
+| `TRUDVANG.MagicFear.HostileTargetsOnly` | Add a hostile token of an intelligent creature from the scene where the power was cast. | Ajoutez un token hostile d’une créature intelligente sur la scène du lancement. |
+| `TRUDVANG.MagicFear.ManualTarget` | GM adjudication | À gérer par le MJ |
+| `TRUDVANG.MagicFear.HiddenTarget` | Hidden target | Cible masquée |
+| `TRUDVANG.MagicFear.NoTargets` | No targets. | Aucune cible. |
+| `TRUDVANG.MagicFear.TargetRemoved` | This target is no longer on the list. | Cette cible n’est plus dans la liste. |
+| `TRUDVANG.MagicFear.ApplyTarget` | Apply fear to this target | Appliquer la peur à cette cible |
 | `TRUDVANG.MagicFear.BaseRecipients` | Base fear — additional recipients | Peur de base — cibles supplémentaires |
 | `TRUDVANG.MagicFear.ProtectionValues` | Fear factors reduced by {degrees} step(s). First fear level ignored. | Réduction des facteurs de peur : {degrees} degré(s). Premier niveau de peur ignoré. |
 | `TRUDVANG.MagicFear.ProtectedFactor` | Personal factor: {factor} → {amount} before personal mitigation. | Facteur personnel : {factor} → {amount} avant protections personnelles. |

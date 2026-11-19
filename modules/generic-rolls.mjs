@@ -41,15 +41,17 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
   const total = Math.max(0, rolled.total);
   const factor = `${choice.dice}d${choice.faces}${choice.threshold ? ` ${localize("TRUDVANG.Roll.OpenRoll")} ${choice.threshold}+` : ""}`;
   const detail = `${rolled.rolls.join(" + ")}${choice.modifier ? ` ${choice.modifier > 0 ? "+" : "−"} ${Math.abs(choice.modifier)}` : ""}`;
-  const targets = prepareDamageTargets(game.user.targets);
-  const targetsHTML = fear ? "" : await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
+  const fearTargetsHTML = fearArea ? await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs", {total, targets:fearArea.targets}) : "";
   const content = await renderTemplate(`systems/trudvang-chronicles/templates/chat/${fear ? "fear" : "damage"}-card.hbs`, {
     actorName: actor?.name ?? game.user.name, actorImg: actor?.img ?? game.user.avatar,
-    modifierDetails: notice&&!fearArea?[notice]:[], title: choice.title, itemName: choice.title, itemImg: "icons/svg/d20.svg", total, detail: fear ? detail : `${factor} : ${detail}`, factor, targetsHTML,
-    fearArea: fearArea ? {notice, visibleNames:fearArea.visibleNames.join(", ")} : null
+    modifierDetails: notice&&!fearArea?[notice]:[], title: choice.title, itemName: choice.title, itemImg: "icons/svg/d20.svg", total, detail, factor,
+    fearArea: fearArea ? {notice} : null, fearTargetsHTML
   });
   await ChatMessage.create({speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(), content,
-    rolls: rolled.diceRolls, flags: {"trudvang-chronicles": fear ? {fearContext:{...fearContext,profile:{dice:choice.dice,faces:choice.faces,threshold:choice.threshold,modifier:Number(fearContext?.profile?.modifier)||0},values:rolled.rolls,adjustment:choice.modifier-(Number(fearContext?.profile?.modifier)||0)}} : {damageTargets: targets,damageContext:{usage:choice.damageUsage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification}}}});
+    rolls: rolled.diceRolls, flags: {"trudvang-chronicles": {
+      ...(fearArea?{fearTargets:fearArea.targets}:{}),
+      fearContext:{...fearContext,profile:{dice:choice.dice,faces:choice.faces,threshold:choice.threshold,modifier:Number(fearContext?.profile?.modifier)||0},values:rolled.rolls,adjustment:choice.modifier-(Number(fearContext?.profile?.modifier)||0)}
+    }}});
   return rolled;
 }
 

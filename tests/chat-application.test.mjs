@@ -65,6 +65,30 @@ function runtime(t, kind = "damage") {
   return {message, flags, updates, makeActor, makeToken, addDamageTarget, payload};
 }
 
+test("area fear edits are limited to the original caster and GM and application follows the revised list", async t => {
+ const {message,flags,makeActor,makeToken,payload} = runtime(t,"fear");
+ const first = makeActor("Original target"), added = makeActor("Added target"), friend = makeActor("Friend");
+ const hostile = Object.assign(makeToken("hostile",added),{parent:{id:"scene"},disposition:-1});
+ const ally = Object.assign(makeToken("ally",friend),{parent:{id:"scene"},disposition:1});
+ flags.fearContext = {areaSceneId:"scene",casterUserId:player.id,casterUuid:"Actor.caster",eligibility:{excludeCaster:true,intelligentOnly:true}};
+ flags.fearTargets = [{actorUuid:first.uuid,name:first.name,canApply:true}];
+ message.content = template("fear-card")({actorName:"Caster",total:10,fearArea:{notice:"5 m"},
+  fearTargetsHTML:template("fear-targets")({total:10,targets:flags.fearTargets})});
+ const edit = (type, data, user=player) => applyChatApplication({type,messageId:message.id,userId:user.id,...data});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid]},observer),{status:"unavailable"});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[ally.uuid]}),{status:"ineligibleTarget"});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid,hostile.uuid]}),{status:"updated"});
+ assert.equal(flags.fearTargets.length,2);
+ assert.match(message.content,/hostile token/);
+ assert.doesNotMatch(message.content,/data-action="apply-fear"/);
+ assert.deepEqual(await edit("chatRemoveFearTarget",{actorUuid:first.uuid},gm),{status:"updated"});
+ assert.deepEqual(await applyChatApplication(payload(first)),{status:"ineligibleTarget"});
+ assert.deepEqual(await applyChatApplication(payload(added)),{status:"applied",amount:10});
+ assert.deepEqual(await edit("chatRemoveFearTarget",{actorUuid:added.uuid}),{status:"updated"});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid]}),{status:"updated"});
+ assert.deepEqual(await applyChatApplication(payload(added)),{status:"alreadyApplied"});
+});
+
 test("restricted damage checks the actual target tags on the GM even with armor bypass or forged payload tags",async t=>{
  const {message,flags,makeActor,addDamageTarget,payload}=runtime(t);
  flags.damageContext={targetTags:['mort-vivant','undead']};

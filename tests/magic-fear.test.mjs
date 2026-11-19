@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {magicFearProfile,magicFearHasBaseTargets,magicFearArea} from '../modules/magic-fear.mjs';
+import {magicFearProfile,magicFearHasBaseTargets,magicFearArea,captureMagicFearArea} from '../modules/magic-fear.mjs';
+import {registerMagicFearPreview} from '../modules/magic-fear-preview.mjs';
 import {fearRecipientEligible} from '../modules/rules/fear-protection.mjs';
 const cases=[['vitner-power-of-thought:fear:3',3,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-gerbanis-wrath-of-tyrd:wolf-tongue:2',1,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-gerbanis-wrath-of-tyrd:dark-visage:5',2,[[10,10,0],[10,9,0],[10,8,0],[10,7,0],[10,6,0]]],['holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8',1,[[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:dreadful-screech:0',1,[[5,0,0],[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:terrifying-howl:2',1,[[10,0,0],[10,10,0],[10,9,0],[10,8,0],[10,8,1]]],['holy-haminges-power-of-the-scale:scream-of-the-devouress:6',1,[[10,10,0],[10,9,0],[10,8,0],[10,8,1]]]];
 test('all seven magical fear profiles match every French step and freeze choices by identity',()=>{
@@ -21,11 +22,11 @@ test('additional recipients can use the base fear profile only when bought',()=>
  assert.equal(magicFearProfile({system:{catalogId:cases[0][0]}}).requiresResistance,true);
 });
 
-test('Wolf Tongue binds fear to hostile characters on the caster’s level within the improved radius', () => {
+test('Wolf Tongue snapshots hostile intelligent targets within its improved radius', () => {
  const id = 'holy-gerbanis-wrath-of-tyrd:wolf-tongue:2';
  const document = {system:{catalogId:id}};
  const token = (name, x, overrides={}) => ({
-  name, actor:{type:'character',uuid:name}, x, y:0, width:1, height:1, level:'ground', disposition:-1, ...overrides
+  name, uuid:'Token.'+name, actor:{type:'character',uuid:name}, x, y:0, width:1, height:1, level:'ground', disposition:-1, ...overrides
  });
  const caster = token('caster',0);
  const near = token('near',250);
@@ -34,17 +35,55 @@ test('Wolf Tongue binds fear to hostile characters on the caster’s level withi
  const scene = {grid:{size:100,distance:2,units:'m'},tokens:[
   caster, near, far, hidden, token('beyond',501), token('friend',50,{disposition:1}),
   token('other floor',50,{level:'upper'}), token('linked copy',100,{actor:near.actor}),
-  token('beast',100,{actor:{type:'npc',uuid:'beast',system:{tags:['bête']}}})
+  token('beast',100,{actor:{type:'npc',uuid:'beast',system:{tags:['bête']}}}),
+  token('troll',100,{actor:{type:'npc',uuid:'troll',system:{tags:['troll']}}})
  ]};
  const base = magicFearArea(document,{},caster,scene);
  assert.equal(base.radius,5);
- assert.deepEqual(base.actorUuids,['near']);
+ assert.deepEqual(base.targets.map(row=>row.actorUuid),['near','troll']);
  const improved = magicFearArea(document,{countsById:{[id+':0']:1}},caster,scene);
  assert.equal(improved.radius,10);
- assert.deepEqual(improved.actorUuids,['near','far','hidden']);
- assert.deepEqual(improved.visibleNames,['linked copy','far']);
- const context = {areaActorUuids:improved.actorUuids};
+ assert.equal(improved.radiusPixels,500);
+ assert.deepEqual(improved.targets.map(row=>row.actorUuid),['near','far','hidden','troll']);
+ assert.deepEqual(improved.targets.map(row=>row.name),['near','far','','troll']);
+ assert.equal(improved.targets.at(-1).canApply,false);
+ const context = {areaActorUuids:improved.targets.map(row=>row.actorUuid)};
  assert.equal(fearRecipientEligible(far.actor,context),true);
  assert.equal(fearRecipientEligible(caster.actor,context),false);
  assert.equal(fearRecipientEligible(near.actor,{areaActorUuids:[]}),false);
+});
+
+test('the successful cast preview draws its radius and outlines visible hostile tokens without changing selection', t => {
+ const previous = {canvas:globalThis.canvas,game:globalThis.game,PIXI:globalThis.PIXI,Hooks:globalThis.Hooks};
+ t.after(() => Object.assign(globalThis,previous));
+ const hooks = new Map(), drawn = [];
+ globalThis.Hooks = {on:(name,fn) => hooks.set(name,fn)};
+ globalThis.PIXI = {Graphics:class {
+  lineStyle() { return this; }
+  beginFill() { return this; }
+  drawCircle(...args) { drawn.push(['circle',...args]); return this; }
+  endFill() { return this; }
+  drawRoundedRect(...args) { drawn.push(['target',...args]); }
+  destroy() { drawn.push(['destroy']); }
+ }};
+ const token = (id,x,disposition,hidden=false) => ({
+  id,uuid:'Token.'+id,name:id,x,y:0,width:1,height:1,disposition,hidden,actor:{type:'character',uuid:id}
+ });
+ const caster = token('caster',0,1), hostile = token('hostile',100,-1);
+ const hidden = token('hidden',200,-1,true), friendly = token('friendly',300,1);
+ const tokens = new Map([caster,hostile,hidden,friendly].map(row => [row.id,row]));
+ const scene = {id:'scene',grid:{size:100,distance:2,units:'m'},tokens};
+ globalThis.canvas = {scene,ready:true,tokens:{placeables:[...tokens.values()].map(document => ({
+  document,x:document.x,y:document.y,w:100,h:100,isVisible:!document.hidden
+ }))},interface:{addChild:graphic => assert.equal(graphic.eventMode,'none')}};
+ globalThis.game = {user:{id:'player'}};
+ registerMagicFearPreview();
+ const area = captureMagicFearArea({system:{catalogId:cases[1][0]}},{},caster.actor,{scene:scene.id,token:caster.id});
+ const message = {id:'cast',getFlag:(_scope,key) => key==='magicFearArea'?area:null};
+ hooks.get('createChatMessage')(message);
+ assert.deepEqual(drawn.slice(0,2),[['circle',50,50,250],['target',97,-3,106,106,8]]);
+ hooks.get('updateChatMessage')(message);
+ assert.equal(drawn.length,2);
+ hooks.get('canvasTearDown')();
+ assert.deepEqual(drawn.at(-1),['destroy']);
 });

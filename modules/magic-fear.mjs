@@ -4,6 +4,15 @@ import {fearRecipientEligible} from './rules/fear-protection.mjs';
 import {zonePixelScale} from './rules/spell-zones.mjs';
 import {auraCasterToken} from './aura.mjs';
 
+export function fearAreaTarget(token, policy) {
+ const actor = token?.actor;
+ if (!actor?.uuid || !['character','npc'].includes(actor.type)
+     || token.disposition !== (globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
+     || !fearRecipientEligible(actor, policy)) return null;
+ return {actorUuid:actor.uuid, tokenUuid:token.uuid, hidden:!!token.hidden,
+  name:token.hidden ? '' : token.name, canApply:actor.type === 'character'};
+}
+
 export function magicFearArea(document, context, casterToken, scene) {
  const details = POWER_DETAILS_BY_ID[ruleTestSourceId(document)];
  const definition = details?.fearRoll;
@@ -17,20 +26,28 @@ export function magicFearArea(document, context, casterToken, scene) {
   y: token.y + token.height * scene.grid.size / 2
  };
  const origin = center(casterToken);
- const hostile = globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1;
  const policy = {casterUuid: casterToken.actor.uuid, eligibility: definition.eligibility};
  const radiusPixels = radius * zonePixelScale(scene);
- const recipients = Array.from(scene.tokens?.values?.() ?? []).filter(token => {
-  if (token.actor?.type !== "character" || token.disposition !== hostile
-      || token.level !== casterToken.level || !fearRecipientEligible(token.actor, policy)) return false;
+ const targets = new Map();
+ for (const token of scene.tokens?.values?.() ?? []) {
+  if (token.level !== casterToken.level) continue;
   const point = center(token);
-  return Math.hypot(point.x - origin.x, point.y - origin.y) <= radiusPixels + .01;
- });
- return {
-  radius,
-  actorUuids: [...new Set(recipients.map(token => token.actor.uuid))],
-  visibleNames: [...new Map(recipients.filter(token => !token.hidden).map(token => [token.actor.uuid, token.name])).values()]
- };
+  if (Math.hypot(point.x - origin.x, point.y - origin.y) > radiusPixels + .01) continue;
+  const row = fearAreaTarget(token, policy);
+  if (row && (!targets.has(row.actorUuid) || targets.get(row.actorUuid).hidden)) targets.set(row.actorUuid, row);
+ }
+ return {sceneId:scene.id, level:casterToken.level ?? null, casterTokenUuid:casterToken.uuid,
+  origin:{x:origin.x,y:origin.y}, radius, radiusPixels, targets:[...targets.values()]};
+}
+
+export function captureMagicFearArea(document, context, actor, speaker) {
+ if (!POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.fearRoll?.area) return null;
+ const scene = globalThis.canvas?.scene;
+ const speakingToken = speaker?.token && speaker.scene === scene?.id ? scene.tokens.get(speaker.token) : null;
+ const casterToken = speakingToken?.actor?.uuid === actor.uuid
+  ? speakingToken : auraCasterToken(actor, globalThis.canvas?.tokens?.controlled, actor.getActiveTokens?.(false, true));
+ const area = magicFearArea(document, context, casterToken, scene);
+ return area && {...area, expiresAt:Date.now()+10000};
 }
 
 export function magicFearProfile(document,context){
@@ -47,7 +64,7 @@ export function magicFearHasBaseTargets(document,context){
  return Number(casting.countsById?.[definition.baseTargetOptionId]??casting.counts?.[index]??0)>0;
 }
 
-export async function rollMagicFear({document,actor,context,baseOnly=false,speaker}={}){
+export async function rollMagicFear({document,actor,context,baseOnly=false,speaker,castArea,casterUserId}={}){
  if(!actor?.isOwner||baseOnly&&!magicFearHasBaseTargets(document,context))return null;
  const profile=magicFearProfile(document,context);if(!profile)return null;
  const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].fearRoll;
@@ -57,11 +74,7 @@ export async function rollMagicFear({document,actor,context,baseOnly=false,speak
  const casting=baseOnly?withCastingCounts(initial,[]):initial;
  const base=baseOnly?definition.steps[0]:profile;
  const resistance=definition.resistance?{test:ruleTestsForDocument(document)[definition.resistance.testIndex],casting,sourceName:document.name,successProfile:definition.resistance.successProfile}:null;
- const scene = globalThis.canvas?.scene;
- const speakingToken = speaker?.token && speaker.scene === scene?.id ? scene.tokens.get(speaker.token) : null;
- const casterToken = definition.area && (speakingToken?.actor?.uuid === actor.uuid
-  ? speakingToken : auraCasterToken(actor, globalThis.canvas?.tokens?.controlled, actor.getActiveTokens?.(false, true)));
- const area = magicFearArea(document, casting, casterToken, scene);
+ const area = castArea ?? captureMagicFearArea(document, casting, actor, speaker);
  if (definition.area && !area) {
   ui.notifications.warn(game.i18n.localize('TRUDVANG.MagicFear.AreaNeedsCaster'));
   return null;
@@ -69,5 +82,5 @@ export async function rollMagicFear({document,actor,context,baseOnly=false,speak
  const notice = area ? game.i18n.format('TRUDVANG.MagicFear.AreaRadius',{radius:area.radius})
   : resistance ? game.i18n.localize(resistance.successProfile?'TRUDVANG.MagicFear.PartialFear':'TRUDVANG.MagicFear.ResistFirst')
   : game.i18n.localize('TRUDVANG.MagicFear.EligibleRecipients');
- return rollGenericImpact('fear',{...base,actor,title:document.name,notice,fearArea:area,fearContext:{sourceId:casting.sourceId,casterUuid:actor.uuid,originMessageId:context?.originMessageId??"",casting,baseOnly,eligibility:definition.eligibility??{},profile:base,...(area?{areaActorUuids:area.actorUuids}:{}),...(resistance?{resistance}:{})}});
+ return rollGenericImpact('fear',{...base,actor,title:document.name,notice,fearArea:area,fearContext:{sourceId:casting.sourceId,casterUuid:actor.uuid,originMessageId:context?.originMessageId??"",casting,baseOnly,eligibility:definition.eligibility??{},profile:base,...(area?{areaSceneId:area.sceneId,casterUserId:casterUserId??game.user.id}:{}),...(resistance?{resistance}:{})}});
 }
