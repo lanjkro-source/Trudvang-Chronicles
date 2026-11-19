@@ -50,7 +50,7 @@
       {
         "id": "vitner-wind-craft:fog:2:3",
         "cost": 5,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Make the fog thicker, reducing visibility to one quarter of normal distance and imposing an additional -2 penalty on combat actions"
       }
     ],

@@ -1,4 +1,4 @@
-import {placeSpellZone,requestSpellZoneTest} from './spell-zones.mjs';
+import {endFog,placeSpellZone,requestSpellZoneTest} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
@@ -276,7 +276,18 @@ function attachListeners(message, html) {
       if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
-  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();if(button.disabled)return;button.disabled=true;try{await placeSpellZone(message);}finally{button.disabled=false;}}));
+  const fogEnd=html.querySelector?.('[data-action="end-fog"]');
+  if(fogEnd){
+    fogEnd.disabled=!message.getFlag("trudvang-chronicles","spellZoneCasting")?.regionUuid;
+    fogEnd.addEventListener('click',async event=>{
+      event.preventDefault();
+      if(fogEnd.disabled)return;
+      fogEnd.disabled=true;
+      try{const result=await endFog(message);fogEnd.disabled=result.status==='removed';}
+      catch(error){fogEnd.disabled=false;throw error;}
+    });
+  }
+  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();if(button.disabled)return;button.disabled=true;try{const result=await placeSpellZone(message);if(fogEnd&&result?.status==='placed')fogEnd.disabled=false;}finally{button.disabled=false;}}));
   html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid,button.dataset.zoneChoice);}));
   html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
     event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);

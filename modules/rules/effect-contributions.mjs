@@ -65,6 +65,7 @@ export function rollEffectKeys(actor, {kind = "", skillKey = "", traitKey = "", 
   const keys = ["allActions"];
   if(["attack","parry","ability","magic","skill","dodge"].includes(kind))keys.push("visibility");
   if (["attack", "parry"].includes(kind) || (["ability", "magic", "skill"].includes(kind) && actor.isInCombatActive())) keys.push("combatActions");
+  if (["attack", "parry", "dodge"].includes(kind) || (["ability", "magic", "skill"].includes(kind) && actor.isInCombatActive())) keys.push("fogCombat");
   if (movement) keys.push("movementActions");
   if (["attack", "parry", "magic"].includes(kind)) keys.push(kind);
   if (skillKey) keys.push(`skills.${skillKey}`);

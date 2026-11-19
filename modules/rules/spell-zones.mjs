@@ -1,6 +1,11 @@
 export function earthquakeProfile(definition,context={}){
  if(!definition)return null;
  const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
+ if(definition.kind==='fog'){
+  const thick=count(definition.thicknessOptionId)>0;
+  return {kind:'fog',radius:2+2*count(definition.radiusOptionId),range:100+100*count(definition.rangeOptionId),
+   rounds:60+60*count(definition.durationOptionId),penalty:thick?-4:-2,rangeDivisor:thick?4:2,movable:true};
+ }
  if(definition.kind==='fire'){const extra=count(definition.durationOptionId);return {kind:'fire',radius:definition.radius+definition.radiusStep*count(definition.radiusOptionId),range:definition.range+5*count(definition.rangeOptionId),rounds:1+extra,instant:extra===0,movable:definition.movable&&extra>0,penalty:definition.visibilityPenalty,excludeCaster:false,centered:false};}
  if(definition.kind==='runeEarthquake'){
   const level=Number(context.runeLevel);if(!Number.isInteger(level)||level<1||level>5)return null;
@@ -13,4 +18,8 @@ export function earthquakeSizeIndex(size){const n=Number(size)||1;return n<1/3?0
 export function earthquakeTest(profile,size){const i=earthquakeSizeIndex(size);return profile.kind==='runeEarthquake'?(profile.sizeSV[i]===null?{immune:true}:{sv:profile.sizeSV[i]+profile.levelModifier*profile.level}):{modifier:profile.sizeModifiers[i]+profile.severityModifier*profile.severity};}
 export function spellZoneExpired(info,{time=0,combat}={}){if(info.profile?.instant)return false;return Number(time)>=info.until||(info.combatId&&combat?.id===info.combatId&&Number(combat.round)>=info.expiresRound);}
 export function spellZonePhase(info,{time=0,combat}={}){if(info.profile?.instant)return 'instant';return info.combatId&&combat?.id===info.combatId?'round:'+Number(combat.round):'time:'+Math.floor((Number(time)-info.createdAt)/5);}
+export function fogRadius(info,{time=0,combat}={}){
+ const elapsed=Math.max(0,Math.floor((time-info.createdAt)/5),combat&&combat.id===info.combatId?combat.round-info.createdRound:0);
+ return info.profile.radius*Math.min(1,(elapsed+1)/3);
+}
 export function zonePixelScale(scene){const unit=String(scene?.grid?.units??'m').toLowerCase();const conversion=/^(ft|feet|foot|pi|pieds?)$/.test(unit)?1/.3048:/^(km|kilom)/.test(unit)?.001:1;return Number(scene?.grid?.size||1)/Number(scene?.grid?.distance||1)*conversion;}

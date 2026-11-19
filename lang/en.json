@@ -1350,6 +1350,7 @@
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
         "StrengthThrowingRange": "Strength: {amount} m to throwing ranges.",
+        "FogRange": "Fog: range divided by {divisor}.",
         "IroncladHeft": "Ironclad level {level}: {amount} effective Heft.",
         "IroncladArmorPenalty": "Ironclad level {level}: recalculates the armor penalties from its effective Heft.",
         "ArmorOverload": "Armor Bearer level {level} is insufficient for Heft {heft}: {amount}.",
@@ -14638,15 +14639,6 @@
           "SourcePage": "139",
           "Duration": "3 minutes"
         },
-        "vitner-wind-craft:fog:2#effect": {
-          "Name": "Fog",
-          "Summary": "Fog",
-          "Description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
-          "SourceName": "Fog",
-          "SourceBook": "Player's Handbook",
-          "SourcePage": "139",
-          "Duration": "5 minutes"
-        },
         "vitner-wind-craft:control-wind:3#effect": {
           "Name": "Control Wind",
           "Summary": "Control Wind",
@@ -19067,6 +19059,9 @@
       "Collapse": "Cave-in or landslide ({chance}%): the GM determines the consequences.",
       "NoCollapse": "No cave-in or landslide (risk: {chance}%).",
       "FireVisibility": "Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself.",
+      "FogVisibility": "In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}.",
+      "FogMoveTooFar": "The fog can move up to 5 m per action round.",
+      "EndFog": "Dispel the fog",
       "FireApplied": "Damage applied",
       "FireAvoided": "Flames avoided",
       "FireEvade": "Evade",

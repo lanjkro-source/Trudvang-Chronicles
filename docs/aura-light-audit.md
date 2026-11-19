@@ -18,7 +18,7 @@ Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs eff
 | Été elfique (p. 233) | Rayon initial 3 m, augmenté par les niveaux | Température limitée à 30 °C et effets météorologiques selon les règles. |
 | Brise du voyage (p. 232) | Rayon initial 3 m, augmenté par les niveaux | Protection contre la pluie, le brouillard et le vent, sans changer la température. |
 | Refuge et Protection contre les éléments (p. 258) | Zones fixées au lieu de la prière | Conditions et sources météorologiques couvertes différentes selon le pouvoir. |
-| Brouillard et Purification de l’air (p. 170) | Zones de portées et formes propres aux sorts | Le brouillard influence la visibilité et peut imposer des malus ; l’air purifié a d’autres conditions. |
+| Purification de l’air (p. 170) | Modes de zone et individuel | Vérifier les conditions d’exposition et de protection propres à chaque mode. |
 | Flammèche (p. 167) | Flamme portée pouvant être laissée sur un objet si l’amélioration correspondante est choisie | Intensité de base comparable à une grosse bougie ; une amélioration permet l’intensité d’une torche. |
 
 Autres zones déjà dotées d'un effet descriptif à traiter : Mur de vitner, Bourbier,

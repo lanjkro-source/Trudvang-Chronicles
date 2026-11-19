@@ -1331,29 +1331,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
-  "vitner-wind-craft:fog:2#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "5 minutes",
-    "priority": 20,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      1,
-      2,
-      3
-    ],
-    "sourceId": "vitner-wind-craft:fog:2",
-    "parameters": [
-      {
-        "index": 0,
-        "target": "duration",
-        "value": 300,
-        "optionId": "vitner-wind-craft:fog:2:0"
-      }
-    ]
-  },
   "vitner-wind-craft:control-wind:3#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -16364,9 +16341,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
   ],
   "vitner-wind-craft:purify-air:0": [
     "vitner-wind-craft:purify-air:0#effect"
-  ],
-  "vitner-wind-craft:fog:2": [
-    "vitner-wind-craft:fog:2#effect"
   ],
   "vitner-wind-craft:control-wind:3": [
     "vitner-wind-craft:control-wind:3#effect"

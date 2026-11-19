@@ -50,7 +50,7 @@
       {
         "id": "vitner-wind-craft:fog:2:3",
         "cost": 5,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Augmente l’épaisseur du brouillard, ce qui réduit la visibilité à un quart (distance normale / 4) et impose un malus supplémentaire de : -2 aux actions de combat"
       }
     ],

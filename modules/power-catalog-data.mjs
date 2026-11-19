@@ -14540,6 +14540,13 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-wind-craft:fog:2": {
     "isRune": false,
     "level": 2,
+    "spellZone": {
+      "kind": "fog",
+      "durationOptionId": "vitner-wind-craft:fog:2:0",
+      "rangeOptionId": "vitner-wind-craft:fog:2:1",
+      "radiusOptionId": "vitner-wind-craft:fog:2:2",
+      "thicknessOptionId": "vitner-wind-craft:fog:2:3"
+    },
     "powerLevels": [
       {
         "id": "vitner-wind-craft:fog:2:0",
@@ -14559,7 +14566,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-wind-craft:fog:2:3",
         "cost": 5,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "sustained",

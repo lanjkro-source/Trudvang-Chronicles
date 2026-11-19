@@ -219,8 +219,14 @@ export function resolveWeaponRange({item, actor = null, modifiers = [], throwing
     explanationData: {amount: strength},
     rule: {book: "coreRules", printedPage: 118, englishBook: "gameMastersGuide", englishPrintedPage: 76}
   })) : [];
-  const short = resolveNumericEquipmentStat({key: "rangeShort", base: base.short, modifiers: [...strengthModifiers, ...modifiers], minimum: 0, integer: true});
-  const long = resolveNumericEquipmentStat({key: "rangeLong", base: base.long, modifiers: [...strengthModifiers, ...modifiers], minimum: short.value, integer: true});
+  const divisor = Number(actor?.system?.modifiers?.fogRangeDivisor) || 1;
+  const fogModifiers = divisor > 1 ? ["rangeShort","rangeLong"].map(target => ({
+    id:`fog-${target}`,target,operation:"multiply",amount:1/divisor,phase:"constraint",
+    explanationKey:"TRUDVANG.Calculation.Equipment.FogRange",explanationData:{divisor}
+  })) : [];
+  const rangeModifiers = [...strengthModifiers,...modifiers,...fogModifiers];
+  const short = resolveNumericEquipmentStat({key:"rangeShort",base:base.short,modifiers:rangeModifiers,minimum:0,integer:true});
+  const long = resolveNumericEquipmentStat({key:"rangeLong",base:base.long,modifiers:rangeModifiers,minimum:short.value,integer:true});
   return {short, long, strength, throwing};
 }
 

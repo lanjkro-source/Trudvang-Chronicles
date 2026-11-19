@@ -1350,6 +1350,7 @@
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
         "StrengthThrowingRange": "Force : {amount} m aux portées de lancer.",
+        "FogRange": "Brouillard : portée divisée par {divisor}.",
         "IroncladHeft": "Cuirassé niveau {level} : {amount} en Encombrement effectif.",
         "IroncladArmorPenalty": "Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif.",
         "ArmorOverload": "Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}.",
@@ -14638,15 +14639,6 @@
           "SourcePage": "170",
           "Duration": "3 minutes"
         },
-        "vitner-wind-craft:fog:2#effect": {
-          "Name": "Brouillard",
-          "Summary": "Brouillard",
-          "Description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
-          "SourceName": "Brouillard",
-          "SourceBook": "Livre des règles",
-          "SourcePage": "170",
-          "Duration": "5 minutes"
-        },
         "vitner-wind-craft:control-wind:3#effect": {
           "Name": "Contrôle du vent",
           "Summary": "Contrôle du vent",
@@ -19067,6 +19059,9 @@
       "Collapse": "Éboulement ou glissement de terrain ({chance} %) : le MJ en détermine les conséquences.",
       "NoCollapse": "Aucun éboulement ni glissement de terrain (risque : {chance} %).",
       "FireVisibility": "Les flammes gênent la visibilité : {penalty} aux tests de compétence dans la zone et aux attaques visant une personne dans la zone. Ce malus ne se cumule pas avec lui-même.",
+      "FogVisibility": "Dans le brouillard : {penalty} à la VC des actions de combat, portées des armes à distance divisées par {divisor}.",
+      "FogMoveTooFar": "Le brouillard peut se déplacer de 5 m par tour de jeu.",
+      "EndFog": "Dissiper le brouillard",
       "FireApplied": "Dégâts appliqués",
       "FireAvoided": "Flammes évitées",
       "FireEvade": "Esquiver",

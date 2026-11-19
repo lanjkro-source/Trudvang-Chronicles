@@ -24,6 +24,8 @@ Sur une arme sans autre effet : appliquer Enchantement d’objet, puis attaquer 
 
 ## Travail restant
 
+**Brouillard** (Livre des règles p. 170, Player’s Handbook p. 140) dispose d’une région déplaçable de 5 m par tour. Sa progression visuelle passe par un tiers, deux tiers puis le rayon complet au troisième tour. Sur les occupants, le brouillard impose −2 aux actions de combat et divise les portées par deux. L’épaississement porte ces valeurs à −4 et au quart. Plusieurs bancs retiennent le plus épais. Les occupants perdent ces modificateurs en sortant. Le bouton de la carte dissipe le banc, par exemple lorsque le tisseur cesse de se concentrer. L’interruption de concentration et la visibilité générale de la scène restent à l’arbitrage du MJ.
+
 Le décompte des modèles d’effet ne prouve pas la couverture complète. Les attaques instantanées déjà proposées dans les cartes ne doivent pas recevoir artificiellement un effet permanent. Restent à traiter/vérifier, dans cet ordre pratique :
 
 1. Autres objets et armes invoqués, sceaux et liaison d’un sortilège préparé (Potion de guérison est désormais traitée).

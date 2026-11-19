@@ -147,6 +147,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     magicFearBase: Boolean(!pendingPerfect && success && item && magicFearHasBaseTargets(item,ruleTestContext)),
     magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
     spellZone:Boolean(!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone),
+    fogZone:!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog',
     magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
     actorUuid: actor.uuid,
     usage,
@@ -207,6 +208,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.spellZone=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone);
+    card.fogZone=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog';
     card.magicDamage=Boolean(!card.spellZone&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
     card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);

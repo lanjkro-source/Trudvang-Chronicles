@@ -1569,6 +1569,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
 | `TRUDVANG.Calculation.Equipment.StrengthDamage` | Strength: {amount} melee damage. | Force : {amount} aux dégâts de corps à corps. |
 | `TRUDVANG.Calculation.Equipment.StrengthThrowingRange` | Strength: {amount} m to throwing ranges. | Force : {amount} m aux portées de lancer. |
+| `TRUDVANG.Calculation.Equipment.FogRange` | Fog: range divided by {divisor}. | Brouillard : portée divisée par {divisor}. |
 | `TRUDVANG.Calculation.Equipment.IroncladHeft` | Ironclad level {level}: {amount} effective Heft. | Cuirassé niveau {level} : {amount} en Encombrement effectif. |
 | `TRUDVANG.Calculation.Equipment.IroncladArmorPenalty` | Ironclad level {level}: recalculates the armor penalties from its effective Heft. | Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif. |
 | `TRUDVANG.Calculation.Equipment.ArmorOverload` | Armor Bearer level {level} is insufficient for Heft {heft}: {amount}. | Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}. |
@@ -11484,17 +11485,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.SourcePage` | 139 | 170 |
 | `TRUDVANG.Content.Transformation.vitner-wind-craft:purify-air:0#effect.Duration` | 3 minutes | 3 minutes |
 
-## `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Name` | Fog | Brouillard |
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Description` | The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2. | L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC. |
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourceName` | Fog | Brouillard |
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.SourcePage` | 139 | 170 |
-| `TRUDVANG.Content.Transformation.vitner-wind-craft:fog:2#effect.Duration` | 5 minutes | 5 minutes |
-
 ## `TRUDVANG.Content.Transformation.vitner-wind-craft:control-wind:3#effect`
 
 | Clé | English | Français |
@@ -16856,6 +16846,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.Collapse` | Cave-in or landslide ({chance}%): the GM determines the consequences. | Éboulement ou glissement de terrain ({chance} %) : le MJ en détermine les conséquences. |
 | `TRUDVANG.SpellZone.NoCollapse` | No cave-in or landslide (risk: {chance}%). | Aucun éboulement ni glissement de terrain (risque : {chance} %). |
 | `TRUDVANG.SpellZone.FireVisibility` | Flames obstruct visibility: {penalty} to skill tests inside the area and attacks against someone inside it. This penalty does not stack with itself. | Les flammes gênent la visibilité : {penalty} aux tests de compétence dans la zone et aux attaques visant une personne dans la zone. Ce malus ne se cumule pas avec lui-même. |
+| `TRUDVANG.SpellZone.FogVisibility` | In the fog: {penalty} SV to combat actions, ranged weapon ranges divided by {divisor}. | Dans le brouillard : {penalty} à la VC des actions de combat, portées des armes à distance divisées par {divisor}. |
+| `TRUDVANG.SpellZone.FogMoveTooFar` | The fog can move up to 5 m per action round. | Le brouillard peut se déplacer de 5 m par tour de jeu. |
+| `TRUDVANG.SpellZone.EndFog` | Dispel the fog | Dissiper le brouillard |
 | `TRUDVANG.SpellZone.FireApplied` | Damage applied | Dégâts appliqués |
 | `TRUDVANG.SpellZone.FireAvoided` | Flames avoided | Flammes évitées |
 | `TRUDVANG.SpellZone.FireEvade` | Evade | Esquiver |

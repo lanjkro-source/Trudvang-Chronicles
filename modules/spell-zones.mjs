@@ -3,7 +3,7 @@ import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {TABLET_BY_ID,powerItemData} from './tablet-catalog.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
-import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,zonePixelScale} from './rules/spell-zones.mjs';
+import {earthquakeProfile,earthquakeTest,fogRadius,spellZoneExpired,spellZonePhase,zonePixelScale} from './rules/spell-zones.mjs';
 import {impactSize} from './rules/impact.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
@@ -17,7 +17,7 @@ const clock=info=>({time:Number(game.time?.worldTime)||0,combat:game.combats?.ge
 const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=>{}).then(work);jobs.set(key,job);return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});};
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
-const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(info.profile.kind==='fire'||!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s)))&&(info.profile.kind==='fire'||!earthquakeTest(info.profile,impactSize(actor)).immune);
+const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&!earthquakeTest(info.profile,impactSize(actor)).immune));
 // Region.tokens can still be empty while native creation events are being processed.
 // Query the public containment API against scene documents before freezing a burst.
 const members=(region,{entering,leaving}={})=>{
@@ -30,6 +30,10 @@ const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
 function center(token,scene){return token.object?.center??{x:Number(token.x||0)+Number(token.width||1)*scene.grid.size/2,y:Number(token.y||0)+Number(token.height||1)*scene.grid.size/2};}
 function allowedPoint(point,token,scene,profile){const p=center(token,scene);return Number.isFinite(point.x)&&Number.isFinite(point.y)&&Math.hypot(point.x-p.x,point.y-p.y)<=profile.range*zonePixelScale(scene)+.01;}
+function fogMoveAllowed(point,region){
+ const center=values(region.shapes)[0];
+ return Number.isFinite(point.x)&&Number.isFinite(point.y)&&center&&Math.hypot(point.x-center.x,point.y-center.y)<=5*zonePixelScale(region.parent)+.01;
+}
 // Lighting failures must not prevent a victim's damage or Evade decision.
 async function syncZoneLight(region,options){try{await syncSpellZoneFireLight(region,options);}catch(error){console.error('Trudvang | Fire area lighting failed',error);}}
 const regionDeletions=new WeakMap();
@@ -82,18 +86,30 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   const info=infoOf(region);
   if(removed||!regionPresent(region)||!enabled(region)){await removeRecipients(region);await syncZoneLight(region,{removed:true});return;}
   if(spellZoneExpired(info,clock(info))){await removeRecipients(region,{expired:true});await deleteZoneOnce(region);return;}
+  if(info.profile.kind==='fog'){
+   const shape=values(region.shapes)[0],radius=fogRadius(info,clock(info))*zonePixelScale(region.parent);
+   if(shape&&Math.abs(shape.radius-radius)>.01)await region.update({shapes:[{type:'circle',x:shape.x,y:shape.y,radius}]});
+  }
   await syncZoneLight(region);
   let tokens=members(region,{entering,leaving});
   if(info.profile.instant){if(!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}scheduleInstantVisual(region);}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())if(!tokens.has(actor.uuid))for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect);
-  if(info.profile.kind==='earthquake'||info.profile.kind==='fire'&&info.profile.penalty&&!info.profile.instant)for(const [uuid,token]of tokens){
+  if(['earthquake','fog'].includes(info.profile.kind)||info.profile.kind==='fire'&&info.profile.penalty&&!info.profile.instant)for(const [uuid,token]of tokens){
    if(effectsFor(token.actor,region).length)continue;
    const remaining=Math.max(.01,(info.until-(Number(game.time?.worldTime)||0))/5),combat=clock(info).combat;
    const rounds=combat?Math.max(.01,info.expiresRound-Number(combat.round)):remaining;
-   await token.actor.createTrudvangEffect({name:nameOf(info),img:info.profile.kind==='fire'?'icons/svg/fire.svg':'systems/trudvang-chronicles/assets/icons/earthquake.svg',type:'effect',transfer:false,origin:region.uuid,description:local(info.profile.kind==='fire'?'FireVisibility':'PenaltyDescription',{penalty:info.profile.penalty}),
-    duration:{value:rounds,units:'rounds'},start:foundry.documents.ActiveEffect.implementation.getEffectStart(),system:{stackId:'spell-zone:'+region.uuid,stacking:'replace',changes:[{key:info.profile.kind==='fire'?'system.modifiers.rolls.visibility':'system.modifiers.rolls.allActions',type:info.profile.kind==='fire'?'downgrade':'add',value:String(info.profile.penalty),phase:'initial',priority:10*Number(info.context.sourceLevel||1)}]},flags:{[S]:{spellZoneRecipient:{regionUuid:region.uuid,...(info.profile.kind==='fire'?{visibility:true}:{})}}}});
+   const fog=info.profile.kind==='fog',fire=info.profile.kind==='fire';
+   const changes=fog ? [
+    {key:'system.modifiers.rolls.fogCombat',type:'downgrade',value:String(info.profile.penalty),phase:'initial'},
+    {key:'system.modifiers.fogRangeDivisor',type:'upgrade',value:String(info.profile.rangeDivisor),phase:'initial'}
+   ] : [{key:fire?'system.modifiers.rolls.visibility':'system.modifiers.rolls.allActions',type:fire?'downgrade':'add',value:String(info.profile.penalty),phase:'initial',priority:10*Number(info.context.sourceLevel||1)}];
+   await token.actor.createTrudvangEffect({name:nameOf(info),img:fire?'icons/svg/fire.svg':fog?'icons/svg/aura.svg':'systems/trudvang-chronicles/assets/icons/earthquake.svg',type:'effect',transfer:false,origin:region.uuid,
+    description:local(fog?'FogVisibility':fire?'FireVisibility':'PenaltyDescription',{penalty:info.profile.penalty,divisor:info.profile.rangeDivisor}),
+    duration:fog?{value:null,units:'seconds'}:{value:rounds,units:'rounds'},start:foundry.documents.ActiveEffect.implementation.getEffectStart(),
+    system:{stackId:'spell-zone:'+region.uuid,stacking:'replace',changes},flags:{[S]:{spellZoneRecipient:{regionUuid:region.uuid,...(fire?{visibility:true}:{})}}}});
   }
+  if(info.profile.kind==='fog')return;
   const prompt=await promptMembers(region,info,tokens);
   if(info.profile.kind==='fire'){if(prompt){const state=structuredClone(prompt.flags[S].spellZoneTest);for(const [id,token]of tokens){const row=state.recipients.find(r=>r.actorUuid===id);if(!row?.canEvade&&!state.responses[responseKey(id)]?.resolved){await applyZoneFireDamage({actor:token.actor,token,info,message:prompt});state.responses[responseKey(id)]={resolved:true,avoided:false};await updatePrompt(prompt,info,state);}}}
   }
@@ -108,24 +124,34 @@ async function previousPlacement(ready){
 }
 function placementFeedback(result){
  if(result.reason)ui.notifications.warn(local(result.reason));
- else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='outOfRange'?'OutOfRange':'Unavailable'));
+ else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='fogMoveTooFar'?'FogMoveTooFar':result.status==='outOfRange'?'OutOfRange':'Unavailable'));
 }
 export async function createSpellZoneOnAuthority(payload){
  const message=game.messages.get(payload.messageId),cast=message?.flags?.[S]?.ruleTestContext,ready=message?.flags?.[S]?.spellZoneCasting,user=game.users.get(payload.userId);
  const actor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null,definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast);
  const die=Number(message?.rolls?.[0]?.total);
  if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!ready||!profile||!Number.isInteger(die)||die<1||die>19||(die!==1&&die>ready.target))return {status:'unavailable'};
- if(ready.regionUuid){const previous=await previousPlacement(ready),existing=previous.region,info=infoOf(existing);if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};const scene=existing.parent,token=scene.tokens.get(payload.tokenId);if(scene.id!==payload.sceneId||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};await existing.update({shapes:[{type:'circle',...payload.point,radius:profile.radius*zonePixelScale(scene)}],['flags.'+S+'.spellZone.lastMovedPhase']:spellZonePhase(info,clock(info))});await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};}
+ if(ready.regionUuid){
+  const previous=await previousPlacement(ready),existing=previous.region,info=infoOf(existing);
+  if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};
+  const scene=existing.parent,token=scene.tokens.get(payload.tokenId),point=payload.point??{},fog=profile.kind==='fog';
+  if(scene.id!==payload.sceneId||token?.actor?.uuid!==actor.uuid)return {status:'outOfRange'};
+  if(fog?!fogMoveAllowed(point,existing):!allowedPoint(point,token,scene,profile))return {status:fog?'fogMoveTooFar':'outOfRange'};
+  const radius=(fog?fogRadius(info,clock(info)):profile.radius)*zonePixelScale(scene);
+  await existing.update({shapes:[{type:'circle',x:point.x,y:point.y,radius}],['flags.'+S+'.spellZone.lastMovedPhase']:spellZonePhase(info,clock(info))});
+  await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};
+ }
  const scene=game.scenes.get(payload.sceneId),token=scene?.tokens?.get(payload.tokenId);
  if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||!allowedPoint(payload.point??{},token,scene,profile))return {status:'outOfRange'};
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
  const info={context:structuredClone(cast),profile,elevation:Number(token.elevation)||0,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
+ if(profile.kind==='fog')info.createdRound=Number(combat?.round)||0;
  info.lastMovedPhase=spellZonePhase(info,clock(info));if(profile.instant)info.visualExpiresAt=Date.now()+10000;
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
-  levels:token.level?[token.level]:[],shapes:[{type:'circle',x:payload.point.x,y:payload.point.y,radius:profile.radius*zonePixelScale(scene)}],flags:{[S]:{spellZone:info}},behaviors:[{type:TYPE,name:nameOf(info),system:{}}]}]);
+  levels:token.level?[token.level]:[],shapes:[{type:'circle',x:payload.point.x,y:payload.point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*zonePixelScale(scene)}],flags:{[S]:{spellZone:info}},behaviors:[{type:TYPE,name:nameOf(info),system:{}}]}]);
  if(!region)throw Error('Spell zone creation failed');
  await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,regionUuid:region.uuid}});
  if(payload.underground===true&&profile.kind==='earthquake'&&!infoOf(region).collapseRolled){
@@ -170,12 +196,25 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  }
  response.resolved=true;await updatePrompt(message,info,next);locks.delete(key);return {status:'resolved'};
 }
-export function resolveSpellZoneRequest(payload){return serial('request:'+(payload.messageId??''),()=>payload.type==='createSpellZone'?createSpellZoneOnAuthority(payload):resolveSpellZoneTestOnAuthority(payload));}
+async function endFogOnAuthority(payload){
+ const message=game.messages.get(payload.messageId),user=game.users.get(payload.userId),ready=message?.flags?.[S]?.spellZoneCasting;
+ if(!writer()||!user?.active||!message||!canRead(message,user)||!ready?.regionUuid)return {status:'unavailable'};
+ const region=await foundry.utils.fromUuid(ready.regionUuid),info=infoOf(region);
+ if(info?.profile.kind!=='fog'||info.messageId!==message.id||!regionPresent(region))return {status:'unavailable'};
+ const actor=await foundry.utils.fromUuid(info.context.casterUuid);
+ if(!user.isGM&&!actor?.testUserPermission(user,'OWNER'))return {status:'unavailable'};
+ await serial(region.uuid,async()=>{
+  await removeRecipients(region);
+  await deleteZoneOnce(region);
+ });
+ return {status:'removed'};
+}
+export function resolveSpellZoneRequest(payload){return serial('request:'+(payload.messageId??''),()=>payload.type==='createSpellZone'?createSpellZoneOnAuthority(payload):payload.type==='endFog'?endFogOnAuthority(payload):resolveSpellZoneTestOnAuthority(payload));}
 function registerSocket(){
  if(socketReady||!game.socket)return;socketReady=true;
  game.socket.on(channel,async payload=>{
   if(payload?.type==='spellZoneReply'&&payload.userId===game.user.id){const p=replies.get(payload.requestId);if(p){clearTimeout(p.timer);replies.delete(payload.requestId);p.resolve(payload.result);}return;}
-  if(!['createSpellZone','spellZoneTest'].includes(payload?.type)||!writer())return;
+  if(!['createSpellZone','spellZoneTest','endFog'].includes(payload?.type)||!writer())return;
   let result;try{result=await resolveSpellZoneRequest(payload);}catch(error){console.error('Trudvang | Spell zone failed',error);result={status:'unavailable'};}
   game.socket.emit(channel,{type:'spellZoneReply',requestId:payload.requestId,userId:payload.userId,result});
  });
@@ -184,6 +223,11 @@ async function request(payload){
  payload={...payload,userId:game.user.id,requestId:crypto.randomUUID()};if(writer()){try{return await resolveSpellZoneRequest(payload);}catch(error){console.error('Trudvang | Spell zone failed',error);return {status:'unavailable'};}}
  if(!game.users?.activeGM||!game.socket)return {status:'unavailable'};registerSocket();
  return new Promise(resolve=>{const timer=setTimeout(()=>{replies.delete(payload.requestId);resolve({status:'unavailable'});},30000);replies.set(payload.requestId,{resolve,timer});game.socket.emit(channel,payload);});
+}
+export async function endFog(message){
+ const result=await request({type:'endFog',messageId:message.id});
+ if(result.status!=='removed')ui.notifications.warn(local('Unavailable'));
+ return result;
 }
 export async function placeSpellZone(message){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
@@ -197,7 +241,10 @@ export async function placeSpellZone(message){
  }
  let point=center(token,canvas.scene);
  if(!profile.centered){
-  const preview=await canvas.regions.placeRegion({name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[{type:'circle',x:0,y:0,radius:profile.radius*zonePixelScale(canvas.scene)}],color:auraColor(),levels:token.level?[token.level]:[],highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS},{create:false,attachToToken:false,allowRotation:false,preConfirm:({shape})=>{if(allowedPoint(shape,token,canvas.scene,profile))return true;ui.notifications.warn(local('OutOfRange'));return false;}});
+  const movingFog=profile.kind==='fog'&&previous?.region;
+  if(movingFog&&movingFog.parent.id!==canvas.scene.id){placementFeedback({status:'outOfRange'});return null;}
+  const radius=profile.kind==='fog'?(movingFog?fogRadius(infoOf(movingFog),clock(infoOf(movingFog))):profile.radius/3):profile.radius;
+  const preview=await canvas.regions.placeRegion({name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[{type:'circle',x:0,y:0,radius:radius*zonePixelScale(canvas.scene)}],color:auraColor(),levels:token.level?[token.level]:[],highlightMode:'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS},{create:false,attachToToken:false,allowRotation:false,preConfirm:({shape})=>{if(movingFog?fogMoveAllowed(shape,movingFog):allowedPoint(shape,token,canvas.scene,profile))return true;ui.notifications.warn(local(movingFog?'FogMoveTooFar':'OutOfRange'));return false;}});
   if(!preview)return null;point={x:preview.shapes[0].x,y:preview.shapes[0].y};
  }
  const result=await request({type:'createSpellZone',messageId:message.id,sceneId:canvas.scene.id,tokenId:token.id,point,underground});placementFeedback(result);return result;
@@ -234,11 +281,32 @@ export function registerSpellZoneSupport(){
  Hooks.on('deleteCombat',combat=>{if(writer()){
   const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(s=>values(s.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())for(const effect of values(actor.effects))if(effect.flags?.[S]?.spellZoneStun?.combatId===combat.id)void deleteEffectOnce(effect,{trudvangExpired:true}).catch(error=>console.error('Trudvang | Zone stun cleanup failed',error));
- } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions))if(infoOf(region)?.combatId===combat.id&&!infoOf(region).profile.instant)void deleteZoneOnce(region).catch(error=>console.error('Trudvang | Zone deletion failed',error));});
+ } if(writer())for(const scene of values(game.scenes))for(const region of values(scene.regions)){
+  const info=infoOf(region);
+  if(info?.combatId!==combat.id||info.profile.instant)continue;
+  const end=info.profile.kind==='fog'?continueFogOutsideCombat(region,combat):deleteZoneOnce(region);
+  void end.catch(error=>console.error('Trudvang | Combat area cleanup failed',error));
+ }});
  Hooks.once('ready',async()=>{registerSocket();
   // TEMPORARY WORLD MIGRATION — remove with the pre-zone development worlds.
   try{await migrateToikalokkeEarthquake();}catch(error){console.error('Trudvang | Earthquake catalogue migration failed',error);}
   safely();});
+}
+
+async function continueFogOutsideCombat(region,combat){
+ await serial(region.uuid,async()=>{
+  const info=infoOf(region),time=Number(game.time?.worldTime)||0;
+  if(!regionPresent(region)||info?.combatId!==combat.id)return;
+  const elapsed=Math.max(time-info.createdAt,5*(Number(combat.round)-info.createdRound));
+  const path='flags.'+S+'.spellZone.';
+  await region.update({
+   [path+'createdAt']:time-elapsed,
+   [path+'until']:time-elapsed+5*info.profile.rounds,
+   [path+'combatId']:null,
+   [path+'lastMovedPhase']:'time:'+Math.floor(elapsed/5)
+  });
+ });
+ await reconcileSpellZone(region);
 }
 
 /** TEMPORARY WORLD MIGRATION — harmonize old catalogue-owned Toikalokke copies.

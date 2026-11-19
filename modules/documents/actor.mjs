@@ -289,6 +289,7 @@ export class TrudvangActor extends BaseActor {
     if(["attack","parry","ability","magic","skill","dodge"].includes(kind))total+=Number(modifiers.visibility||0);
     const combatKinds = new Set(["attack", "parry", "ability", "magic"]);
     if (["attack", "parry"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.combatActions || 0);
+    if (["attack", "parry", "dodge"].includes(kind) || (this.isInCombatActive() && ["ability", "magic", "skill"].includes(kind))) total += Number(modifiers.fogCombat || 0);
     if (movement) total += Number(modifiers.movementActions || 0);
     if (["attack", "parry", "magic"].includes(kind)) total += Number(modifiers[kind] || 0);
     if (skillKey) total += Number(modifiers.skills?.[skillKey] || 0);

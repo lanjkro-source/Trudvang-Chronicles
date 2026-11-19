@@ -114,6 +114,63 @@ test('simultaneous expiry and late native events never delete the same region tw
 });
 
 const burst='vitner-flame-craft:flame-burst:3',sea='vitner-flame-craft:sea-of-fire:7';
+const fog='vitner-wind-craft:fog:2';
+test('fog grows over three rounds, moves up to 5 m per round and removes its effects on dissipation',async()=>{
+ const payload=setup(fog,{[fog+':0']:1,[fog+':2']:1,[fog+':3']:1});
+ const request=extra=>resolveSpellZoneRequest({...payload,type:'createSpellZone',...extra});
+ assert.equal((await request()).status,'placed');
+ const region=[...regions.values()][0];
+ assert.ok(Math.abs(region.shapes[0].radius-400/3)<1e-8);
+ assert.equal(region.flags[S].spellZone.profile.rounds,120);
+ assert.deepEqual(target.effects[0].system.changes.map(row=>[row.key,row.value]),[
+  ['system.modifiers.rolls.fogCombat','-4'],['system.modifiers.fogRangeDivisor','4']
+ ]);
+ assert.equal(game.messages.size,1);
+ assert.equal((await request()).reason,'MoveNextRound');
+ game.combat.round=2;
+ assert.equal((await request({point:{x:551,y:50}})).status,'fogMoveTooFar');
+ scene.tokens.get('caster').x=20000;
+ assert.equal((await request({point:{x:550,y:50}})).status,'placed');
+ assert.equal(region.shapes[0].radius,4*(2/3)*100);
+ game.combat.round=3;
+ await reconcileSpellZone(region);
+ assert.equal(region.shapes[0].radius,400);
+ const token=scene.tokens.get('target');
+ region.tokens.delete(token);
+ await reconcileSpellZone(region,{leaving:token});
+ assert.equal(target.effects.length,0);
+ assert.equal((await resolveSpellZoneRequest({...payload,type:'endFog',userId:observer.id})).status,'unavailable');
+ assert.equal((await resolveSpellZoneRequest({...payload,type:'endFog'})).status,'removed');
+ assert.equal(regions.size,0);
+ assert.equal(caster.effects.length,0);
+});
+
+test('fog reduces both effective ranged limits and preserves the calculation detail',async()=>{
+ const {resolveWeaponRange}=await import('../modules/rules/equipment-resolver.mjs');
+ const item={system:{range:{short:16,long:43}}};
+ const actor={system:{modifiers:{fogRangeDivisor:4}}};
+ const range=resolveWeaponRange({item,actor});
+ assert.deepEqual([range.short.value,range.long.value],[4,10]);
+ assert.equal(range.long.steps.at(-1).explanationKey,'TRUDVANG.Calculation.Equipment.FogRange');
+ assert.equal(item.system.range.long,43);
+});
+
+test('the fog retains elapsed rounds when combat ends and expires on the world clock',async()=>{
+ await createSpellZoneOnAuthority(setup(fog));
+ const region=[...regions.values()][0],combat=game.combat;
+ combat.round=3;
+ game.combat=null;
+ registerSpellZoneSupport();
+ hooks.get('deleteCombat')(combat);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(region.flags[S].spellZone.combatId,null);
+ assert.equal(region.flags[S].spellZone.until,290);
+ assert.equal(region.shapes[0].radius,200);
+ game.time.worldTime=290;
+ await reconcileSpellZone(region);
+ assert.equal(regions.size,0);
+ assert.equal(target.effects.length,0);
+});
 test('fire profiles distinguish diameter/radius, range, duration and frozen open-roll upgrades',async()=>{
  const p=earthquakeProfile(POWER_DETAILS_BY_ID[burst].spellZone,{countsById:{[burst+':0']:2,[burst+':1']:2,[burst+':3']:1}});assert.equal(p.radius,1.5);assert.equal(p.range,20);assert.equal(p.rounds,2);assert.equal(p.movable,true);assert.equal(p.instant,false);
  const q=earthquakeProfile(POWER_DETAILS_BY_ID[sea].spellZone,{countsById:{[sea+':1']:2}});assert.equal(q.radius,4);assert.equal(q.movable,false);assert.equal(q.instant,true);
