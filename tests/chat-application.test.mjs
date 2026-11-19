@@ -87,6 +87,15 @@ test("area fear edits are limited to the original caster and GM and application 
  assert.deepEqual(await edit("chatRemoveFearTarget",{actorUuid:added.uuid}),{status:"updated"});
  assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[hostile.uuid]}),{status:"updated"});
  assert.deepEqual(await applyChatApplication(payload(added)),{status:"alreadyApplied"});
+ const troll = makeActor("Troll");
+ troll.type = "npc";
+ const trollToken = Object.assign(makeToken("troll",troll),{parent:{id:"scene"},disposition:-1});
+ assert.deepEqual(await edit("chatAddFearTargets",{tokenUuids:[trollToken.uuid]}),{status:"updated"});
+ assert.deepEqual(await edit("chatResolveManualFearTarget",{actorUuid:troll.uuid}),{status:"unavailable"});
+ assert.deepEqual(await edit("chatResolveManualFearTarget",{actorUuid:troll.uuid},gm),{status:"updated"});
+ assert.deepEqual(flags.fearManualResolutions,[troll.uuid]);
+ assert.match(message.content,/Réglé par le MJ/);
+ assert.doesNotMatch(message.content,/data-action="resolve-manual-fear"/);
 });
 
 test("restricted damage checks the actual target tags on the GM even with armor bypass or forged payload tags",async t=>{

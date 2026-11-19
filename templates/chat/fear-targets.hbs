@@ -9,7 +9,11 @@
     {{#if canApply}}
     <button type="button" data-action="apply-target-fear" data-actor-uuid="{{actorUuid}}" data-token-uuid="{{tokenUuid}}" title="{{localize 'TRUDVANG.MagicFear.ApplyTarget'}}" aria-label="{{localize 'TRUDVANG.MagicFear.ApplyTarget'}}" hidden><i class="fas fa-face-flushed" aria-hidden="true"></i></button>
     {{else}}
-    <small>{{localize 'TRUDVANG.MagicFear.ManualTarget'}}</small>
+    {{#if resolved}}<small>{{localize 'TRUDVANG.MagicFear.ManualResolved'}}</small>{{else}}
+    <span><small>{{localize 'TRUDVANG.MagicFear.ManualTarget'}}</small>
+      <button type="button" data-action="resolve-manual-fear" data-actor-uuid="{{actorUuid}}" title="{{localize 'TRUDVANG.MagicFear.ResolveManual'}}" aria-label="{{localize 'TRUDVANG.MagicFear.ResolveManual'}}" hidden><i class="fas fa-check" aria-hidden="true"></i></button>
+    </span>
+    {{/if}}
     {{/if}}
     <button type="button" class="damage-target-edit" data-action="remove-fear-target" data-actor-uuid="{{actorUuid}}" title="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" aria-label="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" hidden><i class="fas fa-minus" aria-hidden="true"></i></button>
   </div>

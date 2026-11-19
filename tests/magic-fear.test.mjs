@@ -29,7 +29,7 @@ test('Wolf Tongue snapshots hostile intelligent targets within its improved radi
   name, uuid:'Token.'+name, actor:{type:'character',uuid:name}, x, y:0, width:1, height:1, level:'ground', disposition:-1, ...overrides
  });
  const caster = token('caster',0);
- const near = token('near',250);
+ const near = token('near',250,{level:'adjacent',disposition:'-1',includedInLevel:level=>level==='ground'});
  const far = token('far',500);
  const hidden = token('hidden',500,{hidden:true});
  const scene = {grid:{size:100,distance:2,units:'m'},tokens:[
@@ -53,7 +53,7 @@ test('Wolf Tongue snapshots hostile intelligent targets within its improved radi
  assert.equal(fearRecipientEligible(near.actor,{areaActorUuids:[]}),false);
 });
 
-test('the successful cast preview draws its radius and outlines visible hostile tokens without changing selection', t => {
+test('the successful cast preview persists and redraws until the last fear target is resolved', t => {
  const previous = {canvas:globalThis.canvas,game:globalThis.game,PIXI:globalThis.PIXI,Hooks:globalThis.Hooks};
  t.after(() => Object.assign(globalThis,previous));
  const hooks = new Map(), drawn = [];
@@ -76,14 +76,30 @@ test('the successful cast preview draws its radius and outlines visible hostile 
  globalThis.canvas = {scene,ready:true,tokens:{placeables:[...tokens.values()].map(document => ({
   document,x:document.x,y:document.y,w:100,h:100,isVisible:!document.hidden
  }))},interface:{addChild:graphic => assert.equal(graphic.eventMode,'none')}};
- globalThis.game = {user:{id:'player'}};
+ const messages = new Map();
+ globalThis.game = {user:{id:'player'},messages};
  registerMagicFearPreview();
  const area = captureMagicFearArea({system:{catalogId:cases[1][0]}},{},caster.actor,{scene:scene.id,token:caster.id});
- const message = {id:'cast',getFlag:(_scope,key) => key==='magicFearArea'?area:null};
+ const system = 'trudvang-chronicles';
+ const message = {id:'cast',flags:{[system]:{magicFearArea:area}}};
+ messages.set(message.id,message);
  hooks.get('createChatMessage')(message);
  assert.deepEqual(drawn.slice(0,2),[['circle',50,50,250],['target',97,-3,106,106,8]]);
- hooks.get('updateChatMessage')(message);
- assert.equal(drawn.length,2);
  hooks.get('canvasTearDown')();
  assert.deepEqual(drawn.at(-1),['destroy']);
+ hooks.get('canvasReady')();
+ assert.deepEqual(drawn.at(-1),['target',97,-3,106,106,8]);
+ const fear = {id:'fear',flags:{[system]:{fearContext:{areaSceneId:scene.id,originMessageId:message.id},fearTargets:area.targets}}};
+ messages.set(fear.id,fear);
+ hooks.get('createChatMessage')(fear);
+ assert.deepEqual(drawn.at(-1),['target',97,-3,106,106,8]);
+ fear.flags[system].applications = [{channel:'fear',actorUuid:'hostile'}];
+ hooks.get('updateChatMessage')(fear);
+ assert.deepEqual(drawn.at(-1),['circle',50,50,250]);
+ fear.flags[system].fearManualResolutions = ['hidden'];
+ hooks.get('updateChatMessage')(fear);
+ assert.deepEqual(drawn.at(-1),['destroy']);
+ const completed = drawn.length;
+ hooks.get('canvasReady')();
+ assert.equal(drawn.length,completed);
 });

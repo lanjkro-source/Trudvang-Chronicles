@@ -7,13 +7,13 @@ import {auraCasterToken} from './aura.mjs';
 export function fearAreaTarget(token, policy) {
  const actor = token?.actor;
  if (!actor?.uuid || !['character','npc'].includes(actor.type)
-     || token.disposition !== (globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
+     || Number(token.disposition) !== Number(globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1)
      || !fearRecipientEligible(actor, policy)) return null;
  return {actorUuid:actor.uuid, tokenUuid:token.uuid, hidden:!!token.hidden,
   name:token.hidden ? '' : token.name, canApply:actor.type === 'character'};
 }
 
-export function magicFearArea(document, context, casterToken, scene) {
+export function magicFearArea(document, context, casterToken, scene, viewedLevel) {
  const details = POWER_DETAILS_BY_ID[ruleTestSourceId(document)];
  const definition = details?.fearRoll;
  const area = definition?.area;
@@ -21,33 +21,34 @@ export function magicFearArea(document, context, casterToken, scene) {
  const index = details.powerLevels.findIndex(option => option.id === area.radiusOptionId);
  const count = Math.max(0, Math.trunc(Number(context.countsById?.[area.radiusOptionId] ?? context.counts?.[index]) || 0));
  const radius = area.radius + count * area.radiusStep;
- const center = token => token.object?.center ?? {
+ const center = token => token.getCenterPoint?.() ?? token.object?.center ?? {
   x: token.x + token.width * scene.grid.size / 2,
   y: token.y + token.height * scene.grid.size / 2
  };
  const origin = center(casterToken);
+ const level = viewedLevel && casterToken.includedInLevel?.(viewedLevel) !== false ? viewedLevel : casterToken.level;
  const policy = {casterUuid: casterToken.actor.uuid, eligibility: definition.eligibility};
  const radiusPixels = radius * zonePixelScale(scene);
  const targets = new Map();
  for (const token of scene.tokens?.values?.() ?? []) {
-  if (token.level !== casterToken.level) continue;
+  if (level && (token.includedInLevel?.(level) ?? (token.level == null || token.level === '' || token.level === level)) === false) continue;
   const point = center(token);
   if (Math.hypot(point.x - origin.x, point.y - origin.y) > radiusPixels + .01) continue;
   const row = fearAreaTarget(token, policy);
   if (row && (!targets.has(row.actorUuid) || targets.get(row.actorUuid).hidden)) targets.set(row.actorUuid, row);
  }
- return {sceneId:scene.id, level:casterToken.level ?? null, casterTokenUuid:casterToken.uuid,
+ return {sceneId:scene.id, level:level ?? null, casterTokenUuid:casterToken.uuid,
   origin:{x:origin.x,y:origin.y}, radius, radiusPixels, targets:[...targets.values()]};
 }
 
 export function captureMagicFearArea(document, context, actor, speaker) {
  if (!POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.fearRoll?.area) return null;
- const scene = globalThis.canvas?.scene;
+ const board = globalThis.canvas;
+ const scene = board?.scene;
  const speakingToken = speaker?.token && speaker.scene === scene?.id ? scene.tokens.get(speaker.token) : null;
  const casterToken = speakingToken?.actor?.uuid === actor.uuid
-  ? speakingToken : auraCasterToken(actor, globalThis.canvas?.tokens?.controlled, actor.getActiveTokens?.(false, true));
- const area = magicFearArea(document, context, casterToken, scene);
- return area && {...area, expiresAt:Date.now()+10000};
+  ? speakingToken : auraCasterToken(actor, board?.tokens?.controlled, board?.tokens?.placeables ?? actor.getActiveTokens?.(false, true));
+ return magicFearArea(document, context, casterToken, scene, board?.level?.id);
 }
 
 export function magicFearProfile(document,context){

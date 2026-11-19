@@ -8,6 +8,25 @@ globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{messages.push(da
 globalThis.game={user:{id:"p",targets:new Set()},users:{activeGM:{id:"gm"}},time:{worldTime:0},i18n:{lang:"fr",localize:key=>key,format:(key,values)=>`${key} ${values?.value??""}`}};
 globalThis.ui={notifications:{warn:value=>warnings.push(value)}};
 const {rollUnder}=await import("../modules/dice.mjs");
+test("Wolf Tongue records a permanent-until-resolved area and its hostile NPCs at a successful invocation", async () => {
+ const actor={uuid:"Actor.priest",name:"Priest",items:[]};
+ const scene={id:"scene",grid:{size:100,distance:2,units:"m"}};
+ const token=(id,x,owner,disposition)=>({uuid:"Token."+id,name:id,x,y:0,width:1,height:1,parent:scene,level:"floor",actor:owner,disposition});
+ const caster=token("priest",0,actor,1);
+ const troll={uuid:"Actor.troll",type:"npc",system:{tags:["troll"]}};
+ scene.tokens=[caster,token("Troll",500,troll,-1),token("Friend",150,{uuid:"Actor.friend",type:"character"},1)];
+ globalThis.canvas={scene,level:{id:"floor"},tokens:{controlled:[{document:caster}],placeables:[{document:caster}]}};
+ const item={uuid:"Actor.priest.Item.tongue",type:"divineFeat",system:{catalogId:"holy-gerbanis-wrath-of-tyrd:wolf-tongue:2"}};
+ globalThis.testDie=5;
+ await rollUnder({actor,item,kind:"divine",target:12,label:"Wolf Tongue",powerLevelCounts:[1,0]});
+ const area=messages.at(-1).flags["trudvang-chronicles"].magicFearArea;
+ assert.equal(area.radius,10);
+ assert.equal(area.expiresAt,undefined);
+ assert.deepEqual(area.targets.map(row=>row.actorUuid),[troll.uuid]);
+ globalThis.testDie=20;
+ await rollUnder({actor,item,kind:"divine",target:12,label:"Wolf Tongue",powerLevelCounts:[1,0]});
+ assert.equal(messages.at(-1).flags["trudvang-chronicles"].magicFearArea,undefined);
+});
 test("a successful light invocation applies one source effect to the selected caster token",async()=>{
  const id="holy-tenetnid-tablet-of-the-sun:thermal-light:3",created=[];
  const actor={uuid:"Actor.priest",name:"Priest",items:[],canUserModify:()=>true,getTraitValue:()=>0,async createTrudvangEffect(data){created.push(data);return null;}};

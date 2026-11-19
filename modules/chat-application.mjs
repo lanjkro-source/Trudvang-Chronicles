@@ -70,6 +70,20 @@ async function editFearTargetsOnGM(payload) {
   if (total === null) return {status:"unavailable"};
   const context = message.getFlag(SYSTEM_ID,"fearContext");
   const targets = new Map((message.getFlag(SYSTEM_ID,"fearTargets") ?? []).map(row => [row.actorUuid,row]));
+  const resolved = new Set(message.getFlag(SYSTEM_ID,"fearManualResolutions") ?? []);
+  const renderTargets = async rows => {
+    const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs",
+      {total,targets:rows.map(row=>({...row,resolved:resolved.has(row.actorUuid)}))});
+    return message.content.replace(fearTargetsSection,() => html);
+  };
+  if (payload.type === "chatResolveManualFearTarget") {
+    const target = targets.get(payload.actorUuid);
+    if (!user.isGM || !target || target.canApply) return {status:"unavailable"};
+    if (resolved.has(payload.actorUuid)) return {status:"unchanged"};
+    resolved.add(payload.actorUuid);
+    await message.update({content:await renderTargets([...targets.values()]),[`flags.${SYSTEM_ID}.fearManualResolutions`]:[...resolved]});
+    return {status:"updated"};
+  }
   let changed = false;
   if (payload.type === "chatRemoveFearTarget") {
     changed = targets.delete(payload.actorUuid);
@@ -89,8 +103,7 @@ async function editFearTargetsOnGM(payload) {
   }
   if (!changed) return {status:"unchanged"};
   const rows = [...targets.values()];
-  const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs",{total,targets:rows});
-  await message.update({content:message.content.replace(fearTargetsSection,() => html),[`flags.${SYSTEM_ID}.fearTargets`]:rows});
+  await message.update({content:await renderTargets(rows),[`flags.${SYSTEM_ID}.fearTargets`]:rows});
   return {status:"updated"};
 }
 
@@ -296,7 +309,7 @@ export async function applyChatApplication(payload) {
   const queueKey=game.messages.get(payload.messageId)?.getFlag(SYSTEM_ID,"fearContext")?.originMessageId||payload.messageId;
   const previous = queues.get(queueKey) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
-    : ["chatAddFearTargets","chatRemoveFearTarget"].includes(payload.type) ? editFearTargetsOnGM(payload)
+    : ["chatAddFearTargets","chatRemoveFearTarget","chatResolveManualFearTarget"].includes(payload.type) ? editFearTargetsOnGM(payload)
     : payload.type==='chatImpactTest'?resolveImpactTest(payload,{refresh:refreshApplications,canReadMessage}):payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
   queues.set(queueKey, next);
   try { return await next; }
@@ -313,7 +326,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget","chatResolveManualFearTarget"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -394,6 +407,11 @@ export async function requestFearTargetEdit({message, tokens, actorUuid}) {
   const tokenUuids = Array.from(tokens ?? [], token => token.document?.uuid ?? token.uuid).filter(Boolean);
   return requestChatUpdate(message,{type:actorUuid?"chatRemoveFearTarget":"chatAddFearTargets",
     requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id,actorUuid,tokenUuids});
+}
+
+export async function requestManualFearResolution(message,actorUuid) {
+  if (!game.user.isGM) return {status:"unavailable"};
+  return requestChatUpdate(message,{type:"chatResolveManualFearTarget",requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id,actorUuid});
 }
 
 async function requestChatUpdate(message, payload) {
