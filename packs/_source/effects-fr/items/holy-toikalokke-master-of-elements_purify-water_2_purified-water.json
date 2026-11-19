@@ -1,0 +1,45 @@
+{
+  "_id": "UuFdzjMhNiOjPkQl",
+  "_key": "!items!UuFdzjMhNiOjPkQl",
+  "name": "Eau purifiée (Toikalokke)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+    "description": "Marque un lot d’eau purifié. Pour une boisson empoisonnée ou magique, le MJ confirme la réussite du test de l’ihana avant de poser ce marqueur.",
+    "summary": "Indique la quantité maximale d’eau purifiée.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 297
+    }
+  },
+  "effects": [
+    {
+      "_id": "VFgdZ9C8D9EaGbHc",
+      "_key": "!items.effects!UuFdzjMhNiOjPkQl.VFgdZ9C8D9EaGbHc",
+      "name": "Eau purifiée (Toikalokke)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Marque un lot d’eau purifié. Pour une boisson empoisonnée ou magique, le MJ confirme la réussite du test de l’ihana avant de poser ce marqueur.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+            "sourceId": "holy-toikalokke-master-of-elements:purify-water:2",
+            "summary": "Indique la quantité maximale d’eau purifiée.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

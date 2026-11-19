@@ -177,3 +177,7 @@ La version 2 de `migrateSacredEquipmentCorrections()` (même réglage caché `sa
 
 
 `migrateToikalokkeEarthquake()` et son appel au démarrage dans `modules/spell-zones.mjs` portent le commentaire `TEMPORARY WORLD MIGRATION`. La reprise reconnaît les objets de sortilège/pouvoir portant l’identifiant canonique du séisme de Toikalokke et l’ancien triplet niveau 3/coût 6/modificateur −6. Elle actualise leurs caractéristiques et textes depuis le catalogue FR/EN désormais harmonisé avec le sortilège : niveau 2/coût 4/modificateur −4, portée et zone identiques, mêmes améliorations. Le parcours couvre objets du monde, acteurs et tokens non liés, sans doubler les acteurs liés. Noms, images, inventaires, coûts des anciens lancements et documents ayant un autre profil de base restent intacts. La vérification est idempotente, sans réglage persistant : le nouveau triplet ne correspond plus à l’ancien. Retirer la fonction et son appel après suppression des anciens mondes de développement. Le gestionnaire des régions fixes et l’harmonisation des sources restent nécessaires.
+
+## Main brûlante — profils de la 0.227.0
+
+Le rattrapage dans `modules/damage-qualification-migration.mjs` corrige les qualifications précédemment générées du sort, de ses effets actifs et des poings accordés. La synchronisation des attaques conserve les AA dépensées sur l’acteur. Retirer ce rattrapage après la suppression ou la mise à niveau des mondes de développement.

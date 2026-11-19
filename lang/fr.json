@@ -14472,6 +14472,15 @@
           "SourcePage": "162",
           "Duration": "3 days"
         },
+        "vitner-water-craft:purify-water:1#purified-water": {
+          "Name": "Eau purifiée (vitner)",
+          "Summary": "Indique la quantité maximale d’eau purifiée.",
+          "Description": "Marque un lot d’eau purifié. Les substances dangereuses et toxiques sont retirées. Le sort peut aussi séparer l’eau des sédiments.",
+          "SourceName": "Purification de l’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "163",
+          "Duration": ""
+        },
         "vitner-water-craft:find-water:0#find-water": {
           "Name": "Sourcier",
           "Summary": "Localise les sources et masses d’eau.",
@@ -17839,6 +17848,15 @@
           "SourcePage": "297",
           "Duration": "30 minutes"
         },
+        "holy-toikalokke-master-of-elements:purify-water:2#purified-water": {
+          "Name": "Eau purifiée (Toikalokke)",
+          "Summary": "Indique la quantité maximale d’eau purifiée.",
+          "Description": "Marque un lot d’eau purifié. Pour une boisson empoisonnée ou magique, le MJ confirme la réussite du test de l’ihana avant de poser ce marqueur.",
+          "SourceName": "Purification de l’eau",
+          "SourceBook": "Livre des règles",
+          "SourcePage": "297",
+          "Duration": ""
+        },
         "holy-toikalokke-master-of-elements:fire-tamer:4#effect": {
           "Name": "Dompteur du feu",
           "Summary": "Dompteur du feu",
@@ -19069,6 +19087,11 @@
       "Second": "Main brûlante — seconde main",
       "Profile": "{hands} main(s) embrasée(s) : coup de poing + {fire} feu pour la première ; seconde main : {second} si présente.",
       "WeaponLock": "Main brûlante : aucune arme utilisable pendant le round du lancement."
+    },
+    "WaterPurification": {
+      "Capacity": "Volume purifiable : {value}",
+      "Litres": "{value} L",
+      "Lake": "un petit lac"
     }
   }
 }

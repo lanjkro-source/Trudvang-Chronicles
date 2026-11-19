@@ -3262,6 +3262,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "optionId": "holy-toikalokke-master-of-elements:purify-water:2:1"
         }
       ],
+      "casterTest": true,
       "kind": "resist",
       "index": 0
     }

@@ -11309,7 +11309,7 @@ export const POWER_DETAILS_BY_ID = {
       ],
       "optionId": "vitner-flame-craft:burning-hand:2:2",
       "qualification": {
-        "nature": "normal",
+        "nature": "magical",
         "delivery": "melee",
         "type": "fire",
         "protection": "normal"
@@ -11317,7 +11317,7 @@ export const POWER_DETAILS_BY_ID = {
       "requiresAttack": true
     },
     "damageQualification": {
-      "nature": "normal",
+      "nature": "magical",
       "delivery": "melee",
       "type": "fire",
       "protection": "normal"

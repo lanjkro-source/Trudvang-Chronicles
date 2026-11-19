@@ -30,9 +30,16 @@ export async function migrateDamageQualifications() {
   for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) {
     if (token.actor) actors.set(token.actor.uuid, token.actor);
   }
+  for (const actor of actors.values()) await migrateBurningHand(actor);
   const items = [...(game.items ?? []), ...Array.from(actors.values()).flatMap(actor => Array.from(actor.items ?? []))];
   const abilityById = new Map(CREATURE_ABILITY_ENTRIES.map(entry => [entry.id, entry]));
   for (const item of items) {
+    if (item.isOwner && item.system?.catalogId === "vitner-flame-craft:burning-hand:2"
+      && sameQualification(item._source?.system?.damageQualification,
+        {nature:"normal",delivery:"melee",type:"fire",protection:"normal"})) {
+      // TEMPORARY WORLD MIGRATION — stored spell copies from before the fire correction.
+      await item.update({"system.damageQualification.nature": "magical"});
+    }
     if (!item.isOwner || Number(item.getFlag("trudvang-chronicles", "damageQualificationVersion") ?? 0) >= 4) continue;
     const flags = item.flags?.["trudvang-chronicles"] ?? {};
     const powerId = item.system?.catalogId || flags.catalogId;
@@ -79,5 +86,51 @@ export async function migrateDamageQualifications() {
       if (target && !sameQualification(target, oldDefault) && (!sourceQualification || sameQualification(sourceQualification, oldDefault))) update["system.damageQualification"] = target;
     }
     await item.update(update);
+  }
+}
+
+// TEMPORARY WORLD MIGRATION — repair the generated Burning Hand profiles from 0.227.0.
+async function migrateBurningHand(actor) {
+  const scope = "trudvang-chronicles";
+  const sourceId = "vitner-flame-craft:burning-hand:2";
+  const effectKey = sourceId + "#burning-hands";
+  const effectIds = new Set();
+  for (const effect of actor.effects ?? []) {
+    if (effect.flags?.[scope]?.transformation?.key !== effectKey) continue;
+    effectIds.add(effect.id);
+    const changes = Array.from(effect.system?.changes ?? [], row => row.toObject?.() ?? {...row});
+    const attacks = changes.find(row => row.key === "system.transformation.attacks");
+    if (!attacks) continue;
+    const rows = JSON.parse(attacks.value);
+    let changed = false;
+    for (const row of rows) {
+      if (row.damageQualification?.type === "blunt") {
+        row.damageQualification.type = "bludgeoning";
+        changed = true;
+      }
+      for (const part of row.damageComponents ?? []) {
+        if (part.qualification?.type !== "fire" || part.qualification.nature !== "normal") continue;
+        part.qualification.nature = "magical";
+        changed = true;
+      }
+    }
+    if (changed) {
+      attacks.value = JSON.stringify(rows);
+      await effect.update({"system.changes": changes});
+      const {syncEffectGrants} = await import("./transformations.mjs");
+      await syncEffectGrants(effect, actor);
+    }
+  }
+  for (const item of actor.items ?? []) {
+    const flags = item.flags?.[scope];
+    if (!effectIds.has(flags?.transformationGrant)) continue;
+    const update = {};
+    if (["blunt", "other"].includes(item.system.damageQualification?.type)) update["system.damageQualification.type"] = "bludgeoning";
+    const parts = flags.supplementalDamage;
+    if (parts?.some(part => part.qualification?.type === "fire" && part.qualification.nature === "normal")) {
+      update["flags." + scope + ".supplementalDamage"] = parts.map(part =>
+        part.qualification?.type === "fire" ? {...part, qualification: {...part.qualification, nature: "magical"}} : part);
+    }
+    if (Object.keys(update).length) await item.update(update);
   }
 }

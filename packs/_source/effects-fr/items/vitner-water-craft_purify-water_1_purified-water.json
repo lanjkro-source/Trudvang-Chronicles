@@ -1,0 +1,45 @@
+{
+  "_id": "gKskH7A6B7C8D9Ea",
+  "_key": "!items!gKskH7A6B7C8D9Ea",
+  "name": "Eau purifiée (vitner)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:purify-water:1#purified-water",
+    "description": "Marque un lot d’eau purifié. Les substances dangereuses et toxiques sont retirées. Le sort peut aussi séparer l’eau des sédiments.",
+    "summary": "Indique la quantité maximale d’eau purifiée.",
+    "source": {
+      "book": "Livre des règles",
+      "page": 163
+    }
+  },
+  "effects": [
+    {
+      "_id": "98z9xkNiOjPkQlRm",
+      "_key": "!items.effects!gKskH7A6B7C8D9Ea.98z9xkNiOjPkQlRm",
+      "name": "Eau purifiée (vitner)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Marque un lot d’eau purifié. Les substances dangereuses et toxiques sont retirées. Le sort peut aussi séparer l’eau des sédiments.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:purify-water:1#purified-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:purify-water:1#purified-water",
+            "sourceId": "vitner-water-craft:purify-water:1",
+            "summary": "Indique la quantité maximale d’eau purifiée.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

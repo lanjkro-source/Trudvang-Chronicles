@@ -342,7 +342,7 @@
         "weavingTime": "1 tour de jeu",
         "dailyActivation": "",
         "damageQualification": {
-          "nature": "normal",
+          "nature": "magical",
           "delivery": "melee",
           "type": "fire",
           "protection": "normal"

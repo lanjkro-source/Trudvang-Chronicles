@@ -1,0 +1,45 @@
+{
+  "_id": "gKskH7A6B7C8D9Ea",
+  "_key": "!items!gKskH7A6B7C8D9Ea",
+  "name": "Purified Water (Vitner)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-water-craft:purify-water:1#purified-water",
+    "description": "Marks a batch of purified water. Harmful and toxic substances are removed. The spell can also separate water from sediment.",
+    "summary": "Records the maximum amount of purified water.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 135
+    }
+  },
+  "effects": [
+    {
+      "_id": "98z9xkNiOjPkQlRm",
+      "_key": "!items.effects!gKskH7A6B7C8D9Ea.98z9xkNiOjPkQlRm",
+      "name": "Purified Water (Vitner)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Marks a batch of purified water. Harmful and toxic substances are removed. The spell can also separate water from sediment.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-water-craft:purify-water:1#purified-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-water-craft:purify-water:1#purified-water",
+            "sourceId": "vitner-water-craft:purify-water:1",
+            "summary": "Records the maximum amount of purified water.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

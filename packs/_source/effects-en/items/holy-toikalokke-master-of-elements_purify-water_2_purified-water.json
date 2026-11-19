@@ -1,0 +1,45 @@
+{
+  "_id": "UuFdzjMhNiOjPkQl",
+  "_key": "!items!UuFdzjMhNiOjPkQl",
+  "name": "Purified Water (Toikalokke)",
+  "type": "effect",
+  "img": "icons/svg/daze.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+    "description": "Marks a batch of purified water. For a poisoned or magical drink, the GM confirms the Ihana’s successful test before applying this marker.",
+    "summary": "Records the maximum amount of purified water.",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "VFgdZ9C8D9EaGbHc",
+      "_key": "!items.effects!UuFdzjMhNiOjPkQl.VFgdZ9C8D9EaGbHc",
+      "name": "Purified Water (Toikalokke)",
+      "type": "effect",
+      "img": "icons/svg/daze.svg",
+      "description": "Marks a batch of purified water. For a poisoned or magical drink, the GM confirms the Ihana’s successful test before applying this marker.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-master-of-elements:purify-water:2#purified-water",
+            "sourceId": "holy-toikalokke-master-of-elements:purify-water:2",
+            "summary": "Records the maximum amount of purified water.",
+            "editableChanges": true,
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}
