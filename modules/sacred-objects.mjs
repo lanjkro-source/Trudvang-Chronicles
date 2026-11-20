@@ -10,6 +10,7 @@ import {conditionalSkillModifiers} from './rules/effect-conditional-tests.mjs';
 import {conditionalModifierSection} from './conditional-modifier-ui.mjs';
 import {blessingDialog} from './blessing-dialog.mjs';
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
+import {divineFailureRestriction} from './rules/divine-failure.mjs';
 const S='trudvang-chronicles',channel='system.'+S,jobs=new Map(),replies=new Map();let registered=false;
 const t=key=>game.i18n.localize('TRUDVANG.Sacred.'+key),e=escapeHtml,a=escapeAttribute;
 const state=item=>structuredClone(sacredState(item)?.toObject?.()??sacredState(item));
@@ -67,6 +68,11 @@ async function mutate({actorUuid,itemId,operation,values={},userId},authority){
  }
  const item=actor.items.get(itemId);if(!isSacredObject(item)||sacredState(item).creatorUuid!==actor.uuid)throw Error(t('Invalid'));
  const s=state(item);Object.assign(s,sacredRuneTotals(item));if(!validSacredState(s))throw Error(t('InvalidBalance'));
+ if(['invest','consume'].includes(operation)){
+  const sourceId=s.runes.find(row=>row.id===values.runeId)?.sourceId;
+  const restriction=divineFailureRestriction(actor,operation==='invest'?undefined:sourceId);
+  if(restriction)throw Error(game.i18n.localize(restriction));
+ }
  if(operation==='remove'){
   await item.delete({trudvangSacredDelete:true});return {removed:true};
  }
@@ -154,6 +160,8 @@ export function runeInvestmentAvailable(actor,item){
  return balance.overdrawn?0:Math.max(0,Math.min(balance.free,sacredCapacity(actor,equipmentCraftMaterial(item))-totals.invested));
 }
 export function inscriptionPlan(actor,item,values,{checkFunds=true}={}){
+ const restriction=divineFailureRestriction(actor,values.sourceId);
+ if(restriction)throw Error(game.i18n.localize(restriction));
  const s=state(item),known=knownRunes(actor).find(row=>row.id===values.sourceId),level=Number(values.level),amount=Number(values.amount),old=s.runes.find(row=>row.sourceId===values.sourceId);
  if(!runeObjectEligible(item,values.sourceId))throw Error(t('WrongRuneObject'));
  if(!known||!Number.isInteger(level)||level<1||level>known.level||old&&level<=old.level||s.failed.some(row=>row.sourceId===values.sourceId&&row.level<=level))throw Error(t('InvalidRune'));
@@ -162,6 +170,8 @@ export function inscriptionPlan(actor,item,values,{checkFunds=true}={}){
 }
 export async function investSacredDialog(item,runeId){
  if(!item.parent?.isOwner)return null;
+ const restriction=divineFailureRestriction(item.parent);
+ if(restriction)return ui.notifications.warn(game.i18n.localize(restriction));
  const row=sacredState(item).runes.find(row=>row.id===runeId);if(!row)return ui.notifications.warn(t('InvalidRune'));
  const max=runeInvestmentAvailable(item.parent,item),runeName=game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name');
  const choice=await foundry.applications.api.DialogV2.wait({window:{title:item.name+' — '+runeName},content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.InvestAvailable',{max}))+'</p>'+input('amount',t('Points'),Math.min(row.level,max))+'</div>',buttons:buttons('invest',t('Invest'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
@@ -169,7 +179,9 @@ export async function investSacredDialog(item,runeId){
 }
 export async function inscribeRuneDialog(item){
  const actor=item.parent;if(!owner(actor))return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
- const known=knownRunes(actor).filter(row=>runeObjectEligible(item,row.id));if(!known.length)return ui.notifications.warn(t('NoRunes'));
+ const restriction=divineFailureRestriction(actor);
+ if(restriction)return ui.notifications.warn(game.i18n.localize(restriction));
+ const known=knownRunes(actor).filter(row=>runeObjectEligible(item,row.id)&&!divineFailureRestriction(actor,row.id));if(!known.length)return ui.notifications.warn(t('NoRunes'));
  const s=state(item);
  class InscribeDialog extends foundry.applications.api.DialogV2{
   _onRender(c,o){
@@ -217,17 +229,21 @@ export function faithBreakdown(actor,penalty=0,modifier=0){
 export async function activateSacredRune(item,runeId){
  const actor=item.parent;if(!owner(actor)||sacredState(item)?.creatorUuid!==actor.uuid)return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
  const row=sacredState(item).runes.find(row=>row.id===runeId);if(!row||!runeRow(row).canUse)return ui.notifications.warn(t('Unavailable'));
+ const restriction=divineFailureRestriction(actor,row.sourceId);
+ if(restriction)return ui.notifications.warn(game.i18n.localize(restriction));
  const definition=runeDefinition(row.sourceId),p=faithBreakdown(actor,definition.runeActivation?.modifier??0);
  class ActivationDialog extends foundry.applications.api.DialogV2{
   _onRender(c,o){super._onRender(c,o);const root=this.element;root.querySelector('[name=modifier]').addEventListener('input',event=>{root.querySelector('[data-procedure-target]').textContent=p.target+Number(event.target.value||0);});}
  }
  const choice=await blessingDialog(ActivationDialog,actor,'modifier',{castingType:'divine',runeObjectUuid:item.uuid,runeSourceId:row.sourceId}).wait({window:{title:item.name+' — '+game.i18n.localize('TRUDVANG.Content.Power.'+row.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+e(game.i18n.format('TRUDVANG.Sacred.ActivationCost',{level:row.level,current:row.current,invested:row.invested}))+'</p><p>'+p.base+'<br>'+rollModifierFlavor(p.rows)+'</p>'+conditionalModifierSection()+input('modifier',game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+'<p>'+e(game.i18n.localize('TRUDVANG.Dialog.FinalTarget'))+' : <strong data-rune-base="'+p.target+'" data-procedure-target>'+p.target+'</strong></p></div>',buttons:buttons('activate',game.i18n.localize('TRUDVANG.Action.Roll'),(_e,b,d)=>read(b.form??d.element)),rejectClose:false,close:()=>false});
  if(!choice)return null;
+ const currentRestriction=divineFailureRestriction(actor,row.sourceId);
+ if(currentRestriction)return ui.notifications.warn(game.i18n.localize(currentRestriction));
  await requestSacredMutation(actor,'consume',{itemId:item.id,runeId,expected:JSON.stringify(row)});
  const tablet=TABLET_BY_ID.get(row.sourceId.split(':')[0]),power=tablet?.powers.find(p=>p.id===row.sourceId);if(!power)return null;
  const data=powerItemData(power,tablet);data.system.level=row.level;data.flags??={};data.flags[S]??={};data.flags[S].runeActivation={objectUuid:item.uuid,runeId,level:row.level};
  const virtual={...data,actor,parent:actor,uuid:knownRunes(actor).find(r=>r.id===row.sourceId)?.item.uuid??'',documentName:'Item'};
- return rollUnder({actor,item:virtual,label:item.name+' — '+data.name,target:p.target+choice.modifier,blessing:choice.blessing,kind:'rune',perfectSuccessMax:0,automaticSuccessMax:1,fatalEffect:{kind:'faith',threshold:9,modifier:actor.fatalEffectModifier?.('faith',row.level)??0},powerLevelCounts:Array.from({length:5},(_,i)=>i===row.level-1?1:0),flavor:rollModifierFlavor(p.rows)+'<br>'+e(game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+' : '+choice.modifier});
+ return rollUnder({actor,item:virtual,label:item.name+' — '+data.name,target:p.target+choice.modifier,blessing:choice.blessing,kind:'rune',perfectSuccessMax:0,automaticSuccessMax:1,fatalEffect:{kind:'faith',threshold:9,modifier:actor.fatalEffectModifier?.('faith',row.level)??0,power:{id:row.sourceId,name:data.name}},powerLevelCounts:Array.from({length:5},(_,i)=>i===row.level-1?1:0),flavor:rollModifierFlavor(p.rows)+'<br>'+e(game.i18n.localize('TRUDVANG.Dialog.SituationalModifier'))+' : '+choice.modifier});
 }
 /** Permanent native rune benefits belong to the item and transfer only while carried. */
 const permanentSyncJobs=new Map();

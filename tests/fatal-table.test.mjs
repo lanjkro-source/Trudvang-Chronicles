@@ -19,6 +19,8 @@ class BaseTable {
   getFlag(namespace, key) { return this.flags?.[key]; }
   getResultsForRoll(value) { return this.results.filter(result => !result.drawn && value >= result.range[0] && value <= result.range[1]); }
   async roll(options) { return {ordinary: true, options}; }
+  async draw(options) { this.drawOptions = options; return this.roll(options); }
+  async toMessage(results, options) { this.message = {results, options}; }
 }
 globalThis.foundry = {documents: {RollTable: BaseTable}, applications: {api: {DialogV2: {wait: async () => null}}}};
 globalThis.canvas = {tokens: {controlled: []}};
@@ -80,5 +82,26 @@ test("the divine critical-failure table defaults to JO 9 even for a JO 10 vitner
     return {threshold: 9, modifier: 0};
   };
   assert.equal((await table.roll()).roll.formula, "1d10x>=9");
+  canvas.tokens.controlled = [];
+});
+
+test("an actionable divine draw keeps core chat visibility, the actual roll and the origin of the failure", async () => {
+  const table = new TrudvangRollTable();
+  table.flags = {starterId: "fatal-failure-effects"};
+  table.results = [{range: [55, 56]}, {range: [60, 999]}];
+  const actor = {uuid: "Actor.caster"};
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.uuid})};
+  canvas.tokens.controlled = [{actor}];
+  const roll = {total: 55, _evaluated: true};
+  const {results} = await table.draw({roll, messageMode: "blind"});
+  assert.equal(table.drawOptions.displayChat, false);
+  assert.equal(table.message.options.roll, roll);
+  assert.deepEqual(table.message.options.messageOptions, {messageMode: "blind"});
+  const power = {id: "known-power", name: "Known power"};
+  await table.postFatalResult({roll, results}, {actor, power});
+  assert.deepEqual(table.message.options.messageData.flags["trudvang-chronicles"].divineFailureResult,
+    {actorUuid: actor.uuid, row: 55, power});
+  await table.draw({roll: {total: 60, _evaluated: true}});
+  assert.equal(table.message.options.messageData.flags, undefined);
   canvas.tokens.controlled = [];
 });

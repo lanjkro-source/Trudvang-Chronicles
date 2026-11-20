@@ -18711,6 +18711,19 @@
         "repair": "{source}: {amount} BV repaired."
       }
     },
+    "DivineFailure": {
+      "Apply": "Apply consequence",
+      "Applied": "Effect applied: {effect}",
+      "ApplyFailed": "The critical failure consequence could not be applied.",
+      "ChoosePower": "Power whose invocation failed",
+      "NoPowers": "No accessible powers to take away.",
+      "LinkEffect": "Severed Divine Link",
+      "PowersEffect": "Unavailable Powers — {powers}",
+      "WrathEffect": "Divine Wrath",
+      "LinkLost": "The divine link is severed. Divinity Points cannot be used.",
+      "PowerLost": "This power is unavailable because of a critical failure.",
+      "Wrath": "Divine wrath prevents all invocations."
+    },
     "Revelation": {
       "Contact": "touch",
       "Attitude": "Range: {range}. The GM says whether the person is friendly or hostile towards the caster.",

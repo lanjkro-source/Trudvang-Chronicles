@@ -413,3 +413,8 @@ Contrôle représentatif demandé : lancer Main brûlante avec la seconde main e
 La carte d’un lancement réussi annonce le volume total, y compris les niveaux accordés par un succès critique. La version vitner affiche « un petit lac » si cette option a été achetée. Toikalokke conserve le test de situation de l’ihana pour une boisson empoisonnée ou magique. Le MJ décide de l’état de l’eau et des conséquences du test.
 
 Références. Livre des règles, p. 163 et 297. Player’s Handbook, Purify Water, p. 136 et 241.
+## Échecs critiques divins
+
+La table des échecs critiques (Livre des règles p. 207, Player’s Handbook p. 151) conserve son jet ouvert et ajoute une action sur les neuf résultats qui peuvent créer un effet. Les résultats 1–20 et 60+ restent des résultats de table. Le MJ tranche le sort du personnage pour 60+.
+
+L’effet est appliqué au lanceur d’origine. Si la table est ouverte directement, elle retient l’acteur sélectionné au moment du jet. Pour un résultat qui vise précisément le pouvoir raté, un jet direct propose de choisir ce pouvoir. Un résultat aléatoire retire au plus 1d3 pouvoirs accessibles, sans doublon. Les effets temporaires utilisent l’horloge des autres effets et les rétablissent à expiration. Les retraits définitifs et la colère divine n’expirent pas. Les pouvoirs et les inscriptions restent sur les fiches afin que le blocage puisse être expliqué. Les usages de points de divinité des objets sacrés suivent les mêmes restrictions.

@@ -18711,6 +18711,19 @@
         "repair": "{source} : {amount} VI réparés."
       }
     },
+    "DivineFailure": {
+      "Apply": "Appliquer la conséquence",
+      "Applied": "Effet appliqué : {effect}",
+      "ApplyFailed": "Impossible d’appliquer la conséquence de l’échec critique.",
+      "ChoosePower": "Pouvoir dont l’invocation a échoué",
+      "NoPowers": "Aucun pouvoir accessible à retirer.",
+      "LinkEffect": "Lien divin rompu",
+      "PowersEffect": "Pouvoirs indisponibles — {powers}",
+      "WrathEffect": "Colère divine",
+      "LinkLost": "Le lien divin est rompu. Les points de divinité sont inutilisables.",
+      "PowerLost": "Ce pouvoir est indisponible à la suite d’un échec critique.",
+      "Wrath": "La colère divine empêche toute invocation."
+    },
     "Revelation": {
       "Contact": "contact",
       "Attitude": "Portée : {range}. Le MJ indique si la personne est amicale ou hostile envers le lanceur.",

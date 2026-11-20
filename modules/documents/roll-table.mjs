@@ -2,6 +2,7 @@ import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
 import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
+import { DIVINE_FAILURE_ROWS } from "../rules/divine-failure.mjs";
 import { nameTableMeta, rollNameTable } from "../name-tables.mjs";
 
 const EXTRACT_STAGE_IDS = new Map([
@@ -38,6 +39,13 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
   async draw({displayChat = true, ...options} = {}) {
     // Name tables assemble a prefix and a suffix instead of drawing one result.
     if (nameTableMeta(this).isNameTable) return rollNameTable(this, {displayChat});
+    if (displayChat && this.fatalTableId === "fatal-failure-effects") {
+      const controlled = globalThis.canvas?.tokens?.controlled ?? [];
+      const actor = controlled.length === 1 ? controlled[0].actor : null;
+      const draw = await super.draw({displayChat: false, ...options});
+      if (draw.results.length) await this.postFatalResult(draw, {actor, messageMode: options.messageMode});
+      return draw;
+    }
     if (!extractStageTableId(this)) return super.draw({displayChat, ...options});
     const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
     if (!actor) {
@@ -72,6 +80,17 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
       ? await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll]})
       : null;
     return {roll: dieRoll, results: [], message};
+  }
+
+  async postFatalResult(draw, {actor, power, messageMode} = {}) {
+    const row = this.fatalTableId === "fatal-failure-effects" ? draw.results[0]?.range?.[0] : null;
+    const messageData = actor ? {speaker: ChatMessage.getSpeaker({actor})} : {};
+    if (actor?.uuid && DIVINE_FAILURE_ROWS[row]) {
+      messageData.flags = {"trudvang-chronicles": {divineFailureResult: {
+        actorUuid: actor.uuid, row, power: power ?? null
+      }}};
+    }
+    return this.toMessage(draw.results, {roll: draw.roll, messageData, messageOptions: {messageMode}});
   }
 
   getResultsForRoll(value) {

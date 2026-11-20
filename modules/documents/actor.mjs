@@ -20,6 +20,7 @@ import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
+import { divinePowerId } from "../rules/divine-failure.mjs";
 import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
@@ -1563,7 +1564,8 @@ export class TrudvangActor extends BaseActor {
         return {...selection,flavor:details.map(row=>escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectLevel",{count:row.count,effect:row.level.effect}))).join("<br>")};
       },
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
-        modifier: this.fatalEffectModifier(fatalKind, options.cost)}});
+        modifier: this.fatalEffectModifier(fatalKind, options.cost),
+        ...(isDivine ? {power: {id: divinePowerId(item), name: item.name}} : {})}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
     if (this.isOwner) {
       const stored = Number(this._source.system.resources[resource].value || 0);
@@ -1640,7 +1642,7 @@ export class TrudvangActor extends BaseActor {
     });
   }
 
-  async rollFatalEffect(kind, {threshold, modifier} = {}) {
+  async rollFatalEffect(kind, {threshold, modifier, power} = {}) {
     const isDivine = kind === "faith";
     const vitnerType = this.selectedVitnerType;
     const fatalThreshold = threshold ?? (isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9));
@@ -1651,9 +1653,7 @@ export class TrudvangActor extends BaseActor {
     const roll = new Roll(fatalRollFormula(fatalThreshold, fatalModifier));
     await roll.evaluate();
     const draw = await table.draw({roll, displayChat: false});
-    if (draw.results.length) await table.toMessage(draw.results, {
-      roll: draw.roll, messageData: {speaker: ChatMessage.getSpeaker({actor: this})}
-    });
+    if (draw.results.length) await table.postFatalResult(draw, {actor: this, power});
     return draw;
   }
 

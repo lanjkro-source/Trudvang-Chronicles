@@ -16419,6 +16419,22 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.createConsumable` | {source} was created in the inventory. | {source} a été créée dans l’inventaire. |
 | `TRUDVANG.Consequence.Result.repair` | {source}: {amount} BV repaired. | {source} : {amount} VI réparés. |
 
+## `TRUDVANG.DivineFailure`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.DivineFailure.Apply` | Apply consequence | Appliquer la conséquence |
+| `TRUDVANG.DivineFailure.Applied` | Effect applied: {effect} | Effet appliqué : {effect} |
+| `TRUDVANG.DivineFailure.ApplyFailed` | The critical failure consequence could not be applied. | Impossible d’appliquer la conséquence de l’échec critique. |
+| `TRUDVANG.DivineFailure.ChoosePower` | Power whose invocation failed | Pouvoir dont l’invocation a échoué |
+| `TRUDVANG.DivineFailure.NoPowers` | No accessible powers to take away. | Aucun pouvoir accessible à retirer. |
+| `TRUDVANG.DivineFailure.LinkEffect` | Severed Divine Link | Lien divin rompu |
+| `TRUDVANG.DivineFailure.PowersEffect` | Unavailable Powers — {powers} | Pouvoirs indisponibles — {powers} |
+| `TRUDVANG.DivineFailure.WrathEffect` | Divine Wrath | Colère divine |
+| `TRUDVANG.DivineFailure.LinkLost` | The divine link is severed. Divinity Points cannot be used. | Le lien divin est rompu. Les points de divinité sont inutilisables. |
+| `TRUDVANG.DivineFailure.PowerLost` | This power is unavailable because of a critical failure. | Ce pouvoir est indisponible à la suite d’un échec critique. |
+| `TRUDVANG.DivineFailure.Wrath` | Divine wrath prevents all invocations. | La colère divine empêche toute invocation. |
+
 ## `TRUDVANG.Revelation`
 
 | Clé | English | Français |

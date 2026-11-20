@@ -18,6 +18,7 @@ import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
+import {renderDivineFailureAction} from "./divine-failure-chat.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -76,6 +77,7 @@ function attachListeners(message, html) {
   html.dataset.trudvangBound = "true";
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
+  renderDivineFailureAction(message, html);
   void canManageEffectTargets(message,game.user).then(editable=>{
     for(const button of html.querySelectorAll("[data-transformation-key]")){
       const key=button.dataset.transformationKey;
@@ -169,7 +171,10 @@ function attachListeners(message, html) {
       if (!actor?.isOwner) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotRollForActor"));
       button.disabled = true;
       try {
-        const draw = await actor.rollFatalEffect(kind, {threshold, modifier});
+        const power = button.dataset.fatalPowerId
+          ? {id: button.dataset.fatalPowerId, name: button.dataset.fatalPowerName}
+          : null;
+        const draw = await actor.rollFatalEffect(kind, {threshold, modifier, power});
         if (!draw?.results?.length) button.disabled = false;
       } catch (error) {
         button.disabled = false;
