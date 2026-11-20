@@ -2,6 +2,13 @@
 
 Les termes et les numéros de page ci-dessous proviennent du Livre des règles français ; vérifier les descriptions et niveaux de puissance des deux sources avant toute automatisation. L'inventaire recoupe les descriptions des pouvoirs disposant déjà d'une définition d'effet ; une portée de sélection ou un effet personnel n'est pas automatiquement une aura.
 
+## Durée des régions affichées
+
+- Une décharge de magie funeste prépare la région et les cibles dès l’affichage du résultat. Le rayon et les cibles sont conservés jusqu’à l’application par la carte. La zone est retirée après confirmation et peut être restaurée si le MJ se reconnecte avant l’application.
+- Une zone de flammes instantanée, avec sa lumière, attend les réponses de toutes ses cibles. Chaque cible accepte les dégâts ou résout son esquive. Un déplacement, la clôture du combat ou l’avancement de l’horloge ne clôturent pas une décision en attente.
+- Les zones de peur groupées restent visibles jusqu’à l’application collective, avec mise à jour des cibles ajoutées ou retirées.
+- Les auras restent rattachées à leur effet source. Les zones durables (flammes prolongées, séismes, brouillard, ténèbres, bourbier, mur de terre) utilisent leur durée effective, conservée lors du passage de l’horloge de combat à l’horloge du monde. L’expiration, la dissipation ou la suppression de la source enlève aussi les lumières et effets associés.
+
 ## Auras prises en charge
 
 Lumière rassurante et Radiance sacrée suivent le lanceur, appliquent leurs effets à l'entrée et les retirent à la sortie. Brise du voyage suit également le lanceur et protège les occupants dans les jets d’environnement et face à Brouillard. Refuge, Protection contre les éléments et Été elfique conservent le point de l’invocation. Les murs bloquant la lumière limitent ces régions. Les éclairages automatiques relèvent des auras lumineuses. Les copies appliquées avant cette automatisation ne sont pas transformées en auras fixes.

@@ -81,8 +81,8 @@ export async function applyFatalMagic(message) {
   const rule = FATAL_MAGIC_ROWS[result?.row];
   if (!rule || !result.actorUuid || result.applied) return false;
   if (rule.drain) {
-    const response = await requestFatalVitnerArea(message);
-    if (["applied", "alreadyApplied"].includes(response.status)) return true;
+    const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview});
+    if (["prepared", "applied", "alreadyApplied"].includes(response.status)) return true;
     ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
       ? "TRUDVANG.FatalMagic.NoOrigin" : "TRUDVANG.FatalMagic.AreaUnavailable"));
     return false;
@@ -153,6 +153,20 @@ export function renderFatalResultAction(message, html) {
     const key = FATAL_MAGIC_ROWS[result.row].excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
     note.textContent = game.i18n.localize(`TRUDVANG.FatalMagic.${key}`);
     content.append(note);
+    if (result.preview) {
+      const summary = document.createElement("p");
+      summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaPending", {radius: result.preview.radius});
+      content.append(summary);
+      for (const target of result.preview.targets) {
+        const row = document.createElement("button");
+        row.type = "button";
+        row.className = "trait-situation-token";
+        row.dataset.action = "locate-trait-situation-token";
+        row.dataset.tokenUuid = target.tokenUuid;
+        row.textContent = target.name;
+        content.append(row);
+      }
+    }
   }
   if (result.applied) {
     if (!divine && result.radius) return renderAreaOutcome({...result, messageId: message.id}, content);
@@ -164,7 +178,8 @@ export function renderFatalResultAction(message, html) {
   if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
   const button = document.createElement("button");
   button.type = "button";
-  button.textContent = i18n("Apply");
+  button.textContent = !divine && FATAL_MAGIC_ROWS[result.row]?.drain && !result.preview
+    ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea") : i18n("Apply");
   button.addEventListener("click", async () => {
     button.disabled = true;
     try {

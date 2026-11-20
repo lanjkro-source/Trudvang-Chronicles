@@ -45,29 +45,45 @@ test("46 freezes separate rolls across retries, drains the appropriate pools and
   const mundane = actor("mundane");
   const plans = {};
   const origin = token(mage, 0);
-  const scene = {grid: {size: 100, distance: 1, units: "m"},
+  const regions = new Map();
+  const scene = {id: "scene", regions, grid: {size: 100, distance: 1, units: "m"},
     tokens: [origin, token(spent, 100), token(mundane, 200)],
-    getFlag: () => plans, update: async changes => {plans[id] = Object.values(changes)[0];}};
+    getFlag: () => plans, update: async changes => {plans[id] = Object.values(changes)[0];},
+    createEmbeddedDocuments: async (type, [data]) => {
+      assert.equal(type, "Region");
+      const region = {...data, delete: async () => regions.delete("preview")};
+      regions.set("preview", region);
+      return [region];
+    }};
   origin.parent = scene;
   const supported = new Map([origin, mage, spent, mundane].map(doc => [doc.uuid, doc]));
   globalThis.foundry = {utils: {fromUuid: async uuid => supported.get(uuid)}};
-  globalThis.game = {i18n: {localize: key => key}};
+  globalThis.CONST = {REGION_VISIBILITY: {ALWAYS: 2}};
+  globalThis.game = {scenes: new Map([[scene.id, scene]]), i18n: {localize: key => key}};
   const formulas = [];
   const values = [4, 3, 6, 2, 5];
   globalThis.Roll = class {constructor(formula) {formulas.push(formula);} async evaluate() {return {total: values.shift()};}};
   const result = {row: 46, actorUuid: mage.uuid, tokenUuid: origin.uuid,
     plan: {radius: 999, victims: []}};
-  const message = {id, rolls: [{total: 46}], getFlag: () => result,
-    update: async () => {throw Error("failed to update the card");}};
+  const updateCard = async changes => Object.entries(changes).forEach(([path, value]) => {result[path.split(".").at(-1)] = value;});
+  const message = {id, rolls: [{total: 46}], getFlag: () => result, update: updateCard};
+  assert.deepEqual(await applyFatalVitnerArea(message, {prepareOnly: true}), {status: "prepared"});
+  assert.equal(regions.size, 1);
+  assert.equal([...regions.values()][0].shapes[0].radius, 400);
+  assert.equal(mundane.system.resources.body.current, 20);
+  assert.equal(result.preview.targets.length, 3);
+  message.update = async () => {throw Error("failed to update the card");};
   await assert.rejects(applyFatalVitnerArea(message), /failed to update the card/);
+  assert.equal(regions.size, 1);
   assert.deepEqual(formulas, ["1d10x>=10", "1d6", "1d6", "1d6", "1d6"]);
   assert.equal(mage.system.resources.vitner.current, 5);
   assert.equal(spent.system.resources.body.current, 20);
   assert.equal(mundane.system.resources.body.current, 18);
   assert.deepEqual(mage.effects.get(id).duration, {value: 5, units: "days"});
   assert.equal(fatalSpellBlindness(mage), true);
-  message.update = async changes => Object.entries(changes).forEach(([path, value]) => {result[path.split(".").at(-1)] = value;});
+  message.update = updateCard;
   assert.deepEqual(await applyFatalVitnerArea(message), {status: "applied"});
+  assert.equal(regions.size, 0);
   assert.equal(mundane.system.resources.body.current, 18);
   assert.equal(formulas.length, 5);
   assert.equal(result.radius, 4);

@@ -9,7 +9,8 @@ import {conditionalDamageBonus,damageCanAffect} from "./rules/creature-condition
 import {applyWeaponDamageEffects} from './weapon-damage-effects.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {fearTargetRow} from './magic-fear.mjs';
-import {applyFatalVitnerArea} from "./fatal-vitner-area.mjs";
+import {applyFatalVitnerArea, cleanupFatalVitnerPreviews, clearFatalVitnerPreview} from "./fatal-vitner-area.mjs";
+import {FATAL_MAGIC_ROWS} from "./rules/fatal-magic.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -60,7 +61,7 @@ async function applyFatalVitnerAreaOnGM(payload) {
   const result = message.getFlag(SYSTEM_ID, "fatalMagicResult");
   const actor = result?.actorUuid ? await foundry.utils.fromUuid(result.actorUuid) : null;
   if (!actor?.canUserModify?.(user, "update")) return {status: "unavailable"};
-  return applyFatalVitnerArea(message);
+  return applyFatalVitnerArea(message, {prepareOnly: payload.prepareOnly === true});
 }
 
 export function canManageFearTargets(message,user) {
@@ -346,6 +347,29 @@ export async function applyChatApplication(payload) {
 export function registerChatApplicationSocket() {
   if (registered || !game.socket) return;
   registered = true;
+  const prepare = message => {
+    const result = message?.getFlag?.(SYSTEM_ID, "fatalMagicResult");
+    if (!FATAL_MAGIC_ROWS[result?.row]?.drain || result.applied || !result.tokenUuid
+        || !game.user.isGM || responderFor(message)?.id !== game.user.id) return;
+    void applyChatApplication({type: "chatApplyFatalVitnerArea", prepareOnly: true,
+      messageId: message.id, userId: authorId(message)}).catch(error => console.error("Trudvang | Fatal area preview failed", error));
+  };
+  const restorePreviews = () => {
+    if (game.user.isGM) for (const message of game.messages?.values?.() ?? []) prepare(message);
+    if (game.users?.activeGM?.id === game.user.id) {
+      void cleanupFatalVitnerPreviews().catch(error => console.error("Trudvang | Fatal area cleanup failed", error));
+    }
+  };
+  globalThis.Hooks?.on("createChatMessage", prepare);
+  globalThis.Hooks?.on("updateUser", restorePreviews);
+  globalThis.Hooks?.on("deleteChatMessage", message => {
+    if (game.users?.activeGM?.id === game.user.id && message.getFlag(SYSTEM_ID, "fatalMagicResult")?.tokenUuid) {
+      void (message.getFlag(SYSTEM_ID, "fatalMagicResult")?.preview
+        ? clearFatalVitnerPreview(message) : cleanupFatalVitnerPreviews())
+        .catch(error => console.error("Trudvang | Fatal area cleanup failed", error));
+    }
+  });
+  restorePreviews();
   game.socket.on(SOCKET_CHANNEL, async payload => {
     if (payload?.type === "chatApplicationReply" && payload.userId === game.user.id) {
       const pending = replies.get(payload.requestId);
@@ -441,8 +465,8 @@ export async function requestFearBatch(message) {
   return requestChatUpdate(message,{type:"chatApplyFearBatch",requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id});
 }
 
-export function requestFatalVitnerArea(message) {
-  return requestChatUpdate(message, {type: "chatApplyFatalVitnerArea", requestId: crypto.randomUUID(), messageId: message.id, userId: game.user.id});
+export function requestFatalVitnerArea(message, {prepareOnly = false} = {}) {
+  return requestChatUpdate(message, {type: "chatApplyFatalVitnerArea", requestId: crypto.randomUUID(), messageId: message.id, userId: game.user.id, prepareOnly});
 }
 
 async function requestChatUpdate(message, payload) {

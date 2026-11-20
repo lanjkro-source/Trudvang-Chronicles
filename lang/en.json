@@ -18725,6 +18725,9 @@
       "AreaExceptCaster": "The weaver is spared. Only non-weavers without Vitner Points lose Body Points.",
       "AreaIncludesCaster": "The weaver is also affected. Only non-weavers without Vitner Points lose Body Points.",
       "AreaApplied": "Discharge resolved within a radius of {radius} m.",
+      "AreaName": "Fatal Vitner Drain",
+      "AreaPending": "Radius {radius} m. The area remains visible until the consequence is applied.",
+      "ShowArea": "Show area",
       "Affected": "{name} is affected by the discharge.",
       "VitnerDrained": "{name} loses {amount} Vitner Points.",
       "HealthDrained": "{name} loses {amount} Body Points."

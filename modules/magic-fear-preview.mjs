@@ -28,6 +28,11 @@ function castId(message) {
   : flags?.fearContext?.areaSceneId ? flags.fearContext.originMessageId : null;
 }
 
+function previewId(message) {
+ const flags = section(message);
+ return (flags?.fatalMagicResult?.preview || flags?.spellZoneTest?.instantInfo) ? message.id : castId(message);
+}
+
 function pendingTargets(id, area, deletedId) {
  const cards = values(game.messages).filter(row => row.id !== id && row.id !== deletedId && castId(row) === id);
  const card = cards.find(row => section(row)?.fearBatchApplied) ?? cards.at(-1);
@@ -92,19 +97,26 @@ function drawTargetOutlines(id, deletedId) {
  clearOutlines(id);
  if (id === deletedId) return;
  const cast = game.messages.get(id);
- const area = section(cast)?.magicFearArea;
+ const fatal = section(cast)?.fatalMagicResult;
  const board = globalThis.canvas;
- if (!area?.nativeRegion || !board?.ready || board.scene?.id !== area.sceneId
+ const fire = section(cast)?.spellZoneTest;
+ const fireRegion = fire?.instantInfo && values(board?.scene?.regions).find(region => region.uuid === fire.regionUuid);
+ const fireArea = fireRegion ? {sceneId: board.scene.id, level: values(fireRegion.levels)[0]} : null;
+ const area = fatal?.preview ?? fireArea ?? section(cast)?.magicFearArea;
+ if (!area || (!area.nativeRegion && !fireArea && (!fatal?.preview || fatal.applied)) || !board?.ready || board.scene?.id !== area.sceneId
      || (area.level && board.level?.id && board.level.id !== area.level)
      || cast.visible === false || cast.isContentVisible === false) return;
  const tokens = new Map((board.tokens?.placeables ?? []).map(token => [token.document.uuid,token]));
- const recipients = pendingTargets(id,area,deletedId).targets.map(row => tokens.get(row.tokenUuid))
+ const targets = fatal?.preview ? area.targets : fireArea
+  ? fire.recipients.filter(row => !fire.responses[encodeURIComponent(row.actorUuid).replaceAll('.','%2E')]?.resolved)
+  : pendingTargets(id,area,deletedId).targets;
+ const recipients = targets.map(row => tokens.get(row.tokenUuid))
   .filter(token => token?.isVisible && (!token.document.hidden || game.user.isGM));
  if (!recipients.length) return;
  const graphics = new PIXI.Graphics();
  graphics.eventMode = 'none';
  graphics.lineStyle(4,Number.parseInt(auraColor().slice(1),16),1);
- for (const token of recipients) graphics.drawRoundedRect(token.x - 3,token.y - 3,token.w + 6,token.h + 6,8);
+ for (const token of recipients) graphics.drawRoundedRect((token.document.x ?? token.x) - 3,(token.document.y ?? token.y) - 3,token.w + 6,token.h + 6,8);
  board.interface.addChild(graphics);
  outlines.set(id,graphics);
 }
@@ -117,11 +129,15 @@ export function registerMagicFearPreview() {
  };
  const refresh = (id,deletedId) => {
   if (!id) return;
-  void synchronizeMagicFearRegion(id,{deletedId}).catch(error => console.error('Trudvang | Fear region synchronization failed',error));
+  const flags = section(game.messages.get(id));
+  if (!flags?.fatalMagicResult && !flags?.spellZoneTest) {
+   void synchronizeMagicFearRegion(id,{deletedId}).catch(error => console.error('Trudvang | Fear region synchronization failed',error));
+  }
   refreshOutlines(id,deletedId);
  };
  const rebuild = () => {
-  const ids = new Set(values(game.messages).filter(message => section(message)?.magicFearArea?.nativeRegion).map(message => message.id));
+  const ids = new Set(values(game.messages).filter(message => section(message)?.magicFearArea?.nativeRegion
+   || section(message)?.fatalMagicResult?.preview || section(message)?.spellZoneTest?.instantInfo).map(message => message.id));
   if (writer()) {
    for (const scene of values(game.scenes)) for (const region of values(scene.regions)) {
     const id = regionCastId(region);
@@ -130,10 +146,19 @@ export function registerMagicFearPreview() {
   }
   for (const id of ids) refresh(id);
  };
- Hooks.on('createChatMessage',message => refresh(castId(message)));
- Hooks.on('updateChatMessage',message => refresh(castId(message)));
- Hooks.on('deleteChatMessage',message => refresh(castId(message),message.id));
+ Hooks.on('createChatMessage',message => refresh(previewId(message)));
+ Hooks.on('updateChatMessage',message => refresh(previewId(message)));
+ Hooks.on('deleteChatMessage',message => refresh(previewId(message),message.id));
  Hooks.on('updateRegion',region => refreshOutlines(regionCastId(region)));
+ Hooks.on('deleteRegion',region => {
+  for (const message of values(game.messages)) if (section(message)?.spellZoneTest?.regionUuid === region.uuid) refreshOutlines(message.id);
+ });
+ Hooks.on('updateToken', (_token, changes) => {
+  if (['x','y','width','height','hidden','level'].some(key => Object.hasOwn(changes,key))) {
+   const ids = new Set(values(game.messages).map(previewId).filter(Boolean));
+   for (const id of ids) refreshOutlines(id);
+  }
+ });
  Hooks.on('canvasReady',rebuild);
  Hooks.on('updateUser',rebuild);
  Hooks.on('canvasTearDown',() => {

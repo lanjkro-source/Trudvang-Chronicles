@@ -16436,6 +16436,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FatalMagic.AreaExceptCaster` | The weaver is spared. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
 | `TRUDVANG.FatalMagic.AreaIncludesCaster` | The weaver is also affected. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
 | `TRUDVANG.FatalMagic.AreaApplied` | Discharge resolved within a radius of {radius} m. | Décharge résolue dans un rayon de {radius} m. |
+| `TRUDVANG.FatalMagic.AreaName` | Fatal Vitner Drain | Absorption funeste du vitner |
+| `TRUDVANG.FatalMagic.AreaPending` | Radius {radius} m. The area remains visible until the consequence is applied. | Rayon de {radius} m. La zone reste visible jusqu’à l’application. |
+| `TRUDVANG.FatalMagic.ShowArea` | Show area | Afficher la zone |
 | `TRUDVANG.FatalMagic.Affected` | {name} is affected by the discharge. | {name} est touché par la décharge. |
 | `TRUDVANG.FatalMagic.VitnerDrained` | {name} loses {amount} Vitner Points. | {name} perd {amount} PV. |
 | `TRUDVANG.FatalMagic.HealthDrained` | {name} loses {amount} Body Points. | {name} perd {amount} PS. |

@@ -18725,6 +18725,9 @@
       "AreaExceptCaster": "Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
       "AreaIncludesCaster": "Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
       "AreaApplied": "Décharge résolue dans un rayon de {radius} m.",
+      "AreaName": "Absorption funeste du vitner",
+      "AreaPending": "Rayon de {radius} m. La zone reste visible jusqu’à l’application.",
+      "ShowArea": "Afficher la zone",
       "Affected": "{name} est touché par la décharge.",
       "VitnerDrained": "{name} perd {amount} PV.",
       "HealthDrained": "{name} perd {amount} PS."
