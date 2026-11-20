@@ -1638,7 +1638,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.DamageApplied` | {damage} damage applied to {target}. | {damage} dégâts appliqués à {target}. |
 | `TRUDVANG.Notification.DefenseDamageApplied` | {damage} damage applied to {item}. | {damage} dégâts appliqués à {item}. |
 | `TRUDVANG.Notification.FearApplied` | {amount} Fear point(s) applied to {targets} character(s). | {amount} point(s) de peur appliqué(s) à {targets} personnage(s). |
-| `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
+| `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner {vitner}, Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner {vitner}, divinité {divinity}, −{fear} peur. |
 | `TRUDVANG.Notification.RestChat` | {actor} sleeps through the night: +{health} BP; Vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax}; Divinity {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}. | {actor} passe une nuit de sommeil : +{health} PS ; vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax} ; divinité {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}. |
 | `TRUDVANG.Notification.RestUnchanged` |  (not restored) |  (non renouvelée) |
 | `TRUDVANG.Notification.RestTemporary` | ; −{amount} temporary Divinity Points |  ; −{amount} points de divinité temporaires |
@@ -16418,6 +16418,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.risk` | {source}: {rolled} on 1d20 — {outcome}. | {source} : {rolled} sur 1d20 — {outcome}. |
 | `TRUDVANG.Consequence.Result.createConsumable` | {source} was created in the inventory. | {source} a été créée dans l’inventaire. |
 | `TRUDVANG.Consequence.Result.repair` | {source}: {amount} BV repaired. | {source} : {amount} VI réparés. |
+
+## `TRUDVANG.FatalMagic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.FatalMagic.Lethargy` | Lethargy | Léthargie |
+| `TRUDVANG.FatalMagic.ReducedVitner` | Reduced Vitner Capacity | Réserve de vitner réduite |
+| `TRUDVANG.FatalMagic.Depletion` | Vitner Depletion | Épuisement du vitner |
+| `TRUDVANG.FatalMagic.Penalty` | −2 to tests and initiative. | −2 aux tests et à l’initiative. |
+| `TRUDVANG.FatalMagic.Loss` | Vitner reserve reduced by {points} points (minimum capacity 1). | Réserve de vitner réduite de {points} PV (capacité minimale de 1). |
+| `TRUDVANG.FatalMagic.NoRecovery` | Vitner capacity drops to 1. Recovery is blocked while the effect lasts. | La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet. |
 
 ## `TRUDVANG.DivineFailure`
 

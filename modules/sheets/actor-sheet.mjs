@@ -38,6 +38,7 @@ import {effectContributions, effectContributionText} from "../rules/effect-contr
 import {effectStatus} from "../rules/effect-status.mjs";
 import {sensoryText} from "../rules/senses.mjs";
 import {bodyHealthUpdate} from "../rules/body-health.mjs";
+import {storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
 import {customTabletChild} from "../rules/custom-tablet.mjs";
 import {itemEffectRemainingSeconds} from "../rules/effect-duration.mjs";
 
@@ -184,6 +185,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     addHint("bodyMax", traitHint("strength"), traitHint("constitution"));
     addHint("combatMax", skillHint("fighting"));
     addHint("vitnerMax", skillHint("vitnerCraft"));
+    const fatalVitner = this.actor.fatalVitnerState;
+    if (fatalVitner?.depleted) addHint("vitnerMax", game.i18n.localize("TRUDVANG.FatalMagic.NoRecovery"));
+    else if (fatalVitner?.withheld) addHint("vitnerMax", game.i18n.format("TRUDVANG.FatalMagic.Loss", {points: fatalVitner.withheld}));
     addHint("divinityMax", skillHint("faith"));
     addHint("fearFactor", traitHint("psyche", -1));
     if (this.actor.type === "character") addHint("movement", traitHint("dexterity"));
@@ -498,7 +502,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const level = id => Number(this.actor.findRuleKnowledge(id)?.system.level || 0);
       const capacities = magicCapacities({skill: key => this.actor.getSkillValue(key), level,
         hasReligion: Boolean(this.actor.selectedReligion)});
-      context.npcManualVitnerMax = capacities.vitner === null;
+      context.npcManualVitnerMax = capacities.vitner === null && !fatalVitner?.depleted && !fatalVitner?.withheld;
       context.npcManualDivinityMax = capacities.divinity === null;
       const hasSpells = tablets.some(item => item.system.tabletType === "vitner") || this.actor.items.some(item => item.type === "spell");
       const hasPowers = tablets.some(item => item.system.tabletType === "holy") || this.actor.items.some(item => item.type === "divineFeat");
@@ -767,7 +771,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         const shown = Number(foundry.utils.getProperty(changes, valuePath) || 0);
         const modifier = Number(this.actor.system.modifiers?.[`${key}Value`] || 0);
         const minimum = key === "body" ? Number.NEGATIVE_INFINITY : 0;
-        foundry.utils.setProperty(changes, valuePath, editedPath === valuePath ? Math.max(minimum, shown - modifier) : source.value);
+        const stored = key === "vitner" ? storedVitnerForCurrent(this.actor, shown) : Math.max(minimum, shown - modifier);
+        foundry.utils.setProperty(changes, valuePath, editedPath === valuePath ? stored : source.value);
       }
       if (foundry.utils.hasProperty(changes, maxPath)) {
         const shown = Number(foundry.utils.getProperty(changes, maxPath) || 0);

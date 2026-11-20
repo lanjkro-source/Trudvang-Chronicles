@@ -1406,7 +1406,7 @@
       "DamageApplied": "{damage} damage applied to {target}.",
       "DefenseDamageApplied": "{damage} damage applied to {item}.",
       "FearApplied": "{amount} Fear point(s) applied to {targets} character(s).",
-      "RestCompleted": "Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear.",
+      "RestCompleted": "Rest complete: +{health} BP, Vitner {vitner}, Divinity {divinity}, −{fear} Fear.",
       "RestChat": "{actor} sleeps through the night: +{health} BP; Vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax}; Divinity {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}.",
       "RestUnchanged": " (not restored)",
       "RestTemporary": "; −{amount} temporary Divinity Points",
@@ -18710,6 +18710,14 @@
         "createConsumable": "{source} was created in the inventory.",
         "repair": "{source}: {amount} BV repaired."
       }
+    },
+    "FatalMagic": {
+      "Lethargy": "Lethargy",
+      "ReducedVitner": "Reduced Vitner Capacity",
+      "Depletion": "Vitner Depletion",
+      "Penalty": "−2 to tests and initiative.",
+      "Loss": "Vitner reserve reduced by {points} points (minimum capacity 1).",
+      "NoRecovery": "Vitner capacity drops to 1. Recovery is blocked while the effect lasts."
     },
     "DivineFailure": {
       "Apply": "Apply consequence",

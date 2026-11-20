@@ -18,7 +18,7 @@ import {environmentActorValues, environmentKey} from "./rules/environment.mjs";
 import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
-import {renderDivineFailureAction} from "./divine-failure-chat.mjs";
+import {renderFatalResultAction} from "./fatal-result-chat.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -77,7 +77,7 @@ function attachListeners(message, html) {
   html.dataset.trudvangBound = "true";
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
-  renderDivineFailureAction(message, html);
+  renderFatalResultAction(message, html);
   void canManageEffectTargets(message,game.user).then(editable=>{
     for(const button of html.querySelectorAll("[data-transformation-key]")){
       const key=button.dataset.transformationKey;

@@ -4,7 +4,7 @@ import test from "node:test";
 import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure, divineFailureRestriction} from "../modules/rules/divine-failure.mjs";
 globalThis.foundry = {};
 const {spellAvailability} = await import("../modules/rules/spell-availability.mjs");
-const {applyDivineFailure} = await import("../modules/divine-failure-chat.mjs");
+const {applyDivineFailure} = await import("../modules/fatal-result-chat.mjs");
 
 const scope = "trudvang-chronicles";
 const rules = "TRUDVANG.DivineFailure.";

@@ -1,6 +1,7 @@
 import {escapeHtml, escapeAttribute} from "./helpers.mjs";
 import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure} from "./rules/divine-failure.mjs";
 import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
+import {FATAL_MAGIC_ROWS, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const FLAG = "divineFailureResult";
@@ -9,6 +10,7 @@ const i18n = (key, data) => data
   : game.i18n.localize(`TRUDVANG.DivineFailure.${key}`);
 const canApply = message => message.isContentVisible && (game.user.isGM || message.isAuthor);
 const applying = new Set();
+const roll = async formula => Number((await new Roll(formula).evaluate()).total);
 
 async function choosePower(powers) {
   if (!powers.length) return null;
@@ -48,7 +50,7 @@ export async function applyDivineFailure(message) {
       if (!power) return false;
     }
     const plan = await planDivineFailure(result.row, {
-      power, candidates, roll: async formula => Number((await new Roll(formula).evaluate()).total)
+      power, candidates, roll
     });
     if (!plan) return ui.notifications.warn(i18n("NoPowers"));
     const powers = plan.powers.map(power => power.name).join(", ");
@@ -72,9 +74,54 @@ export async function applyDivineFailure(message) {
   }
 }
 
-export function renderDivineFailureAction(message, html) {
+export async function applyFatalMagic(message) {
+  if (!canApply(message) || applying.has(message.id)) return false;
+  const result = message.getFlag(SCOPE, "fatalMagicResult");
+  if (!FATAL_MAGIC_ROWS[result?.row] || !result.actorUuid || result.applied) return false;
+  applying.add(message.id);
+  try {
+    const actor = await foundry.utils.fromUuid(result.actorUuid);
+    if (!actor?.isOwner) return false;
+    let effect = actor.effects.get(message.id);
+    if (!effect) {
+      const plan = await planFatalMagic(result.row, roll);
+      const name = game.i18n.localize(plan.depleted ? "TRUDVANG.FatalMagic.Depletion"
+        : plan.lethargy ? "TRUDVANG.FatalMagic.Lethargy" : "TRUDVANG.FatalMagic.ReducedVitner");
+      const details = [
+        ...(plan.lethargy ? [game.i18n.localize("TRUDVANG.FatalMagic.Penalty")] : []),
+        ...(plan.reduction ? [game.i18n.format("TRUDVANG.FatalMagic.Loss", {points: plan.reduction})] : []),
+        ...(plan.depleted ? [game.i18n.localize("TRUDVANG.FatalMagic.NoRecovery")] : [])
+      ].join(" · ");
+      effect = await actor.createTrudvangEffect({
+        _id: message.id, name, img: "icons/svg/daze.svg",
+        description: `<p>${escapeHtml(details)}</p>`,
+        duration: normalizeEffectDuration(plan.duration),
+        system: {stackId: `fatal-magic:${message.id}`, changes: plan.lethargy
+          ? ["allActions", "initiative"].map(key => ({key: `system.modifiers.rolls.${key}`, type: "add", value: "-2", phase: "initial"}))
+          : []},
+        flags: {[SCOPE]: {summary: details, fatalMagic: {resultId: message.id, reduction: plan.reduction, depleted: plan.depleted}}}
+      }, {keepId: true});
+    }
+    const applied = effect?.flags?.[SCOPE]?.fatalMagic;
+    if (applied?.resultId !== message.id) return false;
+    if (applied.depleted && !actor.getFlag(SCOPE, "fatalVitnerLoss")?.[message.id]) {
+      // Record the one-time point loss in the same write as the pool change.
+      await actor.update({
+        "system.resources.vitner.value": storedVitnerForCurrent(actor, Math.min(1, actor.system.resources.vitner.current)),
+        [`flags.${SCOPE}.fatalVitnerLoss.${message.id}`]: true
+      });
+    }
+    await message.update({[`flags.${SCOPE}.fatalMagicResult.applied`]: effect.name});
+    return true;
+  } finally {
+    applying.delete(message.id);
+  }
+}
+
+export function renderFatalResultAction(message, html) {
   if (!message.isContentVisible) return;
-  const result = message.getFlag(SCOPE, FLAG);
+  const divine = message.getFlag(SCOPE, FLAG);
+  const result = divine ?? message.getFlag(SCOPE, "fatalMagicResult");
   const content = html.querySelector(".message-content");
   if (!result || !content) return;
   if (result.applied) {
@@ -83,16 +130,16 @@ export function renderDivineFailureAction(message, html) {
     content.append(note);
     return;
   }
-  if (!result.actorUuid || !DIVINE_FAILURE_ROWS[result.row] || !canApply(message)) return;
+  if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
   const button = document.createElement("button");
   button.type = "button";
   button.textContent = i18n("Apply");
   button.addEventListener("click", async () => {
     button.disabled = true;
     try {
-      await applyDivineFailure(message);
+      await (divine ? applyDivineFailure(message) : applyFatalMagic(message));
     } catch (error) {
-      console.error("Trudvang Chronicles | Divine failure application failed", error);
+      console.error("Trudvang Chronicles | Fatal table consequence application failed", error);
       ui.notifications.warn(i18n("ApplyFailed"));
     } finally {
       button.disabled = false;

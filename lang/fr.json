@@ -1406,7 +1406,7 @@
       "DamageApplied": "{damage} dégâts appliqués à {target}.",
       "DefenseDamageApplied": "{damage} dégâts appliqués à {item}.",
       "FearApplied": "{amount} point(s) de peur appliqué(s) à {targets} personnage(s).",
-      "RestCompleted": "Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur.",
+      "RestCompleted": "Repos terminé : +{health} PS, vitner {vitner}, divinité {divinity}, −{fear} peur.",
       "RestChat": "{actor} passe une nuit de sommeil : +{health} PS ; vitner {vitnerBefore} → {vitnerAfter}/{vitnerMax} ; divinité {divinityBefore} → {divinityAfter}/{divinityMax}{divinityNote}{temporary}.",
       "RestUnchanged": " (non renouvelée)",
       "RestTemporary": " ; −{amount} points de divinité temporaires",
@@ -18710,6 +18710,14 @@
         "createConsumable": "{source} a été créée dans l’inventaire.",
         "repair": "{source} : {amount} VI réparés."
       }
+    },
+    "FatalMagic": {
+      "Lethargy": "Léthargie",
+      "ReducedVitner": "Réserve de vitner réduite",
+      "Depletion": "Épuisement du vitner",
+      "Penalty": "−2 aux tests et à l’initiative.",
+      "Loss": "Réserve de vitner réduite de {points} PV (capacité minimale de 1).",
+      "NoRecovery": "La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet."
     },
     "DivineFailure": {
       "Apply": "Appliquer la conséquence",

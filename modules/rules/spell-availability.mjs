@@ -46,7 +46,7 @@ export function spellAvailability(actor,item){
  const resource=actor.system.resources?.[divine?"divinity":"vitner"]??{};
  const available=Number(resource.current??resource.value??0)+(divine?Number(resource.temporary||0):0);
  if(cost>available&&!(actor.unlimitedVitner&&!divine)){
-  if(divine)return deny("TRUDVANG.Warning.NotEnoughPower");
+  if(divine||actor.fatalVitnerState?.depleted)return deny("TRUDVANG.Warning.NotEnoughPower");
   const body=actor.system.resources?.body??{};
   if(!resolveVitnerSacrifice({totalCost:cost,currentVitner:available,currentHP:body.current??body.value,maxHP:body.max})?.feasible)return deny("TRUDVANG.Warning.NotEnoughPower");
  }
