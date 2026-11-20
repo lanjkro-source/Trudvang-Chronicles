@@ -5,6 +5,7 @@ import {activeSpellInstances} from "./active-spell-resolver.mjs";
 import {resolveVitnerSacrifice} from "./magic-power-resolver.mjs";
 import {knowledgeRank} from "./magic-resistance.mjs";
 import {divineFailureRestriction, divinePowerId} from "./divine-failure.mjs";
+import {fatalSpellBlindness} from "./fatal-magic.mjs";
 
 export function spellActorForItem(item,{user=game.user,controlled=globalThis.canvas?.tokens?.controlled??[]}={}){
  const owner=item?.actor??(item?.parent?.documentName==="Actor"?item.parent:null);
@@ -25,6 +26,7 @@ export function spellAvailability(actor,item){
   const restriction=divineFailureRestriction(actor,divinePowerId(item));
   if(restriction)return deny(restriction);
  }
+ if(item.type==="spell"&&fatalSpellBlindness(actor))return deny("TRUDVANG.FatalMagic.Blindness");
  const cooldown=castingCooldownRemaining(actor,item.system?.catalogId);if(cooldown>0)return deny("TRUDVANG.Mobility.Cooldown",{seconds:cooldown});
  const grant=item.flags?.["trudvang-chronicles"]?.transformationGrant;
  if(grant&&!Array.from(actor.allApplicableEffects?.()??actor.effects??[]).some(e=>e.id===grant&&!e.disabled&&!e.isSuppressed&&!e.duration?.expired))return deny("TRUDVANG.Transformation.Restricted");

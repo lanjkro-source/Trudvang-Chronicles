@@ -18717,7 +18717,17 @@
       "Depletion": "Vitner Depletion",
       "Penalty": "−2 to tests and initiative.",
       "Loss": "Vitner reserve reduced by {points} points (minimum capacity 1).",
-      "NoRecovery": "Vitner capacity drops to 1. Recovery is blocked while the effect lasts."
+      "NoRecovery": "Vitner capacity drops to 1. Recovery is blocked while the effect lasts.",
+      "BlindnessEffect": "Vitner Blindness",
+      "Blindness": "Vitner blindness prevents spellcasting.",
+      "NoOrigin": "The discharge needs the weaver’s token on the scene where the roll was made.",
+      "AreaUnavailable": "The discharge could not be applied. Check that the GM is connected.",
+      "AreaExceptCaster": "The weaver is spared. Only non-weavers without Vitner Points lose Body Points.",
+      "AreaIncludesCaster": "The weaver is also affected. Only non-weavers without Vitner Points lose Body Points.",
+      "AreaApplied": "Discharge resolved within a radius of {radius} m.",
+      "Affected": "{name} is affected by the discharge.",
+      "VitnerDrained": "{name} loses {amount} Vitner Points.",
+      "HealthDrained": "{name} loses {amount} Body Points."
     },
     "DivineFailure": {
       "Apply": "Apply consequence",

@@ -2,6 +2,7 @@ import {escapeHtml, escapeAttribute} from "./helpers.mjs";
 import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure} from "./rules/divine-failure.mjs";
 import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
 import {FATAL_MAGIC_ROWS, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
+import {requestFatalVitnerArea} from "./chat-application.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const FLAG = "divineFailureResult";
@@ -77,7 +78,15 @@ export async function applyDivineFailure(message) {
 export async function applyFatalMagic(message) {
   if (!canApply(message) || applying.has(message.id)) return false;
   const result = message.getFlag(SCOPE, "fatalMagicResult");
-  if (!FATAL_MAGIC_ROWS[result?.row] || !result.actorUuid || result.applied) return false;
+  const rule = FATAL_MAGIC_ROWS[result?.row];
+  if (!rule || !result.actorUuid || result.applied) return false;
+  if (rule.drain) {
+    const response = await requestFatalVitnerArea(message);
+    if (["applied", "alreadyApplied"].includes(response.status)) return true;
+    ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
+      ? "TRUDVANG.FatalMagic.NoOrigin" : "TRUDVANG.FatalMagic.AreaUnavailable"));
+    return false;
+  }
   applying.add(message.id);
   try {
     const actor = await foundry.utils.fromUuid(result.actorUuid);
@@ -118,13 +127,35 @@ export async function applyFatalMagic(message) {
   }
 }
 
+function renderAreaOutcome(result, content) {
+  const summary = document.createElement("p");
+  summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaApplied", {radius: result.radius});
+  content.append(summary);
+  for (const outcome of result.outcomes ?? []) {
+    const actor = foundry.utils.fromUuidSync(outcome.actorUuid);
+    if (outcome.hidden && !game.user.isGM && !actor?.isOwner) continue;
+    const row = document.createElement("p");
+    const receipt = game.user.isGM || actor?.isOwner ? actor?.getFlag(SCOPE, "fatalVitnerLoss")?.[result.messageId] : null;
+    const key = receipt ? (receipt.resource === "vitner" ? "VitnerDrained" : "HealthDrained") : "Affected";
+    row.textContent = game.i18n.format(`TRUDVANG.FatalMagic.${key}`, {...outcome, amount: receipt?.amount});
+    content.append(row);
+  }
+}
+
 export function renderFatalResultAction(message, html) {
   if (!message.isContentVisible) return;
   const divine = message.getFlag(SCOPE, FLAG);
   const result = divine ?? message.getFlag(SCOPE, "fatalMagicResult");
   const content = html.querySelector(".message-content");
   if (!result || !content) return;
+  if (!divine && !result.applied && FATAL_MAGIC_ROWS[result.row]?.drain) {
+    const note = document.createElement("p");
+    const key = FATAL_MAGIC_ROWS[result.row].excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
+    note.textContent = game.i18n.localize(`TRUDVANG.FatalMagic.${key}`);
+    content.append(note);
+  }
   if (result.applied) {
+    if (!divine && result.radius) return renderAreaOutcome({...result, messageId: message.id}, content);
     const note = document.createElement("p");
     note.textContent = i18n("Applied", {effect: result.applied});
     content.append(note);

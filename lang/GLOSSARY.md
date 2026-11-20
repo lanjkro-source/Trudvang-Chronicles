@@ -16429,6 +16429,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FatalMagic.Penalty` | −2 to tests and initiative. | −2 aux tests et à l’initiative. |
 | `TRUDVANG.FatalMagic.Loss` | Vitner reserve reduced by {points} points (minimum capacity 1). | Réserve de vitner réduite de {points} PV (capacité minimale de 1). |
 | `TRUDVANG.FatalMagic.NoRecovery` | Vitner capacity drops to 1. Recovery is blocked while the effect lasts. | La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet. |
+| `TRUDVANG.FatalMagic.BlindnessEffect` | Vitner Blindness | Perception du vitner perdue |
+| `TRUDVANG.FatalMagic.Blindness` | Vitner blindness prevents spellcasting. | La perte de perception du vitner empêche de lancer des sortilèges. |
+| `TRUDVANG.FatalMagic.NoOrigin` | The discharge needs the weaver’s token on the scene where the roll was made. | La décharge nécessite le token du tisseur sur la scène du jet. |
+| `TRUDVANG.FatalMagic.AreaUnavailable` | The discharge could not be applied. Check that the GM is connected. | La décharge n’a pas pu être appliquée. Vérifiez que le MJ est connecté. |
+| `TRUDVANG.FatalMagic.AreaExceptCaster` | The weaver is spared. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
+| `TRUDVANG.FatalMagic.AreaIncludesCaster` | The weaver is also affected. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
+| `TRUDVANG.FatalMagic.AreaApplied` | Discharge resolved within a radius of {radius} m. | Décharge résolue dans un rayon de {radius} m. |
+| `TRUDVANG.FatalMagic.Affected` | {name} is affected by the discharge. | {name} est touché par la décharge. |
+| `TRUDVANG.FatalMagic.VitnerDrained` | {name} loses {amount} Vitner Points. | {name} perd {amount} PV. |
+| `TRUDVANG.FatalMagic.HealthDrained` | {name} loses {amount} Body Points. | {name} perd {amount} PS. |
 
 ## `TRUDVANG.DivineFailure`
 

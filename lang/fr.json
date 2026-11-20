@@ -18717,7 +18717,17 @@
       "Depletion": "Épuisement du vitner",
       "Penalty": "−2 aux tests et à l’initiative.",
       "Loss": "Réserve de vitner réduite de {points} PV (capacité minimale de 1).",
-      "NoRecovery": "La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet."
+      "NoRecovery": "La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet.",
+      "BlindnessEffect": "Perception du vitner perdue",
+      "Blindness": "La perte de perception du vitner empêche de lancer des sortilèges.",
+      "NoOrigin": "La décharge nécessite le token du tisseur sur la scène du jet.",
+      "AreaUnavailable": "La décharge n’a pas pu être appliquée. Vérifiez que le MJ est connecté.",
+      "AreaExceptCaster": "Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
+      "AreaIncludesCaster": "Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
+      "AreaApplied": "Décharge résolue dans un rayon de {radius} m.",
+      "Affected": "{name} est touché par la décharge.",
+      "VitnerDrained": "{name} perd {amount} PV.",
+      "HealthDrained": "{name} perd {amount} PS."
     },
     "DivineFailure": {
       "Apply": "Appliquer la conséquence",

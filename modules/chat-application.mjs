@@ -9,6 +9,7 @@ import {conditionalDamageBonus,damageCanAffect} from "./rules/creature-condition
 import {applyWeaponDamageEffects} from './weapon-damage-effects.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {fearTargetRow} from './magic-fear.mjs';
+import {applyFatalVitnerArea} from "./fatal-vitner-area.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -49,6 +50,17 @@ function sourceAmount(message, channel) {
 function canReadMessage(message, user) {
   const whispers = Array.from(message.whisper ?? [], recipient => typeof recipient === "string" ? recipient : recipient.id);
   return user.isGM || (!message.blind && (!whispers.length || authorId(message) === user.id || whispers.includes(user.id)));
+}
+
+async function applyFatalVitnerAreaOnGM(payload) {
+  const message = game.messages.get(payload.messageId);
+  const user = game.users.get(payload.userId);
+  if (!game.user.isGM || !message || !user?.active || !canReadMessage(message, user)
+      || (!user.isGM && authorId(message) !== user.id)) return {status: "unavailable"};
+  const result = message.getFlag(SYSTEM_ID, "fatalMagicResult");
+  const actor = result?.actorUuid ? await foundry.utils.fromUuid(result.actorUuid) : null;
+  if (!actor?.canUserModify?.(user, "update")) return {status: "unavailable"};
+  return applyFatalVitnerArea(message);
 }
 
 export function canManageFearTargets(message,user) {
@@ -323,6 +335,7 @@ export async function applyChatApplication(payload) {
   const previous = queues.get(queueKey) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
     : payload.type === "chatApplyFearBatch" ? applyFearBatchOnGM(payload)
+    : payload.type === "chatApplyFatalVitnerArea" ? applyFatalVitnerAreaOnGM(payload)
     : ["chatAddFearTargets","chatRemoveFearTarget"].includes(payload.type) ? editFearTargetsOnGM(payload)
     : payload.type==='chatImpactTest'?resolveImpactTest(payload,{refresh:refreshApplications,canReadMessage}):payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : ['chatDamageResistance','chatFearResistance'].includes(payload.type)?damageResistanceOnGM(payload):applyOnGM(payload));
   queues.set(queueKey, next);
@@ -340,7 +353,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget","chatApplyFearBatch"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget", "chatDamageResistance", "chatFearResistance","chatImpactTest","chatAddFearTargets","chatRemoveFearTarget","chatApplyFearBatch","chatApplyFatalVitnerArea"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -426,6 +439,10 @@ export async function requestFearTargetEdit({message, tokens, actorUuid}) {
 export async function requestFearBatch(message) {
   if (!canManageFearTargets(message,game.user)) return {status:"unavailable"};
   return requestChatUpdate(message,{type:"chatApplyFearBatch",requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id});
+}
+
+export function requestFatalVitnerArea(message) {
+  return requestChatUpdate(message, {type: "chatApplyFatalVitnerArea", requestId: crypto.randomUUID(), messageId: message.id, userId: game.user.id});
 }
 
 async function requestChatUpdate(message, payload) {

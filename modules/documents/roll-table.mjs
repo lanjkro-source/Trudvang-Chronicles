@@ -4,6 +4,7 @@ import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../
 import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
 import { DIVINE_FAILURE_ROWS } from "../rules/divine-failure.mjs";
 import { FATAL_MAGIC_ROWS } from "../rules/fatal-magic.mjs";
+import { fatalAreaOrigin } from "../fatal-vitner-area.mjs";
 import { nameTableMeta, rollNameTable } from "../name-tables.mjs";
 
 const EXTRACT_STAGE_IDS = new Map([
@@ -89,8 +90,9 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     const messageData = actor ? {speaker: ChatMessage.getSpeaker({actor})} : {};
     if (actor?.uuid && (divine ? DIVINE_FAILURE_ROWS[row] : FATAL_MAGIC_ROWS[row])) {
       const flag = divine ? "divineFailureResult" : "fatalMagicResult";
+      const origin = !divine && FATAL_MAGIC_ROWS[row]?.drain ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
       messageData.flags = {"trudvang-chronicles": {[flag]: {
-        actorUuid: actor.uuid, row, ...(divine ? {power: power ?? null} : {})
+        actorUuid: actor.uuid, row, ...origin, ...(divine ? {power: power ?? null} : {})
       }}};
     }
     return this.toMessage(draw.results, {roll: draw.roll, messageData, messageOptions: {messageMode}});
