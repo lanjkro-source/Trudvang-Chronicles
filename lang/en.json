@@ -18711,6 +18711,15 @@
         "repair": "{source}: {amount} BV repaired."
       }
     },
+    "Revelation": {
+      "Contact": "touch",
+      "Attitude": "Range: {range}. The GM says whether the person is friendly or hostile towards the caster.",
+      "UnusualVision": "Range: {range}. The recipient may glimpse an unusual event affecting them within {horizon}. The GM describes any vision without revealing the outcome.",
+      "ImportantVision": "Range: {range}. The GM describes a crucial or important event affecting the recipient within {horizon}, without revealing its outcome.",
+      "Trace": "Range: {range}. The trail can be followed while the effect is active or for up to {age} afterwards. Use the Situation roll to trace the origin of a spell or negation.",
+      "ReadVitner": "Range: {range}. Use the Situation roll to examine spells from lowest to highest level. The first failure ends the reading, although the vitner remains detectable.",
+      "ReadPower": "Range: {range}. Use the Situation roll to examine powers from lowest to highest level. The first failure ends the reading, although the magic remains detectable."
+    },
     "Aura": {
       "Behavior": "Aura Trudvang",
       "NoToken": "The effect is added to the caster, but no unique token is available yet to place the aura.",

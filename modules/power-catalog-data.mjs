@@ -2826,6 +2826,13 @@ export const POWER_DETAILS_BY_ID = {
   "holy-gerbanis-wisdom-of-windinna:sixth-sense:1": {
     "isRune": false,
     "level": 1,
+    "revelation": {
+      "kind": "attitude",
+      "range": 0,
+      "rangeSteps": {
+        "holy-gerbanis-wisdom-of-windinna:sixth-sense:1:0": 5
+      }
+    },
     "powerLevels": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1:0",
@@ -6018,6 +6025,13 @@ export const POWER_DETAILS_BY_ID = {
   "holy-joaringfaith-sight-of-lekaba:read-powers:5": {
     "isRune": false,
     "level": 4,
+    "revelation": {
+      "kind": "readPower",
+      "range": 0,
+      "rangeSteps": {
+        "holy-joaringfaith-sight-of-lekaba:read-powers:5:1": 5
+      }
+    },
     "powerLevels": [
       {
         "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:0",
@@ -7420,6 +7434,12 @@ export const POWER_DETAILS_BY_ID = {
   "holy-tenetnid-tablet-of-the-sun:augury:2": {
     "isRune": false,
     "level": 2,
+    "revelation": {
+      "kind": "vision",
+      "range": 0,
+      "unit": "hour",
+      "horizonOptionId": "holy-tenetnid-tablet-of-the-sun:augury:2:0"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:augury:2:0",
@@ -7511,6 +7531,12 @@ export const POWER_DETAILS_BY_ID = {
   "holy-tenetnid-tablet-of-the-sun:omen:4": {
     "isRune": false,
     "level": 3,
+    "revelation": {
+      "kind": "vision",
+      "range": 0,
+      "unit": "day",
+      "horizonOptionId": "holy-tenetnid-tablet-of-the-sun:omen:4:0"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:omen:4:0",
@@ -7525,6 +7551,12 @@ export const POWER_DETAILS_BY_ID = {
   "holy-tenetnid-tablet-of-the-sun:portent:8": {
     "isRune": false,
     "level": 5,
+    "revelation": {
+      "kind": "vision",
+      "range": 0,
+      "unit": "week",
+      "horizonOptionId": "holy-tenetnid-tablet-of-the-sun:portent:8:0"
+    },
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-the-sun:portent:8:0",
@@ -12713,6 +12745,13 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-power-of-vision:read-vitner:6": {
     "isRune": false,
     "level": 4,
+    "revelation": {
+      "kind": "readVitner",
+      "range": 0,
+      "rangeSteps": {
+        "vitner-power-of-vision:read-vitner:6:1": 5
+      }
+    },
     "powerLevels": [
       {
         "id": "vitner-power-of-vision:read-vitner:6:0",
@@ -13542,6 +13581,19 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-vitner-craft:trace-vitner:7": {
     "isRune": false,
     "level": 5,
+    "revelation": {
+      "kind": "trace",
+      "range": 10,
+      "rangeSteps": {
+        "vitner-vitner-craft:trace-vitner:7:3": 5,
+        "vitner-vitner-craft:trace-vitner:7:4": 20
+      },
+      "traceSteps": {
+        "vitner-vitner-craft:trace-vitner:7:0": 1,
+        "vitner-vitner-craft:trace-vitner:7:1": 24,
+        "vitner-vitner-craft:trace-vitner:7:2": 168
+      }
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:trace-vitner:7:0",

@@ -18711,6 +18711,15 @@
         "repair": "{source} : {amount} VI réparés."
       }
     },
+    "Revelation": {
+      "Contact": "contact",
+      "Attitude": "Portée : {range}. Le MJ indique si la personne est amicale ou hostile envers le lanceur.",
+      "UnusualVision": "Portée : {range}. Dans un délai de {horizon}, le bénéficiaire peut entrevoir un événement inhabituel qui le concerne. Le MJ décrit la vision éventuelle sans révéler l’issue de l’événement.",
+      "ImportantVision": "Portée : {range}. Le MJ décrit une vision d’un événement crucial ou important pour le bénéficiaire dans un délai de {horizon}, sans révéler son issue.",
+      "Trace": "Portée : {range}. La piste reste lisible pendant l’effet ou jusqu’à {age} après sa fin. Utilisez le test de situation pour retrouver l’origine d’un sort ou d’une négation.",
+      "ReadVitner": "Portée : {range}. Examinez les sortilèges du niveau le plus bas au plus haut avec le test de situation. Le premier échec interrompt la lecture, même si le vitner reste perceptible.",
+      "ReadPower": "Portée : {range}. Examinez les pouvoirs du niveau le plus bas au plus haut avec le test de situation. Le premier échec interrompt la lecture, même si la magie reste perceptible."
+    },
     "Aura": {
       "Behavior": "Aura Trudvang",
       "NoToken": "L’effet est ajouté au lanceur, mais aucun token unique ne permet encore de placer l’aura.",

@@ -1,5 +1,13 @@
 # Effets descriptifs et conséquences encore manuelles
 
+## Révélations immédiates
+
+Les quatre pouvoirs purement descriptifs qui n’avaient pas de résultat sur leur carte disposent d’un texte de réussite. Sixième sens donne l’attitude envers le lanceur à portée effective. Augure, Présage et Oracle affichent respectivement une heure, un jour ou une semaine de base, avec la même unité ajoutée par niveau de puissance. Pour Augure et Présage, l’événement doit être inhabituel et la vision peut manquer. Oracle privilégie un événement crucial ou important. Le MJ décrit la révélation sans dévoiler l’issue des événements. Références françaises p. 226 et p. 262–264, entrées correspondantes du Player’s Handbook.
+
+Piste du vitner affiche en plus le délai cumulé depuis la fin du sort ou de la négation, et sa portée effective. Lecture du vitner et Lecture des pouvoirs rappellent de commencer au niveau le plus faible et de s’arrêter au premier échec. Les trois continuent d’utiliser leurs tests de situation existants. Les limites et améliorations sont structurées dans les sources FR/EN. Ces sept résultats sont immédiats et ne créent aucun effet sur un acteur.
+
+Les effets descriptifs déjà présents conservent leurs références, durées et bénéficiaires. Les entrées comportant des modifications chiffrées, des dégâts, une évolution, une invocation de créature ou une interaction avec un objet restent des chantiers mécaniques et sont suivies à part.
+
 ## Dix runes du Thuuldom — 6 novembre 2026
 
 Aspect de la pierre, Branchies du brochet, Chaleur des profondeurs, Croc de Yukk, Écailles, Enfant de la pierre, Marque de Brokk, Prise de l’araignée des cavernes, Sang du labyrinthe et Transformation de pierre en argile disposent de cinq profils explicites, issus des sources JSON FR puis alignés en EN. Références : Livre des règles, pages imprimées 285–288 (pages PDF 287–290) ; Player’s Handbook, Thuuldom’s Holy Tablets, pages 230–233. Les tableaux français de Choc de l’enclume, Croc de Yukk, Main de Borjorn et Transformation de pierre en argile ont été contrôlés visuellement ; les autres runes instantanées ou à conséquence sur une prochaine action restent dans les lots suivants.

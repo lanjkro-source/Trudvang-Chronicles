@@ -16419,6 +16419,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Consequence.Result.createConsumable` | {source} was created in the inventory. | {source} a été créée dans l’inventaire. |
 | `TRUDVANG.Consequence.Result.repair` | {source}: {amount} BV repaired. | {source} : {amount} VI réparés. |
 
+## `TRUDVANG.Revelation`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Revelation.Contact` | touch | contact |
+| `TRUDVANG.Revelation.Attitude` | Range: {range}. The GM says whether the person is friendly or hostile towards the caster. | Portée : {range}. Le MJ indique si la personne est amicale ou hostile envers le lanceur. |
+| `TRUDVANG.Revelation.UnusualVision` | Range: {range}. The recipient may glimpse an unusual event affecting them within {horizon}. The GM describes any vision without revealing the outcome. | Portée : {range}. Dans un délai de {horizon}, le bénéficiaire peut entrevoir un événement inhabituel qui le concerne. Le MJ décrit la vision éventuelle sans révéler l’issue de l’événement. |
+| `TRUDVANG.Revelation.ImportantVision` | Range: {range}. The GM describes a crucial or important event affecting the recipient within {horizon}, without revealing its outcome. | Portée : {range}. Le MJ décrit une vision d’un événement crucial ou important pour le bénéficiaire dans un délai de {horizon}, sans révéler son issue. |
+| `TRUDVANG.Revelation.Trace` | Range: {range}. The trail can be followed while the effect is active or for up to {age} afterwards. Use the Situation roll to trace the origin of a spell or negation. | Portée : {range}. La piste reste lisible pendant l’effet ou jusqu’à {age} après sa fin. Utilisez le test de situation pour retrouver l’origine d’un sort ou d’une négation. |
+| `TRUDVANG.Revelation.ReadVitner` | Range: {range}. Use the Situation roll to examine spells from lowest to highest level. The first failure ends the reading, although the vitner remains detectable. | Portée : {range}. Examinez les sortilèges du niveau le plus bas au plus haut avec le test de situation. Le premier échec interrompt la lecture, même si le vitner reste perceptible. |
+| `TRUDVANG.Revelation.ReadPower` | Range: {range}. Use the Situation roll to examine powers from lowest to highest level. The first failure ends the reading, although the magic remains detectable. | Portée : {range}. Examinez les pouvoirs du niveau le plus bas au plus haut avec le test de situation. Le premier échec interrompt la lecture, même si la magie reste perceptible. |
+
 ## `TRUDVANG.Aura`
 
 | Clé | English | Français |

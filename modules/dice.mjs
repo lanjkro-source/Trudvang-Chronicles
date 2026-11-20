@@ -1,5 +1,6 @@
 import {withConditionalEffectConsumption} from './rules/effect-conditional-tests.mjs';
 import {purificationConsequence} from './water-purification.mjs';
+import {magicRevelation} from './magic-revelations.mjs';
 import {applyPersonalCasting} from './self-effects.mjs';
 import {actorForResistance} from "./resistance-actor.mjs";
 import {magicDamageHasBaseTargets} from "./magic-damage.mjs";
@@ -136,7 +137,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor: [flavor, ...attackTargets.flatMap(row => (row.defenseRows || []).map(effect => `${escapeHtml(row.name)} · ${escapeHtml(effect.label)}: ${signedModifier(effect.value)}`))].filter(Boolean).join("<br>"),
-    successConsequence: consequenceText(runeAllocation?runeConsequenceText(runeDetails,ruleTestContext):procedure?.text && outcome.success ? procedure.text : purificationConsequence(!pendingPerfect && success ? ruleTestContext : null) || successConsequence),
+    successConsequence: consequenceText(runeAllocation?runeConsequenceText(runeDetails,ruleTestContext):procedure?.text && outcome.success ? procedure.text : !pendingPerfect&&success && (purificationConsequence(ruleTestContext)||magicRevelation(ruleTestContext)) || successConsequence),
     failureConsequence: consequenceText(procedure?.text && !outcome.success ? procedure.text : failureConsequence),
     criticalSuccessConsequence: consequenceText(criticalSuccessConsequence),
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
@@ -209,7 +210,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
     if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
-    card.successConsequence=consequenceText(purificationConsequence(ruleTestContext)||card.successConsequence);
+    card.successConsequence=consequenceText(purificationConsequence(ruleTestContext)||magicRevelation(ruleTestContext)||card.successConsequence);
     card.transformationLinks=auraKey||selfOnly?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;

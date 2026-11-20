@@ -102,6 +102,16 @@ for (const id of [...french.keys()].sort()) {
       if(!DAMAGE_NATURES.includes(q.nature)||!DAMAGE_TYPES.includes(q.type)||!DAMAGE_DELIVERIES.includes(q.delivery)||!DAMAGE_PROTECTIONS.includes(q.protection))fail(`${id}: invalid damage qualifications`);
     }
   if(!same(f.purification,e.purification))fail(id+': unaligned purification');
+  if(!same(f.revelation,e.revelation))fail(id+': unaligned revelation');
+  if(f.revelation){
+    const {kind,range,rangeSteps,unit,horizonOptionId,traceSteps}=f.revelation;
+    const options=new Set(f.powerLevels.map(level=>level.optionId));
+    const validSteps=steps=>Object.entries(steps??{}).every(([option,step])=>options.has(option)&&Number.isInteger(step)&&step>0);
+    if(!['attitude','vision','trace','readVitner','readPower'].includes(kind)||!Number.isInteger(range)||range<0
+      ||!validSteps(rangeSteps)||!validSteps(traceSteps)
+      ||kind==='trace'&&!Object.keys(traceSteps??{}).length
+      ||kind==='vision'&&(!['hour','day','week'].includes(unit)||!options.has(horizonOptionId)))fail(id+': invalid revelation');
+  }
   if(f.purification){
     const {litres,increments,lakeOptionId}=f.purification;
     const hasOption=key=>f.powerLevels.some(p=>p.optionId===key);
@@ -173,6 +183,7 @@ for (const id of [...french.keys()].sort()) {
     ...(f.selfOnly!==undefined?{selfOnly:f.selfOnly}:{}),
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
     ...(f.purification?{purification:f.purification}:{}),
+    ...(f.revelation?{revelation:f.revelation}:{}),
     ...(f.spellZone?{spellZone:f.spellZone}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),
     ...(f.damageQualification ? {damageQualification:f.damageQualification} : {}),
