@@ -215,7 +215,8 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  const darkness=profile.kind==='darkness',scale=zonePixelScale(scene);
  const footprint=darkness?darknessPlacementShape(payload.shape,profile.area,scale):null;
  if(darkness&&(!footprint||footprint.x!==payload.point.x||footprint.y!==payload.point.y))return {status:'invalidArea'};
- const wall=profile.kind==='earthWall'?addSpellWallBlock(null,payload.point,scale,profile):null;
+ const wall=profile.kind==='earthWall'?addSpellWallBlock(null,payload.point,scale,profile,scene.grid):null;
+ if(wall&&!pointInRange(placementLimit(scene,token,profile),wall.origin))return {status:'outOfRange'};
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
@@ -412,8 +413,8 @@ export async function openSpellWallDamage(message){
  const options=sections.map(({index,hp,max})=>`<option value="${index}">${escapeHtml(local(heights.has(index)?'WallBlockSection':'WallSection',{n:index+1,hp,max,height:heights.get(index)}))}</option>`).join('');
  const choice=await foundry.applications.api.DialogV2.wait({window:{title:local('WallDamage')},classes:['trudvang','dialog'],
   content:`<div class="trudvang roll-dialog"><div class="form-group"><label for="wall-section">${escapeHtml(local('WallSectionLabel'))}</label><select id="wall-section" name="section">${options}</select></div><div class="form-group"><label for="wall-damage">${escapeHtml(local('WallDamageAmount'))}</label><input id="wall-damage" name="damage" type="number" min="1" step="1" value="1" required></div></div>`,
-  buttons:[{action:'damage',label:local('WallDamage'),default:true,callback:(_event,button)=>({index:Number(button.form.elements.section.value),damage:button.form.elements.damage.valueAsNumber})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>null}],rejectClose:false});
- if(!choice)return null;
+  buttons:[{action:'damage',label:local('WallDamage'),default:true,callback:(_event,button)=>({index:Number(button.form.elements.section.value),damage:button.form.elements.damage.valueAsNumber})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false}],rejectClose:false});
+ if(!choice||typeof choice!=='object')return null;
  const result=await request({type:'damageSpellWall',messageId:message.id,...choice});
  if(result.status!=='damaged')return ui.notifications.warn(local('Unavailable'));
  ui.notifications.info(local(result.destroyed?'WallDestroyed':'WallSection',{n:result.index+1,hp:result.hp,max:result.max}));
@@ -453,7 +454,7 @@ export async function placeSpellZone(message){
     create:false,attachToToken:false,allowRotation:darkness&&shape.type==='rectangle',
     onMove:({position,snap,shape,preview})=>{
      pointer={x:position.x,y:position.y};
-     const range=limit(),snapped=wall?spellWallBlockPoint(wallState,pointer,scale):snap?board.regions.getSnappedPoint?.(position):null;
+     const range=limit(),snapped=wall?spellWallBlockPoint(wallState,pointer,scale,scene.grid):snap?board.regions.getSnappedPoint?.(position):null;
      guide?.draw(range,pointer,pointInRange(range,pointer)&&(!snapped||pointInRange(range,snapped)));
      if(wall){
       Object.assign(shape,snapped);
@@ -464,7 +465,7 @@ export async function placeSpellZone(message){
     },
     preConfirm:({shape,event})=>{
      const range=limit(),clicked=event?.getLocalPosition?.(board.stage)??pointer??shape;
-     const destination=wall?spellWallBlockPoint(wallState,clicked,scale):shape;
+     const destination=wall?spellWallBlockPoint(wallState,clicked,scale,scene.grid):shape;
      const valid=pointInRange(range,clicked)&&pointInRange(range,destination);
      guide?.draw(range,clicked,valid);
      if(valid){confirmed=destination;return true;}
