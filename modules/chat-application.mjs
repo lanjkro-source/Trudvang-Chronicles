@@ -10,7 +10,7 @@ import {applyWeaponDamageEffects} from './weapon-damage-effects.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {fearTargetRow} from './magic-fear.mjs';
 import {applyFatalVitnerArea, cleanupFatalVitnerPreviews, clearFatalVitnerPreview} from "./fatal-vitner-area.mjs";
-import {FATAL_MAGIC_ROWS} from "./rules/fatal-magic.mjs";
+import {FATAL_MAGIC_ROWS, fatalMagicHasArea} from "./rules/fatal-magic.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -349,7 +349,7 @@ export function registerChatApplicationSocket() {
   registered = true;
   const prepare = message => {
     const result = message?.getFlag?.(SYSTEM_ID, "fatalMagicResult");
-    if (!FATAL_MAGIC_ROWS[result?.row]?.drain || result.applied || !result.tokenUuid
+    if (!fatalMagicHasArea(FATAL_MAGIC_ROWS[result?.row]) || result.applied || !result.tokenUuid
         || !game.user.isGM || responderFor(message)?.id !== game.user.id) return;
     void applyChatApplication({type: "chatApplyFatalVitnerArea", prepareOnly: true,
       messageId: message.id, userId: authorId(message)}).catch(error => console.error("Trudvang | Fatal area preview failed", error));

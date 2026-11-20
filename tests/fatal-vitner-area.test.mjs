@@ -91,3 +91,40 @@ test("46 freezes separate rolls across retries, drains the appropriate pools and
   mage.effects.get(id).duration.expired = true;
   assert.equal(fatalSpellBlindness(mage), false);
 });
+
+test("45 creates a 10 m preview on a 10 and only the tisseur loses one third", async () => {
+  const mage = actor("mage", 29);
+  const ally = actor("ally");
+  const outside = actor("outside");
+  const source = token(mage, 0);
+  const regions = new Map();
+  const plans = {};
+  const scene = {id: "scene", regions, grid: {size: 100, distance: 1, units: "m"},
+    tokens: [source, token(ally, 999), token(outside, 1100)],
+    getFlag: () => plans, update: async data => {plans[id] = Object.values(data)[0];},
+    createEmbeddedDocuments: async (_type, [data]) => {
+      const region = {...data, delete: async () => regions.clear()};
+      regions.set("r", region);
+      return [region];
+    }};
+  source.parent = scene;
+  const docs = new Map([source, mage, ally, outside].map(doc => [doc.uuid, doc]));
+  globalThis.CONST = {REGION_VISIBILITY: {ALWAYS: 2}};
+  globalThis.game = {scenes: new Map([[scene.id, scene]]), i18n: {localize: key => key}};
+  globalThis.foundry = {utils: {fromUuid: async uuid => docs.get(uuid)}};
+  const dice = [4, 10, 1, 5];
+  globalThis.Roll = class {async evaluate() {return {total: dice.shift()};}};
+  const result = {row: 45, actorUuid: mage.uuid, tokenUuid: source.uuid};
+  const message = {id, rolls: [{total: 45}], getFlag: () => result,
+    update: async data => Object.entries(data).forEach(([path, value]) => {result[path.split(".").at(-1)] = value;})};
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "prepared"});
+  assert.equal(regions.get("r").shapes[0].radius, 1000);
+  assert.equal(mage.effects.size + ally.effects.size, 0);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "applied"});
+  assert.equal(mage.effects.get(id).flags[scope].fatalMagic.third, true);
+  assert.equal(ally.effects.get(id).flags[scope].fatalMagic.third, false);
+  assert.match(ally.effects.get(id).description, /Grass/);
+  assert.deepEqual(ally.effects.get(id).duration, {value: 4, units: "days"});
+  assert.equal(outside.effects.size, 0);
+  assert.equal(regions.size, 0);
+});

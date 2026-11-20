@@ -119,7 +119,7 @@ async function promptMembers(region,info,tokens){
    row.trapped=tokens.has(row.actorUuid);
   }
  }
- for(const [uuid,token]of tokens)if(!state.recipients.some(r=>r.actorUuid===uuid))state.recipients.push({actorUuid:uuid,name:token.name??token.actor.name,tokenUuid:token.uuid,...(info.profile.kind==='fire'?{canEvade:Number(fireEvadeItem(token.actor)?.system?.level)>0&&token.actor.canPerformAction?.({movement:true})!==false}:{})});
+ for(const [uuid,token]of tokens)if(!state.recipients.some(r=>r.actorUuid===uuid))state.recipients.push({actorUuid:uuid,name:token.name??token.actor.name,tokenUuid:token.uuid,...(info.profile.kind==='fire'?{canEvade:Number(fireEvadeItem(token.actor)?.system?.level)>0&&token.actor.canPerformAction?.({movement:true,skill:true})!==false}:{})});
  if(mud)for(const row of state.recipients)row.trapped=tokens.has(row.actorUuid);
  const actors=state.recipients.map(r=>tokens.get(r.actorUuid)?.actor).filter(Boolean),whisper=values(game.users).filter(u=>u.isGM||actors.some(a=>a.testUserPermission(u,'OWNER'))).map(u=>u.id);
  if(!message){message=await ChatMessage.create({speaker:{alias:nameOf(info)},whisper,content:promptHTML(info,state.recipients,state.responses),flags:{[S]:{spellZoneTest:state}}});}

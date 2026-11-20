@@ -3,7 +3,7 @@ import { TRUDVANG } from "../config.mjs";
 import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
 import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
 import { DIVINE_FAILURE_ROWS } from "../rules/divine-failure.mjs";
-import { FATAL_MAGIC_ROWS } from "../rules/fatal-magic.mjs";
+import { FATAL_MAGIC_ROWS, fatalMagicHasArea } from "../rules/fatal-magic.mjs";
 import { fatalAreaOrigin } from "../fatal-vitner-area.mjs";
 import { nameTableMeta, rollNameTable } from "../name-tables.mjs";
 
@@ -44,8 +44,15 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     if (displayChat && this.fatalTableId) {
       const controlled = globalThis.canvas?.tokens?.controlled ?? [];
       const actor = controlled.length === 1 ? controlled[0].actor : null;
+      let cost;
+      if (!options.roll) {
+        const choices = await this.#getRollChoices();
+        if (!choices) return {roll: {total: NaN}, results: []};
+        options.roll = new Roll(fatalRollFormula(choices.threshold, choices.modifier));
+        cost = choices.cost;
+      }
       const draw = await super.draw({displayChat: false, ...options});
-      if (draw.results.length) await this.postFatalResult(draw, {actor, messageMode: options.messageMode});
+      if (draw.results.length) await this.postFatalResult(draw, {actor, cost, messageMode: options.messageMode});
       return draw;
     }
     if (!extractStageTableId(this)) return super.draw({displayChat, ...options});
@@ -84,18 +91,25 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     return {roll: dieRoll, results: [], message};
   }
 
-  async postFatalResult(draw, {actor, power, messageMode} = {}) {
+  async postFatalResult(draw, {actor, power, cost, messageMode} = {}) {
     const divine = this.fatalTableId === "fatal-failure-effects";
     const row = draw.results[0]?.range?.[0];
     const messageData = actor ? {speaker: ChatMessage.getSpeaker({actor})} : {};
     if (actor?.uuid && (divine ? DIVINE_FAILURE_ROWS[row] : FATAL_MAGIC_ROWS[row])) {
       const flag = divine ? "divineFailureResult" : "fatalMagicResult";
-      const origin = !divine && FATAL_MAGIC_ROWS[row]?.drain ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
+      const origin = !divine && fatalMagicHasArea(FATAL_MAGIC_ROWS[row]) ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
       messageData.flags = {"trudvang-chronicles": {[flag]: {
-        actorUuid: actor.uuid, row, ...origin, ...(divine ? {power: power ?? null} : {})
+        actorUuid: actor.uuid, row, ...origin, ...(divine ? {power: power ?? null} : {}),
+        ...(!divine && Number.isInteger(cost) ? {cost} : {})
       }}};
     }
-    return this.toMessage(draw.results, {roll: draw.roll, messageData, messageOptions: {messageMode}});
+    const results = divine ? draw.results : draw.results.map(result => {
+      const row = result.range?.[0];
+      return [45, 47, 50].includes(row) && result.clone
+        ? result.clone({text: game.i18n.localize(`TRUDVANG.Content.Table.FatalMagic.E${row}`)}, {keepId: true})
+        : result;
+    });
+    return this.toMessage(results, {roll: draw.roll, messageData, messageOptions: {messageMode}});
   }
 
   getResultsForRoll(value) {
@@ -131,9 +145,11 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
         {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true,
           callback: (event, button, dialog) => {
             const root = button.form ?? dialog.element;
+            const cost = Math.max(0, Math.trunc(Number(root.querySelector('[name="cost"]')?.value) || 0));
             return {
               threshold: Number(root.querySelector('[name="threshold"]')?.value || threshold),
-              modifier: actorModifier + Number(root.querySelector('[name="cost"]')?.value || 0)
+              cost,
+              modifier: actorModifier + cost
                 + Number(root.querySelector('[name="situational"]')?.value || 0)
             };
           }},

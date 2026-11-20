@@ -10,7 +10,7 @@ export async function performTrainedAnimalAction(document, action) {
   if (!trainedAnimalActions(document).includes(action)) return null;
   const actor = document.actor ?? (["character", "npc"].includes(document.parent?.type) ? document.parent : testActorForUser());
   if (!actor?.isOwner) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Procedure.ChooseActor"));
-  if (!actor.canPerformAction()) return actor.warnCannotAct();
+  if (!actor.canPerformAction({skill: true})) return actor.warnCannotAct({skill: true});
   if (action === "jump") {
     const item = actor.findRuleKnowledge(document.system.catalogId) ?? actor.findRuleKnowledge(specialtySourceId(document))
       ?? {name: document.name, type: "ability", system: {...document.system, level: 0, freeLevels: 0}};

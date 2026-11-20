@@ -21,7 +21,7 @@ import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { divinePowerId } from "../rules/divine-failure.mjs";
-import {fatalVitnerState, storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
+import {fatalAmnesia, fatalVitnerState, storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
 import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
@@ -342,14 +342,15 @@ export class TrudvangActor extends BaseActor {
     return rows.length ? `${value} (${value - rollModifierTotal(rows)} · ${effectContributionText(rows)})` : value;
   }
 
-  canPerformAction({movement = false} = {}) {
+  canPerformAction({movement = false, skill = false} = {}) {
     if (isIncapacitated(this)) return false;
+    if (skill && fatalAmnesia(this)) return false;
     if (movement && isImmobilized(this)) return false;
     return true;
   }
 
-  warnCannotAct() {
-    return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotAct"));
+  warnCannotAct({skill = false} = {}) {
+    return ui.notifications.warn(game.i18n.localize(skill && fatalAmnesia(this) ? "TRUDVANG.FatalMagic.AmnesiaRule" : "TRUDVANG.Warning.CannotAct"));
   }
 
   get selectedVitnerType() {
@@ -978,7 +979,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollSkill(skillKey, {label = null, bonus = 0, bonusLabel = "", excludeEffectId = ""} = {}) {
-    if (!this.canPerformAction()) return this.warnCannotAct();
+    if (!this.canPerformAction({skill: true})) return this.warnCannotAct({skill: true});
     const base = this.getSkillValue(skillKey);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
     const modifierRows = this.skillRollModifierRows(skillKey, {bonus: bonusLabel ? 0 : bonus});
@@ -1022,6 +1023,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollAbility(item, context = {}) {
+    if (fatalAmnesia(this)) return this.warnCannotAct({skill: true});
     if (!context.reactive && !this.canPerformAction()) return this.warnCannotAct();
     const calculationActor=context.resistedEffect?await actorForResistance(this,{effect:context.resistedEffect}):this;
     const calculationItem=calculationActor!==this&&item.id?(calculationActor.items?.get?.(item.id)??item):item;
@@ -1147,6 +1149,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollDodge(context={}) {
+    if (fatalAmnesia(this)) return this.warnCannotAct({skill: true});
     if (this.transformationProfile?.noDodge) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
@@ -1168,6 +1171,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollWrestlingAction(kind = "grapple", {defaultPoints = 10} = {}) {
+    if (fatalAmnesia(this)) return this.warnCannotAct({skill: true});
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     const poolResolution = resolveCombatPools({actor: this, context: {action: kind, ignoreSpent: !inCombat}});
@@ -1252,6 +1256,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollFixedAttack({name, target, targetTrait = "none", successConsequence = ""} = {}) {
+    if (fatalAmnesia(this)) return this.warnCannotAct({skill: true});
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const baseVC = Number.isFinite(Number(target)) ? Math.trunc(Number(target)) : 0;
     const targets = resolveFixedAttackTargets({attacker:this,baseVC, targetTrait, targets: Array.from(game.user.targets || [])});
@@ -1302,6 +1307,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollWeaponAction(item, kind, {defaultPoints = 5, throwing = null} = {}) {
+    if (fatalAmnesia(this)) return this.warnCannotAct({skill: true});
     if(!item.system?.isUnarmed&&weaponUseLocked(this))return ui.notifications.warn(game.i18n.localize("TRUDVANG.BurningHand.WeaponLock"));
     if (!transformationItemActive(item) || (this.transformationProfile?.suspendEquipment && !item.flags?.["trudvang-chronicles"]?.transformationGrant)
       || (kind === "parry" && this.transformationProfile?.noParry)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.Restricted"));
@@ -1576,7 +1582,7 @@ export class TrudvangActor extends BaseActor {
       },
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
         modifier: this.fatalEffectModifier(fatalKind, options.cost),
-        ...(isDivine ? {power: {id: divinePowerId(item), name: item.name}} : {})}});
+        ...(isDivine ? {power: {id: divinePowerId(item), name: item.name}} : {cost: options.cost})}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
     if (this.isOwner) {
       const stored = Number(this._source.system.resources[resource].value || 0);
@@ -1653,7 +1659,7 @@ export class TrudvangActor extends BaseActor {
     });
   }
 
-  async rollFatalEffect(kind, {threshold, modifier, power} = {}) {
+  async rollFatalEffect(kind, {threshold, modifier, power, cost} = {}) {
     const isDivine = kind === "faith";
     const vitnerType = this.selectedVitnerType;
     const fatalThreshold = threshold ?? (isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9));
@@ -1664,7 +1670,7 @@ export class TrudvangActor extends BaseActor {
     const roll = new Roll(fatalRollFormula(fatalThreshold, fatalModifier));
     await roll.evaluate();
     const draw = await table.draw({roll, displayChat: false});
-    if (draw.results.length) await table.postFatalResult(draw, {actor: this, power});
+    if (draw.results.length) await table.postFatalResult(draw, {actor: this, power, cost});
     return draw;
   }
 
@@ -1912,7 +1918,7 @@ export class TrudvangActor extends BaseActor {
 
   /** Spend Combat Points on a manoeuvre not otherwise represented in the sheet. */
   async spendGenericCombatAction({defaultPoints = 0, title = "", roll = false} = {}) {
-    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    if (!this.canPerformAction({movement: true, skill: roll})) return this.warnCannotAct({skill: roll});
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "other"}});
     const modifierRows = actorStateRollModifiers(this);

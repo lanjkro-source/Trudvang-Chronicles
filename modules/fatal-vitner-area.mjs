@@ -1,6 +1,5 @@
-import {FATAL_MAGIC_ROWS, absorbsVitnerFrom} from "./rules/fatal-magic.mjs";
-import {bodyHealthUpdate} from "./rules/body-health.mjs";
-import {temporaryHealthState, temporaryHealthUpdate} from "./rules/transformation-profile.mjs";
+import {FATAL_MAGIC_ROWS, absorbsVitnerFrom, fatalMagicHasArea, fatalNegationAppearance} from "./rules/fatal-magic.mjs";
+import {fatalBodyLossUpdates} from "./rules/fatal-body-loss.mjs";
 import {zonePixelScale} from "./rules/spell-zones.mjs";
 import {auraColor} from "./aura.mjs";
 
@@ -14,6 +13,13 @@ function tokenCenter(token, size) {
     y: Number(token.y) + Number(token.height) * size / 2};
 }
 
+function eligibleToken(token, origin, excludeCaster) {
+  const actor = token.actor;
+  const inLevel = !origin.level || (token.includedInLevel?.(origin.level) ?? (!token.level || token.level === origin.level));
+  return actor && ["character", "npc"].includes(actor.type) && inLevel
+    && (!excludeCaster || actor.uuid !== origin.actor.uuid);
+}
+
 export function fatalVitnerRecipients(origin, radius, excludeCaster) {
   const scene = origin.parent;
   const scale = zonePixelScale(scene);
@@ -21,10 +27,8 @@ export function fatalVitnerRecipients(origin, radius, excludeCaster) {
   const center = tokenCenter(origin, size);
   const targets = new Map();
   for (const token of scene.tokens) {
+    if (!eligibleToken(token, origin, excludeCaster)) continue;
     const actor = token.actor;
-    const inLevel = !origin.level || (token.includedInLevel?.(origin.level) ?? (!token.level || token.level === origin.level));
-    if (!actor || !["character", "npc"].includes(actor.type) || !inLevel
-        || (excludeCaster && actor.uuid === origin.actor.uuid)) continue;
     const points = token.getContainmentTestPoints?.();
     const footprint = points?.length ? points : [tokenCenter(token, size)];
     if (!footprint.some(point => Math.hypot(point.x - center.x, point.y - center.y) <= radius * scale + 0.01)) continue;
@@ -45,11 +49,57 @@ export function fatalAreaOrigin(actor, speaker) {
   return token?.actor?.uuid === actor?.uuid ? token?.uuid ?? "" : "";
 }
 
+function targetRow(token) {
+  return {actorUuid: token.actor.uuid, tokenUuid: token.uuid, name: token.name, hidden: Boolean(token.hidden)};
+}
+
+async function planNegation(source, rule) {
+  const days = await rollTotal(rule.negation);
+  const die = await rollTotal("1d10");
+  if (die <= 8) return {days, radius: 0, victims: [{...targetRow(source), appearance: fatalNegationAppearance(die)}]};
+  let victims;
+  if (die === 9) {
+    const size = Number(source.parent.grid?.size || 1);
+    const origin = tokenCenter(source, size);
+    const distance = token => {
+      const p = tokenCenter(token, size);
+      return Math.hypot(origin.x - p.x, origin.y - p.y);
+    };
+    victims = Array.from(source.parent.tokens).filter(token => eligibleToken(token, source, true))
+      .sort((a, b) => distance(a) - distance(b)).slice(0, 1).map(targetRow);
+  } else {
+    victims = fatalVitnerRecipients(source, 10, false);
+  }
+  for (const victim of victims) victim.appearance = fatalNegationAppearance(await rollTotal("1d8"));
+  return {days, radius: die === 10 ? 10 : 0, victims};
+}
+
+async function applyNegation(caster, message, plan) {
+  const conditions = new Map(plan.victims.map(victim => [victim.actorUuid, victim]));
+  if (!conditions.has(caster.uuid)) conditions.set(caster.uuid, {actorUuid: caster.uuid});
+  for (const [uuid, recipient] of conditions) {
+    const actor = uuid === caster.uuid ? caster : await foundry.utils.fromUuid(uuid);
+    if (!actor || actor.effects.get(message.id)) continue;
+    const appearance = recipient.appearance;
+    const name = game.i18n.localize("TRUDVANG.FatalMagic.Negation");
+    const description = [
+      ...(uuid === caster.uuid ? [game.i18n.localize("TRUDVANG.FatalMagic.ThirdLost")] : []),
+      ...(appearance ? [game.i18n.localize(`TRUDVANG.FatalMagic.Cosmetic.${appearance}`)] : [])
+    ].join(" ");
+    if (!await actor.createTrudvangEffect({
+      _id: message.id, name, img: "icons/svg/daze.svg", description,
+      duration: {value: plan.days, units: "days"},
+      system: {stackId: `fatal-magic:${message.id}`, changes: []},
+      flags: {[SCOPE]: {summary: description, fatalMagic: {resultId: message.id, third: uuid === caster.uuid}}}
+    }, {keepId: true})) throw Error("Fatal negation effect creation failed");
+  }
+}
+
 async function drainVictim(actor, rolled, messageId) {
   const receipt = `flags.${SCOPE}.fatalVitnerLoss.${messageId}`;
   const previous = actor.getFlag(SCOPE, "fatalVitnerLoss")?.[messageId];
   if (previous?.resource) return previous;
-  const {vitner, body} = actor.system.resources;
+  const {vitner} = actor.system.resources;
   if (absorbsVitnerFrom(actor)) {
     const current = Math.max(0, Number(vitner.current ?? vitner.value ?? 0));
     const amount = Math.min(current, rolled);
@@ -58,15 +108,8 @@ async function drainVictim(actor, rolled, messageId) {
     await actor.update({[receipt]: result, "system.resources.vitner.value": Math.max(0, stored - amount)});
     return result;
   }
-  const temporary = temporaryHealthState(actor);
-  const paid = Math.min(rolled, temporary.current);
-  const health = rolled - paid;
   const result = {resource: "health", amount: rolled};
-  await actor.update({
-    [receipt]: result,
-    ...(paid ? temporaryHealthUpdate(actor, temporary.current - paid) : {}),
-    ...(health ? bodyHealthUpdate(actor, Number(body.current ?? body.value) - health) : {})
-  });
+  await actor.update({[receipt]: result, ...fatalBodyLossUpdates(actor, rolled)});
   return result;
 }
 
@@ -76,7 +119,7 @@ export async function prepareFatalVitnerArea(message) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
   const total = Number(message.rolls?.[0]?.total);
-  if (!rule?.drain || !Number.isInteger(total) || total < result.row || total > rule.last) return null;
+  if (!fatalMagicHasArea(rule) || !Number.isInteger(total) || total < result.row || total > rule.last) return null;
   if (result.applied) return null;
   const caster = await foundry.utils.fromUuid(result.actorUuid);
   if (!caster) return null;
@@ -88,19 +131,24 @@ export async function prepareFatalVitnerArea(message) {
   const planPath = `flags.${SCOPE}.fatalVitnerPlans.${message.id}`;
   let plan = scene.getFlag(SCOPE, "fatalVitnerPlans")?.[message.id];
   if (!plan) {
-    const radius = await rollTotal("1d10x>=10");
-    const victims = fatalVitnerRecipients(source, radius, rule.excludeCaster);
-    for (const victim of victims) victim.rolled = await rollTotal(rule.drain);
-    plan = {row: result.row, casterUuid: caster.uuid, radius, victims, level: source.level ?? null,
-      center: tokenCenter(source, Number(scene.grid?.size || 1)), blindness: rule.blindness ? await rollTotal(rule.blindness) : 0};
+    if (rule.negation) {
+      plan = await planNegation(source, rule);
+    } else {
+      const radius = await rollTotal("1d10x>=10");
+      const victims = fatalVitnerRecipients(source, radius, rule.excludeCaster);
+      for (const victim of victims) victim.rolled = await rollTotal(rule.drain);
+      plan = {radius, victims, blindness: rule.blindness ? await rollTotal(rule.blindness) : 0};
+    }
+    Object.assign(plan, {row: result.row, casterUuid: caster.uuid, level: source.level ?? null,
+      center: tokenCenter(source, Number(scene.grid?.size || 1))});
     await scene.update({[planPath]: plan});
   }
   if (plan.row !== result.row || plan.casterUuid !== caster.uuid) return null;
-  if (!regionFor(scene, message.id)) {
+  if (plan.radius > 0 && !regionFor(scene, message.id)) {
     const restricted = message.blind || message.whisper?.length;
     const recipients = [message.author?.id, ...Array.from(message.whisper ?? [], user => user.id ?? user)].filter(Boolean);
     const [region] = await scene.createEmbeddedDocuments("Region", [{
-      name: game.i18n.localize("TRUDVANG.FatalMagic.AreaName"), color: auraColor(),
+      name: game.i18n.localize(rule.negation ? "TRUDVANG.FatalMagic.Negation" : "TRUDVANG.FatalMagic.AreaName"), color: auraColor(),
       highlightMode: scene.grid?.isGridless ? "shapes" : "coverage", locked: true,
       levels: plan.level ? [plan.level] : [],
       visibility: message.blind ? CONST.REGION_VISIBILITY.GAMEMASTER
@@ -158,6 +206,13 @@ export async function applyFatalVitnerArea(message, {prepareOnly = false} = {}) 
   if (!prepared) return {status: "noOrigin"};
   if (prepareOnly || !wasVisible) return {status: "prepared"};
   const {plan, caster, scene} = prepared;
+  if (FATAL_MAGIC_ROWS[result.row].negation) {
+    await applyNegation(caster, message, plan);
+    await message.update({[`${RESULT}.applied`]: game.i18n.localize("TRUDVANG.FatalMagic.Negation"),
+      [`${RESULT}.radius`]: plan.radius});
+    await clearFatalVitnerPreview(message, scene);
+    return {status: "applied"};
+  }
   if (plan.blindness && !caster.effects.get(message.id)) {
     const name = game.i18n.localize("TRUDVANG.FatalMagic.BlindnessEffect");
     const summary = game.i18n.localize("TRUDVANG.FatalMagic.Blindness");

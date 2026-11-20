@@ -74,7 +74,7 @@ export async function performKnowledgeProcedure(document) {
   const kind = PROCEDURES[document.system.catalogId];
   const actor = document.actor ?? (["character", "npc"].includes(document.parent?.type) ? document.parent : testActorForUser());
   if (!kind || !actor?.isOwner) return ui.notifications.warn(t("ChooseActor"));
-  if (!actor.canPerformAction()) return actor.warnCannotAct();
+  if (!actor.canPerformAction({skill: true})) return actor.warnCannotAct({skill: true});
   const Dialog = foundry.applications.api.DialogV2;
   class ProcedureDialog extends Dialog {
     _onRender(context, options) {

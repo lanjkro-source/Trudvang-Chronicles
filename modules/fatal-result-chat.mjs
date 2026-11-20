@@ -1,8 +1,9 @@
 import {escapeHtml, escapeAttribute} from "./helpers.mjs";
 import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure} from "./rules/divine-failure.mjs";
 import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
-import {FATAL_MAGIC_ROWS, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
+import {FATAL_MAGIC_ROWS, fatalMagicHasArea, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
 import {requestFatalVitnerArea} from "./chat-application.mjs";
+import {applyFatalMedical} from "./fatal-medical.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const FLAG = "divineFailureResult";
@@ -80,7 +81,7 @@ export async function applyFatalMagic(message) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
   if (!rule || !result.actorUuid || result.applied) return false;
-  if (rule.drain) {
+  if (fatalMagicHasArea(rule)) {
     const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview});
     if (["prepared", "applied", "alreadyApplied"].includes(response.status)) return true;
     ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
@@ -91,6 +92,7 @@ export async function applyFatalMagic(message) {
   try {
     const actor = await foundry.utils.fromUuid(result.actorUuid);
     if (!actor?.isOwner) return false;
+    if (rule.medical) return await applyFatalMedical(actor, message, result);
     let effect = actor.effects.get(message.id);
     if (!effect) {
       const plan = await planFatalMagic(result.row, roll);
@@ -148,15 +150,18 @@ export function renderFatalResultAction(message, html) {
   const result = divine ?? message.getFlag(SCOPE, "fatalMagicResult");
   const content = html.querySelector(".message-content");
   if (!result || !content) return;
-  if (!divine && !result.applied && FATAL_MAGIC_ROWS[result.row]?.drain) {
+  const rule = !divine && FATAL_MAGIC_ROWS[result.row];
+  if (!result.applied && fatalMagicHasArea(rule)) {
     const note = document.createElement("p");
-    const key = FATAL_MAGIC_ROWS[result.row].excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
+    const key = rule.negation ? "ThirdLost" : rule.excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
     note.textContent = game.i18n.localize(`TRUDVANG.FatalMagic.${key}`);
     content.append(note);
     if (result.preview) {
       const summary = document.createElement("p");
-      summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaPending", {radius: result.preview.radius});
-      content.append(summary);
+      if (result.preview.radius) {
+        summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaPending", {radius: result.preview.radius});
+        content.append(summary);
+      }
       for (const target of result.preview.targets) {
         const row = document.createElement("button");
         row.type = "button";
@@ -169,7 +174,7 @@ export function renderFatalResultAction(message, html) {
     }
   }
   if (result.applied) {
-    if (!divine && result.radius) return renderAreaOutcome({...result, messageId: message.id}, content);
+    if (rule?.drain && result.radius) return renderAreaOutcome({...result, messageId: message.id}, content);
     const note = document.createElement("p");
     note.textContent = i18n("Applied", {effect: result.applied});
     content.append(note);
@@ -178,7 +183,7 @@ export function renderFatalResultAction(message, html) {
   if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
   const button = document.createElement("button");
   button.type = "button";
-  button.textContent = !divine && FATAL_MAGIC_ROWS[result.row]?.drain && !result.preview
+  button.textContent = fatalMagicHasArea(rule) && !result.preview
     ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea") : i18n("Apply");
   button.addEventListener("click", async () => {
     button.disabled = true;

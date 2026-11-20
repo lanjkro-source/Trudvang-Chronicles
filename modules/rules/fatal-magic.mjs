@@ -9,14 +9,21 @@ export const FATAL_MAGIC_ROWS = Object.freeze({
   31: {days: 1, reduction: "1d10x>=9"},
   33: {last: 34, drain: "1d3", excludeCaster: true},
   37: {last: 38, drain: "1d6"},
+  39: {last: 40, negation: "1d3"},
   43: {last: 43, drain: "1d10"},
+  45: {last: 45, negation: "1d6"},
   46: {last: 46, drain: "1d6", blindness: "1d6"},
-  49: {days: 7, depleted: true}
+  48: {medical: true, condition: "amnesia", duration: "1d3", units: "days"},
+  49: {days: 7, depleted: true},
+  52: {medical: true, condition: "unconscious", duration: "1d10", units: "minutes", costDamage: true, depletionDays: 7},
+  54: {medical: true, condition: "coma", duration: "1d10", units: "days", damage: "2d10x>=10"},
+  56: {medical: true, condition: "unconscious", duration: "1d10", units: "days", damage: "2d10x>=9", intellect: true},
+  57: {medical: true, damage: "1d10x>=6", depletionDays: 14}
 });
 
 export async function planFatalMagic(row, roll) {
   const rule = FATAL_MAGIC_ROWS[row];
-  if (!rule || rule.drain) return null;
+  if (!rule || fatalMagicHasArea(rule) || rule.medical) return null;
   const duration = rule.days ? {value: rule.days, units: "days"}
     : {value: await roll(rule.duration), units: "hours"};
   return {
@@ -24,6 +31,10 @@ export async function planFatalMagic(row, roll) {
     reduction: rule.reduction ? await roll(rule.reduction) : 0
   };
 }
+
+export const fatalMagicHasArea = rule => Boolean(rule?.drain || rule?.negation);
+
+export const fatalNegationAppearance = die => ["Bark", "Fingers", "Grass", "Fur"][Math.floor((die - 1) / 2)] ?? "";
 
 function activeFatalMagic(actor) {
   return Array.from(actor?.effects?.values?.() ?? actor?.effects ?? []).filter(effect =>
@@ -35,10 +46,27 @@ export function fatalSpellBlindness(actor) {
   return activeFatalMagic(actor).some(effect => effect.blindness);
 }
 
+export function fatalAmnesia(actor) {
+  return activeFatalMagic(actor).some(effect => effect.amnesia);
+}
+
+export async function planFatalMedical(row, roll, cost) {
+  const rule = FATAL_MAGIC_ROWS[row];
+  if (!rule?.medical || (rule.costDamage && !(Number.isInteger(cost) && cost >= 0))) return null;
+  return {
+    condition: rule.condition ?? null,
+    duration: rule.duration ? {value: await roll(rule.duration), units: rule.units} : null,
+    depletionDays: rule.depletionDays ?? 0,
+    damage: rule.costDamage ? cost : rule.damage ? await roll(rule.damage) : 0,
+    intellect: Boolean(rule.intellect)
+  };
+}
+
 export function fatalVitnerState(actor, normalMaximum) {
   const effects = activeFatalMagic(actor);
   if (effects.some(effect => effect.depleted)) return {max: 1, withheld: 0, depleted: true};
-  const losses = effects.reduce((sum, effect) => sum + Math.max(0, Number(effect.reduction) || 0), 0);
+  const losses = effects.reduce((sum, effect) => sum + Math.max(0, Number(effect.reduction) || 0)
+    + (effect.third ? Math.floor(normalMaximum / 3) : 0), 0);
   const withheld = Math.min(losses, Math.max(0, normalMaximum - 1));
   return {max: normalMaximum - withheld, withheld, depleted: false};
 }

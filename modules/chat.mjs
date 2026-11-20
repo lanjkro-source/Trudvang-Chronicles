@@ -174,7 +174,8 @@ function attachListeners(message, html) {
         const power = button.dataset.fatalPowerId
           ? {id: button.dataset.fatalPowerId, name: button.dataset.fatalPowerName}
           : null;
-        const draw = await actor.rollFatalEffect(kind, {threshold, modifier, power});
+        const cost = button.dataset.fatalCost ? Number(button.dataset.fatalCost) : undefined;
+        const draw = await actor.rollFatalEffect(kind, {threshold, modifier, power, cost});
         if (!draw?.results?.length) button.disabled = false;
       } catch (error) {
         button.disabled = false;

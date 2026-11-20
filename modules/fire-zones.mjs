@@ -2,7 +2,7 @@ import {combatPoolsAreFull} from './rules/combat-pool-resolver.mjs';
 const S='trudvang-chronicles';
 export const fireEvadeItem=actor=>actor.findRuleKnowledge?.('evade')??actor.findKnowledgeItem?.('evade');
 export function canEvadeZoneFire(actor){
- if(actor.transformationProfile?.noDodge||!(Number(fireEvadeItem(actor)?.system?.level)>0)||actor.canPerformAction?.({movement:true})===false)return false;
+ if(actor.transformationProfile?.noDodge||!(Number(fireEvadeItem(actor)?.system?.level)>0)||actor.canPerformAction?.({movement:true,skill:true})===false)return false;
  const inCombat=actor.isInActiveCombat??actor.isInCombatActive?.()??false;
  return !inCombat||combatPoolsAreFull(actor)&&!Number(actor.system?.unarmedActionsSpent)&&!Array.from(actor.items??[]).some(i=>Number(i.system?.weaponActionsSpent)>0);
 }

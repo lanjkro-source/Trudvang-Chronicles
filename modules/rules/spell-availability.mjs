@@ -5,7 +5,7 @@ import {activeSpellInstances} from "./active-spell-resolver.mjs";
 import {resolveVitnerSacrifice} from "./magic-power-resolver.mjs";
 import {knowledgeRank} from "./magic-resistance.mjs";
 import {divineFailureRestriction, divinePowerId} from "./divine-failure.mjs";
-import {fatalSpellBlindness} from "./fatal-magic.mjs";
+import {fatalAmnesia, fatalSpellBlindness} from "./fatal-magic.mjs";
 
 export function spellActorForItem(item,{user=game.user,controlled=globalThis.canvas?.tokens?.controlled??[]}={}){
  const owner=item?.actor??(item?.parent?.documentName==="Actor"?item.parent:null);
@@ -22,6 +22,7 @@ export function spellAvailability(actor,item){
  if(!actor||!["character","npc"].includes(actor.type))return deny("TRUDVANG.Warning.SpellCasterRequired");
  if(actor.isOwner===false)return deny("TRUDVANG.Warning.SpellCasterPermission");
  if(actor.canPerformAction?.()===false)return deny("TRUDVANG.Warning.CannotAct");
+ if(fatalAmnesia(actor))return deny("TRUDVANG.FatalMagic.AmnesiaRule");
  if(item.type==="divineFeat"){
   const restriction=divineFailureRestriction(actor,divinePowerId(item));
   if(restriction)return deny(restriction);

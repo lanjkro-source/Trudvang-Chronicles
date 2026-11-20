@@ -11,6 +11,7 @@ import {conditionalModifierSection} from './conditional-modifier-ui.mjs';
 import {blessingDialog} from './blessing-dialog.mjs';
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {divineFailureRestriction} from './rules/divine-failure.mjs';
+import {fatalAmnesia} from './rules/fatal-magic.mjs';
 const S='trudvang-chronicles',channel='system.'+S,jobs=new Map(),replies=new Map();let registered=false;
 const t=key=>game.i18n.localize('TRUDVANG.Sacred.'+key),e=escapeHtml,a=escapeAttribute;
 const state=item=>structuredClone(sacredState(item)?.toObject?.()??sacredState(item));
@@ -127,7 +128,7 @@ const read=root=>Object.fromEntries(Array.from(root.querySelectorAll('[name]')).
 const cancel={action:'cancel',label:()=>game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false};
 const buttons=(action,label,callback)=>[{action,label,default:true,callback}, {...cancel,label:cancel.label()}];
 export async function createSacredObjectDialog(actor){
- if(!owner(actor))return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
+ if(!owner(actor))return null;if(actor.canPerformAction?.({skill:true})===false)return actor.warnCannotAct({skill:true});
  const templates=publicSacredTemplates(game.items),weapons=['oneHandedLightWeapons','oneHandedHeavyWeapons','twoHandedWeapons','crossbow','bowsSlings'];
  const kit=Array.from(actor.items??[]).find(item=>String(item.flags?.[S]?.starterId??'').includes('CraftKit'));
  const toolsDefault=kit?(String(kit.flags[S].starterId).endsWith('Large')?-3:String(kit.flags[S].starterId).endsWith('Small')?-7:-5):0;
@@ -179,6 +180,7 @@ export async function investSacredDialog(item,runeId){
 }
 export async function inscribeRuneDialog(item){
  const actor=item.parent;if(!owner(actor))return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
+ if(fatalAmnesia(actor))return actor.warnCannotAct({skill:true});
  const restriction=divineFailureRestriction(actor);
  if(restriction)return ui.notifications.warn(game.i18n.localize(restriction));
  const known=knownRunes(actor).filter(row=>runeObjectEligible(item,row.id)&&!divineFailureRestriction(actor,row.id));if(!known.length)return ui.notifications.warn(t('NoRunes'));
@@ -228,6 +230,7 @@ export function faithBreakdown(actor,penalty=0,modifier=0){
 }
 export async function activateSacredRune(item,runeId){
  const actor=item.parent;if(!owner(actor)||sacredState(item)?.creatorUuid!==actor.uuid)return null;if(actor.canPerformAction?.()===false)return actor.warnCannotAct();
+ if(fatalAmnesia(actor))return actor.warnCannotAct({skill:true});
  const row=sacredState(item).runes.find(row=>row.id===runeId);if(!row||!runeRow(row).canUse)return ui.notifications.warn(t('Unavailable'));
  const restriction=divineFailureRestriction(actor,row.sourceId);
  if(restriction)return ui.notifications.warn(game.i18n.localize(restriction));
