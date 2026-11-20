@@ -16,6 +16,7 @@ globalThis.foundry={applications:{handlebars:{renderTemplate:async(path,data)=>H
 Handlebars.registerHelper('eq',(a,b)=>a===b);
 Handlebars.registerHelper('localize',(key,options)=>game.i18n.format(key,options.hash));
 const {createSpellZoneOnAuthority,reconcileSpellZone,resolveSpellZoneRequest,registerSpellZoneSupport,requestSpellZoneTest,placeSpellZone,spellWallCardState,openSpellWallDamage,migrateToikalokkeEarthquake}=await import('../modules/spell-zones.mjs');
+const {applyFatalEnclosure, registerFatalEnclosures}=await import('../modules/fatal-enclosure.mjs');
 let gm,owner,observer,scene,caster,target,message,regions;
 function setup(id=vitner,counts={},runeLevel=1){
  docs.clear();hooks.clear();language='fr';gm={id:'gm',isGM:true,active:true,isSelf:true};owner={id:'owner',active:true};observer={id:'observer',active:true};const users=new Map([gm,owner,observer].map(u=>[u.id,u]));users.activeGM=gm;
@@ -31,6 +32,51 @@ function setup(id=vitner,counts={},runeLevel=1){
 const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
 const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
+
+test("a 50 enclosure previews its targets, lasts until the second discharge and ignores continuous presence", async () => {
+ setup();
+ const token=scene.tokens.get("caster"), victim=scene.tokens.get("target");
+ const result={row:50,cost:2,actorUuid:caster.uuid,tokenUuid:token.uuid};
+ message.flags[S].fatalMagicResult=result;
+ message.rolls=[{total:50}];
+ message.getFlag=(_scope,key)=>message.flags[S][key];
+ message.update=async data=>{result.enclosure=data[`flags.${S}.fatalMagicResult.enclosure`];};
+ const create=scene.createEmbeddedDocuments;
+ scene.createEmbeddedDocuments=async (type, data)=>{
+  if(type!=="Region")return create(type,data);
+  const r={...data[0],id:"enclosure",uuid:"Region.enclosure",parent:scene,
+   async update(changes){r.flags[S].fatalEnclosure=changes[`flags.${S}.fatalEnclosure`];},
+   async delete(){regions.delete(r.id);docs.delete(r.uuid);}};
+  regions.set(r.id,r);docs.set(r.uuid,r);
+  return [r];
+ };
+ const previous=globalThis.Roll;
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;return this;}};
+ try {
+  assert.deepEqual(await applyFatalEnclosure(message),{status:"applied"});
+  assert.equal(regions.get("enclosure").attachment.token,token.id);
+  assert.equal(result.enclosure.targets.length,2);
+  assert.equal(target.system.resources.body.value,20);
+  assert.equal(result.enclosure.remaining,2);
+  assert.deepEqual(await applyFatalEnclosure(message,{pulse:true}),{status:"applied"});
+  assert.equal(result.enclosure.remaining,1);
+  assert.equal(target.system.resources.body.value,16);
+  assert.deepEqual(await applyFatalEnclosure(message,{pulse:true}),{status:"unavailable"});
+  registerFatalEnclosures();
+  victim.x=1000;hooks.get("updateToken")(victim);
+  await new Promise(resolve=>setImmediate(resolve));
+  victim.x=100;hooks.get("updateToken")(victim);
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.deepEqual(result.enclosure.targets.map(row=>row.name),["target"]);
+  assert.deepEqual(await applyFatalEnclosure(message,{pulse:true,sequence:0}),{status:"alreadyApplied"});
+  assert.equal(target.system.resources.body.value,16);
+  assert.deepEqual(await applyFatalEnclosure(message,{pulse:true}),{status:"applied"});
+  assert.equal(regions.size,0);
+  assert.equal(caster.effects.length,0);
+  assert.equal(target.system.resources.body.value,12);
+  assert.equal(result.enclosure.live,false);
+ } finally {globalThis.Roll=previous;}
+});
 
 test('Earth Wall converts selected volume and duration upgrades into independently destructible sections',()=>{
  const def=POWER_DETAILS_BY_ID[earthWall].spellZone;

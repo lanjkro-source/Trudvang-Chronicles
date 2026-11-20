@@ -830,7 +830,8 @@
         "none": "Ignore all protection",
         "magical": "Magical armor only",
         "magicalOrGrindsilver": "Magical or grindsilver armor",
-        "grindsilver": "Grindsilver armor only"
+        "grindsilver": "Grindsilver armor only",
+        "mundane": "Non-magical armor only"
       },
       "Application": "Incoming damage: {before} → BP lost: {after}; temporary BP lost: {temporary}",
       "ArmorApplied": "{name}: PV {protection}",
@@ -18739,6 +18740,12 @@
       "MedicalDamage": "Internal injury (−{points} BP)",
       "IntellectLost": "Intelligence reduced by one step",
       "Negation": "Cosmetic Negation",
+      "Enclosure": "Vitner Enclosure",
+      "CreateEnclosure": "Form the enclosure",
+      "Discharge": "Apply discharge",
+      "EnclosureStatus": "Vitner enclosure · radius {radius} m · {remaining}/{maximum} VP",
+      "EnclosureEnded": "The vitner enclosure has ended.",
+      "EnclosureRule": "The enclosure follows the weaver until its reserve runs out. Its chat card shows pending targets and remaining Vitner Points.",
       "ThirdLost": "The weaver loses one third of their vitner reserve while the effect lasts.",
       "Cosmetic": {
         "Bark": "The skin takes on the appearance of bark.",

@@ -3,7 +3,7 @@ import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure} from "./rul
 import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
 import {FATAL_MAGIC_ROWS, fatalMagicHasArea, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
 import {requestFatalVitnerArea} from "./chat-application.mjs";
-import {applyFatalMedical} from "./fatal-medical.mjs";
+import {applyFatalMedical, askFatalSpellCost} from "./fatal-medical.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const FLAG = "divineFailureResult";
@@ -81,6 +81,16 @@ export async function applyFatalMagic(message) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
   if (!rule || !result.actorUuid || result.applied) return false;
+  if (rule.enclosure) {
+    const pulse = Boolean(result.enclosure);
+    const cost = pulse ? undefined : result.cost ?? await askFatalSpellCost();
+    if (!pulse && (!Number.isInteger(cost) || cost < 0)) return false;
+    const response = await requestFatalVitnerArea(message, {pulse, cost, sequence: result.enclosure?.sequence});
+    if (["applied", "alreadyApplied"].includes(response.status)) return true;
+    ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
+      ? "TRUDVANG.FatalMagic.NoOrigin" : "TRUDVANG.FatalMagic.AreaUnavailable"));
+    return false;
+  }
   if (fatalMagicHasArea(rule)) {
     const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview});
     if (["prepared", "applied", "alreadyApplied"].includes(response.status)) return true;
@@ -129,6 +139,18 @@ export async function applyFatalMagic(message) {
   }
 }
 
+function renderTargets(targets, content) {
+  for (const target of targets) {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "trait-situation-token";
+    row.dataset.action = "locate-trait-situation-token";
+    row.dataset.tokenUuid = target.tokenUuid;
+    row.textContent = target.name;
+    content.append(row);
+  }
+}
+
 function renderAreaOutcome(result, content) {
   const summary = document.createElement("p");
   summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaApplied", {radius: result.radius});
@@ -151,6 +173,15 @@ export function renderFatalResultAction(message, html) {
   const content = html.querySelector(".message-content");
   if (!result || !content) return;
   const rule = !divine && FATAL_MAGIC_ROWS[result.row];
+  if (rule?.enclosure && result.enclosure) {
+    const summary = document.createElement("p");
+    summary.textContent = result.enclosure.live
+      ? game.i18n.format("TRUDVANG.FatalMagic.EnclosureStatus", result.enclosure)
+      : game.i18n.localize("TRUDVANG.FatalMagic.EnclosureEnded");
+    content.append(summary);
+    renderTargets(result.enclosure.targets, content);
+    if (!result.enclosure.live || !result.enclosure.pending) return;
+  }
   if (!result.applied && fatalMagicHasArea(rule)) {
     const note = document.createElement("p");
     const key = rule.negation ? "ThirdLost" : rule.excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
@@ -162,15 +193,7 @@ export function renderFatalResultAction(message, html) {
         summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaPending", {radius: result.preview.radius});
         content.append(summary);
       }
-      for (const target of result.preview.targets) {
-        const row = document.createElement("button");
-        row.type = "button";
-        row.className = "trait-situation-token";
-        row.dataset.action = "locate-trait-situation-token";
-        row.dataset.tokenUuid = target.tokenUuid;
-        row.textContent = target.name;
-        content.append(row);
-      }
+      renderTargets(result.preview.targets, content);
     }
   }
   if (result.applied) {
@@ -183,7 +206,8 @@ export function renderFatalResultAction(message, html) {
   if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
   const button = document.createElement("button");
   button.type = "button";
-  button.textContent = fatalMagicHasArea(rule) && !result.preview
+  button.textContent = rule?.enclosure ? game.i18n.localize(result.enclosure
+    ? "TRUDVANG.FatalMagic.Discharge" : "TRUDVANG.FatalMagic.CreateEnclosure") : fatalMagicHasArea(rule) && !result.preview
     ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea") : i18n("Apply");
   button.addEventListener("click", async () => {
     button.disabled = true;

@@ -980,6 +980,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.Protection.magical` | Magical armor only | Armures magiques uniquement |
 | `TRUDVANG.Damage.Protection.magicalOrGrindsilver` | Magical or grindsilver armor | Armures magiques ou en grindsilver |
 | `TRUDVANG.Damage.Protection.grindsilver` | Grindsilver armor only | Armures en grindsilver uniquement |
+| `TRUDVANG.Damage.Protection.mundane` | Non-magical armor only | Armures non magiques uniquement |
 
 ## `TRUDVANG.Npc`
 
@@ -16450,6 +16451,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FatalMagic.MedicalDamage` | Internal injury (−{points} BP) | Blessure interne (−{points} PS) |
 | `TRUDVANG.FatalMagic.IntellectLost` | Intelligence reduced by one step | Intelligence diminuée d’un degré |
 | `TRUDVANG.FatalMagic.Negation` | Cosmetic Negation | Négation cosmétique |
+| `TRUDVANG.FatalMagic.Enclosure` | Vitner Enclosure | Enceinte de vitner |
+| `TRUDVANG.FatalMagic.CreateEnclosure` | Form the enclosure | Former l’enceinte |
+| `TRUDVANG.FatalMagic.Discharge` | Apply discharge | Appliquer la décharge |
+| `TRUDVANG.FatalMagic.EnclosureStatus` | Vitner enclosure · radius {radius} m · {remaining}/{maximum} VP | Enceinte de vitner · rayon {radius} m · {remaining}/{maximum} PV |
+| `TRUDVANG.FatalMagic.EnclosureEnded` | The vitner enclosure has ended. | L’enceinte de vitner s’est terminée. |
+| `TRUDVANG.FatalMagic.EnclosureRule` | The enclosure follows the weaver until its reserve runs out. Its chat card shows pending targets and remaining Vitner Points. | L’enceinte suit le tisseur jusqu’à épuisement de sa réserve. Sa carte affiche les cibles en attente et les PV restants. |
 | `TRUDVANG.FatalMagic.ThirdLost` | The weaver loses one third of their vitner reserve while the effect lasts. | Le tisseur perd un tiers de sa réserve de vitner pendant l’effet. |
 
 ## `TRUDVANG.FatalMagic.Cosmetic`

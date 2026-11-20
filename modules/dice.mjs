@@ -738,7 +738,9 @@ export async function rollDamage({actor, item, context = {}}) {
   const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
   const damageEffects=weaponDamageEffects(item,actor,{explosions});
   const conditionalDamage=context.usage==="magic"?[]:creatureConditionalBonuses(actor,item).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
-  const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets, fixedTarget:Boolean(context.boundActorUuid)});
+  const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {
+    total, targets, fixedTarget: Boolean(context.boundActorUuid), protectionLocked: context.protectionLocked === true
+  });
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
     actorImg: actor.img,
@@ -757,7 +759,7 @@ export async function rollDamage({actor, item, context = {}}) {
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
   });
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, ...(context.whisper?.length ? {whisper: context.whisper} : {}), flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,protectionLocked:context.protectionLocked===true,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return context.returnMessage?{total,message}:total;
 }
 

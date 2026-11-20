@@ -11,6 +11,7 @@ import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
 import {fearTargetRow} from './magic-fear.mjs';
 import {applyFatalVitnerArea, cleanupFatalVitnerPreviews, clearFatalVitnerPreview} from "./fatal-vitner-area.mjs";
 import {FATAL_MAGIC_ROWS, fatalMagicHasArea} from "./rules/fatal-magic.mjs";
+import {applyFatalEnclosure, registerFatalEnclosures} from "./fatal-enclosure.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -35,6 +36,9 @@ export function hasChatApplication(message, actorUuid, channel, itemUuid = "") {
 function responderFor(message) {
   const users = Array.from(game.users?.values?.() ?? game.users ?? []);
   const author = users.find(user => user.id === authorId(message));
+  if (FATAL_MAGIC_ROWS[message?.getFlag?.(SYSTEM_ID, "fatalMagicResult")?.row]?.enclosure) {
+    return game.users?.activeGM ?? users.filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
+  }
   if (author?.active && author.isGM) return author;
   return users.filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
 }
@@ -61,6 +65,9 @@ async function applyFatalVitnerAreaOnGM(payload) {
   const result = message.getFlag(SYSTEM_ID, "fatalMagicResult");
   const actor = result?.actorUuid ? await foundry.utils.fromUuid(result.actorUuid) : null;
   if (!actor?.canUserModify?.(user, "update")) return {status: "unavailable"};
+  if (FATAL_MAGIC_ROWS[result.row]?.enclosure) return applyFatalEnclosure(message, {
+    pulse: payload.pulse === true, cost: payload.cost, sequence: payload.sequence
+  });
   return applyFatalVitnerArea(message, {prepareOnly: payload.prepareOnly === true});
 }
 
@@ -223,6 +230,7 @@ async function applyOnGM(payload,{grouped=false}={}) {
     const context=message.getFlag(SYSTEM_ID,'damageContext')??{};
     if(context.boundActorUuid&&context.boundActorUuid!==actor.uuid)return {status:'ineligibleTarget'};
     if(context.boundActorUuid&&payload.channel==='defense')return {status:'ineligibleTarget'};
+    if(context.protectionLocked&&payload.ignoreArmor)return {status:'ineligibleTarget'};
     const lock=resistanceLocks.get(`${message.id}:${actor.uuid}`);
     if(lock&&lock.until>Date.now())return {status:'resistancePending'};
     const resolution=message.getFlag(SYSTEM_ID,'damageResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
@@ -361,6 +369,7 @@ export function registerChatApplicationSocket() {
     }
   };
   globalThis.Hooks?.on("createChatMessage", prepare);
+  if (globalThis.Hooks) registerFatalEnclosures();
   globalThis.Hooks?.on("updateUser", restorePreviews);
   globalThis.Hooks?.on("deleteChatMessage", message => {
     if (game.users?.activeGM?.id === game.user.id && message.getFlag(SYSTEM_ID, "fatalMagicResult")?.tokenUuid) {
@@ -465,8 +474,10 @@ export async function requestFearBatch(message) {
   return requestChatUpdate(message,{type:"chatApplyFearBatch",requestId:crypto.randomUUID(),messageId:message.id,userId:game.user.id});
 }
 
-export function requestFatalVitnerArea(message, {prepareOnly = false} = {}) {
-  return requestChatUpdate(message, {type: "chatApplyFatalVitnerArea", requestId: crypto.randomUUID(), messageId: message.id, userId: game.user.id, prepareOnly});
+export function requestFatalVitnerArea(message, {prepareOnly = false, pulse = false, cost, sequence} = {}) {
+  return requestChatUpdate(message, {
+    type: "chatApplyFatalVitnerArea", requestId: crypto.randomUUID(), messageId: message.id, userId: game.user.id, prepareOnly, pulse, cost, sequence
+  });
 }
 
 async function requestChatUpdate(message, payload) {

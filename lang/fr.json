@@ -830,7 +830,8 @@
         "none": "Ignore toutes les protections",
         "magical": "Armures magiques uniquement",
         "magicalOrGrindsilver": "Armures magiques ou en grindsilver",
-        "grindsilver": "Armures en grindsilver uniquement"
+        "grindsilver": "Armures en grindsilver uniquement",
+        "mundane": "Armures non magiques uniquement"
       },
       "Application": "Dégâts entrants : {before} → PS perdus : {after} ; PS temporaires perdus : {temporary}",
       "ArmorApplied": "{name} : VP {protection}",
@@ -18739,6 +18740,12 @@
       "MedicalDamage": "Blessure interne (−{points} PS)",
       "IntellectLost": "Intelligence diminuée d’un degré",
       "Negation": "Négation cosmétique",
+      "Enclosure": "Enceinte de vitner",
+      "CreateEnclosure": "Former l’enceinte",
+      "Discharge": "Appliquer la décharge",
+      "EnclosureStatus": "Enceinte de vitner · rayon {radius} m · {remaining}/{maximum} PV",
+      "EnclosureEnded": "L’enceinte de vitner s’est terminée.",
+      "EnclosureRule": "L’enceinte suit le tisseur jusqu’à épuisement de sa réserve. Sa carte affiche les cibles en attente et les PV restants.",
       "ThirdLost": "Le tisseur perd un tiers de sa réserve de vitner pendant l’effet.",
       "Cosmetic": {
         "Bark": "La peau prend l’apparence de l’écorce.",

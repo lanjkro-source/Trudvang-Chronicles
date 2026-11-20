@@ -8,13 +8,18 @@ export const FATAL_MAGIC_ROWS = Object.freeze({
   29: {duration: "1d6", reduction: "1d10", lethargy: true},
   31: {days: 1, reduction: "1d10x>=9"},
   33: {last: 34, drain: "1d3", excludeCaster: true},
+  35: {last: 36, enclosure: {radius: 10, damage: "1d6", protection: "magical", castersOnly: true}},
   37: {last: 38, drain: "1d6"},
   39: {last: 40, negation: "1d3"},
+  41: {last: 42, enclosure: {radius: 20, damage: "1d6", protection: "magical", castersOnly: true}},
   43: {last: 43, drain: "1d10"},
+  44: {last: 44, enclosure: {radius: 50, damage: "1d6", protection: "magical", castersOnly: true}},
   45: {last: 45, negation: "1d6"},
   46: {last: 46, drain: "1d6", blindness: "1d6"},
+  47: {last: 47, enclosure: {radius: "1d10x>=10", damage: "1d10", protection: "mundane", charge: "1d3"}},
   48: {medical: true, condition: "amnesia", duration: "1d3", units: "days"},
   49: {days: 7, depleted: true},
+  50: {last: 50, enclosure: {radius: "1d10x>=9", damage: "1d10", protection: "mundane", charge: 1}},
   52: {medical: true, condition: "unconscious", duration: "1d10", units: "minutes", costDamage: true, depletionDays: 7},
   54: {medical: true, condition: "coma", duration: "1d10", units: "days", damage: "2d10x>=10"},
   56: {medical: true, condition: "unconscious", duration: "1d10", units: "days", damage: "2d10x>=9", intellect: true},
@@ -23,7 +28,7 @@ export const FATAL_MAGIC_ROWS = Object.freeze({
 
 export async function planFatalMagic(row, roll) {
   const rule = FATAL_MAGIC_ROWS[row];
-  if (!rule || fatalMagicHasArea(rule) || rule.medical) return null;
+  if (!rule || fatalMagicHasArea(rule) || rule.medical || rule.enclosure) return null;
   const duration = rule.days ? {value: rule.days, units: "days"}
     : {value: await roll(rule.duration), units: "hours"};
   return {

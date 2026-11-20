@@ -30,7 +30,7 @@ function castId(message) {
 
 function previewId(message) {
  const flags = section(message);
- return (flags?.fatalMagicResult?.preview || flags?.spellZoneTest?.instantInfo) ? message.id : castId(message);
+ return (flags?.fatalMagicResult?.preview || flags?.fatalMagicResult?.enclosure || flags?.spellZoneTest?.instantInfo) ? message.id : castId(message);
 }
 
 function pendingTargets(id, area, deletedId) {
@@ -98,16 +98,17 @@ function drawTargetOutlines(id, deletedId) {
  if (id === deletedId) return;
  const cast = game.messages.get(id);
  const fatal = section(cast)?.fatalMagicResult;
+ const enclosure = fatal?.enclosure?.live ? fatal.enclosure : null;
  const board = globalThis.canvas;
  const fire = section(cast)?.spellZoneTest;
  const fireRegion = fire?.instantInfo && values(board?.scene?.regions).find(region => region.uuid === fire.regionUuid);
  const fireArea = fireRegion ? {sceneId: board.scene.id, level: values(fireRegion.levels)[0]} : null;
- const area = fatal?.preview ?? fireArea ?? section(cast)?.magicFearArea;
- if (!area || (!area.nativeRegion && !fireArea && (!fatal?.preview || fatal.applied)) || !board?.ready || board.scene?.id !== area.sceneId
+ const area = enclosure ?? fatal?.preview ?? fireArea ?? section(cast)?.magicFearArea;
+ if (!area || (!area.nativeRegion && !fireArea && !enclosure && (!fatal?.preview || fatal.applied)) || !board?.ready || board.scene?.id !== area.sceneId
      || (area.level && board.level?.id && board.level.id !== area.level)
      || cast.visible === false || cast.isContentVisible === false) return;
  const tokens = new Map((board.tokens?.placeables ?? []).map(token => [token.document.uuid,token]));
- const targets = fatal?.preview ? area.targets : fireArea
+ const targets = enclosure || fatal?.preview ? area.targets : fireArea
   ? fire.recipients.filter(row => !fire.responses[encodeURIComponent(row.actorUuid).replaceAll('.','%2E')]?.resolved)
   : pendingTargets(id,area,deletedId).targets;
  const recipients = targets.map(row => tokens.get(row.tokenUuid))
@@ -137,7 +138,8 @@ export function registerMagicFearPreview() {
  };
  const rebuild = () => {
   const ids = new Set(values(game.messages).filter(message => section(message)?.magicFearArea?.nativeRegion
-   || section(message)?.fatalMagicResult?.preview || section(message)?.spellZoneTest?.instantInfo).map(message => message.id));
+   || section(message)?.fatalMagicResult?.preview || section(message)?.fatalMagicResult?.enclosure
+   || section(message)?.spellZoneTest?.instantInfo).map(message => message.id));
   if (writer()) {
    for (const scene of values(game.scenes)) for (const region of values(scene.regions)) {
     const id = regionCastId(region);

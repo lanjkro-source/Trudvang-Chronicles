@@ -26,7 +26,7 @@ export function fatalVitnerRecipients(origin, radius, excludeCaster) {
   const size = Number(scene.grid?.size || 1);
   const center = tokenCenter(origin, size);
   const targets = new Map();
-  for (const token of scene.tokens) {
+  for (const token of scene.tokens.values()) {
     if (!eligibleToken(token, origin, excludeCaster)) continue;
     const actor = token.actor;
     const points = token.getContainmentTestPoints?.();
@@ -65,7 +65,7 @@ async function planNegation(source, rule) {
       const p = tokenCenter(token, size);
       return Math.hypot(origin.x - p.x, origin.y - p.y);
     };
-    victims = Array.from(source.parent.tokens).filter(token => eligibleToken(token, source, true))
+    victims = Array.from(source.parent.tokens.values()).filter(token => eligibleToken(token, source, true))
       .sort((a, b) => distance(a) - distance(b)).slice(0, 1).map(targetRow);
   } else {
     victims = fatalVitnerRecipients(source, 10, false);

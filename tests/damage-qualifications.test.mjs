@@ -68,6 +68,18 @@ test('Hand of Death allows only grindsilver armor, excluding other magical and n
  assert.equal(result.conditionalProtection,0);
 });
 
+test("French enclosures 47 and 50 retain ordinary and natural armor and ignore magical armor", async () => {
+  const ordinary = armor("ordinary");
+  const magicProtection = armor("warded", true);
+  const enchanted = armor("enchanted");
+  enchanted.system.magical = true;
+  const actor = target([ordinary, magicProtection, enchanted], {details: {naturalArmor: 2}, protection: 14});
+  const result = await applyDamageToActor({actor, damage: 12,
+    qualification: {nature: "magical", protection: "mundane"}, announce: false});
+  assert.equal(result.bodyDamage, 7);
+  assert.deepEqual(result.armorDamage.map(row => row.item.id), ["ordinary"]);
+});
+
 test("armor blessings use their magic bonus separately from the armor's own eligibility",async()=>{
   const coat=armor("coat");
   coat.effects=[{name:"Cuirasse des gardiens du Rortan",flags:{"trudvang-chronicles":{transformation:{key:"holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3#armor",resolved:true}}}}];

@@ -11,7 +11,7 @@ const roll = async formula => Number((await new Roll(formula).evaluate()).total)
 
 export const lowerIntelligence = value => TRUDVANG.traitChoices.findLast(choice => choice < Number(value)) ?? Number(value);
 
-async function askMissingCost() {
+export async function askFatalSpellCost() {
   return foundry.applications.api.DialogV2.wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.FatalCost")},
     content: `<div class="trudvang roll-dialog"><label>${game.i18n.localize("TRUDVANG.Dialog.FatalCost")} <input type="number" name="cost" min="0" step="1" required></label></div>`,
@@ -46,7 +46,7 @@ async function ensureMedicalEffect(actor, message, {condition, duration, deplete
 export async function applyFatalMedical(actor, message, result) {
   let plan = result.medical;
   if (!plan) {
-    const cost = result.row === 52 ? result.cost ?? await askMissingCost() : undefined;
+    const cost = result.row === 52 ? result.cost ?? await askFatalSpellCost() : undefined;
     plan = await planFatalMedical(result.row, roll, cost);
     if (!plan) return false;
     await message.update({[`${RESULT}.medical`]: plan});
