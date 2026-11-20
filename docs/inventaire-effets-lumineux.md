@@ -2,7 +2,9 @@
 
 Ce document prépare l'extension des effets lumineux ; il ne modifie pas les règles ni le système. Il reprend le Livre des règles français et le Bestiaire de Jorge, recoupés avec les livres anglais et le catalogue `lang/fr.json`. Voir aussi `docs/aura-light-audit.md` pour les zones et les conséquences autres que la lumière. Les miroirs `game doc/markdown-fr/` et `game doc/markdown/` sont les références de recherche ; ne pas les modifier.
 
-Le dépôt possède déjà une automatisation partielle des auras lumineuses dans `modules/aura.mjs` et `modules/transformation-data.mjs`, notamment pour Lumière rassurante et Radiance sacrée. Cet inventaire ne présume pas que les autres lignes soient implémentées : vérifier l'état du code avant de créer ou remplacer quoi que ce soit.
+Les trois auras mobiles de Nid (Lueur de l'aube, Lumière rassurante et Radiance sacrée) éclairent déjà leur zone. Éruption et Mer de flammes utilisent les lumières ambiantes de `modules/fire-zones.mjs`. Ce code prend le rayon réel de la zone de feu. Les rayons proposés plus bas pour ces deux sorts restent des estimations.
+
+`modules/aura.mjs` gère aussi les six bénédictions de la Tablette du chevalier sur les objets équipés, Main brûlante, Impuissance des démons pendant les dix tours du toucher lumineux, Flammèche portée et les deux capacités Corps de feu. Les variantes de Flammèche déposée, les zones solaires fixes, Dompteur du feu, la Rune de guérison, les lueurs nocturnes et les incendies conditionnels figurent encore dans l'inventaire en vue d'une automatisation. Flammèche détachée ne doit plus éclairer son lanceur.
 
 ## Convention pour l'agent
 

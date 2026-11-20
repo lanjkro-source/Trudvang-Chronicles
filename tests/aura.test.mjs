@@ -204,3 +204,29 @@ test('equipped gear lights linked tokens and falls back to the torch, the aura a
  lantern.system.quantity=0;await refresh(lantern);for(const token of scene.tokens)assert.deepEqual(token.light,{bright:3,dim:5});
  torch.system.equipped=false;await refresh(torch);for(const token of scene.tokens)assert.deepEqual(token.light,{bright:1,dim:2});
 });
+
+test('magic light follows the equipped blessed item and ends when its effect expires', async () => {
+ const {carriedMagicLightRadii} = await import('../modules/aura.mjs');
+ const sourceId = 'holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6';
+ const effect = {duration: {value: 5, units: 'rounds'}, start: {time: 100},
+  flags: {[S]: {transformation: {sourceId}}}};
+ const armor = {type: 'armor', system: {equipped: true}, effects: [effect]};
+ const token = {actor: {items: [armor]}, parent: {grid: {units: 'm'}}};
+ assert.deepEqual(carriedMagicLightRadii(token, {time: 124}), {bright: 0, dim: 1});
+ assert.deepEqual(carriedMagicLightRadii(token, {time: 125}), {bright: 0, dim: 0});
+ armor.system.equipped = false;
+ assert.deepEqual(carriedMagicLightRadii(token, {time: 124}), {bright: 0, dim: 0});
+});
+
+test('Flammèche lights as a candle or torch and detaching it stops the carried light', async () => {
+ const {carriedMagicLightRadii} = await import('../modules/aura.mjs');
+ const sourceId = 'vitner-flame-craft:spark:1';
+ const context = {countsById: {}};
+ const effect = {flags: {[S]: {transformation: {sourceId, ruleTestContext: context}}}};
+ const token = {actor: {effects: [effect]}, parent: {grid: {units: 'm'}}};
+ assert.deepEqual(carriedMagicLightRadii(token), {bright: 1, dim: 3});
+ context.countsById[sourceId + ':3'] = 1;
+ assert.deepEqual(carriedMagicLightRadii(token), {bright: 3, dim: 6});
+ context.countsById[sourceId + ':4'] = 1;
+ assert.deepEqual(carriedMagicLightRadii(token), {bright: 0, dim: 0});
+});
