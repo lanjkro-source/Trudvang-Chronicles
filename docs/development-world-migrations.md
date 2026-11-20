@@ -1,5 +1,9 @@
 # Migrations temporaires des mondes de développement
 
+## Anciens murs rectangulaires
+
+`spellWallEdges()` dans `modules/rules/spell-walls.mjs` conserve les collisions des rectangles créés avant la pose par blocs. `spellWallCardState()` dans `modules/spell-zones.mjs` considère les anciens rectangles comme déjà entièrement placés. Le rendu du chat ajoute le compteur aux anciennes cartes, ce qui permet de reprendre une pose qui avait échoué. Ces replis sont à retirer lorsque les mondes de développement concernés ont été supprimés.
+
 ## Sortilèges actifs et zones orphelines
 
 `recoverMaintainedSpellZones()` dans `modules/maintained-spell-tracking.mjs` s’exécute au démarrage côté MJ. Les cartes de placement existantes permettent de retrouver les entrées actives dont la zone a déjà disparu et les zones dont le lancement a déjà été supprimé de la fiche. Le rapprochement utilise le lanceur et l’identifiant du lancement. Les cartes sans zone placée sont ignorées. Retirer cette récupération une fois les mondes créés avant le correctif écartés ou mis à jour. Conserver la synchronisation des suppressions et des expirations.

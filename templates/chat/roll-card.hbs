@@ -10,7 +10,8 @@
   {{#if success}}{{#if feint}}<p class="feint-result">{{localize "TRUDVANG.Roll.FeintParry" points=feint}}</p>{{/if}}{{/if}}
   {{#if flavor}}<div class="card-flavor roll-details is-collapsed" data-roll-details hidden>{{{flavor}}}</div>{{/if}}
   {{#if success}}{{#if (eq kind "attack")}}{{#if itemUuid}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}" data-usage="{{usage}}" data-long-range="{{longRange}}"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{else}}{{#if naturalDamage}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-natural-damage="true"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{/if}}{{/if}}{{/if}}{{/if}}
-  {{#if spellZone}}<button type="button" data-action="place-spell-zone"><i class="fas fa-circle-dot"></i> {{localize "TRUDVANG.SpellZone.Place"}}</button>{{/if}}
+  {{#if wallZone}}<p data-wall-block-volume></p>{{/if}}
+  {{#if spellZone}}<button type="button" data-action="place-spell-zone"><i class="fas fa-circle-dot"></i> {{#if wallZone}}{{localize "TRUDVANG.SpellZone.WallPlaceBlock"}}{{else}}{{localize "TRUDVANG.SpellZone.Place"}}{{/if}}</button>{{/if}}
   {{#if fogZone}}<button type="button" data-action="end-fog" disabled><i class="fas fa-xmark" aria-hidden="true"></i> {{localize "TRUDVANG.SpellZone.EndFog"}}</button>{{/if}}
   {{#if wallZone}}<button type="button" data-action="damage-spell-wall" hidden><i class="fas fa-hammer" aria-hidden="true"></i> {{localize "TRUDVANG.SpellZone.WallDamage"}}</button>{{/if}}
   {{#if magicDamage}}<button type="button" data-action="magic-damage" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{/if}}

@@ -16824,16 +16824,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.DarknessRadius` | Circle radius (m) | Rayon du cercle (m) |
 | `TRUDVANG.SpellZone.DarknessRectangle` | Place the rectangle | Placer le rectangle |
 | `TRUDVANG.SpellZone.DarknessCircle` | Place the circle | Placer le cercle |
-| `TRUDVANG.SpellZone.WallShape` | Shape the wall | Façonner le mur |
-| `TRUDVANG.SpellZone.WallVolume` | Available volume: {volume} m³. Each cubic metre can take {hp} damage. | Volume disponible : {volume} m³. Chaque mètre cube peut subir {hp} points de dégâts. |
-| `TRUDVANG.SpellZone.WallInvalidVolume` | Choose positive dimensions within the available volume. | Choisissez des dimensions positives qui restent dans la limite du volume disponible. |
-| `TRUDVANG.SpellZone.WallLength` | Length (m) | Longueur (m) |
-| `TRUDVANG.SpellZone.WallDepth` | Thickness (m) | Épaisseur (m) |
-| `TRUDVANG.SpellZone.WallHeight` | Height (m) | Hauteur (m) |
+| `TRUDVANG.SpellZone.WallPlaceBlock` | Place a block | Placer un bloc |
+| `TRUDVANG.SpellZone.WallBlockVolume` | {volume} m³ total · {remaining} m³ left | {volume} m³ au total · {remaining} m³ à placer |
+| `TRUDVANG.SpellZone.WallComplete` | All blocks for this wall have been placed. | Tous les blocs de ce mur ont été placés. |
+| `TRUDVANG.SpellZone.WallClosed` | {volume} m³ total · wall dissipated | {volume} m³ au total · mur dissipé |
 | `TRUDVANG.SpellZone.WallDamage` | Damage the wall | Endommager le mur |
 | `TRUDVANG.SpellZone.WallDamageAmount` | Damage to apply | Dégâts à appliquer |
 | `TRUDVANG.SpellZone.WallSectionLabel` | Wall section | Section du mur |
 | `TRUDVANG.SpellZone.WallSection` | Section {n} · {hp}/{max} BP | Section {n} · {hp}/{max} PS |
+| `TRUDVANG.SpellZone.WallBlockSection` | Block {n} · at {height} m high · {hp}/{max} BP | Bloc {n} · à {height} m de haut · {hp}/{max} PS |
 | `TRUDVANG.SpellZone.WallDestroyed` | The wall collapses. | Le mur s’effondre. |
 | `TRUDVANG.SpellZone.FireApplied` | Damage applied | Dégâts appliqués |
 | `TRUDVANG.SpellZone.FireAvoided` | Flames avoided | Flammes évitées |

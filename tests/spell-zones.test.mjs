@@ -4,7 +4,7 @@ import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
 import {darknessCombatRow} from '../modules/rules/jorn-darkness.mjs';
 import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
 import {quagmireMovement,quagmireTravelBudget} from '../modules/rules/quagmire.mjs';
-import {spellWallSections} from '../modules/rules/spell-walls.mjs';
+import {addSpellWallBlock,spellWallColumns} from '../modules/rules/spell-walls.mjs';
 import {endMaintainedSpellOnGM,recoverMaintainedSpellZones} from '../modules/maintained-spell-tracking.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
@@ -15,7 +15,7 @@ globalThis.CONFIG={RegionBehavior:{dataModels:{},typeLabels:{},typeIcons:{}}};gl
 globalThis.foundry={applications:{handlebars:{renderTemplate:async(path,data)=>Handlebars.compile(fs.readFileSync('templates/chat/'+path.split('/').at(-1),'utf8'))(data)}},data:{regionBehaviors:{RegionBehaviorType:class{}}},utils:{fromUuid:async uuid=>docs.get(uuid)},documents:{ActiveEffect:{implementation:{getEffectStart:()=>({time:game.time.worldTime,combat:game.combat?.id,round:game.combat?.round})}}}};
 Handlebars.registerHelper('eq',(a,b)=>a===b);
 Handlebars.registerHelper('localize',(key,options)=>game.i18n.format(key,options.hash));
-const {createSpellZoneOnAuthority,reconcileSpellZone,resolveSpellZoneRequest,registerSpellZoneSupport,requestSpellZoneTest,placeSpellZone,migrateToikalokkeEarthquake,expireInstantSpellZone}=await import('../modules/spell-zones.mjs');
+const {createSpellZoneOnAuthority,reconcileSpellZone,resolveSpellZoneRequest,registerSpellZoneSupport,requestSpellZoneTest,placeSpellZone,spellWallCardState,migrateToikalokkeEarthquake,expireInstantSpellZone}=await import('../modules/spell-zones.mjs');
 let gm,owner,observer,scene,caster,target,message,regions;
 function setup(id=vitner,counts={},runeLevel=1){
  docs.clear();hooks.clear();language='fr';gm={id:'gm',isGM:true,active:true,isSelf:true};owner={id:'owner',active:true};observer={id:'observer',active:true};const users=new Map([gm,owner,observer].map(u=>[u.id,u]));users.activeGM=gm;
@@ -36,40 +36,59 @@ test('Earth Wall converts selected volume and duration upgrades into independent
  const def=POWER_DETAILS_BY_ID[earthWall].spellZone;
  assert.deepEqual(earthquakeProfile(def,{countsById:{[earthWall+':0']:2,[earthWall+':1']:1,[earthWall+':2']:1}}),
   {kind:'earthWall',range:2,volume:3,hitPoints:30,rounds:2880});
- const shape={type:'rectangle',x:150,y:150,width:150,height:100,rotation:90};
- const args={scale:100,height:1,volume:2,hitPoints:30};
- const sections=spellWallSections(shape,args);
- assert.deepEqual(sections.map(s=>s.hp),[30,15]);
- assert.deepEqual(sections.map(s=>s.line.map(Math.round)),[[150,75,150,175],[150,175,150,225]]);
- assert.equal(spellWallSections(shape,{...args,height:2}),null);
+ const profile={volume:2,hitPoints:30};
+ const first=addSpellWallBlock(null,{x:150,y:150},100,profile);
+ const second=addSpellWallBlock(first,{x:179,y:149},100,profile);
+ assert.deepEqual(second.sections.map(s=>s.hp),[30,30]);
+ assert.equal(spellWallColumns(second)[0].blocks.length,2);
+ assert.equal(addSpellWallBlock(second,{x:150,y:150},100,profile),null);
 });
 
 test('Earth Wall creates solid level-specific edges, opens a gap on damage and removes edges at expiry',async()=>{
- const payload=setup(earthWall,{[earthWall+':0']:1});
+ const payload=setup(earthWall,{[earthWall+':0']:2});
  message.flags[S].ruleTestContext.kind='divine';
  const token=scene.tokens.get('caster');
  token.level='ground';
  const nativeCreate=scene.createEmbeddedDocuments;
  scene.walls=new Map();
+ scene.drawings=new Map();
+ const collection=type=>type==='Wall'?scene.walls:scene.drawings;
  scene.createEmbeddedDocuments=async function(type,rows){
-  if(type!=='Wall')return nativeCreate.call(scene,type,rows);
+  if(!['Wall','Drawing'].includes(type))return nativeCreate.call(scene,type,rows);
   return rows.map(row=>{
    const wall={...row,id:crypto.randomUUID()};
-   scene.walls.set(wall.id,wall);return wall;
+   collection(type).set(wall.id,wall);return wall;
   });
  };
  scene.deleteEmbeddedDocuments=async (type,ids)=>{
-  assert.equal(type,'Wall');
-  for(const id of ids)assert.equal(scene.walls.delete(id),true,'never delete a wall twice');
+  for(const id of ids)assert.equal(collection(type).delete(id),true,'never delete a wall document twice');
  };
+ scene.updateEmbeddedDocuments=async(type,rows)=>rows.forEach(row=>Object.assign(collection(type).get(row._id),row));
  CONST.WALL_MOVEMENT_TYPES={NORMAL:20};
  CONST.EDGE_SENSE_TYPES={NORMAL:20};
- const point={x:150,y:50},shape={type:'rectangle',...point,width:200,height:100};
- const placement={...payload,point,shape,wallHeight:1};
- assert.equal((await createSpellZoneOnAuthority({...placement,wallHeight:2})).status,'invalidVolume');
- assert.equal((await createSpellZoneOnAuthority(placement)).status,'placed');
+ const place=(x,y=50)=>resolveSpellZoneRequest({...payload,type:'createSpellZone',point:{x,y}});
+ assert.match(spellWallCardState(message).text,/3 m³ à placer/);
+ const saved={canvas:globalThis.canvas,ui:globalThis.ui};
+ globalThis.ui={notifications:{warn:()=>assert.fail('valid blocks should not warn')}};
+ globalThis.canvas={scene,tokens:{controlled:[token]},regions:{async placeRegion(data,options){
+  const [shape]=data.shapes,point={x:150,y:50};
+  assert.equal(shape.width,100);
+  assert.equal(options.allowRotation,false);
+  options.onMove({position:point,shape,preview:{document:{updateSource:()=>{}},renderFlags:{set:()=>{}}}});
+  assert.equal(options.preConfirm({shape}),true);
+  return {shapes:[{x:999,y:999}]};
+ }}};
+ try{assert.equal((await placeSpellZone(message)).wallBlocksPlaced,1);}
+ finally{Object.assign(globalThis,saved);}
  const [region]=regions.values();
- assert.equal(scene.walls.size,2);
+ assert.equal(scene.walls.size,4);
+ assert.equal((await place(175)).wallBlocksPlaced,2);
+ assert.equal(scene.walls.size,4);
+ assert.equal([...scene.drawings.values()][0].text,'2 m');
+ assert.equal((await place(230,70)).wallBlocksPlaced,3);
+ assert.equal((await place(175)).reason,'WallComplete');
+ assert.equal(spellWallCardState(message).complete,true);
+ assert.equal(scene.walls.size,6,'there are no duplicate internal edges');
  assert.equal(region.shapes.length,2);
  assert.equal(game.messages.size,1);
  for(const wall of scene.walls.values()){
@@ -80,15 +99,19 @@ test('Earth Wall creates solid level-specific edges, opens a gap on damage and r
  const damage={type:'damageSpellWall',messageId:message.id,index:0,damage:10};
  assert.equal((await resolveSpellZoneRequest({...damage,userId:owner.id})).status,'unavailable');
  assert.equal((await resolveSpellZoneRequest({...damage,userId:gm.id})).hp,20);
- assert.equal(scene.walls.size,2);
+ assert.equal(scene.walls.size,6);
  assert.equal((await resolveSpellZoneRequest({...damage,userId:gm.id,damage:20})).hp,0);
- assert.equal(scene.walls.size,1);
+ assert.equal([...scene.drawings.values()][0].text,'1 m');
+ assert.equal((await resolveSpellZoneRequest({...damage,index:1,userId:gm.id,damage:30})).hp,0);
+ assert.equal(scene.walls.size,4);
  assert.equal(region.shapes.length,1);
- assert.equal([...scene.walls.values()][0].flags[S].spellWall.index,1);
+ assert.equal(region.shapes[0].x,250);
  game.time.worldTime=1800;
  await reconcileSpellZone(region);
  assert.equal(regions.size,0);
  assert.equal(scene.walls.size,0);
+ assert.equal(scene.drawings.size,0);
+ assert.equal(spellWallCardState(message).finished,true);
 });
 test('Quagmire freezes diameter, depth, range and both duration increments',()=>{
  const definition=POWER_DETAILS_BY_ID[quagmire].spellZone;

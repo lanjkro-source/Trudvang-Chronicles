@@ -1,4 +1,4 @@
-import {endFog,openSpellWallDamage,placeSpellZone,requestSpellZoneTest} from './spell-zones.mjs';
+import {endFog,openSpellWallDamage,placeSpellZone,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
@@ -291,7 +291,8 @@ function attachListeners(message, html) {
   if(wallDamage){
     if(!game.user.isGM)wallDamage.remove();
     else {
-      wallDamage.hidden=!message.getFlag("trudvang-chronicles","spellZoneCasting")?.regionUuid;
+      const placement=message.getFlag("trudvang-chronicles","spellZoneCasting");
+      wallDamage.hidden=!placement?.regionUuid||placement.wallFinished;
       wallDamage.addEventListener('click',async event=>{
         event.preventDefault();
         wallDamage.disabled=true;
@@ -300,7 +301,34 @@ function attachListeners(message, html) {
       });
     }
   }
-  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();if(button.disabled)return;button.disabled=true;try{const result=await placeSpellZone(message);if(result?.status==='placed'){if(fogEnd)fogEnd.disabled=false;if(wallDamage&&game.user.isGM)wallDamage.hidden=false;}}finally{button.disabled=false;}}));
+  let wallVolume=html.querySelector?.('[data-wall-block-volume]');
+  html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>{
+    const refresh=()=>{
+      const wall=spellWallCardState(message);
+      // TEMPORARY WORLD MIGRATION — reuse unplaced rolls rendered before the block card existed.
+      if(wall&&!wallVolume){
+        wallVolume=document.createElement('p');
+        wallVolume.setAttribute('data-wall-block-volume','');
+        button.before(wallVolume);
+        button.textContent=game.i18n.localize('TRUDVANG.SpellZone.WallPlaceBlock');
+      }
+      if(wallVolume&&wall)wallVolume.textContent=wall.text;
+      button.disabled=Boolean(wall?.complete);
+    };
+    refresh();
+    button.addEventListener('click',async event=>{
+      event.preventDefault();
+      if(button.disabled)return;
+      button.disabled=true;
+      try{
+        const result=await placeSpellZone(message);
+        if(result?.status==='placed'){
+          if(fogEnd)fogEnd.disabled=false;
+          if(wallDamage&&game.user.isGM)wallDamage.hidden=false;
+        }
+      }finally{refresh();}
+    });
+  });
   html.querySelectorAll('[data-action="spell-zone-test"]').forEach(button=>button.addEventListener('click',async event=>{event.preventDefault();await requestSpellZoneTest(message,button.dataset.actorUuid,button.dataset.zoneChoice);}));
   html.querySelectorAll('[data-action="resist-impact"]').forEach(button=>button.addEventListener('click',async event=>{
     event.preventDefault();const actor=await foundry.utils.fromUuid(button.dataset.targetActorUuid);
