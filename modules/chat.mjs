@@ -19,7 +19,7 @@ import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {renderFatalResultAction} from "./fatal-result-chat.mjs";
-import {zoneOutcome} from "./zone-chat.mjs";
+import {zoneAction, zoneOutcome} from "./zone-chat.mjs";
 import {rollOutcomeText} from "./rules/roll-outcome-view.mjs";
 
 const indicatedTraitTokens = new Map();
@@ -438,15 +438,13 @@ function attachListeners(message, html) {
         details.insertAdjacentHTML("beforeend", zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.Affected")));
         if (game.user.isGM || actor?.isOwner) details.lastElementChild.textContent = game.i18n.format("TRUDVANG.AreaChat.FearGain", application);
       } else if (fearContext.resistance && actor?.isOwner) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = game.i18n.localize("TRUDVANG.AreaChat.Resist");
+        details.insertAdjacentHTML("beforeend", zoneAction(game.i18n.localize("TRUDVANG.AreaChat.Resist")));
+        const button = details.lastElementChild;
         button.addEventListener("click", async () => {
           button.disabled = true;
           try { await requestFearResistance({message, actor}); }
           finally { button.disabled = false; }
         });
-        details.append(button);
       } else if (fearContext.resistance) details.insertAdjacentHTML("beforeend", zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.PendingResistance")));
     }
   }

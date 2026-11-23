@@ -4,7 +4,7 @@ import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
 import {FATAL_MAGIC_ROWS, fatalMagicHasArea, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
 import {requestFatalVitnerArea} from "./chat-application.mjs";
 import {applyFatalMedical, askFatalSpellCost} from "./fatal-medical.mjs";
-import {zoneOutcome, zoneTargetList} from "./zone-chat.mjs";
+import {zoneAction, zoneOutcome, zoneTargetList} from "./zone-chat.mjs";
 import {zoneDamageReceipt} from "./zone-damage.mjs";
 
 const SCOPE = "trudvang-chronicles";
@@ -172,7 +172,9 @@ function areaDetails(result, message, row) {
   ), resisted);
   const effectUuid = flash?.effectUuid ?? actor?.effects.get(message.id)?.uuid;
   if (!own || !effectUuid) return consequence + zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.PendingResistance"));
-  return consequence + `<button type="button" data-rule-document-uuid="${escapeAttribute(effectUuid)}" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20" aria-hidden="true"></i> ${escapeHtml(game.i18n.localize("TRUDVANG.AreaChat.Resist"))}</button>`;
+  return consequence + zoneAction(game.i18n.localize("TRUDVANG.AreaChat.Resist"), {
+    action: "roll-rule-test", "rule-document-uuid": effectUuid, "test-index": 0
+  });
 }
 
 function renderAreaRows(message, result, content) {

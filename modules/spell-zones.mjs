@@ -16,7 +16,7 @@ import {darknessPlacementShape} from './rules/jorn-darkness.mjs';
 import {quagmireRecipient} from './rules/quagmire.mjs';
 import {trackSpellZoneRemoval,withMaintainedZoneCasting} from './maintained-spell-tracking.mjs';
 import {isInventoryTransferItem} from './inventory-transfer.mjs';
-import {zoneOutcome,zoneTargetList} from './zone-chat.mjs';
+import {zoneAction,zoneOutcome,zoneTargetList} from './zone-chat.mjs';
 import {applyZoneDamage,zoneDamageReceipt} from './zone-damage.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
@@ -101,7 +101,9 @@ function promptHTML(info,state){
   if(state.awaitingApplication)return '';
   const response=state.responses[responseKey(row.actorUuid)],outcome=response?.outcome;
   if(response?.unavailable)return zoneOutcome(game.i18n.localize('TRUDVANG.AreaChat.Unavailable'));
-  const control=(choice,label)=>'<button type="button" data-action="spell-zone-test" data-zone-choice="'+choice+'" data-actor-uuid="'+escapeAttribute(row.actorUuid)+'">'+escapeHtml(local(label))+'</button>';
+  const control=(choice,label)=>zoneAction(local(label),{
+   action:'spell-zone-test','zone-choice':choice,'actor-uuid':row.actorUuid
+  }, choice==='accept'?'fa-heart-crack':'fa-dice-d20');
   if(info.profile.kind==='fire')return response?.resolved
    ? zoneOutcome(local(response.avoided?'FireAvoided':'FireApplied'),response.avoided)
    : (row.canEvade?control('evade','FireEvade'):'')+control('accept',row.canEvade?'FireDeclineEvade':'FireAccept');

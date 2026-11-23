@@ -1015,12 +1015,6 @@
 .trudvang.chat-card .name-roll-parts { margin: 0 8px 8px; color: var(--trudvang-muted); font-size: .8rem; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card .trait-situation-results { margin: 2px 8px 8px; padding: 0; list-style: none; }
-.zone-target-list { margin: .2em 0; padding: 0; list-style: none; }
-.zone-target-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .4em; align-items: center; padding: .12em .3em; }
-.zone-target-row[hidden], .zone-target-details > button[hidden] { display: none; }
-.zone-target-row > .trait-situation-token { justify-self: start; text-align: left; width: auto; overflow-wrap: anywhere; }
-.zone-target-details { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: .25em; }
-.zone-target-details > button { min-height: 0; width: auto; padding: 0 .4em; font-size: .9em; }
 .zone-outcome.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
 .zone-outcome.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
 .zone-outcome.success, .zone-outcome.failure { padding: 0 .25em; border-radius: 3px; }
@@ -1040,16 +1034,22 @@
 .trudvang.chat-card .trait-situation-die { min-width: 1.5em; text-align: right; }
 .trudvang.chat-card .trait-situation-outcome { text-align: right; }
 .trudvang.chat-card small { display: block; padding: 2px 8px 7px; color: var(--trudvang-muted); text-align: center; }
-.trudvang.chat-card .damage-targets { margin: 8px; border-top: 1px solid var(--trudvang-line); }
-.trudvang.chat-card .damage-targets h4 { margin: 6px 0 4px; color: var(--trudvang-ink); font-size: .85rem; }
+:is(.trudvang.chat-card .damage-targets, .zone-target-list) { margin: 8px; border-top: 1px solid var(--trudvang-line); }
+:is(.trudvang.chat-card .damage-targets, .zone-target-list) h4 { margin: 6px 0 4px; color: var(--trudvang-ink); font-size: .85rem; }
 .trudvang.chat-card .damage-targets-heading { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
-.trudvang.chat-card .damage-target { display: grid; grid-template-columns: 24px minmax(0, 1fr) repeat(3, 29px) 18px; gap: 4px; align-items: center; padding: 3px 0; }
-.trudvang.chat-card .damage-target img { width: 23px; height: 23px; border: 1px solid var(--trudvang-line); object-fit: cover; }
+:is(.trudvang.chat-card, .zone-target-list) .damage-target { display: grid; grid-template-columns: 24px minmax(0, 1fr) repeat(3, 29px) 18px; gap: 4px; align-items: center; padding: 3px 0; }
+:is(.trudvang.chat-card, .zone-target-list) .damage-target img { width: 23px; height: 23px; border: 1px solid var(--trudvang-line); object-fit: cover; }
 .trudvang.chat-card .damage-target button { min-height: 25px; padding: 2px; }
-.trudvang.chat-card .damage-target .damage-target-name { min-width: 0; min-height: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+:is(.trudvang.chat-card, .zone-target-list) .damage-target .damage-target-name { min-width: 0; min-height: 0; padding: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
 .trudvang.chat-card :is(.damage-targets-heading, .damage-target) .damage-target-edit { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 18px; width: 18px; height: 18px; min-width: 0; min-height: 18px; padding: 0; color: var(--trudvang-accent); background: transparent; border: 0; box-shadow: none; line-height: 1; cursor: pointer; }
 .trudvang.chat-card .damage-target-edit:focus-visible { outline: 1px solid var(--trudvang-accent); outline-offset: 2px; }
 .trudvang.chat-card .fear-targets .damage-target { grid-template-columns: minmax(0, 1fr) 18px; }
+:is(.trudvang.chat-card, .zone-target-list) .damage-target.zone-target-row { grid-template-columns: 24px minmax(0, 1fr) auto; }
+:is(.trudvang.chat-card, .zone-target-list) .zone-target-row[hidden], .zone-target-details > button[hidden] { display: none; }
+.zone-target-row .trait-situation-token { color: var(--trudvang-ink); text-decoration: underline; }
+.zone-target-row .trait-situation-token:is(:hover, :focus-visible) { color: var(--trudvang-accent); }
+.zone-target-details { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 4px; }
+.zone-target-details .zone-target-action { width: 29px; height: 25px; min-height: 25px; padding: 2px; }
 .trudvang.chat-card .fear-targets [hidden] { display: none !important; }
 .trudvang.chat-card.portrait-card .portrait-share { display: block; width: auto; height: auto; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .trudvang.chat-card.portrait-card .portrait-share img { display: block; width: 100%; height: auto; max-width: 100%; max-height: 60vh; margin: 0 auto; object-fit: contain; }

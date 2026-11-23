@@ -782,6 +782,8 @@ test('an Evade roll can finish inside the only area card, after its marker is re
   const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest);
   const count=game.messages.size;
   assert.equal((await applyInstant(prompt)).status,"applied");
+  assert.match(prompt.content,/<a href="#" class="trait-situation-token damage-target-name"[^>]*>target<\/a>/);
+  assert.match(prompt.content,/class="zone-target-action" title="Esquiver" aria-label="Esquiver"[^>]*><i class="fas fa-dice-d20" aria-hidden="true"><\/i><\/button>/);
   assert.equal(regions.size,0);
   assert.equal((await requestSpellZoneTest(prompt,target.uuid,"evade")).status,"resolved");
   assert.match(prompt.content,/zone-outcome success[^>]*>Flammes évitées/);

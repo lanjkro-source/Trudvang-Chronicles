@@ -7,8 +7,9 @@ import {auraCasterToken} from './aura.mjs';
 export function fearTargetRow(token) {
  const actor = token?.actor;
  if (!actor?.uuid || !['character','npc'].includes(actor.type)) return null;
+ const portrait=token.texture?.src || actor.img;
  return {actorUuid:actor.uuid, tokenUuid:token.uuid, hidden:!!token.hidden,
-  name:token.hidden ? '' : token.name};
+  name:token.hidden ? '' : token.name, ...(!token.hidden&&portrait?{img:portrait}:{})};
 }
 
 export function automaticFearTargets(tokens, policy, contains) {
