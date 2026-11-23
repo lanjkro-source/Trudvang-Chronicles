@@ -25,10 +25,12 @@ function serialize(id, action) {
 
 /** A new exposure queues a pulse, and people staying inside do not trigger it
  * again. Leaving does not cancel a pulse that already selected a target. */
-export function enclosureExposure(state, candidates) {
+export function enclosureExposure(state, candidates, {again = false} = {}) {
   const seen = candidates.map(row => row.actorUuid);
   const pending = new Map(state.pending.map(row => [row.actorUuid, row]));
-  for (const row of candidates) if (!state.seen.includes(row.actorUuid)) pending.set(row.actorUuid, row);
+  for (const row of candidates) {
+    if (again || pending.has(row.actorUuid) || !state.seen.includes(row.actorUuid)) pending.set(row.actorUuid, row);
+  }
   return {seen, pending: [...pending.values()]};
 }
 
@@ -72,7 +74,7 @@ async function retire(region) {
   return job;
 }
 
-async function reconcile(region, message) {
+async function reconcile(region, message, {roundKey} = {}) {
   const state = stateOf(region);
   if (!state || region.parent.regions.get(region.id) !== region) return null;
   const source = await foundry.utils.fromUuid(state.sourceTokenUuid);
@@ -86,15 +88,30 @@ async function reconcile(region, message) {
   const rule = FATAL_MAGIC_ROWS[state.row].enclosure;
   const eligibleCasters = new Set(values(region.parent.tokens)
     .filter(token => token.actor && absorbsVitnerFrom(token.actor)).map(token => token.actor.uuid));
-  const candidates = fatalVitnerRecipients(source, state.radius, rule.castersOnly)
+  const candidates = fatalVitnerRecipients(source, state.radius, rule.castersOnly, {trackDistance: rule.charge != null})
     .filter(row => !rule.castersOnly || eligibleCasters.has(row.actorUuid));
-  const {seen, pending} = enclosureExposure(state, candidates);
+  const again = rule.automatic && roundKey && roundKey !== state.roundKey;
+  const {seen, pending} = enclosureExposure(state, candidates, {again});
   const level = source.level ?? null;
-  const next = {...state, seen, pending, level};
+  const next = {...state, seen, pending, level, ...(again ? {roundKey} : {})};
   if (JSON.stringify(state.seen) !== JSON.stringify(seen) || JSON.stringify(state.pending) !== JSON.stringify(pending)
-      || state.level !== level) await region.update({[REGION_STATE]: next, ...(state.level !== level ? {levels: level ? [level] : []} : {})});
+      || state.level !== level || again) await region.update({[REGION_STATE]: next, ...(state.level !== level ? {levels: level ? [level] : []} : {})});
   await publish(region, next, message);
   return next;
+}
+
+function combatRoundKey(combat) {
+  return Number(combat?.round) > 0 ? `${combat.id}:${combat.round}` : null;
+}
+
+async function synchronize(region, message, options) {
+  let state = await reconcile(region, message, options);
+  const rule = FATAL_MAGIC_ROWS[state?.row]?.enclosure;
+  // Finish a previously interrupted pulse before processing newly queued exposures.
+  while (rule?.automatic && state?.remaining > 0 && state.pending.length) {
+    await discharge(region, message, state, rule);
+    state = region.parent.regions.get(region.id) === region ? stateOf(region) : null;
+  }
 }
 
 async function createEnclosure(message, result, rule, maximum) {
@@ -122,7 +139,8 @@ async function createEnclosure(message, result, rule, maximum) {
       ...(restricted ? {ownership: Object.fromEntries(recipients.map(id => [id, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER]))} : {}),
       shapes: [{type: "circle", ...center, radius: radius * zonePixelScale(scene)}],
       flags: {[SCOPE]: {[TAG]: {messageId: message.id, casterUuid: caster.uuid, sourceTokenUuid: source.uuid,
-        row: result.row, radius, level, maximum, remaining: maximum, sequence: 0, seen: [], pending: [], pulse: null}}}
+        row: result.row, radius, level, maximum, remaining: maximum, sequence: 0, seen: [], pending: [], pulse: null,
+        ...(rule.automatic && game.combat?.scene?.id === scene.id ? {roundKey: combatRoundKey(game.combat)} : {})}}}
     }]);
   }
   if (!region) return {status: "unavailable"};
@@ -137,7 +155,7 @@ async function createEnclosure(message, result, rule, maximum) {
     if (!effect) return {status: "unavailable"};
   }
   if (!state.started) await region.update({[REGION_STATE]: {...state, started: true}});
-  await reconcile(region, message);
+  await synchronize(region, message);
   return {status: "applied"};
 }
 
@@ -145,17 +163,28 @@ async function discharge(region, message, state, rule) {
   if (!state.pending.length) return {status: "unavailable"};
   let pulse = state.pulse;
   if (!pulse) {
-    const charge = typeof rule.charge === "string" ? await roll(rule.charge) : rule.charge ?? null;
-    pulse = {charge, targets: state.pending};
+    const targets = rule.charge == null ? state.pending : [...state.pending].sort((a, b) =>
+      (a.distance ?? Infinity) - (b.distance ?? Infinity) || a.tokenUuid.localeCompare(b.tokenUuid));
+    pulse = {targets, ...(rule.charge != null ? {charges: []} : {})};
     state = {...state, pulse};
     await region.update({[REGION_STATE]: state});
   }
   const {rollDamage} = await import("./dice.mjs");
   const {requestChatApplication} = await import("./chat-application.mjs");
   let inflicted = 0;
-  for (const target of pulse.targets) {
+  let remaining = state.remaining;
+  const chargedPerTarget = rule.charge != null;
+  for (const [index, target] of pulse.targets.entries()) {
+    if (chargedPerTarget && remaining <= 0) break;
     const actor = await foundry.utils.fromUuid(target.actorUuid);
     if (!actor) continue;
+    if (chargedPerTarget && pulse.charges?.[index] == null) {
+      const charges = [...(pulse.charges ?? [])];
+      charges[index] = typeof rule.charge === "string" ? await roll(rule.charge) : rule.charge;
+      pulse = {...pulse, charges};
+      state = {...state, pulse};
+      await region.update({[REGION_STATE]: state});
+    }
     const token = await foundry.utils.fromUuid(target.tokenUuid) ?? {actor, name: target.name};
     const event = `fatal-enclosure:${message.id}:${state.sequence}:${target.actorUuid}`;
     let card = values(game.messages).find(row => row.getFlag?.(SCOPE, "persistentDamageEvent") === event);
@@ -177,9 +206,10 @@ async function discharge(region, message, state, rule) {
     const result = await requestChatApplication({message: card, actor, token, channel: "body"});
     if (!["applied", "alreadyApplied"].includes(result.status)) throw Error("Fatal enclosure damage application failed");
     inflicted += (card.getFlag(SCOPE, "applications") ?? []).find(row => row.actorUuid === actor.uuid && row.channel === "body")?.impactDamage ?? 0;
+    if (chargedPerTarget) remaining -= pulse.charges[index];
   }
   const hit = new Set(pulse.targets.map(row => row.actorUuid));
-  const next = {...state, sequence: state.sequence + 1, remaining: Math.max(0, state.remaining - (pulse.charge ?? inflicted)),
+  const next = {...state, sequence: state.sequence + 1, remaining: Math.max(0, chargedPerTarget ? remaining : state.remaining - inflicted),
     pending: state.pending.filter(row => !hit.has(row.actorUuid)), pulse: null};
   await region.update({[REGION_STATE]: next});
   if (!next.remaining) await retire(region);
@@ -198,6 +228,7 @@ export function applyFatalEnclosure(message, {pulse = false, cost, sequence} = {
       if (!Number.isInteger(maximum) || maximum < 0) return {status: "unavailable"};
       return createEnclosure(message, result, row.enclosure, maximum);
     }
+    if (row.enclosure.automatic) return {status: "unavailable"};
     const region = regionFor(message.id);
     const state = region && await reconcile(region, message);
     if (!state) return {status: "unavailable"};
@@ -209,14 +240,20 @@ export function applyFatalEnclosure(message, {pulse = false, cost, sequence} = {
 export function registerFatalEnclosures() {
   const writer = () => game.users?.activeGM?.id === game.user.id;
   const safely = job => void job.catch(error => console.error("Trudvang | Fatal enclosure failed", error));
-  const sync = scene => {
+  const sync = (scene, options) => {
     if (!writer()) return;
     for (const region of values(scene?.regions)) {
       const state = stateOf(region);
-      if (state) safely(serialize(state.messageId, () => reconcile(region, game.messages.get(state.messageId))));
+      if (state) safely(serialize(state.messageId, () => synchronize(region, game.messages.get(state.messageId), options)));
     }
   };
   for (const hook of ["createToken", "updateToken", "deleteToken"]) Hooks.on(hook, token => sync(token.parent));
+  Hooks.on("updateCombat", (combat, changes) => {
+    const roundKey = combatRoundKey(combat);
+    if (!Object.hasOwn(changes, "round") || !roundKey) return;
+    const scenes = new Set([combat.scene, ...values(combat.combatants).map(combatant => combatant.token?.parent)].filter(Boolean));
+    for (const scene of scenes) sync(scene, {roundKey});
+  });
   Hooks.on("deleteRegion", region => {
     if (writer() && stateOf(region) && !removing.has(region)) safely(close(region));
   });

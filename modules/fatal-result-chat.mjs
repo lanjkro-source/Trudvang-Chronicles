@@ -181,8 +181,7 @@ export function renderFatalResultAction(message, html) {
       ? game.i18n.format("TRUDVANG.FatalMagic.EnclosureStatus", result.enclosure)
       : game.i18n.localize("TRUDVANG.FatalMagic.EnclosureEnded");
     content.append(summary);
-    renderTargets(result.enclosure.targets, content);
-    if (!result.enclosure.live || !result.enclosure.pending) return;
+    if (rule.enclosure.automatic || !result.enclosure.live || !result.enclosure.pending) return;
   }
   if (!result.applied && fatalMagicHasArea(rule)) {
     const note = document.createElement("p");

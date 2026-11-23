@@ -21,7 +21,7 @@ function eligibleToken(token, origin, excludeCaster) {
     && (!excludeCaster || actor.uuid !== origin.actor.uuid);
 }
 
-export function fatalVitnerRecipients(origin, radius, excludeCaster) {
+export function fatalVitnerRecipients(origin, radius, excludeCaster, {trackDistance = false} = {}) {
   const scene = origin.parent;
   const scale = zonePixelScale(scene);
   const size = Number(scene.grid?.size || 1);
@@ -33,9 +33,13 @@ export function fatalVitnerRecipients(origin, radius, excludeCaster) {
     const points = token.getContainmentTestPoints?.();
     const footprint = points?.length ? points : [tokenCenter(token, size)];
     if (!footprint.some(point => Math.hypot(point.x - center.x, point.y - center.y) <= radius * scale + 0.01)) continue;
+    const point = trackDistance ? tokenCenter(token, size) : null;
+    const distance = point ? Math.hypot(point.x - center.x, point.y - center.y) / scale : null;
     const existing = targets.get(actor.uuid);
-    if (!existing || (existing.hidden && !token.hidden)) {
-      targets.set(actor.uuid, {actorUuid: actor.uuid, tokenUuid: token.uuid, name: token.name, hidden: Boolean(token.hidden)});
+    if (!existing || (trackDistance && distance < existing.distance)
+        || ((!trackDistance || distance === existing.distance) && existing.hidden && !token.hidden)) {
+      targets.set(actor.uuid, {actorUuid: actor.uuid, tokenUuid: token.uuid, name: token.name, hidden: Boolean(token.hidden),
+        ...(trackDistance ? {distance} : {})});
     }
   }
   return [...targets.values()];

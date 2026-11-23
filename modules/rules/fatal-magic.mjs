@@ -13,7 +13,7 @@ export const FATAL_MAGIC_ROWS = Object.freeze({
   39: {last: 40, negation: "1d3"},
   41: {last: 42, enclosure: {radius: 20, damage: "1d6", protection: "magical", castersOnly: true}},
   43: {last: 43, drain: "1d10"},
-  44: {last: 44, enclosure: {radius: 50, damage: "1d6", protection: "magical", castersOnly: true}},
+  44: {last: 44, enclosure: {radius: 50, damage: "1d6", protection: "magical", castersOnly: true, automatic: true}},
   45: {last: 45, negation: "1d6"},
   46: {last: 46, drain: "1d6", blindness: "1d6"},
   47: {last: 47, enclosure: {radius: "1d10x>=10", damage: "1d10", protection: "mundane", charge: "1d3"}},

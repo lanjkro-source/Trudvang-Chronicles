@@ -69,10 +69,10 @@ test('Sunray uses the original casting site and resumes daylight only while the 
  assert.equal(light.hidden,false);
 });
 
-test("a 50 enclosure previews its targets, lasts until the second discharge and ignores continuous presence", async () => {
+function setupEnclosure(row) {
  setup();
  const token=scene.tokens.get("caster"), victim=scene.tokens.get("target");
- const result={row:50,forced:true,actorUuid:caster.uuid,tokenUuid:token.uuid};
+ const result={row,forced:true,actorUuid:caster.uuid,tokenUuid:token.uuid};
  message.flags[S].fatalMagicResult=result;
  message.rolls=[];
  message.getFlag=(_scope,key)=>message.flags[S][key];
@@ -86,14 +86,19 @@ test("a 50 enclosure previews its targets, lasts until the second discharge and 
   regions.set(r.id,r);docs.set(r.uuid,r);
   return [r];
  };
+ return {token, victim, result};
+}
+
+test("a 50 enclosure previews its targets, charges each hit and ignores continuous presence", async () => {
+ const {token,victim,result}=setupEnclosure(50);
  const previous=globalThis.Roll;
  globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;return this;}};
  try {
-  assert.deepEqual(await applyFatalEnclosure(message,{cost:2}),{status:"applied"});
+  assert.deepEqual(await applyFatalEnclosure(message,{cost:3}),{status:"applied"});
   assert.equal(regions.get("enclosure").attachment.token,token.id);
   assert.equal(result.enclosure.targets.length,2);
   assert.equal(target.system.resources.body.value,20);
-  assert.equal(result.enclosure.remaining,2);
+  assert.equal(result.enclosure.remaining,3);
   assert.deepEqual(await applyFatalEnclosure(message,{pulse:true}),{status:"applied"});
   assert.equal(result.enclosure.remaining,1);
   assert.equal(target.system.resources.body.value,16);
@@ -111,6 +116,57 @@ test("a 50 enclosure previews its targets, lasts until the second discharge and 
   assert.equal(caster.effects.length,0);
   assert.equal(target.system.resources.body.value,12);
   assert.equal(result.enclosure.live,false);
+ } finally {globalThis.Roll=previous;}
+});
+
+for (const [row,cost] of [[47,3],[50,2]]) {
+ test(`a ${row} enclosure hits the nearest targets first and stops at zero`,async()=>{
+  const {token,victim}=setupEnclosure(row);
+  const far={...target,uuid:"Actor.far",name:"far",system:{...target.system,resources:{body:{value:20}}}};
+  far.update=async changes=>{far.system.resources.body.value=changes["system.resources.body.value"];};
+  const farToken={...victim,id:"far",uuid:"Scene.scene.Token.far",actor:far,x:300};
+  docs.set(far.uuid,far);docs.set(farToken.uuid,farToken);
+  scene.tokens=new Map([["far",farToken],["target",victim],["caster",token]]);
+  const rolls=[],previous=globalThis.Roll;
+  globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){rolls.push(this.formula);this.total=this.formula==="1d3"?2:4;return this;}};
+  try {
+   await applyFatalEnclosure(message,{cost});
+   assert.deepEqual(await applyFatalEnclosure(message,{pulse:true}),{status:"applied"});
+   assert.equal(caster.system.resources.body.value,16);
+   assert.equal(target.system.resources.body.value,16);
+   assert.equal(far.system.resources.body.value,20);
+   assert.equal(regions.size,0);
+   assert.equal(rolls.filter(formula=>formula==="1d3").length,row===47?2:0);
+  } finally {globalThis.Roll=previous;}
+ });
+}
+
+test("a 44 enclosure automatically hits on formation, re-entry and once per round",async()=>{
+ const {victim,result}=setupEnclosure(44);
+ target.system.resources.vitner={max:10,current:0};
+ game.combat.scene=scene;
+ const previous=globalThis.Roll;
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;return this;}};
+ const flush=()=>new Promise(resolve=>setImmediate(resolve));
+ try {
+  registerFatalEnclosures();
+  assert.deepEqual(await applyFatalEnclosure(message,{cost:16}),{status:"applied"});
+  assert.equal(target.system.resources.body.value,16);
+  assert.equal(result.enclosure.remaining,12);
+  assert.equal(result.enclosure.pending,false);
+  hooks.get("updateToken")(victim);await flush();
+  assert.equal(target.system.resources.body.value,16);
+  game.combat.round=2;
+  hooks.get("updateCombat")(game.combat,{round:2});
+  hooks.get("updateCombat")(game.combat,{round:2});
+  await flush();
+  assert.equal(target.system.resources.body.value,12);
+  victim.x=6000;hooks.get("updateToken")(victim);await flush();
+  victim.x=100;hooks.get("updateToken")(victim);await flush();
+  assert.equal(target.system.resources.body.value,8);
+  game.combat.round=3;hooks.get("updateCombat")(game.combat,{round:3});await flush();
+  assert.equal(target.system.resources.body.value,4);
+  assert.equal(regions.size,0);
  } finally {globalThis.Roll=previous;}
 });
 
