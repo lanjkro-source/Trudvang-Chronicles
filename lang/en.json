@@ -19076,6 +19076,9 @@
     },
     "SpellZone": {
       "Place": "Place / move the area",
+      "ConfirmOutdoorDaylight": "Was the casting site outdoors in daylight?",
+      "BurningStatus": "On fire",
+      "PlaceLight": "Place the light",
       "Instruction": "Each creature’s owner or the GM may make their test.",
       "Test": "Resist earthquake",
       "PenaltyDescription": "The ground shakes: {penalty} to Skill and Situation tests while the creature remains in the area.",

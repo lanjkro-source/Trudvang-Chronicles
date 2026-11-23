@@ -16868,6 +16868,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
+| `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
+| `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |
+| `TRUDVANG.SpellZone.PlaceLight` | Place the light | Placer la lumière |
 | `TRUDVANG.SpellZone.Instruction` | Each creature’s owner or the GM may make their test. | Le contrôleur de chaque créature ou le MJ peut faire son test. |
 | `TRUDVANG.SpellZone.Test` | Resist earthquake | Résister au séisme |
 | `TRUDVANG.SpellZone.PenaltyDescription` | The ground shakes: {penalty} to Skill and Situation tests while the creature remains in the area. | Le sol tremble : {penalty} aux tests de compétence et de situation tant que la créature reste dans la zone. |

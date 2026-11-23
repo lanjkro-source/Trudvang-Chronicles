@@ -23,6 +23,7 @@ import {allocatedCombatVC} from "./rules/attack-size.mjs";
 import {transformationLinks,transformationKeys,applyTransformation} from "./transformations.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {auraCasterToken,auraSite} from "./aura.mjs";
+import {fixedLightProfile} from "./rules/spell-zones.mjs";
 import {weatherTemperatureLimits} from "./rules/weather-wards.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
@@ -100,6 +101,16 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   if(kind==='rune'&&runeConsequenceDefinition(POWER_DETAILS_BY_ID[item?.system?.catalogId])&&!castingId)castingId=foundry.utils.randomID();
   let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
+  if(ruleTestContext?.sourceId?.startsWith("holy-")){
+    const faith=Number(actor.getSkillValue?.("faith"))||0;
+    if(fixedLightProfile({...ruleTestContext,lightFaith:faith})?.requiresDaylight){
+      const token=mapToken();
+      ruleTestContext.lightFaith=faith;
+      const site=auraSite(token);
+      if(site)ruleTestContext.lightSite={...site, tokenId:token.id, elevation:Number(token.elevation)||0};
+    }
+  }
+  const hasSpellZone=()=>Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone||fixedLightProfile(ruleTestContext));
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
@@ -152,7 +163,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     magicDamageBase: Boolean(!pendingPerfect && success && item && magicDamageHasBaseTargets(item,ruleTestContext) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
     magicFearBase: Boolean(!pendingPerfect && success && item && magicFearHasBaseTargets(item,ruleTestContext)),
     magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
-    spellZone:Boolean(!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone),
+    spellZone:Boolean(!pendingPerfect&&success&&hasSpellZone()),
+    fixedLight:!pendingPerfect&&Boolean(fixedLightProfile(ruleTestContext)),
     fogZone:!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog',
     wallZone:!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='earthWall',
     magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
@@ -186,7 +198,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext,...(success&&POWER_DETAILS_BY_ID[ruleTestContext.sourceId]?.spellZone?{spellZoneCasting:{target:card.target}}:{})}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext,...(success&&hasSpellZone()?{spellZoneCasting:{target:card.target}}:{})}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   if (magicFearArea) messageData.flags[SYSTEM_ID].magicFearArea = magicFearArea;
@@ -214,7 +226,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.transformationLinks=auraKey||selfOnly?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
     card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
-    card.spellZone=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone);
+    card.spellZone=hasSpellZone();
+    card.fixedLight=Boolean(fixedLightProfile(ruleTestContext));
     card.fogZone=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog';
     card.wallZone=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='earthWall';
     card.magicDamage=Boolean(!card.spellZone&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
@@ -222,7 +235,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const area = describeFearArea();
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
-    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
+    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
   }
   if(success&&selfOnly&&!auraKey){
    try{

@@ -4,9 +4,11 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicDamageProfile} from './magic-damage.mjs';
 import {itemEffectRemainingSeconds,normalizeEffectDuration} from './rules/effect-duration.mjs';
 import {weatherWard} from './rules/weather-wards.mjs';
+import {syncSpellZoneFireLight} from "./fire-zones.mjs";
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
 const jobs=new Map();
+const burningLightStatus="trudvangBurning";
 const recipientJobs=new Map();
 const lightJobs=new Map();
 const sourceMeta=effect=>effect?.flags?.[S]?.transformation;
@@ -159,16 +161,21 @@ const knightLights = new Set([
 const sparkId = "vitner-flame-craft:spark:1";
 const personalGlow = "vitner-flame-craft:burning-hand:2";
 const demonicImpotence = "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5";
+const healingRune = "holy-thuuldom-healing-rune:healing-rune:0";
 const fireBodies = new Set(["9MMfvcE9EaGbHcId", "n85BQGaGbHcIdJeK"]);
+const nocturnalGlow = new Set(["yhighfHcIdJeKfLg", "SCJYHSnToUpVqWrX"]);
 const lightEffect = effect => {
  const id = sourceMeta(effect)?.sourceId;
- return knightLights.has(id) || id === sparkId || id === personalGlow || id === demonicImpotence;
+ return knightLights.has(id) || id === sparkId || id === personalGlow || id === demonicImpotence || id === healingRune;
 };
 
 /** Radii from active magic and visible creature abilities, in scene units. */
 export function carriedMagicLightRadii(token, {time, combat} = {}) {
  const {actor, parent: scene} = token;
  let bright = 0, dim = 0;
+ if(actor?.statuses?.has(burningLightStatus)){bright=3;dim=6;}
+ const night = Number(scene?.environment?.darknessLevel) >= 0.5;
+ if(night && nocturnalGlow.has(actor?.flags?.[S]?.bestiaryId)) dim = 1;
  const emitting = effect => active(effect) && itemEffectRemainingSeconds(effect, {time, combat}) !== 0;
  for(const effect of actorEffects(actor)) {
   if(!lightEffect(effect) || !emitting(effect)) continue;
@@ -193,8 +200,11 @@ export function carriedMagicLightRadii(token, {time, combat} = {}) {
    bright = Math.max(bright, 3);
    dim = Math.max(dim, 6);
   }
+  if(night && item.type === "creatureAbility" && item.system?.catalogId === "LTLHNqSnToUpVqWr") dim = Math.max(dim, 3);
+  const effects = Array.from(item.effects ?? []);
+  if(effects.some(effect => sourceMeta(effect)?.sourceId === healingRune && emitting(effect))) dim = Math.max(dim, 1);
   if(!item.system?.equipped || Number(item.system.quantity ?? 1) <= 0) continue;
-  if(Array.from(item.effects ?? []).some(effect => knightLights.has(sourceMeta(effect)?.sourceId) && emitting(effect))) {
+  if(effects.some(effect => knightLights.has(sourceMeta(effect)?.sourceId) && emitting(effect))) {
    dim = Math.max(dim, 1);
   }
  }
@@ -246,6 +256,8 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  const regions=Array.from(scene.regions??[]).filter(region=>auraForRegion(region)?.sourceEffectUuid===effect.uuid);
  if(removed||!activeSource(effect)){
   for(const region of regions){
+   if(sourceMeta(effect)?.sourceId==="holy-ealdtradition-magh-s-gift:elf-summer:3")
+    await syncSpellZoneFireLight(region,{removed:true});
    // Clean by provenance even when the scene is not currently viewed.
    const actors=new Map(Array.from(scene.tokens??[]).filter(row=>row.actor?.uuid).map(row=>[row.actor.uuid,row.actor]));
    for(const actor of actors.values()){
@@ -267,6 +279,14 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  const radius=auraRadius(effect),scale=Number(scene.grid?.size||1)/Number(scene.grid?.distance||1)*metresToSceneUnits(scene,1);
  const location=site??auraSite(token);
  const shapes=[{type:"circle",x:location.x,y:location.y,radius:radius*scale}];
+ const summerLight=async region=>{
+  const context=sourceMeta(effect)?.ruleTestContext;
+  if(sourceMeta(effect)?.sourceId!=="holy-ealdtradition-magh-s-gift:elf-summer:3")return;
+  try{
+   await syncSpellZoneFireLight(region,{illuminationSource:{context:{...context,sourceId:sourceMeta(effect).sourceId},
+    elevation:location.elevation,profile:{kind:"fixedLight",radius,illumination:{bright:radius,dim:radius}}}});
+  }catch(error){console.error("Trudvang | Summer light synchronization failed",error);}
+ };
  const syncMembers=async region=>{
   const members=fixed?Array.from(scene.tokens??[]).filter(target=>target.testInsideRegion?.(region)??region.tokens?.has(target)):region.tokens??[];
   for(const target of members)await reconcileAuraToken(region,target);
@@ -274,7 +294,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  };
  if(!regions.length){
   const [region]=await scene.createEmbeddedDocuments("Region",[{name:effect.name,color:auraColor(),highlightMode:"coverage",visibility:CONST.REGION_VISIBILITY.ALWAYS,...(!fixed?{attachment:{token:token.id}}:{}),levels:location.level?[location.level]:[],restriction:{enabled:true,type:"light"},shapes,flags:{[S]:{aura:{sourceEffectUuid:effect.uuid,casterUuid:effect.parent.uuid}}},behaviors:[{type:TYPE,name:effect.name,system:{}}]}]);
-  if(region)await syncMembers(region);
+  if(region){await summerLight(region);await syncMembers(region);}
  }else {
   const update={};
   if(Number(regions[0].shapes?.[0]?.radius)!==radius*scale)update.shapes=shapes;
@@ -284,6 +304,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   if(Object.keys(update).length)await regions[0].update(update);
   for(const region of regions.slice(1))await region.delete();
   await syncMembers(regions[0]);
+  await summerLight(regions[0]);
  }
  if(token)await refreshLight(token);
 }
@@ -291,6 +312,9 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
 /** V14 Region behavior: Foundry determines entry/exit; only the elected GM writes. */
 export function registerAuraSupport(){
  const Base=foundry.data?.regionBehaviors?.RegionBehaviorType;if(!Base)return;
+ if(CONFIG.statusEffects)CONFIG.statusEffects[burningLightStatus]={
+  id:burningLightStatus,name:"TRUDVANG.SpellZone.BurningStatus",img:"icons/svg/fire.svg"
+ };
  class TrudvangAuraBehavior extends Base {
   static defineSchema(){return {};}
   static events={
@@ -320,7 +344,7 @@ export function registerAuraSupport(){
   }).catch(error=>console.error('Trudvang | Hearing aura synchronization failed',error)).finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});jobs.set(key,job);
  };
  Hooks.on("createActiveEffect",effect=>{if(activeSource(effect))schedule(effect);if(hearingStatus(effect))refreshHearing(effect.parent);return refreshEffectLight(effect);});
- Hooks.on("updateActiveEffect",(effect,changes)=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);if(!childFlags(effect)&&(hearingStatus(effect)||changes?.statuses!==undefined))refreshHearing(effect.parent);return refreshEffectLight(effect);});
+ Hooks.on("updateActiveEffect",(effect,changes)=>{if(getAura(effect)&&!childFlags(effect))schedule(effect);if(!childFlags(effect)&&(hearingStatus(effect)||changes?.statuses!==undefined))refreshHearing(effect.parent);return refreshEffectLight(effect,changes);});
  Hooks.on("deleteActiveEffect",effect=>{if(getAura(effect)&&!childFlags(effect))schedule(effect,true);if(hearingStatus(effect))refreshHearing(effect.parent);return refreshEffectLight(effect);});
  Hooks.on("updateToken",(token,changes)=>{if(!isWriter()||changes.disposition===undefined)return;for(const region of token.parent?.regions??[])if(auraForRegion(region)&&region.tokens?.has(token))void reconcileAuraToken(region,token);});
  const scheduleLight=token=>refreshLight(token).catch(error=>console.error("Trudvang | Token light synchronization failed",error));
@@ -332,8 +356,8 @@ export function registerAuraSupport(){
  const refreshItemLight=item=>{
   if(["gear","armor","weapon","shield","creatureAbility"].includes(item.type)) return refreshActorLight(item.parent);
  };
- const refreshEffectLight=effect=>{
-  if(!lightEffect(effect))return;
+ const refreshEffectLight=(effect,changes)=>{
+  if(!lightEffect(effect)&&!Array.from(effect.statuses??[]).includes(burningLightStatus)&&changes?.statuses===undefined)return;
   const owner=effect.parent;
   return refreshActorLight(owner?.documentName==="Item"?owner.parent:owner);
  };
@@ -348,6 +372,10 @@ export function registerAuraSupport(){
  Hooks.on("updateWorldTime",refreshTimedLights);
  Hooks.on("updateCombat",refreshTimedLights);
  Hooks.on("deleteCombat",refreshTimedLights);
+ Hooks.on("updateScene",(scene,changes)=>{
+  if(changes.environment?.darknessLevel!==undefined || changes["environment.darknessLevel"]!==undefined)
+   for(const token of scene.tokens??[]) scheduleLight(token);
+ });
  Hooks.on("updateToken",(token,change)=>{
   if(change.actorId!==undefined||change.actorLink!==undefined||change.delta!==undefined)scheduleLight(token);
  });

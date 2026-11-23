@@ -19076,6 +19076,9 @@
     },
     "SpellZone": {
       "Place": "Placer / déplacer la zone",
+      "ConfirmOutdoorDaylight": "Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ?",
+      "BurningStatus": "En feu",
+      "PlaceLight": "Placer la lumière",
       "Instruction": "Le contrôleur de chaque créature ou le MJ peut faire son test.",
       "Test": "Résister au séisme",
       "PenaltyDescription": "Le sol tremble : {penalty} aux tests de compétence et de situation tant que la créature reste dans la zone.",

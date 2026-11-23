@@ -33,6 +33,42 @@ const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
 const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
 
+test('a detached torch creates one fixed light, then removes it at expiration',async()=>{
+ const spark='vitner-flame-craft:spark:1';
+ const payload=setup(spark,{[spark+':3']:1,[spark+':4']:1});
+ payload.point={x:100,y:50};
+ const result=await createSpellZoneOnAuthority(payload);
+ assert.equal(result.status,'placed');
+ const region=await foundry.utils.fromUuid(result.regionUuid);
+ const light=[...scene.lights.values()][0];
+ assert.deepEqual([light.x,light.config.bright,light.config.dim],[100,3,6]);
+ scene.tokens.get('caster').x=500;
+ assert.equal((await createSpellZoneOnAuthority(payload)).reason,'AlreadyPlaced');
+ assert.equal(scene.lights.size,1);
+ game.time.worldTime=60;
+ await reconcileSpellZone(region);
+ assert.equal(scene.lights.size,0);
+});
+
+test('Sunray uses the original casting site and resumes daylight only while the zone is active',async()=>{
+ const payload=setup('holy-gerbanis-warmth-of-sunvei:sunray:1');
+ const cast=message.flags[S].ruleTestContext;
+ Object.assign(cast,{kind:'divine',lightFaith:12,lightSite:{sceneId:scene.id,tokenId:'caster',x:75,y:90}});
+ scene.tokens.get('caster').x=500;
+ assert.equal((await createSpellZoneOnAuthority(payload)).status,'unavailable');
+ const result=await createSpellZoneOnAuthority({...payload,daylight:true});
+ assert.equal(result.status,'placed');
+ const region=await foundry.utils.fromUuid(result.regionUuid);
+ const light=[...scene.lights.values()][0];
+ assert.deepEqual([light.x,light.y,light.config.bright],[75,90,12]);
+ scene.environment={darknessLevel:0.8};
+ await reconcileSpellZone(region);
+ assert.equal(light.hidden,true);
+ scene.environment.darknessLevel=0.1;
+ await reconcileSpellZone(region);
+ assert.equal(light.hidden,false);
+});
+
 test("a 50 enclosure previews its targets, lasts until the second discharge and ignores continuous presence", async () => {
  setup();
  const token=scene.tokens.get("caster"), victim=scene.tokens.get("target");

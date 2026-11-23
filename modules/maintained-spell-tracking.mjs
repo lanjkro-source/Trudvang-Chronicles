@@ -1,6 +1,7 @@
 import {runeConsequenceExpired,validRuneConsequenceAllocation} from './rules/rune-consequences.mjs';
 import {effectTargetRestriction} from './rules/mobility-effects.mjs';
 import {activeSpellRecords, maintainedSpellEffects, maintainedSpellZones} from "./rules/active-spell-resolver.mjs";
+import {fixedLightProfile} from "./rules/spell-zones.mjs";
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {validateMagicAllocations} from "./rules/magic-target-allocation.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
@@ -70,7 +71,7 @@ export async function recoverMaintainedSpellZones() {
  for (const message of game.messages?.values?.() ?? game.messages ?? []) {
   const flags = message.flags?.["trudvang-chronicles"];
   const context = flags?.ruleTestContext, regionUuid = flags?.spellZoneCasting?.regionUuid;
-  if (context?.kind !== "spell" || !context.castingId || !regionUuid || !POWER_DETAILS_BY_ID[context.sourceId]?.spellZone || seen.has(regionUuid)) continue;
+  if (context?.kind !== "spell" || !context.castingId || !regionUuid || !(POWER_DETAILS_BY_ID[context.sourceId]?.spellZone || fixedLightProfile(context)) || seen.has(regionUuid)) continue;
   seen.add(regionUuid);
   const region = await foundry.utils.fromUuid(regionUuid);
   if (!region) {
@@ -189,6 +190,10 @@ export async function applyAllocatedEffectOnGM({casterUuid,castingId,messageId="
     const counts=(POWER_DETAILS_BY_ID[sourceId].powerLevels??[]).map(row=>countsById[row.id]??0);
     const result=await executeConsequences({actor:target,item:targetItem,operations:[instantConsequenceOperation(template,counts,provenance)],source:game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`)});
     if(!result.rows.length)throw Error("Failed to apply instant consequence");
+    if(instant.rune){
+     const {lightHealingRune}=await import('./rune-consequences.mjs');
+     await lightHealingRune(provenance).catch(error=>console.error("Trudvang | Healing rune light failed",error));
+    }
     // A notification failure must not allow the already applied healing to be replayed.
     try{await announceConsequences(target,result,game.i18n.localize(`TRUDVANG.Content.Transformation.${effectKey}.Name`));}catch(error){console.error("Trudvang | Instant consequence notification failed",error);}
     return {status:"ok",instant:true};

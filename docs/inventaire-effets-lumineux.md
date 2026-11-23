@@ -4,7 +4,11 @@ Ce document prépare l'extension des effets lumineux ; il ne modifie pas les rè
 
 Les trois auras mobiles de Nid (Lueur de l'aube, Lumière rassurante et Radiance sacrée) éclairent déjà leur zone. Éruption et Mer de flammes utilisent les lumières ambiantes de `modules/fire-zones.mjs`. Ce code prend le rayon réel de la zone de feu. Les rayons proposés plus bas pour ces deux sorts restent des estimations.
 
-`modules/aura.mjs` gère aussi les six bénédictions de la Tablette du chevalier sur les objets équipés, Main brûlante, Impuissance des démons pendant les dix tours du toucher lumineux, Flammèche portée et les deux capacités Corps de feu. Les variantes de Flammèche déposée, les zones solaires fixes, Dompteur du feu, la Rune de guérison, les lueurs nocturnes et les incendies conditionnels figurent encore dans l'inventaire en vue d'une automatisation. Flammèche détachée ne doit plus éclairer son lanceur.
+`modules/aura.mjs` gère les six bénédictions du chevalier sur les objets équipés, Main brûlante, Impuissance des démons, Flammèche portée et Corps de feu. Il ajoute aussi l'éclairage d'Été elfique à sa région existante, la lueur de la Rune de guérison pendant deux tours à partir de son application, et les lueurs de la fée, du revenant des tumulus et de Yeux de lune. Pour les créatures, une obscurité ambiante de 0,5 ou plus est assimilée à la nuit. Le MJ peut masquer la lueur d'un revenant aux orbites couvertes par un réglage manuel de sa lumière.
+
+Le bouton **Placer la lumière** de la carte crée une lumière de scène pour Flammèche détachée, Dompteur du feu et les pouvoirs solaires de Solvei et de Sille. La flamme détachée se place jusqu'à 1 m du lanceur, une convention de portée de main. Le point posé est fixe. Attacher la flamme à un objet mobile reste à automatiser. Dompteur du feu place un foyer pour l'usage de création et sa lumière expire avec la durée achetée. L'extinction d'un foyer existant relève du MJ. Les trois prières solaires enregistrent le point d'invocation et demandent confirmation des conditions de jour et d'extérieur. Leur lumière s'éteint pour une obscurité ambiante de 0,5 ou plus. Été elfique reste actif selon sa durée propre.
+
+Le statut **En feu** allume un token à 3 m en lumière vive et 6 m en lumière faible. Le MJ l'applique après confirmation de l'embrasement, notamment pour le braskelwurm, puis le retire quand le feu est éteint. Le statut gère la lumière seule.
 
 ## Convention pour l'agent
 

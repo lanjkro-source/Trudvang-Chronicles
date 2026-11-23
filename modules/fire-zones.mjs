@@ -23,13 +23,19 @@ const lightJobs=new Map(),lightDeletions=new WeakMap();
 const collectionValues=rows=>Array.from(rows?.values?.()??rows??[]);
 const lightRegion=light=>light.flags?.[S]?.spellZoneLight?.regionUuid;
 /** Radius is converted from the actual circle's pixels to the scene's units. */
-export function spellZoneFireLightData(region){
- const info=region.flags?.[S]?.spellZone,shape=Array.from(region.shapes??[]).find(shape=>shape.type==='circle');
- if(info?.profile.kind!=='fire'||!shape)return null;
+export function spellZoneFireLightData(region, info=region.flags?.[S]?.spellZone){
+ const shape=Array.from(region.shapes??[]).find(shape=>shape.type==='circle');
+ if(!shape||!['fire','fixedLight'].includes(info?.profile.kind))return null;
  const radius=Number(shape.radius)*Number(region.parent.grid?.distance||1)/Number(region.parent.grid?.size||1);
+ const illumination=info.profile.illumination;
+ const scale=illumination?radius/info.profile.radius:1;
+ const flame=illumination?.flame??info.profile.kind==='fire';
  // Physical fire colour requested by the GM, independent of the interface palette.
- return {name:game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name'),x:Number(shape.x),y:Number(shape.y),elevation:Number(info.elevation)||0,hidden:false,walls:true,vision:false,
-  config:{bright:radius,dim:0,angle:360,color:'#ffb347',alpha:0.1,attenuation:0,animation:{type:'flame',speed:3,intensity:4}},flags:{[S]:{spellZoneLight:{regionUuid:region.uuid}}}};
+ const hidden=Boolean(info.profile.requiresDaylight&&Number(region.parent.environment?.darknessLevel)>=0.5);
+ return {name:game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name'),x:Number(shape.x),y:Number(shape.y),elevation:Number(info.elevation)||0,hidden,walls:true,vision:false,
+  config:{bright:illumination?illumination.bright*scale:radius,dim:illumination?illumination.dim*scale:0,angle:360,
+   ...(flame?{color:'#ffb347',alpha:0.1,attenuation:0,animation:{type:'flame',speed:3,intensity:4}}:{color:null,attenuation:0})},
+  flags:{[S]:{spellZoneLight:{regionUuid:region.uuid}}}};
 }
 function deleteLightOnce(light){
  if(lightDeletions.has(light))return lightDeletions.get(light);
@@ -37,10 +43,10 @@ function deleteLightOnce(light){
 }
 function includesLightValues(actual,wanted){return Object.entries(wanted).every(([key,value])=>value&&typeof value==='object'?includesLightValues(actual?.[key]??{},value):actual?.[key]===value);}
 /** Called by the active GM; serializing also covers overlapping native region hooks. */
-export function syncSpellZoneFireLight(region,{removed=false}={}){
+export function syncSpellZoneFireLight(region,{removed=false,illuminationSource}={}){
  const previous=lightJobs.get(region.uuid)??Promise.resolve();
  const job=previous.catch(()=>{}).then(async()=>{
-  const scene=region.parent,lights=collectionValues(scene.lights).filter(light=>lightRegion(light)===region.uuid),data=removed?null:spellZoneFireLightData(region);
+  const scene=region.parent,lights=collectionValues(scene.lights).filter(light=>lightRegion(light)===region.uuid),data=removed?null:spellZoneFireLightData(region,illuminationSource);
   if(!data){for(const light of lights)await deleteLightOnce(light);return null;}
   let light=lights[0];for(const duplicate of lights.slice(1))await deleteLightOnce(duplicate);
   if(!light){[light]=await scene.createEmbeddedDocuments('AmbientLight',[data]);if(!light)throw Error('Fire area light creation failed');}

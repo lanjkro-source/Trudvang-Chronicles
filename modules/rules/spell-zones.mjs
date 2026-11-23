@@ -1,3 +1,28 @@
+const sparkId = 'vitner-flame-craft:spark:1';
+const solarTablets = new Set(['holy-gerbanis-warmth-of-sunvei', 'holy-joaringfaith-power-of-sille']);
+export function fixedLightProfile(context = {}){
+ const sourceId = context?.sourceId ?? '';
+ const [tablet, power] = sourceId.split(':');
+ const count = index => Math.max(0, Math.trunc(Number(context.countsById?.[sourceId + ':' + index] ?? context.counts?.[index]) || 0));
+ if(sourceId === sparkId && count(4) > 0){
+  const torch = count(3) > 0;
+  return {kind:'fixedLight', radius:torch?6:3, range:1, rounds:12+12*count(0)+720*count(1)+17280*count(2),
+   illumination:{bright:torch?3:1, dim:torch?6:3, flame:true}};
+ }
+ if(sourceId === 'holy-toikalokke-master-of-elements:fire-tamer:4'){
+  return {kind:'fixedLight',radius:6,range:10+10*count(3),rounds:1+3*count(0)+10*count(1),
+   illumination:{bright:3,dim:6,flame:true}};
+ }
+ if(!solarTablets.has(tablet) || !['sunray','summer-place','time-of-the-hunt'].includes(power)) return null;
+ const faith = Math.max(0, Number(context.lightFaith) || 0);
+ const hunt = power === 'time-of-the-hunt';
+ const radius = hunt ? 10000*(1+count(1)) : faith*(power==='sunray'?1:100);
+ if(!radius) return null;
+ const rounds = hunt ? 17280*(1+count(0)) : 720*((power==='sunray'?1:3)+count(0));
+ return {kind:'fixedLight', radius, range:0, rounds, centered:true, requiresDaylight:true,
+  illumination:{bright:radius, dim:radius}};
+}
+
 export function earthquakeProfile(definition,context={}){
  if(!definition)return null;
  const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
