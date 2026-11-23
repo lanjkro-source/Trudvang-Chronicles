@@ -22,7 +22,7 @@ import {renderFatalResultAction} from "./fatal-result-chat.mjs";
 import {zoneAction, zoneOutcome} from "./zone-chat.mjs";
 import {rollOutcomeText} from "./rules/roll-outcome-view.mjs";
 import {heatingConsequence} from "./water-purification.mjs";
-import {prepareMagicSeal, sealedSpellSource} from "./magic-seal.mjs";
+import {canDropSealCard, canResolveReleasedSeal, registerSealSocket, sealedSpellSource} from "./magic-seal.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -42,6 +42,7 @@ export function registerChatListeners() {
   registerTraitSituationSocket();
   registerDispelSocket();
   registerInitialResistanceSocket();
+  registerSealSocket();
   registerFollowupSocket();
   registerDiseaseResistanceSocket();
   registerChatApplicationSocket();
@@ -82,25 +83,18 @@ function attachListeners(message, html) {
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
   renderFatalResultAction(message, html);
-  const sealCard = message.flags?.["trudvang-chronicles"]?.sealPreparation;
-  if (game.user?.isGM && sealCard && !sealCard.effectUuid && message.isContentVisible) {
+  if (canDropSealCard(message) && message.isContentVisible) {
     const card = html.querySelector?.(".trudvang.chat-card");
     if (card) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = game.i18n.localize("TRUDVANG.Seal.Prepare");
-      button.addEventListener("click", async () => {
-        button.disabled = true;
-        try {
-          const effect = await prepareMagicSeal(message);
-          if (effect) await effect.sheet?.render({force:true});
-        }
-        catch (error) {
-          console.error("Trudvang | Seal preparation failed", error);
-          ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
-        } finally { button.disabled = false; }
+      const seal = document.createElement("span");
+      seal.className = "trudvang-transformation-link seal-drag";
+      seal.draggable = true;
+      seal.textContent = game.i18n.localize("TRUDVANG.Seal.Name");
+      seal.title = game.i18n.localize("TRUDVANG.Seal.DropHint");
+      seal.addEventListener("dragstart", event => {
+        event.dataTransfer.setData("text/plain", JSON.stringify({type:"TrudvangSeal", messageId:message.id}));
       });
-      card.append(button);
+      card.append(seal);
     }
   }
   decorateSpellZoneRows(message, html);
@@ -171,9 +165,11 @@ function attachListeners(message, html) {
       event.preventDefault();
       const actor=await foundry.utils.fromUuid(button.dataset.actorUuid);
       const item=sealedSpellSource(message,actor)??await foundry.utils.fromUuid(button.dataset.itemUuid);
-      if(!actor?.isOwner||!item)return;
+      if(!actor||(!actor.isOwner&&!canResolveReleasedSeal(message))||!item)return;
       const {rollMagicDamage}=await import("./magic-damage.mjs");
-      await rollMagicDamage({document:item,actor,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext,baseOnly:button.dataset.baseOnly==="true"});
+      const sealed = message.flags?.["trudvang-chronicles"]?.releasedSeal;
+      const targets = sealed ? [sealed.targetUuid && await foundry.utils.fromUuid(sealed.targetUuid)].filter(Boolean) : undefined;
+      await rollMagicDamage({document:item,actor,targets,sealMessage:sealed?message:null,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext,baseOnly:button.dataset.baseOnly==="true"});
     });
   });
   html.querySelectorAll("[data-action='magic-fear']").forEach(button=>{
@@ -184,9 +180,9 @@ function attachListeners(message, html) {
       try {
         const actor=await foundry.utils.fromUuid(button.dataset.actorUuid);
         const item=sealedSpellSource(message,actor)??await foundry.utils.fromUuid(button.dataset.itemUuid);
-        if(!actor?.isOwner||!item)return;
+        if(!actor||(!actor.isOwner&&!canResolveReleasedSeal(message))||!item)return;
         const {rollMagicFear}=await import('./magic-fear.mjs');
-        await rollMagicFear({document:item,actor,speaker:message.speaker,castArea:message.getFlag('trudvang-chronicles','magicFearArea'),
+        await rollMagicFear({document:item,actor,speaker:message.speaker,castArea:message.getFlag('trudvang-chronicles','magicFearArea'),sealMessage:message,
           casterUserId:message.author?.id,context:{...message.flags?.['trudvang-chronicles']?.ruleTestContext,originMessageId:message.id},baseOnly:button.dataset.baseOnly==='true'});
       } finally {button.disabled=false;}
     });

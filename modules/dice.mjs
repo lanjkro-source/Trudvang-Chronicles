@@ -139,7 +139,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     const perfectSelection=pendingPerfect?await choosePerfectLevels(resolvePerfectSuccess):null;
     const counts=perfectSelection?.counts??powerLevelCounts;
     const context=withCastingCounts(ruleTestContext,counts);
-    const stored=await storeSealedSpell(seal.effect,actor,item,{roll,target:finalTarget,context,cost:seal.cost,
+    const stored=await storeSealedSpell(seal.effect,actor,item,{roll,target:finalTarget,context,cost:seal.cost,token:seal.token,
       levels:seal.levels.map((entry,index)=>({...entry,count:counts[index]??0}))});
     if(!stored)throw Error(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
     const content=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",{
@@ -203,7 +203,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     longRange: Boolean(longRange)
   };
   if(releasedSeal)card.successConsequence=[
-    game.i18n.format("TRUDVANG.Seal.Released",{object:releasedSeal.objectName}),card.successConsequence
+    game.i18n.format("TRUDVANG.Seal.Released",{object:releasedSeal.objectName}),
+    releasedSeal.target&&game.i18n.format("TRUDVANG.Seal.ConfirmedTarget",{target:releasedSeal.target.name}),card.successConsequence
   ].filter(Boolean).join(" ");
   const speaker = ChatMessage.getSpeaker({actor});
   const describeFearArea = () => {
@@ -231,7 +232,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     rolls: [roll, ...(procedure?.rolls ?? [])],
     ...((useDiceSoNice || targetResults.length || ruleTestContext || damageResistanceFor || procedure?.flags) ? {flags: {
       ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
-      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext,...(success&&hasSpellZone()?{spellZoneCasting:{target:card.target}}:{})}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),game.user?.targets,{caster:actor})}:{})}} : {})
+      ...((targetResults.length||ruleTestContext||damageResistanceFor||procedure?.flags) ? {[SYSTEM_ID]: {...(procedure?.flags??{}),...(damageResistanceFor?{damageResistanceFor,rollOutcome:{success:outcome.success,result,target:finalTarget}}:{}),...(targetResults.length?{attackTargets:targetResults}:{}),...(ruleTestContext?{ruleTestContext,...(success&&hasSpellZone()?{spellZoneCasting:{target:card.target}}:{})}:{}),...(divineAllocation?{divineAllocation}:{}),...(instantAllocation?{instantAllocation}:{}),...(runeAllocation?{runeAllocation}:{}),...(ruleTestContext&&success?{transformationTargets:initialEffectTargets(selfOnly||auraKey?[]:transformationKeys(item),releasedSeal?(releasedSeal.target?[releasedSeal.target]:[]):game.user?.targets,{caster:actor})}:{})}} : {})
     }} : {})
   };
   if (magicFearArea) messageData.flags[SYSTEM_ID].magicFearArea = magicFearArea;
@@ -239,7 +240,9 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   if(preparation)messageData.flags[SYSTEM_ID].sealPreparation=preparation;
   if(releasedSeal){
     messageData._id=releasedSeal.id;
-    messageData.flags[SYSTEM_ID].releasedSeal=releasedSeal.spell;
+    messageData.author=releasedSeal.userId;
+    messageData.flags[SYSTEM_ID].releasedSeal={...releasedSeal.spell, userId:releasedSeal.userId, actorUuid:releasedSeal.actorUuid, tracked:releasedSeal.tracked,
+      targetUuid:releasedSeal.target?.uuid ?? "", targetActorUuid:releasedSeal.target?.actor.uuid ?? ""};
     messageData.flags["dice-so-nice"]={skip:true};
   }
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
@@ -281,7 +284,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   }
   if(success&&selfOnly&&!auraKey){
    try{
-    const effects=await applyPersonalCasting(actor,item,{context:ruleTestContext,counts:powerLevelCounts,messageId:message.id});
+    const effects=await applyPersonalCasting(releasedSeal?.target?.actor??actor,item,{context:ruleTestContext,counts:powerLevelCounts,messageId:message.id});
     automaticEffectUuids.push(...effects.map(e=>e.uuid).filter(Boolean));
     if(effects.length){card.successConsequence=[card.successConsequence,game.i18n.localize('TRUDVANG.Transformation.AutomaticSelf')].filter(Boolean).join(' ');await message.update({content:await renderTemplate('systems/trudvang-chronicles/templates/chat/roll-card.hbs',card)});}
    }catch(error){console.error('Trudvang | Personal effect activation failed',error);ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.AutomaticSelfFailed'));}

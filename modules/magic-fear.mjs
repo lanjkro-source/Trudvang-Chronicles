@@ -3,6 +3,7 @@ import {ruleTestCastingContext,ruleTestSourceId,withCastingCounts} from './rules
 import {fearRecipientEligible} from './rules/fear-protection.mjs';
 import {zonePixelScale} from './rules/spell-zones.mjs';
 import {auraCasterToken} from './aura.mjs';
+import {canResolveReleasedSeal} from './magic-seal.mjs';
 
 export function fearTargetRow(token) {
  const actor = token?.actor;
@@ -85,8 +86,8 @@ export function magicFearHasBaseTargets(document,context){
  return Number(casting.countsById?.[definition.baseTargetOptionId]??casting.counts?.[index]??0)>0;
 }
 
-export async function rollMagicFear({document,actor,context,baseOnly=false,speaker,castArea,casterUserId}={}){
- if(!actor?.isOwner||baseOnly&&!magicFearHasBaseTargets(document,context))return null;
+export async function rollMagicFear({document,actor,context,baseOnly=false,speaker,castArea,casterUserId,sealMessage}={}){
+ if(!actor||(!actor.isOwner&&!canResolveReleasedSeal(sealMessage))||baseOnly&&!magicFearHasBaseTargets(document,context))return null;
  const profile=magicFearProfile(document,context);if(!profile)return null;
  const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].fearRoll;
  const {rollGenericImpact}=await import('./generic-rolls.mjs');

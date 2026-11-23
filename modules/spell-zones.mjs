@@ -18,6 +18,7 @@ import {trackSpellZoneRemoval,withMaintainedZoneCasting} from './maintained-spel
 import {isInventoryTransferItem} from './inventory-transfer.mjs';
 import {zoneAction,zoneOutcome,zoneTargetList} from './zone-chat.mjs';
 import {applyZoneDamage,zoneDamageReceipt} from './zone-damage.mjs';
+import {canResolveReleasedSeal} from './magic-seal.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -251,9 +252,13 @@ export async function extinguishFireTamerLight(message,scene,tokenId,lightId){
 }
 export async function createSpellZoneOnAuthority(payload){
  const message=game.messages.get(payload.messageId),cast=message?.flags?.[S]?.ruleTestContext,ready=message?.flags?.[S]?.spellZoneCasting,user=game.users.get(payload.userId);
- const actor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null,definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast)??fixedLightProfile(cast);
- if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
- return withMaintainedZoneCasting(actor,cast,()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}));
+ const released=message?.flags?.[S]?.releasedSeal,castActor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null;
+ const actor=released?.actorUuid?await foundry.utils.fromUuid(released.actorUuid):castActor;
+ const definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast)??fixedLightProfile(cast);
+ const canPlace=actor&&user&&(actor.testUserPermission(user,'OWNER')||canResolveReleasedSeal(message,user));
+ if(!writer()||!user?.active||!message||!canRead(message,user)||!canPlace||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
+ const place=()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile});
+ return released&&!released.tracked ? place() : withMaintainedZoneCasting(castActor,cast,place);
 }
 
 function sparkInventoryItem(item,user){
@@ -637,9 +642,10 @@ export async function openFireTamerExtinguish(message){
 }
 
 export async function placeSpellZone(message,{attachLight=false,attachInventoryLight=false}={}){
- const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
+ const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context);
+ const actorUuid=message.flags?.[S]?.releasedSeal?.actorUuid??context?.casterUuid,actor=actorUuid?await foundry.utils.fromUuid(actorUuid):null;
  const board=globalThis.canvas,scene=board?.scene;
- if(!profile||!actor?.isOwner||!scene){ui.notifications.warn(local('Unavailable'));return null;}
+ if(!profile||!actor||(!actor.isOwner&&!canResolveReleasedSeal(message))||!scene){ui.notifications.warn(local('Unavailable'));return null;}
  const previous=await previousPlacement(message.flags?.[S]?.spellZoneCasting);if(previous?.reason){const result={status:'alreadyPlaced',reason:previous.reason};placementFeedback(result);return result;}
  const token=auraCasterToken(actor,board.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
  let underground=false,daylight=false;

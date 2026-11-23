@@ -1,4 +1,5 @@
 import {minimumDamageAfterArmor} from './rules/impact.mjs';
+import {canResolveReleasedSeal} from './magic-seal.mjs';
 import {POWER_DETAILS_BY_ID} from "./power-catalog-data.mjs";
 import {ruleTestCastingContext,ruleTestSourceId} from "./rules/magic-resistance.mjs";
 
@@ -46,8 +47,8 @@ export function magicDamageExplanations(document,damage){
 }
 
 /** Use the same confirmation and target application card as weapon damage. */
-export async function rollMagicDamage({document,actor,context,targets,baseOnly=false}={}) {
-  if(!actor?.isOwner)return null;
+export async function rollMagicDamage({document,actor,context,targets,baseOnly=false,sealMessage=null}={}) {
+  if(!actor||(!actor.isOwner&&!canResolveReleasedSeal(sealMessage)))return null;
   if(POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.damageRoll?.requiresAttack)return ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicDamage.AttackRequired"));
   if(baseOnly&&!magicDamageHasBaseTargets(document,context))return null;
   const damage=magicDamageProfile(document,context,{baseOnly});if(!damage)return null;

@@ -79,17 +79,28 @@ test('Seal defers a successful spell, freezes critical improvements and releases
  };
  try{
   setup();
-  const {releaseSealedSpell,sealPreparation,sealSheetView}=await import('../modules/magic-seal.mjs');
+  const {canBindSpell,handleSealRequest,releaseSealedSpell,sealPreparation,sealSheetView}=await import('../modules/magic-seal.mjs');
   const {rollUnder}=await import('../modules/dice.mjs');
-  const seal={uuid:'Actor.caster.Item.vessel.ActiveEffect.seal',parent:{documentName:'Item',type:'gear',name:'Vessel'},
-   flags:{[S]:{magicSeal:{...sealPreparation({sourceId:sealId,kind:'spell',casterUuid:caster.uuid}),releaseMessageId:'release-seal'}}},
+  const seal={uuid:'Actor.target.Item.vessel.ActiveEffect.seal',parent:{documentName:'Item',type:'gear',name:'Vessel',
+   parent:target,testUserPermission:(user,level)=>level==='LIMITED' && [owner,observer].includes(user)},
+   flags:{[S]:{magicSeal:{...sealPreparation({sourceId:sealId,kind:'spell',casterUuid:target.uuid}),releaseMessageId:'release-seal',sealUserId:owner.id}}},
    async update(changes){this.flags[S].magicSeal.spell=changes['flags.'+S+'.magicSeal.spell'];},
    async delete(){this.disabled=true;}};
   const item={uuid:'Actor.caster.Item.heat',id:'heat',name:'Ébullition',actor:caster,type:'spell',
    system:{catalogId:castId,level:1,spellType:'lasting',powerLevels:[{effect:'Plus longue'},{effect:'Plus loin'},{effect:'Plus d’eau'},{effect:'Dix litres'},{effect:'Cent litres'}]},
    toObject(){return {system:structuredClone(this.system)};}};
+  docs.set(seal.uuid,seal);docs.set(item.uuid,item);
+  assert.equal(canBindSpell(seal,caster,item,owner),false);
+  caster.items.push({type:'tablet',system:{catalogId:'vitner-flame-craft',level:1}});
+  assert.equal(canBindSpell(seal,caster,item,owner),true);
+  assert.equal(canBindSpell(seal,caster,item,observer),false);
+  assert.equal(canBindSpell(seal,caster,{...item,system:{...item.system,level:2}},owner),false);
+  caster.items[0].system.level=2;
+  assert.equal(canBindSpell(seal,caster,{...item,system:{...item.system,level:2}},owner),false,'The seal caps the level even if the tablet allows it');
+  const {status,token}=await handleSealRequest({action:'reserve',userId:gm.id,effectUuid:seal.uuid,actorUuid:caster.uuid,spellUuid:item.uuid});
+  assert.equal(status,'reserved');
   const result=await rollUnder({actor:caster,item,kind:'spell',label:item.name,target:10,castingId:'bound-cast',
-   powerLevelCounts:[1,0,0,0,0],seal:{effect:seal,cost:3,levels:[{id:castId+':0'}]},
+   powerLevelCounts:[1,0,0,0,0],seal:{effect:seal,token,cost:3,levels:[{id:castId+':0'}]},
    resolvePerfectSuccess:async()=>({counts:[2,2,2,1,1]})});
   assert.equal(result.success,true);
   const stored=seal.flags[S].magicSeal.spell;
@@ -98,10 +109,27 @@ test('Seal defers a successful spell, freezes critical improvements and releases
   assert.equal(sealSheetView(seal).improvements.length,5);
   assert.doesNotMatch([...game.messages.values()].at(-1).content,/117 L|place-spell-zone|magic-damage/);
   globalThis.Roll=class{static fromData(data){return data;}constructor(){throw Error('Release must use the saved roll');}};
-  const released=await Promise.all([releaseSealedSpell(seal),releaseSealedSpell(seal)]);
-  assert.equal(released.filter(Boolean).length,1);
+  const tokenDoc=scene.tokens.get('target');tokenDoc.documentName='Token';
+  const api=foundry.applications.api;
+  try {
+   game.user=observer;
+   observer.targets=new Set([tokenDoc]);
+   assert.equal(sealSheetView(seal).canRelease,true);
+   foundry.applications.api={DialogV2:{wait:async({content})=>{assert.match(content,/<option[^>]*>target<\/option>/);return null;}}};
+   assert.equal(await releaseSealedSpell(seal),null);
+   assert.equal(game.messages.has('release-seal'),false);
+   assert.equal(seal.disabled,undefined);
+  } finally {
+   game.user=gm;
+   foundry.applications.api=api;
+  }
+  const request={action:'release',userId:observer.id,effectUuid:seal.uuid,targetUuid:tokenDoc.uuid};
+  const released=await Promise.all([handleSealRequest(request),handleSealRequest(request)]);
+  assert.equal(released.filter(result=>result.status==='released').length,1);
   assert.equal(game.messages.get('release-seal').rolls[0].total,1);
   assert.match(game.messages.get('release-seal').content,/117 L.*7 min.*10 m/);
+  assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.targetUuid,tokenDoc.uuid);
+  assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.userId,observer.id);
   assert.equal(seal.disabled,true);
  }finally{globalThis.Roll=previous;}
 });
@@ -112,26 +140,25 @@ test('a successful Seal prepares a single non-transferring effect on the chosen 
  const id='vitner-vitner-craft:seal:5', scope='flags.'+S+'.sealPreparation.';
  const context={sourceId:id,kind:'spell',casterUuid:caster.uuid,castingId:'seal-cast',countsById:{[id+':2']:2}};
  const state=sealPreparation(context,10);
- const item={documentName:'Item',uuid:'Item.box',name:'Box',type:'gear',effects:[],
+ const item={documentName:'Item',uuid:'Item.box',name:'Box',type:'gear',parent:target,effects:[],
+  testUserPermission:(_user,level)=>level==='LIMITED',
   async createEmbeddedDocuments(_type,[data]){const effect={...data,uuid:this.uuid+'.ActiveEffect.seal',parent:this};this.effects.push(effect);return [effect];}};
- game.items=new Map([[item.uuid,item]]);
+ message.author=owner;
  message.isContentVisible=true;
  message.flags[S].ruleTestContext=context;
  message.flags[S].sealPreparation=state;
  message.update=async changes=>{for(const [key,value] of Object.entries(changes))state[key.slice(scope.length)]=value;};
  const saved={...foundry.utils,apps:foundry.applications.api};
  Object.assign(foundry.utils,{deepClone:structuredClone,randomID:()=> 'release'});
- foundry.applications.api={DialogV2:{wait:async()=>item.uuid}};
  try{
-  game.user=owner;
-  assert.equal(await prepareMagicSeal(message),null);
-  game.user=gm;
-  const effect=await prepareMagicSeal(message);
+  assert.equal(await prepareMagicSeal(message,item,observer),null);
+  const effect=await prepareMagicSeal(message,item,owner);
   assert.equal(effect.transfer,false);
   assert.equal(effect.flags[S].magicSeal.maximum,3);
   assert.equal(effect.flags[S].magicSeal.spell,null);
+  assert.equal(effect.flags[S].magicSeal.sealUserId,owner.id);
   assert.equal(effect.flags[S].transformation.ruleTestContext.castingId,'seal-cast');
-  assert.equal(await prepareMagicSeal(message),null);
+  assert.equal(await prepareMagicSeal(message,item,owner),null);
   assert.equal(item.effects.length,1);
  }finally{
   delete foundry.utils.deepClone;delete foundry.utils.randomID;

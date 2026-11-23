@@ -1444,7 +1444,7 @@ export class TrudvangActor extends BaseActor {
     });
   }
 
-  async rollSpell(item, {seal = null} = {}) {
+  async rollSpell(item, {seal = null, sealToken = ""} = {}) {
     if (seal && !canBindSpell(seal,this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
     const availability=spellAvailability(this,item,{sealed:Boolean(seal)});
     if(!availability.ok)return ui.notifications.warn(game.i18n.format(availability.reason,availability.data));
@@ -1580,7 +1580,7 @@ export class TrudvangActor extends BaseActor {
     const result = await rollUnder({blessing:options.blessing, actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
       flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
-      seal: seal ? {effect: seal, cost: options.cost, levels: levelSnapshot} : null,
+      seal: seal ? {effect: seal, token: sealToken, cost: options.cost, levels: levelSnapshot} : null,
       resolvePerfectSuccess:isDivine?null:async()=>{
         const bonusRoll=await new Roll("1d10+1").evaluate();
         await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]});

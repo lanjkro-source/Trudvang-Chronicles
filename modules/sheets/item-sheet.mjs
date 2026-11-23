@@ -228,7 +228,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       root.addEventListener("drop", event => {
         let data; try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { return; }
         const customTabletDrop=isCustomTablet(this.item)&&data?.type==="Item"&&event.target.closest?.('[data-tab="tablet-powers"]');
-        if (data?.type !== "TrudvangTransformation"&&!customTabletDrop) return;
+        if (!["TrudvangTransformation","TrudvangSeal"].includes(data?.type)&&!customTabletDrop) return;
         event.preventDefault(); event.stopImmediatePropagation();
         void this._onDrop(event).catch(error => ui.notifications.error(error.message));
       }, {capture: true});
@@ -279,6 +279,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _onDrop(event) {
     let data;try{data=JSON.parse(event.dataTransfer?.getData("text/plain")||"null");}catch{}
+    if(data?.type==="TrudvangSeal"){
+      const {dropMagicSeal}=await import("../magic-seal.mjs");
+      return dropMagicSeal(data.messageId,this.item);
+    }
     if(data?.type==="Item"&&isCustomTablet(this.item)&&event.target.closest?.('[data-tab="tablet-powers"]')){
       if(!this.isEditable||!this.item.isOwner)return null;
       const item=await foundry.documents.Item.implementation.fromDropData(data);

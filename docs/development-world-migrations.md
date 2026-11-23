@@ -202,3 +202,7 @@ Le palier 73 de `modules/content-importer.mjs` importe la torche et la lanterne 
 ## Ébullition de la 0.250.0
 
 Dans `modules/spell-zones.mjs`, le repli `TEMPORARY WORLD MIGRATION` supprime les régions créées par Ébullition en 0.250.0 avant qu’elles puissent traiter un nouveau contact. Dans `modules/chat.mjs`, le repli portant le même marqueur remplace l’ancien bouton de placement par le bilan du sortilège. Retirer ces deux replis avec les anciens mondes. La présentation du volume, de la durée et de la portée sur les nouvelles cartes reste nécessaire.
+
+## Sceaux de la 0.251.0
+
+Dans `modules/magic-seal.mjs`, le repli `TEMPORARY WORLD MIGRATION` autorise le propriétaire du tisseur d’origine à remplir un ancien sceau dépourvu de l’identifiant du joueur qui l’a créé. Retirer ce repli avec les anciens mondes. Les nouveaux sceaux enregistrent cet identifiant au dépôt sur un objet.

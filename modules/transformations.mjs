@@ -203,7 +203,10 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(template.requiresWeapon&&destinationItem?.type!=="weapon"){
   ui.notifications.warn(game.i18n.localize("TRUDVANG.Transformation.RuneWeaponRequired"));return null;
  }
- const automaticSource=Boolean(casting.casterUuid===actor.uuid&&((template.aura&&casting.auraSource)||(POWER_DETAILS_BY_ID[template.sourceId]?.selfOnly&&casting.selfSource)));
+ const released=message?.flags?.[SCOPE]?.releasedSeal;
+ const automaticSource=Boolean((casting.casterUuid===actor.uuid||released?.actorUuid===actor.uuid||
+  (casting.selfSource&&released?.targetActorUuid===actor.uuid))&&
+  ((template.aura&&casting.auraSource)||(POWER_DETAILS_BY_ID[template.sourceId]?.selfOnly&&casting.selfSource)));
  const targeting=!automaticSource&&!resolvedCopy&&casting.castingId&&casting.casterUuid?POWER_DETAILS_BY_ID[template.sourceId]?.targeting:null;
  let allocationRecord=null,allocationIntro="",availableById={},sharedIds=new Set(),primaryTarget=true;
  if(targeting){

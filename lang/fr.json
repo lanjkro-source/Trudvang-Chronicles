@@ -19176,9 +19176,8 @@
     },
     "Seal": {
       "Name": "Sceau",
-      "Prepare": "Apposer le sceau",
-      "Object": "Choisir l’objet à sceller",
-      "Description": "Le sceau peut contenir un sortilège réussi. Le MJ décide quand le libérer.",
+      "DropHint": "Glissez le sceau sur un objet d’inventaire.",
+      "Description": "Le sceau conserve un sortilège réussi jusqu’à sa libération.",
       "Empty": "Sceau vide",
       "Maximum": "Sortilège de niveau {level} maximum",
       "ChooseSpell": "Choisir le sortilège à sceller",
@@ -19187,9 +19186,11 @@
       "Stored": "Sortilège scellé · {spell}",
       "Bound": "Le sortilège est scellé dans {object}.",
       "Released": "Le sceau de {object} libère le sortilège.",
-      "NoObject": "Aucun objet disponible. Sélectionnez au besoin le token du porteur.",
+      "Target": "Cible",
+      "NoTarget": "Aucune cible",
+      "ConfirmedTarget": "Cible confirmée · {target}",
       "NoSpell": "Le tisseur ne connaît aucun sortilège compatible avec ce sceau.",
-      "NoCaster": "Le tisseur du sceau est introuvable.",
+      "SelectCaster": "Contrôlez un seul token pour choisir le tisseur.",
       "Unavailable": "Le sceau est indisponible. Vérifiez l’objet et le MJ actif."
     },
     "WaterPurification": {

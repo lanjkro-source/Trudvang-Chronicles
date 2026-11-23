@@ -812,6 +812,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   async _onDrop(event) {
     let data;
     try { data = JSON.parse(event.dataTransfer?.getData("text/plain") || "null"); } catch { /* Other native drop formats. */ }
+    if (data?.type === "TrudvangSeal") {
+      const {dropMagicSeal} = await import("../magic-seal.mjs");
+      const itemId = event.target?.closest?.(".item-list [data-item-id]")?.dataset.itemId;
+      return dropMagicSeal(data.messageId, itemId ? this.actor.items.get(itemId) : null);
+    }
     if (data?.type === "TrudvangTransformation") {
       const {applyTransformation} = await import("../transformations.mjs");
       const {effectTargetsFor} = await import("../effect-targets.mjs");

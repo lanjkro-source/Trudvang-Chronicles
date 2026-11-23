@@ -1,4 +1,5 @@
 import {auraColor} from './aura.mjs';
+import {canResolveReleasedSeal} from './magic-seal.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
 import {automaticFearTargets,fearAreaPolicy,fearTargetsInCircle} from './magic-fear.mjs';
 
@@ -66,7 +67,9 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
   const author = cast.author;
   const result = Number(cast.rolls?.[0]?.total);
   const {x,y} = area.origin ?? {};
-  if (!token?.actor || token.actor.uuid !== context.casterUuid || !author || !token.actor.testUserPermission(author,'OWNER')
+  const actorUuid=section(cast)?.releasedSeal?.actorUuid??context.casterUuid;
+  if (!token?.actor || token.actor.uuid !== actorUuid || !author ||
+      (!token.actor.testUserPermission(author,'OWNER')&&!canResolveReleasedSeal(cast,author))
       || !Number.isInteger(result) || result < 1 || result > 19 || (result !== 1 && !(result <= area.target))
       || ![x,y,area.radiusPixels].every(Number.isFinite) || area.radiusPixels <= 0) return;
   const restricted = cast.blind || cast.whisper?.length;

@@ -16975,9 +16975,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Seal.Name` | Seal | Sceau |
-| `TRUDVANG.Seal.Prepare` | Place the seal | Apposer le sceau |
-| `TRUDVANG.Seal.Object` | Choose the object to seal | Choisir l’objet à sceller |
-| `TRUDVANG.Seal.Description` | The seal can store a successful spell casting. The GM decides when to release it. | Le sceau peut contenir un sortilège réussi. Le MJ décide quand le libérer. |
+| `TRUDVANG.Seal.DropHint` | Drag the seal onto an inventory item. | Glissez le sceau sur un objet d’inventaire. |
+| `TRUDVANG.Seal.Description` | The seal stores a successful spell casting until it is released. | Le sceau conserve un sortilège réussi jusqu’à sa libération. |
 | `TRUDVANG.Seal.Empty` | Empty seal | Sceau vide |
 | `TRUDVANG.Seal.Maximum` | Maximum spell level {level} | Sortilège de niveau {level} maximum |
 | `TRUDVANG.Seal.ChooseSpell` | Choose the spell to seal | Choisir le sortilège à sceller |
@@ -16986,9 +16985,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Seal.Stored` | Sealed spell · {spell} | Sortilège scellé · {spell} |
 | `TRUDVANG.Seal.Bound` | The spell is sealed into {object}. | Le sortilège est scellé dans {object}. |
 | `TRUDVANG.Seal.Released` | The seal on {object} releases the spell. | Le sceau de {object} libère le sortilège. |
-| `TRUDVANG.Seal.NoObject` | No eligible item. If needed, select the carrier’s token. | Aucun objet disponible. Sélectionnez au besoin le token du porteur. |
+| `TRUDVANG.Seal.Target` | Target | Cible |
+| `TRUDVANG.Seal.NoTarget` | No target | Aucune cible |
+| `TRUDVANG.Seal.ConfirmedTarget` | Confirmed target · {target} | Cible confirmée · {target} |
 | `TRUDVANG.Seal.NoSpell` | The weaver knows no spell compatible with this seal. | Le tisseur ne connaît aucun sortilège compatible avec ce sceau. |
-| `TRUDVANG.Seal.NoCaster` | The weaver of the seal could not be found. | Le tisseur du sceau est introuvable. |
+| `TRUDVANG.Seal.SelectCaster` | Control one token to choose the weaver. | Contrôlez un seul token pour choisir le tisseur. |
 | `TRUDVANG.Seal.Unavailable` | The seal is unavailable. Check the item and the active GM. | Le sceau est indisponible. Vérifiez l’objet et le MJ actif. |
 
 ## `TRUDVANG.WaterPurification`

@@ -19176,9 +19176,8 @@
     },
     "Seal": {
       "Name": "Seal",
-      "Prepare": "Place the seal",
-      "Object": "Choose the object to seal",
-      "Description": "The seal can store a successful spell casting. The GM decides when to release it.",
+      "DropHint": "Drag the seal onto an inventory item.",
+      "Description": "The seal stores a successful spell casting until it is released.",
       "Empty": "Empty seal",
       "Maximum": "Maximum spell level {level}",
       "ChooseSpell": "Choose the spell to seal",
@@ -19187,9 +19186,11 @@
       "Stored": "Sealed spell · {spell}",
       "Bound": "The spell is sealed into {object}.",
       "Released": "The seal on {object} releases the spell.",
-      "NoObject": "No eligible item. If needed, select the carrier’s token.",
+      "Target": "Target",
+      "NoTarget": "No target",
+      "ConfirmedTarget": "Confirmed target · {target}",
       "NoSpell": "The weaver knows no spell compatible with this seal.",
-      "NoCaster": "The weaver of the seal could not be found.",
+      "SelectCaster": "Control one token to choose the weaver.",
       "Unavailable": "The seal is unavailable. Check the item and the active GM."
     },
     "WaterPurification": {

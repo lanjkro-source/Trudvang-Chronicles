@@ -2,6 +2,7 @@ import {casterFirstEffect} from './rules/self-effects.mjs';
 import {escapeHtml,escapeAttribute} from "./helpers.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {currentCastingCounts} from "./rules/magic-resistance.mjs";
+import {canResolveReleasedSeal, sealedSpellSource} from "./magic-seal.mjs";
 
 const SCOPE="trudvang-chronicles",CHANNEL=`system.${SCOPE}`,jobs=new Map(),replies=new Map();
 let registered=false;
@@ -54,14 +55,14 @@ export async function applyEffectForCasterOnGM({messageId,userId,key,tokenUuid,s
  const message=game.messages?.get(messageId),user=game.users?.get(userId),context=message?.flags?.[SCOPE]?.ruleTestContext;
  if(!game.users?.activeGM?.isSelf||!message||!user?.active||!await canManageEffectTargets(message,user)||!context||TRANSFORMATION_TEMPLATES[key]?.sourceId!==context.sourceId)return {status:"unavailable"};
  const caster=context.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
- if(!caster||(!user.isGM&&!caster.testUserPermission?.(user,"OWNER")))return {status:"unavailable"};
+ if(!canResolveReleasedSeal(message,user)&&(!caster||(!user.isGM&&!caster.testUserPermission?.(user,"OWNER"))))return {status:"unavailable"};
  if(!String(message.content??"").includes(`data-transformation-key="${escapeAttribute(key)}"`)||!String(message.content??"").includes(`data-transformation-source="${escapeAttribute(sourceUuid??"")}"`))return {status:"unavailable"};
  const row=effectTargetsFor(message,key).find(target=>target.tokenUuid===tokenUuid);
  const token=row?await foundry.utils.fromUuid(tokenUuid):null;
  if(!token?.actor||token.actor.uuid!==row.actorUuid)return {status:"unavailable"};
  const item=itemUuid?await foundry.utils.fromUuid(itemUuid):null;
  if(itemUuid&&(!item||item.parent?.uuid!==token.actor.uuid))return {status:"unavailable"};
- const source=sourceUuid?await foundry.utils.fromUuid(sourceUuid):null;
+ const source=sealedSpellSource(message,caster)??(sourceUuid?await foundry.utils.fromUuid(sourceUuid):null);
  if(!source||!["spell","divineFeat"].includes(source.type)||source.system?.catalogId!==context.sourceId)return {status:"unavailable"};
  const rune=message.flags?.[SCOPE]?.runeAllocation;
  const selected=rune?currentCastingCounts({...context,countsById:rune.selected}):currentCastingCounts(context);
