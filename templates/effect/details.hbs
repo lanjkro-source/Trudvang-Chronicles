@@ -14,6 +14,7 @@
       {{/if}}
     {{/if}}
     {{#if resistanceButtons}}<div class="trudvang-transformation-links">{{#each resistanceButtons}}<button type="button" data-action="roll-rule-test" data-test-index="{{index}}"><i class="fas fa-dice-d20"></i> {{label}}</button>{{/each}}</div>{{/if}}
+    {{#if canPullPrisoner}}<button type="button" data-action="pull-prisoner"><i class="fas fa-people-pulling" aria-hidden="true"></i> {{localize "TRUDVANG.FollowupTest.PrisonPull"}}</button>{{/if}}
     {{#if conditionalSituationButtons}}<div class="trudvang-transformation-links">{{#each conditionalSituationButtons}}<button type="button" data-action="roll-conditional-situation" data-index="{{index}}"><i class="fas fa-dice-d20"></i> {{label}}</button>{{/each}}</div>{{/if}}
     {{#if canRollMagicDamage}}<button type="button" data-action="roll-magic-damage"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{/if}}
     {{#if editable}}<button type="button" data-action="saveDescription" title="{{localize 'TRUDVANG.Effect.SaveDescription'}}"><i class="fa-solid fa-floppy-disk"></i> {{localize "TRUDVANG.Effect.SaveDescription"}}</button>{{/if}}

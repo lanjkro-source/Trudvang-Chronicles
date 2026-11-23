@@ -458,7 +458,6 @@ La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et
 ### Chantiers encore ouverts
 
 - **Bouclier d’air et Mur de vitner** — placer une barrière, détecter sa traversée ou le passage d’un projectile et proposer la protection ou le test prévu.
-- **Emprisonnement** — appliquer aux traversées forcées la décharge qui leur est propre. Le contact avec la paroi dispose déjà de dégâts.
 - **Tête du huvfurwurm** — traiter le coup fatal, le seuil amélioré, la consommation unique et le réveil après hibernation. Le don existe sous forme de rappel.
 - **Invocations et reliques des noajs de Haminges** — vérifier les profils invoqués et traiter les propriétés mécaniques des reliques qui restent manuelles. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
 - **Révision du catalogue** — distinguer les effets purement descriptifs des effets pour lesquels un jet, un suivi d’état ou un calcul manque encore. La compatibilité avec les tables de Stormlands reste une vérification distincte.
@@ -468,3 +467,9 @@ La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et
 Après un lancement réussi de Sceau, le lanceur ou le MJ glisse le sceau depuis la carte sur un objet d’inventaire. Dans la description de l’effet, **Tisser le sortilège à sceller** propose les sortilèges instantanés ou persistants du personnage contrôlé, selon son niveau dans la tablette connue et le niveau du sceau. Le lancement dépense normalement le vitner et un échec laisse le sceau vide. Une réussite conserve le jet, le contexte du tisseur et les niveaux de puissance choisis, y compris ceux du succès critique. Le sortilège reste en attente.
 
 Toute personne pouvant ouvrir l’objet peut utiliser **Libérer le sortilège** et confirmer la cible. Le sortilège utilise le jet et les points de vitner du tissage d’origine. La carte permet de résoudre les effets et les zones. L’effet porté par l’objet disparaît après publication. Le MJ arbitre les conditions de libération et sa connexion permet d’autoriser les écritures. Le Sceau suit son objet dans les transferts d’inventaire. Références dans le Livre des règles, entrée Sceau, et le Player’s Handbook, entrée Seal.
+
+### Emprisonnement
+
+Le test de situation de l’effet utilise le Psychisme prévu par l’édition française (Livre des règles p. 196). Une charge réussie applique la décharge de la paroi, dont les dégâts et le JO reprennent les améliorations du lancement, puis retire Emprisonnement. Un échec inflige 1d10 et laisse le prisonnier enfermé. Le temps du monde détermine la journée et chaque prison permet deux tentatives par jour. Annuler le jet laisse le compteur intact.
+
+L’action **Extraire le prisonnier** est réservée au MJ. Elle confirme l’aide de quatre adultes de force normale, inflige 1d10 et retire Emprisonnement. La validation de cette aide et les déplacements sur la scène relèvent du MJ. Le bouton de dégâts existant sert toujours au simple contact avec la paroi. Le Player’s Handbook (Imprison, p. 100) utilise la Force pour la charge.

@@ -12,6 +12,7 @@ import {npcBookSkillRows} from "../rules/npc-summary.mjs";
 import {TRUDVANG} from "../config.mjs";
 import {magicDamageProfile,rollMagicDamage} from "../magic-damage.mjs";
 import {releaseSealedSpell,sealSheetView,weaveSealedSpell} from "../magic-seal.mjs";
+import {canPullPrisoner,pullPrisoner} from "../followup-tests.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -49,7 +50,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       "roll-magic-damage": TrudvangEffectSheet.onRollMagicDamage,
       "roll-conditional-situation": TrudvangEffectSheet.onRollConditionalSituation,
       "weave-sealed-spell": TrudvangEffectSheet.onWeaveSealedSpell,
-      "release-sealed-spell": TrudvangEffectSheet.onReleaseSealedSpell
+      "release-sealed-spell": TrudvangEffectSheet.onReleaseSealedSpell,
+      "pull-prisoner": TrudvangEffectSheet.onPullPrisoner
     }
   };
 
@@ -116,6 +118,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       partContext.canRollMagicDamage=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner && Boolean(magicDamageProfile(this.document)) && !POWER_DETAILS_BY_ID[this.document.flags?.["trudvang-chronicles"]?.transformation?.sourceId]?.damageRoll?.automatic;
       partContext.origin = this.document.origin || "";
       partContext.seal = sealSheetView(this.document);
+      partContext.canPullPrisoner = canPullPrisoner(this.document);
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
         const id = status.id ?? key;
@@ -337,6 +340,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     if (submitData.duration) submitData.duration = normalizeEffectDuration(submitData.duration);
     if (Array.isArray(submitData.system?.stages)) submitData.system.stages = submitData.system.stages.map(normalizeEffectStage);
     return submitData;
+  }
+
+  static async onPullPrisoner() {
+    if (await pullPrisoner(this.document)==="resolved") await this.close();
   }
 
   static async onRollRuleTest(event, target) {

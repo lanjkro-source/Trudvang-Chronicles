@@ -2,7 +2,7 @@ import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
 import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformation-data.mjs";
 import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
 import {withFollowupTest} from './followup-tests.mjs';
-import {followupRollTest,followupPolicy} from './rules/followup-tests.mjs';
+import {followupRollTest,followupPolicy,isVitnerPrison} from './rules/followup-tests.mjs';
 import {withInitialResistance,initialResistanceArea,initialResistanceTestDisabled} from './initial-resistance.mjs';
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
@@ -267,7 +267,11 @@ export async function performRuleTest({document, index, actor = testActorForUser
       message: areaMessage,
       whisper: Array.from(game.users.values()).filter(user => user.isGM || actor.testUserPermission(user, "OWNER")).map(user => user.id)
     }) : document?.flags?.[SYSTEM_ID]?.diseaseIncubation ? diseaseResultPublisher(document,actor,resultMessage) : null;
-    const result=await withFollowupTest(document,Number(index),actor,()=>withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resolveProcedure:followupPolicy(document,Number(index))?()=>({flags:{followupTest:{effectUuid:document.uuid,index:Number(index)}}}):null,reactive:Boolean(initial),resistedEffect:document,resistanceContext:casting,publishMessage}),resultMessage)));
+    const prison=isVitnerPrison(document);
+    const resolveProcedure=followupPolicy(document,Number(index))?({target})=>({flags:{followupTest:{
+      effectUuid:document.uuid,index:Number(index),...(prison?{target}:{})
+    }}}):null;
+    const result=await withFollowupTest(document,Number(index),actor,()=>withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test:prison?{...test,success:"",failure:""}:test, sourceName: document?.name ?? "",resolveProcedure,reactive:Boolean(initial),resistedEffect:document,resistanceContext:casting,publishMessage}),resultMessage)));
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }

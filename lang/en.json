@@ -18948,6 +18948,12 @@
       "AwareUnwillingTarget": "Target aware of the spell and unwilling"
     },
     "FollowupTest": {
+      "PrisonPull": "Pull the prisoner out",
+      "PrisonPullConfirm": "Confirm that four adults of normal strength can pull {actor} through the wall. This deals 1d10 damage.",
+      "PrisonPulled": "Allies pull {actor} through the wall.",
+      "PrisonEscaped": "The discharge is resolved. The prisoner is free.",
+      "PrisonHeld": "The charge failed. The prisoner remains trapped.",
+      "PrisonDailyLimit": "Both attempts for today have been used.",
       "DailyLimit": "This test has already been attempted today. Advance time to the following day to try again.",
       "WaitNextDay": "Memory recovery can begin on the following day.",
       "Busy": "A test is already in progress for this effect.",

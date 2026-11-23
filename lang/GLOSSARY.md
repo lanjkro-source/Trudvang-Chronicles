@@ -16711,6 +16711,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.FollowupTest.PrisonPull` | Pull the prisoner out | Extraire le prisonnier |
+| `TRUDVANG.FollowupTest.PrisonPullConfirm` | Confirm that four adults of normal strength can pull {actor} through the wall. This deals 1d10 damage. | Confirmez que quatre adultes de force normale peuvent tirer {actor} à travers la paroi. L’extraction inflige 1d10 dégâts. |
+| `TRUDVANG.FollowupTest.PrisonPulled` | Allies pull {actor} through the wall. | Les alliés de {actor} le tirent à travers la paroi. |
+| `TRUDVANG.FollowupTest.PrisonEscaped` | The discharge is resolved. The prisoner is free. | La décharge est résolue. Le prisonnier est libéré. |
+| `TRUDVANG.FollowupTest.PrisonHeld` | The charge failed. The prisoner remains trapped. | La charge a échoué. Le prisonnier reste enfermé. |
+| `TRUDVANG.FollowupTest.PrisonDailyLimit` | Both attempts for today have been used. | Les deux tentatives du jour ont été utilisées. |
 | `TRUDVANG.FollowupTest.DailyLimit` | This test has already been attempted today. Advance time to the following day to try again. | Ce test a déjà été tenté aujourd’hui. Faites avancer le temps jusqu’au jour suivant pour réessayer. |
 | `TRUDVANG.FollowupTest.WaitNextDay` | Memory recovery can begin on the following day. | La récupération des souvenirs peut commencer le jour suivant. |
 | `TRUDVANG.FollowupTest.Busy` | A test is already in progress for this effect. | Un test est déjà en cours pour cet effet. |

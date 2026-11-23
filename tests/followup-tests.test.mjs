@@ -8,7 +8,7 @@ const languages=Object.fromEntries(['fr','en'].map(lang=>[lang,JSON.parse(fs.rea
 globalThis.foundry={applications:{handlebars:{renderTemplate:async(_path,data)=>(renderedCard=data,'<article>Result</article>')}},utils:{fromUuid:async uuid=>docs.get(uuid),deepClone:structuredClone}};
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value);}})};
 globalThis.ui={notifications:{warn:message=>warnings.push(message)}};
-const {withFollowupTest,resolveFollowupOnAuthority}=await import('../modules/followup-tests.mjs');
+const {withFollowupTest,resolveFollowupOnAuthority,pullPrisoner}=await import('../modules/followup-tests.mjs');
 const {ruleTestsForDocument,performRuleTest}=await import('../modules/rule-tests.mjs');
 const {applyTransformation}=await import('../modules/transformations.mjs');
 function setup(language='fr'){
@@ -121,4 +121,74 @@ test('the real recovery dialog and chat use the saved bonus once, for the recipi
   assert.equal(messages.get('rolled').speaker.actor,actor.uuid);assert.match(messages.get('rolled').content,/\+4/);
   assert.equal(ruleTestsForDocument(e)[1].followupBonus,4);assert.equal(messages.size,1);
  }finally{foundry.applications.api=old.api;foundry.applications.handlebars.renderTemplate=old.render;globalThis.Roll=old.Roll;globalThis.ChatMessage=old.ChatMessage;globalThis.CONFIG=old.CONFIG;}
+});
+
+test('Imprison resolves two charges per day, applies the saved open roll on escape and lets the GM confirm extraction',async()=>{
+ const actor=setup(),prisonKey='vitner-body-vitner:imprison:10#effect';
+ const makePrison=()=>effect(actor,prisonKey);
+ const prison=makePrison();
+ const sourceId=prison.flags[S].transformation.sourceId;
+ prison.flags[S].transformation.ruleTestContext={sourceId,countsById:{[sourceId+':4']:2,[sourceId+':0']:1}};
+ Object.assign(actor,{
+  system:{resources:{body:{value:30,max:30}}},flags:{},getFlag:(scope,key)=>actor.flags[scope]?.[key],
+  async update(changes){
+   for(const [path,value]of Object.entries(changes)){
+    const keys=path.split('.');let target=actor;
+    for(const key of keys.slice(0,-1))target=target[key]??={};
+    target[keys.at(-1)]=value;
+   }
+  }
+ });
+ const api=foundry.applications.api,previousRoll=globalThis.Roll,previousChat=globalThis.ChatMessage;
+ const rolled=[],totals=[2,3,10,4,5];let confirmed=false;
+ globalThis.Roll=class{
+  constructor(formula){this.formula=formula;}
+  async evaluate(){rolled.push(this.formula);this.total=totals.shift();return this;}
+ };
+ globalThis.ChatMessage={
+  getSpeaker:({actor})=>({actor:actor.uuid}),
+  create:async data=>{
+   const result={...data,id:data._id??`chat-${messages.size}`,update:async changes=>Object.assign(result,changes)};
+   messages.set(result.id,result);return result;
+  }
+ };
+ const charge=(id,die,success)=>{
+  const target=4;
+  const result={id,author:game.user,rolls:[{formula:'1d20',total:die}],flags:{[S]:{followupTest:{effectUuid:prison.uuid,index:0,target}}},
+   content:'<article>Result</article>',update:async changes=>Object.assign(result,changes)};
+  messages.set(id,result);
+  return withFollowupTest(prison,0,actor,async()=>({messageId:id,success,target}));
+ };
+ try{
+  const [test]=ruleTestsForDocument(prison);
+  assert.equal(test.trait[0],'psyche');
+  assert.equal(test.powerLevelModifiers[0].optionId,sourceId+':0');
+  assert.equal(await withFollowupTest(prison,0,actor,async()=>null),null);
+  assert.equal(prison.flags[S].ruleTestProgress,undefined);
+  await charge('first',15,false);
+  await charge('second',16,false);
+  assert.equal(actor.system.resources.body.value,25);
+  assert.match(messages.get('second').content,/reste enfermé/);
+  assert.equal(prison.deleted,undefined);
+  assert.equal(await withFollowupTest(prison,0,actor,()=>assert.fail('daily cap')),null);
+  assert.match(warnings.at(-1),/deux tentatives/);
+  game.time.worldTime=86400;
+  await charge('escape',3,true);
+  assert.deepEqual(rolled,['1d10','1d10','1d10','1d10'],'JO 10 rolls again on 10');
+  assert.equal(actor.system.resources.body.value,11);
+  assert.equal(prison.deleted,true);
+  assert.match(messages.get('escape').content,/prisonnier est libéré/);
+  const pulled=makePrison();
+  assert.equal(await pullPrisoner(pulled),null,'only the GM adjudicates group extraction');
+  game.user=game.users.get('gm');
+  foundry.applications.api={DialogV2:{confirm:async({content})=>{assert.match(content,/quatre adultes/);return confirmed;}}};
+  assert.equal(await pullPrisoner(pulled),null);
+  assert.equal(pulled.deleted,undefined);
+  confirmed=true;
+  assert.equal(await pullPrisoner(pulled),'resolved');
+  assert.equal(actor.system.resources.body.value,6);
+  assert.equal(pulled.deleted,true);
+ }finally{
+  globalThis.Roll=previousRoll;globalThis.ChatMessage=previousChat;foundry.applications.api=api;
+ }
 });

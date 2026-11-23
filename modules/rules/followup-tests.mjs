@@ -1,7 +1,11 @@
 import {effectChangesSource} from './effect-source.mjs';
 import {TRANSFORMATION_TEMPLATES} from '../transformation-data.mjs';
 const S='trudvang-chronicles';
-export const followupPolicy=(effect,index)=>TRANSFORMATION_TEMPLATES[effect?.flags?.[S]?.transformation?.key]?.followupTests?.find(row=>row.testIndex===index);
+const prisonKey='vitner-body-vitner:imprison:10#effect';
+const prisonEscape={frequency:'day',attempts:2,success:'escapePrison'};
+export const isVitnerPrison=effect=>effect?.flags?.[S]?.transformation?.key===prisonKey;
+export const followupPolicy=(effect,index)=>isVitnerPrison(effect)&&index===0 ? prisonEscape
+ : TRANSFORMATION_TEMPLATES[effect?.flags?.[S]?.transformation?.key]?.followupTests?.find(row=>row.testIndex===index);
 export const followupState=effect=>effect?.flags?.[S]?.ruleTestProgress;
 export const worldDay=time=>Math.floor(Number(time||0)/86400);
 export function followupFingerprint(effect){
@@ -15,7 +19,7 @@ export function followupAvailability(effect,index,time){
  if(policy.frequency!=='day')return '';
  const day=worldDay(time),start=effect.flags[S].transformation.appliedAt??effect._source?.start?.time??effect.start?.time??time;
  if(day<worldDay(start)+(policy.startAfterDays??0))return 'wait';
- return state?.lastDay===day?'daily':'';
+ return state?.lastDay===day&&(state.attempts??1)>=(policy.attempts??1)?'daily':'';
 }
 export function followupRollTest(effect,test,index){
  const policy=followupPolicy(effect,index),state=followupState(effect)?.tests?.[index];

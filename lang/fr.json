@@ -18948,6 +18948,12 @@
       "AwareUnwillingTarget": "Cible consciente du sort et non consentante"
     },
     "FollowupTest": {
+      "PrisonPull": "Extraire le prisonnier",
+      "PrisonPullConfirm": "Confirmez que quatre adultes de force normale peuvent tirer {actor} à travers la paroi. L’extraction inflige 1d10 dégâts.",
+      "PrisonPulled": "Les alliés de {actor} le tirent à travers la paroi.",
+      "PrisonEscaped": "La décharge est résolue. Le prisonnier est libéré.",
+      "PrisonHeld": "La charge a échoué. Le prisonnier reste enfermé.",
+      "PrisonDailyLimit": "Les deux tentatives du jour ont été utilisées.",
       "DailyLimit": "Ce test a déjà été tenté aujourd’hui. Faites avancer le temps jusqu’au jour suivant pour réessayer.",
       "WaitNextDay": "La récupération des souvenirs peut commencer le jour suivant.",
       "Busy": "Un test est déjà en cours pour cet effet.",
